@@ -88,13 +88,14 @@ to be global definitions, for example:
 
 
 <p>
-If you installed <i lang="ga">An Gramadóir</i> anywhere other than in /usr/local/bin/gr
+If you installed <i lang="ga">An Gramadóir</i> anywhere other than in /usr/bin
 you need to tell the interface where to look for it by putting a line
 similar to the following:<br>
 <pre>
-   (setq gramadoir-program-path "/usr/local/bin/gr")
+   (setq gramadoir-program-path "/usr/bin/gram-xx.pl")
 </pre>
-in your ~/.emacs, substituting the appropriate path.
+in your ~/.emacs, substituting the appropriate path for "/usr/bin"
+and language code for "xx".
 </p>
 
 <p>
@@ -115,7 +116,9 @@ distributions, or you can download it directly from
 <a href="http://vim.sourceforge.net/scripts/script.php?script_id=802">
 Vim online</a>.     Instructions:
 <ol>
-<li>put <i>gramadoir.vim</i> in ~/.vim/plugin.
+<li>put <i>gramadoir.vim</i> in ~/.vim/plugin.  For languages other
+than Irish, you'll need to change the "gram-ga.pl" around line 30 to
+the appropriate script name.
 
 <li>put the following lines in your ~/.vimrc file
 <pre>
@@ -125,7 +128,7 @@ map &lt;F5&gt; &lt;Plug&gt;Amach
 </pre>
 or choose different hot keys if you want.
 
-<li>open an Irish language text file in Vim.
+<li>open the text file to be checked in Vim.
 
 <li>to check its grammar, press F3; a second buffer,
 containing the messages from <i lang="ga">An Gramadóir</i>,
