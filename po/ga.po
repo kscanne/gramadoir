@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gramadoir 0.2-r1\n"
+"Project-Id-Version: gramadoir 0.3\n"
 "POT-Creation-Date: 2003-10-21 10:32-0500\n"
-"PO-Revision-Date: 2003-09-18 21:46-0500\n"
+"PO-Revision-Date: 2003-10-21 15:58-0500\n"
 "Last-Translator: Kevin Patrick Scannell <scannell@SLU.EDU>\n"
 "Language-Team: Irish <ga@li.org>\n"
 "MIME-Version: 1.0\n"
