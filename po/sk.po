@@ -7,14 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramadoir 0.4\n"
 "Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
-"POT-Creation-Date: 2004-01-08 22:32-0600\n"
+"POT-Creation-Date: 2004-04-01 14:40-0600\n"
 "PO-Revision-Date: 2004-01-10 23:04+0100\n"
 "Last-Translator: Andrej Kacian <andrej@kacian.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: KBabel 1.0.2\n"
 
 #. TRANSLATORS: Please leave untranslated, but add an acute accent to the
@@ -54,7 +55,8 @@ msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
 msgstr "    --iomlan       hlásiť všetky chyby (teda nepoužívať ~/.neamhshuim)"
 
 #: gr.in:58
-msgid "    --ionchod=ENC  specify the character encoding of the text to be checked"
+msgid ""
+"    --ionchod=ENC  specify the character encoding of the text to be checked"
 msgstr "    --ionchod=ENC  určenie kódovania overovaného textu"
 
 #: gr.in:59
@@ -62,188 +64,221 @@ msgid "    --litriu       write misspelled words to standard output"
 msgstr "    --litriu       vypísať nesprávne slová na štandardný výstup"
 
 #: gr.in:60
-msgid "    --aspell       suggest corrections for misspellings (requires GNU aspell)"
-msgstr "    --aspell       navrhnúť opravu nesprávnych slov (vyžaduje GNU aspell)"
+msgid ""
+"    --aspell       suggest corrections for misspellings (requires GNU aspell)"
+msgstr ""
+"    --aspell       navrhnúť opravu nesprávnych slov (vyžaduje GNU aspell)"
 
 #: gr.in:61
-msgid "    --teanga=XX    specify the language of the text to be checked (default=ga)"
-msgstr "    --teanga=XX    určenie jazyku overovaného textu(prednastavené=ga)"
+msgid "    --aschur=FILE  write output to FILE"
+msgstr ""
 
 #: gr.in:62
+msgid ""
+"    --teanga=XX    specify the language of the text to be checked "
+"(default=ga)"
+msgstr "    --teanga=XX    určenie jazyku overovaného textu(prednastavené=ga)"
+
+#: gr.in:63
 msgid "    --help         display this help and exit"
 msgstr "    --help         zobrazí tento text a ukončí program"
 
-#: gr.in:63
+#: gr.in:64
 msgid "    --version      output version information and exit"
 msgstr "    --version      zobrazí informácie o verzii a ukončí program"
 
-#: gr.in:64
+#: gr.in:65
 msgid "Options for developers:"
 msgstr "Voľby pre vývojárov:"
+
+#: gr.in:67
+msgid ""
+"    --api          output a simple XML format for use with other applications"
+msgstr ""
 
 #. TRANSLATORS: "disambiguation" is a term from natural language processing.
 #. Here it means the process of deciding, for a given word with several
 #. possible parts of speech (noun, verb, etc.), the correct part of speech
 #. given the context.  Brill's algorithm is "unsupervised" because it relies
 #. only on statistics gathered from texts which have not been tagged in advance.
-#: gr.in:71
-msgid "    --brill        find disambiguation rules via Brill's unsupervised algorithm"
-msgstr "    --brill        nájsť pravidlá pre určenie významu slov pomocou Brillovho algoritmu"
-
-#: gr.in:72
-msgid "    --html         produce HTML output for viewing in a web browser"
-msgstr "    --html         vytvorí HTML výstup pre prezeranie vo webovom prehliadači"
-
-#: gr.in:73
-msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
-msgstr "    --ilchiall     vypísať slová s nenájdeným významom, zotriedené podľa počtu výskytu"
-
 #: gr.in:74
-msgid "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
-msgstr "    --minic        vypíše všetky značky, zotriedené podľa počtu výskytu (pre unigram-xx.txt)"
+msgid ""
+"    --brill        find disambiguation rules via Brill's unsupervised "
+"algorithm"
+msgstr ""
+"    --brill        nájsť pravidlá pre určenie významu slov pomocou Brillovho "
+"algoritmu"
+
+#: gr.in:75
+msgid "    --html         produce HTML output for viewing in a web browser"
+msgstr ""
+"    --html         vytvorí HTML výstup pre prezeranie vo webovom prehliadači"
+
+#: gr.in:76
+msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
+msgstr ""
+"    --ilchiall     vypísať slová s nenájdeným významom, zotriedené podľa "
+"počtu výskytu"
+
+#: gr.in:77
+msgid ""
+"    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
+msgstr ""
+"    --minic        vypíše všetky značky, zotriedené podľa počtu výskytu (pre "
+"unigram-xx.txt)"
 
 #. TRANSLATORS: By default, if there is no rule in the disambiguation module
 #. for selecting the correct part of speech of an ambiguous word, the program
 #. chooses the part of speech with the highest frequency.  This is sometimes
 #. called "unigram" tagging.   The --no-unigram option turns this behavior off.
-#: gr.in:80
-msgid "    --no-unigram   do not resolve ambiguous parts of speech by frequency"
+#: gr.in:83
+msgid ""
+"    --no-unigram   do not resolve ambiguous parts of speech by frequency"
 msgstr "    --no-unigram   neurčovať význam slov podľa počtu výskytu"
 
 #. TRANSLATORS: The grammar checker works by piping the input text
 #. through a sequence of filters which add XML markup indicating
 #. important grammatical information.  The --xml option displays the
 #. marked up file as an aid in debugging.
-#: gr.in:86
-msgid "    --xml          write tagged XML stream to standard output, for debugging"
-msgstr "    --xml          zapísať označkovaný XML stream na štandardný výstup, pre odlaďovanie"
+#: gr.in:89
+msgid ""
+"    --xml          write tagged XML stream to standard output, for debugging"
+msgstr ""
+"    --xml          zapísať označkovaný XML stream na štandardný výstup, pre "
+"odlaďovanie"
 
-#: gr.in:87
+#: gr.in:90
 msgid "If no file is given, read from standard input."
 msgstr "Ak nie je zadaný žiadny súbor, čítaj zo štandardného vstupu"
 
-#: gr.in:88
+#: gr.in:91
 msgid "Send bug reports to <%s>."
 msgstr "Odosielať správy o chybe na <%s>."
 
-#: gr.in:89
+#: gr.in:92
 msgid "version %s"
 msgstr "verzia %s"
 
-#: gr.in:90
-msgid "This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law."
-msgstr "Toto je voľne šíriteľný program, pozrite si zdrojové súbory. Neposkytuje sa\\nžiadna záruka, dokonca ani záruka PREDAJNOSTI alebo VHODNOSTI PRE \\nURČITÝ ÚČEL, v rozsahu povolenom zákonom."
+#: gr.in:93
+msgid ""
+"This is free software; see the source for copying conditions.  There is NO"
+"\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
+"PURPOSE,\\nto the extent permitted by law."
+msgstr ""
+"Toto je voľne šíriteľný program, pozrite si zdrojové súbory. Neposkytuje sa"
+"\\nžiadna záruka, dokonca ani záruka PREDAJNOSTI alebo VHODNOSTI PRE "
+"\\nURČITÝ ÚČEL, v rozsahu povolenom zákonom."
 
-#: gr.in:91
+#: gr.in:94
 msgid "Try %s for more information."
 msgstr "Skúste %s pre ďalšie informácie."
 
-#: gr.in:92
+#: gr.in:95
 msgid "unrecognized option %s"
 msgstr "neznáma voľba %s"
 
-#: gr.in:93
+#: gr.in:96
 msgid "option %s requires an argument"
 msgstr "voľba %s vyžaduje parameter"
 
-#: gr.in:94
+#: gr.in:97
 msgid "option %s does not allow an argument"
 msgstr "voľba %s nepripúšta parameter"
 
-#: gr.in:95 farc.c.in:18 farc.c.in:30 farc.c.in:42
+#: gr.in:98 farc.c.in:18 farc.c.in:30 farc.c.in:42
 #, c-format
 msgid "Language %s is not supported."
 msgstr "Jazyk %s nie je podporovaný."
 
 #. TRANSLATORS: "conversion" here means conversion between character encodings
-#: gr.in:98
+#: gr.in:101
 msgid "conversion from %s is not supported"
 msgstr "konverzia z %s nie je podporovaná"
 
-#: gr.in:99
+#: gr.in:102
 msgid "aspell-%s is not installed"
 msgstr "aspell-%s nie je nainštalovaný"
 
-#: gr.in:100
+#: gr.in:103
 msgid "Unknown word"
 msgstr "Neznáme slovo"
 
 #. TRANSLATORS: only two unknown words are reported per sentence
-#: gr.in:103
+#: gr.in:106
 msgid "Unknown word (ignoring remainder in this sentence)"
 msgstr "Neznáme slovo (ignorujem zvyšok slov v tejto vete)"
 
-#: gr.in:104
+#: gr.in:107
 msgid "Valid word but extremely rare in actual usage"
 msgstr "Platné slovo, ale extrémne vzácne v bežnom použití"
 
-#: gr.in:105
+#: gr.in:108
 msgid "Usually used in the set phrase \\/\\1\\/"
 msgstr "Väčšinou použité vo fráze \\/\\1\\/"
 
-#: gr.in:106
+#: gr.in:109
 msgid "You should use \\/\\1\\/ here instead"
 msgstr "Mali by ste tu radšej použiť \\/\\1\\/"
 
-#: gr.in:107
+#: gr.in:110
 msgid "Non-standard form: perhaps use \\/\\1\\/?"
 msgstr "Neštandardná forma: možno \\/\\1\\/?"
 
 #. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
-#: gr.in:110
+#: gr.in:113
 msgid "Initial mutation missing"
 msgstr "Počiatočná mutácia chýba"
 
 #. TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
 #. It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
-#: gr.in:114
+#: gr.in:117
 msgid "Unnecessary lenition"
 msgstr "Nepotrebná lenícia"
 
-#: gr.in:115
+#: gr.in:118
 msgid "Prefix \\/h\\/ missing"
 msgstr "Predpona \\/h\\/ chýba"
 
-#: gr.in:116
+#: gr.in:119
 msgid "Prefix \\/t\\/ missing"
 msgstr "Predpona \\/t\\/ chýba"
 
-#: gr.in:117
+#: gr.in:120
 msgid "Lenition missing"
 msgstr "Chýba eklipsa"
 
 #. TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
 #. initial consonants in Irish.  It is indicated in writing by the addition
 #. of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
-#: gr.in:122
+#: gr.in:125
 msgid "Eclipsis missing"
 msgstr "Chýba eklipsa"
 
-#: gr.in:123
+#: gr.in:126
 msgid "Repeated word"
 msgstr "Opakované slovo"
 
-#: gr.in:124
+#: gr.in:127
 msgid "Unusual combination of words"
 msgstr "Nezvyklá kombinácia slov"
 
-#: gr.in:125
+#: gr.in:128
 msgid "Comparative adjective required"
 msgstr "Je potrebné porovnávacie prídavné meno"
 
-#: gr.in:126
+#: gr.in:129
 msgid "Unnecessary prefix \\/h\\/"
 msgstr "Nepotrebná predpona \\/h\\/"
 
-#: gr.in:127
+#: gr.in:130
 msgid "Unnecessary prefix \\/t\\/"
 msgstr "Nepotrebná predpona \\/t\\/"
 
-#: gr.in:128
+#: gr.in:131
 msgid "Unnecessary use of the definite article"
 msgstr "Nepotrebné použitie určitého člena"
 
-#: gr.in:129
+#: gr.in:132
 msgid "The genitive case is required here"
 msgstr "Je tu potrebný genitív"
 
