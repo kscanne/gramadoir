@@ -1,0 +1,300 @@
+# This file contains compound words with their part of speech markup.
+# Copyright (C) 2003 Kevin P. Scannell <scannell@slu.edu>
+#
+# This is free software; see the file COPYING for copying conditions.  There is
+# NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#
+# Users can add to this list by following the syntax described
+# on the web page:  http://borel.slu.edu/gramadoir/
+# Please send me any useful additional rules for inclusion in
+# future releases: <scannell@slu.edu>
+[Aa] chéile:<R>
+# corpas; never followed by article; usually "a lán+pl" or "a lán acu"
+[Aa] lán:<S>
+[Aa] thiarcais:<I>
+# ag bárcadh allais
+[Aa]gus araile:<R>
+[Aa]r aghaidh:<S>
+[Aa]r ais:<R>
+# infrequent
+# [Aa]r an mórchóir
+# [Aa]r an mórgóir
+# infrequent
+[Aa]r athláimh:<R>
+[Aa]r atráth:<R>
+[Aa]r bith:<R>
+[Aa]r bhíthin:<S>
+[Aa]r bun:<R>
+[Aa]r chúl:<S>
+# infrequent
+[Aa]r dearglasadh:<R>
+# infrequent
+[Aa]r deargmheisce:<R>
+[Aa]r fad:<R>
+[Aa]r fáil:<R>
+[Aa]r feadh:<S>
+[Aa]r fud:<S>
+[Aa]r leith:<R>
+[Aa]r leithligh:<R>
+[Aa]r liobarna:<R>
+[Aa]r lorg:<S>
+[Aa]r maos:<R>
+# [Aa]r na mallaibh
+[Aa]r ndóigh:<R>
+[Aa]r neamhchead:<R>
+[Aa]r nós:<S>
+[Aa]r siúl:<R>
+[Aa]r son:<S>
+[Aa]r strae:<R>
+#  prepositional uses in the minority... leave commented out
+#[Aa]r tí:<S>
+# infrequent
+[Aa]r tinneall:<R>
+[Aa]r uairibh:<R>
+[Aa]rna mhárach:<R>
+[Aa]rú amárach:<R>
+[Aa]rú anuraidh:<R>
+[Aa]rú aréir:<R>
+[Aa]rú inné:<R>
+m?[Bb]h?eo beathach:<A pl="n" gnt="n">
+m?[Bb]h?óín Dé:<N pl="n" gnt="n" gnd="f">
+m?[Bb]h?rín óg:<N pl="n" gnt="n">
+m?[Bb]h?uaileam sciath:<N pl="n" gnt="n">
+# OD cá.6
+[Cc]ár bith:<Q>
+# [Cc]é is moite
+[Cc]eannann céanna:<A pl="n" gnt="n">
+[Cc]heannann chéanna:<A pl="n" gnt="n">
+[Cc]iolar chiot:<N pl="n" gnt="n" gnd="f">
+# do the next batch to help disambiguate "chéad" (first vs. hundred)
+[Dd]há chéad:<A pl="n" gnt="n">
+[Tt]rí chéad:<A pl="n" gnt="n">
+[Cc]eithre chéad:<A pl="n" gnt="n">
+[Cc]úig chéad:<A pl="n" gnt="n">
+[Ss]é chéad:<A pl="n" gnt="n">
+g?[Cc]h?odladh grifín:<N pl="n" gnt="n" gnd="m">
+g?[Cc]h?othrom na [Ff]éinne:<N pl="n" gnt="n" gnd="m">
+[Cc]hun cinn:<R>
+[Cc]hun tosaigh:<R>
+[Dd]ar ndóigh:<R>
+# infrequent
+[Dd][eá] bhíthin:<S>
+# OD éis^2.2
+[Dd]á éis:<S>
+[Dd]allach dubh:<N pl="n" gnt="n">
+[Dd]arb ainm:<R>
+[Dd]e bharr:<S>
+# infrequent
+[Dd]e chois:<S>
+# infrequent
+[Dd]e chóir:<S>
+[Dd]e dheasca:<S>
+[Dd]e dhíobháil:<S>
+[Dd]e ghlanmheabhair:<R>
+[Dd]e réir:<S>
+[Dd]e sciotán:<R>
+[Dd]e thairbhe:<S>
+[Dd]e thaisme:<R>
+# next batch to avoid "déag" exceptions to mutation
+# CB p.74
+h[Aa]on déag:<A pl="n" gnt="n">
+[Dd]ó dhéag:<A pl="n" gnt="n">
+[Tt]rí déag:<A pl="n" gnt="n">
+[Cc]eathair déag:<A pl="n" gnt="n">
+[Cc]úig déag:<A pl="n" gnt="n">
+[Ss]é déag:<A pl="n" gnt="n">
+[Ss]eacht déag:<A pl="n" gnt="n">
+[Oo]cht déag:<A pl="n" gnt="n">
+[Nn]aoi déag:<A pl="n" gnt="n">
+# [Dd]rioll ar an dreall
+[Ff]aoi bhráid:<S>
+[Ff]aoi bhun:<S>
+[Ff]aoi cheann:<S>
+[Ff]aoi choinne:<S>
+[Ff]aoi deara:<R>
+[Ff]aoi dhéin:<S>
+[Ff]aoi dheoidh:<R>
+[Ff]aoi lánseol:<R>
+[Ff]aoi láthair:<R>
+Fear Manach:<N pl="n" gnt="n">
+# infrequent
+[Ff]íorchaoin fáilte:<N pl="n" gnt="n">
+[Ff]uta [Ff]ata:<R>
+[Gg]ach re:<A>
+[Gg]liog gleag:<N pl="n" gnt="n">
+[Gg]o brách:<R>
+[Gg]o ceann:<S>
+[Gg]o deo:<R>
+[Gg]o díreach:<R>
+# rare compound <S> not governing genitive
+[Gg]o dtí:<S>
+# infrequent
+[Gg]o feillbhinn:<R>
+[Gg]o fóill:<R>
+# infrequent
+[Gg]o fras:<R>
+[Gg]o háirithe:<R>
+# infrequent
+[Gg]o héag:<R>
+[Gg]o héasca:<R>
+[Gg]o hiomlán:<R>
+[Gg]o léir:<R>
+# <A> => would need exception for lenition after fem. noun
+[Gg]o leith:<R>
+[Gg]o luath:<R>
+[Gg]o minic:<R>
+[Gg]o nuige:<R>
+# infrequent
+[Gg]o treis:<R>
+Hong Cong:<N pl="n" gnt="n">
+[Ii] bhfách:<R>
+[Ii] bhfad:<R>
+[Ii] bhfeac:<R>
+[Ii] bhfeidhm:<R>
+[Ii] bhfeighil:<S>
+[Ii] bhfianaise:<S>
+[Ii] bhfochair:<S>
+[Ii] bhfogas:<R>
+[Ii] bhfolach:<R>
+[Ii] dtaisce:<R>
+[Ii] dteagmháil:<R>
+[Ii] dteannta:<S>
+[Ii] dtólamh:<R>
+# infrequent
+[Ii] dtrátha:<S>
+[Ii] dtreis:<R>
+# corpus
+[Ii] dtreo:<S>
+[Ii] dtuilleamaí:<S>
+[Ii] gcaitheamh:<S>
+#  corpus
+[Ii] gceartlár:<S>
+[Ii] gcéin:<R>
+[Ii] gceist:<R>
+[Ii] gcionn:<S>
+[Ii] gcoinne:<S>
+[Ii] gcóir:<S>
+[Ii] gcoitinne:<R>
+# OD comhair^1
+[Ii] gcomhair:<S>
+# infrequent
+[Ii] gcomhchlos:<S>
+[Ii] gcomhthráth:<R>
+[Ii] gcónaí:<R>
+# infrequent
+[Ii] gcosamar:<S>
+[Ii] gcrích:<R>
+[Ii] gcuideachta:<S>
+[Ii] lár:<S>
+[Ii] láthair:<S>
+[Ii] léig:<R>
+[Ii] leith:<R>
+[Ii] mbliana:<R>
+[Ii] mbun:<S>
+[Ii] measc:<S>
+[Ii] ndáiríre:<R>
+[Ii] ndiaidh:<S>
+# rare compound <S> not governing genitive
+[Ii] ngach:<S>
+[Ii] ngan:<S>
+[Ii] rith:<S>
+[Ii] sáinn:<R>
+[Ii]n aghaidh:<S>
+[Ii]n aice:<S>
+# infrequent
+[Ii]n aicearracht:<R>
+[Ii]n airde:<R>
+# infrequent
+[Ii]n airicis:<S>
+[Ii]n áit:<S>
+[Ii]n ann:<R>
+[Ii]n éadan:<S>
+[Ii]n éindí:<R>
+[Ii]n éineacht:<R>
+[Ii]n imeacht:<S>
+[Ii]n ionad:<S>
+# infrequent; see "in aice" above
+[Ii]na aice:<R>
+# infrequent
+[Ii]na ch?olgsheasamh:<R>
+# infrequent
+[Ii]na steillbheatha:<R>
+# unlenited adj.
+h?Inis Mór:<N pl="n" gnt="n" gnd="f">
+# actually "idir sin is tráthas"
+# is tráthas:<N>
+[Ll]e chéile:<R>
+[Ll]e cois:<S>
+[Ll]e deireanas:<R>
+[Ll]e feiceáil:<R>
+[Ll]e haghaidh:<S>
+[Ll]e hais:<S>
+[Ll]e linn:<S>
+# infrequent
+[Ll]iútar éatar:<N pl="n" gnt="n">
+Loch Garman:<Y>
+# infrequent; both <F> in fact
+#[Ll]uchartha lochartha:<A pl="n" gnt="n">
+# infrequent
+[Ll]uí gaidhte:<N pl="n" gnt="n" gnd="m">
+# infrequent
+[Ll]uthairt lathairt:<N pl="n" gnt="n">
+# infrequent
+[Mm]h?ac siobháin:<N pl="n" gnt="n" gnd="m">
+Mh?aigh Eo:<N pl="n" gnt="n">
+[Mm]ar dhea:<R>
+# infrequent
+[Mm]eacan ragaim:<N pl="n" gnt="n" gnd="m">
+# infrequent
+[Mm]ugadh magadh:<N pl="n" gnt="n">
+na bhfud:<N pl="y" gnt="y" gnd="m">
+[Nn]í hamháin:<U>
+[Nn]í hamhlaidh:<U>
+# infrequent
+[Nn]í hansa:<U>
+# infrequent
+[Nn]iúdar neádar:<N pl="n" gnt="n">
+[Óó] chianaibh:<R>
+[Óó] dheas:<R>
+[Óó] thuaidh:<R>
+[Óó] shin:<R>
+[Oo]s cionn:<S>
+[Oo]s coinne:<S>
+[Oo]s comhair:<S>
+# infrequent
+[Pp]linc pleainc:<R>
+# infrequent
+[Rr]aiple húta:<N pl="n" gnt="n">
+# infrequent
+[Rr]ibe róibéis:<N pl="n" gnt="n" gnd="m">
+# infrequent
+[Rr]ibí róibéis:<N pl="y" gnt="n" gnd="m">
+Ros Comáin:<N pl="n" gnt="n">
+Ros Muc:<N pl="n" gnt="n">
+# infrequent
+[Rr]uaille buaille:<N pl="n" gnt="n">
+# infrequent
+[Ss]a treis:<R>
+# infrequent
+[Ss]a tslánchruinne:<R>
+[Ss]an áireamh:<R>
+# infrequent
+[Ss]an fhaopach:<R>
+# infrequent
+[Ss]aochan céille:<N pl="n" gnt="n" gnd="m">
+[Ss]cun scan:<R>
+[Ss]eo caite:<A pl="n" gnt="n">
+# infrequent
+[Ss]iún sincín:<N pl="n" gnt="n">
+# infrequent
+[Ss]pior spear:<N pl="n" gnt="n">
+# infrequent
+[Ss]teig meig:<N pl="n" gnt="n">
+# infrequent
+[Ss]úm sám:<N pl="n" gnt="n">
+# infrequent
+[Tt]h?amhach táisc:<N pl="n" gnt="n">
+[Tt]ar éis:<S>
+[Tt]har ceann:<S>
+[Tt]har fóir:<R>
+[Tt]rí bhíthin:<S>

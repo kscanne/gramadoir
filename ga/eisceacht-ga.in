@@ -1,0 +1,157 @@
+# eisceacht-ga.in: Exceptions to grammatical rules.   Patterns here are "OK".
+# Copyright (C) 2003 Kevin P. Scannell <scannell@slu.edu>
+#
+# This is free software; see the file COPYING for copying conditions.  There is
+# NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#
+# corpas; exception to "lenite adj after fem noun"; most compound adjs are #'s
+# NB "ceannann céanna" lenites as it should, but handled by comhshuite.
+# 
+<NFCS>ANYTHING</NFCS> <A>COMPOUND</A>:
+# rule now defunct anyway
+#<NMGS>ANYTHING</NMGS> céad:
+# CB p.133 #12
+<U>[Aa]</U> <VPAST>PASTNORFORM</VPAST>:
+# a fuair, a dúirt, etc. ok
+<U>[Aa]</U> <VPAST>PASTNORFORMLEN</VPAST>:
+# like the "má", "ní" rules below
+# exception to rule prohibiting lention in present, future, and imperative
+<U>[Aa]</U> <VNOLEN>LENITED</VNOLEN>:
+# exception to rule requiring mutation after "a"
+# unlike similar rule for "má", etc. use <V> here since no lenition in
+# conditional is ok as well (a déarfadh, etc.).
+<U>[Aa]</U> <V>ABAIRPRFU</V>:
+# exception to "no h's on nouns" pseudo-rule
+<D>FINALA</D> <NWITHH>ANYTHING</NWITHH>:
+ANYTHING [Aa]n méid:
+# corpus; exception to tag 2-gram rule
+<Q>[Aa]n</Q> <A>[Mm]ó</A>:
+# corpus
+<T>[Aa]n</T> <P>[Tt]é</P>:
+# CB p.133 #12; An raibh, An bhfuair, etc. ok
+<Q>[Aa]n</Q> <VPAST>PASTNORFORM</VPAST>:
+# An talamh ar ar leag tú...
+ar ar:
+ANYTHING bheith:
+bheith ANYTHING:
+[Cc]á mhinice|fhad|mhéad:
+# CB p.24 #11.a.iii
+<Q>[Cc]á</Q> <NWITHH>ANYTHING</NWITHH>:
+# CB p.133 #12
+<Q>[Cc]á</Q> <VPAST>PASTNORFORM</VPAST>:
+# OD ea^1.5b, LGG p.114
+[Cc]é ea:
+# corpus; exception to "lenite adj after feminine noun" (céad comes before)
+<NFCS>ANYTHING</NFCS> céad:
+# CB p.24 #11.c
+[Cc]é|[Nn]í|[Ll]e|[Pp]é <PWITHH>ANYTHING</PWITHH>:
+# corpus exception to general "no prefix h" on nouns rule; not in CB
+g?[Cc]h?eithre hairde:
+# corpus
+<Q>[Cc]én</Q> <NMCS>PREFIXEDT</NMCS>:
+<U>[Cc]ha</U> <VPAST>IRREGULARPAST</VPAST>:
+# exception to rule prohibiting lention in present, future, and imperative
+<U>[Cc]ha</U> <VNOLEN>LENITEDBCFGMPS</VNOLEN>:
+# CB p.24 #11.b
+[Cc]homh <AWITHH>ANYTHING</AWITHH>:
+# aithníonn ciaróg ciaróg eile
+ciaróg ciaróg:
+# go deo deo
+deo deo:
+# CB p.23 #11.a.ix
+[Dd]ara <NWITHH>ANYTHING</NWITHH>:
+# CB p.23 #11.a.ix
+<A>ORDINALADJ</A> <NWITHH>ANYTHING</NWITHH>:
+# CB p.23 #11.a.ii
+[Dd]há <NWITHH>ANYTHING</NWITHH>:
+# corpas; exception to "no lenition of adj after masc noun"; egs with capital 
+<NMCS>ANYTHING</NMCS> <A>[Dd]há</A>:
+# rule now defunct
+#<NFGS>ANYTHING</NFGS> <A>dhá</A>:
+# Tabhair iad seo do do chara
+do do:
+# CB p.133 #12.b
+ANYTHING dú(irt|ra[dm]ar|radh):
+# sin é é!
+é é:
+# le fada fada (an lá)
+fada fada:
+# now in comhshuite
+#[Ff]aoi deara:
+ANYTHING gach:
+[Gg]an fhios:
+# gheobh*, gheofar
+# exception to rule prohibiting lention in present, future, and imperative
+ANYTHING <VNOLEN>LENITEDFUTURE</VNOLEN>:
+<S>GODTI</S> <T>ANYTHING</T> <NCS>ANYTHING</NCS>:
+[Gg]o chéile:
+# CB p.24 #11.b
+[Gg]o <AWITHH>ANYTHING</AWITHH>:
+# CB p.24 #11.a.v (not always resolved as <S> yet)
+[Gg]o <NWITHH>ANYTHING</NWITHH>:
+# CB p.133 #12
+<C>[Gg]o</C> <VPAST>PASTNORFORM</VPAST>:
+<S>[Ii]n</S> <D>[Bb]hur</D>:
+<S>[Ii]n</S> [Dd]há:
+[Ll]e bhur|[Cc]héile|dhá:
+<S>([Ll]e|[Ss]na)</S> <NWITHH>ANYTHING</NWITHH>:
+# go leor leor
+leor leor:
+# exception to rule prohibiting lention in present, future, and imperative
+[Mm]á <VNOLEN>LENITED</VNOLEN>:
+# CB p.133 #12.b; exception to requiring lenition after "má"
+[Mm]á <VNOLEN>ABAIRPRFU</VNOLEN>:
+# CB p.133 #12.c
+[Mm]á tá(i[dm]|imid|thar)?:
+mé mé:
+# milliún milliún punt
+milliún milliún:
+# go mór mór
+mór mór:
+# CB p.133 #12
+<C>[Mm]ura</C> <VPAST>PASTNORFORM</VPAST>:
+<T>[Nn]a</T> <NWITHH>ANYTHING</NWITHH>:
+[Nn]á is:
+[Nn]á atá(i[dm]|imid|thar)?:
+# CB p.24 #11.d
+[Nn]á <VIMP>INITIALH</VIMP>:
+# CB p.133 #12
+[Nn]ach <VPAST>PASTNORFORM</VPAST>:
+[Nn]í ba:
+# CB p.133 #12.a and e (past)
+# exception to: (1) rule requiring lenition (dúirt/bhfuair, etc.)
+# and (2) rule requiring "níor" in past (above two, plus "raibh", etc.)
+[Nn]í <VPAST>PASTAFTERNI</VPAST>:
+# CB p.133 #12.e (future/cond eclipsed) 
+# exception to rule requiring lenition, continued
+[Nn]í <V>FAIGHFC</V>:
+# CB p.133 #12.b
+# exception to rule requiring lenition, continued
+[Nn]í <VNOLEN>ABAIRPRFU</VNOLEN>:
+# exception to rule prohibiting lention in present, future, and imperative
+[Nn]í <VNOLEN>LENITED</VNOLEN>:
+# OD has all of these, LGG p.112 too; CB gives "ní ionann"; corpus split
+# Ní hansa, Ní hamháin, Ní hamhlaidh now in comhshuite.
+[Nn]í hionann:
+# exception to rule prohibiting lenition in present, future, imperative
+<C>[Óó]</C> <VNOLEN>LENITED</VNOLEN>:
+<C>[Óó]</C> tá(i[dm]|imid|thar)?:
+[Ss]a méid:
+# corpas; exception to "lenite adj after beirt+noun"
+<N>[Bb]h?eirte?</N> <N>ANYTHING</N> seo:
+# corpas; exception to "lenite adj after fem noun/slender plural"
+<N>ANYTHING</N> seo:
+# Agus sin sin de sin!  OD sin^1.1c
+sin sin:
+# corpas; exception to "lenite adj after beirt+noun"
+<N>[Bb]h?eirte?</N> <N>ANYTHING</N> sin:
+# corpas; exception to "lenite adj after fem noun/slender plural"
+<N>ANYTHING</N> sin:
+# CB p.133 #12
+<C>[Ss]ula</C> <VPAST>PASTNORFORM</VPAST>:
+# corpas; exception to "no lenition of adj after masc noun"
+<NMCS>ANYTHING</NMCS> <A>[Tt]hoir</A>:
+# corpas; exception to "no lenition of adj after masc noun"
+<NMCS>ANYTHING</NMCS> <A>[Tt]huasluaite</A>:
+# CB p.24 #11.a.x 
+ANYTHING <NWITHH>huaire</NWITHH>:
