@@ -49,9 +49,8 @@ s/UNECLIPSED/(?:[aeiouAEIOUαινσϊΑΙΝΣΪcfptCFPT]|d[^Tt']|g[^Cc]|b[^Pph]|bh[^fF])[^
 s/ECLIPSEDVOWEL/n(?:-[aeiouαινσϊ]|[AEIOUΑΙΝΣΪ])[^<]*/g;
 s/ECLIPSEDBCFGP/(?:g[Cc]|b[Pp]|m[Bb]|n[Gg]|bh[fF])[^<]+/g;
 s/ECLIPSED/(?:n(?:-[aeiouαινσϊ]|[AEIOUΑΙΝΣΪ])|d[Tt]|g[Cc]|b[Pp]|m[Bb]|n[DdGg]|bh[fF])[^<]*/g;
-s/ECLIPSINGNUMBER/(?:n?[Dd]h?eich|[Nn]aoi|h?[Oo]cht|[Ss]h?eacht)/g;
-# matches "da" but that's not a word anyway
-s/ECLIPSINGPOSS/(?:[Dd]|[Ff]aoin|[Ii]n|[Ll]en|[Σσ]n|[Tt]rνn)(?:a|αr)/g;
+s/ECLIPSINGNUMBER/(?:n?[Dd]h?eich|[Nn]aoi|h?[Oo]cht|[Ss]h?eacht|[0-9]*[789]|[0-9]*10)/g;
+s/ECLIPSINGPOSS/(?:(?:[Ff]aoin|[Ii]n|[Ll]en|[Σσ]n|[Tt]rνn)?(?:a|αr)|[Dd]?[Αα]r?|[Bb]hur)/g;
 s/INITIALM/[Mm][^<]+/g;
 s/UNLENITABLE/(?:[^BbCcDdFfGgMmPpTt]|[Ss][^lnraeiouαινσϊ])[^<]*/g;
 s/UNLENITEDBCGMP/[BbCcGgMmPp][^h'][^<]*/g;
@@ -64,7 +63,7 @@ s/UNLENITED/(?:[BbCcDdFfGgMmPpTt][^h']|[Ss][lnraeiouαινσϊ]|bh[Ff])[^<]*/g;
 s/LENITEDF/[Ff]h[aeiouαινσϊ][^<]*/g;
 s/ORDINALADJ/(?:[^<][^<]*[^m]|[0-9]+)ϊ/g;
 s/PREFIXEDT/t(?:[AEIOUΑΙΝΣΪ]|-[aeiouαινσϊ])[^<]+/g;
-s/EIRE/(?:[nh])?Ιire[^<]*/g;
+s/EIRE/(?:[nh])?Ιire(?:ann)?/g;
 # gan/chun/ainneoin disallow "[^ >]+n"
 s/FUSEDPOSS/(?:[Dd]αr?|(?:[Ff]aoi|[Ii]|[Ll]e|[Tt]rν)n(?:a|αr))/g;
 s/FUSEDPREP/(?:[Dd][eo]n|[Ss]an?|[Ff]aoin|[Σσ]n)/g;

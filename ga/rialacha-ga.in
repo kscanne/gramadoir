@@ -1605,7 +1605,7 @@ d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</
 # These two are prepositions in addition, even lenited:
 #. Ba chois tine é (OK).
 <ND>([Cc]h?ois|[Ll]áimh)</ND>:OK
-<E><ND>[Cc]ionn</ND> <VCOP>is</VCOP>:OK
+<E><ND>[Cc]ionn</ND></E> <VCOP>is</VCOP>:OK
 <ND>INITIALDAPOST</ND>:OK
 <S>FUSEDPREP</S> <E><ND>ANYTHING</ND></E>:OK
 <S>DATIVEPREP</S> <E><ND>ANYTHING</ND></E>:OK
@@ -1617,11 +1617,18 @@ d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</
 #############################################################################
 #  <=> Eclipsis rules
 #############################################################################
+# get these messages in first
+<N>ndóighe?</N>:INPHRASE{ar ndóigh}
+<S>[Tt]har</S> <N>n-ais</N>:CAIGHDEAN{ar ais}
+<N>d'ár</N>:CAIGHDEAN{dár}
 #  LGG pp.54-55; "ar gcúl", "ar ndóigh", "ar dtús" in comhshuite
 #. Clann na bPoblachta a thug siad orthu féin.
 #  used to be handled by this: <T>[Nn]a</T> <NGS>ECLIPSED</NGS>:NIURU
 #. Cruthaíodh an chloch sin go domhain faoin dtalamh.
 #. Tá ainm in n-easnamh a mbeadh coinne agat leis.
+#. Tá muid compordach inar gcuid "fírinní" féin.
+# lacunae:
+#. Tá siad ag éileamh go n-íocfaí iad as a gcuid costais agus iad mbun traenála.
 <N>ECLIPSED</N>:NIURU
 #  "de an gcrann" etc. won't even make it here, caught earlier
 <S>DATIVEPREP</S> <T>[Aa]n</T> <E><NCDS>ECLIPSEDBCFGP</NCDS></E>:OK
@@ -1630,13 +1637,16 @@ d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</
 #. Cruthaíodh an chloch sin go domhain faoin gcrann (OK).
 <S>FUSEDPREP</S> <E><NCDS>ECLIPSEDBCFGP</NCDS></E>:OK
 <T>[Nn]a</T> <E><NGP>ECLIPSED</NGP></E>:OK
+# same exception for na+NCS above
+<T>na</T> <E><NCS>bhFál</NCS></E>:OK
 # this exception applies to eclipsed consonants, but "i n-[aeiou]" caught above
-<S>[Ii]</S> <E><NCDS>ECLIPSED</NCDS></E>:OK
+<S>[Ii]</S> <E><N>ECLIPSED</N></E>:OK
 [Cc]á|[Gg]o <E><N>bh[Ff]ios</N></E>:OK
-<D>([Aa]|[Áá]r|[Bb]hur)</D> <E><N>ECLIPSED</N></E>:OK
 <D>([Aa]|[Áá]r|[Bb]hur)</D> [Dd]há <E><N>ECLIPSED</N></E>:OK
 <A>ECLIPSINGNUMBER</A> <E><N>ECLIPSED</N></E>:OK
 <D>ECLIPSINGPOSS</D> <E><N>ECLIPSED</N></E>:OK
+<S>[Uu]m</S> <T>an</T> <E><N>dtaca</N></E>:OK
+[Mm]ar <T>an</T> <E><N>gcéanna</N></E>:OK
 #############################################################################
 #  <=> Prefix h rules (verbs handled at top)
 #############################################################################
@@ -2067,7 +2077,6 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 [Gg]o <E><N>[Dd]eo</N></E>:OK
 <N>[Dd]eo</N> <E><N>[Dd]eo</N></E>:OK
 <N>[Dd]heoidh</N>:INPHRASE{faoi dheoidh}
-<N>ndóigh</N>:INPHRASE{ar ndóigh}
 <N>[Éé]atar</N>:INPHRASE{liútar éatar}
 <N>[Éé]indí</N>:INPHRASE{in éindí}
 <N>[Éé]ineacht</N>:INPHRASE{in éineacht}
