@@ -146,11 +146,11 @@ sub build_hashes {
 		while (<DATABASE>) {
 			s/#.*$//;
 			if (/\S/) {
-				my ($patt, $repl, $level) = /\s*(\S+)\s+(\S+)\s+(\S+)/;
+				my ($patt, $repl, $level, $rootpos) = /\s*(\S+)\s+(\S+)\s+(\S+)\s+(<[^>]+>)/;
 				$repl =~ s/(.*)/"$1"/;
 				$repl =~ s/\\l\$([1-9])/".mylcfirst(\$$1)."/g;
 				$repl =~ s/\\L\$([1-9])/".mylc(\$$1)."/g;
-				push @MorphRules, {'patt' => $patt, 'repl' => $repl, 'level' => $level};
+				push @MorphRules, {'patt' => $patt, 'repl' => $repl, 'level' => $level, 'rootpos' => $rootpos};
 			}
 		}
 		close DATABASE;
