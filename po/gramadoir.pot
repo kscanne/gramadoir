@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2003-09-26 09:54-0500\n"
+"POT-Creation-Date: 2003-10-01 15:26-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,122 +74,134 @@ msgstr[1] ""
 msgid "Line %d: %s\n"
 msgstr ""
 
-#: gr.in:42
+#: gr.in:35
 msgid "An Gramadoir"
 msgstr ""
 
-#: gr.in:43
+#: gr.in:36
 msgid "Currently checking %s"
 msgstr ""
 
-#: gr.in:44
+#: gr.in:37
 msgid "There is no such file."
 msgstr ""
 
-#: gr.in:45
+#: gr.in:38
 msgid "Is a directory"
 msgstr ""
 
-#: gr.in:46
+#: gr.in:39
 msgid "Permission denied"
 msgstr ""
 
-#: gr.in:47
+#: gr.in:40
 msgid "Usage: %s [OPTIONS] [FILES]"
 msgstr ""
 
-#: gr.in:48
+#: gr.in:41
 msgid "    --litriu       write misspelled words to standard output"
 msgstr ""
 
-#: gr.in:49
+#: gr.in:42
 msgid "    --html         produce HTML output for viewing in a web browser"
 msgstr ""
 
-#: gr.in:50
+#: gr.in:43
 msgid "    --xml          write tagged XML stream to standard output, for debugging"
 msgstr ""
 
-#: gr.in:51
+#: gr.in:44
 msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
 msgstr ""
 
-#: gr.in:52
+#: gr.in:45
 msgid "    --teanga=XX    specify the language of the text to be checked (default=ga)"
 msgstr ""
 
-#: gr.in:53
+#: gr.in:46
+msgid "    --ionchod=ENC  specify the character encoding of the text to be checked"
+msgstr ""
+
+#: gr.in:47
 msgid "    --help         display this help and exit"
 msgstr ""
 
-#: gr.in:54
+#: gr.in:48
 msgid "    --version      output version information and exit"
 msgstr ""
 
-#: gr.in:55
+#: gr.in:49
 msgid "If no file is given, read from standard input."
 msgstr ""
 
-#: gr.in:56
+#: gr.in:50
 msgid "Send bug reports to <%s>."
 msgstr ""
 
-#: gr.in:57
+#: gr.in:51
 msgid "version %s"
 msgstr ""
 
-#: gr.in:58
+#: gr.in:52
 msgid "This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law."
 msgstr ""
 
-#: gr.in:59
+#: gr.in:53
 msgid "Try %s for more information."
 msgstr ""
 
-#: gr.in:60
-msgid "unknown option"
+#: gr.in:54
+msgid "unrecognized option %s"
 msgstr ""
 
-#: gr.in:61
+#: gr.in:55
+msgid "option %s requires an argument"
+msgstr ""
+
+#: gr.in:56
+msgid "option %s does not allow an argument"
+msgstr ""
+
+#: gr.in:57
 msgid "Language %s is not supported."
 msgstr ""
 
-#: gr.in:62
+#: gr.in:58
 msgid "Unknown word (ignoring remainder in this sentence)"
 msgstr ""
 
-#: gr.in:63
+#: gr.in:59
 msgid "Unknown word"
 msgstr ""
 
-#: gr.in:64
+#: gr.in:60
 msgid "You should use \\/\\1\\/ here instead"
 msgstr ""
 
-#: gr.in:65
+#: gr.in:61
 msgid "Non-standard form: perhaps use \\/\\1\\/?"
 msgstr ""
 
-#: gr.in:66
+#: gr.in:62
 msgid "Initial mutation missing"
 msgstr ""
 
-#: gr.in:67
+#: gr.in:63
 msgid "Unnecessary lenition"
 msgstr ""
 
-#: gr.in:68
+#: gr.in:64
 msgid "Prefix \\/h\\/ missing"
 msgstr ""
 
-#: gr.in:69
+#: gr.in:65
 msgid "Prefix \\/t\\/ missing"
 msgstr ""
 
-#: gr.in:70
+#: gr.in:66
 msgid "Lenition missing"
 msgstr ""
 
-#: gr.in:71
+#: gr.in:67
 msgid "Eclipsis missing"
 msgstr ""
