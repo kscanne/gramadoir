@@ -10,8 +10,9 @@ Keywords: grammar checker, Irish, Gaelic, Gaeilge, natural language, localizatio
 Author: scannell@slu.edu (Kevin P. Scannell)
 Maintained-by: scannell@slu.edu (Kevin P. Scannell)
 Primary-site: borel.slu.edu gramadoir
+              1kb gramadoir.lsm
               943kb gramadoir-0.4.tar.gz
-Alternate-site:
+Alternate-site: ibiblio.org /pub/Linux/apps/misc/
 Original-site:
 Platforms: 
 Copying-policy: GPL
