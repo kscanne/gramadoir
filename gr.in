@@ -58,6 +58,16 @@ gpl=`gettext -s "This is free software; see the source for copying conditions.  
 tryhelp=`gettext -s "Try %s for more information."`
 unknownopt=`gettext -s "unknown option"`
 unsupported=`gettext -s "Language %s is not supported."`
+ANAITHNIDSRL=`gettext -s "Unknown word (ignoring remainder in this sentence)"`
+ANAITHNID=`gettext -s "Unknown word"`
+BACHOIR=`gettext -s "You should use \/\1\/ here instead"`
+CAIGHDEAN=`gettext -s "Non-standard form: perhaps use \/\1\/?"`
+CLAOCHLU=`gettext -s "Initial mutation missing"`
+NISEIMHIU=`gettext -s "Unnecessary lenition"`
+PREFIXH=`gettext -s "Prefix \/h\/ missing"`
+PREFIXT=`gettext -s "Prefix \/t\/ missing"`
+SEIMHIU=`gettext -s "Lenition missing"`
+URU=`gettext -s "Eclipsis missing"`
 
 # i18n: grammatical errors.  See rialacha.in.
 # If you port to another language, you won't translate these; instead
@@ -66,17 +76,17 @@ unsupported=`gettext -s "Language %s is not supported."`
 loganu()
 {
 sed "
-s/\"ANAITHNIDSRL/\"Focal anaithnid (scaoilfear an chuid eile)/g
-s/\"ANAITHNID/\"Focal anaithnid/g
-s/\"BACHOIR{\([^}]*\)}/\"Ba chóir duit \/\1\/ a úsáid anseo/g
+s/\"ANAITHNIDSRL/\"${ANAITHNIDSRL}/g
+s/\"ANAITHNID/\"${ANAITHNID}/g
+s/\"BACHOIR{\([^}]*\)}/\"${BACHOIR}/g
 /CAIGHDEAN/s/_/ /g
-s/\"CAIGHDEAN{\([^}]*\)}/\"Focal neamhchaighdeánach: ar mhaith leat \/\1\/?/g
-s/\"CLAOCHLU/\"Séimhiú nó urú ar iarraidh/g
-s/\"NISEIMHIU/\"Séimhiú gan ghá/g
-s/\"PREFIXH/\"Réamhlitir \/h\/ ar iarraidh/g
-s/\"PREFIXT/\"Réamhlitir \/t\/ ar iarraidh/g
-s/\"SEIMHIU/\"Séimhiú ar iarraidh/g
-s/\"URU/\"Urú ar iarraidh/g
+s/\"CAIGHDEAN{\([^}]*\)}/\"${CAIGHDEAN}/g
+s/\"CLAOCHLU/\"${CLAOCHLU}/g
+s/\"NISEIMHIU/\"${NISEIMHIU}/g
+s/\"PREFIXH/\"${PREFIXH}/g
+s/\"PREFIXT/\"${PREFIXT}/g
+s/\"SEIMHIU/\"${SEIMHIU}/g
+s/\"URU/\"${URU}/g
 "
 }
 
