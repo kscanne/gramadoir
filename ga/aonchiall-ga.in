@@ -176,6 +176,8 @@ CAPITAL <B>Gabhann</B>:<Y>
 #<B>[Gg]o</B> <S>dtí</S>:<S>
 <B>[Gg]o</B> <A>ANYTHING</A>:<U>
 # see "gur" last resort...
+#  not "Carry!" imperative
+<B>iompair</B>:<N pl="n" gnt="y" gnd="m">
 # not "yam" :)
 <B>[Ii]onam</B>:<O>
 # amháin, siar, thiar, thuaidh, etc; iontach only prominent exception
@@ -255,6 +257,10 @@ a <B>sé</B>:<A pl="n" gnt="n">
 #<B>shin</B>:<P>
 #  "they", not "a growth"!
 <B>[Ss]iad</B>:<P>
+# compare with similar le,na rules above
+<S>[Ss]na</S> <B>(haon|hocht)</B>:<A pl="n" gnt="n" h="y">
+# not imperative/past verb
+<B>[Ss]námh</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Tt]har</B>:<S>
 <B>[Tt]hart</B>:<R>
 # "east" not genitive of "bush".
@@ -286,6 +292,17 @@ a <B>sé</B>:<A pl="n" gnt="n">
 #############################################################
 # Brill transformations (not associated to particular words)#
 #############################################################
+# exception to next
+<B>Inis</B>:<N pl="n" gnt="n" gnd="f">
+# Ainmnigh dhá chineál múchtóirí dóiteán; no need for "F" since lenited =>
+# not an imperative and not lenited => not PASTIMPER
+<B><Z>ANYPASTIMPER</Z>CAPVOWEL</B>:<V p="y" t="ord">
+RFORMCONJ <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">
+<S>RFORMPREP</S> <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">
+# leave out "r-form" verbal particle "ar" here!
+[Cc]ár|[Cc]har|[Nn]ár|[Nn]íor <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">
+# OK if before something that is definitely a verb: 
+[Aa]r <B><Z>GENERICPAST</Z>LENITED</B>:<V p="y" t="caite">
 # all the top rules output by Brill algorithm look like these first four!
 # don't seem to have any androgynous words in the COMMON form
 #  There are some words which are androgynous plurals: "Fianna", "ceannaithe"
@@ -449,6 +466,9 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 <B><Z>PAUTGNATH</Z>LENITED</B>:<V p="y" t="gnáth">
 # bhíodh, etc. -- otherwise unigram=>ORD and need to explain lenition...
 <B><Z>BHIODHLIKE</Z>ANYTHING</B>:<V p="y" t="gnáth">
+<B><Z>GENERICPAST</Z>LENITED</B>:<V p="y" t="caite">
+# Ainmnigh na rudaí atá...  (imperative w/o "d'")
+<B><Z>GENERICPAST</Z>INITIALVOWELORF</B>:<V p="y" t="ord">
 # otherwise unigram=>ORD and need to explain lenition...
 # <B><Z>BHIDISLIKE</Z>ANYTHING</B>:<V p="y" t="gnáth">
 <B><Z>GENERICPAST</Z>ANYTHING</B>:<V p="y" t="caite">

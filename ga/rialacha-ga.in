@@ -1158,6 +1158,13 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 #. An bhfuil aon uachtar reoite agat sa scoil (OK)?
 #. An bhfuil aon uachtar reoite agat sa samhradh (OK)?
 <S>[Ss]a</S> <NFCS>INITIALS</NFCS>:PREFIXT
+# CB p.6 #1 (implicitly)
+<S>[Ss]a</S> <NP>ANYTHING</NP>:BACHOIR{sna}
+# CB p.77 #8.i (implicitly)
+<S>[Ss]a</S> <A>(thrí|cheithre|chúig|shé|sheacht|hocht|naoi|dheich)</A>:BACHOIR{sna}
+<E><S>[Ss]a</S> <A>ANYTHING</A></E> g?ch?éad|mh?íle|mh?illiún:OK
+#  no need for this exception:
+# <E><S>[Ss]a</S> <A>ANYTHING</A></E> a chlog:OK
 # CB p.16 #8.c
 #. Tá sé bráthair de chuid Ord San Phroinsias.
 <N>San</N> LENITED:NISEIMHIU
@@ -1228,6 +1235,14 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 # corpus; holds for any POS really
 <S>[Ss]na</S> <[^Y]>LENITED</[^Y]>:NISEIMHIU
 <S>[Ss]na</S> [Cc]héad:OK
+# CB p.77 #8.h (implicitly); unlike "na" above we catch "sna haon" here
+<S>[Ss]na</S> h?aon:BACHOIR{san aon}
+<S>[Ss]na</S> [Dd]h?á:BACHOIR{sa dá}
+<S>[Ss]na</S> fh?iche|h?ochtó:BACHOIR{san}
+<S>[Ss]na</S> tríocha|daichead|caoga|seasca|seachtó|nócha:BACHOIR{sa}
+<S>[Ss]na</S> <A>(míle|milliún)</A>:BACHOIR{sa}
+# CB p.77 #8.h, 2nd part
+<S>[Ss]na</S> <A>(trí|ceithre|cúig|sé|seacht|h?ocht|naoi|deich)</A> g?ch?éad|mh?íle|mh?illiún:BACHOIR{sa}
 # CB p.132 #5
 #. Sula sroicheadar an bun arís, bhí an oíche ann agus chuadar ar strae.
 <C>[Ss]ula</C> <VPAST>ANYTHING</VPAST>:BACHOIR{sular}
@@ -1327,7 +1342,7 @@ d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</
 <T>[Nn]a</T> <E><AWITHH>(haon|hocht)</AWITHH></E>:OK
 # CB p.24 #11.b
 #. Scaoileadh seachtar duine chun báis i mBaile Átha Cliath le hocht mí anuas (OK).
-<S>[Ll]e</S> <E><AWITHH>(haon|hocht)</AWITHH></E>:OK
+<S>([Ll]e|[Ss]na)</S> <E><AWITHH>(haon|hocht)</AWITHH></E>:OK
 # CB p.24 #11.b
 #. Ní dhúnfaidh an t-ollmhargadh go dtí a haon a chlog ar maidin (OK).
 [Aa] <E><AWITHH>(haon|hocht)</AWITHH></E>:OK
@@ -1430,15 +1445,27 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 <VDEE>INITIALVOWELORF</VDEE>:PREFIXD
 #. Fágadh faoi smacht a lámh iad (OK).
 <VPAUT>INITIALVOWELORF</VPAUT>:OK
+<VPAST>[Aa]rsa</VPAST>:OK
 <VPAST>FAIGHECLIPSE</VPAST>:OK
 <C>RFORMCONJ</C> <E><VDEE>INITIALVOWELORF</VDEE></E>:OK
 <S>RFORMPREP</S> <E><VDEE>INITIALVOWELORF</VDEE></E>:OK
-[Aa]r|[Cc]ár|[Nn]ár|[Nn]íor <E><VDEE>INITIALVOWELORF</VDEE></E>:OK
+[Aa]r|[Cc]ár|[Cc]har|[Nn]ár|[Nn]íor <E><VDEE>INITIALVOWELORF</VDEE></E>:OK
 # interrogative "an" doesn't eclipse _vowels_
 #. An íosfá ubh eile (OK)?
 [Aa]n <E><VDEE>INITIALVOWEL</VDEE></E>:OK
 # "ní" always lenites
 [Nn]í <E><VDEE>INITIALVOWELORF</VDEE></E>:OK
+# Now the converse: don't allow "d'" after verbal particles (má, ó, etc. OK)
+#  Should check eclipsing particles too since URU rules don't catch "d'"
+#  (easier this way when dealing with nouns: "i d'áit" is OK)
+#. Níorbh fhada, ámh, gur d'fhoghlaim sí an téarma ceart uathu.
+#. Nílim ag rá gur d'aon ghuth a ainmníodh Sheehy (OK).
+<C>RFORMCONJ</C> <VDEE>INITIALDAPOST</VDEE>:NIDEE
+<S>RFORMPREP</S> <VDEE>INITIALDAPOST</VDEE>:NIDEE
+[Aa]r|[Cc]ár|[Cc]har|[Nn]ár|[Nn]íor <VDEE>INITIALDAPOST</VDEE>:NIDEE
+<C>NONRFORMCONJ</C> <VDEE>INTIALDAPOST</VDEE>:NIDEE
+<S>NONRFORMPREP</S> <VDEE>INTIALDAPOST</VDEE>:NIDEE
+[Aa]n|[Cc]á|[Dd]á|[Nn]ach|[Nn]í <VDEE>INTIALDAPOST</VDEE>:NIDEE
 #############################################################################
 ###### next batch came from analyses of "tag 2-grams" in the corpus    ######
 #############################################################################
@@ -1460,12 +1487,19 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 <NFGS>ANYTHING</NFGS> <AMGS>ANYTHING</AMGS>:CUPLA
 # CB p.61 #2
 #   This examples should be "tithe beaga tábhairne"; too pedantic?
+#  In any case, will require improved disambig (ensuring NPL before APL
+#  for ambiguous nouns, like nm1 gs/npl type)
 # . Tá sé i mbaile beag atá lán le tithe tábhairne beaga.
 # <NS>ANYTHING</NS> <AP>ANYTHING</AP>:CUPLA
 # CB p.67 #17a,b exceptions; "seacht gcapall déag bhána" in there explicitly
 # [Dd]há|[Tt]h?rí|[Cc]h?eithre|[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|[Oo]cht|[Nn]aoi|[Dd]h?eich <E><NS>ANYTHING</NS> <AP>ANYTHING</AP></E>:OK
 # [Dd]há|[Tt]h?rí|[Cc]h?eithre|[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|[Oo]cht|[Nn]aoi <N>ANYTHING</N> <E><N>[Dd]éag</N> <AP>ANYTHING</AP></E>:OK
 # <N>[Bb]h?eirt</N> <E><NS>ANYTHING</NS> <AP>ANYTHING</AP></E>:OK
+######
+# This is related to the rule above: CB p.61 #4
+# BROADFINALCONSONANT <=> "weak" genitive plural
+#. Tá a chumas sa Ghaeilge níos airde ná cumas na bhfear óga.
+<NGP>BROADFINALCONSONANT</NGP> <AP>ANYTHING</AP>:UATHA
 <D>ANYTHING</D> <AP>ANYTHING</AP>:CUPLA
 <D>ANYTHING</D> <C>ANYTHING</C>:CUPLA
 <D>ANYTHING</D> <D>ANYTHING</D>:CUPLA
