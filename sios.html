@@ -2,7 +2,7 @@
         "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
 <head>
-  <title>&Iacute;oslucht&uacute;/Download An Gramad&oacute;ir</title>
+  <title>Download An Gramad&oacute;ir</title>
   <meta http-equiv="Content-Language" content="en">
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
   <meta name="description" content="An Gramad&oacute;ir download page">
@@ -14,7 +14,7 @@
 <body>
 <div class="content">
 <h1>An Gramad&oacute;ir:<br>
-Íosluchtú/Download</h1>
+Download/Installation/Usage</h1>
 
 <h2><a name="Users">Users</a></h2>
 
@@ -22,8 +22,7 @@
 If you just want to install and use the Irish grammar checker, 
 you probably don't need to download anything from this site;
 instead you should install the Perl module
-<i>Lingua::GA::Gramadoir</i> as described on the
-<a href="index.html#Install">main page</a>.
+<i>Lingua::GA::Gramadoir</i> as described below.
 </p>
 
 <h2><a name="Devel">Developers</a></h2>
@@ -45,20 +44,51 @@ All of the language-dependent input files used by the developers' pack
 </p>
 
 <hr>
-<h2><a name="Resources">Other Resources</a></h2>
+<h2><a name="Install">Installation and Usage</a></h2>
 
-<ul>
-<li><a href="http://search.cpan.org/dist/Lingua-GA-Gramadoir/">Main CPAN page</a>
-<li><a href="http://testers.cpan.org/show/Lingua-GA-Gramadoir.html">CPAN test results</a>
-<li><a href="http://freshmeat.net/projects/gramadoir/">Freshmeat project page</a>
-<li><a href="http://sourceforge.net/projects/gramadoir/">Sourceforge project page</a>
-<li><a href="http://www2.iro.umontreal.ca/translation/registry.cgi?domain=gramadoir">GNU Translation Project</a>
-<li><a href="http://www.vim.org/scripts/script.php?script_id=802">Vim Online</a>
-<li><a href="http://www.ibiblio.org/pub/linux/apps/misc/!INDEX.html">ibiblio</a>
-<li><a href="http://packages.gentoo.org/packages/?category=app-dicts;name=gramadoir">Gentoo package</a>
-<li><a href="http://packages.debian.org/unstable/misc/gramadoir">Debian package</a>
-<li><a href="http://registry.dfki.de/show.php3?f_system=367">Natural Language Software Registry</a>
-</ul>
+<p>
+The Irish grammar checker is distributed as the Perl module
+<a href="http://search.cpan.org/dist/Lingua-GA-Gramadoir/"><i>Lingua::GA::Gramadoir</i></a>.
+If you are using Linux or some other Unix-like 
+operating system, you surely already have Perl installed
+and you can
+<a href="http://www.troubleshooters.com/codecorn/littperl/perlcpan.htm">install the module using <i>CPAN.pm</i></a>.
+If you are running something primitive like 
+<a href="http://www.fainne.org/microbog/">Windows</a>,
+you'll first have to install
+<a href="http://www.activestate.com/Products/ActivePerl/">ActiveState Perl</a>
+and then install <i>An Gramadóir</i> using
+<a href="http://aspn.activestate.com/ASPN/docs/ActivePerl/faq/ActivePerl-faq2.html">ppm</a>.
+</p>
+
+<p>
+You can also install manually:
+<a href="http://sourceforge.net/project/showfiles.php?group_id=114958&package_id=125358">download</a>,
+unpack the archive, and
+try the following standard procedure:
+</p>
+<pre>
+% perl Makefile.PL
+% make
+% make install
+</pre>
+
+<p>
+You should then have the front-end script 
+<i>gram-ga.pl</i> installed.  To check the grammar of an
+Irish language text file called <i>gaeilge.txt</i>,
+use the following from the command line:
+</p>
+<pre>
+% gram-ga.pl gaeilge.txt
+</pre>
+
+<p>
+More detailed usage instructions can be found using:
+</p>
+<pre>
+% gram-ga.pl --help
+</pre>
 
 <hr>
 <em>© Cóipcheart/Copyright 2003-2005 Kevin P. Scannell</em><br><br>
