@@ -1,4 +1,7 @@
 #!/bin/bash
+
+fixbackrefs()
+{
 if [ "${1}" != "aonchiall" ]
 then
 	sed 's/|<B><Z>[^+]*+<\\\/Z>[^/]*\/B>//g'
@@ -17,3 +20,22 @@ do
 	fi
 done
 fi
+}
+
+# e.g. "aonchiall-ga.pl"
+PERLOUT="${1}"
+# e.g. /usr/bin/perl
+PERLPATH="${2}"
+# e.g. "aonchiall"
+FLAVOR=`echo ${PERLOUT} | sed 's/-.*//'`
+# e.g. "ga"
+MYLANG=`echo ${PERLOUT} | sed 's/.*-\([^.]*\)\..*/\1/'`
+# e.g. "aonchiall-ga.in"
+INFILE=`echo ${PERLOUT} | sed 's/\.pl/.in/'`
+# e.g. "aonchiall-ga.meta.sed"
+METASED=`echo ${PERLOUT} | sed 's/\.pl/.meta.sed/'`
+
+rm -f ${METASED}
+cat gin.meta.sed macra-${MYLANG}.meta.sed ${FLAVOR}.meta.sed | egrep -v '^#' > ${METASED}
+(echo "#!${PERLPATH}"; echo "# Users should modify $<, not this file"; echo 'while(<>){';  cat "${INFILE}" | sed '/^#/!s/:/~:/' | tr "~" "\n" | LC_ALL="C" sed -f ${METASED}; echo 'print;'; echo '}'; echo 'exit;') | fixbackrefs ${FLAVOR} > ${PERLOUT}
+rm -f ${METASED}
