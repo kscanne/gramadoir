@@ -1,6 +1,0 @@
-#!/bin/bash
-#  used by ga server.  Conversion to utf8 happens on the client side,
-#  so we may assume that "${1}" is of this form
-# (hence the --ionchod=utf8 is ok).
-#   Require the LC_ALL so that output works correctly.
-echo "${1}" | LC_ALL="ga_IE.utf8" /usr/local/bin/gr --api --ionchod=utf8 #--aspell
