@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: GNU gramadoir 0.3\n"
+"Project-Id-Version: GNU gramadoir 0.4\n"
 "Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
 "POT-Creation-Date: 2004-01-08 22:32-0600\n"
-"PO-Revision-Date: 2004-01-04 08:00-0500\n"
+"PO-Revision-Date: 2004-01-09 08:00-0500\n"
 "Last-Translator: Michel Robitaille <robitail@IRO.UMontreal.CA>\n"
 "Language-Team: French <traduc@traduc.org>\n"
 "MIME-Version: 1.0\n"
@@ -45,37 +45,28 @@ msgstr "Usage: %s [OPTIONS] [FICHIERS]"
 
 #: gr.in:54
 msgid "Options for end-users:"
-msgstr ""
+msgstr "Options les usagers:"
 
 #. TRANSLATORS: ~/.neamhshuim is an "ignore file" like those with spellcheckers
 #: gr.in:57
 msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
-msgstr ""
-"    --iomlan       rapporter toutes les erreurs (i.e. ne pas utiliser ~/."
-"neamhshuim)"
+msgstr "    --iomlan       rapporter toutes les erreurs (i.e. ne pas utiliser ~/.neamhshuim)"
 
 #: gr.in:58
-msgid ""
-"    --ionchod=ENC  specify the character encoding of the text to be checked"
-msgstr ""
-"    --ionchod=ENC  spécifier l'encodage des caractères du texte à vérifier"
+msgid "    --ionchod=ENC  specify the character encoding of the text to be checked"
+msgstr "    --ionchod=ENC  spécifier l'encodage des caractères du texte à vérifier"
 
 #: gr.in:59
 msgid "    --litriu       write misspelled words to standard output"
-msgstr ""
-"    --litriu       écrire les mots mal orthographiés sur la sortie standard"
+msgstr "    --litriu       écrire les mots mal orthographiés sur la sortie standard"
 
 #: gr.in:60
-msgid ""
-"    --aspell       suggest corrections for misspellings (requires GNU aspell)"
-msgstr ""
+msgid "    --aspell       suggest corrections for misspellings (requires GNU aspell)"
+msgstr "    --aspell       suggérer des corrections pour les erreurs d'orhographe (GNU aspell requis)"
 
 #: gr.in:61
-msgid ""
-"    --teanga=XX    specify the language of the text to be checked "
-"(default=ga)"
-msgstr ""
-"    --teanga=XX    spécifier le langage du texte à vérifier (par défaut=ga)"
+msgid "    --teanga=XX    specify the language of the text to be checked (default=ga)"
+msgstr "    --teanga=XX    spécifier le langage du texte à vérifier (par défaut=ga)"
 
 #: gr.in:62
 msgid "    --help         display this help and exit"
@@ -87,7 +78,7 @@ msgstr "    --version      afficher la version du logiciel et quitter"
 
 #: gr.in:64
 msgid "Options for developers:"
-msgstr ""
+msgstr "Options pour les développeurs:"
 
 #. TRANSLATORS: "disambiguation" is a term from natural language processing.
 #. Here it means the process of deciding, for a given word with several
@@ -95,45 +86,36 @@ msgstr ""
 #. given the context.  Brill's algorithm is "unsupervised" because it relies
 #. only on statistics gathered from texts which have not been tagged in advance.
 #: gr.in:71
-msgid ""
-"    --brill        find disambiguation rules via Brill's unsupervised "
-"algorithm"
-msgstr ""
+msgid "    --brill        find disambiguation rules via Brill's unsupervised algorithm"
+msgstr "    --brill        trouver des règle de clarification à l'aide de l'algorithme non supervisé de Brill"
 
 #: gr.in:72
 msgid "    --html         produce HTML output for viewing in a web browser"
-msgstr ""
-"    --html         produire une sortie HTML pour un logiciel de navigation "
-"Internet"
+msgstr "    --html         produire une sortie HTML pour un logiciel de navigation Internet"
 
 #: gr.in:73
 msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
-msgstr ""
+msgstr "    --ilchiall     rapporter les ambiguïtés non résolues, triées selon la fréquence"
 
 #: gr.in:74
-msgid ""
-"    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
-msgstr ""
+msgid "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
+msgstr "    --minic        afficher toutes les étiquettes,  triées selon la fréquence (pour unigram-xx.txt)"
 
 #. TRANSLATORS: By default, if there is no rule in the disambiguation module
 #. for selecting the correct part of speech of an ambiguous word, the program
 #. chooses the part of speech with the highest frequency.  This is sometimes
 #. called "unigram" tagging.   The --no-unigram option turns this behavior off.
 #: gr.in:80
-msgid ""
-"    --no-unigram   do not resolve ambiguous parts of speech by frequency"
-msgstr ""
+msgid "    --no-unigram   do not resolve ambiguous parts of speech by frequency"
+msgstr "    --no-unigram   ne pas résoudre les parties ambiguës de la langue selon la fréquence"
 
 #. TRANSLATORS: The grammar checker works by piping the input text
 #. through a sequence of filters which add XML markup indicating
 #. important grammatical information.  The --xml option displays the
 #. marked up file as an aid in debugging.
 #: gr.in:86
-msgid ""
-"    --xml          write tagged XML stream to standard output, for debugging"
-msgstr ""
-"    --xml          écrire un flot XML étiqueté sur la sortie standard, pour "
-"mise au point (debug)"
+msgid "    --xml          write tagged XML stream to standard output, for debugging"
+msgstr "    --xml          écrire un flot XML étiqueté sur la sortie standard, pour mise au point (debug)"
 
 #: gr.in:87
 msgid "If no file is given, read from standard input."
@@ -148,10 +130,7 @@ msgid "version %s"
 msgstr "version %s"
 
 #: gr.in:90
-msgid ""
-"This is free software; see the source for copying conditions.  There is NO"
-"\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
-"PURPOSE,\\nto the extent permitted by law."
+msgid "This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law."
 msgstr ""
 "Ce logiciel est libre; voir les sources pour les conditions de\n"
 "reproduction. AUCUNE garantie n'est donnée; tant pour des raisons\n"
@@ -181,13 +160,12 @@ msgstr "Le langage %s n'est pas supporté."
 
 #. TRANSLATORS: "conversion" here means conversion between character encodings
 #: gr.in:98
-#, fuzzy
 msgid "conversion from %s is not supported"
-msgstr "Le langage %s n'est pas supporté."
+msgstr "la conversion 'a partir de %s n'est pas supportée"
 
 #: gr.in:99
 msgid "aspell-%s is not installed"
-msgstr ""
+msgstr "aspell-%s n'est pas installé"
 
 #: gr.in:100
 msgid "Unknown word"
@@ -200,11 +178,11 @@ msgstr "Mot inconnu (le reste de la phrase est ignoré)"
 
 #: gr.in:104
 msgid "Valid word but extremely rare in actual usage"
-msgstr ""
+msgstr "mot valide mais extrêmement rare selon l'usage actuel"
 
 #: gr.in:105
 msgid "Usually used in the set phrase \\/\\1\\/"
-msgstr ""
+msgstr "habituellement utilisé dans le jeu de phrases \\/\\1\\/"
 
 #: gr.in:106
 msgid "You should use \\/\\1\\/ here instead"
@@ -246,33 +224,31 @@ msgstr "Éclipsis manquante"
 
 #: gr.in:123
 msgid "Repeated word"
-msgstr ""
+msgstr "mot répété"
 
 #: gr.in:124
 msgid "Unusual combination of words"
-msgstr ""
+msgstr "combinaison de mots inusité"
 
 #: gr.in:125
 msgid "Comparative adjective required"
-msgstr ""
+msgstr "adjectif comparatif nécessaire"
 
 #: gr.in:126
-#, fuzzy
 msgid "Unnecessary prefix \\/h\\/"
-msgstr "Lénition non nécessaire"
+msgstr "préfixe non nécessaire \\/h\\/"
 
 #: gr.in:127
-#, fuzzy
 msgid "Unnecessary prefix \\/t\\/"
-msgstr "Lénition non nécessaire"
+msgstr "préfixe non nécessaire \\/t\\/"
 
 #: gr.in:128
 msgid "Unnecessary use of the definite article"
-msgstr ""
+msgstr "usage non nécessaire de l'article défini"
 
 #: gr.in:129
 msgid "The genitive case is required here"
-msgstr ""
+msgstr "le cas génitif est requis ici"
 
 #: cuardach.c:88 cuardach.c:107 cuardach.c:150 cuardach.c:223
 #, c-format
@@ -295,9 +271,9 @@ msgid "%s: warning: problem closing %s\n"
 msgstr "%s: AVERTISSEMENT: problème de fermeture de %s\n"
 
 #: cuardach.c:453
-#, fuzzy, c-format
+#, c-format
 msgid "%s: no grammar codes: %s\n"
-msgstr "%s: pas de codes de grammaire\n"
+msgstr "%s: pas de codes de grammaire: %s\n"
 
 #: cuardach.c:581
 #, c-format
