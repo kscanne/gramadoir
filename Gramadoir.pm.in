@@ -12,26 +12,8 @@ use Encode qw(decode from_to);
 use String::Approx qw(amatch adist);
 use Lingua::@TEANGA@::Gramadoir::Languages;
 
-require Exporter;
-
-our @ISA = qw(Exporter);
-our @EXPORT = ();
-our %EXPORT_TAGS = ( 'all' => [ qw(
-add_tags get_sentences grammatical_errors xml_stream spell_check
-) ] );
-our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
-
-
 our $VERSION = '@PACKAGE_VERSION@';
-
-our @FOCAIL;  # array of hashes
-our %EILE;
-our %EARRAIDI;
-our %NOCOMBO;
-our %POS;
-our %GRAMS;
-our %IGNORE;
-our $lh;
+our qw( @FOCAIL %EILE %EARRAIDI %NOCOMBO %POS %GRAMS %IGNORE $lh);
 
 memoize('tag_one_word', TIE => [ 'Memoize::ExpireLRU',
 				CACHESIZE => 5000,
@@ -39,7 +21,7 @@ memoize('tag_one_word', TIE => [ 'Memoize::ExpireLRU',
 
 =head1 NAME
 
-Lingua::@TEANGA@::Gramadoir - Natural language processing tools for the @NAME_ENGLISH@ language
+Lingua::@TEANGA@::Gramadoir - Check the grammar of @NAME_ENGLISH@ language text
 
 =head1 SYNOPSIS
 
@@ -55,10 +37,10 @@ Lingua::@TEANGA@::Gramadoir - Natural language processing tools for the @NAME_EN
 =head1 DESCRIPTION
 
 This module contains the code for segmentation, spell checking,
-part-of-speech tagging, and grammar checking used by "An Gramadóir",
+part-of-speech tagging, and grammar checking used by "An GramadE<oacute>ir",
 an open-source grammar and style checker that can be used
 with vim, emacs, OpenOffice, or through a command-line interface.
-An Gramadóir is intended as a platform for the development of 
+An GramadE<oacute>ir is intended as a platform for the development of 
 sophisticated natural language processing tools for languages with
 limited computational resources.
 
@@ -66,42 +48,42 @@ The Perl code contained in this module is generated automatically
 from a higher-level representation of the grammatical rules
 and should not be edited directly.  Anyone interested in helping
 improve the lexicon or the rule sets should download the 
-developers' package from the web site linked below.
+developers' pack from the An GramadE<oacute>ir web site:
+L<http://borel.slu.edu/gramadoir/>.
 
 =head1 CONSTRUCTOR
 
-=over
+=over 4
 
 =item new %PARAMS
 
 Constructs an instance of the grammar checker and loads the lexicon
 into memory.  It should only be called once.   Options may be specified
-by passing a hash containing some of the following keys:
+by passing a hash containing any of the following keys:
 
-=over
-
-=item fix_spelling => 0
+fix_spelling => 0
 
 Suggest replacements for misspelled or unknown words.
 
-=item use_ignore_file => 0
+use_ignore_file => 0
 
 Read a file containing words to be ignored when checking spelling and grammar.
 
-=item interface_language => '' 
+interface_language => ""
 
 Specify the language of output messages
-(NOT necessarily the language of the text to be checked).
+(B<not> necessarily the language of the text to be checked).
 With the default value, Locale::Maketext attempts to determine
 the correct language to use based on things like your
 environment variables.
 
-=item input_encoding => '@NATIVE@'
+input_encoding => '@NATIVE@'
 
 Specify the encoding for all texts passed to one of the module's exported
 functions.   There is no currently no way to change the encoding of
 the data returned by the exported functions (always encoded as perl strings).
 
+=back
 
 =cut
 
@@ -165,12 +147,15 @@ sub gettext
 
 =head1 METHODS
 
+=over
+
 =item get_sentences TEXT
 
 Splits the input TEXT up into sentences and returns a reference to an
 array containing the sentences.
 
 =cut
+
 ##############################################################################
 
 # approximates "abairti" from bash version
@@ -469,6 +454,7 @@ Returns a reference to an array containing the misspelled words appearing
 in the input text.
 
 =cut
+
 ##############################################################################
 
 sub spell_check
@@ -501,6 +487,7 @@ with (XML-style) *disambiguated* part-of-speech tags.  Does not do
 any grammatical rule checking.
 
 =cut
+
 ##############################################################################
 
 sub add_tags
@@ -553,6 +540,7 @@ purposes.  Use "grammatical_errors" (which is basically "xml_stream" plus
 some whittling down) as an interface with other programs.
 
 =cut
+
 ##############################################################################
 # bash version's vanilla_xml_output/aspell_xml_output
 sub xml_stream
@@ -700,6 +688,7 @@ XML format usable by other applications.  Error messages are localized
 according to locale settings as determined by Locale::Maketext.
 
 =cut
+
 ##############################################################################
 
 # like the bash "xml_api"
@@ -867,11 +856,14 @@ sub tag_recurse
 
 __END__
 
+=back
+
 =head1 HISTORY
 
-=over 8
+=over 4
 
-=item 0.50
+=item *
+0.50
 
 First Perl version.
 
@@ -879,24 +871,31 @@ First Perl version.
 
 =head1 SEE ALSO
 
-I<perl>(1)
+=over 4
 
-The home page for An Gramadóir is:
+=item *
+L<http://borel.slu.edu/gramadoir/>
 
-  http://borel.slu.edu/gramadoir/
+=item *
+L<Locale::Maketext>
+
+=item *
+L<perl(1)>
+
+=back
 
 =head1 BUGS
 
 The grammar checker does not attempt a full parse of the input
 sentences nor does it attempt to exploit any semantic information.
 There are, therefore, certain constructs that cannot be dealt with
-correctly.  For instance, the possessive adjective "a" mutates the
+correctly.  For instance, in Irish the possessive adjective "a" mutates the
 word which follows differently depending on whether it means
 "his", "her", or "their".
 
 =head1 AUTHOR
 
-Kevin P. Scannell, E<lt>scannell@slu.eduE<gt>
+Kevin P. Scannell, E<lt>scannell@slu.eduE<gt>.
 
 =head1 COPYRIGHT AND LICENSE
 
