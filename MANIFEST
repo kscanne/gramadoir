@@ -2,6 +2,7 @@ Changes				Change Log
 lib/Lingua/@UPPERTEANGA@/Gramadoir.pm	Module implementation
 lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages.pm	Localization parent
 lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/af.pm	Afrikaans localization
+lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/cy.pm	Welsh localization
 lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/de.pm	German localization
 lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/en_us.pm	English localization (default)
 lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/fr.pm	French localization
