@@ -90,6 +90,7 @@ installweb :
 	$(INSTALL_DATA) sios.html $(webhome)
 	$(INSTALL_DATA) sonrai.html $(webhome)
 	$(INSTALL_DATA) sampla.html $(webhome)
+	$(INSTALL_DATA) gramadoir.dtd $(webhome)/../dtds
 
 triail.html : all triail
 	./gr --html triail > triail.html
@@ -116,6 +117,7 @@ dist : triail.err
 	tar rvhf $(APPNAME).tar -C .. $(APPNAME)/focail.bs
 	tar rvhf $(APPNAME).tar -C .. $(APPNAME)/gin.meta.sed
 	tar rvhf $(APPNAME).tar -C .. $(APPNAME)/gr.in
+	tar rvhf $(APPNAME).tar -C .. $(APPNAME)/gramadoir.dtd
 	tar rvhf $(APPNAME).tar -C .. $(APPNAME)/hilite.awk
 	tar rvhf $(APPNAME).tar -C .. $(APPNAME)/Makefile
 	tar rvhf $(APPNAME).tar -C .. $(APPNAME)/README
