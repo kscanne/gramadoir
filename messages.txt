@@ -31,6 +31,8 @@ MIMHOIRF	'Derived form of common misspelling \/\1\/?'
 COMHFHOCAL	'Not in database but may be a compound \/\1\/?'
 COMHCHAIGH	'Not in database but may be a non-standard compound \/\1\/?'
 GRAM		'Possibly a foreign word (the sequence \/\1\/ is highly improbable)'
+NUMBER		'Number disagreement'
+CASE		'Case disagreement'
 # TRANSLATORS: Rules specific to the Irish language (ga)
 PREFIXH		'Prefix \/h\/ missing'
 PREFIXT		'Prefix \/t\/ missing'
