@@ -336,6 +336,9 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 # amach, síos, suas, aníos, ...  optional <A> on isteach, amuigh, istigh, etc
 <B><Z>PREPADV</Z>ANYTHING</B>:<R>
 # disambiguate adjectives
+# gluaiseacht na gceart sibhialta
+<NGP>BROADFINALCONSONANT</NGP> <B><Z>ANYWITHCOMMON</Z>ANYTHING</B>:<A pl="n" gnt="n">
+# na fir comhaimseartha
 <NP>ANYTHING</NP> <B><Z>AWITHPL</Z>ANYTHING</B>:<A pl="y" gnt="n">
 # next two are a bad idea: "crann tógála mór buí" => "mór" genitive
 #<NFGS>ANYTHING</NFGS> <B><Z>AWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">

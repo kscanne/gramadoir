@@ -172,6 +172,10 @@ sin sin:OK
 # INPHRASE rule, but example sentence is best caught before "na" rules
 #. Maidin lá ar na mhárach thug a fhear gaoil cuairt air.
 <N>[Mm]hárach</N>:INPHRASE{arna mhárach}
+# this is like the "use dependent form" rules toward the bottom,
+# but better to get it out of the way before "a+UNMUTATED"
+#. Cad é mar a tá tú?
+[Aa] <V>JUSTTA</V>:BACHOIR{atá}
 ##############################################################################
 #   Rules A->Z begin here...
 ##############################################################################
@@ -312,7 +316,8 @@ h?[Aa]on <N>LENITEDDST</N>:NISEIMHIU
 # never applies since aonchiall only resolves "ar" as <Q> before VPAST
 #<Q>[Aa]r</Q> <VNOTPAST>ANYTHING</VNOTPAST>:BACHOIR{an}
 # CB p.133 #12.a
-<Q>[Aa]r</Q> <VPAST>PASTNORFORMLEN</VPAST>:BACHOIR{an}
+#. Bhí daoine le fáil i Sasana a chreid gach ar dúradh sa bholscaireacht.
+<[QU]>[Aa]r</[QU]> <VPAST>PASTNORFORMLEN</VPAST>:BACHOIR{a, an}
 # CB p.19 #13, p.132 #5, OD ar^5
 #. Ar gcaith tú do chiall agus do chéadfaí ar fad?
 <Q>[Aa]r</Q> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
@@ -527,6 +532,10 @@ g?[Cc]h?úig <NP>(bliana|cinn|cloigne|fichid|huaire)</NP>:OK
 <D>[Dd]ár</D> UNECLIPSED:URU
 # CB p.132 #4
 [Dd]ár <VNOTPAST>ANYTHING</VNOTPAST>:BACHOIR{dá}
+# CB p.133 #12.a
+[Dd]ár <VPAST>PASTNORFORMLEN</VPAST>:BACHOIR{dá}
+# CB p.132 #5 (unlenited "~ dúirt" trapped by previous rule)
+[Dd]ár <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
 # CB p.79 #13.a
 <N>n?[Dd]h?áréag</N> <NP>ANYTHING</N>:UATHA
 <N>n?[Dd]h?áréag</N> <NP>ban</N>:OK
@@ -651,6 +660,10 @@ n?[Dd]h?eich <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 <S>[Ff]aoina</S> <VPAST>PASTNORFORM</VPAST>:OK
 # CB p.132 #4
 <S>[Ff]aoinar</S> <VNOTPAST>ANYTHING</VNOTPAST>:BACHOIR{faoina}
+# CB p.133 #12.a
+<S>[Ff]aoinar</S> <VPAST>PASTNORFORMLEN</VPAST>:BACHOIR{faoina}
+# CB p.132 #5 (unlenited "~ dúirt" trapped by previous rule)
+<S>[Ff]aoinar</S> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
 # CB p.84 #8 keep before following
 <D>[Ff]aoinár</D> dhá <N>UNECLIPSED</N>:URU
 # CB p.84 #8
@@ -788,6 +801,10 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Ii]na</S> <VPAST>PASTNORFORM</VPAST>:OK
 # CB p.132 #4
 <S>[Ii]nar</S> <VNOTPAST>ANYTHING</VNOTPAST>:BACHOIR{ina}
+# CB p.133 #12.a
+<S>[Ii]nar</S> <VPAST>PASTNORFORMLEN</VPAST>:BACHOIR{ina}
+# CB p.132 #5 (unlenited "~ dúirt" trapped by previous rule)
+<S>[Ii]nar</S> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
 # CB p.84 #8 keep before following
 <D>[Ii]nár</D> dhá <N>UNECLIPSED</N>:URU
 # CB p.84 #8
@@ -839,6 +856,10 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.132 #4
 #. Cuir alt eile lenar bhfuil scríofa agat i gCeist a trí.
 <S>[Ll]enar</S> <VNOTPAST>ANYTHING</VNOTPAST>:BACHOIR{lena}
+# CB p.133 #12.a
+<S>[Ll]enar</S> <VPAST>PASTNORFORMLEN</VPAST>:BACHOIR{lena}
+# CB p.132 #5 (unlenited "~ dúirt" trapped by previous rule)
+<S>[Ll]enar</S> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
 # CB p.84 #8 keep before following
 <D>[Ll]enár</D> dhá <N>UNECLIPSED</N>:URU
 # CB p.84 #8
@@ -849,10 +870,10 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <C>[Mm]á</C> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
 # CB p.133 #12.b
 #. Má deirim libh é, ní chreidfidh sibh (OK).
-[Mm]á <VNOLEN>ABAIRPRFU</VNOLEN>:OK
+<C>[Mm]á</C> <VNOLEN>ABAIRPRFU</VNOLEN>:OK
 # CB p.133 #12.c
 #. Má tá suim agat sa turas seo, seol d'ainm chugamsa (OK).
-[Mm]á tá(i[dm]|imid|thar)?:OK
+<C>[Mm]á</C> <V>JUSTTA</V>:OK
 # CB p.13 #4.a
 #. Roghnaítear an bhliain 1961 mar pointe tosaigh don anailís.
 <S>[Mm]ar</S> <N>UNLENITED</N>:SEIMHIU
@@ -988,6 +1009,8 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <N>[Nn]aonúr</N> <N>m?bh?ean</N>:BACHOIR{ban}
 # CB p.132 #4 (implicit), OD nach/nár
 [Nn]ár <VNOTPASTSUBJ>ANYTHING</VNOTPASTSUBJ>:BACHOIR{nach}
+# CB p.133 #12.a
+[Nn]ár <VPAST>PASTNORFORMLEN</VPAST>:BACHOIR{nach}
 # CB p.16 #7 (N), p.18 #10 (A), p.19 #13 (V), p.132 #5
 #. Nár breá liom claíomh a bheith agam i mo ghlac!
 [Nn]ár <[AN]>UNLENITED</[AN]>:SEIMHIU
@@ -1015,6 +1038,8 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 #. Ní bhfaighidh tú aon déirce uaim (OK).
 <U>[Nn]í</U> <V>FAIGHFC</V>:OK
 <U>[Nn]í</U> <V>ba</V>:OK
+# not really an exception by save for "use dependent form" message below
+<U>[Nn]í</U> <V>JUSTTA</V>:OK
 # CB p.133 #12.a
 # same exception below under "BACHOIR{níor}"; here only applies to "ní dúirt"
 <U>[Nn]í</U> <VPAST>PASTAFTERNI</VPAST>:OK
@@ -1059,7 +1084,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 #. Ach anois ó cuimhním air, bhí ardán coincréite sa pháirc.
 <C>[Óó]</C> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
 #. Bhuel, fan ar strae mar sin ó tá tú chomh mímhúinte sin (OK).
-<C>[Óó]</C> tá(i[dm]|imid|thar)?:OK
+<C>[Óó]</C> <V>JUSTTA</V>:OK
 # CB p.13 #4.a
 #. Tabhair an t-ordú seo leanas ó béal.
 <S>[Óó]</S> <N>UNLENITED</N>:SEIMHIU
@@ -1115,6 +1140,10 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 # CB p.132 #4
 #. Seo teaghlach ag a bhfuil go leor fadhbanna agus ónar dteastaíonn tacaíocht atá dírithe.
 <S>[Óó]nar</S> <VNOTPAST>ANYTHING</VNOTPAST>:BACHOIR{óna}
+# CB p.133 #12.a
+<S>[Óó]nar</S> <VPAST>PASTNORFORMLEN</VPAST>:BACHOIR{óna}
+# CB p.132 #5 (unlenited "~ dúirt" trapped by previous rule)
+<S>[Óó]nar</S> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
 # CB p.84 #8 keep before following
 <D>[Óó]nár</D> dhá <N>UNECLIPSED</N>:URU
 # CB p.84 #8
@@ -1314,6 +1343,10 @@ d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</
 # CB p.132 #4
 #. Is mar a chéile an próiseas trínar ndéantar é seo.
 <S>[Tt]rínar</S> <VNOTPAST>ANYTHING</VNOTPAST>:BACHOIR{trína}
+# CB p.133 #12.a
+<S>[Tt]rínar</S> <VPAST>PASTNORFORMLEN</VPAST>:BACHOIR{trína}
+# CB p.132 #5 (unlenited "~ dúirt" trapped by previous rule)
+<S>[Tt]rínar</S> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
 # CB p.84 #8 keep before following
 <D>[Tt]rínár</D> dhá <N>UNECLIPSED</N>:URU
 # CB p.84 #8
@@ -1429,8 +1462,6 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 #. Ní gheobhaidh an mealltóir nathrach aon táille.
 #  apparently  " a gheobh*" is OK as direct relative
 [Aa]n|[Cc]á|[Dd]á|[Nn]ach|[Nn]í <V>ABSNONPASTVERB</V>:RELATIVE
-#. Cad é mar a tá tú?
-[Aa] <V>JUSTTA</V>:BACHOIR{atá}
 #  next three are the converse rules; dependent forms "in phrase" only
 #. Má dhearna sí praiseach de, thosaigh sí arís go bhfuair sí ceart é.
 <V>DEPENDENT</V>:ABSOLUTE
@@ -1500,6 +1531,10 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 # BROADFINALCONSONANT <=> "weak" genitive plural
 #. Tá a chumas sa Ghaeilge níos airde ná cumas na bhfear óga.
 <NGP>BROADFINALCONSONANT</NGP> <AP>ANYTHING</AP>:UATHA
+# exception CB p.79 #13.b - using gpl "bhan" after beirt is itself exceptional,
+# but this actually occurs in the corpus:
+#. Beirt bhan Mheiriceánacha a bhí ann (OK).
+<N>m?[Bb]h?eirt</N> <E><NGP>[Bb]han</NGP> <AP>ANYTHING</AP></E>:OK
 <D>ANYTHING</D> <AP>ANYTHING</AP>:CUPLA
 <D>ANYTHING</D> <C>ANYTHING</C>:CUPLA
 <D>ANYTHING</D> <D>ANYTHING</D>:CUPLA
