@@ -1,14 +1,15 @@
 # Deutsche Übersetzungen für gramadoir
 # Copyright (C) 2003 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gramadoir package.
+# Karl Eichwalder <ke@gnu.franken.de>, 2003.
 # Martin Gregory <martin.gregory@sas.com>, 2003.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gramadoir 0.2-r1\n"
+"Project-Id-Version: gramadoir 0.3\n"
 "POT-Creation-Date: 2003-10-21 10:32-0500\n"
-"PO-Revision-Date: 2003-10-07 22:09+0100\n"
-"Last-Translator: Martin Gregory <martin.gregory@sas.com>\n"
+"PO-Revision-Date: 2003-10-22 05:23+0200\n"
+"Last-Translator: Karl Eichwalder <ke@gnu.franken.de>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
@@ -23,7 +24,7 @@ msgstr "%s: Arbeitsspeicher erschöpft\n"
 #: cuardach.c:92
 #, c-format
 msgid "%s: `%s' corrupted at %s\n"
-msgstr "%s: `%s' verfälscht bei %s\n"
+msgstr "%s: `%s' beschädigt bei %s\n"
 
 #: cuardach.c:115 cuardach.c:156 cuardach.c:236
 #, c-format
@@ -38,7 +39,7 @@ msgstr "%s: Warnung: Problem beim Schließen von %s\n"
 #: cuardach.c:278
 #, c-format
 msgid "%s: no grammar codes\n"
-msgstr "%s: keine grammatische Codes\n"
+msgstr "%s: keine grammatischen Codes\n"
 
 #: cuardach.c:518
 msgid "problem with the `cuardach' command\n"
@@ -52,7 +53,7 @@ msgstr "%s: Problem beim Lesen der Datenbank\n"
 #: farc.c.in:19
 #, c-format
 msgid "Language %s is not supported."
-msgstr "Die Sprache %s wird nicht unterstutzt."
+msgstr "Die Sprache %s wird nicht unterstützt."
 
 #: farc.c.in:23
 #, c-format
@@ -84,7 +85,7 @@ msgstr "An Gramadóir"
 
 #: gr.in:36
 msgid "Currently checking %s"
-msgstr "%s wird geprüft"
+msgstr "%s wird gerade geprüft"
 
 #: gr.in:37
 msgid "There is no such file."
@@ -100,44 +101,35 @@ msgstr "Zugriff nicht erlaubt"
 
 #: gr.in:40
 msgid "Usage: %s [OPTIONS] [FILES]"
-msgstr "Syntax: %s [OPTIONS] [FILES]"
+msgstr "Syntax: %s [OPTIONEN] [DATEIEN]"
 
 #: gr.in:41
 msgid "    --litriu       write misspelled words to standard output"
-msgstr "    --litriu       falsch geschriebene Wörter an Standardausgabe"
+msgstr "    --litriu       falsch geschriebene Wörter auf Standardausgabe ausgeben"
 
 #: gr.in:42
 msgid "    --html         produce HTML output for viewing in a web browser"
-msgstr "    --html         erzeugt Ausgabe in HTML-Format"
+msgstr "    --html         Ausgabe im HTML-Format erzeugen"
 
 #: gr.in:43
-msgid ""
-"    --xml          write tagged XML stream to standard output, for debugging"
-msgstr ""
-"    --xml          erzeugt Ausgabe in XML-Format, um Fehlersuche zu "
-"erleichtern"
+msgid "    --xml          write tagged XML stream to standard output, for debugging"
+msgstr "    --xml          Ausgabe im XML-Format zu Zwecken der Fehlersuche erzeugen"
 
 #: gr.in:44
 msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
-msgstr ""
-"    --iomlan       alle Fehler protokollieren; ~/.neamhshuim wird nicht "
-"gelesen"
+msgstr "    --iomlan       alle Fehler protokollieren; ~/.neamhshuim wird nicht gelesen"
 
 #: gr.in:45
-msgid ""
-"    --teanga=XX    specify the language of the text to be checked "
-"(default=ga)"
-msgstr ""
-"    --teanga=XX    Sprache des zu überprüfenden Textes (Voreinstellung=ga)"
+msgid "    --teanga=XX    specify the language of the text to be checked (default=ga)"
+msgstr "    --teanga=XX    Sprache des zu überprüfenden Textes (Voreinstellung=ga)"
 
 #: gr.in:46
-msgid ""
-"    --ionchod=ENC  specify the character encoding of the text to be checked"
+msgid "    --ionchod=ENC  specify the character encoding of the text to be checked"
 msgstr "    --ionchod=ENC  Zeichensatz des zu überprüfenden Textes"
 
 #: gr.in:47
 msgid "    --help         display this help and exit"
-msgstr "    --help         diese Kurzanleitung anziegen"
+msgstr "    --help         diese Kurzanleitung anzeigen"
 
 #: gr.in:48
 msgid "    --version      output version information and exit"
@@ -145,31 +137,29 @@ msgstr "    --version      Versionsnummer anzeigen"
 
 #: gr.in:49
 msgid "If no file is given, read from standard input."
-msgstr ""
-"Falls keine Datei angegeben wird, wird von der Standardeingabe gelesen."
+msgstr "Falls keine Datei angegeben wird, wird von der Standardeingabe gelesen."
 
 #: gr.in:50
 msgid "Send bug reports to <%s>."
-msgstr "Fehlermeldungen an <%s> schicken."
+msgstr ""
+"Fehlermeldungen an <%s> schicken.\n"
+"Probleme mit der Übersetzung an die Mailingliste de@li.org melden."
 
 #: gr.in:51
 msgid "version %s"
 msgstr "Version %s"
 
 #: gr.in:52
-msgid ""
-"This is free software; see the source for copying conditions.  There is NO"
-"\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
-"PURPOSE,\\nto the extent permitted by law."
+msgid "This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law."
 msgstr ""
-"Dieses Programm is freie Software; die Bedingung unter denen Sie es kopieren"
-"\\ndürfen, finden Sie in dem Quellcode. Es ist OHNE IRGENDEINE GARANTIE, "
-"sogar\\nohne die implizite Garantie der MARKTREIFE oder der VERWENDBARKEIT "
-"FÜR EINEN BESTIMMTEN ZWECK."
+"Dieses Programm ist freie Software; die Bedingungen, unter denen Sie es\n"
+"kopieren dürfen, finden Sie in dem Quellcode. Es ist OHNE IRGENDEINE GARANTIE,\n"
+"sogar ohne die implizite Garantie der MARKTREIFE oder der VERWENDBARKEIT FÜR\n"
+"EINEN BESTIMMTEN ZWECK."
 
 #: gr.in:53
 msgid "Try %s for more information."
-msgstr "%s eingeben, um weitere zu erhalten."
+msgstr "%s eingeben, um weitere Informationen zu erhalten."
 
 #: gr.in:54
 msgid "unrecognized option %s"
@@ -193,11 +183,11 @@ msgstr "Unbekanntes Wort"
 
 #: gr.in:59
 msgid "You should use \\/\\1\\/ here instead"
-msgstr "An dieser Stelle, sollst Du lieber \\/\\1\\/ benutzen"
+msgstr "An dieser Stelle besser \\/\\1\\/ benutzen"
 
 #: gr.in:60
 msgid "Non-standard form: perhaps use \\/\\1\\/?"
-msgstr "Nichtstandard Form: vielleicht sollst Du \\/\\1\\/ benutzen?"
+msgstr "Nicht dem Standard entsprechende Form: vielleicht besser \\/\\1\\/ benutzen?"
 
 #: gr.in:61
 msgid "Initial mutation missing"
