@@ -301,7 +301,7 @@ i[dg]h(th?.)		i$1		1	<.+>  # marcaidhthe, masluighthe, beannuighth?ear
 ighim			ím		1	<V.*>    # broad and slender
 ighidh			í		1	<.+>    # subjunctive?
 ighinn			ínn		1	<.+>    # imperfect
-# Future forms: see OS88 p.215 for these (fe?as, etc. on p.63)
+# Future forms: see OS88 p.215 for these (fe?as, etc. on p.63), also CB p.145
 #  socróid, dílseoid, 3rd plural forms in achtanna
 fa[ds]$			faidh		1	<V p="y" t="fáist">
 fea[ds]$		fidh		1	<V p="y" t="fáist">
@@ -324,7 +324,7 @@ eois$			eoidh		1	<V p="y" t="fáist">
 # Future/Cond autonomous; unwanted prefix h is common in achtanna
 ^h([aeiouáéíóú].+fe?ar)$	$1	1	<V p="n" t="fáist">
 ^h([aeiouáéíóú].+fa?í)$		$1	1	<V p="n" t="coinn">
-# Past; also see Di27 (present).  "r" forms on p.216
+# Past; also see Di27 (present).  "r" forms on p.216 (also CB p.145 present)
 (...)eas$		$1		1	<V p="y" t="caite">
 (..[^aeiouáéíóú])as$	$1		1	<V p="y" t="caite">
 (...)íos$		$1igh		1	<V p="y" t="caite">
