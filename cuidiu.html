@@ -40,8 +40,8 @@ etc. once the headword <i lang="ga">Gaeltacht</i> has been entered.
 <p>
 The easiest and most valuable way to contribute is by
 helping add new rules to the checker.   Rules are contained in
-three plain text files called <i>aonchiall.in</i>, 
-<i>eisceacht.in</i> and <i>rialacha.in</i>.
+three plain text files called <i>aonchiall-ga.in</i>, 
+<i>eisceacht-ga.in</i> and <i>rialacha-ga.in</i>.
 Complicated "meta"-scripts convert these (somewhat) human-readable
 files into the Perl scripts which actually find and mark up the grammatical
 errors.   
@@ -51,10 +51,10 @@ You fortunately don't need to understand this process to contribute rules
 </p>
 
 <p>
-The file <i>aonchiall.in</i> contains rules for disambiguating 
+The file <i>aonchiall-ga.in</i> contains rules for disambiguating 
 parts of speech; for instance, the word <i>an</i> in Irish can either be
 the definite article or an interrogative particle.   The first
-couple of lines of <i>aonchiall.in</i> are rules which indicate
+couple of lines of <i>aonchiall-ga.in</i> are rules which indicate
 that if <i>an</i> is followed by a verb, we expect it to be
 an interrogative and otherwise it is the article. 
 This kind of disambiguation is obviously a necessary preliminary step 
@@ -63,8 +63,8 @@ can try to apply grammatical rules depending on part of speech.
 </p>
 
 <p>
-The file <i>rialacha.in</i> contains the grammatical rules proper,
-and <i>eisceacht.in</i> lists any exceptions to these rules.
+The file <i>rialacha-ga.in</i> contains the grammatical rules proper,
+and <i>eisceacht-ga.in</i> lists any exceptions to these rules.
 The sections which follow describe the structure of all three files
 in sufficient detail that (I hope) you will be able to write
 and contribute your own rules for inclusion in later releases.
@@ -121,8 +121,8 @@ you will also find advice for what kinds of rules you might like
 to include, ways of optimizing your rule set, etc.
 </p>
 
-<h2>Disambiguation: <i>aonchiall.in</i></h2>
-The phrase portion of a rule in <i>aonchiall.in</i>
+<h2>Disambiguation: <i>aonchiall-ga.in</i></h2>
+The phrase portion of a rule in <i>aonchiall-ga.in</i>
 is required to contain a single word marked up with
 "&lt;B&gt;&lt;/B&gt;".  Naturally, this is the word to disambiguate
 and the phrase is the context in which the disambiguation is to occur.
@@ -132,9 +132,9 @@ like
 which represents the disambiguated part of speech when the given
 phrase is matched.
 
-<h2>Grammar checking: <i>rialacha.in</i></h2>
+<h2>Grammar checking: <i>rialacha-ga.in</i></h2>
 <p>
-The phrase portion of a rule in <i>rialacha.in</i>
+The phrase portion of a rule in <i>rialacha-ga.in</i>
 is converted to a regular expression which matches a grammatical error.
 The action portion consists simply of a macro which expands
 to the error message you want to be printed when the rule
@@ -149,14 +149,14 @@ expands to "Ba chóir duit /ina/ a úsáid anseo"
 slashes.
 </p>
 
-<h2>Exceptions: <i>eisceacht.in</i></h2>
+<h2>Exceptions: <i>eisceacht-ga.in</i></h2>
 <p>
-The phrases in <i>eisceacht.in</i> represent patterns which are
-matched as errors by <i>rialacha.in</i> but which are actually 
+The phrases in <i>eisceacht-ga.in</i> represent patterns which are
+matched as errors by <i>rialacha-ga.in</i> but which are actually 
 grammatical and should not be reported as errors.
 For instance, the preposition <i lang="ga">faoi</i> causes
 aspiration in general, but not in the phrase <i lang="ga">faoi deara</i>;
-this phrase is therefore included in <i>eisceacht.in</i>.
+this phrase is therefore included in <i>eisceacht-ga.in</i>.
 The action portion of a rule is left blank (though, to keep
 the grammars the same, each line should be terminated by a colon).
 </p>
