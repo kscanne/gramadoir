@@ -362,6 +362,15 @@ my_tolower (const char x)
   return (x | 0x20);		/* know that x is upper as determined by my_isupper */
 }
 
+/* exploit the fact that the only non-ASCII chars in Irish are vowels! */
+int
+vowel_p (const char x)
+{
+  char z = my_tolower (x);
+  return ((z & 0x80) || z == 'a' || z == 'e' || z == 'i' || z == 'o'
+	  || z == 'u');
+}
+
 int
 my_isupper (const char x)
 {
@@ -375,31 +384,60 @@ my_isupper (const char x)
 int
 make_all_lowercase (const char *word, char *lowered)
 {
-  int i = 0, j = 0, retval = 0;
+  int i = 0, offset = 0, lowers = 0, uppers = 0, firstupper = -1;
 
   if ((word[0] == 'n' || word[0] == 't') && my_isupper (word[1]))
     {
       lowered[0] = word[0];
       lowered[1] = '-';
       lowered[2] = my_tolower (word[1]);
-      retval = 1;
+      lowers = uppers = firstupper = 1;
       i = 2;
-      j = 3;
+      offset = 1;
     }
   while (word[i] != 0)
     {
       if (my_isupper (word[i]))
 	{
-	  lowered[j] = my_tolower (word[i]);
-	  retval = 1;
+	  lowered[i + offset] = my_tolower (word[i]);
+	  uppers++;
+	  if (firstupper == -1)
+	    firstupper = i;
 	}
       else
-	lowered[j] = word[i];
+	{
+	  lowered[i + offset] = word[i];
+	  lowers++;
+	}
       i++;
-      j++;
     }
-  lowered[j] = 0;
-  return retval;
+  lowered[i + offset] = 0;
+  if (uppers == 0)
+    return 0;
+  else if (lowers == 0)
+    return 1;
+  else if (uppers > 1)
+    return 0;
+  else if (firstupper == 0)
+    return 1;			/* rest is for ga only; move eventually */
+  else if (firstupper == 1)
+    {
+      if (vowel_p (word[1]))
+	return (word[0] == 'h' || word[0] == 'n' || word[0] == 't');
+      else
+	return ((word[0] == 'b' && word[1] == 'P') ||
+		(word[0] == 'd' && word[1] == 'T') ||
+		(word[0] == 'g' && word[1] == 'C') ||
+		(word[0] == 'm' && word[1] == 'B') ||
+		(word[0] == 'n' && (word[1] == 'D' || word[1] == 'G')) ||
+		(word[0] == 't' && word[1] == 'S'));
+    }
+  else if (firstupper == 2)
+    {
+      return (word[0] == 'b' && word[1] == 'h' && word[2] == 'F');
+    }
+  else
+    return 0;
 }
 
 int
@@ -444,13 +482,14 @@ tidy_codes (unsigned char *codes)
 int
 dictlookup (const char *word, char *fill, char *attrs, char *extratags)
 {
-  int len, retval = 1;
+  int len, do_lowered_p, retval = 1;
   unsigned char unused, codes[2 * GR_AMBIGMAX];
   char repl[GR_REPLMAX], lowered[GR_WORDMAX];
 
   *codes = 0;
   rawlookup (word, codes);
-  if (make_all_lowercase (word, lowered))
+  do_lowered_p = make_all_lowercase (word, lowered);
+  if (do_lowered_p)
     {
       len = strlen (codes) - 1;
       if (len < 0)
@@ -483,7 +522,7 @@ dictlookup (const char *word, char *fill, char *attrs, char *extratags)
 	      strcpy (fill, "Y");
 	      return 1;
 	    }
-	  else if (my_isupper (word[0]))
+	  else if (do_lowered_p)
 	    {
 	      if (rawignorelookup (lowered))
 		{
@@ -494,7 +533,7 @@ dictlookup (const char *word, char *fill, char *attrs, char *extratags)
 	}
       if (replacementlookup (word, repl))
 	retval = 0;
-      else if (my_isupper (word[0]))
+      else if (do_lowered_p)
 	{
 	  if (replacementlookup (lowered, repl))
 	    retval = 0;
