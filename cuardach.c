@@ -23,7 +23,8 @@
 
 struct foirm
 {
-  char focal[GR_WORDMAX], coid[GR_AMBIGMAX];
+  char focal[GR_WORDMAX];
+  unsigned char coid[GR_AMBIGMAX];
 };
 
 struct ignorable
@@ -248,10 +249,10 @@ load_dictionary ()
 /* cod has trailing newline on there */
 /* return 0 if ok, 1 if problem */
 int
-code_to_markup (const char *cod, char *fill, char *attrs, char *extratags)
+code_to_markup (const unsigned char *cod, char *fill, char *attrs,
+		char *extratags)
 {
   int len = strlen (cod) - 1, j;
-  unsigned char c;
   char temp[8], tempatt[128];
   if (len > 1)
     {
@@ -284,7 +285,7 @@ code_to_markup (const char *cod, char *fill, char *attrs, char *extratags)
 /* word is terminated with "\n\0" already */
 /* return 1 if found, 0 otherwise */
 int
-rawlookup (const char *word, char *codes)
+rawlookup (const char *word, unsigned char *codes)
 {
   int min = 0, max = dict_total - 1;
   int guess, cmp;
@@ -370,13 +371,20 @@ my_isupper (const char x)
     return (x >= 'A' && x <= 'Z');
 }
 
+int
+sort_bytes (const void *a, const void *b)
+{
+  return (*(const unsigned char *) a - *(const unsigned char *) b);
+}
+
 /* Assert, word is non-zero length, terminated with "\n\0" */
 /* return 0 iff found in replacement dict and <E> will be the markup */
 int
 dictlookup (const char *word, char *fill, char *attrs, char *extratags)
 {
   int i, j, k, len, totlen, retval = 1;
-  char unused, repl[GR_REPLMAX], codes[2 * GR_AMBIGMAX], lowered[GR_WORDMAX];
+  unsigned char unused, codes[2 * GR_AMBIGMAX];
+  char repl[GR_REPLMAX], lowered[GR_WORDMAX];
   *codes = 0;
   rawlookup (word, codes);
   if (my_isupper (word[0]))
@@ -403,24 +411,26 @@ dictlookup (const char *word, char *fill, char *attrs, char *extratags)
 	}
       else
 	{
-	  totlen = strlen (codes) - 1;
-	  unused = codes[totlen];	/* needed if len=0 => unused=0 */
-	  for (j = 0; j < len; j++)
+	  if (len)
 	    {
-	      for (k = len; k < totlen; k++)
+	      totlen = strlen (codes) - 1;
+	      qsort (codes, (size_t) totlen, sizeof (unsigned char),
+		     sort_bytes);
+	      j = 1;		/* strip repeats */
+	      for (k = 1; k < totlen; k++)
 		{
-		  if (codes[j] == codes[k])
+		  if (codes[k] != codes[j - 1])
 		    {
-		      totlen--;
-		      codes[k] = codes[totlen];
-		      break;
+		      if (j < k)
+			codes[j] = codes[k];
+		      j++;
 		    }
 		}
-	    }
-	  codes[totlen] = unused;
-	  codes[totlen + 1] = 0;
-	}
-    }
+	      codes[j] = unused;
+	      codes[j + 1] = 0;
+	    }			/* if capital word was found originally */
+	}			/* if lowered version found */
+    }				/* if capital */
   if (*codes)
     {
       if (code_to_markup (codes, fill, attrs, extratags))
