@@ -1786,7 +1786,8 @@ d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</
 #. Galar crúibe is béil (OK).
 <V cop="y">is</V> <NG>ANYTHING</NG>:OK
 <S>COMPOUND</S> <NG>ANYTHING</NG>:OK
-<S>([Cc]hun|[Cc]ois|[Dd]ála|[Ff]earacht|[Tt]impeall|[Tt]rasna)</S> <NG>ANYTHING</NG>:OK
+<S>[Cc]hun</S> <NG>ANYTHING</NG>:OK
+<S>GENITIVEPREP</S> <NG>ANYTHING</NG>:OK
 #. Caitheann sé go leor ama ann (OK).
 #  disabled temporarily since <R> is no longer in main rule
 # <R>[Gg]o leor</R> <NGS>ANYTHING</NGS>:OK
@@ -1796,13 +1797,16 @@ d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</
 #. Ní raibh dúil bheo le feiceáil ar na bhfuinneog.
 <S>NONCOMPOUND</S> <T>ANYTHING</T> <NG>ANYTHING</NG>:NOGENITIVE
 #. Bhí, dála an scéil, ocht mbean déag aige (OK).
-<S>([Cc]hun|[Cc]ois|[Dd]ála|[Ff]earacht|[Tt]impeall|[Tt]rasna)</S> <T>ANYTHING</T> <NG>ANYTHING</NG>:OK
+<S>[Cc]hun</S> <T>ANYTHING</T> <NG>ANYTHING</NG>:OK
+<S>GENITIVEPREP</S> <T>ANYTHING</T> <NG>ANYTHING</NG>:OK
 #. Cá bhfuil an tseomra?
 #. Is iad na nGardaí.
 #  exclude <R> until can tag "amach", "amháin" as <A> correctly:
 #. Éirí Amach na Cásca (OK).
 #. Leas phobal na hÉireann agus na hEorpa (OK).
 <[^ACNRSY]>ANYTHING</[^ACNRSY]> <T>ANYTHING</T> <NG>ANYTHING</NG>:NOGENITIVE
+#. Fáilte an deamhain is an diabhail romhat (OK).
+<V cop="y">is</V> <T>ANYTHING</T> <NG>ANYTHING</NG>:OK
 # in phrases; see OD deo.  Temporarily disabled since <R> out of main rule
 #. Go deo na ndeor, go deo na díleann (OK).
 # <R>[Gg]o deo</R> <T>ANYTHING</T> <NG>ANYTHING</NG>:OK
@@ -2181,62 +2185,62 @@ d?[tT]h?rí|g?[Cc]h?eithre|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 #  as the error for these, but INPHRASE is clearer, softened by "usually" too.
 #  Ar+eclipsis trapped by general "ar+UNLENITED" rule.
 #############################################################################
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">bhallchrith</N>:INPHRASE{ar ballchrith}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">bhís</N>:INPHRASE{ar bís}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">bhuile</N>:INPHRASE{ar buile}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">cheal</N>:INPHRASE{ar ceal}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">chéalacan</N>:INPHRASE{ar céalacan}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">cheant</N>:INPHRASE{ar ceant}
-<S>[Aa]r</S> <N pl="n" gnt="d">cheathrúin</N>:INPHRASE{ar ceathrúin}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">chíos</N>:INPHRASE{ar cíos}
-<S>[Aa]r</S> <N pl="y" gnt="n" gnd="m">chipíní</N>:INPHRASE{ar cipíní}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">chóimhéid</N>:INPHRASE{ar cóimhéid}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">chomhbhrí</N>:INPHRASE{ar comhbhrí}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">chomhfhad</N>:INPHRASE{ar comhfhad}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Bb]hallchrith</N>:INPHRASE{ar ballchrith}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">[Bb]hís</N>:INPHRASE{ar bís}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">[Bb]huile</N>:INPHRASE{ar buile}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Cc]heal</N>:INPHRASE{ar ceal}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Cc]héalacan</N>:INPHRASE{ar céalacan}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Cc]heant</N>:INPHRASE{ar ceant}
+<S>[Aa]r</S> <N pl="n" gnt="d">[Cc]heathrúin</N>:INPHRASE{ar ceathrúin}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Cc]híos</N>:INPHRASE{ar cíos}
+<S>[Aa]r</S> <N pl="y" gnt="n" gnd="m">[Cc]hipíní</N>:INPHRASE{ar cipíní}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">[Cc]hóimhéid</N>:INPHRASE{ar cóimhéid}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">[Cc]homhbhrí</N>:INPHRASE{ar comhbhrí}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Cc]homhfhad</N>:INPHRASE{ar comhfhad}
 # lenited common in corpus but this is a "state" CB94 p.13 #4.b
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">chomhscór</N>:INPHRASE{ar comhscór}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">chrith</N>:INPHRASE{ar crith}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">chrochadh</N>:INPHRASE{ar crochadh}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">dháir</N>:INPHRASE{ar dáir}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">dheic</N>:INPHRASE{ar deic}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">dheil</N>:INPHRASE{ar deil}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">dheiseal</N>:INPHRASE{ar deiseal}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">dheoraíocht</N>:INPHRASE{ar deoraíocht}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">dhiúité</N>:INPHRASE{ar diúité}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">fháil</N>:INPHRASE{ar fáil}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">fhán</N>:INPHRASE{ar fán}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">fhaonoscailt</N>:INPHRASE{ar faonoscailt}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">fheadh</N>:INPHRASE{ar feadh}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">fhéarach</N>:INPHRASE{ar féarach}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">fheitheamh</N>:INPHRASE{ar feitheamh}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">fhiannas</N>:INPHRASE{ar fiannas}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">fhiar</N>:INPHRASE{ar fiar}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">fhionraí</N>:INPHRASE{ar fionraí}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">fhiuchadh</N>:INPHRASE{ar fiuchadh}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">fhónamh</N>:INPHRASE{ar fónamh}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">fhorbhás</N>:INPHRASE{ar forbhás}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">fhoscadh</N>:INPHRASE{ar foscadh}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">fhostú</N>:INPHRASE{ar fostú}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">fhruiliú</N>:INPHRASE{ar fruiliú}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">ghor</N>:INPHRASE{ar gor}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">mhaidin</N>:INPHRASE{ar maidin}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">mhaos</N>:INPHRASE{ar maos}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">mhearaí</N>:INPHRASE{ar mearaí}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">mhearbhall</N>:INPHRASE{ar mearbhall}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">mhearú</N>:INPHRASE{ar mearú}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">mheisce</N>:INPHRASE{ar meisce}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">mhire</N>:INPHRASE{ar mire}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">mhuir</N>:INPHRASE{ar muir}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">phromhadh</N>:INPHRASE{ar promhadh}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">sheachrán</N>:INPHRASE{ar seachrán}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">shileadh</N>:INPHRASE{ar sileadh}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">shnámh</N>:INPHRASE{ar snámh}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">shodar</N>:INPHRASE{ar sodar}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">thaispeáint</N>:INPHRASE{ar taispeáint}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">theaghrán</N>:INPHRASE{ar teaghrán}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">thí</N>:INPHRASE{ar tí}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">thogradh</N>:INPHRASE{ar togradh}
-<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">thuathal</N>:INPHRASE{ar tuathal}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Cc]homhscór</N>:INPHRASE{ar comhscór}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Cc]hrith</N>:INPHRASE{ar crith}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Cc]hrochadh</N>:INPHRASE{ar crochadh}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">[Dd]háir</N>:INPHRASE{ar dáir}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">[Dd]heic</N>:INPHRASE{ar deic}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">[Dd]heil</N>:INPHRASE{ar deil}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Dd]heiseal</N>:INPHRASE{ar deiseal}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">[Dd]heoraíocht</N>:INPHRASE{ar deoraíocht}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Dd]hiúité</N>:INPHRASE{ar diúité}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">[Ff]háil</N>:INPHRASE{ar fáil}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Ff]hán</N>:INPHRASE{ar fán}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">[Ff]haonoscailt</N>:INPHRASE{ar faonoscailt}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Ff]headh</N>:INPHRASE{ar feadh}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Ff]héarach</N>:INPHRASE{ar féarach}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Ff]heitheamh</N>:INPHRASE{ar feitheamh}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Ff]hiannas</N>:INPHRASE{ar fiannas}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Ff]hiar</N>:INPHRASE{ar fiar}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">[Ff]hionraí</N>:INPHRASE{ar fionraí}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Ff]hiuchadh</N>:INPHRASE{ar fiuchadh}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Ff]hónamh</N>:INPHRASE{ar fónamh}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Ff]horbhás</N>:INPHRASE{ar forbhás}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Ff]hoscadh</N>:INPHRASE{ar foscadh}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Ff]hostú</N>:INPHRASE{ar fostú}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Ff]hruiliú</N>:INPHRASE{ar fruiliú}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Gg]hor</N>:INPHRASE{ar gor}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">[Mm]haidin</N>:INPHRASE{ar maidin}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Mm]haos</N>:INPHRASE{ar maos}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">[Mm]hearaí</N>:INPHRASE{ar mearaí}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Mm]hearbhall</N>:INPHRASE{ar mearbhall}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Mm]hearú</N>:INPHRASE{ar mearú}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">[Mm]heisce</N>:INPHRASE{ar meisce}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">[Mm]hire</N>:INPHRASE{ar mire}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">[Mm]huir</N>:INPHRASE{ar muir}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Pp]hromhadh</N>:INPHRASE{ar promhadh}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Ss]heachrán</N>:INPHRASE{ar seachrán}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Ss]hileadh</N>:INPHRASE{ar sileadh}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Ss]hnámh</N>:INPHRASE{ar snámh}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Ss]hodar</N>:INPHRASE{ar sodar}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="f">[Tt]haispeáint</N>:INPHRASE{ar taispeáint}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Tt]heaghrán</N>:INPHRASE{ar teaghrán}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Tt]hí</N>:INPHRASE{ar tí}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Tt]hogradh</N>:INPHRASE{ar togradh}
+<S>[Aa]r</S> <N pl="n" gnt="n" gnd="m">[Tt]huathal</N>:INPHRASE{ar tuathal}
 #############################################################################
 #  now, same for "thar" phrases
 #############################################################################
