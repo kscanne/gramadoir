@@ -320,7 +320,8 @@ h?[Aa]on <N>LENITEDDST</N>:NISEIMHIU
 <[QU]>[Aa]r</[QU]> <VPAST>PASTNORFORMLEN</VPAST>:BACHOIR{a, an}
 #   Some improved messages before "ar+unlenited":
 # not "incense"; 124 times in corpus Jan '05
-<S>[Aa]r</S> <N>dtúis</N>:MICHEART{ar dtús}
+<S>[Aa]r</S> <N>d?túi?s</N>:MICHEART{ar dtús}
+<S>[Aa]r</S> <N>cúl</N>:MICHEART{ar gcúl}
 # amazingly common, and always in place of "ar siúl":
 <S>[Aa]r</S> <N>súil</N>:MICHEART{ar siúl}
 # CB p.13 #4.b
@@ -332,7 +333,13 @@ h?[Aa]on <N>LENITEDDST</N>:NISEIMHIU
 #. Tá sé an chéad suíomh gréasán ar bronnadh teastas air (OK).
 #  Also when accent left off of possessive "ár":
 #. Bhíomar ag féachaint ar an Ghaeltacht mar ionad chun feabhas a chur ar ar gcuid Gaeilge.
+#. Cosc a bheith ar cic a thabhairt don sliotar.
+#. Cosc a bheith ar CIC leabhair a dhíol (OK).
 <S>[Aa]r</S> <N>UNLENITED</N>:SEIMHIU
+# most of the time the construction here means "ar" is a copula,
+# but I'm not sure enough to move this to a "aonchiall" rule.
+#. Beidh cairde dá cuid ar Gaeilgeoirí iad (OK).
+<E><S>[Aa]r</S> <N>UNLENITED</N></E> <P>ANYTHING</P>:OK
 # CB p.19 #13, p.132 #5, OD ar^5
 #. Ar gcaith tú do chiall agus do chéadfaí ar fad?
 <Q>[Aa]r</Q> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
@@ -1709,6 +1716,8 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 <S>[Aa]r</S> <N>chóimhéid</N>:INPHRASE{ar cóimhéid}
 <S>[Aa]r</S> <N>chomhbhrí</N>:INPHRASE{ar comhbhrí}
 <S>[Aa]r</S> <N>chomhfhad</N>:INPHRASE{ar comhfhad}
+# lenited common in corpus but this is a "state" CB94 p.13 #4.b
+<S>[Aa]r</S> <N>chomhscór</N>:INPHRASE{ar comhscór}
 <S>[Aa]r</S> <N>chrith</N>:INPHRASE{ar crith}
 <S>[Aa]r</S> <N>chrochadh</N>:INPHRASE{ar crochadh}
 <S>[Aa]r</S> <N>dháir</N>:INPHRASE{ar dáir}
