@@ -1,5 +1,10 @@
 # This sed script is used for converting the hopefully-user-readable
 # *.in files into the somewhat complicated *.pl scripts
+# Copyright (C) 2003 Kevin P. Scannell <scannell@slu.edu>
+#
+# This is free software; see the file COPYING for copying conditions.  There is
+# NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#
 /^#/d
 s/<^\([A-DF-Z]\)>\([^<]*\)<\/^[A-DF-Z]>/(<[^\\\/\1][^>]*>\2<\\\/[^\1]>|<B><Z>(<[^\1][^>]*>)+<\\\/Z>\2<\\\/B>)/g
 s/<\([CDIQRSTUXY]\)>\([^<]*\)<\/[A-Z]>/<\1>\2<\\\/\1>/g
