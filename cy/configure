@@ -1,7 +1,6 @@
 #!/bin/sh
 GRAMDIR=".."
-VERSION="0.5.0"
-PERLVERSION=`echo "${VERSION}" | sed 's/^\([0-9]*\.[0-9]\)\.\([0-9]\).*/\1\2/'`
+VERSION="0.02"
 TEANGA="cy"
 UPPERTEANGA="CY"
 AUTHOR="Kevin Donnelly <kevin@dotmon.com>"
@@ -14,6 +13,7 @@ ECHO=`grep '^ECHO =' ${GRAMDIR}/Makefile | sed 's/^ECHO = *//'`
 EGREP=`grep '^EGREP =' ${GRAMDIR}/Makefile | sed 's/^EGREP = *//'`
 LN_S=`grep '^LN_S =' ${GRAMDIR}/Makefile | sed 's/^LN_S = *//'`
 PERL=`grep '^PERL =' ${GRAMDIR}/Makefile | sed 's/^PERL = *//'`
+GRAMVERSION=`grep '^TARBALL =' ${GRAMDIR}/Makefile | sed 's/^TARBALL = gramadoir-//'`
 # the next batch of values are extracted from crubadan EOLAS file, so 
 # changes should be made upstream also
 NAME_ENG="Welsh"
@@ -32,7 +32,7 @@ s@!TEANGA!@${TEANGA}@
 s@!UPPERTEANGA!@${UPPERTEANGA}@
 s@!NAME_ENG!@${NAME_ENG}@
 s@!VERSION!@${VERSION}@
-s@!PERLVERSION!@${PERLVERSION}@
+s@!GRAMVERSION!@${GRAMVERSION}@
 s@!NATIVE!@${NATIVE}@
 s@!BDCHARS!@${BDCHARS}@
 s@!INTCHARS!@${INTCHARS}@
