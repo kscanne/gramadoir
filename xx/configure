@@ -1,0 +1,43 @@
+#!/bin/sh
+GRAMDIR=".."
+VERSION="^VERSION^"
+PERLVERSION=`echo "${VERSION}" | sed 's/^\([0-9]*\.[0-9]\)\.\([0-9]\).*/\1\2/'`
+TEANGA="^TEANGA^"
+UPPERTEANGA="^UPPERTEANGA^"
+AUTHOR="^AUTHOR^"
+if [ ! -e ${GRAMDIR}/Makefile ]
+then
+	echo "configure: need to run ${GRAMDIR}/configure first"
+	exit 1
+fi
+ECHO=`grep '^ECHO =' ${GRAMDIR}/Makefile | sed 's/^ECHO = *//'`
+EGREP=`grep '^EGREP =' ${GRAMDIR}/Makefile | sed 's/^EGREP = *//'`
+LN_S=`grep '^LN_S =' ${GRAMDIR}/Makefile | sed 's/^LN_S = *//'`
+PERL=`grep '^PERL =' ${GRAMDIR}/Makefile | sed 's/^PERL = *//'`
+# the next batch of values are extracted from crubadan EOLAS file, so 
+# changes should be made upstream also
+NAME_ENG="^NAME_ENG^"
+NATIVE="^NATIVE^"
+BDCHARS="^BDCHARS^"
+INTCHARS="^INTCHARS^"
+UPPERS="^UPPERS^"
+LOWERS="^LOWERS^"
+echo "configure: creating Makefile"
+sed "
+s@!ECHO!@${ECHO}@
+s@!EGREP!@${EGREP}@
+s@!LN_S!@${LN_S}@
+s@!PERL!@${PERL}@
+s@!TEANGA!@${TEANGA}@
+s@!UPPERTEANGA!@${UPPERTEANGA}@
+s@!NAME_ENG!@${NAME_ENG}@
+s@!VERSION!@${VERSION}@
+s@!PERLVERSION!@${PERLVERSION}@
+s@!NATIVE!@${NATIVE}@
+s@!BDCHARS!@${BDCHARS}@
+s@!INTCHARS!@${INTCHARS}@
+s@!UPPERS!@${UPPERS}@
+s@!LOWERS!@${LOWERS}@
+s/!AUTHOR!/${AUTHOR}/
+" ${GRAMDIR}/Makefile-xx.in > Makefile
+sed -i "s@!PERLPATH!@${PERL}@" macra-${TEANGA}.meta.pl

@@ -1,0 +1,10 @@
+# Exceptions to grammatical rules.   Patterns here are "OK".
+# Copyright (C) 2003 Kevin P. Scannell <scannell@slu.edu>
+#
+# This is free software; see the file COPYING for copying conditions.  There is
+# NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#
+# Users can add to this list by following the syntax described
+# on the web page:  http://borel.slu.edu/gramadoir/
+# Please send me any useful additional rules for inclusion in
+# future releases: <scannell@slu.edu>
