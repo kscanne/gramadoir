@@ -1,6 +1,8 @@
 %{
 /* Grammar for the three *.in data files */
 #include <stdio.h>
+#include <locale.h>
+#include <libintl.h>
 int lineno = 1;
 int errors = 0;
 int rules = 0;
@@ -47,16 +49,26 @@ extern FILE *yyin;
 
 main()
 {
+  setlocale (LC_MESSAGES, "");  /* read from environment */
+  setlocale (LC_CTYPE, "");     /* needed so accents appear correctly! */
+  bindtextdomain (PACKAGE_NAME, LOCALEDIR);
+  textdomain (PACKAGE_NAME);
+
 	do
 	{
 		yyparse();
 	}
 	while (!feof(yyin));
 	if (errors) {
-		printf("There were %d errors.\n", errors);
+		printf(ngettext ("There was %d error.\n",
+		                 "There were %d errors.\n", 
+				 errors), errors);
 	     }
 	else {
-		printf("Successfully parsed %d lines, %d rules.\n", lineno-1, rules);
+	        /* used to print number of lines parsed too: lineno-1 */
+		printf(ngettext ("Successfully parsed %d rule.\n",
+		                 "Successfully parsed %d rules.\n",
+				 rules), rules);
 	}
 	return (errors);
 }
@@ -64,6 +76,6 @@ main()
 yyerror(s)
 char* s;
 {
-	fprintf(stderr, "Line %d: %s\n", lineno, s);
+	fprintf(stderr, gettext ("Line %d: %s\n"), lineno, s);
 	errors++;
 }
