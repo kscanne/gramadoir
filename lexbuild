@@ -1,49 +1,38 @@
-#!/bin/sh
+#!/usr/bin/perl
 # Copyright (C) 2004 Kevin P. Scannell
 # This is free software; see the file COPYING for copying conditions.  There is
 # NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#
+#   Reads a plain text lexicon from standard input;
+#   words with frequency 0 and 1 have been taken out and dealt with already.
+#   Processes these words and writes 5 files of approximately the same size:
+#   lexicon0.txt through lexicon4.txt ranging from highest to lowest freq.
 
-TEANGA=${1}
-GRAMDIR=${2}
-NATIVE=${3}
-UPPERTEANGA=`echo "${TEANGA}" | tr "[:lower:]" "[:upper:]"`
-FOCAILTEMP=`mktemp`
-cat lexicon-${TEANGA}.txt | perl ${GRAMDIR}/count.pl freq-${TEANGA}.txt | sort -n -r > ${FOCAILTEMP}
-rm -f focail?-${TEANGA}.bs.pre
-egrep '^0' ${FOCAILTEMP} | sed 's/^0 //' > focail6-${TEANGA}.bs.pre
-egrep '^1 ' ${FOCAILTEMP} | sed 's/^1 //' > focail5-${TEANGA}.bs.pre
-sed -i '/^[01] /d' ${FOCAILTEMP}
-sed -i 's/^[0-9]* //' ${FOCAILTEMP}
-TOTALLINES=`wc -l ${FOCAILTEMP} | sed 's/ .*//'`
-CHUNK=$(($TOTALLINES / 5))
-LINENUM=1
-NEXTLINE=1
-for FILENUM in 0 1 2 3 4
-do
-	FILENAME=focail${FILENUM}-${TEANGA}.bs.pre
-	NEXTLINE=$(($LINENUM + $CHUNK))
-	sed -n "${LINENUM},${NEXTLINE}p" ${FOCAILTEMP} >> ${FILENAME}
-	PREV=`sed -n "${NEXTLINE}p" ${FOCAILTEMP} | sed 's/ .*//'`
-	LINENUM=$((${NEXTLINE}+1))
-	sed -n "${LINENUM},$((${NEXTLINE}+20))p" ${FOCAILTEMP} |
-	while read x
-	do
-		WORD=`echo "${x}" | sed 's/ .*//'`	
-		if [ ${PREV} = ${WORD} ]
-		then
-			echo "${x}" >> ${FILENAME}
-		else
-			echo "${x}" >> focail$((${FILENUM}+1))-${TEANGA}.bs.pre
-		fi
-	done
-	LINENUM=$((${NEXTLINE}+21))
-done
-for FILENUM in 0 1 2 3 4 5 6
-do
-	TARGETFILE="Lingua-${UPPERTEANGA}-Gramadoir/share/focail${FILENUM}.bs"
-	rm -f ${TARGETFILE}
-	cat focail${FILENUM}-${TEANGA}.bs.pre | LC_COLLATE=POSIX sort -u -k1,1 -k2,2n | ${GRAMDIR}/cabhair.pl --compress --encoding=${NATIVE} > ${TARGETFILE}
-	chmod 644 ${TARGETFILE}
-	rm -f focail${FILENUM}-${TEANGA}.bs.pre
-done
-rm -f ${FOCAILTEMP}
+use strict;
+
+my @everything;
+binmode STDIN, ":bytes";
+while (<STDIN>) {
+	push @everything, $_;
+}
+
+my $linenum = 0;
+my $stop = $linenum + @everything/5;
+my $filenum = 0;
+my $prev;
+open (OUTSTREAM, ">:bytes", "lexicon$filenum.txt") or die "Could not open output file: $!\n";
+foreach (@everything) {
+	$linenum++;
+	if ($linenum > $stop) {
+		$prev =~ s/ .*/ /s;
+		unless (m/^$prev/) {
+			close OUTSTREAM;
+			$filenum++;
+			open (OUTSTREAM, ">:bytes", "lexicon$filenum.txt") or die "Could not open output file: $!\n";
+			$stop += @everything/5;
+		}
+	}
+	print OUTSTREAM $_;
+	$prev = $_;
+}
+exit 0;
