@@ -1,22 +1,21 @@
-# translation of gramadoir-0.4.po to Slovak
+# translation of gramadoir to Slovak
 # Copyright (C) 2004 Kevin P. Scannell.
 # This file is distributed under the same license as the gramadoir package.
 # Andrej Kacian <andrej@kacian.sk>, 2004.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gramadoir 0.4\n"
+"Project-Id-Version: gramadoir 0.5\n"
 "Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
 "POT-Creation-Date: 2004-08-25 11:22-0500\n"
-"PO-Revision-Date: 2004-01-10 23:04+0100\n"
+"PO-Revision-Date: 2004-08-25 21:20+0200\n"
 "Last-Translator: Andrej Kacian <andrej@kacian.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: KBabel 1.0.2\n"
+"Plural-Forms:  nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: KBabel 1.3\n"
 
 #: ponc.in.y:63
 #, c-format
@@ -56,7 +55,7 @@ msgstr "voľba %s nepripúšta parameter"
 
 #: gram.pl:174 gramdev.pl:88
 msgid "error parsing command-line options"
-msgstr ""
+msgstr "chyba pri čítaní parametrov príkazového riadku"
 
 #: gram.pl:177
 #, perl-format
@@ -83,14 +82,8 @@ msgid "version %s"
 msgstr "verzia %s"
 
 #: gram.pl:247 gramdev.pl:153
-msgid ""
-"This is free software; see the source for copying conditions.  There is NO"
-"\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
-"PURPOSE,\\nto the extent permitted by law."
-msgstr ""
-"Toto je voľne šíriteľný program, pozrite si zdrojové súbory. Neposkytuje sa"
-"\\nžiadna záruka, dokonca ani záruka PREDAJNOSTI alebo VHODNOSTI PRE "
-"\\nURČITÝ ÚČEL, v rozsahu povolenom zákonom."
+msgid "This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law."
+msgstr "Toto je voľne šíriteľný program, pozrite si zdrojové súbory. Neposkytuje sa\\nžiadna záruka, dokonca ani záruka PREDAJNOSTI alebo VHODNOSTI PRE \\nURČITÝ ÚČEL, v rozsahu povolenom zákonom."
 
 #: gram.pl:261
 #, perl-format
@@ -106,21 +99,20 @@ msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
 msgstr "    --iomlan       hlásiť všetky chyby (teda nepoužívať ~/.neamhshuim)"
 
 #: gram.pl:271
-msgid ""
-"    --ionchod=ENC  specify the character encoding of the text to be checked"
+msgid "    --ionchod=ENC  specify the character encoding of the text to be checked"
 msgstr "    --ionchod=ENC  určenie kódovania overovaného textu"
 
 #: gram.pl:274
 msgid "    --aschod=ENC   specify the character encoding for output"
-msgstr ""
+msgstr "    --aschod=ENC   určenie výstupného kódovania"
 
 #: gram.pl:277
 msgid "    --comheadan=xx choose the language for error messages"
-msgstr ""
+msgstr "    --comheadan=xx určenie jazyka pre chybové hlášky"
 
 #: gram.pl:280
 msgid "    --dath=COLOR   specify the color to use for highlighting errors"
-msgstr ""
+msgstr "    --dath=COLOR   určenie farby pre zvýraznenie chýb"
 
 #: gram.pl:283
 msgid "    --litriu       write misspelled words to standard output"
@@ -132,7 +124,7 @@ msgstr "    --aspell       navrhnúť opravu nesprávnych slov"
 
 #: gram.pl:289
 msgid "    --aschur=FILE  write output to FILE"
-msgstr ""
+msgstr "    --aschur=FILE  zapísať výstup do súboru FILE"
 
 #: gram.pl:292 gramdev.pl:133
 msgid "    --help         display this help and exit"
@@ -147,26 +139,20 @@ msgid "Options for developers:"
 msgstr "Voľby pre vývojárov:"
 
 #: gram.pl:300
-msgid ""
-"    --api          output a simple XML format for use with other applications"
-msgstr ""
+msgid "    --api          output a simple XML format for use with other applications"
+msgstr "    --api          formátovať výstup ako jednoduché XML, pre iné aplikácie"
 
 #: gram.pl:302
 msgid "    --html         produce HTML output for viewing in a web browser"
-msgstr ""
-"    --html         vytvorí HTML výstup pre prezeranie vo webovom prehliadači"
+msgstr "    --html         vytvorí HTML výstup pre prezeranie vo webovom prehliadači"
 
 #: gram.pl:308
-msgid ""
-"    --no-unigram   do not resolve ambiguous parts of speech by frequency"
+msgid "    --no-unigram   do not resolve ambiguous parts of speech by frequency"
 msgstr "    --no-unigram   neurčovať význam slov podľa počtu výskytu"
 
 #: gram.pl:314
-msgid ""
-"    --xml          write tagged XML stream to standard output, for debugging"
-msgstr ""
-"    --xml          zapísať označkovaný XML stream na štandardný výstup, pre "
-"odlaďovanie"
+msgid "    --xml          write tagged XML stream to standard output, for debugging"
+msgstr "    --xml          zapísať označkovaný XML stream na štandardný výstup, pre odlaďovanie"
 
 #: gram.pl:317 gramdev.pl:139
 msgid "If no file is given, read from standard input."
@@ -201,24 +187,15 @@ msgstr "Práve overujem %s"
 
 #: gramdev.pl:125
 msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
-msgstr ""
-"    --ilchiall     vypísať slová s nenájdeným významom, zotriedené podľa "
-"počtu výskytu"
+msgstr "    --ilchiall     vypísať slová s nenájdeným významom, zotriedené podľa počtu výskytu"
 
 #: gramdev.pl:128
-msgid ""
-"    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
-msgstr ""
-"    --minic        vypíše všetky značky, zotriedené podľa počtu výskytu (pre "
-"unigram-xx.txt)"
+msgid "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
+msgstr "    --minic        vypíše všetky značky, zotriedené podľa počtu výskytu (pre unigram-xx.txt)"
 
 #: gramdev.pl:130
-msgid ""
-"    --brill        find disambiguation rules via Brill's unsupervised "
-"algorithm"
-msgstr ""
-"    --brill        nájsť pravidlá pre určenie významu slov pomocou Brillovho "
-"algoritmu"
+msgid "    --brill        find disambiguation rules via Brill's unsupervised algorithm"
+msgstr "    --brill        nájsť pravidlá pre určenie významu slov pomocou Brillovho algoritmu"
 
 #: Gramadoir.pm.in:118
 #, perl-format
@@ -264,17 +241,16 @@ msgid "You should use \\/\\1\\/ here instead"
 msgstr "Mali by ste tu radšej použiť \\/\\1\\/"
 
 #: Gramadoir.pm.in:638
-#, fuzzy
 msgid "Non-standard form of \\/\\1\\/"
-msgstr "Neštandardná forma: možno \\/\\1\\/?"
+msgstr "Neštandardná forma \\/\\1\\/"
 
 #: Gramadoir.pm.in:642
 msgid "Derived from a non-standard form of \\/\\1\\/"
-msgstr ""
+msgstr "Odvodené z neštandardnej formy \\/\\1\\/"
 
 #: Gramadoir.pm.in:646
 msgid "Derived incorrectly from the root \\/\\1\\/"
-msgstr ""
+msgstr "Odvodené nesprávne z koreňa \\/\\1\\/"
 
 #. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
 #: Gramadoir.pm.in:651
@@ -336,51 +312,24 @@ msgstr "Je tu potrebný genitív"
 
 #: Gramadoir.pm.in:708
 msgid "Not in database but apparently formed from the root \\/\\1\\/"
-msgstr ""
+msgstr "Nenašlo sa v databáze, ale očividne získané z koreňa \\/\\1\\/"
 
 #: Gramadoir.pm.in:712
 msgid "Do you mean \\/\\1\\/?"
-msgstr ""
+msgstr "Mysleli ste \\/\\1\\/?"
 
 #: Gramadoir.pm.in:716
 msgid "Derived form of common misspelling \\/\\1\\/?"
-msgstr ""
+msgstr "Odvodená forma bežnej gramatickej chyby \\/\\1\\/?"
 
 #: Gramadoir.pm.in:720
 msgid "Not in database but may be a compound \\/\\1\\/?"
-msgstr ""
+msgstr "Nenašlo sa v databáze, môže ísť o zložené slovo \\/\\1\\/?"
 
 #: Gramadoir.pm.in:724
 msgid "Not in database but may be a non-standard compound \\/\\1\\/?"
-msgstr ""
+msgstr "Nenašlo sa v databáze, môže ísť o neštandardné zložené slovo \\/\\1\\/?"
 
 #: Gramadoir.pm.in:728
 msgid "Possibly a foreign word (the sequence \\/\\1\\/ is highly improbable)"
-msgstr ""
-
-#~ msgid ""
-#~ "    --aspell       suggest corrections for misspellings (requires GNU "
-#~ "aspell)"
-#~ msgstr ""
-#~ "    --aspell       navrhnúť opravu nesprávnych slov (vyžaduje GNU aspell)"
-
-#~ msgid ""
-#~ "    --teanga=XX    specify the language of the text to be checked "
-#~ "(default=ga)"
-#~ msgstr ""
-#~ "    --teanga=XX    určenie jazyku overovaného textu(prednastavené=ga)"
-
-#~ msgid "aspell-%s is not installed"
-#~ msgstr "aspell-%s nie je nainštalovaný"
-
-#~ msgid "Unknown word (ignoring remainder in this sentence)"
-#~ msgstr "Neznáme slovo (ignorujem zvyšok slov v tejto vete)"
-
-#~ msgid "%s: out of memory\n"
-#~ msgstr "%s: málo pamäti!\n"
-
-#~ msgid "%s: warning: check size of %s: %d?\n"
-#~ msgstr "%s: varovanie: overte veľkosť %s: %d?\n"
-
-#~ msgid "problem with the `cuardach' command\n"
-#~ msgstr "problém s príkazom `cuardach'\n"
+msgstr "Pravdepodobne cudzie slovo (sekvencia \\/\\1\\/ je veľmi nepravdepodobná)"
