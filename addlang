@@ -1,0 +1,27 @@
+#!/bin/bash
+if [ $# -ne 2 ]
+then
+	echo "Usage: addlang xx WORDLIST"
+	exit
+fi
+if grep "^${1} " TEANGACHA > /dev/null
+then
+	echo "Language ${1} is already in TEANGACHA"
+	exit
+fi
+make cabhair
+cp aonchiall-en.in aonchiall-${1}.in
+cp cuardach-en.c cuardach-${1}.c
+sed -i "s/_en/_${1}/g" cuardach-${1}.c
+echo "0" > eile-${1}.bs
+cp eisceacht-en.in eisceacht-${1}.in
+sed -i '1d; 7,$d' eisceacht-${1}.in
+(cat ${2} | wc -l | sed 's/^ *//'; cat ${2} | sed 's/$/ 1/' | ./cabhair 0) > focail-${1}.bs
+chmod 644 focail-en.bs
+cp giorr-xx giorr-${1}
+chmod 755 giorr-${1}
+cp macra-en.meta.sed macra-${1}.meta.sed
+cp rialacha-en.in rialacha-${1}.in
+cp unigram-en.pre unigram-${1}.pre
+cp unigram-en.txt unigram-${1}.txt
+vi TEANGACHA
