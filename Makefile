@@ -95,10 +95,10 @@ triail.html : all triail
 	./gr --html triail > triail.html
 
 distclean :
-	rm -f triail.html cuardach cuardach.o rialacha.pl aonchiall.pl eisceacht.pl gr cabhair.o cabhair
+	rm -f triail.html cuardach cuardach.o rialacha.pl aonchiall.pl eisceacht.pl gr cabhair.o cabhair triail.err.old
 
 clean :
-	rm -f triail.html cuardach cuardach.o rialacha.pl aonchiall.pl eisceacht.pl gr cabhair.o cabhair
+	rm -f triail.html cuardach cuardach.o rialacha.pl aonchiall.pl eisceacht.pl gr cabhair.o cabhair triail.err.old
 
 maintainer-clean :
 	make distclean
@@ -127,7 +127,9 @@ dist : triail.err
 	rm -f ../$(APPNAME)
 
 triail.err : all triail
+	mv -f triail.err triail.err.old
 	./gr triail > triail.err
+	- diff triail.err.old triail.err
 
 focail.bs : FORCE
 	make cabhair
