@@ -73,6 +73,16 @@ s/^(huíbh) 98$/$1 99/;
 s/^((?:n-|[bmd]')?uíbh) 9[68]$/$1 97/;
 s/^(hUltaibh) 98$/$1 99/;
 s/^((?:n|[bmd]')?Ultaibh) 9[68]$/$1 97/;
+#  autonomous imperative is very rare.  It does exist though, see OF81
+#  for several examples:  Ná hitear...  etc.
+#  The only ones that are unambiguous are the ones with initial "h",
+#  all others will resort (sensibly) to the present autonomous
+s/^([^ ]+) 192$/$1 127/;
+#  same for pres. subjunctive autonomous; only unambiguous ones are
+#  "rabhthar" and "dheirtear".  The first is used as an alt of "rabhthas"
+#  and the second is incorrectly lenited after "ní" in the present
+#  All other cases will default to present
+s/^([^ ]+) 199$/$1 127/;
 # now fix some to 127; these are mostly inflected forms
 # that happen to nearly coincide with something common, like
 # "airithe" for "áirithe"; but for which it's not acceptable
