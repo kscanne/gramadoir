@@ -707,7 +707,7 @@ sub localize_me
 
 	$msg =~ m/^([^{]+)/;
 	my $macro = $1;
-	my $msgstr = '';
+	my $msgstr = '-';
 	if (exists($MESSAGES{$macro})) {
 		my $msgid = $MESSAGES{$macro};
 		if ($msg =~ m/{(.*)}$/) {
