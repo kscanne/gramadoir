@@ -232,10 +232,12 @@ that you should think of this script as written in a meta-language
 which is making reference to the languages of the *.in and *.pl
 files.   In practical terms this means that there is an extra
 level of "escape" in the shell (sed) commands: if you want to
-create a pattern matching "&lt;/N&gt;" in the Perl file, it will look like
-"&lt;\\\/N&gt;" in <i>gin.meta.sed</i>.   The language of the Perl
+create a pattern matching "&lt;\/N&gt;" in the Perl file, it will look like
+"&lt;\\\/N&gt;" in <i>gin.meta.sed</i>.   Note too that the 
+language of the Perl
 file is itself a meta-language, one level above the language of the 
-actual XML stream.
+actual XML stream (so the pattern "&lt;\/N&gt;" matches "&lt;/N&gt;"
+in the XML).
 </p>
 
 <h3><i>rialacha</i></h3>
