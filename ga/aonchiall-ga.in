@@ -120,6 +120,9 @@ an <B>dála</B>:<N pl="n" gnt="n" gnd="f">
 <B>Dé</B>:<N pl="n" gnt="y" gnd="m">
 <N>Dé</N> <B><Z>ANYNMG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <N>Dé</N> <B><Z>ANYNFG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+# noun forms in phrases "ó dheas", "i ndeas", etc. always mutated
+# doing this hear helps "go+<A>"
+<B>[Dd]eas</B>:<A pl="n" gnt="n">
 # ok as is; "trí bliana déag", etc.  "trí déag"... in comhshuite
 <B>[Dd]éag</B>:<N pl="n" gnt="n">
 <B>n?[Dd]h?earna</B>:<V p="y" t="caite">
@@ -483,7 +486,8 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 # functionally same as the adverb "too"; hopefully noun is picked up with <S>?
 <B>[Ll]eis</B>:<O>
 # as, faoi (tríd only other handled above)
-<B><Z>PREPPRONM</Z>ANYTHING</B> <S>ANYTHING</S>:<O>
+# Baintear feidhm as chun aicídí súl a mhaolú => "as" is <O> (see rialacha)
+<B><Z>PREPPRONM</Z>ANYTHING</B> <[RS]>ANYTHING</[RS]>:<O>
 <B><Z>PREPPRONM</Z>ANYTHING</B>:<S>
 # dar le/liom/liomsa/lena etc.
 <B>[Dd]ar</B> <[DOST]>ANYTHING</[DOST]>:<S>

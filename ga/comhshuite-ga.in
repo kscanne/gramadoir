@@ -8,6 +8,7 @@
 # on the web page:  http://borel.slu.edu/gramadoir/
 # Please send me any useful additional rules for inclusion in
 # future releases: <scannell@slu.edu>
+[Aa]s [Aa] chéile:<R>
 [Aa] chéile:<R>
 [Aa] [Cc]hloi?g:<R>
 # corpas; never followed by article; usually "a lán+pl" or "a lán acu"
@@ -131,6 +132,7 @@ Fear Manach:<N pl="n" gnt="n">
 [Gg]o brách:<R>
 [Gg]o ceann:<S>
 [Gg]o chéile:<R>
+[Gg]o [Dd]eimhin:<R>
 [Gg]o deo:<R>
 [Gg]o díreach:<R>
 # rare compound <S> not governing genitive
@@ -206,6 +208,7 @@ Hong Cong:<N pl="n" gnt="n">
 # rare compound <S> not governing genitive
 [Ii] ngach:<S>
 [Ii] ngan fhios:<R>
+[Ii] ngearr:<R>
 [Ii] rith:<S>
 [Ii] sáinn:<R>
 [Ii]n aghaidh:<S>
@@ -232,7 +235,7 @@ Hong Cong:<N pl="n" gnt="n">
 h?Inis Mór:<N pl="n" gnt="n" gnd="f">
 # actually "idir sin is tráthas"
 # is tráthas:<N>
-[Ll]e chéile:<R>
+[Ll]e [Cc]héile:<R>
 [Ll]e cois:<S>
 # rare instance in which déanaí is not preceded by copula; see rialacha
 [Ll]e déanaí:<R>
