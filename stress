@@ -7,6 +7,8 @@ echo "test help flag"
 gr --help
 echo "test version flag"
 gr --version
+echo "test segmentation"
+echo "Several.  Sentences.  Here!" | gr --iomlan
 echo "test litriu flag"
 gr --litriu --iomlan triail.2
 echo "test xml flag"
@@ -19,6 +21,8 @@ echo "test English"
 head -n 42 COPYING | gr --iomlan --teanga=en --xml
 echo "test English: ASCII character set"
 echo 'This string has embédded non-ASCII characters!' | gr --xml --iomlan --teanga=en
+echo "test aspell support"
+echo "Militriu." | gr --iomlan --aspell
 echo "test various error messages" >&2
 rm -f nonexistentfile
 gr nonexistentfile
@@ -29,6 +33,7 @@ gr --fakeoption=fakearg /dev/null
 gr --teanga /dev/null
 gr --xml=fakearg /dev/null
 gr --teanga=el /dev/null
+gr --teanga=EN --aspell /dev/null
 gr --ionchod=fakecode /dev/null
 ##  add stuff for ponc.in  checks
 mv /usr/local/share/gramadoir/focail-ga.bs ./f.bs
