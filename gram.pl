@@ -173,6 +173,9 @@ sub localized_die
 	elsif ( $signal =~ m/^getopt/ ) {
 		$msg = gettext('error parsing command-line options');
 	}
+	elsif ( $signal =~ m/^Invalid attribute name ([^ ]*)/ ) {
+		$msg = gettext('Unable to set output color to %s', $1);
+	}
 	elsif ( $signal =~ m/^gram: maketext (.*)/ ) {
 		$msg = gettext('Language %s is not supported.', $1);
 	}
@@ -214,6 +217,9 @@ eval {
 die "getopt error" if $@;
 
 $xml = 1 if $nounigram;
+unless ($dath eq "none") {
+eval { color $dath };
+}
 
 if ($aschur) {
 	unless ($^O eq 'MSWin32') {
