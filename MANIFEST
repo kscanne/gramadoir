@@ -30,6 +30,7 @@ share/focail6.bs		"     "     lowest freq.
 share/gramadoir.el		Emacs Lisp interface
 share/gramadoir.sxw		OpenOffice sample document and macro
 share/gramadoir.vim		Vim interface
+share/morph.bs			Morphological rules
 share/nocombo.bs		Words that don't form compounds
 share/pos.bs			Part-of-speech tags
 t/Lingua-@UPPERTEANGA@-Gramadoir.t		Test suite
