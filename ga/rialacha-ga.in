@@ -202,6 +202,7 @@ ANYTHING <VNOLEN>LENITEDFUTURE</VNOLEN>:OK
 <S>[Aa]mhail</S> <T>an</T> <NMCS>INITIALVOWEL</NMCS>:PREFIXT
 # CB p.22 #7.b, p.132 #4; vowel exception from corpus
 #. An bainim sult as bás an drochdhuine?
+#. An éireodh níos fearr leo dá mba mar sin a bheidís (OK)?
 <Q>[Aa]n</Q> <V>UNECLIPSEDCONS</V>:URU
 # CB p.132 #5
 <Q>[Aa]n</Q> <VPAST>ANYTHING</VPAST>:BACHOIR{ar}
@@ -289,8 +290,9 @@ h?[Aa]on <N>UNLENITEDBCFGMP</N>:SEIMHIU
 <Q>[Cc][áé] [Mm]héad</Q> <NP>ANYTHING</NP>:UATHA
 #. Faigh amach cé mhéad saile a bhíonn i sampla d'uisce.
 <Q>[Cc][áé] [Mm]héad</Q> <NGS>ANYTHING</NGS>:NOGENITIVE
-# CB p.22 #7.c, p.132 #4
+# CB p.22 #7.c, p.132 #4; unlike "<Q>An</Q>" this one eclipses vowels too
 #. Cá cuireann tú do thréad ar féarach?
+#. Cá úsáidfear an mhóin?
 <Q>[Cc]á</Q> <V>UNECLIPSED</V>:URU
 # CB p.24 #11.a.iii, LGG p.113
 #. Cá áit a nochtfadh sé é féin ach i mBostún!
@@ -386,6 +388,11 @@ h?[Aa]on <N>UNLENITEDBCFGMP</N>:SEIMHIU
 [Cc]hun <N>LENITED</N>:NISEIMHIU
 #. Tiocfaidh deontas faoin alt seo chun bheith iníoctha (OK).
 [Cc]hun <N>bheith</N>:OK
+# OD clog^1.2b; "a chloi?g" is in comhshuite; worth trapping 
+# since this can follow "trí", exception to "trí a" => "trína" rule
+# "her bell/clock" is a potential exception but never in the corpus.
+#. D'éirídís ar maidin ar a ceathair a clog.
+[Aa] g?[Cc]loi?g:SEIMHIU
 # CB p.13 #3.f
 #. Bhí sé cúig bhanlámh ar fhad, cúig banlámh ar leithead.
 [Cc]úig <NCS>UNLENITED</NCS>:SEIMHIU
@@ -454,16 +461,13 @@ Dé Aoine:PREFIXH
 # CB p.84 #8, p.132 #2
 # aonchiall disambiguates "de" to <O> in this context, so rule never applies
 #<S>[Dd]e</S> a:BACHOIR{dá}
-# CB p.132 #2
-<S>[Dd]e</S> ar:BACHOIR{dár}
 # CB p.84 #8, p.132 #2
 #. Tá sé de chúram seirbhís a chur ar fáil do a gcustaiméirí i nGaeilge.
 [Dd]o a:BACHOIR{dá}
-# CB p.132 #2
-[Dd]o ar:BACHOIR{dár}
-# CB p.84 #8
+# CB p.84 #8, p.132 #2
 #. Seinnigí moladh ar an gcruit do ár nDia.
-[Dd][eo] ár:BACHOIR{dár}
+#. Is é seo mo Mhac muirneach do ar thug mé gnaoi.
+[Dd][eo] [áa]r:BACHOIR{dár}
 # CB p.18 #9.j, p.74 #2; "dó dhéag" in comhshuite
 #. Tabharfaidh an tUachtarán a óráid ag leath i ndiaidh a dó déag Dé Sathairn.
 [Dd]ó déag:SEIMHIU
@@ -574,6 +578,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Ii]</S> [Nn]a:BACHOIR{sna}
 # CB p.84 #8, p.132 #2
 #. An bhfuil aon uachtar reoite i a cuisneoir?
+#. Roghnaigh na teangacha i a thaispeánfar na leathanaigh seo.
 <S>[Ii]</S> a:BACHOIR{ina}
 # CB p.132 #2
 #. Rinne gach cine é sin sna cathracha i ar lonnaíodar.
@@ -608,6 +613,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Ll]e</S> <T>na</T>:BACHOIR{leis na}
 # CB p.84 #8, p.132 #2
 #. Labhraíodh gach duine an fhírinne le a chomharsa.
+#. Aontaím le a bhfuil ráite agat.
 <S>[Ll]e</S> a:BACHOIR{lena}
 # CB p.132 #2
 #. Beir i do láimh ar an tslat le ar bhuail tú an abhainn, agus seo leat.
@@ -652,6 +658,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <D>[Mm]o</D> dhá UNLENITED:SEIMHIU
 # CB p.22 #7.f, p.132 #4
 #. Mura tagann aon duine i gcabhair orainn, rachaimid anonn chugaibh.
+#. Fiú mura éiríonn liom, beidh mé ábalta cabhrú ar bhonn deonach.
 <C>[Mm]ura</C> <V>UNECLIPSED</V>:URU
 # CB p.132 #5
 #. Mura dtuig siad é, nach dóibh féin is mó náire?
@@ -814,6 +821,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Óó]n</S> <N>MUTATEDDST</N>:NICLAOCHLU
 # CB p.84 #8, p.132 #2
 #. Amharcann sé ó a ionad cónaithe ar gach aon neach dá maireann ar talamh.
+#. Is é an planda ó a bhfaightear línéadach.
 <S>[Óó]n?</S> a:BACHOIR{óna}
 # CB p.132 #2
 #. Seo iad a gcéimeanna de réir na n-áiteanna ó ar thosaíodar.
@@ -911,7 +919,8 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 [Tt]rí uaire?:BACHOIR{huaire}
 # CB p.84 #8 <D>a</D>, p.132 #2 <S>a</D>
 #. Scríobhaim chugaibh mar gur maitheadh daoibh bhur bpeacaí trí a ainm.
-<S>[Tt]rí</S> <[^U]>a</[^U]>:BACHOIR{trína}
+#. "Bruithniú" a thugtar ar an phróiseas trí a mbaintear miotal as mianach.
+<S>[Tt]rí</S> a:BACHOIR{trína}
 # CB p.132 #2; <Q> or <S>
 #. Ní fhillfidh siad ar an ngeata trí ar ghabh siad isteach.
 <S>[Tt]rí</S> ar:BACHOIR{trínar}
