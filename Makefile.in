@@ -181,6 +181,7 @@ installhtml :
 	$(INSTALL_DATA) iompar.html $(webhome)
 	$(INSTALL_DATA) sios.html $(webhome)
 	$(INSTALL_DATA) sonrai.html $(webhome)
+	$(INSTALL_DATA) stair.html $(webhome)
 	$(INSTALL_DATA) sampla.html $(webhome)
 
 installweb :
@@ -219,6 +220,8 @@ ChangeLog : FORCE
 
 dist : FORCE
 	$(MAKE) ChangeLog
+	$(MAKE) triail
+	$(MAKE) triail.err
 	$(LN_S) gr ../$(TARBALL)
 	mv TEANGACHA TEANGACHA.bak
 	cp TEANGACHA.dist TEANGACHA
@@ -272,6 +275,9 @@ dist : FORCE
 	mv $(TARBALL).tar.gz $(webhome)
 	rm -f ../$(TARBALL)
 	mv -f TEANGACHA.bak TEANGACHA
+
+triail : rialacha-ga.in
+	sed -n '/^#\./{s/^#\. //; p}' rialacha-ga.in > triail
 
 triail.err : FORCE
 	rm -f triail.err
