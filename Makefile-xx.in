@@ -212,7 +212,7 @@ locale_ok : $(PERLDOK)
 	done
 	touch locale_ok
 
-.in.pl :
+%.pl : %.in macra-$(TEANGA).meta.pl $(GRAMDIR)/gin.meta.pl pos-$(TEANGA).txt
 	cat "$<" | LC_ALL="C" $(PERL) $(GRAMDIR)/gin.meta.pl `sed -n '/<[A-Z] /{s/^[0-9]* <\([A-Z]\).*/\1/; p;}' pos-$(TEANGA).txt | sort -u | tr -d "\n"` | LC_ALL="C" $(PERL) -p macra-${TEANGA}.meta.pl | LC_ALL="C" $(PERL) $(GRAMDIR)/`$(ECHO) $< | sed 's/-.*//'`.meta.pl | sed 's/^/\t/' > $@
 
 giorr-$(TEANGA).pl : giorr-$(TEANGA).txt giorr-$(TEANGA).pre
