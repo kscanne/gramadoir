@@ -1,5 +1,5 @@
---- Makefile	2004-11-02 23:58:26.935251784 -0600
-+++ Makefile.ok	2004-11-02 22:58:08.664312576 -0600
+--- Makefile	2004-11-03 17:47:37.593869312 -0600
++++ Makefile.ok	2004-11-03 17:15:08.605160632 -0600
 @@ -76,6 +76,15 @@
  
  Makefile : $(GRAMDIR)/Makefile-xx.in configure
@@ -16,7 +16,7 @@
  
  test : perl
  	(cd $(PERLD); make test)
-@@ -322,4 +331,74 @@
+@@ -322,4 +331,77 @@
  zipped : perl
  	(cd $(PERLD); make zipdist)
  
@@ -65,6 +65,9 @@
 +	sort -k1,1 $(EARR) > ./tempsrc
 +	sed 's/ .*//' ./tempsrc | keepif -n ./tempfocail latin-1 | sort -u | join ./tempsrc - | LC_COLLATE=POSIX sort -k1,1 | $(EGREP) . > ./earraidi-ga.bs
 +	rm -f tempfocail tempsrc
++
++lexicon-$(TEANGA).xml : lexicon-$(TEANGA).txt
++	cat lexicon-$(TEANGA).txt | sed 's/ .*//' | alltags > $@
 +
 +BIGDIR = /home/spas
 +
