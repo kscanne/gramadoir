@@ -1,0 +1,35 @@
+# This file contains the disambiguation rules which use local context
+# to select correct stems for ambiguous tokens.
+# Copyright (C) 2003 Kevin P. Scannell <scannell@slu.edu>
+#
+# This is free software; see the file COPYING for copying conditions.  There is
+# NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#
+# Users can add to this list by following the syntax described 
+# on the web page:  http://borel.slu.edu/gramadoir/
+# Please send me any useful additional rules for inclusion in
+# future releases: <scannell@slu.edu>
+<B>[Aa]n</B> <^V>ANYTHING</^V>:<T>
+<B>[Aa]n</B> <V>ANYTHING</V>:<Q>
+<B>[Aa]r</B> <T>ANYTHING</T>:<S>
+<B>[Aa]s</B> <T>ANYTHING</T>:<S>
+<B>[Aa]s</B> <N>ANYTHING</N>:<S>
+<T>[Nn]a</T> <B>ba</B>:<N>
+<B>[Bb]a</B>:<V>
+<B>[Bb]h?eag</B>:<A pl="n" gnt="n">
+<B>[Cc]é</B> <P>ANYTHING</P>:<Q>
+<B>[Dd]ár</B> <N>ANYTHING</N>:<D>
+<B>[Dd]ár</B> <V>ANYTHING</V>:<S>
+<B>[Ff]aoi</B> <T>ANYTHING</T>:<S>
+<B>[Ff]aoi</B> <N>ANYTHING</N>:<S>
+<B>[Ff]aoin</B>:<S>
+<B>[Ff]h?ear</B>:<N pl="n" gnt="n" gnd="m">
+<B>gur</B> <V>ANYTHING</V>:<C>
+<B>[Ll]eis</B> <T>ANYTHING</T>:<S>
+<B>[Mm]á</B> <V>ANYTHING</V>:<C>
+<B>[Mm]ar</B> <N>ANYTHING</N>:<S>
+<B>[Mm]ar</B> <T>ANYTHING</T>:<S>
+<B>ó</B> <V>ANYTHING</V>:<C>
+<B>ó</B>:<S>
+<B>San</B> CAPITAL:<N>
+<B>San</B> ANYTHING:<S>
