@@ -9,6 +9,7 @@
 # Please send me any useful additional rules for inclusion in
 # future releases: <scannell@slu.edu>
 [Aa] chéile:<R>
+[Aa] [Cc]hloi?g:<R>
 # corpas; never followed by article; usually "a lán+pl" or "a lán acu"
 [Aa] lán:<S>
 [Aa] thiarcais:<I>
@@ -129,6 +130,7 @@ Fear Manach:<N pl="n" gnt="n">
 [Gg]liog gleag:<N pl="n" gnt="n">
 [Gg]o brách:<R>
 [Gg]o ceann:<S>
+[Gg]o chéile:<R>
 [Gg]o deo:<R>
 [Gg]o díreach:<R>
 # rare compound <S> not governing genitive
@@ -203,7 +205,7 @@ Hong Cong:<N pl="n" gnt="n">
 [Ii] ndiaidh:<S>
 # rare compound <S> not governing genitive
 [Ii] ngach:<S>
-[Ii] ngan:<S>
+[Ii] ngan fhios:<R>
 [Ii] rith:<S>
 [Ii] sáinn:<R>
 [Ii]n aghaidh:<S>
@@ -258,6 +260,7 @@ Mh?aigh Eo:<N pl="n" gnt="n">
 # infrequent
 [Mm]ugadh magadh:<N pl="n" gnt="n">
 na bhfud:<N pl="y" gnt="y" gnd="m">
+[Nn]í ba:<R>
 [Nn]í hamháin:<U>
 [Nn]í hamhlaidh:<U>
 # infrequent

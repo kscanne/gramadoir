@@ -239,6 +239,11 @@ a <B>sé</B>:<A pl="n" gnt="n">
 <B>[Ss]iad</B>:<P>
 <B>[Tt]har</B>:<S>
 <B>[Tt]hart</B>:<R>
+# "east" not genitive of "bush".
+# weird performance bug when these two are lumped together as [Tt]hoir...
+<N>ANYTHING</N> <B>thoir</B>:<A pl="n" gnt="n">
+<N>ANYTHING</N> <B>Thoir</B>:<A pl="n" gnt="n">
+<B>[Tt]hoir</B>:<R>
 # Béarla
 <B>T[Hh][Ee]</B>:<F>
 <[^N]>ANYTHING</[^N]> <B>the</B>:<F>
@@ -312,8 +317,8 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 <R>[Cc]homh</R> <B><Z>ANYWITHCOMMONH</Z>ANYTHING</B>:<A pl="n" gnt="n" h="y">
 # comparitive, superlative; not nec. all adjective, e.g. "níos déanaí"
 <R>[Nn]íos</R> <B><Z>ANYWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
-<R>[Nn]íb</R> <B><Z>ANYWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
-<R>[Nn]íba</R> <B><Z>ANYWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
+# "ní ba", "níb", "níba"
+<R>NIBS</R> <B><Z>ANYWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
 # uppercase "Is" is usually copula: "Is ócáidí iontacha"
 is <B><Z>ANYWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
 [Gg]o <B><Z>NOUNADJ</Z>ANYTHING</B>:<A pl="n" gnt="n">
