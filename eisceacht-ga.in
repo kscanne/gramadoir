@@ -6,6 +6,7 @@
 #
 # corpas; exception to "lenite adj after fem noun"; most compound adjs are #'s
 # NB "ceannann céanna" lenites as it should, but handled by comhshuite.
+# 
 <NFCS>ANYTHING</NFCS> <A>COMPOUND</A>:
 # rule now defunct anyway
 #<NMGS>ANYTHING</NMGS> céad:
@@ -30,7 +31,7 @@ ANYTHING [Aa]n méid:
 # CB p.133 #12; An raibh, An bhfuair, etc. ok
 <Q>[Aa]n</Q> <VPAST>PASTNORFORM</VPAST>:
 # An talamh ar ar leag tú...
-ar:
+ar ar:
 ANYTHING bheith:
 bheith ANYTHING:
 [Cc]á mhinice|fhad|mhéad:
@@ -54,9 +55,9 @@ g?[Cc]h?eithre hairde:
 # CB p.24 #11.b
 [Cc]homh <AWITHH>ANYTHING</AWITHH>:
 # aithníonn ciaróg ciaróg eile
-ciaróg:
+ciaróg ciaróg:
 # go deo deo
-deo:
+deo deo:
 # CB p.23 #11.a.ix
 [Dd]ara <NWITHH>ANYTHING</NWITHH>:
 # CB p.23 #11.a.ix
@@ -68,13 +69,13 @@ deo:
 # rule now defunct
 #<NFGS>ANYTHING</NFGS> <A>dhá</A>:
 # Tabhair iad seo do do chara
-do:
+do do:
 # CB p.133 #12.b
 ANYTHING dú(irt|ra[dm]ar|radh):
 # sin é é!
-é:
+é é:
 # le fada fada (an lá)
-fada:
+fada fada:
 # now in comhshuite
 #[Ff]aoi deara:
 ANYTHING gach:
@@ -95,18 +96,18 @@ ANYTHING <VNOLEN>LENITEDFUTURE</VNOLEN>:
 [Ll]e bhur|[Cc]héile|dhá:
 <S>([Ll]e|[Ss]na)</S> <NWITHH>ANYTHING</NWITHH>:
 # go leor leor
-leor:
+leor leor:
 # exception to rule prohibiting lention in present, future, and imperative
 [Mm]á <VNOLEN>LENITED</VNOLEN>:
 # CB p.133 #12.b; exception to requiring lenition after "má"
 [Mm]á <VNOLEN>ABAIRPRFU</VNOLEN>:
 # CB p.133 #12.c
 [Mm]á tá(i[dm]|imid|thar)?:
-mé:
+mé mé:
 # milliún milliún punt
-milliún:
+milliún milliún:
 # go mór mór
-mór:
+mór mór:
 # CB p.133 #12
 <C>[Mm]ura</C> <VPAST>PASTNORFORM</VPAST>:
 <T>[Nn]a</T> <NWITHH>ANYTHING</NWITHH>:
@@ -141,7 +142,7 @@ mór:
 # corpas; exception to "lenite adj after fem noun/slender plural"
 <N>ANYTHING</N> seo:
 # Agus sin sin de sin!  OD sin^1.1c
-sin:
+sin sin:
 # corpas; exception to "lenite adj after beirt+noun"
 <N>[Bb]h?eirte?</N> <N>ANYTHING</N> sin:
 # corpas; exception to "lenite adj after fem noun/slender plural"
