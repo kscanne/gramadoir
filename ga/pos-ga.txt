@@ -43,11 +43,8 @@
 128 <A pl="n" gnt="n">
 130 <A pl="n" gnt="n" h="y">
 152 <A pl="n" gnt="y" gnd="f">
-154 <A pl="n" gnt="y" gnd="f" h="y">
 156 <A pl="n" gnt="y" gnd="m">
-158 <A pl="n" gnt="y" gnd="m" h="y">
 160 <A pl="y" gnt="n">
-162 <A pl="y" gnt="n" h="y">
 192 <V p="n" t="ord">
 193 <V p="n" t="láith">
 194 <V cop="y">
