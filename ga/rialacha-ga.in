@@ -386,8 +386,8 @@ h?[Aa]on <N>LENITEDDST</N>:NISEIMHIU
 # corpus.  Compare disambig rules for "mba" in aonchiall
 #  don't do this for "mba" itself since it disambigs as NPL otherwise
 #  and likely we'd get a NIURU from the noun rules
-<A pl="n" gnt="n">INITIALMBAPOST</A>:NIURU
-[Dd]h?á|[Gg]o|[Nn]ach <E><A pl="n" gnt="n">INITIALMBAPOST</A></E>:OK
+INITIALMBAPOST:NIURU
+[Dd]h?á|[Gg]o|[Nn]ach <E>INITIALMBAPOST</E>:OK
 # CB p.16 #7 (N), p.18 #10 (A)
 #. Ba maith liom fios a thabhairt anois daoibh.
 #. Dúirt daoine go mba ceart an poll a dhúnadh suas ar fad.
