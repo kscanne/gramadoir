@@ -76,6 +76,7 @@
 ^ath([bcdfgmp]h)	$1		0	<[ANV].*>
 ^ath(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>
 ^ath(s[^aeiouáéíóúlnrh])	$1	0	<[ANV].*>
+^ath-?th		at		1	<[ANV].*>
 ^ath-?th		th		1	<[ANV].*>
 ^comh([^bcdfgmnpst-])	$1		0	<[ANV].*>
 ^comh([bcdfgpt]h)	$1		0	<[ANV].*>
@@ -83,11 +84,13 @@
 ^comh(s[^aeiouáéíóúlnrh])	$1	0	<[ANV].*>
 ^có(mh[aáoóuú])		$1		0	<[ANV].*>
 ^cói(mh[eéií])		$1		0	<[ANV].*>
-^comh-mh		mh		1	<[ANV].*>
-^comhn			cón		1	<[ANV].*>
 ^có(n[aáoóuú])		$1		0	<[ANV].*>
 ^cói(n[eéií])		$1		0	<[ANV].*>
-^có-(..)		$1		1	<[ANV].*>
+^coimh-mh		cóimh		1	<[ANV].*>
+^comh-mh		mh		1	<[ANV].*>
+^co(i?)mh-?n		có$1n		1	<[ANV].*>
+^có-(..)		comh$1		1	<[ANV].*>
+^có([bcdfgpt]h)		comh$1		1	<[ANV].*>
 ^do-([aeiouáéíóú])	$1		0	<[AN].*>
 # ^do([lnr]) BELOW
 ^do([bcdfgmpt]h)	$1		0	<[AN].*>
@@ -135,6 +138,9 @@
 # ^in([^bcfgmp-]) BELOW
 ^in-(n)			$1		0	<[AN].*>
 ^in([bcfgmp]h..)	$1		0	<[AN].*>
+^leas-(s)		$1		0	<[AN].*>
+^leas([aeiouáéíóúd]..)	$1		0	<[AN].*>
+^leas([bcfgm]h..)	$1		0	<[AN].*>
 ^mí-([aeiouáéíóú])	$1		0	<[ANV].*>
 ^mí([aeiouáéíóú]..)	$1		2	<[ANV].*>  # míúsáid
 ^mí([lnr]..)		$1		0	<[ANV].*>
@@ -206,7 +212,9 @@ uithe$			ú		0	<N.*>
 ^duibh			dubh		1	<.+>
 ^ion			in		1	<.+>
 ^maill			mall		1	<.+>
+^nea-mb			neamhbh		1	<.+>
 ^nea-			neamh-		1	<.+>    # strip hyphen later
+^nea([cdfgpt]h)		neamh$1		1	<.+>
 ^óig			óg		1	<.+>
 ^prímh			príomh		1	<.+>
 ^réimh			réamh		1	<.+>
@@ -281,6 +289,7 @@ e[oó]chai(nn|dís)$	eoi$1		1	<V .* t="coinn">
 ([^e])óchai(nn|dís)$	$1ói$2		1	<V .* t="coinn">
 #   2nd declension Dinneen-style endings
 u(i?gh)			a$1		1	<.+>  # see next few
+aíd$			aíonn		1	<V .* t="láith"> # cialluíd
 aghadh			ú		1	<N.*>  # broad and slender
 i[dg]h(th?.)		i$1		1	<.+>  # marcaidhthe, masluighthe, beannuighth?ear
 thear$			tear		1	<V.*> # aut. present
@@ -288,17 +297,28 @@ ighim			ím		1	<V.*>    # broad and slender
 ighidh			í		1	<.+>    # subjunctive?
 ighinn			ínn		1	<.+>    # imperfect
 # Future forms: see OS88 p.215 for these (fe?as, etc. on p.63)
+#  socróid, dílseoid, 3rd plural forms in achtanna
 fa[ds]$			faidh		1	<V .* t="fáist">
 fea[ds]$		fidh		1	<V .* t="fáist">
-ó[ds]$			óidh		1	<V .* t="fáist">
-eo[ds]$			eoidh		1	<V .* t="fáist">
-# Future 2nd p., "r" forms noted on p.216
-fai[rs]$		faidh		1	<V .* t="fáist">
-fi[rsd]$		fidh		1	<V .* t="fáist">  # bainfid
+ói?[ds]$		óidh		1	<V .* t="fáist">
+eoi?[ds]$		eoidh		1	<V .* t="fáist">
+# Common in achtanna to have -fidh,-fid ending on broad stem, lots of 
+# other slender/broad mismatches:
+([aáoóuú][^aeiouáéíóú]*)fí$	$1faí	1	<V .* t="coinn">
+([aáoóuú][^aeiouáéíóú]*)fidh?$	$1faidh	1	<V .* t="fáist">
+([eéií][^aeiouáéíóú]*)fa(r|dh)$	$1fea$2	1	<V .* t="coinn">
+([eéií][^aeiouáéíóú]*)tar$	$1tear	1	<V .* t="láith"> # * not + for chítar
+# Future 2nd p., "r" forms noted on OS88 p.216;
+# see achtanna for íocfaid/íocfa, bainfid/bainfe
+fa$			faidh		1	<V .* t="fáist">
+fai[rsd]$		faidh		1	<V .* t="fáist">
+fe$			fidh		1	<V .* t="fáist">
+fi[rsd]$		fidh		1	<V .* t="fáist">
 óis$			óidh		1	<V .* t="fáist">
 eois$			eoidh		1	<V .* t="fáist">
-# Future autonomous; unwanted prefix h is common in achtanna
+# Future/Cond autonomous; unwanted prefix h is common in achtanna
 ^h(.+fe?ar)$		$1		1	<V .* t="fáist">
+^h(.+faí)$		$1		1	<V .* t="coinn">
 # Past; also see Di27 (present).  "r" forms on p.216
 (...)eas$		$1		1	<V .* t="caite">
 (..[^aeiouáéíóú])as$	$1		1	<V .* t="caite">
@@ -339,7 +359,12 @@ th(eá|ear)$		t$1		1	<V.*>
 ([aouáóú][^aeiouáéíóú-]*s)-san?$		$1	0	<[NV].*>
 ([aouáóú][^aeiouáéíóú-]*n)-na$			$1	0	<[NV].*>
 ([eiéí][^aeiouáéíóú-]*s)-se(an)?$		$1	0	<[NV].*>
-([eiéí][^aeiouáéíóú-]*n)ne$			$1	0	<[NV].*>
+([eiéí][^aeiouáéíóú-]*n)-ne$			$1	0	<[NV].*>
+#############################################################################
+#   common spelling errors
+uil$			úil		2	<A.*>
+ula$			úla		2	<A.*>
+eail$			eáil		2	<.+>    # common missing accent
 #############################################################################
 #  rules with somewhat lower probability (e.g. fo-, must be after non-stnd
 #  verb endings to avoid "foluíonn"  parsing as "fo+luíonn"
