@@ -335,15 +335,15 @@ msgstr "%s: ungültiger grammatische Code\n"
 #, c-format
 msgid "There was %d error.\n"
 msgid_plural "There were %d errors.\n"
-msgstr[0] "%d Fehler ist aufgetreten.\n"
-msgstr[1] "%d Fehler sind aufgetreten.\n"
+msgstr[0] "Es gab %d Fehler.\n"
+msgstr[1] "Es gab %d Fehler.\n"
 
 #: ponc.in.y:69
 #, c-format
 msgid "Successfully parsed %d rule.\n"
 msgid_plural "Successfully parsed %d rules.\n"
-msgstr[0] "%d grammatische Regel wurde erfolgreich analysiert.\n"
-msgstr[1] "%d grammatische Regeln wurden erfolgreich analysiert.\n"
+msgstr[0] "%d Regel erfolgreich geparst.\n"
+msgstr[1] "%d Regeln erfolgreich geparst.\n"
 
 #: ponc.in.y:79
 #, c-format
