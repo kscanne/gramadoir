@@ -377,81 +377,87 @@ Eclipsis missing.
 126: Tá do ghéaga spréite ar bhraillín ghléigeal os fharraige faoileán. 
 Unnecessary lenition.
 
-127: Agus tháinig scéin air roimh an pobal seo ar a líonmhaire. 
+127: Uaidh féin, b'fhéidir, pé é féin. 
+Prefix /h/ missing.
+
+128: Agus tháinig scéin air roimh an pobal seo ar a líonmhaire. 
 Initial mutation missing.
 
-128: Is gaiste é eagla roimh daoine. 
+129: Is gaiste é eagla roimh daoine. 
 Lenition missing.
 
-129: An bhfuil aon uachtar reoite agat sa oighear? 
+130: An bhfuil aon uachtar reoite agat sa oighear? 
 You should use /san/ here instead.
 
-130: An bhfuil aon uachtar reoite agat sa cuisneoir? 
+131: An bhfuil aon uachtar reoite agat sa cuisneoir? 
 Lenition missing.
 
-131: An bhfuil aon uachtar reoite agat sa seamair? 
+132: An bhfuil aon uachtar reoite agat sa seamair? 
 Prefix /t/ missing.
 
-132: An bhfuil aon uachtar reoite agat sa scoil (OK)? 
+133: An bhfuil aon uachtar reoite agat sa scoil (OK)? 
 Unknown word.
 
-133: An bhfuil aon uachtar reoite agat sa samhradh (OK)? 
+134: An bhfuil aon uachtar reoite agat sa samhradh (OK)? 
 Unknown word.
 
-134: Tá sé bráthair de chuid Ord San Phroinsias. 
+135: Tá sé bráthair de chuid Ord San Phroinsias. 
 Unnecessary lenition.
 
-135: San fásach cuirfidh mé crainn chéadrais. 
+136: San fásach cuirfidh mé crainn chéadrais. 
 Lenition missing.
 
-136: An bhfuil aon uachtar reoite agat san foraois? 
+137: An bhfuil aon uachtar reoite agat san foraois? 
 Lenition missing.
 
-137: Anois i ndeireadh an tséasúir bhí sé uaire d'oíche ann. 
+138: Anois i ndeireadh an tséasúir bhí sé uaire d'oíche ann. 
 You should use /huaire/ here instead.
 
-138: Céard atá ann ná sé cathaoirleach coiste. 
+139: Céard atá ann ná sé cathaoirleach coiste. 
 Lenition missing.
 
-139: Cuireadh boscaí ticeála isteach seachas bhoscaí le freagraí a scríobh isteach. 
+140: Cuireadh boscaí ticeála isteach seachas bhoscaí le freagraí a scríobh isteach. 
 Unnecessary lenition.
 
-140: Tá seacht lampa air agus seacht píopa ar gach ceann díobh. 
+141: Tá seacht lampa air agus seacht píopa ar gach ceann díobh. 
 Eclipsis missing.
 
-141: Iompróidh siad thú lena lámha sula bhuailfeá do chos in aghaidh cloiche. 
+142: Tá ar a laghad ceithre ní sa litir a chuir scaoll sna oifigigh. 
+Prefix /h/ missing.
+
+143: Iompróidh siad thú lena lámha sula bhuailfeá do chos in aghaidh cloiche. 
 Eclipsis missing.
 
-142: Ach sular sroich sé, dúirt sí: "Dúnaigí an doras air!" 
+144: Ach sular sroich sé, dúirt sí: "Dúnaigí an doras air!" 
 Lenition missing.
 
-143: Chuir iad ina suí mar a raibh onóir acu thar an cuid eile a fuair cuireadh. 
+145: Chuir iad ina suí mar a raibh onóir acu thar an cuid eile a fuair cuireadh. 
 Initial mutation missing.
 
-144: Timpeall trí uaire a chloig ina dhiaidh sin tháinig an bhean isteach. 
+146: Timpeall trí uaire a chloig ina dhiaidh sin tháinig an bhean isteach. 
 You should use /huaire/ here instead.
 
-146: Ní fhillfidh siad ar an ngeata trí ar ghabh siad isteach. 
+148: Ní fhillfidh siad ar an ngeata trí ar ghabh siad isteach. 
 You should use /trínar/ here instead.
 
-147: Beirimid an bua go caithréimeach trí an té úd a thug grá dúinn. 
+149: Beirimid an bua go caithréimeach trí an té úd a thug grá dúinn. 
 You should use /tríd an/ here instead.
 
-148: Coinníodh lenár sála sa chaoi nárbh fhéidir siúl trí ár sráideanna. 
+150: Coinníodh lenár sála sa chaoi nárbh fhéidir siúl trí ár sráideanna. 
 You should use /trínár/ here instead.
 
-149: Mar trínár peacaí, tá do phobal ina ábhar gáire ag cách máguaird orainn. 
+151: Mar trínár peacaí, tá do phobal ina ábhar gáire ag cách máguaird orainn. 
 Eclipsis missing.
 
-150: Gabhfaidh siad trí muir na hÉigipte. 
+152: Gabhfaidh siad trí muir na hÉigipte. 
 Lenition missing.
 
-151: Idir dhá sholas, um tráthnóna, faoi choim na hoíche agus sa dorchadas. 
+153: Idir dhá sholas, um tráthnóna, faoi choim na hoíche agus sa dorchadas. 
 Lenition missing.
 
-152: Tá sé-- tá sé- mo ---shin-seanathair (OK). 
+154: Tá sé-- tá sé- mo ---shin-seanathair (OK). 
 Unknown word.
 
-153: 23. IV. Is abairt í seo le giorrúcháin, cf. Dr. Scannell, Jr. agus m.sh. Caoimhín Ó Scanaill, T. D. atá i gceanas faoi réir m. sh. VIII, ceart go leor? 
+155: 23. IV. Is abairt í seo le giorrúcháin, cf. Dr. Scannell, Jr. agus m.sh. Caoimhín Ó Scanaill, T. D. atá i gceanas faoi réir m. sh. VIII, ceart go leor? 
 Unknown word, Unknown word (ignoring remainder in this sentence).
 
