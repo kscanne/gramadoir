@@ -12,10 +12,12 @@ if exists("loaded_gramadoir") || &compatible
    finish
 endif
 let loaded_gramadoir = 1
+let s:active_file = 0
 let s:cpo_save = &cpo
 set cpo&vim
 
 function s:Check()
+  echo "An Gramadóir: fan go fóill..."
   let l:filename=expand("%")
   if !strlen(l:filename)
     let l:filename=tempname()
@@ -31,9 +33,13 @@ function s:Check()
   execute "normal 1G"
   execute "normal \<C-W>t"
   execute "normal 1G"
+  let s:active_file = 1
 endfunction
 
 function s:NextError()
+  if s:active_file == 0
+    call s:Check()
+  endif
   syntax clear
   execute "normal \<C-W>b"
   syntax clear
@@ -55,6 +61,7 @@ function s:NextError()
 endfunction
 
 function s:QuitGr()
+  let s:active_file = 0
   execute "normal \<C-W>b"
   q!
 endfunction
@@ -62,20 +69,14 @@ endfunction
 if !hasmapto('<Plug>Gr')
   map <unique> <Leader>g <Plug>Gr
 endif
-if !hasmapto('<Plug>Aris')
-  map <unique> <Leader>n <Plug>Aris
-endif
 if !hasmapto('<Plug>Amach')
   map <unique> <Leader>a <Plug>Amach
 endif
 
-noremap <unique> <script> <Plug>Gr <SID>Check
-noremap <SID>Check :call <SID>Check()<CR>
-noremap <unique> <script> <Plug>Aris <SID>NextError
-noremap <SID>NextError :call <SID>NextError()<CR>
+noremap <unique> <script> <Plug>Gr <SID>NextError
+noremap <silent> <SID>NextError :call <SID>NextError()<CR>
 noremap <unique> <script> <Plug>Amach <SID>QuitGr
-noremap <SID>QuitGr :call <SID>QuitGr()<CR>
-
+noremap <silent> <SID>QuitGr :call <SID>QuitGr()<CR>
 
 let &cpo = s:cpo_save
 finish
