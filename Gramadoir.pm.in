@@ -199,6 +199,7 @@ array containing the sentences.
 sub get_sentences
 {
 	my ( $self, $text ) = @_;
+	return undef unless defined $text;
 	eval {from_to($text,$self->{'input_encoding'},'@NATIVE@') };
 # TRANSLATORS: "conversion" here means conversion between character encodings
 	croak gettext('conversion from %s is not supported', 
@@ -214,7 +215,7 @@ my $BD="\001";
 my $NOBD="\002";
 sub get_sentences_real
 {
-	my $sentences;
+	my $sentences = [];
 
 	for ($_[0]) {
 		s/<[^>]*>/ /g;  # naive; see comments above
@@ -491,7 +492,6 @@ sub unchecked_xml
 {
 	my $self = $_[0];
 	my $sentences = get_sentences_real($_[1]);
-	my $answer;
 	foreach my $sentence (@$sentences) {
 		$sentence = $self->tokenize($sentence);
 		$sentence =~ s/(<c>[^<]+<\/c>) \1/<E msg="DUBAILTE">$1 $1<\/E>/g;
@@ -516,11 +516,12 @@ in the input text.
 sub spell_check
 {
 	my ( $self, $text ) = @_;
+	return undef unless defined $text;
 	eval {from_to($text,$self->{'input_encoding'},'@NATIVE@') };
 	croak gettext('conversion from %s is not supported', 
 			$self->{'input_encoding'}) if $@;
 	my $sentences = $self->unchecked_xml($text);
-	my $badwords;
+	my $badwords = [];
 	foreach my $s (@$sentences) {
 		if ($s =~ m/<X>/) {
 			$s =~ s/<[^X\/][^>]*>//g;
@@ -551,10 +552,11 @@ any grammatical rule checking.
 sub add_tags
 {
 	my ( $self, $text ) = @_;
+	return undef unless defined $text;
 	eval {from_to($text,$self->{'input_encoding'},'@NATIVE@') };
 	croak gettext('conversion from %s is not supported', 
 			$self->{'input_encoding'}) if $@;
-	my $answer = $self->add_tags_read($text);
+	my $answer = $self->add_tags_real($text);
 	foreach my $s (@$answer) {
 		$s = decode('@NATIVE@', $s);
 	}
@@ -607,6 +609,7 @@ some whittling down) as an interface with other programs.
 sub xml_stream
 {
 	my ( $self, $text ) = @_;
+	return undef unless defined $text;
 	eval {from_to($text,$self->{'input_encoding'},'@NATIVE@') };
 	croak gettext('conversion from %s is not supported', 
 			$self->{'input_encoding'}) if $@;
@@ -766,7 +769,7 @@ sub whiteout
 sub grammatical_errors
 {
 	my ( $self, $text ) = @_;
-
+	return undef unless defined $text;
 	eval {from_to($text,$self->{'input_encoding'},'@NATIVE@') };
 	croak gettext('conversion from %s is not supported', 
 			$self->{'input_encoding'}) if $@;
@@ -782,7 +785,7 @@ sub grammatical_errors
 	$pristine =~ s/$/ /;
 
 	my $marked_up_sentences = $self->xml_sentences ($text);
-	my $errors;  # array reference to return
+	my $errors = [];  # array reference to return
   # endoflast is global offset in $pristine following the end of last error
 	my $endoflast = 0;
 	my $toy = 1;   # line number at position $endoflast; lines count from 1
