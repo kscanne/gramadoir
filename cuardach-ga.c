@@ -112,6 +112,11 @@ byte_to_markup_ga (const unsigned char c, char *fill, char *attrs)
       strcpy (attrs, "");
       if (c & 0x20)
 	strcat (attrs, " pl=\"y\"");
+      else if (tense == 2 && person == 0)
+	{
+	  strcat (attrs, " cop=\"y\"");
+	  return 0;
+	}
       switch (person)
 	{
 	case 0:
