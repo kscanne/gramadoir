@@ -29,10 +29,11 @@ struct ignorable {
     };
 
 struct replacement {
-      char focal[GR_WORDMAX], athfhocal[GR_WORDMAX];
+      char focal[GR_WORDMAX];
+      char* athfhocal;
     };
 
-#define DICTTOTAL 313973
+#define DICTTOTAL 313953
 int ignore_total=0;
 int repl_total=0;
 
@@ -43,8 +44,9 @@ struct replacement* torepl=NULL;
 /* return 0 if everything went well enough to proceed, non-zero if not */
 int load_replacements()
     {
-     int iomlan, retval=0;
+     int wordlen, iomlan, retval=0;
      FILE* repl;
+     char token[8*GR_WORDMAX];
      char fn[GR_FILENAMEMAX], countstr[8];
      char* split;
      
@@ -67,16 +69,27 @@ int load_replacements()
 	       }
 	   while (!feof(repl) && repl_total != iomlan)
 	   	{
-	         fgets(torepl[repl_total].focal, GR_WORDMAX, repl);
-		 split = strchr(torepl[repl_total].focal, ' ');
+	         fgets(token, 8*GR_WORDMAX, repl);
+		 split = strchr(token, ' ');
 		 if (split==NULL) {
+                      /* "An Gramadóir: corrupted eile.bs at %s\n" */
+                      fprintf(stderr, "An Gramadóir: eile.bs truaillithe ag %s\n", token);
+		      return 0;  /* muddle on thru */
 		     }
 		 else {
+		       wordlen = split-token; 
+		       torepl[repl_total].athfhocal = malloc(strlen(split));
+		       if (torepl[repl_total].athfhocal==NULL) {
+                               /* "An Gramadóir: out of memory\n" */
+                              fprintf(stderr, "An Gramadóir: cuimhne ídithe\n");
+	                      return 1;
+		             }
+		       strncpy(torepl[repl_total].focal, token, wordlen);
+		       torepl[repl_total].focal[wordlen] = '\n';
+		       torepl[repl_total].focal[wordlen+1] = 0;
 		       strcpy(torepl[repl_total].athfhocal, split+1);
-		       *split='\n';
-		       *(split+1)=0;
+		       repl_total++; 
 		      }
-		 repl_total++; 
 		}
 	   if (repl_total != iomlan) {
                     /* "An Gramadóir: warning: check size of %s: %d?\n" */
@@ -268,6 +281,7 @@ void code_to_markup(const char* cod, char* fill, char* attrs, char* extratags)
    }
 
 /* this does the actual log search, concatenates codes */
+/* word is terminated with "\n\0" already */
 int rawlookup(const char* word, char* codes)
     {
      int min=0, max=DICTTOTAL-1;
@@ -286,6 +300,7 @@ int rawlookup(const char* word, char* codes)
     }
 
 /* Assert: toignore != NULL */
+/* word is terminated with "\n\0" already */
 int rawignorelookup(const char* word)
     {
      int min=0, max=ignore_total-1;
@@ -300,6 +315,7 @@ int rawignorelookup(const char* word)
      return 0;
     }
 
+/* word is terminated with "\n\0" already */
 int replacementlookup(const char* word, char* repl)
     {
      int min=0, max=repl_total-1;
@@ -318,7 +334,7 @@ int replacementlookup(const char* word, char* repl)
      return 0;
     }
 
-/* Assert, word is non-zero length */
+/* Assert, word is non-zero length, terminated with "\n\0" */
 int dictlookup(const char* word, char* fill, char* attrs, char* extratags)
     {
      int len, retval=1;
@@ -379,6 +395,14 @@ void markup(char* token, char* w)
      printf("%s", tail);                 /** chars after </c> **/
     }
 
+void cleanup()
+   {
+    int l;
+    if (toignore != NULL) free(toignore);
+    for (l=0; l < repl_total; l++) 
+       free(torepl[repl_total].athfhocal);
+   }
+
 int main(int argc, char* argv[])
    {
     char token[512], *w;
@@ -401,6 +425,7 @@ int main(int argc, char* argv[])
       if (load_dictionary() || load_replacements()) {
                    /* "An Gramadóir: problem reading the database\n" */
          fprintf(stderr, "An Gramadóir: fadhb ag léamh an bhunachair sonraí\n");
+	 cleanup();
          return 1;
         }
 
@@ -418,6 +443,6 @@ int main(int argc, char* argv[])
            else markup(token,w);
           }
     printf("\n</teacs>");
-    if (toignore != NULL) free(toignore);
+    cleanup();
     return 0;
    }
