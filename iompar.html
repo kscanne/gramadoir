@@ -30,6 +30,18 @@ then you should be able to begin implementing
 sophisticated grammatical rules immediately.
 </p>
 
+<p>
+Caveat Emptor: If you've read the <a href="sonrai.html">Details</a> page,
+you know that <i lang="ga">An Gramad&oacute;ir</i> is a rule-based
+grammar checker that uses pattern matching to find errors. 
+This is quite satisfactory for Irish where many of the common 
+errors made in writing involve misuse of the initial mutations
+which are determined almost entirely by local context
+(usually, just the preceding word).   It is much harder
+to find errors in languages like English using the same scheme,
+and harder still in languages having free word order.
+</p>
+
 <hr>
 <h2>Things to do</h2>
 <p>
@@ -37,11 +49,11 @@ sophisticated grammatical rules immediately.
 If you have some grammatical rules that
 don't require part of speech information, then in fact this step
 is optional.  You can either construct <i>focail.bs</i> from a plain text file
-containing one word per line (like you will find distributed with
-GNU <i>aspell</i> if your language has 
-<a href="ftp://ftp.gnu.org/pub/gnu/aspell/dict/index.html"><i>aspell</i> support</a>):<br><br>
+containing one word per line (which can be generated easily
+if your language has 
+<a href="http://fmg-www.cs.ucla.edu/fmg-members/geoff/ispell-dictionaries.html"><i>ispell</i> support</a>):<br><br>
 <samp>
-cat aspell.txt | sed 's/.*/&amp; 1/' | cabhair > focail.bs
+cat wordlist | sed 's/.*/&amp; 1/' | cabhair > focail.bs
 </samp>
 <br><br>
 or get rid of the first rule in <i>rialacha.in</i> to turn off
@@ -53,7 +65,7 @@ constructions like the English
 (sadly common in my part of the world).
 You could add a rule to <i>rialacha.in</i> resembling:<br><br>
 <samp>
-&lt;N&gt; done &lt;VP&gt;ANYTHING&lt;/VP&gt;:MESSAGE
+&lt;N&gt;ANYTHING&lt;/N&gt; done &lt;VP&gt;ANYTHING&lt;/VP&gt;:MESSAGE
 </samp>
 <br><br>
 and populate <i>focail.bs</i> with verbs in the past tense.
