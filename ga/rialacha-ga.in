@@ -141,7 +141,7 @@ sin sin:OK
 <NFCS>ANYTHING</NFCS> <A>COMPOUND</A>:OK
 # corpus; exception to "lenite adj after feminine noun" (céad comes before)
 #. Léimeann an fharraige céad méadar suas sa spéir (OK).
-<NFCS>ANYTHING</NFCS> <A>(céad|curtha|deich|gach|seacht|seo|sin|tugtha)</A>:OK
+<NFCS>ANYTHING</NFCS> <A>(bainte|céad|curtha|deich|gach|seacht|seo|sin|tugtha)</A>:OK
 <NFCS>[Bb]heith</NFCS> <A>UNLENITED</A>:OK
 # next rule doesn't make sense: "bileog bholscaireachta dhátheangach" is fine
 # will need a shallow parse to link up adjectives to nouns they modify
@@ -167,7 +167,7 @@ sin sin:OK
 # corpus exceptions
 #. Mhair cuid mhór dár sinsir céad caoga bliain ó shin (OK).
 #. Tá sé le cloisteáil sna meáin gach seachtain (OK).
-<NP>SLENDERFINALCONSONANT</NP> <A>(céad|curtha|deich|gach|seacht|seo|sin|tugtha)</A>:OK
+<NP>SLENDERFINALCONSONANT</NP> <A>(bainte|céad|curtha|deich|gach|seacht|seo|sin|tugtha)</A>:OK
 # INPHRASE rule, but example sentence is best caught before "na" rules
 #. Maidin lá ar na mhárach thug a fhear gaoil cuairt air.
 <N>[Mm]hárach</N>:INPHRASE{arna mhárach}
@@ -883,7 +883,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Ii]n?</S> [Nn]a:BACHOIR{sna}
 # CB p.84 #8, p.132 #2
 #. An bhfuil aon uachtar reoite i a cuisneoir?
-#. Roghnaigh na teangacha i a dtaispeánfar na leathanaigh seo.
+#. Roghnaigh na teangacha i a nochtar na leathanaigh seo.
 <S>[Ii]n?</S> a:BACHOIR{ina}
 # CB p.132 #2
 #. Rinne gach cine é sin sna cathracha i ar lonnaíodar.
@@ -964,7 +964,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Ll]e</S> <T>na</T>:BACHOIR{leis na}
 # CB p.84 #8, p.132 #2
 #. Labhraíodh gach duine an fhírinne le a chomharsa.
-#. É dílis don teaghlach le a mbaineann sé.
+#. Le halt 16 i ndáil le hiarratas ar ordú le a meastar gur tugadh toiliú.
 <S>[Ll]e</S> a:BACHOIR{lena}
 # CB p.132 #2
 #. Beir i do láimh ar an tslat le ar bhuail tú an abhainn, agus seo leat.
@@ -1311,7 +1311,6 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 <S>[Óó]n</S> <N>MUTATEDDST</N>:NICLAOCHLU
 # CB p.84 #8, p.132 #2
 #. Amharcann sé ó a ionad cónaithe ar gach aon neach dá maireann ar talamh.
-#. Is é an planda ó a bhfaightear línéadach.
 <S>[Óó]n?</S> a:BACHOIR{óna}
 # CB p.132 #2
 #. Seo iad a gcéimeanna de réir na n-áiteanna ó ar thosaíodar.
@@ -1516,7 +1515,7 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 [Tt]rí uaire?:BACHOIR{huaire}
 # CB p.84 #8 <D>a</D>, p.132 #2 <S>a</D>
 #. Scríobhaim chugaibh mar gur maitheadh daoibh bhur bpeacaí trí a ainm.
-#. "Bruithniú" a thugtar ar an phróiseas trí a mbaintear miotal as mianach.
+#. Cuirtear i láthair na struchtúir trí a reáchtálfar gnímh ag an leibhéal náisiúnta.
 <S>[Tt]rí</S> a:BACHOIR{trína}
 # CB p.132 #2; <Q> or <S>
 #. Ní fhillfidh siad ar an ngeata trí ar ghabh siad isteach.
@@ -1648,6 +1647,14 @@ ECLIPSINGNUMBER <E><N>ECLIPSED</N></E>:OK
 <D>ECLIPSINGPOSS</D> <E><N>ECLIPSED</N></E>:OK
 <S>[Uu]m</S> <T>an</T> <E><N>dtaca</N></E>:OK
 [Mm]ar <T>an</T> <E><N>gcéanna</N></E>:OK
+# VERBS NOW
+#. Sin é a dhéantar i gcas cuntair oibre cistine.
+<V>ECLIPSED</V>:NIURU
+<U>[Cc]ha</U> <E><V>ECLIPSEDDT</V></E>:OK
+<U>([Aa]|[Nn]ach)</U> <E><V>ECLIPSED</V></E>:OK
+<Q>([Aa]n|[Cc]á)</Q> <E><V>ECLIPSED</V></E>:OK
+<C>([Dd]á|[Gg]o|[Mm]ura|[Ss]ula)</C> <E><V>ECLIPSED</V></E>:OK
+<S>NONRFORMPREP</S> <E><V>ECLIPSED</V></E>:OK
 #############################################################################
 #  <=> Prefix h rules (verbs handled at top)
 #############################################################################

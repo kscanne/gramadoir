@@ -47,6 +47,7 @@ s/UNECLIPSEDDT/(?:[tT]|d[^Tt'])[^<]+/g;
 s/UNECLIPSEDCONS/(?:[cfptCFPT]|d[^Tt']|g[^Cc]|b[^Pph]|bh[^fF])[^<]+/g;
 s/UNECLIPSED/(?:[aeiouAEIOUáéíóúÁÉÍÓÚcfptCFPT]|d[^Tt']|g[^Cc]|b[^Pph]|bh[^fF])[^<]*/g;
 s/ECLIPSEDVOWEL/n(?:-[aeiouáéíóú]|[AEIOUÁÉÍÓÚ])[^<]*/g;
+s/ECLIPSEDDT/(?:d[Tt]|n[Dd])[^<]+/g;
 s/ECLIPSEDBCFGP/(?:g[Cc]|b[Pp]|m[Bb]|n[Gg]|bh[fF])[^<]+/g;
 s/ECLIPSED/(?:n(?:-[aeiouáéíóú]|[AEIOUÁÉÍÓÚ])|d[Tt]|g[Cc]|b[Pp]|m[Bb]|n[DdGg]|bh[fF])[^<]*/g;
 s/ECLIPSINGNUMBER/(?:n?[Dd]h?eich|[Nn]aoi|(?:h|[mbd]')?[Oo]cht|[Ss]h?eacht|[0-9]*[789]|[0-9]*10)/g;
@@ -138,7 +139,8 @@ s/NPLF/<N pl="y" gnt="n".><N pl="y" gnt="n" gnd="f".>/g;
 s/PLADJSUBJ/<A pl="y" gnt="n".><V p="." t="foshuit".>/g;
 s/PRESSUBJ/<V p="y" t="láith".><V p="y" t="foshuit".>/g;
 s/NFGSUBJ/<N pl="n" gnt="y" gnd="f".><V p="." t="foshuit".>/g;
-s/GENADJ/<N pl="n" gnt="y" gnd="m".><A pl="n" gnt="n".><A pl="n" gnt="y" gnd="f".><A pl="n" gnt="y" gnd="m".><A pl="y" gnt="n".>/g;
+# allowing feminine noun catches "breise" too; gets some absurdities like "ait"
+s/GENADJ/<N pl="n" gnt="y" gnd=".".><A pl="n" gnt="n".><A pl="n" gnt="y" gnd="f".><A pl="n" gnt="y" gnd="m".><A pl="y" gnt="n".>/g;
 s/PROPER/<Y.>(?:<[^>]*>)+/g;
 s/MASCPL/<N pl="y" gnt="n".><N pl="y" gnt="n" gnd="m".>/g;
 s/ADJADV/<R.><A pl="n" gnt="n".>/g;
