@@ -102,7 +102,7 @@ ANYTHING <VIMP>INITIALH</VIMP>:NIAITCH
 <D>[Bb]hur</D> UNECLIPSED:URU
 # CB p.22 #7.c, p.132 #4
 <Q>[Cc]á</Q> <V>UNECLIPSED</V>:URU
-# CB p.24 #11.a.iii
+# CB p.24 #11.a.iii, LGG p.113
 <Q>[Cc]á</Q> <N>INITIALVOWEL</N>:PREFIXH
 # OD cá; see exceptions
 <Q>[Cc]á</Q> <N>LENITED</N>:NISEIMHIU
@@ -120,7 +120,7 @@ ANYTHING <VIMP>INITIALH</VIMP>:NIAITCH
 <Q>[Cc]én</Q> <NMCS>INITIALVOWEL</NMCS>:PREFIXT
 # CB p.13 #3.c
 [Cc]héad <N>UNLENITEDBCFGMP</N>:SEIMHIU
-# CB p.24 #11.b.ii
+# CB p.24 #11.b.ii, LGG p.113
 <R>[Cc]homh</R> <A>INITIALVOWEL</A>:PREFIXH
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 <S>[Cc]huig</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
@@ -144,7 +144,7 @@ ANYTHING <VIMP>INITIALH</VIMP>:NIAITCH
 <D>[Dd]ár</D> UNECLIPSED:URU
 # CB p.13 #3.d
 <[^D]>ANYTHING</[^D]> [Dd]há UNLENITED:SEIMHIU
-# CB p.24 #11.a.iv
+# CB p.24 #11.a.iv, LGG p.112
 Dé Aoine:PREFIXH
 # CB p.20 #1.c
 [Dd]eich <N>UNECLIPSED</N>:URU
@@ -200,7 +200,7 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 <S>[Gg]an</S> <Y>LENITED</Y>:NISEIMHIU
 # CB p.22 #8.a, also CB p.134 #1.a
 <S>[Gg]an</S> <T>an</T> <NMCS>INITIALVOWEL</NMCS>:PREFIXT
-# CB p.24 #11.a.v, #11.b.ii
+# CB p.24 #11.a.v, #11.b.ii, LGG p.112-113
 [Gg]o <[AN]>INITIALVOWEL</[AN]>:PREFIXH
 # CB p.22 11d, p.132 #4
 [Gg]o <V>UNECLIPSED</V>:URU
@@ -250,7 +250,7 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 <S>[Ll]e</S> ar:BACHOIR{lenar}
 # CB p.84 #8
 <S>[Ll]e</S> ár:BACHOIR{lenár}
-# CB p.24 #11.a.v (N) #11.b.ii (A) #11.c (P)
+# CB p.24 #11.a.v (N) #11.b.ii (A) #11.c (P), LGG p.112-113
 <S>[Ll]e</S> INITIALVOWEL:PREFIXH
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 <S>[Ll]eis</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
@@ -278,9 +278,9 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 <C>[Mm]urar</C> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
 # CB p.21 #2.b
 <T>na</T> <NGP>UNECLIPSED</NGP>:URU
-# CB p.24 #11.a.vi
+# CB p.24 #11.a.vi, LGG p.112
 <T>na</T> <NFGS>INITIALVOWEL</NFGS>:PREFIXH
-# CB p.24 #11.a.vii (eclipsis in genitive plural, rule above)
+# CB p.24 #11.a.vii (eclipsis in genitive plural, rule above), LGG p.112
 <T>na</T> <NCP>INITIALVOWEL</NCP>:PREFIXH
 # CB p.24 #11.d
 [Nn]á <V>INITIALVOWEL</V>:PREFIXH
@@ -413,6 +413,7 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 <S>[Uu]m</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 ###### next batch came from analyses of "tag 2-grams" in the corpus ######
 <T>ANYTHING</T> <AP>ANYTHING</AP>:CUPLA
+# "an <P>té</P>" in eisceacht
 <T>ANYTHING</T> <[^ANY]>ANYTHING</[^ANY]>:CUPLA
 # got níos * above
 <R>ANYTHING</R> <AP>ANYTHING</AP>:CUPLA
