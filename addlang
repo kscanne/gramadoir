@@ -4,20 +4,22 @@
 #   for potential authors.   In particular, this script relies on data
 #   contained in the appropriate Crubadan data files in /usr/local/share/...
 #
-#     Guaranteed only to (create and) write in a subdirectory  
+#     Guaranteed to only (create and) write in a subdirectory  
 #
 #  version number can be independent of gramadoir-x.x (and of the 
 #  perl versions which are tied to these)
   
-if [ $# -ne 2 ]
+if [ $# -ne 3 ]
 then
-	echo "Usage: addlang xx VERSION"
+	echo "Usage: addlang xx VERSION \"author <email>\""
 	exit
 fi
 TEANGA="${1}"
 UPPERTEANGA=`echo "${TEANGA}" | tr "[:lower:]" "[:upper:]"`
 VERSION="${2}"
+AUTHOR="${3}"
 CRUBADAN="/usr/local/share/crubadan/${TEANGA}"
+THISYEAR=`date +%Y`
 if [ ! -e ${CRUBADAN} ]
 then
 	echo "Need to start crawler first for this language"
@@ -63,24 +65,28 @@ s/\^BDCHARS\^/${BDCHARS}/
 s/\^INTCHARS\^/${INTCHARS}/
 s/\^UPPERS\^/${UPPERS}/
 s/\^LOWERS\^/${LOWERS}/
+/^# *only used/d
 " configure-xx > ${DIR}/configure
 chmod 755 ${DIR}/configure
 cp COPYING ${DIR}/COPYING
 touch ${DIR}/earraidi-${TEANGA}.bs
-echo "0" > ${DIR}/eile-${TEANGA}.bs
-sed '1d; 7,$d' eisceacht-en.in > ${DIR}/eisceacht-${TEANGA}.in
+touch ${DIR}/eile-${TEANGA}.bs
+sed '11,$d' eisceacht-en.in > ${DIR}/eisceacht-${TEANGA}.in
 cp giorr-xx ${DIR}/giorr-${TEANGA}
 LC_ALL=C sort -u ${CRUBADAN}/GLAN > ${DIR}/lexicon-${TEANGA}.txt
 counts.pl ${CRUBADAN}/FREQ ${DIR}/lexicon-${TEANGA}.txt > ${DIR}/freq-${TEANGA}.txt
 sed -i 's/.*/& 1/' ${DIR}/lexicon-${TEANGA}.txt
 ##  create "squished" version too since in future lexicon will be built from
 ##  that (distributed) file
-cp macra-en.meta.sed ${DIR}/macra-${TEANGA}.meta.sed
+sed "/CAPITAL/s/A-Z/${UPPERS}/" macra-en.meta.sed > ${DIR}/macra-${TEANGA}.meta.sed
 # get MANIFEST, MANIFEST.SKIP from gramadoir 
 egrep '^#' morph-en.txt | sed '1d' > ${DIR}/morph-${TEANGA}.txt
 touch ${DIR}/nocombo-${TEANGA}.txt
-echo "0 <U>" > ${DIR}/pos-${TEANGA}.txt
+echo "1 <U>" > ${DIR}/pos-${TEANGA}.txt
 sed "s/@TEANGA@/${TEANGA}/; s/@NAME_ENGLISH@/${NAME_ENG}/" README-xx > ${DIR}/README
 cp rialacha-en.in ${DIR}/rialacha-${TEANGA}.in
 cp unigram-en.pre ${DIR}/unigram-${TEANGA}.pre
 cp unigram-en.txt ${DIR}/unigram-${TEANGA}.txt
+sed -i "s/(C) 20.. /(C) ${THISYEAR} /" ${DIR}/*-${TEANGA}.in ${DIR}/macra-${TEANGA}.meta.sed
+sed -i "/Copyright.*Kevin P\. Scannell/s/.*/&\n#                    ${AUTHOR}/" ${DIR}/*-${TEANGA}.in ${DIR}/macra-${TEANGA}.meta.sed ${DIR}/morph-${TEANGA}.txt
+sed -i "/Copyright.*Kevin P\. Scannell/s/.*/&\n                     ${AUTHOR}/" ${DIR}/README
