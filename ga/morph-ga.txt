@@ -174,6 +174,8 @@
 ([ao])chai?s$		$1ch		0	<A pl="n" gnt="n".*>
 acht$			ach		0	<A pl="n" gnt="n".*>
 íocht$			íoch		0	<A pl="n" gnt="n".*>
+úlachta?$		úil		0	<A pl="n" gnt="n".*> # CO p.120
+úchái?n$		ú		0	<N.*>
 ################## CAIGHDEÁN OIFIGIÚIL SPELLING REFORMS #####################
 ^aith			ath		1	<.+>
 ^eadar			idir		1	<.+>
@@ -182,7 +184,9 @@ acht$			ach		0	<A pl="n" gnt="n".*>
 ^n-([AEIOUÁÉÍÓÚ])	n$1		1	<.+>    # CO p.125
 ^t-([AEIOUÁÉÍÓÚ])	t$1		1	<.+>    # CO p.125
 ^ana-			an-		1	<.+>    # ana-eagraithe
-^de[ai]gh		dea		1	<.+>
+^(g?ch?)oimh		$1omh		1	<.+>    # coimhlíonadh
+^(n?dh?)e[ai]gh		$1ea		1	<.+>
+^(n?dh?)ligh		$1lí		1	<.+>
 ^ion			in		1	<.+>
 ^(mh?a)ill		$1ll		1	<.+>
 ^óig			óg		1	<.+>
@@ -198,9 +202,9 @@ dn			nn		1	<.+>    # CO p.114 céadna
 ó(i?r[dlnr])		o$1		1	<.+>    # CO p.123-124
 ú(i?r[dlnr])		u$1		1	<.+>    # CO p.123-124
 eó			eo		1	<.+>    # go leór, etc.
-eamhail$		iúil		1	<A.*>    # dlightheamhail
+eamhail$		iúil		1	<[AN].*>    # dlightheamhail
 eamhla			iúla		1	<[AN].*>
-([^e])amhail$		$1úil		1	<A.*>    # CO p.102
+([^e])amhail$		$1úil		1	<[AN].*>    # CO p.102, a2+barúil, etc.
 ([^e])amhla		$1úla		1	<[AN].*>    # "-amhlachta?" too
 aíle$			aíola		1	<.+>    # *3ú* decl.
 aibh$			a		1	<.+>    # fearaibh, fiachaibh
@@ -263,6 +267,19 @@ ins$			eann		1	<V .* t="láith">
 #  OS88 p.126  present
 anns$			ann		1	<V .* t="láith">
 íonns$			íonn		1	<V .* t="láith">
+#  corpus - imperfect
+theá$			teá		1	<V .* t="gnáth">
+#  various -áil  endings should be broad, CO p.120
+áilim$			álaim		1	<V.*>
+áileann$		álann		1	<V.*>
+áilfidh$		álfaidh		1	<V.*>
+áilfeá$			álfá		1	<V.*>
+ái(lf?)eadh$		á$1adh		1	<V.*>
+ái(lf?)im(i[sd])$	á$1aim$2	1	<V.*>
+áiligí$			álaigí		1	<V.*>
+áilea([dm]ar)$		ála$1		1	<V.*>
+ái(lf?)idís$		á$1aidís	1	<V.*>
+áltar$			áiltear		1	<V.*>
 #############################################################################
 #  emphatic suffixes
 (.[aouáóú])(san?|na)$	$1		0	<.+>
