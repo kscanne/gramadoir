@@ -103,9 +103,7 @@ msgid ""
 "to the extent permitted by law."
 msgstr ""
 "Tiu programo estas libera; vidu la fontkodon por la kondiĉoj pri kopiado. Estas NENIU garantio, eĉ ne pri TAŬGECO POR VENDADO aŭ POR IU SPECIFA UZO,\\n"
-" ĝis la limo de la leĝo.AUCUNE garantie n'est donnée; tant pour des raisons\n"
-"COMMERCIALES que pour RÉPONDRE À UN BESOIN PARTICULIER,\n"
-"selon que les lois le permettent"
+" ĝis la limo de la leĝo."
 
 #: gram.pl:267
 #, perl-format
