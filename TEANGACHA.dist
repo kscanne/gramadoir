@@ -1,0 +1,15 @@
+# This file contains ISO-639-1 codes for the languages supported
+# by An Gramadóir (that is, there exist rule sets for checking the
+# grammar of texts written in these languages).
+#
+# The second column contains the default character encoding for documents
+# written in the language.  This is also the character encoding used to
+# implement all of the ".in" rule files for the language.
+#
+# The language of the messages seen by the end user doesn't need to be the
+# same as the language of the documents being checked.  The former is 
+# controlled by GNU gettext, and information about available user interface
+# languages can be found in the "po" directory (in particular, "po/LINGUAS").
+# 
+ga ISO-8859-1 A-ZÁÉÍÓÚa-záéíóú '-
+en ISO-8859-1 A-Za-z '
