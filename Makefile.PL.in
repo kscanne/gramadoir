@@ -15,7 +15,6 @@ if( build_hashes() ) {
 	  			'File::Spec' => '0.83',
 				'Getopt::Long' => '2.32',
 				'Memoize' => '0.52',
-				'Memoize::ExpireLRU' => '0',
 	  			'Storable' => '2.04',
 	  			'String::Approx' => '3.19',
 				'Term::ANSIColor' => '1.05',
