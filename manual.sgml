@@ -29,20 +29,22 @@
     </legalnotice>
   </bookinfo>
   <toc></toc>
-  <chapter>
+  <chapter id="overview">
     <title>An Overview</title>
     <para>This manual is intended for developers interested in 
     porting &gram; to a new language.  Help for 
     end users with installation, usage, etc. is available from
-    the <ulink url="http://borel.slu.edu/gramadoir/">web site</ulink>.
+    the <ulink url="http://borel.slu.edu/gramadoir/">project web site</ulink>.
     </para>
     <note><title>Convention</title>
       <para>
         Throughout this manual, I will use "xx" or "XX" to refer
-	to the ISO-639 two- or three-letter code for your language.
+	to the
+	<ulink url="http://www.w3.org/WAI/ER/IG/ert/iso639.htm">ISO 639</ulink>
+	two- or three-letter code for your language.
       </para>
     </note>
-    <sect1>
+    <sect1 id="structure">
         <title>Package Structure</title>
 	<para>Three different packages are involved when creating
 	  a grammar checker for your language.  The first is
@@ -62,11 +64,11 @@
 	  install, and use to check their grammar.    
 	</para>
       </sect1>
-      <sect1>
+      <sect1 id="process">
         <title>The Grammar Checking Process</title>
 	<para>
 	  The first version of &gram; was written as a (pretty simple-minded) 
-	  <application>sed</application> script consisting
+	  <ulink url="http://www.gnu.org/software/sed/sed.html"><application>sed</application></ulink> script consisting
 	  entirely of substitutions:
 	</para>
 	<programlisting>
@@ -82,6 +84,15 @@ s/sa [bcfgmp][^h][^ ]*/&lt;E msg="lenition"&gt;&amp;&lt;E&gt;/g;
 	  written in Perl and are infinitely more intelligent,
 	  though I've maintained this essentially
 	  "stateless" design.
+        <footnote id="stateless">
+    	  <para>
+	  "Stateless" isn't exactly the right word; the program maintains
+	  plenty of state, it is just carried around in the
+	  text stream itself vs. in so-called "variables",
+	  risky abstractions which I'm told are used widely in certain
+	  programming languages.
+	  </para>
+        </footnote>
 	  The input text is passed through a series of filters,
 	  each of which adds some <acronym>XML</acronym> markup.
           I'll illustrate this with a trivial English language example.
@@ -122,6 +133,10 @@ A umpire.  The status quo.
 &lt;<sgmltag>line</sgmltag>&gt;A umpire.&lt;/<sgmltag>line</sgmltag>&gt;
 &lt;<sgmltag>line</sgmltag>&gt;The status quo.&lt;/<sgmltag>line</sgmltag>&gt;
 	    </screen>
+	    <para>
+	      See <xref linkend="segmentation"> for more information on
+	      how this is implemented.
+	    </para>
           </listitem>
           <listitem>
 	    <para>
@@ -156,6 +171,12 @@ A umpire.  The status quo.
 &lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>T</sgmltag> def="n"&gt;A&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>B</sgmltag>&gt;&lt;<sgmltag>Z</sgmltag>&gt;&lt;<sgmltag>N</sgmltag>/&gt;&lt;<sgmltag>V</sgmltag>/&gt;&lt;/<sgmltag>Z</sgmltag>&gt;umpire&lt;/<sgmltag>B</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
 &lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>T</sgmltag> def="y"&gt;The&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>N</sgmltag>&gt;status&lt;/<sgmltag>N</sgmltag>&gt; &lt;<sgmltag>F</sgmltag>&gt;quo&lt;/<sgmltag>F</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
 	    </screen>
+	    <para>
+	      See <xref linkend="dictionary"> and 
+	      <xref linkend="morphology"> for more information
+	      on how words are stored and recognized by
+	      the morphology engine.
+	    </para>
           </listitem>
           <listitem>
 	    <para>
@@ -173,6 +194,10 @@ A umpire.  The status quo.
 &lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>T</sgmltag> def="n"&gt;A&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>B</sgmltag>&gt;&lt;<sgmltag>Z</sgmltag>&gt;&lt;<sgmltag>N</sgmltag>/&gt;&lt;<sgmltag>V</sgmltag>/&gt;&lt;/<sgmltag>Z</sgmltag>&gt;umpire&lt;/<sgmltag>B</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
 &lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>T</sgmltag> def="y"&gt;The&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>N</sgmltag>&gt;status quo&lt;/<sgmltag>N</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
 	    </screen>
+	    <para>
+	      See <xref linkend="chunks"> for how to specify 
+	      these chunks for your language.
+	    </para>
           </listitem>
           <listitem>
 	    <para>
@@ -189,6 +214,10 @@ A umpire.  The status quo.
 &lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>T</sgmltag> def="n"&gt;A&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>N</sgmltag>&gt;umpire&lt;/<sgmltag>N</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
 &lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>T</sgmltag> def="y"&gt;The&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>N</sgmltag>&gt;status quo&lt;/<sgmltag>N</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
 	    </screen>
+	    <para>
+	      The syntax of the disambigation input file is described
+	      in <xref linkend="disambiguation">.
+	    </para>
           </listitem>
           <listitem>
 	    <para>
@@ -205,10 +234,36 @@ A umpire.  The status quo.
 &lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>T</sgmltag> def="y"&gt;The&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>N</sgmltag>&gt;status quo&lt;/<sgmltag>N</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
 &lt;/<sgmltag>teacs</sgmltag>&gt;
 	    </screen>
+	    <para>
+	      See <xref linkend="rules"> for information on 
+	      how rules and exceptions are specified in the
+	      input file <filename>rialacha-xx.in</filename>.
+	    </para>
           </listitem>
+          <listitem>
+	    <para>
+	      <emphasis>Recurse</emphasis>.  The basic strategy of &gram; is like a bottom-up parser, but with grammatical rules being applied at each 
+	      stage of the parse.   Empirically at least, the kinds of rules
+	      one would normally like to implement seem to be naturally
+	      "stratified"
+	      according to the amount of phrase structure markup needed
+	      to implement them.  Simple spell checking is like "level -1", 
+	      requiring no markup at all.  Most rules for Irish are
+	      "level 0", requiring part of speech (including
+	      gender, number, etc.) markup but no more; they are,
+	      therefore, able to be implemented with just one pass through
+	      the sequence of steps above.  
+	      For many languages, a natural next step
+	      would be to chunk noun phrases and then apply any
+	      appropriate rules at this level before proceeding to deeper
+	      parsing.  See <xref linkend="caveat"> for more general
+	      remarks on this strategy and how it is particularly well-suited
+	      to languages with limited resources.
+	    </para>
+	  </listitem>
 	</itemizedlist>
       </sect1>
-      <sect1>
+      <sect1 id="languages">
         <title>Available Languages</title>
 	<para>The goal of this project is to provide a framework 
 	  for the development of language technology for languages
@@ -225,6 +280,7 @@ A umpire.  The status quo.
 	  completion):
 	  Afrikaans (by Petri Jooste and Tjaart van der Walt),
 	  Cornish (by Paul Bowden and Edi Werner),
+	  Esperanto,
 	  Walloon (by Pablo Saratxaga),
 	  and Welsh (by Kevin Donnelly).
 	  These are kept under <acronym>CVS</acronym> at
@@ -236,9 +292,10 @@ A umpire.  The status quo.
 	  Azerbaijani, Breton, Chichewa, French, Igbo, Kinyarwanda, Ladin, Malagasy, Malay, Manx Gaelic, Mongolian, Norwegian, Scottish Gaelic, Setswana, Tagalog, Tetum, Upper Sorbian, Xhosa, Zulu.
 	</para>
       </sect1>
-      <sect1>
+      <sect1 id="caveat">
         <title>Caveat Emptor</title>
 	<para>
+	  As described above in <xref linkend="process">,
 	  &gram; finds errors
 	  by first marking up the input text with grammatical information
 	  (ranging from simple part-of-speech tags to full phrase structure)
@@ -248,8 +305,7 @@ A umpire.  The status quo.
 	  pattern-matching approach like the one used by the
 	  venerable
 	  <ulink url="http://www.gnu.org/software/diction/diction.html"><application>GNU diction</application></ulink>
-	  package.
-	  The complexity of
+	  package.  The complexity of
 	  the errors that can be trapped and reported is limited
 	  only by the sophistication of the markup that is added.
 	  For Irish and the other Celtic languages,
@@ -258,17 +314,54 @@ A umpire.  The status quo.
 	  <ulink url="http://www.fiosfeasa.com/bearla/language/claochlo.htm">initial mutations</ulink>
 	  which are determined almost entirely by local context
 	  (usually, just the preceding word).
-	  Finding errors reliably in languages
-	  like English (or languages with free word order)
-	  will require at least
-	  a shallow parse of the input text.
+	</para>
+	<para>
+	  For most other languages, creating a grammar checker
+	  with more than trivial coverage is a major undertaking,
+	  requiring syntactic analysis sophisticated enough to 
+	  detect potentially "long distance" errors like
+	  noun/verb disagreement.
+	  This is surely true for a language like English, and even more
+	  so for languages with free word order.
+	  Because of this, the traditional approach to grammar
+	  checking has been to try something approximating a
+	  full parse of the input text.   The problem is, 
+	  even for English, where there is a huge market-driven
+	  need for robust language processing tools and huge
+	  amounts of money to be made developing them, the best parsers
+	  are only right maybe 80% of the time.  This leads to brittle 
+	  grammar checking and lots of false positives.
+	</para>
+	<para>
+	  &gram; is intended for use by minority and
+	  under-resourced language communities, where there is often
+	  little hope of assembling the resources 
+	  (time, money, expertise) needed 
+	  to tackle full-scale parsing.
+	  With this in mind, the grammar checking algorithm of
+	  &gram; is designed in such a way
+	  that rules can be applied at various recursive "levels";
+	  as a consequence, the resulting grammar checker will
+	  reflect precisely the amount of energy that is put into it.
+	  This is to be contrasted with a design requiring
+	  the construction of a complete parser, which might, if
+	  you're lucky, be correct 40-50% of the time,
+	  resulting in an essentially useless tool from the
+	  point of view of the end user.
+	  In other words, you can focus work on the parts of 
+	  natural language processing generally regarded as "easy":
+	  morphology, part-of-speech tagging, noun phrase chunking,
+	  etc., postponing the "hard" parts:
+	  semantic disambiguation,
+	  prepositional phrase attachment,
+	  anaphora resolution, etc.
 	</para>
       </sect1>
   </chapter>
 
-  <chapter>
+  <chapter id="starting">
     <title>Starting a new language</title>
-      <sect1>
+      <sect1 id="statistics">
         <title>Statistical support</title>
 	<para>
 	  The first thing you should do if you're interested in
@@ -282,9 +375,75 @@ A umpire.  The status quo.
 	  this data.  If you don't have a clean word list there will be
 	  some preliminary work involved in constructing one.
 	</para>
+	<para>
+	  Even if you have a word list in place, the web crawler can
+	  be used to augment the word list or even to find potential 
+	  errors in it by statistical means.    
+	  The crawler generates the following files for each language:
+	</para>
+	<itemizedlist>
+	  <listitem>
+	    <para>
+              <filename>A.toadd.txt</filename>:
+	      This is the main list of candidate words to be considered
+	      for addition to the word list; these words pass through all
+	      of the statistical filters.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+              <filename>A.toaddcap.txt</filename>:
+	      Same as <filename>A.toadd.txt</filename>, but consisting
+	      of words appearing primarily in upper case in the corpus.
+	      These words are therefore usually (but not always)
+	      proper names of one kind or another.  
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+              <filename>A.accent.txt</filename>: 
+	      Pairs of words that pass through the filters but differ
+              only in presence or absence of one or more diacritical marks.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+              <filename>A.glanacc.txt</filename>: 
+	      Same as <filename>A.accent.txt</filename>, but each pair
+	      consists of one word that is already in the "clean" word list
+	      (labelled "z" in the file) and one word which is not
+	      (labelled "y").  In most cases, the "y" word is incorrect
+	      and this is an efficient way to build up a "replacement file"
+	      (see <xref linkend="replacements">).
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+              <filename>A.pollute.txt</filename>:
+	      High frequency words that also appear in the
+	      <application>aspell</application> English
+              word list (or another "polluting" language that you
+	      can specify); many of these words are correct,
+	      especially the highest frequency words, but as you
+	      get deeper in the list quite a few are really pollution.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+              <filename>A.3gram.txt</filename>:
+	        High frequency words that have one or more "suspect" three
+                letter sequences in them.  The filters must "learn" what
+		correctly-spelled words look like based on (1) some 
+		number-crunching on the raw corpus (2) any edits to this
+		and the other files.  So initially there will be a mixture
+		of correct and incorrect words in this file, but 
+		eventually this improves as the language model improves.
+	    </para>
+	  </listitem>
+        </itemizedlist>
       </sect1>
 
-      <sect1>
+      <sect1 id="cvs">
         <title><acronym>CVS</acronym> access</title>
 	<para>
 	  If you have a <ulink url="http://sourceforge.net/">sourceforge</ulink>
@@ -298,7 +457,7 @@ A umpire.  The status quo.
 	</para>
       </sect1>
 
-      <sect1>
+      <sect1 id="prereqs">
         <title>Installing prerequisites</title>
         <para>The developers' pack runs only on Unix-like systems that
 	  have a relatively recent version of <application>Perl</application>
@@ -321,7 +480,7 @@ A umpire.  The status quo.
         </screen>
       </sect1>
 
-      <sect1>
+      <sect1 id="getting">
         <title>Getting the language pack</title>
 	<para>
 	  To checkout the <application>gramadoir</application> engine
@@ -380,7 +539,7 @@ U engine/COPYING
 	</para>
       </sect1>
 
-      <sect1>
+      <sect1 id="building">
         <title>Creating a grammar checker from the language pack</title>
 	<para>
 	  Creating the necessary files for the
@@ -422,7 +581,7 @@ U engine/COPYING
   </chapter>
 
 
-  <chapter>
+  <chapter id="tour">
       <title>A tour of the language pack</title>
       <para>Of course, until you actually add some real grammatical rules
         to the language pack input files, the Perl module will
@@ -432,7 +591,7 @@ U engine/COPYING
         quickly.
       </para>
 
-      <sect1>
+      <sect1 id="lexicon">
         <title>The lexicon</title>
 	<para>
 	  If you'd like your grammar checker to have
@@ -446,7 +605,7 @@ U engine/COPYING
 	  list, with part-of-speech information associated to each word.
 	</para>
 
-        <sect2>
+        <sect2 id="pos">
           <title>Parts of speech</title>
 	  <para>
 	    Part-of-speech markup is added to input texts as
@@ -510,7 +669,7 @@ U engine/COPYING
 	  </itemizedlist>
         </sect2>
   
-        <sect2>
+        <sect2 id="dictionary">
           <title>Main word list</title>
 	  <para>
 	    The files <filename>lexicon-xx.bs</filename> and
@@ -569,7 +728,7 @@ directions 32
 	  </para>
         </sect2>
 
-        <sect2>
+        <sect2 id="replacements">
           <title>Replacements</title>
 	  <para>
 	    The file <filename>eile-xx.bs</filename>
@@ -595,7 +754,7 @@ spellchecker spell checker
 	  </screen>
         </sect2>
 
-        <sect2>
+        <sect2 id="morphology">
           <title>Morphology</title>
 	  <para>
 	    The file <filename>morph-xx.txt</filename> encodes
@@ -657,7 +816,7 @@ spellchecker spell checker
         </sect2>
       </sect1>
 
-      <sect1>
+      <sect1 id="grammar">
         <title>Grammar checking</title>
 	<para>The grammar checker
 	  <foreignphrase lang="la">per se</foreignphrase>
@@ -670,7 +829,7 @@ spellchecker spell checker
 	  find and mark up the grammatical errors.
 	</para>
 
-	<sect2>
+	<sect2 id="syntax">
 	  <title>Common structure of the <filename>*.in</filename> files</title>
 	  <para>
 	    The structure of all three input files is essentially the same.
@@ -798,7 +957,7 @@ phrase:action
 	  </itemizedlist>
 	</sect2>
 
-        <sect2>
+        <sect2 id="chunks">
           <title>Multi-word units</title>
 	  <para>The file <filename>comhshuite-xx.in</filename>
 	    is the simplest of the three; each
@@ -828,7 +987,7 @@ phrase:action
 	  </para>
         </sect2>
 
-        <sect2>
+        <sect2 id="disambiguation">
           <title>Disambiguation</title>
 	  <para>The file <filename>aonchiall-xx.in</filename> contains
 	    rules for disambiguating
@@ -906,7 +1065,7 @@ phrase:action
 	  </screen>
         </sect2>
 
-        <sect2>
+        <sect2 id="rules">
           <title>Rules and exceptions</title>
 	  <para>The file <filename>rialacha-xx.in</filename>
 	    contains the grammatical rules proper,
@@ -1010,12 +1169,12 @@ phrase:action
         </sect2>
       </sect1>
 
-      <sect1>
+      <sect1 id="other">
         <title>An assortment of less important files</title>
 	<para>The remainder of the files in the language pack 
 	  require less attention, and some can be ignored entirely.
 	</para>
-        <sect2>
+        <sect2 id="segmentation">
           <title>Segmentation</title>
 	  <para>
 	   The grammar checker performs simple segmentation of the
@@ -1035,7 +1194,7 @@ phrase:action
 	   get encoded here.
 	  </para>
         </sect2>
-	<sect2>
+	<sect2 id="static">
 	  <title>Files to leave alone</title>
 	  <para>
 	    The statistics in <filename>3grams-xx.txt</filename> and
@@ -1055,7 +1214,7 @@ phrase:action
 	</sect2>
       </sect1>
   </chapter>
-  <chapter>
+  <chapter id="faq">
     <title>&gram; <acronym>FAQ</acronym></title>
     <qandaset>
       <qandaentry>
