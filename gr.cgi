@@ -15,8 +15,11 @@ my $charset = 'ISO-8859-1';
 my( $ionchur ) = $q->param( "foirm_ionchur" ) =~ /^(['áéíóúÁÉÍÓÚ\w\s,.!?-]+)$/;
 my( $teanga ) = $q->param( "teanga" ) =~ /^([a-z][a-z]_[A-Z][A-Z])$/;
 
-if ( $teanga=="ro_RO" ) {
+if ( $teanga eq "ro_RO" ) {
 $charset = 'ISO-8859-2';
+}
+if ( $teanga eq "sk_SK" or $teanga eq "mn_MN" ) {
+$charset = 'UTF-8';
 }
 
 local *PIPE;
