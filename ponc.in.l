@@ -53,9 +53,9 @@ CAIGHDEAN	 {return  MESSAGEPLUS;}
 
 ([A-Za-zΑΙΝΣΪαινσϊ[][-a-zαινσϊ'?]?|[a-zαινσϊ][A-Z])[][A-Za-zΑΙΝΣΪαινσϊ'?()|-]*	{return  WORD;}
 
-"{"([A-Za-zΑΙΝΣΪαινσϊ][-_a-zαινσϊ+']?|[a-zαινσϊ][A-Z])[-_A-Za-zΑΙΝΣΪαινσϊ+']*"}" {return  MESSAGEARG;}
+"{"([A-Za-zΑΙΝΣΪαινσϊ][- a-zαινσϊ+']?|[a-zαινσϊ][A-Z])[- A-Za-zΑΙΝΣΪαινσϊ+']*"}" {return  MESSAGEARG;}
 
-[ ]*\n		{lineno++;}
+\n		{lineno++;}
 
 .		{return yytext[0];}
 
