@@ -47,8 +47,10 @@
 <I>
 <N pl="y" gnt="y">
 <V p="y" t="foshuit">
+<N pl="y" gnt="n" gnd="m" h="y">
 <N pl="y" gnt="n" gnd="f" h="y">
 <V p="n" t="gnáth">
 <N pl="y" gnt="n" h="y">
 <N pl="n" gnt="y" gnd="m" h="y">
 <N pl="n" gnt="n" h="y">
+<N pl="y" gnt="y" gnd="m" h="y">
