@@ -1,0 +1,48 @@
+--- Makefile.raw	2004-08-25 14:42:11.805848552 -0500
++++ Makefile	2004-08-25 14:42:15.896226720 -0500
+@@ -295,4 +295,45 @@
+ zipped : perl
+ 	(cd $(PERLD); make zipdist)
+ 
++benchmark : FORCE
++	benchcorp | LC_ALL=ga_IE perl -d:DProf /usr/bin/gram-ga.pl --iomlan --dath=none > /dev/null
++	bash bmtabla >> ../../eile/benchmarks
++	vi ../../eile/benchmarks
++	rm -f tmon.out
++
++Changes : ../stair.html
++	vilistextum $(GRAMDIR)/stair.html - | sed -n '/^ChangeLog/,/----/p' | egrep -v -- '---' > $@
++
++ISPELLDIR = ${HOME}/gaeilge/ispell
++
++# use "groom" instead of this directly (since it requires ispell personal, etc.)
++lexfromdb : FORCE
++	Gin 12
++	((cat ${HOME}/.ispell_gaeilge; cat ${HOME}/.biobla | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | aspell -dga -p${HOME}/.aspell.blank.pws -l) | sed 's/.*/& 44/'; cat FOCAIL) | LC_COLLATE=POSIX sort -u -k1,1 -k2,2n > lexicon-ga.txt
++	$(MAKE) rebuildlex
++	rm -f FOCAIL
++
++# for convenience (from groom); but also ensures built in correct order
++gafromdb : FORCE
++	$(MAKE) lexfromdb
++	$(MAKE) eilefromdb
++	$(MAKE) earrfromdb
++
++ATH = ${ISPELLDIR}/ispell-gaeilge/athfhocail
++
++# use "groom" instead of this directly
++eilefromdb : FORCE
++	sed 's/ .*//' lexicon-ga.txt > ./tempfocail
++	sed 's/ .*//' $(ATH) | keepif -n ./tempfocail latin-1 | sort -u | join $(ATH) - | LC_COLLATE=POSIX sort -k1,1 | sed 's/ /_/g; s/_/ /;' | $(EGREP) . > ./eile-ga.bs
++	rm -f tempfocail
++
++EARR = ${ISPELLDIR}/ispell-gaeilge/gaelu ${ISPELLDIR}/ispell-gaeilge/earraidi
++
++# use "groom" instead of this directly
++earrfromdb : FORCE
++	sed 's/ .*//' lexicon-ga.txt eile-ga.bs > ./tempfocail
++	sort -k1,1 $(EARR) > ./tempsrc
++	sed 's/ .*//' ./tempsrc | keepif -n ./tempfocail latin-1 | sort -u | join ./tempsrc - | LC_COLLATE=POSIX sort -k1,1 | sed 's/ /_/g; s/_/ /;' | $(EGREP) . > ./earraidi-ga.bs
++	rm -f tempfocail tempsrc
++
+ FORCE :
