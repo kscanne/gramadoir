@@ -14,6 +14,13 @@
 #  are marked up with <F> and all other tags automatically take precedence
 #  over <F>; e.g. raibh as a noun.  But should leave the rules here since 
 #  the performance hit is small and they might pop up in corpus eventually
+#
+#  Some remarks on initial h; only ambig words in corpus that have
+#  a tag other than A,N,V,Y are "hamhlaidh" and "haló".
+#  The first doesn't matter - unigram tags as <R> but it's got
+#  an INPHRASE only rule; second is explicitly tagged with a rule below.
+#  Verbs after [Nn]á are handled by rule below.
+#  Anything with a <Y> ends up as <Y> (see the PROPER rule below).
 <S>[Ii]</S> <B>bhfuil</B>:<N pl="n" gnt="n" gnd="f">
 <B>bhfuil</B>:<V p="y" t="láith">
 <B>raibh</B>:<V p="y" t="caite">
@@ -199,6 +206,9 @@ CAPITAL <B>Gabhann</B>:<Y>
 #<B>[Gg]o</B> <S>dtí</S>:<S>
 <B>[Gg]o</B> <A>ANYTHING</A>:<U>
 # see "gur" last resort...
+<T>na</T> <B>huaire</B>:<N pl="n" gnt="y" gnd="f" h="y">
+# all others are like "ceithre huaire"
+<B>huaire</B>:<N pl="y" gnt="n" gnd="f" h="y">
 #  not "Carry!" imperative
 <B>iompair</B>:<N pl="n" gnt="y" gnd="m">
 # not "yam" :)
@@ -212,6 +222,10 @@ CAPITAL <B>Gabhann</B>:<Y>
 <B>[Ll]án</B> <D>ANYTHING</D>:<N pl="n" gnt="n" gnd="m">
 <B>[Ll]án</B> <S>de</S>:<A pl="n" gnt="n">
 <S>[Ll]e</S> <B>(haon|hocht)</B>:<A pl="n" gnt="n" h="y">
+<S>[Ll]e</S> <B><Z>ANYNMCH</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m" h="y">
+<S>[Ll]e</S> <B><Z>ANYNFCH</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f" h="y">
+<S>[Ll]e</S> <B><Z>ANYNMPLH</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m" h="y">
+<S>[Ll]e</S> <B><Z>ANYNFPLH</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f" h="y">
 <B>[Ll]éinn</B>:<N pl="n" gnt="y" gnd="m">
 # see last resort at the end
 <B>[Ll]eis</B> <T>na</T>:<S>
@@ -284,6 +298,8 @@ a <B>sé</B>:<A pl="n" gnt="n">
 <B>[Ss]iad</B>:<P>
 # compare with similar le,na rules above
 <S>[Ss]na</S> <B>(haon|hocht)</B>:<A pl="n" gnt="n" h="y">
+<S>[Ss]na</S> <B><Z>ANYNMPLH</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m" h="y">
+<S>[Ss]na</S> <B><Z>ANYNFPLH</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f" h="y">
 # not imperative/past verb
 <B>[Ss]námh</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Tt]har</B>:<S>
@@ -403,7 +419,11 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 # uppercase "Is" is usually copula: "Is ócáidí iontacha"
 is <B><Z>ANYWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
 [Gg]o <B><Z>NOUNADJ</Z>ANYTHING</B>:<A pl="n" gnt="n">
-[Gg]o <B><Z>NOUNADJH</Z>ANYTHING</B>:<A pl="n" gnt="n" h="y">
+# go hintleachtach; intellectually and not "to an intellectual" - following rule
+[Gg]o <B><Z>ANYWITHCOMMONH</Z>ANYTHING</B>:<A pl="n" gnt="n" h="y">
+[Gg]o <B><Z>ANYNMCH</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m" h="y">
+# go hoíche   would end up as genitive by unigrams (since "X na hoíche" common)
+[Gg]o <B><Z>ANYNFCH</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f" h="y">
 # N[FM]ADJ macros don't allow genitives (see last rule in batch)
 <S>ANYTHING</S> <B><Z>NMADJ</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <T>[Aa]n</T> <B><Z>NMADJ</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
@@ -482,6 +502,11 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 <B><Z>STRONGPLM</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 <B><Z>STRONGPLF</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
 <T>na</T> <B><Z>ANYNFG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+# this because unigram would give genitive; masculine is fine by unigram
+<D>FINALA</D> <B><Z>ANYNFCH</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f" h="y">
+<N>ANYTHING</N> <T>na</T> <B><Z>ANYNFGH</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f" h="y">
+<T>na</T> <B><Z>ANYNMPLH</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m" h="y">
+<T>na</T> <B><Z>ANYNFPLH</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f" h="y">
 <T>na</T> <B><Z>NMONEADJ</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="m">
 <[^N]>ANYTHING</[^N]> <B><Z>NFFOUR</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 # mar, ach, go
