@@ -21,10 +21,20 @@ sub massage
 	return $string;
 }
 
+sub my_warn
+{
+return 1;
+}
+
 if (@ARGV != 2) {
 	die "Usage: $0 POFILE LANGUAGECODE\n";
 }
-my $aref = Locale::PO->load_file_asarray($ARGV[0]);
+
+my $aref;
+{
+	local $SIG{__WARN__} = 'my_warn';
+	$aref = Locale::PO->load_file_asarray($ARGV[0]);
+}
 shift(@$aref);
 my $lang = $ARGV[1];
 
