@@ -100,3 +100,37 @@ An Gramad�ir: aspell-EN is not installed
 An Gramad�ir: conversion from fakecode is not supported
 An Gramad�ir: Problemen met lezen van de databank
 An Gramad�ir: Problemen met lezen van de databank
+test various error messages
+Грамадойр: nonexistentfile: Тийм файл алга.
+Грамадойр: /home/kps: Энэ бол лавлах
+Грамадойр: /etc/shadow: Хандалт хүчингүй
+Грамадойр: танигдахгүй сонголт --fakeoption
+Илүү мэдээллийн хувьд gr --help гэж оролд.
+Грамадойр: танигдахгүй сонголт --fakeoption
+Илүү мэдээллийн хувьд gr --help гэж оролд.
+Грамадойр: --teanga сонголт аргумент шаардаж байна
+Илүү мэдээллийн хувьд gr --help гэж оролд.
+Грамадойр: --xml сонголт аргумент зөвшөөрөхгүй
+Илүү мэдээллийн хувьд gr --help гэж оролд.
+Грамадойр: el хэл дэмжигдээгүй байна.
+Грамадойр: aspell-EN суулгагдаагүй байна
+Грамадойр: fakecode -с хөрвүүлэх дэмжигдээгүй
+Грамадойр: өгөгдлийн бааз уншиж байхад алдаа
+Грамадойр: өгөгдлийн бааз уншиж байхад алдаа
+test various error messages
+An Gramad�ir: nonexistentfile: Tak� s�bor neexistuje.
+An Gramad�ir: /home/kps: Toto je prie�inok
+An Gramad�ir: /etc/shadow: Pr�stup nepovolen�
+An Gramad�ir: nezn�ma vo�ba --fakeoption
+Sk�ste gr --help pre �al�ie inform�cie.
+An Gramad�ir: nezn�ma vo�ba --fakeoption
+Sk�ste gr --help pre �al�ie inform�cie.
+An Gramad�ir: vo�ba --teanga vy�aduje parameter
+Sk�ste gr --help pre �al�ie inform�cie.
+An Gramad�ir: vo�ba --xml neprip��ta parameter
+Sk�ste gr --help pre �al�ie inform�cie.
+An Gramad�ir: Jazyk el nie je podporovan�.
+An Gramad�ir: aspell-EN nie je nain�talovan�
+An Gramad�ir: konverzia z fakecode nie je podporovan�
+An Gramad�ir: probl�m pri ��tan� z datab�zy
+An Gramad�ir: probl�m pri ��tan� z datab�zy

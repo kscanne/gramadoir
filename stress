@@ -59,6 +59,8 @@ test_language ga_IE
 test_language ga_IE.utf8
 test_language ro_RO
 test_language nl_NL
+test_language mn_MN
+test_language sk_SK
 rm -f triail.2
 }
 

@@ -50,11 +50,11 @@ test xml flag
 <line uimhir="3"> <Q>An</Q> <V p="xx" t="l·ith">bhfuil</V> <A pl="n" gnt="n">aon</A> <E msg="ANAITHNID"><X>uaktar</X></E> <A>reoite</A> <O>agat</O>? </line>
 <line uimhir="4"> <Q>An</Q> <V p="xx" t="l·ith">bhfuil</V> <E msg="ANAITHNID"><X>ayn</X></E> <N pl="n" gnt="n" gnd="m">uachtar</N> <E msg="ANAITHNIDSRL"><X>roach</X></E> <O>agat</O>? </line>
 <line uimhir="5"> <V p="xx" t="l·ith">BÌonn</V> <T>an</T> <E msg="NEAMHCHOIT"><F>ge·l</F></E> <S>ag</S> <N pl="n" gnt="n" gnd="f">satailt</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">dubh</N>. </line>
-<line uimhir="6"> <E msg="NIAITCH"><V cop="y">Nach</V> <A pl="n" gnt="n" h="y">holc</A></E> <T>an</T> <N pl="n" gnt="n" gnd="f">mhaise</N> <O>duit</O> <S>a</S> <N pl="n" gnt="n" gnd="f">bheith</N> <S>ag</S> <N pl="n" gnt="n" gnd="m">magadh</N>. </line>
-<line uimhir="7"> <E msg="NIAITCH"><V cop="y">Ba</V> <P h="y">hiad</P></E> <T>na</T> <N pl="y" gnt="n" gnd="m">hamhr·in</N> <S>i</S> <N pl="n" gnt="n" gnd="m">dtosach</N> <V cop="y">ba</V> <N pl="n" gnt="n" gnd="f">ch˙is</N> <O>leis</O>. </line>
-<line uimhir="8"> <V cop="y">Ba</V> <P>iad</P> <T>na</T> <E msg="NIAITCH"><A pl="n" gnt="n">trÌ</A> <N pl="n" gnt="n" gnd="f" h="y">h·it</N></E> <P>iad</P> <N pl="n" gnt="n" gnd="m">Bost˙n</N>, <N pl="n" gnt="n" gnd="m">Baile</N> <N pl="n" gnt="y" gnd="m">¡tha</N> <N pl="n" gnt="n" gnd="f">Cliath</N> <C>agus</C> <A pl="n" gnt="n">Nua</A> <N pl="n" gnt="n" gnd="m">Eabhrac</N>. </line>
-<line uimhir="9"> <S>Sa</S> <E msg="PREFIXH"><A pl="n" gnt="n">dara</A> <N pl="n" gnt="n" gnd="m">alt</N></E>, <N pl="n" gnt="n" gnd="m">dÈan</N> <N pl="n" gnt="n" gnd="m">cur</N> <R>sÌos</R> <S>ar</S> <U>a</U> <V p="xx" t="caite">bhfaca</V> <P>siad</P> <S>sa</S> <N pl="n" gnt="n" gnd="f">Sp·inn</N>. </line>
-<line uimhir="10"> <V p="xx" t="coinn">Oirfeadh</V> <N pl="n" gnt="n" gnd="m">sÌol</N> <A pl="n" gnt="n">·iti˙il</A> <R>nÌos</R> <A pl="n" gnt="y" gnd="f">fearr</A> <C>n·</C> <T>an</T> <N pl="n" gnt="n" gnd="m">sÌol</N> <E msg="NIAITCH"><U>a</U> <V p="saor" t="ord">h˙s·idtear</V></E> <R>go minic</R>. </line>
+<line uimhir="6"> <C>Ach</C> <V p="xx" t="caite">bhÌ</V> <P>mÈ</P> <S>ag</S> <N pl="n" gnt="n" gnd="f">lean˙int</N> <E msg="GENITIVE"><S>ar aghaidh</S> <T>an</T> <N pl="n" gnt="n" gnd="m">t-am</N></E> <R>ar fad</R> <O>leis</O>. </line>
+<line uimhir="7"> <E msg="NIAITCH"><V cop="y">Nach</V> <A pl="n" gnt="n" h="y">holc</A></E> <T>an</T> <N pl="n" gnt="n" gnd="f">mhaise</N> <O>duit</O> <S>a</S> <N pl="n" gnt="n" gnd="f">bheith</N> <S>ag</S> <N pl="n" gnt="n" gnd="m">magadh</N>. </line>
+<line uimhir="8"> <E msg="NIAITCH"><V cop="y">Ba</V> <P h="y">hiad</P></E> <T>na</T> <N pl="y" gnt="n" gnd="m">hamhr·in</N> <S>i</S> <N pl="n" gnt="n" gnd="m">dtosach</N> <V cop="y">ba</V> <N pl="n" gnt="n" gnd="f">ch˙is</N> <O>leis</O>. </line>
+<line uimhir="9"> <V cop="y">Ba</V> <P>iad</P> <T>na</T> <E msg="NIAITCH"><A pl="n" gnt="n">trÌ</A> <N pl="n" gnt="n" gnd="f" h="y">h·it</N></E> <P>iad</P> <N pl="n" gnt="n" gnd="m">Bost˙n</N>, <N pl="n" gnt="n" gnd="m">Baile</N> <N pl="n" gnt="y" gnd="m">¡tha</N> <N pl="n" gnt="n" gnd="f">Cliath</N> <C>agus</C> <A pl="n" gnt="n">Nua</A> <N pl="n" gnt="n" gnd="m">Eabhrac</N>. </line>
+<line uimhir="10"> <S>Sa</S> <E msg="PREFIXH"><A pl="n" gnt="n">dara</A> <N pl="n" gnt="n" gnd="m">alt</N></E>, <N pl="n" gnt="n" gnd="m">dÈan</N> <N pl="n" gnt="n" gnd="m">cur</N> <R>sÌos</R> <S>ar</S> <U>a</U> <V p="xx" t="caite">bhfaca</V> <P>siad</P> <S>sa</S> <N pl="n" gnt="n" gnd="f">Sp·inn</N>. </line>
 </teacs>
 test html flag
 Currently checking triail.2
@@ -73,20 +73,20 @@ Unknown word, Unknown word (ignoring remainder in this sentence).
 <br><br>5: BÌonn an <b class=gramadoir>ge·l</b> ag satailt ar an dubh. <br>
 Valid word but extremely rare in actual usage.
 
-<br><br>6: <b class=gramadoir>Nach holc</b> an mhaise duit a bheith ag magadh. <br>
+<br><br>6: Ach bhÌ mÈ ag lean˙int <b class=gramadoir>ar aghaidh an t-am</b> ar fad leis. <br>
+The genitive case is required here.
+
+<br><br>7: <b class=gramadoir>Nach holc</b> an mhaise duit a bheith ag magadh. <br>
 Unnecessary prefix /h/.
 
-<br><br>7: <b class=gramadoir>Ba hiad</b> na hamhr·in i dtosach ba ch˙is leis. <br>
+<br><br>8: <b class=gramadoir>Ba hiad</b> na hamhr·in i dtosach ba ch˙is leis. <br>
 Unnecessary prefix /h/.
 
-<br><br>8: Ba iad na <b class=gramadoir>trÌ h·it</b> iad Bost˙n, Baile ¡tha Cliath agus Nua Eabhrac. <br>
+<br><br>9: Ba iad na <b class=gramadoir>trÌ h·it</b> iad Bost˙n, Baile ¡tha Cliath agus Nua Eabhrac. <br>
 Unnecessary prefix /h/.
 
-<br><br>9: Sa <b class=gramadoir>dara alt</b>, dÈan cur sÌos ar a bhfaca siad sa Sp·inn. <br>
+<br><br>10: Sa <b class=gramadoir>dara alt</b>, dÈan cur sÌos ar a bhfaca siad sa Sp·inn. <br>
 Prefix /h/ missing.
-
-<br><br>10: Oirfeadh sÌol ·iti˙il nÌos fearr n· an sÌol <b class=gramadoir>a h˙s·idtear</b> go minic. <br>
-Unnecessary prefix /h/.
 
 test ionchod flag and ability to read from stdin
 1: N√≠ raibh l√≠on m√≥r daoine bainteach leis an scaifte a bh√≠ ag iarraidh mioscais a choth√∫. 
@@ -104,20 +104,20 @@ Unknown word, Unknown word (ignoring remainder in this sentence).
 5: B√≠onn an ge√°l ag satailt ar an dubh. 
 Valid word but extremely rare in actual usage.
 
-6: Nach holc an mhaise duit a bheith ag magadh. 
+6: Ach bh√≠ m√© ag lean√∫int ar aghaidh an t-am ar fad leis. 
+The genitive case is required here.
+
+7: Nach holc an mhaise duit a bheith ag magadh. 
 Unnecessary prefix /h/.
 
-7: Ba hiad na hamhr√°in i dtosach ba ch√∫is leis. 
+8: Ba hiad na hamhr√°in i dtosach ba ch√∫is leis. 
 Unnecessary prefix /h/.
 
-8: Ba iad na tr√≠ h√°it iad Bost√∫n, Baile √Åtha Cliath agus Nua Eabhrac. 
+9: Ba iad na tr√≠ h√°it iad Bost√∫n, Baile √Åtha Cliath agus Nua Eabhrac. 
 Unnecessary prefix /h/.
 
-9: Sa dara alt, d√©an cur s√≠os ar a bhfaca siad sa Sp√°inn. 
+10: Sa dara alt, d√©an cur s√≠os ar a bhfaca siad sa Sp√°inn. 
 Prefix /h/ missing.
-
-10: Oirfeadh s√≠ol √°iti√∫il n√≠os fearr n√° an s√≠ol a h√∫s√°idtear go minic. 
-Unnecessary prefix /h/.
 
 test English
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
@@ -150,9 +150,9 @@ Unknown word /MÌlitri˙, MÌlitrÌ, MhÌlitri˙, MÌlitrigh, MÌlitrÌm/?.
 
 test brill algorithm
 <N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<V p="xx" t="l·ith">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 a <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<V p="xx" t="l·ith">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 <A pl="n" gnt="n">ANYTHING</A> <B><Z><U/><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/><V cop="y"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 a <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
@@ -169,20 +169,21 @@ a <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p=
 an <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <A pl="n" gnt="n">ANYTHING</A> <B><Z><S/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<S>
 <V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="y" gnd="f"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
-<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <C>ANYTHING</C> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <P>ANYTHING</P> <B><Z><R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/></Z>ANYTHING</B>:<R>
 <P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <T>ANYTHING</T> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 an <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
-at· <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <V p="xx" t="l·ith">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+at· <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 seo <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+mÈ <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 do <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 do <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <R>ANYTHING</R> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
@@ -193,19 +194,15 @@ do <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y"
 <P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 <C>ANYTHING</C> <B><Z><C/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/></Z>ANYTHING</B>:<C>
 <A pl="n" gnt="n">ANYTHING</A> <B><Z><N pl="n" gnt="y" gnd="f"/><N pl="y" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
-<V p="xx" t="f·ist">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <V p="1˙" t="l·ith">ANYTHING</V> <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<O>
-mÈ <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 T· <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<V p="xx" t="f·ist">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 agus <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 sÈ <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 sin <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 bhur <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 <V cop="y">ANYTHING</V> <B><Z><O em="y"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<O em="y">
-fÈin <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-bheidh <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<V pl="y" p="2˙" t="ord">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/><V p="3˙" t="gn·th"/><V pl="y" p="2˙" t="gn·th"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <N pl="y" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 do <B><Z><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
 sÈ <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
@@ -215,6 +212,9 @@ T· <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y"
 mo <B><Z><N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 t˙ <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 sin <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+fÈin <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+bheidh <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V pl="y" p="2˙" t="ord">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/><V p="3˙" t="gn·th"/><V pl="y" p="2˙" t="gn·th"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <V p="xx" t="l·ith">ANYTHING</V> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
 <C>ANYTHING</C> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
 <N pl="y" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
@@ -414,11 +414,11 @@ test xml flag
 <line uimhir="3"> <Q>An</Q> <V p="xx" t="l·ith">bhfuil</V> <A pl="n" gnt="n">aon</A> <E msg="ANAITHNID"><X>uaktar</X></E> <A>reoite</A> <O>agat</O>? </line>
 <line uimhir="4"> <Q>An</Q> <V p="xx" t="l·ith">bhfuil</V> <E msg="ANAITHNID"><X>ayn</X></E> <N pl="n" gnt="n" gnd="m">uachtar</N> <E msg="ANAITHNIDSRL"><X>roach</X></E> <O>agat</O>? </line>
 <line uimhir="5"> <V p="xx" t="l·ith">BÌonn</V> <T>an</T> <E msg="NEAMHCHOIT"><F>ge·l</F></E> <S>ag</S> <N pl="n" gnt="n" gnd="f">satailt</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">dubh</N>. </line>
-<line uimhir="6"> <E msg="NIAITCH"><V cop="y">Nach</V> <A pl="n" gnt="n" h="y">holc</A></E> <T>an</T> <N pl="n" gnt="n" gnd="f">mhaise</N> <O>duit</O> <S>a</S> <N pl="n" gnt="n" gnd="f">bheith</N> <S>ag</S> <N pl="n" gnt="n" gnd="m">magadh</N>. </line>
-<line uimhir="7"> <E msg="NIAITCH"><V cop="y">Ba</V> <P h="y">hiad</P></E> <T>na</T> <N pl="y" gnt="n" gnd="m">hamhr·in</N> <S>i</S> <N pl="n" gnt="n" gnd="m">dtosach</N> <V cop="y">ba</V> <N pl="n" gnt="n" gnd="f">ch˙is</N> <O>leis</O>. </line>
-<line uimhir="8"> <V cop="y">Ba</V> <P>iad</P> <T>na</T> <E msg="NIAITCH"><A pl="n" gnt="n">trÌ</A> <N pl="n" gnt="n" gnd="f" h="y">h·it</N></E> <P>iad</P> <N pl="n" gnt="n" gnd="m">Bost˙n</N>, <N pl="n" gnt="n" gnd="m">Baile</N> <N pl="n" gnt="y" gnd="m">¡tha</N> <N pl="n" gnt="n" gnd="f">Cliath</N> <C>agus</C> <A pl="n" gnt="n">Nua</A> <N pl="n" gnt="n" gnd="m">Eabhrac</N>. </line>
-<line uimhir="9"> <S>Sa</S> <E msg="PREFIXH"><A pl="n" gnt="n">dara</A> <N pl="n" gnt="n" gnd="m">alt</N></E>, <N pl="n" gnt="n" gnd="m">dÈan</N> <N pl="n" gnt="n" gnd="m">cur</N> <R>sÌos</R> <S>ar</S> <U>a</U> <V p="xx" t="caite">bhfaca</V> <P>siad</P> <S>sa</S> <N pl="n" gnt="n" gnd="f">Sp·inn</N>. </line>
-<line uimhir="10"> <V p="xx" t="coinn">Oirfeadh</V> <N pl="n" gnt="n" gnd="m">sÌol</N> <A pl="n" gnt="n">·iti˙il</A> <R>nÌos</R> <A pl="n" gnt="y" gnd="f">fearr</A> <C>n·</C> <T>an</T> <N pl="n" gnt="n" gnd="m">sÌol</N> <E msg="NIAITCH"><U>a</U> <V p="saor" t="ord">h˙s·idtear</V></E> <R>go minic</R>. </line>
+<line uimhir="6"> <C>Ach</C> <V p="xx" t="caite">bhÌ</V> <P>mÈ</P> <S>ag</S> <N pl="n" gnt="n" gnd="f">lean˙int</N> <E msg="GENITIVE"><S>ar aghaidh</S> <T>an</T> <N pl="n" gnt="n" gnd="m">t-am</N></E> <R>ar fad</R> <O>leis</O>. </line>
+<line uimhir="7"> <E msg="NIAITCH"><V cop="y">Nach</V> <A pl="n" gnt="n" h="y">holc</A></E> <T>an</T> <N pl="n" gnt="n" gnd="f">mhaise</N> <O>duit</O> <S>a</S> <N pl="n" gnt="n" gnd="f">bheith</N> <S>ag</S> <N pl="n" gnt="n" gnd="m">magadh</N>. </line>
+<line uimhir="8"> <E msg="NIAITCH"><V cop="y">Ba</V> <P h="y">hiad</P></E> <T>na</T> <N pl="y" gnt="n" gnd="m">hamhr·in</N> <S>i</S> <N pl="n" gnt="n" gnd="m">dtosach</N> <V cop="y">ba</V> <N pl="n" gnt="n" gnd="f">ch˙is</N> <O>leis</O>. </line>
+<line uimhir="9"> <V cop="y">Ba</V> <P>iad</P> <T>na</T> <E msg="NIAITCH"><A pl="n" gnt="n">trÌ</A> <N pl="n" gnt="n" gnd="f" h="y">h·it</N></E> <P>iad</P> <N pl="n" gnt="n" gnd="m">Bost˙n</N>, <N pl="n" gnt="n" gnd="m">Baile</N> <N pl="n" gnt="y" gnd="m">¡tha</N> <N pl="n" gnt="n" gnd="f">Cliath</N> <C>agus</C> <A pl="n" gnt="n">Nua</A> <N pl="n" gnt="n" gnd="m">Eabhrac</N>. </line>
+<line uimhir="10"> <S>Sa</S> <E msg="PREFIXH"><A pl="n" gnt="n">dara</A> <N pl="n" gnt="n" gnd="m">alt</N></E>, <N pl="n" gnt="n" gnd="m">dÈan</N> <N pl="n" gnt="n" gnd="m">cur</N> <R>sÌos</R> <S>ar</S> <U>a</U> <V p="xx" t="caite">bhfaca</V> <P>siad</P> <S>sa</S> <N pl="n" gnt="n" gnd="f">Sp·inn</N>. </line>
 </teacs>
 test html flag
 triail.2 wird gerade gepr¸ft
@@ -437,20 +437,20 @@ Unbekanntes Wort, Unbekanntes Wort (der Satz wird nicht weiter bearbeitet).
 <br><br>5: BÌonn an <b class=gramadoir>ge·l</b> ag satailt ar an dubh. <br>
 Valid word but extremely rare in actual usage.
 
-<br><br>6: <b class=gramadoir>Nach holc</b> an mhaise duit a bheith ag magadh. <br>
+<br><br>6: Ach bhÌ mÈ ag lean˙int <b class=gramadoir>ar aghaidh an t-am</b> ar fad leis. <br>
+The genitive case is required here.
+
+<br><br>7: <b class=gramadoir>Nach holc</b> an mhaise duit a bheith ag magadh. <br>
 Unnecessary prefix /h/.
 
-<br><br>7: <b class=gramadoir>Ba hiad</b> na hamhr·in i dtosach ba ch˙is leis. <br>
+<br><br>8: <b class=gramadoir>Ba hiad</b> na hamhr·in i dtosach ba ch˙is leis. <br>
 Unnecessary prefix /h/.
 
-<br><br>8: Ba iad na <b class=gramadoir>trÌ h·it</b> iad Bost˙n, Baile ¡tha Cliath agus Nua Eabhrac. <br>
+<br><br>9: Ba iad na <b class=gramadoir>trÌ h·it</b> iad Bost˙n, Baile ¡tha Cliath agus Nua Eabhrac. <br>
 Unnecessary prefix /h/.
 
-<br><br>9: Sa <b class=gramadoir>dara alt</b>, dÈan cur sÌos ar a bhfaca siad sa Sp·inn. <br>
+<br><br>10: Sa <b class=gramadoir>dara alt</b>, dÈan cur sÌos ar a bhfaca siad sa Sp·inn. <br>
 Pr‰fix /h/ fehlt.
-
-<br><br>10: Oirfeadh sÌol ·iti˙il nÌos fearr n· an sÌol <b class=gramadoir>a h˙s·idtear</b> go minic. <br>
-Unnecessary prefix /h/.
 
 test ionchod flag and ability to read from stdin
 1: N√≠ raibh l√≠on m√≥r daoine bainteach leis an scaifte a bh√≠ ag iarraidh mioscais a choth√∫. 
@@ -468,20 +468,20 @@ Unbekanntes Wort, Unbekanntes Wort (der Satz wird nicht weiter bearbeitet).
 5: B√≠onn an ge√°l ag satailt ar an dubh. 
 Valid word but extremely rare in actual usage.
 
-6: Nach holc an mhaise duit a bheith ag magadh. 
+6: Ach bh√≠ m√© ag lean√∫int ar aghaidh an t-am ar fad leis. 
+The genitive case is required here.
+
+7: Nach holc an mhaise duit a bheith ag magadh. 
 Unnecessary prefix /h/.
 
-7: Ba hiad na hamhr√°in i dtosach ba ch√∫is leis. 
+8: Ba hiad na hamhr√°in i dtosach ba ch√∫is leis. 
 Unnecessary prefix /h/.
 
-8: Ba iad na tr√≠ h√°it iad Bost√∫n, Baile √Åtha Cliath agus Nua Eabhrac. 
+9: Ba iad na tr√≠ h√°it iad Bost√∫n, Baile √Åtha Cliath agus Nua Eabhrac. 
 Unnecessary prefix /h/.
 
-9: Sa dara alt, d√©an cur s√≠os ar a bhfaca siad sa Sp√°inn. 
+10: Sa dara alt, d√©an cur s√≠os ar a bhfaca siad sa Sp√°inn. 
 Pr‰fix /h/ fehlt.
-
-10: Oirfeadh s√≠ol √°iti√∫il n√≠os fearr n√° an s√≠ol a h√∫s√°idtear go minic. 
-Unnecessary prefix /h/.
 
 test English
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
@@ -514,9 +514,9 @@ Unbekanntes Wort /MÌlitri˙, MÌlitrÌ, MhÌlitri˙, MÌlitrigh, MÌlitrÌm/?.
 
 test brill algorithm
 <N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<V p="xx" t="l·ith">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 a <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<V p="xx" t="l·ith">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 <A pl="n" gnt="n">ANYTHING</A> <B><Z><U/><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/><V cop="y"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 a <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
@@ -533,20 +533,21 @@ a <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p=
 an <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <A pl="n" gnt="n">ANYTHING</A> <B><Z><S/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<S>
 <V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="y" gnd="f"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
-<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <C>ANYTHING</C> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <P>ANYTHING</P> <B><Z><R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/></Z>ANYTHING</B>:<R>
 <P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <T>ANYTHING</T> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 an <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
-at· <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <V p="xx" t="l·ith">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+at· <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 seo <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+mÈ <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 do <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 do <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <R>ANYTHING</R> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
@@ -557,19 +558,15 @@ do <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y"
 <P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 <C>ANYTHING</C> <B><Z><C/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/></Z>ANYTHING</B>:<C>
 <A pl="n" gnt="n">ANYTHING</A> <B><Z><N pl="n" gnt="y" gnd="f"/><N pl="y" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
-<V p="xx" t="f·ist">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <V p="1˙" t="l·ith">ANYTHING</V> <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<O>
-mÈ <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 T· <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<V p="xx" t="f·ist">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 agus <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 sÈ <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 sin <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 bhur <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 <V cop="y">ANYTHING</V> <B><Z><O em="y"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<O em="y">
-fÈin <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-bheidh <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<V pl="y" p="2˙" t="ord">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/><V p="3˙" t="gn·th"/><V pl="y" p="2˙" t="gn·th"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <N pl="y" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 do <B><Z><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
 sÈ <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
@@ -579,6 +576,9 @@ T· <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y"
 mo <B><Z><N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 t˙ <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 sin <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+fÈin <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+bheidh <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V pl="y" p="2˙" t="ord">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/><V p="3˙" t="gn·th"/><V pl="y" p="2˙" t="gn·th"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <V p="xx" t="l·ith">ANYTHING</V> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
 <C>ANYTHING</C> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
 <N pl="y" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
@@ -777,11 +777,11 @@ test xml flag
 <line uimhir="3"> <Q>An</Q> <V p="xx" t="l·ith">bhfuil</V> <A pl="n" gnt="n">aon</A> <E msg="ANAITHNID"><X>uaktar</X></E> <A>reoite</A> <O>agat</O>? </line>
 <line uimhir="4"> <Q>An</Q> <V p="xx" t="l·ith">bhfuil</V> <E msg="ANAITHNID"><X>ayn</X></E> <N pl="n" gnt="n" gnd="m">uachtar</N> <E msg="ANAITHNIDSRL"><X>roach</X></E> <O>agat</O>? </line>
 <line uimhir="5"> <V p="xx" t="l·ith">BÌonn</V> <T>an</T> <E msg="NEAMHCHOIT"><F>ge·l</F></E> <S>ag</S> <N pl="n" gnt="n" gnd="f">satailt</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">dubh</N>. </line>
-<line uimhir="6"> <E msg="NIAITCH"><V cop="y">Nach</V> <A pl="n" gnt="n" h="y">holc</A></E> <T>an</T> <N pl="n" gnt="n" gnd="f">mhaise</N> <O>duit</O> <S>a</S> <N pl="n" gnt="n" gnd="f">bheith</N> <S>ag</S> <N pl="n" gnt="n" gnd="m">magadh</N>. </line>
-<line uimhir="7"> <E msg="NIAITCH"><V cop="y">Ba</V> <P h="y">hiad</P></E> <T>na</T> <N pl="y" gnt="n" gnd="m">hamhr·in</N> <S>i</S> <N pl="n" gnt="n" gnd="m">dtosach</N> <V cop="y">ba</V> <N pl="n" gnt="n" gnd="f">ch˙is</N> <O>leis</O>. </line>
-<line uimhir="8"> <V cop="y">Ba</V> <P>iad</P> <T>na</T> <E msg="NIAITCH"><A pl="n" gnt="n">trÌ</A> <N pl="n" gnt="n" gnd="f" h="y">h·it</N></E> <P>iad</P> <N pl="n" gnt="n" gnd="m">Bost˙n</N>, <N pl="n" gnt="n" gnd="m">Baile</N> <N pl="n" gnt="y" gnd="m">¡tha</N> <N pl="n" gnt="n" gnd="f">Cliath</N> <C>agus</C> <A pl="n" gnt="n">Nua</A> <N pl="n" gnt="n" gnd="m">Eabhrac</N>. </line>
-<line uimhir="9"> <S>Sa</S> <E msg="PREFIXH"><A pl="n" gnt="n">dara</A> <N pl="n" gnt="n" gnd="m">alt</N></E>, <N pl="n" gnt="n" gnd="m">dÈan</N> <N pl="n" gnt="n" gnd="m">cur</N> <R>sÌos</R> <S>ar</S> <U>a</U> <V p="xx" t="caite">bhfaca</V> <P>siad</P> <S>sa</S> <N pl="n" gnt="n" gnd="f">Sp·inn</N>. </line>
-<line uimhir="10"> <V p="xx" t="coinn">Oirfeadh</V> <N pl="n" gnt="n" gnd="m">sÌol</N> <A pl="n" gnt="n">·iti˙il</A> <R>nÌos</R> <A pl="n" gnt="y" gnd="f">fearr</A> <C>n·</C> <T>an</T> <N pl="n" gnt="n" gnd="m">sÌol</N> <E msg="NIAITCH"><U>a</U> <V p="saor" t="ord">h˙s·idtear</V></E> <R>go minic</R>. </line>
+<line uimhir="6"> <C>Ach</C> <V p="xx" t="caite">bhÌ</V> <P>mÈ</P> <S>ag</S> <N pl="n" gnt="n" gnd="f">lean˙int</N> <E msg="GENITIVE"><S>ar aghaidh</S> <T>an</T> <N pl="n" gnt="n" gnd="m">t-am</N></E> <R>ar fad</R> <O>leis</O>. </line>
+<line uimhir="7"> <E msg="NIAITCH"><V cop="y">Nach</V> <A pl="n" gnt="n" h="y">holc</A></E> <T>an</T> <N pl="n" gnt="n" gnd="f">mhaise</N> <O>duit</O> <S>a</S> <N pl="n" gnt="n" gnd="f">bheith</N> <S>ag</S> <N pl="n" gnt="n" gnd="m">magadh</N>. </line>
+<line uimhir="8"> <E msg="NIAITCH"><V cop="y">Ba</V> <P h="y">hiad</P></E> <T>na</T> <N pl="y" gnt="n" gnd="m">hamhr·in</N> <S>i</S> <N pl="n" gnt="n" gnd="m">dtosach</N> <V cop="y">ba</V> <N pl="n" gnt="n" gnd="f">ch˙is</N> <O>leis</O>. </line>
+<line uimhir="9"> <V cop="y">Ba</V> <P>iad</P> <T>na</T> <E msg="NIAITCH"><A pl="n" gnt="n">trÌ</A> <N pl="n" gnt="n" gnd="f" h="y">h·it</N></E> <P>iad</P> <N pl="n" gnt="n" gnd="m">Bost˙n</N>, <N pl="n" gnt="n" gnd="m">Baile</N> <N pl="n" gnt="y" gnd="m">¡tha</N> <N pl="n" gnt="n" gnd="f">Cliath</N> <C>agus</C> <A pl="n" gnt="n">Nua</A> <N pl="n" gnt="n" gnd="m">Eabhrac</N>. </line>
+<line uimhir="10"> <S>Sa</S> <E msg="PREFIXH"><A pl="n" gnt="n">dara</A> <N pl="n" gnt="n" gnd="m">alt</N></E>, <N pl="n" gnt="n" gnd="m">dÈan</N> <N pl="n" gnt="n" gnd="m">cur</N> <R>sÌos</R> <S>ar</S> <U>a</U> <V p="xx" t="caite">bhfaca</V> <P>siad</P> <S>sa</S> <N pl="n" gnt="n" gnd="f">Sp·inn</N>. </line>
 </teacs>
 test html flag
 Ag seice·il triail.2
@@ -800,20 +800,20 @@ Focal anaithnid, Focal anaithnid (scaoilfear an chuid eile san abairt seo).
 <br><br>5: BÌonn an <b class=gramadoir>ge·l</b> ag satailt ar an dubh. <br>
 Focal bailÌ ach fÌor-neamhchoitianta in ˙s·id iarbhÌr.
 
-<br><br>6: <b class=gramadoir>Nach holc</b> an mhaise duit a bheith ag magadh. <br>
+<br><br>6: Ach bhÌ mÈ ag lean˙int <b class=gramadoir>ar aghaidh an t-am</b> ar fad leis. <br>
+Is g· leis an ghinideach anseo.
+
+<br><br>7: <b class=gramadoir>Nach holc</b> an mhaise duit a bheith ag magadh. <br>
 RÈamhlitir /h/ gan gh·.
 
-<br><br>7: <b class=gramadoir>Ba hiad</b> na hamhr·in i dtosach ba ch˙is leis. <br>
+<br><br>8: <b class=gramadoir>Ba hiad</b> na hamhr·in i dtosach ba ch˙is leis. <br>
 RÈamhlitir /h/ gan gh·.
 
-<br><br>8: Ba iad na <b class=gramadoir>trÌ h·it</b> iad Bost˙n, Baile ¡tha Cliath agus Nua Eabhrac. <br>
+<br><br>9: Ba iad na <b class=gramadoir>trÌ h·it</b> iad Bost˙n, Baile ¡tha Cliath agus Nua Eabhrac. <br>
 RÈamhlitir /h/ gan gh·.
 
-<br><br>9: Sa <b class=gramadoir>dara alt</b>, dÈan cur sÌos ar a bhfaca siad sa Sp·inn. <br>
+<br><br>10: Sa <b class=gramadoir>dara alt</b>, dÈan cur sÌos ar a bhfaca siad sa Sp·inn. <br>
 RÈamhlitir /h/ ar iarraidh.
-
-<br><br>10: Oirfeadh sÌol ·iti˙il nÌos fearr n· an sÌol <b class=gramadoir>a h˙s·idtear</b> go minic. <br>
-RÈamhlitir /h/ gan gh·.
 
 test ionchod flag and ability to read from stdin
 1: N√≠ raibh l√≠on m√≥r daoine bainteach leis an scaifte a bh√≠ ag iarraidh mioscais a choth√∫. 
@@ -831,20 +831,20 @@ Focal anaithnid, Focal anaithnid (scaoilfear an chuid eile san abairt seo).
 5: B√≠onn an ge√°l ag satailt ar an dubh. 
 Focal bailÌ ach fÌor-neamhchoitianta in ˙s·id iarbhÌr.
 
-6: Nach holc an mhaise duit a bheith ag magadh. 
+6: Ach bh√≠ m√© ag lean√∫int ar aghaidh an t-am ar fad leis. 
+Is g· leis an ghinideach anseo.
+
+7: Nach holc an mhaise duit a bheith ag magadh. 
 RÈamhlitir /h/ gan gh·.
 
-7: Ba hiad na hamhr√°in i dtosach ba ch√∫is leis. 
+8: Ba hiad na hamhr√°in i dtosach ba ch√∫is leis. 
 RÈamhlitir /h/ gan gh·.
 
-8: Ba iad na tr√≠ h√°it iad Bost√∫n, Baile √Åtha Cliath agus Nua Eabhrac. 
+9: Ba iad na tr√≠ h√°it iad Bost√∫n, Baile √Åtha Cliath agus Nua Eabhrac. 
 RÈamhlitir /h/ gan gh·.
 
-9: Sa dara alt, d√©an cur s√≠os ar a bhfaca siad sa Sp√°inn. 
+10: Sa dara alt, d√©an cur s√≠os ar a bhfaca siad sa Sp√°inn. 
 RÈamhlitir /h/ ar iarraidh.
-
-10: Oirfeadh s√≠ol √°iti√∫il n√≠os fearr n√° an s√≠ol a h√∫s√°idtear go minic. 
-RÈamhlitir /h/ gan gh·.
 
 test English
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
@@ -877,9 +877,9 @@ Focal anaithnid /MÌlitri˙, MÌlitrÌ, MhÌlitri˙, MÌlitrigh, MÌlitrÌm/?.
 
 test brill algorithm
 <N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<V p="xx" t="l·ith">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 a <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<V p="xx" t="l·ith">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 <A pl="n" gnt="n">ANYTHING</A> <B><Z><U/><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/><V cop="y"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 a <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
@@ -896,20 +896,21 @@ a <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p=
 an <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <A pl="n" gnt="n">ANYTHING</A> <B><Z><S/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<S>
 <V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="y" gnd="f"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
-<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <C>ANYTHING</C> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <P>ANYTHING</P> <B><Z><R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/></Z>ANYTHING</B>:<R>
 <P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <T>ANYTHING</T> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 an <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
-at· <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <V p="xx" t="l·ith">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+at· <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 seo <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+mÈ <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 do <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 do <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <R>ANYTHING</R> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
@@ -920,19 +921,15 @@ do <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y"
 <P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 <C>ANYTHING</C> <B><Z><C/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/></Z>ANYTHING</B>:<C>
 <A pl="n" gnt="n">ANYTHING</A> <B><Z><N pl="n" gnt="y" gnd="f"/><N pl="y" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
-<V p="xx" t="f·ist">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <V p="1˙" t="l·ith">ANYTHING</V> <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<O>
-mÈ <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 T· <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<V p="xx" t="f·ist">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 agus <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 sÈ <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 sin <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 bhur <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 <V cop="y">ANYTHING</V> <B><Z><O em="y"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<O em="y">
-fÈin <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-bheidh <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<V pl="y" p="2˙" t="ord">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/><V p="3˙" t="gn·th"/><V pl="y" p="2˙" t="gn·th"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <N pl="y" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 do <B><Z><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
 sÈ <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
@@ -942,6 +939,9 @@ T· <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y"
 mo <B><Z><N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 t˙ <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 sin <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+fÈin <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+bheidh <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V pl="y" p="2˙" t="ord">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/><V p="3˙" t="gn·th"/><V pl="y" p="2˙" t="gn·th"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <V p="xx" t="l·ith">ANYTHING</V> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
 <C>ANYTHING</C> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
 <N pl="y" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
@@ -1140,11 +1140,11 @@ test xml flag
 <line uimhir="3"> <Q>An</Q> <V p="xx" t="l·ith">bhfuil</V> <A pl="n" gnt="n">aon</A> <E msg="ANAITHNID"><X>uaktar</X></E> <A>reoite</A> <O>agat</O>? </line>
 <line uimhir="4"> <Q>An</Q> <V p="xx" t="l·ith">bhfuil</V> <E msg="ANAITHNID"><X>ayn</X></E> <N pl="n" gnt="n" gnd="m">uachtar</N> <E msg="ANAITHNIDSRL"><X>roach</X></E> <O>agat</O>? </line>
 <line uimhir="5"> <V p="xx" t="l·ith">BÌonn</V> <T>an</T> <E msg="NEAMHCHOIT"><F>ge·l</F></E> <S>ag</S> <N pl="n" gnt="n" gnd="f">satailt</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">dubh</N>. </line>
-<line uimhir="6"> <E msg="NIAITCH"><V cop="y">Nach</V> <A pl="n" gnt="n" h="y">holc</A></E> <T>an</T> <N pl="n" gnt="n" gnd="f">mhaise</N> <O>duit</O> <S>a</S> <N pl="n" gnt="n" gnd="f">bheith</N> <S>ag</S> <N pl="n" gnt="n" gnd="m">magadh</N>. </line>
-<line uimhir="7"> <E msg="NIAITCH"><V cop="y">Ba</V> <P h="y">hiad</P></E> <T>na</T> <N pl="y" gnt="n" gnd="m">hamhr·in</N> <S>i</S> <N pl="n" gnt="n" gnd="m">dtosach</N> <V cop="y">ba</V> <N pl="n" gnt="n" gnd="f">ch˙is</N> <O>leis</O>. </line>
-<line uimhir="8"> <V cop="y">Ba</V> <P>iad</P> <T>na</T> <E msg="NIAITCH"><A pl="n" gnt="n">trÌ</A> <N pl="n" gnt="n" gnd="f" h="y">h·it</N></E> <P>iad</P> <N pl="n" gnt="n" gnd="m">Bost˙n</N>, <N pl="n" gnt="n" gnd="m">Baile</N> <N pl="n" gnt="y" gnd="m">¡tha</N> <N pl="n" gnt="n" gnd="f">Cliath</N> <C>agus</C> <A pl="n" gnt="n">Nua</A> <N pl="n" gnt="n" gnd="m">Eabhrac</N>. </line>
-<line uimhir="9"> <S>Sa</S> <E msg="PREFIXH"><A pl="n" gnt="n">dara</A> <N pl="n" gnt="n" gnd="m">alt</N></E>, <N pl="n" gnt="n" gnd="m">dÈan</N> <N pl="n" gnt="n" gnd="m">cur</N> <R>sÌos</R> <S>ar</S> <U>a</U> <V p="xx" t="caite">bhfaca</V> <P>siad</P> <S>sa</S> <N pl="n" gnt="n" gnd="f">Sp·inn</N>. </line>
-<line uimhir="10"> <V p="xx" t="coinn">Oirfeadh</V> <N pl="n" gnt="n" gnd="m">sÌol</N> <A pl="n" gnt="n">·iti˙il</A> <R>nÌos</R> <A pl="n" gnt="y" gnd="f">fearr</A> <C>n·</C> <T>an</T> <N pl="n" gnt="n" gnd="m">sÌol</N> <E msg="NIAITCH"><U>a</U> <V p="saor" t="ord">h˙s·idtear</V></E> <R>go minic</R>. </line>
+<line uimhir="6"> <C>Ach</C> <V p="xx" t="caite">bhÌ</V> <P>mÈ</P> <S>ag</S> <N pl="n" gnt="n" gnd="f">lean˙int</N> <E msg="GENITIVE"><S>ar aghaidh</S> <T>an</T> <N pl="n" gnt="n" gnd="m">t-am</N></E> <R>ar fad</R> <O>leis</O>. </line>
+<line uimhir="7"> <E msg="NIAITCH"><V cop="y">Nach</V> <A pl="n" gnt="n" h="y">holc</A></E> <T>an</T> <N pl="n" gnt="n" gnd="f">mhaise</N> <O>duit</O> <S>a</S> <N pl="n" gnt="n" gnd="f">bheith</N> <S>ag</S> <N pl="n" gnt="n" gnd="m">magadh</N>. </line>
+<line uimhir="8"> <E msg="NIAITCH"><V cop="y">Ba</V> <P h="y">hiad</P></E> <T>na</T> <N pl="y" gnt="n" gnd="m">hamhr·in</N> <S>i</S> <N pl="n" gnt="n" gnd="m">dtosach</N> <V cop="y">ba</V> <N pl="n" gnt="n" gnd="f">ch˙is</N> <O>leis</O>. </line>
+<line uimhir="9"> <V cop="y">Ba</V> <P>iad</P> <T>na</T> <E msg="NIAITCH"><A pl="n" gnt="n">trÌ</A> <N pl="n" gnt="n" gnd="f" h="y">h·it</N></E> <P>iad</P> <N pl="n" gnt="n" gnd="m">Bost˙n</N>, <N pl="n" gnt="n" gnd="m">Baile</N> <N pl="n" gnt="y" gnd="m">¡tha</N> <N pl="n" gnt="n" gnd="f">Cliath</N> <C>agus</C> <A pl="n" gnt="n">Nua</A> <N pl="n" gnt="n" gnd="m">Eabhrac</N>. </line>
+<line uimhir="10"> <S>Sa</S> <E msg="PREFIXH"><A pl="n" gnt="n">dara</A> <N pl="n" gnt="n" gnd="m">alt</N></E>, <N pl="n" gnt="n" gnd="m">dÈan</N> <N pl="n" gnt="n" gnd="m">cur</N> <R>sÌos</R> <S>ar</S> <U>a</U> <V p="xx" t="caite">bhfaca</V> <P>siad</P> <S>sa</S> <N pl="n" gnt="n" gnd="f">Sp·inn</N>. </line>
 </teacs>
 test html flag
 Ag seice√°il triail.2
@@ -1163,20 +1163,20 @@ Focal anaithnid, Focal anaithnid (scaoilfear an chuid eile san abairt seo).
 <br><br>5: BÌonn an <b class=gramadoir>ge·l</b> ag satailt ar an dubh. <br>
 Focal bail√≠ ach f√≠or-neamhchoitianta in √∫s√°id iarbh√≠r.
 
-<br><br>6: <b class=gramadoir>Nach holc</b> an mhaise duit a bheith ag magadh. <br>
+<br><br>6: Ach bhÌ mÈ ag lean˙int <b class=gramadoir>ar aghaidh an t-am</b> ar fad leis. <br>
+Is g√° leis an ghinideach anseo.
+
+<br><br>7: <b class=gramadoir>Nach holc</b> an mhaise duit a bheith ag magadh. <br>
 R√©amhlitir /h/ gan gh√°.
 
-<br><br>7: <b class=gramadoir>Ba hiad</b> na hamhr·in i dtosach ba ch˙is leis. <br>
+<br><br>8: <b class=gramadoir>Ba hiad</b> na hamhr·in i dtosach ba ch˙is leis. <br>
 R√©amhlitir /h/ gan gh√°.
 
-<br><br>8: Ba iad na <b class=gramadoir>trÌ h·it</b> iad Bost˙n, Baile ¡tha Cliath agus Nua Eabhrac. <br>
+<br><br>9: Ba iad na <b class=gramadoir>trÌ h·it</b> iad Bost˙n, Baile ¡tha Cliath agus Nua Eabhrac. <br>
 R√©amhlitir /h/ gan gh√°.
 
-<br><br>9: Sa <b class=gramadoir>dara alt</b>, dÈan cur sÌos ar a bhfaca siad sa Sp·inn. <br>
+<br><br>10: Sa <b class=gramadoir>dara alt</b>, dÈan cur sÌos ar a bhfaca siad sa Sp·inn. <br>
 R√©amhlitir /h/ ar iarraidh.
-
-<br><br>10: Oirfeadh sÌol ·iti˙il nÌos fearr n· an sÌol <b class=gramadoir>a h˙s·idtear</b> go minic. <br>
-R√©amhlitir /h/ gan gh√°.
 
 test ionchod flag and ability to read from stdin
 1: N√≠ raibh l√≠on m√≥r daoine bainteach leis an scaifte a bh√≠ ag iarraidh mioscais a choth√∫. 
@@ -1194,20 +1194,20 @@ Focal anaithnid, Focal anaithnid (scaoilfear an chuid eile san abairt seo).
 5: B√≠onn an ge√°l ag satailt ar an dubh. 
 Focal bail√≠ ach f√≠or-neamhchoitianta in √∫s√°id iarbh√≠r.
 
-6: Nach holc an mhaise duit a bheith ag magadh. 
+6: Ach bh√≠ m√© ag lean√∫int ar aghaidh an t-am ar fad leis. 
+Is g√° leis an ghinideach anseo.
+
+7: Nach holc an mhaise duit a bheith ag magadh. 
 R√©amhlitir /h/ gan gh√°.
 
-7: Ba hiad na hamhr√°in i dtosach ba ch√∫is leis. 
+8: Ba hiad na hamhr√°in i dtosach ba ch√∫is leis. 
 R√©amhlitir /h/ gan gh√°.
 
-8: Ba iad na tr√≠ h√°it iad Bost√∫n, Baile √Åtha Cliath agus Nua Eabhrac. 
+9: Ba iad na tr√≠ h√°it iad Bost√∫n, Baile √Åtha Cliath agus Nua Eabhrac. 
 R√©amhlitir /h/ gan gh√°.
 
-9: Sa dara alt, d√©an cur s√≠os ar a bhfaca siad sa Sp√°inn. 
+10: Sa dara alt, d√©an cur s√≠os ar a bhfaca siad sa Sp√°inn. 
 R√©amhlitir /h/ ar iarraidh.
-
-10: Oirfeadh s√≠ol √°iti√∫il n√≠os fearr n√° an s√≠ol a h√∫s√°idtear go minic. 
-R√©amhlitir /h/ gan gh√°.
 
 test English
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
@@ -1240,9 +1240,9 @@ Focal anaithnid /MÌlitri˙, MÌlitrÌ, MhÌlitri˙, MÌlitrigh, MÌlitrÌm/?.
 
 test brill algorithm
 <N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<V p="xx" t="l·ith">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 a <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<V p="xx" t="l·ith">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 <A pl="n" gnt="n">ANYTHING</A> <B><Z><U/><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/><V cop="y"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 a <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
@@ -1259,20 +1259,21 @@ a <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p=
 an <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <A pl="n" gnt="n">ANYTHING</A> <B><Z><S/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<S>
 <V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="y" gnd="f"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
-<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <C>ANYTHING</C> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <P>ANYTHING</P> <B><Z><R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/></Z>ANYTHING</B>:<R>
 <P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <T>ANYTHING</T> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 an <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
-at· <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <V p="xx" t="l·ith">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+at· <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 seo <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+mÈ <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 do <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 do <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <R>ANYTHING</R> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
@@ -1283,19 +1284,15 @@ do <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y"
 <P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 <C>ANYTHING</C> <B><Z><C/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/></Z>ANYTHING</B>:<C>
 <A pl="n" gnt="n">ANYTHING</A> <B><Z><N pl="n" gnt="y" gnd="f"/><N pl="y" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
-<V p="xx" t="f·ist">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <V p="1˙" t="l·ith">ANYTHING</V> <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<O>
-mÈ <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 T· <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<V p="xx" t="f·ist">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 agus <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 sÈ <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 sin <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 bhur <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 <V cop="y">ANYTHING</V> <B><Z><O em="y"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<O em="y">
-fÈin <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-bheidh <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<V pl="y" p="2˙" t="ord">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/><V p="3˙" t="gn·th"/><V pl="y" p="2˙" t="gn·th"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <N pl="y" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 do <B><Z><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
 sÈ <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
@@ -1305,6 +1302,9 @@ T· <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y"
 mo <B><Z><N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 t˙ <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 sin <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+fÈin <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+bheidh <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V pl="y" p="2˙" t="ord">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/><V p="3˙" t="gn·th"/><V pl="y" p="2˙" t="gn·th"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <V p="xx" t="l·ith">ANYTHING</V> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
 <C>ANYTHING</C> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
 <N pl="y" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
@@ -1502,11 +1502,11 @@ test xml flag
 <line uimhir="3"> <Q>An</Q> <V p="xx" t="l·ith">bhfuil</V> <A pl="n" gnt="n">aon</A> <E msg="ANAITHNID"><X>uaktar</X></E> <A>reoite</A> <O>agat</O>? </line>
 <line uimhir="4"> <Q>An</Q> <V p="xx" t="l·ith">bhfuil</V> <E msg="ANAITHNID"><X>ayn</X></E> <N pl="n" gnt="n" gnd="m">uachtar</N> <E msg="ANAITHNIDSRL"><X>roach</X></E> <O>agat</O>? </line>
 <line uimhir="5"> <V p="xx" t="l·ith">BÌonn</V> <T>an</T> <E msg="NEAMHCHOIT"><F>ge·l</F></E> <S>ag</S> <N pl="n" gnt="n" gnd="f">satailt</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">dubh</N>. </line>
-<line uimhir="6"> <E msg="NIAITCH"><V cop="y">Nach</V> <A pl="n" gnt="n" h="y">holc</A></E> <T>an</T> <N pl="n" gnt="n" gnd="f">mhaise</N> <O>duit</O> <S>a</S> <N pl="n" gnt="n" gnd="f">bheith</N> <S>ag</S> <N pl="n" gnt="n" gnd="m">magadh</N>. </line>
-<line uimhir="7"> <E msg="NIAITCH"><V cop="y">Ba</V> <P h="y">hiad</P></E> <T>na</T> <N pl="y" gnt="n" gnd="m">hamhr·in</N> <S>i</S> <N pl="n" gnt="n" gnd="m">dtosach</N> <V cop="y">ba</V> <N pl="n" gnt="n" gnd="f">ch˙is</N> <O>leis</O>. </line>
-<line uimhir="8"> <V cop="y">Ba</V> <P>iad</P> <T>na</T> <E msg="NIAITCH"><A pl="n" gnt="n">trÌ</A> <N pl="n" gnt="n" gnd="f" h="y">h·it</N></E> <P>iad</P> <N pl="n" gnt="n" gnd="m">Bost˙n</N>, <N pl="n" gnt="n" gnd="m">Baile</N> <N pl="n" gnt="y" gnd="m">¡tha</N> <N pl="n" gnt="n" gnd="f">Cliath</N> <C>agus</C> <A pl="n" gnt="n">Nua</A> <N pl="n" gnt="n" gnd="m">Eabhrac</N>. </line>
-<line uimhir="9"> <S>Sa</S> <E msg="PREFIXH"><A pl="n" gnt="n">dara</A> <N pl="n" gnt="n" gnd="m">alt</N></E>, <N pl="n" gnt="n" gnd="m">dÈan</N> <N pl="n" gnt="n" gnd="m">cur</N> <R>sÌos</R> <S>ar</S> <U>a</U> <V p="xx" t="caite">bhfaca</V> <P>siad</P> <S>sa</S> <N pl="n" gnt="n" gnd="f">Sp·inn</N>. </line>
-<line uimhir="10"> <V p="xx" t="coinn">Oirfeadh</V> <N pl="n" gnt="n" gnd="m">sÌol</N> <A pl="n" gnt="n">·iti˙il</A> <R>nÌos</R> <A pl="n" gnt="y" gnd="f">fearr</A> <C>n·</C> <T>an</T> <N pl="n" gnt="n" gnd="m">sÌol</N> <E msg="NIAITCH"><U>a</U> <V p="saor" t="ord">h˙s·idtear</V></E> <R>go minic</R>. </line>
+<line uimhir="6"> <C>Ach</C> <V p="xx" t="caite">bhÌ</V> <P>mÈ</P> <S>ag</S> <N pl="n" gnt="n" gnd="f">lean˙int</N> <E msg="GENITIVE"><S>ar aghaidh</S> <T>an</T> <N pl="n" gnt="n" gnd="m">t-am</N></E> <R>ar fad</R> <O>leis</O>. </line>
+<line uimhir="7"> <E msg="NIAITCH"><V cop="y">Nach</V> <A pl="n" gnt="n" h="y">holc</A></E> <T>an</T> <N pl="n" gnt="n" gnd="f">mhaise</N> <O>duit</O> <S>a</S> <N pl="n" gnt="n" gnd="f">bheith</N> <S>ag</S> <N pl="n" gnt="n" gnd="m">magadh</N>. </line>
+<line uimhir="8"> <E msg="NIAITCH"><V cop="y">Ba</V> <P h="y">hiad</P></E> <T>na</T> <N pl="y" gnt="n" gnd="m">hamhr·in</N> <S>i</S> <N pl="n" gnt="n" gnd="m">dtosach</N> <V cop="y">ba</V> <N pl="n" gnt="n" gnd="f">ch˙is</N> <O>leis</O>. </line>
+<line uimhir="9"> <V cop="y">Ba</V> <P>iad</P> <T>na</T> <E msg="NIAITCH"><A pl="n" gnt="n">trÌ</A> <N pl="n" gnt="n" gnd="f" h="y">h·it</N></E> <P>iad</P> <N pl="n" gnt="n" gnd="m">Bost˙n</N>, <N pl="n" gnt="n" gnd="m">Baile</N> <N pl="n" gnt="y" gnd="m">¡tha</N> <N pl="n" gnt="n" gnd="f">Cliath</N> <C>agus</C> <A pl="n" gnt="n">Nua</A> <N pl="n" gnt="n" gnd="m">Eabhrac</N>. </line>
+<line uimhir="10"> <S>Sa</S> <E msg="PREFIXH"><A pl="n" gnt="n">dara</A> <N pl="n" gnt="n" gnd="m">alt</N></E>, <N pl="n" gnt="n" gnd="m">dÈan</N> <N pl="n" gnt="n" gnd="m">cur</N> <R>sÌos</R> <S>ar</S> <U>a</U> <V p="xx" t="caite">bhfaca</V> <P>siad</P> <S>sa</S> <N pl="n" gnt="n" gnd="f">Sp·inn</N>. </line>
 </teacs>
 test html flag
 Œn prezent se verific„ triail.2
@@ -1525,20 +1525,20 @@ Cuv‚nt necunoscut, Cuv‚nt necunoscut (se ignor„ marcajul(remainder) Ón aceast„ p
 <br><br>5: BÌonn an <b class=gramadoir>ge·l</b> ag satailt ar an dubh. <br>
 Valid word but extremely rare in actual usage.
 
-<br><br>6: <b class=gramadoir>Nach holc</b> an mhaise duit a bheith ag magadh. <br>
+<br><br>6: Ach bhÌ mÈ ag lean˙int <b class=gramadoir>ar aghaidh an t-am</b> ar fad leis. <br>
+The genitive case is required here.
+
+<br><br>7: <b class=gramadoir>Nach holc</b> an mhaise duit a bheith ag magadh. <br>
 Unnecessary prefix /h/.
 
-<br><br>7: <b class=gramadoir>Ba hiad</b> na hamhr·in i dtosach ba ch˙is leis. <br>
+<br><br>8: <b class=gramadoir>Ba hiad</b> na hamhr·in i dtosach ba ch˙is leis. <br>
 Unnecessary prefix /h/.
 
-<br><br>8: Ba iad na <b class=gramadoir>trÌ h·it</b> iad Bost˙n, Baile ¡tha Cliath agus Nua Eabhrac. <br>
+<br><br>9: Ba iad na <b class=gramadoir>trÌ h·it</b> iad Bost˙n, Baile ¡tha Cliath agus Nua Eabhrac. <br>
 Unnecessary prefix /h/.
 
-<br><br>9: Sa <b class=gramadoir>dara alt</b>, dÈan cur sÌos ar a bhfaca siad sa Sp·inn. <br>
+<br><br>10: Sa <b class=gramadoir>dara alt</b>, dÈan cur sÌos ar a bhfaca siad sa Sp·inn. <br>
 Lipse∫te prefixul /h/.
-
-<br><br>10: Oirfeadh sÌol ·iti˙il nÌos fearr n· an sÌol <b class=gramadoir>a h˙s·idtear</b> go minic. <br>
-Unnecessary prefix /h/.
 
 test ionchod flag and ability to read from stdin
 1: N√≠ raibh l√≠on m√≥r daoine bainteach leis an scaifte a bh√≠ ag iarraidh mioscais a choth√∫. 
@@ -1556,20 +1556,20 @@ Cuv‚nt necunoscut, Cuv‚nt necunoscut (se ignor„ marcajul(remainder) Ón aceast„ p
 5: B√≠onn an ge√°l ag satailt ar an dubh. 
 Valid word but extremely rare in actual usage.
 
-6: Nach holc an mhaise duit a bheith ag magadh. 
+6: Ach bh√≠ m√© ag lean√∫int ar aghaidh an t-am ar fad leis. 
+The genitive case is required here.
+
+7: Nach holc an mhaise duit a bheith ag magadh. 
 Unnecessary prefix /h/.
 
-7: Ba hiad na hamhr√°in i dtosach ba ch√∫is leis. 
+8: Ba hiad na hamhr√°in i dtosach ba ch√∫is leis. 
 Unnecessary prefix /h/.
 
-8: Ba iad na tr√≠ h√°it iad Bost√∫n, Baile √Åtha Cliath agus Nua Eabhrac. 
+9: Ba iad na tr√≠ h√°it iad Bost√∫n, Baile √Åtha Cliath agus Nua Eabhrac. 
 Unnecessary prefix /h/.
 
-9: Sa dara alt, d√©an cur s√≠os ar a bhfaca siad sa Sp√°inn. 
+10: Sa dara alt, d√©an cur s√≠os ar a bhfaca siad sa Sp√°inn. 
 Lipse∫te prefixul /h/.
-
-10: Oirfeadh s√≠ol √°iti√∫il n√≠os fearr n√° an s√≠ol a h√∫s√°idtear go minic. 
-Unnecessary prefix /h/.
 
 test English
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
@@ -1602,9 +1602,9 @@ Cuv‚nt necunoscut /MÌlitri˙, MÌlitrÌ, MhÌlitri˙, MÌlitrigh, MÌlitrÌm/?.
 
 test brill algorithm
 <N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<V p="xx" t="l·ith">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 a <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<V p="xx" t="l·ith">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 <A pl="n" gnt="n">ANYTHING</A> <B><Z><U/><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/><V cop="y"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 a <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
@@ -1621,20 +1621,21 @@ a <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p=
 an <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <A pl="n" gnt="n">ANYTHING</A> <B><Z><S/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<S>
 <V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="y" gnd="f"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
-<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <C>ANYTHING</C> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <P>ANYTHING</P> <B><Z><R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/></Z>ANYTHING</B>:<R>
 <P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <T>ANYTHING</T> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 an <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
-at· <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <V p="xx" t="l·ith">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+at· <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 seo <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+mÈ <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 do <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 do <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <R>ANYTHING</R> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
@@ -1645,19 +1646,15 @@ do <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y"
 <P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 <C>ANYTHING</C> <B><Z><C/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/></Z>ANYTHING</B>:<C>
 <A pl="n" gnt="n">ANYTHING</A> <B><Z><N pl="n" gnt="y" gnd="f"/><N pl="y" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
-<V p="xx" t="f·ist">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <V p="1˙" t="l·ith">ANYTHING</V> <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<O>
-mÈ <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 T· <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<V p="xx" t="f·ist">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 agus <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 sÈ <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 sin <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 bhur <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 <V cop="y">ANYTHING</V> <B><Z><O em="y"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<O em="y">
-fÈin <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-bheidh <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<V pl="y" p="2˙" t="ord">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/><V p="3˙" t="gn·th"/><V pl="y" p="2˙" t="gn·th"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <N pl="y" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 do <B><Z><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
 sÈ <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
@@ -1667,6 +1664,9 @@ T· <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y"
 mo <B><Z><N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 t˙ <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 sin <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+fÈin <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+bheidh <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V pl="y" p="2˙" t="ord">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/><V p="3˙" t="gn·th"/><V pl="y" p="2˙" t="gn·th"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <V p="xx" t="l·ith">ANYTHING</V> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
 <C>ANYTHING</C> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
 <N pl="y" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
@@ -1864,11 +1864,11 @@ test xml flag
 <line uimhir="3"> <Q>An</Q> <V p="xx" t="l·ith">bhfuil</V> <A pl="n" gnt="n">aon</A> <E msg="ANAITHNID"><X>uaktar</X></E> <A>reoite</A> <O>agat</O>? </line>
 <line uimhir="4"> <Q>An</Q> <V p="xx" t="l·ith">bhfuil</V> <E msg="ANAITHNID"><X>ayn</X></E> <N pl="n" gnt="n" gnd="m">uachtar</N> <E msg="ANAITHNIDSRL"><X>roach</X></E> <O>agat</O>? </line>
 <line uimhir="5"> <V p="xx" t="l·ith">BÌonn</V> <T>an</T> <E msg="NEAMHCHOIT"><F>ge·l</F></E> <S>ag</S> <N pl="n" gnt="n" gnd="f">satailt</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">dubh</N>. </line>
-<line uimhir="6"> <E msg="NIAITCH"><V cop="y">Nach</V> <A pl="n" gnt="n" h="y">holc</A></E> <T>an</T> <N pl="n" gnt="n" gnd="f">mhaise</N> <O>duit</O> <S>a</S> <N pl="n" gnt="n" gnd="f">bheith</N> <S>ag</S> <N pl="n" gnt="n" gnd="m">magadh</N>. </line>
-<line uimhir="7"> <E msg="NIAITCH"><V cop="y">Ba</V> <P h="y">hiad</P></E> <T>na</T> <N pl="y" gnt="n" gnd="m">hamhr·in</N> <S>i</S> <N pl="n" gnt="n" gnd="m">dtosach</N> <V cop="y">ba</V> <N pl="n" gnt="n" gnd="f">ch˙is</N> <O>leis</O>. </line>
-<line uimhir="8"> <V cop="y">Ba</V> <P>iad</P> <T>na</T> <E msg="NIAITCH"><A pl="n" gnt="n">trÌ</A> <N pl="n" gnt="n" gnd="f" h="y">h·it</N></E> <P>iad</P> <N pl="n" gnt="n" gnd="m">Bost˙n</N>, <N pl="n" gnt="n" gnd="m">Baile</N> <N pl="n" gnt="y" gnd="m">¡tha</N> <N pl="n" gnt="n" gnd="f">Cliath</N> <C>agus</C> <A pl="n" gnt="n">Nua</A> <N pl="n" gnt="n" gnd="m">Eabhrac</N>. </line>
-<line uimhir="9"> <S>Sa</S> <E msg="PREFIXH"><A pl="n" gnt="n">dara</A> <N pl="n" gnt="n" gnd="m">alt</N></E>, <N pl="n" gnt="n" gnd="m">dÈan</N> <N pl="n" gnt="n" gnd="m">cur</N> <R>sÌos</R> <S>ar</S> <U>a</U> <V p="xx" t="caite">bhfaca</V> <P>siad</P> <S>sa</S> <N pl="n" gnt="n" gnd="f">Sp·inn</N>. </line>
-<line uimhir="10"> <V p="xx" t="coinn">Oirfeadh</V> <N pl="n" gnt="n" gnd="m">sÌol</N> <A pl="n" gnt="n">·iti˙il</A> <R>nÌos</R> <A pl="n" gnt="y" gnd="f">fearr</A> <C>n·</C> <T>an</T> <N pl="n" gnt="n" gnd="m">sÌol</N> <E msg="NIAITCH"><U>a</U> <V p="saor" t="ord">h˙s·idtear</V></E> <R>go minic</R>. </line>
+<line uimhir="6"> <C>Ach</C> <V p="xx" t="caite">bhÌ</V> <P>mÈ</P> <S>ag</S> <N pl="n" gnt="n" gnd="f">lean˙int</N> <E msg="GENITIVE"><S>ar aghaidh</S> <T>an</T> <N pl="n" gnt="n" gnd="m">t-am</N></E> <R>ar fad</R> <O>leis</O>. </line>
+<line uimhir="7"> <E msg="NIAITCH"><V cop="y">Nach</V> <A pl="n" gnt="n" h="y">holc</A></E> <T>an</T> <N pl="n" gnt="n" gnd="f">mhaise</N> <O>duit</O> <S>a</S> <N pl="n" gnt="n" gnd="f">bheith</N> <S>ag</S> <N pl="n" gnt="n" gnd="m">magadh</N>. </line>
+<line uimhir="8"> <E msg="NIAITCH"><V cop="y">Ba</V> <P h="y">hiad</P></E> <T>na</T> <N pl="y" gnt="n" gnd="m">hamhr·in</N> <S>i</S> <N pl="n" gnt="n" gnd="m">dtosach</N> <V cop="y">ba</V> <N pl="n" gnt="n" gnd="f">ch˙is</N> <O>leis</O>. </line>
+<line uimhir="9"> <V cop="y">Ba</V> <P>iad</P> <T>na</T> <E msg="NIAITCH"><A pl="n" gnt="n">trÌ</A> <N pl="n" gnt="n" gnd="f" h="y">h·it</N></E> <P>iad</P> <N pl="n" gnt="n" gnd="m">Bost˙n</N>, <N pl="n" gnt="n" gnd="m">Baile</N> <N pl="n" gnt="y" gnd="m">¡tha</N> <N pl="n" gnt="n" gnd="f">Cliath</N> <C>agus</C> <A pl="n" gnt="n">Nua</A> <N pl="n" gnt="n" gnd="m">Eabhrac</N>. </line>
+<line uimhir="10"> <S>Sa</S> <E msg="PREFIXH"><A pl="n" gnt="n">dara</A> <N pl="n" gnt="n" gnd="m">alt</N></E>, <N pl="n" gnt="n" gnd="m">dÈan</N> <N pl="n" gnt="n" gnd="m">cur</N> <R>sÌos</R> <S>ar</S> <U>a</U> <V p="xx" t="caite">bhfaca</V> <P>siad</P> <S>sa</S> <N pl="n" gnt="n" gnd="f">Sp·inn</N>. </line>
 </teacs>
 test html flag
 Word momenteel nagekeken
@@ -1887,20 +1887,20 @@ Onbekend woord, Onbekend word (de rest van deze zin word genegeerd).
 <br><br>5: BÌonn an <b class=gramadoir>ge·l</b> ag satailt ar an dubh. <br>
 Correct woord, maar erg zeldzaam in waarlijk gebruik.
 
-<br><br>6: <b class=gramadoir>Nach holc</b> an mhaise duit a bheith ag magadh. <br>
+<br><br>6: Ach bhÌ mÈ ag lean˙int <b class=gramadoir>ar aghaidh an t-am</b> ar fad leis. <br>
+The genitive case is required here.
+
+<br><br>7: <b class=gramadoir>Nach holc</b> an mhaise duit a bheith ag magadh. <br>
 Unnecessary prefix /h/.
 
-<br><br>7: <b class=gramadoir>Ba hiad</b> na hamhr·in i dtosach ba ch˙is leis. <br>
+<br><br>8: <b class=gramadoir>Ba hiad</b> na hamhr·in i dtosach ba ch˙is leis. <br>
 Unnecessary prefix /h/.
 
-<br><br>8: Ba iad na <b class=gramadoir>trÌ h·it</b> iad Bost˙n, Baile ¡tha Cliath agus Nua Eabhrac. <br>
+<br><br>9: Ba iad na <b class=gramadoir>trÌ h·it</b> iad Bost˙n, Baile ¡tha Cliath agus Nua Eabhrac. <br>
 Unnecessary prefix /h/.
 
-<br><br>9: Sa <b class=gramadoir>dara alt</b>, dÈan cur sÌos ar a bhfaca siad sa Sp·inn. <br>
+<br><br>10: Sa <b class=gramadoir>dara alt</b>, dÈan cur sÌos ar a bhfaca siad sa Sp·inn. <br>
 Voorvoegsel /h/ ontbreekt.
-
-<br><br>10: Oirfeadh sÌol ·iti˙il nÌos fearr n· an sÌol <b class=gramadoir>a h˙s·idtear</b> go minic. <br>
-Unnecessary prefix /h/.
 
 test ionchod flag and ability to read from stdin
 1: N√≠ raibh l√≠on m√≥r daoine bainteach leis an scaifte a bh√≠ ag iarraidh mioscais a choth√∫. 
@@ -1918,20 +1918,20 @@ Onbekend woord, Onbekend word (de rest van deze zin word genegeerd).
 5: B√≠onn an ge√°l ag satailt ar an dubh. 
 Correct woord, maar erg zeldzaam in waarlijk gebruik.
 
-6: Nach holc an mhaise duit a bheith ag magadh. 
+6: Ach bh√≠ m√© ag lean√∫int ar aghaidh an t-am ar fad leis. 
+The genitive case is required here.
+
+7: Nach holc an mhaise duit a bheith ag magadh. 
 Unnecessary prefix /h/.
 
-7: Ba hiad na hamhr√°in i dtosach ba ch√∫is leis. 
+8: Ba hiad na hamhr√°in i dtosach ba ch√∫is leis. 
 Unnecessary prefix /h/.
 
-8: Ba iad na tr√≠ h√°it iad Bost√∫n, Baile √Åtha Cliath agus Nua Eabhrac. 
+9: Ba iad na tr√≠ h√°it iad Bost√∫n, Baile √Åtha Cliath agus Nua Eabhrac. 
 Unnecessary prefix /h/.
 
-9: Sa dara alt, d√©an cur s√≠os ar a bhfaca siad sa Sp√°inn. 
+10: Sa dara alt, d√©an cur s√≠os ar a bhfaca siad sa Sp√°inn. 
 Voorvoegsel /h/ ontbreekt.
-
-10: Oirfeadh s√≠ol √°iti√∫il n√≠os fearr n√° an s√≠ol a h√∫s√°idtear go minic. 
-Unnecessary prefix /h/.
 
 test English
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
@@ -1964,9 +1964,9 @@ Onbekend woord /MÌlitri˙, MÌlitrÌ, MhÌlitri˙, MÌlitrigh, MÌlitrÌm/?.
 
 test brill algorithm
 <N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<V p="xx" t="l·ith">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 a <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<V p="xx" t="l·ith">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 <A pl="n" gnt="n">ANYTHING</A> <B><Z><U/><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/><V cop="y"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 a <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
@@ -1983,20 +1983,21 @@ a <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p=
 an <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <A pl="n" gnt="n">ANYTHING</A> <B><Z><S/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<S>
 <V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="y" gnd="f"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
-<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <C>ANYTHING</C> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <P>ANYTHING</P> <B><Z><R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/></Z>ANYTHING</B>:<R>
 <P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <T>ANYTHING</T> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 an <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
-at· <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <V p="xx" t="l·ith">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+at· <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 seo <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+mÈ <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 do <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 do <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <R>ANYTHING</R> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
@@ -2007,19 +2008,15 @@ do <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y"
 <P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 <C>ANYTHING</C> <B><Z><C/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/></Z>ANYTHING</B>:<C>
 <A pl="n" gnt="n">ANYTHING</A> <B><Z><N pl="n" gnt="y" gnd="f"/><N pl="y" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
-<V p="xx" t="f·ist">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <V p="1˙" t="l·ith">ANYTHING</V> <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<O>
-mÈ <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 T· <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<V p="xx" t="f·ist">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 agus <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 <N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 sÈ <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 sin <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 bhur <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 <V cop="y">ANYTHING</V> <B><Z><O em="y"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<O em="y">
-fÈin <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-bheidh <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<V pl="y" p="2˙" t="ord">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/><V p="3˙" t="gn·th"/><V pl="y" p="2˙" t="gn·th"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <N pl="y" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 do <B><Z><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
 sÈ <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
@@ -2029,6 +2026,9 @@ T· <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y"
 mo <B><Z><N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
 t˙ <B><Z><S/><D/></Z>ANYTHING</B>:<S>
 sin <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+fÈin <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+bheidh <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V pl="y" p="2˙" t="ord">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/><V p="3˙" t="gn·th"/><V pl="y" p="2˙" t="gn·th"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <V p="xx" t="l·ith">ANYTHING</V> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
 <C>ANYTHING</C> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
 <N pl="y" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
@@ -2174,3 +2174,727 @@ test ambiguity report
 1	<A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/>
              1	bre·
 Word momenteel nagekeken
+test help flag
+–•—ç—Ä—ç–≥–ª—ç—ç: gr [–°–û–ù–ì–û–õ–¢] [–§–ê–ô–õ]
+
+–≠—Ü—Å–∏–π–Ω —Ö—ç—Ä—ç–≥–ª—ç–≥—á–¥–∏–π–Ω —Å–æ–Ω–≥–æ–ª—Ç:
+    --iomlan       –±“Ø—Ö –∞–ª–¥–∞–∞–≥ –º—ç–¥—ç—ç–ª—ç—Ö (”®.—Ö. ~/.neamhshuim –≥—ç–∂ —Ö—ç—Ä—ç–≥–ª—ç—Ö–≥“Ø–π)
+    --ionchod=ENC  —à–∞–ª–≥–∞–≥–¥–∞—Ö —ë—Å—Ç–æ–π —Ç–µ–∫—Å—Ç–∏–π–Ω —Ç—ç–º–¥—ç–≥—Ç –∫–æ–¥—á–∏–ª–æ–ª—ã–≥ —Ç–æ–¥–æ—Ä—Ö–æ–π–ª–æ—Ö
+    --litriu       —Å—Ç–∞–Ω–¥–∞—Ä—Ç –≥–∞—Ä–∞–ª—Ç —Ä—É—É –∞–ª–¥–∞–∞—Ç–∞–π “Ø–≥—Å–∏–π–≥ –±–∏—á–∏—Ö
+    --aspell       –∑”©–≤ –±–∏—á–≥–∏–π–Ω –∞–ª–¥–∞–∞ –∑–∞—Å–∞–ª—Ç —Å–∞–Ω–∞–ª –±–æ–ª–≥–æ—Ö (–ì–ù–£ aspell —à–∞–∞—Ä–¥–ª–∞–≥–∞—Ç–∞–π)
+    --teanga=XX    —à–∞–ª–≥–∞–≥–¥–∞—Ö —Ç–µ–∫—Å—Ç–∏–π–Ω —Ö—ç–ª–∏–π–≥ —Å–æ–Ω–≥–æ–Ω–æ (—Å—Ç–∞–Ω–¥–∞—Ä—Ç–∞–∞—Ä=ga)
+    --help         —ç–Ω—ç —Ç—É—Å–ª–∞–º–∂–∏–π–≥ “Ø–∑“Ø“Ø–ª—ç—ç–¥ –≥–∞—Ä–Ω–∞
+    --version      —Ö—É–≤–∏–ª–±–∞—Ä—ã–Ω –º—ç–¥—ç—ç–ª–ª–∏–π–≥ “Ø–∑“Ø“Ø–ª—ç—ç–¥ –≥–∞—Ä–Ω–∞
+
+–•”©–≥–∂“Ø“Ø–ª—ç–≥—á–¥–∏–π–Ω —Å–æ–Ω–≥–æ–ª—Ç:
+    --brill        —É—Ö–∞–≥–¥–∞—Ö—É—É–Ω—ã —Ç–æ–¥–æ—Ä—Ö–æ–π–ª–æ–ª—Ç—ã–Ω –¥“Ø—Ä–º–∏–π–≥ –ë–∏–ª–ª–∏–π–Ω —à–∞–ª–≥–∞–ª—Ç–≥“Ø–π –∞–ª–≥–æ—Ä–∏—Ç–º–∞–∞—Ä –æ–ª–æ—Ö
+    --html         –í—ç–± —Ö”©—Ç”©—á–∏–¥ —Ö–∞—Ä—É—É–ª–∞—Ö–∞–¥ –∑–æ—Ä–∏—É–ª—Å–∞–Ω HTML -—Ä –≥–∞—Ä–≥–∞—Ö
+    --ilchiall     —à–∏–π–¥—ç–≥–¥—ç—ç–≥“Ø–π –∞—Ü —É—Ç–≥—ã–≥ —Ö—ç–ª–±—ç–ª–∑—ç–ª—ç—ç—Ä —ç—Ä—ç–º–±—ç–ª—ç–Ω —Ç–∞–π–ª–∞–≥–Ω–∞—Ö
+    --minic        —Ö—ç–ª–±—ç–ª–∑—ç–ª—ç—ç—Ä —ç—Ä—ç–º–±—ç–ª—ç–Ω –±“Ø—Ö —Ç–∞–≥–∏–π–≥ –≥–∞—Ä–≥–∞—Ö (unigram-xx.txt -–Ω —Ö—É–≤—å–¥)
+    --no-unigram   —Ö—ç–ª–ª—ç–≥–∏–π–Ω —Ö—ç–ª–±—ç–ª–∑—ç–ª—ç—ç—Ä –∞—Ü —É—Ç–≥–∞—Ç —Ö—ç—Å–≥–∏–π–≥ —à–∏–π–¥–≤—ç—Ä–ª—ç—Ö–≥“Ø–π
+    --xml          –¢–∞–≥—Ç–∞–π XML —É—Ä—Å–≥–∞–ª —Å—Ç–∞–Ω–¥–∞—Ä—Ç –≥–∞—Ä–∞–ª—Ç —Ä—É—É —à–∏–Ω–∂–ª—ç–Ω –≥–∞—Ä–≥–∞—Ö
+
+–•—ç—Ä—ç–≤ —Ñ–∞–π–ª ”©–≥”©–≥–¥”©”©–≥“Ø–π –±–æ–ª —Å—Ç–∞–Ω–¥–∞—Ä—Ç –æ—Ä–æ–ª—Ç–æ–æ—Å —É–Ω—à–∏–Ω–∞.
+
+<scannell@slu.edu> —Ä“Ø“Ø —Å–æ–≥–æ–≥–∏–π–Ω —Ç–∞–π–ª–∞–Ω –∏–ª–≥—ç—ç—Ö.
+test version flag
+–ì—Ä–∞–º–∞–¥–æ–π—Ä, —Ö—É–≤–∏–ª–±–∞—Ä 0.4
+Copyright (C) 2003 Kevin P. Scannell
+–≠–Ω—ç –±–æ–ª “Ø–Ω—ç–≥“Ø–π –ø—Ä–æ–≥—Ä–∞–º; —ç—Ö –∫–æ–¥ –¥–∞—Ö —Ö—É—É–ª–∞—Ö –Ω”©—Ö—Ü”©–ª–∏–π–Ω —Ö–∞—Ä.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,
+to the extent permitted by law.
+test segmentation
+1: Several. 
+–ú—ç–¥—ç–≥–¥—ç—Ö“Ø–π “Ø–≥.
+
+1: Sentences. 
+–ú—ç–¥—ç–≥–¥—ç—Ö“Ø–π “Ø–≥.
+
+1: Here! 
+–ú—ç–¥—ç–≥–¥—ç—Ö“Ø–π “Ø–≥.
+
+test litriu flag
+uaktar
+ayn
+roach
+test xml flag
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE teacs SYSTEM "/dtds/gramadoir.dtd">
+<teacs>
+<line uimhir="1"> <U>NÌ</U> <V p="xx" t="caite">raibh</V> <N pl="n" gnt="n" gnd="m">lÌon</N> <A pl="n" gnt="n">mÛr</A> <N pl="y" gnt="n" gnd="m">daoine</N> <A pl="n" gnt="n">bainteach</A> <S>leis</S> <T>an</T> <E msg="CAIGHDEAN{scata}"><Y>scaifte</Y></E> <U>a</U> <V p="xx" t="caite">bhÌ</V> <S>ag</S> <N pl="n" gnt="n" gnd="f">iarraidh</N> <N pl="n" gnt="n" gnd="f">mioscais</N> <S>a</S> <N pl="n" gnt="n" gnd="m">choth˙</N>. </line>
+<line uimhir="2"> <V p="xx" t="ord">Tabhair</V> <U>go</U> <A pl="n" gnt="n">leor</A> <A pl="n" gnt="n">leor</A> <S>de</S> <T>na</T> <E msg="DUBAILTE"><T>na</T></E> <N pl="y" gnt="n" gnd="m">rudaÌ</N> <A pl="n" gnt="n">seo</A> <S>do</S> <S>do</S> <N pl="n" gnt="n" gnd="m">chara</N>, <D>a</D> <Y>ChaoimhÌn</Y>. </line>
+<line uimhir="3"> <Q>An</Q> <V p="xx" t="l·ith">bhfuil</V> <A pl="n" gnt="n">aon</A> <E msg="ANAITHNID"><X>uaktar</X></E> <A>reoite</A> <O>agat</O>? </line>
+<line uimhir="4"> <Q>An</Q> <V p="xx" t="l·ith">bhfuil</V> <E msg="ANAITHNID"><X>ayn</X></E> <N pl="n" gnt="n" gnd="m">uachtar</N> <E msg="ANAITHNIDSRL"><X>roach</X></E> <O>agat</O>? </line>
+<line uimhir="5"> <V p="xx" t="l·ith">BÌonn</V> <T>an</T> <E msg="NEAMHCHOIT"><F>ge·l</F></E> <S>ag</S> <N pl="n" gnt="n" gnd="f">satailt</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">dubh</N>. </line>
+<line uimhir="6"> <C>Ach</C> <V p="xx" t="caite">bhÌ</V> <P>mÈ</P> <S>ag</S> <N pl="n" gnt="n" gnd="f">lean˙int</N> <E msg="GENITIVE"><S>ar aghaidh</S> <T>an</T> <N pl="n" gnt="n" gnd="m">t-am</N></E> <R>ar fad</R> <O>leis</O>. </line>
+<line uimhir="7"> <E msg="NIAITCH"><V cop="y">Nach</V> <A pl="n" gnt="n" h="y">holc</A></E> <T>an</T> <N pl="n" gnt="n" gnd="f">mhaise</N> <O>duit</O> <S>a</S> <N pl="n" gnt="n" gnd="f">bheith</N> <S>ag</S> <N pl="n" gnt="n" gnd="m">magadh</N>. </line>
+<line uimhir="8"> <E msg="NIAITCH"><V cop="y">Ba</V> <P h="y">hiad</P></E> <T>na</T> <N pl="y" gnt="n" gnd="m">hamhr·in</N> <S>i</S> <N pl="n" gnt="n" gnd="m">dtosach</N> <V cop="y">ba</V> <N pl="n" gnt="n" gnd="f">ch˙is</N> <O>leis</O>. </line>
+<line uimhir="9"> <V cop="y">Ba</V> <P>iad</P> <T>na</T> <E msg="NIAITCH"><A pl="n" gnt="n">trÌ</A> <N pl="n" gnt="n" gnd="f" h="y">h·it</N></E> <P>iad</P> <N pl="n" gnt="n" gnd="m">Bost˙n</N>, <N pl="n" gnt="n" gnd="m">Baile</N> <N pl="n" gnt="y" gnd="m">¡tha</N> <N pl="n" gnt="n" gnd="f">Cliath</N> <C>agus</C> <A pl="n" gnt="n">Nua</A> <N pl="n" gnt="n" gnd="m">Eabhrac</N>. </line>
+<line uimhir="10"> <S>Sa</S> <E msg="PREFIXH"><A pl="n" gnt="n">dara</A> <N pl="n" gnt="n" gnd="m">alt</N></E>, <N pl="n" gnt="n" gnd="m">dÈan</N> <N pl="n" gnt="n" gnd="m">cur</N> <R>sÌos</R> <S>ar</S> <U>a</U> <V p="xx" t="caite">bhfaca</V> <P>siad</P> <S>sa</S> <N pl="n" gnt="n" gnd="f">Sp·inn</N>. </line>
+</teacs>
+test html flag
+–û–¥–æ–æ —à–∞–ª–≥–∞–∂ –±–∞–π–Ω–∞ triail.2
+<br><br>1: NÌ raibh lÌon mÛr daoine bainteach leis an <b class=gramadoir>scaifte</b> a bhÌ ag iarraidh mioscais a choth˙. <br>
+–°—Ç–∞–Ω–¥–∞—Ä—Ç –±—É—Å —Ö—ç–ª–±—ç—Ä: –º–∞–≥–∞–¥ /scata/ –±–∞–π—Ö?.
+
+<br><br>2: Tabhair go leor leor de <b class=gramadoir>na</b> <b class=gramadoir>na</b> rudaÌ seo do do chara, a ChaoimhÌn. <br>
+–î–∞–≤—Ç–∞–≥–¥—Å–∞–Ω “Ø–≥.
+
+<br><br>3: An bhfuil aon <b class=gramadoir>uaktar</b> reoite agat? <br>
+–ú—ç–¥—ç–≥–¥—ç—Ö“Ø–π “Ø–≥.
+
+<br><br>4: An bhfuil <b class=gramadoir>ayn</b> uachtar <b class=gramadoir>roach</b> agat? <br>
+–ú—ç–¥—ç–≥–¥—ç—Ö“Ø–π “Ø–≥, –ú—ç–¥—ç–≥–¥—ç—Ö–≥“Ø–π “Ø–≥ (—ç–Ω—ç ”©–≥“Ø“Ø–ª–±—ç—Ä–∏–π–Ω “Ø–ª–¥—ç–≥–¥–ª–∏–π–≥ “Ø–ª —Ö—ç—Ä—ç–≥—Å—ç—Ö).
+
+<br><br>5: BÌonn an <b class=gramadoir>ge·l</b> ag satailt ar an dubh. <br>
+–•“Ø—á–∏–Ω—Ç—ç–π “Ø–≥ –≥—ç—Ö–¥—ç—ç –∏–¥—ç–≤—Ö–∏—Ç—ç–π —Ö—ç—Ä—ç–≥–ª—ç—ç–Ω–¥ —Ç—É–π–ª—ã–Ω —Ö–æ–≤–æ—Ä.
+
+<br><br>6: Ach bhÌ mÈ ag lean˙int <b class=gramadoir>ar aghaidh an t-am</b> ar fad leis. <br>
+–•–∞—Ä—ä—è–∞–ª–∞—Ö—ã–Ω —Ç–∏–π–Ω —è–ª–≥–∞–ª —ç–Ω–¥ —à–∞–∞—Ä–¥–ª–∞–≥–∞—Ç–∞–π.
+
+<br><br>7: <b class=gramadoir>Nach holc</b> an mhaise duit a bheith ag magadh. <br>
+–£–≥—Ç–≤–∞—Ä —à–∞–∞—Ä–¥–ª–∞–≥–∞–≥“Ø–π /h/.
+
+<br><br>8: <b class=gramadoir>Ba hiad</b> na hamhr·in i dtosach ba ch˙is leis. <br>
+–£–≥—Ç–≤–∞—Ä —à–∞–∞—Ä–¥–ª–∞–≥–∞–≥“Ø–π /h/.
+
+<br><br>9: Ba iad na <b class=gramadoir>trÌ h·it</b> iad Bost˙n, Baile ¡tha Cliath agus Nua Eabhrac. <br>
+–£–≥—Ç–≤–∞—Ä —à–∞–∞—Ä–¥–ª–∞–≥–∞–≥“Ø–π /h/.
+
+<br><br>10: Sa <b class=gramadoir>dara alt</b>, dÈan cur sÌos ar a bhfaca siad sa Sp·inn. <br>
+–£–≥—Ç–≤–∞—Ä /h/ –¥—É—Ç—É—É.
+
+test ionchod flag and ability to read from stdin
+1: N√≠ raibh l√≠on m√≥r daoine bainteach leis an scaifte a bh√≠ ag iarraidh mioscais a choth√∫. 
+–°—Ç–∞–Ω–¥–∞—Ä—Ç –±—É—Å —Ö—ç–ª–±—ç—Ä: –º–∞–≥–∞–¥ /scata/ –±–∞–π—Ö?.
+
+2: Tabhair go leor leor de na na ruda√≠ seo do do chara, a Chaoimh√≠n. 
+–î–∞–≤—Ç–∞–≥–¥—Å–∞–Ω “Ø–≥.
+
+3: An bhfuil aon uaktar reoite agat? 
+–ú—ç–¥—ç–≥–¥—ç—Ö“Ø–π “Ø–≥.
+
+4: An bhfuil ayn uachtar roach agat? 
+–ú—ç–¥—ç–≥–¥—ç—Ö“Ø–π “Ø–≥, –ú—ç–¥—ç–≥–¥—ç—Ö–≥“Ø–π “Ø–≥ (—ç–Ω—ç ”©–≥“Ø“Ø–ª–±—ç—Ä–∏–π–Ω “Ø–ª–¥—ç–≥–¥–ª–∏–π–≥ “Ø–ª —Ö—ç—Ä—ç–≥—Å—ç—Ö).
+
+5: B√≠onn an ge√°l ag satailt ar an dubh. 
+–•“Ø—á–∏–Ω—Ç—ç–π “Ø–≥ –≥—ç—Ö–¥—ç—ç –∏–¥—ç–≤—Ö–∏—Ç—ç–π —Ö—ç—Ä—ç–≥–ª—ç—ç–Ω–¥ —Ç—É–π–ª—ã–Ω —Ö–æ–≤–æ—Ä.
+
+6: Ach bh√≠ m√© ag lean√∫int ar aghaidh an t-am ar fad leis. 
+–•–∞—Ä—ä—è–∞–ª–∞—Ö—ã–Ω —Ç–∏–π–Ω —è–ª–≥–∞–ª —ç–Ω–¥ —à–∞–∞—Ä–¥–ª–∞–≥–∞—Ç–∞–π.
+
+7: Nach holc an mhaise duit a bheith ag magadh. 
+–£–≥—Ç–≤–∞—Ä —à–∞–∞—Ä–¥–ª–∞–≥–∞–≥“Ø–π /h/.
+
+8: Ba hiad na hamhr√°in i dtosach ba ch√∫is leis. 
+–£–≥—Ç–≤–∞—Ä —à–∞–∞—Ä–¥–ª–∞–≥–∞–≥“Ø–π /h/.
+
+9: Ba iad na tr√≠ h√°it iad Bost√∫n, Baile √Åtha Cliath agus Nua Eabhrac. 
+–£–≥—Ç–≤–∞—Ä —à–∞–∞—Ä–¥–ª–∞–≥–∞–≥“Ø–π /h/.
+
+10: Sa dara alt, d√©an cur s√≠os ar a bhfaca siad sa Sp√°inn. 
+–£–≥—Ç–≤–∞—Ä /h/ –¥—É—Ç—É—É.
+
+test English
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE teacs SYSTEM "/dtds/gramadoir.dtd">
+<teacs>
+<line uimhir="1"> <E msg="ANAITHNID"><X>GNU</X></E> <U>GENERAL</U> <U>PUBLIC</U> <U>LICENSE</U> <U>Version</U> 2, <U>June</U> 1991 <U>Copyright</U> (<E msg="ANAITHNIDSRL"><X>C</X></E>) 1989, 1991 <U>Free</U> <U>Software</U> <U>Foundation</U>, <U>Inc</U>. 675 <U>Mass</U> <U>Ave</U>, <U>Cambridge</U>, <X>MA</X> 02139, <X>USA</X> <U>Everyone</U> <U>is</U> <U>permitted</U> <U>to</U> <U>copy</U> <U>and</U> <U>distribute</U> <X>verbatim</X> <U>copies</U> <U>of</U> <U>this</U> <U>license</U> <U>document</U>, <U>but</U> <U>changing</U> <U>it</U> <U>is</U> <U>not</U> <U>allowed</U>. </line>
+<line uimhir="9"> <E msg="ANAITHNID"><X>Preamble</X></E> <U>The</U> <U>licenses</U> <U>for</U> <U>most</U> <U>software</U> <U>are</U> <U>designed</U> <U>to</U> <U>take</U> <U>away</U> <U>your</U> <U>freedom</U> <U>to</U> <U>share</U> <U>and</U> <U>change</U> <U>it</U>. </line>
+<line uimhir="12"> <U>By</U> <U>contrast</U>, <U>the</U> <E msg="ANAITHNID"><X>GNU</X></E> <U>General</U> <U>Public</U> <U>License</U> <U>is</U> <U>intended</U> <U>to</U> <U>guarantee</U> <U>your</U> <U>freedom</U> <U>to</U> <U>share</U> <U>and</U> <U>change</U> <U>free</U> <U>software</U>--<U>to</U> <U>make</U> <U>sure</U> <U>the</U> <U>software</U> <U>is</U> <U>free</U> <U>for</U> <U>all</U> <U>its</U> <U>users</U>. </line>
+<line uimhir="14"> <U>This</U> <U>General</U> <U>Public</U> <U>License</U> <U>applies</U> <U>to</U> <U>most</U> <U>of</U> <U>the</U> <U>Free</U> <U>Software</U> <U>Foundation's</U> <U>software</U> <U>and</U> <U>to</U> <U>any</U> <U>other</U> <U>program</U> <U>whose</U> <U>authors</U> <U>commit</U> <U>to</U> <U>using</U> <U>it</U>. </line>
+<line uimhir="17"> (<U>Some</U> <U>other</U> <U>Free</U> <U>Software</U> <U>Foundation</U> <U>software</U> <U>is</U> <U>covered</U> <U>by</U> <U>the</U> <E msg="ANAITHNID"><X>GNU</X></E> <U>Library</U> <U>General</U> <U>Public</U> <U>License</U> <U>instead</U>.) </line>
+<line uimhir="18"> <U>You</U> <U>can</U> <U>apply</U> <U>it</U> <U>to</U> <U>your</U> <U>programs</U>, <U>too</U>. </line>
+<line uimhir="21"> <U>When</U> <U>we</U> <U>speak</U> <U>of</U> <U>free</U> <U>software</U>, <U>we</U> <U>are</U> <U>referring</U> <U>to</U> <U>freedom</U>, <U>not</U> <U>price</U>. </line>
+<line uimhir="22"> <U>Our</U> <U>General</U> <U>Public</U> <U>Licenses</U> <U>are</U> <U>designed</U> <U>to</U> <U>make</U> <U>sure</U> <U>that</U> <U>you</U> <U>have</U> <U>the</U> <U>freedom</U> <U>to</U> <U>distribute</U> <U>copies</U> <U>of</U> <U>free</U> <U>software</U> (<U>and</U> <U>charge</U> <U>for</U> <U>this</U> <U>service</U> <U>if</U> <U>you</U> <U>wish</U>), <U>that</U> <U>you</U> <U>receive</U> <U>source</U> <U>code</U> <U>or</U> <U>can</U> <U>get</U> <U>it</U> <U>if</U> <U>you</U> <U>want</U> <U>it</U>, <U>that</U> <U>you</U> <U>can</U> <U>change</U> <U>the</U> <U>software</U> <U>or</U> <U>use</U> <U>pieces</U> <U>of</U> <U>it</U> <U>in</U> <U>new</U> <U>free</U> <U>programs</U>; <U>and</U> <U>that</U> <U>you</U> <U>know</U> <U>you</U> <U>can</U> <U>do</U> <U>these</U> <U>things</U>. </line>
+<line uimhir="28"> <U>To</U> <U>protect</U> <U>your</U> <U>rights</U>, <U>we</U> <U>need</U> <U>to</U> <U>make</U> <U>restrictions</U> <U>that</U> <U>forbid</U> <U>anyone</U> <U>to</U> <U>deny</U> <U>you</U> <U>these</U> <U>rights</U> <U>or</U> <U>to</U> <U>ask</U> <U>you</U> <U>to</U> <U>surrender</U> <U>the</U> <U>rights</U>. </line>
+<line uimhir="30"> <U>These</U> <U>restrictions</U> <U>translate</U> <U>to</U> <U>certain</U> <U>responsibilities</U> <U>for</U> <U>you</U> <U>if</U> <U>you</U> <U>distribute</U> <U>copies</U> <U>of</U> <U>the</U> <U>software</U>, <U>or</U> <U>if</U> <U>you</U> <U>modify</U> <U>it</U>. </line>
+<line uimhir="33"> <U>For</U> <U>example</U>, <U>if</U> <U>you</U> <U>distribute</U> <U>copies</U> <U>of</U> <U>such</U> <U>a</U> <U>program</U>, <U>whether</U> <E msg="ANAITHNID"><X>gratis</X></E> <U>or</U> <U>for</U> <U>a</U> <U>fee</U>, <U>you</U> <U>must</U> <U>give</U> <U>the</U> <U>recipients</U> <U>all</U> <U>the</U> <U>rights</U> <U>that</U> <U>you</U> <U>have</U>. </line>
+<line uimhir="35"> <U>You</U> <U>must</U> <U>make</U> <U>sure</U> <U>that</U> <U>they</U>, <U>too</U>, <U>receive</U> <U>or</U> <U>can</U> <U>get</U> <U>the</U> <U>source</U> <U>code</U>. </line>
+<line uimhir="36"> <U>And</U> <U>you</U> <U>must</U> <U>show</U> <U>them</U> <U>these</U> <U>terms</U> <U>so</U> <U>they</U> <U>know</U> <U>their</U> <U>rights</U>. </line>
+<line uimhir="39"> <U>We</U> <U>protect</U> <U>your</U> <U>rights</U> <U>with</U> <U>two</U> <U>steps</U>: (1) <U>copyright</U> <U>the</U> <U>software</U>, <U>and</U> (2) <U>offer</U> <U>you</U> <U>this</U> <U>license</U> <U>which</U> <U>gives</U> <U>you</U> <U>legal</U> <U>permission</U> <U>to</U> <U>copy</U>, <U>distribute</U> <U>and</U>/<U>or</U> <U>modify</U> <U>the</U> <U>software</U>. </line>
+</teacs>
+test English: ASCII character set
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE teacs SYSTEM "/dtds/gramadoir.dtd">
+<teacs>
+<line uimhir="1"> <U>This</U> <U>string</U> <U>has</U> <E msg="ANAITHNID"><X>emb</X></E>È<E msg="ANAITHNIDSRL"><X>dded</X></E> <U>non</U>-<U>ASCII</U> <U>characters</U>! </line>
+</teacs>
+test aspell support
+1: Militriu. 
+–ú—ç–¥—ç–≥–¥—ç—Ö“Ø–π “Ø–≥ /MÌlitri˙, MÌlitrÌ, MhÌlitri˙, MÌlitrigh, MÌlitrÌm/?.
+
+test brill algorithm
+<N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<V p="xx" t="l·ith">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+a <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><U/><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/><V cop="y"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+a <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<D>ANYTHING</D> <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<P>ANYTHING</P> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<P>ANYTHING</P> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<D>ANYTHING</D> <B><Z><N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+<U>ANYTHING</U> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+an <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><S/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<S>
+<V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="y" gnd="f"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
+<V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<C>ANYTHING</C> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<P>ANYTHING</P> <B><Z><R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/></Z>ANYTHING</B>:<R>
+<P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<T>ANYTHING</T> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+an <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<V p="xx" t="l·ith">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+at· <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+seo <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+mÈ <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+do <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+do <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<R>ANYTHING</R> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<P>ANYTHING</P> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+<T>ANYTHING</T> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+<V cop="y">ANYTHING</V> <B><Z><S/><R/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<R>
+<P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<C>ANYTHING</C> <B><Z><C/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/></Z>ANYTHING</B>:<C>
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><N pl="n" gnt="y" gnd="f"/><N pl="y" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+<V p="1˙" t="l·ith">ANYTHING</V> <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<O>
+T· <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<V p="xx" t="f·ist">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+agus <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+sÈ <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+sin <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+bhur <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<V cop="y">ANYTHING</V> <B><Z><O em="y"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<O em="y">
+<N pl="y" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+do <B><Z><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+sÈ <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+mo <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+T· <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+mo <B><Z><N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+t˙ <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+sin <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+fÈin <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+bheidh <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V pl="y" p="2˙" t="ord">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/><V p="3˙" t="gn·th"/><V pl="y" p="2˙" t="gn·th"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="xx" t="l·ith">ANYTHING</V> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+<C>ANYTHING</C> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+<N pl="y" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<P>ANYTHING</P> <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<O>
+agus <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+test tag frequency counter
+<N pl="n" gnt="n" gnd="m">
+<S>
+<N pl="n" gnt="n" gnd="f">
+<A pl="n" gnt="n">
+<T>
+<P>
+<V p="xx" t="l·ith">
+<O>
+<D>
+<C>
+<V p="xx" t="caite">
+<R>
+<N pl="y" gnt="n" gnd="m">
+<V cop="y">
+<U>
+<Q>
+<V p="xx" t="f·ist">
+<N pl="y" gnt="n" gnd="f">
+<N pl="n" gnt="y" gnd="m">
+<A>
+<N pl="n" gnt="y" gnd="f">
+<N pl="n" gnt="n">
+<V p="xx" t="ord">
+<A pl="n" gnt="y" gnd="f">
+<A pl="y" gnt="n">
+<V p="saor" t="caite">
+<V p="xx" t="coinn">
+<O em="y">
+<V p="saor" t="l·ith">
+<V p="xx" t="gn·th">
+<N pl="y" gnt="y" gnd="m">
+<N pl="n" gnt="y" gnd="f" h="y">
+<N pl="n" gnt="n" gnd="f" h="y">
+<V p="xx" t="foshuit">
+<V p="saor" t="ord">
+<V p="saor" t="f·ist">
+<V p="saor" t="coinn">
+<P h="y">
+<N pl="y" gnt="y" gnd="f">
+<F>
+<A pl="n" gnt="n" h="y">
+test ambiguity report
+17	<S/><D/>
+            17	do
+5	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/>
+             2	Gaeilge
+             1	imnÌ
+             1	faire
+             1	Bhealtaine
+4	<N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/>
+             1	cuireadh
+             1	cinneadh
+             1	Cuireadh
+             1	Ceapadh
+3	<O/><N pl="n" gnt="n" gnd="f"/>
+             3	uaim
+3	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/>
+             3	mÈid
+3	<A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             2	eile
+             1	dÈanta
+2	<V p="saor" t="caite"/><V p="3˙" t="ord"/><V p="3˙" t="gn·th"/><V pl="y" p="2˙" t="gn·th"/>
+             1	maitheadh
+             1	LabhraÌodh
+2	<R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/>
+             2	beag·n
+2	<N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/>
+             1	Ûga
+             1	cinÌocha
+2	<N pl="n" gnt="y" gnd="f"/><N pl="y" gnt="n" gnd="f"/>
+             2	uaire
+2	<N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/><V p="3˙" t="gn·th"/><V pl="y" p="2˙" t="gn·th"/>
+             1	sheoladh
+             1	moladh
+2	<N pl="n" gnt="n" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/>
+             1	scrios
+             1	lÌon
+2	<N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/>
+             1	gear·n
+             1	dÈan
+2	<N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/>
+             1	˙d
+             1	ceart
+2	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/>
+             1	g·ire
+             1	ciste
+2	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/>
+             1	FÈile
+             1	FhÈile
+2	<A pl="n" gnt="y" gnd="f"/><A pl="y" gnt="n"/>
+             1	oifigi˙la
+             1	mhilse
+1	<U/><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/><V cop="y"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/>
+             1	nÌ
+1	<S/><R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/>
+             1	Timpeall
+1	<S/><R/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/>
+             1	fi˙
+1	<S/><N pl="n" gnt="n" gnd="f"/>
+             1	toisc
+1	<O em="y"/><N pl="n" gnt="y" gnd="f"/>
+             1	linne
+1	<N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/>
+             1	bpeacaÌ
+1	<N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	r·ite
+1	<N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/>
+             1	chÈadfaÌ
+1	<N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/>
+             1	aitheanta
+1	<N pl="n" gnt="y" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/>
+             1	Bhraith
+1	<N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><V p="2˙" t="ord"/>
+             1	tosaigh
+1	<N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	cÛnaithe
+1	<N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/>
+             1	lorg
+1	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	chÈanna
+1	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y" gnd="f"/>
+             1	dheoraÌ
+1	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	beo
+1	<N pl="n" gnt="n" gnd="m" h="y"/><N pl="y" gnt="y" gnd="m" h="y"/><A pl="n" gnt="n" h="y"/>
+             1	holc
+1	<N pl="n" gnt="n" gnd="f"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/>
+             1	ghoid
+1	<N pl="n" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/>
+             1	ghlac
+1	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="m"/>
+             1	c˙il
+1	<C/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/>
+             1	Ûir
+1	<A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	Nua
+1	<A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/>
+             1	bre·
+–û–¥–æ–æ —à–∞–ª–≥–∞–∂ –±–∞–π–Ω–∞ /dev/null
+test help flag
+Pouæitie: gr [VO•BY] [S⁄BORY]
+
+Voµby pre koncov˝ch pouæÌvateµov:
+    --iomlan       hl·siª vπetky chyby (teda nepouæÌvaª ~/.neamhshuim)
+    --ionchod=ENC  urËenie kÛdovania overovanÈho textu
+    --litriu       vypÌsaª nespr·vne slov· na πtandardn˝ v˝stup
+    --aspell       navrhn˙ª opravu nespr·vnych slov (vyæaduje GNU aspell)
+    --teanga=XX    urËenie jazyku overovanÈho textu(prednastavenÈ=ga)
+    --help         zobrazÌ tento text a ukonËÌ program
+    --version      zobrazÌ inform·cie o verzii a ukonËÌ program
+
+Voµby pre v˝voj·rov:
+    --brill        n·jsª pravidl· pre urËenie v˝znamu slov pomocou Brillovho algoritmu
+    --html         vytvorÌ HTML v˝stup pre prezeranie vo webovom prehliadaËi
+    --ilchiall     vypÌsaª slov· s nen·jden˝m v˝znamom, zotriedenÈ podµa poËtu v˝skytu
+    --minic        vypÌπe vπetky znaËky, zotriedenÈ podµa poËtu v˝skytu (pre unigram-xx.txt)
+    --no-unigram   neurËovaª v˝znam slov podµa poËtu v˝skytu
+    --xml          zapÌsaª oznaËkovan˝ XML stream na πtandardn˝ v˝stup, pre odlaÔovanie
+
+Ak nie je zadan˝ æiadny s˙bor, ËÌtaj zo πtandardnÈho vstupu
+
+Odosielaª spr·vy o chybe na <scannell@slu.edu>.
+test version flag
+An GramadÛir, verzia 0.4
+Copyright (C) 2003 Kevin P. Scannell
+Toto je voµne πÌriteµn˝ program, pozrite si zdrojovÈ s˙bory. Neposkytuje sa
+æiadna z·ruka, dokonca ani z·ruka PREDAJNOSTI alebo VHODNOSTI PRE 
+UR»IT› ⁄»EL, v rozsahu povolenom z·konom.
+test segmentation
+1: Several. 
+Nezn·me slovo.
+
+1: Sentences. 
+Nezn·me slovo.
+
+1: Here! 
+Nezn·me slovo.
+
+test litriu flag
+uaktar
+ayn
+roach
+test xml flag
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE teacs SYSTEM "/dtds/gramadoir.dtd">
+<teacs>
+<line uimhir="1"> <U>NÌ</U> <V p="xx" t="caite">raibh</V> <N pl="n" gnt="n" gnd="m">lÌon</N> <A pl="n" gnt="n">mÛr</A> <N pl="y" gnt="n" gnd="m">daoine</N> <A pl="n" gnt="n">bainteach</A> <S>leis</S> <T>an</T> <E msg="CAIGHDEAN{scata}"><Y>scaifte</Y></E> <U>a</U> <V p="xx" t="caite">bhÌ</V> <S>ag</S> <N pl="n" gnt="n" gnd="f">iarraidh</N> <N pl="n" gnt="n" gnd="f">mioscais</N> <S>a</S> <N pl="n" gnt="n" gnd="m">choth˙</N>. </line>
+<line uimhir="2"> <V p="xx" t="ord">Tabhair</V> <U>go</U> <A pl="n" gnt="n">leor</A> <A pl="n" gnt="n">leor</A> <S>de</S> <T>na</T> <E msg="DUBAILTE"><T>na</T></E> <N pl="y" gnt="n" gnd="m">rudaÌ</N> <A pl="n" gnt="n">seo</A> <S>do</S> <S>do</S> <N pl="n" gnt="n" gnd="m">chara</N>, <D>a</D> <Y>ChaoimhÌn</Y>. </line>
+<line uimhir="3"> <Q>An</Q> <V p="xx" t="l·ith">bhfuil</V> <A pl="n" gnt="n">aon</A> <E msg="ANAITHNID"><X>uaktar</X></E> <A>reoite</A> <O>agat</O>? </line>
+<line uimhir="4"> <Q>An</Q> <V p="xx" t="l·ith">bhfuil</V> <E msg="ANAITHNID"><X>ayn</X></E> <N pl="n" gnt="n" gnd="m">uachtar</N> <E msg="ANAITHNIDSRL"><X>roach</X></E> <O>agat</O>? </line>
+<line uimhir="5"> <V p="xx" t="l·ith">BÌonn</V> <T>an</T> <E msg="NEAMHCHOIT"><F>ge·l</F></E> <S>ag</S> <N pl="n" gnt="n" gnd="f">satailt</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">dubh</N>. </line>
+<line uimhir="6"> <C>Ach</C> <V p="xx" t="caite">bhÌ</V> <P>mÈ</P> <S>ag</S> <N pl="n" gnt="n" gnd="f">lean˙int</N> <E msg="GENITIVE"><S>ar aghaidh</S> <T>an</T> <N pl="n" gnt="n" gnd="m">t-am</N></E> <R>ar fad</R> <O>leis</O>. </line>
+<line uimhir="7"> <E msg="NIAITCH"><V cop="y">Nach</V> <A pl="n" gnt="n" h="y">holc</A></E> <T>an</T> <N pl="n" gnt="n" gnd="f">mhaise</N> <O>duit</O> <S>a</S> <N pl="n" gnt="n" gnd="f">bheith</N> <S>ag</S> <N pl="n" gnt="n" gnd="m">magadh</N>. </line>
+<line uimhir="8"> <E msg="NIAITCH"><V cop="y">Ba</V> <P h="y">hiad</P></E> <T>na</T> <N pl="y" gnt="n" gnd="m">hamhr·in</N> <S>i</S> <N pl="n" gnt="n" gnd="m">dtosach</N> <V cop="y">ba</V> <N pl="n" gnt="n" gnd="f">ch˙is</N> <O>leis</O>. </line>
+<line uimhir="9"> <V cop="y">Ba</V> <P>iad</P> <T>na</T> <E msg="NIAITCH"><A pl="n" gnt="n">trÌ</A> <N pl="n" gnt="n" gnd="f" h="y">h·it</N></E> <P>iad</P> <N pl="n" gnt="n" gnd="m">Bost˙n</N>, <N pl="n" gnt="n" gnd="m">Baile</N> <N pl="n" gnt="y" gnd="m">¡tha</N> <N pl="n" gnt="n" gnd="f">Cliath</N> <C>agus</C> <A pl="n" gnt="n">Nua</A> <N pl="n" gnt="n" gnd="m">Eabhrac</N>. </line>
+<line uimhir="10"> <S>Sa</S> <E msg="PREFIXH"><A pl="n" gnt="n">dara</A> <N pl="n" gnt="n" gnd="m">alt</N></E>, <N pl="n" gnt="n" gnd="m">dÈan</N> <N pl="n" gnt="n" gnd="m">cur</N> <R>sÌos</R> <S>ar</S> <U>a</U> <V p="xx" t="caite">bhfaca</V> <P>siad</P> <S>sa</S> <N pl="n" gnt="n" gnd="f">Sp·inn</N>. </line>
+</teacs>
+test html flag
+Pr·ve overujem triail.2
+<br><br>1: NÌ raibh lÌon mÛr daoine bainteach leis an <b class=gramadoir>scaifte</b> a bhÌ ag iarraidh mioscais a choth˙. <br>
+Neπtandardn· forma: moæno /scata/?.
+
+<br><br>2: Tabhair go leor leor de <b class=gramadoir>na</b> <b class=gramadoir>na</b> rudaÌ seo do do chara, a ChaoimhÌn. <br>
+OpakovanÈ slovo.
+
+<br><br>3: An bhfuil aon <b class=gramadoir>uaktar</b> reoite agat? <br>
+Nezn·me slovo.
+
+<br><br>4: An bhfuil <b class=gramadoir>ayn</b> uachtar <b class=gramadoir>roach</b> agat? <br>
+Nezn·me slovo, Nezn·me slovo (ignorujem zvyπok slov v tejto vete).
+
+<br><br>5: BÌonn an <b class=gramadoir>ge·l</b> ag satailt ar an dubh. <br>
+PlatnÈ slovo, ale extrÈmne vz·cne v beænom pouæitÌ.
+
+<br><br>6: Ach bhÌ mÈ ag lean˙int <b class=gramadoir>ar aghaidh an t-am</b> ar fad leis. <br>
+Je tu potrebn˝ genitÌv.
+
+<br><br>7: <b class=gramadoir>Nach holc</b> an mhaise duit a bheith ag magadh. <br>
+Nepotrebn· predpona /h/.
+
+<br><br>8: <b class=gramadoir>Ba hiad</b> na hamhr·in i dtosach ba ch˙is leis. <br>
+Nepotrebn· predpona /h/.
+
+<br><br>9: Ba iad na <b class=gramadoir>trÌ h·it</b> iad Bost˙n, Baile ¡tha Cliath agus Nua Eabhrac. <br>
+Nepotrebn· predpona /h/.
+
+<br><br>10: Sa <b class=gramadoir>dara alt</b>, dÈan cur sÌos ar a bhfaca siad sa Sp·inn. <br>
+Predpona /h/ ch˝ba.
+
+test ionchod flag and ability to read from stdin
+1: N√≠ raibh l√≠on m√≥r daoine bainteach leis an scaifte a bh√≠ ag iarraidh mioscais a choth√∫. 
+Neπtandardn· forma: moæno /scata/?.
+
+2: Tabhair go leor leor de na na ruda√≠ seo do do chara, a Chaoimh√≠n. 
+OpakovanÈ slovo.
+
+3: An bhfuil aon uaktar reoite agat? 
+Nezn·me slovo.
+
+4: An bhfuil ayn uachtar roach agat? 
+Nezn·me slovo, Nezn·me slovo (ignorujem zvyπok slov v tejto vete).
+
+5: B√≠onn an ge√°l ag satailt ar an dubh. 
+PlatnÈ slovo, ale extrÈmne vz·cne v beænom pouæitÌ.
+
+6: Ach bh√≠ m√© ag lean√∫int ar aghaidh an t-am ar fad leis. 
+Je tu potrebn˝ genitÌv.
+
+7: Nach holc an mhaise duit a bheith ag magadh. 
+Nepotrebn· predpona /h/.
+
+8: Ba hiad na hamhr√°in i dtosach ba ch√∫is leis. 
+Nepotrebn· predpona /h/.
+
+9: Ba iad na tr√≠ h√°it iad Bost√∫n, Baile √Åtha Cliath agus Nua Eabhrac. 
+Nepotrebn· predpona /h/.
+
+10: Sa dara alt, d√©an cur s√≠os ar a bhfaca siad sa Sp√°inn. 
+Predpona /h/ ch˝ba.
+
+test English
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE teacs SYSTEM "/dtds/gramadoir.dtd">
+<teacs>
+<line uimhir="1"> <E msg="ANAITHNID"><X>GNU</X></E> <U>GENERAL</U> <U>PUBLIC</U> <U>LICENSE</U> <U>Version</U> 2, <U>June</U> 1991 <U>Copyright</U> (<E msg="ANAITHNIDSRL"><X>C</X></E>) 1989, 1991 <U>Free</U> <U>Software</U> <U>Foundation</U>, <U>Inc</U>. 675 <U>Mass</U> <U>Ave</U>, <U>Cambridge</U>, <X>MA</X> 02139, <X>USA</X> <U>Everyone</U> <U>is</U> <U>permitted</U> <U>to</U> <U>copy</U> <U>and</U> <U>distribute</U> <X>verbatim</X> <U>copies</U> <U>of</U> <U>this</U> <U>license</U> <U>document</U>, <U>but</U> <U>changing</U> <U>it</U> <U>is</U> <U>not</U> <U>allowed</U>. </line>
+<line uimhir="9"> <E msg="ANAITHNID"><X>Preamble</X></E> <U>The</U> <U>licenses</U> <U>for</U> <U>most</U> <U>software</U> <U>are</U> <U>designed</U> <U>to</U> <U>take</U> <U>away</U> <U>your</U> <U>freedom</U> <U>to</U> <U>share</U> <U>and</U> <U>change</U> <U>it</U>. </line>
+<line uimhir="12"> <U>By</U> <U>contrast</U>, <U>the</U> <E msg="ANAITHNID"><X>GNU</X></E> <U>General</U> <U>Public</U> <U>License</U> <U>is</U> <U>intended</U> <U>to</U> <U>guarantee</U> <U>your</U> <U>freedom</U> <U>to</U> <U>share</U> <U>and</U> <U>change</U> <U>free</U> <U>software</U>--<U>to</U> <U>make</U> <U>sure</U> <U>the</U> <U>software</U> <U>is</U> <U>free</U> <U>for</U> <U>all</U> <U>its</U> <U>users</U>. </line>
+<line uimhir="14"> <U>This</U> <U>General</U> <U>Public</U> <U>License</U> <U>applies</U> <U>to</U> <U>most</U> <U>of</U> <U>the</U> <U>Free</U> <U>Software</U> <U>Foundation's</U> <U>software</U> <U>and</U> <U>to</U> <U>any</U> <U>other</U> <U>program</U> <U>whose</U> <U>authors</U> <U>commit</U> <U>to</U> <U>using</U> <U>it</U>. </line>
+<line uimhir="17"> (<U>Some</U> <U>other</U> <U>Free</U> <U>Software</U> <U>Foundation</U> <U>software</U> <U>is</U> <U>covered</U> <U>by</U> <U>the</U> <E msg="ANAITHNID"><X>GNU</X></E> <U>Library</U> <U>General</U> <U>Public</U> <U>License</U> <U>instead</U>.) </line>
+<line uimhir="18"> <U>You</U> <U>can</U> <U>apply</U> <U>it</U> <U>to</U> <U>your</U> <U>programs</U>, <U>too</U>. </line>
+<line uimhir="21"> <U>When</U> <U>we</U> <U>speak</U> <U>of</U> <U>free</U> <U>software</U>, <U>we</U> <U>are</U> <U>referring</U> <U>to</U> <U>freedom</U>, <U>not</U> <U>price</U>. </line>
+<line uimhir="22"> <U>Our</U> <U>General</U> <U>Public</U> <U>Licenses</U> <U>are</U> <U>designed</U> <U>to</U> <U>make</U> <U>sure</U> <U>that</U> <U>you</U> <U>have</U> <U>the</U> <U>freedom</U> <U>to</U> <U>distribute</U> <U>copies</U> <U>of</U> <U>free</U> <U>software</U> (<U>and</U> <U>charge</U> <U>for</U> <U>this</U> <U>service</U> <U>if</U> <U>you</U> <U>wish</U>), <U>that</U> <U>you</U> <U>receive</U> <U>source</U> <U>code</U> <U>or</U> <U>can</U> <U>get</U> <U>it</U> <U>if</U> <U>you</U> <U>want</U> <U>it</U>, <U>that</U> <U>you</U> <U>can</U> <U>change</U> <U>the</U> <U>software</U> <U>or</U> <U>use</U> <U>pieces</U> <U>of</U> <U>it</U> <U>in</U> <U>new</U> <U>free</U> <U>programs</U>; <U>and</U> <U>that</U> <U>you</U> <U>know</U> <U>you</U> <U>can</U> <U>do</U> <U>these</U> <U>things</U>. </line>
+<line uimhir="28"> <U>To</U> <U>protect</U> <U>your</U> <U>rights</U>, <U>we</U> <U>need</U> <U>to</U> <U>make</U> <U>restrictions</U> <U>that</U> <U>forbid</U> <U>anyone</U> <U>to</U> <U>deny</U> <U>you</U> <U>these</U> <U>rights</U> <U>or</U> <U>to</U> <U>ask</U> <U>you</U> <U>to</U> <U>surrender</U> <U>the</U> <U>rights</U>. </line>
+<line uimhir="30"> <U>These</U> <U>restrictions</U> <U>translate</U> <U>to</U> <U>certain</U> <U>responsibilities</U> <U>for</U> <U>you</U> <U>if</U> <U>you</U> <U>distribute</U> <U>copies</U> <U>of</U> <U>the</U> <U>software</U>, <U>or</U> <U>if</U> <U>you</U> <U>modify</U> <U>it</U>. </line>
+<line uimhir="33"> <U>For</U> <U>example</U>, <U>if</U> <U>you</U> <U>distribute</U> <U>copies</U> <U>of</U> <U>such</U> <U>a</U> <U>program</U>, <U>whether</U> <E msg="ANAITHNID"><X>gratis</X></E> <U>or</U> <U>for</U> <U>a</U> <U>fee</U>, <U>you</U> <U>must</U> <U>give</U> <U>the</U> <U>recipients</U> <U>all</U> <U>the</U> <U>rights</U> <U>that</U> <U>you</U> <U>have</U>. </line>
+<line uimhir="35"> <U>You</U> <U>must</U> <U>make</U> <U>sure</U> <U>that</U> <U>they</U>, <U>too</U>, <U>receive</U> <U>or</U> <U>can</U> <U>get</U> <U>the</U> <U>source</U> <U>code</U>. </line>
+<line uimhir="36"> <U>And</U> <U>you</U> <U>must</U> <U>show</U> <U>them</U> <U>these</U> <U>terms</U> <U>so</U> <U>they</U> <U>know</U> <U>their</U> <U>rights</U>. </line>
+<line uimhir="39"> <U>We</U> <U>protect</U> <U>your</U> <U>rights</U> <U>with</U> <U>two</U> <U>steps</U>: (1) <U>copyright</U> <U>the</U> <U>software</U>, <U>and</U> (2) <U>offer</U> <U>you</U> <U>this</U> <U>license</U> <U>which</U> <U>gives</U> <U>you</U> <U>legal</U> <U>permission</U> <U>to</U> <U>copy</U>, <U>distribute</U> <U>and</U>/<U>or</U> <U>modify</U> <U>the</U> <U>software</U>. </line>
+</teacs>
+test English: ASCII character set
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE teacs SYSTEM "/dtds/gramadoir.dtd">
+<teacs>
+<line uimhir="1"> <U>This</U> <U>string</U> <U>has</U> <E msg="ANAITHNID"><X>emb</X></E>È<E msg="ANAITHNIDSRL"><X>dded</X></E> <U>non</U>-<U>ASCII</U> <U>characters</U>! </line>
+</teacs>
+test aspell support
+1: Militriu. 
+Nezn·me slovo /MÌlitri˙, MÌlitrÌ, MhÌlitri˙, MÌlitrigh, MÌlitrÌm/?.
+
+test brill algorithm
+<N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<V p="xx" t="l·ith">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+a <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><U/><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/><V cop="y"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+a <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<D>ANYTHING</D> <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<P>ANYTHING</P> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<P>ANYTHING</P> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<D>ANYTHING</D> <B><Z><N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+<U>ANYTHING</U> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+an <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><S/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<S>
+<V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="y" gnd="f"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
+<V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<C>ANYTHING</C> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<P>ANYTHING</P> <B><Z><R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/></Z>ANYTHING</B>:<R>
+<P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<T>ANYTHING</T> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+an <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<V p="xx" t="l·ith">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+at· <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+seo <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+mÈ <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+do <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+do <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<R>ANYTHING</R> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<P>ANYTHING</P> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+<T>ANYTHING</T> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+<V cop="y">ANYTHING</V> <B><Z><S/><R/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<R>
+<P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<C>ANYTHING</C> <B><Z><C/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/></Z>ANYTHING</B>:<C>
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><N pl="n" gnt="y" gnd="f"/><N pl="y" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+<V p="1˙" t="l·ith">ANYTHING</V> <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<O>
+T· <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<V p="xx" t="f·ist">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+agus <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+sÈ <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+sin <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+bhur <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<V cop="y">ANYTHING</V> <B><Z><O em="y"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<O em="y">
+<N pl="y" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+do <B><Z><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+sÈ <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+mo <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+T· <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+mo <B><Z><N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+t˙ <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+sin <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+fÈin <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+bheidh <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V pl="y" p="2˙" t="ord">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/><V p="3˙" t="gn·th"/><V pl="y" p="2˙" t="gn·th"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="xx" t="l·ith">ANYTHING</V> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+<C>ANYTHING</C> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+<N pl="y" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<P>ANYTHING</P> <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<O>
+agus <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+test tag frequency counter
+<N pl="n" gnt="n" gnd="m">
+<S>
+<N pl="n" gnt="n" gnd="f">
+<A pl="n" gnt="n">
+<T>
+<P>
+<V p="xx" t="l·ith">
+<O>
+<D>
+<C>
+<V p="xx" t="caite">
+<R>
+<N pl="y" gnt="n" gnd="m">
+<V cop="y">
+<U>
+<Q>
+<V p="xx" t="f·ist">
+<N pl="y" gnt="n" gnd="f">
+<N pl="n" gnt="y" gnd="m">
+<A>
+<N pl="n" gnt="y" gnd="f">
+<N pl="n" gnt="n">
+<V p="xx" t="ord">
+<A pl="n" gnt="y" gnd="f">
+<A pl="y" gnt="n">
+<V p="saor" t="caite">
+<V p="xx" t="coinn">
+<O em="y">
+<V p="saor" t="l·ith">
+<V p="xx" t="gn·th">
+<N pl="y" gnt="y" gnd="m">
+<N pl="n" gnt="y" gnd="f" h="y">
+<N pl="n" gnt="n" gnd="f" h="y">
+<V p="xx" t="foshuit">
+<V p="saor" t="ord">
+<V p="saor" t="f·ist">
+<V p="saor" t="coinn">
+<P h="y">
+<N pl="y" gnt="y" gnd="f">
+<F>
+<A pl="n" gnt="n" h="y">
+test ambiguity report
+17	<S/><D/>
+            17	do
+5	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/>
+             2	Gaeilge
+             1	imnÌ
+             1	faire
+             1	Bhealtaine
+4	<N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/>
+             1	cuireadh
+             1	cinneadh
+             1	Cuireadh
+             1	Ceapadh
+3	<O/><N pl="n" gnt="n" gnd="f"/>
+             3	uaim
+3	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/>
+             3	mÈid
+3	<A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             2	eile
+             1	dÈanta
+2	<V p="saor" t="caite"/><V p="3˙" t="ord"/><V p="3˙" t="gn·th"/><V pl="y" p="2˙" t="gn·th"/>
+             1	maitheadh
+             1	LabhraÌodh
+2	<R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/>
+             2	beag·n
+2	<N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/>
+             1	Ûga
+             1	cinÌocha
+2	<N pl="n" gnt="y" gnd="f"/><N pl="y" gnt="n" gnd="f"/>
+             2	uaire
+2	<N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3˙" t="ord"/><V p="3˙" t="gn·th"/><V pl="y" p="2˙" t="gn·th"/>
+             1	sheoladh
+             1	moladh
+2	<N pl="n" gnt="n" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/>
+             1	scrios
+             1	lÌon
+2	<N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2˙" t="ord"/>
+             1	gear·n
+             1	dÈan
+2	<N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/>
+             1	˙d
+             1	ceart
+2	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/>
+             1	g·ire
+             1	ciste
+2	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/>
+             1	FÈile
+             1	FhÈile
+2	<A pl="n" gnt="y" gnd="f"/><A pl="y" gnt="n"/>
+             1	oifigi˙la
+             1	mhilse
+1	<U/><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/><V cop="y"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/>
+             1	nÌ
+1	<S/><R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/>
+             1	Timpeall
+1	<S/><R/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/>
+             1	fi˙
+1	<S/><N pl="n" gnt="n" gnd="f"/>
+             1	toisc
+1	<O em="y"/><N pl="n" gnt="y" gnd="f"/>
+             1	linne
+1	<N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/>
+             1	bpeacaÌ
+1	<N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	r·ite
+1	<N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/><V p="1˙" t="foshuit"/><V p="2˙" t="foshuit"/><V p="3˙" t="foshuit"/><V pl="y" p="2˙" t="foshuit"/><V pl="y" p="3˙" t="foshuit"/>
+             1	chÈadfaÌ
+1	<N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/>
+             1	aitheanta
+1	<N pl="n" gnt="y" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/>
+             1	Bhraith
+1	<N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><V p="2˙" t="ord"/>
+             1	tosaigh
+1	<N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	cÛnaithe
+1	<N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/>
+             1	lorg
+1	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	chÈanna
+1	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y" gnd="f"/>
+             1	dheoraÌ
+1	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	beo
+1	<N pl="n" gnt="n" gnd="m" h="y"/><N pl="y" gnt="y" gnd="m" h="y"/><A pl="n" gnt="n" h="y"/>
+             1	holc
+1	<N pl="n" gnt="n" gnd="f"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/>
+             1	ghoid
+1	<N pl="n" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><V p="1˙" t="caite"/><V p="2˙" t="ord"/><V p="2˙" t="caite"/><V p="3˙" t="caite"/><V pl="y" p="2˙" t="caite"/>
+             1	ghlac
+1	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="m"/>
+             1	c˙il
+1	<C/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/>
+             1	Ûir
+1	<A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	Nua
+1	<A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/>
+             1	bre·
+Pr·ve overujem /dev/null
