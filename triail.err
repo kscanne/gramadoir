@@ -56,6 +56,12 @@ Urú ar iarraidh.
 22: Níl aon ní arbh fiú a shantú seachas í. 
 Seimhiú ar iarraidh.
 
+23: Ba maith liom fios a thabhairt anois daoibh. 
+Seimhiú ar iarraidh.
+
+24: Ba eol duit go hiomlán m'anam. 
+Ba chóir duit /b+uaschamóg/ a úsáid anseo.
+
 25: D'fhan beirt buachaill sa champa. 
 Seimhiú ar iarraidh.
 
@@ -107,8 +113,11 @@ Seimhiú gan ghá.
 42: Bhí sé cúig bhanlámh ar fhad, cúig banlámh ar leithead. 
 Seimhiú ar iarraidh.
 
-43: Beirim mo mhionna duir dar an margadh a rinne Dia le mo shinsir. 
-Focal anaithnid.
+43: Beirim mo mhionna dar an beart a rinne Dia le mo shinsir. 
+Seimhiú nó urú ar iarraidh.
+
+44: Dearbhaím é dar chuthach m'éada i gcoinne na gciníocha eile. 
+Seimhiú gan ghá.
 
 45: Tá dhá teanga oifigiúla le stádas bunreachtúil á labhairt sa tír seo. 
 Seimhiú ar iarraidh.
@@ -122,8 +131,14 @@ Urú ar iarraidh.
 48: Tógfaidh mé do coinnleoir óna ionad, mura ndéana tú aithrí. 
 Seimhiú ar iarraidh.
 
-49: Is cúis imní don pobal a laghad maoinithe a dhéantar ar Naíonraí. 
-Seimhiú ar iarraidh, Focal anaithnid.
+49: Is cúis imní don pobal a laghad maoinithe a dhéantar ar Naíscoileanna. 
+Seimhiú ar iarraidh.
+
+50: Is mairg don chathair cantalach thruaillithe. 
+Seimhiú ar iarraidh.
+
+51: Creidim go raibh siad de an thuairim chéanna. 
+Ba chóir duit /den/ a úsáid anseo.
 
 52: Cá bhfuil feoil le fáil agamsa le tabhairt do an mhuintir seo? 
 Ba chóir duit /don/ a úsáid anseo.
@@ -146,8 +161,8 @@ Seimhiú ar iarraidh.
 58: Caithfidh pobal na Gaeltachta iad féin cinneadh a dhéanamh faoi an Ghaeilge. 
 Ba chóir duit /faoin/ a úsáid anseo.
 
-59: Féadfar comhalta nó comhaltaí de Sheanad Éireann a thoghadh faoin fo-alt seo. 
-Focal anaithnid.
+59: Tá dualgas ar an gComhairle sin tabhairt faoin cúram seo. 
+Seimhiú nó urú ar iarraidh.
 
 60: Beidh paráid Lá Fhéile Phádraig i mBostún. 
 Seimhiú gan ghá.
@@ -167,8 +182,14 @@ Urú ar iarraidh.
 65: Rug sé ar ais mé go dhoras an Teampaill. 
 Seimhiú gan ghá.
 
-68: Nuair a chuala na Filistínigh gur cheapadh Dáiví ina rí, ghabhadar go léir suas ar a thóir. 
+66: Tar, téanam go dtí bhean na bhfíseanna. 
+Seimhiú gan ghá.
+
+67: Cuirimis chun bealaigh i dtreo na háite sin ó dúirt sé gur peacaíomar. 
 Focal anaithnid.
+
+68: B'fhéidir gurbh fearr é seo duit ná leamhnacht na bó ba mhilse i gcontae Chill Mhantáin. 
+Seimhiú ar iarraidh.
 
 69: An bhfuil aon uachtar reoite agat i cuisneoir? 
 Urú ar iarraidh.
@@ -206,20 +227,26 @@ Seimhiú ar iarraidh.
 83: Roghnaítear an bhliain 1961 mar pointe tosaigh don anailís. 
 Seimhiú ar iarraidh.
 
+84: Comhlíon mo aitheanta agus mairfidh tú beo. 
+Ba chóir duit /m+uaschamóg/ a úsáid anseo.
+
 85: Ceapadh mise i mo bolscaire. 
 Seimhiú ar iarraidh.
 
-86: Bhuail mé mo dhá bois ar a chéile. 
-Focal anaithnid.
+86: Bhuail mé mo dhá bos ar a chéile. 
+Seimhiú ar iarraidh.
 
 87: Mura tagann aon duine i gcabhair orainn, rachaimid anonn chugaibh. 
 Urú ar iarraidh.
 
+88: Murar cruthaigh mise lá agus oíche... teilgim uaim sliocht Iacóib. 
+Seimhiú ar iarraidh.
+
 89: Is mór ag náisiún na Éireann a choibhneas speisialta le daoine de bhunadh na hÉireann atá ina gcónaí ar an gcoigríoch. 
 Réamhlitir /h/ ar iarraidh.
 
-90: Chuir an Coimisiún féin comhfhreagras chuig na eagraíochtaí seo ag lorg mioneolais faoina ngníomhaíochtaí. 
-Réamhlitir /h/ ar iarraidh, Focal anaithnid.
+90: Chuir an Coimisiún féin comhfhreagras chuig na eagraíochtaí seo ag lorg eolais faoina ngníomhaíochtaí. 
+Réamhlitir /h/ ar iarraidh.
 
 91: Ná iompaígí chun na n-íol, agus ná dealbhaígí déithe de mhiotal. 
 Réamhlitir /h/ ar iarraidh.
@@ -236,8 +263,8 @@ Urú ar iarraidh.
 95: Tháinig na bróga chomh fada siar le haimsir Naomh Phádraig féin. 
 Seimhiú gan ghá.
 
-96: Nár breá liom claíomh a bheith agam i mo ghlaic! 
-Seimhiú ar iarraidh, Focal anaithnid.
+96: Nár breá liom claíomh a bheith agam i mo ghlac! 
+Seimhiú ar iarraidh.
 
 97: Nár freagair sé thú, focal ar fhocal. 
 Seimhiú ar iarraidh.
@@ -248,6 +275,12 @@ Seimhiú ar iarraidh.
 99: Ní féadfaidh a gcuid airgid ná óir iad a shábháil. 
 Seimhiú ar iarraidh.
 
+100: Ní iad sin do phíopaí ar an tábla! 
+Réamhlitir /h/ ar iarraidh.
+
+101: Níor cailleamar aon ní i rith an ama go léir a bhíomar ina gcomharsanacht. 
+Focal anaithnid.
+
 102: Níor gá do dheoraí riamh codladh sa tsráid; Bhí mo dhoras riamh ar leathadh. 
 Seimhiú ar iarraidh.
 
@@ -257,6 +290,9 @@ Seimhiú ar iarraidh.
 104: Tabhair an t-ordú seo leanas ó béal. 
 Seimhiú ar iarraidh.
 
+105: Bíodh bhur ngrá saor ó an gcur i gcéill. 
+Ba chóir duit /ón/ a úsáid anseo.
+
 106: Bhí ocht tábla ar fad ar a maraídís na híobairtí. 
 Urú ar iarraidh.
 
@@ -265,6 +301,9 @@ Seimhiú nó urú ar iarraidh.
 
 108: Tá do ghéaga spréite ar bhraillín gléigeal os fharraige faoileán. 
 Seimhiú gan ghá.
+
+109: Agus tháinig scéin air roimh an pobal seo ar a líonmhaire. 
+Seimhiú nó urú ar iarraidh.
 
 110: Is gaiste é eagla roimh daoine. 
 Seimhiú ar iarraidh.
@@ -285,38 +324,41 @@ Focal anaithnid.
 Focal anaithnid.
 
 116: Tá sé bráthair de chuid Ord San Phroinsias. 
-Focal anaithnid.
+Seimhiú gan ghá.
 
 117: An bhfuil aon uachtar reoite agat san foraois? 
 Seimhiú ar iarraidh.
 
-118: Anois i ndeireadh an tséasúir bhí sé uaire de oíche ann. 
-Réamhlitir /h/ ar iarraidh, Ba chóir duit /d+uaschamóg/ a úsáid anseo.
-
-119: Cuireadh boscaí ticeála isteach seachas bhoscaí le freagraí a scríobh isteach. 
-Seimhiú gan ghá.
-
-121: Iompróidh siad thú lena lámha sula buailfeá do chos in aghaidh cloiche. 
-Focal anaithnid.
-
-122: Dhéan an comhairleoir gnó moltaí áirithe don údarás sular ceannaíodar é. 
-Focal anaithnid.
-
-123: Chuir iad ina suí mar a raibh onóir acu thar an cuid eile a fuair cuireadh. 
-Seimhiú nó urú ar iarraidh.
-
-124: Timpeall trí uaire a chloig ina dhiaidh sin tháinig an bhean isteach. 
+118: Anois i ndeireadh an tséasúir bhí sé uaire d'oíche ann. 
 Réamhlitir /h/ ar iarraidh.
 
-125: Beirimid an bua go caithréimeach trí an té úd a thug grá dúinn. 
+120: Cuireadh boscaí ticeála isteach seachas bhoscaí le freagraí a scríobh isteach. 
+Seimhiú gan ghá.
+
+121: Tá seacht lampa air agus seacht píopa ar gach ceann díobh. 
+Urú ar iarraidh.
+
+122: Iompróidh siad thú lena lámha sula bhuailfeá do chos in aghaidh cloiche. 
+Urú ar iarraidh.
+
+123: Dhéan an comhairleoir gnó moltaí áirithe don údarás sular ceannaíodar é. 
+Focal anaithnid.
+
+124: Chuir iad ina suí mar a raibh onóir acu thar an cuid eile a fuair cuireadh. 
+Seimhiú nó urú ar iarraidh.
+
+125: Timpeall trí uaire a chloig ina dhiaidh sin tháinig an bhean isteach. 
+Réamhlitir /h/ ar iarraidh.
+
+126: Beirimid an bua go caithréimeach trí an té úd a thug grá dúinn. 
 Ba chóir duit /tríd/ a úsáid anseo.
 
-126: Gabhfaidh siad trí muir na hÉigipte. 
+127: Gabhfaidh siad trí muir na hÉigipte. 
 Seimhiú ar iarraidh.
 
-127: Idir dhá sholas, um tráthnóna, faoi choim na hoíche agus sa dorchadas. 
+128: Idir dhá sholas, um tráthnóna, faoi choim na hoíche agus sa dorchadas. 
 Seimhiú ar iarraidh.
 
-128: Tá sé-- tá sé- mo ---shin-seanathair an-chantalach. 
+129: Tá sé-- tá sé- mo ---shin-seanathair (OK). 
 Focal anaithnid.
 
