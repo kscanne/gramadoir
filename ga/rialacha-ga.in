@@ -141,7 +141,7 @@ sin sin:OK
 <NFCS>ANYTHING</NFCS> <A>COMPOUND</A>:OK
 # corpus; exception to "lenite adj after feminine noun" (céad comes before)
 #. Léimeann an fharraige céad méadar suas sa spéir (OK).
-<NFCS>ANYTHING</NFCS> <A>(céad|curtha|gach|seo|sin|tugtha)</A>:OK
+<NFCS>ANYTHING</NFCS> <A>(céad|curtha|deich|gach|seacht|seo|sin|tugtha)</A>:OK
 <NFCS>[Bb]heith</NFCS> <A>UNLENITED</A>:OK
 # next rule doesn't make sense: "bileog bholscaireachta dhátheangach" is fine
 # will need a shallow parse to link up adjectives to nouns they modify
@@ -167,7 +167,7 @@ sin sin:OK
 # corpus exceptions
 #. Mhair cuid mhór dár sinsir céad caoga bliain ó shin (OK).
 #. Tá sé le cloisteáil sna meáin gach seachtain (OK).
-<NP>SLENDERFINALCONSONANT</NP> <A>(céad|curtha|gach|seo|sin|tugtha)</A>:OK
+<NP>SLENDERFINALCONSONANT</NP> <A>(céad|curtha|deich|gach|seacht|seo|sin|tugtha)</A>:OK
 # INPHRASE rule, but example sentence is best caught before "na" rules
 #. Maidin lá ar na mhárach thug a fhear gaoil cuairt air.
 <N>[Mm]hárach</N>:INPHRASE{arna mhárach}
@@ -1643,7 +1643,8 @@ d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</
 <S>[Ii]</S> <E><N>ECLIPSED</N></E>:OK
 [Cc]á|[Gg]o <E><N>bh[Ff]ios</N></E>:OK
 <D>([Aa]|[Áá]r|[Bb]hur)</D> [Dd]há <E><N>ECLIPSED</N></E>:OK
-<A>ECLIPSINGNUMBER</A> <E><N>ECLIPSED</N></E>:OK
+# numbers sometimes tagged as "<N>" so leave like this
+ECLIPSINGNUMBER <E><N>ECLIPSED</N></E>:OK
 <D>ECLIPSINGPOSS</D> <E><N>ECLIPSED</N></E>:OK
 <S>[Uu]m</S> <T>an</T> <E><N>dtaca</N></E>:OK
 [Mm]ar <T>an</T> <E><N>gcéanna</N></E>:OK

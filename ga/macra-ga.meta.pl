@@ -49,8 +49,8 @@ s/UNECLIPSED/(?:[aeiouAEIOU·ÈÌÛ˙¡…Õ”⁄cfptCFPT]|d[^Tt']|g[^Cc]|b[^Pph]|bh[^fF])[^
 s/ECLIPSEDVOWEL/n(?:-[aeiou·ÈÌÛ˙]|[AEIOU¡…Õ”⁄])[^<]*/g;
 s/ECLIPSEDBCFGP/(?:g[Cc]|b[Pp]|m[Bb]|n[Gg]|bh[fF])[^<]+/g;
 s/ECLIPSED/(?:n(?:-[aeiou·ÈÌÛ˙]|[AEIOU¡…Õ”⁄])|d[Tt]|g[Cc]|b[Pp]|m[Bb]|n[DdGg]|bh[fF])[^<]*/g;
-s/ECLIPSINGNUMBER/(?:n?[Dd]h?eich|[Nn]aoi|h?[Oo]cht|[Ss]h?eacht|[0-9]*[789]|[0-9]*10)/g;
-s/ECLIPSINGPOSS/(?:(?:[Ff]aoin|[Ii]n|[Ll]en|[”Û]n|[Tt]rÌn)?(?:a|·r)|[Dd]?[¡·]r?|[Bb]hur)/g;
+s/ECLIPSINGNUMBER/(?:n?[Dd]h?eich|[Nn]aoi|(?:h|[mbd]')?[Oo]cht|[Ss]h?eacht|[0-9]*[789]|[0-9]*10)/g;
+s/ECLIPSINGPOSS/(?:(?:[Ff]aoin|[Ii]n|[Ll]en|[”Û]n|[Tt]rÌn)?(?:[Aa]|·r)|[Dd]?[¡·]r?|[Bb]hur)/g;
 s/INITIALM/[Mm][^<]+/g;
 s/UNLENITABLE/(?:[^BbCcDdFfGgMmPpTt]|[Ss][^lnraeiou·ÈÌÛ˙])[^<]*/g;
 s/UNLENITEDBCGMP/[BbCcGgMmPp][^h'][^<]*/g;
@@ -121,6 +121,8 @@ s/NMONE/<N pl="n" gnt="y" gnd="m"(?: h="y")?.><N pl="y" gnt="n" gnd="m"(?: h="y"
 s/ANDROGYN/<N pl="n" gnt="n" gnd="f".><N pl="n" gnt="y" gnd="m".>/g;
 s/STRONGPLM/<N pl="y" gnt="n" gnd="m"(?: h="y")?.><N pl="y" gnt="y" gnd="m"(?: h="y")?.>/g;
 s/STRONGPLF/<N pl="y" gnt="n" gnd="f"(?: h="y")?.><N pl="y" gnt="y" gnd="f"(?: h="y")?.>(?:<A pl="n" gnt="y" gnd="f".>)?/g;
+# n-oibrÌ, n-ÈirÌ, etc.
+s/NMFOURSUBJ/<N pl="n" gnt="n" gnd="m".><N pl="n" gnt="y" gnd="m".><V p="y" t="foshuit".>/g;
 s/NMFOUR/<N pl="n" gnt="n" gnd="m".><N pl="n" gnt="y" gnd="m".>(?:<V p="." t="foshuit".>)?/g;
 s/NFFOUR/<N pl="n" gnt="n" gnd="f"(?: h="y")?.><N pl="n" gnt="y" gnd="f"(?: h="y")?.>/g;
 s/NMADJ/<N pl="n" gnt="n" gnd="m".>(?:<N pl="y" gnt="y" gnd="m".>)?<A pl="n" gnt="n".>(?:<[A-Z][^>]*>)*/g;
@@ -136,7 +138,7 @@ s/NPLF/<N pl="y" gnt="n".><N pl="y" gnt="n" gnd="f".>/g;
 s/PLADJSUBJ/<A pl="y" gnt="n".><V p="." t="foshuit".>/g;
 s/PRESSUBJ/<V p="y" t="l·ith".><V p="y" t="foshuit".>/g;
 s/NFGSUBJ/<N pl="n" gnt="y" gnd="f".><V p="." t="foshuit".>/g;
-s/GENADJ/<N pl="n" gnt="y" gnd=".".><A pl="n" gnt="n".>(?:<A [^>]*>)*/g;
+s/GENADJ/<N pl="n" gnt="y" gnd="m".><A pl="n" gnt="n".><A pl="n" gnt="y" gnd="f".><A pl="n" gnt="y" gnd="m".><A pl="y" gnt="n".>/g;
 s/PROPER/<Y.>(?:<[^>]*>)+/g;
 s/MASCPL/<N pl="y" gnt="n".><N pl="y" gnt="n" gnd="m".>/g;
 s/ADJADV/<R.><A pl="n" gnt="n".>/g;

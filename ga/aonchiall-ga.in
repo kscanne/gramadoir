@@ -24,6 +24,8 @@
 <S>[Ff]aoin</S> <B>g?ch?éad</B>:<N pl="n" gnt="n">
 # "down" not lenited "housekeeping"
 <B>[Tt]híos</B>:<R>
+# go n-éirí, go n-oibrí, etc. 
+[Gg]o <B><Z>NMFOURSUBJ</Z>ECLIPSED</B>:<V p="y" t="foshuit">
 # this century
 <B>g?[Cc]h?éad</B> seo:<N pl="n" gnt="n" gnd="m">
 <B>g?[Cc]h?éad</B>:<A pl="n" gnt="n">
@@ -86,7 +88,7 @@
 <B>[Aa]tá</B>:<V p="y" t="láith">
 <T>[Nn]a</T> <B>ba</B>:<N pl="y" gnt="n" gnd="f">
 <B>[Bb]a</B>:<V cop="y">
-[Gg]o <B>m[Bb]a</B>:<V cop="y">
+[Gg]o|[Nn]ach <B>m[Bb]a</B>:<V cop="y">
 [Dd]h?á <B>m[Bb]a</B>:<V cop="y">
 <B>m?[Bb]h?aile</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Bb]haineann</B>:<V p="y" t="láith">
@@ -316,6 +318,9 @@ RFORMCONJ <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">
 #  Somewhat more frequent are words which can be common singular+plural
 #  simultaneously:  ailt, cóir, uain.  Order prefers singular
 <B><Z>NUMERICAL</Z>ANYTHING</B>:<A pl="n" gnt="n">
+# these two before all of the compound preps (e.g. i ndiaidh na n-uaisle)
+<T>na</T> <B><Z>ANYNMGPL</Z>ECLIPSED</B>:<N pl="y" gnt="y" gnd="m">
+<T>na</T> <B><Z>ANYNFGPL</Z>ECLIPSED</B>:<N pl="y" gnt="y" gnd="f">
 GENITIVEPREP <T>an</T> <B><Z>ANYNMG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 GENITIVEPREP <T>na</T> <B><Z>ANYNFG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 GENITIVEPREP <T>na</T> <B><Z>ANYNMGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="m">
@@ -360,8 +365,6 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 #<NFGS>ANYTHING</NFGS> <A>ANYTHING</A> <B><Z>AWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
 #<NMGS>ANYTHING</NMGS> <A>ANYTHING</A> <B><Z>AWITHGSM</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="m">
 #<NCS>ANYTHING</NCS> <A>ANYTHING</A> <B><Z>AWITHCOMMON</Z>ANYTHING</B>:<A pl="n" gnt="n">
-<T>na</T> <B><Z>ANYNMGPL</Z>ECLIPSED</B>:<N pl="y" gnt="y" gnd="m">
-<T>na</T> <B><Z>ANYNFGPL</Z>ECLIPSED</B>:<N pl="y" gnt="y" gnd="f">
 # s?na=>plural
 <T>[Nn]a</T> <B><Z>ANYNFPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
 <T>[Nn]a</T> <B><Z>ANYNMPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
@@ -435,7 +438,7 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 # Roinne, vótála, etc.
 <B><Z>NFGSUBJ</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 <B><Z>PLADJSUBJ</Z>ANYTHING</B>:<A pl="y" gnt="n">
-<B><Z>GENADJ</Z>ANYTHING</B>:<A>
+<B><Z>GENADJ</Z>ANYTHING</B>:<A pl="n" gnt="n">
 # next one better without <T>, "an chnuasaigh", etc.
 [Aa]o?n|[Gg]ach <B><Z>ANYNMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 [Aa]o?n <B><Z>ANYNMONEC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
@@ -500,6 +503,7 @@ ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
 # "rinne siad ionadh de go raibh" needs go -> <C> first
 <B>[Dd]e</B> <[CSR]>ANYTHING</[CSR]>:<O>
 <B>[Dd]e</B>:<S>
+<B>n?[Dd]h?earcadh</B>:<N pl="n" gnt="n" gnd="m">
 # "gur rinne" needs rinne -> <V> first
 <B>gur</B> <V>ANYTHING</V>:<C>
 <B>gur</B>:<V cop="y">
