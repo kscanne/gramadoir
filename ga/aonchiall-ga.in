@@ -69,6 +69,8 @@
 <B><Z>ANYCOPULA</Z>ANYTHING</B> cóir|cuma|deacair|dh?éanaí|deimhin|dh?ual|h?ea|éard|fiú|maith|mh?ithid:<V cop="y">
 # lowercase ach under last resorts
 <B>Ach</B>:<C>
+# Clochán an Aifir, not verb
+<B>Aifir</B>:<Y>
 # Not needed until corpus ref turns up for "ar" nm1
 # <B>[Aa]ir</B>:<O>
 # háirithe now handled in comhshuite
@@ -162,12 +164,15 @@ d?[Tt]h?rí <B>[Bb]liana</B>:<N pl="y" gnt="n" gnd="f">
 <S>FUSEDPREP</S> <B>[Cc]heathrú</B>:<A pl="n" gnt="n">
 <B>g?[Cc]h?eathrú</B> <N>UNLENITED</N>:<A pl="n" gnt="n">
 <B>g?[Cc]h?eathrú</B> <NWITHH>ANYTHING</NWITHH>:<A pl="n" gnt="n">
+# foilsitheoir, not "kick"
+<B>CIC</B>:<Y>
 # else gets <V> :(
 <B>[Cc]hinn</B> <N pl="n" gnt="y" gnd="f">[Bb]liana</N>:<N pl="n" gnt="y" gnd="m">
 <T>[Nn]a</T> <B>cinn</B>:<N pl="y" gnt="n" gnd="m">
 # includes "sna"; tá cinn móra aige
 <[SV]>ANYTHING</[SV]> <B>cinn</B>:<N pl="y" gnt="n" gnd="m">
 <B>cinn</B>:<N pl="n" gnt="y" gnd="m">
+<B>Colm</B>:<Y>
 <B>[Cc]omhalta</B>:<N pl="n" gnt="n" gnd="m">
 <B>g?ch?ónaí</B>:<N pl="n" gnt="n" gnd="m">
 # since if it gets nb2, will want lenition on cainte
@@ -364,12 +369,14 @@ a <B>sé</B>:<A pl="n" gnt="n">
 <B>theannta</B>:<N pl="n" gnt="n" gnd="m">
 # house, not golf
 <B>[Tt]h?í</B>:<N pl="n" gnt="y" gnd="m">
+<B>Treasa</B>:<Y>
 <T>ANYTHING</T> <B>[Tt]rí</B>:<A pl="n" gnt="n">
 <B>[Tt]rí</B> bliana|cinn|fichid|seachtaine:<A pl="n" gnt="n">
 <B>[Tt]rí</B>:<S>
 <B>[Tt]ríd</B> <T>na</T>:<S>
 <B>[Tt]ríd</B> an:<S>
 <B>[Tt]ríd</B>:<O>
+<B>Uí</B>:<Y>
 # Aire, aire; first one needs <S> resolved (leis, etc)
 # but do it before the <S> ANYNMC rule below!
 [Aa]r <T>[Aa]n</T> <B>Aire</B>:<N pl="n" gnt="n" gnd="m">
@@ -643,6 +650,8 @@ ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
 <B>Ó</B> <Y>ANYTHING</Y>:<Y>
 <B>[Óó]</B> <V>ANYTHING</V>:<C>
 <B>[Óó]</B>:<S>
+# exception to next
+<B>Luimnigh</B>:<N pl="n" gnt="y" gnd="m">
 # e.g. na+NMONE; best to wait until "ar", "de", "ó"
 <[^N]>ANYTHING</[^N]> <B><Z>NMONE</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 # like "Ó" above
