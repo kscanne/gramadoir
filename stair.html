@@ -20,25 +20,41 @@ History</h1>
 <h2>Release History</h2>
 
 <table border cellpadding=2>
-<tr><td>Version</td> <td>Date</td> <td>Lexicon size</td> <td>Alternate forms</td> <td>Disambig. rules</td> <td>Grammar rules</td></tr>
-<tr><td>0.1</td> <td>18 July 2003</td> <td>313,973</td> <td>-</td> <td>16</td> <td>146</td></tr>
-<tr><td>0.2</td> <td>30 July 2003</td> <td>314,027</td> <td>22,292</td> <td>22</td> <td>173</td></tr>
-<tr><td>0.3</td> <td>21 October 2003</td> <td>315,002</td> <td>23,353</td> <td>24</td> <td>177</td></tr>
+<tr><td>Version</td> <td>Release Date</td> <td>Size of lexicon</td> <td>Alternate forms</td> <td>Disambig. rules</td> <td>Grammar rules</td></tr>
+<tr><td>0.1</td> <td>18 Jul 2003</td> <td>313,973</td> <td>-</td> <td>16</td> <td>146</td></tr>
+<tr><td>0.2</td> <td>30 Jul 2003</td> <td>314,027</td> <td>22,292</td> <td>22</td> <td>173</td></tr>
+<tr><td>0.3</td> <td>21 Oct 2003</td> <td>315,002</td> <td>23,353</td> <td>24</td> <td>177</td></tr>
 </table>
 
-<hr>
+<h2>Benchmarks</h2>
+<p>
+The benchmark corpus is comprised of approximately one megabyte of
+plain text from the online Irish monthly <i lang="ga">Beo!</i>.
+There are 192406 words in the corpus forming 9292 sentences.
+Times below are given in seconds (real computation time on my 
+dual Xeon box running Gentoo Linux).   WPM = words per minute.
+</p>
+
+<table border cellpadding=2>
+<tr><td>Version</td> <td>TOTAL</td> <td>WPM</td> <td><i>abair</i></td> <td><i>cuard</i></td> <td><i>aon1</i></td> <td><i>aon2</i></td> <td><i>uni</i></td> <td><i>riail</i></td> <td><i>eisc</i></td> <td><i>aschur</i></td></tr>
+<tr><td>0.1</td> <td><i>220.16</i></td> <td><i>52436</i></td> <td><i>5.20</i></td> <td><i>1.06</i></td> <td><i>3.03</i></td> <td><i>-</i></td> <td><i>-</i></td> <td><i>206.52</i></td> <td><i>0.46</i></td> <td><i>3.89</i></td></tr>
+<tr><td>0.2</td> <td><i>220.73</i></td> <td><i>52301</i></td> <td><i>5.10</i></td> <td><i>1.13</i></td> <td><i>3.38</i></td> <td><i>-</i></td> <td><i>-</i></td> <td><i>206.80</i></td> <td><i>0.43</i></td> <td><i>3.88</i></td></tr>
+<tr><td>0.3</td> <td><i>241.61</i></td> <td><i>47781</i></td> <td><i>5.04</i></td> <td><i>1.11</i></td> <td><i>3.41</i></td> <td><i>-</i></td> <td><i>-</i></td> <td><i>227.64</i></td> <td><i>0.44</i></td> <td><i>3.97</i></td></tr>
+</table>
+
 <h2>ChangeLog Summary</h2>
 <p>
 <b>Version 0.2->0.3</b>
 <ul>
 <li>Optional native language support with GNU gettext (with translations to
 Irish and German included)
-<li>Added ability to specify text encoding via --ionchod command line option
-<li>Ported to build cleanly under Mac OS X
+<li>Added ability to specify text encoding via "--ionchod" command line option
 <li>Modularized language-specific material; added trivial English port and the
---teanga command line option
+"--teanga" command line option
+<li>Ported to build cleanly under Mac OS X
 <li>Added new (mostly grammar) rules
 <li>Minor bug fixes
+<li>New "extras" in tarball: emacs interface, complete CVS ChangeLog
 </ul>
 </p>
 
@@ -46,29 +62,12 @@ Irish and German included)
 <b>Version 0.1->0.2</b>
 <ul>
 <li>Added the "replacement file" containing non-standard forms
-<li>Added user "ignore file" and --iomlan command line option
+<li>Added user "ignore file" and "--iomlan" command line option
 <li>Added new disambiguation and grammar rules
-<li>Improved handling of exceptional input text
+<li>More robust handling of exceptional input text
 <li>Minor bug fixes
 </ul>
 </p>
-
-<hr>
-<h2>Benchmarks</h2>
-<p>
-The benchmark corpus is comprised of approximately one megabyte of
-plain text articles from the online Irish monthly <i lang="ga">Beo!</i>.
-There are 192406 words in the corpus forming 9292 sentences.
-Times below are given in seconds (real computation time on my 
-dual Xeon box running Gentoo Linux).
-</p>
-
-<table border cellpadding=2>
-<tr><td>Version</td> <td><i>IOMLAN</i></td> <td><i>abair</i></td> <td><i>cuard</i></td> <td><i>aon1</i></td> <td><i>aon2</i></td> <td><i>uni</i></td> <td><i>riail</i></td> <td><i>eisc</i></td> <td><i>aschur</i></td></tr>
-<tr><td>0.1</td> <td><i>220.16</i></td> <td><i>5.20</i></td> <td><i>1.06</i></td> <td><i>3.03</i></td> <td><i>-</i></td> <td><i>-</i></td> <td><i>206.52</i></td> <td><i>0.46</i></td> <td><i>3.89</i></td></tr>
-<tr><td>0.2</td> <td><i>220.73</i></td> <td><i>5.10</i></td> <td><i>1.13</i></td> <td><i>3.38</i></td> <td><i>-</i></td> <td><i>-</i></td> <td><i>206.80</i></td> <td><i>0.43</i></td> <td><i>3.88</i></td></tr>
-<tr><td>0.3</td> <td><i>241.61</i></td> <td><i>5.04</i></td> <td><i>1.11</i></td> <td><i>3.41</i></td> <td><i>-</i></td> <td><i>-</i></td> <td><i>227.64</i></td> <td><i>0.44</i></td> <td><i>3.97</i></td></tr>
-</table>
 
 <hr>
 <em>© Cóipcheart/Copyright 2003 Kevin P. Scannell</em><br><br>
