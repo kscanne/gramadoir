@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2003-10-01 21:49-0500\n"
+"POT-Creation-Date: 2003-10-17 16:09-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,43 +16,48 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: cuardach.c:77 cuardach.c:96 cuardach.c:139
+#: cuardach.c:82 cuardach.c:101 cuardach.c:144 cuardach.c:217
 #, c-format
 msgid "%s: out of memory\n"
 msgstr ""
 
-#: cuardach.c:86
+#: cuardach.c:91
 #, c-format
-msgid "%s: `eile.bs' corrupted at %s\n"
+msgid "%s: `%s' corrupted at %s\n"
 msgstr ""
 
-#: cuardach.c:109 cuardach.c:150 cuardach.c:215
+#: cuardach.c:114 cuardach.c:155 cuardach.c:235
 #, c-format
 msgid "%s: warning: check size of %s: %d?\n"
 msgstr ""
 
-#: cuardach.c:114 cuardach.c:155 cuardach.c:221
+#: cuardach.c:119 cuardach.c:160 cuardach.c:241
 #, c-format
 msgid "%s: warning: problem closing %s\n"
 msgstr ""
 
-#: cuardach.c:344
-#, c-format
-msgid "%s: illegal grammatical code\n"
-msgstr ""
-
-#: cuardach.c:396
+#: cuardach.c:277
 #, c-format
 msgid "%s: no grammar codes\n"
 msgstr ""
 
-#: cuardach.c:623
+#: cuardach.c:516
 msgid "problem with the `cuardach' command\n"
 msgstr ""
 
-#: cuardach.c:631
+#: cuardach.c:526
 #, c-format
 msgid "%s: problem reading the database\n"
+msgstr ""
+
+#: farc.c.in:19
+#, c-format
+msgid "Language %s is not supported."
+msgstr ""
+
+#: farc.c.in:23
+#, c-format
+msgid "%s: illegal grammatical code\n"
 msgstr ""
 
 #: ponc.in.y:63
@@ -163,45 +168,41 @@ msgid "option %s does not allow an argument"
 msgstr ""
 
 #: gr.in:57
-msgid "Language %s is not supported."
-msgstr ""
-
-#: gr.in:58
 msgid "Unknown word (ignoring remainder in this sentence)"
 msgstr ""
 
-#: gr.in:59
+#: gr.in:58
 msgid "Unknown word"
 msgstr ""
 
-#: gr.in:60
+#: gr.in:59
 msgid "You should use \\/\\1\\/ here instead"
 msgstr ""
 
-#: gr.in:61
+#: gr.in:60
 msgid "Non-standard form: perhaps use \\/\\1\\/?"
 msgstr ""
 
-#: gr.in:62
+#: gr.in:61
 msgid "Initial mutation missing"
 msgstr ""
 
-#: gr.in:63
+#: gr.in:62
 msgid "Unnecessary lenition"
 msgstr ""
 
-#: gr.in:64
+#: gr.in:63
 msgid "Prefix \\/h\\/ missing"
 msgstr ""
 
-#: gr.in:65
+#: gr.in:64
 msgid "Prefix \\/t\\/ missing"
 msgstr ""
 
-#: gr.in:66
+#: gr.in:65
 msgid "Lenition missing"
 msgstr ""
 
-#: gr.in:67
+#: gr.in:66
 msgid "Eclipsis missing"
 msgstr ""
