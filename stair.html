@@ -20,26 +20,29 @@ History</h1>
 <h2>Release History</h2>
 
 <table border cellpadding=2>
-<tr><td>Version</td> <td>Release Date</td> <td>Size of lexicon</td> <td>Alternate forms</td> <td>Disambig. rules</td> <td>Grammar rules</td></tr>
-<tr><td>0.1</td> <td>18 Jul 2003</td> <td>313,973</td> <td>-</td> <td>16</td> <td>146</td></tr>
-<tr><td>0.2</td> <td>30 Jul 2003</td> <td>314,027</td> <td>22,292</td> <td>22</td> <td>173</td></tr>
-<tr><td>0.3</td> <td>21 Oct 2003</td> <td>315,002</td> <td>23,353</td> <td>24</td> <td>177</td></tr>
+<tr><td>Version</td> <td>Release Date</td> <td>Size of lexicon</td> <td>Alt. forms</td> <td>Idioms</td> <td>Disambig rules</td> <td>Gramm. rules</td> <td>Excepts</td></tr>
+<tr><td>0.1</td> <td>18 Jul 2003</td> <td>313,973</td> <td>-</td>      <td>-</td>     <td>16</td>    <td>146</td> <td>18</td></tr>
+<tr><td>0.2</td> <td>30 Jul 2003</td> <td>314,027</td> <td>22,292</td> <td>-</td>     <td>22</td>    <td>173</td> <td>18</td></tr>
+<tr><td>0.3</td> <td>21 Oct 2003</td> <td>315,002</td> <td>23,353</td> <td>-</td>     <td>24</td>    <td>177</td> <td>18</td></tr>
+<tr><td>0.4</td> <td>8 Jan 2004</td> <td>315,041</td> <td>24,107</td> <td>214</td>    <td>331</td>   <td>361</td> <td>77</td></tr>
 </table>
 
 <h2>Benchmarks</h2>
 <p>
 The benchmark corpus is comprised of approximately one megabyte of
-plain text from the online Irish monthly <i lang="ga">Beo!</i>.
+plain text from the online Irish monthly 
+<a href="http://www.beo.ie/"><i lang="ga">Beo!</i></a>.
 There are 192406 words in the corpus forming 9292 sentences.
 Times below are given in seconds (real computation time on my 
 dual Xeon box running Gentoo Linux).   WPM = words per minute.
 </p>
 
 <table border cellpadding=2>
-<tr><td>Version</td> <td>TOTAL</td> <td>WPM</td> <td><i>abair</i></td> <td><i>cuard</i></td> <td><i>aon1</i></td> <td><i>aon2</i></td> <td><i>uni</i></td> <td><i>riail</i></td> <td><i>eisc</i></td> <td><i>aschur</i></td></tr>
-<tr><td>0.1</td> <td><i>220.16</i></td> <td><i>52436</i></td> <td><i>5.20</i></td> <td><i>1.06</i></td> <td><i>3.03</i></td> <td><i>-</i></td> <td><i>-</i></td> <td><i>206.52</i></td> <td><i>0.46</i></td> <td><i>3.89</i></td></tr>
-<tr><td>0.2</td> <td><i>220.73</i></td> <td><i>52301</i></td> <td><i>5.10</i></td> <td><i>1.13</i></td> <td><i>3.38</i></td> <td><i>-</i></td> <td><i>-</i></td> <td><i>206.80</i></td> <td><i>0.43</i></td> <td><i>3.88</i></td></tr>
-<tr><td>0.3</td> <td><i>241.61</i></td> <td><i>47781</i></td> <td><i>5.04</i></td> <td><i>1.11</i></td> <td><i>3.41</i></td> <td><i>-</i></td> <td><i>-</i></td> <td><i>227.64</i></td> <td><i>0.44</i></td> <td><i>3.97</i></td></tr>
+<tr><td>v</td> <td>TOT</td> <td>WPM</td> <td><i>ab</i></td> <td><i>cu</i></td> <td><i>co</i></td> <td><i>a1</i></td> <td><i>a2</i></td> <td><i>un</i></td> <td><i>rl</i></td> <td><i>ei</i></td> <td><i>as</i></td></tr>
+<tr><td>0.1</td> <td><i>220.16</i></td> <td><i>52436</i></td> <td><i>5.20</i></td> <td><i>1.06</i></td> <td><i>-</i></td> <td><i>3.03</i></td> <td><i>-</i></td> <td><i>-</i></td> <td><i>206.52</i></td> <td><i>0.46</i></td> <td><i>3.89</i></td></tr>
+<tr><td>0.2</td> <td><i>220.73</i></td> <td><i>52301</i></td> <td><i>5.10</i></td> <td><i>1.13</i></td> <td><i>-</i></td> <td><i>3.38</i></td> <td><i>-</i></td> <td><i>-</i></td> <td><i>206.80</i></td> <td><i>0.43</i></td> <td><i>3.88</i></td></tr>
+<tr><td>0.3</td> <td><i>241.61</i></td> <td><i>47781</i></td> <td><i>5.04</i></td> <td><i>1.11</i></td> <td><i>-</i></td> <td><i>3.41</i></td> <td><i>-</i></td> <td><i>-</i></td> <td><i>227.64</i></td> <td><i>0.44</i></td> <td><i>3.97</i></td></tr>
+<tr><td>0.4</td> <td><i>208.39</i></td> <td><i>55398</i></td> <td><i>15.06</i></td> <td><i>2.60</i></td> <td><i>6.39</i></td> <td><i>133.83</i></td> <td><i>26.46</i></td> <td><i>0.76</i></td> <td><i>19.25</i></td> <td><i>1.04</i></td> <td><i>3.00</i></td></tr>
 </table>
 
 <h2>ChangeLog Summary</h2>
