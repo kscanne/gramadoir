@@ -39,8 +39,8 @@ Before we elaborate on this point, it is worth having a look
 at the guts of the <i>gr</i> script.   The line which does
 all of the real work is simply a sequence of filters:
 <pre>
-diutf | abairti | cuardach | aonchiall | 
-	rialacha | eisceacht | comheadan | loganu
+diutf | abairti | cuardach | aonchiall | aonchiall | unigram |
+        rialacha | eisceacht | comheadan | toutf | loganu
 </pre>
 </p>
 
@@ -60,7 +60,12 @@ for the language being checked (e.g. ISO-8859-1 for Irish).
 </tr>
 <tr>
 <td><i>aonchiall</i></td>
-<td>attempts to disambiguate parts of speech from context</td>
+<td>attempts to disambiguate parts of speech from context (executed twice)</td>
+</tr>
+<tr>
+<td><i>unigram</i></td>
+<td>performs "last resort" part of speech tagging by selecting the most
+frequent tag</td>
 </tr>
 <tr>
 <td><i>rialacha</i></td>
@@ -73,6 +78,11 @@ for the language being checked (e.g. ISO-8859-1 for Irish).
 <tr>
 <td><i>comheadan</i></td>
 <td>extracts the error markup and generates the output script</td>
+</tr>
+<tr>
+<td><i>toutf</i></td> 
+<td>converts character encoding from the native encoding
+back to the encoding of the file being checked</td>
 </tr>
 <tr>
 <td><i>loganu</i></td>
@@ -260,6 +270,18 @@ language of the Perl
 file is itself a meta-language, one level above the language of the 
 actual XML stream (so the pattern "&lt;\/N&gt;" matches "&lt;/N&gt;"
 in the XML).
+</p>
+
+<h3><i>unigram</i></h3>
+<p>
+If two passes through the <i>aonchiall</i> module
+fail to produce a unique part of speech for an ambiguous word,
+this module selects the most frequent tag as a default.
+The Perl script <i>unigram-xx.pl</i> is generated from a plain
+text file <i>unigram-xx.txt</i> which contains the list of
+legal part of speech tags sorted by frequency.   For Irish, this list
+was bootstrapped by tagging my (20 million word) corpus using  
+<i lang="ga">An Gramadóir</i> itself.
 </p>
 
 <h3><i>rialacha</i></h3>
