@@ -45,24 +45,23 @@ and harder still in languages having free word order.
 <p>
 In the instructions below, I will use "xx" for
 the two-letter ISO-639-1 code for your language.
+As of version 0.3, I've included in the distribution
+a trivial port to English which can be used as a template
+for adding new languages.
 </p>
 
 <hr>
 <h2>Things to do</h2>
 <p>
-<b>1. Build focail.bs</b>.   This is the database of recognized words.
+<b>1. Build focail-xx.bs and eile-xx.bs</b>.
+These are the databases of recognized words.
 If you have some grammatical rules that
 don't require part of speech information, then in fact this step
-is optional.  You can either construct <i>focail.bs</i> from a plain text file
+is optional.  You can construct <i>focail-xx.bs</i> from a plain text file
 containing one word per line (which can be generated easily
 if your language has 
-<a href="http://fmg-www.cs.ucla.edu/fmg-members/geoff/ispell-dictionaries.html"><i>ispell</i> support</a>):<br><br>
-<samp>
-cat wordlist | sed 's/.*/&amp; 1/' | cabhair > focail.bs
-</samp>
-<br><br>
-or get rid of the first rule in <i>rialacha-ga.in</i> to turn off
-spellchecking if you have no word list at all.
+<a href="http://fmg-www.cs.ucla.edu/fmg-members/geoff/ispell-dictionaries.html"><i>ispell</i> support</a>).  See the <i>focail-en.bs</i> target in the
+Makefile for an example.<br><br>
 An intermediate possibility would be if, for instance, you want 
 to check for erroneous
 constructions like the English 
@@ -73,30 +72,38 @@ You could add a rule to <i>rialacha-xx.in</i> resembling:<br><br>
 &lt;N&gt;ANYTHING&lt;/N&gt; done &lt;VP&gt;ANYTHING&lt;/VP&gt;:MESSAGE
 </samp>
 <br><br>
-and populate <i>focail.bs</i> with verbs in the past tense.
+and populate <i>focail-xx.bs</i> with verbs in the past tense.
 It all depends on what kind of checks you need to do for your language.
-You can also provide a "replacement" file which contains misspelled
+The file <i>eile-xx.bs</i> is a "replacement" file which contains misspelled
 (or, as in the case of Irish, pre-standard or dialect) words and
-suggested replacements.   See <i>eile.bs</i> in the distribution.
+suggested replacements.   I built the file 
+<i>eile-en.bs</i> in the distribution by collating the
+specifically American and British word lists that are distributed with
+<i>ispell</i>.
 </p>
 
 <p>
-<b>2. Rewrite "byte_to_markup" in cuardach.c</b>.
-You can choose the grammatical codes that go into <i>focail.bs</i>
-as you see fit;
-just decode them correctly in this one function.
+<b>2. Rewrite "byte_to_markup_xx" in cuardach-xx.c</b>.
+You can choose the grammatical codes that go into <i>focail-xx.bs</i>
+and the corresponding XML tags as you see fit;
+just correctly convert the former to the latter in this one function.
 </p>
 
 <p>
 <b>3. Tweak the details</b>.
 If your language has unusual conventions for ends of sentences,
-you may need to play with the <i>abairti</i> module.  Or if
-you need characters outside of Latin-1, the <i>di-utf</i> 
-function will need to be generalized.  The buffers in <i>cuardach.c</i>
-for storing Irish words are 32 bytes long
-(longest word: <i>ngearr-chlóscríobhneoireachta</i>, 28 bytes) and
-may need to be increased.  There may be other minor
-things as well.
+you may need to play with the <i>abairti</i> module.
+The buffers in <i>cuardach.c</i>
+for storing words are 32 bytes long
+(longest Irish word: <i>ngearr-chlóscríobhneoireachta</i>, 28 bytes) and
+may need to be increased.  Finally, be sure to add a line for your language to
+the TEANGACHA file of the form:
+<samp>
+xx ENCODING BOUNDARYCHARS INTERNALCHARS
+</samp>
+where "ENCODING" is the default character encoding for texts in your
+language (and also the character encoding used in the rule files),
+e.g. "ISO88591" or "UTF8", etc. 
 </p>
 
 <p>
