@@ -760,6 +760,10 @@ sub localize_me
 			$msgid = gettext('Prefix \/d\'\/ missing');
 			s/PREFIXD/$msgid/;
 		}
+		if (/WEAKSEIMHIU{([^}]+)}/) {
+			$msgid = gettext('Often the preposition \/\1\/ causes lenition, but this case is unclear', $1);
+			s/WEAKSEIMHIU{([^}]+)}/$msgid/;
+		}
 		if (/SEIMHIU/) {
 			$msgid = gettext('Lenition missing');
 			s/SEIMHIU/$msgid/;
