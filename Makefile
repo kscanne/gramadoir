@@ -11,6 +11,8 @@ SHELL = /bin/sh
 PERL = /usr/bin/perl
 CC = gcc
 CFLAGS = -g
+LEX = flex
+YACC = bison
 RELEASE = 0.1pre2
 APPNAME_ASCII = gramadoir
 APPNAME = $(APPNAME_ASCII)-$(RELEASE)
@@ -83,6 +85,19 @@ uninstall :
 	rm -f $(libexecdir)/rialacha.pl
 	rm -f $(bindir)/gr
 
+distclean :
+	${MAKE} clean
+
+clean :
+	rm -f triail.html cuardach cuardach.o rialacha.pl aonchiall.pl eisceacht.pl gr cabhair.o cabhair triail.err.old y.tab.* lex.yy.* aparser eparser rparser aonchiall.y eisceacht.y rialacha.y
+
+semiclean :
+	rm -f triail.html cuardach.o cabhair.o cabhair triail.err.old y.tab.* lex.yy.*
+
+###############################################
+# Remaining targets are for use by developers #
+###############################################
+
 installweb :
 	$(INSTALL_DATA) cuidiu.html $(webhome)
 	$(INSTALL_DATA) index.html $(webhome)
@@ -94,12 +109,6 @@ installweb :
 
 triail.html : all triail
 	./gr --html triail > triail.html
-
-distclean :
-	rm -f triail.html cuardach cuardach.o rialacha.pl aonchiall.pl eisceacht.pl gr cabhair.o cabhair triail.err.old
-
-clean :
-	rm -f triail.html cuardach cuardach.o rialacha.pl aonchiall.pl eisceacht.pl gr cabhair.o cabhair triail.err.old
 
 maintainer-clean :
 	make distclean
@@ -149,5 +158,40 @@ cabhair : cabhair.o
 	
 cabhair.o : cabhair.c
 	$(CC) -c $(CFLAGS) cabhair.c
+
+aonchiall.y : ponc.in.y
+	cat ponc.in.y | sed "s/_TAIL_MACRO_/result/; s/_RESULT_MACRO_/POSTAG/" > aonchiall.y
+
+eisceacht.y : ponc.in.y
+	cat ponc.in.y | sed "s/_TAIL_MACRO_//; /^result/d" > eisceacht.y
+
+rialacha.y : ponc.in.y
+	cat ponc.in.y | sed "s/_TAIL_MACRO_/result/; s/_RESULT_MACRO_/MESSAGE | MESSAGEPLUS MESSAGEARG/" > rialacha.y
+
+aparser : aonchiall.y ponc.in.l
+	${LEX} ponc.in.l
+	${YACC} -y -d aonchiall.y
+	${CC} -c lex.yy.c y.tab.c
+	$(CC) -o aparser lex.yy.o y.tab.o -lfl
+
+eparser : eisceacht.y ponc.in.l
+	${LEX} ponc.in.l
+	${YACC} -y -d eisceacht.y
+	${CC} -c lex.yy.c y.tab.c
+	$(CC) -o eparser lex.yy.o y.tab.o -lfl
+
+rparser : rialacha.y ponc.in.l
+	${LEX} ponc.in.l
+	${YACC} -y -d rialacha.y
+	${CC} -c lex.yy.c y.tab.c
+	$(CC) -o rparser lex.yy.o y.tab.o -lfl
+
+poncin : aparser eparser rparser
+	@echo 'Checking aonchiall.in'
+	@cat aonchiall.in | ./aparser
+	@echo 'Checking eisceacht.in'
+	@cat eisceacht.in | ./eparser
+	@echo 'Checking rialacha.in'
+	@cat rialacha.in | ./rparser
 
 FORCE :
