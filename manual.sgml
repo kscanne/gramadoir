@@ -63,7 +63,149 @@
 	</para>
       </sect1>
       <sect1>
-        <title>Available languages</title>
+        <title>The Grammar Checking Process</title>
+	<para>
+	  The first version of &gram; was written as a (pretty simple-minded) 
+	  <application>sed</application> script consisting
+	  entirely of substitutions:
+	</para>
+	<programlisting>
+s/de [bcdfgmpt][^h][^ ]*/&lt;E msg="lenition"&gt;&amp;&lt;E&gt;/g;
+s/de s[lnraeiou&aacute;&eacute;&iacute;&oacute;&uacute;][^ ]*/&lt;E msg="lenition"&gt;&amp;&lt;E&gt;/g;
+s/mo [aeiou&aacute;&eacute;&iacute;&oacute;&uacute;][^h][^ ]*/&lt;E msg="apostrophe"&gt;&amp;&lt;E&gt;/g;
+s/mo [bcdfgmpt][^h][^ ]*/&lt;E msg="lenition"&gt;&amp;&lt;E&gt;/g;
+s/mo s[lnraeiou&aacute;&eacute;&iacute;&oacute;&uacute;][^ ]*/&lt;E msg="lenition"&gt;&amp;&lt;E&gt;/g;
+s/sa [bcfgmp][^h][^ ]*/&lt;E msg="lenition"&gt;&amp;&lt;E&gt;/g;
+	</programlisting>
+	<para>
+          The latest versions are
+	  written in Perl and are infinitely more intelligent,
+	  though I've maintained this essentially
+	  "stateless" design.
+	  The input text is passed through a series of filters,
+	  each of which adds some <acronym>XML</acronym> markup.
+          I'll illustrate this with a trivial English language example.
+	</para>
+        <itemizedlist>
+          <listitem>
+	    <para>
+	      <emphasis>Preprocessing</emphasis>.  Each language has a
+	      <firstterm>native character encoding</firstterm> that is
+	      used internally by &gram; to represent the lexicon and
+	      rule sets.   It is also the default input encoding
+	      for the interface script <filename>gram-xx.pl</filename>.
+              If text in another encoding is passed to 
+	      <filename>gram-xx.pl</filename>, it is converted
+	      to the native encoding in the preprocessing step.
+	      Also, if the input text contains any <acronym>SGML</acronym>-style
+	      markup, it will be removed at this stage; otherwise it can
+	      interfere with the <acronym>XML</acronym> markup inserted by &gram;.
+	      In the example below,
+	      the preprocessor will simply strip the
+	      <literal>&lt;<sgmltag>b</sgmltag>&gt;</literal> markup:
+	    </para>
+	    <screen>
+A &lt;<sgmltag>b</sgmltag>&gt;umpire&lt;/<sgmltag>b</sgmltag>&gt;.  The status quo.
+-->
+A umpire.  The status quo.
+	    </screen>
+          </listitem>
+          <listitem>
+	    <para>
+	      <emphasis>Segmentation</emphasis>.  This step breaks the text up
+	      into sentences, each of which is marked up with a
+	      <literal>&lt;<sgmltag>line</sgmltag>&gt;</literal> tag:
+	    </para>
+	    <screen>
+A umpire.  The status quo.
+-->
+&lt;<sgmltag>line</sgmltag>&gt;A umpire.&lt;/<sgmltag>line</sgmltag>&gt;
+&lt;<sgmltag>line</sgmltag>&gt;The status quo.&lt;/<sgmltag>line</sgmltag>&gt;
+	    </screen>
+          </listitem>
+          <listitem>
+	    <para>
+	      <emphasis>Tokenizing</emphasis>.  Next, each sentence
+	      is broken up into words, each of which is marked up
+	      with a &lt;<sgmltag>c</sgmltag>&gt; tag:
+	    </para>
+	    <screen>
+&lt;<sgmltag>line</sgmltag>&gt;A umpire.&lt;/<sgmltag>line</sgmltag>&gt;
+&lt;<sgmltag>line</sgmltag>&gt;The status quo.&lt;/<sgmltag>line</sgmltag>&gt;
+-->
+&lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>c</sgmltag>&gt;A&lt;/<sgmltag>c</sgmltag>&gt; &lt;<sgmltag>c</sgmltag>&gt;umpire&lt;/<sgmltag>c</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
+&lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>c</sgmltag>&gt;The&lt;/<sgmltag>c</sgmltag>&gt; &lt;<sgmltag>c</sgmltag>&gt;status&lt;/<sgmltag>c</sgmltag>&gt; &lt;<sgmltag>c</sgmltag>&gt;quo&lt;/<sgmltag>c</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
+	    </screen>
+          </listitem>
+          <listitem>
+	    <para>
+	      <emphasis>Lookup</emphasis>.  Next, each word is looked up in the
+	      the lexicon.  Unambiguous words are tagged with their correct
+	      part of speech, while ambiguous words are assigned a more
+	      complicated markup involving all of their possible
+	      parts of speech (e.g. <wordasword>umpire</wordasword>
+	      in the example, which can be, <foreignphrase lang="la">a priori</foreignphrase>, either a noun or a verb).  Words that aren't found in the
+	      lexicon are sent to the morphology engine in the hope
+	      of recognizing them as morphological variants of some
+	      known word. 
+	    </para>
+	    <screen>
+&lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>c</sgmltag>&gt;A&lt;/<sgmltag>c</sgmltag>&gt; &lt;<sgmltag>c</sgmltag>&gt;umpire&lt;/<sgmltag>c</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
+&lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>c</sgmltag>&gt;The&lt;/<sgmltag>c</sgmltag>&gt; &lt;<sgmltag>c</sgmltag>&gt;status&lt;/<sgmltag>c</sgmltag>&gt; &lt;<sgmltag>c</sgmltag>&gt;quo&lt;/<sgmltag>c</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
+-->
+&lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>T</sgmltag> def="n"&gt;A&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>B</sgmltag>&gt;&lt;<sgmltag>Z</sgmltag>&gt;&lt;<sgmltag>N</sgmltag>/&gt;&lt;<sgmltag>V</sgmltag>/&gt;&lt;/<sgmltag>Z</sgmltag>&gt;umpire&lt;/<sgmltag>B</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
+&lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>T</sgmltag> def="y"&gt;The&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>N</sgmltag>&gt;status&lt;/<sgmltag>N</sgmltag>&gt; &lt;<sgmltag>F</sgmltag>&gt;quo&lt;/<sgmltag>F</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
+	    </screen>
+          </listitem>
+          <listitem>
+	    <para>
+	      <emphasis>Chunking</emphasis>.  In this step, certain "set phrases" are lumped together to be treated as single units by the grammar checker.  In the present example, the word "<wordasword>quo</wordasword>" is marked up
+	      with the special
+	      tag <literal>&lt;<sgmltag>F</sgmltag>&gt;</literal>
+	      which would lead to an warning from the grammar checker unless,
+	      as is the case here, it appears in known set phrase. 
+	      This is a useful trick.
+	    </para>
+	    <screen>
+&lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>T</sgmltag> def="n"&gt;A&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>B</sgmltag>&gt;&lt;<sgmltag>Z</sgmltag>&gt;&lt;<sgmltag>N</sgmltag>/&gt;&lt;<sgmltag>V</sgmltag>/&gt;&lt;/<sgmltag>Z</sgmltag>&gt;umpire&lt;/<sgmltag>B</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
+&lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>T</sgmltag> def="y"&gt;The&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>N</sgmltag>&gt;status&lt;/<sgmltag>N</sgmltag>&gt; &lt;<sgmltag>F</sgmltag>&gt;quo&lt;/<sgmltag>F</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
+-->
+&lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>T</sgmltag> def="n"&gt;A&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>B</sgmltag>&gt;&lt;<sgmltag>Z</sgmltag>&gt;&lt;<sgmltag>N</sgmltag>/&gt;&lt;<sgmltag>V</sgmltag>/&gt;&lt;/<sgmltag>Z</sgmltag>&gt;umpire&lt;/<sgmltag>B</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
+&lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>T</sgmltag> def="y"&gt;The&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>N</sgmltag>&gt;status quo&lt;/<sgmltag>N</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
+	    </screen>
+          </listitem>
+          <listitem>
+	    <para>
+	      <emphasis>Disambiguation</emphasis>.  This step uses local 
+	      contextual cues to resolve any ambiguous part of speech tags.
+	      In our example, the fact that "<wordasword>umpire</wordasword>"
+	      is preceded by an article is a good indicator that
+	      it is a noun and not a verb:
+	    </para>
+	    <screen>
+&lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>T</sgmltag> def="n"&gt;A&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>B</sgmltag>&gt;&lt;<sgmltag>Z</sgmltag>&gt;&lt;<sgmltag>N</sgmltag>/&gt;&lt;<sgmltag>V</sgmltag>/&gt;&lt;/<sgmltag>Z</sgmltag>&gt;umpire&lt;/<sgmltag>B</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
+&lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>T</sgmltag> def="y"&gt;The&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>N</sgmltag>&gt;status quo&lt;/<sgmltag>N</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
+-->
+&lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>T</sgmltag> def="n"&gt;A&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>N</sgmltag>&gt;umpire&lt;/<sgmltag>N</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
+&lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>T</sgmltag> def="y"&gt;The&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>N</sgmltag>&gt;status quo&lt;/<sgmltag>N</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
+	    </screen>
+          </listitem>
+          <listitem>
+	    <para>
+	      <emphasis>Rules</emphasis>.  Finally, the actual grammatical rules are applied:
+	    </para>
+	    <screen>
+&lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>T</sgmltag> def="n"&gt;A&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>N</sgmltag>&gt;umpire&lt;/<sgmltag>N</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
+&lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>T</sgmltag> def="y"&gt;The&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>N</sgmltag>&gt;status quo&lt;/<sgmltag>N</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
+-->
+&lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>E</sgmltag> msg="BACHOIR{an}"&gt;&lt;<sgmltag>T</sgmltag> def="n"&gt;A&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>N</sgmltag>&gt;umpire&lt;/<sgmltag>N</sgmltag>&gt;&lt;/<sgmltag>E</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
+&lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>T</sgmltag> def="y"&gt;The&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>N</sgmltag>&gt;status quo&lt;/<sgmltag>N</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
+	    </screen>
+          </listitem>
+	</itemizedlist>
+      </sect1>
+      <sect1>
+        <title>Available Languages</title>
 	<para>The goal of this project is to provide a framework 
 	  for the development of language technology for languages
 	  with limited computational resources.  Using corpora
@@ -170,9 +312,8 @@
 	  You can install these by running the following commands (as root user):
 	</para>
 	<screen>
-<prompt>#</prompt> <userinput>perl -MCPAN -e 'install Locale::PO'</userinput>
-<prompt>#</prompt> <userinput>perl -MCPAN -e 'install String::Approx'</userinput>
-<prompt>#</prompt> <userinput>perl -MCPAN -e 'install Archive::Zip'</userinput>
+<prompt>#</prompt> <userinput>cpan</userinput>
+<prompt>cpan&gt;</prompt> <userinput>install Locale::PO String::Approx Archive::Zip</userinput>
         </screen>
       </sect1>
 
@@ -241,14 +382,14 @@ U engine/COPYING
 	  Creating the necessary files for the
 	  <application>Lingua::XX::Gramadoir</application>
 	  Perl module is as simple as running
-	  <application>make</application> in the
+	  <command>make</command> in the
 	  <filename>xx</filename> (language code)
 	  directory.
 	  This will generate the files
 	  in the subdirectory <filename>Lingua-XX-Gramadoir</filename>.
 	  If you want to update these files
 	  at any point in the future,
-	  just run <application>make</application>
+	  just run <command>make</command>
 	  again in the <filename>xx</filename> directory.
 	</para>
 	<para>
@@ -409,6 +550,10 @@ directions 32
 	    (we are thinking in the example above of the
 	    word <wordasword>direct</wordasword> as either
 	    a verb, adjective, or adverb).
+	    The word list need not be alphabetized, but this
+	    is probably a good idea for maintenance purposes!
+	    The only requirement is that all of the codes for
+	    a single ambiguous word must appear contiguously.
 	  </para>
 	  <para>
 	    As noted earlier, in the default language pack, all grammatical
@@ -548,30 +693,16 @@ phrase:action
 	    regular expression you want
 	    to match in the marked up text stream.
 	    The phrase syntax is the same for all
-	    three files: a sequence of words separated by single spaces.
+	    three files: one or more words, optionally surrounded by
+	    tags, separated by single spaces.
 	    A word can either be an explicit regular expression
 	    (e.g. <literal>[Aa]ch</literal> to match upper or lowercase
 	    <foreignphrase lang="ga"><wordasword>ach</wordasword></foreignphrase>) or one
 	    of a collection of macros defined in the file
 	    <filename>macra-xx.meta.pl</filename>
-	    (e.g. <literal>LENITEDDFST</literal> expands to the
+	    (e.g. for Irish <literal>LENITEDDFST</literal> expands to the
 	    regular expression
 	    <literal>[DdFfSsTt]h[^&lt;]*</literal>).
-	    In addition, a word can be provided with
-	    a grammatical tag when there is a danger of ambiguity.
-	    For instance
-	    <literal>&lt;<sgmltag>T</sgmltag>&gt;[Aa]n&lt;/T&gt;</literal>
-	    refers specifically to the word
-	    <foreignphrase lang="ga"><wordasword>an</wordasword></foreignphrase>
-	    as the definite article and
-	    not, say, as an interrogative particle.  It is a good idea to
-	    include these tags even for unambiguous words, in case the database
-	    changes in the future (it is also faster this way).
-	    The tag syntax
-	    <literal>&lt;[^S]&gt;do&lt;/[^S]&gt;</literal>
-	    is permitted as well; this will match instances of the word
-	    <foreignphrase lang="ga"><wordasword>do</wordasword></foreignphrase>
-	    which are <emphasis>not</emphasis> prepositions.
 	    Complicated regular expressions should be defined as
 	    macros in <filename>macra-xx.meta.pl</filename>; simple expressions
 	    such as optional substrings or alternation are fine.
@@ -581,6 +712,85 @@ phrase:action
 	    will treat these correctly when generating the
 	    final Perl code.
 	  </para>
+	  <para>
+	    The real power comes from being able to specify 
+	    part of speech tags as regular expressions;
+	    these take one of the following forms:
+	  </para>
+	  <itemizedlist>
+	    <listitem>
+	      <para>
+	        <emphasis>No tag at all.</emphasis> Something like <literal>direct</literal> will match <emphasis>any</emphasis> appearance of the word
+		<wordasword>direct</wordasword>, ignoring part of speech tags.
+		This can be useful in the disambiguation module before
+		all parts of speech have been resolved.  Otherwise, if you
+		know what the part of speech ought to be, it is clearer
+		to specify it (and faster too).
+	      </para>
+	    </listitem>
+	    <listitem>
+	      <para>
+	        <emphasis>A literal tag.</emphasis> 
+	        For instance
+	        <literal>&lt;<sgmltag>T</sgmltag>&gt;[Aa]n&lt;/T&gt;</literal>
+	        refers specifically to the Irish word
+	        <foreignphrase lang="ga"><wordasword>an</wordasword></foreignphrase>
+	        as the definite article and
+	        not, say, as an interrogative particle. 
+		There is an important distinction here between tags in
+		<filename>pos-xx.txt</filename> that sometimes admit
+		attributes (often true for nouns and verbs, e.g.
+	        <literal>&lt;<sgmltag>N</sgmltag> gender="m" pl="y"&gt;</literal>,
+	        <literal>&lt;<sgmltag>N</sgmltag> gender="m" pl="n"&gt;</literal>)
+		and those that do not (often "closed-class" parts of
+		speech like prepositions
+	        <literal>&lt;<sgmltag>S</sgmltag>&gt;</literal>)
+		In the first case, it is still legal to markup a word
+		with something like
+	        <literal>&lt;<sgmltag>N</sgmltag>&gt;direction&lt;/<sgmltag>N</sgmltag>&gt;</literal>, but internally this expands to a macro
+		that matches <emphasis>any</emphasis> noun tag,
+		ignoring attributes.
+	      </para>
+	    </listitem>
+	    <listitem>
+	      <para>
+	        <emphasis>A macro tag.</emphasis>  More generally, you can
+		define your own macros in <filename>macra-xx.meta.pl</filename>
+		in order to match some property in the attributes.  For example,
+		if you specify a "gender" attribute for nouns (in addition
+		to some others like singular vs. plural, etc.) it is
+		natural to define a macro
+	        <literal>&lt;<sgmltag>NM</sgmltag>&gt;</literal>
+		that can be used to match any masculine noun, 
+		independent of the other attributes.
+	      </para>
+	    </listitem>
+	    <listitem>
+	      <para>
+	        <emphasis>Tags with simple character classes.</emphasis>
+		You can specify a range of tags using the usual
+		regular expression (square bracket) notation:
+	        <literal>&lt;<sgmltag>[AN]</sgmltag>&gt;</literal>
+		matches any adjective or noun tag.
+		In Irish, we have the rule:
+	      </para>
+	      <screen>
+&lt;V cop="y"&gt;[Bb]a&lt;/V&gt; &lt;[AN]&gt;UNLENITED&lt;/[AN]&gt;:SEIMHIU
+	      </screen>
+	      <para>
+	        which requires that both nouns and adjectives be 
+		lenited following the past copula
+	        <foreignphrase lang="ga"><wordasword>ba</wordasword></foreignphrase>.
+	      </para>
+	      <para>Negation is allowed as well; this rule flags a
+	      definite article preceding a word that is <emphasis>not</emphasis>
+	      a noun or adjective:
+	      </para>
+	      <screen>
+&lt;T&gt;ANYTHING&lt;/T&gt; &lt;[^AN]&gt;ANYTHING&lt;/[^AN]&gt;:CUPLA
+	      </screen>
+	    </listitem>
+	  </itemizedlist>
 	</sect2>
 
         <sect2>
