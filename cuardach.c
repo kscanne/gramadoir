@@ -9,35 +9,84 @@
 #if STDC_HEADERS
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>    /* strtol */
+#include <stdlib.h>    /* atoi, strtol */
 #include <ctype.h>     /* tolower, isupper, etc. */
 #include <locale.h>    /* so tolower, etc. actually WORK! */
 #else
 /* trouble! */
 #endif
 
+#define GR_WORDMAX 32
+#define GR_AMBIGMAX 16
+#define GR_FILENAMEMAX 128
+
 struct foirm {
-      char focal[32], coid[16];
+      char focal[GR_WORDMAX], coid[GR_AMBIGMAX];
+    };
+
+struct ignorable {
+      char focal[GR_WORDMAX];
     };
 
 #define DICTTOTAL 313973
+int ignore_total=0;
 
 struct foirm focloir[DICTTOTAL];
+struct ignorable* toignore=NULL;
+
+void load_ignore()
+    {
+     int iomlan;
+     FILE* grig;
+     char* baile; 
+     char grignore[GR_FILENAMEMAX], countstr[8];
+     
+     baile = getenv("HOME");
+     strcpy(grignore, baile);
+     strcat(grignore, "/.neamhshuim");
+     grig = fopen(grignore, "r");
+     if (grig) {
+           fgets(countstr, 8, grig);
+	   countstr[strlen(countstr)-1]=0;
+	   iomlan = atoi(countstr);
+	   if (!iomlan) return;  /* in case of bad malloc */
+	   toignore = malloc(iomlan * sizeof(struct ignorable));
+	   if (toignore==NULL) {
+                               /* "An Gramadóir: warning: out of memory\n" */
+                 fprintf(stderr, "An Gramadóir: rabhadh: cuimhne ídithe\n");
+	        return; 
+	       }
+	   while (!feof(grig) && ignore_total != iomlan)
+	   	{
+	         fgets(toignore[ignore_total].focal, GR_WORDMAX, grig);
+		 ignore_total++; 
+		}
+	   if (ignore_total != iomlan) {
+                    /* "An Gramadóir: warning: check size of %s: %d?\n" */
+                 fprintf(stderr, "An Gramadóir: rabhadh: deimhnigh méid de %s: %d?\n", grignore, ignore_total);
+	   	}
+     	   if (fclose(grig)) {
+                /* "An Gramadóir: warning: problem closing %s\n" */
+                 fprintf(stderr, "An Gramadóir: rabhadh: fadhb ag dúnadh %s\n", grignore);
+                }
+          }
+     else /* move on silently */  ;
+    }
 
 int load_dictionary()
     {
      FILE* bs;
-     char temp[32], *hold;
+     char temp[GR_WORDMAX], *hold;
      int cp, meid=1;
 
      if ((bs=fopen(BSONRAI,"r"))==NULL) return 1;
-     if (fgets(focloir[0].focal, 32, bs)==NULL) return 1;
-     if (fgets(focloir[0].coid, 16, bs)==NULL) return 1;
-     while (fgets(temp, 32, bs) != NULL) {
+     if (fgets(focloir[0].focal, GR_WORDMAX, bs)==NULL) return 1;
+     if (fgets(focloir[0].coid, GR_AMBIGMAX, bs)==NULL) return 1;
+     while (fgets(temp, GR_WORDMAX, bs) != NULL) {
 	  strncpy(focloir[meid].focal, focloir[meid-1].focal, 
 	          (int) strtol(temp, &hold, 10));
 	  strcat(focloir[meid].focal, hold);
-	  fgets(focloir[meid].coid, 16, bs);
+	  fgets(focloir[meid].coid, GR_AMBIGMAX, bs);
 	  meid++;
          }
      if (meid != DICTTOTAL) {
@@ -59,7 +108,7 @@ int load_dictionary()
     "E" is used as error markup code in my stuff
     "B" is used to markup ambiguous words
     "Z" is used inside <B></B> to markup list of ambigous parts of speech 
-    "Y" is used for words to ignore (proper words or from .grignore)
+    "Y" is used for words to ignore (proper words or from .neamhshuim)
     "X" is used when a word is not in database
      Changes to these codes need to be reflected in rialacha.meta.sed too
  */
@@ -176,12 +225,27 @@ int rawlookup(const char* word, char* codes)
      return 0;
     }
 
+/* Assert: toignore != NULL */
+int rawignorelookup(const char* word)
+    {
+     int min=0, max=ignore_total-1;
+     int guess, cmp;
+     while (min <= max) {
+          guess = (max+min)/2;
+	  cmp = strcmp(toignore[guess].focal, word);
+	  if (cmp == 0) return 1;
+          else if (cmp < 0) min = guess+1;
+          else max = guess-1;
+         }
+     return 0;
+    }
+
 /* Assert, word is non-zero length */
 /* return non-zero iff some match found, so zero iff <X> markup */
 void dictlookup(const char* word, char* fill, char* attrs, char* extratags)
     {
      int len;
-     char unused, codes[32], lowered[32];
+     char unused, codes[2*GR_AMBIGMAX], lowered[GR_WORDMAX];
      *codes = 0;
      rawlookup(word, codes);
      if (isupper(word[0])) {
@@ -197,9 +261,11 @@ void dictlookup(const char* word, char* fill, char* attrs, char* extratags)
 	 }
      if (*codes) code_to_markup(codes, fill, attrs, extratags);
      else {
-           strcpy(fill, "X");   /* "residual" tag -- not in dictionary */
            strcpy(attrs, "");
            strcpy(extratags, "");
+           strcpy(fill, "X");   /* "residual" tag -- not in dictionary */
+           if (toignore != NULL) 
+	         if (rawignorelookup(word)) strcpy(fill, "Y");
           }
     }
 
@@ -225,9 +291,15 @@ void markup(char* token, char* w)
      printf("%s", tail);                 /** chars after </c> **/
     }
 
-int main()
+int main(int argc, char* argv[])
    {
     char token[512], *w;
+    if (argc != 2) {
+                      /* "An Gramadóir: problem with the 'cuardach' command" */
+            fprintf(stderr, "An Gramadóir: fadhb leis an ordú 'cuardach'\n");
+	    return 1;
+           }
+
     /* set locale for the toupper/tolower stuff, NOT for sorting
        since I use strcmp instead of strcoll -- if you look in the 
        makefile when focail.bs is built I set LC_COLLATE to POSIX */
@@ -243,11 +315,13 @@ int main()
          fprintf(stderr, "An Gramadóir: fadhb ag léamh an bhunachair sonraí\n");
          return 1;
         }
-    
+
+    if (!strcmp(argv[1], "ignore")) load_ignore();
+
     printf("<?xml version=\"1.0\" encoding=\"ISO-8859-1\" standalone=\"no\"?>\n");
     printf("<!DOCTYPE teacs SYSTEM \"/dtds/gramadoir.dtd\">\n");
     printf("<teacs>");
-    while (scanf("%s",token) != EOF)
+    while (scanf("%512s",token) != EOF)
           {
            if (strstr(token, "<line")==token) printf("\n");
            else printf(" ");
@@ -256,5 +330,6 @@ int main()
            else markup(token,w);
           }
     printf("\n</teacs>");
+    if (toignore != NULL) free(toignore);
     return 0;
    }
