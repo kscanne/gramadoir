@@ -20,6 +20,7 @@ TEANGA = !TEANGA!
 UPPERTEANGA = !UPPERTEANGA!
 NAME_ENG = !NAME_ENG!
 VERSION = !VERSION!
+GRAMVERSION = !GRAMVERSION!
 PACKAGE_NAME = gramadoir-$(TEANGA)
 TARBALL = gramadoir-$(TEANGA)-$(VERSION)
 PERLVERSION = $(VERSION)
@@ -96,7 +97,7 @@ $(PERLD)/META.yml : perl
 	(cd $(PERLD); make metafile)
 
 $(PERLD)/README : $(GRAMDIR)/README.perl
-	sed "s/@UPPERTEANGA@/$(UPPERTEANGA)/; s/@NAME_ENG@/$(NAME_ENG)/; /^Copyright (C)/s/.*/&\n                   $(AUTHOR)/" $(GRAMDIR)/README.perl > $@
+	sed "s/@UPPERTEANGA@/$(UPPERTEANGA)/; s/@TEANGA@/$(TEANGA)/; s/@VERSION@/$(VERSION)/; s/@GRAMVERSION@/$(GRAMVERSION)/; s/@NAME_ENG@/$(NAME_ENG)/; /^Copyright (C)/s/.*/&\n                   $(AUTHOR)/" $(GRAMDIR)/README.perl > $@
 	chmod 644 $@
 
 $(PERLD)/scripts/$(SCRIPTNAME) : $(GRAMDIR)/gram.pl
