@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramadoir 0.5\n"
 "Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
-"POT-Creation-Date: 2004-12-30 11:44-0600\n"
+"POT-Creation-Date: 2005-03-02 20:22-0600\n"
 "PO-Revision-Date: 2004-09-19 11:43+0100\n"
 "Last-Translator: Kyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -69,8 +69,8 @@ msgstr "Ni chynhelir yr iaith %s"
 #. "o" in "Gramadoir" if available in your character set and encoding.
 #. If you must translate, this is the Irish for (literally) "The Grammarian"
 #: gram.pl:185 gram.pl:248 gramdev.pl:93 gramdev.pl:118 Gramadoir.pm.in:119
-#: Gramadoir.pm.in:163 Gramadoir.pm.in:263 Gramadoir.pm.in:277
-#: Gramadoir.pm.in:284
+#: Gramadoir.pm.in:166 Gramadoir.pm.in:266 Gramadoir.pm.in:280
+#: Gramadoir.pm.in:287 Gramadoir.pm.in:724
 msgid "An Gramadoir"
 msgstr "An Gramadóir"
 
@@ -173,7 +173,7 @@ msgstr ""
 "    --xml          ysgrifennu llif XML wedi'i dagio i allbwn safonol, ar "
 "gyfer dadnamu"
 
-#: gram.pl:323 gramdev.pl:139
+#: gram.pl:323
 msgid "If no file is given, read from standard input."
 msgstr "Os ni roddir ffeil, darllenir o fewnbwn safonol."
 
@@ -229,160 +229,254 @@ msgstr ""
 msgid "%s: problem reading the database\n"
 msgstr "%s: problem wrth ddarllen y gronfa ddata\n"
 
-#: Gramadoir.pm.in:162
+#: Gramadoir.pm.in:165
 #, perl-format
 msgid "%s: `%s' corrupted at %s\n"
 msgstr "%s: `%s' wedi ei lygru wrth %s\n"
 
 #. TRANSLATORS: "conversion" here means conversion between character encodings
-#: Gramadoir.pm.in:214 Gramadoir.pm.in:504 Gramadoir.pm.in:575
-#: Gramadoir.pm.in:609 Gramadoir.pm.in:632 Gramadoir.pm.in:689
-#: Gramadoir.pm.in:869
+#: Gramadoir.pm.in:217 Gramadoir.pm.in:508 Gramadoir.pm.in:579
+#: Gramadoir.pm.in:613 Gramadoir.pm.in:636 Gramadoir.pm.in:692
+#: Gramadoir.pm.in:756
 #, perl-format
 msgid "conversion from %s is not supported"
 msgstr "ni chynhelir trosi o %s"
 
-#: Gramadoir.pm.in:262 Gramadoir.pm.in:276
+#: Gramadoir.pm.in:265 Gramadoir.pm.in:279
 #, perl-format
 msgid "%s: illegal grammatical code\n"
 msgstr "%s: côd gramadegol anghyfreithlon\n"
 
-#: Gramadoir.pm.in:283
+#: Gramadoir.pm.in:286
 #, perl-format
 msgid "%s: no grammar codes: %s\n"
 msgstr "%s: dim codau gramadeg: %s\n"
 
-#: Gramadoir.pm.in:709
-msgid "Unknown word"
-msgstr "Gair anhysbys"
+#: Gramadoir.pm.in:723
+#, fuzzy, perl-format
+msgid "%s: unrecognized error macro: %s\n"
+msgstr "dewisiad anadnabyddus %s"
 
-#: Gramadoir.pm.in:713
+#. TRANSLATORS: The remaining strings are errors reported by the grammar
+#. checking engine.  The first batch consists of messages intended to be
+#. reused across a wide range of languages.
+#: messages.txt:4
 msgid "Valid word but extremely rare in actual usage"
 msgstr "Gair dilys, ond eithriadol o brin mewn defnydd gwirioneddol"
 
-#: Gramadoir.pm.in:717
+#: messages.txt:5
+msgid "Repeated word"
+msgstr "Gair wedi'i ailadrodd"
+
+#: messages.txt:6
+msgid "Unusual combination of words"
+msgstr "Cyfuniad anarferol o eiriau"
+
+#: messages.txt:7
+#, fuzzy
+msgid "The plural form is required here"
+msgstr "Mae'r cyflwr genidol yn ofynnol yma"
+
+#: messages.txt:8
+#, fuzzy
+msgid "The singular form is required here"
+msgstr "Mae'r cyflwr genidol yn ofynnol yma"
+
+#: messages.txt:9
+msgid "Comparative adjective required"
+msgstr "Mae ansoddair cymharol yn ofynnol"
+
+#: messages.txt:10
+msgid "Definite article required"
+msgstr ""
+
+#: messages.txt:11
+msgid "Unnecessary use of the definite article"
+msgstr "Defnydd diangen o'r fannod benodol"
+
+#: messages.txt:12
+#, fuzzy
+msgid "Unnecessary use of the genitive case"
+msgstr "Defnydd diangen o'r fannod benodol"
+
+#: messages.txt:13
+msgid "The genitive case is required here"
+msgstr "Mae'r cyflwr genidol yn ofynnol yma"
+
+#: messages.txt:14
+msgid "It seems unlikely that you intended to use the subjunctive here"
+msgstr ""
+
+#. TRANSLATORS: You can use whatever kind of quotes you prefer for your locale
+#. around the variable \\1.  You should keep the double backslash before the 1,
+#. but there is no need to escape the quotes the way they are in the msgid.
+#: messages.txt:18
 msgid "Usually used in the set phrase \\/\\1\\/"
 msgstr "Defnyddir fel rheol yn yr ymadrodd sefydlog \\/\\1\\/"
 
-#: Gramadoir.pm.in:721
+#: messages.txt:19
 msgid "You should use \\/\\1\\/ here instead"
 msgstr "Dylech ddefnyddio \\/\\1\\/ yma yn lle"
 
-#: Gramadoir.pm.in:725
+#: messages.txt:20
 msgid "Non-standard form of \\/\\1\\/"
 msgstr "Ffurf ansafonol o \\/\\1\\/"
 
-#: Gramadoir.pm.in:729
+#: messages.txt:21
 msgid "Derived from a non-standard form of \\/\\1\\/"
 msgstr "Deilliwyd o ffurf ansafonol o \\/\\1\\/"
 
-#: Gramadoir.pm.in:733
+#: messages.txt:22
 msgid "Derived incorrectly from the root \\/\\1\\/"
 msgstr "Deilliwyd yn anghywir o'r gwreiddyn \\/\\1\\/"
 
+#: messages.txt:23
+msgid "Unknown word"
+msgstr "Gair anhysbys"
+
+#. TRANSLATORS: \\1 is substituted with one or more suggested replacements
+#: messages.txt:25
+#, fuzzy
+msgid "Unknown word: \\/\\1\\/?"
+msgstr "Gair anhysbys"
+
+#: messages.txt:26
+msgid "Valid word but more often found in place of \\/\\1\\/"
+msgstr ""
+
+#: messages.txt:27
+msgid "Not in database but apparently formed from the root \\/\\1\\/"
+msgstr ""
+"Dim yn y gronfa ddata, ond yn ôl pob golwg deilliwyd o'r gwreiddyn \\/\\1\\/"
+
+#: messages.txt:28
+msgid "The word \\/\\1\\/ is not needed"
+msgstr ""
+
+#: messages.txt:29
+msgid "Do you mean \\/\\1\\/?"
+msgstr "Ydych yn golygu \\/\\1\\/?"
+
+#: messages.txt:30
+msgid "Derived form of common misspelling \\/\\1\\/?"
+msgstr "Ffurf ddeilliedig o'r camsillafiad cyffredin \\/\\1\\/?"
+
+#: messages.txt:31
+msgid "Not in database but may be a compound \\/\\1\\/?"
+msgstr "Dim yn y gronfa ddata ond efallai cyfansoddair o \\/\\1\\/?"
+
+#: messages.txt:32
+msgid "Not in database but may be a non-standard compound \\/\\1\\/?"
+msgstr "Dim yn y gronfa ddata ond efallai cyfansoddair ansafonol o \\/\\1\\/?"
+
+#: messages.txt:33
+msgid "Possibly a foreign word (the sequence \\/\\1\\/ is highly improbable)"
+msgstr "Efallai gair dieithr (mae'r dilyniant \\/\\1\\/ yn annhebygol iawn)"
+
+#. TRANSLATORS: Rules specific to the Irish language (ga)
+#: messages.txt:35
+msgid "Prefix \\/h\\/ missing"
+msgstr "Rhagddodiad \\/h\\/ ar goll"
+
+#: messages.txt:36
+msgid "Prefix \\/t\\/ missing"
+msgstr "Rhagddodiad \\/t\\/ ar goll"
+
+#: messages.txt:37
+#, fuzzy
+msgid "Prefix \\/d'\\/ missing"
+msgstr "Rhagddodiad \\/h\\/ ar goll"
+
+#: messages.txt:38
+msgid "Unnecessary prefix \\/h\\/"
+msgstr "Rhagddodiad diangen \\/h\\/"
+
+#: messages.txt:39
+msgid "Unnecessary prefix \\/t\\/"
+msgstr "Rhagddodiad diangen \\/t\\/"
+
+#: messages.txt:40
+#, fuzzy
+msgid "Unnecessary prefix \\/d'\\/"
+msgstr "Rhagddodiad diangen \\/h\\/"
+
 #. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
-#: Gramadoir.pm.in:738
+#: messages.txt:42
 #, fuzzy
 msgid "Unnecessary initial mutation"
 msgstr "Treiglad meddal diangen"
 
-#: Gramadoir.pm.in:742
+#: messages.txt:43
 msgid "Initial mutation missing"
 msgstr "Treiglad cychwynnol ar goll"
 
 #. TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
 #. It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
-#: Gramadoir.pm.in:748
+#: messages.txt:46
 msgid "Unnecessary lenition"
 msgstr "Treiglad meddal diangen"
 
-#: Gramadoir.pm.in:752
-msgid "Prefix \\/h\\/ missing"
-msgstr "Rhagddodiad \\/h\\/ ar goll"
+#: messages.txt:47
+msgid ""
+"Often the preposition \\/\\1\\/ causes lenition, but this case is unclear"
+msgstr ""
 
-#: Gramadoir.pm.in:756
-msgid "Prefix \\/t\\/ missing"
-msgstr "Rhagddodiad \\/t\\/ ar goll"
-
-#: Gramadoir.pm.in:760
+#: messages.txt:48
 msgid "Lenition missing"
 msgstr "Treiglad meddal ar goll"
 
 #. TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
 #. initial consonants in Irish.  It is indicated in writing by the addition
 #. of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
-#: Gramadoir.pm.in:767
+#: messages.txt:52
 #, fuzzy
 msgid "Unnecessary eclipsis"
 msgstr "Treiglad meddal diangen"
 
-#: Gramadoir.pm.in:771
+#: messages.txt:53
 msgid "Eclipsis missing"
 msgstr "Treiglad trwynol ar goll"
 
-#: Gramadoir.pm.in:775
-msgid "Repeated word"
-msgstr "Gair wedi'i ailadrodd"
-
-#: Gramadoir.pm.in:779
-msgid "Unusual combination of words"
-msgstr "Cyfuniad anarferol o eiriau"
-
-#: Gramadoir.pm.in:783
-msgid "Comparative adjective required"
-msgstr "Mae ansoddair cymharol yn ofynnol"
-
-#: Gramadoir.pm.in:787
-msgid "Unnecessary prefix \\/h\\/"
-msgstr "Rhagddodiad diangen \\/h\\/"
-
-#: Gramadoir.pm.in:791
-msgid "Unnecessary prefix \\/t\\/"
-msgstr "Rhagddodiad diangen \\/t\\/"
-
-#: Gramadoir.pm.in:795
-msgid "Unnecessary use of the definite article"
-msgstr "Defnydd diangen o'r fannod benodol"
-
-#: Gramadoir.pm.in:799
-#, fuzzy
-msgid "Unnecessary use of the genitive case"
-msgstr "Defnydd diangen o'r fannod benodol"
-
-#: Gramadoir.pm.in:803
-msgid "The genitive case is required here"
-msgstr "Mae'r cyflwr genidol yn ofynnol yma"
-
-#: Gramadoir.pm.in:807
-#, fuzzy
-msgid "The singular form is required here"
-msgstr "Mae'r cyflwr genidol yn ofynnol yma"
-
-#: Gramadoir.pm.in:811
-msgid "Not in database but apparently formed from the root \\/\\1\\/"
-msgstr ""
-"Dim yn y gronfa ddata, ond yn ôl pob golwg deilliwyd o'r gwreiddyn \\/\\1\\/"
-
-#: Gramadoir.pm.in:815
-msgid "The word \\/\\1\\/ is not needed"
+#: messages.txt:54
+msgid "The dative is used only in special phrases"
 msgstr ""
 
-#: Gramadoir.pm.in:819
-msgid "Do you mean \\/\\1\\/?"
-msgstr "Ydych yn golygu \\/\\1\\/?"
+#: messages.txt:55
+#, fuzzy
+msgid "The dependent form of the verb is required here"
+msgstr "Mae'r cyflwr genidol yn ofynnol yma"
 
-#: Gramadoir.pm.in:823
-msgid "Derived form of common misspelling \\/\\1\\/?"
-msgstr "Ffurf ddeilliedig o'r camsillafiad cyffredin \\/\\1\\/?"
+#: messages.txt:56
+#, fuzzy
+msgid "Unnecessary use of the dependent form of the verb"
+msgstr "Defnydd diangen o'r fannod benodol"
 
-#: Gramadoir.pm.in:827
-msgid "Not in database but may be a compound \\/\\1\\/?"
-msgstr "Dim yn y gronfa ddata ond efallai cyfansoddair o \\/\\1\\/?"
+#: messages.txt:57
+msgid "The synthetic (combined) form, ending in \\/\\1\\/, is often used here"
+msgstr ""
 
-#: Gramadoir.pm.in:831
-msgid "Not in database but may be a non-standard compound \\/\\1\\/?"
-msgstr "Dim yn y gronfa ddata ond efallai cyfansoddair ansafonol o \\/\\1\\/?"
+#. TRANSLATORS: Rules specific to the Cornish language (kw)
+#: messages.txt:59
+#, fuzzy
+msgid "Second (soft) mutation missing"
+msgstr "Treiglad cychwynnol ar goll"
 
-#: Gramadoir.pm.in:835
-msgid "Possibly a foreign word (the sequence \\/\\1\\/ is highly improbable)"
-msgstr "Efallai gair dieithr (mae'r dilyniant \\/\\1\\/ yn annhebygol iawn)"
+#: messages.txt:60
+#, fuzzy
+msgid "Third (breathed) mutation missing"
+msgstr "Treiglad cychwynnol ar goll"
+
+#: messages.txt:61
+#, fuzzy
+msgid "Fourth (hard) mutation missing"
+msgstr "Treiglad cychwynnol ar goll"
+
+#: messages.txt:62
+#, fuzzy
+msgid "Fifth (mixed) mutation missing"
+msgstr "Treiglad cychwynnol ar goll"
+
+#: messages.txt:63
+#, fuzzy
+msgid "Fifth (mixed) mutation after 'th missing"
+msgstr "Treiglad cychwynnol ar goll"

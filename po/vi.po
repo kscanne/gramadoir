@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramadoir 0.5\n"
 "Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
-"POT-Creation-Date: 2004-08-25 11:22-0500\n"
+"POT-Creation-Date: 2005-03-02 20:22-0600\n"
 "PO-Revision-Date: 2005-02-04 17:24+1030\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net> \n"
@@ -54,277 +54,423 @@ msgstr "gặp lỗi khi phân tách tùy chọn đường lệnh"
 
 #: gram.pl:177
 #, perl-format
+msgid "Unable to set output color to %s"
+msgstr ""
+
+#: gram.pl:180
+#, perl-format
 msgid "Language %s is not supported."
 msgstr "Chưa hỗ trợ ngôn ngữ %s."
 
 #. TRANSLATORS: Please leave untranslated, but add an acute accent to the
 #. "o" in "Gramadoir" if available in your character set and encoding.
 #. If you must translate, this is the Irish for (literally) "The Grammarian"
-#: gram.pl:182 gram.pl:242 gramdev.pl:93 gramdev.pl:118 Gramadoir.pm.in:119
-#: Gramadoir.pm.in:147 Gramadoir.pm.in:243 Gramadoir.pm.in:257
-#: Gramadoir.pm.in:264
+#: gram.pl:185 gram.pl:248 gramdev.pl:93 gramdev.pl:118 Gramadoir.pm.in:119
+#: Gramadoir.pm.in:166 Gramadoir.pm.in:266 Gramadoir.pm.in:280
+#: Gramadoir.pm.in:287 Gramadoir.pm.in:724
 msgid "An Gramadoir"
 msgstr "An Gramadóir"
 
-#: gram.pl:183 gramdev.pl:94
+#: gram.pl:186 gramdev.pl:94
 #, perl-format
 msgid "Try %s for more information."
 msgstr "Thử lệnh %s để tìm thông tin thêm."
 
-#: gram.pl:245 gramdev.pl:151
+#: gram.pl:251 gramdev.pl:151
 #, perl-format
 msgid "version %s"
 msgstr "phiên bản %s"
 
-#: gram.pl:247 gramdev.pl:153
-msgid "This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law."
-msgstr "Phần mềm này tự do; hãy xem nguồn để tìm điều kiện sao chép.\\nKhông bảo đảm gì cả, dù khả năng bán hay khả năng làm việc dứt khoát,\\ntrong phạm vi mà luật cho phép."
+#: gram.pl:253 gramdev.pl:153
+msgid ""
+"This is free software; see the source for copying conditions.  There is NO"
+"\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
+"PURPOSE,\\nto the extent permitted by law."
+msgstr ""
+"Phần mềm này tự do; hãy xem nguồn để tìm điều kiện sao chép.\\nKhông bảo đảm "
+"gì cả, dù khả năng bán hay khả năng làm việc dứt khoát,\\ntrong phạm vi mà "
+"luật cho phép."
 
-#: gram.pl:261
+#: gram.pl:267
 #, perl-format
 msgid "Usage: %s [OPTIONS] [FILES]"
 msgstr "Cách sử dụng: %s [TÙY_CHỌN] [TẬP_TIN]"
 
-#: gram.pl:264
+#: gram.pl:270
 msgid "Options for end-users:"
 msgstr "Tùy chọn cho người sử dụng cuối:"
 
-#: gram.pl:268
+#: gram.pl:274
 msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
-msgstr "    --iomlan       thông báo tất cả lỗi (thì không sử dụng ~/.neamhshuim)"
+msgstr ""
+"    --iomlan       thông báo tất cả lỗi (thì không sử dụng ~/.neamhshuim)"
 
-#: gram.pl:271
-msgid "    --ionchod=ENC  specify the character encoding of the text to be checked"
+#: gram.pl:277
+msgid ""
+"    --ionchod=ENC  specify the character encoding of the text to be checked"
 msgstr "    --ionchod=MÃ  ghi rõ mã chữ của văn bản để kiểm tra"
 
-#: gram.pl:274
+#: gram.pl:280
 msgid "    --aschod=ENC   specify the character encoding for output"
 msgstr "    --aschod=MÃ   ghi rõ mã chữ để xuất"
 
-#: gram.pl:277
+#: gram.pl:283
 msgid "    --comheadan=xx choose the language for error messages"
 msgstr "    --comheadan=xx chọn ngôn ngữ đối với thông điệp lỗi"
 
-#: gram.pl:280
+#: gram.pl:286
 msgid "    --dath=COLOR   specify the color to use for highlighting errors"
 msgstr "    --dath=MÀU   ghi rõ màu để nổi bật lỗi"
 
-#: gram.pl:283
+#: gram.pl:289
 msgid "    --litriu       write misspelled words to standard output"
 msgstr "    --litriu       ghi từ sai chính tả vào thiết bị xuất chuẩn"
 
-#: gram.pl:286
+#: gram.pl:292
 msgid "    --aspell       suggest corrections for misspellings"
 msgstr "    --aspell       đề nghị cách sửa từ sai chính tả"
 
-#: gram.pl:289
+#: gram.pl:295
 msgid "    --aschur=FILE  write output to FILE"
 msgstr "    --aschur=TẬP_TIN  ghi dữ liệu xuất TẬP TIN ấy"
 
-#: gram.pl:292 gramdev.pl:133
+#: gram.pl:298 gramdev.pl:133
 msgid "    --help         display this help and exit"
 msgstr "    --help         hiển thì _trợ giúp_ này rồi thoát"
 
-#: gram.pl:295 gramdev.pl:136
+#: gram.pl:301 gramdev.pl:136
 msgid "    --version      output version information and exit"
 msgstr "    --version      xuất thông tin _phiên bản_ rồi thoát"
 
-#: gram.pl:298
+#: gram.pl:304
 msgid "Options for developers:"
 msgstr "Tùy chọn cho lập trình viên:"
 
-#: gram.pl:300
-msgid "    --api          output a simple XML format for use with other applications"
-msgstr "    --api          xuất khuôn dạng XML đơn giản để sử dụng với ứng dụng khác"
+#: gram.pl:306
+msgid ""
+"    --api          output a simple XML format for use with other applications"
+msgstr ""
+"    --api          xuất khuôn dạng XML đơn giản để sử dụng với ứng dụng khác"
 
-#: gram.pl:302
+#: gram.pl:308
 msgid "    --html         produce HTML output for viewing in a web browser"
 msgstr "    --html         xuất bằng html để coi trong trình duyệt Mạng"
 
-#: gram.pl:308
-msgid "    --no-unigram   do not resolve ambiguous parts of speech by frequency"
+#: gram.pl:314
+msgid ""
+"    --no-unigram   do not resolve ambiguous parts of speech by frequency"
 msgstr "    --no-unigram   không giải quyết loại từ mơ hồ theo tần số"
 
-#: gram.pl:314
-msgid "    --xml          write tagged XML stream to standard output, for debugging"
-msgstr "    --xml          ghi dòng XML có thẻ vào thiết bị xuất chuẩn để gỡ lỗi"
+#: gram.pl:320
+msgid ""
+"    --xml          write tagged XML stream to standard output, for debugging"
+msgstr ""
+"    --xml          ghi dòng XML có thẻ vào thiết bị xuất chuẩn để gỡ lỗi"
 
-#: gram.pl:317 gramdev.pl:139
+#: gram.pl:323
 msgid "If no file is given, read from standard input."
 msgstr "Nếu chưa chọn tập tin thì đọc dữ liệu nhập chuẩn."
 
-#: gram.pl:320 gramdev.pl:142
+#: gram.pl:326 gramdev.pl:142
 #, perl-format
 msgid "Send bug reports to <%s>."
 msgstr "Hãy thông báo lỗi cho <%s>"
 
-#: gram.pl:342
+#: gram.pl:348
 msgid "There is no such file."
 msgstr "Không có tập tin như vậy."
 
-#: gram.pl:346
+#: gram.pl:352
 msgid "Is a directory"
 msgstr "là thư mục"
 
-#: gram.pl:354
+#: gram.pl:360
 msgid "Permission denied"
 msgstr "Không cho phép"
 
-#: gram.pl:364
+#: gram.pl:370
 #, perl-format
 msgid "%s: warning: problem closing %s\n"
 msgstr "%s: cảnh báo: gặp khó đóng %s\n"
 
-#: gram.pl:381
+#: gram.pl:387
 #, perl-format
 msgid "Currently checking %s"
 msgstr "Hiện kiểm tra %s"
 
 #: gramdev.pl:125
 msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
-msgstr "    --ilchiall    thông báo các từ mơ hồ chưa giải quyết, sắp xếp theo tần số"
+msgstr ""
+"    --ilchiall    thông báo các từ mơ hồ chưa giải quyết, sắp xếp theo tần số"
 
 #: gramdev.pl:128
-msgid "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
-msgstr "    --minic        xuất tất cả thẻ, sắp xếp theo tần số (đối với unigram-xx.txt)"
+msgid ""
+"    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
+msgstr ""
+"    --minic        xuất tất cả thẻ, sắp xếp theo tần số (đối với unigram-xx."
+"txt)"
 
 #: gramdev.pl:130
-msgid "    --brill        find disambiguation rules via Brill's unsupervised algorithm"
-msgstr "    --brill        tìm quy tắc giải quyết từ mơ hồ thông qua thuật toán không có giám sát của Brill"
+msgid ""
+"    --brill        find disambiguation rules via Brill's unsupervised "
+"algorithm"
+msgstr ""
+"    --brill        tìm quy tắc giải quyết từ mơ hồ thông qua thuật toán "
+"không có giám sát của Brill"
 
 #: Gramadoir.pm.in:118
 #, perl-format
 msgid "%s: problem reading the database\n"
 msgstr "%s: gặp khó đọc cơ sở dữ liệu\n"
 
-#: Gramadoir.pm.in:146
+#: Gramadoir.pm.in:165
 #, perl-format
 msgid "%s: `%s' corrupted at %s\n"
 msgstr "%s: `%s' bị hỏng tại %s\n"
 
 #. TRANSLATORS: "conversion" here means conversion between character encodings
-#: Gramadoir.pm.in:197 Gramadoir.pm.in:511 Gramadoir.pm.in:546
-#: Gramadoir.pm.in:602 Gramadoir.pm.in:754
+#: Gramadoir.pm.in:217 Gramadoir.pm.in:508 Gramadoir.pm.in:579
+#: Gramadoir.pm.in:613 Gramadoir.pm.in:636 Gramadoir.pm.in:692
+#: Gramadoir.pm.in:756
 #, perl-format
 msgid "conversion from %s is not supported"
 msgstr "chưa hỗ trợ bản dịch sang %s"
 
-#: Gramadoir.pm.in:242 Gramadoir.pm.in:256
+#: Gramadoir.pm.in:265 Gramadoir.pm.in:279
 #, perl-format
 msgid "%s: illegal grammatical code\n"
 msgstr "%s: không cho phép mã ngữ pháp ấy\n"
 
-#: Gramadoir.pm.in:263
+#: Gramadoir.pm.in:286
 #, perl-format
 msgid "%s: no grammar codes: %s\n"
 msgstr "%s: không có mã ngữ pháp: %s\n"
 
-#: Gramadoir.pm.in:622
-msgid "Unknown word"
-msgstr "Từ chưa biết"
+#: Gramadoir.pm.in:723
+#, fuzzy, perl-format
+msgid "%s: unrecognized error macro: %s\n"
+msgstr "chưa chấp nhận tùy chọn %s"
 
-#: Gramadoir.pm.in:626
+#. TRANSLATORS: The remaining strings are errors reported by the grammar
+#. checking engine.  The first batch consists of messages intended to be
+#. reused across a wide range of languages.
+#: messages.txt:4
 msgid "Valid word but extremely rare in actual usage"
 msgstr "Từ hợp lệ nhưng rất ít dụng"
 
-#: Gramadoir.pm.in:630
+#: messages.txt:5
+msgid "Repeated word"
+msgstr "Một từ hai lần"
+
+#: messages.txt:6
+msgid "Unusual combination of words"
+msgstr "Phối hợp từ một cách không thường"
+
+#: messages.txt:7
+#, fuzzy
+msgid "The plural form is required here"
+msgstr "Ở đây thì cần đến cách sở hữu"
+
+#: messages.txt:8
+#, fuzzy
+msgid "The singular form is required here"
+msgstr "Ở đây thì cần đến cách sở hữu"
+
+#: messages.txt:9
+msgid "Comparative adjective required"
+msgstr "Cần đến tính từ so sánh"
+
+#: messages.txt:10
+msgid "Definite article required"
+msgstr ""
+
+#: messages.txt:11
+msgid "Unnecessary use of the definite article"
+msgstr "Không cần sử dụng mạo từ hạn định"
+
+#: messages.txt:12
+#, fuzzy
+msgid "Unnecessary use of the genitive case"
+msgstr "Không cần sử dụng mạo từ hạn định"
+
+#: messages.txt:13
+msgid "The genitive case is required here"
+msgstr "Ở đây thì cần đến cách sở hữu"
+
+#: messages.txt:14
+msgid "It seems unlikely that you intended to use the subjunctive here"
+msgstr ""
+
+#. TRANSLATORS: You can use whatever kind of quotes you prefer for your locale
+#. around the variable \\1.  You should keep the double backslash before the 1,
+#. but there is no need to escape the quotes the way they are in the msgid.
+#: messages.txt:18
 msgid "Usually used in the set phrase \\/\\1\\/"
 msgstr "Thường dụng trong cụm từ riêng \\/\\1\\/"
 
-#: Gramadoir.pm.in:634
+#: messages.txt:19
 msgid "You should use \\/\\1\\/ here instead"
 msgstr "Ở đây thì nên sử dụng \\/\\1\\/ thay thế"
 
-#: Gramadoir.pm.in:638
+#: messages.txt:20
 msgid "Non-standard form of \\/\\1\\/"
 msgstr "Hình thái không chuẩn của \\/\\1\\/"
 
-#: Gramadoir.pm.in:642
+#: messages.txt:21
 msgid "Derived from a non-standard form of \\/\\1\\/"
 msgstr "Gốc là hình thái không chuẩn của \\/\\1\\/"
 
-#: Gramadoir.pm.in:646
+#: messages.txt:22
 msgid "Derived incorrectly from the root \\/\\1\\/"
 msgstr "Gốc (không đúng) là \\/\\1\\/"
 
+#: messages.txt:23
+msgid "Unknown word"
+msgstr "Từ chưa biết"
+
+#. TRANSLATORS: \\1 is substituted with one or more suggested replacements
+#: messages.txt:25
+#, fuzzy
+msgid "Unknown word: \\/\\1\\/?"
+msgstr "Từ chưa biết"
+
+#: messages.txt:26
+msgid "Valid word but more often found in place of \\/\\1\\/"
+msgstr ""
+
+#: messages.txt:27
+msgid "Not in database but apparently formed from the root \\/\\1\\/"
+msgstr "Không trong cơ sở dữ liệu nhưng hình như có gốc \\/\\1\\/"
+
+#: messages.txt:28
+msgid "The word \\/\\1\\/ is not needed"
+msgstr ""
+
+#: messages.txt:29
+msgid "Do you mean \\/\\1\\/?"
+msgstr "Ý kiến bạn là \\/\\1\\/ không??"
+
+#: messages.txt:30
+msgid "Derived form of common misspelling \\/\\1\\/?"
+msgstr "Hình thái bắt nguồn từ sai chính tả \\/\\1\\/ không?"
+
+#: messages.txt:31
+msgid "Not in database but may be a compound \\/\\1\\/?"
+msgstr "Không trong cơ sở dữ liệu nhưng có lẽ là \\/\\1\\/ ghép không?"
+
+#: messages.txt:32
+msgid "Not in database but may be a non-standard compound \\/\\1\\/?"
+msgstr ""
+"Không trong cơ sở dữ liệu nhưng có lẽ là \\/\\1\\/ ghép không chuẩn không?"
+
+#: messages.txt:33
+msgid "Possibly a foreign word (the sequence \\/\\1\\/ is highly improbable)"
+msgstr "Có lẽ từ nước ngoài (sắp xếp  \\/\\1\\/ rất không chắc)"
+
+#. TRANSLATORS: Rules specific to the Irish language (ga)
+#: messages.txt:35
+msgid "Prefix \\/h\\/ missing"
+msgstr "Thiếu tiền tố \\/h\\/"
+
+#: messages.txt:36
+msgid "Prefix \\/t\\/ missing"
+msgstr "Thiếu tiền tố \\/t\\/"
+
+#: messages.txt:37
+#, fuzzy
+msgid "Prefix \\/d'\\/ missing"
+msgstr "Thiếu tiền tố \\/h\\/"
+
+#: messages.txt:38
+msgid "Unnecessary prefix \\/h\\/"
+msgstr "Không cần tiền tố \\/h\\/"
+
+#: messages.txt:39
+msgid "Unnecessary prefix \\/t\\/"
+msgstr "Không cần tiền tố \\/t\\/"
+
+#: messages.txt:40
+#, fuzzy
+msgid "Unnecessary prefix \\/d'\\/"
+msgstr "Không cần tiền tố \\/h\\/"
+
 #. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
-#: Gramadoir.pm.in:651
+#: messages.txt:42
+#, fuzzy
+msgid "Unnecessary initial mutation"
+msgstr "Không cần thêm chữ h để làm cho phụ âm đầu mềm hơn"
+
+#: messages.txt:43
 msgid "Initial mutation missing"
 msgstr "Thiếu cách đổi phụ âm đầu"
 
 #. TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
 #. It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
-#: Gramadoir.pm.in:657
+#: messages.txt:46
 msgid "Unnecessary lenition"
 msgstr "Không cần thêm chữ h để làm cho phụ âm đầu mềm hơn"
 
-#: Gramadoir.pm.in:661
-msgid "Prefix \\/h\\/ missing"
-msgstr "Thiếu tiền tố \\/h\\/"
+#: messages.txt:47
+msgid ""
+"Often the preposition \\/\\1\\/ causes lenition, but this case is unclear"
+msgstr ""
 
-#: Gramadoir.pm.in:665
-msgid "Prefix \\/t\\/ missing"
-msgstr "Thiếu tiền tố \\/t\\/"
-
-#: Gramadoir.pm.in:669
+#: messages.txt:48
 msgid "Lenition missing"
 msgstr "Thiếu cách thêm chữ h để làm cho phụ âm đầu mềm hơn"
 
 #. TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
 #. initial consonants in Irish.  It is indicated in writing by the addition
 #. of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
-#: Gramadoir.pm.in:676
+#: messages.txt:52
+#, fuzzy
+msgid "Unnecessary eclipsis"
+msgstr "Không cần thêm chữ h để làm cho phụ âm đầu mềm hơn"
+
+#: messages.txt:53
 msgid "Eclipsis missing"
 msgstr "Thiếu cách che phụ âm đầu"
 
-#: Gramadoir.pm.in:680
-msgid "Repeated word"
-msgstr "Một từ hai lần"
+#: messages.txt:54
+msgid "The dative is used only in special phrases"
+msgstr ""
 
-#: Gramadoir.pm.in:684
-msgid "Unusual combination of words"
-msgstr "Phối hợp từ một cách không thường"
-
-#: Gramadoir.pm.in:688
-msgid "Comparative adjective required"
-msgstr "Cần đến tính từ so sánh"
-
-#: Gramadoir.pm.in:692
-msgid "Unnecessary prefix \\/h\\/"
-msgstr "Không cần tiền tố \\/h\\/"
-
-#: Gramadoir.pm.in:696
-msgid "Unnecessary prefix \\/t\\/"
-msgstr "Không cần tiền tố \\/t\\/"
-
-#: Gramadoir.pm.in:700
-msgid "Unnecessary use of the definite article"
-msgstr "Không cần sử dụng mạo từ hạn định"
-
-#: Gramadoir.pm.in:704
-msgid "The genitive case is required here"
+#: messages.txt:55
+#, fuzzy
+msgid "The dependent form of the verb is required here"
 msgstr "Ở đây thì cần đến cách sở hữu"
 
-#: Gramadoir.pm.in:708
-msgid "Not in database but apparently formed from the root \\/\\1\\/"
-msgstr "Không trong cơ sở dữ liệu nhưng hình như có gốc \\/\\1\\/"
+#: messages.txt:56
+#, fuzzy
+msgid "Unnecessary use of the dependent form of the verb"
+msgstr "Không cần sử dụng mạo từ hạn định"
 
-#: Gramadoir.pm.in:712
-msgid "Do you mean \\/\\1\\/?"
-msgstr "Ý kiến bạn là \\/\\1\\/ không??"
+#: messages.txt:57
+msgid "The synthetic (combined) form, ending in \\/\\1\\/, is often used here"
+msgstr ""
 
-#: Gramadoir.pm.in:716
-msgid "Derived form of common misspelling \\/\\1\\/?"
-msgstr "Hình thái bắt nguồn từ sai chính tả \\/\\1\\/ không?"
+#. TRANSLATORS: Rules specific to the Cornish language (kw)
+#: messages.txt:59
+#, fuzzy
+msgid "Second (soft) mutation missing"
+msgstr "Thiếu cách đổi phụ âm đầu"
 
-#: Gramadoir.pm.in:720
-msgid "Not in database but may be a compound \\/\\1\\/?"
-msgstr "Không trong cơ sở dữ liệu nhưng có lẽ là \\/\\1\\/ ghép không?"
+#: messages.txt:60
+#, fuzzy
+msgid "Third (breathed) mutation missing"
+msgstr "Thiếu cách đổi phụ âm đầu"
 
-#: Gramadoir.pm.in:724
-msgid "Not in database but may be a non-standard compound \\/\\1\\/?"
-msgstr "Không trong cơ sở dữ liệu nhưng có lẽ là \\/\\1\\/ ghép không chuẩn không?"
+#: messages.txt:61
+#, fuzzy
+msgid "Fourth (hard) mutation missing"
+msgstr "Thiếu cách đổi phụ âm đầu"
 
-#: Gramadoir.pm.in:728
-msgid "Possibly a foreign word (the sequence \\/\\1\\/ is highly improbable)"
-msgstr "Có lẽ từ nước ngoài (sắp xếp  \\/\\1\\/ rất không chắc)"
+#: messages.txt:62
+#, fuzzy
+msgid "Fifth (mixed) mutation missing"
+msgstr "Thiếu cách đổi phụ âm đầu"
+
+#: messages.txt:63
+#, fuzzy
+msgid "Fifth (mixed) mutation after 'th missing"
+msgstr "Thiếu cách đổi phụ âm đầu"
