@@ -120,21 +120,35 @@ Vim online</a>.     Instructions:
 <li>put the following lines in your ~/.vimrc file
 <pre>
 map &lt;F3&gt; &lt;Plug&gt;Gr
-map &lt;F4&gt; &lt;Plug&gt;Amach
+map &lt;F4&gt; &lt;Plug&gt;Neamh
+map &lt;F5&gt; &lt;Plug&gt;Amach
 </pre>
 or choose different hot keys if you want.
 
 <li>open an Irish language text file in Vim.
 
-<li>to check its grammar, press F3; a second window will open with 
-the messages from <i lang="ga">An Gramadóir</i>.  The cursor
+<li>to check its grammar, press F3; a second buffer,
+containing the messages from <i lang="ga">An Gramadóir</i>,
+will open at the bottom of the screen.  The cursor
 will move to the first error (which is also highlighted in red if you
 are using a suitable color terminal).
 
 <li>Each successive use of F3 moves to the next error
 (in both windows, in parallel).
 
-<li>Pressing F4 exits the grammar checker and resumes normal editing.
+<li>If the current error is a single word (unknown, misspelled, rare,
+non-standard, etc.), you can insert it into your <code>.neamhshuim</code> 
+(ignore) file by pressing F4.
+
+<li>Pressing F5 exits the grammar checker and resumes normal editing.
+
+<li>Notes: you are free to make edits, corrections, etc. to the 
+main buffer while running the grammar checker.  The last error
+displayed is tracked according to the cursor position in the 
+error buffer, so whenever you press F3 it will correctly take you 
+to the next error.  This also means that you can jump to any
+particular error you'd like: go into the error buffer (with Crtl-w-w),
+move the cursor to just before the desired error, press F3.
 </ol>
 
 </p>
