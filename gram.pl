@@ -16,7 +16,6 @@
 # it under the same terms as Perl itself, either Perl version 5.8.2 or,
 # at your option, any later version of Perl 5 you may have available.
 
-
 use strict;
 use warnings;
 
@@ -77,6 +76,7 @@ my $help = '';
 my $html = '';
 my $iomlan = '';
 my $ionchod = '@NATIVE@';
+my $aschod = 'utf8';
 my $litriu = '';
 my $version = '';
 my $xml = '';
@@ -86,7 +86,8 @@ GetOptions (
 		'aspell'                => \$aspell,
 		'check|litriu|l'        => \$litriu,
 		'color|colour|dath=s'	=> \$dath,
-		'encoding|ionchod=s'    => \$ionchod,
+		'incode|ionchod|f=s'    => \$ionchod,
+		'outcode|aschod|t=s'    => \$aschod,
 		'help|cabhair|h'        => \$help,
 		'html'			=> \$html,
 		'interface|comheadan=s' => \$comheadan,
@@ -95,18 +96,17 @@ GetOptions (
 		'xml'                   => \$xml,
 		) or die "getopt error";
 
-
 if ($aschur) {
 	unless ($^O eq 'MSWin32') {
 		$aschur =~ s#^~(\w*)#$1 ? (getpwnam($1))[7] : ( $ENV{HOME} || $ENV{LOGDIR} || (getpwuid($>))[7] )#e;
 	}
-	open(OUTSTREAM, ">:utf8", $aschur) or
+	open(OUTSTREAM, ">:encoding($aschod)", $aschur) or
 		warn "Can't open $aschur: $!\n";
 }
 else {
 	open(OUTSTREAM, ">&=STDOUT") or
 		warn "Couldn't alias STDOUT: $!\n";
-	binmode OUTSTREAM, ":utf8";  # must be after alias
+	binmode OUTSTREAM, ":encoding($aschod)";  # must be after alias
 }
 
 if ($comheadan) {
