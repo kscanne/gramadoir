@@ -39,5 +39,6 @@ s@!INTCHARS!@${INTCHARS}@
 s@!UPPERS!@${UPPERS}@
 s@!LOWERS!@${LOWERS}@
 s/!AUTHOR!/${AUTHOR}/
+s@!GRAMDIR!@${GRAMDIR}@
 " ${GRAMDIR}/Makefile-xx.in > Makefile
-sed -i "s@!PERLPATH!@${PERL}@" macra-${TEANGA}.meta.pl
+${PERL} -i -p -e "s@!PERLPATH!@${PERL}@" macra-${TEANGA}.meta.pl
