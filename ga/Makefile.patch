@@ -1,5 +1,5 @@
---- Makefile	2004-11-03 17:47:37.593869312 -0600
-+++ Makefile.ok	2004-11-03 17:15:08.605160632 -0600
+--- Makefile	2004-12-29 20:53:46.311372720 -0600
++++ Makefile.ok	2004-12-29 20:53:40.676229392 -0600
 @@ -76,6 +76,15 @@
  
  Makefile : $(GRAMDIR)/Makefile-xx.in configure
@@ -16,7 +16,20 @@
  
  test : perl
  	(cd $(PERLD); make test)
-@@ -322,4 +331,77 @@
+@@ -174,6 +183,12 @@
+ triail : rialacha-$(TEANGA).in
+ 	sed -n '/^#\./{s/^#\. //; p;}' rialacha-$(TEANGA).in > triail
+ 
++triailcheck : FORCE
++	cat triail.xml | iconv -f utf8 -t iso-8859-1 | sed 's/^<E offset.*sentence="/<E s="/' > t1.xml
++	$(PERL) -I $(PERLD)/lib $(PERLD)/scripts/$(SCRIPTNAME) --api --iomlan --aspell --comheadan=ga --aschod=iso-8859-1 triail | sed 's/^<E offset.*sentence="/<E s="/' > t2.xml
++	vimdiff t1.xml t2.xml
++	rm -f t1.xml t2.xml
++
+ triail.xml-update : FORCE
+ 	$(MAKE) triail
+ 	$(MAKE) perl
+@@ -322,4 +337,80 @@
  zipped : perl
  	(cd $(PERLD); make zipdist)
  
@@ -67,7 +80,7 @@
 +	rm -f tempfocail tempsrc
 +
 +lexicon-$(TEANGA).xml : lexicon-$(TEANGA).txt
-+	cat lexicon-$(TEANGA).txt | sed 's/ .*//' | alltags > $@
++	cat lexicon-$(TEANGA).txt | sed 's/ .*//' | LC_ALL=C sort -u | alltags > $@
 +
 +BIGDIR = /home/spas
 +
@@ -92,5 +105,8 @@
 +	@benchcorp | $(PERL) -I $(PERLD)/lib $(PERLD)/scripts/$(SCRIPTNAME) --xml --iomlan --aschod=iso-8859-1 --comheadan=ga | sed 's/<E/\n<E/g; s/<\/E>/&\n/g' | sed '/^<E/!{s/ </\n</g}' | $(EGREP) '.' | tee $(BIGDIR)/big.new.xml | $(EGREP) '^<E' | LC_ALL=C sort > $(BIGDIR)/bigerr.new.xml
 +	@if diff -u $(BIGDIR)/big.xml $(BIGDIR)/big.new.xml > $(BIGDIR)/diff1.txt; then echo "XML unchanged."; rm -f $(BIGDIR)/big.new.xml $(BIGDIR)/diff1.txt; else echo "Differences in XML."; fi
 +	@if diff -u $(BIGDIR)/bigerr.xml $(BIGDIR)/bigerr.new.xml > $(BIGDIR)/diff2.txt; then echo "Errors unchanged."; rm -f $(BIGDIR)/bigerr.new.xml $(BIGDIR)/diff2.txt; else echo "Differences in errors."; fi
++
++bugs.html : bugs.txt
++	cat bugs.txt | sed '/^[^#]/s/\*\([^\*]*\)\*/<b class=gramadoir>\1<\/b>/g; s/^[^#].*/<i>&<\/i><br>/; s/^# *HEADING: *\(.*\)/<hr><h2>\1<\/h2><p>/; s/^# *BUG.*/<\/p><p>/; s/^# \(.*\)/\1<br>/;' > $@
 +
  FORCE :
