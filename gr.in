@@ -6,7 +6,7 @@
 # This is free software; see the file COPYING for copying conditions.  There is
 # NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #
-# Usage: gr [--help] [--version] [--html] [--xml] [--litriu] [FILES]
+# Usage: gr [OPTIONS] [FILES]
 #
 # This is a script for checking the grammar of Irish language text
 # contained in the files specified on the command line, or read from
@@ -18,8 +18,11 @@
 # viewed in a standard web brower.  The --litriu argument tells gr to
 # act like classical UNIX "spell" (or ispell -l), and the --xml argument
 # writes the intermediate tagged XML stream to standard output for 
-# development or debugging purposes.   The standard GNU --version and
-# --help options work in the expected way.
+# development or debugging purposes.  By default, the script looks in the
+# user's home directory for a file .neamhshuim of words to ignore while
+# checking the spelling and grammar.  Use the --iomlan flag to disregard
+# this file.  The standard GNU --version and --help options work in the 
+# expected way.
 
 CLAR='An Gramadóir'        # title that prints to screen, not used as filename
 
@@ -33,9 +36,10 @@ notfound='níl a leithéid de chomhad ann'
 isdir='is comhadlann í'
 # "Permission denied"  (tried to check a file without having read permission)
 permissions='cead diúltaithe'
-# Usage string.  Don't translate the --litriu option (means "spelling"!)
+# Usage string.  Don't translate the Irish option names.
 # You can translate "COMHAID" to "FILES"
-usage="Úsáid: gr [--help] [--version] [--html] [--xml] [--litriu] [COMHAID]"
+usage1="Úsáid: gr [--help] [--version] [--html] [--xml]"
+usage2="          [--litriu] [--iomlan] [COMHAID]"
 # "If no file is given, read from standard input"
 stdinhelp="Mura bhfuil comhad ann, léigh ón ionchur caighdeánach"
 # "Send bug reports to <...>"   Leave the @PACKAGE_BUGREPORT@ alone.
@@ -91,7 +95,8 @@ echo ${gpl4}
 # this is what happens if --help is passed
 helpout()
 {
-echo "${usage}"
+echo "${usage1}"
+echo "${usage2}"
 echo "${stdinhelp}"
 echo
 echo "${bugreports}"
@@ -264,6 +269,8 @@ drochchomhad()
 	[ ! -e ${1} ] || [ -d ${1} ] || [ ! -r ${1} ]    # return value
 }
 
+USEIGNORE="ignore"
+
 # This is the main sequence of filters for checking a given file
 # Either $1 is empty (stdin) or, if not, we've checked
 # it exists, is not a directory, and is readable
@@ -271,7 +278,7 @@ comhad()
 {
 	cat $1 | diutf | 
 		abairti |
-		@prefix@/libexec/cuardach |
+		@prefix@/libexec/cuardach ${USEIGNORE} |
 		aonchiall |
 		rialacha |
 		eisceacht |
@@ -287,7 +294,7 @@ xml_output()
 {
 	cat $1 | diutf | 
 		abairti |
-		@prefix@/libexec/cuardach |
+		@prefix@/libexec/cuardach ${USEIGNORE} |
 		aonchiall |
 		rialacha |
 		eisceacht
@@ -312,7 +319,7 @@ litriu()
 {
 	cat $1 | diutf | 
 		abairti |
-		@prefix@/libexec/cuardach |
+		@prefix@/libexec/cuardach ${USEIGNORE} |
 		litriu_comheadan
 }
 
@@ -346,7 +353,12 @@ do
 			then
 				ACTION=xml_output
 			else
-				option_error ${1}
+				if [ ${1} = "--iomlan" ]
+				then
+					USEIGNORE="noignore"
+				else
+					option_error ${1}
+				fi
 			fi
 		fi
 	fi
