@@ -4,6 +4,9 @@
 # Please send me any useful additional rules for inclusion in
 # future releases: <scannell@slu.edu>
 #
+# References: 
+# CB=The Christian Brothers, New Irish Grammar, C. J. Fallon, 1994.
+#
 <X>ANYTHING</X>:ANAITHNID
 # CB p.16 #9.a  (needs shallow parse)
 #<NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
@@ -183,9 +186,9 @@ Fh?éile LENITED:NISEIMHIU
 # CB p.13 #4.a
 <S>[Mm]ar</S> <N>UNLENITED</N>:SEIMHIU
 # CB p.5 #17
-<D>[Mm]o</D> <N>INITIALVOWELORF</N>:BACHOIR{m+uaschamóg}
+<D>[Mm]o</D> INITIALVOWELORF:BACHOIR{m+uaschamóg}
 # CB p.12 #3.a
-<D>[Mm]o</D> <N>UNLENITED</N>:SEIMHIU
+<D>[Mm]o</D> UNLENITED:SEIMHIU
 # CB p.13 #3.d
 <D>[Mm]o</D> dhá UNLENITED:SEIMHIU
 # CB p.22 #7.f, p.132 #4
@@ -248,7 +251,7 @@ Naomh LENITED:NISEIMHIU
 <S>[Ss]a</S> INITIALVOWELORF:BACHOIR{san}
 # CB p.12 #1.c.i
 <S>[Ss]a</S> UNLENITEDBCGMP:SEIMHIU
-# CB p.23 #9 (subtle - implicit article)
+# CB p.23 #9 (implicit article)
 <S>[Ss]a</S> <NFCS>INITIALS</NFCS>:PREFIXT
 # CB p.17 #9.g
 <S>[Ss]an?</S> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
