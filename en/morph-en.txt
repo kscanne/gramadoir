@@ -5,9 +5,9 @@
 # is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR
 # PURPOSE.
 #
-^([A-Z]+)$			\L$1		-1	<.+>
-^([A-Z])			\l$1		-1	<.+>
-^pro-(.)			$1		0	<.+>
-^ultra(.)			$1		0	<.+>
-(..)ing$			$1		1	<.+>
-([A-Zаимсз])			\l$1		2	<.+>
+^([A-Z]+)$			\L$1		-1	<.+>	<&>
+^([A-Z])			\l$1		-1	<.+>	<&>
+^pro-(.)			$1		-1	<N.*>	<A>
+^ultra(.)			$1		0	<A.*>	<&>
+(..)ing$			$1		1	<.+>	<&>
+([A-Zаимсз])			\l$1		2	<.+>	<&>
