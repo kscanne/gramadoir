@@ -129,6 +129,9 @@ s/^(d'eisc) .*/$1 127/;
 s/^(d'fhail) .*/$1 127/;
 s/^(d'fhaisc) .*/$1 127/;
 s/^(d'fheilte) .*/$1 127/;
+# genitives of "díleas"
+s/^(n?dh?ílis) 92/$1 127/;
+s/^(n?dh?ílis) 108/$1 127/;
 s/^(dtairgeadh) .*/$1 127/;
 s/^(dteann) .*/$1 127/;
 s/^(dtoin) .*/$1 127/;
