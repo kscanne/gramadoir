@@ -11,6 +11,8 @@ SHELL = @SHELL@
 
 .SUFFIXES:
 
+.SUFFIXES: .in .pl
+
 prefix=@prefix@
 exec_prefix = $(prefix)
 
@@ -36,8 +38,13 @@ LEX_OUTPUT_ROOT = @LEX_OUTPUT_ROOT@
 LN_S = @LN_S@
 PERL = @PERL@
 YACC = @YACC@
+TEANGACHA = @TEANGACHA@
+ALLPL = @ALLPL@
+ALLIN = @ALLIN@
+METAS = gin.meta.sed aonchiall.meta.sed eisceacht.meta.sed rialacha.meta.sed
 
-all : aonchiall.pl eisceacht.pl rialacha.pl cuardach gr
+
+all : allperl cuardach gr
 
 cuardach : cuardach.o
 	$(CC) -o cuardach $(CFLAGS) cuardach.o
@@ -45,20 +52,17 @@ cuardach : cuardach.o
 cuardach.o : cuardach.c
 	$(CC) -c $(CFLAGS) $(DEFS) -DBSONRAI=\"$(pkgdatadir)\" cuardach.c
 
-rialacha.pl : rialacha.in rialacha.meta.sed gin.meta.sed
-	cat rialacha.in | sed '/^#/!s/:/\n:/' > rialacha.in.2
-	($(ECHO) "#!$(PERL)"; $(ECHO) '# Users should modify rialacha.in, not this file'; $(ECHO) 'while(<>){';  cat rialacha.in.2 | sed -f gin.meta.sed | sed -f rialacha.meta.sed; $(ECHO) 'print;'; $(ECHO) '}'; $(ECHO) 'exit;') > rialacha.pl
-	rm -f rialacha.in.2
+.in.pl :
+	cat $< | sed '/^#/!s/:/\n:/' > $<.2
+	cp `echo "$<" | sed 's/-.*//'`.meta.sed temp.meta.sed
+	($(ECHO) "#!$(PERL)"; $(ECHO) "# Users should modify $<, not this file"; $(ECHO) 'while(<>){';  cat $<.2 | sed -f gin.meta.sed | sed -f temp.meta.sed; $(ECHO) 'print;'; $(ECHO) '}'; $(ECHO) 'exit;') > $@
+	rm -f $<.2 temp.meta.sed
 
-aonchiall.pl : aonchiall.in aonchiall.meta.sed gin.meta.sed
-	cat aonchiall.in | sed '/^#/!s/:/\n:/' > aonchiall.in.2
-	($(ECHO) "#!$(PERL)"; $(ECHO) '# Users should modify aonchiall.in, not this file'; $(ECHO) 'while(<>){'; cat aonchiall.in.2 | sed -f gin.meta.sed | sed -f aonchiall.meta.sed; $(ECHO) 'print;'; $(ECHO) '}'; $(ECHO) 'exit;') > aonchiall.pl
-	rm -f aonchiall.in.2
+lastperl : $(METAS)
+	touch lastperl $(ALLIN)
 
-eisceacht.pl : eisceacht.in eisceacht.meta.sed gin.meta.sed
-	cat eisceacht.in | sed '/^#/!s/:/\n:/' > eisceacht.in.2
-	($(ECHO) "#!$(PERL)"; $(ECHO) '# Users should modify eisceacht.in, not this file'; $(ECHO) 'while(<>){'; cat eisceacht.in.2 | sed -f gin.meta.sed | sed -f eisceacht.meta.sed; $(ECHO) 'print;'; $(ECHO) '}'; $(ECHO) 'exit;') > eisceacht.pl
-	rm -f eisceacht.in.2
+allperl : $(ALLIN) lastperl
+	$(MAKE) $(ALLPL)
 
 installcheck : FORCE
 	@$(bindir)/gr --iomlan triail | sed "s/^[0-9]*: //" > triail.tmp
@@ -72,11 +76,12 @@ install : all installdirs
 	$(INSTALL_DATA) focail.bs $(pkgdatadir)/focail.bs
 	$(INSTALL_PROGRAM) cuardach $(libexecdir)/cuardach
 	$(INSTALL_PROGRAM) hilite.awk $(libexecdir)/hilite.awk
-	$(INSTALL_PROGRAM) aonchiall.pl $(libexecdir)/aonchiall.pl
-	$(INSTALL_PROGRAM) eisceacht.pl $(libexecdir)/eisceacht.pl
-	$(INSTALL_PROGRAM) rialacha.pl $(libexecdir)/rialacha.pl
+	$(INSTALL_PROGRAM) aonchiall-ga.pl $(libexecdir)/aonchiall-ga.pl
+	$(INSTALL_PROGRAM) eisceacht-ga.pl $(libexecdir)/eisceacht-ga.pl
+	$(INSTALL_PROGRAM) rialacha-ga.pl $(libexecdir)/rialacha-ga.pl
 	$(INSTALL_PROGRAM) gr $(bindir)/gr
 	rm -f gr
+	cd po && $(MAKE) install
 
 installdirs : mkinstalldirs
 	./mkinstalldirs $(bindir) $(pkgdatadir) $(libexecdir)
@@ -87,15 +92,16 @@ uninstall :
 	rm -f $(pkgdatadir)/focail.bs
 	rm -f $(libexecdir)/cuardach
 	rm -f $(libexecdir)/hilite.awk
-	rm -f $(libexecdir)/aonchiall.pl
-	rm -f $(libexecdir)/eisceacht.pl
-	rm -f $(libexecdir)/rialacha.pl
+	rm -f $(libexecdir)/aonchiall-ga.pl
+	rm -f $(libexecdir)/eisceacht-ga.pl
+	rm -f $(libexecdir)/rialacha-ga.pl
 	rm -f $(bindir)/gr
+	cd po && $(MAKE) uninstall
 
 configure: configure.ac
 	autoconf
 
-Makefile gr : Makefile.in gr.in config.status
+Makefile gr : Makefile.in gr.in config.status TEANGACHA
 	./config.status
 	chmod 444 Makefile gr
 
@@ -103,12 +109,17 @@ config.status: configure
 	./config.status --recheck
 
 distclean :
-	$(MAKE) clean
+	cd po && $(MAKE) distclean
+	$(MAKE) topclean
 	rm -f gr config.log config.status Makefile
 
-clean :
+topclean :
 	$(MAKE) semiclean
-	rm -f cuardach cuardach.o rialacha.pl aonchiall.pl eisceacht.pl aparser eparser rparser FOCAIL FOCAIL.all
+	rm -f cuardach cuardach.o rialacha-ga.pl aonchiall-ga.pl eisceacht-ga.pl aparser eparser rparser FOCAIL FOCAIL.all
+
+clean :
+	cd po && $(MAKE) clean
+	$(MAKE) topclean
 
 semiclean :
 	rm -f triail.html cabhair.o cabhair y.tab.* $(LEX_OUTPUT_ROOT).* aonchiall.y eisceacht.y rialacha.y
@@ -148,6 +159,9 @@ dist : FORCE
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/aonchiall.in
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/aonchiall.meta.sed
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/cabhair.c
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/config.guess
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/config.rpath
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/config.sub
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/configure
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/configure.ac
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/COPYING
@@ -170,6 +184,7 @@ dist : FORCE
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/rialacha.meta.sed
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/triail
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/triail.err
+	cd po && $(MAKE) dist
 	gzip $(TARBALL).tar
 	chmod 444 $(TARBALL).tar.gz
 	mv $(TARBALL).tar.gz $(webhome)
@@ -207,19 +222,19 @@ rialacha.y : ponc.in.y
 aparser : aonchiall.y ponc.in.l
 	$(LEX) ponc.in.l
 	$(YACC) -d aonchiall.y
-	$(CC) -c $(CFLAGS) $(LEX_OUTPUT_ROOT).c y.tab.c
+	$(CC) -c $(CFLAGS) $(DEFS) $(LEX_OUTPUT_ROOT).c y.tab.c
 	$(CC) -o aparser $(CFLAGS) $(LEX_OUTPUT_ROOT).o y.tab.o $(LEXLIB)
 
 eparser : eisceacht.y ponc.in.l
 	$(LEX) ponc.in.l
 	$(YACC) -d eisceacht.y
-	$(CC) -c $(CFLAGS) $(LEX_OUTPUT_ROOT).c y.tab.c
+	$(CC) -c $(CFLAGS) $(DEFS) $(LEX_OUTPUT_ROOT).c y.tab.c
 	$(CC) -o eparser $(CFLAGS) $(LEX_OUTPUT_ROOT).o y.tab.o $(LEXLIB)
 
 rparser : rialacha.y ponc.in.l
 	$(LEX) ponc.in.l
 	$(YACC) -d rialacha.y
-	$(CC) -c $(CFLAGS) $(LEX_OUTPUT_ROOT).c y.tab.c
+	$(CC) -c $(CFLAGS) $(DEFS) $(LEX_OUTPUT_ROOT).c y.tab.c
 	$(CC) -o rparser $(CFLAGS) $(LEX_OUTPUT_ROOT).o y.tab.o $(LEXLIB)
 
 poncin : aparser eparser rparser
