@@ -115,7 +115,7 @@
 <E offset="48" fromy="112" fromx="48" toy="112" tox="49" sentence="Mothóidh Pobal Osraí an bheirt laoch sin uathu (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
 <E offset="10" fromy="113" fromx="10" toy="113" tox="23" sentence="Ní amháin bhur dhá chosa, ach nigh bhur lámha!" errortext="bhur dhá chosa" msg="Urú ar iarraidh">
 <E offset="28" fromy="114" fromx="28" toy="114" tox="40" sentence="Déanaigí beart leis de réir bhur briathra." errortext="bhur briathra" msg="Urú ar iarraidh">
-<E offset="0" fromy="115" fromx="0" toy="115" tox="7" sentence="Cé mhéid gealladh a briseadh ar an Indiach bocht?" errortext="Cé mhéid" msg="Foirm neamhchaighdeánach de «mhéad»">
+<E offset="0" fromy="115" fromx="0" toy="115" tox="7" sentence="Cé mhéid gealladh ar briseadh ar an Indiach bocht?" errortext="Cé mhéid" msg="Foirm neamhchaighdeánach de «mhéad»">
 <E offset="24" fromy="116" fromx="24" toy="116" tox="38" sentence="Nach raibh a fhios aige cé mhéad daoine a bhíonn ag éisteacht leis an stáisiún." errortext="cé mhéad daoine" msg="Tá gá leis an leagan uatha anseo">
 <E offset="12" fromy="117" fromx="12" toy="117" tox="27" sentence="Faigh amach cé mhéad salainn a bhíonn i sampla d'uisce." errortext="cé mhéad salainn" msg="Tá gá leis an leagan uatha anseo">
 <E offset="0" fromy="118" fromx="0" toy="118" tox="5" sentence="Cá áit a nochtfadh sé é féin ach i mBostún!" errortext="Cá áit" msg="Réamhlitir «h» ar iarraidh">
