@@ -29,7 +29,9 @@ YACC = @YACC@
 #                     .IN FILE GRAMMAR/PARSER
 ###############################################################################
 
-all : aparser eparser rparser
+all : FORCE
+
+parsers : aparser eparser rparser
 
 aonchiall.y : ponc.in.y
 	cat ponc.in.y | sed "s/_TAIL_MACRO_/result/; s/_RESULT_MACRO_/POSTAG/" > aonchiall.y
