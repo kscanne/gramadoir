@@ -521,10 +521,17 @@ sub tokenize
 sub tokenize_real
 {
 	my ( $self, $sentence ) = @_;
-	$sentence =~ s/([@BDCHARS@][@BDCHARS@@INTCHARS@]*)/<c>$1<\/c>/g;
-	$sentence =~ s/([@INTCHARS@]+)<\/c>/<\/c>$1/g;
-	$sentence =~ s/&<c>(quot|lt|gt|amp)<\/c>;/&$1;/g;
-	return $sentence;
+	my $answer;
+	foreach my $chunk (split / /,$sentence) {
+		unless ($chunk =~ /^(?:(?:https?|ftp):\/\/|www\.)/) {
+			$chunk =~ s/([@BDCHARS@][@BDCHARS@@INTCHARS@]*)/<c>$1<\/c>/g;
+			$chunk =~ s/([@INTCHARS@]+)<\/c>/<\/c>$1/g;
+			$chunk =~ s/&<c>(quot|lt|gt|amp)<\/c>;/&$1;/g;
+		}
+		$answer .= " " if $answer;
+		$answer .= $chunk;
+	}
+	return $answer;
 }
 
 # takes the input TEXT and returns a reference to an array of sentences with 
