@@ -84,36 +84,42 @@ egrep -n '^' | sed "
 		s/[A-Za-z·ÈÌÛ˙¡…Õ”⁄-]\+/<c>&<\/c>/g; 
 		s/<c>\([BDMbdm]\)<\/c>'<c>/<c>\1'/g;
 		s/<c>\([Mm]b\)<\/c>'<c>/<c>\1'/g;
-		s/^\([1-9][0-9]*\):/<line uimhir=\"\1\"\/>/; 
-		s/\([^.][^.][^.][.?!][]\"\')}]*\) [ \t\n]*/\1\n/g" | 
+		s/^\([1-9][0-9]*\):/<line uimhir=\"\1\"> /; 
+		s/\([^.][^.][^.][.?!][]\"\')}]*\) [ \t\n]*/\1 <\/line>\n/g;
+		s/[^.][^.][^.][.?!][]\"\')}]*$/& <\/line>/" |
 		athuimhir | athcheang |
-		sed 's/\(.\)<line uimhir[^>]*>/\1 /g'
+		sed 's/\(.\)<line uimhir[^>]*>/\1/g'
 }
 
-# helper for abairti
+# helper for abairti.  If a sentence starts in the middle of a line,
+# need the line number tag to propagate down to the beginning of this
+# sentence.  Thus, the first chunk below stores the line number markup 
+# in hold space and the second chunk retrieves it and inserts at beginning
 athuimhir()
 {
 sed '
 /^<line uimhir=/ {
 h
-s/^\(<line uimhir=\"[1-9][0-9]*\"\/>\).*$/\1/
+s/^\(<line uimhir=\"[1-9][0-9]*\">\).*$/\1/
 x
 }
 
 /^<line uimhir=/! {
 G
-s/^\(.*\)\n\(<line uimhir=\"[1-9][0-9]*\"\/>\)$/\2\1/
+s/^\(.*\)\n\(<line uimhir=\"[1-9][0-9]*\">\)$/\2 \1/
 }
 
-/^<line uimhir=\"[1-9][0-9]*\"\/>$/d
+/^<line uimhir=\"[1-9][0-9]*\"> *$/d
 '
 }
 
-# helper for abairti
+# helper for abairti.  This is the "complement" to athuimhir, for when
+# a sentence spans across lines.   It needs to be "rejoined" (athcheangailte).
+# onto a single line.
 athcheang()
 {
 sed "
-/[^.][^.][^.][^.][.?!][]\"\')}]*$/ {
+/<\/line>$/ {
 H
 s/^.*$//
 x
@@ -121,7 +127,7 @@ s/\n//g
 s/[ \t][ \t]*/ /g
 }
 
-/[^.][^.][^.][^.][.?!][]\"\')}]*$/! {
+/<\/line>$/! {
 H
 d
 }
@@ -165,7 +171,7 @@ comheadan()
 sed -n '
 /<E/ {
 h
-s/^<line uimhir=\"\([1-9][0-9]*\)\"\/>/echo "\1: /
+s/^<line uimhir=\"\([1-9][0-9]*\)\">/echo "\1:/
 s/<[^>]*>//g
 s/\(["$`]\)/\\\1/g
 s/^echo \\"/echo "/
@@ -186,6 +192,7 @@ s/\n[^<]*</</
 s/>[^<]*$/>/
 s/<\/E>[^<]*<E/<\/E><E/g
 s/<E[^>]*>\([^<]*\)<\/E>/\1|/g
+s/<[^>]*>//g
 s/|$/)"/
 G
 p
@@ -219,12 +226,12 @@ drochchomhad()
 comhad()
 {
 	cat $1 | diutf | 
-		abairti | 
+		abairti |
 		__libexecdir_/cuardach |
-		aonchiall | 
+		aonchiall |
 		rialacha |
 		eisceacht |
-		comheadan | 
+		comheadan |
 		awk "{sub(/myaibhsigh/,\"${AIBHSIGHVAR}\"); print}" | 
 		loganu |
 		/bin/bash -s
