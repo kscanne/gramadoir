@@ -25,7 +25,7 @@ CLAR='An Gramadóir'        # title that prints to screen, not used as filename
 
 # i18n strings; use gettext eventually
 checking='Ag seiceáil'
-notfound='ní a leithéid de chomhad ann'
+notfound='níl a leithéid de chomhad ann'
 isdir='is comhadlann í'
 permissions='cead diúltaithe'
 usage="Úsáid: gr [--help] [--version] [--html] [--xml] [--litriu] [COMHAID]"
@@ -36,6 +36,8 @@ gpl1="Is saorbhogearra an ríomhchlár seo; féach ar an bhunchód le haghaidh"
 gpl2="coinníollacha cóipeála.  Níl baránta AR BITH ann; go fiú níl baránta ann"
 gpl3="d'INDÍOLTACHT nó FEILIÚNACHT DO FHEIDHM AR LEITH, an oiread atá ceadaithe"
 gpl4="de réir dlí."
+unknownopt="rogha anaithnid"
+tryhelp="Bain triail as \`gr --help' chun tuilleadh eolais a fháil."
 
 TAB=`@AWK@ 'BEGIN{printf "\t";}'`
 
@@ -73,6 +75,13 @@ echo "${usage}"
 echo "${stdinhelp}"
 echo
 echo "${bugreports}"
+}
+
+# one argument, the erroneous option passed
+option_error()
+{
+echo "${CLAR}: ${unknownopt} \`${1}'"
+echo "${tryhelp}"
 }
 
 
@@ -306,16 +315,18 @@ do
 	if [ ${1} = "--html" ]
 	then
 		AIBHSIGHVAR="@AWK@ -f @prefix@/libexec/hilite.awk pattern="
-	fi
-
-	if [ ${1} = "--litriu" ]
-	then
-		ACTION=litriu
-	fi
-
-	if [ ${1} = "--xml" ]
-	then
-		ACTION=xml_output
+	else
+		if [ ${1} = "--litriu" ]
+		then
+			ACTION=litriu
+		else
+			if [ ${1} = "--xml" ]
+			then
+				ACTION=xml_output
+			else
+				option_error ${1}
+			fi
+		fi
 	fi
 	shift
 done
