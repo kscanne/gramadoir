@@ -184,7 +184,6 @@ dist : FORCE
 	$(MAKE) ChangeLog
 	$(LN_S) gr ../$(TARBALL)
 	tar cvhf $(TARBALL).tar -C .. $(TARBALL)/ABOUT-NLS
-	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/aclocal.m4
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/aonchiall.meta.sed
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/cabhair.c
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/ChangeLog
