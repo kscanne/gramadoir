@@ -105,26 +105,35 @@ msgstr "Syntax: %s [OPTIONEN] [DATEIEN]"
 
 #: gr.in:41
 msgid "    --litriu       write misspelled words to standard output"
-msgstr "    --litriu       falsch geschriebene Wörter auf Standardausgabe ausgeben"
+msgstr ""
+"    --litriu       falsch geschriebene Wörter auf Standardausgabe ausgeben"
 
 #: gr.in:42
 msgid "    --html         produce HTML output for viewing in a web browser"
 msgstr "    --html         Ausgabe im HTML-Format erzeugen"
 
 #: gr.in:43
-msgid "    --xml          write tagged XML stream to standard output, for debugging"
-msgstr "    --xml          Ausgabe im XML-Format zu Zwecken der Fehlersuche erzeugen"
+msgid ""
+"    --xml          write tagged XML stream to standard output, for debugging"
+msgstr ""
+"    --xml          Ausgabe im XML-Format zu Zwecken der Fehlersuche erzeugen"
 
 #: gr.in:44
 msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
-msgstr "    --iomlan       alle Fehler protokollieren; ~/.neamhshuim wird nicht gelesen"
+msgstr ""
+"    --iomlan       alle Fehler protokollieren; ~/.neamhshuim wird nicht "
+"gelesen"
 
 #: gr.in:45
-msgid "    --teanga=XX    specify the language of the text to be checked (default=ga)"
-msgstr "    --teanga=XX    Sprache des zu überprüfenden Textes (Voreinstellung=ga)"
+msgid ""
+"    --teanga=XX    specify the language of the text to be checked "
+"(default=ga)"
+msgstr ""
+"    --teanga=XX    Sprache des zu überprüfenden Textes (Voreinstellung=ga)"
 
 #: gr.in:46
-msgid "    --ionchod=ENC  specify the character encoding of the text to be checked"
+msgid ""
+"    --ionchod=ENC  specify the character encoding of the text to be checked"
 msgstr "    --ionchod=ENC  Zeichensatz des zu überprüfenden Textes"
 
 #: gr.in:47
@@ -137,7 +146,8 @@ msgstr "    --version      Versionsnummer anzeigen"
 
 #: gr.in:49
 msgid "If no file is given, read from standard input."
-msgstr "Falls keine Datei angegeben wird, wird von der Standardeingabe gelesen."
+msgstr ""
+"Falls keine Datei angegeben wird, wird von der Standardeingabe gelesen."
 
 #: gr.in:50
 msgid "Send bug reports to <%s>."
@@ -150,11 +160,16 @@ msgid "version %s"
 msgstr "Version %s"
 
 #: gr.in:52
-msgid "This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law."
+msgid ""
+"This is free software; see the source for copying conditions.  There is NO"
+"\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
+"PURPOSE,\\nto the extent permitted by law."
 msgstr ""
 "Dieses Programm ist freie Software; die Bedingungen, unter denen Sie es\n"
-"kopieren dürfen, finden Sie in dem Quellcode. Es ist OHNE IRGENDEINE GARANTIE,\n"
-"sogar ohne die implizite Garantie der MARKTREIFE oder der VERWENDBARKEIT FÜR\n"
+"kopieren dürfen, finden Sie in dem Quellcode. Es ist OHNE IRGENDEINE "
+"GARANTIE,\n"
+"sogar ohne die implizite Garantie der MARKTREIFE oder der VERWENDBARKEIT "
+"FÜR\n"
 "EINEN BESTIMMTEN ZWECK."
 
 #: gr.in:53
@@ -187,7 +202,8 @@ msgstr "An dieser Stelle besser \\/\\1\\/ benutzen"
 
 #: gr.in:60
 msgid "Non-standard form: perhaps use \\/\\1\\/?"
-msgstr "Nicht dem Standard entsprechende Form: vielleicht besser \\/\\1\\/ benutzen?"
+msgstr ""
+"Nicht dem Standard entsprechende Form: vielleicht besser \\/\\1\\/ benutzen?"
 
 #: gr.in:61
 msgid "Initial mutation missing"
