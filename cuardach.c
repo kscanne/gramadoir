@@ -375,19 +375,30 @@ my_isupper (const char x)
 int
 make_all_lowercase (const char *word, char *lowered)
 {
-  int i = 0, retval = 0;
+  int i = 0, j = 0, retval = 0;
+
+  if ((word[0] == 'n' || word[0] == 't') && my_isupper (word[1]))
+    {
+      lowered[0] = word[0];
+      lowered[1] = '-';
+      lowered[2] = my_tolower (word[1]);
+      retval = 1;
+      i = 2;
+      j = 3;
+    }
   while (word[i] != 0)
     {
       if (my_isupper (word[i]))
 	{
-	  lowered[i] = my_tolower (word[i]);
+	  lowered[j] = my_tolower (word[i]);
 	  retval = 1;
 	}
       else
-	lowered[i] = word[i];
+	lowered[j] = word[i];
       i++;
+      j++;
     }
-  lowered[i] = 0;
+  lowered[j] = 0;
   return retval;
 }
 
