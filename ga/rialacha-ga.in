@@ -297,6 +297,7 @@ sin sin:OK
 # converse of CB p.16 #7, no lenition after present/future copula
 #. An fhéidir le duine ar bith eile breathnú ar mo script?
 <VCOP>[Aa]n</VCOP> <[AN]>LENITED</[AN]>:NISEIMHIU
+<VCOP>[Aa]n</VCOP> <A>[Dd]há</A>:OK
 # OD dhá; do this before "aon + non-noun" rule below for better error message
 #. Ní bhíonn aon dhá chlár as an chrann céanna mar a chéile go díreach.
 <A>[Aa]on</A> [Dd]há:NISEIMHIU
@@ -940,6 +941,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Ii]onsar</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # converse of CB p.16 #7, no lenition after present/future copula
 <VCOP>[Ii]s</VCOP> <[AN]>LENITED</[AN]>:NISEIMHIU
+<VCOP>[Ii]s</VCOP> <A>[Dd]há</A>:OK
 # CB p.14 Note; extended to all POS 7 Jan 2005
 #. Is tuar dóchais é an méid dul chun cinn atá déanta le bhlianta beaga.
 <S>[Ll]e</S> <[^Y]>LENITED</[^Y]>:NISEIMHIU
@@ -1022,6 +1024,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # converse of CB p.16 #7, no lenition after present/future copula
 #. Más mhían leat tuilleadh eolais a fháil, scríobh chugainn.
 <VCOP>[Mm]ás</VCOP> <[AN]>LENITED</[AN]>:NISEIMHIU
+<VCOP>[Mm]ás</VCOP> <A>[Dd]há</A>:OK
 # OD méad
 #. Tá caitheamh na hola ag dul i méad i gcónaí.
 [Mm]h?éad:CAIGHDEAN{méid, mhéid}
@@ -1058,6 +1061,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <VCOP>[Mm]urar</VCOP> LENITEDF:BACHOIR{murarbh}
 # converse of CB p.16 #7, no lenition after present/future copula
 <VCOP>[Mm]ura</VCOP> <[AN]>LENITED</[AN]>:NISEIMHIU
+<VCOP>[Mm]ura</VCOP> <A>[Dd]há</A>:OK
 # CB p.113
 <VCOP>[Mm]urab</VCOP> INITIALCONSONANT:BACHOIR{mura}
 # CB p.14 Note
@@ -1143,6 +1147,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # converse of CB p.16 #7, no lenition after present/future copula
 #. Nach ghasta a fuair tú í!
 <VCOP>[Nn]ach</VCOP> <[AN]>LENITED</[AN]>:NISEIMHIU
+<VCOP>[Nn]ach</VCOP> <A>[Dd]há</A>:OK
 # CB p.20 #1.c, p.76 #8.c (even in plural)
 #. Rinneadh an roinnt don naoi treibh go leith ar chrainn.
 <[^Y]>[Nn]aoi</[^Y]> <N>UNECLIPSED</N>:URU
@@ -1213,6 +1218,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 #. Ní dheireadh aon duine acu aon rud liom.
 #. Ní fhéidir dóibh duine a shaoradh ón mbás.
 <VCOP>[Nn]í</VCOP> <[AN]>LENITED</[AN]>:NISEIMHIU
+<VCOP>[Nn]í</VCOP> <A>[Dd]há</A>:OK
 # CB pp.70-71
 #. Bhí an méid sin airgid níba luachmhar dúinn ná maoin an domhain.
 #. An raibh duine ar bith acu ní ba bhocht ná eisean?
@@ -1336,6 +1342,7 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 [Oo]s bhur:OK
 # converse of CB p.16 #7, no lenition after present/future copula
 <VCOP>[Óó]s</VCOP> <[AN]>LENITED</[AN]>:NISEIMHIU
+<VCOP>[Óó]s</VCOP> <A>[Dd]há</A>:OK
 # OD pé
 #. Uaidh féin, b'fhéidir, pé é féin.
 <P>[Pp]é</P> <P>INITIALVOWEL</P>:PREFIXH
@@ -1850,6 +1857,8 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 #############################################################################
 #   Nouns appearing only in the dative; see CB p.46 #13, p.55 #6 (Éirinn)
 #############################################################################
+# stronger message in some cases first:
+<N>g?[Cc]h?ianaibh</N>:INPHRASE{ó chianaibh}
 #. An lá dar gcionn nochtadh gealltanas an Taoisigh sa nuachtán.
 #. Conas a bheadh Éirinn agus Meiriceá difriúil?
 <ND>ANYTHING</ND>:DATIVE
@@ -2006,7 +2015,6 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 <N>g[Cc]éin</N>:INPHRASE{i gcéin}
 <N>g[Cc]oitinne</N>:INPHRASE{i gcoitinne}
 <N>g[Cc]rích</N>:INPHRASE{i gcrích}
-<N>g?[Cc]h?ianaibh</N>:INPHRASE{ó chianaibh}
 <N>g?[Cc]h?iolar</N>:INPHRASE{ciolar chiot}
 <U>[Cc]hiot</U>:INPHRASE{ciolar chiot}
 <N>g?[Cc]h?olgsheasamh</N>:INPHRASE{ina cholgsheasamh}
