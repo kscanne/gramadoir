@@ -13,21 +13,34 @@
 #   "NLP tools for the ${2} language"
 if [ $# -ne 3 ]
 then
-	echo "Usage: buildperl xx name_english [y|n]"
-	echo "Use makefile target \"perl\" or \"perldb\"."
+	echo "Usage: buildperl xx name_english [y|n] [native|utf8]"
+	echo "   y iff the hash tables should be rebuilt/reinstalled"
+	echo "You should be using this via the makefile target \"perl\" or \"perldb\"."
 	exit 1
 fi
 if echo "${1}" | grep '[A-Z]' > /dev/null
 then
 	echo "The ISO-639 code should be given in lowercase"
-	echo "Use makefile target \"perl\" or \"perldb\"."
+	echo "You should be using this via the makefile target \"perl\" or \"perldb\"."
 	exit 1
 fi
 TEANGA="${1}"
+UPPERTEANGA=`echo "${TEANGA}" | tr "[:lower:]" "[:upper:]"`
 NATIVE=`grep "^${TEANGA} " TEANGACHA | sed "s/^${TEANGA}  *\([^ ]*\).*/\1/"`
+TARGET=${NATIVE}
+if [ "${4}" = "utf8" ]
+then
+	TARGET="utf8"
+	sed -i '/#.*binmode/s/#//g' Lingua-${UPPERTEANGA}-Gramadoir/Makefile.PL
+else
+	sed -i '/^[^#]*binmode/s/^/#/' Lingua-${UPPERTEANGA}-Gramadoir/Makefile.PL
+fi
 CHARSPEC=`grep "^${TEANGA} " TEANGACHA | sed "s/^${TEANGA}  *[^ ]*  *//"`
-BDCHARS=`echo "${CHARSPEC}" | sed "s/ .*//" | iconv -f "${NATIVE}" -t utf8`
-INTCHARS=`echo "${CHARSPEC}" | sed "s/^[^ ]*  *//" | iconv -f "${NATIVE}" -t utf8`
+BDCHARS=`echo "${CHARSPEC}" | sed "s/ .*//" | iconv -f "${NATIVE}" -t "${TARGET}"`
+INTCHARS=`echo "${CHARSPEC}" | sed "s/^[^ ]*  *\([^ ]*\) .*/\1/" | iconv -f "${NATIVE}" -t "${TARGET}"`
+REST=`echo "${CHARSPEC}" | sed "s/^[^ ]*  *[^ ]*  *//"`
+CAPITALS=`echo "${REST}" | sed 's/ .*//'`
+LOWERS=`echo "${REST}" | sed 's/^[^ ]*  *//'`
 
 #  perl scripts to be inserted into Gramadoir.pm...
 MOIRFEOLAIOCHT=`mktemp`
@@ -37,14 +50,13 @@ EISCEACHT=`mktemp`
 GIORR=`mktemp`
 RIALACHA=`mktemp`
 UNIGRAM=`mktemp`
-UPPERTEANGA=`echo "${TEANGA}" | tr "[:lower:]" "[:upper:]"`
-cat morph-${TEANGA}.txt | sed '/^#/d' | sed '/^$/d' | sed 's/#.*$//' | sed 's#^\([^\t ]*\)[ \t]*\([^\t ]*\)[ \t]*\([^\t ]*\)#\tif ( $current =~ m/\1/ ) {\n\t\t($newcurrent = $current) =~ s/\1/\2/;\n\t\t$ans = $self->tag_recurse($original, $newcurrent, ($level > \3) ? $level : \3);\n\t\treturn $ans if $ans;\n\t}\n#' | sed 's/\/""\//\/\//' | iconv -f "${NATIVE}" -t utf8 > ${MOIRFEOLAIOCHT}
-cat aonchiall-${TEANGA}.pl | egrep '^s/' | sed 's/^/\t/' | iconv -f "${NATIVE}" -t utf8 > ${AONCHIALL}
-cat comhshuite-${TEANGA}.pl | egrep '^s/' | sed 's/^/\t/' | iconv -f "${NATIVE}" -t utf8 > ${COMHSHUITE}
-cat eisceacht-${TEANGA}.pl | egrep '^s/' | sed 's/^/\t/' | iconv -f "${NATIVE}" -t utf8 > ${EISCEACHT}
-cat giorr-${TEANGA} | tr -d '\t' | egrep '^s/' | sed 's/^/\t/' | sed 's/\$charset/${BDCHARS}${INTCHARS}/g' | iconv -f "${NATIVE}" -t utf8 > ${GIORR}
-cat rialacha-${TEANGA}.pl | egrep '^s/' | sed 's/^/\t/' | iconv -f "${NATIVE}" -t utf8 > ${RIALACHA}
-cat unigram-${TEANGA}.pl | egrep '^s/' | sed 's/^/\t/' | iconv -f "${NATIVE}" -t utf8 > ${UNIGRAM}
+cat morph-${TEANGA}.txt | sed '/^#/d' | sed '/^$/d' | sed 's/#.*$//' | sed 's#^\([^\t ]*\)[ \t]*\([^\t ]*\)[ \t]*\([^\t ]*\)#\tif ( $current =~ m/\1/ ) {\n\t\t($newcurrent = $current) =~ s/\1/"\2"/e;\n\t\t$ans = $self->tag_recurse($original, $newcurrent, ($level > \3) ? $level : \3);\n\t\treturn $ans if $ans;\n\t}\n#' | sed 's/""""/""/' | sed 's/\\[Ll]\$\([1-9]\)/".mylc($\1)."/g' | iconv -f "${NATIVE}" -t "${TARGET}" > ${MOIRFEOLAIOCHT}
+cat aonchiall-${TEANGA}.pl | egrep '^s/' | sed 's/^/\t/' | iconv -f "${NATIVE}" -t "${TARGET}" > ${AONCHIALL}
+cat comhshuite-${TEANGA}.pl | egrep '^s/' | sed 's/^/\t/' | iconv -f "${NATIVE}" -t "${TARGET}" > ${COMHSHUITE}
+cat eisceacht-${TEANGA}.pl | egrep '^s/' | sed 's/^/\t/' | iconv -f "${NATIVE}" -t "${TARGET}" > ${EISCEACHT}
+cat giorr-${TEANGA} | tr -d '\t' | egrep '^s/' | sed 's/^/\t/' | sed 's/\$charset/@BDCHARS@@INTCHARS@/g' | iconv -f "${NATIVE}" -t "${TARGET}" > ${GIORR}
+cat rialacha-${TEANGA}.pl | egrep '^s/' | sed 's/^/\t/' | iconv -f "${NATIVE}" -t "${TARGET}" > ${RIALACHA}
+cat unigram-${TEANGA}.pl | egrep '^s/' | sed 's/^/\t/' | iconv -f "${NATIVE}" -t "${TARGET}" > ${UNIGRAM}
 
 # ensure these are rebuilt upon "perl Makefile.PL" below
 if [ "${3}" = "y" ]
@@ -56,18 +68,21 @@ fi
 sed -i "s/@TEANGA@/${UPPERTEANGA}/g" Lingua-${UPPERTEANGA}-Gramadoir/Makefile.PL
 
 # 3grams.bs
-egrep '[0-9][0-9]' /usr/local/share/crubadan/${TEANGA}/3GRAMS | sed 's/ *\([0-9]*\) \(.*\)/\2 \1/' | iconv -f "${NATIVE}" -t utf8 > Lingua-${UPPERTEANGA}-Gramadoir/share/3grams.bs
+egrep '[0-9][0-9]' /usr/local/share/crubadan/${TEANGA}/3GRAMS | sed 's/ *\([0-9]*\) \(.*\)/\2 \1/' | iconv -f "${NATIVE}" -t "${TARGET}" > Lingua-${UPPERTEANGA}-Gramadoir/share/3grams.bs
 
 # pos.txt
 LEXICON="Lingua-${UPPERTEANGA}-Gramadoir/share/pos.bs"
 rm -f ${LEXICON}
-cat pos-${TEANGA}.txt | iconv -f "${NATIVE}" -t utf8 > ${LEXICON}
+cat pos-${TEANGA}.txt | iconv -f "${NATIVE}" -t "${TARGET}" > ${LEXICON}
 chmod 444 ${LEXICON}
 
 # focail.bs
 LEXICON="Lingua-${UPPERTEANGA}-Gramadoir/share/focail.bs"
 rm -f ${LEXICON}
-cat focail-${TEANGA}.bs | sed '1d' | perl -e '
+cat focail-${TEANGA}.bs | sed '1d' | 
+if [ "${TARGET}" = "utf8" ]
+then
+perl -e '
 use Encode;
 # convert only word lines, not grammatical bytes!
 binmode(STDIN);
@@ -77,19 +92,22 @@ print Encode::encode( "utf8", $_ );
 my $next=<STDIN>;
 print $next;
 }
-' > ${LEXICON}
+' 
+else
+	cat
+fi > ${LEXICON}
 chmod 444 ${LEXICON}
 
 # eile.bs
 LEXICON="Lingua-${UPPERTEANGA}-Gramadoir/share/eile.bs"
 rm -f ${LEXICON}
-cat eile-${TEANGA}.bs | sed '1d' | iconv -f "${NATIVE}" -t utf8 > ${LEXICON}
+cat eile-${TEANGA}.bs | sed '1d' | iconv -f "${NATIVE}" -t "${TARGET}" > ${LEXICON}
 chmod 444 ${LEXICON}
 
 # earraidi.bs
 LEXICON="Lingua-${UPPERTEANGA}-Gramadoir/share/earraidi.bs"
 rm -f ${LEXICON}
-cat earraidi-${TEANGA}.bs | iconv -f "${NATIVE}" -t utf8 > ${LEXICON}
+cat earraidi-${TEANGA}.bs | iconv -f "${NATIVE}" -t "${TARGET}" > ${LEXICON}
 chmod 444 ${LEXICON}
 
 # Languages for Localization
@@ -107,10 +125,6 @@ sed -i "s/@TEANGA@/${UPPERTEANGA}/g" ${LANGPREFIX}.pm ${LANGPREFIX}/*.pm
 MODULE="Lingua-${UPPERTEANGA}-Gramadoir/lib/Lingua/${UPPERTEANGA}/Gramadoir.pm"
 rm -f "${MODULE}"
 cat 'Gramadoir.pm.in' |
-sed "s/@TEANGA@/${UPPERTEANGA}/g" |
-sed "s/@NAME_ENGLISH@/${2}/g" |
-sed "s/@BDCHARS@/${BDCHARS}/g" |
-sed "s/@INTCHARS@/${INTCHARS}/g" |
 sed "
 /^# morphology code goes here/r ${MOIRFEOLAIOCHT}
 /^# aonchiall code goes here/r ${AONCHIALL}
@@ -119,11 +133,18 @@ sed "
 /^# giorr code goes here/r ${GIORR}
 /^# rialacha code goes here/r ${RIALACHA}
 /^# unigram code goes here/r ${UNIGRAM}
-" | sed '/^# [a-z]* code goes here/d' > "${MODULE}"
+" | 
+sed "s/@TEANGA@/${UPPERTEANGA}/g" |
+sed "s/@NAME_ENGLISH@/${2}/g" |
+sed "s/@BDCHARS@/${BDCHARS}/g" |
+sed "s/@INTCHARS@/${INTCHARS}/g" |
+sed "s/@CAPITALS@/${CAPITALS}/g" |
+sed "s/@LOWERS@/${LOWERS}/g" |
+sed '/^# [a-z]* code goes here/d' > "${MODULE}"
 chmod 444 "${MODULE}"
 
 # gram-xx target
-SCRIPT="Lingua-${UPPERTEANGA}-Gramadoir/gram-${TEANGA}"
+SCRIPT="Lingua-${UPPERTEANGA}-Gramadoir/gram-${TEANGA}.pl"
 rm -f "${SCRIPT}"
 cat gram.pl |
 sed "s/@TEANGA@/${UPPERTEANGA}/g" |
