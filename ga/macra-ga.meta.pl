@@ -27,6 +27,7 @@ s/NONVOWELNONF/(?:[^aeiouAEIOUαινσϊΑΙΝΣΪfF]|[Ff]h?[lr])[^<]+/g;
 s/UNECLIPSEDDT/(?:[tT]|d[^Tt'])[^<]+/g;
 s/UNECLIPSEDCONS/(?:[cfptCFPT]|d[^Tt']|g[^Cc]|b[^Pph]|bh[^fF])[^<]+/g;
 s/UNECLIPSED/(?:[aeiouAEIOUαινσϊΑΙΝΣΪcfptCFPT]|d[^Tt']|g[^Cc]|b[^Pph]|bh[^fF])[^<]*/g;
+s/ECLIPSEDVOWEL/n(?:-[aeiouαινσϊ]|[AEIOUΑΙΝΣΪ])[^<]*/g;
 s/ECLIPSED/(?:n(?:-[aeiouαινσϊ]|[AEIOUΑΙΝΣΪ])|d[Tt]|g[Cc]|b[Pp]|bh[fF])[^<]*/g;
 s/UNLENITABLE/(?:[^BbCcDdFfGgMmPpTt]|[Ss][^lnraeiouαινσϊ])[^<]*/g;
 s/UNLENITEDBCFGMP/(?:[BbCcFfGgMmPp][^h']|bh[fF])[^<]*/g;
