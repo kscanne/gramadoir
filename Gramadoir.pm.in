@@ -143,6 +143,8 @@ sub new {
 		if (open (DATAFILE, File::Spec->catfile( $homedir, '.neamhshuim' ))) {
 			while (<DATAFILE>) {
 				chomp;
+				carp gettext('%s: `%s\' corrupted at %s\n', 
+					gettext('An Gramadoir'), ".neamhshuim", $.) if /[^@BDCHARS@@INTCHARS@]/;
 				$IGNORE{$_}++;
 			}
 		}
@@ -153,17 +155,18 @@ sub new {
 
 sub gettext
 {
-	my $string = shift;
-	my $arg = shift;
+	my ( $string, @rest ) = @_;
 
 	$string =~ s/\[/~[/g;
 	$string =~ s/\]/~]/g;
 	$string =~ s/\%s/[_1]/;
+	$string =~ s/\%s/[_2]/;
+	$string =~ s/\%s/[_3]/;
 	$string =~ s/\\n$/\n/;
 	$string =~ s#\\/([@BDCHARS@@INTCHARS@]+)\\/#/$1/#;
 	$string =~ s#\\/\\([1-9])\\/#/[_$1]/#;
 
-	return $lh->maketext($string, $arg);
+	return $lh->maketext($string, @rest);
 }
 
 ##############################################################################
@@ -228,7 +231,8 @@ sub add_grammar_tags
 	my ( $self, $word, $grambytes ) = @_;
 
 	my $ans;
-	if ( length( $grambytes ) == 1) {
+	my $num = length( $grambytes );
+	if ( $num == 1) {
 		my $tag = $POS{ord($grambytes)};
 		if (defined($tag)) {
 			$tag =~ m/^<([A-Z])/;
@@ -240,7 +244,7 @@ sub add_grammar_tags
 			$ans = "<U>$word</U>";
 		}
 	}
-	else {
+	elsif ( $num > 1 ) {
 		$ans = "<B><Z>";
 		foreach my $byte (split //, $grambytes) {
 			my $tag = $POS{ord($byte)};
@@ -254,6 +258,10 @@ sub add_grammar_tags
 			}
 		}
 		$ans = $ans."</Z>".$word."</B>";
+	}
+	else {
+		carp gettext('%s: no grammar codes: %s\n',
+			gettext('An Gramadoir'), "x");    # recode word?
 	}
 
 	return $ans;
