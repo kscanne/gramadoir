@@ -1,0 +1,48 @@
+#!/bin/sh
+# Copyright (C) 2004 Kevin P. Scannell
+# This is free software; see the file COPYING for copying conditions.  There is
+# NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+TEANGA=${1}
+GRAMDIR=${2}
+UPPERTEANGA=`echo "${TEANGA}" | tr "[:lower:]" "[:upper:]"`
+FOCAILTEMP=`mktemp`
+cat lexicon-${TEANGA}.txt | perl ${GRAMDIR}/count.pl freq-${TEANGA}.txt | sort -n -r > ${FOCAILTEMP}
+rm -f focail?-${TEANGA}.bs.pre
+egrep '^0' ${FOCAILTEMP} | sed 's/^0 //' > focail6-${TEANGA}.bs.pre
+egrep '^1 ' ${FOCAILTEMP} | sed 's/^1 //' > focail5-${TEANGA}.bs.pre
+sed -i '/^[01] /d' ${FOCAILTEMP}
+sed -i 's/^[0-9]* //' ${FOCAILTEMP}
+TOTALLINES=`wc -l ${FOCAILTEMP} | sed 's/ .*//'`
+CHUNK=$(($TOTALLINES / 5))
+LINENUM=1
+NEXTLINE=1
+for FILENUM in 0 1 2 3 4
+do
+	FILENAME=focail${FILENUM}-${TEANGA}.bs.pre
+	NEXTLINE=$(($LINENUM + $CHUNK))
+	sed -n "${LINENUM},${NEXTLINE}p" ${FOCAILTEMP} >> ${FILENAME}
+	PREV=`sed -n "${NEXTLINE}p" ${FOCAILTEMP} | sed 's/ .*//'`
+	LINENUM=$((${NEXTLINE}+1))
+	sed -n "${LINENUM},$((${NEXTLINE}+20))p" ${FOCAILTEMP} |
+	while read x
+	do
+		WORD=`echo "${x}" | sed 's/ .*//'`	
+		if [ ${PREV} = ${WORD} ]
+		then
+			echo "${x}" >> ${FILENAME}
+		else
+			echo "${x}" >> focail$((${FILENUM}+1))-${TEANGA}.bs.pre
+		fi
+	done
+	LINENUM=$((${NEXTLINE}+21))
+done
+for FILENUM in 0 1 2 3 4 5 6
+do
+	TARGETFILE="Lingua-${UPPERTEANGA}-Gramadoir/share/focail${FILENUM}.bs"
+	rm -f ${TARGETFILE}
+	cat focail${FILENUM}-${TEANGA}.bs.pre | LC_COLLATE=POSIX sort -u -k1,1 -k2,2n | ${GRAMDIR}/cabhair.pl --compress > ${TARGETFILE}
+	chmod 644 ${TARGETFILE}
+	rm -f focail${FILENUM}-${TEANGA}.bs.pre
+done
+rm -f ${FOCAILTEMP}
