@@ -30,10 +30,20 @@ delete @ENV{ 'IFS', 'CDPATH', 'ENV', 'BASH_ENV' };
 
 my $q = new CGI;
 # /^(['áéíóúÁÉÍÓÚ\w\s,.!?-]+)$/ is better
-my( $ionchur ) = $q->param( "foirm_ionchur" ) =~ /^(.+)$/;
-my( $teanga ) = $q->param( "teanga" ) =~ /^([a-z][a-z]_[A-Z][A-Z])$/;
+my $pure_input = $q->param( "foirm_ionchur" );
+my $ionchur;
+my $pure_lang = $q->param( "teanga" );
+my $teanga;
 
-$lh = Lingua::GA::Gramadoir::Languages->get_handle($teanga);
+( $ionchur ) = $pure_input =~ /^(.+)$/ if defined $pure_input;
+( $teanga ) = $pure_lang =~ /^([a-z][a-z]_[A-Z][A-Z])$/ if defined $pure_lang;
+
+if (defined $teanga) {
+	$lh = Lingua::GA::Gramadoir::Languages->get_handle($teanga);
+}
+else {
+	$lh = Lingua::GA::Gramadoir::Languages->get_handle();
+}
 die "Problem setting language handle" unless $lh;
 
 # rightfully this file should go in po/POTFILES.in
@@ -70,6 +80,8 @@ if (defined($ionchur)) {
 else {
 	$ionchur = '<<empty input>>';
 }
+
+$teanga = '<<no language>>' unless defined $teanga;
 
 print $q->hr;
 print $q->end_html;
