@@ -50,14 +50,19 @@ notfound=`@SH_GETTEXT@ "There is no such file."`
 isdir=`@SH_GETTEXT@ "Is a directory"`
 permissions=`@SH_GETTEXT@ "Permission denied"`
 usage1=`@SH_GETTEXT@ "Usage: %s [OPTIONS] [FILES]"`
-usage2=`@SH_GETTEXT@ "    --litriu       write misspelled words to standard output"`
-usage3=`@SH_GETTEXT@ "    --html         produce HTML output for viewing in a web browser"`
-usage4=`@SH_GETTEXT@ "    --xml          write tagged XML stream to standard output, for debugging"`
-usage5=`@SH_GETTEXT@ "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"`
-usage8=`@SH_GETTEXT@ "    --teanga=XX    specify the language of the text to be checked (default=ga)"`
-usage9=`@SH_GETTEXT@ "    --ionchod=ENC  specify the character encoding of the text to be checked"`
-usage6=`@SH_GETTEXT@ "    --help         display this help and exit"`
-usage7=`@SH_GETTEXT@ "    --version      output version information and exit"`
+usage2=`@SH_GETTEXT@ "Options for end-users:"`
+userop1=`@SH_GETTEXT@ "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"`
+userop2=`@SH_GETTEXT@ "    --ionchod=ENC  specify the character encoding of the text to be checked"`
+userop3=`@SH_GETTEXT@ "    --litriu       write misspelled words to standard output"`
+userop4=`@SH_GETTEXT@ "    --teanga=XX    specify the language of the text to be checked (default=ga)"`
+userop5=`@SH_GETTEXT@ "    --help         display this help and exit"`
+userop6=`@SH_GETTEXT@ "    --version      output version information and exit"`
+usage3=`@SH_GETTEXT@ "Options for developers:"`
+devop1=`@SH_GETTEXT@ "    --html         produce HTML output for viewing in a web browser"`
+devop2=`@SH_GETTEXT@ "    --ilchiall     report unresolved ambiguities, sorted by frequency"`
+devop3=`@SH_GETTEXT@ "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"`
+devop4=`@SH_GETTEXT@ "    --no-unigram   do not resolve ambiguous parts of speech by frequency"`
+devop5=`@SH_GETTEXT@ "    --xml          write tagged XML stream to standard output, for debugging"`
 stdinhelp=`@SH_GETTEXT@ "If no file is given, read from standard input."`
 bugreports=`@SH_GETTEXT@ "Send bug reports to <%s>."`
 versionstring=`@SH_GETTEXT@ "version %s"`
@@ -141,13 +146,19 @@ helpout()
 printf "${usage1}\n" "${EXECUTABLE}"
 echo
 echo "${usage2}"
+echo "${userop1}"
+echo "${userop2}"
+echo "${userop3}"
+echo "${userop4}"
+echo "${userop5}"
+echo "${userop6}"
+echo
 echo "${usage3}"
-echo "${usage4}"
-echo "${usage5}"
-echo "${usage8}"
-echo "${usage9}"
-echo "${usage6}"
-echo "${usage7}"
+echo "${devop1}"
+echo "${devop2}"
+echo "${devop3}"
+echo "${devop4}"
+echo "${devop5}"
 echo
 echo "${stdinhelp}"
 echo
@@ -390,6 +401,37 @@ xml_output()
 		eisceacht
 }
 
+nounigram_output()
+{
+		unchecked_xml |
+		aonchiall | aonchiall
+}
+
+ambiguity_report()
+{
+		nounigram_output | 
+		tee /tmp/amb_rep.xml |
+		sed 's/<B>/\n<B>/g' | @EGREP@ '^<B>' | 
+		sed 's/^<B><Z>\([^Z]*\)<\/Z>.*/\1/' | 
+		sort | uniq -c | sort -r -n |
+		while read ambig
+		do
+			echo "${ambig}"
+			JUSTTAGS=`echo "${ambig}" | sed 's/^[^<]*//'`
+			@EGREP@ -e "${JUSTTAGS}" /tmp/amb_rep.xml | sed "s@<B><Z>${JUSTTAGS}@\n&@g" | @EGREP@ -e "^<B><Z>${JUSTTAGS}</Z>" | sed "s@^<B><Z>${JUSTTAGS}<\/Z>\([^<]*\)<\/B>.*@\1@" | sort | uniq -c | sort -r -n | head -n 15 | sed "s/^/       /"
+		done
+		rm -f /tmp/amb_rep.xml
+}
+
+create_unigram_file()
+{
+		nounigram_output |
+		unigram |
+		sed 's/<[A-Z]/\n&/g' | grep "^<[ACDF-W]" | grep -v "/>" |
+		sed "s/>.*/>/" | sort | uniq -c | sort -r -n |
+		sed 's/^[^<]*//'
+}
+
 # This is the main sequence of filters for checking a given file
 comhad()
 {
@@ -447,7 +489,7 @@ do
 		"--ionchod" )
 			IONCHOD="${OPTARG}"
 		;;
-		"--help" | "--version" | "--html" | "--xml" | "--litriu" | "--iomlan" )
+		"--help" | "--version" | "--html" | "--ilchiall" | "--minic" | "--no-unigram" | "--xml" | "--litriu" | "--iomlan" )
 			unwanted_arg "${JUSTOPT}" >&2
 			exit 1
 		;;
@@ -480,6 +522,15 @@ do
 		;;
 		"--xml" )
 			ACTION=xml_output
+		;;
+		"--ilchiall" )
+			ACTION=ambiguity_report
+		;;
+		"--minic" )
+			ACTION=create_unigram_file
+		;;
+		"--no-unigram" )
+			ACTION=nounigram_output
 		;;
 		"--iomlan" )
 			USEIGNORE="noignore"
