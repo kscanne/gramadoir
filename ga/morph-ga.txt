@@ -178,7 +178,7 @@ acht$				ach		0
 ^aith				ath		1
 ^eadar				idir		1
 ^dh'				d'		1
-^h-				h		1
+^h-				h		1    # CO p.126
 ^n-([AEIOUÁÉÍÓÚ])		n$1		1    # CO p.125
 ^t-([AEIOUÁÉÍÓÚ])		t$1		1    # CO p.125
 ^ana-				an-		1    # ana-eagraithe
@@ -274,6 +274,9 @@ anns$				ann		1
 ([A-ZÁÉÍÓÚ])			\l$1		2	# pRíOMhach
 ([eiéí][^aeiouáéíóú]+)íní?$	$1		0	# diminutive
 ([aouáóú][^aeiouáéíóú]+)íní?$	$1		2	# diminutive
+#  the next rule handles a lot of stuff, including unwanted hyphens
+#  after prefixes (since the prefix rules will apply after recursing)
+#  and similarly unwanted hyphens before emphatic endings (CO p.126)
 (.)-				$1		1       # ró-bheag -> róbheag
 # delenite, de-eclipse.  
 # Only helps when we recurse and find a standard unmutated prefix above!
