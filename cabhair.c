@@ -60,6 +60,7 @@ main (int argc, char *argv[])
 	      strcpy (prev, token);
 	    }
 	}
+      printf ("%c", unusedcode);
     }
   else
     {
