@@ -59,13 +59,13 @@
 <E offset="6" fromy="57" fromx="6" toy="57" tox="24" sentence="Tá na lachain slachtmhara ar eitilt." errortext="lachain slachtmhara" msg="Séimhiú ar iarraidh">
 <E offset="53" fromy="58" fromx="53" toy="58" tox="54" sentence="Mhair cuid mhór dár sinsir céad caoga bliain ó shin (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
 <E offset="46" fromy="59" fromx="46" toy="59" tox="47" sentence="Tá sé le cloisteáil sna meáin gach seachtain (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
-<E offset="14" fromy="60" fromx="14" toy="60" tox="26" sentence="An oíche sin, sular chuaigh sé a chodladh, chuir sé litir fhada dom." errortext="sular chuaigh" msg="RELATIVE">
-<E offset="13" fromy="61" fromx="13" toy="61" tox="25" sentence="Tá mioneolas faoinar rinne sé ansin." errortext="faoinar rinne" msg="RELATIVE">
-<E offset="0" fromy="62" fromx="0" toy="62" tox="12" sentence="Níor rinneadh a leithéid le fada agus ní raibh aon slat tomhais acu." errortext="Níor rinneadh" msg="RELATIVE">
-<E offset="35" fromy="63" fromx="35" toy="63" tox="49" sentence="Teastaíonn uaidh an scéal a insint sula ngeobhaidh sé bás." errortext="sula ngeobhaidh" msg="RELATIVE">
-<E offset="26" fromy="64" fromx="26" toy="64" tox="31" sentence="Tá folúntas sa chomhlacht ina tá mé ag obair faoi láthair." errortext="ina tá" msg="RELATIVE">
-<E offset="0" fromy="65" fromx="0" toy="65" tox="12" sentence="Ní gheobhaidh an mealltóir nathrach aon táille." errortext="Ní gheobhaidh" msg="RELATIVE">
-<E offset="10" fromy="66" fromx="10" toy="66" tox="13" sentence="Cad é mar a tá tú?" errortext="a tá" msg="RELATIVE">
+<E offset="14" fromy="60" fromx="14" toy="60" tox="26" sentence="An oíche sin, sular chuaigh sé a chodladh, chuir sé litir fhada dom." errortext="sular chuaigh" msg="Tá gá leis an fhoirm spleách anseo">
+<E offset="13" fromy="61" fromx="13" toy="61" tox="25" sentence="Tá mioneolas faoinar rinne sé ansin." errortext="faoinar rinne" msg="Tá gá leis an fhoirm spleách anseo">
+<E offset="0" fromy="62" fromx="0" toy="62" tox="12" sentence="Níor rinneadh a leithéid le fada agus ní raibh aon slat tomhais acu." errortext="Níor rinneadh" msg="Tá gá leis an fhoirm spleách anseo">
+<E offset="35" fromy="63" fromx="35" toy="63" tox="49" sentence="Teastaíonn uaidh an scéal a insint sula ngeobhaidh sé bás." errortext="sula ngeobhaidh" msg="Tá gá leis an fhoirm spleách anseo">
+<E offset="26" fromy="64" fromx="26" toy="64" tox="31" sentence="Tá folúntas sa chomhlacht ina tá mé ag obair faoi láthair." errortext="ina tá" msg="Tá gá leis an fhoirm spleách anseo">
+<E offset="0" fromy="65" fromx="0" toy="65" tox="12" sentence="Ní gheobhaidh an mealltóir nathrach aon táille." errortext="Ní gheobhaidh" msg="Tá gá leis an fhoirm spleách anseo">
+<E offset="10" fromy="66" fromx="10" toy="66" tox="13" sentence="Cad é mar a tá tú?" errortext="a tá" msg="Tá gá leis an fhoirm spleách anseo">
 <E offset="16" fromy="67" fromx="16" toy="67" tox="22" sentence="Maidin lá ar na mhárach thug a fhear gaoil cuairt air." errortext="mhárach" msg="Ní úsáidtear an focal seo ach san abairtín /arna mhárach/ de ghnáth">
 <E offset="52" fromy="68" fromx="52" toy="68" tox="60" sentence="Tá an Rialtas tar éis áit na Gaeilge i saol na tíre a ceistiú." errortext="a ceistiú" msg="Séimhiú ar iarraidh">
 <E offset="52" fromy="69" fromx="52" toy="69" tox="53" sentence="Ach sin scéal eile mar a déarfadh an té a déarfadh (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
