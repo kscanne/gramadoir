@@ -42,8 +42,8 @@ export LC_COLLATE="C"
 EXECUTABLE="${0##/*/}"
 HELPCOMMAND="${EXECUTABLE} --help"
 
-# All i18n strings collected here.  See gramadoir.pot for some 
-# translation hints.
+# TRANSLATORS: Please leave untranslated, but add an acute accent to the
+# "o" in "Gramadoir" if available in your character set and encoding.
 CLAR=`@SH_GETTEXT@ "An Gramadoir"`
 checking=`@SH_GETTEXT@ "Currently checking %s"`
 notfound=`@SH_GETTEXT@ "There is no such file."`
@@ -51,6 +51,8 @@ isdir=`@SH_GETTEXT@ "Is a directory"`
 permissions=`@SH_GETTEXT@ "Permission denied"`
 usage1=`@SH_GETTEXT@ "Usage: %s [OPTIONS] [FILES]"`
 usage2=`@SH_GETTEXT@ "Options for end-users:"`
+
+# TRANSLATORS: ~/.neamhshuim is an "ignore file" like those with spellcheckers
 userop1=`@SH_GETTEXT@ "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"`
 userop2=`@SH_GETTEXT@ "    --ionchod=ENC  specify the character encoding of the text to be checked"`
 userop3=`@SH_GETTEXT@ "    --litriu       write misspelled words to standard output"`
@@ -58,11 +60,27 @@ userop4=`@SH_GETTEXT@ "    --teanga=XX    specify the language of the text to be
 userop5=`@SH_GETTEXT@ "    --help         display this help and exit"`
 userop6=`@SH_GETTEXT@ "    --version      output version information and exit"`
 usage3=`@SH_GETTEXT@ "Options for developers:"`
+
+# TRANSLATORS: "disambiguation" is a term from natural language processing.
+# Here it means the process of deciding, for a given word with several
+# possible parts of speech (noun, verb, etc.), the correct part of speech
+# given the context.  Brill's algorithm is "unsupervised" because it relies
+# only on statistics gathered from texts which have not been tagged in advance.
 devop1=`@SH_GETTEXT@ "    --brill        find disambiguation rules via Brill's unsupervised algorithm"`
 devop2=`@SH_GETTEXT@ "    --html         produce HTML output for viewing in a web browser"`
 devop3=`@SH_GETTEXT@ "    --ilchiall     report unresolved ambiguities, sorted by frequency"`
 devop4=`@SH_GETTEXT@ "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"`
+
+# TRANSLATORS: By default, if there is no rule in the disambiguation module
+# for selecting the correct part of speech of an ambiguous word, the program
+# chooses the part of speech with the highest frequency.  This is sometimes
+# called "unigram" tagging.   The --no-unigram option turns this behavior off.
 devop5=`@SH_GETTEXT@ "    --no-unigram   do not resolve ambiguous parts of speech by frequency"`
+
+# TRANSLATORS: The grammar checker works by piping the input text
+# through a sequence of filters which add XML markup indicating
+# important grammatical information.  The --xml option displays the
+# marked up file as an aid in debugging.
 devop6=`@SH_GETTEXT@ "    --xml          write tagged XML stream to standard output, for debugging"`
 stdinhelp=`@SH_GETTEXT@ "If no file is given, read from standard input."`
 bugreports=`@SH_GETTEXT@ "Send bug reports to <%s>."`
@@ -73,17 +91,30 @@ unknownopt=`@SH_GETTEXT@ "unrecognized option %s"`
 missingarg=`@SH_GETTEXT@ "option %s requires an argument"`
 unwanted=`@SH_GETTEXT@ "option %s does not allow an argument"`
 unsupported=`@SH_GETTEXT@ "Language %s is not supported."`
+
+# TRANSLATORS: "conversion" here means conversion between character encodings
 iconvproblem=`@SH_GETTEXT@ "conversion from %s is not supported"`
-ANAITHNIDSRL=`@SH_GETTEXT@ "Unknown word (ignoring remainder in this sentence)"`
 ANAITHNID=`@SH_GETTEXT@ "Unknown word"`
+
+# TRANSLATORS: only two unknown words are reported per sentence
+ANAITHNIDSRL=`@SH_GETTEXT@ "Unknown word (ignoring remainder in this sentence)"`
 NEAMHCHOIT=`@SH_GETTEXT@ "Valid word but extremely rare in actual usage"`
 BACHOIR=`@SH_GETTEXT@ "You should use \/\1\/ here instead"`
 CAIGHDEAN=`@SH_GETTEXT@ "Non-standard form: perhaps use \/\1\/?"`
+
+# TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
 CLAOCHLU=`@SH_GETTEXT@ "Initial mutation missing"`
+
+# TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
+# It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
 NISEIMHIU=`@SH_GETTEXT@ "Unnecessary lenition"`
 PREFIXH=`@SH_GETTEXT@ "Prefix \/h\/ missing"`
 PREFIXT=`@SH_GETTEXT@ "Prefix \/t\/ missing"`
 SEIMHIU=`@SH_GETTEXT@ "Lenition missing"`
+
+# TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
+# initial consonants in Irish.  It is indicated in writing by the addition
+# of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
 URU=`@SH_GETTEXT@ "Eclipsis missing"`
 DUBAILTE=`@SH_GETTEXT@ "Repeated word"`
 CUPLA=`@SH_GETTEXT@ "Unusual combination of words"`
@@ -398,7 +429,8 @@ unchecked_xml()
 {
 		diutf | 
 		abairti |
-		LC_CTYPE="${OLDCTYPE}" @prefix@/libexec/cuardach "${USEIGNORE}" "${CLAR}" "${TEANGA}"
+		LC_CTYPE="${OLDCTYPE}" @prefix@/libexec/cuardach "${USEIGNORE}" "${CLAR}" "${TEANGA}" |
+		sed "/^<.xml/s/ISO-8859-1/${NATIVE}/"
 }
 
 # This replaces "comhad" when "--xml" options is given
@@ -476,7 +508,7 @@ p
 # This replaces "comhad" above when "--litriu" option is given
 litriu()
 {
-	unchecked_xml | litriu_comheadan
+	unchecked_xml | litriu_comheadan | toutf
 }
 
 # used by Brill
@@ -509,7 +541,7 @@ done) > "${UNAMBIGFILE}"
 cat "${1}" | sed 's/^<Z>//' | sed 's/<\/Z>//' |
 while read ambiguity
 do
-	echo "${ambiguity}<NOTHING>" | sed "s/</\n</g" | sed "s/\/>/>/" | egrep "^<" |
+	echo "${ambiguity}<NOTHING>" | grep -o '<[A-Z][^>]*>' | sed 's/\/>/>/' |
 	while read individual
 	do
 		egrep -e "${individual}" "${UNAMBIGFILE}"
