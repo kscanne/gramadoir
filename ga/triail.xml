@@ -62,10 +62,10 @@
 <E offset="45" fromy="60" fromx="45" toy="60" tox="46" sentence="Baintear feidhm as chun aicídí súl a mhaolú (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
 <E offset="14" fromy="61" fromx="14" toy="61" tox="21" sentence="Má shuíonn tú ag bhord le flaith, tabhair faoi deara go cúramach céard atá leagtha romhat." errortext="ag bhord" msg="Séimhiú gan ghá">
 <E offset="14" fromy="62" fromx="14" toy="62" tox="26" sentence="Bláthaíonn sé amhail bhláth an mhachaire." errortext="amhail bhláth" msg="Séimhiú gan ghá">
-<E offset="0" fromy="63" fromx="0" toy="63" tox="8" sentence="An bainim sult as bás an drochdhuine?" errortext="An bainim" msg="Urú ar iarraidh">
-<E offset="52" fromy="64" fromx="52" toy="64" tox="53" sentence="An éireodh níos fearr leo dá mba mar sin a bheidís (OK)?" errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
-<E offset="40" fromy="65" fromx="40" toy="65" tox="41" sentence="An ndeachaigh tú ag iascaireacht inniu (OK)?" errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
-<E offset="53" fromy="66" fromx="53" toy="66" tox="54" sentence="An raibh aon bhealach praiticiúil eile chun na hInd (OK)?" errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
+<E offset="40" fromy="63" fromx="40" toy="63" tox="41" sentence="An ndeachaigh tú ag iascaireacht inniu (OK)?" errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
+<E offset="53" fromy="64" fromx="53" toy="64" tox="54" sentence="An raibh aon bhealach praiticiúil eile chun na hInd (OK)?" errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
+<E offset="0" fromy="65" fromx="0" toy="65" tox="8" sentence="An bainim sult as bás an drochdhuine?" errortext="An bainim" msg="Urú ar iarraidh">
+<E offset="52" fromy="66" fromx="52" toy="66" tox="53" sentence="An éireodh níos fearr leo dá mba mar sin a bheidís (OK)?" errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
 <E offset="10" fromy="67" fromx="10" toy="67" tox="21" sentence="Ní féidir an Gaeltacht a choinneáil mar réigiún Gaeilge go náisiúnta gan athrú bunúsach." errortext="an Gaeltacht" msg="Séimhiú ar iarraidh">
 <E offset="7" fromy="68" fromx="7" toy="68" tox="18" sentence="I gcás An Comhairle Ealaíon ní mór é seo a dhéanamh." errortext="An Comhairle" msg="Séimhiú ar iarraidh">
 <E offset="0" fromy="69" fromx="0" toy="69" tox="6" sentence="An bean sin, tá sí ina múinteoir." errortext="An bean" msg="Séimhiú ar iarraidh">
@@ -105,13 +105,13 @@
 <E offset="0" fromy="102" fromx="0" toy="102" tox="7" sentence="Cé mhéid gealladh a briseadh ar an Indiach bocht?" errortext="Cé mhéid" msg="Foirm neamhchaighdeánach de /mhéad/">
 <E offset="24" fromy="103" fromx="24" toy="103" tox="38" sentence="Nach raibh a fhios aige cé mhéad daoine a bhíonn ag éisteacht leis an stáisiún." errortext="cé mhéad daoine" msg="Tá gá leis an leagan uatha anseo">
 <E offset="12" fromy="104" fromx="12" toy="104" tox="25" sentence="Faigh amach cé mhéad saile a bhíonn i sampla d'uisce." errortext="cé mhéad saile" msg="Ní gá leis an leagan ginideach anseo">
-<E offset="0" fromy="105" fromx="0" toy="105" tox="10" sentence="Cá cuireann tú do thréad ar féarach?" errortext="Cá cuireann" msg="Urú ar iarraidh">
-<E offset="0" fromy="106" fromx="0" toy="106" tox="11" sentence="Cá úsáidfear an mhóin?" errortext="Cá úsáidfear" msg="Urú ar iarraidh">
-<E offset="0" fromy="107" fromx="0" toy="107" tox="5" sentence="Cá áit a nochtfadh sé é féin ach i mBostún!" errortext="Cá áit" msg="Réamhlitir /h/ ar iarraidh">
-<E offset="0" fromy="108" fromx="0" toy="108" tox="6" sentence="Cá chás dúinn bheith ag máinneáil thart anseo?" errortext="Cá chás" msg="Séimhiú gan ghá">
-<E offset="35" fromy="109" fromx="35" toy="109" tox="36" sentence="Cá mhinice ba riachtanach dó stad (OK)?" errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
-<E offset="0" fromy="110" fromx="0" toy="110" tox="11" sentence="Cá n-oibrigh an t-údar sular imigh sí le ceol?" errortext="Cá n-oibrigh" msg="Ba chóir duit /cár/ a úsáid anseo">
-<E offset="27" fromy="111" fromx="27" toy="111" tox="28" sentence="Cá raibh na rudaí go léir (OK)?" errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
+<E offset="0" fromy="105" fromx="0" toy="105" tox="5" sentence="Cá áit a nochtfadh sé é féin ach i mBostún!" errortext="Cá áit" msg="Réamhlitir /h/ ar iarraidh">
+<E offset="0" fromy="106" fromx="0" toy="106" tox="6" sentence="Cá chás dúinn bheith ag máinneáil thart anseo?" errortext="Cá chás" msg="Séimhiú gan ghá">
+<E offset="35" fromy="107" fromx="35" toy="107" tox="36" sentence="Cá mhinice ba riachtanach dó stad (OK)?" errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
+<E offset="0" fromy="108" fromx="0" toy="108" tox="11" sentence="Cá n-oibrigh an t-údar sular imigh sí le ceol?" errortext="Cá n-oibrigh" msg="Ba chóir duit /cár/ a úsáid anseo">
+<E offset="27" fromy="109" fromx="27" toy="109" tox="28" sentence="Cá raibh na rudaí go léir (OK)?" errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
+<E offset="0" fromy="110" fromx="0" toy="110" tox="10" sentence="Cá cuireann tú do thréad ar féarach?" errortext="Cá cuireann" msg="Urú ar iarraidh">
+<E offset="0" fromy="111" fromx="0" toy="111" tox="11" sentence="Cá úsáidfear an mhóin?" errortext="Cá úsáidfear" msg="Urú ar iarraidh">
 <E offset="0" fromy="112" fromx="0" toy="112" tox="6" sentence="Cár fág tú eisean?" errortext="Cár fág" msg="Ba chóir duit /cá/ a úsáid anseo">
 <E offset="0" fromy="113" fromx="0" toy="113" tox="8" sentence="Cár bhfág tú eisean?" errortext="Cár bhfág" msg="Séimhiú ar iarraidh">
 <E offset="19" fromy="114" fromx="19" toy="114" tox="20" sentence="Cár fágadh eisean (OK)?" errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
@@ -223,10 +223,10 @@
 <E offset="15" fromy="220" fromx="15" toy="220" tox="26" sentence="Ceapadh mise i mo bolscaire." errortext="mo bolscaire" msg="Séimhiú ar iarraidh">
 <E offset="37" fromy="221" fromx="37" toy="221" tox="45" sentence="Tá mé ag sclábhaíocht ag iarraidh mo dhá gasúr a chur trí scoil." errortext="dhá gasúr" msg="Séimhiú ar iarraidh">
 <E offset="15" fromy="222" fromx="15" toy="222" tox="35" sentence="Agus anois bhí mórsheisear iníonacha ag an sagart." errortext="mórsheisear iníonacha" msg="Tá gá leis an leagan uatha anseo">
-<E offset="0" fromy="223" fromx="0" toy="223" tox="10" sentence="Mura tagann aon duine i gcabhair orainn, rachaimid anonn chugaibh." errortext="Mura tagann" msg="Urú ar iarraidh">
-<E offset="4" fromy="224" fromx="4" toy="224" tox="15" sentence="Fiú mura éiríonn liom, beidh mé ábalta cabhrú ar bhonn deonach." errortext="mura éiríonn" msg="Urú ar iarraidh">
-<E offset="0" fromy="225" fromx="0" toy="225" tox="9" sentence="Mura dtuig siad é, nach dóibh féin is mó náire?" errortext="Mura dtuig" msg="Ba chóir duit /murar/ a úsáid anseo">
-<E offset="35" fromy="226" fromx="35" toy="226" tox="36" sentence="Mura bhfuair, sin an chraobh aige (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
+<E offset="0" fromy="223" fromx="0" toy="223" tox="9" sentence="Mura dtuig siad é, nach dóibh féin is mó náire?" errortext="Mura dtuig" msg="Ba chóir duit /murar/ a úsáid anseo">
+<E offset="35" fromy="224" fromx="35" toy="224" tox="36" sentence="Mura bhfuair, sin an chraobh aige (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
+<E offset="0" fromy="225" fromx="0" toy="225" tox="10" sentence="Mura tagann aon duine i gcabhair orainn, rachaimid anonn chugaibh." errortext="Mura tagann" msg="Urú ar iarraidh">
+<E offset="4" fromy="226" fromx="4" toy="226" tox="15" sentence="Fiú mura éiríonn liom, beidh mé ábalta cabhrú ar bhonn deonach." errortext="mura éiríonn" msg="Urú ar iarraidh">
 <E offset="73" fromy="227" fromx="73" toy="227" tox="74" sentence="Murach bheith mar sin, bheadh sé dodhéanta dó oibriú na huaireanta fada (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
 <E offset="0" fromy="228" fromx="0" toy="228" tox="17" sentence="Murar chruthaítear lá agus oíche... teilgim uaim sliocht Iacóib." errortext="Murar chruthaítear" msg="Ba chóir duit /mura/ a úsáid anseo">
 <E offset="0" fromy="229" fromx="0" toy="229" tox="15" sentence="Murar gcruthaigh mise lá agus oíche... teilgim uaim sliocht Iacóib." errortext="Murar gcruthaigh" msg="Séimhiú ar iarraidh">
@@ -243,19 +243,19 @@
 <E offset="34" fromy="240" fromx="34" toy="240" tox="40" sentence="Níor thúisce greim bia caite aige ná thug sé an tuath air féin." errortext="ná thug" msg="Séimhiú gan ghá">
 <E offset="43" fromy="241" fromx="43" toy="241" tox="50" sentence="Is fearr de bhéile luibheanna agus grá leo ná mhart méith agus gráin leis." errortext="ná mhart" msg="Séimhiú gan ghá">
 <E offset="41" fromy="242" fromx="41" toy="242" tox="42" sentence="Is fearr an bás ná bheith beo ar dhéirc (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
-<E offset="0" fromy="243" fromx="0" toy="243" tox="12" sentence="Nach bainfidh mé uaidh an méid a ghoid sé uaim?" errortext="Nach bainfidh" msg="Urú ar iarraidh">
-<E offset="32" fromy="244" fromx="32" toy="244" tox="33" sentence="Nach raibh dóthain eolais aige (OK)?" errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
+<E offset="32" fromy="243" fromx="32" toy="243" tox="33" sentence="Nach raibh dóthain eolais aige (OK)?" errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
+<E offset="0" fromy="244" fromx="0" toy="244" tox="12" sentence="Nach bainfidh mé uaidh an méid a ghoid sé uaim?" errortext="Nach bainfidh" msg="Urú ar iarraidh">
 <E offset="23" fromy="245" fromx="23" toy="245" tox="33" sentence="Rinneadh an roinnt don naoi treibh go leith ar cranna." errortext="naoi treibh" msg="Urú ar iarraidh">
 <E offset="44" fromy="246" fromx="44" toy="246" tox="57" sentence="Tháinig na bróga chomh fada siar le haimsir Naomh Phádraig féin." errortext="Naomh Phádraig" msg="Séimhiú gan ghá">
 <E offset="0" fromy="247" fromx="0" toy="247" tox="7" sentence="Nár breá liom claíomh a bheith agam i mo ghlac!" errortext="Nár breá" msg="Séimhiú ar iarraidh">
 <E offset="0" fromy="248" fromx="0" toy="248" tox="13" sentence="Nár bhfreagair sé thú, focal ar fhocal." errortext="Nár bhfreagair" msg="Séimhiú ar iarraidh">
 <E offset="43" fromy="249" fromx="43" toy="249" tox="54" sentence="Feicimid gur de dheasca a n-easumhlaíochta nárbh féidir leo dul isteach ann." errortext="nárbh féidir" msg="Séimhiú ar iarraidh">
 <E offset="0" fromy="250" fromx="0" toy="250" tox="12" sentence="Ní fuaireamar puinn eile tuairisce air i ndiaidh sin." errortext="Ní fuaireamar" msg="Urú ar iarraidh">
-<E offset="0" fromy="251" fromx="0" toy="251" tox="11" sentence="Ní féadfaidh a gcuid airgid ná óir iad a shábháil." errortext="Ní féadfaidh" msg="Séimhiú ar iarraidh">
-<E offset="34" fromy="252" fromx="34" toy="252" tox="35" sentence="Ní bhfaighidh tú aon déirce uaim (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
-<E offset="33" fromy="253" fromx="33" toy="253" tox="34" sentence="Ní deir sé é seo le haon ghráin (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
-<E offset="0" fromy="254" fromx="0" toy="254" tox="12" sentence="Ní chuireadar aon áthas ar Mhac Dara." errortext="Ní chuireadar" msg="Ba chóir duit /níor/ a úsáid anseo">
-<E offset="34" fromy="255" fromx="34" toy="255" tox="35" sentence="Ní dúirt sé cad a bhí déanta acu (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
+<E offset="0" fromy="251" fromx="0" toy="251" tox="12" sentence="Ní chuireadar aon áthas ar Mhac Dara." errortext="Ní chuireadar" msg="Ba chóir duit /níor/ a úsáid anseo">
+<E offset="34" fromy="252" fromx="34" toy="252" tox="35" sentence="Ní dúirt sé cad a bhí déanta acu (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
+<E offset="0" fromy="253" fromx="0" toy="253" tox="11" sentence="Ní féadfaidh a gcuid airgid ná óir iad a shábháil." errortext="Ní féadfaidh" msg="Séimhiú ar iarraidh">
+<E offset="34" fromy="254" fromx="34" toy="254" tox="35" sentence="Ní bhfaighidh tú aon déirce uaim (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
+<E offset="33" fromy="255" fromx="33" toy="255" tox="34" sentence="Ní deir sé é seo le haon ghráin (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
 <E offset="0" fromy="256" fromx="0" toy="256" tox="5" sentence="Ní iad sin do phíopaí ar an tábla!" errortext="Ní iad" msg="Réamhlitir /h/ ar iarraidh">
 <E offset="23" fromy="257" fromx="23" toy="257" tox="26" sentence="Bhí an méid sin airgid níba luachmhar dúinn ná maoin an domhain." errortext="níba" msg="Ba chóir duit an bhreischéim a úsáid anseo">
 <E offset="27" fromy="258" fromx="27" toy="258" tox="31" sentence="An raibh duine ar bith acu ní ba bhocht ná eisean?" errortext="ní ba" msg="Ba chóir duit an bhreischéim a úsáid anseo">
@@ -309,9 +309,9 @@
 <E offset="25" fromy="306" fromx="25" toy="306" tox="36" sentence="Tá seacht lampa air agus seacht píopa ar gach ceann díobh." errortext="seacht píopa" msg="Urú ar iarraidh">
 <E offset="50" fromy="307" fromx="50" toy="307" tox="61" sentence="Tá ar a laghad ceithre ní sa litir a chuir scaoll sna oifigigh." errortext="sna oifigigh" msg="Réamhlitir /h/ ar iarraidh">
 <E offset="31" fromy="308" fromx="31" toy="308" tox="41" sentence="Soláthraíonn an Roinn seisiúin sna Gaeilge labhartha do na mic léinn." errortext="sna Gaeilge" msg="Ba chóir duit /sa, san/ a úsáid anseo">
-<E offset="30" fromy="309" fromx="30" toy="309" tox="43" sentence="Iompróidh siad thú lena lámha sula bhuailfeá do chos in aghaidh cloiche." errortext="sula bhuailfeá" msg="Urú ar iarraidh">
-<E offset="0" fromy="310" fromx="0" toy="310" tox="15" sentence="Sula sroicheadar an bun arís, bhí an oíche ann agus chuadar ar strae." errortext="Sula sroicheadar" msg="Ba chóir duit /sular/ a úsáid anseo">
-<E offset="74" fromy="311" fromx="74" toy="311" tox="75" sentence="Sula ndearna sé amhlaidh, más ea, léirigh sé a chreidiúint san fhoireann (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
+<E offset="0" fromy="309" fromx="0" toy="309" tox="15" sentence="Sula sroicheadar an bun arís, bhí an oíche ann agus chuadar ar strae." errortext="Sula sroicheadar" msg="Ba chóir duit /sular/ a úsáid anseo">
+<E offset="74" fromy="310" fromx="74" toy="310" tox="75" sentence="Sula ndearna sé amhlaidh, más ea, léirigh sé a chreidiúint san fhoireann (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
+<E offset="30" fromy="311" fromx="30" toy="311" tox="43" sentence="Iompróidh siad thú lena lámha sula bhuailfeá do chos in aghaidh cloiche." errortext="sula bhuailfeá" msg="Urú ar iarraidh">
 <E offset="4" fromy="312" fromx="4" toy="312" tox="15" sentence="Ach sular sroich sé, dúirt sí: &quot;Dúnaigí an doras air!&quot;" errortext="sular sroich" msg="Séimhiú ar iarraidh">
 <E offset="45" fromy="313" fromx="45" toy="313" tox="51" sentence="Chuir iad ina suí mar a raibh onóir acu thar an cuid eile a fuair cuireadh." errortext="an cuid" msg="Séimhiú ar iarraidh">
 <E offset="9" fromy="314" fromx="9" toy="314" tox="17" sentence="Timpeall trí uaire a chloig ina dhiaidh sin tháinig an bhean isteach." errortext="trí uaire" msg="Ba chóir duit /huaire/ a úsáid anseo">
