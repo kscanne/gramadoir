@@ -11,6 +11,7 @@ then
 fi
 make cabhair
 cp aonchiall-en.in aonchiall-${1}.in
+cp comhshuite-en.in comhshuite-${1}.in
 cp cuardach-en.c cuardach-${1}.c
 sed -i "s/_en/_${1}/g" cuardach-${1}.c
 echo "0" > eile-${1}.bs
