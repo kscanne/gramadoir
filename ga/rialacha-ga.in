@@ -95,14 +95,25 @@ sin sin:OK
 #   note in previous batch that prefix h on other tags or on non-imperative V
 #   is handled by spelling...
 # using NMCS vs. nothing in next rule is faster and avoids false positive
-# with t-léine, etc.
+# with t-léine, etc.  Macro means "prefix t on a vowel"
 #. Tá ceacht stairiúil uathúil do chuairteoirí san t-ionad seo.
 <NMCS>PREFIXEDT</NMCS>:NITEE
+#  note that this exception permits "leis an t-ainm", etc. so such
+#  examples need to be trapped as errors under the appropriate prepositions
 #. Faightear an t-ainm isteach faoin tír freisin (OK).
 <T>[Aa]n</T> <E><NMCS>PREFIXEDT</NMCS></E>:OK
 # corpus exception
 #. Cén t-ainm atá air (OK)?
 <Q>[Cc]én</Q> <E><NMCS>PREFIXEDT</NMCS></E>:OK
+# CB p.23 #9,10; most of the time these NITEE's are caught as spelling errors!
+#. Aistríodh é go tSualainnis, Gearmáinis, agus Fraincis.
+<N>INITIALTS</N>:NITEE
+#. Cén chaoi a n-aimsíonn scoil an tseirbhís seo (OK)?
+<T>[Aa]n</T> <E><NFCS>INITIALTS</NFCS></E>:OK
+#. Tá sonraí ann faoin tslí ina n-iarrtar taifid faoin Acht um Shaoráil Faisnéise (OK).
+<S>FUSEDPREP</S> <E><NFCS>INITIALTS</NFCS></E>:OK
+#. Bhí imní ag teacht ar dheartháir an tsagairt (OK).
+<T>[Aa]n</T> <E><NMGS>INITIALTS</NMGS></E>:OK
 # CB p.18-19 converse of #11-13
 #. In Éirinn chaitheann breis is 30 faoin gcéad de mhná toitíní.
 #. Chuirfear in iúl do dhaoine gurb é sin an aidhm atá againn.
@@ -195,6 +206,8 @@ sin sin:OK
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. An bhfuil aon uachtar reoite ar an cuntar?
 <S>[Aa][grs]</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
+# CB p.22 #8.a
+<S>[Aa][grs]</S> <T>an</T> <NMCS>PREFIXEDT</NMCS>:NITEE
 # CB p.14 Note
 #. Má shuíonn tú ag bhord le flaith, tabhair faoi deara go cúramach céard atá leagtha romhat.
 <S>[Aa][gs]</S> <N>LENITED</N>:NISEIMHIU
@@ -261,9 +274,20 @@ sin sin:OK
 # CB p.8 #4
 #. Tá dhá shiombail ag an bharr gach leathanaigh.
 <T>ANYTHING</T> <NC>ANYTHING</NC> <A>gach</A> <NG>ANYTHING</NG>:ONEART
+# OD dhá; do this before "aon + non-noun" rule below for better error message
+#. Ní bhíonn aon dhá chlár as an chrann céanna mar a chéile go díreach.
+<A>[Aa]on</A> [Dd]há:NISEIMHIU
 # CB p.13 #3.c, p.76 #8.b
 #. Ní bheidh aon buntáiste againn orthu sin.
 h?[Aa]on <N>UNLENITEDBCFGMP</N>:SEIMHIU
+# corpus rule; compare MacL00 p.115 on including "cheann" after "aon"
+# no "haon" b/c of "a haon a chlog", etc.
+#. Rogha aon de na focail a tháinig i d'intinn.
+[Aa]on <[^N]>ANYTHING</[^N]>:CUPLA
+#. Ná hith aon arán gabhála mar aon léi (OK).
+[Mm]ar <E>[Aa]on <[DOS]>INITIALL</[DOS]>:OK
+#. Freagair aon dá cheann ar bith díobh seo a leanas (OK).
+[Aa]on dá:OK
 # CB p.132 #5, OD ar^5
 # never applies since aonchiall only resolves "ar" as <Q> before VPAST
 #<Q>[Aa]r</Q> <VNOTPAST>ANYTHING</VNOTPAST>:BACHOIR{an}
@@ -416,6 +440,8 @@ g?[Cc]h?eithre <N>[Ss]heachtain</N>:BACHOIR{seachtaine}
 # CB p.14 Note; "~ bheith' not in corpus so no exception
 #. Níl tú do do sheoladh chuig dhaoine a labhraíonn teanga dhothuigthe.
 <S>[Cc]huig</S> <N>LENITED</N>:NISEIMHIU
+# CB p.22 #8.a
+<S>[Cc]huig</S> <T>an</T> <NMCS>PREFIXEDT</NMCS>:NITEE
 # CB p.14 Note
 [Cc]hun <N>LENITED</N>:NISEIMHIU
 #. Tiocfaidh deontas faoin alt seo chun bheith iníoctha (OK).
@@ -503,8 +529,6 @@ n?[Dd]h?eich <N>[Ss]eachtain</N>:BACHOIR{seachtaine}
 # OD dhá^1
 #. Is léir nach bhfuil an dhá theanga ar chomhchéim lena chéile.
 <T>[Aa]n</T> [Dd]há:NISEIMHIU
-#. Ní bhíonn aon dhá chlár as an chrann céanna mar a chéile go díreach.
-<A>[Aa]on</A> [Dd]há:NISEIMHIU
 #. Tionóladh an chéad dhá chomórtas i nGaoth Dobhair.
 <A>[Cc]h?éad</A> [Dd]há:NISEIMHIU
 # CB p.6 #2
@@ -693,6 +717,8 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. Tá do scrios chomh leathan leis an farraige.
 <S>[Ll]eis</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
+# CB p.22 #8.a
+<S>[Ll]eis</S> <T>an</T> <NMCS>PREFIXEDT</NMCS>:NITEE
 # CB p.84 #8 keep before following
 <D>[Ll]enár</D> dhá <N>UNECLIPSED</N>:URU
 # CB p.84 #8
@@ -769,6 +795,11 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <T>[Nn]a</T> <NGS>ECLIPSED</NGS>:NIURU
 #. Athdhéantar na snáithe i ngach ceann de na curaclaim seo.
 <T>[Nn]a</T> <NCS>ANYTHING</NCS>:BACHOIR{an}
+# Literary refs, OF81 m.sh. "An Tiarna Dia na Slua" and "Béal Átha na Slua"
+# Short for "na Sluagh" genitive plural
+<T>na</T> <NCS>Slua</NCS>:OK
+# Gaelscoil/Bóthar/Pobal/Ceantar ~ ~
+<T>na</T> <NCS>bhFál</NCS>:OK
 # CB p.24 #11.d
 #. Ná iompaígí chun na n-íol, agus ná dealbhaígí déithe de mhiotal.
 [Nn]á <V>INITIALVOWEL</V>:PREFIXH
@@ -936,6 +967,8 @@ h?[Oo]ocht <N>[Ss]eachtain</N>:BACHOIR{seachtaine}
 # CB p.13 #4.a
 #. Is gaiste é eagla roimh daoine.
 <S>[Rr]oimh</S> <N>UNLENITED</N>:SEIMHIU
+# CB p.22 #8.a
+<S>[Rr]oimh</S> <T>an</T> <NMCS>PREFIXEDT</NMCS>:NITEE
 # CB p.6 #2 <=>
 #. An bhfuil aon uachtar reoite agat sa oighear?
 <S>[Ss]a</S> INITIALVOWELORF:BACHOIR{san}
@@ -1026,6 +1059,8 @@ h?[Oo]ocht <N>[Ss]eachtain</N>:BACHOIR{seachtaine}
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. Chuir iad ina suí mar a raibh onóir acu thar an cuid eile a fuair cuireadh.
 [Tt]har <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
+# CB p.22 #8.a
+<S>[Tt]har</S> <T>an</T> <NMCS>PREFIXEDT</NMCS>:NITEE
 # CB p.24 #11.a.x
 #. Timpeall trí uaire a chloig ina dhiaidh sin tháinig an bhean isteach.
 [Tt]rí uaire?:BACHOIR{huaire}
@@ -1061,6 +1096,8 @@ d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</
 # CB p.6 #2 _singular_ article only; corpus
 #. Feidhmeoidh an ciste coimisiúnaithe tríd na foilsitheoirí go príomha.
 <S>[Tt]ríd</S> <T>na</T>:BACHOIR{trí na}
+# CB p.22 #8.a
+<S>[Tt]ríd</S> <T>an</T> <NMCS>PREFIXEDT</NMCS>:NITEE
 # CB p.84 #8 keep before following
 <D>[Tt]rínár</D> dhá <N>UNECLIPSED</N>:URU
 # CB p.84 #8
@@ -1073,6 +1110,8 @@ d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</
 <S>[Uu]m</S> <N>UNLENITED</N>:SEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 <S>[Uu]m</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
+# CB p.22 #8.a
+<S>[Uu]m</S> <T>an</T> <NMCS>PREFIXEDT</NMCS>:NITEE
 #############################################################################
 #. Nach holc an mhaise duit a bheith ag magadh.
 <AWITHH>ANYTHING</AWITHH>:NIAITCH
@@ -1186,6 +1225,8 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 <N>[Bb]rách</N>:INPHRASE{go brách}
 <N>m?[Bb]h?rín</N>:INPHRASE{brín óg}
 <N>m?[Bb]h?uaileam</N>:INPHRASE{buaileam sciath}
+<Q>[Cc]árb</Q>:INPHRASE{cárb as}
+<E><Q>[Cc]árb</Q></E> [Aa]s:OK
 <N>g?[Cc]h?eannann</N>:INPHRASE{ceannann céanna}
 <N>g[Cc]eartlár</N>:INPHRASE{i gceartlár}
 <N>g[Cc]éin</N>:INPHRASE{i gcéin}
@@ -1202,10 +1243,10 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 <N>[Dd]hea</N>:INPHRASE{mar dhea}
 <N>n?[Dd]h?earglasadh</N>:INPHRASE{ar dearglasadh}
 <N>n?[Dd]h?eargmheisce</N>:INPHRASE{ar deargmheisce}
-ANYTHING <N>[Dd]eo</N>:INPHRASE{go deo}
+<N>[Dd]eo</N>:INPHRASE{go deo}
 # not in comhshuite when in phr. "go deo deo"; see doubled word exception above
-[Gg]o <N>[Dd]eo</N>:OK
-<N>[Dd]eo</N> <N>[Dd]eo</N>:OK
+[Gg]o <E><N>[Dd]eo</N></E>:OK
+<N>[Dd]eo</N> <E><N>[Dd]eo</N></E>:OK
 <N>[Dd]heoidh</N>:INPHRASE{faoi dheoidh}
 <N>ndóigh</N>:INPHRASE{ar ndóigh}
 <N>[Éé]atar</N>:INPHRASE{liútar éatar}
