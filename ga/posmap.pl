@@ -101,6 +101,7 @@ s/^(ata) .*/$1 127/;
 s/^(ataim) .*/$1 127/;
 s/^(ataimid) .*/$1 127/;
 s/^(banaithe) .*/$1 127/;
+s/^(m?bh?eatha) 92/$1 127/;
 s/^(beith) .*/$1 127/;
 s/^(bhanaithe) .*/$1 127/;
 s/^(bhfainne) .*/$1 127/;
