@@ -53,7 +53,7 @@ cuardach.o : cuardach.c gettext.h
 	$(CC) -c $(CFLAGS) $(DEFS) -DBSONRAI=\"$(pkgdatadir)\" cuardach.c
 
 .in.pl :
-	cat $< | sed '/^#/!s/:/\n:/' > $<.2
+	cat $< | sed '/^#/!s/:/!:/' | tr "!" "\n" > $<.2
 	cp `echo "$<" | sed 's/-.*//'`.meta.sed temp.meta.sed
 	($(ECHO) "#!$(PERL)"; $(ECHO) "# Users should modify $<, not this file"; $(ECHO) 'while(<>){';  cat $<.2 | sed -f gin.meta.sed | sed -f temp.meta.sed; $(ECHO) 'print;'; $(ECHO) '}'; $(ECHO) 'exit;') > $@
 	rm -f $<.2 temp.meta.sed
