@@ -210,6 +210,7 @@ sub get_sentences
 	return $answer;
 }
 
+my $NOBD="\002";
 sub get_sentences_real
 {
 	my $BD="\001";
@@ -220,12 +221,13 @@ sub get_sentences_real
 		s/&/&amp;/g;    # this one first!
 		s/</&lt;/g;
 		s/>/&gt;/g;
-		s/[\\$BD]//g;
+		s/$NOBD//g;
+		s/$BD//g;
 		giorr ( $_ );
-		s/([^\\][.?!][]"')}]*)[ \t\n]+/$1$BD/g;
+		s/([^$NOBD][.?!][]"')}]*)[ \t\n]+/$1$BD/g;
 		s/"/&quot;/g;   # &apos; ok  (note " in prev line)
 		s/\s+/ /g;
-		tr/\\//d;
+		s/$NOBD//g;
 		@$sentences = split /$BD/;
 	}
 
@@ -865,13 +867,13 @@ sub giorr
 {
 	for ($_[0]) {
 	s/^/ /;
-	s/([^@BDCHARS@0-9-][0-9])([.?!])/$1\\$2/g;
-	s/([^@BDCHARS@0-9-][0-9][0-9])([.?!])/$1\\$2/g;
-	s/(\...)([.?!])/$1\\$2/g;
-	s/\.(ie|uk)\\([.?!])/.$1$2/g;
-	s/(\..)([.?!])/$1\\$2/g;
-	s/(\.)([.?!])/$1\\$2/g;
-	s/([IVX][IVX])([.?!])/$1\\$2/g;
+	s/([^@BDCHARS@0-9-][0-9])([.?!])/$1$NOBD$2/g;
+	s/([^@BDCHARS@0-9-][0-9][0-9])([.?!])/$1$NOBD$2/g;
+	s/(\...)([.?!])/$1$NOBD$2/g;
+	s/\.(ie|uk)$NOBD([.?!])/.$1$2/g;
+	s/(\..)([.?!])/$1$NOBD$2/g;
+	s/(\.)([.?!])/$1$NOBD$2/g;
+	s/([IVX][IVX])([.?!])/$1$NOBD$2/g;
 # giorr code goes here
 	s/^ //;
 	}
