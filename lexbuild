@@ -5,6 +5,7 @@
 
 TEANGA=${1}
 GRAMDIR=${2}
+NATIVE=${3}
 UPPERTEANGA=`echo "${TEANGA}" | tr "[:lower:]" "[:upper:]"`
 FOCAILTEMP=`mktemp`
 cat lexicon-${TEANGA}.txt | perl ${GRAMDIR}/count.pl freq-${TEANGA}.txt | sort -n -r > ${FOCAILTEMP}
@@ -41,7 +42,7 @@ for FILENUM in 0 1 2 3 4 5 6
 do
 	TARGETFILE="Lingua-${UPPERTEANGA}-Gramadoir/share/focail${FILENUM}.bs"
 	rm -f ${TARGETFILE}
-	cat focail${FILENUM}-${TEANGA}.bs.pre | LC_COLLATE=POSIX sort -u -k1,1 -k2,2n | ${GRAMDIR}/cabhair.pl --compress > ${TARGETFILE}
+	cat focail${FILENUM}-${TEANGA}.bs.pre | LC_COLLATE=POSIX sort -u -k1,1 -k2,2n | ${GRAMDIR}/cabhair.pl --compress --encoding=${NATIVE} > ${TARGETFILE}
 	chmod 644 ${TARGETFILE}
 	rm -f focail${FILENUM}-${TEANGA}.bs.pre
 done
