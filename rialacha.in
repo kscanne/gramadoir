@@ -4,20 +4,22 @@
 # This is free software; see the file COPYING for copying conditions.  There is
 # NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #
-# Users can add to this list by following the syntax described 
-# on the web page:  http://borel.slu.edu/gramadoir/
+# Users can add to this list by following the syntax described
+# on the web page  http://borel.slu.edu/gramadoir/
 # Please send me any useful additional rules for inclusion in
-# future releases: <scannell@slu.edu>
+# future releases <scannell@slu.edu>
 #
-# References: 
+# References
 # CB=The Christian Brothers, New Irish Grammar, C. J. Fallon, 1994.
 #
 <X>ANYTHING</X>:ANAITHNID
 <X>ANYTHING</X>:ANAITHNIDSRL
 # CB p.16 #9.a  (needs shallow parse)
-#<NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
+<NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
+<NFGS>ANYTHING</NFGS> <A>LENITED</A>:NISEIMHIU
 # CB p.16 #9.b  (needs shallow parse)
-#<NMGS>ANYTHING</NMGS> <A>UNLENITED</A>:SEIMHIU
+<NMGS>ANYTHING</NMGS> <A>UNLENITED</A>:SEIMHIU
+<NMCS>ANYTHING</NMCS> <A>LENITED</A>:NISEIMHIU
 # CB p.16 #9.c
 <NP>SLENDERFINALCONSONANT</NP> <A>UNLENITED</A>:SEIMHIU
 # CB p.13 #4.a
@@ -37,13 +39,13 @@
 # CB p.22 #7.b, p.132 #4
 <Q>[Aa]n</Q> <V>UNECLIPSED</V>:URU
 # CB p.12 #1.a
-<^S>ANYTHING</^S> <T>an</T> <NFCS>UNLENITEDBCFGMP</NFCS>:SEIMHIU 
+<^S>ANYTHING</^S> <T>an</T> <NFCS>UNLENITEDBCFGMP</NFCS>:SEIMHIU
 # CB p.12 #1.b
-<T>[Aa]n</T> <NMGS>UNLENITEDBCFGMP</NMGS>:SEIMHIU 
+<T>[Aa]n</T> <NMGS>UNLENITEDBCFGMP</NMGS>:SEIMHIU
 # CB p.23 #9
-<T>[Aa]n</T> <NFCS>INITIALS</NFCS>:PREFIXT 
+<T>[Aa]n</T> <NFCS>INITIALS</NFCS>:PREFIXT
 # CB p.23 #10
-<T>[Aa]n</T> <NMGS>INITIALS</NMGS>:PREFIXT 
+<T>[Aa]n</T> <NMGS>INITIALS</NMGS>:PREFIXT
 # CB p.6 #1
 <T>[Aa]n</T> <NFGS>ANYTHING</NFGS>:BACHOIR{na}
 # CB p.6 #1
@@ -183,9 +185,9 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 # CB p.14 Note
 <S>[Ii]</S> <N>LENITED</N>:NISEIMHIU
 # CB p.20 Note
-<S>[Ii]</S> [Bb]hur:BACHOIR{in_bhur}
+<S>[Ii]</S> [Bb]hur:BACHOIR{in bhur}
 # CB p.20 Note
-<S>[Ii]</S> [Dd]há:BACHOIR{in_dhá}
+<S>[Ii]</S> [Dd]há:BACHOIR{in dhá}
 # CB p.6 #2
 <S>[Ii]</S> [Aa]n:BACHOIR{sa}
 <S>[Ii]</S> [Nn]a:BACHOIR{sna}
@@ -206,9 +208,9 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 # CB p.14 Note
 <S>[Ll]e</S> <N>LENITED</N>:NISEIMHIU
 # CB p.6 #2
-<S>[Ll]e</S> <T>an</T>:BACHOIR{leis_an}
+<S>[Ll]e</S> <T>an</T>:BACHOIR{leis an}
 # CB p.6 #2
-<S>[Ll]e</S> <T>na</T>:BACHOIR{leis_na}
+<S>[Ll]e</S> <T>na</T>:BACHOIR{leis na}
 # CB p.84 #8, p.132 #2
 <S>[Ll]e</S> a:BACHOIR{lena}
 # CB p.132 #2
@@ -336,7 +338,7 @@ Naomh CAPITALLENITED:NISEIMHIU
 # CB p.132 #2
 [Tt]rí ar:BACHOIR{trínar}
 # CB p.6 #2
-[Tt]rí <T>an</T>:BACHOIR{tríd_an}
+[Tt]rí <T>an</T>:BACHOIR{tríd an}
 # CB p.84 #8
 [Tt]rí ár:BACHOIR{trínár}
 # CB p.13 #3.f (<A>trí</A>) p.13 #4.a (<S>trí</S>)
