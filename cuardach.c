@@ -34,7 +34,7 @@ struct replacement {
       char* athfhocal;
     };
 
-#define DICTTOTAL 313953
+#define DICTTOTAL 313956
 int ignore_total=0;
 int repl_total=0;
 
@@ -377,29 +377,35 @@ int dictlookup(const char* word, char* fill, char* attrs, char* extratags)
     }
 
 /* 
-  w looks like "<c>word</c>!!'" or the like
+  w points into the "token": looks like "<c>word</c>!!'" or the like.
   token includes leading characters too: "`<c>word</c>!!'"
+  No guarantee that the token is well-formed (e.g. if len>=512)
 */
-void markup(char* token, char* w)
+void markup(char* token)
     {
-     char mu[8], attrs[256], extratags[512];
-     char* tail; 
+     char mu[8], attrs[128], extratags[512];
+     char* tail, *w; 
      int val;
 
+     w=strstr(token, "<c>");
      tail = strstr(token, "</c>");
-     *tail='\n';              /* \n since it is kept around in focloir */ 
-     *(tail+1)='\0';              /* null terminate the word itself */
-     val=dictlookup(w+3, mu, attrs, extratags);
-     *tail='\0';                
-     *w = '\0';
-     printf("%s", token);                /** chars before <c> **/
-     printf("<%s", mu);                  /** new markup **/
-     printf("%s", attrs);                /** attributes **/
-     printf(">%s", extratags);           /** any additional tags **/
-     printf("%s", w+3);                  /** word itself **/
-     if (!val) printf("</Y>");           /** dummy markup in case of repl. **/
-     printf("</%s>", mu);                /** end of new markup **/
-     printf("%s", tail+4);               /** chars after </c> **/
+     if (tail==NULL || w==NULL)     /* e.g. punct, "<line", length>511, etc. */
+          printf("%s",token);
+     else {
+        *tail='\n';              /* \n since it is kept around in focloir */ 
+        *(tail+1)='\0';              /* null terminate the word itself */
+        val=dictlookup(w+3, mu, attrs, extratags);
+        *tail='\0';                
+        *w = '\0';
+        printf("%s", token);              /** chars before <c> **/
+        printf("<%s", mu);                /** new markup **/
+        printf("%s", attrs);              /** attributes **/
+        printf(">%s", extratags);         /** any additional tags **/
+        printf("%s", w+3);                /** word itself **/
+        if (!val) printf("</Y>");         /** dummy markup in case of repl. **/
+        printf("</%s>", mu);              /** end of new markup **/
+        printf("%s", tail+4);             /** chars after </c> **/
+       }
     }
 
 void cleanup()
@@ -413,6 +419,7 @@ void cleanup()
 int main(int argc, char* argv[])
    {
     char token[512], *w;
+
     if (argc != 2) {
                       /* "An Gramadóir: problem with the 'cuardach' command" */
             fprintf(stderr, "An Gramadóir: fadhb leis an ordú 'cuardach'\n");
@@ -441,15 +448,13 @@ int main(int argc, char* argv[])
     printf("<?xml version=\"1.0\" encoding=\"ISO-8859-1\" standalone=\"no\"?>\n");
     printf("<!DOCTYPE teacs SYSTEM \"/dtds/gramadoir.dtd\">\n");
     printf("<teacs>");
-    while (scanf("%512s",token) != EOF)
+    while (scanf("%511s",token) != EOF)
           {
-           if (strstr(token, "<line")==token) printf("\n");
+           if (!strcmp(token, "<line")) printf("\n");
            else printf(" ");
-           if ((w=strstr(token, "<c>"))==NULL) 
-                 printf("%s", token);
-           else markup(token,w);
+	   markup(token);
           }
-    printf("\n</teacs>");
+    printf("\n</teacs>\n");
     cleanup();
     return 0;
    }
