@@ -31,9 +31,6 @@
 <B>Ach</B>:<C>
 # Not needed until corpus ref turns up for "ar" nm1
 # <B>[Aa]ir</B>:<O>
-[Aa]n <B>Aire</B>:<N pl="n" gnt="y" gnd="m">
-<B>Aire</B>:<N pl="n" gnt="n" gnd="m">
-<B>(n-)?aire</B>:<N pl="n" gnt="n" gnd="f">
 # háirithe now handled in comhshuite
 <B>áirithe</B>:<A>
 # not "a haló"="her aloe"!
@@ -266,6 +263,13 @@ a <B>sé</B>:<A pl="n" gnt="n">
 <B>[Tt]ríd</B> <T>na</T>:<S>
 <B>[Tt]ríd</B> an:<S>
 <B>[Tt]ríd</B>:<O>
+# Aire, aire; first one needs <S> resolved (leis, etc)
+# but do it before the <S> ANYNMC rule below!
+[Aa]r [Aa]n <B>Aire</B>:<N pl="n" gnt="n" gnd="m">
+<S>ANYTHING</S> [Aa]n <B>Aire</B>:<N pl="n" gnt="n" gnd="m">
+[Aa]n <B>Aire</B>:<N pl="n" gnt="y" gnd="m">
+<B>Aire</B>:<N pl="n" gnt="n" gnd="m">
+<B>(n-)?aire</B>:<N pl="n" gnt="n" gnd="f">
 #############################################################
 # Brill transformations (not associated to particular words)#
 #############################################################
