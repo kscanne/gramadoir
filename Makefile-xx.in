@@ -45,7 +45,7 @@ LEXICONS = $(SHARE)/3grams.bs $(SHARE)/earraidi.bs $(SHARE)/eile.bs $(SHARE)/foc
 EXTRAS = $(SHARE)/gramadoir.el $(SHARE)/gramadoir.vim $(SHARE)/gramadoir.sxw
 TESTS = $(PERLD)/t/$(PERLD).t
 LOCALES = locale_ok $(PERLLIB)/Languages.pm $(PERLLIB)/Languages/en_us.pm
-INTERMEDIATE = aonchiall-$(TEANGA).pl comhshuite-$(TEANGA).pl eisceacht-$(TEANGA).pl giorr-$(TEANGA).pl rialacha-$(TEANGA).pl unigram-$(TEANGA).pl
+INTERMEDIATE = aonchiall-$(TEANGA).pl comhshuite-$(TEANGA).pl giorr-$(TEANGA).pl rialacha-$(TEANGA).pl unigram-$(TEANGA).pl
 HASHDIR = ${PERLD}/lib/Lingua/${UPPERTEANGA}/Gramadoir
 
 all : perldistfiles $(DEVSCRIPTNAME)
@@ -182,7 +182,7 @@ triail.xml-update : FORCE
 
 # last line (subst of \x{} codes) is a hack for legacy encodings w/ 5.8.0
 $(PERLLIB).pm : $(GRAMDIR)/Gramadoir.pm.in $(INTERMEDIATE) $(PERLDOK)
-	sed "/^# aonchiall code /r aonchiall-$(TEANGA).pl" $(GRAMDIR)/Gramadoir.pm.in | sed "/^# comhshuite code /r comhshuite-$(TEANGA).pl" | sed "/^# eisceacht code /r eisceacht-$(TEANGA).pl" | sed "/^# giorr code /r giorr-$(TEANGA).pl" | sed "/^# rialacha code /r rialacha-$(TEANGA).pl" | sed "/^# unigram code /r unigram-$(TEANGA).pl" | \
+	sed "/^# aonchiall code /r aonchiall-$(TEANGA).pl" $(GRAMDIR)/Gramadoir.pm.in | sed "/^# comhshuite code /r comhshuite-$(TEANGA).pl" | sed "/^# giorr code /r giorr-$(TEANGA).pl" | sed "/^# rialacha code /r rialacha-$(TEANGA).pl" | sed "/^# unigram code /r unigram-$(TEANGA).pl" | \
 	sed "s/@PACKAGE_VERSION@/$(PERLVERSION)/; s/@TEANGA@/$(UPPERTEANGA)/g; s/@NAME_ENGLISH@/$(NAME_ENG)/g; s/@NATIVE@/$(NATIVE)/g; s/@BDCHARS@/$(BDCHARS)/g; s/@INTCHARS@/$(INTCHARS)/g; s/@CAPITALS@/$(CAPITALS)/g; s/@LOWERS@/$(LOWERS)/g;" | LC_ALL="C" $(PERL) -p -e 's/(.*)/$$1\n                   $(AUTHOR)/ if m/^Copyright \(C\)/;' | sed '/^# [a-z]* code goes here/d' > $@
 	if $(ECHO) "$(NATIVE)" | $(EGREP) -i 'utf' > /dev/null; \
 	then \
@@ -245,8 +245,6 @@ poncin : FORCE
 	@cd $(GRAMDIR) && make parsers
 	@$(ECHO) 'Checking aonchiall-$(TEANGA).in'
 	@cat aonchiall-$(TEANGA).in | $(GRAMDIR)/aparser
-	@$(ECHO) 'Checking eisceacht-$(TEANGA).in'
-	@cat eisceacht-$(TEANGA).in | $(GRAMDIR)/eparser
 	@$(ECHO) 'Checking rialacha-$(TEANGA).in'
 	@cat rialacha-$(TEANGA).in | $(GRAMDIR)/rparser
 
@@ -286,7 +284,6 @@ dist : FORCE
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/comhshuite-$(TEANGA).in
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/earraidi-$(TEANGA).bs
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/eile-$(TEANGA).bs
-	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/eisceacht-$(TEANGA).in
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/freq-$(TEANGA).txt
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/giorr-$(TEANGA).pre
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/giorr-$(TEANGA).txt
@@ -317,7 +314,7 @@ counts : FORCE
 	$(EGREP) '^[^#]' comhshuite-$(TEANGA).in | wc -l
 	$(EGREP) '^[^#]' aonchiall-$(TEANGA).in | wc -l
 	$(EGREP) '^[^#]' rialacha-$(TEANGA).in | wc -l
-	$(EGREP) '^[^#]' eisceacht-$(TEANGA).in | wc -l
+	$(EGREP) ':OK *$$' rialacha-$(TEANGA).in | wc -l
 
 zipped : perl
 	(cd $(PERLD); make zipdist)

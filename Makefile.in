@@ -31,13 +31,10 @@ YACC = @YACC@
 
 all : FORCE
 
-parsers : aparser eparser rparser
+parsers : aparser rparser
 
 aonchiall.y : ponc.in.y
 	cat ponc.in.y | sed "s/_TAIL_MACRO_/result/; s/_RESULT_MACRO_/POSTAG/" > aonchiall.y
-
-eisceacht.y : ponc.in.y
-	cat ponc.in.y | sed "s/_TAIL_MACRO_//; /^result/d" > eisceacht.y
 
 rialacha.y : ponc.in.y
 	cat ponc.in.y | sed "s/_TAIL_MACRO_/result/; s/_RESULT_MACRO_/MESSAGE | MESSAGEPLUS MESSAGEARG/" > rialacha.y
@@ -47,12 +44,6 @@ aparser : aonchiall.y ponc.in.l gettext.h
 	$(YACC) -d aonchiall.y
 	$(CC) -c $(CFLAGS) $(DEFS) $(LEX_OUTPUT_ROOT).c y.tab.c
 	$(CC) -o aparser $(CFLAGS) $(LEX_OUTPUT_ROOT).o y.tab.o $(LEXLIB)
-
-eparser : eisceacht.y ponc.in.l gettext.h
-	$(LEX) ponc.in.l
-	$(YACC) -d eisceacht.y
-	$(CC) -c $(CFLAGS) $(DEFS) $(LEX_OUTPUT_ROOT).c y.tab.c
-	$(CC) -o eparser $(CFLAGS) $(LEX_OUTPUT_ROOT).o y.tab.o $(LEXLIB)
 
 rparser : rialacha.y ponc.in.l gettext.h
 	$(LEX) ponc.in.l
@@ -81,13 +72,13 @@ distclean :
 
 topclean :
 	$(MAKE) semiclean
-	rm -f aparser eparser rparser *.c~ ChangeLog.bak
+	rm -f aparser rparser *.c~ ChangeLog.bak
 
 clean :
 	cd po && $(MAKE) clean
 	$(MAKE) topclean
 
 semiclean :
-	rm -f y.tab.* $(LEX_OUTPUT_ROOT).* aonchiall.y eisceacht.y rialacha.y
+	rm -f y.tab.* $(LEX_OUTPUT_ROOT).* aonchiall.y rialacha.y
 
 FORCE :
