@@ -17,13 +17,15 @@
 
 /* ngearr-chlóscríobhneoireachta  has 28 */
 #define GR_WORDMAX 32
+/*  can redefine this to something like 257 to turn this business off */
+#define RAREBYTE 127
 
 int
 main (int argc, char *argv[])
 {
   const char unusedcode = '\n';
   char token[GR_WORDMAX], prev[GR_WORDMAX], repl[GR_WORDMAX];
-  int code, m;
+  int code, m, pendingrarebit = 0;
   char codec;
 
   if (argc != 2)
@@ -43,11 +45,21 @@ main (int argc, char *argv[])
 	  codec = (char) code;
 	  if (!strcmp (prev, token))
 	    {
-	      printf ("%c", codec);
+	      if (pendingrarebit)
+		{
+		  printf ("%c%d%s%c", unusedcode, m, token + m, unusedcode);
+		  pendingrarebit = 0;
+		}
+	      if (code != RAREBYTE)
+		printf ("%c", codec);
+	      /* else, if it is 127, we've written this word before, so skip */
 	    }
 	  else
 	    {
-	      m = 0;
+	      if (pendingrarebit)	/* previous word had just one code == 127 */
+		printf ("%c%d%s%c%c", unusedcode, m, prev + m, unusedcode,
+			(char) RAREBYTE);
+	      m = 0;		/*  how much in common with previous word */
 	      while (prev[m])
 		{
 		  if (prev[m] == token[m])
@@ -55,8 +67,14 @@ main (int argc, char *argv[])
 		  else
 		    break;
 		}
-	      printf ("%c%d%s%c%c", unusedcode, m, token + m, unusedcode,
-		      codec);
+	      if (code != RAREBYTE)
+		{
+		  printf ("%c%d%s%c%c", unusedcode, m, token + m, unusedcode,
+			  codec);
+		  pendingrarebit = 0;
+		}
+	      else
+		pendingrarebit = 1;
 	      strcpy (prev, token);
 	    }
 	}
