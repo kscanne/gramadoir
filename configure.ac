@@ -24,25 +24,6 @@ AC_C_CONST
 dnl Checks for library functions.
 AC_CHECK_FUNCS(strstr strtol)
 
-AC_MSG_CHECKING(for regexp highlighter)
-echo 'X' > conftestsc
-if ${EGREP} --color -h . conftestsc > /dev/null 2>&1
-then
-	EGREP_COLOR="${EGREP} --color -h"
-	AC_MSG_RESULT([using ${EGREP} --color])
-else
-	if glark -h -N -q . conftestsc > /dev/null 2>&1
-	then
-		EGREP_COLOR="glark -N -q"
-		AC_MSG_RESULT([using glark])
-	else
-		EGREP_COLOR="${EGREP} -h"
-		AC_MSG_RESULT([no])
-		AC_MSG_WARN([not found; using vanilla ${EGREP}])
-	fi
-fi
-AC_SUBST(EGREP_COLOR)
-
 AM_GNU_GETTEXT([external])
 if test "$USE_NLS" = "yes"
 then
