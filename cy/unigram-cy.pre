@@ -1,4 +1,0 @@
-# This file is for any preprocessing that should occur before applying
-# the last resort unigram tagger.  Something typical is to "lump together"
-# several tags if the differences between them aren't relevant, e.g.
-# s/<V(?: pl="y")? p=".." t="([^"]*)"/<V p="xx" t="$1"/g;
