@@ -70,6 +70,14 @@ sin sin:OK
 <X>ANYTHING</X>:ANAITHNID
 #. Bíonn an geál ag satailt ar an dubh.
 <F>ANYTHING</F>:NEAMHCHOIT
+# CB p.119 #4a-e
+# usually this rule finds typos, no intention to use subjunctive:
+#. Ach go rithe an fhíréantacht mar uisce agus an t-ionracas mar shruth gan dísc (OK)!
+#. Ba iad mo shinsear rithe Chúige Uladh.
+#. Is iad na trí cholún sin le cheile an tAontas Eorpach.
+<VSUBJ>ANYTHING</VSUBJ>:NOSUBJ
+<C>([Dd]á|[Gg]o|[Ss]ula|[Mm]ura)</C> <E><VSUBJ>ANYTHING</VSUBJ></E>:OK
+<U>[Nn]ár</U> <E><VSUBJ>ANYTHING</VSUBJ></E>:OK
 # CB p.138
 #. Ach bhí mé ag leanúint ar aghaidh an t-am ar fad leis.
 <S>COMPOUND</S> <T>ANYTHING</T> <NCS>ANYTHING</NCS>:GENITIVE
@@ -1251,7 +1259,129 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 #   23. IV.  Is abairt í seo le giorrúcháin, cf. Dr. Scannell, Jr. agus m.sh. Caoimhín Ó Scanaill, T. D. atá i gceanas faoi réir m. sh. VIII, ceart go leor?
 #  this tests the segmentation module.
 #############################################################################
+# rules for irregular comparative adjectives:
+#  these are only gsf's that aren't correct comparatives; i.e. all other
+#  errors with níos, níba are caught above when testing for gsf
+#  In particular, common error "níos breá" is caught by that rule
+#  since the irreg. comparative "breátha" happens also to be the gsf
+#   Note that "níos ionúine", "níos tréine" are OK.
+<R>[Nn]íos</R> <A>bh?ige</A>:BACHOIR{lú}
+<R>NIBS</R> <A>bh?ige</A>:BACHOIR{lú}
+<V>[Ii]s</V> <A>bh?ige</A>:BACHOIR{lú}
+<R>[Nn]íos</R> <A>dh?ócha</A>:BACHOIR{dóichí}
+<R>NIBS</R> <A>dh?ócha</A>:BACHOIR{dóichí}
+<R>[Nn]íos</R> <A>fh?ada</A>:BACHOIR{faide}
+<R>NIBS</R> <A>fh?ada</A>:BACHOIR{faide}
+<R>[Nn]íos</R> <A>fh?urasta</A>:BACHOIR{fusa}
+<R>NIBS</R> <A>fh?urasta</A>:BACHOIR{fusa}
+# iomaí follows copula only (rules below), so this just gives better msg
+<R>[Nn]íos</R> <A>iomaí</A>:BACHOIR{lia}
+<R>NIBS</R> <A>iomaí</A>:BACHOIR{lia}
+<R>[Nn]íos</R> <A>mh?aithe</A>:BACHOIR{fearr}
+<R>NIBS</R> <A>mh?aithe</A>:BACHOIR{fearr}
+<V>[Ii]s</V> <A>mh?aithe</A>:BACHOIR{fearr}
+<R>[Nn]íos</R> <A>mh?óire</A>:BACHOIR{mó}
+<R>NIBS</R> <A>mh?óire</A>:BACHOIR{mó}
+<V>[Ii]s</V> <A>mh?óire</A>:BACHOIR{mó}
+<R>[Nn]íos</R> <A>oilce</A>:BACHOIR{measa}
+<R>NIBS</R> <A>oilce</A>:BACHOIR{measa}
+<V>[Ii]s</V> <A>oilce</A>:BACHOIR{measa}
+<R>[Nn]íos</R> <A>th?e</A>:BACHOIR{teo}
+<R>NIBS</R> <A>th?e</A>:BACHOIR{teo}
+#############################################################################
 #                 SET PHRASES                                               #
+#############################################################################
+# First, a bunch of words that always follow the copula
+# prefix h's caught elsewhere
+<N>[Áá]il</N>:INPHRASE{is áil}
+<VCOP>ANYTHING</VCOP> <E><N>[Áá]il</N></E>:OK
+<N>[Aa]ithnid</N>:INPHRASE{is aithnid}
+<VCOP>ANYTHING</VCOP> <E><N>[Aa]ithnid</N></E>:OK
+<N>[Cc]h?uimhin</N>:INPHRASE{is cuimhin}
+<VCOP>ANYTHING</VCOP> <E><N>[Cc]h?uimhin</N></E>:OK
+# le,níos other exceptions in comhshuite
+[Dd]h?éanaí:INPHRASE{is déanaí, le déanaí}
+<VCOP>ANYTHING</VCOP> <E>[Dd]h?éanaí</E>:OK
+<A>[Dd]h?ócha</A>:INPHRASE{is dócha}
+<VCOP>ANYTHING</VCOP> <E><A>[Dd]h?ócha</A></E>:OK
+[Dd]h?ual:INPHRASE{is dual}
+<VCOP>ANYTHING</VCOP> <E>[Dd]h?ual</E>:OK
+<P>h?ea</P>:INPHRASE{is ea, ní hea}
+<VCOP>ANYTHING</VCOP> <E><P>h?ea</P></E>:OK
+# OD ea^1.5b, LGG p.114 -- literary form, not in corpus at all
+# also an exception under "cé" rules above
+<Q>[Cc]é</Q> <E><P>ea</P></E>:OK
+<A>[Ee]agal</A>:INPHRASE{is eagal}
+<VCOP>ANYTHING</VCOP> <E><A>[Ee]agal</A></E>:OK
+<P>éard</P>:INPHRASE{is éard}
+<VCOP>ANYTHING</VCOP> <E><P>éard</P></E>:OK
+<N>[Ee]ol</N>:INPHRASE{is eol}
+<VCOP>ANYTHING</VCOP> <E><N>[Ee]ol</N></E>:OK
+<N>[Ff]h?éidir</N>:INPHRASE{is féidir}
+<VCOP>ANYTHING</VCOP> <E><N>[Ff]h?éidir</N></E>:OK
+# negative copula only; using fact that negative <=> initial "n"
+#. Is foláir dóibh a ndualgais a chomhlíonadh.
+<A>[Ff]h?oláir</A>:INPHRASE{ní foláir}
+<VCOP>INITIALN</VCOP> <E><A>[Ff]h?oláir</A></E>:OK
+<A>[Ii]omaí</A>:INPHRASE{is iomaí}
+<VCOP>ANYTHING</VCOP> <E><A>[Ii]omaí</A></E>:OK
+<A>[Ii]onann</A>:INPHRASE{is ionann}
+<VCOP>ANYTHING</VCOP> <E><A>[Ii]onann</A></E>:OK
+<A>[Ll]éir</A>:INPHRASE{is léir}
+<VCOP>ANYTHING</VCOP> <E><A>[Ll]éir</A></E>:OK
+# go leor in comhshuite of course, but not when it's go leor leor
+<A>[Ll]eor</A>:INPHRASE{is leor, go leor}
+<VCOP>ANYTHING</VCOP> <E><A>[Ll]eor</A></E>:OK
+[Gg]o <E><A>leor</A></E>:OK
+<A>[Ll]eor</A> <E><A>leor</A></E>:OK
+<A>[Mm]h?iste</A>:INPHRASE{is miste, ní miste}
+<VCOP>ANYTHING</VCOP> <E><A>[Mm]h?iste</A></E>:OK
+[Mm]h?ithid:INPHRASE{is mithid}
+<VCOP>ANYTHING</VCOP> <E>[Mm]h?ithid</E>:OK
+<A>[Nn]áir</A>:INPHRASE{is náir}
+<VCOP>ANYTHING</VCOP> <E><A>[Nn]áir</A></E>:OK
+<N>[Oo]th</N>:INPHRASE{is oth}
+<VCOP>ANYTHING</VCOP> <E><N>[Oo]th</N></E>:OK
+#############################################################################
+# Now, some irregular comparatives that follow copula OR níos/níba?
+#   A similar rule for general gsf adjs would have to allow them to 
+#   actually follow a gsf noun!  Note that "foisce" from CB94 is <F> currently
+#  All other irreg comparatives are ambiguous: breátha, lia, measa, teo, treise
+#    Note "hansa" is below
+<A>[Aa]nsa</A>:INPHRASE{níos ansa, is ansa}
+<VCOP>ANYTHING</VCOP> <E><A>[Aa]nsa</A></E>:OK
+<R>[Nn]íos</R> <E><A>[Aa]nsa</A></E>:OK
+<R>NIBA</R> <E><A>[Aa]nsa</A></E>:OK
+<A>[Dd]h?óichí</A>:INPHRASE{níos dóichí, is dóichí}
+<VCOP>ANYTHING</VCOP> <E><A>[Dd]h?óichí</A></E>:OK
+<R>[Nn]íos</R> <E><A>[Dd]h?óichí</A></E>:OK
+<R>NIBA</R> <E><A>[Dd]h?óichí</A></E>:OK
+<A>[Ff]h?aide</A>:INPHRASE{níos faide, is faide}
+<VCOP>ANYTHING</VCOP> <E><A>[Ff]h?aide</A></E>:OK
+<R>[Nn]íos</R> <E><A>[Ff]h?aide</A></E>:OK
+<R>NIBA</R> <E><A>[Ff]h?aide</A></E>:OK
+<A>[Ff]h?earr</A>:INPHRASE{níos fearr, is fearr}
+<VCOP>ANYTHING</VCOP> <E><A>[Ff]h?earr</A></E>:OK
+<R>[Nn]íos</R> <E><A>[Ff]h?earr</A></E>:OK
+<R>NIBA</R> <E><A>[Ff]h?earr</A></E>:OK
+<A>[Ff]h?usa</A>:INPHRASE{níos fusa, is fusa}
+<VCOP>ANYTHING</VCOP> <E><A>[Ff]h?usa</A></E>:OK
+<R>[Nn]íos</R> <E><A>[Ff]h?usa</A></E>:OK
+<R>NIBA</R> <E><A>[Ff]h?usa</A></E>:OK
+<A>[Ll]ú</A>:INPHRASE{níos lú, is lú}
+<VCOP>ANYTHING</VCOP> <E><A>[Ll]ú</A></E>:OK
+<R>[Nn]íos</R> <E><A>[Ll]ú</A></E>:OK
+<R>NIBA</R> <E><A>[Ll]ú</A></E>:OK
+<A>[Mm]h?ó</A>:INPHRASE{níos mó, is mó}
+<VCOP>ANYTHING</VCOP> <E><A>[Mm]h?ó</A></E>:OK
+<R>[Nn]íos</R> <E><A>[Mm]h?ó</A></E>:OK
+<R>NIBA</R> <E><A>[Mm]h?ó</A></E>:OK
+<A>[Tt]h?úisce</A>:INPHRASE{níos túisce, is túisce}
+<VCOP>ANYTHING</VCOP> <E><A>[Tt]h?úisce</A></E>:OK
+<R>[Nn]íos</R> <E><A>[Tt]h?úisce</A></E>:OK
+<R>NIBA</R> <E><A>[Tt]h?úisce</A></E>:OK
+#############################################################################
+#  Now, just random words that appear only in the specificed phrase(s)
 #############################################################################
 <N>[Aa]ice</N>:INPHRASE{in aice}
 <N>[Aa]icearracht</N>:INPHRASE{in aicearracht}
