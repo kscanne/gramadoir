@@ -77,6 +77,7 @@ s/DATIVEPREP/(?:[Aa][grs]|[Cc]huig|[Dd][eo]|[Ff]aoi|[Gg]an|[Gg]o|[Ll]e|[”Û]|[Ii]
 s/INITIALMORDAPOST/[md]'[^<]+/g;
 s/INITIALDAPOST/d'[^<]+/g;
 s/INITIALBAPOST/b'[^<]+/g;
+s/INITIALMBAPOST/mb'[^<]+/g;
 s/LENITEDBCFGMPS/(?:[CcFfGgMmPpSs]h|[Bb]h[^fF])[^<]+/g;
 s/LENITEDBMP/(?:[MmPp]h|[Bb]h[^fF])[^<]+/g;
 s/MUTATEDDST/(?:n[Dd]|d[Tt]|[DdSsTt]h)[^<]+/g;

@@ -298,6 +298,10 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 <T>[Aa]n</T> <A pl="n" gnt="n">(trí|ceithre|cúig|sé|seacht|ocht|naoi|deich)</A>:BACHOIR{na}
 <E><T>[Aa]n</T> <A pl="n" gnt="n">ANYTHING</A></E> g?ch?éad|mh?íle|mh?illiún:OK
 <E><T>[Aa]n</T> <A pl="n" gnt="n">ANYTHING</A></E> a chlog:OK
+# OD dháréag; other similar delenition rules for "dháréag" are below
+# this is here to be caught before following NICLAOCHLU error
+<T>[Aa]n</T> <N>[Dd]háréag</N>:NISEIMHIU
+<S>FUSEDPREP</S> <N>[Dd]háréag</N>:NISEIMHIU
 # CB p.12 #1.abc, p.20 #2a
 #. Ní bhíonn an dhíograis chéanna ná an dhúthracht chéanna i gceist.
 <T>[Aa]n</T> <N>MUTATEDDST</N>:NICLAOCHLU
@@ -314,6 +318,8 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 # OD dhá; do this before "aon + non-noun" rule below for better error message
 #. Ní bhíonn aon dhá chlár as an chrann céanna mar a chéile go díreach.
 <A pl="n" gnt="n">[Aa]on</A> <A pl="n" gnt="n">[Dd]há</A>:NISEIMHIU
+# OD dháréag
+<A pl="n" gnt="n">[Aa]on</A> <N>[Dd]háréag</N>:NISEIMHIU
 # CB p.13 #3.c, p.76 #8.b
 #. Ní bheidh aon buntáiste againn orthu sin.
 h?[Aa]on <N>UNLENITEDBCFGMP</N>:SEIMHIU
@@ -377,6 +383,11 @@ h?[Aa]on <N>LENITEDDST</N>:NISEIMHIU
 # CB p.16 #7 (N), p.18 #10 (A)
 #. Níl aon ní arbh fiú a shantú seachas í.
 <V cop="y">[Aa]rbh</V> UNLENITEDF:SEIMHIU
+# corpus.  Compare disambig rules for "mba" in aonchiall
+#  don't do this for "mba" itself since it disambigs as NPL otherwise
+#  and likely we'd get a NIURU from the noun rules
+<A pl="n" gnt="n">INITIALMBAPOST</A>:NIURU
+[Dd]h?á|[Gg]o|[Nn]ach <E><A pl="n" gnt="n">INITIALMBAPOST</A></E>:OK
 # CB p.16 #7 (N), p.18 #10 (A)
 #. Ba maith liom fios a thabhairt anois daoibh.
 #. Dúirt daoine go mba ceart an poll a dhúnadh suas ar fad.
@@ -633,6 +644,8 @@ g?[Cc]h?úig <NP>(bliana|cinn|cloigne|fichid|huaire)</NP>:OK
 # CB p.24 #11.a.iv, LGG p.112
 #. D'oibrigh mé liom go dtí Dé Aoine.
 Dé Aoine:PREFIXH
+#. Míle naoi gcéad a hocht ndéag is fiche.
+ndéag:CAIGHDEAN{déag}
 # CB p.18 #9.j, p.74 #2; LGG p.195, OD déag
 #. Feicim go bhfuil aon duine déag curtha san uaigh seo.
 # genitive is OK I think:
@@ -737,11 +750,21 @@ n?[Dd]h?eich <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 <A pl="n" gnt="n">[Dd]há</A> g?[Cc]h?os:BACHOIR{chois}
 # CB p.77 #8.d; no such rule in OD/LGG, in fact "do dhá lámh" explicitly in OD
 <A pl="n" gnt="n">[Dd]há</A> [Ll]ámh:BACHOIR{láimh}
-# OD dhá^1
+# OD dhá^1; similar rules for dháréag is above, before "an+leniteddst" error
 #. Is léir nach bhfuil an dhá theanga ar chomhchéim lena chéile.
 <T>[Aa]n</T> <A pl="n" gnt="n">[Dd]há</A>:NISEIMHIU
+<S>FUSEDPREP</S> <A pl="n" gnt="n">[Dd]há</A>:NISEIMHIU
+# OD dhá^1; similar rule for "aon" above among the "aon" rules
 #. Tionóladh an chéad dhá chomórtas i nGaoth Dobhair.
 <A pl="n" gnt="n">[Cc]h?éad</A> <A pl="n" gnt="n">[Dd]há</A>:NISEIMHIU
+# OD dháréag; similar rule for "aon" above among the "aon" rules
+<A pl="n" gnt="n">[Cc]h?éad</A> <N>[Dd]háréag</N>:NISEIMHIU
+# or SEIMHIU?
+<N>[Dd]áréag</N>:BACHOIR{dháréag}
+<T>[Aa]n</T> <E><N>[Dd]áréag</N></E>:OK
+<S>FUSEDPREP</S> <E><N>[Dd]áréag</N></E>:OK
+<A pl="n" gnt="n">[Aa]on</A> <E><N>[Dd]áréag</N></E>:OK
+<A pl="n" gnt="n">[Cc]h?éad</A> <E><N>[Dd]áréag</N></E>:OK
 # NGBC p.184, CB p.76 #8.a
 <A pl="n" gnt="n">[Dd]há</A> <NP>ANYTHING</NP>:UATHA
 <T>[Aa]n</T> [Dd]á <NP>ANYTHING</NP>:UATHA
@@ -1742,6 +1765,7 @@ d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</
 <S>DATIVEPREP</S> <E><ND>ANYTHING</ND></E>:OK
 <S>DATIVEPREP</S> <D>ANYTHING</D> <E><ND>ANYTHING</ND></E>:OK
 <S>([Aa][rs]|[Ll]eis)</S> <T>ANYTHING</T> <E><ND>ANYTHING</ND></E>:OK
+# incl. "dár gcionn"; see OD dár^3
 <D>FUSEDPOSS</D> <E><ND>ANYTHING</ND></E>:OK
 <A pl="n" gnt="n">[Dd]há</A> <E><ND>ANYTHING</ND></E>:OK
 <T>[Aa]n</T> [Dd]á <E><ND>ANYTHING</ND></E>:OK
