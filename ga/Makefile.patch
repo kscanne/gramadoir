@@ -1,6 +1,22 @@
---- Makefile	2004-08-25 22:17:34.271202464 -0500
-+++ Makefile.ok	2004-08-25 22:17:17.894692072 -0500
-@@ -295,4 +295,48 @@
+--- Makefile	2004-09-02 21:25:45.765395264 -0500
++++ Makefile.ok	2004-09-02 21:25:40.733160280 -0500
+@@ -75,6 +75,15 @@
+ 
+ Makefile : $(GRAMDIR)/Makefile-xx.in configure
+ 	./configure
++	patch < Makefile.patch
++	chmod 444 Makefile
++
++Makefile.patch : FORCE
++	rm -f Makefile.patch
++	mv -f Makefile Makefile.ok
++	./configure
++	- diff -u Makefile Makefile.ok > Makefile.patch
++	mv -f Makefile.ok Makefile
+ 
+ test : perl
+ 	(cd $(PERLD); make test)
+@@ -300,4 +309,70 @@
  zipped : perl
  	(cd $(PERLD); make zipdist)
  
@@ -36,7 +52,7 @@
 +# use "groom" instead of this directly
 +eilefromdb : FORCE
 +	sed 's/ .*//' lexicon-ga.txt > ./tempfocail
-+	sed 's/ .*//' $(ATH) | keepif -n ./tempfocail latin-1 | sort -u | join $(ATH) - | LC_COLLATE=POSIX sort -k1,1 | sed 's/ /_/g; s/_/ /;' | $(EGREP) . > ./eile-ga.bs
++	sed 's/ .*//' $(ATH) | keepif -n ./tempfocail latin-1 | sort -u | join $(ATH) - | LC_COLLATE=POSIX sort -k1,1 | $(EGREP) . > ./eile-ga.bs
 +	rm -f tempfocail
 +
 +EARR = ${ISPELLDIR}/ispell-gaeilge/gaelu ${ISPELLDIR}/ispell-gaeilge/earraidi
@@ -45,7 +61,29 @@
 +earrfromdb : FORCE
 +	sed 's/ .*//' lexicon-ga.txt eile-ga.bs > ./tempfocail
 +	sort -k1,1 $(EARR) > ./tempsrc
-+	sed 's/ .*//' ./tempsrc | keepif -n ./tempfocail latin-1 | sort -u | join ./tempsrc - | LC_COLLATE=POSIX sort -k1,1 | sed 's/ /_/g; s/_/ /;' | $(EGREP) . > ./earraidi-ga.bs
++	sed 's/ .*//' ./tempsrc | keepif -n ./tempfocail latin-1 | sort -u | join ./tempsrc - | LC_COLLATE=POSIX sort -k1,1 | $(EGREP) . > ./earraidi-ga.bs
 +	rm -f tempfocail tempsrc
++
++BIGDIR = /home/spas
++
++big.xml-update : FORCE
++	rm -f $(BIGDIR)/big.xml $(BIGDIR)/bigerr.xml
++	if [ -e $(BIGDIR)/big.new.xml ]; \
++	then \
++		mv $(BIGDIR)/big.new.xml $(BIGDIR)/big.xml; \
++	else \
++		benchcorp | gram-ga.pl --xml --iomlan --aschod=iso-8859-1 --comheadan=ga > $(BIGDIR)/big.xml; \
++	fi
++	if [ -e $(BIGDIR)/bigerr.new.xml ]; \
++	then \
++		mv $(BIGDIR)/bigerr.new.xml $(BIGDIR)/bigerr.xml; \
++	else \
++		sed 's/<E/\n<E/g' $(BIGDIR)/big.xml | sed 's/<\/E>/<\/E>\n/' | egrep '^<E' | LC_ALL=C sort > $(BIGDIR)/bigerr.xml; \
++	fi
++
++bigtest : FORCE
++	@benchcorp | gram-ga.pl --xml --iomlan --aschod=iso-8859-1 --comheadan=ga | tee $(BIGDIR)/big.new.xml | sed 's/<E/\n<E/g' | sed 's/<\/E>/<\/E>\n/' | egrep '^<E' | LC_ALL=C sort > $(BIGDIR)/bigerr.new.xml
++	@if diff -u $(BIGDIR)/big.xml $(BIGDIR)/big.new.xml > /dev/null; then echo "XML unchanged."; rm -f $(BIGDIR)/big.new.xml; else echo "Differences in XML."; fi
++	@if diff -u $(BIGDIR)/bigerr.xml $(BIGDIR)/bigerr.new.xml > /dev/null; then echo "Errors unchanged."; rm -f $(BIGDIR)/bigerr.new.xml; else echo "Differences in errors."; fi
 +
  FORCE :
