@@ -10,6 +10,7 @@ Options for end-users:
     --version      output version information and exit
 
 Options for developers:
+    --brill        find disambiguation rules via Brill's unsupervised algorithm
     --html         produce HTML output for viewing in a web browser
     --ilchiall     report unresolved ambiguities, sorted by frequency
     --minic        output all tags, sorted by frequency (for unigram-xx.txt)
@@ -48,11 +49,11 @@ test xml flag
 <line uimhir="3"> <Q>An</Q> <V t="láith">bhfuil</V> <E msg="ANAITHNID"><X>ayn</X></E> <N pl="n" gnt="n" gnd="m">uachtar</N> <E msg="ANAITHNIDSRL"><X>roach</X></E> <O>agat</O>? </line>
 <line uimhir="4"> <V t="láith">Bíonn</V> <T>an</T> <E msg="NEAMHCHOIT"><F>geál</F></E> <S>ag</S> <N pl="n" gnt="n" gnd="f">satailt</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">dubh</N>. </line>
 <line uimhir="5"> <U>Ní</U> <V p="xx" t="caite">raibh</V> <N pl="n" gnt="n" gnd="m">líon</N> <A pl="n" gnt="n">mór</A> <N pl="y" gnt="n" gnd="m">daoine</N> <A pl="n" gnt="n">bainteach</A> <S>leis</S> <T>an</T> <E msg="CAIGHDEAN{scata}"><Y>scaifte</Y></E> <U>a</U> <V p="xx" t="caite">bhí</V> <S>ag</S> <N pl="n" gnt="n" gnd="f">iarraidh</N> <N pl="n" gnt="n" gnd="f">mioscais</N> <S>a</S> <N pl="n" gnt="n" gnd="m">chothú</N>. </line>
-<line uimhir="6"> <V t="láith">Tá</V> <T>na</T> <E msg="SEIMHIU"><N pl="y" gnt="n" gnd="f">lachain</N> <A pl="y" gnt="n">slachtmhara</A></E> <S>ar</S> <N pl="n" gnt="n" gnd="f">eitilt</N>. </line>
-<line uimhir="7"> <V t="láith">Tá</V> <T>an</T> <N pl="n" gnt="n" gnd="m">Rialtas</N> <V p="2ú" t="ord">tar</V> <N pl="n" gnt="n">éis</N> <N pl="n" gnt="n" gnd="f">áit</N> <T>na</T> <N pl="n" gnt="y" gnd="f">Gaeilge</N> <S>i</S> <N pl="n" gnt="n" gnd="m">saol</N> <T>na</T> <N pl="n" gnt="y" gnd="f">tíre</N> <E msg="SEIMHIU"><S>a</S> <N pl="n" gnt="n" gnd="m">ceistiú</N></E>. </line>
-<line uimhir="8"> <V pl="y" p="3ú" t="caite">Bhíodar</V> <S>ag</S> <N pl="n" gnt="n" gnd="m">rá</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">aonach</N> <V cop="y">gur</V> <O em="y">agamsa</O> <U>a</U> <V p="xx" t="caite">bhí</V> <T>na</T> <N pl="n" gnt="n" gnd="f" h="y">huain</N> <E msg="SEIMHIU"><V cop="y">ab</V> <A pl="n" gnt="y" gnd="f">fearr</A></E>. </line>
-<line uimhir="9"> <U>Ní</U> <V t="fáist">bheidh</V> <E msg="NISEIMHIU"><S>ach</S> <N pl="n" gnt="n" gnd="f">mhallacht</N></E> <S>i</S> <N pl="n" gnt="n" gnd="m">ndán</N> <O>dó</O> <S>ó</S> <T>na</T> <N pl="y" gnt="n" gnd="m">ciníocha</N> <C>agus</C> <N pl="n" gnt="n" gnd="m">fuath</N> <S>ó</S> <T>na</T> <N pl="y" gnt="n" gnd="m">náisiúin</N>. </line>
-<line uimhir="10"> <Q>An</Q> <V t="láith">bhfuil</V> <A pl="n" gnt="n">aon</A> <N pl="n" gnt="n" gnd="m">uachtar</N> <A>reoite</A> <E msg="CLAOCHLU"><S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">cuntar</N></E>? </line>
+<line uimhir="6"> <E msg="NIAITCH"><V cop="y">Nach</V> <A pl="n" gnt="n" h="y">holc</A></E> <T>an</T> <N pl="n" gnt="n" gnd="f">mhaise</N> <O>duit</O> <S>a</S> <N pl="n" gnt="n" gnd="f">bheith</N> <S>ag</S> <N pl="n" gnt="n" gnd="m">magadh</N>. </line>
+<line uimhir="7"> <V t="coinn">Oirfeadh</V> <N pl="n" gnt="n" gnd="m">síol</N> <A pl="n" gnt="n">áitiúil</A> <R>níos</R> <A pl="n" gnt="y" gnd="f">fearr</A> <C>ná</C> <T>an</T> <N pl="n" gnt="n" gnd="m">síol</N> <E msg="NIAITCH"><U>a</U> <V p="saor" t="ord">húsáidtear</V></E> <U>go</U> <A pl="n" gnt="n">minic</A>. </line>
+<line uimhir="8"> <V t="láith">Tá</V> <N pl="n" gnt="n" gnd="m">ceacht</N> <A pl="n" gnt="n">stairiúil</A> <A pl="n" gnt="n">uathúil</A> <S>do</S> <N pl="y" gnt="n" gnd="m">chuairteoirí</N> <E msg="NITEE"><S>san</S> <N pl="n" gnt="n" gnd="m">t-ionad</N></E> <A pl="n" gnt="n">seo</A>. </line>
+<line uimhir="9"> <V t="láith">Tá</V> <T>na</T> <E msg="SEIMHIU"><N pl="y" gnt="n" gnd="f">lachain</N> <A pl="y" gnt="n">slachtmhara</A></E> <S>ar</S> <N pl="n" gnt="n" gnd="f">eitilt</N>. </line>
+<line uimhir="10"> <V t="láith">Tá</V> <T>an</T> <N pl="n" gnt="n" gnd="m">Rialtas</N> <V p="2ú" t="ord">tar</V> <N pl="n" gnt="n">éis</N> <N pl="n" gnt="n" gnd="f">áit</N> <T>na</T> <N pl="n" gnt="y" gnd="f">Gaeilge</N> <S>i</S> <N pl="n" gnt="n" gnd="m">saol</N> <T>na</T> <N pl="n" gnt="y" gnd="f">tíre</N> <E msg="SEIMHIU"><S>a</S> <N pl="n" gnt="n" gnd="m">ceistiú</N></E>. </line>
 </teacs>
 test html flag
 Currently checking triail.2
@@ -71,20 +72,20 @@ Valid word but extremely rare in actual usage.
 <br><br>5: Ní raibh líon mór daoine bainteach leis an <b class=gramadoir>scaifte</b> a bhí ag iarraidh mioscais a chothú. <br>
 Non-standard form: perhaps use /scata/?.
 
-<br><br>6: Tá na <b class=gramadoir>lachain slachtmhara</b> ar eitilt. <br>
+<br><br>6: <b class=gramadoir>Nach holc</b> an mhaise duit a bheith ag magadh. <br>
+Unnecessary prefix /h/.
+
+<br><br>7: Oirfeadh síol áitiúil níos fearr ná an síol <b class=gramadoir>a húsáidtear</b> go minic. <br>
+Unnecessary prefix /h/.
+
+<br><br>8: Tá ceacht stairiúil uathúil do chuairteoirí <b class=gramadoir>san t-ionad</b> seo. <br>
+Unnecessary prefix /t/.
+
+<br><br>9: Tá na <b class=gramadoir>lachain slachtmhara</b> ar eitilt. <br>
 Lenition missing.
 
-<br><br>7: Tá an Rialtas tar éis áit na Gaeilge i saol na tíre <b class=gramadoir>a ceistiú</b>. <br>
+<br><br>10: Tá an Rialtas tar éis áit na Gaeilge i saol na tíre <b class=gramadoir>a ceistiú</b>. <br>
 Lenition missing.
-
-<br><br>8: Bhíodar ag rá ar an aonach gur agamsa a bhí na huain <b class=gramadoir>ab fearr</b>. <br>
-Lenition missing.
-
-<br><br>9: Ní bheidh <b class=gramadoir>ach mhallacht</b> i ndán dó ó na ciníocha agus fuath ó na náisiúin. <br>
-Unnecessary lenition.
-
-<br><br>10: An bhfuil aon uachtar reoite <b class=gramadoir>ar an cuntar</b>? <br>
-Initial mutation missing.
 
 test ionchod flag and ability to read from stdin
 1: Tabhair go leor leor de na na rudaÃ­ seo do do chara, a ChaoimhÃ­n. 
@@ -102,20 +103,20 @@ Valid word but extremely rare in actual usage.
 5: NÃ­ raibh lÃ­on mÃ³r daoine bainteach leis an scaifte a bhÃ­ ag iarraidh mioscais a chothÃº. 
 Non-standard form: perhaps use /scata/?.
 
-6: TÃ¡ na lachain slachtmhara ar eitilt. 
+6: Nach holc an mhaise duit a bheith ag magadh. 
+Unnecessary prefix /h/.
+
+7: Oirfeadh sÃ­ol Ã¡itiÃºil nÃ­os fearr nÃ¡ an sÃ­ol a hÃºsÃ¡idtear go minic. 
+Unnecessary prefix /h/.
+
+8: TÃ¡ ceacht stairiÃºil uathÃºil do chuairteoirÃ­ san t-ionad seo. 
+Unnecessary prefix /t/.
+
+9: TÃ¡ na lachain slachtmhara ar eitilt. 
 Lenition missing.
 
-7: TÃ¡ an Rialtas tar Ã©is Ã¡it na Gaeilge i saol na tÃ­re a ceistiÃº. 
+10: TÃ¡ an Rialtas tar Ã©is Ã¡it na Gaeilge i saol na tÃ­re a ceistiÃº. 
 Lenition missing.
-
-8: BhÃ­odar ag rÃ¡ ar an aonach gur agamsa a bhÃ­ na huain ab fearr. 
-Lenition missing.
-
-9: NÃ­ bheidh ach mhallacht i ndÃ¡n dÃ³ Ã³ na cinÃ­ocha agus fuath Ã³ na nÃ¡isiÃºin. 
-Unnecessary lenition.
-
-10: An bhfuil aon uachtar reoite ar an cuntar? 
-Initial mutation missing.
 
 test English
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
@@ -154,6 +155,7 @@ Options for end-users:
     --version      Versionsnummer anzeigen
 
 Options for developers:
+    --brill        find disambiguation rules via Brill's unsupervised algorithm
     --html         Ausgabe im HTML-Format erzeugen
     --ilchiall     report unresolved ambiguities, sorted by frequency
     --minic        output all tags, sorted by frequency (for unigram-xx.txt)
@@ -194,11 +196,11 @@ test xml flag
 <line uimhir="3"> <Q>An</Q> <V t="láith">bhfuil</V> <E msg="ANAITHNID"><X>ayn</X></E> <N pl="n" gnt="n" gnd="m">uachtar</N> <E msg="ANAITHNIDSRL"><X>roach</X></E> <O>agat</O>? </line>
 <line uimhir="4"> <V t="láith">Bíonn</V> <T>an</T> <E msg="NEAMHCHOIT"><F>geál</F></E> <S>ag</S> <N pl="n" gnt="n" gnd="f">satailt</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">dubh</N>. </line>
 <line uimhir="5"> <U>Ní</U> <V p="xx" t="caite">raibh</V> <N pl="n" gnt="n" gnd="m">líon</N> <A pl="n" gnt="n">mór</A> <N pl="y" gnt="n" gnd="m">daoine</N> <A pl="n" gnt="n">bainteach</A> <S>leis</S> <T>an</T> <E msg="CAIGHDEAN{scata}"><Y>scaifte</Y></E> <U>a</U> <V p="xx" t="caite">bhí</V> <S>ag</S> <N pl="n" gnt="n" gnd="f">iarraidh</N> <N pl="n" gnt="n" gnd="f">mioscais</N> <S>a</S> <N pl="n" gnt="n" gnd="m">chothú</N>. </line>
-<line uimhir="6"> <V t="láith">Tá</V> <T>na</T> <E msg="SEIMHIU"><N pl="y" gnt="n" gnd="f">lachain</N> <A pl="y" gnt="n">slachtmhara</A></E> <S>ar</S> <N pl="n" gnt="n" gnd="f">eitilt</N>. </line>
-<line uimhir="7"> <V t="láith">Tá</V> <T>an</T> <N pl="n" gnt="n" gnd="m">Rialtas</N> <V p="2ú" t="ord">tar</V> <N pl="n" gnt="n">éis</N> <N pl="n" gnt="n" gnd="f">áit</N> <T>na</T> <N pl="n" gnt="y" gnd="f">Gaeilge</N> <S>i</S> <N pl="n" gnt="n" gnd="m">saol</N> <T>na</T> <N pl="n" gnt="y" gnd="f">tíre</N> <E msg="SEIMHIU"><S>a</S> <N pl="n" gnt="n" gnd="m">ceistiú</N></E>. </line>
-<line uimhir="8"> <V pl="y" p="3ú" t="caite">Bhíodar</V> <S>ag</S> <N pl="n" gnt="n" gnd="m">rá</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">aonach</N> <V cop="y">gur</V> <O em="y">agamsa</O> <U>a</U> <V p="xx" t="caite">bhí</V> <T>na</T> <N pl="n" gnt="n" gnd="f" h="y">huain</N> <E msg="SEIMHIU"><V cop="y">ab</V> <A pl="n" gnt="y" gnd="f">fearr</A></E>. </line>
-<line uimhir="9"> <U>Ní</U> <V t="fáist">bheidh</V> <E msg="NISEIMHIU"><S>ach</S> <N pl="n" gnt="n" gnd="f">mhallacht</N></E> <S>i</S> <N pl="n" gnt="n" gnd="m">ndán</N> <O>dó</O> <S>ó</S> <T>na</T> <N pl="y" gnt="n" gnd="m">ciníocha</N> <C>agus</C> <N pl="n" gnt="n" gnd="m">fuath</N> <S>ó</S> <T>na</T> <N pl="y" gnt="n" gnd="m">náisiúin</N>. </line>
-<line uimhir="10"> <Q>An</Q> <V t="láith">bhfuil</V> <A pl="n" gnt="n">aon</A> <N pl="n" gnt="n" gnd="m">uachtar</N> <A>reoite</A> <E msg="CLAOCHLU"><S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">cuntar</N></E>? </line>
+<line uimhir="6"> <E msg="NIAITCH"><V cop="y">Nach</V> <A pl="n" gnt="n" h="y">holc</A></E> <T>an</T> <N pl="n" gnt="n" gnd="f">mhaise</N> <O>duit</O> <S>a</S> <N pl="n" gnt="n" gnd="f">bheith</N> <S>ag</S> <N pl="n" gnt="n" gnd="m">magadh</N>. </line>
+<line uimhir="7"> <V t="coinn">Oirfeadh</V> <N pl="n" gnt="n" gnd="m">síol</N> <A pl="n" gnt="n">áitiúil</A> <R>níos</R> <A pl="n" gnt="y" gnd="f">fearr</A> <C>ná</C> <T>an</T> <N pl="n" gnt="n" gnd="m">síol</N> <E msg="NIAITCH"><U>a</U> <V p="saor" t="ord">húsáidtear</V></E> <U>go</U> <A pl="n" gnt="n">minic</A>. </line>
+<line uimhir="8"> <V t="láith">Tá</V> <N pl="n" gnt="n" gnd="m">ceacht</N> <A pl="n" gnt="n">stairiúil</A> <A pl="n" gnt="n">uathúil</A> <S>do</S> <N pl="y" gnt="n" gnd="m">chuairteoirí</N> <E msg="NITEE"><S>san</S> <N pl="n" gnt="n" gnd="m">t-ionad</N></E> <A pl="n" gnt="n">seo</A>. </line>
+<line uimhir="9"> <V t="láith">Tá</V> <T>na</T> <E msg="SEIMHIU"><N pl="y" gnt="n" gnd="f">lachain</N> <A pl="y" gnt="n">slachtmhara</A></E> <S>ar</S> <N pl="n" gnt="n" gnd="f">eitilt</N>. </line>
+<line uimhir="10"> <V t="láith">Tá</V> <T>an</T> <N pl="n" gnt="n" gnd="m">Rialtas</N> <V p="2ú" t="ord">tar</V> <N pl="n" gnt="n">éis</N> <N pl="n" gnt="n" gnd="f">áit</N> <T>na</T> <N pl="n" gnt="y" gnd="f">Gaeilge</N> <S>i</S> <N pl="n" gnt="n" gnd="m">saol</N> <T>na</T> <N pl="n" gnt="y" gnd="f">tíre</N> <E msg="SEIMHIU"><S>a</S> <N pl="n" gnt="n" gnd="m">ceistiú</N></E>. </line>
 </teacs>
 test html flag
 triail.2 wird gerade geprüft
@@ -217,20 +219,20 @@ Valid word but extremely rare in actual usage.
 <br><br>5: Ní raibh líon mór daoine bainteach leis an <b class=gramadoir>scaifte</b> a bhí ag iarraidh mioscais a chothú. <br>
 Nicht dem Standard entsprechende Form: vielleicht besser /scata/ benutzen?.
 
-<br><br>6: Tá na <b class=gramadoir>lachain slachtmhara</b> ar eitilt. <br>
+<br><br>6: <b class=gramadoir>Nach holc</b> an mhaise duit a bheith ag magadh. <br>
+Unnecessary prefix /h/.
+
+<br><br>7: Oirfeadh síol áitiúil níos fearr ná an síol <b class=gramadoir>a húsáidtear</b> go minic. <br>
+Unnecessary prefix /h/.
+
+<br><br>8: Tá ceacht stairiúil uathúil do chuairteoirí <b class=gramadoir>san t-ionad</b> seo. <br>
+Unnecessary prefix /t/.
+
+<br><br>9: Tá na <b class=gramadoir>lachain slachtmhara</b> ar eitilt. <br>
 Lenierung fehlt.
 
-<br><br>7: Tá an Rialtas tar éis áit na Gaeilge i saol na tíre <b class=gramadoir>a ceistiú</b>. <br>
+<br><br>10: Tá an Rialtas tar éis áit na Gaeilge i saol na tíre <b class=gramadoir>a ceistiú</b>. <br>
 Lenierung fehlt.
-
-<br><br>8: Bhíodar ag rá ar an aonach gur agamsa a bhí na huain <b class=gramadoir>ab fearr</b>. <br>
-Lenierung fehlt.
-
-<br><br>9: Ní bheidh <b class=gramadoir>ach mhallacht</b> i ndán dó ó na ciníocha agus fuath ó na náisiúin. <br>
-Unnötige Lenierung.
-
-<br><br>10: An bhfuil aon uachtar reoite <b class=gramadoir>ar an cuntar</b>? <br>
-Veränderung am Anfang des Wortes fehlt.
 
 test ionchod flag and ability to read from stdin
 1: Tabhair go leor leor de na na rudaÃ­ seo do do chara, a ChaoimhÃ­n. 
@@ -248,20 +250,20 @@ Valid word but extremely rare in actual usage.
 5: NÃ­ raibh lÃ­on mÃ³r daoine bainteach leis an scaifte a bhÃ­ ag iarraidh mioscais a chothÃº. 
 Nicht dem Standard entsprechende Form: vielleicht besser /scata/ benutzen?.
 
-6: TÃ¡ na lachain slachtmhara ar eitilt. 
+6: Nach holc an mhaise duit a bheith ag magadh. 
+Unnecessary prefix /h/.
+
+7: Oirfeadh sÃ­ol Ã¡itiÃºil nÃ­os fearr nÃ¡ an sÃ­ol a hÃºsÃ¡idtear go minic. 
+Unnecessary prefix /h/.
+
+8: TÃ¡ ceacht stairiÃºil uathÃºil do chuairteoirÃ­ san t-ionad seo. 
+Unnecessary prefix /t/.
+
+9: TÃ¡ na lachain slachtmhara ar eitilt. 
 Lenierung fehlt.
 
-7: TÃ¡ an Rialtas tar Ã©is Ã¡it na Gaeilge i saol na tÃ­re a ceistiÃº. 
+10: TÃ¡ an Rialtas tar Ã©is Ã¡it na Gaeilge i saol na tÃ­re a ceistiÃº. 
 Lenierung fehlt.
-
-8: BhÃ­odar ag rÃ¡ ar an aonach gur agamsa a bhÃ­ na huain ab fearr. 
-Lenierung fehlt.
-
-9: NÃ­ bheidh ach mhallacht i ndÃ¡n dÃ³ Ã³ na cinÃ­ocha agus fuath Ã³ na nÃ¡isiÃºin. 
-Unnötige Lenierung.
-
-10: An bhfuil aon uachtar reoite ar an cuntar? 
-Veränderung am Anfang des Wortes fehlt.
 
 test English
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
@@ -291,7 +293,7 @@ test English: ASCII character set
 test help flag
 Úsáid: gr [ROGHANNA] [COMHAD]
 
-Options for end-users:
+Roghanna d'úsáideoirí:
     --iomlan       taispeáin gach earráid (.i. ná húsáid ~/.neamhshuim)
     --ionchod=CÓD  socraigh an t-ionchódú den téacs le seiceáil
     --litriu       scríobh focail mílitrithe chuig an aschur caighdeánach
@@ -299,7 +301,8 @@ Options for end-users:
     --help         taispeáin an chabhair seo agus éirigh as
     --version      taispeáin eolas faoin leagan agus éirigh as
 
-Options for developers:
+Roghanna d'fhorbróirí:
+    --brill        find disambiguation rules via Brill's unsupervised algorithm
     --html         aschur i gcruth HTML chun féachaint le brabhsálaí
     --ilchiall     report unresolved ambiguities, sorted by frequency
     --minic        output all tags, sorted by frequency (for unigram-xx.txt)
@@ -339,11 +342,11 @@ test xml flag
 <line uimhir="3"> <Q>An</Q> <V t="láith">bhfuil</V> <E msg="ANAITHNID"><X>ayn</X></E> <N pl="n" gnt="n" gnd="m">uachtar</N> <E msg="ANAITHNIDSRL"><X>roach</X></E> <O>agat</O>? </line>
 <line uimhir="4"> <V t="láith">Bíonn</V> <T>an</T> <E msg="NEAMHCHOIT"><F>geál</F></E> <S>ag</S> <N pl="n" gnt="n" gnd="f">satailt</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">dubh</N>. </line>
 <line uimhir="5"> <U>Ní</U> <V p="xx" t="caite">raibh</V> <N pl="n" gnt="n" gnd="m">líon</N> <A pl="n" gnt="n">mór</A> <N pl="y" gnt="n" gnd="m">daoine</N> <A pl="n" gnt="n">bainteach</A> <S>leis</S> <T>an</T> <E msg="CAIGHDEAN{scata}"><Y>scaifte</Y></E> <U>a</U> <V p="xx" t="caite">bhí</V> <S>ag</S> <N pl="n" gnt="n" gnd="f">iarraidh</N> <N pl="n" gnt="n" gnd="f">mioscais</N> <S>a</S> <N pl="n" gnt="n" gnd="m">chothú</N>. </line>
-<line uimhir="6"> <V t="láith">Tá</V> <T>na</T> <E msg="SEIMHIU"><N pl="y" gnt="n" gnd="f">lachain</N> <A pl="y" gnt="n">slachtmhara</A></E> <S>ar</S> <N pl="n" gnt="n" gnd="f">eitilt</N>. </line>
-<line uimhir="7"> <V t="láith">Tá</V> <T>an</T> <N pl="n" gnt="n" gnd="m">Rialtas</N> <V p="2ú" t="ord">tar</V> <N pl="n" gnt="n">éis</N> <N pl="n" gnt="n" gnd="f">áit</N> <T>na</T> <N pl="n" gnt="y" gnd="f">Gaeilge</N> <S>i</S> <N pl="n" gnt="n" gnd="m">saol</N> <T>na</T> <N pl="n" gnt="y" gnd="f">tíre</N> <E msg="SEIMHIU"><S>a</S> <N pl="n" gnt="n" gnd="m">ceistiú</N></E>. </line>
-<line uimhir="8"> <V pl="y" p="3ú" t="caite">Bhíodar</V> <S>ag</S> <N pl="n" gnt="n" gnd="m">rá</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">aonach</N> <V cop="y">gur</V> <O em="y">agamsa</O> <U>a</U> <V p="xx" t="caite">bhí</V> <T>na</T> <N pl="n" gnt="n" gnd="f" h="y">huain</N> <E msg="SEIMHIU"><V cop="y">ab</V> <A pl="n" gnt="y" gnd="f">fearr</A></E>. </line>
-<line uimhir="9"> <U>Ní</U> <V t="fáist">bheidh</V> <E msg="NISEIMHIU"><S>ach</S> <N pl="n" gnt="n" gnd="f">mhallacht</N></E> <S>i</S> <N pl="n" gnt="n" gnd="m">ndán</N> <O>dó</O> <S>ó</S> <T>na</T> <N pl="y" gnt="n" gnd="m">ciníocha</N> <C>agus</C> <N pl="n" gnt="n" gnd="m">fuath</N> <S>ó</S> <T>na</T> <N pl="y" gnt="n" gnd="m">náisiúin</N>. </line>
-<line uimhir="10"> <Q>An</Q> <V t="láith">bhfuil</V> <A pl="n" gnt="n">aon</A> <N pl="n" gnt="n" gnd="m">uachtar</N> <A>reoite</A> <E msg="CLAOCHLU"><S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">cuntar</N></E>? </line>
+<line uimhir="6"> <E msg="NIAITCH"><V cop="y">Nach</V> <A pl="n" gnt="n" h="y">holc</A></E> <T>an</T> <N pl="n" gnt="n" gnd="f">mhaise</N> <O>duit</O> <S>a</S> <N pl="n" gnt="n" gnd="f">bheith</N> <S>ag</S> <N pl="n" gnt="n" gnd="m">magadh</N>. </line>
+<line uimhir="7"> <V t="coinn">Oirfeadh</V> <N pl="n" gnt="n" gnd="m">síol</N> <A pl="n" gnt="n">áitiúil</A> <R>níos</R> <A pl="n" gnt="y" gnd="f">fearr</A> <C>ná</C> <T>an</T> <N pl="n" gnt="n" gnd="m">síol</N> <E msg="NIAITCH"><U>a</U> <V p="saor" t="ord">húsáidtear</V></E> <U>go</U> <A pl="n" gnt="n">minic</A>. </line>
+<line uimhir="8"> <V t="láith">Tá</V> <N pl="n" gnt="n" gnd="m">ceacht</N> <A pl="n" gnt="n">stairiúil</A> <A pl="n" gnt="n">uathúil</A> <S>do</S> <N pl="y" gnt="n" gnd="m">chuairteoirí</N> <E msg="NITEE"><S>san</S> <N pl="n" gnt="n" gnd="m">t-ionad</N></E> <A pl="n" gnt="n">seo</A>. </line>
+<line uimhir="9"> <V t="láith">Tá</V> <T>na</T> <E msg="SEIMHIU"><N pl="y" gnt="n" gnd="f">lachain</N> <A pl="y" gnt="n">slachtmhara</A></E> <S>ar</S> <N pl="n" gnt="n" gnd="f">eitilt</N>. </line>
+<line uimhir="10"> <V t="láith">Tá</V> <T>an</T> <N pl="n" gnt="n" gnd="m">Rialtas</N> <V p="2ú" t="ord">tar</V> <N pl="n" gnt="n">éis</N> <N pl="n" gnt="n" gnd="f">áit</N> <T>na</T> <N pl="n" gnt="y" gnd="f">Gaeilge</N> <S>i</S> <N pl="n" gnt="n" gnd="m">saol</N> <T>na</T> <N pl="n" gnt="y" gnd="f">tíre</N> <E msg="SEIMHIU"><S>a</S> <N pl="n" gnt="n" gnd="m">ceistiú</N></E>. </line>
 </teacs>
 test html flag
 Ag seiceáil triail.2
@@ -362,20 +365,20 @@ Focal bailí ach fíor-neamhchoitianta in úsáid iarbhír.
 <br><br>5: Ní raibh líon mór daoine bainteach leis an <b class=gramadoir>scaifte</b> a bhí ag iarraidh mioscais a chothú. <br>
 Focal neamhchaighdeánach: ar mhaith leat /scata/?.
 
-<br><br>6: Tá na <b class=gramadoir>lachain slachtmhara</b> ar eitilt. <br>
+<br><br>6: <b class=gramadoir>Nach holc</b> an mhaise duit a bheith ag magadh. <br>
+Réamhlitir /h/ gan ghá.
+
+<br><br>7: Oirfeadh síol áitiúil níos fearr ná an síol <b class=gramadoir>a húsáidtear</b> go minic. <br>
+Réamhlitir /h/ gan ghá.
+
+<br><br>8: Tá ceacht stairiúil uathúil do chuairteoirí <b class=gramadoir>san t-ionad</b> seo. <br>
+Réamhlitir /t/ gan ghá.
+
+<br><br>9: Tá na <b class=gramadoir>lachain slachtmhara</b> ar eitilt. <br>
 Séimhiú ar iarraidh.
 
-<br><br>7: Tá an Rialtas tar éis áit na Gaeilge i saol na tíre <b class=gramadoir>a ceistiú</b>. <br>
+<br><br>10: Tá an Rialtas tar éis áit na Gaeilge i saol na tíre <b class=gramadoir>a ceistiú</b>. <br>
 Séimhiú ar iarraidh.
-
-<br><br>8: Bhíodar ag rá ar an aonach gur agamsa a bhí na huain <b class=gramadoir>ab fearr</b>. <br>
-Séimhiú ar iarraidh.
-
-<br><br>9: Ní bheidh <b class=gramadoir>ach mhallacht</b> i ndán dó ó na ciníocha agus fuath ó na náisiúin. <br>
-Séimhiú gan ghá.
-
-<br><br>10: An bhfuil aon uachtar reoite <b class=gramadoir>ar an cuntar</b>? <br>
-Séimhiú nó urú ar iarraidh.
 
 test ionchod flag and ability to read from stdin
 1: Tabhair go leor leor de na na rudaÃ­ seo do do chara, a ChaoimhÃ­n. 
@@ -393,20 +396,20 @@ Focal bailí ach fíor-neamhchoitianta in úsáid iarbhír.
 5: NÃ­ raibh lÃ­on mÃ³r daoine bainteach leis an scaifte a bhÃ­ ag iarraidh mioscais a chothÃº. 
 Focal neamhchaighdeánach: ar mhaith leat /scata/?.
 
-6: TÃ¡ na lachain slachtmhara ar eitilt. 
+6: Nach holc an mhaise duit a bheith ag magadh. 
+Réamhlitir /h/ gan ghá.
+
+7: Oirfeadh sÃ­ol Ã¡itiÃºil nÃ­os fearr nÃ¡ an sÃ­ol a hÃºsÃ¡idtear go minic. 
+Réamhlitir /h/ gan ghá.
+
+8: TÃ¡ ceacht stairiÃºil uathÃºil do chuairteoirÃ­ san t-ionad seo. 
+Réamhlitir /t/ gan ghá.
+
+9: TÃ¡ na lachain slachtmhara ar eitilt. 
 Séimhiú ar iarraidh.
 
-7: TÃ¡ an Rialtas tar Ã©is Ã¡it na Gaeilge i saol na tÃ­re a ceistiÃº. 
+10: TÃ¡ an Rialtas tar Ã©is Ã¡it na Gaeilge i saol na tÃ­re a ceistiÃº. 
 Séimhiú ar iarraidh.
-
-8: BhÃ­odar ag rÃ¡ ar an aonach gur agamsa a bhÃ­ na huain ab fearr. 
-Séimhiú ar iarraidh.
-
-9: NÃ­ bheidh ach mhallacht i ndÃ¡n dÃ³ Ã³ na cinÃ­ocha agus fuath Ã³ na nÃ¡isiÃºin. 
-Séimhiú gan ghá.
-
-10: An bhfuil aon uachtar reoite ar an cuntar? 
-Séimhiú nó urú ar iarraidh.
 
 test English
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
@@ -436,7 +439,7 @@ test English: ASCII character set
 test help flag
 ÃšsÃ¡id: gr [ROGHANNA] [COMHAD]
 
-Options for end-users:
+Roghanna d'ÃºsÃ¡ideoirÃ­:
     --iomlan       taispeÃ¡in gach earrÃ¡id (.i. nÃ¡ hÃºsÃ¡id ~/.neamhshuim)
     --ionchod=CÃ“D  socraigh an t-ionchÃ³dÃº den tÃ©acs le seiceÃ¡il
     --litriu       scrÃ­obh focail mÃ­litrithe chuig an aschur caighdeÃ¡nach
@@ -444,7 +447,8 @@ Options for end-users:
     --help         taispeÃ¡in an chabhair seo agus Ã©irigh as
     --version      taispeÃ¡in eolas faoin leagan agus Ã©irigh as
 
-Options for developers:
+Roghanna d'fhorbrÃ³irÃ­:
+    --brill        find disambiguation rules via Brill's unsupervised algorithm
     --html         aschur i gcruth HTML chun fÃ©achaint le brabhsÃ¡laÃ­
     --ilchiall     report unresolved ambiguities, sorted by frequency
     --minic        output all tags, sorted by frequency (for unigram-xx.txt)
@@ -484,11 +488,11 @@ test xml flag
 <line uimhir="3"> <Q>An</Q> <V t="láith">bhfuil</V> <E msg="ANAITHNID"><X>ayn</X></E> <N pl="n" gnt="n" gnd="m">uachtar</N> <E msg="ANAITHNIDSRL"><X>roach</X></E> <O>agat</O>? </line>
 <line uimhir="4"> <V t="láith">Bíonn</V> <T>an</T> <E msg="NEAMHCHOIT"><F>geál</F></E> <S>ag</S> <N pl="n" gnt="n" gnd="f">satailt</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">dubh</N>. </line>
 <line uimhir="5"> <U>Ní</U> <V p="xx" t="caite">raibh</V> <N pl="n" gnt="n" gnd="m">líon</N> <A pl="n" gnt="n">mór</A> <N pl="y" gnt="n" gnd="m">daoine</N> <A pl="n" gnt="n">bainteach</A> <S>leis</S> <T>an</T> <E msg="CAIGHDEAN{scata}"><Y>scaifte</Y></E> <U>a</U> <V p="xx" t="caite">bhí</V> <S>ag</S> <N pl="n" gnt="n" gnd="f">iarraidh</N> <N pl="n" gnt="n" gnd="f">mioscais</N> <S>a</S> <N pl="n" gnt="n" gnd="m">chothú</N>. </line>
-<line uimhir="6"> <V t="láith">Tá</V> <T>na</T> <E msg="SEIMHIU"><N pl="y" gnt="n" gnd="f">lachain</N> <A pl="y" gnt="n">slachtmhara</A></E> <S>ar</S> <N pl="n" gnt="n" gnd="f">eitilt</N>. </line>
-<line uimhir="7"> <V t="láith">Tá</V> <T>an</T> <N pl="n" gnt="n" gnd="m">Rialtas</N> <V p="2ú" t="ord">tar</V> <N pl="n" gnt="n">éis</N> <N pl="n" gnt="n" gnd="f">áit</N> <T>na</T> <N pl="n" gnt="y" gnd="f">Gaeilge</N> <S>i</S> <N pl="n" gnt="n" gnd="m">saol</N> <T>na</T> <N pl="n" gnt="y" gnd="f">tíre</N> <E msg="SEIMHIU"><S>a</S> <N pl="n" gnt="n" gnd="m">ceistiú</N></E>. </line>
-<line uimhir="8"> <V pl="y" p="3ú" t="caite">Bhíodar</V> <S>ag</S> <N pl="n" gnt="n" gnd="m">rá</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">aonach</N> <V cop="y">gur</V> <O em="y">agamsa</O> <U>a</U> <V p="xx" t="caite">bhí</V> <T>na</T> <N pl="n" gnt="n" gnd="f" h="y">huain</N> <E msg="SEIMHIU"><V cop="y">ab</V> <A pl="n" gnt="y" gnd="f">fearr</A></E>. </line>
-<line uimhir="9"> <U>Ní</U> <V t="fáist">bheidh</V> <E msg="NISEIMHIU"><S>ach</S> <N pl="n" gnt="n" gnd="f">mhallacht</N></E> <S>i</S> <N pl="n" gnt="n" gnd="m">ndán</N> <O>dó</O> <S>ó</S> <T>na</T> <N pl="y" gnt="n" gnd="m">ciníocha</N> <C>agus</C> <N pl="n" gnt="n" gnd="m">fuath</N> <S>ó</S> <T>na</T> <N pl="y" gnt="n" gnd="m">náisiúin</N>. </line>
-<line uimhir="10"> <Q>An</Q> <V t="láith">bhfuil</V> <A pl="n" gnt="n">aon</A> <N pl="n" gnt="n" gnd="m">uachtar</N> <A>reoite</A> <E msg="CLAOCHLU"><S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">cuntar</N></E>? </line>
+<line uimhir="6"> <E msg="NIAITCH"><V cop="y">Nach</V> <A pl="n" gnt="n" h="y">holc</A></E> <T>an</T> <N pl="n" gnt="n" gnd="f">mhaise</N> <O>duit</O> <S>a</S> <N pl="n" gnt="n" gnd="f">bheith</N> <S>ag</S> <N pl="n" gnt="n" gnd="m">magadh</N>. </line>
+<line uimhir="7"> <V t="coinn">Oirfeadh</V> <N pl="n" gnt="n" gnd="m">síol</N> <A pl="n" gnt="n">áitiúil</A> <R>níos</R> <A pl="n" gnt="y" gnd="f">fearr</A> <C>ná</C> <T>an</T> <N pl="n" gnt="n" gnd="m">síol</N> <E msg="NIAITCH"><U>a</U> <V p="saor" t="ord">húsáidtear</V></E> <U>go</U> <A pl="n" gnt="n">minic</A>. </line>
+<line uimhir="8"> <V t="láith">Tá</V> <N pl="n" gnt="n" gnd="m">ceacht</N> <A pl="n" gnt="n">stairiúil</A> <A pl="n" gnt="n">uathúil</A> <S>do</S> <N pl="y" gnt="n" gnd="m">chuairteoirí</N> <E msg="NITEE"><S>san</S> <N pl="n" gnt="n" gnd="m">t-ionad</N></E> <A pl="n" gnt="n">seo</A>. </line>
+<line uimhir="9"> <V t="láith">Tá</V> <T>na</T> <E msg="SEIMHIU"><N pl="y" gnt="n" gnd="f">lachain</N> <A pl="y" gnt="n">slachtmhara</A></E> <S>ar</S> <N pl="n" gnt="n" gnd="f">eitilt</N>. </line>
+<line uimhir="10"> <V t="láith">Tá</V> <T>an</T> <N pl="n" gnt="n" gnd="m">Rialtas</N> <V p="2ú" t="ord">tar</V> <N pl="n" gnt="n">éis</N> <N pl="n" gnt="n" gnd="f">áit</N> <T>na</T> <N pl="n" gnt="y" gnd="f">Gaeilge</N> <S>i</S> <N pl="n" gnt="n" gnd="m">saol</N> <T>na</T> <N pl="n" gnt="y" gnd="f">tíre</N> <E msg="SEIMHIU"><S>a</S> <N pl="n" gnt="n" gnd="m">ceistiú</N></E>. </line>
 </teacs>
 test html flag
 Ag seiceÃ¡il triail.2
@@ -507,20 +511,20 @@ Focal bailÃ­ ach fÃ­or-neamhchoitianta in ÃºsÃ¡id iarbhÃ­r.
 <br><br>5: Ní raibh líon mór daoine bainteach leis an <b class=gramadoir>scaifte</b> a bhí ag iarraidh mioscais a chothú. <br>
 Focal neamhchaighdeÃ¡nach: ar mhaith leat /scata/?.
 
-<br><br>6: Tá na <b class=gramadoir>lachain slachtmhara</b> ar eitilt. <br>
+<br><br>6: <b class=gramadoir>Nach holc</b> an mhaise duit a bheith ag magadh. <br>
+RÃ©amhlitir /h/ gan ghÃ¡.
+
+<br><br>7: Oirfeadh síol áitiúil níos fearr ná an síol <b class=gramadoir>a húsáidtear</b> go minic. <br>
+RÃ©amhlitir /h/ gan ghÃ¡.
+
+<br><br>8: Tá ceacht stairiúil uathúil do chuairteoirí <b class=gramadoir>san t-ionad</b> seo. <br>
+RÃ©amhlitir /t/ gan ghÃ¡.
+
+<br><br>9: Tá na <b class=gramadoir>lachain slachtmhara</b> ar eitilt. <br>
 SÃ©imhiÃº ar iarraidh.
 
-<br><br>7: Tá an Rialtas tar éis áit na Gaeilge i saol na tíre <b class=gramadoir>a ceistiú</b>. <br>
+<br><br>10: Tá an Rialtas tar éis áit na Gaeilge i saol na tíre <b class=gramadoir>a ceistiú</b>. <br>
 SÃ©imhiÃº ar iarraidh.
-
-<br><br>8: Bhíodar ag rá ar an aonach gur agamsa a bhí na huain <b class=gramadoir>ab fearr</b>. <br>
-SÃ©imhiÃº ar iarraidh.
-
-<br><br>9: Ní bheidh <b class=gramadoir>ach mhallacht</b> i ndán dó ó na ciníocha agus fuath ó na náisiúin. <br>
-SÃ©imhiÃº gan ghÃ¡.
-
-<br><br>10: An bhfuil aon uachtar reoite <b class=gramadoir>ar an cuntar</b>? <br>
-SÃ©imhiÃº nÃ³ urÃº ar iarraidh.
 
 test ionchod flag and ability to read from stdin
 1: Tabhair go leor leor de na na rudaÃ­ seo do do chara, a ChaoimhÃ­n. 
@@ -538,20 +542,20 @@ Focal bailÃ­ ach fÃ­or-neamhchoitianta in ÃºsÃ¡id iarbhÃ­r.
 5: NÃ­ raibh lÃ­on mÃ³r daoine bainteach leis an scaifte a bhÃ­ ag iarraidh mioscais a chothÃº. 
 Focal neamhchaighdeÃ¡nach: ar mhaith leat /scata/?.
 
-6: TÃ¡ na lachain slachtmhara ar eitilt. 
+6: Nach holc an mhaise duit a bheith ag magadh. 
+RÃ©amhlitir /h/ gan ghÃ¡.
+
+7: Oirfeadh sÃ­ol Ã¡itiÃºil nÃ­os fearr nÃ¡ an sÃ­ol a hÃºsÃ¡idtear go minic. 
+RÃ©amhlitir /h/ gan ghÃ¡.
+
+8: TÃ¡ ceacht stairiÃºil uathÃºil do chuairteoirÃ­ san t-ionad seo. 
+RÃ©amhlitir /t/ gan ghÃ¡.
+
+9: TÃ¡ na lachain slachtmhara ar eitilt. 
 SÃ©imhiÃº ar iarraidh.
 
-7: TÃ¡ an Rialtas tar Ã©is Ã¡it na Gaeilge i saol na tÃ­re a ceistiÃº. 
+10: TÃ¡ an Rialtas tar Ã©is Ã¡it na Gaeilge i saol na tÃ­re a ceistiÃº. 
 SÃ©imhiÃº ar iarraidh.
-
-8: BhÃ­odar ag rÃ¡ ar an aonach gur agamsa a bhÃ­ na huain ab fearr. 
-SÃ©imhiÃº ar iarraidh.
-
-9: NÃ­ bheidh ach mhallacht i ndÃ¡n dÃ³ Ã³ na cinÃ­ocha agus fuath Ã³ na nÃ¡isiÃºin. 
-SÃ©imhiÃº gan ghÃ¡.
-
-10: An bhfuil aon uachtar reoite ar an cuntar? 
-SÃ©imhiÃº nÃ³ urÃº ar iarraidh.
 
 test English
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
@@ -590,6 +594,7 @@ Options for end-users:
     --version      afiºeazã informaşii despre versiune ºi iese
 
 Options for developers:
+    --brill        find disambiguation rules via Brill's unsupervised algorithm
     --html         produce output HTML pentru vizualizarea într-un browser de web
     --ilchiall     report unresolved ambiguities, sorted by frequency
     --minic        output all tags, sorted by frequency (for unigram-xx.txt)
@@ -628,11 +633,11 @@ test xml flag
 <line uimhir="3"> <Q>An</Q> <V t="láith">bhfuil</V> <E msg="ANAITHNID"><X>ayn</X></E> <N pl="n" gnt="n" gnd="m">uachtar</N> <E msg="ANAITHNIDSRL"><X>roach</X></E> <O>agat</O>? </line>
 <line uimhir="4"> <V t="láith">Bíonn</V> <T>an</T> <E msg="NEAMHCHOIT"><F>geál</F></E> <S>ag</S> <N pl="n" gnt="n" gnd="f">satailt</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">dubh</N>. </line>
 <line uimhir="5"> <U>Ní</U> <V p="xx" t="caite">raibh</V> <N pl="n" gnt="n" gnd="m">líon</N> <A pl="n" gnt="n">mór</A> <N pl="y" gnt="n" gnd="m">daoine</N> <A pl="n" gnt="n">bainteach</A> <S>leis</S> <T>an</T> <E msg="CAIGHDEAN{scata}"><Y>scaifte</Y></E> <U>a</U> <V p="xx" t="caite">bhí</V> <S>ag</S> <N pl="n" gnt="n" gnd="f">iarraidh</N> <N pl="n" gnt="n" gnd="f">mioscais</N> <S>a</S> <N pl="n" gnt="n" gnd="m">chothú</N>. </line>
-<line uimhir="6"> <V t="láith">Tá</V> <T>na</T> <E msg="SEIMHIU"><N pl="y" gnt="n" gnd="f">lachain</N> <A pl="y" gnt="n">slachtmhara</A></E> <S>ar</S> <N pl="n" gnt="n" gnd="f">eitilt</N>. </line>
-<line uimhir="7"> <V t="láith">Tá</V> <T>an</T> <N pl="n" gnt="n" gnd="m">Rialtas</N> <V p="2ú" t="ord">tar</V> <N pl="n" gnt="n">éis</N> <N pl="n" gnt="n" gnd="f">áit</N> <T>na</T> <N pl="n" gnt="y" gnd="f">Gaeilge</N> <S>i</S> <N pl="n" gnt="n" gnd="m">saol</N> <T>na</T> <N pl="n" gnt="y" gnd="f">tíre</N> <E msg="SEIMHIU"><S>a</S> <N pl="n" gnt="n" gnd="m">ceistiú</N></E>. </line>
-<line uimhir="8"> <V pl="y" p="3ú" t="caite">Bhíodar</V> <S>ag</S> <N pl="n" gnt="n" gnd="m">rá</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">aonach</N> <V cop="y">gur</V> <O em="y">agamsa</O> <U>a</U> <V p="xx" t="caite">bhí</V> <T>na</T> <N pl="n" gnt="n" gnd="f" h="y">huain</N> <E msg="SEIMHIU"><V cop="y">ab</V> <A pl="n" gnt="y" gnd="f">fearr</A></E>. </line>
-<line uimhir="9"> <U>Ní</U> <V t="fáist">bheidh</V> <E msg="NISEIMHIU"><S>ach</S> <N pl="n" gnt="n" gnd="f">mhallacht</N></E> <S>i</S> <N pl="n" gnt="n" gnd="m">ndán</N> <O>dó</O> <S>ó</S> <T>na</T> <N pl="y" gnt="n" gnd="m">ciníocha</N> <C>agus</C> <N pl="n" gnt="n" gnd="m">fuath</N> <S>ó</S> <T>na</T> <N pl="y" gnt="n" gnd="m">náisiúin</N>. </line>
-<line uimhir="10"> <Q>An</Q> <V t="láith">bhfuil</V> <A pl="n" gnt="n">aon</A> <N pl="n" gnt="n" gnd="m">uachtar</N> <A>reoite</A> <E msg="CLAOCHLU"><S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">cuntar</N></E>? </line>
+<line uimhir="6"> <E msg="NIAITCH"><V cop="y">Nach</V> <A pl="n" gnt="n" h="y">holc</A></E> <T>an</T> <N pl="n" gnt="n" gnd="f">mhaise</N> <O>duit</O> <S>a</S> <N pl="n" gnt="n" gnd="f">bheith</N> <S>ag</S> <N pl="n" gnt="n" gnd="m">magadh</N>. </line>
+<line uimhir="7"> <V t="coinn">Oirfeadh</V> <N pl="n" gnt="n" gnd="m">síol</N> <A pl="n" gnt="n">áitiúil</A> <R>níos</R> <A pl="n" gnt="y" gnd="f">fearr</A> <C>ná</C> <T>an</T> <N pl="n" gnt="n" gnd="m">síol</N> <E msg="NIAITCH"><U>a</U> <V p="saor" t="ord">húsáidtear</V></E> <U>go</U> <A pl="n" gnt="n">minic</A>. </line>
+<line uimhir="8"> <V t="láith">Tá</V> <N pl="n" gnt="n" gnd="m">ceacht</N> <A pl="n" gnt="n">stairiúil</A> <A pl="n" gnt="n">uathúil</A> <S>do</S> <N pl="y" gnt="n" gnd="m">chuairteoirí</N> <E msg="NITEE"><S>san</S> <N pl="n" gnt="n" gnd="m">t-ionad</N></E> <A pl="n" gnt="n">seo</A>. </line>
+<line uimhir="9"> <V t="láith">Tá</V> <T>na</T> <E msg="SEIMHIU"><N pl="y" gnt="n" gnd="f">lachain</N> <A pl="y" gnt="n">slachtmhara</A></E> <S>ar</S> <N pl="n" gnt="n" gnd="f">eitilt</N>. </line>
+<line uimhir="10"> <V t="láith">Tá</V> <T>an</T> <N pl="n" gnt="n" gnd="m">Rialtas</N> <V p="2ú" t="ord">tar</V> <N pl="n" gnt="n">éis</N> <N pl="n" gnt="n" gnd="f">áit</N> <T>na</T> <N pl="n" gnt="y" gnd="f">Gaeilge</N> <S>i</S> <N pl="n" gnt="n" gnd="m">saol</N> <T>na</T> <N pl="n" gnt="y" gnd="f">tíre</N> <E msg="SEIMHIU"><S>a</S> <N pl="n" gnt="n" gnd="m">ceistiú</N></E>. </line>
 </teacs>
 test html flag
 În prezent se verificã triail.2
@@ -651,20 +656,20 @@ Valid word but extremely rare in actual usage.
 <br><br>5: Ní raibh líon mór daoine bainteach leis an <b class=gramadoir>scaifte</b> a bhí ag iarraidh mioscais a chothú. <br>
 Formã nestandardizatã: mai bine folosişi  /scata/?.
 
-<br><br>6: Tá na <b class=gramadoir>lachain slachtmhara</b> ar eitilt. <br>
+<br><br>6: <b class=gramadoir>Nach holc</b> an mhaise duit a bheith ag magadh. <br>
+Unnecessary prefix /h/.
+
+<br><br>7: Oirfeadh síol áitiúil níos fearr ná an síol <b class=gramadoir>a húsáidtear</b> go minic. <br>
+Unnecessary prefix /h/.
+
+<br><br>8: Tá ceacht stairiúil uathúil do chuairteoirí <b class=gramadoir>san t-ionad</b> seo. <br>
+Unnecessary prefix /t/.
+
+<br><br>9: Tá na <b class=gramadoir>lachain slachtmhara</b> ar eitilt. <br>
 Indulgenşã(lenition) lipsã.
 
-<br><br>7: Tá an Rialtas tar éis áit na Gaeilge i saol na tíre <b class=gramadoir>a ceistiú</b>. <br>
+<br><br>10: Tá an Rialtas tar éis áit na Gaeilge i saol na tíre <b class=gramadoir>a ceistiú</b>. <br>
 Indulgenşã(lenition) lipsã.
-
-<br><br>8: Bhíodar ag rá ar an aonach gur agamsa a bhí na huain <b class=gramadoir>ab fearr</b>. <br>
-Indulgenşã(lenition) lipsã.
-
-<br><br>9: Ní bheidh <b class=gramadoir>ach mhallacht</b> i ndán dó ó na ciníocha agus fuath ó na náisiúin. <br>
-Indulgenşã(lenition) nenecesarã.
-
-<br><br>10: An bhfuil aon uachtar reoite <b class=gramadoir>ar an cuntar</b>? <br>
-Mutaşie inişialã lipsã.
 
 test ionchod flag and ability to read from stdin
 1: Tabhair go leor leor de na na rudaÃ­ seo do do chara, a ChaoimhÃ­n. 
@@ -682,20 +687,20 @@ Valid word but extremely rare in actual usage.
 5: NÃ­ raibh lÃ­on mÃ³r daoine bainteach leis an scaifte a bhÃ­ ag iarraidh mioscais a chothÃº. 
 Formã nestandardizatã: mai bine folosişi  /scata/?.
 
-6: TÃ¡ na lachain slachtmhara ar eitilt. 
+6: Nach holc an mhaise duit a bheith ag magadh. 
+Unnecessary prefix /h/.
+
+7: Oirfeadh sÃ­ol Ã¡itiÃºil nÃ­os fearr nÃ¡ an sÃ­ol a hÃºsÃ¡idtear go minic. 
+Unnecessary prefix /h/.
+
+8: TÃ¡ ceacht stairiÃºil uathÃºil do chuairteoirÃ­ san t-ionad seo. 
+Unnecessary prefix /t/.
+
+9: TÃ¡ na lachain slachtmhara ar eitilt. 
 Indulgenşã(lenition) lipsã.
 
-7: TÃ¡ an Rialtas tar Ã©is Ã¡it na Gaeilge i saol na tÃ­re a ceistiÃº. 
+10: TÃ¡ an Rialtas tar Ã©is Ã¡it na Gaeilge i saol na tÃ­re a ceistiÃº. 
 Indulgenşã(lenition) lipsã.
-
-8: BhÃ­odar ag rÃ¡ ar an aonach gur agamsa a bhÃ­ na huain ab fearr. 
-Indulgenşã(lenition) lipsã.
-
-9: NÃ­ bheidh ach mhallacht i ndÃ¡n dÃ³ Ã³ na cinÃ­ocha agus fuath Ã³ na nÃ¡isiÃºin. 
-Indulgenşã(lenition) nenecesarã.
-
-10: An bhfuil aon uachtar reoite ar an cuntar? 
-Mutaşie inişialã lipsã.
 
 test English
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
@@ -734,6 +739,7 @@ Options for end-users:
     --version      toon versie-informatie en beëindig programma
 
 Options for developers:
+    --brill        find disambiguation rules via Brill's unsupervised algorithm
     --html         creeer HTML output om te bekijken in een web browser
     --ilchiall     report unresolved ambiguities, sorted by frequency
     --minic        output all tags, sorted by frequency (for unigram-xx.txt)
@@ -772,11 +778,11 @@ test xml flag
 <line uimhir="3"> <Q>An</Q> <V t="láith">bhfuil</V> <E msg="ANAITHNID"><X>ayn</X></E> <N pl="n" gnt="n" gnd="m">uachtar</N> <E msg="ANAITHNIDSRL"><X>roach</X></E> <O>agat</O>? </line>
 <line uimhir="4"> <V t="láith">Bíonn</V> <T>an</T> <E msg="NEAMHCHOIT"><F>geál</F></E> <S>ag</S> <N pl="n" gnt="n" gnd="f">satailt</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">dubh</N>. </line>
 <line uimhir="5"> <U>Ní</U> <V p="xx" t="caite">raibh</V> <N pl="n" gnt="n" gnd="m">líon</N> <A pl="n" gnt="n">mór</A> <N pl="y" gnt="n" gnd="m">daoine</N> <A pl="n" gnt="n">bainteach</A> <S>leis</S> <T>an</T> <E msg="CAIGHDEAN{scata}"><Y>scaifte</Y></E> <U>a</U> <V p="xx" t="caite">bhí</V> <S>ag</S> <N pl="n" gnt="n" gnd="f">iarraidh</N> <N pl="n" gnt="n" gnd="f">mioscais</N> <S>a</S> <N pl="n" gnt="n" gnd="m">chothú</N>. </line>
-<line uimhir="6"> <V t="láith">Tá</V> <T>na</T> <E msg="SEIMHIU"><N pl="y" gnt="n" gnd="f">lachain</N> <A pl="y" gnt="n">slachtmhara</A></E> <S>ar</S> <N pl="n" gnt="n" gnd="f">eitilt</N>. </line>
-<line uimhir="7"> <V t="láith">Tá</V> <T>an</T> <N pl="n" gnt="n" gnd="m">Rialtas</N> <V p="2ú" t="ord">tar</V> <N pl="n" gnt="n">éis</N> <N pl="n" gnt="n" gnd="f">áit</N> <T>na</T> <N pl="n" gnt="y" gnd="f">Gaeilge</N> <S>i</S> <N pl="n" gnt="n" gnd="m">saol</N> <T>na</T> <N pl="n" gnt="y" gnd="f">tíre</N> <E msg="SEIMHIU"><S>a</S> <N pl="n" gnt="n" gnd="m">ceistiú</N></E>. </line>
-<line uimhir="8"> <V pl="y" p="3ú" t="caite">Bhíodar</V> <S>ag</S> <N pl="n" gnt="n" gnd="m">rá</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">aonach</N> <V cop="y">gur</V> <O em="y">agamsa</O> <U>a</U> <V p="xx" t="caite">bhí</V> <T>na</T> <N pl="n" gnt="n" gnd="f" h="y">huain</N> <E msg="SEIMHIU"><V cop="y">ab</V> <A pl="n" gnt="y" gnd="f">fearr</A></E>. </line>
-<line uimhir="9"> <U>Ní</U> <V t="fáist">bheidh</V> <E msg="NISEIMHIU"><S>ach</S> <N pl="n" gnt="n" gnd="f">mhallacht</N></E> <S>i</S> <N pl="n" gnt="n" gnd="m">ndán</N> <O>dó</O> <S>ó</S> <T>na</T> <N pl="y" gnt="n" gnd="m">ciníocha</N> <C>agus</C> <N pl="n" gnt="n" gnd="m">fuath</N> <S>ó</S> <T>na</T> <N pl="y" gnt="n" gnd="m">náisiúin</N>. </line>
-<line uimhir="10"> <Q>An</Q> <V t="láith">bhfuil</V> <A pl="n" gnt="n">aon</A> <N pl="n" gnt="n" gnd="m">uachtar</N> <A>reoite</A> <E msg="CLAOCHLU"><S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">cuntar</N></E>? </line>
+<line uimhir="6"> <E msg="NIAITCH"><V cop="y">Nach</V> <A pl="n" gnt="n" h="y">holc</A></E> <T>an</T> <N pl="n" gnt="n" gnd="f">mhaise</N> <O>duit</O> <S>a</S> <N pl="n" gnt="n" gnd="f">bheith</N> <S>ag</S> <N pl="n" gnt="n" gnd="m">magadh</N>. </line>
+<line uimhir="7"> <V t="coinn">Oirfeadh</V> <N pl="n" gnt="n" gnd="m">síol</N> <A pl="n" gnt="n">áitiúil</A> <R>níos</R> <A pl="n" gnt="y" gnd="f">fearr</A> <C>ná</C> <T>an</T> <N pl="n" gnt="n" gnd="m">síol</N> <E msg="NIAITCH"><U>a</U> <V p="saor" t="ord">húsáidtear</V></E> <U>go</U> <A pl="n" gnt="n">minic</A>. </line>
+<line uimhir="8"> <V t="láith">Tá</V> <N pl="n" gnt="n" gnd="m">ceacht</N> <A pl="n" gnt="n">stairiúil</A> <A pl="n" gnt="n">uathúil</A> <S>do</S> <N pl="y" gnt="n" gnd="m">chuairteoirí</N> <E msg="NITEE"><S>san</S> <N pl="n" gnt="n" gnd="m">t-ionad</N></E> <A pl="n" gnt="n">seo</A>. </line>
+<line uimhir="9"> <V t="láith">Tá</V> <T>na</T> <E msg="SEIMHIU"><N pl="y" gnt="n" gnd="f">lachain</N> <A pl="y" gnt="n">slachtmhara</A></E> <S>ar</S> <N pl="n" gnt="n" gnd="f">eitilt</N>. </line>
+<line uimhir="10"> <V t="láith">Tá</V> <T>an</T> <N pl="n" gnt="n" gnd="m">Rialtas</N> <V p="2ú" t="ord">tar</V> <N pl="n" gnt="n">éis</N> <N pl="n" gnt="n" gnd="f">áit</N> <T>na</T> <N pl="n" gnt="y" gnd="f">Gaeilge</N> <S>i</S> <N pl="n" gnt="n" gnd="m">saol</N> <T>na</T> <N pl="n" gnt="y" gnd="f">tíre</N> <E msg="SEIMHIU"><S>a</S> <N pl="n" gnt="n" gnd="m">ceistiú</N></E>. </line>
 </teacs>
 test html flag
 Word momenteel nagekeken
@@ -795,20 +801,20 @@ Correct woord, maar erg zeldzaam in waarlijk gebruik.
 <br><br>5: Ní raibh líon mór daoine bainteach leis an <b class=gramadoir>scaifte</b> a bhí ag iarraidh mioscais a chothú. <br>
 Geen standard vorm: gebruik misschien /scata/?.
 
-<br><br>6: Tá na <b class=gramadoir>lachain slachtmhara</b> ar eitilt. <br>
+<br><br>6: <b class=gramadoir>Nach holc</b> an mhaise duit a bheith ag magadh. <br>
+Unnecessary prefix /h/.
+
+<br><br>7: Oirfeadh síol áitiúil níos fearr ná an síol <b class=gramadoir>a húsáidtear</b> go minic. <br>
+Unnecessary prefix /h/.
+
+<br><br>8: Tá ceacht stairiúil uathúil do chuairteoirí <b class=gramadoir>san t-ionad</b> seo. <br>
+Unnecessary prefix /t/.
+
+<br><br>9: Tá na <b class=gramadoir>lachain slachtmhara</b> ar eitilt. <br>
 Lenitie (verzachting) ontbreekt.
 
-<br><br>7: Tá an Rialtas tar éis áit na Gaeilge i saol na tíre <b class=gramadoir>a ceistiú</b>. <br>
+<br><br>10: Tá an Rialtas tar éis áit na Gaeilge i saol na tíre <b class=gramadoir>a ceistiú</b>. <br>
 Lenitie (verzachting) ontbreekt.
-
-<br><br>8: Bhíodar ag rá ar an aonach gur agamsa a bhí na huain <b class=gramadoir>ab fearr</b>. <br>
-Lenitie (verzachting) ontbreekt.
-
-<br><br>9: Ní bheidh <b class=gramadoir>ach mhallacht</b> i ndán dó ó na ciníocha agus fuath ó na náisiúin. <br>
-Onnodige lenitie.
-
-<br><br>10: An bhfuil aon uachtar reoite <b class=gramadoir>ar an cuntar</b>? <br>
-Begin mutatie ontbreekt.
 
 test ionchod flag and ability to read from stdin
 1: Tabhair go leor leor de na na rudaÃ­ seo do do chara, a ChaoimhÃ­n. 
@@ -826,20 +832,20 @@ Correct woord, maar erg zeldzaam in waarlijk gebruik.
 5: NÃ­ raibh lÃ­on mÃ³r daoine bainteach leis an scaifte a bhÃ­ ag iarraidh mioscais a chothÃº. 
 Geen standard vorm: gebruik misschien /scata/?.
 
-6: TÃ¡ na lachain slachtmhara ar eitilt. 
+6: Nach holc an mhaise duit a bheith ag magadh. 
+Unnecessary prefix /h/.
+
+7: Oirfeadh sÃ­ol Ã¡itiÃºil nÃ­os fearr nÃ¡ an sÃ­ol a hÃºsÃ¡idtear go minic. 
+Unnecessary prefix /h/.
+
+8: TÃ¡ ceacht stairiÃºil uathÃºil do chuairteoirÃ­ san t-ionad seo. 
+Unnecessary prefix /t/.
+
+9: TÃ¡ na lachain slachtmhara ar eitilt. 
 Lenitie (verzachting) ontbreekt.
 
-7: TÃ¡ an Rialtas tar Ã©is Ã¡it na Gaeilge i saol na tÃ­re a ceistiÃº. 
+10: TÃ¡ an Rialtas tar Ã©is Ã¡it na Gaeilge i saol na tÃ­re a ceistiÃº. 
 Lenitie (verzachting) ontbreekt.
-
-8: BhÃ­odar ag rÃ¡ ar an aonach gur agamsa a bhÃ­ na huain ab fearr. 
-Lenitie (verzachting) ontbreekt.
-
-9: NÃ­ bheidh ach mhallacht i ndÃ¡n dÃ³ Ã³ na cinÃ­ocha agus fuath Ã³ na nÃ¡isiÃºin. 
-Onnodige lenitie.
-
-10: An bhfuil aon uachtar reoite ar an cuntar? 
-Begin mutatie ontbreekt.
 
 test English
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
