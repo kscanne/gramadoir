@@ -1,0 +1,192 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Kevin P. Scannell
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2003-09-18 19:52-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: cuardach.c:76 cuardach.c:95 cuardach.c:138
+#, c-format
+msgid "%s: out of memory\n"
+msgstr ""
+
+#: cuardach.c:85
+#, c-format
+msgid "%s: `eile.bs' corrupted at %s\n"
+msgstr ""
+
+#: cuardach.c:108 cuardach.c:149 cuardach.c:214
+#, c-format
+msgid "%s: warning: check size of %s: %d?\n"
+msgstr ""
+
+#: cuardach.c:113 cuardach.c:154 cuardach.c:220
+#, c-format
+msgid "%s: warning: problem closing %s\n"
+msgstr ""
+
+#: cuardach.c:343
+#, c-format
+msgid "%s: illegal grammatical code\n"
+msgstr ""
+
+#: cuardach.c:395
+#, c-format
+msgid "%s: no grammar codes\n"
+msgstr ""
+
+#: cuardach.c:622
+#, c-format
+msgid "%s: problem with the `cuardach' command\n"
+msgstr ""
+
+#: cuardach.c:629
+#, c-format
+msgid "%s: problem reading the database\n"
+msgstr ""
+
+#: ponc.in.y:63
+#, c-format
+msgid "There was %d error.\n"
+msgid_plural "There were %d errors.\n"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ponc.in.y:69
+#, c-format
+msgid "Successfully parsed %d rule.\n"
+msgid_plural "Successfully parsed %d rules.\n"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ponc.in.y:79
+#, c-format
+msgid "Line %d: %s\n"
+msgstr ""
+
+#: gr.in:45
+msgid "Currently checking %s"
+msgstr ""
+
+#: gr.in:46
+msgid "There is no such file."
+msgstr ""
+
+#: gr.in:47
+msgid "Is a directory"
+msgstr ""
+
+#: gr.in:48
+msgid "Permission denied"
+msgstr ""
+
+#: gr.in:49
+msgid "Usage: %s [OPTIONS] [FILES]"
+msgstr ""
+
+#: gr.in:50
+msgid "    --litriu       write misspelled words to standard output"
+msgstr ""
+
+#: gr.in:51
+msgid "    --html         produce HTML output for viewing in a web browser"
+msgstr ""
+
+#: gr.in:52
+msgid "    --xml          write tagged XML stream to standard output, for debugging"
+msgstr ""
+
+#: gr.in:53
+msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
+msgstr ""
+
+#: gr.in:54
+msgid "    --teanga=XX    specify the language of the text to be checked (default=ga)"
+msgstr ""
+
+#: gr.in:55
+msgid "    --help         display this help and exit"
+msgstr ""
+
+#: gr.in:56
+msgid "    --version      output version information and exit"
+msgstr ""
+
+#: gr.in:57
+msgid "If no file is given, read from standard input."
+msgstr ""
+
+#: gr.in:58
+msgid "Send bug reports to <%s>."
+msgstr ""
+
+#: gr.in:59
+msgid "version %s"
+msgstr ""
+
+#: gr.in:60
+msgid "This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law."
+msgstr ""
+
+#: gr.in:61
+msgid "Try %s for more information."
+msgstr ""
+
+#: gr.in:62
+msgid "unknown option"
+msgstr ""
+
+#: gr.in:63
+msgid "Language %s is not supported."
+msgstr ""
+
+#: gr.in:64
+msgid "Unknown word (ignoring remainder in this sentence)"
+msgstr ""
+
+#: gr.in:65
+msgid "Unknown word"
+msgstr ""
+
+#: gr.in:66
+msgid "You should use \\/\\1\\/ here instead"
+msgstr ""
+
+#: gr.in:67
+msgid "Non-standard form: perhaps use \\/\\1\\/?"
+msgstr ""
+
+#: gr.in:68
+msgid "Initial mutation missing"
+msgstr ""
+
+#: gr.in:69
+msgid "Unnecessary lenition"
+msgstr ""
+
+#: gr.in:70
+msgid "Prefix \\/h\\/ missing"
+msgstr ""
+
+#: gr.in:71
+msgid "Prefix \\/t\\/ missing"
+msgstr ""
+
+#: gr.in:72
+msgid "Lenition missing"
+msgstr ""
+
+#: gr.in:73
+msgid "Eclipsis missing"
+msgstr ""

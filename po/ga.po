@@ -1,0 +1,211 @@
+# Irish translations for gramadoir.
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gramadoir package.
+# Kevin Patrick Scannell <scannell@SLU.EDU>, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramadoir 0.2-r1\n"
+"POT-Creation-Date: 2003-09-18 19:52-0500\n"
+"PO-Revision-Date: 2003-09-18 21:46-0500\n"
+"Last-Translator: Kevin Patrick Scannell <scannell@SLU.EDU>\n"
+"Language-Team: Irish <ga@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 0 : (n>1 && n<7) ? 1 : (n>6 && n "
+"<11) ? 2 : 3;\n"
+
+#: cuardach.c:76 cuardach.c:95 cuardach.c:138
+#, c-format
+msgid "%s: out of memory\n"
+msgstr "%s: cuimhne ídithe\n"
+
+#: cuardach.c:85
+#, c-format
+msgid "%s: `eile.bs' corrupted at %s\n"
+msgstr "%s: `eile.bs' truaillithe ag %s\n"
+
+#: cuardach.c:108 cuardach.c:149 cuardach.c:214
+#, c-format
+msgid "%s: warning: check size of %s: %d?\n"
+msgstr "%s: rabhadh: deimhnigh méid de %s: %d?\n"
+
+#: cuardach.c:113 cuardach.c:154 cuardach.c:220
+#, c-format
+msgid "%s: warning: problem closing %s\n"
+msgstr "%s: rabhadh: fadhb ag dúnadh %s\n"
+
+#: cuardach.c:343
+#, c-format
+msgid "%s: illegal grammatical code\n"
+msgstr "%s: cód gramadach neamhcheadaithe\n"
+
+#: cuardach.c:395
+#, c-format
+msgid "%s: no grammar codes\n"
+msgstr "%s: níl aon cód gramadaí ann\n"
+
+#: cuardach.c:622
+#, c-format
+msgid "%s: problem with the `cuardach' command\n"
+msgstr "%s: fadhb leis an ordú 'cuardach'\n"
+
+#: cuardach.c:629
+#, c-format
+msgid "%s: problem reading the database\n"
+msgstr "%s: fadhb ag léamh an bhunachair sonraí\n"
+
+#: ponc.in.y:63
+#, c-format
+msgid "There was %d error.\n"
+msgid_plural "There were %d errors.\n"
+msgstr[0] "Bhí %d earráid ann.\n"
+msgstr[1] "Bhí %d earráid ann.\n"
+msgstr[2] "Bhí %d n-earráid ann.\n"
+msgstr[3] "Bhí %d earráid ann.\n"
+
+#: ponc.in.y:69
+#, c-format
+msgid "Successfully parsed %d rule.\n"
+msgid_plural "Successfully parsed %d rules.\n"
+msgstr[0] "Pársáladh %d riail.\n"
+msgstr[1] "Pársáladh %d riail.\n"
+msgstr[2] "Pársáladh %d riail.\n"
+msgstr[3] "Pársáladh %d riail.\n"
+
+#: ponc.in.y:79
+#, c-format
+msgid "Line %d: %s\n"
+msgstr "Líne %d: %s\n"
+
+#: gr.in:45
+msgid "Currently checking %s"
+msgstr "Ag seiceáil %s"
+
+#: gr.in:46
+msgid "There is no such file."
+msgstr "Níl a leithéid de chomhad ann"
+
+#: gr.in:47
+msgid "Is a directory"
+msgstr "Is comhadlann é"
+
+#: gr.in:48
+msgid "Permission denied"
+msgstr "Cead diúltaithe"
+
+#: gr.in:49
+msgid "Usage: %s [OPTIONS] [FILES]"
+msgstr "Úsáid: %s [ROGHANNA] [COMHAD]"
+
+#: gr.in:50
+msgid "    --litriu       write misspelled words to standard output"
+msgstr ""
+"    --litriu       scríobh focail mílitrithe chuig an aschur caighdeánach"
+
+#: gr.in:51
+msgid "    --html         produce HTML output for viewing in a web browser"
+msgstr "    --html         aschur i gcruth HTML chun féachaint le brabhsaer"
+
+#: gr.in:52
+msgid ""
+"    --xml          write tagged XML stream to standard output, for debugging"
+msgstr ""
+"    --xml          scríobh sruth XML chuig aschur caighdeánach, chun "
+"dífhabhtú"
+
+#: gr.in:53
+msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
+msgstr ""
+"    --iomlan       taispeáin gach earráid (.i. ná húsáid ~/.neamhshuim)"
+
+#: gr.in:54
+msgid ""
+"    --teanga=XX    specify the language of the text to be checked "
+"(default=ga)"
+msgstr ""
+"    --teanga=XX    socraigh an teanga den téacs le seiceáil (loicthe=ga)"
+
+#: gr.in:55
+msgid "    --help         display this help and exit"
+msgstr "    --help         taispeáin an chabhair seo agus éirigh as"
+
+#: gr.in:56
+msgid "    --version      output version information and exit"
+msgstr "    --version      taispeáin eolas faoin leagan agus éirigh as"
+
+#: gr.in:57
+msgid "If no file is given, read from standard input."
+msgstr "Mura bhfuil comhad ann, léigh ón ionchur caighdeánach."
+
+#: gr.in:58
+msgid "Send bug reports to <%s>."
+msgstr "Seol tuairiscí fabhtanna chuig <%s>."
+
+#: gr.in:59
+msgid "version %s"
+msgstr "leagan %s"
+
+#: gr.in:60
+msgid ""
+"This is free software; see the source for copying conditions.  There is NO"
+"\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
+"PURPOSE,\\nto the extent permitted by law."
+msgstr ""
+"Is saorbhogearra an ríomhchlár seo; féach ar an bhunchód le haghaidh"
+"\\ncoinníollacha cóipeála.  Níl baránta AR BITH ann; go fiú níl baránta ann"
+"\\nd'INDÍOLTACHT nó FEILIÚNACHT DO FHEIDHM AR LEITH, an oiread atá ceadaithe"
+"\\nde réir dlí."
+
+#: gr.in:61
+msgid "Try %s for more information."
+msgstr "Bain triail as %s chun tuilleadh eolais a fháil."
+
+#: gr.in:62
+msgid "unknown option"
+msgstr "rogha anaithnid"
+
+#: gr.in:63
+msgid "Language %s is not supported."
+msgstr "Níl an teanga %s ar fáil."
+
+#: gr.in:64
+msgid "Unknown word (ignoring remainder in this sentence)"
+msgstr "Focal anaithnid (scaoilfear an chuid eile san abairt seo)"
+
+#: gr.in:65
+msgid "Unknown word"
+msgstr "Focal anaithnid"
+
+#: gr.in:66
+msgid "You should use \\/\\1\\/ here instead"
+msgstr "Ba chóir duit \\/\\1\\/ a úsáid anseo"
+
+#: gr.in:67
+msgid "Non-standard form: perhaps use \\/\\1\\/?"
+msgstr "Focal neamhchaighdeánach: ar mhaith leat \\/\\1\\/?"
+
+#: gr.in:68
+msgid "Initial mutation missing"
+msgstr "Séimhiú nó urú ar iarraidh"
+
+#: gr.in:69
+msgid "Unnecessary lenition"
+msgstr "Séimhiú gan ghá"
+
+#: gr.in:70
+msgid "Prefix \\/h\\/ missing"
+msgstr "Réamhlitir \\/h\\/ ar iarraidh"
+
+#: gr.in:71
+msgid "Prefix \\/t\\/ missing"
+msgstr "Réamhlitir \\/t\\/ ar iarraidh"
+
+#: gr.in:72
+msgid "Lenition missing"
+msgstr "Séimhiú ar iarraidh"
+
+#: gr.in:73
+msgid "Eclipsis missing"
+msgstr "Urú ar iarraidh"
