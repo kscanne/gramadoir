@@ -223,7 +223,7 @@ ghail$				aíl		1    # Dinneen
 ghaile$				aíola		1    # Dinneen
 ighil$				íl		1    # Dinneen
 ighile$				íola		1    # Dinneen
-(ain|é[ai]g|iar)gc		$1g		1    # CO p.109
+(ain|é[ai]|iar)gc		$1g		1    # CO p.109
 (é[ai])dt			$1d		1    # CO p.109
 (dh?í?)omb			$1om		1    # CO p.109
 (ai?n)bhf			$1bh		1    # CO p.109  ainbhfiosach
