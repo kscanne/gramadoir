@@ -77,6 +77,10 @@ output a simple XML format for use with other applications
 
 produce HTML output for viewing in a web browser
 
+=item B<--no-unigram>
+
+do not resolve ambiguous parts of speech by frequency
+
 =item B<--xml>        
 
 write tagged XML stream to standard output, for debugging
@@ -140,54 +144,56 @@ my $VERSION = '@PACKAGE_VERSION@';
 
 sub gettext
 {
-	my $string = shift;
+	my ( $string, @rest ) = @_;
 
 	$string =~ s/\\n/\n/g;
 	$string =~ s/\[/~[/g;
 	$string =~ s/\]/~]/g;
 	$string =~ s/\%s/[_1]/;
-	return $lh->maketext($string, @_);
+	return $lh->maketext($string, @rest);
 }
 
 sub localized_die
 {
 	my ( $signal ) = @_;
-	my $dieclar = gettext('An Gramadoir');  # can't use global $clar yet
+	my $msg;
 
-	if ( $signal =~ m/^getopt/ ) {
-		my $msg = gettext('error parsing command-line options');
-		my $helper = $0;
-		$helper =~ s#^.*/([^/]+)$#$1 --help#;
-		my $tryhelp = gettext('Try %s for more information.', $helper);
-		print STDERR "$dieclar: $msg\n$tryhelp\n";
-		exit 1;
+	if ( $signal =~ m/^Unknown option: (.*)/ ) {
+		my $arg = $1;
+		chomp $arg;
+		$msg = gettext('unrecognized option %s', '`'.$arg.'\'');
+	}
+	elsif ( $signal =~ m/^Option (.*) requires an argument/ ) {
+		$msg = gettext('option %s requires an argument', '`'.$1.'\'');
+	}
+	elsif ( $signal =~ m/^Option (.*) does not take/ ) {
+		$msg = gettext('option %s does not allow an argument', '`'.$1.'\'');
+	}
+	elsif ( $signal =~ m/^getopt/ ) {
+		$msg = gettext('error parsing command-line options');
 	}
 	elsif ( $signal =~ m/^gram: maketext (.*)/ ) {
-		my $msg = gettext('Language %s is not supported.', $1);
-		print STDERR "$dieclar: $msg\n";
-		exit 1;
+		$msg = gettext('Language %s is not supported.', $1);
 	}
 	else {
 		die $signal;
 	}
+	my $dieclar = gettext('An Gramadoir');  # can't use global $clar yet
+	my $tryhelp = gettext('Try %s for more information.', '`@SCRIPTNAME@ --help\'');
+	print STDERR "$dieclar: $msg\n$tryhelp\n";
+	exit 1;
 }
 
 $lh = Lingua::@TEANGA@::Gramadoir::Languages->get_handle();
 $SIG{__DIE__} = 'localized_die';
-my $api = '';
-my $aschur = '';
-my $aspell = '';
-my $comheadan = '';
-my $dath = 'bold red';
-my $help = '';
-my $html = '';
-my $iomlan = '';
-my $ionchod = '@NATIVE@';
-my $aschod = 'utf8';
-my $litriu = '';
-my $version = '';
-my $xml = '';
-GetOptions (	
+# scalars for global options
+use vars qw($api $aschur $aspell $comheadan $dath $help $html $iomlan $ionchod $aschod $litriu $version $xml $nounigram);
+$dath = 'bold red';
+$ionchod = '@NATIVE@';
+$aschod = 'utf8';
+eval { 
+	local $SIG{__WARN__} = 'localized_die';
+	GetOptions (	
 		'all|iomlan|a'          => \$iomlan,
 		'api'                   => \$api,
 		'aspell|moltai'         => \$aspell,
@@ -195,13 +201,18 @@ GetOptions (
 		'color|colour|dath=s'	=> \$dath,
 		'incode|ionchod|f=s'    => \$ionchod,
 		'outcode|aschod|t=s'    => \$aschod,
+		'no-unigram'		=> \$nounigram,
 		'help|cabhair|h'        => \$help,
 		'html'			=> \$html,
 		'interface|comheadan=s' => \$comheadan,
 		'output|aschur|o=s'     => \$aschur,
 		'version|leagan|v'      => \$version,
 		'xml'                   => \$xml,
-		) or die "getopt error";
+		) 
+};
+die "getopt error" if $@;
+
+$xml = 1 if $nounigram;
 
 if ($aschur) {
 	unless ($^O eq 'MSWin32') {
@@ -216,7 +227,9 @@ else {
 	binmode OUTSTREAM, ":encoding($aschod)";  # must be after alias
 }
 
-if ($comheadan) {
+binmode STDERR, ":encoding($aschod)";
+
+f ($comheadan) {
 	$lh = Lingua::@TEANGA@::Gramadoir::Languages->get_handle($comheadan);
 	die "gram: maketext $comheadan" unless $lh;
 }
@@ -286,6 +299,12 @@ gettext(
 "    --api          output a simple XML format for use with other applications"),
 gettext(
 "    --html         produce HTML output for viewing in a web browser"),
+# TRANSLATORS: By default, if there is no rule in the disambiguation module
+# for selecting the correct part of speech of an ambiguous word, the program
+# chooses the part of speech with the highest frequency.  This is sometimes
+# called "unigram" tagging.   The --no-unigram option turns this behavior off.
+gettext(
+"    --no-unigram   do not resolve ambiguous parts of speech by frequency"),
 # TRANSLATORS: The grammar checker works by passing the input text
 # through a sequence of filters which add XML markup indicating
 # important grammatical information.  The --xml option displays the
@@ -309,6 +328,7 @@ gettext(
 my $gr = new Lingua::@TEANGA@::Gramadoir(
 	fix_spelling => $aspell,
 	use_ignore_file => ! $iomlan,
+	unigram_tagging => ! $nounigram,
 	interface_language => $comheadan,
 	input_encoding => $ionchod,
 );
