@@ -18,6 +18,8 @@ echo "test ionchod flag and ability to read from stdin"
 cat triail | iconv -f iso88591 -t utf8 | gr --ionchod=utf8
 echo "test English"
 head -n 42 COPYING | gr --iomlan --teanga=en --xml
+echo "test English: ASCII character set"
+echo "This string has embédded non-ASCII!" | gr --xml --iomlan --teanga=en
 echo "test various error messages" >&2
 rm -f nonexistentfile
 gr nonexistentfile
