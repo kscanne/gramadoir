@@ -136,6 +136,7 @@ dist : FORCE
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/COPYING
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/count.pl
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/eisceacht.meta.pl
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gettext.h
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gin.meta.pl
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gramadoir.dtd
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gramadoir.el
