@@ -87,6 +87,7 @@ install : all installdirs
 	$(INSTALL_DATA) TEANGACHA $(pkgdatadir)/TEANGACHA
 	$(INSTALL_PROGRAM) cuardach $(libexecdir)/cuardach
 	$(INSTALL_PROGRAM) hilite.awk $(libexecdir)/hilite.awk
+	$(INSTALL_PROGRAM) giorr $(libexecdir)/giorr
 	$(INSTALL_PROGRAM) gr $(bindir)/gr
 	for teanga in $(TEANGACHA); do \
 		$(INSTALL_DATA) eile-$${teanga}.bs $(pkgdatadir)/eile-$${teanga}.bs; \
@@ -106,6 +107,7 @@ uninstall :
 	rm -f $(pkgdatadir)/TEANGACHA
 	rm -f $(libexecdir)/cuardach
 	rm -f $(libexecdir)/hilite.awk
+	rm -f $(libexecdir)/giorr
 	rm -f $(bindir)/gr
 	for teanga in $(TEANGACHA); do \
 		rm -f $(pkgdatadir)/eile-$${teanga}.bs; \
@@ -179,8 +181,8 @@ benchmark : FORCE
 	then \
 		benchcorp | gr --iomlan > /dev/null; \
 		rm -f ./DEBUG?; \
-		(cat DEBUG.log; echo) >> ../eile/benchmarks; \
-		cat DEBUG.log; \
+		cat DEBUG.log | bmtabla >> ../eile/benchmarks; \
+		vi ../eile/benchmarks; \
 	else \
 		echo "You need to \"make debug\" and \"make install\" first."; \
 	fi
@@ -213,6 +215,7 @@ dist : FORCE
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/farc.c.in
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gettext.h
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gin.meta.sed
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/giorr
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gr.in
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gramadoir.dtd
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gramadoir.el
@@ -311,12 +314,10 @@ poncin : aparser eparser rparser
 	@cat rialacha-ga.in | ./rparser
 
 stresstest : FORCE
-	@mv stress.out stress.out.bak
-	@mv stress.err stress.err.bak
+	@mv stress.out stress.out.ok
+	@mv stress.err stress.err.ok
 	@./stress
-	@if diff stress.err.bak stress.err && diff stress.out.bak stress.out; then $(ECHO) "OK."; else mv stress.err.bak stress.err; mv stress.out.bak stress.out; fi
-	@rm -f stress.err.bak stress.out.bak
-
+	@if diff stress.err.ok stress.err && diff stress.out.ok stress.out; then $(ECHO) "OK."; rm -f *.ok; else $(ECHO) "Problem."; fi
 
 eile-ga.bs : FORCE
 	$(MAKE) cabhair
