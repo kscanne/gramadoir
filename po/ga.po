@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gramadoir 0.4\n"
+"Project-Id-Version: gramadoir 0.5\n"
 "Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
-"POT-Creation-Date: 2004-04-01 14:40-0600\n"
-"PO-Revision-Date: 2004-01-11 15:58-0500\n"
+"POT-Creation-Date: 2004-08-17 23:07-0500\n"
+"PO-Revision-Date: 2004-07-28 15:58-0500\n"
 "Last-Translator: Kevin Patrick Scannell <scannell@SLU.EDU>\n"
 "Language-Team: Irish <ga@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,312 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 0 : (n>1 && n<7) ? 1 : (n>6 && n "
 "<11) ? 2 : 3;\n"
-
-#. TRANSLATORS: Please leave untranslated, but add an acute accent to the
-#. "o" in "Gramadoir" if available in your character set and encoding.
-#. If you must translate, this is the Irish for (literally) "The Grammarian"
-#: gr.in:48
-msgid "An Gramadoir"
-msgstr "An Gramadóir"
-
-#: gr.in:49
-msgid "Currently checking %s"
-msgstr "Ag seiceáil %s"
-
-#: gr.in:50
-msgid "There is no such file."
-msgstr "Níl a leithéid de chomhad ann"
-
-#: gr.in:51
-msgid "Is a directory"
-msgstr "Is comhadlann é"
-
-#: gr.in:52
-msgid "Permission denied"
-msgstr "Cead diúltaithe"
-
-#: gr.in:53
-msgid "Usage: %s [OPTIONS] [FILES]"
-msgstr "Úsáid: %s [ROGHANNA] [COMHAD]"
-
-#: gr.in:54
-msgid "Options for end-users:"
-msgstr "Roghanna d'úsáideoirí:"
-
-#. TRANSLATORS: ~/.neamhshuim is an "ignore file" like those with spellcheckers
-#: gr.in:57
-msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
-msgstr ""
-"    --iomlan       taispeáin gach earráid (.i. ná húsáid ~/.neamhshuim)"
-
-#: gr.in:58
-msgid ""
-"    --ionchod=ENC  specify the character encoding of the text to be checked"
-msgstr "    --ionchod=CÓD  socraigh an t-ionchódú den téacs le seiceáil"
-
-#: gr.in:59
-msgid "    --litriu       write misspelled words to standard output"
-msgstr ""
-"    --litriu       scríobh focail mílitrithe chuig an aschur caighdeánach"
-
-#: gr.in:60
-msgid ""
-"    --aspell       suggest corrections for misspellings (requires GNU aspell)"
-msgstr ""
-"    --aspell       mol ceartúcháin d'fhocail mílitrithe (is gá le GNU aspell)"
-
-#: gr.in:61
-msgid "    --aschur=FILE  write output to FILE"
-msgstr ""
-
-#: gr.in:62
-msgid ""
-"    --teanga=XX    specify the language of the text to be checked "
-"(default=ga)"
-msgstr ""
-"    --teanga=XX    socraigh an teanga den téacs le seiceáil (loicthe=ga)"
-
-#: gr.in:63
-msgid "    --help         display this help and exit"
-msgstr "    --help         taispeáin an chabhair seo agus éirigh as"
-
-#: gr.in:64
-msgid "    --version      output version information and exit"
-msgstr "    --version      taispeáin eolas faoin leagan agus éirigh as"
-
-#: gr.in:65
-msgid "Options for developers:"
-msgstr "Roghanna d'fhorbróirí:"
-
-#: gr.in:67
-msgid ""
-"    --api          output a simple XML format for use with other applications"
-msgstr ""
-
-#. TRANSLATORS: "disambiguation" is a term from natural language processing.
-#. Here it means the process of deciding, for a given word with several
-#. possible parts of speech (noun, verb, etc.), the correct part of speech
-#. given the context.  Brill's algorithm is "unsupervised" because it relies
-#. only on statistics gathered from texts which have not been tagged in advance.
-#: gr.in:74
-msgid ""
-"    --brill        find disambiguation rules via Brill's unsupervised "
-"algorithm"
-msgstr ""
-"    --brill        gin rialacha aonchiallacha le halgartam féinlathach de "
-"Brill"
-
-#: gr.in:75
-msgid "    --html         produce HTML output for viewing in a web browser"
-msgstr "    --html         aschur i gcruth HTML chun féachaint le brabhsálaí"
-
-#: gr.in:76
-msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
-msgstr "    --ilchiall     taispeáin focail ilchiallacha, de réir minicíochta"
-
-#: gr.in:77
-msgid ""
-"    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
-msgstr ""
-"    --minic        taispeáin gach clib de réir minicíochta (do unigram-xx."
-"txt)"
-
-#. TRANSLATORS: By default, if there is no rule in the disambiguation module
-#. for selecting the correct part of speech of an ambiguous word, the program
-#. chooses the part of speech with the highest frequency.  This is sometimes
-#. called "unigram" tagging.   The --no-unigram option turns this behavior off.
-#: gr.in:83
-msgid ""
-"    --no-unigram   do not resolve ambiguous parts of speech by frequency"
-msgstr ""
-"    --no-unigram   ná réitigh ranna cainte ilchiallacha de réir minicíochta"
-
-#. TRANSLATORS: The grammar checker works by piping the input text
-#. through a sequence of filters which add XML markup indicating
-#. important grammatical information.  The --xml option displays the
-#. marked up file as an aid in debugging.
-#: gr.in:89
-msgid ""
-"    --xml          write tagged XML stream to standard output, for debugging"
-msgstr ""
-"    --xml          scríobh sruth XML chuig aschur caighdeánach, chun "
-"dífhabhtú"
-
-#: gr.in:90
-msgid "If no file is given, read from standard input."
-msgstr "Mura bhfuil comhad ann, léigh ón ionchur caighdeánach."
-
-#: gr.in:91
-msgid "Send bug reports to <%s>."
-msgstr "Seol tuairiscí fabhtanna chuig <%s>."
-
-#: gr.in:92
-msgid "version %s"
-msgstr "leagan %s"
-
-#: gr.in:93
-msgid ""
-"This is free software; see the source for copying conditions.  There is NO"
-"\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
-"PURPOSE,\\nto the extent permitted by law."
-msgstr ""
-"Is saorbhogearra an ríomhchlár seo; féach ar an bhunchód le haghaidh"
-"\\ncoinníollacha cóipeála.  Níl baránta AR BITH ann; go fiú níl baránta ann"
-"\\nd'INDÍOLTACHT nó FEILIÚNACHT DO FHEIDHM AR LEITH, an oiread atá ceadaithe"
-"\\nde réir dlí."
-
-#: gr.in:94
-msgid "Try %s for more information."
-msgstr "Bain triail as %s chun tuilleadh eolais a fháil."
-
-#: gr.in:95
-msgid "unrecognized option %s"
-msgstr "rogha anaithnid %s"
-
-#: gr.in:96
-msgid "option %s requires an argument"
-msgstr "ní foláir argóint don rogha %s"
-
-#: gr.in:97
-msgid "option %s does not allow an argument"
-msgstr "ní cheadaítear argóint i ndiaidh an rogha %s"
-
-#: gr.in:98 farc.c.in:18 farc.c.in:30 farc.c.in:42
-#, c-format
-msgid "Language %s is not supported."
-msgstr "Níl an teanga %s ar fáil."
-
-#. TRANSLATORS: "conversion" here means conversion between character encodings
-#: gr.in:101
-msgid "conversion from %s is not supported"
-msgstr "níl aon fháil ar tiontú ón ionchódú %s"
-
-#: gr.in:102
-msgid "aspell-%s is not installed"
-msgstr "Níl aspell-%s ar fáil"
-
-#: gr.in:103
-msgid "Unknown word"
-msgstr "Focal anaithnid"
-
-#. TRANSLATORS: only two unknown words are reported per sentence
-#: gr.in:106
-msgid "Unknown word (ignoring remainder in this sentence)"
-msgstr "Focal anaithnid (scaoilfear an chuid eile san abairt seo)"
-
-#: gr.in:107
-msgid "Valid word but extremely rare in actual usage"
-msgstr "Focal ceart ach an-neamhchoitianta"
-
-#: gr.in:108
-msgid "Usually used in the set phrase \\/\\1\\/"
-msgstr "Ní úsáidtear an focal seo ach san abairtín \\/\\1\\/ de ghnáth"
-
-#: gr.in:109
-msgid "You should use \\/\\1\\/ here instead"
-msgstr "Ba chóir duit \\/\\1\\/ a úsáid anseo"
-
-#: gr.in:110
-msgid "Non-standard form: perhaps use \\/\\1\\/?"
-msgstr "Focal neamhchaighdeánach: ar mhaith leat \\/\\1\\/?"
-
-#. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
-#: gr.in:113
-msgid "Initial mutation missing"
-msgstr "Urú nó séimhiú ar iarraidh"
-
-#. TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
-#. It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
-#: gr.in:117
-msgid "Unnecessary lenition"
-msgstr "Séimhiú gan ghá"
-
-#: gr.in:118
-msgid "Prefix \\/h\\/ missing"
-msgstr "Réamhlitir \\/h\\/ ar iarraidh"
-
-#: gr.in:119
-msgid "Prefix \\/t\\/ missing"
-msgstr "Réamhlitir \\/t\\/ ar iarraidh"
-
-#: gr.in:120
-msgid "Lenition missing"
-msgstr "Séimhiú ar iarraidh"
-
-#. TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
-#. initial consonants in Irish.  It is indicated in writing by the addition
-#. of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
-#: gr.in:125
-msgid "Eclipsis missing"
-msgstr "Urú ar iarraidh"
-
-#: gr.in:126
-msgid "Repeated word"
-msgstr "Focal céanna faoi dhó"
-
-#: gr.in:127
-msgid "Unusual combination of words"
-msgstr "Cor cainte aisteach"
-
-#: gr.in:128
-msgid "Comparative adjective required"
-msgstr "Ba chóir duit an bhreischéim a úsáid anseo"
-
-#: gr.in:129
-msgid "Unnecessary prefix \\/h\\/"
-msgstr "Réamhlitir \\/h\\/ gan ghá"
-
-#: gr.in:130
-msgid "Unnecessary prefix \\/t\\/"
-msgstr "Réamhlitir \\/t\\/ gan ghá"
-
-#: gr.in:131
-msgid "Unnecessary use of the definite article"
-msgstr "Ní gá leis an alt cinnte anseo"
-
-#: gr.in:132
-msgid "The genitive case is required here"
-msgstr "Tá gá leis an leagan ginideach anseo"
-
-#: cuardach.c:88 cuardach.c:107 cuardach.c:150 cuardach.c:223
-#, c-format
-msgid "%s: out of memory\n"
-msgstr "%s: cuimhne ídithe\n"
-
-#: cuardach.c:97
-#, c-format
-msgid "%s: `%s' corrupted at %s\n"
-msgstr "%s: `%s' truaillithe ag %s\n"
-
-#: cuardach.c:120 cuardach.c:161 cuardach.c:241
-#, c-format
-msgid "%s: warning: check size of %s: %d?\n"
-msgstr "%s: rabhadh: deimhnigh méid de %s: %d?\n"
-
-#: cuardach.c:125 cuardach.c:166 cuardach.c:247
-#, c-format
-msgid "%s: warning: problem closing %s\n"
-msgstr "%s: rabhadh: fadhb ag dúnadh %s\n"
-
-#: cuardach.c:453
-#, c-format
-msgid "%s: no grammar codes: %s\n"
-msgstr "%s: níl aon cód gramadaí ann: %s\n"
-
-#: cuardach.c:581
-#, c-format
-msgid "problem with the `cuardach' command\n"
-msgstr "fadhb leis an ordú 'cuardach'\n"
-
-#: cuardach.c:591
-#, c-format
-msgid "%s: problem reading the database\n"
-msgstr "%s: fadhb ag léamh an bhunachair sonraí\n"
-
-#: farc.c.in:46
-#, c-format
-msgid "%s: illegal grammatical code\n"
-msgstr "%s: cód gramadach neamhcheadaithe\n"
 
 #: ponc.in.y:63
 #, c-format
@@ -345,3 +39,353 @@ msgstr[3] "Parsáladh %d riail.\n"
 #, c-format
 msgid "Line %d: %s\n"
 msgstr "Líne %d: %s\n"
+
+#: gram.pl:165 gramdev.pl:82
+#, perl-format
+msgid "unrecognized option %s"
+msgstr "rogha anaithnid %s"
+
+#: gram.pl:168
+#, perl-format
+msgid "option %s requires an argument"
+msgstr "ní foláir argóint don rogha %s"
+
+#: gram.pl:171 gramdev.pl:85
+#, perl-format
+msgid "option %s does not allow an argument"
+msgstr "ní cheadaítear argóint i ndiaidh an rogha %s"
+
+#: gram.pl:174 gramdev.pl:88
+msgid "error parsing command-line options"
+msgstr "earráid agus roghanna líne na n-orduithe á miondealú"
+
+#: gram.pl:177 gramdev.pl:91
+#, perl-format
+msgid "Language %s is not supported."
+msgstr "Níl an teanga %s ar fáil."
+
+#. TRANSLATORS: Please leave untranslated, but add an acute accent to the
+#. "o" in "Gramadoir" if available in your character set and encoding.
+#. If you must translate, this is the Irish for (literally) "The Grammarian"
+#: gram.pl:182 gram.pl:242 gramdev.pl:96 gramdev.pl:129 Gramadoir.pm.in:119
+#: Gramadoir.pm.in:147 Gramadoir.pm.in:243 Gramadoir.pm.in:257
+#: Gramadoir.pm.in:264
+msgid "An Gramadoir"
+msgstr "An Gramadóir"
+
+#: gram.pl:183 gramdev.pl:97
+#, perl-format
+msgid "Try %s for more information."
+msgstr "Bain triail as %s chun tuilleadh eolais a fháil."
+
+#: gram.pl:245 gramdev.pl:132
+#, perl-format
+msgid "version %s"
+msgstr "leagan %s"
+
+#: gram.pl:247 gramdev.pl:134
+msgid ""
+"This is free software; see the source for copying conditions.  There is NO"
+"\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
+"PURPOSE,\\nto the extent permitted by law."
+msgstr ""
+"Is saorbhogearra an ríomhchlár seo; féach ar an bhunchód le haghaidh"
+"\\ncoinníollacha cóipeála.  Níl baránta AR BITH ann; go fiú níl baránta ann"
+"\\nd'INDÍOLTACHT nó FEILIÚNACHT DO FHEIDHM AR LEITH, an oiread atá ceadaithe"
+"\\nde réir dlí."
+
+#: gram.pl:261
+#, perl-format
+msgid "Usage: %s [OPTIONS] [FILES]"
+msgstr "Úsáid: %s [ROGHANNA] [COMHAD]"
+
+#: gram.pl:264
+msgid "Options for end-users:"
+msgstr "Roghanna d'úsáideoirí:"
+
+#: gram.pl:268
+msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
+msgstr ""
+"    --iomlan       taispeáin gach earráid (.i. ná húsáid ~/.neamhshuim)"
+
+#: gram.pl:271 gramdev.pl:142
+msgid ""
+"    --ionchod=ENC  specify the character encoding of the text to be checked"
+msgstr "    --ionchod=CÓD  socraigh an t-ionchódú den téacs le seiceáil"
+
+#: gram.pl:274
+msgid "    --aschod=ENC   specify the character encoding for output"
+msgstr "    --aschod=CÓD   socraigh an t-ionchódú le haschur"
+
+#: gram.pl:277 gramdev.pl:145
+msgid "    --comheadan=xx choose the language for error messages"
+msgstr "    --comheadan=xx socraigh an teanga de na teachtaireachtaí"
+
+#: gram.pl:280
+msgid "    --dath=COLOR   specify the color to use for highlighting errors"
+msgstr "    --dath=DATH    aibhsigh earráidí sa DHATH seo"
+
+#: gram.pl:283
+msgid "    --litriu       write misspelled words to standard output"
+msgstr ""
+"    --litriu       scríobh focail mílitrithe chuig an aschur caighdeánach"
+
+#: gram.pl:286
+msgid "    --aspell       suggest corrections for misspellings"
+msgstr "    --aspell       mol ceartúcháin d'fhocail mílitrithe"
+
+#: gram.pl:289
+msgid "    --aschur=FILE  write output to FILE"
+msgstr "    --aschur=COMHAD scríobh aschur chuig COMHAD"
+
+#: gram.pl:292 gramdev.pl:148
+msgid "    --help         display this help and exit"
+msgstr "    --help         taispeáin an chabhair seo agus éirigh as"
+
+#: gram.pl:295 gramdev.pl:151
+msgid "    --version      output version information and exit"
+msgstr "    --version      taispeáin eolas faoin leagan agus éirigh as"
+
+#: gram.pl:298
+msgid "Options for developers:"
+msgstr "Roghanna d'fhorbróirí:"
+
+#: gram.pl:300
+msgid ""
+"    --api          output a simple XML format for use with other applications"
+msgstr ""
+"    --api          scríobh i bhformáid XML mar comhéadan le feidhmchláir eile"
+
+#: gram.pl:302
+msgid "    --html         produce HTML output for viewing in a web browser"
+msgstr "    --html         aschur i gcruth HTML chun féachaint le brabhsálaí"
+
+#: gram.pl:308
+msgid ""
+"    --no-unigram   do not resolve ambiguous parts of speech by frequency"
+msgstr ""
+"    --no-unigram   ná réitigh ranna cainte ilchiallacha de réir minicíochta"
+
+#: gram.pl:314
+msgid ""
+"    --xml          write tagged XML stream to standard output, for debugging"
+msgstr ""
+"    --xml          scríobh sruth XML chuig aschur caighdeánach, chun "
+"dífhabhtú"
+
+#: gram.pl:317 gramdev.pl:162
+msgid "If no file is given, read from standard input."
+msgstr "Mura bhfuil comhad ann, léigh ón ionchur caighdeánach."
+
+#: gram.pl:320 gramdev.pl:165
+#, perl-format
+msgid "Send bug reports to <%s>."
+msgstr "Seol tuairiscí fabhtanna chuig <%s>."
+
+#: gram.pl:342
+msgid "There is no such file."
+msgstr "Níl a leithéid de chomhad ann"
+
+#: gram.pl:346
+msgid "Is a directory"
+msgstr "Is comhadlann é"
+
+#: gram.pl:354
+msgid "Permission denied"
+msgstr "Cead diúltaithe"
+
+#: gram.pl:364
+#, perl-format
+msgid "%s: warning: problem closing %s\n"
+msgstr "%s: rabhadh: fadhb ag dúnadh %s\n"
+
+#: gram.pl:381
+#, perl-format
+msgid "Currently checking %s"
+msgstr "Ag seiceáil %s"
+
+#: gramdev.pl:154
+msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
+msgstr "    --ilchiall     taispeáin focail ilchiallacha, de réir minicíochta"
+
+#: gramdev.pl:157
+msgid ""
+"    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
+msgstr ""
+"    --minic        taispeáin gach clib de réir minicíochta (do unigram-xx."
+"txt)"
+
+#: gramdev.pl:159
+msgid ""
+"    --brill        find disambiguation rules via Brill's unsupervised "
+"algorithm"
+msgstr ""
+"    --brill        gin rialacha aonchiallacha le halgartam féinlathach de "
+"Brill"
+
+#: Gramadoir.pm.in:118
+#, perl-format
+msgid "%s: problem reading the database\n"
+msgstr "%s: fadhb ag léamh an bhunachair sonraí\n"
+
+#: Gramadoir.pm.in:146
+#, perl-format
+msgid "%s: `%s' corrupted at %s\n"
+msgstr "%s: `%s' truaillithe ag %s\n"
+
+#. TRANSLATORS: "conversion" here means conversion between character encodings
+#: Gramadoir.pm.in:197 Gramadoir.pm.in:511 Gramadoir.pm.in:546
+#: Gramadoir.pm.in:602 Gramadoir.pm.in:754
+#, perl-format
+msgid "conversion from %s is not supported"
+msgstr "níl aon fháil ar tiontú ón ionchódú %s"
+
+#: Gramadoir.pm.in:242 Gramadoir.pm.in:256
+#, perl-format
+msgid "%s: illegal grammatical code\n"
+msgstr "%s: cód gramadach neamhcheadaithe\n"
+
+#: Gramadoir.pm.in:263
+#, perl-format
+msgid "%s: no grammar codes: %s\n"
+msgstr "%s: níl aon cód gramadaí ann: %s\n"
+
+#: Gramadoir.pm.in:622
+msgid "Unknown word"
+msgstr "Focal anaithnid"
+
+#: Gramadoir.pm.in:626
+msgid "Valid word but extremely rare in actual usage"
+msgstr "Focal ceart ach an-neamhchoitianta"
+
+#: Gramadoir.pm.in:630
+msgid "Usually used in the set phrase \\/\\1\\/"
+msgstr "Ní úsáidtear an focal seo ach san abairtín \\/\\1\\/ de ghnáth"
+
+#: Gramadoir.pm.in:634
+msgid "You should use \\/\\1\\/ here instead"
+msgstr "Ba chóir duit \\/\\1\\/ a úsáid anseo"
+
+#: Gramadoir.pm.in:638
+msgid "Non-standard form of \\/\\1\\/"
+msgstr "Foirm neamhchaighdeánach de \\/\\1\\/"
+
+#: Gramadoir.pm.in:642
+msgid "Derived from a non-standard form of \\/\\1\\/"
+msgstr "Bunaithe ar foirm neamhchaighdeánach de \\/\\1\\/"
+
+#: Gramadoir.pm.in:646
+msgid "Derived incorrectly from the root \\/\\1\\/"
+msgstr "Bunaithe go mícheart ar an bhfréamh \\/\\1\\/"
+
+#. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
+#: Gramadoir.pm.in:651
+msgid "Initial mutation missing"
+msgstr "Urú nó séimhiú ar iarraidh"
+
+#. TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
+#. It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
+#: Gramadoir.pm.in:657
+msgid "Unnecessary lenition"
+msgstr "Séimhiú gan ghá"
+
+#: Gramadoir.pm.in:661
+msgid "Prefix \\/h\\/ missing"
+msgstr "Réamhlitir \\/h\\/ ar iarraidh"
+
+#: Gramadoir.pm.in:665
+msgid "Prefix \\/t\\/ missing"
+msgstr "Réamhlitir \\/t\\/ ar iarraidh"
+
+#: Gramadoir.pm.in:669
+msgid "Lenition missing"
+msgstr "Séimhiú ar iarraidh"
+
+#. TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
+#. initial consonants in Irish.  It is indicated in writing by the addition
+#. of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
+#: Gramadoir.pm.in:676
+msgid "Eclipsis missing"
+msgstr "Urú ar iarraidh"
+
+#: Gramadoir.pm.in:680
+msgid "Repeated word"
+msgstr "Focal céanna faoi dhó"
+
+#: Gramadoir.pm.in:684
+msgid "Unusual combination of words"
+msgstr "Cor cainte aisteach"
+
+#: Gramadoir.pm.in:688
+msgid "Comparative adjective required"
+msgstr "Ba chóir duit an bhreischéim a úsáid anseo"
+
+#: Gramadoir.pm.in:692
+msgid "Unnecessary prefix \\/h\\/"
+msgstr "Réamhlitir \\/h\\/ gan ghá"
+
+#: Gramadoir.pm.in:696
+msgid "Unnecessary prefix \\/t\\/"
+msgstr "Réamhlitir \\/t\\/ gan ghá"
+
+#: Gramadoir.pm.in:700
+msgid "Unnecessary use of the definite article"
+msgstr "Ní gá leis an alt cinnte anseo"
+
+#: Gramadoir.pm.in:704
+msgid "The genitive case is required here"
+msgstr "Tá gá leis an leagan ginideach anseo"
+
+#: Gramadoir.pm.in:708
+msgid "Not in database but apparently formed from the root \\/\\1\\/"
+msgstr "Focal anaithnid ach bunaithe ar \\/\\1\\/ is dócha"
+
+#: Gramadoir.pm.in:712
+msgid "Do you mean \\/\\1\\/?"
+msgstr "An raibh \\/\\1\\/ ar intinn agat?"
+
+#: Gramadoir.pm.in:716
+msgid "Derived form of common misspelling \\/\\1\\/?"
+msgstr "Bunaithe ar focal mílitrithe go coitianta \\/\\1\\/?"
+
+#: Gramadoir.pm.in:720
+msgid "Not in database but may be a compound \\/\\1\\/?"
+msgstr "Focal anaithnid ach is féidir gur comhfhocal \\/\\1\\/ é?"
+
+#: Gramadoir.pm.in:724
+msgid "Not in database but may be a non-standard compound \\/\\1\\/?"
+msgstr ""
+"Focal anaithnid ach is féidir gur comhfhocal neamhchaighdeánach \\/\\1\\/ é?"
+
+#: Gramadoir.pm.in:728
+msgid "Possibly a foreign word (the sequence \\/\\1\\/ is highly improbable)"
+msgstr ""
+"Is féidir gur focal iasachta é seo (tá na litreacha \\/\\1\\/ neamhdhóchúil)"
+
+#~ msgid ""
+#~ "    --aspell       suggest corrections for misspellings (requires GNU "
+#~ "aspell)"
+#~ msgstr ""
+#~ "    --aspell       mol ceartúcháin d'fhocail mílitrithe (is gá le GNU "
+#~ "aspell)"
+
+#~ msgid ""
+#~ "    --teanga=XX    specify the language of the text to be checked "
+#~ "(default=ga)"
+#~ msgstr ""
+#~ "    --teanga=XX    socraigh an teanga den téacs le seiceáil (loicthe=ga)"
+
+#~ msgid "aspell-%s is not installed"
+#~ msgstr "Níl aspell-%s ar fáil"
+
+#~ msgid "Unknown word (ignoring remainder in this sentence)"
+#~ msgstr "Focal anaithnid (scaoilfear an chuid eile san abairt seo)"
+
+#~ msgid "%s: out of memory\n"
+#~ msgstr "%s: cuimhne ídithe\n"
+
+#~ msgid "%s: warning: check size of %s: %d?\n"
+#~ msgstr "%s: rabhadh: deimhnigh méid de %s: %d?\n"
+
+#~ msgid "problem with the `cuardach' command\n"
+#~ msgstr "fadhb leis an ordú 'cuardach'\n"
