@@ -965,17 +965,6 @@ __END__
 
 =back
 
-=head1 HISTORY
-
-=over 4
-
-=item *
-0.50
-
-First Perl version.
-
-=back
-
 =head1 SEE ALSO
 
 =over 4
