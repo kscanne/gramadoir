@@ -396,6 +396,8 @@ u$			ú		2	<N.*>
 ^bhf([^h])		f$1		0	<[ANV].*>
 ^dt([^h])		t$1		0	<[ANV].*>
 ^gc([^h])		c$1		0	<[ANV].*>
+# these aren't in aspell db by default
+^mb'			b'		-1	<A.*>
 ^mb([^h])		b$1		0	<[ANV].*>
 ^nd([^h])		d$1		0	<[ANV].*>
 ^ng([^h])		g$1		0	<[ANV].*>
