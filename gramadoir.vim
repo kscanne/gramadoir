@@ -58,7 +58,7 @@ function s:NextError()
   execute "syntax match grError /".s:errorwords."/"
   execute "normal \<C-W>t"
   execute "normal ".l:linenumber."G"
-  call search(s:errorwords)
+  call search(s:errorpattern)
   execute "syntax match grError /".s:errorpattern."/"
   highlight grError cterm=bold ctermfg=Red guifg=Red
 endfunction
@@ -72,9 +72,11 @@ endfunction
 
 function s:Neamhshuim()
   if s:errorwords !~ ".* .*"
-     let l:dummy2=system("(cat ". s:ignore . "; echo ". s:errorwords .") | LC_COLLATE=C sort -u -o ". s:ignore ."; sed -i \"1s/.*/`cat ". s:ignore . " | grep -v '^[0-9]' | wc -l`/\" ". s:ignore)
+     let l:dummy2=system("(cat ". s:ignore . "; echo \"". s:errorwords ."\") | LC_COLLATE=C sort -u -o ". s:ignore ."; sed -i \"1s/.*/`cat ". s:ignore . " | grep -v '^[0-9]' | wc -l`/\" ". s:ignore)
      execute "normal \<C-W>b"
+     execute "normal ma"
      silent execute "%s/<b>".s:errorwords."<.b>/".s:errorwords."/g"
+     execute "normal `a"
      execute "normal \<C-W>t"
      echo "Cuireadh \"". s:errorwords ."\" isteach i ~/.neamhshuim."
   endif
