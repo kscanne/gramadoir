@@ -34,12 +34,12 @@ s/AWITHPL/(<N pl="y"[^>]*>)*(<A[^>]*>)*<A pl="y" gnt="n".>/g
 s/AWITHCOMMON/(<N pl="y"[^>]*>)*<A pl="n" gnt="n".>(<A[^>]*>)*/g
 s/ANYWITHCOMMONH/(<[^>]*>)*<A pl="n" gnt="n" h="y".>(<[^>]*>)*/g
 s/ANYWITHCOMMON/(<[^>]*>)*<A pl="n" gnt="n".>(<[^>]*>)*/g
-s/ANYNMG/(<[^>]*>)*<N pl="n" gnt="y" gnd="m".>(<[^>]*>)*/g
-s/ANYNFG/(<[^>]*>)*<N pl="n" gnt="y" gnd="f".>(<[^>]*>)*/g
-s/ANYNMC/(<[^>]*>)*<N pl="n" gnt="n" gnd="m".>(<[^>]*>)*/g
-s/ANYNFC/(<[^>]*>)*<N pl="n" gnt="n" gnd="f".>(<[^>]*>)*/g
-s/ANYNMPL/(<[^>]*>)*<N pl="y" gnt="n" gnd="m".>(<[^>]*>)*/g
-s/ANYNFPL/(<[^>]*>)*<N pl="y" gnt="n" gnd="f".>(<[^>]*>)*/g
+s/ANYNMG/(<[^>]*>)*<N pl="n" gnt="y" gnd="m"( h="y")?.>(<[^>]*>)*/g
+s/ANYNFG/(<[^>]*>)*<N pl="n" gnt="y" gnd="f"( h="y")?.>(<[^>]*>)*/g
+s/ANYNMC/(<[^>]*>)*<N pl="n" gnt="n" gnd="m"( h="y")?.>(<[^>]*>)*/g
+s/ANYNFC/(<[^>]*>)*<N pl="n" gnt="n" gnd="f"( h="y")?.>(<[^>]*>)*/g
+s/ANYNMPL/(<[^>]*>)*<N pl="y" gnt="n" gnd="m"( h="y")?.>(<[^>]*>)*/g
+s/ANYNFPL/(<[^>]*>)*<N pl="y" gnt="n" gnd="f"( h="y")?.>(<[^>]*>)*/g
 s/NFONEC/<N pl="n" gnt="n" gnd="f".><N pl="y" gnt="y" gnd="f".>/g
 s/NMONEC/<N pl="n" gnt="n" gnd="m"( h="y")?.><N pl="y" gnt="y" gnd="m"( h="y")?.>/g
 s/NMONE/<N pl="n" gnt="y" gnd="m"( h="y")?.><N pl="y" gnt="n" gnd="m"( h="y")?.>/g
