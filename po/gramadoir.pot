@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
-"POT-Creation-Date: 2004-07-28 08:43-0500\n"
+"POT-Creation-Date: 2004-08-17 23:07-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,302 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-
-#. TRANSLATORS: Please leave untranslated, but add an acute accent to the
-#. "o" in "Gramadoir" if available in your character set and encoding.
-#. If you must translate, this is the Irish for (literally) "The Grammarian"
-#: gr.in:45 gram.pl:48 gram.pl:121
-msgid "An Gramadoir"
-msgstr ""
-
-#: gr.in:46 gram.pl:253
-#, perl-format
-msgid "Currently checking %s"
-msgstr ""
-
-#: gr.in:47 gram.pl:214
-msgid "There is no such file."
-msgstr ""
-
-#: gr.in:48 gram.pl:218
-msgid "Is a directory"
-msgstr ""
-
-#: gr.in:49 gram.pl:226
-msgid "Permission denied"
-msgstr ""
-
-#: gr.in:50 gram.pl:140
-#, perl-format
-msgid "Usage: %s [OPTIONS] [FILES]"
-msgstr ""
-
-#: gr.in:51 gram.pl:143
-msgid "Options for end-users:"
-msgstr ""
-
-#. TRANSLATORS: ~/.neamhshuim is an "ignore file" like those with spellcheckers
-#: gr.in:54 gram.pl:147
-msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
-msgstr ""
-
-#: gr.in:55 gram.pl:150
-msgid ""
-"    --ionchod=ENC  specify the character encoding of the text to be checked"
-msgstr ""
-
-#: gr.in:56 gram.pl:162
-msgid "    --litriu       write misspelled words to standard output"
-msgstr ""
-
-#: gr.in:57
-msgid ""
-"    --aspell       suggest corrections for misspellings (requires GNU aspell)"
-msgstr ""
-
-#: gr.in:58 gram.pl:168
-msgid "    --aschur=FILE  write output to FILE"
-msgstr ""
-
-#: gr.in:59
-msgid ""
-"    --teanga=XX    specify the language of the text to be checked "
-"(default=ga)"
-msgstr ""
-
-#: gr.in:60 gram.pl:171
-msgid "    --help         display this help and exit"
-msgstr ""
-
-#: gr.in:61 gram.pl:174
-msgid "    --version      output version information and exit"
-msgstr ""
-
-#: gr.in:62 gram.pl:177
-msgid "Options for developers:"
-msgstr ""
-
-#: gr.in:64 gram.pl:179
-msgid ""
-"    --api          output a simple XML format for use with other applications"
-msgstr ""
-
-#. TRANSLATORS: "disambiguation" is a term from natural language processing.
-#. Here it means the process of deciding, for a given word with several
-#. possible parts of speech (noun, verb, etc.), the correct part of speech
-#. given the context.  Brill's algorithm is "unsupervised" because it relies
-#. only on statistics gathered from texts which have not been tagged in advance.
-#: gr.in:71
-msgid ""
-"    --brill        find disambiguation rules via Brill's unsupervised "
-"algorithm"
-msgstr ""
-
-#: gr.in:72 gram.pl:181
-msgid "    --html         produce HTML output for viewing in a web browser"
-msgstr ""
-
-#: gr.in:73
-msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
-msgstr ""
-
-#: gr.in:74
-msgid ""
-"    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
-msgstr ""
-
-#. TRANSLATORS: By default, if there is no rule in the disambiguation module
-#. for selecting the correct part of speech of an ambiguous word, the program
-#. chooses the part of speech with the highest frequency.  This is sometimes
-#. called "unigram" tagging.   The --no-unigram option turns this behavior off.
-#: gr.in:80
-msgid ""
-"    --no-unigram   do not resolve ambiguous parts of speech by frequency"
-msgstr ""
-
-#. TRANSLATORS: The grammar checker works by piping the input text
-#. through a sequence of filters which add XML markup indicating
-#. important grammatical information.  The --xml option displays the
-#. marked up file as an aid in debugging.
-#: gr.in:86 gram.pl:187
-msgid ""
-"    --xml          write tagged XML stream to standard output, for debugging"
-msgstr ""
-
-#: gr.in:87 gram.pl:190
-msgid "If no file is given, read from standard input."
-msgstr ""
-
-#: gr.in:88 gram.pl:193
-#, perl-format
-msgid "Send bug reports to <%s>."
-msgstr ""
-
-#: gr.in:89 gram.pl:124
-#, perl-format
-msgid "version %s"
-msgstr ""
-
-#: gr.in:90 gram.pl:126
-msgid ""
-"This is free software; see the source for copying conditions.  There is NO"
-"\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
-"PURPOSE,\\nto the extent permitted by law."
-msgstr ""
-
-#: gr.in:91 gram.pl:54
-#, perl-format
-msgid "Try %s for more information."
-msgstr ""
-
-#: gr.in:92
-msgid "unrecognized option %s"
-msgstr ""
-
-#: gr.in:93
-msgid "option %s requires an argument"
-msgstr ""
-
-#: gr.in:94
-msgid "option %s does not allow an argument"
-msgstr ""
-
-#: gr.in:95 farc.c.in:18 farc.c.in:30 farc.c.in:42 gram.pl:59
-#, c-format, perl-format
-msgid "Language %s is not supported."
-msgstr ""
-
-#. TRANSLATORS: "conversion" here means conversion between character encodings
-#: gr.in:98
-msgid "conversion from %s is not supported"
-msgstr ""
-
-#: gr.in:99
-msgid "aspell-%s is not installed"
-msgstr ""
-
-#: gr.in:100 Gramadoir.pm.in:568
-msgid "Unknown word"
-msgstr ""
-
-#. TRANSLATORS: only two unknown words are reported per sentence
-#: gr.in:103
-msgid "Unknown word (ignoring remainder in this sentence)"
-msgstr ""
-
-#: gr.in:104 Gramadoir.pm.in:572
-msgid "Valid word but extremely rare in actual usage"
-msgstr ""
-
-#: gr.in:105 Gramadoir.pm.in:576
-msgid "Usually used in the set phrase \\/\\1\\/"
-msgstr ""
-
-#: gr.in:106 Gramadoir.pm.in:580
-msgid "You should use \\/\\1\\/ here instead"
-msgstr ""
-
-#: gr.in:107 Gramadoir.pm.in:584
-msgid "Non-standard form of \\/\\1\\/"
-msgstr ""
-
-#. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
-#: gr.in:110 Gramadoir.pm.in:597
-msgid "Initial mutation missing"
-msgstr ""
-
-#. TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
-#. It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
-#: gr.in:114 Gramadoir.pm.in:603
-msgid "Unnecessary lenition"
-msgstr ""
-
-#: gr.in:115 Gramadoir.pm.in:607
-msgid "Prefix \\/h\\/ missing"
-msgstr ""
-
-#: gr.in:116 Gramadoir.pm.in:611
-msgid "Prefix \\/t\\/ missing"
-msgstr ""
-
-#: gr.in:117 Gramadoir.pm.in:615
-msgid "Lenition missing"
-msgstr ""
-
-#. TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
-#. initial consonants in Irish.  It is indicated in writing by the addition
-#. of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
-#: gr.in:122 Gramadoir.pm.in:622
-msgid "Eclipsis missing"
-msgstr ""
-
-#: gr.in:123 Gramadoir.pm.in:626
-msgid "Repeated word"
-msgstr ""
-
-#: gr.in:124 Gramadoir.pm.in:630
-msgid "Unusual combination of words"
-msgstr ""
-
-#: gr.in:125 Gramadoir.pm.in:634
-msgid "Comparative adjective required"
-msgstr ""
-
-#: gr.in:126 Gramadoir.pm.in:638
-msgid "Unnecessary prefix \\/h\\/"
-msgstr ""
-
-#: gr.in:127 Gramadoir.pm.in:642
-msgid "Unnecessary prefix \\/t\\/"
-msgstr ""
-
-#: gr.in:128 Gramadoir.pm.in:646
-msgid "Unnecessary use of the definite article"
-msgstr ""
-
-#: gr.in:129 Gramadoir.pm.in:650
-msgid "The genitive case is required here"
-msgstr ""
-
-#: cuardach.c:88 cuardach.c:107 cuardach.c:150 cuardach.c:223
-#, c-format
-msgid "%s: out of memory\n"
-msgstr ""
-
-#: cuardach.c:97
-#, c-format
-msgid "%s: `%s' corrupted at %s\n"
-msgstr ""
-
-#: cuardach.c:120 cuardach.c:161 cuardach.c:241
-#, c-format
-msgid "%s: warning: check size of %s: %d?\n"
-msgstr ""
-
-#: cuardach.c:125 cuardach.c:166 cuardach.c:247
-#, c-format
-msgid "%s: warning: problem closing %s\n"
-msgstr ""
-
-#: cuardach.c:453
-#, c-format
-msgid "%s: no grammar codes: %s\n"
-msgstr ""
-
-#: cuardach.c:581
-#, c-format
-msgid "problem with the `cuardach' command\n"
-msgstr ""
-
-#: cuardach.c:591
-#, c-format
-msgid "%s: problem reading the database\n"
-msgstr ""
-
-#: farc.c.in:46
-#, c-format
-msgid "%s: illegal grammatical code\n"
-msgstr ""
 
 #: ponc.in.y:63
 #, c-format
@@ -332,54 +36,308 @@ msgstr[1] ""
 msgid "Line %d: %s\n"
 msgstr ""
 
-#: gram.pl:51
+#: gram.pl:165 gramdev.pl:82
+#, perl-format
+msgid "unrecognized option %s"
+msgstr ""
+
+#: gram.pl:168
+#, perl-format
+msgid "option %s requires an argument"
+msgstr ""
+
+#: gram.pl:171 gramdev.pl:85
+#, perl-format
+msgid "option %s does not allow an argument"
+msgstr ""
+
+#: gram.pl:174 gramdev.pl:88
 msgid "error parsing command-line options"
 msgstr ""
 
-#: gram.pl:153
+#: gram.pl:177 gramdev.pl:91
+#, perl-format
+msgid "Language %s is not supported."
+msgstr ""
+
+#. TRANSLATORS: Please leave untranslated, but add an acute accent to the
+#. "o" in "Gramadoir" if available in your character set and encoding.
+#. If you must translate, this is the Irish for (literally) "The Grammarian"
+#: gram.pl:182 gram.pl:242 gramdev.pl:96 gramdev.pl:129 Gramadoir.pm.in:119
+#: Gramadoir.pm.in:147 Gramadoir.pm.in:243 Gramadoir.pm.in:257
+#: Gramadoir.pm.in:264
+msgid "An Gramadoir"
+msgstr ""
+
+#: gram.pl:183 gramdev.pl:97
+#, perl-format
+msgid "Try %s for more information."
+msgstr ""
+
+#: gram.pl:245 gramdev.pl:132
+#, perl-format
+msgid "version %s"
+msgstr ""
+
+#: gram.pl:247 gramdev.pl:134
+msgid ""
+"This is free software; see the source for copying conditions.  There is NO"
+"\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
+"PURPOSE,\\nto the extent permitted by law."
+msgstr ""
+
+#: gram.pl:261
+#, perl-format
+msgid "Usage: %s [OPTIONS] [FILES]"
+msgstr ""
+
+#: gram.pl:264
+msgid "Options for end-users:"
+msgstr ""
+
+#: gram.pl:268
+msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
+msgstr ""
+
+#: gram.pl:271 gramdev.pl:142
+msgid ""
+"    --ionchod=ENC  specify the character encoding of the text to be checked"
+msgstr ""
+
+#: gram.pl:274
 msgid "    --aschod=ENC   specify the character encoding for output"
 msgstr ""
 
-#: gram.pl:156
+#: gram.pl:277 gramdev.pl:145
 msgid "    --comheadan=xx choose the language for error messages"
 msgstr ""
 
-#: gram.pl:159
+#: gram.pl:280
 msgid "    --dath=COLOR   specify the color to use for highlighting errors"
 msgstr ""
 
-#: gram.pl:165
+#: gram.pl:283
+msgid "    --litriu       write misspelled words to standard output"
+msgstr ""
+
+#: gram.pl:286
 msgid "    --aspell       suggest corrections for misspellings"
 msgstr ""
 
-#: Gramadoir.pm.in:588
+#: gram.pl:289
+msgid "    --aschur=FILE  write output to FILE"
+msgstr ""
+
+#: gram.pl:292 gramdev.pl:148
+msgid "    --help         display this help and exit"
+msgstr ""
+
+#: gram.pl:295 gramdev.pl:151
+msgid "    --version      output version information and exit"
+msgstr ""
+
+#: gram.pl:298
+msgid "Options for developers:"
+msgstr ""
+
+#: gram.pl:300
+msgid ""
+"    --api          output a simple XML format for use with other applications"
+msgstr ""
+
+#: gram.pl:302
+msgid "    --html         produce HTML output for viewing in a web browser"
+msgstr ""
+
+#: gram.pl:308
+msgid ""
+"    --no-unigram   do not resolve ambiguous parts of speech by frequency"
+msgstr ""
+
+#: gram.pl:314
+msgid ""
+"    --xml          write tagged XML stream to standard output, for debugging"
+msgstr ""
+
+#: gram.pl:317 gramdev.pl:162
+msgid "If no file is given, read from standard input."
+msgstr ""
+
+#: gram.pl:320 gramdev.pl:165
+#, perl-format
+msgid "Send bug reports to <%s>."
+msgstr ""
+
+#: gram.pl:342
+msgid "There is no such file."
+msgstr ""
+
+#: gram.pl:346
+msgid "Is a directory"
+msgstr ""
+
+#: gram.pl:354
+msgid "Permission denied"
+msgstr ""
+
+#: gram.pl:364
+#, perl-format
+msgid "%s: warning: problem closing %s\n"
+msgstr ""
+
+#: gram.pl:381
+#, perl-format
+msgid "Currently checking %s"
+msgstr ""
+
+#: gramdev.pl:154
+msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
+msgstr ""
+
+#: gramdev.pl:157
+msgid ""
+"    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
+msgstr ""
+
+#: gramdev.pl:159
+msgid ""
+"    --brill        find disambiguation rules via Brill's unsupervised "
+"algorithm"
+msgstr ""
+
+#: Gramadoir.pm.in:118
+#, perl-format
+msgid "%s: problem reading the database\n"
+msgstr ""
+
+#: Gramadoir.pm.in:146
+#, perl-format
+msgid "%s: `%s' corrupted at %s\n"
+msgstr ""
+
+#. TRANSLATORS: "conversion" here means conversion between character encodings
+#: Gramadoir.pm.in:197 Gramadoir.pm.in:511 Gramadoir.pm.in:546
+#: Gramadoir.pm.in:602 Gramadoir.pm.in:754
+#, perl-format
+msgid "conversion from %s is not supported"
+msgstr ""
+
+#: Gramadoir.pm.in:242 Gramadoir.pm.in:256
+#, perl-format
+msgid "%s: illegal grammatical code\n"
+msgstr ""
+
+#: Gramadoir.pm.in:263
+#, perl-format
+msgid "%s: no grammar codes: %s\n"
+msgstr ""
+
+#: Gramadoir.pm.in:622
+msgid "Unknown word"
+msgstr ""
+
+#: Gramadoir.pm.in:626
+msgid "Valid word but extremely rare in actual usage"
+msgstr ""
+
+#: Gramadoir.pm.in:630
+msgid "Usually used in the set phrase \\/\\1\\/"
+msgstr ""
+
+#: Gramadoir.pm.in:634
+msgid "You should use \\/\\1\\/ here instead"
+msgstr ""
+
+#: Gramadoir.pm.in:638
+msgid "Non-standard form of \\/\\1\\/"
+msgstr ""
+
+#: Gramadoir.pm.in:642
 msgid "Derived from a non-standard form of \\/\\1\\/"
 msgstr ""
 
-#: Gramadoir.pm.in:592
+#: Gramadoir.pm.in:646
 msgid "Derived incorrectly from the root \\/\\1\\/"
 msgstr ""
 
-#: Gramadoir.pm.in:654
+#. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
+#: Gramadoir.pm.in:651
+msgid "Initial mutation missing"
+msgstr ""
+
+#. TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
+#. It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
+#: Gramadoir.pm.in:657
+msgid "Unnecessary lenition"
+msgstr ""
+
+#: Gramadoir.pm.in:661
+msgid "Prefix \\/h\\/ missing"
+msgstr ""
+
+#: Gramadoir.pm.in:665
+msgid "Prefix \\/t\\/ missing"
+msgstr ""
+
+#: Gramadoir.pm.in:669
+msgid "Lenition missing"
+msgstr ""
+
+#. TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
+#. initial consonants in Irish.  It is indicated in writing by the addition
+#. of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
+#: Gramadoir.pm.in:676
+msgid "Eclipsis missing"
+msgstr ""
+
+#: Gramadoir.pm.in:680
+msgid "Repeated word"
+msgstr ""
+
+#: Gramadoir.pm.in:684
+msgid "Unusual combination of words"
+msgstr ""
+
+#: Gramadoir.pm.in:688
+msgid "Comparative adjective required"
+msgstr ""
+
+#: Gramadoir.pm.in:692
+msgid "Unnecessary prefix \\/h\\/"
+msgstr ""
+
+#: Gramadoir.pm.in:696
+msgid "Unnecessary prefix \\/t\\/"
+msgstr ""
+
+#: Gramadoir.pm.in:700
+msgid "Unnecessary use of the definite article"
+msgstr ""
+
+#: Gramadoir.pm.in:704
+msgid "The genitive case is required here"
+msgstr ""
+
+#: Gramadoir.pm.in:708
 msgid "Not in database but apparently formed from the root \\/\\1\\/"
 msgstr ""
 
-#: Gramadoir.pm.in:658
+#: Gramadoir.pm.in:712
 msgid "Do you mean \\/\\1\\/?"
 msgstr ""
 
-#: Gramadoir.pm.in:662
+#: Gramadoir.pm.in:716
 msgid "Derived form of common misspelling \\/\\1\\/?"
 msgstr ""
 
-#: Gramadoir.pm.in:666
+#: Gramadoir.pm.in:720
 msgid "Not in database but may be a compound \\/\\1\\/?"
 msgstr ""
 
-#: Gramadoir.pm.in:670
+#: Gramadoir.pm.in:724
 msgid "Not in database but may be a non-standard compound \\/\\1\\/?"
 msgstr ""
 
-#: Gramadoir.pm.in:674
+#: Gramadoir.pm.in:728
 msgid "Possibly a foreign word (the sequence \\/\\1\\/ is highly improbable)"
 msgstr ""
