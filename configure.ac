@@ -1,5 +1,5 @@
 dnl Process this file with autoconf to produce a configure script.
-AC_INIT([gramadoir],[0.5-r1],[scannell@slu.edu], [gramadoir-0.5-r1])
+AC_INIT([gramadoir],[0.6],[scannell@slu.edu], [gramadoir-0.6])
 
 dnl Checks for programs.
 AC_PROG_YACC
