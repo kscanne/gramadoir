@@ -11,28 +11,19 @@ delete @ENV{ 'IFS', 'CDPATH', 'ENV', 'BASH_ENV' };
 
 my $GRAMADOIR = '/usr/local/bin/grweb';
 my $q = new CGI;
-my $charset = 'ISO-8859-1';
 my( $ionchur ) = $q->param( "foirm_ionchur" ) =~ /^(['áéíóúÁÉÍÓÚ\w\s,.!?-]+)$/;
 my( $teanga ) = $q->param( "teanga" ) =~ /^([a-z][a-z]_[A-Z][A-Z])$/;
 
-if ( $teanga eq "ro_RO" ) {
-$charset = 'ISO-8859-2';
-}
-if ( $teanga eq "sk_SK" or $teanga eq "mn_MN" ) {
-$charset = 'UTF-8';
-}
-
 local *PIPE;
 
-print $q->header( "text/html" ),
+print $q->header(-type=>"text/html",
+		 -charset=>'utf-8'),
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\"\n",
 "\"http://www.w3.org/TR/html4/strict.dtd\">\n",
 "<html lang=\"ga\">\n",
 "<head>\n",
 "<title>An Gramad&oacute;ir: Tortha&iacute;</title>\n",
-"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=",
-$charset,
-"\">\n",
+"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n",
 "<link rel=\"stylesheet\" href=\"http://borel.slu.edu/kps.css\" type=\"text/css\">\n",
 "</head>\n<body>\n";
 
