@@ -36,10 +36,20 @@ notfound='níl a leithéid de chomhad ann'
 isdir='is comhadlann í'
 # "Permission denied"  (tried to check a file without having read permission)
 permissions='cead diúltaithe'
-# Usage string.  Don't translate the Irish option names.
-# You can translate "COMHAID" to "FILES"
-usage1="Úsáid: gr [--help] [--version] [--html] [--xml]"
-usage2="          [--litriu] [--iomlan] [COMHAID]"
+# "Usage: gr [OPTIONS] [FILES]"
+usage1="Úsáid: gr [ROGHANNA] [COMHAID]"
+#      "    --litriu       write misspelled words to standard output"
+usage2="    --litriu       scríobh focail mílitrithe chuig an aschur caighdeánach"
+#      "    --html         produce HTML output for viewing in a web browser"
+usage3="    --html         aschur i gcruth HTML chun féachaint le brabhsaer"
+#      "    --xml          write tagged XML stream to standard output, for debugging"
+usage4="    --xml          scríobh sruth XML chuig aschur caighdeánach, chun dífhabhtú"
+#      "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
+usage5="    --iomlan       taispeáin gach earráid (.i. ná húsáid ~/.neamhshuim)"
+#      "    --help         display this help and exit"
+usage6="    --help         taispeáin an chabhair seo agus éirigh as"
+#      "    --version      output version information and exit"
+usage7="    --version      taispeáin eolas faoin leagan agus éirigh as"
 # "If no file is given, read from standard input"
 stdinhelp="Mura bhfuil comhad ann, léigh ón ionchur caighdeánach"
 # "Send bug reports to <...>"   Leave the @PACKAGE_BUGREPORT@ alone.
@@ -111,7 +121,14 @@ echo "</i></p><hr>"
 helpout()
 {
 echo "${usage1}"
+echo
 echo "${usage2}"
+echo "${usage3}"
+echo "${usage4}"
+echo "${usage5}"
+echo "${usage6}"
+echo "${usage7}"
+echo
 echo "${stdinhelp}"
 echo
 echo "${bugreports}"
