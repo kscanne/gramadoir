@@ -16,6 +16,7 @@
 <h1>An Gramad&oacute;ir:<br>
 Architecture and implementation details</h1>
 
+<hr>
 <h2>Overview</h2>
 <p>
 The <i>gr</i> front-end script is intended to be used like the
@@ -38,7 +39,7 @@ Before we elaborate on this point, it is worth having a look
 at the guts of the <i>gr</i> script.   The line which does
 all of the real work is simply a sequence of filters:
 <pre>
-diutf | abairti | cuardach | aonchiall | rialacha | comheadan | loganu
+diutf | abairti | cuardach | aonchiall | rialacha | eisceacht | comheadan | loganu
 </pre>
 </p>
 
@@ -64,6 +65,10 @@ diutf | abairti | cuardach | aonchiall | rialacha | comheadan | loganu
 <td>searches for and marks up grammatical errors</td>
 </tr>
 <tr>
+<td><i>eisceacht</i></td>
+<td>strips off error markup from exceptions</td>
+</tr>
+<tr>
 <td><i>comheadan</i></td>
 <td>extracts the error markup and generates the output script</td>
 </tr>
@@ -75,8 +80,8 @@ diutf | abairti | cuardach | aonchiall | rialacha | comheadan | loganu
 </table>
 
 <p>
-Each of the four filters from <i>abairti</i> through <i>rialacha</i> 
-adds some XML markup to the text stream. 
+Each of the five filters from <i>abairti</i> through <i>eisceacht</i> 
+adds or removes some XML markup to or from the text stream. 
 An XML-based architecture will, I hope, facilitate the integration 
 of these components into
 more complicated future software projects.  For instance, the XML file 
@@ -87,7 +92,7 @@ for corpus linguistics or as the first stage of a (conjectural)
 Irish language parser.
 </p>
 
-
+<hr>
 <h2>Detailed module descriptions</h2>
 
 <h3><i>abairti</i></h3>
@@ -194,6 +199,11 @@ Coming soon...
 </p>
 
 <h3><i>rialacha</i></h3>
+<p>
+Coming soon...
+</p>
+
+<h3><i>eisceacht</i></h3>
 <p>
 Coming soon...
 </p>

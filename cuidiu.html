@@ -16,6 +16,12 @@
 <h1>An Gramad&oacute;ir:<br>
 How to Contribute</h1>
 
+<hr>
+<h2>Porting to other languages</h2>
+See the <a href="iompar.html">Languages</a> page for more information.
+<br><br>
+
+<hr>
 <h2>Contributing words</h2>
 The database of Irish words used by <i>An Gramad&oacute;ir</i>
 is the same one used by my other Irish language applications:
@@ -29,15 +35,17 @@ and mutations of a given word to the database, so you don't have
 to worry about <i lang="ga">nGaeltacht, Ghaeltacht, Gaeltachta</i>,
 etc. once the headword <i lang="ga">Gaeltacht</i> has been entered.
 
+<hr>
 <h2>Hacking the rule set</h2>
 <p>
 The easiest and most valuable way to contribute is by
 helping add new rules to the checker.   Rules are contained in
-two plain text files called <i>aonchiall.in</i> and <i>rialacha.in</i>.
+three plain text files called <i>aonchiall.in</i>, 
+<i>eisceacht.in</i> and <i>rialacha.in</i>.
 Complicated "meta"-scripts convert these (somewhat) human-readable
-files into the scripts which actually find and mark up the grammatical
-errors.   You 
-fortunately don't need to understand this process to contribute rules
+files into the Perl scripts which actually find and mark up the grammatical
+errors.   
+You fortunately don't need to understand this process to contribute rules
 (although anyone who is curious can read the  
 <a href="sonrai.html">Details</a> page).
 </p>
@@ -55,8 +63,9 @@ can try to apply grammatical rules depending on part of speech.
 </p>
 
 <p>
-The file <i>rialacha.in</i> contains the grammatical rules proper.
-The sections which follow describe the structure of these files
+The file <i>rialacha.in</i> contains the grammatical rules proper,
+and <i>eisceacht.in</i> lists any exceptions to these rules.
+The sections which follow describe the structure of all three files
 in sufficient detail that (I hope) you will be able to write
 and contribute your own rules for inclusion in later releases.
 Alternatively, if you provide me with a brief description 
@@ -65,12 +74,17 @@ a rule you think is missing from the database, I will try and
 construct the appropriate entry.
 </p>
 
+<hr>
 <h2>Disambiguation: <i>aonchiall.in</i></h2>
 A detailed description of this file will appear here shortly.
 
 <h2>Grammar checking: <i>rialacha.in</i></h2>
 A detailed description of this file will appear here shortly.
 
+<h2>Exceptions: <i>eisceacht.in</i></h2>
+A detailed description of this file will appear here shortly.
+
+<hr>
 <h2>Contributors</h2>
 <ul>
 <li>None yet!

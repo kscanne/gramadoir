@@ -16,12 +16,13 @@
 <h1>An Gramad&oacute;ir:<br>
 Porting to other languages</h1>
 
+<hr>
 <h2>Introduction</h2>
 <p>
 I would be excited to help port this software
 for use with languages other than Irish.  Getting 
 something simple up and running should be easy,
-even if your language lacks some of the basics for
+even if your language lacks some of the basic tools for
 doing natural language processing.  If, however, you 
 already have things like a large word list or a
 part-of-speech tagger,
@@ -29,19 +30,20 @@ then you should be able to begin implementing
 sophisticated grammatical rules immediately.
 </p>
 
+<hr>
 <h2>Things to do</h2>
-
 <p>
 <b>1. Build focail.bs</b>.   This is the database of recognized words.
 If you have some grammatical rules that
 don't require part of speech information, then in fact this step
 is optional.  You can either construct <i>focail.bs</i> from a plain text file
 containing one word per line (like you will find distributed with
-GNU aspell if your language has 
-<a href="ftp://ftp.gnu.org/pub/gnu/aspell/dict/index.html">aspell support</a>):
+GNU <i>aspell</i> if your language has 
+<a href="ftp://ftp.gnu.org/pub/gnu/aspell/dict/index.html"><i>aspell</i> support</a>):<br><br>
 <samp>
 cat aspell.txt | sed 's/.*/&amp; 1/' | cabhair > focail.bs
 </samp>
+<br><br>
 or get rid of the first rule in <i>rialacha.in</i> to turn off
 spellchecking if you have no word list at all.
 An intermediate possibility would be if, for instance, you want 
@@ -49,10 +51,11 @@ to check for erroneous
 constructions like the English 
 "He done went fishing", or "He done ate his dinner"
 (sadly common in my part of the world).
-You can add a rule to <i>rialacha.in</i> resembling:
+You could add a rule to <i>rialacha.in</i> resembling:<br><br>
 <samp>
-done &lt;VP&gr;&lt;/VP&rt;
+&lt;N&gt; done &lt;VP&gt;&lt;/VP&gt;
 </samp>
+<br><br>
 and populate <i>focail.bs</i> with verbs in the past tense.
 It all depends on what kind of checks you need to do for your language.
 </p>
@@ -74,23 +77,24 @@ things as well.
 </p>
 
 <p>
-<b>4. Write aonchiall.in</b>.  These are the rules for disambiguation.
-In Irish, and I would imagine in many other language, you can get
-away in a lot of cases without too many rules here.  See
+<b>4. Write <i>aonchiall.in</i></b>.  These are the rules for disambiguation.
+In Irish, and I would imagine in many other languages, one can get
+away without too many rules here.  See
 the description of this file on the <a href="cuidiu.html">Contributing</a>
 page.
 </p>
 
 <p>
-<b>5. Write rialacha.in</b>.  These are the grammatical rules.
+<b>5. Write <i>rialacha.in</i> and <i>eisceacht.in</i></b>.  
+These are the grammatical rules and exceptions.
 Again see the <a href="cuidiu.html">Contributing</a> page for information
-on how to create this file.
+on how to create these files.
 
 <p>
 <b>6. Localize message strings</b>.
 Technically this is part of porting the user interface, not
 porting the grammar checker.  I'm guessing however that you'll want to
-see the output in the same language as the language of 
+see the output in the same language as
 the documents that are being
 checked.  I've kept these strings together at the top of <i>gr.in</i>.
 I'll move to using <i>gettext</i> in the future to streamline this.
