@@ -28,12 +28,12 @@ gr --xml=fakearg /dev/null
 gr --teanga=el /dev/null
 gr --ionchod=fakecode /dev/null
 ##  add stuff for ponc.in  checks
-mv /usr/local/share/gramadoir/focail.bs ./f.bs
+mv /usr/local/share/gramadoir/focail-ga.bs ./f.bs
 gr --litriu triail
-mv ./f.bs /usr/local/share/gramadoir/focail.bs
-mv /usr/local/share/gramadoir/eile.bs ./e.bs
+mv ./f.bs /usr/local/share/gramadoir/focail-ga.bs
+mv /usr/local/share/gramadoir/eile-ga.bs ./e.bs
 gr --litriu triail
-mv ./e.bs /usr/local/share/gramadoir/eile.bs
+mv ./e.bs /usr/local/share/gramadoir/eile-ga.bs
 }
 
 do_all()
