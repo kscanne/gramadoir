@@ -1,0 +1,19 @@
+#!/bin/bash
+if [ "${1}" != "aonchiall" ]
+then
+	cat
+else
+while read perlline
+do
+	if echo "${perlline}" | grep '^s/' > /dev/null
+	then
+		PRESTUFF=`echo "${perlline}" | sed 's/)<B>.*//'`
+		PREANDWORD=`echo "${perlline}" | sed 's@)<\\/B>.*@@'`
+		WORDNUM=`echo "((${PRESTUFF}" | tr -d -c "(" | wc -c | sed 's/^ *//'`
+		TAILNUM=`echo "(${PREANDWORD}" | tr -d -c "(" | wc -c | sed 's/^ *//'`
+		echo "${perlline}" | sed "s/\$4/\$${TAILNUM}/; s/\$3/\$${WORDNUM}/" | sed 's/\([[<^]\)\//\1\\\//g'
+	else
+		echo "${perlline}" | sed 's/\([[<^]\)\//\1\\\//g'
+	fi
+done
+fi
