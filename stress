@@ -3,23 +3,24 @@
 test_language()
 {
 LC_MESSAGES="${1}"
-export LC_MESSAGES
+LC_CTYPE="${1}"
+export LC_MESSAGES LC_CTYPE
 echo "test help flag"
 gr --help
 echo "test version flag"
 gr --version
 echo "test litriu flag"
-gr --litriu --iomlan triail
+gr --litriu --iomlan triail.2
 echo "test xml flag"
-gr --xml --iomlan triail
+gr --xml --iomlan triail.2
 echo "test html flag"
-gr --html --iomlan triail
+gr --html --iomlan triail.2
 echo "test ionchod flag and ability to read from stdin"
-cat triail | iconv -f iso88591 -t utf8 | gr --ionchod=utf8
+cat triail.2 | iconv -f iso88591 -t utf8 | gr --ionchod=utf8
 echo "test English"
 head -n 42 COPYING | gr --iomlan --teanga=en --xml
 echo "test English: ASCII character set"
-echo "This string has embédded non-ASCII!" | gr --xml --iomlan --teanga=en
+echo 'This string has embédded non-ASCII characters!' | gr --xml --iomlan --teanga=en
 echo "test various error messages" >&2
 rm -f nonexistentfile
 gr nonexistentfile
@@ -33,18 +34,22 @@ gr --teanga=el /dev/null
 gr --ionchod=fakecode /dev/null
 ##  add stuff for ponc.in  checks
 mv /usr/local/share/gramadoir/focail-ga.bs ./f.bs
-gr --litriu triail
+gr --litriu triail.2
 mv ./f.bs /usr/local/share/gramadoir/focail-ga.bs
 mv /usr/local/share/gramadoir/eile-ga.bs ./e.bs
-gr --litriu triail
+gr --litriu triail.2
 mv ./e.bs /usr/local/share/gramadoir/eile-ga.bs
 }
 
 do_all()
 {
+head triail > triail.2
 test_language POSIX
 test_language de_DE
 test_language ga_IE
+test_language ro_RO
+test_language nl_NL
+rm -f triail.2
 }
 
 do_all > stress.out 2> stress.err
