@@ -121,54 +121,72 @@ load_replacements ()
   return retval;
 }
 
+/* takes opened, non-zero FILE pointer and reads in words to ignore */
+/* problem is signified in calling routine by (toignore==NULL) */
+int
+real_loader (char *grignore, FILE * grig)
+{
+  int iomlan;
+  char countstr[8];
+
+  fgets (countstr, 8, grig);
+  countstr[strlen (countstr) - 1] = 0;
+  iomlan = atoi (countstr);
+  if (!iomlan)
+    return;			/* in case of bad malloc */
+  toignore = malloc (iomlan * sizeof (struct ignorable));
+  if (toignore == NULL)
+    {
+      /* "An Gramadóir: warning: out of memory\n" */
+      fprintf (stderr, "An Gramadóir: rabhadh: cuimhne ídithe\n");
+      return;
+    }
+  while (!feof (grig) && ignore_total != iomlan)
+    {
+      fgets (toignore[ignore_total].focal, GR_WORDMAX, grig);
+      ignore_total++;
+    }
+  if (ignore_total != iomlan)
+    {
+      /* "An Gramadóir: warning: check size of %s: %d?\n" */
+      fprintf (stderr,
+	       "An Gramadóir: rabhadh: deimhnigh méid de %s: %d?\n",
+	       grignore, ignore_total);
+    }
+  if (fclose (grig))
+    {
+      /* "An Gramadóir: warning: problem closing %s\n" */
+      fprintf (stderr, "An Gramadóir: rabhadh: fadhb ag dúnadh %s\n",
+	       grignore);
+    }
+}
+
+
 /* no return value, since no matter what happens we'll proceed */
 void
 load_ignore ()
 {
-  int iomlan;
   FILE *grig;
   char *baile;
-  char grignore[GR_FILENAMEMAX], countstr[8];
+  char grignore[GR_FILENAMEMAX];
 
   baile = getenv ("HOME");
-  strcpy (grignore, baile);
-  strcat (grignore, "/.neamhshuim");
-  grig = fopen (grignore, "r");
-  if (grig)
+  if (baile != NULL)
     {
-      fgets (countstr, 8, grig);
-      countstr[strlen (countstr) - 1] = 0;
-      iomlan = atoi (countstr);
-      if (!iomlan)
-	return;			/* in case of bad malloc */
-      toignore = malloc (iomlan * sizeof (struct ignorable));
-      if (toignore == NULL)
+      strcpy (grignore, baile);
+      strcat (grignore, "/.neamhshuim");
+      grig = fopen (grignore, "r");
+      if (grig)
 	{
-	  /* "An Gramadóir: warning: out of memory\n" */
-	  fprintf (stderr, "An Gramadóir: rabhadh: cuimhne ídithe\n");
+	  real_loader (grignore, grig);
 	  return;
 	}
-      while (!feof (grig) && ignore_total != iomlan)
-	{
-	  fgets (toignore[ignore_total].focal, GR_WORDMAX, grig);
-	  ignore_total++;
-	}
-      if (ignore_total != iomlan)
-	{
-	  /* "An Gramadóir: warning: check size of %s: %d?\n" */
-	  fprintf (stderr,
-		   "An Gramadóir: rabhadh: deimhnigh méid de %s: %d?\n",
-		   grignore, ignore_total);
-	}
-      if (fclose (grig))
-	{
-	  /* "An Gramadóir: warning: problem closing %s\n" */
-	  fprintf (stderr, "An Gramadóir: rabhadh: fadhb ag dúnadh %s\n",
-		   grignore);
-	}
     }
-  else				/* move on silently */
-    ;
+  strcpy (grignore, BSONRAI);
+  strcat (grignore, "/Neamhshuim");
+  grig = fopen (grignore, "r");
+  if (grig)
+    real_loader (grignore, grig);
 }
 
 int
