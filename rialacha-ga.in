@@ -74,6 +74,12 @@ ANYTHING <VNOLEN>LENITED</VNOLEN>:NISEIMHIU
 #<NMGS>ANYTHING</NMGS> <A>UNLENITED</A>:SEIMHIU
 <NMCS>UNLENITED</NMCS> <A>LENITED</A>:NISEIMHIU
 <NMCS>UNLENITABLE</NMCS> <A>LENITED</A>:NISEIMHIU
+#  requires shallow parse;  else false positive like the following:
+#  "Tugann an <b>clár deis</b> do dhaoine taithí oibre a fháil"
+#  "Rinne mé <b>iarracht scéal</b> a scríobh"
+#  "Tá sé de <b>chúram seirbhís</b> a chur ar fáil"
+#  "Tá ar chumas an <b>duine saol</b> iomlán a chaitheamh.."
+#<NCS>ANYTHING</NCS> <NCS>ANYTHING</NCS>:GENITIVE
 # CB p.16 #9.c
 #. Tá na lachain slachtmhara ar eitilt.
 <NP>SLENDERFINALCONSONANT</NP> <A>UNLENITED</A>:SEIMHIU
@@ -601,8 +607,6 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # OD pé
 #. Uaidh féin, b'fhéidir, pé é féin.
 <P>[Pp]é</P> <P>INITIALVOWEL</P>:PREFIXH
-#. Bhain na toibreacha le re eile agus le dream daoine atá imithe.
-<U>[Rr]e</U>:INPHRASE{gach re}
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. Agus tháinig scéin air roimh an pobal seo ar a líonmhaire.
 <S>[Rr]oimh</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
@@ -735,7 +739,6 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 #############################################################################
 #                 SET PHRASES                                               #
 #############################################################################
-#. Bhain na toibreacha le re eile agus le dream daoine atá imithe.
 <N>[Aa]ice</N>:INPHRASE{in aice}
 <N>[Aa]icearracht</N>:INPHRASE{in aicearracht}
 <A>h?[Aa]raile</A>:INPHRASE{agus araile}
@@ -759,6 +762,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <U>[Cc]hiot</U>:INPHRASE{ciolar chiot}
 <N>g?[Cc]h?olgsheasamh</N>:INPHRASE{ina cholgsheasamh}
 <N>g?[Cc]h?omhchlos</N>:INPHRASE{i gcomhchlos}
+<N>g?[Cc]h?omhthráth</N>:INPHRASE{i gcomhthráth}
 <S>[Dd]arb</S>:INPHRASE{darb ainm}
 <N>n?[Dd]h?allach</N>:INPHRASE{dallach dubh}
 <N>n?[Dd]h?eara</N>:INPHRASE{faoi deara}
@@ -793,6 +797,7 @@ háirithe:INPHRASE{go háirithe}
 <A>hansa</A>:INPHRASE{ní hansa}
 <N>[HC]ong</N>:INPHRASE{Hong Cong}
 <N>[Hh]úta</N>:INPHRASE{raiple húta}
+<N>[Ll]ánseol</N>:INPHRASE{faoi lánseol}
 <N>[Ll]éig</N>:INPHRASE{i léig}
 <N>[Ll]eithligh</N>:INPHRASE{ar leithligh}
 <N>[Ll]iobarna</N>:INPHRASE{ar liobarna}
@@ -806,11 +811,13 @@ háirithe:INPHRASE{go háirithe}
 <N>ndáiríre</N>:INPHRASE{i ndáiríre}
 <N>[Nn]eamhchead</N>:INPHRASE{ar neamhchead}
 n[gG]ach:INPHRASE{i ngach}
+n[gG]an:INPHRASE{i ngan}
 <N>[Nn][ie][áú]dar</N>:INPHRASE{niúdar neádar}
 <R>[Nn]uige</R>:INPHRASE{go nuige}
 <R>[Pp]l(ea)?inc</R>:INPHRASE{plinc pleainc}
 <U>[Rr]agaim</U>:INPHRASE{meacan ragaim}
 <N>[Rr]aiple</N>:INPHRASE{raiple húta}
+#. Bhain na toibreacha le re eile agus le dream daoine atá imithe.
 <U>[Rr]e</U>:INPHRASE{gach re}
 <U>[Rr]óibéis</U>:INPHRASE{ribe róibéis}
 <N>[RrBb]uaille</N>:INPHRASE{ruaille buaille}
