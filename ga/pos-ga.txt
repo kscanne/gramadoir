@@ -42,53 +42,18 @@
 158 <A pl="n" gnt="y" gnd="m" h="y">
 160 <A pl="y" gnt="n">
 162 <A pl="y" gnt="n" h="y">
-192 <V p="saor" t="ord">
-193 <V p="saor" t="láith">
+192 <V p="n" t="ord">
+193 <V p="n" t="láith">
 194 <V cop="y">
-195 <V p="saor" t="caite">
-196 <V p="saor" t="fáist">
-197 <V p="saor" t="gnáth">
-198 <V p="saor" t="coinn">
-199 <V p="saor" t="foshuit">
-200 <V p="1ú" t="ord">
-201 <V p="1ú" t="láith">
-203 <V p="1ú" t="caite">
-204 <V p="1ú" t="fáist">
-205 <V p="1ú" t="gnáth">
-206 <V p="1ú" t="coinn">
-207 <V p="1ú" t="foshuit">
-208 <V p="2ú" t="ord">
-209 <V p="2ú" t="láith">
-211 <V p="2ú" t="caite">
-212 <V p="2ú" t="fáist">
-213 <V p="2ú" t="gnáth">
-214 <V p="2ú" t="coinn">
-215 <V p="2ú" t="foshuit">
-216 <V p="3ú" t="ord">
-217 <V p="3ú" t="láith">
-219 <V p="3ú" t="caite">
-220 <V p="3ú" t="fáist">
-221 <V p="3ú" t="gnáth">
-222 <V p="3ú" t="coinn">
-223 <V p="3ú" t="foshuit">
-232 <V pl="y" p="1ú" t="ord">
-233 <V pl="y" p="1ú" t="láith">
-235 <V pl="y" p="1ú" t="caite">
-236 <V pl="y" p="1ú" t="fáist">
-237 <V pl="y" p="1ú" t="gnáth">
-238 <V pl="y" p="1ú" t="coinn">
-239 <V pl="y" p="1ú" t="foshuit">
-240 <V pl="y" p="2ú" t="ord">
-241 <V pl="y" p="2ú" t="láith">
-243 <V pl="y" p="2ú" t="caite">
-244 <V pl="y" p="2ú" t="fáist">
-245 <V pl="y" p="2ú" t="gnáth">
-246 <V pl="y" p="2ú" t="coinn">
-247 <V pl="y" p="2ú" t="foshuit">
-248 <V pl="y" p="3ú" t="ord">
-249 <V pl="y" p="3ú" t="láith">
-251 <V pl="y" p="3ú" t="caite">
-252 <V pl="y" p="3ú" t="fáist">
-253 <V pl="y" p="3ú" t="gnáth">
-254 <V pl="y" p="3ú" t="coinn">
-255 <V pl="y" p="3ú" t="foshuit">
+195 <V p="n" t="caite">
+196 <V p="n" t="fáist">
+197 <V p="n" t="gnáth">
+198 <V p="n" t="coinn">
+199 <V p="n" t="foshuit">
+200 <V p="y" t="ord">
+201 <V p="y" t="láith">
+203 <V p="y" t="caite">
+204 <V p="y" t="fáist">
+205 <V p="y" t="gnáth">
+206 <V p="y" t="coinn">
+207 <V p="y" t="foshuit">

@@ -15,8 +15,8 @@
 #  over <F>; e.g. raibh as a noun.  But should leave the rules here since 
 #  the performance hit is small and they might pop up in corpus eventually
 <S>[Ii]</S> <B>bhfuil</B>:<N pl="n" gnt="n" gnd="f">
-<B>bhfuil</B>:<V p="xx" t="láith">
-<B>raibh</B>:<V p="xx" t="caite">
+<B>bhfuil</B>:<V p="y" t="láith">
+<B>raibh</B>:<V p="y" t="caite">
 <B>[Ff]aoin</B>:<S>
 <S>[Ff]aoin</S> <B>g?ch?éad</B>:<N pl="n" gnt="n">
 # this century
@@ -64,19 +64,19 @@
 <B>[Áá]r</B>:<D>
 # almost always a typo, not "swollen"
 <B>ata</B>:<F>
-<B>[Aa]tá</B>:<V p="xx" t="láith">
+<B>[Aa]tá</B>:<V p="y" t="láith">
 <T>[Nn]a</T> <B>ba</B>:<N pl="y" gnt="n" gnd="f">
 <B>[Bb]a</B>:<V cop="y">
 [Gg]o <B>m[Bb]a</B>:<V cop="y">
 [Dd]h?á <B>m[Bb]a</B>:<V cop="y">
 <B>m?[Bb]h?aile</B>:<N pl="n" gnt="n" gnd="m">
-<B>[Bb]haineann</B>:<V p="xx" t="láith">
+<B>[Bb]haineann</B>:<V p="y" t="láith">
 # catch barra here otherwise looks like nm1 gs/pl (really nm4 gs+pl of barr)
 #  and gets disambiguated as the gs after "an"
 [Aa]n <B>[Bb]arra</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Bb]h?arr</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Bb]h?eag</B>:<A pl="n" gnt="n">
-<B>[Bb]hí</B>:<V p="xx" t="caite">
+<B>[Bb]hí</B>:<V p="y" t="caite">
 # verbal particle or copula
 <B>[Cc]á</B> <V>ANYTHING</V>:<Q>
 <B>[Cc]á</B> UNECLIPSED:<V cop="y">
@@ -100,7 +100,7 @@
 <B>g?ch?ónaí</B>:<N pl="n" gnt="n" gnd="m">
 # lenition => prob not imperative
 an <B>[Cc]huir</B>:<N pl="n" gnt="y" gnd="m">
-<B>[Cc]huir</B>:<V p="xx" t="caite">
+<B>[Cc]huir</B>:<V p="y" t="caite">
 <T>na</T> <B>g[Cc]umann</B>:<N pl="y" gnt="y" gnd="m">
 <B>g?[Cc]h?umann</B>:<N pl="n" gnt="n" gnd="m">
 # OD dhá 
@@ -120,8 +120,8 @@ an <B>dála</B>:<N pl="n" gnt="n" gnd="f">
 <N>Dé</N> <B><Z>ANYNFG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 # ok as is; "trí bliana déag", etc.  "trí déag"... in comhshuite
 <B>[Dd]éag</B>:<N pl="n" gnt="n">
-<B>n?[Dd]h?earna</B>:<V p="xx" t="caite">
-<B>[Dd]eir</B>:<V p="xx" t="láith">
+<B>n?[Dd]h?earna</B>:<V p="y" t="caite">
+<B>[Dd]eir</B>:<V p="y" t="láith">
 <B>[Dd]eireadh</B>:<N pl="n" gnt="n" gnd="m">
 <B>dío?bh</B>:<O>
 <B>[Dd]o</B> <T>na</T>:<S>
@@ -149,7 +149,7 @@ an <B>dó</B>:<A pl="n" gnt="n">
 <T>na</T> <B>bh[Ff]ear</B>:<N pl="y" gnt="y" gnd="m">
 <B>(bh)?[Ff]h?ear</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Ff]éin</B>:<R>
-<B>(bh)?[Ff]uair</B>:<V p="xx" t="caite">
+<B>(bh)?[Ff]uair</B>:<V p="y" t="caite">
 <B>[Gg]ach</B> a:<N pl="n" gnt="n">
 <B>[Gg]ach</B> ar:<N pl="n" gnt="n">
 <B>[Gg]ach</B> is:<N pl="n" gnt="n">
@@ -185,7 +185,7 @@ an <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
 <B>[Mm]h?ór</B>:<A pl="n" gnt="n">
 <B>[Nn]á</B> <V>ANYTHING</V>:<U>
 # note that next rule is disjoint from previous (so don't put <U> in next one)
-[Nn]á <B><Z>ANYIMPER</Z>ANYTHING</B>:<V p="xx" t="ord">
+[Nn]á <B><Z>ANYIMPER</Z>ANYTHING</B>:<V p="y" t="ord">
 <B>[Nn]á</B>:<C>
 # since "ná" verbs are handled in previous batch, now can do next two:
 # e.g.  go hInis, á húsáid, á hól  are nouns...
@@ -208,13 +208,13 @@ an <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
 # River
 an <B>Níl</B>:<N pl="n" gnt="n" gnd="f">
 <S>ANYTHING</S> <B>Níl</B>:<N pl="n" gnt="n" gnd="f">
-<B>Níl</B>:<V p="xx" t="láith">
+<B>Níl</B>:<V p="y" t="láith">
 <B>[Nn]íor</B>:<V cop="y">
 <B>[Nn]uair</B>:<C>
 # not "deer"
 <B>os</B>:<S>
 <T>na</T> <B>[Rr]inne</B>:<N pl="n" gnt="y" gnd="f">
-<B>[Rr]inne</B>:<V p="xx" t="caite">
+<B>[Rr]inne</B>:<V p="y" t="caite">
 # missp. of ríthe
 <B>[Rr]ithe</B>:<F>
 <B>San</B> CAPITAL:<N pl="n" gnt="n">
@@ -241,6 +241,7 @@ a <B>sé</B>:<A pl="n" gnt="n">
 <B>[Tt]hart</B>:<R>
 # "east" not genitive of "bush".
 # weird performance bug when these two are lumped together as [Tt]hoir...
+# <N>ANYTHING</N> <B>[Tt]hoir</B>:<A pl="n" gnt="n">
 <N>ANYTHING</N> <B>thoir</B>:<A pl="n" gnt="n">
 <N>ANYTHING</N> <B>Thoir</B>:<A pl="n" gnt="n">
 <B>[Tt]hoir</B>:<R>
@@ -337,27 +338,27 @@ is <B><Z>ANYWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
 <S>ANYTHING</S> <B><Z>NMVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <T>[Aa]n</T> <B><Z>NMVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 # N[MF]VERB types exclude autonomous correctly
-a <B><Z>NMVERB</Z>ANYTHING</B> <P>ANYTHING</P>:<V p="xx" t="caite">
-a <B><Z>NMVERB</Z>ANYTHING</B> sé:<V p="xx" t="caite">
-a <B><Z>NMVERB</Z>ANYTHING</B> <N>ANYTHING</N>:<V p="xx" t="caite">
-a <B><Z>NMVERB</Z>ANYTHING</B> <Y>ANYTHING</Y>:<V p="xx" t="caite">
+a <B><Z>NMVERB</Z>ANYTHING</B> <P>ANYTHING</P>:<V p="y" t="caite">
+a <B><Z>NMVERB</Z>ANYTHING</B> sé:<V p="y" t="caite">
+a <B><Z>NMVERB</Z>ANYTHING</B> <N>ANYTHING</N>:<V p="y" t="caite">
+a <B><Z>NMVERB</Z>ANYTHING</B> <Y>ANYTHING</Y>:<V p="y" t="caite">
 a <B><Z>NMVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <V>ANYTHING</V> <B><Z>NMVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 # repeat previous batch for feminine:  "roinn", "úsáid", "chaill", etc. 
 <S>ANYTHING</S> <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <T>[Aa]n</T> <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
-a <B><Z>NFVERB</Z>ANYTHING</B> <P>ANYTHING</P>:<V p="xx" t="caite">
-a <B><Z>NFVERB</Z>ANYTHING</B> sé:<V p="xx" t="caite">
-a <B><Z>NFVERB</Z>ANYTHING</B> <N>ANYTHING</N>:<V p="xx" t="caite">
-a <B><Z>NFVERB</Z>ANYTHING</B> <Y>ANYTHING</Y>:<V p="xx" t="caite">
+a <B><Z>NFVERB</Z>ANYTHING</B> <P>ANYTHING</P>:<V p="y" t="caite">
+a <B><Z>NFVERB</Z>ANYTHING</B> sé:<V p="y" t="caite">
+a <B><Z>NFVERB</Z>ANYTHING</B> <N>ANYTHING</N>:<V p="y" t="caite">
+a <B><Z>NFVERB</Z>ANYTHING</B> <Y>ANYTHING</Y>:<V p="y" t="caite">
 a <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <V>ANYTHING</V> <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 # ...agus glacadh leis, murar glacadh leis.
-<C>ANYTHING</C> <B><Z>ADHWORD</Z>ANYTHING</B>:<V p="saor" t="caite">
+<C>ANYTHING</C> <B><Z>ADHWORD</Z>ANYTHING</B>:<V p="n" t="caite">
 # really a <C> but not resolved until below
-[Óó] <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="saor" t="caite">
-a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="saor" t="caite">
-<VCOP>ANYTHING</VCOP> <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="saor" t="caite">
+[Óó] <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
+a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
+<VCOP>ANYTHING</VCOP> <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 # doesn't matter
 <B><Z>TEMPORAL</Z>ANYTHING</B>:<R>
 <B><Z>PREPPOSS</Z>NOTDO</B> <V>ANYTHING</V>:<S>
@@ -369,7 +370,7 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="saor" t="caite">
 <B><Z>NPLFSUBJ</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
 <B><Z>NPLF</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
 # Táimid, etc.
-<B><Z>PRESSUBJ</Z>ANYTHING</B>:<V pl="y" p="1ú" t="láith">
+<B><Z>PRESSUBJ</Z>ANYTHING</B>:<V p="y" t="láith">
 # Roinne, vótála, etc.
 <B><Z>NFGSUBJ</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 <B><Z>PLADJSUBJ</Z>ANYTHING</B>:<A pl="y" gnt="n">
@@ -411,20 +412,15 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="saor" t="caite">
 <B><Z>COPULAPART</Z>ANYTHING</B> <V>ANYTHING</V>:<U>
 <B><Z>COPULAPART</Z>ANYTHING</B>:<V cop="y">
 # choinníodh, etc. -- otherwise unigram=>PAUT and need to explain lenition...
-<B><Z>PAUTGNATH</Z>LENITED</B>:<V p="xx" t="gnáth">
+<B><Z>PAUTGNATH</Z>LENITED</B>:<V p="y" t="gnáth">
 # bhíodh, etc. -- otherwise unigram=>ORD and need to explain lenition...
-<B><Z>BHIODHLIKE</Z>ANYTHING</B>:<V p="xx" t="gnáth">
+<B><Z>BHIODHLIKE</Z>ANYTHING</B>:<V p="y" t="gnáth">
 # otherwise unigram=>ORD and need to explain lenition...
-<B><Z>BHIDISLIKE</Z>ANYTHING</B>:<V p="xx" t="gnáth">
-# do next batch for efficiency only
-<B><Z>GENERICPAST</Z>ANYTHING</B>:<V p="xx" t="caite">
-<B><Z>GENERICPRES</Z>ANYTHING</B>:<V p="xx" t="láith">
-<B><Z>GENERICFUTURE</Z>ANYTHING</B>:<V p="xx" t="fáist">
-<B><Z>GENERICCOND</Z>ANYTHING</B>:<V p="xx" t="coinn">
-<B><Z>GENERICAUT</Z>ANYTHING</B>:<V p="saor" t="láith">
-<B><Z>GENERICPAUT</Z>ANYTHING</B>:<V p="saor" t="caite">
-<B><Z>GENERICFIRST</Z>ANYTHING</B>:<V p="1ú" t="láith">
-<B><Z>GENERICSUB</Z>ANYTHING</B>:<V p="xx" t="foshuit">
+# <B><Z>BHIDISLIKE</Z>ANYTHING</B>:<V p="y" t="gnáth">
+<B><Z>GENERICPAST</Z>ANYTHING</B>:<V p="y" t="caite">
+<B><Z>GENERICAUT</Z>ANYTHING</B>:<V p="n" t="láith">
+<B><Z>GENERICPAUT</Z>ANYTHING</B>:<V p="n" t="caite">
+<B><Z>GENERICFIRST</Z>ANYTHING</B>:<V p="y" t="láith">
 # last resorts
 # e.g.  next rule gets "ar siad" since siad -> <P> above 
 <B>[Aa]r</B> s[éí]:<V cop="y">

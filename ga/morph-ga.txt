@@ -290,11 +290,11 @@ e[oó]cha(i?dh)$		eo$1		1	<V.*>
 ([^e])ócha(i?dh)$	$1ó$2		1	<V.*>
 e[oó]chaimi([ds])$	eoimi$1		1	<V.*>
 ([^e])óchaimi([ds])$	$1óimi$2	1	<V.*>
-e[oó]chai(nn|dís)$	eoi$1		1	<V .* t="coinn">
-([^e])óchai(nn|dís)$	$1ói$2		1	<V .* t="coinn">
+e[oó]chai(nn|dís)$	eoi$1		1	<V p="y" t="coinn">
+([^e])óchai(nn|dís)$	$1ói$2		1	<V p="y" t="coinn">
 #   2nd declension Dinneen-style endings
 u(i?gh)			a$1		1	<.+>  # see next few
-(..)aíd$		$1aíonn		1	<V .* t="láith"> # cialluíd
+(..)aíd$		$1aíonn		1	<V p="y" t="láith"> # cialluíd
 aghadh			ú		1	<N.*>  # broad and slender
 i[dg]h(th?.)		i$1		1	<.+>  # marcaidhthe, masluighthe, beannuighth?ear
 (..)thear$		$1tear		1	<V.*> # aut. present
@@ -303,44 +303,44 @@ ighidh			í		1	<.+>    # subjunctive?
 ighinn			ínn		1	<.+>    # imperfect
 # Future forms: see OS88 p.215 for these (fe?as, etc. on p.63)
 #  socróid, dílseoid, 3rd plural forms in achtanna
-fa[ds]$			faidh		1	<V .* t="fáist">
-fea[ds]$		fidh		1	<V .* t="fáist">
-ói?[ds]$		óidh		1	<V .* t="fáist">
-eoi?[ds]$		eoidh		1	<V .* t="fáist">
+fa[ds]$			faidh		1	<V p="y" t="fáist">
+fea[ds]$		fidh		1	<V p="y" t="fáist">
+ói?[ds]$		óidh		1	<V p="y" t="fáist">
+eoi?[ds]$		eoidh		1	<V p="y" t="fáist">
 # Common in achtanna to have -fidh,-fid ending on broad stem, lots of 
 # other slender/broad mismatches:
-([aáoóuú][^aeiouáéíóú]*)fí$	$1faí	1	<V .* t="coinn">
-([aáoóuú][^aeiouáéíóú]*)fidh?$	$1faidh	1	<V .* t="fáist">
-([eéií][^aeiouáéíóú]*)fa(r|dh)$	$1fea$2	1	<V .* t="coinn">
-([eéií][^aeiouáéíóú]*)tar$	$1tear	1	<V .* t="láith"> # * not + for chítar
+([aáoóuú][^aeiouáéíóú]*)fí$	$1faí	1	<V p="n" t="coinn">
+([aáoóuú][^aeiouáéíóú]*)fidh?$	$1faidh	1	<V p="y" t="fáist">
+([eéií][^aeiouáéíóú]*)fa(r|dh)$	$1fea$2	1	<V p="." t="coinn">
+([eéií][^aeiouáéíóú]*)tar$	$1tear	1	<V p="n" t="láith"> # * not + for chítar
 # Future 2nd p., "r" forms noted on OS88 p.216;
 # see achtanna for íocfaid/íocfa, bainfid/bainfe
-fa$			faidh		1	<V .* t="fáist">
-fai[rsd]$		faidh		1	<V .* t="fáist">
-fe$			fidh		1	<V .* t="fáist">
-fi[rsd]$		fidh		1	<V .* t="fáist">
-óis$			óidh		1	<V .* t="fáist">
-eois$			eoidh		1	<V .* t="fáist">
+fa$			faidh		1	<V p="y" t="fáist">
+fai[rsd]$		faidh		1	<V p="y" t="fáist">
+fe$			fidh		1	<V p="y" t="fáist">
+fi[rsd]$		fidh		1	<V p="y" t="fáist">
+óis$			óidh		1	<V p="y" t="fáist">
+eois$			eoidh		1	<V p="y" t="fáist">
 # Future/Cond autonomous; unwanted prefix h is common in achtanna
-^h([aeiouáéíóú].+fe?ar)$	$1	1	<V .* t="fáist">
-^h([aeiouáéíóú].+fa?í)$		$1	1	<V .* t="coinn">
+^h([aeiouáéíóú].+fe?ar)$	$1	1	<V p="n" t="fáist">
+^h([aeiouáéíóú].+fa?í)$		$1	1	<V p="n" t="coinn">
 # Past; also see Di27 (present).  "r" forms on p.216
-(...)eas$		$1		1	<V .* t="caite">
-(..[^aeiouáéíóú])as$	$1		1	<V .* t="caite">
-(...)íos$		$1igh		1	<V .* t="caite">
-(...)ai[rs]$		$1		1	<V .* t="caite">
-(..[^aeiouáéíóú])i[rs]$	$1		1	<V .* t="caite">
-(...)ís$		$1igh		1	<V .* t="caite">
+(...)eas$		$1		1	<V p="y" t="caite">
+(..[^aeiouáéíóú])as$	$1		1	<V p="y" t="caite">
+(...)íos$		$1igh		1	<V p="y" t="caite">
+(...)ai[rs]$		$1		1	<V p="y" t="caite">
+(..[^aeiouáéíóú])i[rs]$	$1		1	<V p="y" t="caite">
+(...)ís$		$1igh		1	<V p="y" t="caite">
 #  present
-ains$			ann		1	<V .* t="láith">
-ins$			eann		1	<V .* t="láith">
-íns$			íonn		1	<V .* t="láith">
+ains$			ann		1	<V p="y" t="láith">
+ins$			eann		1	<V p="y" t="láith">
+íns$			íonn		1	<V p="y" t="láith">
 #  OS88 p.126  present
-anns$			ann		1	<V .* t="láith">
-íonns$			íonn		1	<V .* t="láith">
+anns$			ann		1	<V p="y" t="láith">
+íonns$			íonn		1	<V p="y" t="láith">
 #  corpus 
 th(eá|ear)$		t$1		1	<V.*>
-(..)faimís$		$1faimis	2	<V .* t="coinn">
+(..)faimís$		$1faimis	2	<V p="y" t="coinn">
 #  various -áil  endings should be broad, CO p.120
 áilim$			álaim		1	<V.*>
 áileann$		álann		1	<V.*>

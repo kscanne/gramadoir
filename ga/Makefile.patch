@@ -1,5 +1,5 @@
---- Makefile	2004-12-29 20:53:46.311372720 -0600
-+++ Makefile.ok	2004-12-29 20:53:40.676229392 -0600
+--- Makefile	2005-01-04 16:27:52.615924144 -0600
++++ Makefile.ok	2005-01-04 15:03:30.865427184 -0600
 @@ -76,6 +76,15 @@
  
  Makefile : $(GRAMDIR)/Makefile-xx.in configure
@@ -29,7 +29,7 @@
  triail.xml-update : FORCE
  	$(MAKE) triail
  	$(MAKE) perl
-@@ -322,4 +337,80 @@
+@@ -319,4 +334,80 @@
  zipped : perl
  	(cd $(PERLD); make zipdist)
  
@@ -52,7 +52,7 @@
 +# use "groom" instead of this directly (since it requires ispell personal, etc.)
 +lexfromdb : FORCE
 +	Gin 12
-+	((cat ${HOME}/.ispell_gaeilge; cat ${HOME}/.biobla | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | aspell -dga -p${HOME}/.aspell.blank.pws -l) | sed 's/.*/& 44/'; cat FOCAIL) | LC_COLLATE=POSIX sort -u -k1,1 -k2,2n > lexicon-ga.txt
++	((cat ${HOME}/.ispell_gaeilge; cat ${HOME}/.biobla | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | aspell -dga -p${HOME}/.aspell.blank.pws -l) | sed 's/.*/& 44/'; cat FOCAIL) | $(PERL) -p posmap.pl | LC_COLLATE=POSIX sort -u -k1,1 -k2,2n > lexicon-ga.txt
 +	$(MAKE) rebuildlex
 +	rm -f FOCAIL
 +

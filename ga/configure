@@ -23,6 +23,7 @@ INTCHARS="'-"
 UPPERS="A-ZΑΙΝΣΪ"
 LOWERS="a-zαινσϊ"
 echo "configure: creating Makefile"
+rm -f Makefile
 sed "
 s@!ECHO!@${ECHO}@
 s@!EGREP!@${EGREP}@
