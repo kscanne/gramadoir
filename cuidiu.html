@@ -35,19 +35,17 @@ How to Contribute</h1>
 
 <hr>
 <h2>Reporting bugs</h2>
-Bug reports, support requests, and patches may be submitted via the
+<p>Bug reports, support requests, and patches may be submitted via the
 <a href="http://sourceforge.net/tracker/?group_id=114958">sourceforge tracker</a>.
-<br>
+</p>
 
 <h2>Grammar checking other languages</h2>
-See the <a href="iompar.html">Languages</a> page for more information.
-<br>
+<p>See the <a href="iompar.html">Languages</a> page for more information.</p>
 
 <h2>Translating the user interface</h2>
-See our page at the 
+<p>See our page at the 
 <a href="http://www2.iro.umontreal.ca/~gnutra/registry.cgi?domain=gramadoir">GNU Translation Project</a> 
-for more information.
-<br>
+for more information.</p>
 
 <hr>
 <h2>Hacking the rule set</h2>
@@ -63,15 +61,15 @@ by the appropriate ISO-639 language code.
 <p>
 The easiest and most valuable way to contribute is by
 helping add new rules to the checker.   Rules are contained in
-four plain text files called <i>comhshuite-ga.in</i>, <i>aonchiall-ga.in</i>, 
-<i>eisceacht-ga.in</i> and <i>rialacha-ga.in</i>.
+three plain text files called <i>comhshuite-ga.in</i>, <i>aonchiall-ga.in</i>, 
+and <i>rialacha-ga.in</i>.
 Complicated "meta"-scripts convert these (more or less) human-readable
 files into the Perl scripts which actually find and mark up the grammatical
 errors.   
 </p>
 
 <p>
-The file <i>comhshuite-ga.in</i> is the simplest of the four; each
+The file <i>comhshuite-ga.in</i> is the simplest of the three; each
 line contains a multiword "set phrase" followed by the part of speech
 tag that should be assigned to the given phrase.  
 For instance, the phrase <i lang="ga">le haghaidh</i> appears, followed by
@@ -97,8 +95,8 @@ can try to apply grammatical rules depending on part of speech.
 
 <p>
 The file <i>rialacha-ga.in</i> contains the grammatical rules proper,
-and <i>eisceacht-ga.in</i> lists any exceptions to these rules.
-The sections which follow describe the structure of all four files
+and lists any exceptions to these rules.
+The sections which follow describe the structure of all three files
 in sufficient detail that (I hope) you will be able to write
 and contribute your own rules for inclusion in later releases.
 Alternatively, if you provide me with a brief description 
@@ -110,7 +108,7 @@ construct the appropriate entry.
 <hr>
 <h2>Common structure of the *.in files</h2>
 <p>
-The structure of all four input files is essentially the same.
+The structure of all three input files is essentially the same.
 I've included a <i>flex/bison</i> parser in the distribution 
 that can be used for error-checking these files during development
 (see the "poncin" target in the Makefile).   Also, those who might prefer
@@ -202,20 +200,23 @@ expands to
 slashes.
 </p>
 
-<h2>Exceptions: <i>eisceacht-ga.in</i></h2>
+<h2>Exceptions: <i>rialacha-ga.in</i></h2>
 <p>
-The phrases in <i>eisceacht-ga.in</i> represent patterns which are
-matched as errors by <i>rialacha-ga.in</i> but which are actually 
-grammatical and should not be reported as errors.
+In earlier versions, the exceptions were kept in a separate input
+file called <i>eisceacht-ga.in</i>.  We now find it more convenient
+to store the exceptions together with the rules to which they
+apply in the file <i>rialacha-ga.in</i>.
+Following each rule, one has the option of including a block
+of patterns representing exceptions to the rule that are
+actually grammatical and should not be reported as errors.
 For instance, the preposition <i lang="ga">sa</i> causes
 lenition in general, but not in the phrase <i lang="ga">sa méid</i>;
-this phrase is therefore included in <i>eisceacht-ga.in</i>.
-The action portion of a rule is left blank (though, to keep
-the grammars the same, each line should be terminated by a colon).
+this phrase is therefore included in <i>rialacha-ga.in</i>
+with the action portion of the rule set to "OK".
 </p>
 
 <hr>
-<em>© Cóipcheart/Copyright 2003, 2004 Kevin P. Scannell</em><br><br>
+<em>© Cóipcheart/Copyright 2003-2005 Kevin P. Scannell</em><br><br>
 </ul>
 </div>
 <div class="navigation">
@@ -225,6 +226,7 @@ Contributing<br>
 <a href = "iompar.html">Languages</a><br>
 <a href = "stair.html">History</a><br>
 <a href = "sampla.html">Sampler</a><br>
+<a href = "bugs.html">Bugs</a><br>
 <a href = "foirm.html">Web Interface</a><br>
 <a href = "eagar.html">Editors</a><br>
 <a href = "/nlp.html">Projects</a><br>
