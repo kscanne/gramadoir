@@ -3,7 +3,6 @@ GRAMDIR=".."
 VERSION="0.01"
 TEANGA="en"
 UPPERTEANGA="EN"
-AUTHOR=""
 if [ ! -e ${GRAMDIR}/Makefile ]
 then
 	echo "configure: need to run ${GRAMDIR}/configure first"
@@ -39,7 +38,6 @@ s@!BDCHARS!@${BDCHARS}@
 s@!INTCHARS!@${INTCHARS}@
 s@!UPPERS!@${UPPERS}@
 s@!LOWERS!@${LOWERS}@
-s@!AUTHOR!@${AUTHOR}@
 s@!GRAMDIR!@${GRAMDIR}@
 " ${GRAMDIR}/Makefile-xx.in > Makefile
 ${PERL} -i -p -e "s@!PERLPATH!@${PERL}@" macra-${TEANGA}.meta.pl
