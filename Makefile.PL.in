@@ -10,6 +10,7 @@ if( build_hashes() ) {
 	  EXE_FILES         => ['scripts/gram-@LOWERTEANGA@.pl',
 	  			'scripts/groo-@LOWERTEANGA@.pl'],
   	  PREREQ_PM         => { 
+	  			'Archive::Zip' => '1.06',
 	  			'Carp' => '0',
 				'Encode' => '0',
 				'ExtUtils::MakeMaker' => '6.03',
