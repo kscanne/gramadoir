@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gramadoir 0.2-r1\n"
-"POT-Creation-Date: 2003-10-01 15:26-0500\n"
+"POT-Creation-Date: 2003-10-01 21:49-0500\n"
 "PO-Revision-Date: 2003-09-18 21:46-0500\n"
 "Last-Translator: Kevin Patrick Scannell <scannell@SLU.EDU>\n"
 "Language-Team: Irish <ga@li.org>\n"
@@ -133,8 +133,7 @@ msgstr ""
 #: gr.in:46
 msgid ""
 "    --ionchod=ENC  specify the character encoding of the text to be checked"
-msgstr ""
-"    --ionchod=CÓD  socraigh an t-ionchódú den téacs le seiceáil"
+msgstr "    --ionchod=CÓD  socraigh an t-ionchódú den téacs le seiceáil"
 
 #: gr.in:47
 msgid "    --help         display this help and exit"
