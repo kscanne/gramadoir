@@ -94,7 +94,7 @@ distclean :
 
 clean :
 	${MAKE} semiclean
-	rm -f cuardach cuardach.o rialacha.pl aonchiall.pl eisceacht.pl aparser eparser rparser
+	rm -f cuardach cuardach.o rialacha.pl aonchiall.pl eisceacht.pl aparser eparser rparser FOCAIL FOCAIL.all
 
 semiclean :
 	rm -f triail.html cabhair.o cabhair y.tab.* lex.yy.* aonchiall.y eisceacht.y rialacha.y
@@ -159,12 +159,12 @@ triail.err : FORCE
 focail.bs : FORCE
 	${MAKE} cabhair
 	Gin 12
-	(cat ${HOME}/.ispell_gaeilge ${HOME}/.biobla | sed 's/.*/& 44/'; cat FOCAIL) | LC_COLLATE=POSIX sort -u > FOCAIL.all
+	(cat ${HOME}/.ispell_gaeilge ${HOME}/.biobla | ispell -dgaeilge -e3 | tr " " "\n" | egrep -v '\/' | sed 's/.*/& 44/'; cat FOCAIL) | LC_COLLATE=POSIX sort -u > FOCAIL.all
 	cat FOCAIL.all | ./cabhair > focail.bs
 	chmod 644 focail.bs
 	@$(ECHO) 'Verify count in cuardach.c:' 
 	@$(ECHO) `cat FOCAIL.all | sed 's/ [0-9]*//' | uniq | wc -l`
-	rm -f FOCAIL FOCAIL.all
+#	rm -f FOCAIL FOCAIL.all
 
 cabhair : cabhair.o
 	$(CC) -o cabhair $(CFLAGS) cabhair.o
