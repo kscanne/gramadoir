@@ -11,6 +11,7 @@ lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/mn.pm	Mongolian localization
 lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/nl.pm	Dutch localization
 lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/ro.pm	Romanian localization
 lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/sk.pm	Slovak localization
+lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/vi.pm	Vietnamese localization
 Makefile.PL			Makefile generator
 MANIFEST			This list of files
 META.yml			Package info for CPAN
