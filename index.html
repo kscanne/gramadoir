@@ -102,14 +102,21 @@ The sentence is preceded by the line number (in the original text file)
 on which it starts and is followed by a brief description of the errors
 found in the sentence.   You can see some actual output on
 the <a href="sampla.html">Sampler page</a>.
-There are also a few command line options:
+If there are words you would like to be disregarded while checking
+spelling and grammar you can create a plain text file in your home directory 
+called ".neamhshuim".  The first line should contain the number of
+words in the file and then place one word on each line.
 </p>
 
+<p>
+There are also a few command line options:
+</p>
 <ul>
 <li><b>--litriu</b>: Write all of the unknown/misspelled words to standard output.
 <li><b>--html</b>: Produce HTML output which should resemble the output of vanilla "gr" when viewed in a web browser.
 <li><b>--xml</b>: Write the intermediate tagged XML stream to standard output;
 useful for debugging.
+<li><b>--iomlan</b>: Report all errors (do not use the file "~/.neamhshuim").
 <li><b>--help</b>: Display some help in Irish.
 <li><b>--version</b>: Display version and copyright information.
 </ul>
