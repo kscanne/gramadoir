@@ -24,8 +24,8 @@
 <E offset="43" fromy="24" fromx="43" toy="24" tox="52" sentence="Bhí sé páirteach sa chéad léiriú poiblí de Riverdance." errortext="Riverdance" msg="Is féidir gur focal iasachta é seo (tá na litreacha «Riv» neamhdhóchúil)">
 <E offset="74" fromy="25" fromx="74" toy="25" tox="86" sentence="Beidh an tionchar le mothú níos mó i gcás comhlachtaí Éireannacha mar gur mionairgeadra é an punt." errortext="mionairgeadra" msg="Focal anaithnid ach is féidir gur comhfhocal «mion+airgeadra» é?">
 <E offset="13" fromy="26" fromx="13" toy="26" tox="21" sentence="Bhí an dream dí-armtha ag iarraidh a gcuid gunnaí." errortext="dí-armtha" msg="Focal anaithnid ach is féidir gur comhfhocal neamhchaighdeánach «dí+armtha» é?">
-<E offset="10" fromy="27" fromx="10" toy="27" tox="12" sentence="An bhfuil ayn uachtar roeite agattt?" errortext="ayn" msg="Focal anaithnid /aon, ann, an/?">
-<E offset="22" fromy="27" fromx="22" toy="27" tox="27" sentence="An bhfuil ayn uachtar roeite agattt?" errortext="roeite" msg="Focal anaithnid /reoite/?">
+<E offset="10" fromy="27" fromx="10" toy="27" tox="12" sentence="An bhfuil ayn uachtar roeite agattt?" errortext="ayn" msg="Focal anaithnid: «aon, ann, an»?">
+<E offset="22" fromy="27" fromx="22" toy="27" tox="27" sentence="An bhfuil ayn uachtar roeite agattt?" errortext="roeite" msg="Focal anaithnid: «reoite»?">
 <E offset="29" fromy="27" fromx="29" toy="27" tox="34" sentence="An bhfuil ayn uachtar roeite agattt?" errortext="agattt" msg="Is féidir gur focal iasachta é seo (tá na litreacha «ttt» neamhdhóchúil)">
 <E offset="9" fromy="28" fromx="9" toy="28" tox="12" sentence="Bíonn an geál ag satailt ar an dubh." errortext="geál" msg="Focal ceart ach an-neamhchoitianta">
 <E offset="79" fromy="29" fromx="79" toy="29" tox="80" sentence="Ach go rithe an fhíréantacht mar uisce agus an t-ionracas mar shruth gan dísc (OK)!" errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
@@ -263,7 +263,7 @@
 <E offset="36" fromy="260" fromx="36" toy="260" tox="37" sentence="Má fuair níor fhreagair sé an facs (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
 <E offset="28" fromy="261" fromx="28" toy="261" tox="37" sentence="Roghnaítear an bhliain 1961 mar pointe tosaigh don anailís." errortext="mar pointe" msg="Séimhiú ar iarraidh">
 <E offset="13" fromy="262" fromx="13" toy="262" tox="25" sentence="Aithnítear é mar an údarás." errortext="mar an údarás" msg="Réamhlitir «t» ar iarraidh">
-<E offset="4" fromy="263" fromx="4" toy="263" tox="8" sentence="Más mhían leat tuilleadh eolais a fháil, scríobh chugainn." errortext="mhían" msg="Focal anaithnid /mhín, mhian/?">
+<E offset="0" fromy="263" fromx="0" toy="263" tox="8" sentence="Más mhian leat tuilleadh eolais a fháil, scríobh chugainn." errortext="Más mhian" msg="Séimhiú gan ghá">
 <E offset="30" fromy="264" fromx="30" toy="264" tox="33" sentence="Tá caitheamh na hola ag dul i méad i gcónaí." errortext="méad" msg="Foirm neamhchaighdeánach de «méid, mhéid»">
 <E offset="61" fromy="265" fromx="61" toy="265" tox="74" sentence="Tosaíodh ar mhodh adhlactha eile ina mbaintí úsáid as clocha measartha móra." errortext="measartha móra" msg="Tá gá leis an leagan uatha anseo">
 <E offset="9" fromy="266" fromx="9" toy="266" tox="20" sentence="Comhlíon mo aitheanta agus mairfidh tú beo." errortext="mo aitheanta" msg="Ba chóir duit «m+uaschamóg» a úsáid anseo">
