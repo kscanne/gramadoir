@@ -15,6 +15,19 @@
 <X>ANYTHING</X>:ANAITHNID
 <X>ANYTHING</X>:ANAITHNIDSRL
 <F>ANYTHING</F>:NEAMHCHOIT
+# chomh,go in eisceacht
+ANYTHING <AWITHH>ANYTHING</AWITHH>:NIAITCH
+# cé,le,ní,pé in eisceacht
+ANYTHING <PWITHH>ANYTHING</PWITHH>:NIAITCH
+# many exceptions: na,sna,a (+ina,faoina,etc.),cá,Dé,go,le,ordinals... 
+#ANYTHING <NWITHH>ANYTHING</NWITHH>:NIAITCH
+# ná in eisceacht
+ANYTHING <VIMP>INITIALH</VIMP>:NIAITCH
+#   note in previous batch that prefix h on other tags or on non-imperative V
+#   is handled by spelling...
+# using NMCS vs. nothing in next rule is faster and avoids false positive
+# with t-léine, etc. Note na+NMCS picked up elsewhere.  "cén"+t- in eisceacht
+<[^T]>ANYTHING</[^T]> <NMCS>PREFIXEDT</NMCS>:NITEE
 # CB p.16 #9.a  (needs shallow parse)
 <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 <NFGS>ANYTHING</NFGS> <A>LENITED</A>:NISEIMHIU
@@ -28,7 +41,9 @@
 # CB p.16 #7 (N), p.18 #10 (A)
 <V>[Aa]b</V> UNLENITED:SEIMHIU
 # CB p.14 Note
-[Aa]ch <N>LENITED</N>:NISEIMHIU
+<S>[Aa]ch</S> <N>LENITED</N>:NISEIMHIU
+# CB p.22 #8.a, also CB p.134 #1.a
+<S>[Aa]ch</S> <T>an</T> <NMCS>INITIALVOWEL</NMCS>:PREFIXT
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 <S>[Aa][grs]</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
@@ -36,11 +51,15 @@
 # CB p.14 Note
 <S>[Aa][gs]</S> <N>LENITED</N>:NISEIMHIU
 # CB p.14 Note
-[Aa]mhail <N>LENITED</N>:NISEIMHIU
+<S>[Aa]mhail</S> <N>LENITED</N>:NISEIMHIU
+# CB p.22 #8.a, also CB p.134 #1.a
+<S>[Aa]mhail</S> <T>an</T> <NMCS>INITIALVOWEL</NMCS>:PREFIXT
 # CB p.22 #7.b, p.132 #4
 <Q>[Aa]n</Q> <V>UNECLIPSED</V>:URU
 # CB p.12 #1.a
-<^S>ANYTHING</^S> <T>an</T> <NFCS>UNLENITEDBCFGMP</NFCS>:SEIMHIU
+<[^S]>ANYTHING</[^S]> <T>an</T> <NFCS>UNLENITEDBCFGMP</NFCS>:SEIMHIU
+# CB p.22 #8.a
+<[^S]>ANYTHING</[^S]> <T>an</T> <NMCS>INITIALVOWEL</NMCS>:PREFIXT
 # CB p.12 #1.b
 <T>[Aa]n</T> <NMGS>UNLENITEDBCFGMP</NMGS>:SEIMHIU
 # CB p.23 #9
@@ -64,9 +83,9 @@
 #
 <D>[Aa]rna</D> UNLENITED:SEIMHIU
 # CB p.16 #7 (N), p.18 #10 (A)
-<V>[Bb]a</V> <^S>UNLENITED</^S>:SEIMHIU
-# CB p.5 #17
-<V>[Bb]a</V> <^S>INITIALVOWELORF</^S>:BACHOIR{b+uaschamóg}
+<V>[Bb]a</V> <[^S]>UNLENITED</[^S]>:SEIMHIU
+# CB p.5 #17, note pronoun exception CB p.114
+<V>[Bb]a</V> <[AN]>INITIALVOWELORF</[AN]>:BACHOIR{b+uaschamóg}
 # CB p.13 #3.e
 <N>[Bb]eirt</N> <N>UNLENITED</N>:SEIMHIU
 # CB p.16 #9.d
@@ -91,10 +110,12 @@
 [Cc]eithre uaire?:BACHOIR{huaire}
 # CB p.13 #3.f
 [Cc]eithre <NCS>UNLENITED</NCS>:SEIMHIU
+# CB p.22 #8 (implicit), corpus confirms
+<Q>[Cc]én</Q> <NMCS>INITIALVOWEL</NMCS>:PREFIXT
 # CB p.13 #3.c
 [Cc]héad <N>UNLENITEDBCFGMP</N>:SEIMHIU
 # CB p.24 #11.b.ii
-<R>[Cc]homh</R> INITIALVOWEL:PREFIXH
+<R>[Cc]homh</R> <A>INITIALVOWEL</A>:PREFIXH
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 <S>[Cc]huig</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
@@ -116,7 +137,7 @@
 # CB p.84 #8
 <D>[Dd]ár</D> UNECLIPSED:URU
 # CB p.13 #3.d
-<^D>ANYTHING</^D> [Dd]há UNLENITED:SEIMHIU
+<[^D]>ANYTHING</[^D]> [Dd]há UNLENITED:SEIMHIU
 # CB p.24 #11.a.iv
 Dé Aoine:PREFIXH
 # CB p.20 #1.c
@@ -169,10 +190,12 @@ Dé Aoine:PREFIXH
 Fh?éile CAPITALLENITED:NISEIMHIU
 # CB p.14 #4.c.i (says "nouns" specif.)
 <S>[Gg]an</S> <N>LENITEDDFST</N>:NISEIMHIU
-# CB p.14 #4.c.iv
+# CB p.14 #4.c.iv, exception "gan fhios" in eisceacht
 <S>[Gg]an</S> <Y>LENITED</Y>:NISEIMHIU
+# CB p.22 #8.a, also CB p.134 #1.a
+<S>[Gg]an</S> <T>an</T> <NMCS>INITIALVOWEL</NMCS>:PREFIXT
 # CB p.24 #11.a.v, #11.b.ii
-[Gg]o INITIALVOWEL:PREFIXH
+[Gg]o <[AN]>INITIALVOWEL</[AN]>:PREFIXH
 # CB p.22 11d, p.132 #4
 [Gg]o <V>UNECLIPSED</V>:URU
 # CB p.14 Note
@@ -259,12 +282,11 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 # CB p.22 #7.e
 [Nn]ach <V>UNECLIPSED</V>:URU
 # CB p.20 #1.c
-<^Y>[Nn]aoi</^Y> <N>UNECLIPSED</N>:URU
+<[^Y]>[Nn]aoi</[^Y]> <N>UNECLIPSED</N>:URU
 # CB p.16 #8.c
 <N>Naomh</N> CAPITALLENITED:NISEIMHIU
 # CB p.16 #7 (N), p.18 #10 (A), p.19 #13 (V), p.132 #5
-[Nn]ár <N>UNLENITED</N>:SEIMHIU
-[Nn]ár <A>UNLENITED</A>:SEIMHIU
+[Nn]ár <[AN]>UNLENITED</[AN]>:SEIMHIU
 [Nn]ár <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
 # CB p.16 #7 (N), p.18 #10 (A)
 <V>[Nn]árbh</V> UNLENITEDF:SEIMHIU
@@ -272,14 +294,23 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 <U>[Nn]í</U> <V>UNLENITED</V>:SEIMHIU
 # CB p.24 #11.c
 <V>[Nn]í</V> <P>INITIALVOWEL</P>:PREFIXH
+# CB pp.70-71
+<R>[Nn]íba?</R> <ACS>ANYTHING</ACS>:BREISCHEIM
+<R>[Nn]íba?</R> <AMGS>ANYTHING</AMGS>:BREISCHEIM
+<R>[Nn]íba?</R> <AP>ANYTHING</AP>:BREISCHEIM
+<R>[Nn]íba?</R> <[^A]>ANYTHING</[^A]>:BREISCHEIM
+<R>[Nn]íba</R> <AFGS>INITIALVOWELORF</AFGS>:BACHOIR{níb}
+<R>[Nn]íba</R> <AFGS>UNLENITED</AFGS>:SEIMHIU
 # CB p.16 #7 (N), p.18 #10 (A), p.19 #13 (V), p.132 #5
-[Nn]íor <N>UNLENITED</N>:SEIMHIU
-[Nn]íor <A>UNLENITED</A>:SEIMHIU
+[Nn]íor <[AN]>UNLENITED</[AN]>:SEIMHIU
 [Nn]íor <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
 # CB p.16 #7 (N), p.18 #10 (A)
 <V>[Nn]íorbh</V> UNLENITEDF:SEIMHIU
-#
+# CB pp.70-71
+<R>[Nn]íos</R> <ACS>ANYTHING</ACS>:BREISCHEIM
+<R>[Nn]íos</R> <AMGS>ANYTHING</AMGS>:BREISCHEIM
 <R>[Nn]íos</R> <AP>ANYTHING</AP>:BREISCHEIM
+<R>[Nn]íos</R> <[^A]>ANYTHING</[^A]>:BREISCHEIM
 # CB p.13 #4.a
 <S>[Óó]</S> <N>UNLENITED</N>:SEIMHIU
 # CB p.6 #2
@@ -302,6 +333,8 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 <D>[Óó]nár</D> UNECLIPSED:URU
 # CB p.14 Note
 [Oo]s <N>LENITED</N>:NISEIMHIU
+# OD pé
+<P>[Pp]é</P> <P>INITIALVOWEL</P>:PREFIXH
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 <S>[Rr]oimh</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
@@ -326,8 +359,12 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 <A>[Ss]é</A> <NCS>UNLENITED</NCS>:SEIMHIU
 # CB p.14 Note
 <S>[Ss]eachas</S> <N>LENITED</N>:NISEIMHIU
+# CB p.22 #8.a, also CB p.134 #1.a
+<S>[Ss]eachas</S> <T>an</T> <NMCS>INITIALVOWEL</NMCS>:PREFIXT
 # CB p.20 #1.c
 [Ss]eacht <N>UNECLIPSED</N>:URU
+# CB p.24 #11.a.vii (implicitly)
+<S>[Ss]na</S> <NCP>INITIALVOWEL</NCP>:PREFIXH
 # CB p.22 #7.g, p.132 #4
 <C>[Ss]ula</C> UNECLIPSED:URU
 # CB p.19 #13, p.132 #5
@@ -338,8 +375,8 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 <S>[Tt]har</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.24 #11.a.x
 [Tt]rí uaire?:BACHOIR{huaire}
-# CB p.84 #8, p.132 #2
-<S>[Tt]rí</S> a:BACHOIR{trína}
+# CB p.84 #8 <D>a</D>, p.132 #2 <S>a</D>
+<S>[Tt]rí</S> <[^U]>a</[^U]>:BACHOIR{trína}
 # CB p.132 #2
 [Tt]rí ar:BACHOIR{trínar}
 # CB p.6 #2
@@ -383,8 +420,8 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 <P>ANYTHING</P> <AFGS>NOBEEAPOST</AFGS>:CUPLA
 <O>ANYTHING</O> <AP>ANYTHING</AP>:CUPLA
 <O>ANYTHING</O> <AFGS>ANYTHING</AFGS>:CUPLA
-<NFGS>ANYTHING</NFGS> <AFGS>ANYTHING</AFGS>:CUPLA
-##  problem until I tag and resolve nm1  gpl's
+<NMGS>ANYTHING</NMGS> <AFGS>ANYTHING</AFGS>:CUPLA
+<NFGS>ANYTHING</NFGS> <AMGS>ANYTHING</AMGS>:CUPLA
 <NCS>ANYTHING</NCS> <AP>ANYTHING</AP>:CUPLA
 <D>ANYTHING</D> <AP>ANYTHING</AP>:CUPLA
 <D>ANYTHING</D> <C>ANYTHING</C>:CUPLA
