@@ -56,15 +56,6 @@
 <S>GENITIVEPREP</S> <T>ANYTHING</T> <NCS>ANYTHING</NCS>:GENITIVE
 # CB p.134 #2; fails badly for "chun";  timpeall/trasna usually definite anyway
 #<S>GENITIVEPREP</S> <NCS>ANYTHING</NCS>:GENITIVE
-# chomh,go in eisceacht
-#. Nach holc an mhaise duit a bheith ag magadh.
-ANYTHING <AWITHH>ANYTHING</AWITHH>:NIAITCH
-# cé,le,ní,pé in eisceacht
-#. Ba hiad na hamhráin i dtosach ba chúis leis.
-ANYTHING <PWITHH>ANYTHING</PWITHH>:NIAITCH
-# many exceptions: na,sna,a (+ina,faoina,etc.),cá,Dé,go,le,ordinals... 
-#. Ba iad na trí háit iad Bostún, Baile Átha Cliath agus Nua Eabhrac.
-ANYTHING <NWITHH>ANYTHING</NWITHH>:NIAITCH
 # CB p.24 #11.a.ix, LGG p.113
 <A>ORDINALADJ</A> <N>INITIALVOWEL</N>:PREFIXH
 # CB p.24 #11.a.ix
@@ -138,10 +129,11 @@ ANYTHING <VNOLEN>LENITED</VNOLEN>:NISEIMHIU
 <Q>[Aa]n</Q> <VPAST>ANYTHING</VPAST>:BACHOIR{ar}
 # CB p.12 #1.a
 #. Ní féidir an Gaeltacht a choinneáil mar réigiún Gaeilge go náisiúnta gan athrú bunúsach.
-<[^S]>ANYTHING</[^S]> <T>an</T> <NFCS>UNLENITEDBCFGMP</NFCS>:SEIMHIU
+#. I gcás An Comhairle Ealaíon ní mór é seo a dhéanamh.
+<[^S]>ANYTHING</[^S]> <T>[Aa]n</T> <NFCS>UNLENITEDBCFGMP</NFCS>:SEIMHIU
 # CB p.22 #8.a
 #. Cad é an chomhairle a thug an ochtapas dó?
-<[^S]>ANYTHING</[^S]> <T>an</T> <NMCS>INITIALVOWEL</NMCS>:PREFIXT
+<[^S]>ANYTHING</[^S]> <T>[Aa]n</T> <NMCS>INITIALVOWEL</NMCS>:PREFIXT
 # CB p.12 #1.b
 #. Chóirigh sé na lampaí le solas a chaitheamh os comhair an coinnleora.
 <T>[Aa]n</T> <NMGS>UNLENITEDBCFGMP</NMGS>:SEIMHIU
@@ -168,7 +160,7 @@ ANYTHING <VNOLEN>LENITED</VNOLEN>:NISEIMHIU
 <T>ANYTHING</T> <NC>ANYTHING</NC> <A>gach</A> <NG>ANYTHING</NG>:ONEART
 # CB p.13 #3.c
 #. Ní bheidh aon buntáiste againn orthu sin.
-[Aa]on <N>UNLENITEDBCFGMP</N>:SEIMHIU
+h?[Aa]on <N>UNLENITEDBCFGMP</N>:SEIMHIU
 # CB p.132 #5, OD ar^5
 # never applies since aonchiall only resolves "ar" as <Q> before VPAST
 #<Q>[Aa]r</Q> <VNOTPAST>ANYTHING</VNOTPAST>:BACHOIR{an}
@@ -190,10 +182,11 @@ ANYTHING <VNOLEN>LENITED</VNOLEN>:NISEIMHIU
 <D>[Aa]rna</D> UNLENITED:SEIMHIU
 # CB p.16 #7 (N), p.18 #10 (A)
 #. Ba maith liom fios a thabhairt anois daoibh.
-<V>[Bb]a</V> <[^SP]>UNLENITED</[^SP]>:SEIMHIU
+#. Dúirt daoine go mba ceart an poll a dhúnadh suas ar fad.
+<V>m?[Bb]a</V> <[^SP]>UNLENITED</[^SP]>:SEIMHIU
 # CB p.5 #17, note pronoun exception CB p.114
 #. Ba eol duit go hiomlán m'anam.
-<V>[Bb]a</V> <[AN]>INITIALVOWELORF</[AN]>:BACHOIR{b+uaschamóg}
+<V>m?[Bb]a</V> <[AN]>INITIALVOWELORF</[AN]>:BACHOIR{b+uaschamóg}
 # CB p.13 #3.e
 #. D'fhan beirt buachaill sa champa.
 <N>[Bb]eirt</N> <N>UNLENITED</N>:SEIMHIU
@@ -745,6 +738,18 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Uu]m</S> <N>UNLENITED</N>:SEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 <S>[Uu]m</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
+#############################################################################
+#  These have many exceptions so good to flag near the bottom;
+#  in particular after "haon"+lenition rule or else that won't show up
+# chomh,go in eisceacht
+#. Nach holc an mhaise duit a bheith ag magadh.
+ANYTHING <AWITHH>ANYTHING</AWITHH>:NIAITCH
+# cé,le,ní,pé in eisceacht
+#. Ba hiad na hamhráin i dtosach ba chúis leis.
+ANYTHING <PWITHH>ANYTHING</PWITHH>:NIAITCH
+# many exceptions: na,sna,a (+ina,faoina,etc.),cá,Dé,go,le,ordinals... 
+#. Ba iad na trí háit iad Bostún, Baile Átha Cliath agus Nua Eabhrac.
+ANYTHING <NWITHH>ANYTHING</NWITHH>:NIAITCH
 #############################################################################
 ###### next batch came from analyses of "tag 2-grams" in the corpus    ######
 #############################################################################
