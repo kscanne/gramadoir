@@ -2,7 +2,7 @@
 # rialacha-xx.in into the somewhat complicated rialacha-xx.pl
 # It only needs to be changed if the grammar of the .in file changes
 # or new tags are added, etc.
-# Copyright (C) 2003 Kevin P. Scannell <scannell@slu.edu>
+# Copyright (C) 2003, 2004 Kevin P. Scannell <scannell@slu.edu>
 #
 # This is free software; see the file COPYING for copying conditions.  There is
 # NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
