@@ -15,6 +15,7 @@ MANIFEST			This list of files
 META.yml			Package info for CPAN
 README				Install, Copyright/License info
 scripts/gram-@TEANGA@.pl		Command-line interface
+scripts/groo-@TEANGA@.pl		OpenOffice.org interface
 share/3grams.bs			3-gram statistics
 share/earraidi.bs		Misspellings & replacements
 share/eile.bs			Alternate forms & replacements
