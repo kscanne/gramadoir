@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramadoir 0.5\n"
 "Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
-"POT-Creation-Date: 2004-09-09 22:13-0500\n"
+"POT-Creation-Date: 2004-12-30 11:44-0600\n"
 "PO-Revision-Date: 2004-08-25 11:36-0500\n"
 "Last-Translator: Kevin Patrick Scannell <scannell@SLU.EDU>\n"
 "Language-Team: Irish <ga@li.org>\n"
@@ -53,7 +53,7 @@ msgstr "ní foláir argóint don rogha %s"
 #: gram.pl:171 gramdev.pl:85
 #, perl-format
 msgid "option %s does not allow an argument"
-msgstr "ní cheadaítear argóint i ndiaidh an rogha %s"
+msgstr "ní cheadaítear argóint i ndiaidh na rogha %s"
 
 #: gram.pl:174 gramdev.pl:88
 msgid "error parsing command-line options"
@@ -73,8 +73,8 @@ msgstr "Níl an teanga %s ar fáil."
 #. "o" in "Gramadoir" if available in your character set and encoding.
 #. If you must translate, this is the Irish for (literally) "The Grammarian"
 #: gram.pl:185 gram.pl:248 gramdev.pl:93 gramdev.pl:118 Gramadoir.pm.in:119
-#: Gramadoir.pm.in:147 Gramadoir.pm.in:243 Gramadoir.pm.in:257
-#: Gramadoir.pm.in:264
+#: Gramadoir.pm.in:163 Gramadoir.pm.in:263 Gramadoir.pm.in:277
+#: Gramadoir.pm.in:284
 msgid "An Gramadoir"
 msgstr "An Gramadóir"
 
@@ -145,11 +145,11 @@ msgstr "    --aschur=COMHAD scríobh aschur chuig COMHAD"
 
 #: gram.pl:298 gramdev.pl:133
 msgid "    --help         display this help and exit"
-msgstr "    --help         taispeáin an chabhair seo agus éirigh as"
+msgstr "    --help         taispeáin an chabhair seo agus scoir"
 
 #: gram.pl:301 gramdev.pl:136
 msgid "    --version      output version information and exit"
-msgstr "    --version      taispeáin eolas faoin leagan agus éirigh as"
+msgstr "    --version      taispeáin eolas faoin leagan agus scoir"
 
 #: gram.pl:304
 msgid "Options for developers:"
@@ -233,136 +233,157 @@ msgstr ""
 msgid "%s: problem reading the database\n"
 msgstr "%s: fadhb ag léamh an bhunachair sonraí\n"
 
-#: Gramadoir.pm.in:146
+#: Gramadoir.pm.in:162
 #, perl-format
 msgid "%s: `%s' corrupted at %s\n"
 msgstr "%s: `%s' truaillithe ag %s\n"
 
 #. TRANSLATORS: "conversion" here means conversion between character encodings
-#: Gramadoir.pm.in:197 Gramadoir.pm.in:511 Gramadoir.pm.in:546
-#: Gramadoir.pm.in:602 Gramadoir.pm.in:754
+#: Gramadoir.pm.in:214 Gramadoir.pm.in:504 Gramadoir.pm.in:575
+#: Gramadoir.pm.in:609 Gramadoir.pm.in:632 Gramadoir.pm.in:689
+#: Gramadoir.pm.in:869
 #, perl-format
 msgid "conversion from %s is not supported"
 msgstr "níl aon fháil ar tiontú ón ionchódú %s"
 
-#: Gramadoir.pm.in:242 Gramadoir.pm.in:256
+#: Gramadoir.pm.in:262 Gramadoir.pm.in:276
 #, perl-format
 msgid "%s: illegal grammatical code\n"
 msgstr "%s: cód gramadach neamhcheadaithe\n"
 
-#: Gramadoir.pm.in:263
+#: Gramadoir.pm.in:283
 #, perl-format
 msgid "%s: no grammar codes: %s\n"
 msgstr "%s: níl aon cód gramadaí ann: %s\n"
 
-#: Gramadoir.pm.in:622
+#: Gramadoir.pm.in:709
 msgid "Unknown word"
 msgstr "Focal anaithnid"
 
-#: Gramadoir.pm.in:626
+#: Gramadoir.pm.in:713
 msgid "Valid word but extremely rare in actual usage"
 msgstr "Focal ceart ach an-neamhchoitianta"
 
-#: Gramadoir.pm.in:630
+#: Gramadoir.pm.in:717
 msgid "Usually used in the set phrase \\/\\1\\/"
 msgstr "Ní úsáidtear an focal seo ach san abairtín \\/\\1\\/ de ghnáth"
 
-#: Gramadoir.pm.in:634
+#: Gramadoir.pm.in:721
 msgid "You should use \\/\\1\\/ here instead"
 msgstr "Ba chóir duit \\/\\1\\/ a úsáid anseo"
 
-#: Gramadoir.pm.in:638
+#: Gramadoir.pm.in:725
 msgid "Non-standard form of \\/\\1\\/"
 msgstr "Foirm neamhchaighdeánach de \\/\\1\\/"
 
-#: Gramadoir.pm.in:642
+#: Gramadoir.pm.in:729
 msgid "Derived from a non-standard form of \\/\\1\\/"
 msgstr "Bunaithe ar foirm neamhchaighdeánach de \\/\\1\\/"
 
-#: Gramadoir.pm.in:646
+#: Gramadoir.pm.in:733
 msgid "Derived incorrectly from the root \\/\\1\\/"
 msgstr "Bunaithe go mícheart ar an bhfréamh \\/\\1\\/"
 
 #. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
-#: Gramadoir.pm.in:651
+#: Gramadoir.pm.in:738
+msgid "Unnecessary initial mutation"
+msgstr "Urú nó séimhiú gan ghá"
+
+#: Gramadoir.pm.in:742
 msgid "Initial mutation missing"
 msgstr "Urú nó séimhiú ar iarraidh"
 
 #. TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
 #. It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
-#: Gramadoir.pm.in:657
+#: Gramadoir.pm.in:748
 msgid "Unnecessary lenition"
 msgstr "Séimhiú gan ghá"
 
-#: Gramadoir.pm.in:661
+#: Gramadoir.pm.in:752
 msgid "Prefix \\/h\\/ missing"
 msgstr "Réamhlitir \\/h\\/ ar iarraidh"
 
-#: Gramadoir.pm.in:665
+#: Gramadoir.pm.in:756
 msgid "Prefix \\/t\\/ missing"
 msgstr "Réamhlitir \\/t\\/ ar iarraidh"
 
-#: Gramadoir.pm.in:669
+#: Gramadoir.pm.in:760
 msgid "Lenition missing"
 msgstr "Séimhiú ar iarraidh"
 
 #. TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
 #. initial consonants in Irish.  It is indicated in writing by the addition
 #. of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
-#: Gramadoir.pm.in:676
+#: Gramadoir.pm.in:767
+msgid "Unnecessary eclipsis"
+msgstr "Urú gan ghá"
+
+#: Gramadoir.pm.in:771
 msgid "Eclipsis missing"
 msgstr "Urú ar iarraidh"
 
-#: Gramadoir.pm.in:680
+#: Gramadoir.pm.in:775
 msgid "Repeated word"
 msgstr "Focal céanna faoi dhó"
 
-#: Gramadoir.pm.in:684
+#: Gramadoir.pm.in:779
 msgid "Unusual combination of words"
 msgstr "Cor cainte aisteach"
 
-#: Gramadoir.pm.in:688
+#: Gramadoir.pm.in:783
 msgid "Comparative adjective required"
 msgstr "Ba chóir duit an bhreischéim a úsáid anseo"
 
-#: Gramadoir.pm.in:692
+#: Gramadoir.pm.in:787
 msgid "Unnecessary prefix \\/h\\/"
 msgstr "Réamhlitir \\/h\\/ gan ghá"
 
-#: Gramadoir.pm.in:696
+#: Gramadoir.pm.in:791
 msgid "Unnecessary prefix \\/t\\/"
 msgstr "Réamhlitir \\/t\\/ gan ghá"
 
-#: Gramadoir.pm.in:700
+#: Gramadoir.pm.in:795
 msgid "Unnecessary use of the definite article"
 msgstr "Ní gá leis an alt cinnte anseo"
 
-#: Gramadoir.pm.in:704
+#: Gramadoir.pm.in:799
+msgid "Unnecessary use of the genitive case"
+msgstr "Ní gá leis an leagan ginideach anseo"
+
+#: Gramadoir.pm.in:803
 msgid "The genitive case is required here"
 msgstr "Tá gá leis an leagan ginideach anseo"
 
-#: Gramadoir.pm.in:708
+#: Gramadoir.pm.in:807
+msgid "The singular form is required here"
+msgstr "Tá gá leis an leagan uatha anseo"
+
+#: Gramadoir.pm.in:811
 msgid "Not in database but apparently formed from the root \\/\\1\\/"
 msgstr "Focal anaithnid ach bunaithe ar \\/\\1\\/ is dócha"
 
-#: Gramadoir.pm.in:712
+#: Gramadoir.pm.in:815
+msgid "The word \\/\\1\\/ is not needed"
+msgstr "Ní gá leis an fhocal \\/\\1\\/"
+
+#: Gramadoir.pm.in:819
 msgid "Do you mean \\/\\1\\/?"
 msgstr "An raibh \\/\\1\\/ ar intinn agat?"
 
-#: Gramadoir.pm.in:716
+#: Gramadoir.pm.in:823
 msgid "Derived form of common misspelling \\/\\1\\/?"
 msgstr "Bunaithe ar focal mílitrithe go coitianta \\/\\1\\/?"
 
-#: Gramadoir.pm.in:720
+#: Gramadoir.pm.in:827
 msgid "Not in database but may be a compound \\/\\1\\/?"
 msgstr "Focal anaithnid ach is féidir gur comhfhocal \\/\\1\\/ é?"
 
-#: Gramadoir.pm.in:724
+#: Gramadoir.pm.in:831
 msgid "Not in database but may be a non-standard compound \\/\\1\\/?"
 msgstr ""
 "Focal anaithnid ach is féidir gur comhfhocal neamhchaighdeánach \\/\\1\\/ é?"
 
-#: Gramadoir.pm.in:728
+#: Gramadoir.pm.in:835
 msgid "Possibly a foreign word (the sequence \\/\\1\\/ is highly improbable)"
 msgstr ""
 "Is féidir gur focal iasachta é seo (tá na litreacha \\/\\1\\/ neamhdhóchúil)"

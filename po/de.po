@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramadoir 0.5\n"
 "Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
-"POT-Creation-Date: 2004-08-25 11:22-0500\n"
+"POT-Creation-Date: 2004-12-30 11:44-0600\n"
 "PO-Revision-Date: 2004-10-16 08:54+0100\n"
 "Last-Translator: Roland Illig <roland.illig@gmx.de>\n"
 "Language-Team: German <de@li.org>\n"
@@ -58,283 +58,343 @@ msgstr "Fehler beim Interpretieren der Kommandozeilenoptionen"
 
 #: gram.pl:177
 #, perl-format
+msgid "Unable to set output color to %s"
+msgstr ""
+
+#: gram.pl:180
+#, perl-format
 msgid "Language %s is not supported."
 msgstr "Die Sprache %s wird nicht unterstützt."
 
 #. TRANSLATORS: Please leave untranslated, but add an acute accent to the
 #. "o" in "Gramadoir" if available in your character set and encoding.
 #. If you must translate, this is the Irish for (literally) "The Grammarian"
-#: gram.pl:182 gram.pl:242 gramdev.pl:93 gramdev.pl:118 Gramadoir.pm.in:119
-#: Gramadoir.pm.in:147 Gramadoir.pm.in:243 Gramadoir.pm.in:257
-#: Gramadoir.pm.in:264
+#: gram.pl:185 gram.pl:248 gramdev.pl:93 gramdev.pl:118 Gramadoir.pm.in:119
+#: Gramadoir.pm.in:163 Gramadoir.pm.in:263 Gramadoir.pm.in:277
+#: Gramadoir.pm.in:284
 msgid "An Gramadoir"
 msgstr "An Gramadóir"
 
-#: gram.pl:183 gramdev.pl:94
+#: gram.pl:186 gramdev.pl:94
 #, perl-format
 msgid "Try %s for more information."
 msgstr "%s eingeben, um weitere Informationen zu erhalten."
 
-#: gram.pl:245 gramdev.pl:151
+#: gram.pl:251 gramdev.pl:151
 #, perl-format
 msgid "version %s"
 msgstr "Version %s"
 
-#: gram.pl:247 gramdev.pl:153
-msgid "This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law."
+#: gram.pl:253 gramdev.pl:153
+msgid ""
+"This is free software; see the source for copying conditions.  There is NO"
+"\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
+"PURPOSE,\\nto the extent permitted by law."
 msgstr ""
 "Dieses Programm ist freie Software; die Bedingungen, unter denen Sie es\n"
-"kopieren dürfen, finden Sie in dem Quellcode. Es ist OHNE IRGENDEINE GARANTIE,\n"
-"sogar ohne die implizite Garantie der MARKTREIFE oder der VERWENDBARKEIT FÜR\n"
+"kopieren dürfen, finden Sie in dem Quellcode. Es ist OHNE IRGENDEINE "
+"GARANTIE,\n"
+"sogar ohne die implizite Garantie der MARKTREIFE oder der VERWENDBARKEIT "
+"FÜR\n"
 "EINEN BESTIMMTEN ZWECK."
 
-#: gram.pl:261
+#: gram.pl:267
 #, perl-format
 msgid "Usage: %s [OPTIONS] [FILES]"
 msgstr "Syntax: %s [OPTIONEN] [DATEIEN]"
 
-#: gram.pl:264
+#: gram.pl:270
 msgid "Options for end-users:"
 msgstr "Optionen für Endbenutzer:"
 
-#: gram.pl:268
+#: gram.pl:274
 msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
-msgstr "    --iomlan       alle Fehler protokollieren; ~/.neamhshuim wird nicht gelesen"
+msgstr ""
+"    --iomlan       alle Fehler protokollieren; ~/.neamhshuim wird nicht "
+"gelesen"
 
-#: gram.pl:271
-msgid "    --ionchod=ENC  specify the character encoding of the text to be checked"
+#: gram.pl:277
+msgid ""
+"    --ionchod=ENC  specify the character encoding of the text to be checked"
 msgstr "    --ionchod=ENC  Zeichensatz des zu überprüfenden Textes"
 
-#: gram.pl:274
+#: gram.pl:280
 msgid "    --aschod=ENC   specify the character encoding for output"
 msgstr "    --aschod=ENC   Zeichencodierung für die Ausgabe wählen"
 
-#: gram.pl:277
+#: gram.pl:283
 msgid "    --comheadan=xx choose the language for error messages"
 msgstr "    --comheadan=xx Sprache für Fehlermeldungen wählen"
 
-#: gram.pl:280
+#: gram.pl:286
 msgid "    --dath=COLOR   specify the color to use for highlighting errors"
 msgstr "    --dath=FARBE   Farbe zum Hervorheben von Fehlern wählen"
 
-#: gram.pl:283
+#: gram.pl:289
 msgid "    --litriu       write misspelled words to standard output"
-msgstr "    --litriu       falsch geschriebene Wörter auf Standardausgabe ausgeben"
+msgstr ""
+"    --litriu       falsch geschriebene Wörter auf Standardausgabe ausgeben"
 
-#: gram.pl:286
+#: gram.pl:292
 msgid "    --aspell       suggest corrections for misspellings"
 msgstr "    --aspell       Rechtschreibkorrekturen vorschlagen"
 
-#: gram.pl:289
+#: gram.pl:295
 msgid "    --aschur=FILE  write output to FILE"
 msgstr "    --aschur=DATEI Ausgabe in DATEI schreiben"
 
-#: gram.pl:292 gramdev.pl:133
+#: gram.pl:298 gramdev.pl:133
 msgid "    --help         display this help and exit"
 msgstr "    --help         diese Kurzanleitung anzeigen"
 
-#: gram.pl:295 gramdev.pl:136
+#: gram.pl:301 gramdev.pl:136
 msgid "    --version      output version information and exit"
 msgstr "    --version      Versionsnummer anzeigen"
 
-#: gram.pl:298
+#: gram.pl:304
 msgid "Options for developers:"
 msgstr "Optionen für Entwickler:"
 
-#: gram.pl:300
-msgid "    --api          output a simple XML format for use with other applications"
-msgstr "    --api          Einfaches XML-Dateiformat zur Benutzung in anderen Anwendungen ausgeben"
+#: gram.pl:306
+msgid ""
+"    --api          output a simple XML format for use with other applications"
+msgstr ""
+"    --api          Einfaches XML-Dateiformat zur Benutzung in anderen "
+"Anwendungen ausgeben"
 
-#: gram.pl:302
+#: gram.pl:308
 msgid "    --html         produce HTML output for viewing in a web browser"
 msgstr "    --html         Ausgabe im HTML-Format erzeugen"
 
-#: gram.pl:308
-msgid "    --no-unigram   do not resolve ambiguous parts of speech by frequency"
+#: gram.pl:314
+msgid ""
+"    --no-unigram   do not resolve ambiguous parts of speech by frequency"
 msgstr "    --no-unigram   Mehrdeutige Satzteile nicht auflösen"
 
-#: gram.pl:314
-msgid "    --xml          write tagged XML stream to standard output, for debugging"
-msgstr "    --xml          Ausgabe im XML-Format zu Zwecken der Fehlersuche erzeugen"
+#: gram.pl:320
+msgid ""
+"    --xml          write tagged XML stream to standard output, for debugging"
+msgstr ""
+"    --xml          Ausgabe im XML-Format zu Zwecken der Fehlersuche erzeugen"
 
-#: gram.pl:317 gramdev.pl:139
+#: gram.pl:323 gramdev.pl:139
 msgid "If no file is given, read from standard input."
-msgstr "Falls keine Datei angegeben wird, wird von der Standardeingabe gelesen."
+msgstr ""
+"Falls keine Datei angegeben wird, wird von der Standardeingabe gelesen."
 
-#: gram.pl:320 gramdev.pl:142
+#: gram.pl:326 gramdev.pl:142
 #, perl-format
 msgid "Send bug reports to <%s>."
 msgstr ""
 "Fehlermeldungen an <%s> schicken.\n"
 "Probleme mit der Übersetzung an die Mailingliste de@li.org melden."
 
-#: gram.pl:342
+#: gram.pl:348
 msgid "There is no such file."
 msgstr "Datei nicht vorhanden."
 
-#: gram.pl:346
+#: gram.pl:352
 msgid "Is a directory"
 msgstr "Ist ein Verzeichnis"
 
-#: gram.pl:354
+#: gram.pl:360
 msgid "Permission denied"
 msgstr "Zugriff nicht erlaubt"
 
-#: gram.pl:364
+#: gram.pl:370
 #, perl-format
 msgid "%s: warning: problem closing %s\n"
 msgstr "%s: Warnung: Problem beim Schließen von %s\n"
 
-#: gram.pl:381
+#: gram.pl:387
 #, perl-format
 msgid "Currently checking %s"
 msgstr "%s wird gerade geprüft"
 
 #: gramdev.pl:125
 msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
-msgstr "    --ilchiall     Nicht aufgelöste Mehrdeutigkeiten berichten, nach Häufigkeit sortiert"
+msgstr ""
+"    --ilchiall     Nicht aufgelöste Mehrdeutigkeiten berichten, nach "
+"Häufigkeit sortiert"
 
 #: gramdev.pl:128
-msgid "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
-msgstr "    --minic        Alle Tags nach Häufigkeit sortiert ausgeben (für unigram-xx.txt)"
+msgid ""
+"    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
+msgstr ""
+"    --minic        Alle Tags nach Häufigkeit sortiert ausgeben (für unigram-"
+"xx.txt)"
 
 #: gramdev.pl:130
-msgid "    --brill        find disambiguation rules via Brill's unsupervised algorithm"
-msgstr "    --brill        Eindeutigkeitsregeln mit Brill's unbeaufsichtigtem Algorithmus finden"
+msgid ""
+"    --brill        find disambiguation rules via Brill's unsupervised "
+"algorithm"
+msgstr ""
+"    --brill        Eindeutigkeitsregeln mit Brill's unbeaufsichtigtem "
+"Algorithmus finden"
 
 #: Gramadoir.pm.in:118
 #, perl-format
 msgid "%s: problem reading the database\n"
 msgstr "%s: Problem beim Lesen der Datenbank\n"
 
-#: Gramadoir.pm.in:146
+#: Gramadoir.pm.in:162
 #, perl-format
 msgid "%s: `%s' corrupted at %s\n"
 msgstr "%s: `%s' beschädigt bei %s\n"
 
 #. TRANSLATORS: "conversion" here means conversion between character encodings
-#: Gramadoir.pm.in:197 Gramadoir.pm.in:511 Gramadoir.pm.in:546
-#: Gramadoir.pm.in:602 Gramadoir.pm.in:754
+#: Gramadoir.pm.in:214 Gramadoir.pm.in:504 Gramadoir.pm.in:575
+#: Gramadoir.pm.in:609 Gramadoir.pm.in:632 Gramadoir.pm.in:689
+#: Gramadoir.pm.in:869
 #, perl-format
 msgid "conversion from %s is not supported"
 msgstr "Umwandlung von %s wird nicht unterstützt."
 
-#: Gramadoir.pm.in:242 Gramadoir.pm.in:256
+#: Gramadoir.pm.in:262 Gramadoir.pm.in:276
 #, perl-format
 msgid "%s: illegal grammatical code\n"
 msgstr "%s: ungültiger grammatische Code\n"
 
-#: Gramadoir.pm.in:263
+#: Gramadoir.pm.in:283
 #, perl-format
 msgid "%s: no grammar codes: %s\n"
 msgstr "%s: keine grammatischen Codes: %s\n"
 
-#: Gramadoir.pm.in:622
+#: Gramadoir.pm.in:709
 msgid "Unknown word"
 msgstr "Unbekanntes Wort"
 
-#: Gramadoir.pm.in:626
+#: Gramadoir.pm.in:713
 msgid "Valid word but extremely rare in actual usage"
 msgstr "Gültiges Wort, wird aber extrem selten wirklich benutzt"
 
-#: Gramadoir.pm.in:630
+#: Gramadoir.pm.in:717
 msgid "Usually used in the set phrase \\/\\1\\/"
 msgstr "Normalerweise im Satz \\/\\1\\/ benutzt"
 
-#: Gramadoir.pm.in:634
+#: Gramadoir.pm.in:721
 msgid "You should use \\/\\1\\/ here instead"
 msgstr "An dieser Stelle besser \\/\\1\\/ benutzen"
 
-#: Gramadoir.pm.in:638
+#: Gramadoir.pm.in:725
 msgid "Non-standard form of \\/\\1\\/"
 msgstr "Nicht dem Standard entsprechende Form von \\/\\1\\/"
 
-#: Gramadoir.pm.in:642
+#: Gramadoir.pm.in:729
 msgid "Derived from a non-standard form of \\/\\1\\/"
 msgstr "Abgeleitet von der nicht dem Standard entsprechenden Form \\/\\1\\/"
 
-#: Gramadoir.pm.in:646
+#: Gramadoir.pm.in:733
 msgid "Derived incorrectly from the root \\/\\1\\/"
 msgstr "Falsch abgeleitet von der Wurzel \\/\\1\\/"
 
 #. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
-#: Gramadoir.pm.in:651
+#: Gramadoir.pm.in:738
+#, fuzzy
+msgid "Unnecessary initial mutation"
+msgstr "Unnötige Lenierung"
+
+#: Gramadoir.pm.in:742
 msgid "Initial mutation missing"
 msgstr "Veränderung am Anfang des Wortes fehlt"
 
 #. TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
 #. It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
-#: Gramadoir.pm.in:657
+#: Gramadoir.pm.in:748
 msgid "Unnecessary lenition"
 msgstr "Unnötige Lenierung"
 
-#: Gramadoir.pm.in:661
+#: Gramadoir.pm.in:752
 msgid "Prefix \\/h\\/ missing"
 msgstr "Präfix \\/h\\/ fehlt"
 
-#: Gramadoir.pm.in:665
+#: Gramadoir.pm.in:756
 msgid "Prefix \\/t\\/ missing"
 msgstr "Präfix \\/t\\/ fehlt"
 
-#: Gramadoir.pm.in:669
+#: Gramadoir.pm.in:760
 msgid "Lenition missing"
 msgstr "Lenierung fehlt"
 
 #. TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
 #. initial consonants in Irish.  It is indicated in writing by the addition
 #. of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
-#: Gramadoir.pm.in:676
+#: Gramadoir.pm.in:767
+#, fuzzy
+msgid "Unnecessary eclipsis"
+msgstr "Unnötige Lenierung"
+
+#: Gramadoir.pm.in:771
 msgid "Eclipsis missing"
 msgstr "Eklipsis fehlt"
 
-#: Gramadoir.pm.in:680
+#: Gramadoir.pm.in:775
 msgid "Repeated word"
 msgstr "Wortwiederholung"
 
-#: Gramadoir.pm.in:684
+#: Gramadoir.pm.in:779
 msgid "Unusual combination of words"
 msgstr "Ungewöhnliche Wortkombination"
 
-#: Gramadoir.pm.in:688
+#: Gramadoir.pm.in:783
 msgid "Comparative adjective required"
 msgstr "Adjektiv im Komparativ benötigt"
 
-#: Gramadoir.pm.in:692
+#: Gramadoir.pm.in:787
 msgid "Unnecessary prefix \\/h\\/"
 msgstr "Unnötiges Präfix \\/h\\/"
 
-#: Gramadoir.pm.in:696
+#: Gramadoir.pm.in:791
 msgid "Unnecessary prefix \\/t\\/"
 msgstr "Unnötiges Präfix \\/t\\/"
 
-#: Gramadoir.pm.in:700
+#: Gramadoir.pm.in:795
 msgid "Unnecessary use of the definite article"
 msgstr "Unnötige Benutzung des bestimmten Artikels"
 
-#: Gramadoir.pm.in:704
+#: Gramadoir.pm.in:799
+#, fuzzy
+msgid "Unnecessary use of the genitive case"
+msgstr "Unnötige Benutzung des bestimmten Artikels"
+
+#: Gramadoir.pm.in:803
 msgid "The genitive case is required here"
 msgstr "Hier muss ein Genitiv stehen"
 
-#: Gramadoir.pm.in:708
-msgid "Not in database but apparently formed from the root \\/\\1\\/"
-msgstr "Nicht in der Datenbank, aber anscheinend aus der Wurzel \\/\\1\\/ gebildet"
+#: Gramadoir.pm.in:807
+#, fuzzy
+msgid "The singular form is required here"
+msgstr "Hier muss ein Genitiv stehen"
 
-#: Gramadoir.pm.in:712
+#: Gramadoir.pm.in:811
+msgid "Not in database but apparently formed from the root \\/\\1\\/"
+msgstr ""
+"Nicht in der Datenbank, aber anscheinend aus der Wurzel \\/\\1\\/ gebildet"
+
+#: Gramadoir.pm.in:815
+msgid "The word \\/\\1\\/ is not needed"
+msgstr ""
+
+#: Gramadoir.pm.in:819
 msgid "Do you mean \\/\\1\\/?"
 msgstr "Meinen Sie \\/\\1\\/?"
 
-#: Gramadoir.pm.in:716
+#: Gramadoir.pm.in:823
 msgid "Derived form of common misspelling \\/\\1\\/?"
 msgstr "Abgeleitete Form der beliebten Falschschreibung \\/\\1\\/?"
 
-#: Gramadoir.pm.in:720
+#: Gramadoir.pm.in:827
 msgid "Not in database but may be a compound \\/\\1\\/?"
-msgstr "Nicht in der Datenbank, aber könnte es ein zusammengesetztes \\/\\1\\/ sein?"
+msgstr ""
+"Nicht in der Datenbank, aber könnte es ein zusammengesetztes \\/\\1\\/ sein?"
 
-#: Gramadoir.pm.in:724
+#: Gramadoir.pm.in:831
 msgid "Not in database but may be a non-standard compound \\/\\1\\/?"
-msgstr "Nicht in der Datenbank, aber könnte es ein ungewöhnliches zusammengesetztes \\/\\1\\/ sein?"
+msgstr ""
+"Nicht in der Datenbank, aber könnte es ein ungewöhnliches zusammengesetztes "
+"\\/\\1\\/ sein?"
 
-#: Gramadoir.pm.in:728
+#: Gramadoir.pm.in:835
 msgid "Possibly a foreign word (the sequence \\/\\1\\/ is highly improbable)"
-msgstr "Wahrscheinlich ein Fremdwort (die Folge \\/\\1\\/ ist sehr unwahrscheinlich)"
+msgstr ""
+"Wahrscheinlich ein Fremdwort (die Folge \\/\\1\\/ ist sehr unwahrscheinlich)"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramadoir 0.4\n"
 "Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
-"POT-Creation-Date: 2004-09-09 22:13-0500\n"
+"POT-Creation-Date: 2004-12-30 11:44-0600\n"
 "PO-Revision-Date: 2004-03-02 16:38+0200\n"
 "Last-Translator: Petri Jooste <rkwjpj@puk.ac.za>\n"
 "Language-Team: Afrikaans <i18n@af.org.za>\n"
@@ -67,8 +67,8 @@ msgstr "Taal %s word nie ondersteun nie."
 #. "o" in "Gramadoir" if available in your character set and encoding.
 #. If you must translate, this is the Irish for (literally) "The Grammarian"
 #: gram.pl:185 gram.pl:248 gramdev.pl:93 gramdev.pl:118 Gramadoir.pm.in:119
-#: Gramadoir.pm.in:147 Gramadoir.pm.in:243 Gramadoir.pm.in:257
-#: Gramadoir.pm.in:264
+#: Gramadoir.pm.in:163 Gramadoir.pm.in:263 Gramadoir.pm.in:277
+#: Gramadoir.pm.in:284
 msgid "An Gramadoir"
 msgstr "An Gramadóir"
 
@@ -230,136 +230,161 @@ msgstr ""
 msgid "%s: problem reading the database\n"
 msgstr "%s: probleem met lees van databasis\n"
 
-#: Gramadoir.pm.in:146
+#: Gramadoir.pm.in:162
 #, perl-format
 msgid "%s: `%s' corrupted at %s\n"
 msgstr "%s: `%s' is korrup by at %s\n"
 
 #. TRANSLATORS: "conversion" here means conversion between character encodings
-#: Gramadoir.pm.in:197 Gramadoir.pm.in:511 Gramadoir.pm.in:546
-#: Gramadoir.pm.in:602 Gramadoir.pm.in:754
+#: Gramadoir.pm.in:214 Gramadoir.pm.in:504 Gramadoir.pm.in:575
+#: Gramadoir.pm.in:609 Gramadoir.pm.in:632 Gramadoir.pm.in:689
+#: Gramadoir.pm.in:869
 #, perl-format
 msgid "conversion from %s is not supported"
 msgstr "Omsetting van %s word nie ondersteun nie"
 
-#: Gramadoir.pm.in:242 Gramadoir.pm.in:256
+#: Gramadoir.pm.in:262 Gramadoir.pm.in:276
 #, perl-format
 msgid "%s: illegal grammatical code\n"
 msgstr "%s: ongeldige grammatika-kode\n"
 
-#: Gramadoir.pm.in:263
+#: Gramadoir.pm.in:283
 #, perl-format
 msgid "%s: no grammar codes: %s\n"
 msgstr "%s: geen grammatika-kodes: %s\n"
 
-#: Gramadoir.pm.in:622
+#: Gramadoir.pm.in:709
 msgid "Unknown word"
 msgstr "Onbekende woord"
 
-#: Gramadoir.pm.in:626
+#: Gramadoir.pm.in:713
 msgid "Valid word but extremely rare in actual usage"
 msgstr "Geldige woord, maar baie seldsaam"
 
-#: Gramadoir.pm.in:630
+#: Gramadoir.pm.in:717
 msgid "Usually used in the set phrase \\/\\1\\/"
 msgstr "Word normaalweg gebruik in die vaste konstruksie \\/\\1\\/"
 
-#: Gramadoir.pm.in:634
+#: Gramadoir.pm.in:721
 msgid "You should use \\/\\1\\/ here instead"
 msgstr "U moet hier eerder \\/\\1\\/ gebruik"
 
-#: Gramadoir.pm.in:638
+#: Gramadoir.pm.in:725
 #, fuzzy
 msgid "Non-standard form of \\/\\1\\/"
 msgstr "Nie-standaardvorm: gebruik miskien \\/\\1\\/?"
 
-#: Gramadoir.pm.in:642
+#: Gramadoir.pm.in:729
 msgid "Derived from a non-standard form of \\/\\1\\/"
 msgstr ""
 
-#: Gramadoir.pm.in:646
+#: Gramadoir.pm.in:733
 msgid "Derived incorrectly from the root \\/\\1\\/"
 msgstr ""
 
 #. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
-#: Gramadoir.pm.in:651
+#: Gramadoir.pm.in:738
+#, fuzzy
+msgid "Unnecessary initial mutation"
+msgstr "Onnodige linisie"
+
+#: Gramadoir.pm.in:742
 msgid "Initial mutation missing"
 msgstr "Aanvangsmutasie ontbreek"
 
 #. TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
 #. It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
-#: Gramadoir.pm.in:657
+#: Gramadoir.pm.in:748
 msgid "Unnecessary lenition"
 msgstr "Onnodige linisie"
 
-#: Gramadoir.pm.in:661
+#: Gramadoir.pm.in:752
 msgid "Prefix \\/h\\/ missing"
 msgstr "Voorvoegsel \\/h\\/ ontbreek"
 
-#: Gramadoir.pm.in:665
+#: Gramadoir.pm.in:756
 msgid "Prefix \\/t\\/ missing"
 msgstr "Voorvoegsel \\/t\\/ ontbreekkdesu is weg"
 
-#: Gramadoir.pm.in:669
+#: Gramadoir.pm.in:760
 msgid "Lenition missing"
 msgstr "Lenisie ontbreek"
 
 #. TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
 #. initial consonants in Irish.  It is indicated in writing by the addition
 #. of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
-#: Gramadoir.pm.in:676
+#: Gramadoir.pm.in:767
+#, fuzzy
+msgid "Unnecessary eclipsis"
+msgstr "Onnodige linisie"
+
+#: Gramadoir.pm.in:771
 msgid "Eclipsis missing"
 msgstr "Eklips ontbreek"
 
-#: Gramadoir.pm.in:680
+#: Gramadoir.pm.in:775
 msgid "Repeated word"
 msgstr "Herhaalde woord"
 
-#: Gramadoir.pm.in:684
+#: Gramadoir.pm.in:779
 msgid "Unusual combination of words"
 msgstr "Ongewone kombinasie van woorde"
 
-#: Gramadoir.pm.in:688
+#: Gramadoir.pm.in:783
 msgid "Comparative adjective required"
 msgstr "Vergelykende adjektief benodig"
 
-#: Gramadoir.pm.in:692
+#: Gramadoir.pm.in:787
 msgid "Unnecessary prefix \\/h\\/"
 msgstr "Onnodige voorvoegsel \\/h\\/"
 
-#: Gramadoir.pm.in:696
+#: Gramadoir.pm.in:791
 msgid "Unnecessary prefix \\/t\\/"
 msgstr "Onnodige voorvoegsel \\/t\\/"
 
-#: Gramadoir.pm.in:700
+#: Gramadoir.pm.in:795
 msgid "Unnecessary use of the definite article"
 msgstr "Onnodige gebruik van die bepaalde lidwoord"
 
-#: Gramadoir.pm.in:704
+#: Gramadoir.pm.in:799
+#, fuzzy
+msgid "Unnecessary use of the genitive case"
+msgstr "Onnodige gebruik van die bepaalde lidwoord"
+
+#: Gramadoir.pm.in:803
 msgid "The genitive case is required here"
 msgstr "Die genitief word hier benodig"
 
-#: Gramadoir.pm.in:708
+#: Gramadoir.pm.in:807
+#, fuzzy
+msgid "The singular form is required here"
+msgstr "Die genitief word hier benodig"
+
+#: Gramadoir.pm.in:811
 msgid "Not in database but apparently formed from the root \\/\\1\\/"
 msgstr ""
 
-#: Gramadoir.pm.in:712
+#: Gramadoir.pm.in:815
+msgid "The word \\/\\1\\/ is not needed"
+msgstr ""
+
+#: Gramadoir.pm.in:819
 msgid "Do you mean \\/\\1\\/?"
 msgstr ""
 
-#: Gramadoir.pm.in:716
+#: Gramadoir.pm.in:823
 msgid "Derived form of common misspelling \\/\\1\\/?"
 msgstr ""
 
-#: Gramadoir.pm.in:720
+#: Gramadoir.pm.in:827
 msgid "Not in database but may be a compound \\/\\1\\/?"
 msgstr ""
 
-#: Gramadoir.pm.in:724
+#: Gramadoir.pm.in:831
 msgid "Not in database but may be a non-standard compound \\/\\1\\/?"
 msgstr ""
 
-#: Gramadoir.pm.in:728
+#: Gramadoir.pm.in:835
 msgid "Possibly a foreign word (the sequence \\/\\1\\/ is highly improbable)"
 msgstr ""
 
