@@ -125,7 +125,8 @@ s/^(fhainne) .*/$1 127/;
 s/^(fhalta) .*/$1 127/;
 s/^(fhasach) .*/$1 127/;
 s/^(fheilte) .*/$1 127/;
-s/^(fhinne) .*/$1 127/;
+#  ok in lowercase but "Fhinne" is common enough in place names
+# s/^(fhinne) .*/$1 127/;
 s/^(fh?irinne) .*/$1 127/;
 s/^(fhormaid) .*/$1 127/;
 s/^(fhrasa) .*/$1 127/;
