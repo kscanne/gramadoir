@@ -81,12 +81,16 @@
 <B>[Aa]n</B> de:<V cop="y">
 <B>[Aa]n</B> faoi:<V cop="y">
 <B>[Aa]n</B> fiú:<V cop="y">
+# see resolutions of chuir,mhaith below; very slow without this done first
+# and no good with capital A...  "An maith leat an dán?"
+<B>an</B> chuir|mh?aith|ní:<T>
 <B>[Aa]n</B> <[^V]>ANYTHING</[^V]>:<T>
 <S>ANYTHING</S> <B>[Aa]n</B>:<T>
 <B>[Aa]nuas</B>:<R>
 [Mm]ar <B>aon</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Aa]on</B>:<A pl="n" gnt="n">
-[Aa]n <B>ár</B>:<N pl="n" gnt="n" gnd="m">
+# "ag breathrú ar an ár"  (common form would have "t-")
+<T>[Aa]n</T> <B>ár</B>:<N pl="n" gnt="n" gnd="m">
 <B>ár</B> <C>ANYTHING</C>:<N pl="n" gnt="n" gnd="m">
 <B>ár</B> <T>ANYTHING</T>:<N pl="n" gnt="n" gnd="m">
 <B>[Áá]r</B>:<D>
@@ -101,7 +105,7 @@
 <B>[Bb]haineann</B>:<V p="y" t="láith">
 # catch barra here otherwise looks like nm1 gs/pl (really nm4 gs+pl of barr)
 #  and gets disambiguated as the gs after "an"
-[Aa]n <B>[Bb]arra</B>:<N pl="n" gnt="n" gnd="m">
+<T>[Aa]n</T> <B>[Bb]arra</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Bb]h?arr</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Bb]h?eag</B>:<A pl="n" gnt="n">
 <B>[Bb]hí</B>:<V p="y" t="caite">
@@ -118,14 +122,15 @@
 <N>ANYTHING</N> <B>gcéanna</B>:<A pl="n" gnt="n">
 <B>[Cc]h?éanna</B>:<A pl="n" gnt="n">
 # others unigram to <N pl="n" gnt="n" gnd="f">
-[Aa]n <B>[Cc]heathrú</B>:<A pl="n" gnt="n">
+<T>[Aa]n</T> <B>[Cc]heathrú</B>:<A pl="n" gnt="n">
 <B>g?[Cc]h?eathrú</B> <N>UNLENITED</N>:<A pl="n" gnt="n">
 <B>g?[Cc]h?eathrú</B> <NWITHH>ANYTHING</NWITHH>:<A pl="n" gnt="n">
 <B>cinn</B>:<N pl="n" gnt="y" gnd="m">
 <B>[Cc]omhalta</B>:<N pl="n" gnt="n" gnd="m">
 <B>g?ch?ónaí</B>:<N pl="n" gnt="n" gnd="m">
 # lenition => prob not imperative
-an <B>[Cc]huir</B>:<N pl="n" gnt="y" gnd="m">
+# "de réir an chuir síos", etc.
+<T>an</T> <B>[Cc]huir</B>:<N pl="n" gnt="y" gnd="m">
 <B>[Cc]huir</B>:<V p="y" t="caite">
 <T>na</T> <B>g[Cc]umann</B>:<N pl="y" gnt="y" gnd="m">
 <B>g?[Cc]h?umann</B>:<N pl="n" gnt="n" gnd="m">
@@ -135,12 +140,12 @@ an <B>[Cc]huir</B>:<N pl="n" gnt="y" gnd="m">
 g?ch?éad <B>dá</B>:<A pl="n" gnt="n">
 <S>[Ss]a</S> <B>dá</B>:<A pl="n" gnt="n">
 # idir an dá linn, Tadhg an dá thaobh
-[Aa]n <B>[Dd]á</B>:<A pl="n" gnt="n">
+<T>[Aa]n</T> <B>[Dd]á</B>:<A pl="n" gnt="n">
 <B>[Dd]á</B> <V>ANYTHING</V>:<C>
 <B>[Dd]á</B> <N>ANYTHING</N>:<D>
 # "dá hóige"
 <B>[Dd]á</B> INITIALH:<D>
-an <B>dála</B>:<N pl="n" gnt="n" gnd="f">
+<T>an</T> <B>dála</B>:<N pl="n" gnt="n" gnd="f">
 <B>Dé</B>:<N pl="n" gnt="y" gnd="m">
 <N pl="n" gnt="y" gnd="m">Dé</N> <B><Z>ANYNMG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <N pl="n" gnt="y" gnd="m">Dé</N> <B><Z>ANYNFG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
@@ -157,12 +162,14 @@ an <B>dála</B>:<N pl="n" gnt="n" gnd="f">
 <S>ANYTHING</S> <B>do</B>:<D>
 <B>do</B> <D>ANYTHING</D>:<S>
 <B>do</B> <Y>ANYTHING</Y>:<S>
-<B>do</B> gach:<S>
+<B>do</B> <A pl="n" gnt="n">gach</A>:<S>
 # broken because of repeat markup?
 #do <B>do</B>:<D>
 # numerical, last resort <O> at bottom if not noun via Brill xforms
 a <B>dó</B>:<N pl="n" gnt="n">
-an <B>dó</B>:<A pl="n" gnt="n">
+<T>an</T> <B>dó</B>:<A pl="n" gnt="n">
+# imperative only other choice; this speeds up "dóigh a:<H>" below
+<B>dóigh</B>:<N pl="n" gnt="n" gnd="f">
 # logainmneacha
 <B>Dh?ún</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Éé]</B>:<P>
@@ -182,10 +189,11 @@ an <B>dó</B>:<A pl="n" gnt="n">
 <B>(bh)?[Ff]uair</B>:<V p="y" t="caite">
 CAPITAL <B>Gabhann</B>:<Y>
 <B>Gabhann</B>:<V p="y" t="láith">
-<B>[Gg]ach</B> a:<N pl="n" gnt="n">
-<B>[Gg]ach</B> ar:<N pl="n" gnt="n">
-<B>[Gg]ach</B> is:<N pl="n" gnt="n">
-<B>[Gg]ach</B>:<A pl="n" gnt="n">
+#   non-ambiguous in IG now - 1/05
+# <B>[Gg]ach</B> a:<N pl="n" gnt="n">
+# <B>[Gg]ach</B> ar:<N pl="n" gnt="n">
+# <B>[Gg]ach</B> is:<N pl="n" gnt="n">
+# <B>[Gg]ach</B>:<A pl="n" gnt="n">
 <B>g[Cc]inn</B>:<N pl="y" gnt="n" gnd="m">
 # comhshuite now
 #<B>[Gg]o</B> <S>dtí</S>:<S>
@@ -212,9 +220,10 @@ CAPITAL <B>Gabhann</B>:<Y>
 <B>[Ll]eo</B>:<O>
 <B>[Mm]á</B> <V>ANYTHING</V>:<C>
 <S>ANYTHING</S> <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
-<T>na</T> <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
-an <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
-[Aa]on <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
+# never in corpus: (weird)
+# <T>na</T> <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
+<T>an</T> <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
+<A pl="n" gnt="n">[Aa]on</A> <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
 <B>[Mm]h?aith</B>:<A pl="n" gnt="n">
 <B>[Mm]ar</B> gheall:<S>
 <B>[Mm]h?ór</B>:<A pl="n" gnt="n">
@@ -231,11 +240,11 @@ an <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
 <B>[Nn]aomh</B>:<N pl="n" gnt="n" gnd="m">
 # subjunctive in db, only used in phrase with faoi  -- now in comhshuite
 #<B>ndeara</B>:<N pl="n" gnt="n">
-[Aa]n <B>[Nn]í</B>:<N pl="n" gnt="n" gnd="m">
+#   "an" not yet disambig?
+<T>[Aa]n</T> <B>[Nn]í</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Nn]í</B> nach:<N pl="n" gnt="n" gnd="m">
 <B>[Nn]í</B> a:<N pl="n" gnt="n" gnd="m">
-[Gg]ach <B>[Nn]í</B>:<N pl="n" gnt="n" gnd="m">
-[Aa]on <B>[Nn]í</B>:<N pl="n" gnt="n" gnd="m">
+<A pl="n" gnt="n">([Aa]on|[Gg]ach)</A> <B>[Nn]í</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Nn]í</B> <V>ANYTHING</V>:<U>
 # mór done above
 <B>[Nn]í</B> <A pl="n" gnt="n">mór</A>:<V cop="y">
@@ -243,7 +252,7 @@ an <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
 <B>[Nn]í</B> <N>ANYTHING</N>:<V cop="y">
 <B>[Nn]í</B> <P>ANYTHING</P>:<V cop="y">
 # River
-an <B>Níl</B>:<N pl="n" gnt="n" gnd="f">
+[Aa]n <B>Níl</B>:<N pl="n" gnt="n" gnd="f">
 <S>ANYTHING</S> <B>Níl</B>:<N pl="n" gnt="n" gnd="f">
 <B>Níl</B>:<V p="y" t="láith">
 <B>[Nn]uair</B>:<C>
@@ -261,11 +270,11 @@ an <B>Níl</B>:<N pl="n" gnt="n" gnd="f">
 # Sé Chontae usually if caps; won't catch "beidh sé c_athair thearmainn"!
 <B>[Ss]é</B> LENITED:<A pl="n" gnt="n">
 a <B>sé</B>:<A pl="n" gnt="n">
-# exception to <^V> rule
 <P>sí</P> <C>nó</C> <B>sé</B>:<P>
-# cúig nó sé, buille an sé, na Sé Chontae, etc.
+# like cúig nó sé, buille an sé, na Sé Chontae, etc.
+#  this is slow but gets the job done; other attempts don't 
+#  have the same accuracy
 <[^V]>ANYTHING</[^V]> <B>[Ss]é</B>:<A pl="n" gnt="n">
-# last resort
 <B>[Ss]é</B>:<P>
 # almost always "ó shin"; now in comhshuite
 #<B>shin</B>:<P>
@@ -298,9 +307,9 @@ a <B>sé</B>:<A pl="n" gnt="n">
 <B>[Tt]ríd</B>:<O>
 # Aire, aire; first one needs <S> resolved (leis, etc)
 # but do it before the <S> ANYNMC rule below!
-[Aa]r [Aa]n <B>Aire</B>:<N pl="n" gnt="n" gnd="m">
-<S>ANYTHING</S> [Aa]n <B>Aire</B>:<N pl="n" gnt="n" gnd="m">
-[Aa]n <B>Aire</B>:<N pl="n" gnt="y" gnd="m">
+[Aa]r <T>[Aa]n</T> <B>Aire</B>:<N pl="n" gnt="n" gnd="m">
+<S>ANYTHING</S> <T>[Aa]n</T> <B>Aire</B>:<N pl="n" gnt="n" gnd="m">
+<T>[Aa]n</T> <B>Aire</B>:<N pl="n" gnt="y" gnd="m">
 <B>Aire</B>:<N pl="n" gnt="n" gnd="m">
 <B>(n-)?aire</B>:<N pl="n" gnt="n" gnd="f">
 #############################################################
@@ -345,8 +354,8 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 <S>ANYTHING</S> <B><Z>ANYNFPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
 <S>ANYTHING</S> <B><Z>ANYNMPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 # see rialacha
-[Dd]ís|[Dd]h?osaen|[Pp]h?éire <B><Z>ANYNMGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="m">
-[Dd]ís|[Dd]h?osaen|[Pp]h?éire <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
+<N>[Dd]ís|[Dd]h?osaen|[Pp]h?éire</N> <B><Z>ANYNMGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="m">
+<N>[Dd]ís|[Dd]h?osaen|[Pp]h?éire</N> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 # exceptions to next pair
 <N pl="n" gnt="n" gnd="m">[Cc]h?úpla</N> <B><Z>ANYNMC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <N pl="n" gnt="n" gnd="m">[Cc]h?úpla</N> <B><Z>ANYNFC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
@@ -448,8 +457,10 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 <B><Z>PLADJSUBJ</Z>ANYTHING</B>:<A pl="y" gnt="n">
 <B><Z>GENADJ</Z>ANYTHING</B>:<A pl="n" gnt="n">
 # next one better without <T>, "an chnuasaigh", etc.
-[Aa]o?n|[Gg]ach <B><Z>ANYNMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
-[Aa]o?n <B><Z>ANYNMONEC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+[Aa]n <B><Z>ANYNMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<A pl="n" gnt="n">([Aa]on|[Gg]ach)</A> <B><Z>ANYNMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+[Aa]n <B><Z>ANYNMONEC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<A pl="n" gnt="n">([Aa]on|[Gg]ach)</A> <B><Z>ANYNMONEC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 #<T>na</T> <B><Z>NMONE</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">  see next
 <[^N]>ANYTHING</[^N]> <B><Z>NMONE</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 <B><Z>NMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
@@ -559,7 +570,8 @@ ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
 # Ó Cóileán, corpus
 # I gcás a ndéanfaidh...
 # faoin gcaoi a bhfoghlaimíonn...
-[Dd]h?óigh <B>[Aa]</B>:<H>
+#  not guaranteed to be N first time around unless preceding article, etc.
+<N pl="n" gnt="n" gnd="f">[Dd]h?óigh</N> <B>[Aa]</B>:<H>
 <N pl="n" gnt="n" gnd="m">([Ff]h?áth|g[Cc]ás)</N> <B>[Aa]</B>:<H>
 <N pl="n" gnt="n" gnd="f">([Áá]it|t[Ss]lí)</N> <B>[Aa]</B>:<H>
 <N pl="n" gnt="n" gnd="f" h="y">h[Áá]it</N> <B>[Aa]</B>:<H>
