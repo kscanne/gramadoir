@@ -13,3 +13,8 @@
 #. Dis in't speled righte.
 <X>ANYTHING</X>:ANAITHNID
 <F>ANYTHING</F>:NEAMHCHOIT
+#. This is a sentence with with a repeated word.
+#. ... that that nation might live (CEART).
+that that:OK
+#. Fern couldn't eat until her pig had had a drink of milk (CEART).
+had had:OK
