@@ -53,7 +53,7 @@ else
 	SH_GETTEXT="echo"
 fi
 
-TEANGACHA=`sed '/^#/d' TEANGACHA | tr "\n" " "`
+TEANGACHA=`sed '/^#/d; s/ .*//' TEANGACHA | tr "\n" " "`
 ALLPL=""
 for cod in ${TEANGACHA}
 do
