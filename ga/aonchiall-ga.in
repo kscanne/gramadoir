@@ -525,9 +525,19 @@ ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
 <V>ANYTHING</V> <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
 <C>ANYTHING</C> <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
 <B><Z>SEOSIN</Z>ANYTHING</B>:<A pl="n" gnt="n">
+# new Jan '05; <G>=direct relative "a", <H>=indirect relative
+# as refinements of the <U> tag.  When unsure can still use <U>
+# see LGG pp.176-177 for a nice survey
+<C>([Mm]ar|[Nn]uair)</C> <B>[Aa]</B>:<G>
+<Q>([Cc]ad|[Cc]athain|[Cc]é|[Cc]onas)</Q> <B>[Aa]</B>:<G>
+# Cá huair a ... too
+<N>(t?-?[Aa]m|[Bb]h?liain|[Ll]á|[Oo]íche|h?[Uu]air)</N> <B>[Aa]</B>:<G>
+[Cc]á <N>[Ff]had</N> <B>[Aa]</B>:<G>
+<N>([Cc]h?aoi|[Ff]h?áth|[Dd]h?óigh)</N> <B>[Aa]</B>:<H>
+<B>[Aa]</B> <V>ECLIPSED</V>:<H>
+<B>[Aa]</B> <V>LENITED</V>:<G>
 <B>[Aa]</B> <V>ANYTHING</V>:<U>
-<C>[Nn]uair</C> <B>[Aa]</B>:<U>
-#<B>[Aa]</B> UNLENITED:<D>
+<B>[Aa]</B> UNLENITED:<D>
 # "tarraing sí a hanáil"
 <B>[Aa]</B> INITIALH:<D>
 <B>[Aa]</B> <N>ECLIPSED</N>:<D>

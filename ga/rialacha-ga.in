@@ -191,12 +191,15 @@ sin sin:OK
 # a fuair, a dúirt, etc. also ok
 #. Is iomaí uair a fuair mé locht ar an rialtas (OK).
 <U>[Aa]</U> <VPAST>PASTNORFORMLEN</VPAST>:OK
-# fictional rule below, analogue of "cár", "níor", etc. (CB p.132 #5)
+# rule below, analogue of "cár", "níor", etc. (CB p.132 #5)
 # does not hold in general because "a" can also be the direct relative
-# conjunction, CB p. 132 #8
-#<U>[Aa]</U> <VPAST>ANYTHING</VPAST>:BACHOIR{ar}
-# would need this exception if we ever try it (CB p.133 #12)
-# <U>[Aa]</U> <VPAST>PASTNORFORM</VPAST>:OK
+# conjunction, CB p. 132 #8; so can't have it with <U>a</U>...
+<H>[Aa]</H> <VPAST>ANYTHING</VPAST>:BACHOIR{ar}
+<H>[Aa]</H> <VPAST>PASTNORFORM</VPAST>:OK
+<H>[Aa]</H> <V>UNECLIPSED</V>:URU
+<G>[Aa]</G> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
+<G>[Aa]</G> <VNOPAUT>ABAIRPRFU</VNOPAUT>:OK
+<G>[Aa]</G> <VPAST>PASTNORFORMLEN</VPAST>:OK
 # CB p.16 #7 (N), p.18 #10 (A)
 #. Bhíodar ag rá ar an aonach gur agamsa a bhí na huain ab fearr.
 <V>[Aa]b</V> UNLENITED:SEIMHIU
@@ -308,6 +311,8 @@ h?[Aa]on <N>LENITEDDST</N>:NISEIMHIU
 # no "haon" b/c of "a haon a chlog", etc.
 #. Rogha aon de na focail a tháinig i d'intinn.
 [Aa]on <[^N]>ANYTHING</[^N]>:CUPLA
+# tagging error?
+[Aa]on <A>[Mm]híle</A>:OK
 #. Ná hith aon arán gabhála mar aon léi (OK).
 [Mm]ar <E>[Aa]on <[DOS]>INITIALL</[DOS]></E>:OK
 #. Freagair aon dá cheann ar bith díobh seo a leanas (OK).
@@ -1659,6 +1664,7 @@ ECLIPSINGNUMBER <E><N>ECLIPSED</N></E>:OK
 <V>ECLIPSED</V>:NIURU
 <U>[Cc]ha</U> <E><V>ECLIPSEDDT</V></E>:OK
 <U>([Aa]|[Nn]ach)</U> <E><V>ECLIPSED</V></E>:OK
+<H>[Aa]</H> <E><V>ECLIPSED</V></E>:OK
 <Q>([Aa]n|[Cc]á)</Q> <E><V>ECLIPSED</V></E>:OK
 <C>([Dd]á|[Gg]o|[Mm]ura|[Ss]ula)</C> <E><V>ECLIPSED</V></E>:OK
 <S>NONRFORMPREP</S> <E><V>ECLIPSED</V></E>:OK
@@ -1736,8 +1742,9 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 #. Má bhrúitear idir chnónna agus bhlaoscanna faightear ola inchaite (OK).
 #. Ní chothaíonn na briathra na bráithre (OK).
 [Mm]á|[Nn]í|[Óó] <E><VNOLEN>LENITED</VNOLEN></E>:OK
-# CB p.132 #8.a, and see #2 for the combined forms
-[Aa]|[Ff]aoina|[Ii]na|[Ll]ena|[Óóna|[Tt]rína <E><VNOLEN>LENITED</VNOLEN></E>:OK
+# CB p.132 #8.a
+# exception only for DIRECT relatives, so not for "faoina, ina, lena", etc.
+[Aa] <E><VNOLEN>LENITED</VNOLEN></E>:OK
 #. Cha bhíonn striapachas agus seafóid Mheiriceá ann feasta (OK).
 <U>[Cc]ha</U> <E><VNOLEN>LENITEDBCFGMPS</VNOLEN></E>:OK
 #. Tá cleachtadh ag daoine ó bhíonn siad an-óg ar uaigneas imeachta (OK).
