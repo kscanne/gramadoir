@@ -1,0 +1,909 @@
+package Lingua::@TEANGA@::Gramadoir;
+
+use 5.008;
+use strict;
+use warnings;
+
+use Carp;
+use File::Spec;
+use Storable;
+use Memoize;
+use Encode qw(decode from_to);
+use String::Approx qw(amatch adist);
+use Lingua::@TEANGA@::Gramadoir::Languages;
+
+require Exporter;
+
+our @ISA = qw(Exporter);
+our @EXPORT = ();
+our %EXPORT_TAGS = ( 'all' => [ qw(
+add_tags get_sentences grammatical_errors xml_stream spell_check
+) ] );
+our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
+
+
+our $VERSION = '@PACKAGE_VERSION@';
+
+our @FOCAIL;  # array of hashes
+our %EILE;
+our %EARRAIDI;
+our %NOCOMBO;
+our %POS;
+our %GRAMS;
+our %IGNORE;
+our $lh;
+
+memoize('tag_one_word', TIE => [ 'Memoize::ExpireLRU',
+				CACHESIZE => 5000,
+				]);
+
+=head1 NAME
+
+Lingua::@TEANGA@::Gramadoir - Natural language processing tools for the @NAME_ENGLISH@ language
+
+=head1 SYNOPSIS
+
+  use Lingua::@TEANGA@::Gramadoir;
+
+  my $gr = new Lingua::@TEANGA@::Gramadoir;
+
+  my $errors = $gr->grammatical_errors( $text );
+  foreach my $error (@$errors) {
+  	# process $error appropriately
+  }
+
+=head1 DESCRIPTION
+
+This module contains the code for segmentation, spell checking,
+part-of-speech tagging, and grammar checking used by "An Gramadóir",
+an open-source grammar and style checker that can be used
+with vim, emacs, OpenOffice, or through a command-line interface.
+An Gramadóir is intended as a platform for the development of 
+sophisticated natural language processing tools for languages with
+limited computational resources.
+
+The Perl code contained in this module is generated automatically
+from a higher-level representation of the grammatical rules
+and should not be edited directly.  Anyone interested in helping
+improve the lexicon or the rule sets should download the 
+developers' package from the web site linked below.
+
+=head1 CONSTRUCTOR
+
+=over
+
+=item new %PARAMS
+
+Constructs an instance of the grammar checker and loads the lexicon
+into memory.  It should only be called once.   Options may be specified
+by passing a hash containing some of the following keys:
+
+=over
+
+=item fix_spelling => 0
+
+Suggest replacements for misspelled or unknown words.
+
+=item use_ignore_file => 0
+
+Read a file containing words to be ignored when checking spelling and grammar.
+
+=item interface_language => '' 
+
+Specify the language of output messages
+(NOT necessarily the language of the text to be checked).
+With the default value, Locale::Maketext attempts to determine
+the correct language to use based on things like your
+environment variables.
+
+=item input_encoding => '@NATIVE@'
+
+Specify the encoding for all texts passed to one of the module's exported
+functions.   There is no currently no way to change the encoding of
+the data returned by the exported functions (always encoded as perl strings).
+
+
+=cut
+
+sub new {
+	my $invocant = shift;
+	my $class = ref($invocant) || $invocant;
+	my $self = {
+			fix_spelling => 0,
+			use_ignore_file => 0,
+			interface_language => '',
+			input_encoding => '@NATIVE@',
+			@_,
+	};
+
+	( my $datapath ) = __FILE__ =~ /(.*)\.pm/;
+	%EILE = %{ retrieve( File::Spec->catfile( $datapath, 'eile.hash' ) )};
+	%EARRAIDI = %{ retrieve( File::Spec->catfile( $datapath, 'earraidi.hash' ) ) };
+	%NOCOMBO = %{ retrieve( File::Spec->catfile( $datapath, 'nocombo.hash' ) )};
+	%POS = %{ retrieve( File::Spec->catfile( $datapath, 'pos.hash' ) ) };
+	%GRAMS = %{ retrieve(File::Spec->catfile($datapath, '3grams.hash') ) };
+	for my $i (0 .. 6) {
+		push @FOCAIL, retrieve( File::Spec->catfile( $datapath, "focail$i.hash" ) );
+	}
+
+	if ($self->{'use_ignore_file'}) {
+		my $homedir = $ENV{HOME} || $ENV{LOGDIR}; # || (getpwuid($>))[7];
+		if (open (DATAFILE, File::Spec->catfile( $homedir, '.neamhshuim' ))) {
+			while (<DATAFILE>) {
+				chomp;
+				$IGNORE{$_}++;
+			}
+		}
+	}
+
+	if ($self->{'interface_language'}) {
+		$lh = Lingua::@TEANGA@::Gramadoir::Languages->get_handle($self->{'interface_language'});
+	}
+	else {
+		$lh = Lingua::@TEANGA@::Gramadoir::Languages->get_handle();
+	}
+	croak 'Could not set interface language' unless $lh;
+
+	return bless $self, $class;
+}
+
+sub gettext
+{
+	my $string = shift;
+	my $arg = shift;
+
+	$string =~ s/\[/~[/g;
+	$string =~ s/\]/~]/g;
+	$string =~ s/\%s/[_1]/;
+	$string =~ s#\\/([@BDCHARS@@INTCHARS@]+)\\/#/$1/#;
+	$string =~ s#\\/\\([1-9])\\/#/[_$1]/#;
+
+	return $lh->maketext($string, $arg);
+}
+
+##############################################################################
+
+=head1 METHODS
+
+=item get_sentences TEXT
+
+Splits the input TEXT up into sentences and returns a reference to an
+array containing the sentences.
+
+=cut
+##############################################################################
+
+# approximates "abairti" from bash version
+# General philosophy is that it is *not* the job of the grammar checker
+# to filter incoming texts (of, say, TeX or SGML markup).  On the other hand,
+# SGML-like markup *must* be stripped so it doesn't interfere with
+# the real work of the grammar checker.
+sub get_sentences
+{
+	my ( $self, $text ) = @_;
+	from_to($text, $self->{'input_encoding'}, '@NATIVE@');
+	my $answer = get_sentences_real($text);
+	foreach my $s (@$answer) {
+		$s = decode('@NATIVE@', $s);
+	}
+	return $answer;
+}
+
+sub get_sentences_real
+{
+	my $BD="\001";
+	my $sentences;
+
+	for ($_[0]) {
+		s/<[^>]*>/ /g;  # naive; see comments above
+		s/&/&amp;/g;    # this one first!
+		s/</&lt;/g;
+		s/>/&gt;/g;
+		s/[\\$BD]//g;
+		giorr ( $_ );
+		s/([^\\][.?!][]"')}]*)[ \t\n]+/$1$BD/g;
+		s/"/&quot;/g;   # &apos; ok  (note " in prev line)
+		s/\s+/ /g;
+		tr/\\//d;
+		@$sentences = split /$BD/;
+	}
+
+	return $sentences;
+}
+
+# two arguments; first is word to be tagged, 2nd is string of grammatical bytes
+sub add_grammar_tags
+{
+	my ( $self, $word, $grambytes ) = @_;
+
+	my $ans;
+	if ( length( $grambytes ) == 1) {
+		my $tag = $POS{ord($grambytes)};
+		$tag =~ m/^<([A-Z])/;
+		$ans = $tag.$word."</".$1.">";
+	}
+	else {
+		$ans = "<B><Z>";
+		foreach my $byte (split //, $grambytes) {
+			my $tag = $POS{ord($byte)};
+			$tag =~ s/>$/\/>/;
+			$ans = $ans.$tag;
+		}
+		$ans = $ans."</Z>".$word."</B>";
+	}
+
+	return $ans;
+}
+
+sub mylc {
+	my ($string) = @_;
+	$string =~ tr/@CAPITALS@/@LOWERS@/;
+	return $string;
+}
+
+sub mylcfirst {
+	my ($string) = @_;
+	$string =~ s/^(.)(.*)$/mylc($1).$2/e;
+	return $string;
+}
+
+# look up in the hash tables FOCAIL, EILE, EARRAIDI consecutively
+# same arguments, return conventions as tag_recurse, just no recursion!
+sub lookup
+{
+	my ( $self, $original, $current, $level ) = @_;
+
+	my $ans;
+	for my $href ( @FOCAIL ) {
+		if ( exists($href->{$current}) ) {
+			if ( $level == -1 ) {
+				my $codez = $href->{$current};
+				my %tempseen;
+				if ( $current =~ m/^[@CAPITALS@]/ ) {
+					my $lower = mylcfirst($current);
+					if ( exists($href->{$lower}) ) {
+						foreach my $bee (split //, $href->{$current}.$href->{$lower}) {
+							$tempseen{$bee}++;
+						}
+						$codez = join('', sort(keys %tempseen));
+						if ( length( $codez ) > 1 ) {
+							$codez =~ s/\177//;
+						}
+					}
+				}
+				$ans = $self->add_grammar_tags($original, $codez);
+			}
+			elsif ( $level == 0 ) {
+				$ans = "<E msg=\"MOIRF{$current}\"><Y>".$original."</Y></E>";
+			}
+			elsif ( $level == 1 ) {
+				$ans = "<E msg=\"CAIGHDEAN{$current}\"><Y>".$original."</Y></E>";
+			}
+			else {
+				$ans = "<E msg=\"DROCHMHOIRF{$current}\"><X>".$original."</X></E>";
+			}
+			return $ans;
+		}
+	}
+	if ( exists($EILE{$current}) ) {
+		my $correction = $EILE{$current};
+		if ( $level == -1 ) {
+			$ans = "<E msg=\"CAIGHDEAN{$correction}\"><Y>".$original."</Y></E>";
+		}
+		elsif ( $level == 0 ) {
+			$ans = "<E msg=\"CAIGHMOIRF{$correction}\"><Y>".$original."</Y></E>";
+		}
+		elsif ( $level == 1 ) {
+			$ans = "<E msg=\"CAIGHDEAN{$current ($correction)}\"><X>".$original."</X></E>";
+		}
+		else {
+			$ans = "<E msg=\"DROCHMHOIRF{$current ($correction)}\"><Y>".$original."</Y></E>";
+		}
+		return $ans;
+	}
+	if ( exists($EARRAIDI{$current}) ) {
+		my $correction = $EARRAIDI{$current};
+		if ( $level == -1 ) {
+			$ans = "<E msg=\"MICHEART{$correction}\"><X>".$original."</X></E>";
+		}
+		else {
+			$ans = "<E msg=\"MIMHOIRF{$current ($correction)}\"><X>".$original."</X></E>";
+		}
+		return $ans;
+	}
+	return "";
+}
+
+# note use of "tag_recurse" on the conjectural pieces below; 
+# this is (primarily) to deal with capitalization of the halves.
+# definitely *don't* want to call full tag on the two pieces or
+# else *this* function will recurse 
+sub tag_as_compound
+{
+	my ( $self, $word ) = @_;
+	if ($self->{'fix_spelling'}) {
+		if ($word =~ m/^([^-]+)-(.*)$/) {
+			my $l = $1;
+			my $r = $2;
+			my $t1 = $self->tag_recurse( $l, $l, -1 );
+			my $t2 = $self->tag_recurse( $r, $r, -1 );
+			if ($t1 && $t2) {
+				if ($t1 !~ m/<E/ && $t2 !~ m/<E/) {
+					return "<E msg=\"COMHFHOCAL{$l+$r}\"><X>".$word."</X></E>";
+				}
+				else {
+					return "<E msg=\"COMHCHAIGH{$l+$r}\"><X>".$word."</X></E>";
+				}
+			}
+		}
+		else {
+			my $len = length($word);
+			for (my $i = 3; $i < $len-2; $i++) { # i=len of left
+				my $l = substr($word, 0, $i);
+				my $r = substr($word, $i, $len - $i);
+				if (!exists($NOCOMBO{$l}) &&
+				    !exists($NOCOMBO{$r})) {
+					my $tl = $self->tag_recurse($l,$l,-1);
+					my $tr = $self->tag_recurse($r,$r,-1);
+				    	if ( $tl && $tr ) {
+						if ($tl !~ m/<E/ && $tr !~ m/<E/) {
+							return "<E msg=\"COMHFHOCAL{$l+$r}\"><X>".$word."</X></E>";
+						}
+						else {
+							return "<E msg=\"COMHCHAIGH{$l+$r}\"><X>".$word."</X></E>";
+						}
+					}
+				}
+			}
+		}
+	}
+	return "";
+}
+
+sub tag_as_near_miss
+{
+	my ( $self, $word ) = @_;
+
+	if ($self->{'fix_spelling'}) {
+		my $wordlen = length($word);
+		if ($wordlen > 2) {
+			for my $href ( @FOCAIL ) {
+				my %matches;
+				my $dist = "1";
+				if ($word =~ m/[@CAPITALS@]/) {
+					$dist =~ s/$/ i/;
+				}
+				for (my $i = 0; $i < $wordlen-1; $i++) {
+					my $perm = $word;
+					$perm =~ s/(.{$i})(.)(.)/$1$3$2/;
+					$matches{$perm}++ if (exists($href->{$perm}));
+				}
+				for (amatch($word, [ $dist, "I0S0" ], (keys %$href))) {
+					$matches{$_}++ if (length($_)==$wordlen-1);
+				}
+				for (amatch($word, [ $dist, "D0S0" ], (keys %$href))) {
+					$matches{$_}++ if (length($_)==$wordlen+1);
+				}
+				for (amatch($word, [ $dist, "D0I0" ], (keys %$href))) {
+					$matches{$_}++ if (length($_)==$wordlen);
+				}
+				my $suggs = join(', ', (keys %matches));
+				return "<E msg=\"ANAITHNID /$suggs/?\"><X>$word</X></E>" if $suggs;
+			}
+		}
+	}
+	return "";
+}
+
+sub find_bad_three_grams
+{
+	my ( $self, $word ) = @_;
+
+	$word =~ s/^/</;
+	$word =~ s/$/>/;
+	my $end = length($word) - 2;
+	for (my $i = 0; $i < $end; $i++) {
+		my $cand = substr($word, $i, 3);
+		if (!exists($GRAMS{$cand})) {
+			$cand =~ tr/<>/^$/;
+			$word =~ tr/<>//d;
+			return "<E msg=\"GRAM{$cand}\"><X>$word</X></E>";
+		}
+	}
+	return "";
+}
+
+# takes a single word as an argument and returns it tagged, without fail
+# e.g. it will get something like <X>neamhword</X> if it is unknown
+sub tag_one_word
+{
+	my ( $self, $word ) = @_;
+
+	if ($self->{'use_ignore_file'}) {
+		return "<Y>".$word."</Y>" if ( exists($IGNORE{$word}) );
+	}
+	my $ans = $self->tag_recurse($word, $word, -1);
+	return $ans if $ans;
+	$ans = $self->tag_as_near_miss($word);
+	return $ans if $ans;
+	$ans = $self->tag_as_compound($word);
+	return $ans if $ans;
+	$ans = $self->find_bad_three_grams($word);
+	return $ans if $ans;
+	return "<X>$word</X>";
+}
+
+# takes a sentence as input and returns the sentence with trivial markup
+# around each token (in bash version this was part of abairti)
+sub tokenize
+{
+	my ( $self, $sentence ) = @_;
+	$sentence =~ s/([@BDCHARS@][@BDCHARS@@INTCHARS@]*)/<c>$1<\/c>/g;
+	$sentence =~ s/([@INTCHARS@]+)<\/c>/<\/c>$1/g;
+	$sentence =~ s/&<c>(quot|lt|gt|amp)<\/c>;/&$1;/g;
+	return $sentence;
+}
+
+# takes the input TEXT and returns a reference to an array of sentences with 
+# a preliminary XML markup consisting of all possible parts of speech
+sub unchecked_xml
+{
+	my $self = $_[0];
+	my $sentences = get_sentences_real($_[1]);
+	my $answer;
+	foreach my $sentence (@$sentences) {
+		$sentence = $self->tokenize($sentence);
+		$sentence =~ s/(<c>[^<]+<\/c>) \1/<E msg="DUBAILTE">$1 $1<\/E>/g;
+		1 while ( $sentence =~ s/<c>([^<]*)<\/c>/$self->tag_one_word($1);/e );
+		$sentence =~ s/^/<line> /;
+		$sentence =~ s/$/ <\/line>/;
+	}
+	return $sentences;
+}
+
+##############################################################################
+
+=item spell_check TEXT
+
+Returns a reference to an array containing the misspelled words appearing
+in the input text.
+
+=cut
+##############################################################################
+
+sub spell_check
+{
+	my ( $self, $text ) = @_;
+	from_to($text, $self->{'input_encoding'}, '@NATIVE@');
+	my $sentences = $self->unchecked_xml($text);
+	my $badwords;
+	foreach my $s (@$sentences) {
+		if ($s =~ m/<X>/) {
+			$s =~ s/<[^X\/][^>]*>//g;
+			$s =~ s/<\/[^X][^>]*>//g;
+			$s =~ s/^[^<]*<X>//;
+			$s =~ s/<\/X>[^<]*$//;
+			$s =~ s/<\/X>[^<]*<X>/\n/g;
+			$s = decode('@NATIVE@', $s);
+			push @$badwords,$s;
+		}
+	}
+	return $badwords;
+}
+
+
+##############################################################################
+
+=item add_tags TEXT
+
+Takes the input TEXT and returns a reference to an array of sentences 
+with (XML-style) *disambiguated* part-of-speech tags.  Does not do
+any grammatical rule checking.
+
+=cut
+##############################################################################
+
+sub add_tags
+{
+	my ( $self, $text ) = @_;
+	from_to($text, $self->{'input_encoding'}, '@NATIVE@');
+	my $answer = $self->add_tags_read($text);
+	foreach my $s (@$answer) {
+		$s = decode('@NATIVE@', $s);
+	}
+	return $answer;
+}
+
+sub add_tags_real
+{
+	my $sentences = unchecked_xml(@_);
+	foreach my $sentence (@$sentences) {
+		comhshuite($sentence);
+		aonchiall($sentence);
+		aonchiall_deux($sentence);
+		unigram($sentence);
+	}
+	return $sentences;
+}
+
+
+# Takes the input TEXT and returns a reference to an array of sentences
+# containing full XML markup, including part of speech tags and marked
+# up grammatical errors.   
+# Called by grammatical_errors and xml_stream (the latter just adds an
+# XML header/footer and dumps the array of sentences to a scalar).
+sub xml_sentences
+{
+	my $sentences = add_tags_real(@_);
+	foreach my $sentence (@$sentences) {
+		rialacha ($sentence);
+		eisceacht ($sentence);
+	}
+	return $sentences;
+}
+
+##############################################################################
+
+=item xml_stream TEXT
+
+Takes the input TEXT and returns it as well-formed XML (encoded as perl
+strings, not utf-8) with full grammatical markup.   Error messages are not 
+localized.  This function should only be exported for debugging/development
+purposes.  Use "grammatical_errors" (which is basically "xml_stream" plus
+some whittling down) as an interface with other programs.
+
+=cut
+##############################################################################
+# bash version's vanilla_xml_output/aspell_xml_output
+sub xml_stream
+{
+	my ( $self, $text ) = @_;
+	from_to($text, $self->{'input_encoding'}, '@NATIVE@');
+	my $answer='<?xml version="1.0" encoding="utf-8" standalone="no"?>';
+	$answer = $answer."\n".'<!DOCTYPE teacs SYSTEM "/dtds/gramadoir.dtd">';
+	$answer = $answer."\n<teacs>\n";
+	my $sentences = $self->xml_sentences($text);
+	$answer = $answer.join("\n", @$sentences);
+	$answer = $answer."\n</teacs>\n";
+	$answer = decode("@NATIVE@", $answer);
+	return $answer;
+}
+
+sub localize_me
+{
+	my ( $self, $msg ) = @_;
+
+	my $msgid;
+	for ($msg) {
+		tr/_/ /;
+		if (/ANAITHNID/) {
+			$msgid = gettext('Unknown word');
+			s/ANAITHNID/$msgid/;
+		}
+		if (/NEAMHCHOIT/) {
+			$msgid = gettext('Valid word but extremely rare in actual usage');
+			s/NEAMHCHOIT/$msgid/;
+		}
+		if (/INPHRASE{([^}]+)}/) {
+			$msgid = gettext('Usually used in the set phrase \/\1\/', $1);
+			s/INPHRASE{([^}]+)}/$msgid/;
+		}
+		if (/BACHOIR{([^}]+)}/) {
+			$msgid = gettext('You should use \/\1\/ here instead', $1);
+			s/BACHOIR{([^}]+)}/$msgid/;
+		}
+		if (/CAIGHDEAN{([^}]+)}/) {
+			$msgid = gettext('Non-standard form of \/\1\/', $1);
+			s/CAIGHDEAN{([^}]+)}/$msgid/;
+		}
+		if (/CAIGHMOIRF{([^}]+)}/) {
+			$msgid = gettext('Derived from a non-standard form of \/\1\/', $1);
+			s/CAIGHMOIRF{([^}]+)}/$msgid/;
+		}
+		if (/DROCHMHOIRF{([^}]+)}/) {
+			$msgid = gettext('Derived incorrectly from the root \/\1\/', $1);
+			s/DROCHMHOIRF{([^}]+)}/$msgid/;
+		}
+		if (/CLAOCHLU/) {
+# TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
+			$msgid = gettext('Initial mutation missing');
+			s/CLAOCHLU/$msgid/;
+		}
+		if (/NISEIMHIU/) {
+# TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
+# It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
+			$msgid = gettext('Unnecessary lenition');
+			s/NISEIMHIU/$msgid/;
+		}
+		if (/PREFIXH/) {
+			$msgid = gettext('Prefix \/h\/ missing');
+			s/PREFIXH/$msgid/;
+		}
+		if (/PREFIXT/) {
+			$msgid = gettext('Prefix \/t\/ missing');
+			s/PREFIXT/$msgid/;
+		}
+		if (/SEIMHIU/) {
+			$msgid = gettext('Lenition missing');
+			s/SEIMHIU/$msgid/;
+		}
+		if (/URU/) {
+# TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
+# initial consonants in Irish.  It is indicated in writing by the addition
+# of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
+			$msgid = gettext('Eclipsis missing');
+			s/URU/$msgid/;
+		}
+		if (/DUBAILTE/) {
+			$msgid = gettext('Repeated word');
+			s/DUBAILTE/$msgid/;
+		}
+		if (/CUPLA/) {
+			$msgid = gettext('Unusual combination of words');
+			s/CUPLA/$msgid/;
+		}
+		if (/BREISCHEIM/) {
+			$msgid = gettext('Comparative adjective required');
+			s/BREISCHEIM/$msgid/;
+		}
+		if (/NIAITCH/) {
+			$msgid = gettext('Unnecessary prefix \/h\/');
+			s/NIAITCH/$msgid/;
+		}
+		if (/NITEE/) {
+			$msgid = gettext('Unnecessary prefix \/t\/');
+			s/NITEE/$msgid/;
+		}
+		if (/ONEART/) {
+			$msgid = gettext('Unnecessary use of the definite article');
+			s/ONEART/$msgid/;
+		}
+		if (/GENITIVE/) {
+			$msgid = gettext('The genitive case is required here');
+			s/GENITIVE/$msgid/;
+		}
+		if (/MOIRF{([^}]+)}/) {
+			$msgid = gettext('Not in database but apparently formed from the root \/\1\/', $1);
+			s/MOIRF{([^}]+)}/$msgid/;
+		}
+		if (/MICHEART{([^}]+)}/) {
+			$msgid = gettext('Do you mean \/\1\/?', $1);
+			s/MICHEART{([^}]+)}/$msgid/;
+		}
+		if (/MIMHOIRF{([^}]+)}/) {
+			$msgid = gettext('Derived form of common misspelling \/\1\/?', $1);
+			s/MIMHOIRF{([^}]+)}/$msgid/;
+		}
+		if (/COMHFHOCAL{([^}]+)}/) {
+			$msgid = gettext('Not in database but may be a compound \/\1\/?', $1);
+			s/COMHFHOCAL{([^}]+)}/$msgid/;
+		}
+		if (/COMHCHAIGH{([^}]+)}/) {
+			$msgid = gettext('Not in database but may be a non-standard compound \/\1\/?', $1);
+			s/COMHCHAIGH{([^}]+)}/$msgid/;
+		}
+		if (/GRAM{([^}]+)}/) {
+			$msgid = gettext('Possibly a foreign word (the sequence \/\1\/ is highly improbable)', $1);
+			s/GRAM{([^}]+)}/$msgid/;
+		}
+	}
+	return $msg;
+}
+
+##############################################################################
+
+=item grammatical_errors TEXT
+
+Returns the grammatical errors in the input TEXT as a reference to an array,
+one error per element of the array, with each error given in a simple
+XML format usable by other applications.  Error messages are localized
+according to locale settings as determined by Locale::Maketext.
+
+=cut
+##############################################################################
+
+# like the bash "xml_api"
+sub grammatical_errors
+{
+	my ( $self, $text ) = @_;
+
+	from_to($text, $self->{'input_encoding'}, '@NATIVE@');
+	my $pristine = $text;  # so actually NOT pristine e.g. if input is utf8
+	$pristine =~ s/^/ /;
+	$pristine =~ s/\n/ \n /g;
+	$pristine =~ s/$/ /;
+
+	my $marked_up_sentences = $self->xml_sentences ($text);
+	my $errors;  # array reference to return
+  # endoflast is global offset in $pristine following the end of last error
+	my $endoflast = 0;
+	my $toy = 1;   # line number at position $endoflast; lines count from 1
+	my $tox = -1;  # line position of end of last match (not like $+[0]!)
+
+	foreach (@$marked_up_sentences) {
+		if (/<E/) {
+			my $plain = $_;
+			$plain =~ s/<[^>]+>//g;
+			$plain =~ s/^ *//;
+			$plain =~ s/ *$//;
+			my $buffered = " $plain ";
+			while (m!(<E[^>]+>)(([^<]|<[^/]|</[^E])*)</E>!g) {
+				my $thiserror = $1;
+				my $errortext = $2;
+				my $fromy;
+				my $fromx;
+				$errortext =~ s/<[^>]+>//g; # strip pos stuff
+				my $errorregexp = $errortext;
+				$thiserror =~ s/^<E/<E sentence="$plain" errortext="$errortext"/;
+				$errorregexp =~ s/ /([\\s\\\\]|<[^>]+>)+/g;
+				$errorregexp =~ s/^/(?<=[^@BDCHARS@])/;
+				$errorregexp =~ s/$/(?=[^@BDCHARS@])/;
+				$pristine =~ m!$errorregexp!gs;
+				my $globs = $-[0];
+				my $globe = $+[0];
+				my $str = substr($pristine, $endoflast, $globs - $endoflast);
+				$fromy = $toy + ($str =~ tr/\n/\n/);
+				if ($fromy == $toy) {
+					$fromx = $tox + 1 + ($globs - $endoflast);
+				}
+				else {
+					$str =~ m/([^\n]+)$/s;
+					$fromx = length ($1); 
+				}
+				$str = substr($pristine, $globs, $globe - $globs);
+				$toy = $fromy + ($str =~ tr/\n/\n/); 
+				if ($fromy == $toy) {
+					$tox = $fromx + ($globe - $globs) - 1;
+				}
+				else {
+					$str =~ m/([^\n]+)$/s;
+					$tox = length ($1) - 1 ; 
+				}
+				$endoflast = $globe;
+				$fromx--;
+				my $toans = $tox - 1;  # keep tox for next err 
+				$buffered =~ m!$errorregexp!g;
+				my $offset = $-[0] - 1;
+				$thiserror =~ s!^<E !<E offset="$offset" fromy="$fromy" fromx="$fromx" toy="$toy" tox="$toans" !;
+				$thiserror = decode("@NATIVE@", $thiserror);
+				$thiserror =~ s! msg="([^"]+)"!" msg=\"".$self->localize_me($1)."\""!e;
+				push @$errors, $thiserror;
+			}
+		}
+	} # loop over sentences
+	return $errors;
+}
+
+# functionally same as aonchiall; separate for profiling
+sub aonchiall_deux
+{
+	return aonchiall(@_);
+}
+
+##############################################################################
+#   The remaining functions are automatically generated using a high
+#   level description of @NAME_ENGLISH@ grammar; see the An Gramadoir
+#   developers' pack for more information...
+#       http://borel.slu.edu/gramadoir/
+##############################################################################
+sub aonchiall
+{
+	for ($_[0]) {
+# aonchiall code goes here
+	}
+}
+
+sub comhshuite
+{
+	for ($_[0]) {
+# comhshuite code goes here
+	}
+}
+
+sub eisceacht
+{
+	for ($_[0]) {
+# eisceacht code goes here
+	}
+}
+
+# analogue of "escape_punc" in bash version
+sub giorr
+{
+	for ($_[0]) {
+	s/^/ /;
+	s/([^@BDCHARS@0-9-][0-9])([.?!])/$1\\$2/g;
+	s/([^@BDCHARS@0-9-][0-9][0-9])([.?!])/$1\\$2/g;
+	s/(\...)([.?!])/$1\\$2/g;
+	s/\.(ie|uk)\\([.?!])/.$1$2/g;
+	s/(\..)([.?!])/$1\\$2/g;
+	s/(\.)([.?!])/$1\\$2/g;
+	s/([IVX][IVX])([.?!])/$1\\$2/g;
+# giorr code goes here
+	s/^ //;
+	}
+}
+
+sub rialacha
+{
+	for ($_[0]) {
+# rialacha code goes here
+	}
+}
+
+sub unigram
+{
+	for ($_[0]) {
+# unigram code goes here
+	}
+}
+
+# recursive helper function for "tag_one_word".  
+# ** This function is generated automatically from a higher level 
+#    description of @NAME_ENGLISH@ morphology ** 
+#
+#  Takes three arguments; original word to be tagged; the current
+#  decomposed version for lookup (and possible further decomp)
+#  and a "level" which determines whether, if a match is found,
+#  whether it should be untagged (-1), tagged as OK but noting decomp (0),
+#  tagged as non-standard (1), or tagged as a misspelling (2).
+#
+#   Returns the word tagged appropriately if a match is found, returns
+#   false ("") if the recursion bottoms out with no matches
+sub tag_recurse
+{
+	my ( $self, $original, $current, $level ) = @_;
+
+	my $ans = $self->lookup( $original, $current, $level );
+	return $ans if $ans;
+	my $newcurrent;
+# morphology code goes here
+	return "";
+}
+
+
+
+1;
+
+__END__
+
+=head1 HISTORY
+
+=over 8
+
+=item 0.50
+
+First Perl version.
+
+=back
+
+=head1 SEE ALSO
+
+I<perl>(1)
+
+The home page for An Gramadóir is:
+
+  http://borel.slu.edu/gramadoir/
+
+=head1 BUGS
+
+The grammar checker does not attempt a full parse of the input
+sentences nor does it attempt to exploit any semantic information.
+There are, therefore, certain constructs that cannot be dealt with
+correctly.  For instance, the possessive adjective "a" mutates the
+word which follows differently depending on whether it means
+"his", "her", or "their".
+
+=head1 AUTHOR
+
+Kevin P. Scannell, E<lt>scannell@slu.eduE<gt>
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright (C) 2004 Kevin P. Scannell
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself, either Perl version 5.8.2 or,
+at your option, any later version of Perl 5 you may have available.
+
+=cut
