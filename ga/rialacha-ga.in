@@ -1786,6 +1786,9 @@ d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</
 # lacunae:
 #. Tá siad ag éileamh go n-íocfaí iad as a gcuid costais agus iad mbun traenála.
 <N>ECLIPSED</N>:NIURU
+# this exception is too broad (allows "i mb'ábhar", etc.) but errors
+# with such words are caught above with a tighter rule requiring "go","dá",etc.
+<N>INITIALMBAPOST</N>:OK
 #  "de an gcrann" etc. won't even make it here, caught earlier
 <S>DATIVEPREP</S> <T>[Aa]n</T> <E><NCDS>ECLIPSEDBCFGP</NCDS></E>:OK
 <S>[Ll]eis</S> <T>[Aa]n</T> <E><NCDS>ECLIPSEDBCFGP</NCDS></E>:OK
