@@ -259,10 +259,10 @@ sub lookup
 				$ans = $self->add_grammar_tags($original, $codez);
 			}
 			elsif ( $level == 0 ) {
-				$ans = "<E msg=\"MOIRF{$current}\"><Y>".$original."</Y></E>";
+				$ans = "<E msg=\"MOIRF{$current}\"><X>".$original."</X></E>";
 			}
 			elsif ( $level == 1 ) {
-				$ans = "<E msg=\"CAIGHDEAN{$current}\"><Y>".$original."</Y></E>";
+				$ans = "<E msg=\"CAIGHDEAN{$current}\"><X>".$original."</X></E>";
 			}
 			else {
 				$ans = "<E msg=\"DROCHMHOIRF{$current}\"><X>".$original."</X></E>";
@@ -273,16 +273,16 @@ sub lookup
 	if ( exists($EILE{$current}) ) {
 		my $correction = $EILE{$current};
 		if ( $level == -1 ) {
-			$ans = "<E msg=\"CAIGHDEAN{$correction}\"><Y>".$original."</Y></E>";
+			$ans = "<E msg=\"CAIGHDEAN{$correction}\"><X>".$original."</X></E>";
 		}
 		elsif ( $level == 0 ) {
-			$ans = "<E msg=\"CAIGHMOIRF{$correction}\"><Y>".$original."</Y></E>";
+			$ans = "<E msg=\"CAIGHMOIRF{$correction}\"><X>".$original."</X></E>";
 		}
 		elsif ( $level == 1 ) {
 			$ans = "<E msg=\"CAIGHDEAN{$current ($correction)}\"><X>".$original."</X></E>";
 		}
 		else {
-			$ans = "<E msg=\"DROCHMHOIRF{$current ($correction)}\"><Y>".$original."</Y></E>";
+			$ans = "<E msg=\"DROCHMHOIRF{$current ($correction)}\"><X>".$original."</X></E>";
 		}
 		return $ans;
 	}
