@@ -15,303 +15,434 @@
 # LGG=Mac Congáil, Leabhar Gramadaí Gaeilge, CIC, 2002.
 # OD=Ó Donaill, Foclóir Gaeilge-Béarla, 1977.
 #
+##############################################################################
+#. Ní raibh líon mór daoine bainteach leis an scaifte a bhí ag iarraidh mioscais a chothú.
+#   "scaifte" is recognized as an alternate of scata directly by "cuardach"
+#. Tabhair go leor leor de na na rudaí seo do do chara, a Chaoimhín.
+#    the doubled "na na" is marked up directly by "cuardach"
+#. An bhfuil aon uaktar reoite agat?
 <X>ANYTHING</X>:ANAITHNID
+#. An bhfuil ayn uachtar roach agat?
 <X>ANYTHING</X>:ANAITHNIDSRL
+#. Bíonn an geál ag satailt ar an dubh.
 <F>ANYTHING</F>:NEAMHCHOIT
 # chomh,go in eisceacht
+#. Nach holc an mhaise duit a bheith ag magadh.
 ANYTHING <AWITHH>ANYTHING</AWITHH>:NIAITCH
 # cé,le,ní,pé in eisceacht
 ANYTHING <PWITHH>ANYTHING</PWITHH>:NIAITCH
 # many exceptions: na,sna,a (+ina,faoina,etc.),cá,Dé,go,le,ordinals... 
 #ANYTHING <NWITHH>ANYTHING</NWITHH>:NIAITCH
 # ná in eisceacht
+#. Oirfeadh síol áitiúil níos fearr ná an síol a húsáidtear go minic.
 ANYTHING <VIMP>INITIALH</VIMP>:NIAITCH
 #   note in previous batch that prefix h on other tags or on non-imperative V
 #   is handled by spelling...
 # using NMCS vs. nothing in next rule is faster and avoids false positive
 # with t-léine, etc. Note na+NMCS picked up elsewhere.  "cén"+t- in eisceacht
+#. Tá ceacht stairiúil uathúil do chuairteoirí san t-ionad seo.
 <[^T]>ANYTHING</[^T]> <NMCS>PREFIXEDT</NMCS>:NITEE
 # CB p.16 #9.a  (needs shallow parse)
+#. Tá sé riachtanach ar mhaithe le feidhmiú an phlean a bheidh ceaptha ag an eagraíocht ceannasach.
 <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 <NFGS>ANYTHING</NFGS> <A>LENITED</A>:NISEIMHIU
 # CB p.16 #9.b  (needs shallow parse)
 <NMGS>ANYTHING</NMGS> <A>UNLENITED</A>:SEIMHIU
 <NMCS>ANYTHING</NMCS> <A>LENITED</A>:NISEIMHIU
 # CB p.16 #9.c
+#. Tá na lachain slachtmhara ar eitilt.
 <NP>SLENDERFINALCONSONANT</NP> <A>UNLENITED</A>:SEIMHIU
 # CB p.13 #4.a
+#. Tá an Rialtas tar éis áit na Gaeilge i saol na tíre a ceistiú.
 <S>a</S> <N>UNLENITED</N>:SEIMHIU
 # CB p.16 #7 (N), p.18 #10 (A)
+#. Bhíodar ag rá ar an aonach gur agamsa a bhí na huain ab fearr.
 <V>[Aa]b</V> UNLENITED:SEIMHIU
 # CB p.14 Note
+#. Ní bheidh ach mhallacht i ndán dó ó na ciníocha agus fuath ó na náisiúin.
 <S>[Aa]ch</S> <N>LENITED</N>:NISEIMHIU
 # CB p.22 #8.a, also CB p.134 #1.a
 <S>[Aa]ch</S> <T>an</T> <NMCS>INITIALVOWEL</NMCS>:PREFIXT
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
+#. An bhfuil aon uachtar reoite ar an cuntar?
 <S>[Aa][grs]</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
 <S>[Aa][grs]</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.14 Note
+#. Má shuíonn tú ag bhord le flaith, tabhair faoi deara go cúramach céard atá leagtha romhat.
 <S>[Aa][gs]</S> <N>LENITED</N>:NISEIMHIU
 # CB p.14 Note
+#. Bláthaíonn sé amhail bhláth an mhachaire.
 <S>[Aa]mhail</S> <N>LENITED</N>:NISEIMHIU
 # CB p.22 #8.a, also CB p.134 #1.a
 <S>[Aa]mhail</S> <T>an</T> <NMCS>INITIALVOWEL</NMCS>:PREFIXT
 # CB p.22 #7.b, p.132 #4; vowel exception from corpus
+#. An bainim sult as bás an drochdhuine?
 <Q>[Aa]n</Q> <V>UNECLIPSEDCONS</V>:URU
 # CB p.12 #1.a
+#. Ní féidir an Gaeltacht a choinneáil mar réigiún Gaeilge go náisiúnta gan athrú bunúsach.
 <[^S]>ANYTHING</[^S]> <T>an</T> <NFCS>UNLENITEDBCFGMP</NFCS>:SEIMHIU
 # CB p.22 #8.a
+#. Cad é an chomhairle a thug an ochtapas dó?
 <[^S]>ANYTHING</[^S]> <T>an</T> <NMCS>INITIALVOWEL</NMCS>:PREFIXT
 # CB p.12 #1.b
+#. Chóirigh sé na lampaí le solas a chaitheamh os comhair an coinnleora.
 <T>[Aa]n</T> <NMGS>UNLENITEDBCFGMP</NMGS>:SEIMHIU
 # CB p.23 #9
+#. Comhlánóidh saoránacht an Aontais an saoránacht náisiúnta agus ní ghabhfaidh sí a hionad.
 <T>[Aa]n</T> <NFCS>INITIALS</NFCS>:PREFIXT
 # CB p.23 #10
+#. Bíonn na cimí ar a suaimhneas le chéile gan guth an séiléara le clos a thuilleadh.
 <T>[Aa]n</T> <NMGS>INITIALS</NMGS>:PREFIXT
 # CB p.6 #1
+#. Tá sin ráite cheana féin acu le muintir an tíre seo.
 <T>[Aa]n</T> <NFGS>ANYTHING</NFGS>:BACHOIR{na}
 # CB p.6 #1
+#. Is é is dóichí go raibh baint ag an eisimirce leis an laghdú i líon an gcainteoirí Gaeilge.
 <T>[Aa]n</T> <NP>ANYTHING</NP>:BACHOIR{na}
 # CB p.8 #4
+#. Ba é an fear an phortaigh a tháinig thart leis na plátaí bia.
 <T>ANYTHING</T> <NC>ANYTHING</NC> <T>ANYTHING</T> <NG>ANYTHING</NG>:ONEART
+# CB p.8 #4
+#. Tá dhá shiombail ag an bharr gach leathanaigh.
 <T>ANYTHING</T> <NC>ANYTHING</NC> <A>gach</A> <NG>ANYTHING</NG>:ONEART
 # CB p.13 #3.c
+#. Ní bheidh aon buntáiste againn orthu sin.
 [Aa]on <N>UNLENITEDBCFGMP</N>:SEIMHIU
 # CB p.19 #13, p.132 #5
+#. Ar caith tú do chiall agus do chéadfaí ar fad?
 [Aa]r <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
 # CB p.20 1.b. keep before following
+#. Ní amháin ár dhá chosa, ach nigh ár lámha!
 [Áá]r dhá <N>UNECLIPSED</N>:URU
 # CB p.20 1.a
+#. Gheobhaimid maoin de gach sórt, agus líonfaimid ár tithe le creach.
 <D>[Áá]r</D> UNECLIPSED:URU
 # CB p.16 #7 (N), p.18 #10 (A)
+#. Níl aon ní arbh fiú a shantú seachas í.
 <V>[Aa]rbh</V> UNLENITEDF:SEIMHIU
 #
 <D>[Aa]rna</D> UNLENITED:SEIMHIU
 # CB p.16 #7 (N), p.18 #10 (A)
+#. Ba maith liom fios a thabhairt anois daoibh.
 <V>[Bb]a</V> <[^S]>UNLENITED</[^S]>:SEIMHIU
 # CB p.5 #17, note pronoun exception CB p.114
+#. Ba eol duit go hiomlán m'anam.
 <V>[Bb]a</V> <[AN]>INITIALVOWELORF</[AN]>:BACHOIR{b+uaschamóg}
 # CB p.13 #3.e
+#. D'fhan beirt buachaill sa champa.
 <N>[Bb]eirt</N> <N>UNLENITED</N>:SEIMHIU
 # CB p.16 #9.d
+#. D'fhan beirt bhuachaill cancrach sa champa.
 <N>[Bb]h?eirte?</N> <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
 # CB p.20 1.b, keep before following
+#. Ní amháin bhur dhá chosa, ach nigh bhur lámha!
 <D>[Bb]hur</D> dhá <N>UNECLIPSED</N>:URU
 # CB p.20 1.a
+#. Déanaigí beart leis de réir bhur briathra.
 <D>[Bb]hur</D> UNECLIPSED:URU
 # CB p.22 #7.c, p.132 #4
+#. Cá cuireann tú do thréad ar féarach?
 <Q>[Cc]á</Q> <V>UNECLIPSED</V>:URU
 # CB p.24 #11.a.iii, LGG p.113
+#. Cá áit a nochtfadh sé é féin ach in Bhostún!
 <Q>[Cc]á</Q> <N>INITIALVOWEL</N>:PREFIXH
 # OD cá; see exceptions
+#. Cá chás dúinn bheith ag máinneáil thart anseo?
 <Q>[Cc]á</Q> <N>LENITED</N>:NISEIMHIU
 # CB p.19 #13, p.132 #5
+#. Cár fág tú eisean?
+#. Cár fágadh eisean (OK)?
 [Cc]ár <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
 # CB p.24 #11.c
+#. Cé iad na fir seo ag fanacht farat?
 <Q>[Cc]é</Q> <P>INITIALVOWEL</P>:PREFIXH
 # CB p.6 #2
+#. Cé an ceart atá agamsa a thuilleadh fós a lorg ar an rí?
 <Q>[Cc]é</Q> <T>an</T>:BACHOIR{cén}
 # CB p.24 #11.a.x
+#. Chuir siad fios orm ceithre uaire ar an tslí sin.
 [Cc]eithre uaire?:BACHOIR{huaire}
 # CB p.13 #3.f
+#. Beidh ar Bhord Feidhmiúcháin an tUachtarán agus ceithre ball eile.
 [Cc]eithre <NCS>UNLENITED</NCS>:SEIMHIU
 # CB p.22 #8 (implicit), corpus confirms
+#. Cén amhránaí is fearr leat?
 <Q>[Cc]én</Q> <NMCS>INITIALVOWEL</NMCS>:PREFIXT
 # CB p.13 #3.c
+#. Bhí an chéad cruinniú den Choimisiún i Ros Muc i nGaeltacht na Gaillimhe.
 [Cc]héad <N>UNLENITEDBCFGMP</N>:SEIMHIU
 # CB p.24 #11.b.ii, LGG p.113
+#. Tá sé chomh iontach le sneachta dearg.
 <R>[Cc]homh</R> <A>INITIALVOWEL</A>:PREFIXH
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
+#. Chuir mé céad punta chuig an banaltra.
 <S>[Cc]huig</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
 <S>[Cc]huig</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.14 Note
+#. Níl tú do do sheoladh chuig dhaoine a labhraíonn teanga dhothuigthe.
 <S>[Cc]huig</S> <N>LENITED</N>:NISEIMHIU
 # CB p.14 Note
 [Cc]hun <N>LENITED</N>:NISEIMHIU
 # CB p.13 #3.f
+#. Bhí sé cúig bhanlámh ar fhad, cúig banlámh ar leithead.
 [Cc]úig <NCS>UNLENITED</NCS>:SEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
+#. Beirim mo mhionna dar an beart a rinne Dia le mo shinsir.
 <S>[Dd]ar</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
 <S>[Dd]ar</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.14 Note
+#. Dearbhaím é dar chuthach m'éada i gcoinne na gciníocha eile.
 <S>[Dd]ar</S> <N>LENITED</N>:NISEIMHIU
 # CB p.84 #8 keep before following
 <D>[Dd]ár</D> dhá <N>UNECLIPSED</N>:URU
 # CB p.84 #8
+#. Sa dara bliain déag dár braighdeanas, tháinig fear ar a theitheadh.
 <D>[Dd]ár</D> UNECLIPSED:URU
 # CB p.13 #3.d
+#. Tá dhá teanga oifigiúla le stádas bunreachtúil á labhairt sa tír seo.
 <[^D]>ANYTHING</[^D]> [Dd]há UNLENITED:SEIMHIU
 # CB p.24 #11.a.iv, LGG p.112
+#. D'oibrigh mé liom go dtí Dé Aoine.
 Dé Aoine:PREFIXH
 # CB p.20 #1.c
+#. Bhí deich tobar fíoruisce agus seachtó crann pailme ann.
 [Dd]eich <N>UNECLIPSED</N>:URU
 # CB p.12 #3.a (<D>do</D>), CB p.13 #4.a (<S>d[eo]</S>)
+#. Tógfaidh mé do coinnleoir óna ionad, mura ndéana tú aithrí.
 [Dd][eo] <N>UNLENITED</N>:SEIMHIU
 # CB p.12 #1.c.i
+#. Is cúis imní don pobal a laghad maoinithe a dhéantar ar Naíscoileanna.
 [Dd][eo]n <N>UNLENITEDBCFGMP</N>:SEIMHIU
 # CB p.17 #9.g
 [Dd][eo]n <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.6 #2
+#. Creidim go raibh siad de an thuairim chéanna.
 [Dd]e <T>an</T>:BACHOIR{den}
 # CB p.6 #2
+#. Cá bhfuil feoil le fáil agamsa le tabhairt do an mhuintir seo?
 [Dd]o <T>an</T>:BACHOIR{don}
 # CB p.5 #17
+#. Is amhlaidh a bheidh freisin do na tagairtí do airteagail.
 [Dd][eo] <N>INITIALVOWELORF</N>:BACHOIR{d+uaschamóg}
 # CB p.84 #8, p.132 #2
 <S>[Dd]e</S> a:BACHOIR{dá}
 # CB p.132 #2
 <S>[Dd]e</S> ar:BACHOIR{dár}
 # CB p.84 #8, p.132 #2
+#. Tá sé de chúram seirbhís a chur ar fáil do a gcustaiméirí i nGaeilge.
 [Dd]o a:BACHOIR{dá}
 # CB p.132 #2
 [Dd]o ar:BACHOIR{dár}
 # CB p.84 #8
+#. Seinnigí moladh ar an gcruit do ár nDia.
 [Dd][eo] ár:BACHOIR{dár}
 # CB p.18 #9.j
+#. Tabharfaidh an tUachtarán a óráid ag leath i ndiaidh a dó déag Dé Sathairn.
 [Dd]ó déag:SEIMHIU
 # CB p.13 #3.d
 <D>[Dd]o</D> dhá UNLENITED:SEIMHIU
 # CB p.13 #4.a
+#. Tá an domhan go léir faoi suaimhneas.
 <S>[Ff]aoi</S> <N>UNLENITED</N>:SEIMHIU
 # CB p.6 #2
+#. Caithfidh pobal na Gaeltachta iad féin cinneadh a dhéanamh faoi an Ghaeilge.
 <S>[Ff]aoi</S> <T>an</T>:BACHOIR{faoin}
 # CB p.84 #8, p.132 #2
+#. Cuireann sí a neart mar chrios faoi a coim.
 [Ff]aoi a:BACHOIR{faoina}
 # CB p.132 #2
 <S>[Ff]aoi</S> ar:BACHOIR{faoinar}
 # CB p.84 #8
+#. Cuireann sé ciníocha faoi ár smacht agus cuireann sé náisiúin faoinár gcosa.
 [Ff]aoi ár:BACHOIR{faoinár}
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
+#. Tá dualgas ar an gComhairle sin tabhairt faoin cúram seo.
 <S>[Ff]aoin</S> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
 <S>[Ff]aoin</S> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.84 #8 keep before following
 <D>[Ff]aoinár</D> dhá <N>UNECLIPSED</N>:URU
 # CB p.84 #8
+#. Ní bheidh gearán ag duine ar bith faoin gciste fial atá faoinár cúram.
 <D>[Ff]aoinár</D> UNECLIPSED:URU
 # CB p.16 #8.c
+#. Beidh paráid Lá Fhéile Phádraig i mBostún.
 Fh?éile CAPITALLENITED:NISEIMHIU
 # CB p.14 #4.c.i (says "nouns" specif.)
+#. Tá ar chumas an duine saol iomlán a chaitheamh gan theanga eile á brú air.
 <S>[Gg]an</S> <N>LENITEDDFST</N>:NISEIMHIU
 # CB p.14 #4.c.iv, exception "gan fhios" in eisceacht
+#. Tá gruaim mhór orm gan Chaitlín.
 <S>[Gg]an</S> <Y>LENITED</Y>:NISEIMHIU
 # CB p.22 #8.a, also CB p.134 #1.a
 <S>[Gg]an</S> <T>an</T> <NMCS>INITIALVOWEL</NMCS>:PREFIXT
 # CB p.24 #11.a.v, #11.b.ii, LGG p.112-113
+#. Is stáit ilteangacha iad cuid mhór de na stáit sin atá aonteangach go oifigiúil.
 [Gg]o <[AN]>INITIALVOWEL</[AN]>:PREFIXH
 # CB p.22 11d, p.132 #4
+#. Ní bheidh bonn comparáide ann go beidh torthaí Dhaonáireamh 2007 ar fáil.
 [Gg]o <V>UNECLIPSED</V>:URU
 # CB p.14 Note
+#. Rug sé ar ais mé go dhoras an Teampaill.
 [Gg]o <N>LENITED</N>:NISEIMHIU
 # corpus; see also CB p.6 #2, analogous to leis, tríd; no converse
+#. Chuaigh mé suas go an doras cúil a chaisleáin.
 [Gg]o <T>ANYTHING</T>:BACHOIR{go dtí}
 # CB p.14 Note
+#. Tar, téanam go dtí bhean na bhfíseanna.
 [Gg]o dtí <N>LENITED</N>:NISEIMHIU
 # CB p.19 #13, p.132 #5
+#. An ea nach cás leat gur fág mo dheirfiúr an freastal fúmsa i m'aonar?
 <C>[Gg]ur</C> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
 # CB p.16 #7 (N), p.18 #10 (A)
+#. B'fhéidir gurbh fearr é seo duit ná leamhnacht na bó ba mhilse i gcontae Chill Mhantáin.
 <V>[Gg]urbh</V> UNLENITEDF:SEIMHIU
-# CB p.20 #1.c
+# CB p.20 #1.c, catches LENITED ones too, CB p.14 Note
+#. An bhfuil aon uachtar reoite agat i cuisneoir?
+#. An bhfuil aon uachtar reoite agat i chuisneoir?
 <S>[Ii]</S> <N>UNECLIPSED</N>:URU
-# CB p.14 Note
-<S>[Ii]</S> <N>LENITED</N>:NISEIMHIU
 # CB p.20 Note
+#. An bhfuil aon uachtar reoite agaibh i bhur gcuisneoir?
 <S>[Ii]</S> [Bb]hur:BACHOIR{in bhur}
 # CB p.20 Note
+#. An bhfuil aon uachtar reoite agat i dhá chuisneoir?
 <S>[Ii]</S> [Dd]há:BACHOIR{in dhá}
 # CB p.6 #2
+#. An bhfuil aon uachtar reoite agat i an chuisneoir?
 <S>[Ii]</S> [Aa]n:BACHOIR{sa}
+# CB p.6 #2
+#. An bhfuil aon uachtar reoite agat i na cuisneoirí?
 <S>[Ii]</S> [Nn]a:BACHOIR{sna}
 # CB p.84 #8, p.132 #2
+#. An bhfuil aon uachtar reoite i a cuisneoir?
 <S>[Ii]</S> a:BACHOIR{ina}
 # CB p.132 #2
+#. Rinne gach cine é sin sna cathracha i ar lonnaíodar.
 <S>[Ii]</S> ar:BACHOIR{inar}
 # CB p.84 #8
+#. An bhfuil aon uachtar reoite i ár gcuisneoir?
 <S>[Ii]</S> ár:BACHOIR{inár}
 # CB p.84 #8 keep before following
 <D>[Ii]nár</D> dhá <N>UNECLIPSED</N>:URU
 # CB p.84 #8
+#. Tá beirfean inár craiceann faoi mar a bheimis i sorn.
 <D>[Ii]nár</D> UNECLIPSED:URU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 <S>[Ii]onsar</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
 <S>[Ii]onsar</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.14 Note
+#. Is tuar dóchais é an méid dul chun cinn atá déanta le bhlianta beaga.
 <S>[Ll]e</S> <N>LENITED</N>:NISEIMHIU
 # CB p.6 #2, converse handled by aonchiall  (leis +<[^T]> => <O>leis</O>)
+#. D'fhéadfadh tábhacht a bheith ag baint le an gcéad toisc díobh sin.
 <S>[Ll]e</S> <T>an</T>:BACHOIR{leis an}
+#. Molann an Coimisiún go maoineofaí scéim chun tacú le na pobail sin.
 <S>[Ll]e</S> <T>na</T>:BACHOIR{leis na}
 # CB p.84 #8, p.132 #2
+#. Labhraíodh gach duine an fhírinne le a chomharsa.
 <S>[Ll]e</S> a:BACHOIR{lena}
 # CB p.132 #2
+#. Beir i do láimh ar an tslat le ar bhuail tú an abhainn, agus seo leat.
 <S>[Ll]e</S> ar:BACHOIR{lenar}
 # CB p.84 #8
+#. Ba mhaith liom buíochas a ghlacadh le ár bhfoireann riaracháin.
 <S>[Ll]e</S> ár:BACHOIR{lenár}
 # CB p.24 #11.a.v (N) #11.b.ii (A) #11.c (P), LGG p.112-113
+#. Tógann siad cuid de le iad féin a théamh.
 <S>[Ll]e</S> INITIALVOWEL:PREFIXH
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
+#. Tá do scrios chomh leathan leis an farraige.
 <S>[Ll]eis</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
 <S>[Ll]eis</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.84 #8 keep before following
 <D>[Ll]enár</D> dhá <N>UNECLIPSED</N>:URU
 # CB p.84 #8
+#. Is linne í ar ndóigh agus lenár clann.
 <D>[Ll]enár</D> UNECLIPSED:URU
 # CB p.19 #13, p.133 #9
+#. Má tugann rí breith ar na boicht le cothromas, bunófar a ríchathaoir go brách.
 <C>[Mm]á</C> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
 # CB p.13 #4.a
+#. Roghnaítear an bhliain 1961 mar pointe tosaigh don anailís.
 <S>[Mm]ar</S> <N>UNLENITED</N>:SEIMHIU
 # CB p.5 #17
+#. Comhlíon mo aitheanta agus mairfidh tú beo.
 <D>[Mm]o</D> INITIALVOWELORF:BACHOIR{m+uaschamóg}
 # CB p.12 #3.a
+#. Ceapadh mise i mo bolscaire.
 <D>[Mm]o</D> UNLENITED:SEIMHIU
 # CB p.13 #3.d
+#. Bhuail mé mo dhá bos ar a chéile.
 <D>[Mm]o</D> dhá UNLENITED:SEIMHIU
 # CB p.22 #7.f, p.132 #4
+#. Mura tagann aon duine i gcabhair orainn, rachaimid anonn chugaibh.
 <C>[Mm]ura</C> <V>UNECLIPSED</V>:URU
 # CB p.14 Note
 <C>[Mm]urach</C> <N>LENITED</N>:NISEIMHIU
 # CB p.19 #13, p.132 #5
+#. Murar cruthaigh mise lá agus oíche... teilgim uaim sliocht Iacóib.
 <C>[Mm]urar</C> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
 # CB p.21 #2.b
+#. An bhfuil aon uachtar reoite ag fear na bád?
 <T>na</T> <NGP>UNECLIPSED</NGP>:URU
 # CB p.24 #11.a.vi, LGG p.112
+#. Is mór ag náisiún na Éireann a choibhneas speisialta le daoine de bhunadh na hÉireann atá ina gcónaí ar an gcoigríoch.
 <T>na</T> <NFGS>INITIALVOWEL</NFGS>:PREFIXH
 # CB p.24 #11.a.vii (eclipsis in genitive plural, rule above), LGG p.112
+#. Chuir an Coimisiún féin comhfhreagras chuig na eagraíochtaí seo ag lorg eolais faoina ngníomhaíochtaí.
 <T>na</T> <NCP>INITIALVOWEL</NCP>:PREFIXH
 # CB p.24 #11.d
+#. Ná iompaígí chun na n-íol, agus ná dealbhaígí déithe de mhiotal.
 [Nn]á <V>INITIALVOWEL</V>:PREFIXH
 # CB p.14 Note
+#. Is fearr de bhéile luibheanna agus grá leo ná mhart méith agus gráin leis.
 [Nn]á <N>LENITED</N>:NISEIMHIU
 # CB p.22 #7.e
+#. Nach bainfidh mé uaidh an méid a ghoid sé uaim?
 [Nn]ach <V>UNECLIPSED</V>:URU
 # CB p.20 #1.c
+#. Rinneadh an roinnt don naoi treibh go leith ar cranna.
 <[^Y]>[Nn]aoi</[^Y]> <N>UNECLIPSED</N>:URU
 # CB p.16 #8.c
+#. Tháinig na bróga chomh fada siar le haimsir Naomh Phádraig féin.
 <N>Naomh</N> CAPITALLENITED:NISEIMHIU
 # CB p.16 #7 (N), p.18 #10 (A), p.19 #13 (V), p.132 #5
+#. Nár breá liom claíomh a bheith agam i mo ghlac!
 [Nn]ár <[AN]>UNLENITED</[AN]>:SEIMHIU
+#. Nár freagair sé thú, focal ar fhocal.
 [Nn]ár <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
 # CB p.16 #7 (N), p.18 #10 (A)
+#. Feicimid gur de dheasca a n-easumhlaíochta nárbh féidir leo dul isteach ann.
 <V>[Nn]árbh</V> UNLENITEDF:SEIMHIU
 # CB p.19 #13, p.132 #4 (aut. too)
+#. Ní féadfaidh a gcuid airgid ná óir iad a shábháil.
 <U>[Nn]í</U> <V>UNLENITED</V>:SEIMHIU
 # CB p.24 #11.c
+#. Ní iad sin do phíopaí ar an tábla!
 <V>[Nn]í</V> <P>INITIALVOWEL</P>:PREFIXH
 # CB pp.70-71
+#. Bhí an méid sin airgid níba luachmhar dúinn ná maoin an domhain.
 <R>[Nn]íba?</R> <ACS>ANYTHING</ACS>:BREISCHEIM
 <R>[Nn]íba?</R> <AMGS>ANYTHING</AMGS>:BREISCHEIM
+#. Eisean beagán níb óga ná mise.
 <R>[Nn]íba?</R> <AP>ANYTHING</AP>:BREISCHEIM
 <R>[Nn]íba?</R> <[^A]>ANYTHING</[^A]>:BREISCHEIM
+#. Eisean beagán níba óige ná mise.
 <R>[Nn]íba</R> <AFGS>INITIALVOWELORF</AFGS>:BACHOIR{níb}
+#. Bhí na páistí ag éirí níba tréine.
 <R>[Nn]íba</R> <AFGS>UNLENITED</AFGS>:SEIMHIU
 # CB p.16 #7 (N), p.18 #10 (A), p.19 #13 (V), p.132 #5
+#. Níor gá do dheoraí riamh codladh sa tsráid; Bhí mo dhoras riamh ar leathadh.
 [Nn]íor <[AN]>UNLENITED</[AN]>:SEIMHIU
+#. Níor bain sé leis an dream a bhí i gcogar ceilge.
 [Nn]íor <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
 # CB p.16 #7 (N), p.18 #10 (A)
+#. Níorbh foláir dó éisteacht a thabhairt dom.
 <V>[Nn]íorbh</V> UNLENITEDF:SEIMHIU
 # CB pp.70-71
 <R>[Nn]íos</R> <ACS>ANYTHING</ACS>:BREISCHEIM
@@ -319,93 +450,131 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 <R>[Nn]íos</R> <AP>ANYTHING</AP>:BREISCHEIM
 <R>[Nn]íos</R> <[^A]>ANYTHING</[^A]>:BREISCHEIM
 # CB p.13 #4.a
+#. Tabhair an t-ordú seo leanas ó béal.
 <S>[Óó]</S> <N>UNLENITED</N>:SEIMHIU
 # CB p.6 #2
+#. Bíodh bhur ngrá saor ó an gcur i gcéill.
 <S>[Óó]</S> <T>an</T>:BACHOIR{ón}
 # CB p.20 #1.c
+#. Bhí ocht tábla ar fad ar a maraídís na híobairtí.
 [Oo]cht <N>UNECLIPSED</N>:URU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
+#. Bíodh bhur ngrá saor ón cur i gcéill.
 <S>[Óó]n</S> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
 <S>[Óó]n</S> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.84 #8, p.132 #2
+#. Amharcann sé ó a ionad cónaithe ar gach aon neach dá maireann ar talamh.
 <S>[Óó]n?</S> a:BACHOIR{óna}
 # CB p.132 #2
+#. Seo iad a gcéimeanna de réir na n-áiteanna ó ar thosaíodar.
 <S>[Óó]n?</S> ar:BACHOIR{ónar}
 # CB p.84 #8
+#. Agus rinne sé ár bhfuascailt ó ár naimhde.
 <S>[Óó]n?</S> ár:BACHOIR{ónár}
 # CB p.84 #8 keep before following
 <D>[Óó]nár</D> dhá <N>UNECLIPSED</N>:URU
 # CB p.84 #8
+#. Bhíodh súil in airde againn ónár túir faire.
 <D>[Óó]nár</D> UNECLIPSED:URU
 # CB p.14 Note
+#. Tá do ghéaga spréite ar bhraillín ghléigeal os fharraige faoileán.
 [Oo]s <N>LENITED</N>:NISEIMHIU
 # OD pé
+#. Uaidh féin, b'fhéidir, pé é féin.
 <P>[Pp]é</P> <P>INITIALVOWEL</P>:PREFIXH
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
+#. Agus tháinig scéin air roimh an pobal seo ar a líonmhaire.
 <S>[Rr]oimh</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
 <S>[Rr]oimh</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.13 #4.a
+#. Is gaiste é eagla roimh daoine.
 <S>[Rr]oimh</S> <N>UNLENITED</N>:SEIMHIU
 # CB p.12 #1.c.i
+#. An bhfuil aon uachtar reoite agat sa cuisneoir?
 <S>[Ss]a</S> UNLENITEDBCGMP:SEIMHIU
 # CB p.23 #9 (implicit article)
+#. An bhfuil aon uachtar reoite agat sa seamair?
+#. An bhfuil aon uachtar reoite agat sa scoil (OK)?
+#. An bhfuil aon uachtar reoite agat sa samhradh (OK)?
 <S>[Ss]a</S> <NFCS>INITIALS</NFCS>:PREFIXT
 # CB p.17 #9.g
 <S>[Ss]an?</S> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.16 #8.c
+#. Tá sé bráthair de chuid Ord San Phroinsias.
 <N>San</N> LENITED:NISEIMHIU
 # CB p.12 #1.c.i
+#. San fásach cuirfidh mé crainn chéadrais.
+#. An bhfuil aon uachtar reoite agat san foraois?
 <S>[Ss]an</S> UNLENITEDF:SEIMHIU
 # CB p.6 #2 <=>
+#. An bhfuil aon uachtar reoite agat sa oighear?
 <S>[Ss]a</S> INITIALVOWELORF:BACHOIR{san}
+#. Tugaimid faoi abhainn na Sionainne san bhád locha ó Ros Comáin.
 <S>[Ss]an</S> NONVOWELNONF:BACHOIR{sa}
 # CB p.24 #11.a.x
+#. Anois i ndeireadh an tséasúir bhí sé uaire d'oíche ann.
 [Ss]é uaire?:BACHOIR{huaire}
 # CB p.13 #3.f
+#. Céard atá ann ná sé cathaoirleach coiste.
 <A>[Ss]é</A> <NCS>UNLENITED</NCS>:SEIMHIU
 # CB p.14 Note
+#. Cuireadh boscaí ticeála isteach seachas bhoscaí le freagraí a scríobh isteach.
 <S>[Ss]eachas</S> <N>LENITED</N>:NISEIMHIU
 # CB p.22 #8.a, also CB p.134 #1.a
 <S>[Ss]eachas</S> <T>an</T> <NMCS>INITIALVOWEL</NMCS>:PREFIXT
 # CB p.20 #1.c
+#. Tá seacht lampa air agus seacht píopa ar gach ceann díobh.
 [Ss]eacht <N>UNECLIPSED</N>:URU
 # CB p.24 #11.a.vii (implicitly)
+#. Tá ar a laghad ceithre ní sa litir a chuir scaoll sna oifigigh.
 <S>[Ss]na</S> <NCP>INITIALVOWEL</NCP>:PREFIXH
 # CB p.22 #7.g, p.132 #4
+#. Iompróidh siad thú lena lámha sula bhuailfeá do chos in aghaidh cloiche.
 <C>[Ss]ula</C> UNECLIPSED:URU
 # CB p.19 #13, p.132 #5
+#. Ach sular sroich sé, dúirt sí: "Dúnaigí an doras air!"
 <C>[Ss]ular</C> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
+#. Chuir iad ina suí mar a raibh onóir acu thar an cuid eile a fuair cuireadh.
 [Tt]har <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
 <S>[Tt]har</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.24 #11.a.x
+#. Timpeall trí uaire a chloig ina dhiaidh sin tháinig an bhean isteach.
 [Tt]rí uaire?:BACHOIR{huaire}
 # CB p.84 #8 <D>a</D>, p.132 #2 <S>a</D>
+#. Scríobhaim chugaibh mar gur maitheadh daoibh bhur bpeacaí trí a ainm.
 <S>[Tt]rí</S> <[^U]>a</[^U]>:BACHOIR{trína}
 # CB p.132 #2
+#. Ní fhillfidh siad ar an ngeata trí ar ghabh siad isteach.
 <S>[Tt]rí</S> <S>ar</S>:BACHOIR{trínar}
 # CB p.6 #2, converse done via aonchiall (tríd <[^T]> -> <O>), "tríd na" below
+#. Beirimid an bua go caithréimeach trí an té úd a thug grá dúinn.
 <S>[Tt]rí</S> <T>an</T>:BACHOIR{tríd an}
 # CB p.84 #8
+#. Coinníodh lenár sála sa chaoi nárbh fhéidir siúl trí ár sráideanna.
 <S>[Tt]rí</S> <D>ár</D>:BACHOIR{trínár}
 # CB p.13 #3.f (<A>trí</A>) p.13 #4.a (<S>trí</S>)
+#. Gabhfaidh siad trí muir na hÉigipte.
 [Tt]rí <NCS>UNLENITED</NCS>:SEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 <S>[Tt]ríd</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.6 #2 _singular_ article only; corpus
+#. Feidhmeoidh an ciste coimisiúnaithe tríd na foilsitheoirí go príomha.
 <S>[Tt]ríd</S> <T>na</T>:BACHOIR{trí na}
 # CB p.17 #9.h
 <S>[Tt]ríd</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.84 #8 keep before following
 <D>[Tt]rínár</D> dhá <N>UNECLIPSED</N>:URU
 # CB p.84 #8
+#. Mar trínár peacaí, tá do phobal ina ábhar gáire ag cách máguaird orainn.
 <D>[Tt]rínár</D> UNECLIPSED:URU
 # CB p.13 #3.b  (needs shallow parse)
 #[Uu]ile <N>UNLENITED</N>:SEIMHIU
 # CB p.13 #4.a
+#. Idir dhá sholas, um tráthnóna, faoi choim na hoíche agus sa dorchadas.
 <S>[Uu]m</S> <N>UNLENITED</N>:SEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 <S>[Uu]m</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
@@ -439,3 +608,7 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 <AP>ANYTHING</AP> <AFGS>NOBEEAPOST</AFGS>:CUPLA
 <AFGS>ANYTHING</AFGS> <AP>ANYTHING</AP>:CUPLA
 <ACS>ANYTHING</ACS> <AFGS>ANYTHING</AFGS>:CUPLA
+#. Tá sé-- tá sé- mo ---shin-seanathair (OK).
+#  this tests that the tokenizer handles hyphens correctly.
+#. 23. IV.  Is abairt í seo le giorrúcháin, cf. Dr. Scannell, Jr. agus m.sh. Caoimhín Ó Scanaill, T. D. atá i gceanas faoi réir m. sh. VIII, ceart go leor?
+#  this tests the segmentation module.
