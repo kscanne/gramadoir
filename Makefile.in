@@ -17,6 +17,7 @@ exec_prefix = $(prefix)
 bindir = $(exec_prefix)/bin
 libexecdir = $(exec_prefix)/libexec
 datadir = $(prefix)/share
+localedir = $(datadir)/locale
 PACKAGE_NAME = @PACKAGE_NAME@
 TARBALL = @PACKAGE_TARNAME@
 pkgdatadir = $(datadir)/$(PACKAGE_NAME)
@@ -26,7 +27,7 @@ INSTALL_PROGRAM = @INSTALL@
 AWK = @AWK@
 CC = @CC@
 CFLAGS = @CFLAGS@
-DEFS = @DEFS@
+DEFS = -DLOCALEDIR=\"$(localedir)\" @DEFS@
 ECHO = echo
 EGREP = @EGREP@
 LEX = @LEX@
@@ -118,7 +119,7 @@ semiclean :
 
 webhome = $(HOME)/public_html/$(PACKAGE_NAME)
 
-installweb :
+installhtml :
 	$(INSTALL_DATA) cuidiu.html $(webhome)
 	$(INSTALL_DATA) foirm.html $(webhome)
 	$(INSTALL_DATA) index.html $(webhome)
@@ -126,6 +127,10 @@ installweb :
 	$(INSTALL_DATA) sios.html $(webhome)
 	$(INSTALL_DATA) sonrai.html $(webhome)
 	$(INSTALL_DATA) sampla.html $(webhome)
+
+installweb :
+	$(MAKE) installhtml
+	$(MAKE) neamhshuim
 	$(INSTALL_DATA) gramadoir.dtd $(webhome)/../dtds
 	$(INSTALL_DATA) $(HOME)/.neamhshuim $(pkgdatadir)/Neamhshuim
 	runchoip
@@ -139,7 +144,8 @@ maintainer-clean :
 
 dist : FORCE
 	$(LN_S) gr ../$(TARBALL)
-	tar cvhf $(TARBALL).tar -C .. $(TARBALL)/aonchiall.in
+	tar cvhf $(TARBALL).tar -C .. $(TARBALL)/ABOUT-NLS
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/aonchiall.in
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/aonchiall.meta.sed
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/cabhair.c
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/configure
