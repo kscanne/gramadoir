@@ -3,7 +3,7 @@
 <E offset="24" fromy="3" fromx="24" toy="3" tox="28" sentence="Tabhair go leor leor de na na rudaí seo do do chara, a Chaoimhín." errortext="na na" msg="Focal céanna faoi dhó">
 <E offset="45" fromy="4" fromx="45" toy="4" tox="51" sentence="Chuaigh sí in olcas ina dhiaidh sin agus bhí an-imní orthu." errortext="an-imní" msg="Focal anaithnid ach bunaithe ar /imní/ is dócha">
 <E offset="20" fromy="5" fromx="20" toy="5" tox="35" sentence="Tharla sé seo ar lá an-mífheiliúnach, an Déardaoin." errortext="an-mífheiliúnach" msg="Bunaithe go mícheart ar an bhfréamh /mífheiliúnach/">
-<E offset="24" fromy="6" fromx="24" toy="6" tox="37" sentence="Ní maith liom na daoine míintleachtúla." errortext="míintleachtúla" msg="Bunaithe go mícheart ar an bhfréamh /intleachtúla (intleachtaí)/">
+<E offset="24" fromy="6" fromx="24" toy="6" tox="37" sentence="Ní maith liom na daoine míintleachtúla." errortext="míintleachtúla" msg="Bunaithe go mícheart ar an bhfréamh /intleachtúla (intleachtacha, intleachtaí)/">
 <E offset="4" fromy="7" fromx="4" toy="7" tox="17" sentence="Trí chomhtharlúint, bhí siad sa tuaisceart ag an am." errortext="chomhtharlúint" msg="Bunaithe ar foirm neamhchaighdeánach de /tharlú/">
 <E offset="24" fromy="8" fromx="24" toy="8" tox="28" sentence="Sílim nárbh ea, agus is docha nach bhfuil i gceist ach easpa smaoinimh." errortext="docha" msg="An raibh /dócha/ ar intinn agat?">
 <E offset="87" fromy="9" fromx="87" toy="9" tox="91" sentence="Tá súil le feabhas nuair a thosóidh airgead ag teacht isteach ó ola agus gás i mBearna Timor." errortext="Timor" msg="An raibh /Tíomór/ ar intinn agat?">
