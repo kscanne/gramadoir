@@ -49,7 +49,7 @@ all : allperl cuardach gr
 cuardach : cuardach.o
 	$(CC) -o cuardach $(CFLAGS) cuardach.o
 	
-cuardach.o : cuardach.c
+cuardach.o : cuardach.c gettext.h
 	$(CC) -c $(CFLAGS) $(DEFS) -DBSONRAI=\"$(pkgdatadir)\" cuardach.c
 
 .in.pl :
@@ -168,6 +168,7 @@ dist : FORCE
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/eile.bs
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/eisceacht.meta.sed
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/focail.bs
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gettext.h
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gin.meta.sed
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gr.in
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gramadoir.dtd
@@ -220,19 +221,19 @@ eisceacht.y : ponc.in.y
 rialacha.y : ponc.in.y
 	cat ponc.in.y | sed "s/_TAIL_MACRO_/result/; s/_RESULT_MACRO_/MESSAGE | MESSAGEPLUS MESSAGEARG/" > rialacha.y
 
-aparser : aonchiall.y ponc.in.l
+aparser : aonchiall.y ponc.in.l gettext.h
 	$(LEX) ponc.in.l
 	$(YACC) -d aonchiall.y
 	$(CC) -c $(CFLAGS) $(DEFS) $(LEX_OUTPUT_ROOT).c y.tab.c
 	$(CC) -o aparser $(CFLAGS) $(LEX_OUTPUT_ROOT).o y.tab.o $(LEXLIB)
 
-eparser : eisceacht.y ponc.in.l
+eparser : eisceacht.y ponc.in.l gettext.h
 	$(LEX) ponc.in.l
 	$(YACC) -d eisceacht.y
 	$(CC) -c $(CFLAGS) $(DEFS) $(LEX_OUTPUT_ROOT).c y.tab.c
 	$(CC) -o eparser $(CFLAGS) $(LEX_OUTPUT_ROOT).o y.tab.o $(LEXLIB)
 
-rparser : rialacha.y ponc.in.l
+rparser : rialacha.y ponc.in.l gettext.h
 	$(LEX) ponc.in.l
 	$(YACC) -d rialacha.y
 	$(CC) -c $(CFLAGS) $(DEFS) $(LEX_OUTPUT_ROOT).c y.tab.c

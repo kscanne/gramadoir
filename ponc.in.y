@@ -1,8 +1,7 @@
 %{
 /* Grammar for the three *.in data files */
 #include <stdio.h>
-#include <locale.h>
-#include <libintl.h>
+#include "gettext.h"
 int lineno = 1;
 int errors = 0;
 int rules = 0;
