@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramadoir 0.5\n"
 "Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
-"POT-Creation-Date: 2004-08-17 23:07-0500\n"
-"PO-Revision-Date: 2004-07-28 15:58-0500\n"
+"POT-Creation-Date: 2004-08-25 11:22-0500\n"
+"PO-Revision-Date: 2004-08-25 10:36-0500\n"
 "Last-Translator: Kevin Patrick Scannell <scannell@SLU.EDU>\n"
 "Language-Team: Irish <ga@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -59,7 +59,7 @@ msgstr "ní cheadaítear argóint i ndiaidh an rogha %s"
 msgid "error parsing command-line options"
 msgstr "earráid agus roghanna líne na n-orduithe á miondealú"
 
-#: gram.pl:177 gramdev.pl:91
+#: gram.pl:177
 #, perl-format
 msgid "Language %s is not supported."
 msgstr "Níl an teanga %s ar fáil."
@@ -67,23 +67,23 @@ msgstr "Níl an teanga %s ar fáil."
 #. TRANSLATORS: Please leave untranslated, but add an acute accent to the
 #. "o" in "Gramadoir" if available in your character set and encoding.
 #. If you must translate, this is the Irish for (literally) "The Grammarian"
-#: gram.pl:182 gram.pl:242 gramdev.pl:96 gramdev.pl:129 Gramadoir.pm.in:119
+#: gram.pl:182 gram.pl:242 gramdev.pl:93 gramdev.pl:118 Gramadoir.pm.in:119
 #: Gramadoir.pm.in:147 Gramadoir.pm.in:243 Gramadoir.pm.in:257
 #: Gramadoir.pm.in:264
 msgid "An Gramadoir"
 msgstr "An Gramadóir"
 
-#: gram.pl:183 gramdev.pl:97
+#: gram.pl:183 gramdev.pl:94
 #, perl-format
 msgid "Try %s for more information."
 msgstr "Bain triail as %s chun tuilleadh eolais a fháil."
 
-#: gram.pl:245 gramdev.pl:132
+#: gram.pl:245 gramdev.pl:151
 #, perl-format
 msgid "version %s"
 msgstr "leagan %s"
 
-#: gram.pl:247 gramdev.pl:134
+#: gram.pl:247 gramdev.pl:153
 msgid ""
 "This is free software; see the source for copying conditions.  There is NO"
 "\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
@@ -108,7 +108,7 @@ msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
 msgstr ""
 "    --iomlan       taispeáin gach earráid (.i. ná húsáid ~/.neamhshuim)"
 
-#: gram.pl:271 gramdev.pl:142
+#: gram.pl:271
 msgid ""
 "    --ionchod=ENC  specify the character encoding of the text to be checked"
 msgstr "    --ionchod=CÓD  socraigh an t-ionchódú den téacs le seiceáil"
@@ -117,7 +117,7 @@ msgstr "    --ionchod=CÓD  socraigh an t-ionchódú den téacs le seiceáil"
 msgid "    --aschod=ENC   specify the character encoding for output"
 msgstr "    --aschod=CÓD   socraigh an t-ionchódú le haschur"
 
-#: gram.pl:277 gramdev.pl:145
+#: gram.pl:277
 msgid "    --comheadan=xx choose the language for error messages"
 msgstr "    --comheadan=xx socraigh an teanga de na teachtaireachtaí"
 
@@ -138,11 +138,11 @@ msgstr "    --aspell       mol ceartúcháin d'fhocail mílitrithe"
 msgid "    --aschur=FILE  write output to FILE"
 msgstr "    --aschur=COMHAD scríobh aschur chuig COMHAD"
 
-#: gram.pl:292 gramdev.pl:148
+#: gram.pl:292 gramdev.pl:133
 msgid "    --help         display this help and exit"
 msgstr "    --help         taispeáin an chabhair seo agus éirigh as"
 
-#: gram.pl:295 gramdev.pl:151
+#: gram.pl:295 gramdev.pl:136
 msgid "    --version      output version information and exit"
 msgstr "    --version      taispeáin eolas faoin leagan agus éirigh as"
 
@@ -173,11 +173,11 @@ msgstr ""
 "    --xml          scríobh sruth XML chuig aschur caighdeánach, chun "
 "dífhabhtú"
 
-#: gram.pl:317 gramdev.pl:162
+#: gram.pl:317 gramdev.pl:139
 msgid "If no file is given, read from standard input."
 msgstr "Mura bhfuil comhad ann, léigh ón ionchur caighdeánach."
 
-#: gram.pl:320 gramdev.pl:165
+#: gram.pl:320 gramdev.pl:142
 #, perl-format
 msgid "Send bug reports to <%s>."
 msgstr "Seol tuairiscí fabhtanna chuig <%s>."
@@ -204,18 +204,18 @@ msgstr "%s: rabhadh: fadhb ag dúnadh %s\n"
 msgid "Currently checking %s"
 msgstr "Ag seiceáil %s"
 
-#: gramdev.pl:154
+#: gramdev.pl:125
 msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
 msgstr "    --ilchiall     taispeáin focail ilchiallacha, de réir minicíochta"
 
-#: gramdev.pl:157
+#: gramdev.pl:128
 msgid ""
 "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
 msgstr ""
 "    --minic        taispeáin gach clib de réir minicíochta (do unigram-xx."
 "txt)"
 
-#: gramdev.pl:159
+#: gramdev.pl:130
 msgid ""
 "    --brill        find disambiguation rules via Brill's unsupervised "
 "algorithm"

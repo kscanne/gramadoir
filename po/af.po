@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramadoir 0.4\n"
 "Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
-"POT-Creation-Date: 2004-08-17 23:07-0500\n"
+"POT-Creation-Date: 2004-08-25 11:22-0500\n"
 "PO-Revision-Date: 2004-03-02 16:38+0200\n"
 "Last-Translator: Petri Jooste <rkwjpj@puk.ac.za>\n"
 "Language-Team: Afrikaans <i18n@af.org.za>\n"
@@ -53,7 +53,7 @@ msgstr "opsie %s laat nie 'n parameter toe nie"
 msgid "error parsing command-line options"
 msgstr ""
 
-#: gram.pl:177 gramdev.pl:91
+#: gram.pl:177
 #, perl-format
 msgid "Language %s is not supported."
 msgstr "Taal %s word nie ondersteun nie."
@@ -61,23 +61,23 @@ msgstr "Taal %s word nie ondersteun nie."
 #. TRANSLATORS: Please leave untranslated, but add an acute accent to the
 #. "o" in "Gramadoir" if available in your character set and encoding.
 #. If you must translate, this is the Irish for (literally) "The Grammarian"
-#: gram.pl:182 gram.pl:242 gramdev.pl:96 gramdev.pl:129 Gramadoir.pm.in:119
+#: gram.pl:182 gram.pl:242 gramdev.pl:93 gramdev.pl:118 Gramadoir.pm.in:119
 #: Gramadoir.pm.in:147 Gramadoir.pm.in:243 Gramadoir.pm.in:257
 #: Gramadoir.pm.in:264
 msgid "An Gramadoir"
 msgstr "An Gramadóir"
 
-#: gram.pl:183 gramdev.pl:97
+#: gram.pl:183 gramdev.pl:94
 #, perl-format
 msgid "Try %s for more information."
 msgstr "Probeer %s vir meer inligting."
 
-#: gram.pl:245 gramdev.pl:132
+#: gram.pl:245 gramdev.pl:151
 #, perl-format
 msgid "version %s"
 msgstr "weergawe %s"
 
-#: gram.pl:247 gramdev.pl:134
+#: gram.pl:247 gramdev.pl:153
 msgid ""
 "This is free software; see the source for copying conditions.  There is NO"
 "\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
@@ -101,7 +101,7 @@ msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
 msgstr ""
 "    --iomlan       wys alle foute (d.w.s. ignoreer die lêer ~/.neamhshuim)"
 
-#: gram.pl:271 gramdev.pl:142
+#: gram.pl:271
 msgid ""
 "    --ionchod=ENC  specify the character encoding of the text to be checked"
 msgstr ""
@@ -112,7 +112,7 @@ msgstr ""
 msgid "    --aschod=ENC   specify the character encoding for output"
 msgstr ""
 
-#: gram.pl:277 gramdev.pl:145
+#: gram.pl:277
 msgid "    --comheadan=xx choose the language for error messages"
 msgstr ""
 
@@ -132,11 +132,11 @@ msgstr "    --aspell       maak suggesties vir spelfoute"
 msgid "    --aschur=FILE  write output to FILE"
 msgstr ""
 
-#: gram.pl:292 gramdev.pl:148
+#: gram.pl:292 gramdev.pl:133
 msgid "    --help         display this help and exit"
 msgstr "    --help         wys hierdie hulpteks en stop"
 
-#: gram.pl:295 gramdev.pl:151
+#: gram.pl:295 gramdev.pl:136
 msgid "    --version      output version information and exit"
 msgstr "    --version      wys weergawe-inligting en stop"
 
@@ -168,11 +168,11 @@ msgstr ""
 "    --xml          skryf die XML-stroom met merkers na standaardafvoer, vir "
 "ontfouting"
 
-#: gram.pl:317 gramdev.pl:162
+#: gram.pl:317 gramdev.pl:139
 msgid "If no file is given, read from standard input."
 msgstr "As geen lêer gegee is nie, lees van standaardtoevoer"
 
-#: gram.pl:320 gramdev.pl:165
+#: gram.pl:320 gramdev.pl:142
 #, perl-format
 msgid "Send bug reports to <%s>."
 msgstr "Stuur foutverslae aan <%s>."
@@ -199,20 +199,20 @@ msgstr "%s: waarskuwing: problem met toemaak van %s\n"
 msgid "Currently checking %s"
 msgstr "%s word tans nagegaan"
 
-#: gramdev.pl:154
+#: gramdev.pl:125
 msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
 msgstr ""
 "    --ilchiall     wys onopgeloste dubbelsinnighede, gesorteer volgens "
 "frekwensie"
 
-#: gramdev.pl:157
+#: gramdev.pl:128
 msgid ""
 "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
 msgstr ""
 "    --minic        wys alle merkers, gesorteer volgens frekwensie (vir "
 "unigram-xx.txt)"
 
-#: gramdev.pl:159
+#: gramdev.pl:130
 msgid ""
 "    --brill        find disambiguation rules via Brill's unsupervised "
 "algorithm"

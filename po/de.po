@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramadoir 0.4\n"
 "Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
-"POT-Creation-Date: 2004-08-17 23:07-0500\n"
+"POT-Creation-Date: 2004-08-25 11:22-0500\n"
 "PO-Revision-Date: 2004-03-28 22:28+0100\n"
 "Last-Translator: Roland Illig <roland.illig@gmx.de>\n"
 "Language-Team: German <de@li.org>\n"
@@ -56,7 +56,7 @@ msgstr "Ein Argument ist bei der Option %s nicht erlaubt"
 msgid "error parsing command-line options"
 msgstr ""
 
-#: gram.pl:177 gramdev.pl:91
+#: gram.pl:177
 #, perl-format
 msgid "Language %s is not supported."
 msgstr "Die Sprache %s wird nicht unterstützt."
@@ -64,23 +64,23 @@ msgstr "Die Sprache %s wird nicht unterstützt."
 #. TRANSLATORS: Please leave untranslated, but add an acute accent to the
 #. "o" in "Gramadoir" if available in your character set and encoding.
 #. If you must translate, this is the Irish for (literally) "The Grammarian"
-#: gram.pl:182 gram.pl:242 gramdev.pl:96 gramdev.pl:129 Gramadoir.pm.in:119
+#: gram.pl:182 gram.pl:242 gramdev.pl:93 gramdev.pl:118 Gramadoir.pm.in:119
 #: Gramadoir.pm.in:147 Gramadoir.pm.in:243 Gramadoir.pm.in:257
 #: Gramadoir.pm.in:264
 msgid "An Gramadoir"
 msgstr "An Gramadóir"
 
-#: gram.pl:183 gramdev.pl:97
+#: gram.pl:183 gramdev.pl:94
 #, perl-format
 msgid "Try %s for more information."
 msgstr "%s eingeben, um weitere Informationen zu erhalten."
 
-#: gram.pl:245 gramdev.pl:132
+#: gram.pl:245 gramdev.pl:151
 #, perl-format
 msgid "version %s"
 msgstr "Version %s"
 
-#: gram.pl:247 gramdev.pl:134
+#: gram.pl:247 gramdev.pl:153
 msgid ""
 "This is free software; see the source for copying conditions.  There is NO"
 "\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
@@ -108,7 +108,7 @@ msgstr ""
 "    --iomlan       alle Fehler protokollieren; ~/.neamhshuim wird nicht "
 "gelesen"
 
-#: gram.pl:271 gramdev.pl:142
+#: gram.pl:271
 msgid ""
 "    --ionchod=ENC  specify the character encoding of the text to be checked"
 msgstr "    --ionchod=ENC  Zeichensatz des zu überprüfenden Textes"
@@ -117,7 +117,7 @@ msgstr "    --ionchod=ENC  Zeichensatz des zu überprüfenden Textes"
 msgid "    --aschod=ENC   specify the character encoding for output"
 msgstr ""
 
-#: gram.pl:277 gramdev.pl:145
+#: gram.pl:277
 msgid "    --comheadan=xx choose the language for error messages"
 msgstr ""
 
@@ -138,11 +138,11 @@ msgstr "    --aspell       Rechtschreibkorrekturen vorschlagen"
 msgid "    --aschur=FILE  write output to FILE"
 msgstr ""
 
-#: gram.pl:292 gramdev.pl:148
+#: gram.pl:292 gramdev.pl:133
 msgid "    --help         display this help and exit"
 msgstr "    --help         diese Kurzanleitung anzeigen"
 
-#: gram.pl:295 gramdev.pl:151
+#: gram.pl:295 gramdev.pl:136
 msgid "    --version      output version information and exit"
 msgstr "    --version      Versionsnummer anzeigen"
 
@@ -170,12 +170,12 @@ msgid ""
 msgstr ""
 "    --xml          Ausgabe im XML-Format zu Zwecken der Fehlersuche erzeugen"
 
-#: gram.pl:317 gramdev.pl:162
+#: gram.pl:317 gramdev.pl:139
 msgid "If no file is given, read from standard input."
 msgstr ""
 "Falls keine Datei angegeben wird, wird von der Standardeingabe gelesen."
 
-#: gram.pl:320 gramdev.pl:165
+#: gram.pl:320 gramdev.pl:142
 #, perl-format
 msgid "Send bug reports to <%s>."
 msgstr ""
@@ -204,20 +204,20 @@ msgstr "%s: Warnung: Problem beim Schließen von %s\n"
 msgid "Currently checking %s"
 msgstr "%s wird gerade geprüft"
 
-#: gramdev.pl:154
+#: gramdev.pl:125
 msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
 msgstr ""
 "    --ilchiall     Nicht aufgelöste Mehrdeutigkeiten berichten, nach "
 "Häufigkeit sortiert"
 
-#: gramdev.pl:157
+#: gramdev.pl:128
 msgid ""
 "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
 msgstr ""
 "    --minic        Alle Tags nach Häufigkeit sortiert ausgeben (für unigram-"
 "xx.txt)"
 
-#: gramdev.pl:159
+#: gramdev.pl:130
 msgid ""
 "    --brill        find disambiguation rules via Brill's unsupervised "
 "algorithm"
