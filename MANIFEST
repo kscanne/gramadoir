@@ -5,6 +5,7 @@ lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/af.pm	Afrikaans localization
 lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/cy.pm	Welsh localization
 lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/de.pm	German localization
 lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/en_us.pm	English localization (default)
+lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/eo.pm	Esperanto localization
 lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/fr.pm	French localization
 lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/ga.pm	Irish localization
 lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/mn.pm	Mongolian localization
