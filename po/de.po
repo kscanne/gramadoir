@@ -1,0 +1,206 @@
+# Deutsche Übersetzungen für gramadoir
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gramadoir package.
+# Martin Gregory <martin.gregory@sas.com>, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramadoir 0.2-r1\n"
+"POT-Creation-Date: 2003-10-07 22:09+0100\n"
+"PO-Revision-Date: 2003-10-07 22:09+0100\n"
+"Last-Translator: Martin Gregory <martin.gregory@sas.com>\n"
+"Language-Team: German <de@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: cuardach.c:77 cuardach.c:96 cuardach.c:139
+#, c-format
+msgid "%s: out of memory\n"
+msgstr "%s: Arbeitsspeicher erschöpft\n"
+
+#: cuardach.c:86
+#, c-format
+msgid "%s: `eile.bs' corrupted at %s\n"
+msgstr "%s: `eile.bs' verfälscht bei %s\n"
+
+#: cuardach.c:109 cuardach.c:150 cuardach.c:215
+#, c-format
+msgid "%s: warning: check size of %s: %d?\n"
+msgstr "%s: Warnung: Größe von %s überprüfen: %d?\n"
+
+#: cuardach.c:114 cuardach.c:155 cuardach.c:221
+#, c-format
+msgid "%s: warning: problem closing %s\n"
+msgstr "%s: Warnung: Problem beim Schließen von %s\n"
+
+#: cuardach.c:344
+#, c-format
+msgid "%s: illegal grammatical code\n"
+msgstr "%s: ungültiger grammatische Code\n"
+
+#: cuardach.c:396
+#, c-format
+msgid "%s: no grammar codes\n"
+msgstr "%s: keine grammatische Codes\n"
+
+#: cuardach.c:624
+msgid "problem with the `cuardach' command\n"
+msgstr "Problem mit dem Befehl `cuardach'\n"
+
+#: cuardach.c:632
+#, c-format
+msgid "%s: problem reading the database\n"
+msgstr "%s: Problem beim Lesen der Datenbank\n"
+
+#: ponc.in.y:63
+#, c-format
+msgid "There was %d error.\n"
+msgid_plural "There were %d errors.\n"
+msgstr[0] "%d Fehler ist aufgetreten.\n"
+msgstr[1] "%d Fehler sind aufgetreten.\n"
+
+#: ponc.in.y:69
+#, c-format
+msgid "Successfully parsed %d rule.\n"
+msgid_plural "Successfully parsed %d rules.\n"
+msgstr[0] "%d grammatische Regel wurde erfolgreich analysiert.\n"
+msgstr[1] "%d grammatische Regeln wurden erfolgreich analysiert.\n"
+
+#: ponc.in.y:79
+#, c-format
+msgid "Line %d: %s\n"
+msgstr "Zeile %d: %s\n"
+
+#: gr.in:35
+msgid "An Gramadoir"
+msgstr "An Gramadóir"
+
+#: gr.in:36
+msgid "Currently checking %s"
+msgstr "%s wird geprüft"
+
+#: gr.in:37
+msgid "There is no such file."
+msgstr "Datei nicht vorhanden."
+
+#: gr.in:38
+msgid "Is a directory"
+msgstr "Ist ein Verzeichnis"
+
+#: gr.in:39
+msgid "Permission denied"
+msgstr "Zugriff nicht erlaubt"
+
+#: gr.in:40
+msgid "Usage: %s [OPTIONS] [FILES]"
+msgstr "Syntax: %s [OPTIONS] [FILES]"
+
+#: gr.in:41
+msgid "    --litriu       write misspelled words to standard output"
+msgstr "    --litriu       falsch geschriebene Wörter an Standardausgabe"
+
+#: gr.in:42
+msgid "    --html         produce HTML output for viewing in a web browser"
+msgstr "    --html         erzeugt Ausgabe in HTML-Format"
+
+#: gr.in:43
+msgid "    --xml          write tagged XML stream to standard output, for debugging"
+msgstr "    --xml          erzeugt Ausgabe in XML-Format, um Fehlersuche zu erleichtern"
+
+#: gr.in:44
+msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
+msgstr "    --iomlan       alle Fehler protokollieren; ~/.neamhshuim wird nicht gelesen"
+
+#: gr.in:45
+msgid "    --teanga=XX    specify the language of the text to be checked (default=ga)"
+msgstr "    --teanga=XX    Sprache des zu überprüfenden Textes (Voreinstellung=ga)"
+
+#: gr.in:46
+msgid "    --ionchod=ENC  specify the character encoding of the text to be checked"
+msgstr "    --ionchod=ENC  Zeichensatz des zu überprüfenden Textes"
+
+#: gr.in:47
+msgid "    --help         display this help and exit"
+msgstr "    --help         diese Kurzanleitung anziegen"
+
+#: gr.in:48
+msgid "    --version      output version information and exit"
+msgstr "    --version      Versionsnummer anzeigen"
+
+#: gr.in:49
+msgid "If no file is given, read from standard input."
+msgstr "Falls keine Datei angegeben wird, wird von der Standardeingabe gelesen."
+
+#: gr.in:50
+msgid "Send bug reports to <%s>."
+msgstr "Fehlermeldungen an <%s> schicken."
+
+#: gr.in:51
+msgid "version %s"
+msgstr "Version %s"
+
+#: gr.in:52
+msgid "This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law."
+msgstr "Dieses Programm is freie Software; die Bedingung unter denen Sie es kopieren\\ndürfen, finden Sie in dem Quellcode. Es ist OHNE IRGENDEINE GARANTIE, sogar\\nohne die implizite Garantie der MARKTREIFE oder der VERWENDBARKEIT FÜR EINEN BESTIMMTEN ZWECK."
+
+#: gr.in:53
+msgid "Try %s for more information."
+msgstr "%s eingeben, um weitere zu erhalten."
+
+#: gr.in:54
+msgid "unrecognized option %s"
+msgstr "unbekannte Option %s"
+
+#: gr.in:55
+msgid "option %s requires an argument"
+msgstr "Ein Argument ist bei der Option %s erforderlich"
+
+#: gr.in:56
+msgid "option %s does not allow an argument"
+msgstr "Ein Argument ist bei der Option %s nicht erlaubt"
+
+#: gr.in:57
+msgid "Language %s is not supported."
+msgstr "Die Sprache %s wird nicht unterstutzt."
+
+#: gr.in:58
+msgid "Unknown word (ignoring remainder in this sentence)"
+msgstr "Unbekanntes Wort (der Satz wird nicht weiter bearbeitet)"
+
+#: gr.in:59
+msgid "Unknown word"
+msgstr "Unbekanntes Wort"
+
+#: gr.in:60
+msgid "You should use \\/\\1\\/ here instead"
+msgstr "An dieser Stelle, sollst Du lieber \\/\\1\\/ benutzen"
+
+#: gr.in:61
+msgid "Non-standard form: perhaps use \\/\\1\\/?"
+msgstr "Nichtstandard Form: vielleicht sollst Du \\/\\1\\/ benutzen?"
+
+#: gr.in:62
+msgid "Initial mutation missing"
+msgstr "Veränderung am Anfang des Wortes fehlt"
+
+#: gr.in:63
+msgid "Unnecessary lenition"
+msgstr "Unnötige Lenierung"
+
+#: gr.in:64
+msgid "Prefix \\/h\\/ missing"
+msgstr "Präfix \\/h\\/ fehlt"
+
+#: gr.in:65
+msgid "Prefix \\/t\\/ missing"
+msgstr "Präfix \\/t\\/ fehlt"
+
+#: gr.in:66
+msgid "Lenition missing"
+msgstr "Lenierung fehlt"
+
+#: gr.in:67
+msgid "Eclipsis missing"
+msgstr "Eklipsis fehlt"
