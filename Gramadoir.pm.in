@@ -373,42 +373,40 @@ sub lookup
 sub tag_as_compound
 {
 	my ( $self, $word ) = @_;
-#	if ($self->{'fix_spelling'}) {
-		if ($word =~ m/^([^-]+)-(.*)$/) {
-			my $l = $1;
-			my $r = $2;
-			my $t1 = $self->tag_recurse( $l, $l, -1, "" );
-			my $t2 = $self->tag_recurse( $r, $r, -1, "" );
-			if ($t1 && $t2) {
-				if ($t1 !~ m/<E/ && $t2 !~ m/<E/) {
-					return "<E msg=\"COMHFHOCAL{$l+$r}\"><X>".$word."</X></E>";
-				}
-				else {
-					return "<E msg=\"COMHCHAIGH{$l+$r}\"><X>".$word."</X></E>";
-				}
+	if ($word =~ m/^([^-]+)-(.*)$/) {
+		my $l = $1;
+		my $r = $2;
+		my $t1 = $self->tag_recurse( $l, $l, -1, "" );
+		my $t2 = $self->tag_recurse( $r, $r, -1, "" );
+		if ($t1 && $t2) {
+			if ($t1 !~ m/<E/ && $t2 !~ m/<E/) {
+				return "<E msg=\"COMHFHOCAL{$l+$r}\"><X>".$word."</X></E>";
+			}
+			else {
+				return "<E msg=\"COMHCHAIGH{$l+$r}\"><X>".$word."</X></E>";
 			}
 		}
-		else {
-			my $len = length($word);
-			for (my $i = 3; $i < $len-2; $i++) { # i=len of left
-				my $l = substr($word, 0, $i);
-				my $r = substr($word, $i, $len - $i);
-				if (!exists($NOCOMBO{$l}) &&
-				    !exists($NOCOMBO{$r})) {
-					my $tl = $self->tag_recurse($l,$l,-1, "");
-					my $tr = $self->tag_recurse($r,$r,-1, "");
-				    	if ( $tl && $tr ) {
-						if ($tl !~ m/<E/ && $tr !~ m/<E/) {
-							return "<E msg=\"COMHFHOCAL{$l+$r}\"><X>".$word."</X></E>";
-						}
-						else {
-							return "<E msg=\"COMHCHAIGH{$l+$r}\"><X>".$word."</X></E>";
-						}
+	}
+	else {
+		my $len = length($word);
+		for (my $i = 3; $i < $len-2; $i++) { # i=len of left
+			my $l = substr($word, 0, $i);
+			my $r = substr($word, $i, $len - $i);
+			if (!exists($NOCOMBO{$l}) &&
+			    !exists($NOCOMBO{$r})) {
+				my $tl = $self->tag_recurse($l,$l,-1, "");
+				my $tr = $self->tag_recurse($r,$r,-1, "");
+			    	if ( $tl && $tr ) {
+					if ($tl !~ m/<E/ && $tr !~ m/<E/) {
+						return "<E msg=\"COMHFHOCAL{$l+$r}\"><X>".$word."</X></E>";
+					}
+					else {
+						return "<E msg=\"COMHCHAIGH{$l+$r}\"><X>".$word."</X></E>";
 					}
 				}
 			}
 		}
-#	}
+	}
 	return "";
 }
 
