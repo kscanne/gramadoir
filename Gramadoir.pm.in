@@ -926,6 +926,7 @@ sub giorr
 	s/(\.)([.?!])/$1$NOBD$2/g;
 	s/([IVX][IVX])([.?!])/$1$NOBD$2/g;
 # giorr code goes here
+	s/([?!][]"')}]*[ \t\n-]+[@LOWERS@])/$NOBD$1/g;
 	s/^ //;
 	}
 }
