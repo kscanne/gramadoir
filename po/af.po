@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramadoir 0.4\n"
 "Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
-"POT-Creation-Date: 2004-01-08 22:32-0600\n"
+"POT-Creation-Date: 2004-04-01 14:40-0600\n"
 "PO-Revision-Date: 2004-03-02 16:38+0200\n"
 "Last-Translator: Petri Jooste <rkwjpj@puk.ac.za>\n"
 "Language-Team: Afrikaans <i18n@af.org.za>\n"
@@ -49,199 +49,239 @@ msgstr "Opsies vir eindgebruikers:"
 #. TRANSLATORS: ~/.neamhshuim is an "ignore file" like those with spellcheckers
 #: gr.in:57
 msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
-msgstr "    --iomlan       wys alle foute (d.w.s. ignoreer die lêer ~/.neamhshuim)"
+msgstr ""
+"    --iomlan       wys alle foute (d.w.s. ignoreer die lêer ~/.neamhshuim)"
 
 #: gr.in:58
-msgid "    --ionchod=ENC  specify the character encoding of the text to be checked"
-msgstr "    --ionchod=ENC  spesifiseer die karakterkodering van die teks wat nagegaan moet word"
+msgid ""
+"    --ionchod=ENC  specify the character encoding of the text to be checked"
+msgstr ""
+"    --ionchod=ENC  spesifiseer die karakterkodering van die teks wat "
+"nagegaan moet word"
 
 #: gr.in:59
 msgid "    --litriu       write misspelled words to standard output"
 msgstr "    --litriu       skryf spelfoute na standaardafvoer"
 
 #: gr.in:60
-msgid "    --aspell       suggest corrections for misspellings (requires GNU aspell)"
+msgid ""
+"    --aspell       suggest corrections for misspellings (requires GNU aspell)"
 msgstr "    --aspell       maak suggesties vir spelfoute (benodig GNU aspell)"
 
 #: gr.in:61
-msgid "    --teanga=XX    specify the language of the text to be checked (default=ga)"
-msgstr "    --teanga=XX    spesifiseer die taal van die teks wat nagegaan moet word (verstek=ga)"
+msgid "    --aschur=FILE  write output to FILE"
+msgstr ""
 
 #: gr.in:62
+msgid ""
+"    --teanga=XX    specify the language of the text to be checked "
+"(default=ga)"
+msgstr ""
+"    --teanga=XX    spesifiseer die taal van die teks wat nagegaan moet word "
+"(verstek=ga)"
+
+#: gr.in:63
 msgid "    --help         display this help and exit"
 msgstr "    --help         wys hierdie hulpteks en stop"
 
-#: gr.in:63
+#: gr.in:64
 msgid "    --version      output version information and exit"
 msgstr "    --version      wys weergawe-inligting en stop"
 
-#: gr.in:64
+#: gr.in:65
 msgid "Options for developers:"
 msgstr "Opsies vir ontwikkelaars:"
+
+#: gr.in:67
+msgid ""
+"    --api          output a simple XML format for use with other applications"
+msgstr ""
 
 #. TRANSLATORS: "disambiguation" is a term from natural language processing.
 #. Here it means the process of deciding, for a given word with several
 #. possible parts of speech (noun, verb, etc.), the correct part of speech
 #. given the context.  Brill's algorithm is "unsupervised" because it relies
 #. only on statistics gathered from texts which have not been tagged in advance.
-#: gr.in:71
-msgid "    --brill        find disambiguation rules via Brill's unsupervised algorithm"
-msgstr "    --brill        bepaal reëls vir ondubbelsinnigmaking deur Brill se toesiglose algoritme"
-
-#: gr.in:72
-msgid "    --html         produce HTML output for viewing in a web browser"
-msgstr "    --html         produseer HTML-afvoer wat met 'n webblaaier bekyk kan word"
-
-#: gr.in:73
-msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
-msgstr "    --ilchiall     wys onopgeloste dubbelsinnighede, gesorteer volgens frekwensie"
-
 #: gr.in:74
-msgid "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
-msgstr "    --minic        wys alle merkers, gesorteer volgens frekwensie (vir unigram-xx.txt)"
+msgid ""
+"    --brill        find disambiguation rules via Brill's unsupervised "
+"algorithm"
+msgstr ""
+"    --brill        bepaal reëls vir ondubbelsinnigmaking deur Brill se "
+"toesiglose algoritme"
+
+#: gr.in:75
+msgid "    --html         produce HTML output for viewing in a web browser"
+msgstr ""
+"    --html         produseer HTML-afvoer wat met 'n webblaaier bekyk kan word"
+
+#: gr.in:76
+msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
+msgstr ""
+"    --ilchiall     wys onopgeloste dubbelsinnighede, gesorteer volgens "
+"frekwensie"
+
+#: gr.in:77
+msgid ""
+"    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
+msgstr ""
+"    --minic        wys alle merkers, gesorteer volgens frekwensie (vir "
+"unigram-xx.txt)"
 
 #. TRANSLATORS: By default, if there is no rule in the disambiguation module
 #. for selecting the correct part of speech of an ambiguous word, the program
 #. chooses the part of speech with the highest frequency.  This is sometimes
 #. called "unigram" tagging.   The --no-unigram option turns this behavior off.
-#: gr.in:80
-msgid "    --no-unigram   do not resolve ambiguous parts of speech by frequency"
-msgstr "    --no-unigram   moenie frekwensie gebruik om dubbelsinnige woordsoorte op te los nie"
+#: gr.in:83
+msgid ""
+"    --no-unigram   do not resolve ambiguous parts of speech by frequency"
+msgstr ""
+"    --no-unigram   moenie frekwensie gebruik om dubbelsinnige woordsoorte op "
+"te los nie"
 
 #. TRANSLATORS: The grammar checker works by piping the input text
 #. through a sequence of filters which add XML markup indicating
 #. important grammatical information.  The --xml option displays the
 #. marked up file as an aid in debugging.
-#: gr.in:86
-msgid "    --xml          write tagged XML stream to standard output, for debugging"
-msgstr "    --xml          skryf die XML-stroom met merkers na standaardafvoer, vir ontfouting"
+#: gr.in:89
+msgid ""
+"    --xml          write tagged XML stream to standard output, for debugging"
+msgstr ""
+"    --xml          skryf die XML-stroom met merkers na standaardafvoer, vir "
+"ontfouting"
 
-#: gr.in:87
+#: gr.in:90
 msgid "If no file is given, read from standard input."
 msgstr "As geen lêer gegee is nie, lees van standaardtoevoer"
 
-#: gr.in:88
+#: gr.in:91
 msgid "Send bug reports to <%s>."
 msgstr "Stuur foutverslae aan <%s>."
 
-#: gr.in:89
+#: gr.in:92
 msgid "version %s"
 msgstr "weergawe %s"
 
-#: gr.in:90
-msgid "This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law."
-msgstr "Hierdie is vry sagteware; sien die bronkode vir kopieervoorwaardes.  Daar is GEEN\\nwaarborg nie; selfs nie eers vir MERCHANTABILITY of GESKIKTHEID VIR 'N SPESIFIEKE DOEL nie,\\ntot die mate wat deur die wet toegelaat word."
+#: gr.in:93
+msgid ""
+"This is free software; see the source for copying conditions.  There is NO"
+"\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
+"PURPOSE,\\nto the extent permitted by law."
+msgstr ""
+"Hierdie is vry sagteware; sien die bronkode vir kopieervoorwaardes.  Daar is "
+"GEEN\\nwaarborg nie; selfs nie eers vir MERCHANTABILITY of GESKIKTHEID VIR "
+"'N SPESIFIEKE DOEL nie,\\ntot die mate wat deur die wet toegelaat word."
 
-#: gr.in:91
+#: gr.in:94
 msgid "Try %s for more information."
 msgstr "Probeer %s vir meer inligting."
 
-#: gr.in:92
+#: gr.in:95
 msgid "unrecognized option %s"
 msgstr "onbekende opsie %s"
 
-#: gr.in:93
+#: gr.in:96
 msgid "option %s requires an argument"
 msgstr "opsie %s: benodig 'n parameter"
 
-#: gr.in:94
+#: gr.in:97
 msgid "option %s does not allow an argument"
 msgstr "opsie %s laat nie 'n parameter toe nie"
 
-#: gr.in:95 farc.c.in:18 farc.c.in:30 farc.c.in:42
+#: gr.in:98 farc.c.in:18 farc.c.in:30 farc.c.in:42
 #, c-format
 msgid "Language %s is not supported."
 msgstr "Taal %s word nie ondersteun nie."
 
 #. TRANSLATORS: "conversion" here means conversion between character encodings
-#: gr.in:98
+#: gr.in:101
 msgid "conversion from %s is not supported"
 msgstr "Omsetting van %s word nie ondersteun nie"
 
-#: gr.in:99
+#: gr.in:102
 msgid "aspell-%s is not installed"
 msgstr "aspell-%s is nie geïnstalleer nie"
 
-#: gr.in:100
+#: gr.in:103
 msgid "Unknown word"
 msgstr "Onbekende woord"
 
 #. TRANSLATORS: only two unknown words are reported per sentence
-#: gr.in:103
+#: gr.in:106
 msgid "Unknown word (ignoring remainder in this sentence)"
 msgstr "Onbekende woord (die res van die sin word geïgnoreer)"
 
-#: gr.in:104
+#: gr.in:107
 msgid "Valid word but extremely rare in actual usage"
 msgstr "Geldige woord, maar baie seldsaam"
 
-#: gr.in:105
+#: gr.in:108
 msgid "Usually used in the set phrase \\/\\1\\/"
 msgstr "Word normaalweg gebruik in die vaste konstruksie \\/\\1\\/"
 
-#: gr.in:106
+#: gr.in:109
 msgid "You should use \\/\\1\\/ here instead"
 msgstr "U moet hier eerder \\/\\1\\/ gebruik"
 
-#: gr.in:107
+#: gr.in:110
 msgid "Non-standard form: perhaps use \\/\\1\\/?"
 msgstr "Nie-standaardvorm: gebruik miskien \\/\\1\\/?"
 
 #. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
-#: gr.in:110
+#: gr.in:113
 msgid "Initial mutation missing"
 msgstr "Aanvangsmutasie ontbreek"
 
 #. TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
 #. It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
-#: gr.in:114
+#: gr.in:117
 msgid "Unnecessary lenition"
 msgstr "Onnodige linisie"
 
-#: gr.in:115
+#: gr.in:118
 msgid "Prefix \\/h\\/ missing"
 msgstr "Voorvoegsel \\/h\\/ ontbreek"
 
-#: gr.in:116
+#: gr.in:119
 msgid "Prefix \\/t\\/ missing"
 msgstr "Voorvoegsel \\/t\\/ ontbreekkdesu is weg"
 
-#: gr.in:117
+#: gr.in:120
 msgid "Lenition missing"
 msgstr "Lenisie ontbreek"
 
 #. TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
 #. initial consonants in Irish.  It is indicated in writing by the addition
 #. of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
-#: gr.in:122
+#: gr.in:125
 msgid "Eclipsis missing"
 msgstr "Eklips ontbreek"
 
-#: gr.in:123
+#: gr.in:126
 msgid "Repeated word"
 msgstr "Herhaalde woord"
 
-#: gr.in:124
+#: gr.in:127
 msgid "Unusual combination of words"
 msgstr "Ongewone kombinasie van woorde"
 
-#: gr.in:125
+#: gr.in:128
 msgid "Comparative adjective required"
 msgstr "Vergelykende adjektief benodig"
 
-#: gr.in:126
+#: gr.in:129
 msgid "Unnecessary prefix \\/h\\/"
 msgstr "Onnodige voorvoegsel \\/h\\/"
 
-#: gr.in:127
+#: gr.in:130
 msgid "Unnecessary prefix \\/t\\/"
 msgstr "Onnodige voorvoegsel \\/t\\/"
 
-#: gr.in:128
+#: gr.in:131
 msgid "Unnecessary use of the definite article"
 msgstr "Onnodige gebruik van die bepaalde lidwoord"
 
-#: gr.in:129
+#: gr.in:132
 msgid "The genitive case is required here"
 msgstr "Die genitief word hier benodig"
 

@@ -54,6 +54,7 @@ do_all()
 {
 head triail > triail.2
 test_language POSIX
+test_language af_ZA
 test_language de_DE
 test_language ga_IE
 test_language ga_IE.utf8
