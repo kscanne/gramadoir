@@ -331,7 +331,7 @@ eile-ga.bs : FORCE
 	rm -f eile.pre.bs tempeile
 
 unigram-ga.txt :
-	beocorp | gr --xml --iomlan | tagfreq | sort -r -n | sed 's/^[^<]*//' > unigram-ga.txt
+	beocorp | gr --minic --iomlan > unigram-ga.txt
 
 neamhshuim : FORCE
 	cat ../../gnu/gnu/poglac ../../ispell/bearla/glac ../../ispell/bearla/hyphenglac | LC_COLLATE=POSIX sort -u > /tmp/neamhshuim.tmp
