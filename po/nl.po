@@ -1,0 +1,221 @@
+# Dutch translations for gramadoir.
+# Copyright (C) 2003 Kevin P. Scannell
+# This file is distributed under the same license as the gramadoir package.
+# Anneke Bart <barta@slu.edu>, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramadoir 0.3\n"
+"POT-Creation-Date: 2003-11-06 13:51-0600\n"
+"PO-Revision-Date: 2003-11-23 15:58-0600\n"
+"Last-Translator: Anneke Bart <barta@slu.edu>\n"
+"Language-Team: Dutch <vertaling@nl.linux.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: cuardach.c:84 cuardach.c:103 cuardach.c:146 cuardach.c:219
+#, c-format
+msgid "%s: out of memory\n"
+msgstr "%s: geen geheugen meer beschikbaar\n"
+
+#: cuardach.c:93
+#, c-format
+msgid "%s: `%s' corrupted at %s\n"
+msgstr ""
+
+#: cuardach.c:116 cuardach.c:157 cuardach.c:237
+#, c-format
+msgid "%s: warning: check size of %s: %d?\n"
+msgstr ""
+
+#: cuardach.c:121 cuardach.c:162 cuardach.c:243
+#, c-format
+msgid "%s: warning: problem closing %s\n"
+msgstr ""
+
+#: cuardach.c:437
+#, c-format
+msgid "%s: no grammar codes: %s\n"
+msgstr ""
+
+#: cuardach.c:563
+msgid "problem with the `cuardach' command\n"
+msgstr ""
+
+#: cuardach.c:573
+#, c-format
+msgid "%s: problem reading the database\n"
+msgstr "%s: Problemen met lezen van de databank\n"
+
+#: farc.c.in:19
+#, c-format
+msgid "Language %s is not supported."
+msgstr "Taal %s word niet ondersteund."
+
+#: farc.c.in:23
+#, c-format
+msgid "%s: illegal grammatical code\n"
+msgstr "%s: foutieve grammatica code\n"
+
+#: ponc.in.y:63
+#, c-format
+msgid "There was %d error.\n"
+msgid_plural "There were %d errors.\n"
+msgstr[0] "Er was %d fout.\n"
+msgstr[1] "Er waren %d fouten.\n"
+
+#: ponc.in.y:69
+#, c-format
+msgid "Successfully parsed %d rule.\n"
+msgid_plural "Successfully parsed %d rules.\n"
+msgstr[0] "Succesvolle ontleding %d regel.\n"
+msgstr[1] "Succesvolle ontleding %d regels.\n"
+
+#: ponc.in.y:79
+#, c-format
+msgid "Line %d: %s\n"
+msgstr "Regel %d: %s\n"
+
+#: gr.in:35
+msgid "An Gramadoir"
+msgstr "An Gramadóir"
+
+#: gr.in:36
+msgid "Currently checking %s"
+msgstr "Word momenteel nagekeken"
+
+#: gr.in:37
+msgid "There is no such file."
+msgstr "Dit bestand bestaat niet."
+
+#: gr.in:38
+msgid "Is a directory"
+msgstr "Is een map"
+
+#: gr.in:39
+msgid "Permission denied"
+msgstr "Toegang geweigerd"
+
+#: gr.in:40
+msgid "Usage: %s [OPTIONS] [FILES]"
+msgstr "Gebruik: %s [OPTIE] [BESTAND]"
+
+#: gr.in:41
+msgid "    --litriu       write misspelled words to standard output"
+msgstr "    --litriu       schrijf verkeerd gespelde woorden naar een standard output"
+
+#: gr.in:42
+msgid "    --html         produce HTML output for viewing in a web browser"
+msgstr "    --html         creeer HTML output om te bekijken in een web browser"
+
+#: gr.in:43
+msgid "    --xml          write tagged XML stream to standard output, for debugging"
+msgstr ""
+
+#: gr.in:44
+msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
+msgstr "    --iomlan       geef alle fouten aan (m.a.w. gebruik niet ~/.neamhshuim)"
+
+#: gr.in:45
+msgid "    --teanga=XX    specify the language of the text to be checked (default=ga)"
+msgstr "    --teanga=XX    Specificeer de taal van de betreffende text (default=ga)"
+
+#: gr.in:46
+msgid "    --ionchod=ENC  specify the character encoding of the text to be checked"
+msgstr "    --ionchod=ENC  specificeer de character codering van de betreffende text"
+
+#: gr.in:47
+msgid "    --help         display this help and exit"
+msgstr "    --help         toon deze hulptekst en beëindig programma"
+
+#: gr.in:48
+msgid "    --version      output version information and exit"
+msgstr "    --version      toon versie-informatie en beëindig programma"
+
+#: gr.in:49
+msgid "If no file is given, read from standard input."
+msgstr "Als geen bestand wordt gegeven, lees van standard invoering."
+
+#: gr.in:50
+msgid "Send bug reports to <%s>."
+msgstr "Meld fouten in het programma aan <%s>."
+
+#: gr.in:51
+msgid "version %s"
+msgstr "versie %s"
+
+#: gr.in:52
+msgid ""
+"This is free software; see the source for copying conditions.  There is NO"
+"\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
+"PURPOSE,\\nto the extent permitted by law."
+msgstr ""
+"Dit is vrije programmatuur; zie de broncode voor distributie-\\n"
+"voorwaarden. Er is GEEN garantie; zelfs niet voor VERKOOPBAARHEID of\\n"
+"GESCHIKTHEID VOOR EEN BEPAALD DOEL, zo ver als wettelijk mogelijk is."
+
+#: gr.in:53
+msgid "Try %s for more information."
+msgstr "Probeer %s voor meer informatie."
+
+#: gr.in:54
+msgid "unrecognized option %s"
+msgstr "onbekende optie %s"
+
+#: gr.in:55
+msgid "option %s requires an argument"
+msgstr "optie %s vereist een argument"
+
+#: gr.in:56
+msgid "option %s does not allow an argument"
+msgstr "optie %s staat geen argumenten toe"
+
+#: gr.in:57
+msgid "Unknown word (ignoring remainder in this sentence)"
+msgstr "Onbekend word (de rest van deze zin word genegeerd)"
+
+#: gr.in:58
+msgid "Unknown word"
+msgstr "Onbekend woord"
+
+#: gr.in:59
+msgid "Valid word but extremely rare in actual usage"
+msgstr "Correct woord, maar erg zeldzaam in waarlijk gebruik"
+
+#: gr.in:60
+msgid "You should use \\/\\1\\/ here instead"
+msgstr "Gebruik \\/\\1\\/ hier"
+
+#: gr.in:61
+msgid "Non-standard form: perhaps use \\/\\1\\/?"
+msgstr "Geen standard vorm: gebruik misschien \\/\\1\\/?"
+
+#: gr.in:62
+msgid "Initial mutation missing"
+msgstr "Begin mutatie ontbreekt"
+
+#: gr.in:63
+msgid "Unnecessary lenition"
+msgstr "Onnodige lenitie"
+
+#: gr.in:64
+msgid "Prefix \\/h\\/ missing"
+msgstr "Voorvoegsel \\/h\\/ ontbreekt"
+
+#: gr.in:65
+msgid "Prefix \\/t\\/ missing"
+msgstr "Voorvoegsel \\/t\\/ ontbreekt"
+
+#: gr.in:66
+msgid "Lenition missing"
+msgstr "Lenitie (verzachting) ontbreekt"
+
+#: gr.in:67
+msgid "Eclipsis missing"
+msgstr "Eclipsis ontbreekt"
+
+#: gr.in:68
+msgid "Repeated word"
+msgstr "Herhaald woord"
