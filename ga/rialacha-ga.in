@@ -1584,8 +1584,14 @@ d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</
 <N>d?[Tt]h?riúr</N> <NP>ANYTHING</N>:UATHA
 <N>d?[Tt]h?riúr</N> <NP>ban</N>:OK
 <N>d?[Tt]h?riúr</N> <N>m?bh?ean</N>:BACHOIR{ban}
-# CB p.13 #3.b  (needs shallow parse)
-#[Uu]ile <N>UNLENITED</N>:SEIMHIU
+# CB p.13 #3.b
+#. Nár thug sí póg do gach uile duine?
+# Just uile+<N> is not good enough since it might be
+# the case that uile is following a noun:
+#. D'ith na daoine uile bia (OK).
+<T>[Aa]n</T> <A>[Uu]ile</A> <N>UNLENITED</N>:SEIMHIU
+<A>[Gg]ach</A> <A>[Uu]ile</A> <N>UNLENITED</N>:SEIMHIU
+<S>FUSEDPREP</S> <A>[Uu]ile</A> <N>UNLENITED</N>:SEIMHIU
 # CB p.13 #4.a
 #. Idir dhá sholas, um tráthnóna, faoi choim na hoíche agus sa dorchadas.
 <S>[Uu]m</S> <N>UNLENITED</N>:SEIMHIU
