@@ -153,7 +153,7 @@ $(SHARE)/gramadoir.el : $(GRAMDIR)/gramadoir.el $(PERLDOK)
 $(SHARE)/gramadoir.vim : $(GRAMDIR)/gramadoir.vim $(PERLDOK)
 	sed "s/gram-ga\.pl/$(SCRIPTNAME)/g" $(GRAMDIR)/gramadoir.vim > $@
 
-$(PERLD)/t/$(PERLD).t : $(GRAMDIR)/Lingua-XX-Gramadoir.t triail $(PERLDOK)
+$(PERLD)/t/$(PERLD).t : $(GRAMDIR)/Lingua-XX-Gramadoir.t triail triail.xml $(PERLDOK)
 	cat $(GRAMDIR)/Lingua-XX-Gramadoir.t | sed "s/@TEANGA@/$(UPPERTEANGA)/g; s/@NATIVE@/$(NATIVE)/g; s/tests => 1;/tests => 4+`cat triail.xml | wc -l | sed 's/^ *//'`;/" | sed "/<<.EOF.;/r triail" | sed "/<<.RESEOF.;/r triail.xml" > $@
 	chmod 644 $@
 
