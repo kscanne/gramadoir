@@ -16,6 +16,8 @@ echo "test html flag"
 gr --html --iomlan triail
 echo "test ionchod flag and ability to read from stdin"
 cat triail | iconv -f iso88591 -t utf8 | gr --ionchod=utf8
+echo "test English"
+head -n 42 COPYING | gr --iomlan --teanga=en --xml
 echo "test various error messages" >&2
 rm -f nonexistentfile
 gr nonexistentfile
