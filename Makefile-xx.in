@@ -1,0 +1,252 @@
+# Copyright (C) 2003, 2004 Kevin P. Scannell <scannell@slu.edu>
+#
+# This is free software; see the file COPYING for copying conditions.  There is
+# NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#
+
+SHELL = /bin/sh
+
+.SUFFIXES: .in .pl
+
+# general configuration
+ECHO = !ECHO!
+EGREP = !EGREP!
+LN_S = !LN_S!
+PERL = !PERL!
+
+# package configuration
+GRAMDIR = ..
+TEANGA = !TEANGA!
+UPPERTEANGA = !UPPERTEANGA!
+NAME_ENG = !NAME_ENG!
+VERSION = !VERSION!
+PACKAGE_NAME = gramadoir-$(TEANGA)
+TARBALL = gramadoir-$(TEANGA)-$(VERSION)
+PERLVERSION = 0.50
+PERLD = Lingua-$(UPPERTEANGA)-Gramadoir
+PERLLIB = $(PERLD)/lib/Lingua/$(UPPERTEANGA)/Gramadoir
+SHARE = $(PERLD)/share
+NATIVE = !NATIVE!
+BDCHARS = !BDCHARS!
+INTCHARS = !INTCHARS!
+CAPITALS = !UPPERS!
+LOWERS = !LOWERS!
+AUTHOR = !AUTHOR!
+
+# targets '
+PERLTOP = $(PERLD)/Changes $(PERLD)/Makefile.PL $(PERLD)/MANIFEST $(PERLD)/MANIFEST.SKIP $(PERLD)/README
+PERLCODE = $(PERLD)/scripts/gram-$(TEANGA).pl $(PERLLIB).pm
+LEXICONS = $(SHARE)/3grams.bs $(SHARE)/earraidi.bs $(SHARE)/eile.bs $(SHARE)/focail0.bs $(SHARE)/nocombo.bs $(SHARE)/pos.bs
+EXTRAS = $(SHARE)/gramadoir.el $(SHARE)/gramadoir.vim
+TESTS = $(PERLD)/t/$(PERLD).t
+LOCALES = locale_ok $(PERLLIB)/Languages.pm $(PERLLIB)/Languages/en_us.pm
+INTERMEDIATE = morph-$(TEANGA).pl aonchiall-$(TEANGA).pl comhshuite-$(TEANGA).pl eisceacht-$(TEANGA).pl giorr-$(TEANGA).pl rialacha-$(TEANGA).pl unigram-$(TEANGA).pl
+
+all : perldb
+
+perldb : FORCE
+	(cd $(PERLD); if [ -e Makefile ]; then make distclean; fi)
+	$(MAKE) perl
+
+perl : $(PERLTOP) $(PERLCODE) $(LEXICONS) $(EXTRAS) $(TESTS) $(LOCALES)
+	(cd $(PERLD); perl Makefile.PL; make)
+
+install : all
+	(cd $(PERLD); make pure_install)
+
+installcheck : triail FORCE
+	@LC_ALL=C gram-$(TEANGA).pl --dath=none --iomlan --aspell --aschod=iso-8859-1 triail | sed "s/^[0-9]*: //" > triail.tmp
+	@if diff triail.err triail.tmp; then $(ECHO) 'OK.'; else $(ECHO) 'Problem.'; fi
+	@rm -f triail.tmp
+
+lexicon-$(TEANGA).txt : lexicon-$(TEANGA).bs
+	cat lexicon-$(TEANGA).bs | $(PERL) $(GRAMDIR)/cabhair.pl -d --encoding=$(NATIVE) > $@
+
+$(PERLD)/Changes : Changes
+	cp -f Changes $@
+	chmod 644 $@
+
+# Irish only
+# Changes : stair.html
+# 	vilistextum stair.html - | sed -n '/^ChangeLog/,/----/p' | egrep -v -- '---' > $@
+
+$(PERLD)/Makefile.PL : $(GRAMDIR)/Makefile.PL.in
+	cat $(GRAMDIR)/Makefile.PL.in | sed "s/@TEANGA@/$(UPPERTEANGA)/g; s/@LOWERTEANGA@/$(TEANGA)/g" > $@
+	if [ "$(NATIVE)" = "utf8" ]; \
+	then \
+		sed -i '/#.*binmode/s/#//g' $@; \
+	else \
+		sed -i '/^#.*binmode/d' $@; \
+	fi
+	chmod 644 $@
+
+$(PERLD)/MANIFEST : $(GRAMDIR)/MANIFEST
+	cat $(GRAMDIR)/MANIFEST | sed "s/@TEANGA@/$(TEANGA)/; s/@UPPERTEANGA@/$(UPPERTEANGA)/" > $@
+	chmod 644 $@
+
+$(PERLD)/MANIFEST.SKIP : $(GRAMDIR)/MANIFEST.SKIP
+	cp -f $(GRAMDIR)/MANIFEST.SKIP $@
+	chmod 644 $@
+
+$(PERLD)/META.yml : perl
+	(cd $(PERLD); make metafile)
+
+$(PERLD)/README : $(GRAMDIR)/README.perl
+	sed "s/@UPPERTEANGA@/$(UPPERTEANGA)/; s/@NAME_ENG@/$(NAME_ENG)/; /^Copyright (C)/s/.*/&\n                   $(AUTHOR)/" $(GRAMDIR)/README.perl > $@
+	chmod 644 $@
+
+$(PERLD)/scripts/gram-$(TEANGA).pl : $(GRAMDIR)/gram.pl
+	cat $(GRAMDIR)/gram.pl | sed "s/@PACKAGE_VERSION@/$(PERLVERSION)/; s/@TEANGA@/$(UPPERTEANGA)/g; s/@NATIVE@/$(NATIVE)/g; s/@NAME_ENGLISH@/$(NAME_ENG)/g; /^# Copyright (C)/s/.*/&\n#                    $(AUTHOR)/" > $@
+	chmod 644 $@
+
+$(SHARE)/3grams.bs : 3grams-$(TEANGA).txt
+	cp 3grams-$(TEANGA).txt $@
+	chmod 644 $@
+
+$(SHARE)/earraidi.bs : earraidi-$(TEANGA).bs
+	cp earraidi-$(TEANGA).bs $@
+	chmod 644 $@
+
+$(SHARE)/eile.bs : eile-$(TEANGA).bs
+	cp eile-$(TEANGA).bs $@
+	chmod 644 $@
+
+$(SHARE)/nocombo.bs : nocombo-$(TEANGA).txt
+	cp nocombo-$(TEANGA).txt $@
+	chmod 644 $@
+
+$(SHARE)/pos.bs : pos-$(TEANGA).txt
+	cp pos-$(TEANGA).txt $@
+	chmod 644 $@
+
+$(SHARE)/gramadoir.el : $(GRAMDIR)/gramadoir.el
+	sed "s/gram-ga\.pl/gram-$(TEANGA).pl/g" $(GRAMDIR)/gramadoir.el > $@
+
+$(SHARE)/gramadoir.vim : $(GRAMDIR)/gramadoir.vim
+	sed "s/gram-ga\.pl/gram-$(TEANGA).pl/g" $(GRAMDIR)/gramadoir.vim > $@
+
+$(PERLD)/t/$(PERLD).t : $(GRAMDIR)/Lingua-XX-Gramadoir.t triail
+	touch triail.xml
+	cat $(GRAMDIR)/Lingua-XX-Gramadoir.t | sed "s/@TEANGA@/$(UPPERTEANGA)/g; s/@NATIVE@/$(NATIVE)/g; s/tests => 1;/tests => 4+`cat triail.xml | wc -l`;/" > $@
+	sed -i "/<<.EOF.;/r triail" $@
+	sed -i '/<<.RESEOF.;/r triail.xml' $@
+	chmod 644 $@
+
+triail : rialacha-$(TEANGA).in
+	sed -n '/^#\./{s/^#\. //; p}' rialacha-$(TEANGA).in > triail
+
+triail.xml : FORCE
+	$(MAKE) triail
+	LC_ALL=ga_IE gram-$(TEANGA).pl --api --iomlan --aspell triail > triail.xml
+
+triail.err : FORCE
+	rm -f triail.err
+	LC_ALL=C gram-$(TEANGA).pl --dath=none --iomlan --aspell triail | sed 's/^[0-9]*: //' > triail.err
+
+$(PERLLIB).pm : $(GRAMDIR)/Gramadoir.pm.in $(INTERMEDIATE)
+	sed "/^# morphology code /r morph-$(TEANGA).pl" $(GRAMDIR)/Gramadoir.pm.in > $@
+	sed -i "/^# aonchiall code /r aonchiall-$(TEANGA).pl" $@
+	sed -i "/^# comhshuite code /r comhshuite-$(TEANGA).pl" $@
+	sed -i "/^# eisceacht code /r eisceacht-$(TEANGA).pl" $@
+	sed -i "/^# giorr code /r giorr-$(TEANGA).pl" $@
+	sed -i "/^# rialacha code /r rialacha-$(TEANGA).pl" $@
+	sed -i "/^# unigram code /r unigram-$(TEANGA).pl" $@
+	sed -i "s/@PACKAGE_VERSION@/$(PERLVERSION)/" $@
+	sed -i "s/@TEANGA@/$(UPPERTEANGA)/g" $@
+	sed -i "s/@NAME_ENGLISH@/$(NAME_ENG)/g" $@
+	sed -i "s/@NATIVE@/$(NATIVE)/g" $@
+	sed -i "s/@BDCHARS@/$(BDCHARS)/g" $@
+	sed -i "s/@INTCHARS@/$(INTCHARS)/g" $@
+	sed -i "s/@CAPITALS@/$(CAPITALS)/g" $@
+	sed -i "s/@LOWERS@/$(LOWERS)/g" $@
+	sed -i '/^# [a-z]* code goes here/d' $@
+	sed -i "/^Copyright (C)/s/.*/&\n                   $(AUTHOR)/" $@
+	perl -i -p -e 's/([\x{80}-\x{ff}])/sprintf("\\x{%x}",ord($$1));/ge;' $@
+	chmod 644 $@
+
+morph-$(TEANGA).pl : morph-$(TEANGA).txt
+	cat morph-$(TEANGA).txt | sed '/^#/d' | sed '/^$$/d' | sed 's/#.*$$//' | sed 's#^\([^\t ]*\)[ \t]*\([^\t ]*\)[ \t]*\([^\t ]*\)#\tif ( $$current =~ m/\1/ ) {\n\t\t($$newcurrent = $$current) =~ s/\1/"\2"/e;\n\t\t$$ans = $$self->tag_recurse($$original, $$newcurrent, ($$level > \3) ? $$level : \3);\n\t\treturn $$ans if $$ans;\n\t}\n#' | sed 's/""""/""/' | sed 's/\\[Ll]\$$\([1-9]\)/".mylc($$\1)."/g' > $@
+
+$(PERLLIB)/Languages.pm : $(GRAMDIR)/Languages.pm
+	sed "s/@TEANGA@/$(UPPERTEANGA)/g" $(GRAMDIR)/Languages.pm > $@
+
+$(PERLLIB)/Languages/en_us.pm : $(GRAMDIR)/Languages-en_us.pm
+	sed "s/@TEANGA@/$(UPPERTEANGA)/g" $(GRAMDIR)/Languages-en_us.pm > $@
+
+locale_ok :
+	cat $(GRAMDIR)/po/LINGUAS | tr " " "\n" | egrep '[a-z]' | while read x; do perl $(GRAMDIR)/po2perl.pl $(GRAMDIR)/po/$${x}.po "$${x}" 1> pometa-$${x}.tmp 2> /dev/null; cat pometa-$${x}.tmp | iconv -f `egrep '^"Content-Type:' $(GRAMDIR)/po/$${x}.po | sed 's/^.*charset *= *\([^ ]*\)\\\n.*/\1/'`  -t utf-8 > $(PERLLIB)/Languages/$${x}.pm; sed -n '1,/^"Content-Transfer-Encoding/{/^[^#]/s/^/#/; p;}' $(GRAMDIR)/po/$${x}.po > pometa-$${x}.tmp; sed -i "/^package/r pometa-$${x}.tmp" $(PERLLIB)/Languages/$${x}.pm; done
+	sed -i "s/@TEANGA@/$(UPPERTEANGA)/g" $(PERLLIB)/Languages/*.pm
+	rm -f pometa*.tmp
+	touch locale_ok
+
+.in.pl :
+	cat "$<" | sed '/^#/!s/:/~:/' | tr "~" "\n" | LC_ALL="C" $(PERL) -n $(GRAMDIR)/gin.meta.pl | LC_ALL="C" $(PERL) -p macra-${TEANGA}.meta.pl | LC_ALL="C" $(PERL) -p $(GRAMDIR)/`echo $< | sed 's/-.*//'`.meta.pl | sed 's/^/\t/' > $@
+
+giorr-$(TEANGA).pl : giorr-$(TEANGA).txt giorr-$(TEANGA).pre
+	(cat giorr-$(TEANGA).pre | egrep '^s/' | sed 's/^/\t/'; cat giorr-$(TEANGA).txt | sed 's/.*/\ts\/([^@BDCHARS@@INTCHARS@]&)\\.\/$$1\\\\.\/g;/') > $@
+
+unigram-$(TEANGA).pl : unigram-$(TEANGA).pre unigram-$(TEANGA).txt
+	(cat unigram-$(TEANGA).pre | egrep '^s/' | sed 's/^/\t/'; cat unigram-$(TEANGA).txt | sed 's/^\(<\([A-Z]\)[^>]*\)>/\ts\/<B><Z>(?:<[^>]*>)*\1.>(?:<[^>]*>)*<\\\/Z>([^<]+)<\\\/B>\/\1>$$1<\\\/\2>\/g;/') > $@
+
+$(SHARE)/focail0.bs : lexicon-$(TEANGA).txt freq-$(TEANGA).txt
+	bash $(GRAMDIR)/lexbuild $(TEANGA) $(GRAMDIR)
+
+topclean :
+	rm -f lexicon-$(TEANGA).txt locale_ok $(INTERMEDIATE)
+
+distclean :
+	$(MAKE) topclean
+	rm -f $(PERLTOP) $(PERLCODE) $(LEXICONS) $(EXTRAS) $(TESTS)
+	rm -f Makefile
+	rm -f triail triail.xml
+
+clean :
+	$(MAKE) topclean
+
+rebuildlex : FORCE
+	rm -f lexicon-$(TEANGA).bs
+	cat lexicon-$(TEANGA).txt | $(PERL) $(GRAMDIR)/cabhair.pl -c --encoding=$(NATIVE) > lexicon-$(TEANGA).bs
+
+dist : FORCE
+	$(MAKE) rebuildlex
+	$(MAKE) triail
+	$(MAKE) triail.err
+#	$(LN_S) $(TEANGA) ../$(TARBALL)
+	sed -i '1s/.*/#!!PERLPATH!/' macra-$(TEANGA).meta.pl
+	tar cvhf $(TARBALL).tar -C .. $(TARBALL)/Changes
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/configure
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/COPYING
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/README
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/3grams-$(TEANGA).txt; \
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/aonchiall-$(TEANGA).in; \
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/comhshuite-$(TEANGA).in; \
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/earraidi-$(TEANGA).bs; \
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/eile-$(TEANGA).bs; \
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/eisceacht-$(TEANGA).in; \
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/freq-$(TEANGA).txt; \
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/giorr-$(TEANGA). \
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/lexicon-$(TEANGA).bs; \
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/macra-$(TEANGA).meta.pl; \
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/morph-$(TEANGA).txt; \
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/nocombo-$(TEANGA).txt; \
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/pos-$(TEANGA).txt; \
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/rialacha-$(TEANGA).in; \
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/unigram-$(TEANGA).pre; \
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/unigram-$(TEANGA).txt; \
+	gzip $(TARBALL).tar
+	chmod 444 $(TARBALL).tar.gz
+
+counts : FORCE
+	(cat lexicon-$(TEANGA).bs | wc -l; echo '2 / p') | dc
+	cat eile-$(TEANGA).bs | wc -l
+	egrep '^[^#]' comhshuite-$(TEANGA).in | wc -l
+	egrep '^[^#]' aonchiall-$(TEANGA).in | wc -l
+	egrep '^[^#]' rialacha-$(TEANGA).in | wc -l
+	egrep '^[^#]' eisceacht-$(TEANGA).in | wc -l
+
+zipped : FORCE
+	(cd Lingua-$(UPPERTEANGA)-Gramadoir; make realclean)
+	zip -r Lingua-$(UPPERTEANGA)-Gramadoir Lingua-$(UPPERTEANGA)-Gramadoir
+	mv -f Lingua-$(UPPERTEANGA)-Gramadoir.zip $(HOME)/public_html
+
+FORCE :
