@@ -69,6 +69,12 @@ use_ignore_file => 0
 
 Read a file containing words to be ignored when checking spelling and grammar.
 
+unigram_tagging => 1
+
+Resolve ambiguous part of speech according to frequency.  This should
+be set to false only for debugging purposes because the pattern matching
+for grammatical errors relies on complete disambiguation.
+
 interface_language => ""
 
 Specify the language of output messages
@@ -93,19 +99,43 @@ sub new {
 	my $self = {
 			fix_spelling => 0,
 			use_ignore_file => 0,
+			unigram_tagging => 1,
 			interface_language => '',
 			input_encoding => '@NATIVE@',
 			@_,
 	};
 
+	if ($self->{'interface_language'}) {
+		$lh = Lingua::@TEANGA@::Gramadoir::Languages->get_handle($self->{'interface_language'});
+	}
+	else {
+		$lh = Lingua::@TEANGA@::Gramadoir::Languages->get_handle();
+	}
+	croak 'Could not set interface language' unless $lh;
+
 	( my $datapath ) = __FILE__ =~ /(.*)\.pm/;
-	%EILE = %{ retrieve( File::Spec->catfile( $datapath, 'eile.hash' ) )};
-	%EARRAIDI = %{ retrieve( File::Spec->catfile( $datapath, 'earraidi.hash' ) ) };
-	%NOCOMBO = %{ retrieve( File::Spec->catfile( $datapath, 'nocombo.hash' ) )};
-	%POS = %{ retrieve( File::Spec->catfile( $datapath, 'pos.hash' ) ) };
-	%GRAMS = %{ retrieve(File::Spec->catfile($datapath, '3grams.hash') ) };
+	my $hashref;
+	my $errormsg = gettext('%s: problem reading the database\n',
+				gettext('An Gramadoir'));
+	eval {$hashref = retrieve(File::Spec->catfile($datapath, 'eile.hash'))};
+	croak $errormsg if ($@ or !$hashref);
+	%EILE = %$hashref;
+	eval {$hashref = retrieve(File::Spec->catfile($datapath, 'earraidi.hash'))};
+	croak $errormsg if ($@ or !$hashref);
+	%EARRAIDI = %$hashref;
+	eval {$hashref = retrieve(File::Spec->catfile($datapath, 'nocombo.hash'))};
+	croak $errormsg if ($@ or !$hashref);
+	%NOCOMBO = %$hashref;
+	eval {$hashref = retrieve(File::Spec->catfile($datapath, 'pos.hash'))};
+	croak $errormsg if ($@ or !$hashref);
+	%POS = %$hashref;
+	eval {$hashref = retrieve(File::Spec->catfile($datapath, '3grams.hash'))};
+	croak $errormsg if ($@ or !$hashref);
+	%GRAMS = %$hashref;
 	for my $i (0 .. 6) {
-		push @FOCAIL, retrieve( File::Spec->catfile( $datapath, "focail$i.hash" ) );
+		eval {$hashref = retrieve(File::Spec->catfile($datapath, "focail$i.hash" ) )};
+		croak $errormsg if ($@ or !$hashref);
+		push @FOCAIL, $hashref;
 	}
 
 	if ($self->{'use_ignore_file'}) {
@@ -117,14 +147,6 @@ sub new {
 			}
 		}
 	}
-
-	if ($self->{'interface_language'}) {
-		$lh = Lingua::@TEANGA@::Gramadoir::Languages->get_handle($self->{'interface_language'});
-	}
-	else {
-		$lh = Lingua::@TEANGA@::Gramadoir::Languages->get_handle();
-	}
-	croak 'Could not set interface language' unless $lh;
 
 	return bless $self, $class;
 }
@@ -167,7 +189,10 @@ array containing the sentences.
 sub get_sentences
 {
 	my ( $self, $text ) = @_;
-	from_to($text, $self->{'input_encoding'}, '@NATIVE@');
+	eval {from_to($text,$self->{'input_encoding'},'@NATIVE@') };
+# TRANSLATORS: "conversion" here means conversion between character encodings
+	croak gettext('conversion from %s is not supported', 
+			$self->{'input_encoding'}) if $@;
 	my $answer = get_sentences_real($text);
 	foreach my $s (@$answer) {
 		$s = decode('@NATIVE@', $s);
@@ -474,7 +499,9 @@ in the input text.
 sub spell_check
 {
 	my ( $self, $text ) = @_;
-	from_to($text, $self->{'input_encoding'}, '@NATIVE@');
+	eval {from_to($text,$self->{'input_encoding'},'@NATIVE@') };
+	croak gettext('conversion from %s is not supported', 
+			$self->{'input_encoding'}) if $@;
 	my $sentences = $self->unchecked_xml($text);
 	my $badwords;
 	foreach my $s (@$sentences) {
@@ -507,7 +534,9 @@ any grammatical rule checking.
 sub add_tags
 {
 	my ( $self, $text ) = @_;
-	from_to($text, $self->{'input_encoding'}, '@NATIVE@');
+	eval {from_to($text,$self->{'input_encoding'},'@NATIVE@') };
+	croak gettext('conversion from %s is not supported', 
+			$self->{'input_encoding'}) if $@;
 	my $answer = $self->add_tags_read($text);
 	foreach my $s (@$answer) {
 		$s = decode('@NATIVE@', $s);
@@ -517,12 +546,13 @@ sub add_tags
 
 sub add_tags_real
 {
+	my $self = $_[0];
 	my $sentences = unchecked_xml(@_);
 	foreach my $sentence (@$sentences) {
 		comhshuite($sentence);
 		aonchiall($sentence);
 		aonchiall_deux($sentence);
-		unigram($sentence);
+		unigram($sentence) if $self->{'unigram_tagging'};
 	}
 	return $sentences;
 }
@@ -560,7 +590,9 @@ some whittling down) as an interface with other programs.
 sub xml_stream
 {
 	my ( $self, $text ) = @_;
-	from_to($text, $self->{'input_encoding'}, '@NATIVE@');
+	eval {from_to($text,$self->{'input_encoding'},'@NATIVE@') };
+	croak gettext('conversion from %s is not supported', 
+			$self->{'input_encoding'}) if $@;
 	my $answer='<?xml version="1.0" encoding="utf-8" standalone="no"?>';
 	$answer = $answer."\n".'<!DOCTYPE teacs SYSTEM "/dtds/gramadoir.dtd">';
 	$answer = $answer."\n<teacs>\n";
@@ -710,7 +742,9 @@ sub grammatical_errors
 {
 	my ( $self, $text ) = @_;
 
-	from_to($text, $self->{'input_encoding'}, '@NATIVE@');
+	eval {from_to($text,$self->{'input_encoding'},'@NATIVE@') };
+	croak gettext('conversion from %s is not supported', 
+			$self->{'input_encoding'}) if $@;
 	my $pristine = $text;  # so actually NOT pristine e.g. if input is utf8
 	$pristine =~ s/^/ /;
 	$pristine =~ s/\n/ \n /g;
