@@ -75,7 +75,7 @@ egrep '[0-9][0-9]' /usr/local/share/crubadan/${TEANGA}/3GRAMS | sed 's/ *\([0-9]
 LEXICON="Lingua-${UPPERTEANGA}-Gramadoir/share/pos.bs"
 rm -f ${LEXICON}
 cat pos-${TEANGA}.txt | iconv -f "${NATIVE}" -t "${TARGET}" > ${LEXICON}
-chmod 444 ${LEXICON}
+chmod 644 ${LEXICON}
 
 if [ ${3} = "y" ]
 then
@@ -154,7 +154,7 @@ do
 	else
 		cat
 	fi > ${TARGETFILE}
-	chmod 444 ${TARGETFILE}
+	chmod 644 ${TARGETFILE}
 done
 rm -f ${FOCAILTEMP}
 fi
@@ -163,19 +163,19 @@ fi
 LEXICON="Lingua-${UPPERTEANGA}-Gramadoir/share/nocombo.bs"
 rm -f ${LEXICON}
 cat nocombo-${TEANGA}.txt | iconv -f "${NATIVE}" -t "${TARGET}" > ${LEXICON}
-chmod 444 ${LEXICON}
+chmod 644 ${LEXICON}
 
 # eile.bs
 LEXICON="Lingua-${UPPERTEANGA}-Gramadoir/share/eile.bs"
 rm -f ${LEXICON}
 cat eile-${TEANGA}.bs | sed '1d' | iconv -f "${NATIVE}" -t "${TARGET}" > ${LEXICON}
-chmod 444 ${LEXICON}
+chmod 644 ${LEXICON}
 
 # earraidi.bs
 LEXICON="Lingua-${UPPERTEANGA}-Gramadoir/share/earraidi.bs"
 rm -f ${LEXICON}
 cat earraidi-${TEANGA}.bs | iconv -f "${NATIVE}" -t "${TARGET}" > ${LEXICON}
-chmod 444 ${LEXICON}
+chmod 644 ${LEXICON}
 
 # Languages for Localization
 LANGPREFIX="Lingua-${UPPERTEANGA}-Gramadoir/lib/Lingua/${UPPERTEANGA}/Gramadoir/Languages"
@@ -229,7 +229,7 @@ s/í/\\x{ed}/g
 s/ó/\\x{f3}/g
 s/ú/\\x{fa}/g
 ' > "${MODULE}"
-chmod 444 "${MODULE}"
+chmod 644 "${MODULE}"
 
 # gram-xx.pl target
 SCRIPT="Lingua-${UPPERTEANGA}-Gramadoir/scripts/gram-${TEANGA}.pl"
@@ -239,7 +239,7 @@ sed "s/@PACKAGE_VERSION@/${PERLVERSION}/" |
 sed "s/@TEANGA@/${UPPERTEANGA}/g" |
 sed "s/@NATIVE@/${NATIVE}/g" |
 sed "s/@NAME_ENGLISH@/${2}/g" > "${SCRIPT}"
-chmod 444 "${SCRIPT}"
+chmod 644 "${SCRIPT}"
 
 # Makefile.PL target
 SCRIPT="Lingua-${UPPERTEANGA}-Gramadoir/Makefile.PL"
@@ -247,7 +247,7 @@ rm -f "${SCRIPT}"
 cat 'Makefile.PL.in' |
 sed "s/@TEANGA@/${UPPERTEANGA}/g" |
 sed "s/@LOWERTEANGA@/${TEANGA}/g" > "${SCRIPT}"
-chmod 444 "${SCRIPT}"
+chmod 644 "${SCRIPT}"
 
 # extras
 cp gramadoir.el Lingua-${UPPERTEANGA}-Gramadoir/share
@@ -256,7 +256,8 @@ cp gramadoir.vim Lingua-${UPPERTEANGA}-Gramadoir/share
 # including raw cvs logs for files not in the dist is pretty stupid.
 # cvs2cl.pl -l "-d '2004-06-01<'" -f Lingua-${UPPERTEANGA}-Gramadoir/Changes *-ga*
 make CHANGES
-cp CHANGES Lingua-${UPPERTEANGA}-Gramadoir
+mv -f CHANGES Lingua-${UPPERTEANGA}-Gramadoir/Changes
+chmod 644 Lingua-${UPPERTEANGA}-Gramadoir/Changes
 
 
 # t/triail.xml target
@@ -273,7 +274,7 @@ sed "s/@NATIVE@/${NATIVE}/g" |
 sed "s/tests => 1;/tests => $((${TESTS}+4));/" > ${SCRIPT}
 sed -i "/<<.EOF.;/r triail" ${SCRIPT}
 sed -i '/<<.RESEOF.;/r triail.xml' ${SCRIPT}
-chmod 444 "${SCRIPT}"
+chmod 644 "${SCRIPT}"
 
 
 # cleanup
