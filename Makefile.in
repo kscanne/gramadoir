@@ -172,6 +172,7 @@ installhtml :
 	$(INSTALL_DATA) cuidiu.html $(webhome)
 	$(INSTALL_DATA) eagar.html $(webhome)
 	$(INSTALL_DATA) foirm.html $(webhome)
+	$(INSTALL_DATA) form.html $(webhome)
 	$(INSTALL_DATA) index.html $(webhome)
 	$(INSTALL_DATA) iompar.html $(webhome)
 	$(INSTALL_DATA) sios.html $(webhome)
@@ -183,6 +184,7 @@ installweb :
 	$(MAKE) installhtml
 #	$(MAKE) neamhshuim
 	$(INSTALL_DATA) gramadoir.dtd $(webhome)/../dtds
+	$(INSTALL_DATA) gramadoir.lsm $(webhome)
 #	$(INSTALL_DATA) $(HOME)/.neamhshuim $(pkgdatadir)/Neamhshuim
 	runchoip
 
