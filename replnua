@@ -1,0 +1,8 @@
+#!/bin/sh
+# Generates replacement database for An Gramadóir -- only called from Makefile
+##  see "make eile.bs" target.
+cd ${HOME}/gaeilge/ispell/ispell-gaeilge/
+make athfromdb
+cat ${HOME}/.ispell_gaeilge ${HOME}/.biobla > ./temppersonal
+cat athfhocail | sed 's/ .*$//' | ispell -dgaeilgelit -p./temppersonal -l | uniq | sed 's/.*/grep "^&" athfhocail/' | /bin/bash | LC_COLLATE=POSIX sort -u | sed 's/ /_/g; s/_/ /;' > ${HOME}/gaeilge/gramadoir/gr/eile.pre.bs
+rm -f temppersonal

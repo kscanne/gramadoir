@@ -1,0 +1,28 @@
+#!/bin/bash
+#  used from gramadoir  "benchmark" makefile target.
+#   can conceivably be used with other software that outputs
+#   benchmark info in format like "debug.sed" in gramadoir dir.
+FIRST=true
+FIRSTINT=true
+grep '^20' |
+while read timestamp
+do
+	HUNDS=`echo "${timestamp}" | sed 's/^[^ ]*//' | sed 's/.......$//' | sed 's/:/ 360000 * /' | sed 's/:/ 6000 * /' | sed 's/\./ 100 * /' | sed 's/$/ + + + p/' | dc`
+	echo "${HUNDS}"
+	if [ ${FIRST} = "false" ]
+	then
+		echo "-"
+		echo "p"
+		echo "${HUNDS}"
+	fi
+	FIRST=false
+done | dc | sed 's/^-//' | 
+(while read interval
+do
+	echo "${interval}" "p"
+	if [ ${FIRSTINT} = "false" ]
+	then
+		echo "+"
+	fi
+	FIRSTINT=false
+done; echo "p") | dc | tr "\n" "\t" | sed "s/^/200x-xx-xx     /"
