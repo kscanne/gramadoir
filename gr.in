@@ -11,7 +11,7 @@
 # This is a script for checking the grammar of Irish language text
 # contained in the files specified on the command line, or read from
 # standard input if no arguments are given.   The default behavior is
-# to write a summary of possible errors to standard output.   
+# to write a summary of possible errors to standard output.
 #
 # There are several command line options.  The --html command line argument
 # produces HTML output which should resemble the terminal output when
@@ -79,7 +79,6 @@ loganu()
 sed "
 s/\"ANAITHNIDSRL/\"Focal anaithnid (scaoilfear an chuid eile)/g
 s/\"ANAITHNID/\"Focal anaithnid/g
-/BACHOIR/s/_/ /g
 s/\"BACHOIR{\([^}]*\)}/\"Ba chóir duit \/\1\/ a úsáid anseo/g
 /CAIGHDEAN/s/_/ /g
 s/\"CAIGHDEAN{\([^}]*\)}/\"Focal neamhchaighdeánach: ar mhaith leat \/\1\/?/g
@@ -97,7 +96,7 @@ s/\"URU/\"Urú ar iarraidh/g
 versionout()
 {
 echo "${CLAR}, ${versionstring}"
-echo "Copyright (C) 2003 Kevin P. Scannell"
+echo "Cóipcheart/Copyright (C) 2003 Kevin P. Scannell"
 echo ${gpl1}
 echo ${gpl2}
 echo ${gpl3}
@@ -108,7 +107,7 @@ htmlversion()
 {
 echo "<p>"
 echo "<a href=\"http://borel.slu.edu/gramadoir/\">${CLAR}</a>, ${versionstring}<br>"
-echo "Copyright (C) 2003 <a href=\"http://borel.slu.edu/\">Kevin P. Scannell</a><br><br>"
+echo "Cóipcheart/Copyright (C) 2003 <a href=\"http://borel.slu.edu/\">Kevin P. Scannell</a><br><br>"
 echo "<i>"
 echo "${gpl1}"
 echo "${gpl2}"
@@ -315,7 +314,7 @@ comhad()
 		rialacha |
 		eisceacht |
 		comheadan |
-		@AWK@ "{sub(/myaibhsigh/,\"${AIBHSIGHVAR}\"); print}" | 
+		@AWK@ "{sub(/myaibhsigh/,\"${AIBHSIGHVAR}\"); print}" |
 		loganu |
 		/bin/bash -s
 }
@@ -324,7 +323,7 @@ comhad()
 # same as filters in comhad up to the interface
 xml_output()
 {
-	cat $1 | diutf | 
+	cat $1 | diutf |
 		abairti |
 		@prefix@/libexec/cuardach ${USEIGNORE} |
 		aonchiall |
@@ -349,7 +348,7 @@ p
 # This replaces "comhad" above when "--litriu" options is given
 litriu()
 {
-	cat $1 | diutf | 
+	cat $1 | diutf |
 		abairti |
 		@prefix@/libexec/cuardach ${USEIGNORE} |
 		litriu_comheadan
