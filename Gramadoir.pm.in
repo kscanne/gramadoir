@@ -580,6 +580,27 @@ sub spell_check
 	return $badwords;
 }
 
+##############################################################################
+
+=item all_possible_tags WORD
+
+Takes the input WORD and returns it with (XML-style) markup 
+indicating all of its possible parts of speech.
+
+=cut
+
+##############################################################################
+
+sub all_possible_tags
+{
+	my ( $self, $word ) = @_;
+	return undef unless defined $word;
+	eval {from_to($word,$self->{'input_encoding'},'@NATIVE@') };
+	croak gettext('conversion from %s is not supported', 
+			$self->{'input_encoding'}) if $@;
+	return decode('@NATIVE@', $self->tag_one_word($word));
+}
+
 
 ##############################################################################
 
