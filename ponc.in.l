@@ -47,7 +47,8 @@ PREFIXT |
 SEIMHIU |
 URU 		{return MESSAGE;}
 
-BACHOIR		{return  MESSAGEPLUS;}
+BACHOIR	|
+CAIGHDEAN	 {return  MESSAGEPLUS;}
 
 
 ([A-Za-zΑΙΝΣΪαινσϊ[][-a-zαινσϊ'?]?|[a-zαινσϊ][A-Z])[][A-Za-zΑΙΝΣΪαινσϊ'?()|-]*	{return  WORD;}
