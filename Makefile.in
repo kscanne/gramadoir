@@ -32,7 +32,7 @@ PERL = @PERL@
 VERSION = @VERSION@
 YACC = @YACC@
 
-all : aonchiall.pl eisceacht.pl rialacha.pl cuardach
+all : aonchiall.pl eisceacht.pl rialacha.pl cuardach gr
 
 cuardach : cuardach.o
 	$(CC) -o cuardach $(CFLAGS) cuardach.o
@@ -51,7 +51,7 @@ eisceacht.pl : eisceacht.in eisceacht.meta.sed gin.meta.sed
 
 check : FORCE
 	@gr triail > triail.tmp
-	@if diff triail.tmp triail.err; then $(ECHO) 'Ceart go leor.'; else $(ECHO) 'Fadhb.'; fi
+	@if diff triail.err triail.tmp; then $(ECHO) 'Ceart go leor.'; else $(ECHO) 'Fadhb.'; fi
 	@rm -f triail.tmp
 
 
@@ -67,7 +67,7 @@ install : all installdirs
 
 installdirs : mkinstalldirs
 	./mkinstalldirs $(bindir) $(pkgdatadir) $(libexecdir)
-	chmod 755 $(bindir) $(pkgdatadir) $(libexecdir)
+#	chmod 755 $(bindir) $(pkgdatadir) $(libexecdir)
 
 uninstall :
 	rm -f $(pkgdatadir)/focail.bs
@@ -78,18 +78,26 @@ uninstall :
 	rm -f $(libexecdir)/rialacha.pl
 	rm -f $(bindir)/gr
 
-Makefile gr : Makefile.in gr.in
-	./configure
+configure: configure.ac
+	autoconf
+
+Makefile gr : Makefile.in gr.in config.status
+	./config.status
+	chmod 444 Makefile gr
+
+config.status: configure
+	./config.status --recheck
 
 distclean :
 	${MAKE} clean
 	rm -f gr config.log config.status Makefile
 
 clean :
-	rm -f triail.html cuardach cuardach.o rialacha.pl aonchiall.pl eisceacht.pl cabhair.o cabhair y.tab.* lex.yy.* aparser eparser rparser aonchiall.y eisceacht.y rialacha.y
+	${MAKE} semiclean
+	rm -f cuardach cuardach.o rialacha.pl aonchiall.pl eisceacht.pl aparser eparser rparser
 
 semiclean :
-	rm -f triail.html cuardach.o cabhair.o cabhair y.tab.* lex.yy.*
+	rm -f triail.html cabhair.o cabhair y.tab.* lex.yy.* aonchiall.y eisceacht.y rialacha.y
 
 ###############################################
 # Remaining targets are for use by developers #
@@ -141,6 +149,7 @@ dist : FORCE
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/triail.err
 	gzip $(TARBALL).tar
 	chmod 444 $(TARBALL).tar.gz
+	mv $(TARBALL).tar.gz $(webhome)
 	rm -f ../$(TARBALL)
 
 triail.err : FORCE
