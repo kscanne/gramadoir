@@ -29,6 +29,7 @@ packageversion="@PACKAGE_VERSION@"
 bugemail="@PACKAGE_BUGREPORT@"
 TEXTDOMAINDIR="@prefix@/share/locale"
 TEXTDOMAIN="@PACKAGE_NAME@"
+TEANGACHA="@TEANGACHA@"
 export TEXTDOMAINDIR TEXTDOMAIN
 
 # title that prints to screen, not used as filename.  I'd also prefer
@@ -56,6 +57,7 @@ versionstring=`gettext -s "version %s"`
 gpl=`gettext -s "This is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\nto the extent permitted by law."`
 tryhelp=`gettext -s "Try %s for more information."`
 unknownopt=`gettext -s "unknown option"`
+unsupported=`gettext -s "Language %s is not supported."`
 
 # i18n: grammatical errors.  See rialacha.in.
 # If you port to another language, you won't translate these; instead
@@ -209,19 +211,19 @@ d
 #  that...     distinguishing between ...  is sometimes much harder.
 aonchiall()
 {
-@PERL@ @prefix@/libexec/aonchiall.pl
+@PERL@ @prefix@/libexec/aonchiall-${TEANGA}.pl
 }
 
 # This is the workhorse.  It does the actually marking up of errors.
 rialacha()
 {
-@PERL@ @prefix@/libexec/rialacha.pl
+@PERL@ @prefix@/libexec/rialacha-${TEANGA}.pl
 }
 
 # This strips off errors from exceptions to rules
 eisceacht()
 {
-@PERL@ @prefix@/libexec/eisceacht.pl
+@PERL@ @prefix@/libexec/eisceacht-${TEANGA}.pl
 }
 
 # This is the final filter used by the "gr" program.
@@ -328,7 +330,7 @@ p
 "
 }
 
-# This replaces "comhad" above when "--litriu" options is given
+# This replaces "comhad" above when "--litriu" option is given
 litriu()
 {
 	cat $1 | diutf |
@@ -342,9 +344,29 @@ litriu()
 AIBHSIGHVAR="@EGREP_COLOR@ "
 ACTION=comhad
 SCRIOBH_HTML=nihea
+TEANGA=ga
 while [ ${1%%[^-]*} ]
 do
-	case "${1}" in
+	if echo ${1} | grep "=" > /dev/null
+	then
+		JUSTOPT=`echo ${1} | sed 's/=.*//'`
+		OPTARG=`echo ${1} | sed 's/^[^=]*=//'`
+		case "${JUSTOPT}" in
+		"--teanga" )
+			if echo "${TEANGACHA}" | grep "${OPTARG}" > /dev/null
+			then
+				TEANGA="${OPTARG}"
+			else
+				printf "${unsupported}\n" ${OPTARG}
+				exit 1
+			fi
+		;;
+		* )
+			option_error ${JUSTOPT}
+		;;
+		esac
+	else
+		case "${1}" in
 		"--version" )
 			if [ ${SCRIOBH_HTML} = "issea" ]
 			then
@@ -374,7 +396,8 @@ do
 		* )
 			option_error ${1}
 		;;
-	esac
+		esac
+	fi
 	shift
 done
 
