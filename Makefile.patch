@@ -1,5 +1,5 @@
---- Makefile	2005-03-02 22:40:37.128601552 -0600
-+++ Makefile.ok	2005-03-02 22:40:27.925000712 -0600
+--- Makefile	2005-03-07 14:23:50.521912080 -0600
++++ Makefile.ok	2005-03-07 14:23:44.690798544 -0600
 @@ -60,8 +60,16 @@
  
  Makefile : Makefile.in config.status
@@ -17,7 +17,7 @@
  config.status: configure
  	./config.status --recheck
  
-@@ -81,4 +89,187 @@
+@@ -81,4 +89,186 @@
  semiclean :
  	rm -f y.tab.* $(LEX_OUTPUT_ROOT).* aonchiall.y rialacha.y
  
@@ -102,7 +102,6 @@
 +	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/ponc.in.y
 +	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/README
 +	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/README.perl
-+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/README-xx
 +	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/rialacha.meta.pl
 +	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/OOo/groo.pl
 +	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/OOo/gramadoir.sxw
@@ -149,7 +148,6 @@
 +	cp -f ponc.in.y $(CVSDIR)/engine
 +	cp -f README $(CVSDIR)/engine
 +	cp -f README.perl $(CVSDIR)/engine
-+	cp -f README-xx $(CVSDIR)/engine
 +	cp -f rialacha.meta.pl $(CVSDIR)/engine
 +	cp -f OOo/groo.pl $(CVSDIR)/engine/OOo
 +	cp -f OOo/gramadoir.sxw $(CVSDIR)/engine/OOo
@@ -178,6 +176,7 @@
 +	(cd $(CVSDIR)/engine; cvs commit -m "sync'd with borel repository" .)
 +	cvs update engine
 +	cp -f ga/3grams-ga.txt $(CVSDIR)/ga
++	cp -f ga/Artistic $(CVSDIR)/ga
 +	cp -f ga/COPYING $(CVSDIR)/ga
 +	cp -f ga/Changes $(CVSDIR)/ga
 +	cp -f ga/README $(CVSDIR)/ga
