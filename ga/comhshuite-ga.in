@@ -60,9 +60,14 @@ m?[Bb]h?eo beathach:<A pl="n" gnt="n">
 m?[Bb]h?óín Dé:<N pl="n" gnt="n" gnd="f">
 m?[Bb]h?rín óg:<N pl="n" gnt="n">
 m?[Bb]h?uaileam sciath:<N pl="n" gnt="n">
+# OD méad.2
+[Aa]r mhéad:<R>
+[Aa]r a mhéad:<R>
+[Cc][áé] [Mm]héad:<Q>
+[Dd]á mhéad:<R>
 # OD cá.6
 [Cc]ár bith:<Q>
-# [Cc]é is moite
+[Cc]é is moite:<R>
 [Cc]eannann céanna:<A pl="n" gnt="n">
 [Cc]heannann chéanna:<A pl="n" gnt="n">
 [Cc]iolar chiot:<N pl="n" gnt="n" gnd="f">
@@ -138,9 +143,11 @@ Fear Manach:<N pl="n" gnt="n">
 [Gg]o héag:<R>
 [Gg]o héasca:<R>
 [Gg]o hiomlán:<R>
+# hides "léir" from rule requiring a preceding copula; see rialacha
 [Gg]o léir:<R>
-# <A> => would need exception for lenition after fem. noun
 [Gg]o leith:<R>
+# hides "leor" from rule requiring a preceding copula; see rialacha
+[Gg]o leor:<R>
 [Gg]o luath:<R>
 [Gg]o minic:<R>
 [Gg]o nuige:<R>
@@ -225,6 +232,8 @@ h?Inis Mór:<N pl="n" gnt="n" gnd="f">
 # is tráthas:<N>
 [Ll]e chéile:<R>
 [Ll]e cois:<S>
+# rare instance in which déanaí is not preceded by copula; see rialacha
+[Ll]e déanaí:<R>
 [Ll]e deireanas:<R>
 [Ll]e feiceáil:<R>
 [Ll]e haghaidh:<S>
@@ -243,6 +252,7 @@ Loch Garman:<Y>
 [Mm]h?ac siobháin:<N pl="n" gnt="n" gnd="m">
 Mh?aigh Eo:<N pl="n" gnt="n">
 [Mm]ar dhea:<R>
+[Mm]ar sin féin:<R>
 # infrequent
 [Mm]eacan ragaim:<N pl="n" gnt="n" gnd="m">
 # infrequent
@@ -252,6 +262,12 @@ na bhfud:<N pl="y" gnt="y" gnd="m">
 [Nn]í hamhlaidh:<U>
 # infrequent
 [Nn]í hansa:<U>
+# rare instance in which déanaí is not preceded by copula; see rialacha
+[Nn]íos déanaí:<R>
+# rare instance in which fearr is not preceded by copula; see rialacha
+[Nn]íos fearr:<A>
+# rare instance in which mó is not preceded by copula; see rialacha
+[Nn]íos mó:<A>
 # infrequent
 [Nn]iúdar neádar:<N pl="n" gnt="n">
 [Óó] chianaibh:<R>
@@ -298,3 +314,4 @@ Ros Muc:<N pl="n" gnt="n">
 [Tt]har ceann:<S>
 [Tt]har fóir:<R>
 [Tt]rí bhíthin:<S>
+[Uu]m an dtaca:<R>

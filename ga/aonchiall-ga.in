@@ -24,12 +24,13 @@
 <B>g?[Cc]h?éad</B>:<A pl="n" gnt="n">
 <B>[Cc]heana</B>:<R>
 # "if", not "thigh"
-<B>[Mm]ás</B>:<C>
+<B>[Mm]ás</B>:<V cop="y">
 # copula, not "abbot"
 <B>[Aa]b</B>:<V cop="y">
 # lowercase ach under last resorts
 <B>Ach</B>:<C>
-<B>[Aa]ir</B>:<O>
+# Not needed until corpus ref turns up for "ar" nm1
+# <B>[Aa]ir</B>:<O>
 <B>Aire</B>:<N pl="n" gnt="n" gnd="m">
 <B>(n-)?aire</B>:<N pl="n" gnt="n" gnd="f">
 # háirithe now handled in comhshuite
@@ -43,15 +44,15 @@
 #<S>[Ii]n</S> <B>ann</B>:<N pl="n" gnt="n">
 <B>ann</B>:<O>
 <B>[Aa]n</B> <V>ANYTHING</V>:<Q>
-<B>[Aa]n</B> amhlaidh:<Q>
-<B>[Aa]n</B> mar:<Q>
+<B>[Aa]n</B> amhlaidh:<V cop="y">
+<B>[Aa]n</B> mar:<V cop="y">
 <B>[Aa]n</B> <P>té</P>:<T>
-<B>[Aa]n</B> <[PRSO]>ANYTHING</[PRSO]>:<Q>
-<B>[Aa]n</B> leis:<Q>
-<B>[Aa]n</B> mó:<Q>
-<B>[Aa]n</B> de:<Q>
-<B>[Aa]n</B> faoi:<Q>
-<B>[Aa]n</B> fiú:<Q>
+<B>[Aa]n</B> <[PRSO]>ANYTHING</[PRSO]>:<V cop="y">
+<B>[Aa]n</B> leis:<V cop="y">
+<B>[Aa]n</B> mó:<V cop="y">
+<B>[Aa]n</B> de:<V cop="y">
+<B>[Aa]n</B> faoi:<V cop="y">
+<B>[Aa]n</B> fiú:<V cop="y">
 <B>[Aa]n</B> <[^V]>ANYTHING</[^V]>:<T>
 <S>ANYTHING</S> <B>[Aa]n</B>:<T>
 <B>[Aa]nuas</B>:<R>
@@ -76,6 +77,9 @@
 <B>[Bb]h?arr</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Bb]h?eag</B>:<A pl="n" gnt="n">
 <B>[Bb]hí</B>:<V p="xx" t="caite">
+# verbal particle or copula
+<B>[Cc]á</B> <V>ANYTHING</V>:<Q>
+<B>[Cc]á</B> UNECLIPSED:<V cop="y">
 # friends, not credit
 <B>g?[Cc]h?airde</B>:<N pl="y" gnt="n" gnd="m">
 <B>[Cc]ár</B> <V>ANYTHING</V>:<Q>
@@ -154,6 +158,7 @@ an <B>dó</B>:<A pl="n" gnt="n">
 # comhshuite now
 #<B>[Gg]o</B> <S>dtí</S>:<S>
 <B>[Gg]o</B> <A>ANYTHING</A>:<U>
+# see "gur" last resort...
 # not "yam" :)
 <B>[Ii]onam</B>:<O>
 # amháin, siar, thiar, thuaidh, etc; iontach only prominent exception
@@ -292,9 +297,8 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 #<NFGS>ANYTHING</NFGS> <A>ANYTHING</A> <B><Z>AWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
 #<NMGS>ANYTHING</NMGS> <A>ANYTHING</A> <B><Z>AWITHGSM</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="m">
 #<NCS>ANYTHING</NCS> <A>ANYTHING</A> <B><Z>AWITHCOMMON</Z>ANYTHING</B>:<A pl="n" gnt="n">
-# strong plurals after "na" must be done before the ANYNMPL rules that follow
-<T>na</T> <B><Z>STRONGPLM</Z>ECLIPSED</B>:<N pl="y" gnt="y" gnd="m">
-<T>na</T> <B><Z>STRONGPLF</Z>ECLIPSED</B>:<N pl="y" gnt="y" gnd="f">
+<T>na</T> <B><Z>ANYNMGPL</Z>ECLIPSED</B>:<N pl="y" gnt="y" gnd="m">
+<T>na</T> <B><Z>ANYNFGPL</Z>ECLIPSED</B>:<N pl="y" gnt="y" gnd="f">
 # s?na=>plural
 <T>[Nn]a</T> <B><Z>ANYNFPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
 <T>[Nn]a</T> <B><Z>ANYNMPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
@@ -316,17 +320,17 @@ is <B><Z>ANYWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
 [Gg]o <B><Z>NOUNADJH</Z>ANYTHING</B>:<A pl="n" gnt="n" h="y">
 # N[FM]ADJ macros don't allow genitives (see last rule in batch)
 <S>ANYTHING</S> <B><Z>NMADJ</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<T>ANYTHING</T> <B><Z>NMADJ</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<T>[Aa]n</T> <B><Z>NMADJ</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 [Aa] <B><Z>NMADJ</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <N>ANYTHING</N> <B><Z>NMADJ</Z>ANYTHING</B>:<A pl="n" gnt="n">
 # next batch is for feminine: "maith", etc.
 <S>ANYTHING</S> <B><Z>NFADJ</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
-<T>ANYTHING</T> <B><Z>NFADJ</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<T>[Aa]n</T> <B><Z>NFADJ</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 [Aa] <B><Z>NFADJ</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <N>ANYTHING</N> <B><Z>NFADJ</Z>ANYTHING</B>:<A>
 # next batch is for "scríobh", "rith", "líon", etc. 
 <S>ANYTHING</S> <B><Z>NMVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<T>ANYTHING</T> <B><Z>NMVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<T>[Aa]n</T> <B><Z>NMVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 # N[MF]VERB types exclude autonomous correctly
 a <B><Z>NMVERB</Z>ANYTHING</B> <P>ANYTHING</P>:<V p="xx" t="caite">
 a <B><Z>NMVERB</Z>ANYTHING</B> sé:<V p="xx" t="caite">
@@ -336,7 +340,7 @@ a <B><Z>NMVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <V>ANYTHING</V> <B><Z>NMVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 # repeat previous batch for feminine:  "roinn", "úsáid", "chaill", etc. 
 <S>ANYTHING</S> <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
-<T>ANYTHING</T> <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<T>[Aa]n</T> <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 a <B><Z>NFVERB</Z>ANYTHING</B> <P>ANYTHING</P>:<V p="xx" t="caite">
 a <B><Z>NFVERB</Z>ANYTHING</B> sé:<V p="xx" t="caite">
 a <B><Z>NFVERB</Z>ANYTHING</B> <N>ANYTHING</N>:<V p="xx" t="caite">
@@ -388,6 +392,7 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="saor" t="caite">
 <B><Z>STRONGPLM</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 <B><Z>STRONGPLF</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
 <T>na</T> <B><Z>ANYNFG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+<T>na</T> <B><Z>NMONEADJ</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="m">
 <[^N]>ANYTHING</[^N]> <B><Z>NFFOUR</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 # mar, ach, go
 <B><Z>PREPCONJ</Z>ANYTHING</B> <[NP]>ANYTHING</[NP]>:<S>
@@ -467,3 +472,6 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="saor" t="caite">
 # as, faoi (tríd only other handled above)
 <B><Z>PREPPRONM</Z>ANYTHING</B> <S>ANYTHING</S>:<O>
 <B><Z>PREPPRONM</Z>ANYTHING</B>:<S>
+# dar le/liom/liomsa/lena etc.
+<B>[Dd]ar</B> <[DOST]>ANYTHING</[DOST]>:<S>
+<B>[Dd]ar</B>:<V cop="y">

@@ -34,9 +34,10 @@ ANYTHING [Aa]n méid:
 ar ar:
 ANYTHING bheith:
 bheith ANYTHING:
-[Cc]á mhinice|fhad|mhéad:
+# OD cá.3a ("Cá mhéad" is in comhshuite)
+[Cc]á mhinice|fhad:
 # CB p.24 #11.a.iii
-<Q>[Cc]á</Q> <NWITHH>ANYTHING</NWITHH>:
+<V>[Cc]á</V> <NWITHH>ANYTHING</NWITHH>:
 # CB p.133 #12
 <Q>[Cc]á</Q> <VPAST>PASTNORFORM</VPAST>:
 # OD ea^1.5b, LGG p.114
@@ -78,7 +79,8 @@ ANYTHING dú(irt|ra[dm]ar|radh):
 fada fada:
 # now in comhshuite
 #[Ff]aoi deara:
-ANYTHING gach:
+# exception to rule requiring lenition of adjective following fem. nouns
+<N>ANYTHING</N> gach:
 [Gg]an fhios:
 # gheobh*, gheofar
 # exception to rule prohibiting lention in present, future, and imperative

@@ -74,6 +74,10 @@ ANYTHING <VIMP>INITIALH</VIMP>:NIAITCH
 #  ní, má, gur, etc. + "gheo*" forms in eisceacht
 #. In Éirinn chaitheann breis is 30 faoin gcéad de mhná toitíní.
 ANYTHING <VNOLEN>LENITED</VNOLEN>:NISEIMHIU
+# MacL00 p.114 (Béarlachas)
+# Lá fuar agus fliuch a bhí ann.
+#  many exceptions?
+# <A>ANYTHING</A> <C>agus</C> <A>ANYTHING</A>:NIGA{agus}
 # CB p.16 #9.a  (needs shallow parse) -- subsumes CB p.17 #9.gh after <S>
 #. Tá sé riachtanach ar mhaithe le feidhmiú an phlean a bheidh ceaptha ag an eagraíocht ceannasach.
 <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
@@ -94,6 +98,9 @@ ANYTHING <VNOLEN>LENITED</VNOLEN>:NISEIMHIU
 # CB p.16 #9.c
 #. Tá na lachain slachtmhara ar eitilt.
 <NP>SLENDERFINALCONSONANT</NP> <A>UNLENITED</A>:SEIMHIU
+# INPHRASE rule, but example sentence is best caught before "na" rules
+#. Maidin lá ar na mhárach thug a fhear gaoil cuairt air.
+<N>[Mm]hárach</N>:INPHRASE{arna mhárach}
 # CB p.13 #4.a
 #. Tá an Rialtas tar éis áit na Gaeilge i saol na tíre a ceistiú.
 <S>a</S> <N>UNLENITED</N>:SEIMHIU
@@ -199,15 +206,23 @@ h?[Aa]on <N>UNLENITEDBCFGMP</N>:SEIMHIU
 # CB p.20 1.a
 #. Déanaigí beart leis de réir bhur briathra.
 <D>[Bb]hur</D> UNECLIPSED:URU
+# OD méid, corpus; common alternate of "Cé mhéad"
+#. Cé mhéid gealladh a briseadh ar an Indiach bocht?
+[Cc][áé] <N>[Mm]h?éid</N>:CAIGHDEAN{mhéad}
+# OD méad, "with s.", MacL00 p.110, LGG p.29
+#. Nach raibh a fhios aige cé mhéad daoine a bhíonn ag éisteacht leis an stáisiún.
+<Q>[Cc][áé] [Mm]héad</Q> <NP>ANYTHING</NP>:UATHA
+#. Faigh amach cé mhéad saile a bhíonn i sampla d'uisce.
+<Q>[Cc][áé] [Mm]héad</Q> <NGS>ANYTHING</NGS>:NOGENITIVE
 # CB p.22 #7.c, p.132 #4
 #. Cá cuireann tú do thréad ar féarach?
 <Q>[Cc]á</Q> <V>UNECLIPSED</V>:URU
 # CB p.24 #11.a.iii, LGG p.113
 #. Cá áit a nochtfadh sé é féin ach i mBostún!
-<Q>[Cc]á</Q> <N>INITIALVOWEL</N>:PREFIXH
+<V>[Cc]á</V> <N>INITIALVOWEL</N>:PREFIXH
 # OD cá; see exceptions
 #. Cá chás dúinn bheith ag máinneáil thart anseo?
-<Q>[Cc]á</Q> <N>LENITED</N>:NISEIMHIU
+<V>[Cc]á</V> <N>LENITED</N>:NISEIMHIU
 # CB p.132 #5
 <Q>[Cc]á</Q> <VPAST>ANYTHING</VPAST>:BACHOIR{cár}
 # CB p.132 #5
@@ -285,14 +300,17 @@ h?[Aa]on <N>UNLENITEDBCFGMP</N>:SEIMHIU
 # CB p.13 #3.f
 #. Bhí sé cúig bhanlámh ar fhad, cúig banlámh ar leithead.
 [Cc]úig <NCS>UNLENITED</NCS>:SEIMHIU
+# OD méid is alt of méad
+[Dd]á <N>[Mm]h?éid</N>:CAIGHDEAN{mhéad}
 # CB p.22 #7.h, p.132 #6
 <C>[Dd]á</C> <V>UNECLIPSED</V>:URU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. Beirim mo mhionna dar an beart a rinne Dia le mo shinsir.
 <S>[Dd]ar</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
-# CB p.14 Note
-#. Dearbhaím é dar chuthach m'éada i gcoinne na gciníocha eile.
-<S>[Dd]ar</S> <N>LENITED</N>:NISEIMHIU
+# CB p.14 Note; but it is hard to disambiguate from past copula "dar"
+# which DOES lenite...
+# Dearbhaím é dar chuthach m'éada i gcoinne na gciníocha eile.
+# <S>[Dd]ar</S> <N>LENITED</N>:NISEIMHIU
 # CB p.84 #8 keep before following
 <D>[Dd]ár</D> dhá <N>UNECLIPSED</N>:URU
 # CB p.84 #8
@@ -331,6 +349,13 @@ Dé Aoine:PREFIXH
 #[Dd]há g?[Cc]h?os:BACHOIR{chois}
 # CB p.77 #8.d; no such rule in OD/LGG, in fact "do dhá lámh" explicitly in OD
 #[Dd]há [Ll]ámh:BACHOIR{láimh}
+# OD dhá^1
+#. Is léir nach bhfuil an dhá theanga ar chomhchéim lena chéile.
+<T>[Aa]n</T> [Dd]há:NISEIMHIU
+#. Ní bhíonn aon dhá chlár as an chrann céanna mar a chéile go díreach.
+<A>[Aa]on</A> [Dd]há:NISEIMHIU
+#. Tionóladh an chéad dhá chomórtas i nGaoth Dobhair.
+<A>[Cc]h?éad</A> [Dd]há:NISEIMHIU
 # CB p.6 #2
 #. Cá bhfuil feoil le fáil agamsa le tabhairt do an mhuintir seo?
 [Dd]o <T>an</T>:BACHOIR{don}
@@ -502,6 +527,9 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.13 #4.a
 #. Roghnaítear an bhliain 1961 mar pointe tosaigh don anailís.
 <S>[Mm]ar</S> <N>UNLENITED</N>:SEIMHIU
+# OD méad
+#. Tá caitheamh na hola ag dul i méad i gcónaí.
+[Mm]h?éad:CAIGHDEAN{méid, mhéid}
 # CB p.5 #17
 #. Comhlíon mo aitheanta agus mairfidh tú beo.
 <D>[Mm]o</D> INITIALVOWELORF:BACHOIR{m+uaschamóg}
@@ -535,6 +563,12 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.24 #11.a.vii (eclipsis in genitive plural, rule above), LGG p.112
 #. Chuir an Coimisiún féin comhfhreagras chuig na eagraíochtaí seo ag lorg eolais faoina ngníomhaíochtaí.
 <T>na</T> <NCP>INITIALVOWEL</NCP>:PREFIXH
+#. Tá an tréith sin coitianta i measc na nÉireannaigh sa tír seo.
+<T>[Nn]a</T> <NCP>ECLIPSED</NCP>:GENITIVE
+#. Clann na bPoblachta a thug siad orthu féin.
+<T>[Nn]a</T> <NGS>ECLIPSED</NGS>:NIURU
+#. Athdhéantar na snáithe i ngach ceann de na curaclaim seo.
+<T>[Nn]a</T> <NCS>ANYTHING</NCS>:BACHOIR{an}
 # CB p.24 #11.d
 #. Ná iompaígí chun na n-íol, agus ná dealbhaígí déithe de mhiotal.
 [Nn]á <V>INITIALVOWEL</V>:PREFIXH
@@ -602,6 +636,8 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <R>[Nn]íos</R> <AMGS>ANYTHING</AMGS>:BREISCHEIM
 <R>[Nn]íos</R> <AP>ANYTHING</AP>:BREISCHEIM
 <R>[Nn]íos</R> <[^A]>ANYTHING</[^A]>:BREISCHEIM
+#. Tá bonn i bhfad níos dhoimhne ná sin le Féilte an Oireachtais.
+<R>[Nn]íos</R> <A>LENITED</A>:NISEIMHIU
 # CB p.133 #9 (with "má"), OD ó^4.II
 #. Ach anois ó cuimhním air, bhí ardán coincréite sa pháirc.
 <C>[Óó]</C> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
@@ -614,6 +650,12 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.20 #1.c
 #. Bhí ocht tábla ar fad ar a maraídís na híobairtí.
 [Oo]cht <N>UNECLIPSED</N>:URU
+# MacL00 p.118
+#. Beidh an chéad chruinniú oifigiúil ag an gcoiste oíche Dé Luain.
+<N>[Oo]íche</N> <N>Dé</N>:NIGA{Dé}
+# MacL00 p.118
+#. Bíonn ranganna ar siúl oíche Dhéardaoin.
+<N>[Oo]íche</N> <N>Dhéardaoin</N>:NISEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. Bíodh bhur ngrá saor ón cur i gcéill.
 <S>[Óó]n</S> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
@@ -688,6 +730,8 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.24 #11.a.vii (implicitly)
 #. Tá ar a laghad ceithre ní sa litir a chuir scaoll sna oifigigh.
 <S>[Ss]na</S> <NCP>INITIALVOWEL</NCP>:PREFIXH
+#. Soláthraíonn an Roinn seisiúin sna Gaeilge labhartha do na mic léinn.
+<S>[Ss]na</S> <NCS>ANYTHING</NCS>:BACHOIR{sa, san}
 # CB p.22 #7.g, p.132 #4
 #. Iompróidh siad thú lena lámha sula bhuailfeá do chos in aghaidh cloiche.
 <C>[Ss]ula</C> UNECLIPSED:URU
@@ -812,7 +856,6 @@ ANYTHING <NWITHH>ANYTHING</NWITHH>:NIAITCH
 <N>g?[Cc]h?olgsheasamh</N>:INPHRASE{ina cholgsheasamh}
 <N>g?[Cc]h?omhchlos</N>:INPHRASE{i gcomhchlos}
 <N>g?[Cc]h?omhthráth</N>:INPHRASE{i gcomhthráth}
-<S>[Dd]arb</S>:INPHRASE{darb ainm}
 <N>n?[Dd]h?allach</N>:INPHRASE{dallach dubh}
 <N>n?[Dd]h?eara</N>:INPHRASE{faoi deara}
 <N>[Dd]hea</N>:INPHRASE{mar dhea}
@@ -854,8 +897,7 @@ háirithe:INPHRASE{go háirithe}
 <N>liútar</N>:INPHRASE{liútar éatar}
 <N>[Ll]uthairt</N>:INPHRASE{luthairt lathairt}
 <N>[Mm]aos</N>:INPHRASE{ar maos}
-#. Maidin lá ar na mhárach thug a fhear gaoil cuairt air.
-<N>[Mm]hárach</N>:INPHRASE{arna mhárach}
+<U>[Mm]oite</U>:INPHRASE{cé is moite}
 <N>[Mm]ugadh</N>:INPHRASE{mugadh magadh}
 <N>ndáiríre</N>:INPHRASE{i ndáiríre}
 <N>[Nn]eamhchead</N>:INPHRASE{ar neamhchead}
