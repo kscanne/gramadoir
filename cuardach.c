@@ -608,6 +608,12 @@ cleanup ()
   free (torepl);
 }
 
+void
+flush_input (char *buf)
+{
+  while (scanf ("%511s", buf) != EOF);
+}
+
 int
 main (int argc, char *argv[])
 {
@@ -622,6 +628,7 @@ main (int argc, char *argv[])
   if (argc != 3)
     {
       fprintf (stderr, gettext ("problem with the `cuardach' command\n"));
+      flush_input (token);
       return 1;
     }
 
@@ -632,6 +639,7 @@ main (int argc, char *argv[])
       fprintf (stderr, gettext ("%s: problem reading the database\n"),
 	       packagename);
       cleanup ();
+      flush_input (token);
       return 1;
     }
 
