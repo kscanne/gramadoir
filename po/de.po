@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gramadoir 0.2-r1\n"
-"POT-Creation-Date: 2003-10-17 16:09-0500\n"
+"POT-Creation-Date: 2003-10-21 10:14-0500\n"
 "PO-Revision-Date: 2003-10-07 22:09+0100\n"
 "Last-Translator: Martin Gregory <martin.gregory@sas.com>\n"
 "Language-Team: German <de@li.org>\n"
@@ -15,36 +15,36 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: cuardach.c:82 cuardach.c:101 cuardach.c:144 cuardach.c:217
+#: cuardach.c:83 cuardach.c:102 cuardach.c:145 cuardach.c:218
 #, c-format
 msgid "%s: out of memory\n"
 msgstr "%s: Arbeitsspeicher erschöpft\n"
 
-#: cuardach.c:91
+#: cuardach.c:92
 #, c-format
 msgid "%s: `%s' corrupted at %s\n"
 msgstr "%s: `%s' verfälscht bei %s\n"
 
-#: cuardach.c:114 cuardach.c:155 cuardach.c:235
+#: cuardach.c:115 cuardach.c:156 cuardach.c:236
 #, c-format
 msgid "%s: warning: check size of %s: %d?\n"
 msgstr "%s: Warnung: Größe von %s überprüfen: %d?\n"
 
-#: cuardach.c:119 cuardach.c:160 cuardach.c:241
+#: cuardach.c:120 cuardach.c:161 cuardach.c:242
 #, c-format
 msgid "%s: warning: problem closing %s\n"
 msgstr "%s: Warnung: Problem beim Schließen von %s\n"
 
-#: cuardach.c:277
+#: cuardach.c:278
 #, c-format
 msgid "%s: no grammar codes\n"
 msgstr "%s: keine grammatische Codes\n"
 
-#: cuardach.c:516
+#: cuardach.c:518
 msgid "problem with the `cuardach' command\n"
 msgstr "Problem mit dem Befehl `cuardach'\n"
 
-#: cuardach.c:526
+#: cuardach.c:528
 #, c-format
 msgid "%s: problem reading the database\n"
 msgstr "%s: Problem beim Lesen der Datenbank\n"
