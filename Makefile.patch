@@ -1,5 +1,5 @@
---- Makefile	2005-01-19 10:20:37.210867560 -0600
-+++ Makefile.ok	2005-01-19 10:20:31.885677112 -0600
+--- Makefile	2005-01-30 14:51:18.241094296 -0600
++++ Makefile.ok	2005-01-30 14:49:17.804403456 -0600
 @@ -60,8 +60,16 @@
  
  Makefile : Makefile.in config.status
@@ -17,7 +17,7 @@
  config.status: configure
  	./config.status --recheck
  
-@@ -81,4 +89,96 @@
+@@ -81,4 +89,159 @@
  semiclean :
  	rm -f y.tab.* $(LEX_OUTPUT_ROOT).* aonchiall.y rialacha.y
  
@@ -112,5 +112,68 @@
 +	gzip $(TARBALL).tar
 +	chmod 444 $(TARBALL).tar.gz
 +	rm -f ../$(TARBALL)
++
++sync : FORCE
++	cp -f ABOUT-NLS engine
++	cp -f aonchiall.meta.pl engine
++	cp -f cabhair.pl engine
++	cp -f ChangeLog engine
++	cp -f comhshuite.meta.pl engine
++	cp -f config.guess engine
++	cp -f config.rpath engine
++	cp -f config.sub engine
++	cp -f configure engine
++	cp -f configure.ac engine
++	cp -f COPYING engine
++	cp -f count.pl engine
++	cp -f gettext.h engine
++	cp -f gin.meta.pl engine
++	cp -f gramadoir.dtd engine
++	cp -f gramadoir.el engine
++	cp -f Gramadoir.pm.in engine
++	cp -f gramadoir.vim engine
++	cp -f gramdev.pl engine
++	cp -f gram.pl engine
++	cp -f install-sh engine
++	cp -f Languages-en_us.pm engine
++	cp -f Languages.pm engine
++	cp -f lexbuild engine
++	cp -f Lingua-XX-Gramadoir.t engine
++	cp -f Makefile.in engine
++	cp -f Makefile.PL.in engine
++	cp -f Makefile-xx.in engine
++	cp -f MANIFEST engine
++	cp -f MANIFEST.SKIP engine
++	cp -f po2perl.pl engine
++	cp -f ponc.in.l engine
++	cp -f ponc.in.y engine
++	cp -f README engine
++	cp -f README.perl engine
++	cp -f README-xx engine
++	cp -f rialacha.meta.pl engine
++	cp -f OOo/groo.pl engine/OOo
++	cp -f OOo/gramadoir.sxw engine/OOo
++	cp -f po/af.po engine/po
++	cp -f po/boldquot.sed engine/po
++	cp -f po/cy.po engine/po
++	cp -f po/de.po engine/po
++	cp -f po/en@boldquot.header engine/po
++	cp -f po/en@quot.header engine/po
++	cp -f po/fr.po engine/po
++	cp -f po/ga.po engine/po
++	cp -f po/gramadoir.pot engine/po
++	cp -f po/insert-header.sin engine/po
++	cp -f po/LINGUAS engine/po
++	cp -f po/Makefile.in.in engine/po
++	cp -f po/Makevars engine/po
++	cp -f po/mn.po engine/po
++	cp -f po/nl.po engine/po
++	cp -f po/POTFILES.in engine/po
++	cp -f po/quot.sed engine/po
++	cp -f po/remove-potcdate.sin engine/po
++	cp -f po/ro.po engine/po
++	cp -f po/Rules-quot engine/po
++	cp -f po/sk.po engine/po
++	cvs commit -m "sync'd with borel repository" engine
 +
  FORCE :
