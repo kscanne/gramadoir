@@ -215,30 +215,32 @@ dist : FORCE
 	$(MAKE) rebuildlex
 	$(MAKE) triail
 	$(MAKE) triail.err
-#	$(LN_S) $(TEANGA) ../$(TARBALL)
+	$(LN_S) $(TEANGA) ../$(TARBALL)
 	sed -i '1s/.*/#!!PERLPATH!/' macra-$(TEANGA).meta.pl
 	tar cvhf $(TARBALL).tar -C .. $(TARBALL)/Changes
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/configure
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/COPYING
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/README
-	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/3grams-$(TEANGA).txt; \
-	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/aonchiall-$(TEANGA).in; \
-	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/comhshuite-$(TEANGA).in; \
-	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/earraidi-$(TEANGA).bs; \
-	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/eile-$(TEANGA).bs; \
-	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/eisceacht-$(TEANGA).in; \
-	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/freq-$(TEANGA).txt; \
-	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/giorr-$(TEANGA). \
-	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/lexicon-$(TEANGA).bs; \
-	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/macra-$(TEANGA).meta.pl; \
-	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/morph-$(TEANGA).txt; \
-	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/nocombo-$(TEANGA).txt; \
-	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/pos-$(TEANGA).txt; \
-	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/rialacha-$(TEANGA).in; \
-	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/unigram-$(TEANGA).pre; \
-	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/unigram-$(TEANGA).txt; \
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/3grams-$(TEANGA).txt
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/aonchiall-$(TEANGA).in
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/comhshuite-$(TEANGA).in
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/earraidi-$(TEANGA).bs
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/eile-$(TEANGA).bs
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/eisceacht-$(TEANGA).in
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/freq-$(TEANGA).txt
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/giorr-$(TEANGA).pre
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/giorr-$(TEANGA).txt
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/lexicon-$(TEANGA).bs
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/macra-$(TEANGA).meta.pl
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/morph-$(TEANGA).txt
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/nocombo-$(TEANGA).txt
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/pos-$(TEANGA).txt
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/rialacha-$(TEANGA).in
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/unigram-$(TEANGA).pre
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/unigram-$(TEANGA).txt
 	gzip $(TARBALL).tar
 	chmod 444 $(TARBALL).tar.gz
+	rm -f ../$(TARBALL)
 
 counts : FORCE
 	(cat lexicon-$(TEANGA).bs | wc -l; echo '2 / p') | dc
