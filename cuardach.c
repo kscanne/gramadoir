@@ -19,6 +19,7 @@
 #define GR_WORDMAX 32
 #define GR_AMBIGMAX 16
 #define GR_FILENAMEMAX 128
+#define GR_REPLMAX 8*GR_WORDMAX
 
 struct foirm {
       char focal[GR_WORDMAX], coid[GR_AMBIGMAX];
@@ -46,7 +47,7 @@ int load_replacements()
     {
      int wordlen, iomlan, retval=0;
      FILE* repl;
-     char token[8*GR_WORDMAX];
+     char token[GR_REPLMAX+GR_WORDMAX];
      char fn[GR_FILENAMEMAX], countstr[8];
      char* split;
      
@@ -69,7 +70,7 @@ int load_replacements()
 	       }
 	   while (!feof(repl) && repl_total != iomlan)
 	   	{
-	         fgets(token, 8*GR_WORDMAX, repl);
+	         fgets(token, GR_REPLMAX+GR_WORDMAX, repl);
 		 split = strchr(token, ' ');
 		 if (split==NULL) {
                       /* "An Gramadóir: corrupted eile.bs at %s\n" */
@@ -338,7 +339,7 @@ int replacementlookup(const char* word, char* repl)
 int dictlookup(const char* word, char* fill, char* attrs, char* extratags)
     {
      int len, retval=1;
-     char unused, repl[GR_WORDMAX], codes[2*GR_AMBIGMAX], lowered[GR_WORDMAX];
+     char unused, repl[GR_REPLMAX], codes[2*GR_AMBIGMAX], lowered[GR_WORDMAX];
      *codes = 0;
      rawlookup(word, codes);
      if (isupper(word[0])) {
@@ -357,6 +358,9 @@ int dictlookup(const char* word, char* fill, char* attrs, char* extratags)
            strcpy(attrs, "");
            strcpy(extratags, "");
            strcpy(fill, "X");   /* "residual" tag -- not in dictionary */
+	   if (toignore != NULL) {
+	         if (rawignorelookup(word)) {strcpy(fill, "Y"); return 1;}
+		}
 	   if (replacementlookup(word, repl)) {
 	        strcpy(fill, "E");
                 strcpy(extratags, "<Y>");
@@ -365,8 +369,6 @@ int dictlookup(const char* word, char* fill, char* attrs, char* extratags)
 		strcat(attrs, "\"");
 		retval=0;
                }
-	   else if (toignore != NULL) 
-	         if (rawignorelookup(word)) strcpy(fill, "Y");
           }
      return retval;
     }
@@ -377,13 +379,15 @@ int dictlookup(const char* word, char* fill, char* attrs, char* extratags)
 */
 void markup(char* token, char* w)
     {
-     char mu[8], attrs[128], extratags[512];
-     char* tail = strstr(token, "</c>")+4;
+     char mu[8], attrs[256], extratags[512];
+     char* tail; 
      int val;
-     *(tail-4)='\n';              /* \n since it is kept around in focloir */ 
-     *(tail-3)='\0';              /* null terminate the word itself */
+
+     tail = strstr(token, "</c>");
+     *tail='\n';              /* \n since it is kept around in focloir */ 
+     *(tail+1)='\0';              /* null terminate the word itself */
      val=dictlookup(w+3, mu, attrs, extratags);
-     *(tail-4)='\0';                
+     *tail='\0';                
      *w = '\0';
      printf("%s", token);                /** chars before <c> **/
      printf("<%s", mu);                  /** new markup **/
@@ -392,7 +396,7 @@ void markup(char* token, char* w)
      printf("%s", w+3);                  /** word itself **/
      if (!val) printf("</Y>");           /** dummy markup in case of repl. **/
      printf("</%s>", mu);                /** end of new markup **/
-     printf("%s", tail);                 /** chars after </c> **/
+     printf("%s", tail+4);               /** chars after </c> **/
     }
 
 void cleanup()
