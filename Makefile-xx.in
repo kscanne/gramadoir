@@ -22,7 +22,7 @@ NAME_ENG = !NAME_ENG!
 VERSION = !VERSION!
 PACKAGE_NAME = gramadoir-$(TEANGA)
 TARBALL = gramadoir-$(TEANGA)-$(VERSION)
-PERLVERSION = 0.50
+PERLVERSION = !PERLVERSION!
 PERLD = Lingua-$(UPPERTEANGA)-Gramadoir
 PERLLIB = $(PERLD)/lib/Lingua/$(UPPERTEANGA)/Gramadoir
 SHARE = $(PERLD)/share
@@ -35,6 +35,7 @@ AUTHOR = !AUTHOR!
 
 # targets '
 SCRIPTNAME = gram-${TEANGA}.pl
+DEVSCRIPTNAME = gramdev-${TEANGA}.pl
 PERLTOP = $(PERLD)/Changes $(PERLD)/Makefile.PL $(PERLD)/MANIFEST $(PERLD)/MANIFEST.SKIP $(PERLD)/README
 PERLCODE = $(PERLD)/scripts/$(SCRIPTNAME) $(PERLLIB).pm
 LEXICONS = $(SHARE)/3grams.bs $(SHARE)/earraidi.bs $(SHARE)/eile.bs $(SHARE)/focail0.bs $(SHARE)/nocombo.bs $(SHARE)/pos.bs
@@ -193,6 +194,10 @@ unigram-$(TEANGA).pl : unigram-$(TEANGA).pre unigram-$(TEANGA).txt
 
 $(SHARE)/focail0.bs : lexicon-$(TEANGA).txt freq-$(TEANGA).txt
 	bash $(GRAMDIR)/lexbuild $(TEANGA) $(GRAMDIR)
+
+gramdev-$(TEANGA).pl : $(GRAMDIR)/gramdev.pl
+	cat $(GRAMDIR)/gramdev.pl | sed "s/@SCRIPTNAME@/$(DEVSCRIPTNAME)/; s/@PACKAGE_VERSION@/$(PERLVERSION)/; s/@TEANGA@/$(UPPERTEANGA)/g; s/@NATIVE@/$(NATIVE)/g; s/@NAME_ENGLISH@/$(NAME_ENG)/g; /^Copyright (C)/s/.*/&\n                   $(AUTHOR)/" > $@
+	chmod 755 $@
 
 topclean :
 	rm -f lexicon-$(TEANGA).txt locale_ok $(INTERMEDIATE)
