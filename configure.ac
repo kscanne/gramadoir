@@ -55,9 +55,11 @@ fi
 
 TEANGACHA=`sed '/^#/d; s/ .*//' TEANGACHA | tr "\n" " "`
 ALLPL=""
+ALLOH=""
 for cod in ${TEANGACHA}
 do
 	ALLPL="${ALLPL} aonchiall-${cod}.pl eisceacht-${cod}.pl rialacha-${cod}.pl"
+	ALLOH="${ALLOH} cuardach-${cod}.o"
 done
 ALLIN=`echo ${ALLPL} | sed "s/\.pl/.in/g"`
 
@@ -65,6 +67,7 @@ AC_SUBST(SH_GETTEXT)
 AC_SUBST(TEANGACHA)
 AC_SUBST(ALLPL)
 AC_SUBST(ALLIN)
+AC_SUBST(ALLOH)
 
 AC_CONFIG_FILES(Makefile gr po/Makefile.in )
 AC_OUTPUT
