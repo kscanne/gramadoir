@@ -1,4 +1,4 @@
 #!/bin/bash
-LC_ALL=ga_IE /usr/local/bin/gr --html --version
-(date; echo "${1}"; echo; echo;) >> /home/httpd/gr.log
-echo "${1}" "." | LC_ALL=ga_IE /usr/local/bin/gr --html
+LC_ALL="${2}" /usr/local/bin/gr --html --version
+(date; echo "Teanga=${2}"; echo "${1}"; echo; echo;) >> /home/httpd/gr.log
+echo "${1}" "." | LC_ALL="${2}" /usr/local/bin/gr --html

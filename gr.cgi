@@ -11,7 +11,13 @@ delete @ENV{ 'IFS', 'CDPATH', 'ENV', 'BASH_ENV' };
 
 my $GRAMADOIR = '/usr/local/bin/grweb';
 my $q = new CGI;
+my $charset = 'ISO-8859-1';
 my( $ionchur ) = $q->param( "foirm_ionchur" ) =~ /^(['áéíóúÁÉÍÓÚ\w\s,.!?-]+)$/;
+my( $teanga ) = $q->param( "teanga" ) =~ /^([a-z][a-z]_[A-Z][A-Z])$/;
+
+if ( $teanga=="ro_RO" ) {
+$charset = 'ISO-8859-2';
+}
 
 local *PIPE;
 
@@ -21,7 +27,9 @@ print $q->header( "text/html" ),
 "<html lang=\"ga\">\n",
 "<head>\n",
 "<title>An Gramad&oacute;ir: Tortha&iacute;</title>\n",
-"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\">\n",
+"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=",
+$charset,
+"\">\n",
 "<link rel=\"stylesheet\" href=\"http://borel.slu.edu/kps.css\" type=\"text/css\">\n",
 "</head>\n<body>\n";
 
@@ -35,7 +43,7 @@ $ionchur =~ s/'/\'/g;
 my $pid = open PIPE, "-|";
 die "Fork failed: $!" unless defined $pid;
 unless ( $pid ) {
-	exec $GRAMADOIR, "$ionchur" or die "Can't open pipe: $!";
+	exec $GRAMADOIR, "$ionchur", "$teanga" or die "Can't open pipe: $!";
 	}
 
 print while <PIPE>;
