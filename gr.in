@@ -58,9 +58,10 @@ userop1=`@SH_GETTEXT@ "    --iomlan       report all errors (i.e. do not use ~/.
 userop2=`@SH_GETTEXT@ "    --ionchod=ENC  specify the character encoding of the text to be checked"`
 userop3=`@SH_GETTEXT@ "    --litriu       write misspelled words to standard output"`
 userop4=`@SH_GETTEXT@ "    --aspell       suggest corrections for misspellings (requires GNU aspell)"`
-userop5=`@SH_GETTEXT@ "    --teanga=XX    specify the language of the text to be checked (default=ga)"`
-userop6=`@SH_GETTEXT@ "    --help         display this help and exit"`
-userop7=`@SH_GETTEXT@ "    --version      output version information and exit"`
+userop5=`@SH_GETTEXT@ "    --aschur=FILE  write output to FILE"`
+userop6=`@SH_GETTEXT@ "    --teanga=XX    specify the language of the text to be checked (default=ga)"`
+userop7=`@SH_GETTEXT@ "    --help         display this help and exit"`
+userop8=`@SH_GETTEXT@ "    --version      output version information and exit"`
 usage3=`@SH_GETTEXT@ "Options for developers:"`
 
 devop1=`@SH_GETTEXT@ "    --api          output a simple XML format for use with other applications"`
@@ -198,6 +199,7 @@ echo "${userop4}"
 echo "${userop5}"
 echo "${userop6}"
 echo "${userop7}"
+echo "${userop8}"
 echo
 echo "${usage3}"
 echo "${devop1}"
@@ -273,7 +275,7 @@ s/\(\..\)\([.?!]\)/\1\\\\\2/g
 s/\(\.\)\([.?!]\)/\1\\\\\2/g
 s/\([IVX][IVX]\)\([.?!]\)/\1\\\\\2/g
 " |
-@prefix@/libexec/giorr-${TEANGA} "${BDCHARS}"
+@prefix@/libexec/giorr-${TEANGA} "${BDCHARS}${INTCHARS}"
 }
 
 # strips any pre-existing markup, tokenizes with <c></c>,
@@ -284,8 +286,8 @@ abairti()
 {
 tr -d "\015" |
 @EGREP@ -n '^' |
-sed "s/<[^>]*>//g; s/[&\<>]/ /g" |
-escape_punc "${BDCHARS}" | 
+sed "s/<[^>]*>/ /g; s/[&\<>]/ /g" |
+escape_punc | 
 sed "
 s/[${BDCHARS}][${BDCHARS}${INTCHARS}]*/<c>&<\/c>/g;
 s/\([${INTCHARS}][${INTCHARS}]*\)<\/c>/<\/c>\1/g;
@@ -397,12 +399,7 @@ aspell_xml_output()
 {
 TEMPXML=`mktemp` || TEMPXML="/tmp/aspell_repl.xml"
 TEMPSED=`mktemp` || TEMPSED="/tmp/aspell_repl.sed"
-		unchecked_xml |
-		comhshuite |
-		aonchiall | aonchiall |
-		unigram |
-		rialacha |
-		eisceacht | tee "${TEMPXML}" |
+		vanilla_xml_output | tee "${TEMPXML}" |
 		aspell_search > "${TEMPSED}"
 		cat "${TEMPXML}" | 
 		sed -f "${TEMPSED}"
@@ -432,7 +429,7 @@ while (m!(<E[^>]+>)(([^<]|<[^/]|</[^E])*)</E>!g) {
 	$thiserror =~ s/^<E/<E line="$line" sentence="$sentence" errortext="$errortext"/;
 	print "$thiserror\n";
 }
-') | 
+') | toutf |
 @PERL@ -e '
 $globalfile = <>;
 open(PRISTINE, "< $globalfile") or die "problem accessing original file\n";
@@ -449,9 +446,11 @@ while (<>) {
 		$online++;
 		pos($current) = 0;
 	}
+#	print "searching for $errorregexp in:";
+#	print "$current \n";
 	while (1) {
 	   if ($current =~ m!$errorregexp!gs) {
-		$before = $`;
+		$before = $`;   # SLOW, get rid of these.
 		$matched = $&;
 		$fromx = $-[0];
 		$tox = $+[0]-1;
@@ -466,16 +465,20 @@ while (<>) {
 		last;
 		}
 	   else {
+	   	if (eof PRISTINE) {
+		    print "ERROR: did not find regexp in original file.\n";
+		    exit;
+		   }
 		$next = <PRISTINE>;
 		$current = "$current$next";
 		$online++;
+#                print "not found, appending line to search space\n";
 	        }
 	}
 	s!<E line="[^"]+" !<E fromy="$fromy" fromx="$fromx" toy="$toy" tox="$tox" !;
 	print;
 }
 ' |
-toutf |
 loganu
 }
 
@@ -518,6 +521,7 @@ vanilla_xml_output()
 		rialacha |
 		eisceacht
 }
+
 
 nounigram_output()
 {
@@ -690,6 +694,7 @@ TEANGA="ga"
 IONCHOD="unspecified"
 GLOBALFILENAME=""
 XML_OUTPUT="vanilla_xml_output"
+REDIRECT="/dev/stdout"
 while [ ${1%%[^-]*} ]
 do
 	if echo "${1}" | grep "=" > /dev/null
@@ -709,6 +714,10 @@ do
 		"--ionchod" )
 			IONCHOD="${OPTARG}"
 		;;
+		"--aschur" )
+			REDIRECT="${OPTARG}"
+		;;
+
 		"--help" | "--version" | "--api" | "--brill" | "--html" | "--ilchiall" | "--minic" | "--no-unigram" | "--xml" | "--litriu" | "--aspell" | "--iomlan" )
 			unwanted_arg "${JUSTOPT}" >&2
 			exit 1
@@ -764,7 +773,7 @@ do
 		"--iomlan" )
 			USEIGNORE="noignore"
 		;;
-		"--ionchod" | "--teanga" )
+		"--ionchod" | "--teanga" | "--aschur" )
 			no_argument "${1}" >&2
 			exit 1
 		;;
@@ -780,7 +789,8 @@ done
 NATIVE=`grep "^${TEANGA} " ${DATADIR}/TEANGACHA | sed "s/^${TEANGA}  *\([^ ]*\).*/\1/"`
 CHARSPEC=`grep "^${TEANGA} " ${DATADIR}/TEANGACHA | sed "s/^${TEANGA}  *[^ ]*  *//"`
 BDCHARS=`echo "${CHARSPEC}" | sed "s/ .*//"`
-INTCHARS=`echo "${CHARSPEC}" | sed "s/^[^ ]*  *//"`
+INTCHARS=`echo "${CHARSPEC}" | sed "s/^[^ ]*  *\([^ ]*\).*/\1/"`
+
 if [ "${IONCHOD}" = "unspecified" ]
 then
 	IONCHOD="${NATIVE}"
@@ -824,5 +834,5 @@ else
 		fi	
 		shift
 	done
-fi
+fi > "${REDIRECT}"
 exit 0
