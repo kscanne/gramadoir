@@ -135,9 +135,9 @@ gettext(
 gettext(
 "    --version      output version information and exit"),
 "",
-gettext(
-"If no file is given, read from standard input."),
-"",
+# gettext(
+# "If no file is given, read from standard input."),
+# "",
 gettext(
 'Send bug reports to <%s>.','scannell@slu.edu'),
 ""
