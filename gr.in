@@ -69,7 +69,7 @@ PREFIXT=`gettext -s "Prefix \/t\/ missing"`
 SEIMHIU=`gettext -s "Lenition missing"`
 URU=`gettext -s "Eclipsis missing"`
 
-# i18n: grammatical errors.  See rialacha.in.
+# i18n: grammatical errors.  See rialacha-*.in.
 # If you port to another language, you won't translate these; instead
 # they will be replaced completely with messages corresponding to
 # the errors for your language.
