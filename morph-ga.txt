@@ -1,3 +1,10 @@
+# morph-ga.txt: Morphology rules for Irish.
+# Copyright (C) 2004 Kevin P. Scannell <scannell@slu.edu>
+#
+# This is free software; see the file COPYING for copying conditions.  There
+# is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR
+# PURPOSE.
+#
 #  with the exception of some of the non-standard verb endings,
 #  each rule decreases number of caps or length => recursion will stop.
 #
