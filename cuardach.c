@@ -6,11 +6,15 @@
  NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
 
+#if STDC_HEADERS
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>    /* strtol */
 #include <ctype.h>     /* tolower, isupper, etc. */
 #include <locale.h>    /* so tolower, etc. actually WORK! */
+#else
+/* trouble! */
+#endif
 
 struct foirm {
       char focal[32], coid[16];

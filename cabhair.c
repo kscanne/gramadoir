@@ -8,14 +8,18 @@
  NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
 
+#if STDC_HEADERS
 #include <stdio.h>
 #include <string.h>
+#else
+/* trouble */
+#endif
 
 int main()
    {
     const char unusedcode='\n';
-    char token[32], prev[32];   // ngearr-chlóscríobhneoireachta  has 28
-    int code;
+    char token[32], prev[32];   /* ngearr-chlóscríobhneoireachta  has 28 */
+    int code,m;
     char codec;
     scanf("%s", prev);
     scanf("%d", &code);   codec = (char) code;
@@ -26,7 +30,7 @@ int main()
 	         printf("%c",codec);
 	        }
           else {
-	        int m=0;
+	        m=0;
 	        while (prev[m]) {
 		     if (prev[m]==token[m]) m++;
 		     else break;
