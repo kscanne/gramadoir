@@ -1,5 +1,5 @@
---- Makefile	2004-09-05 21:29:20.388671152 -0500
-+++ Makefile.ok	2004-09-05 21:28:06.648881304 -0500
+--- Makefile	2004-09-09 23:30:34.890592808 -0500
++++ Makefile.ok	2004-09-09 23:30:25.972948496 -0500
 @@ -69,8 +69,16 @@
  
  Makefile : Makefile.in config.status
@@ -59,7 +59,7 @@
 +	rm -f ChangeLog configure sampla.html
 +
 +ChangeLog : FORCE
-+	cvs2cl.pl
++	cvs2cl.pl --FSF
 +
 +dist : FORCE
 +	$(MAKE) ChangeLog
