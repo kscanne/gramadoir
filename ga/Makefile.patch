@@ -1,6 +1,6 @@
---- Makefile	2004-09-02 21:25:45.765395264 -0500
-+++ Makefile.ok	2004-09-02 21:25:40.733160280 -0500
-@@ -75,6 +75,15 @@
+--- Makefile	2004-09-27 23:43:27.716768568 -0500
++++ Makefile.ok	2004-09-27 23:37:25.745796520 -0500
+@@ -76,6 +76,15 @@
  
  Makefile : $(GRAMDIR)/Makefile-xx.in configure
  	./configure
@@ -16,12 +16,13 @@
  
  test : perl
  	(cd $(PERLD); make test)
-@@ -300,4 +309,70 @@
+@@ -314,4 +323,74 @@
  zipped : perl
  	(cd $(PERLD); make zipdist)
  
 +benchmark : FORCE
-+	benchcorp | LC_ALL=ga_IE perl -d:DProf /usr/bin/gram-ga.pl --iomlan --dath=none > /dev/null
++	$(MAKE) perl
++	benchcorp | $(PERL) -I $(PERLD)/lib -d:DProf $(PERLD)/scripts/$(SCRIPTNAME) --iomlan --dath=none --comheadan=ga > /dev/null
 +	bash bmtabla >> ../../eile/benchmarks
 +	vi ../../eile/benchmarks
 +	rm -f tmon.out
@@ -29,8 +30,9 @@
 +Changes : ../stair.html
 +	vilistextum $(GRAMDIR)/stair.html - | sed -n '/^ChangeLog/,/----/p' | egrep -v -- '---' > $@
 +
++# use installed version for this
 +triail.html : triail
-+	gram-ga.pl --iomlan --aschod=iso-8859-1 --html --aspell triail > $@
++	/usr/bin/gram-ga.pl --iomlan --aschod=iso-8859-1 --html --aspell triail > $@
 +
 +ISPELLDIR = ${HOME}/gaeilge/ispell
 +
@@ -67,12 +69,13 @@
 +BIGDIR = /home/spas
 +
 +big.xml-update : FORCE
++	$(MAKE) perl
 +	rm -f $(BIGDIR)/big.xml $(BIGDIR)/bigerr.xml
 +	if [ -e $(BIGDIR)/big.new.xml ]; \
 +	then \
 +		mv $(BIGDIR)/big.new.xml $(BIGDIR)/big.xml; \
 +	else \
-+		benchcorp | gram-ga.pl --xml --iomlan --aschod=iso-8859-1 --comheadan=ga > $(BIGDIR)/big.xml; \
++		benchcorp | $(PERL) -I $(PERLD)/lib $(PERLD)/scripts/$(SCRIPTNAME) --xml --iomlan --aschod=iso-8859-1 --comheadan=ga > $(BIGDIR)/big.xml; \
 +	fi
 +	if [ -e $(BIGDIR)/bigerr.new.xml ]; \
 +	then \
@@ -82,7 +85,8 @@
 +	fi
 +
 +bigtest : FORCE
-+	@benchcorp | gram-ga.pl --xml --iomlan --aschod=iso-8859-1 --comheadan=ga | tee $(BIGDIR)/big.new.xml | sed 's/<E/\n<E/g' | sed 's/<\/E>/<\/E>\n/' | egrep '^<E' | LC_ALL=C sort > $(BIGDIR)/bigerr.new.xml
++	@$(MAKE) perl
++	@benchcorp | $(PERL) -I $(PERLD)/lib $(PERLD)/scripts/$(SCRIPTNAME) --xml --iomlan --aschod=iso-8859-1 --comheadan=ga | tee $(BIGDIR)/big.new.xml | sed 's/<E/\n<E/g' | sed 's/<\/E>/<\/E>\n/' | egrep '^<E' | LC_ALL=C sort > $(BIGDIR)/bigerr.new.xml
 +	@if diff -u $(BIGDIR)/big.xml $(BIGDIR)/big.new.xml > /dev/null; then echo "XML unchanged."; rm -f $(BIGDIR)/big.new.xml; else echo "Differences in XML."; fi
 +	@if diff -u $(BIGDIR)/bigerr.xml $(BIGDIR)/bigerr.new.xml > /dev/null; then echo "Errors unchanged."; rm -f $(BIGDIR)/bigerr.new.xml; else echo "Differences in errors."; fi
 +
