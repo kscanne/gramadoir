@@ -13,7 +13,7 @@ extern int lineno;
 
 ^[ \t]+		{return BLANK;}
 
-\<[A-Z]*>	{return  POSTAG;}
+\<[^^/>]*>	{return  POSTAG;}
 
 \<\^[A-Z]*>	{return  NEGTAG;}
 
