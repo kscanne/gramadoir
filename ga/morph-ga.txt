@@ -28,7 +28,7 @@
 ^TS				tS		1
 ^([A-ZÁÉÍÓÚ])([A-ZÁÉÍÓÚ'-]+)$	$1\L$2		-1	# GAELTACHT
 ^([A-ZÁÉÍÓÚ])			\l$1		-1 	# Príomhach
--([A-ZÁÉÍÓÚ])			-\l$1		-1 	# Príomh-Aire
+(...)-([A-ZÁÉÍÓÚ])		$1-\l$2		-1 	# Príomh-Aire
 ^b'([AEIOUÁÉÍÓÚF])		b'\l$1		-1
 ^bP([A-ZÁÉÍÓÚ'-]+)$		bp\L$1		-1	# bPRÍOMH-AIRE
 ^bP				bp		-1	# bPríomhach
@@ -173,19 +173,19 @@
 achai?s$			ach		0
 acht$				ach		0
 íocht$				íoch		0
-([aouáóú][^aeiouáéíóú-]+)-?san$	$1		0
-([eiéí][^aeiouáéíóú-]+)-?sean$	$1		0
-([aouáóú][^aeiouáéíóú-]+)-?sa$	$1		0
-([eiéí][^aeiouáéíóú-]+)-?se$	$1		0
-([aouáóú][^aeiouáéíóú-]+)-?na$	$1		0
-([eiéí][^aeiouáéíóú-]+)-?ne$	$1		0
+([aouáóú][^aeiouáéíóú-]+)san$	$1		0
+([eiéí][^aeiouáéíóú-]+)sean$	$1		0
+([aouáóú][^aeiouáéíóú-]+)sa$	$1		0
+([eiéí][^aeiouáéíóú-]+)se$	$1		0
+([aouáóú][^aeiouáéíóú-]+)na$	$1		0
+([eiéí][^aeiouáéíóú-]+)ne$	$1		0
 ################## CAIGHDEÁN OIFIGIÚIL SPELLING REFORMS #####################
 ^aith				ath		1
 ^eadar				idir		1
 ^dh'				d'		1
 ^h-				h		1
-^n-([AEIOUÁÉÍÓÚ])		n$1		1
-^t-([AEIOUÁÉÍÓÚ])		t$1		1
+^n-([AEIOUÁÉÍÓÚ])		n$1		1    # CO p.125
+^t-([AEIOUÁÉÍÓÚ])		t$1		1    # CO p.125
 ^ana-				an-		1    # ana-eagraithe
 ^de[ai]gh			dea		1
 ^ion				in		1
@@ -198,6 +198,7 @@ ai(cht?ín)			a$1		1    # CO p.120, smaichtín
 sg				sc		1    # CO p.115
 sb				sp		1    # CO p.115
 sd				st		1    # CO p.115
+dn				nn		1    # CO p.114 céadna
 é(ir[ld])			e$1		1    # CO p.123
 á(i?r[dlnr])			a$1		1    # CO p.123-124
 ó(i?r[dlnr])			o$1		1    # CO p.123-124
@@ -212,9 +213,10 @@ aibh$				a		1    # fearaibh, fiachaibh,...
 ([^a])ibh$			$1e		1    # coinnibh, etc.
 eu				éa		1    # sgeul, ceudna, srl.
 tch				t		1    # CO p.103
-i[dg]he$			í		1    # CO p.104,106
 i[dg]hea			ío		1    # CO p.105,107
+i[dg]he				í		1    # CO p.104,106
 adha				ú		1    # CO p.105
+ádh				á		1    # ádhbhar, rádh, etc.
 [mb]hth				f		1    # CO p.106
 th[mb]h				f		1    # CO p.106
 ghai				aí		1    # CO p.107
@@ -226,6 +228,11 @@ ghail$				aíl		1    # Dinneen
 ghaile$				aíola		1    # Dinneen
 ighil$				íl		1    # Dinneen
 ighile$				íola		1    # Dinneen
+(ain|é[ai]g|iar)gc		$1g		1    # CO p.109
+(é[ai])dt			$1d		1    # CO p.109
+(dh?í?)omb			$1om		1    # CO p.109
+(ai?n)bhf			$1bh		1    # CO p.109  ainbhfiosach
+(..)u(i?s)$			$1a$2		1    # solus, árus, etc.
 ##################  NON/PRE-STANDARD VERB ENDINGS #########################
 #   2nd declension Dinneen-style endings
 u(i?gh)				a$1		1    # in prep for next ones...
@@ -261,6 +268,7 @@ anns$				ann		1
 ([A-ZÁÉÍÓÚ])			\l$1		2	# pRíOMhach
 ([eiéí][^aeiouáéíóú]+)íní?$	$1		0	# diminutive
 ([aouáóú][^aeiouáéíóú]+)íní?$	$1		2	# diminutive
+(.)-				$1		1       # ró-bheag -> róbheag
 # delenite, de-eclipse.  
 # Only helps when we recurse and find a standard unmutated prefix above!
 ^bp([^h])			p$1		0
