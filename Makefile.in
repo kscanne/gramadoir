@@ -263,6 +263,14 @@ poncin : aparser eparser rparser
 	@$(ECHO) 'Checking rialacha-ga.in'
 	@cat rialacha-ga.in | ./rparser
 
+stresstest : FORCE
+	@mv stress.out stress.out.bak
+	@mv stress.err stress.err.bak
+	@./stress
+	@if diff stress.err.bak stress.err && diff stress.out.bak stress.out; then $(ECHO) "OK."; else mv stress.err.bak stress.err; mv stress.out.bak stress.out; fi
+	@rm -f stress.err.bak stress.out.bak
+
+
 eile.bs : FORCE
 	$(MAKE) cabhair
 	replnua
