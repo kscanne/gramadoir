@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: GNU gramadoir 0.5\n"
+"Project-Id-Version: GNU gramadoir 0.6\n"
 "Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
 "POT-Creation-Date: 2005-03-02 22:40-0600\n"
-"PO-Revision-Date: 2004-08-26 08:00-0500\n"
+"PO-Revision-Date: 2005-03-06 08:00-0500\n"
 "Last-Translator: Michel Robitaille <robitail@IRO.UMontreal.CA>\n"
 "Language-Team: French <traduc@traduc.org>\n"
 "MIME-Version: 1.0\n"
@@ -57,7 +57,7 @@ msgstr "erreur d'analyse de syntaxe des options de la ligne de commande"
 #: gram.pl:177
 #, perl-format
 msgid "Unable to set output color to %s"
-msgstr ""
+msgstr "Incapable de fixer la couleur de sortie à %s"
 
 #: gram.pl:180
 #, perl-format
@@ -84,10 +84,7 @@ msgid "version %s"
 msgstr "version %s"
 
 #: gram.pl:253 gramdev.pl:153
-msgid ""
-"This is free software; see the source for copying conditions.  There is NO"
-"\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
-"PURPOSE,\\nto the extent permitted by law."
+msgid "This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law."
 msgstr ""
 "Ce logiciel est libre; voir les sources pour les conditions de\n"
 "reproduction. AUCUNE garantie n'est donnée; tant pour des raisons\n"
@@ -105,15 +102,11 @@ msgstr "Options les usagers:"
 
 #: gram.pl:274
 msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
-msgstr ""
-"    --iomlan       rapporter toutes les erreurs (i.e. ne pas utiliser ~/."
-"neamhshuim)"
+msgstr "    --iomlan       rapporter toutes les erreurs (i.e. ne pas utiliser ~/.neamhshuim)"
 
 #: gram.pl:277
-msgid ""
-"    --ionchod=ENC  specify the character encoding of the text to be checked"
-msgstr ""
-"    --ionchod=ENC  spécifier l'encodage des caractères du texte à vérifier"
+msgid "    --ionchod=ENC  specify the character encoding of the text to be checked"
+msgstr "    --ionchod=ENC  spécifier l'encodage des caractères du texte à vérifier"
 
 #: gram.pl:280
 msgid "    --aschod=ENC   specify the character encoding for output"
@@ -125,18 +118,15 @@ msgstr "    --comheadan=xx choisir le langage pour les message d'erreur"
 
 #: gram.pl:286
 msgid "    --dath=COLOR   specify the color to use for highlighting errors"
-msgstr ""
-"    --dath=COULEUR spécifier la COULEUR à utiliser pour surligner les erreurs"
+msgstr "    --dath=COULEUR spécifier la COULEUR à utiliser pour surligner les erreurs"
 
 #: gram.pl:289
 msgid "    --litriu       write misspelled words to standard output"
-msgstr ""
-"    --litriu       écrire les mots mal orthographiés sur la sortie standard"
+msgstr "    --litriu       écrire les mots mal orthographiés sur la sortie standard"
 
 #: gram.pl:292
 msgid "    --aspell       suggest corrections for misspellings"
-msgstr ""
-"    --aspell       suggérer des corrections pour les erreurs d'orhographe"
+msgstr "    --aspell       suggérer des corrections pour les erreurs d'orhographe"
 
 #: gram.pl:295
 msgid "    --aschur=FILE  write output to FILE"
@@ -155,31 +145,20 @@ msgid "Options for developers:"
 msgstr "Options pour les développeurs:"
 
 #: gram.pl:306
-msgid ""
-"    --api          output a simple XML format for use with other applications"
-msgstr ""
-"    --api          produire un format XML simple de sortie avec d'autres "
-"applications"
+msgid "    --api          output a simple XML format for use with other applications"
+msgstr "    --api          produire un format XML simple de sortie avec d'autres applications"
 
 #: gram.pl:308
 msgid "    --html         produce HTML output for viewing in a web browser"
-msgstr ""
-"    --html         produire une sortie HTML pour un logiciel de navigation "
-"Internet"
+msgstr "    --html         produire une sortie HTML pour un logiciel de navigation Internet"
 
 #: gram.pl:314
-msgid ""
-"    --no-unigram   do not resolve ambiguous parts of speech by frequency"
-msgstr ""
-"    --no-unigram   ne pas résoudre les parties ambiguës de la langue selon "
-"la fréquence"
+msgid "    --no-unigram   do not resolve ambiguous parts of speech by frequency"
+msgstr "    --no-unigram   ne pas résoudre les parties ambiguës de la langue selon la fréquence"
 
 #: gram.pl:320
-msgid ""
-"    --xml          write tagged XML stream to standard output, for debugging"
-msgstr ""
-"    --xml          écrire un flot XML étiqueté sur la sortie standard, pour "
-"mise au point (debug)"
+msgid "    --xml          write tagged XML stream to standard output, for debugging"
+msgstr "    --xml          écrire un flot XML étiqueté sur la sortie standard, pour mise au point (debug)"
 
 #: gram.pl:323
 msgid "If no file is given, read from standard input."
@@ -214,24 +193,15 @@ msgstr "Vérification en cours %s"
 
 #: gramdev.pl:125
 msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
-msgstr ""
-"    --ilchiall     rapporter les ambiguïtés non résolues, triées selon la "
-"fréquence"
+msgstr "    --ilchiall     rapporter les ambiguïtés non résolues, triées selon la fréquence"
 
 #: gramdev.pl:128
-msgid ""
-"    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
-msgstr ""
-"    --minic        afficher toutes les étiquettes,  triées selon la "
-"fréquence (pour unigram-xx.txt)"
+msgid "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
+msgstr "    --minic        afficher toutes les étiquettes,  triées selon la fréquence (pour unigram-xx.txt)"
 
 #: gramdev.pl:130
-msgid ""
-"    --brill        find disambiguation rules via Brill's unsupervised "
-"algorithm"
-msgstr ""
-"    --brill        trouver des règle de clarification à l'aide de "
-"l'algorithme non supervisé de Brill"
+msgid "    --brill        find disambiguation rules via Brill's unsupervised algorithm"
+msgstr "    --brill        trouver des règle de clarification à l'aide de l'algorithme non supervisé de Brill"
 
 #: Gramadoir.pm.in:118
 #, perl-format
@@ -262,9 +232,9 @@ msgid "%s: no grammar codes: %s\n"
 msgstr "%s: pas de codes de grammaire: %s\n"
 
 #: Gramadoir.pm.in:723
-#, fuzzy, perl-format
+#, perl-format
 msgid "%s: unrecognized error macro: %s\n"
-msgstr "%s option non reconnue"
+msgstr "%s: erreur macro non reconnue: %s\n"
 
 #. TRANSLATORS: The remaining strings are errors reported by the grammar
 #. checking engine.  The first batch consists of messages intended to be
@@ -282,14 +252,12 @@ msgid "Unusual combination of words"
 msgstr "combinaison de mots inusité"
 
 #: messages.txt:7
-#, fuzzy
 msgid "The plural form is required here"
-msgstr "le cas génitif est requis ici"
+msgstr "La forme au pluriel est requise ici"
 
 #: messages.txt:8
-#, fuzzy
 msgid "The singular form is required here"
-msgstr "le cas génitif est requis ici"
+msgstr "La forme au singulier est requise ici"
 
 #: messages.txt:9
 msgid "Comparative adjective required"
@@ -297,16 +265,15 @@ msgstr "adjectif comparatif nécessaire"
 
 #: messages.txt:10
 msgid "Definite article required"
-msgstr ""
+msgstr "Article défini requis"
 
 #: messages.txt:11
 msgid "Unnecessary use of the definite article"
 msgstr "usage non nécessaire de l'article défini"
 
 #: messages.txt:12
-#, fuzzy
 msgid "Unnecessary use of the genitive case"
-msgstr "usage non nécessaire de l'article défini"
+msgstr "usage non nécessaire du cas génitif"
 
 #: messages.txt:13
 msgid "The genitive case is required here"
@@ -314,7 +281,7 @@ msgstr "le cas génitif est requis ici"
 
 #: messages.txt:14
 msgid "It seems unlikely that you intended to use the subjunctive here"
-msgstr ""
+msgstr "Il semble que vous avez l'intention d'utiliser un subjonctif ici"
 
 #. TRANSLATORS: You can use whatever kind of quotes you prefer for your locale
 #. around the variable \\1.  You should keep the double backslash before the 1,
@@ -345,23 +312,20 @@ msgstr "Mot inconnu"
 
 #. TRANSLATORS: \\1 is substituted with one or more suggested replacements
 #: messages.txt:25
-#, fuzzy
 msgid "Unknown word: \\/\\1\\/?"
-msgstr "Mot inconnu"
+msgstr "Mot inconnu: \\/\\1\\/?"
 
 #: messages.txt:26
 msgid "Valid word but more often found in place of \\/\\1\\/"
-msgstr ""
+msgstr "Mot vlaide mais trouvé plus d'une fois à la place de \\/\\1\\/"
 
 #: messages.txt:27
 msgid "Not in database but apparently formed from the root \\/\\1\\/"
-msgstr ""
-"N'est pas dans la base de données mais apparemment formé à partir de la "
-"racine \\/\\1\\/"
+msgstr "N'est pas dans la base de données mais apparemment formé à partir de la racine \\/\\1\\/"
 
 #: messages.txt:28
 msgid "The word \\/\\1\\/ is not needed"
-msgstr ""
+msgstr "Le mot \\/\\1\\/ n'est pas requis."
 
 #: messages.txt:29
 msgid "Do you mean \\/\\1\\/?"
@@ -377,14 +341,11 @@ msgstr "N'est pas dans la base de données mais peut être composé \\/\\1\\/?"
 
 #: messages.txt:32
 msgid "Not in database but may be a non-standard compound \\/\\1\\/?"
-msgstr ""
-"N'est pas dans la base de données mais peut être composé de manière non "
-"standard \\/\\1\\/?"
+msgstr "N'est pas dans la base de données mais peut être composé de manière non standard \\/\\1\\/?"
 
 #: messages.txt:33
 msgid "Possibly a foreign word (the sequence \\/\\1\\/ is highly improbable)"
-msgstr ""
-"Possiblement un mot étranger (la séquence \\/\\1\\/ est hautement improbable)"
+msgstr "Possiblement un mot étranger (la séquence \\/\\1\\/ est hautement improbable)"
 
 #. TRANSLATORS: Rules specific to the Irish language (ga)
 #: messages.txt:35
@@ -396,9 +357,8 @@ msgid "Prefix \\/t\\/ missing"
 msgstr "Préfixe \\/t\\/ manquant"
 
 #: messages.txt:37
-#, fuzzy
 msgid "Prefix \\/d'\\/ missing"
-msgstr "Préfixe \\/h\\/ manquant"
+msgstr "Le préfixe \\/d'\\/ est manquant"
 
 #: messages.txt:38
 msgid "Unnecessary prefix \\/h\\/"
@@ -409,15 +369,13 @@ msgid "Unnecessary prefix \\/t\\/"
 msgstr "préfixe non nécessaire \\/t\\/"
 
 #: messages.txt:40
-#, fuzzy
 msgid "Unnecessary prefix \\/d'\\/"
-msgstr "préfixe non nécessaire \\/h\\/"
+msgstr "préfixe non nécessaire \\/d'\\/"
 
 #. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
 #: messages.txt:42
-#, fuzzy
 msgid "Unnecessary initial mutation"
-msgstr "Lénition non nécessaire"
+msgstr "Mutation initiale non nécessaire"
 
 #: messages.txt:43
 msgid "Initial mutation missing"
@@ -430,9 +388,8 @@ msgid "Unnecessary lenition"
 msgstr "Lénition non nécessaire"
 
 #: messages.txt:47
-msgid ""
-"Often the preposition \\/\\1\\/ causes lenition, but this case is unclear"
-msgstr ""
+msgid "Often the preposition \\/\\1\\/ causes lenition, but this case is unclear"
+msgstr "Souvent la préposition \\/\\1\\/ provoque une lénition mais ce cas n'est pas clair"
 
 #: messages.txt:48
 msgid "Lenition missing"
@@ -442,9 +399,8 @@ msgstr "Lénition manquante"
 #. initial consonants in Irish.  It is indicated in writing by the addition
 #. of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
 #: messages.txt:52
-#, fuzzy
 msgid "Unnecessary eclipsis"
-msgstr "Lénition non nécessaire"
+msgstr "Éclipsis non nécessaire"
 
 #: messages.txt:53
 msgid "Eclipsis missing"
@@ -452,54 +408,44 @@ msgstr "Éclipsis manquante"
 
 #: messages.txt:54
 msgid "The dative is used only in special phrases"
-msgstr ""
+msgstr "La partie datative est utilisée seulement dans des phrases spéciales"
 
 #: messages.txt:55
-#, fuzzy
 msgid "The dependent form of the verb is required here"
-msgstr "le cas génitif est requis ici"
+msgstr "La forme dépendante du verbe est requise ici"
 
 #: messages.txt:56
-#, fuzzy
 msgid "Unnecessary use of the dependent form of the verb"
-msgstr "usage non nécessaire de l'article défini"
+msgstr "Usage non nécessaire de la forme dépendante du verbe"
 
 #: messages.txt:57
 msgid "The synthetic (combined) form, ending in \\/\\1\\/, is often used here"
-msgstr ""
+msgstr "La forme synthétique (combinée) se terminant par \\/\\1\\/ est souvent utilisé ici"
 
 #. TRANSLATORS: Rules specific to the Cornish language (kw)
 #: messages.txt:59
-#, fuzzy
 msgid "Second (soft) mutation missing"
-msgstr "Mutation initiale manquante"
+msgstr "Seconde mutation (logicielle) manquante"
 
 #: messages.txt:60
 #, fuzzy
 msgid "Third (breathed) mutation missing"
-msgstr "Mutation initiale manquante"
+msgstr "Troisième mutation (breathed) manquante"
 
 #: messages.txt:61
-#, fuzzy
 msgid "Fourth (hard) mutation missing"
-msgstr "Mutation initiale manquante"
+msgstr "Quatrième mutation (dure) manquante"
 
 #: messages.txt:62
-#, fuzzy
 msgid "Fifth (mixed) mutation missing"
-msgstr "Mutation initiale manquante"
+msgstr "Quatrième mutation (mixte) manquante"
 
 #: messages.txt:63
-#, fuzzy
 msgid "Fifth (mixed) mutation after 'th missing"
-msgstr "Mutation initiale manquante"
+msgstr "Cinquième mutation (mixte) après la nième manquante"
 
-#~ msgid ""
-#~ "    --teanga=XX    specify the language of the text to be checked "
-#~ "(default=ga)"
-#~ msgstr ""
-#~ "    --teanga=XX    spécifier le langage du texte à vérifier (par "
-#~ "défaut=ga)"
+#~ msgid "    --teanga=XX    specify the language of the text to be checked (default=ga)"
+#~ msgstr "    --teanga=XX    spécifier le langage du texte à vérifier (par défaut=ga)"
 
 #~ msgid "aspell-%s is not installed"
 #~ msgstr "aspell-%s n'est pas installé"
