@@ -285,7 +285,7 @@ h?[Aa]on <N>UNLENITEDBCFGMP</N>:SEIMHIU
 #. Rogha aon de na focail a tháinig i d'intinn.
 [Aa]on <[^N]>ANYTHING</[^N]>:CUPLA
 #. Ná hith aon arán gabhála mar aon léi (OK).
-[Mm]ar <E>[Aa]on <[DOS]>INITIALL</[DOS]>:OK
+[Mm]ar <E>[Aa]on <[DOS]>INITIALL</[DOS]></E>:OK
 #. Freagair aon dá cheann ar bith díobh seo a leanas (OK).
 [Aa]on dá:OK
 # CB p.132 #5, OD ar^5
