@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2003-09-18 19:52-0500\n"
+"POT-Creation-Date: 2003-09-26 09:54-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,42 +16,41 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: cuardach.c:76 cuardach.c:95 cuardach.c:138
+#: cuardach.c:77 cuardach.c:96 cuardach.c:139
 #, c-format
 msgid "%s: out of memory\n"
 msgstr ""
 
-#: cuardach.c:85
+#: cuardach.c:86
 #, c-format
 msgid "%s: `eile.bs' corrupted at %s\n"
 msgstr ""
 
-#: cuardach.c:108 cuardach.c:149 cuardach.c:214
+#: cuardach.c:109 cuardach.c:150 cuardach.c:215
 #, c-format
 msgid "%s: warning: check size of %s: %d?\n"
 msgstr ""
 
-#: cuardach.c:113 cuardach.c:154 cuardach.c:220
+#: cuardach.c:114 cuardach.c:155 cuardach.c:221
 #, c-format
 msgid "%s: warning: problem closing %s\n"
 msgstr ""
 
-#: cuardach.c:343
+#: cuardach.c:344
 #, c-format
 msgid "%s: illegal grammatical code\n"
 msgstr ""
 
-#: cuardach.c:395
+#: cuardach.c:396
 #, c-format
 msgid "%s: no grammar codes\n"
 msgstr ""
 
-#: cuardach.c:622
-#, c-format
-msgid "%s: problem with the `cuardach' command\n"
+#: cuardach.c:623
+msgid "problem with the `cuardach' command\n"
 msgstr ""
 
-#: cuardach.c:629
+#: cuardach.c:631
 #, c-format
 msgid "%s: problem reading the database\n"
 msgstr ""
@@ -75,118 +74,122 @@ msgstr[1] ""
 msgid "Line %d: %s\n"
 msgstr ""
 
-#: gr.in:45
+#: gr.in:42
+msgid "An Gramadoir"
+msgstr ""
+
+#: gr.in:43
 msgid "Currently checking %s"
 msgstr ""
 
-#: gr.in:46
+#: gr.in:44
 msgid "There is no such file."
 msgstr ""
 
-#: gr.in:47
+#: gr.in:45
 msgid "Is a directory"
 msgstr ""
 
-#: gr.in:48
+#: gr.in:46
 msgid "Permission denied"
 msgstr ""
 
-#: gr.in:49
+#: gr.in:47
 msgid "Usage: %s [OPTIONS] [FILES]"
 msgstr ""
 
-#: gr.in:50
+#: gr.in:48
 msgid "    --litriu       write misspelled words to standard output"
 msgstr ""
 
-#: gr.in:51
+#: gr.in:49
 msgid "    --html         produce HTML output for viewing in a web browser"
 msgstr ""
 
-#: gr.in:52
+#: gr.in:50
 msgid "    --xml          write tagged XML stream to standard output, for debugging"
 msgstr ""
 
-#: gr.in:53
+#: gr.in:51
 msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
 msgstr ""
 
-#: gr.in:54
+#: gr.in:52
 msgid "    --teanga=XX    specify the language of the text to be checked (default=ga)"
 msgstr ""
 
-#: gr.in:55
+#: gr.in:53
 msgid "    --help         display this help and exit"
 msgstr ""
 
-#: gr.in:56
+#: gr.in:54
 msgid "    --version      output version information and exit"
 msgstr ""
 
-#: gr.in:57
+#: gr.in:55
 msgid "If no file is given, read from standard input."
 msgstr ""
 
-#: gr.in:58
+#: gr.in:56
 msgid "Send bug reports to <%s>."
 msgstr ""
 
-#: gr.in:59
+#: gr.in:57
 msgid "version %s"
 msgstr ""
 
-#: gr.in:60
+#: gr.in:58
 msgid "This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law."
 msgstr ""
 
-#: gr.in:61
+#: gr.in:59
 msgid "Try %s for more information."
 msgstr ""
 
-#: gr.in:62
+#: gr.in:60
 msgid "unknown option"
 msgstr ""
 
-#: gr.in:63
+#: gr.in:61
 msgid "Language %s is not supported."
 msgstr ""
 
-#: gr.in:64
+#: gr.in:62
 msgid "Unknown word (ignoring remainder in this sentence)"
 msgstr ""
 
-#: gr.in:65
+#: gr.in:63
 msgid "Unknown word"
 msgstr ""
 
-#: gr.in:66
+#: gr.in:64
 msgid "You should use \\/\\1\\/ here instead"
 msgstr ""
 
-#: gr.in:67
+#: gr.in:65
 msgid "Non-standard form: perhaps use \\/\\1\\/?"
 msgstr ""
 
-#: gr.in:68
+#: gr.in:66
 msgid "Initial mutation missing"
 msgstr ""
 
-#: gr.in:69
+#: gr.in:67
 msgid "Unnecessary lenition"
 msgstr ""
 
-#: gr.in:70
+#: gr.in:68
 msgid "Prefix \\/h\\/ missing"
 msgstr ""
 
-#: gr.in:71
+#: gr.in:69
 msgid "Prefix \\/t\\/ missing"
 msgstr ""
 
-#: gr.in:72
+#: gr.in:70
 msgid "Lenition missing"
 msgstr ""
 
-#: gr.in:73
+#: gr.in:71
 msgid "Eclipsis missing"
 msgstr ""

@@ -37,7 +37,7 @@ struct replacement
   char *athfhocal;
 };
 
-char packagename[16] = "An Gramadóir";
+char packagename[64];
 char dictfile[16] = "focail.bs";
 
 #define DICTTOTAL 314027
@@ -618,12 +618,13 @@ main (int argc, char *argv[])
   bindtextdomain (PACKAGE_NAME, LOCALEDIR);
   textdomain (PACKAGE_NAME);
 
-  if (argc != 2)
+  if (argc != 3)
     {
-      fprintf (stderr, gettext ("%s: problem with the `cuardach' command\n"),
-	       packagename);
+      fprintf (stderr, gettext ("problem with the `cuardach' command\n"));
       return 1;
     }
+
+  strcpy (packagename, argv[2]);
 
   if (load_dictionary () || load_replacements ())
     {

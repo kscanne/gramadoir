@@ -34,14 +34,12 @@ TEXTDOMAIN="@PACKAGE_NAME@"
 TEANGACHA="@TEANGACHA@"
 export TEXTDOMAINDIR TEXTDOMAIN
 
-# title that prints to screen, not used as filename.  I'd also prefer
-# that it not be localized even for non-Irish grammar checking.
-CLAR='An Gramadóir'    
 EXECUTABLE="${0##/*/}"
 HELPCOMMAND="${EXECUTABLE} --help"
 
 # All i18n strings collected here.  See gramadoir.pot for some 
 # translation hints.
+CLAR=`@SH_GETTEXT@ "An Gramadoir"`
 checking=`@SH_GETTEXT@ "Currently checking %s"`
 notfound=`@SH_GETTEXT@ "There is no such file."`
 isdir=`@SH_GETTEXT@ "Is a directory"`
@@ -307,7 +305,7 @@ comhad()
 {
 	cat $1 | diutf | 
 		abairti |
-		@prefix@/libexec/cuardach ${USEIGNORE} |
+		@prefix@/libexec/cuardach ${USEIGNORE} "${CLAR}" |
 		aonchiall |
 		rialacha |
 		eisceacht |
@@ -323,7 +321,7 @@ xml_output()
 {
 	cat $1 | diutf |
 		abairti |
-		@prefix@/libexec/cuardach ${USEIGNORE} |
+		@prefix@/libexec/cuardach ${USEIGNORE} "${CLAR}" |
 		aonchiall |
 		rialacha |
 		eisceacht
@@ -348,7 +346,7 @@ litriu()
 {
 	cat $1 | diutf |
 		abairti |
-		@prefix@/libexec/cuardach ${USEIGNORE} |
+		@prefix@/libexec/cuardach ${USEIGNORE} "${CLAR}" |
 		litriu_comheadan
 }
 
