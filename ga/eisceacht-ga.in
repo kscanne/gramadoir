@@ -83,7 +83,7 @@ ANYTHING gach:
 # gheobh*, gheofar
 # exception to rule prohibiting lention in present, future, and imperative
 ANYTHING <VNOLEN>LENITEDFUTURE</VNOLEN>:
-<S>GODTI</S> <T>ANYTHING</T> <NCS>ANYTHING</NCS>:
+<S>[Gg]o dtí</S> <T>ANYTHING</T> <NCS>ANYTHING</NCS>:
 [Gg]o chéile:
 # CB p.24 #11.b
 [Gg]o <AWITHH>ANYTHING</AWITHH>:

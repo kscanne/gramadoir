@@ -11,8 +11,6 @@ s/CAPITAL/[A-Zаимсз][^<]*/g;
 s/LENITEDFUTURE/[Gg]heo[^<]+/g;
 s/ABAIRPRFU/[Dd](?:eir|Иar)[^<]*/g;
 s/FAIGHFC/bhfaigh[^<]+/g;
-s/GODTI/[Gg]o dtМ/g;
-s/ARBITH/[Aa]r bith/g;
 s/COMPOUND/[^< ]+ [^<]+/g;
 s/GENITIVEPREP/(?:[Cc]ois|[Dd]Аla|[Ff]earacht|[Tt]impeall|[Tt]rasna)/g;
 s/IRREGULARPAST/(?:raibh|dtАinig|dtug|ndearnadh|gcuala|bhfuair)/g;

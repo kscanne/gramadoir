@@ -224,7 +224,7 @@ ANYTHING <VNOLEN>LENITED</VNOLEN>:NISEIMHIU
 #. Cár fágadh eisean (OK)?
 <Q>[Cc]ár</Q> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
 # OD cé^2.8
-<Q>[Cc]é</Q> <R>ARBITH</R>:BACHOIR{cibé}
+<Q>[Cc]é</Q> <R>[Aa]r bith</R>:BACHOIR{cibé}
 # OD cé^2.8
 <Q>[Cc]é</Q> <N>bith</N>:BACHOIR{cibé}
 # OD cé^2.7
@@ -410,7 +410,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 [Gg]o <T>ANYTHING</T>:BACHOIR{go dtí}
 # CB p.14 Note
 #. Tar, téanam go dtí bhean na bhfíseanna.
-<S>GODTI</S> <N>LENITED</N>:NISEIMHIU
+<S>[Gg]o dtí</S> <N>LENITED</N>:NISEIMHIU
 # CB p.132 #5
 #. Ba mhaith liom gur bhfágann daoine óga an scoil agus iad ullmhaithe.
 <C>[Gg]ur</C> <VNOTPAST>ANYTHING</VNOTPAST>:BACHOIR{go}
