@@ -28,12 +28,70 @@ struct ignorable {
       char focal[GR_WORDMAX];
     };
 
+struct replacement {
+      char focal[GR_WORDMAX], athfhocal[GR_WORDMAX];
+    };
+
 #define DICTTOTAL 313973
 int ignore_total=0;
+int repl_total=0;
 
 struct foirm focloir[DICTTOTAL];
 struct ignorable* toignore=NULL;
+struct replacement* torepl=NULL;
 
+/* return 0 if everything went well enough to proceed, non-zero if not */
+int load_replacements()
+    {
+     int iomlan, retval=0;
+     FILE* repl;
+     char fn[GR_FILENAMEMAX], countstr[8];
+     char* split;
+     
+     strcpy(fn, BSONRAI);
+     strcat(fn, "/eile.bs");
+     repl = fopen(fn, "r");
+     if (repl) {
+           fgets(countstr, 8, repl);
+	   countstr[strlen(countstr)-1]=0;
+	   iomlan = atoi(countstr);
+	   if (!iomlan) {
+	         repl_total = 0;
+	         return 0;   /* prevent bad malloc */ 
+		}
+	   torepl = malloc(iomlan * sizeof(struct replacement));
+	   if (torepl==NULL) {
+                               /* "An Gramadóir: out of memory\n" */
+                fprintf(stderr, "An Gramadóir: cuimhne ídithe\n");
+	        return 1;
+	       }
+	   while (!feof(repl) && repl_total != iomlan)
+	   	{
+	         fgets(torepl[repl_total].focal, GR_WORDMAX, repl);
+		 split = strchr(torepl[repl_total].focal, ' ');
+		 if (split==NULL) {
+		     }
+		 else {
+		       strcpy(torepl[repl_total].athfhocal, split+1);
+		       *split='\n';
+		       *(split+1)=0;
+		      }
+		 repl_total++; 
+		}
+	   if (repl_total != iomlan) {
+                    /* "An Gramadóir: warning: check size of %s: %d?\n" */
+                 fprintf(stderr, "An Gramadóir: rabhadh: deimhnigh méid de %s: %d?\n", fn, ignore_total);
+	   	}
+     	   if (fclose(repl)) {
+                /* "An Gramadóir: warning: problem closing %s\n" */
+                 fprintf(stderr, "An Gramadóir: rabhadh: fadhb ag dúnadh %s\n", fn);
+                }
+          }
+     else retval=1;
+     return retval;
+    }
+
+/* no return value, since no matter what happens we'll proceed */
 void load_ignore()
     {
      int iomlan;
@@ -76,10 +134,12 @@ void load_ignore()
 int load_dictionary()
     {
      FILE* bs;
-     char temp[GR_WORDMAX], *hold;
+     char fn[GR_FILENAMEMAX], temp[GR_WORDMAX], *hold;
      int cp, meid=1;
 
-     if ((bs=fopen(BSONRAI,"r"))==NULL) return 1;
+     strcpy(fn, BSONRAI);
+     strcat(fn, "/focail.bs");
+     if ((bs=fopen(fn,"r"))==NULL) return 1;
      if (fgets(focloir[0].focal, GR_WORDMAX, bs)==NULL) return 1;
      if (fgets(focloir[0].coid, GR_AMBIGMAX, bs)==NULL) return 1;
      while (fgets(temp, GR_WORDMAX, bs) != NULL) {
@@ -240,12 +300,29 @@ int rawignorelookup(const char* word)
      return 0;
     }
 
-/* Assert, word is non-zero length */
-/* return non-zero iff some match found, so zero iff <X> markup */
-void dictlookup(const char* word, char* fill, char* attrs, char* extratags)
+int replacementlookup(const char* word, char* repl)
     {
-     int len;
-     char unused, codes[2*GR_AMBIGMAX], lowered[GR_WORDMAX];
+     int min=0, max=repl_total-1;
+     int guess, cmp;
+     while (min <= max) {
+          guess = (max+min)/2;
+	  cmp = strcmp(torepl[guess].focal, word);
+	  if (cmp == 0) {
+	         strcpy(repl, torepl[guess].athfhocal);
+		 repl[strlen(repl)-1]='}';  /* replace newline */
+	         return 1;
+		}
+          else if (cmp < 0) min = guess+1;
+          else max = guess-1;
+         }
+     return 0;
+    }
+
+/* Assert, word is non-zero length */
+int dictlookup(const char* word, char* fill, char* attrs, char* extratags)
+    {
+     int len, retval=1;
+     char unused, repl[GR_WORDMAX], codes[2*GR_AMBIGMAX], lowered[GR_WORDMAX];
      *codes = 0;
      rawlookup(word, codes);
      if (isupper(word[0])) {
@@ -264,9 +341,18 @@ void dictlookup(const char* word, char* fill, char* attrs, char* extratags)
            strcpy(attrs, "");
            strcpy(extratags, "");
            strcpy(fill, "X");   /* "residual" tag -- not in dictionary */
-           if (toignore != NULL) 
+	   if (replacementlookup(word, repl)) {
+	        strcpy(fill, "E");
+                strcpy(extratags, "<Y>");
+		strcpy(attrs, " msg=\"CAIGHDEAN{");
+		strcat(attrs, repl);
+		strcat(attrs, "\"");
+		retval=0;
+               }
+	   else if (toignore != NULL) 
 	         if (rawignorelookup(word)) strcpy(fill, "Y");
           }
+     return retval;
     }
 
 /* 
@@ -277,9 +363,10 @@ void markup(char* token, char* w)
     {
      char mu[8], attrs[128], extratags[512];
      char* tail = strstr(token, "</c>")+4;
+     int val;
      *(tail-4)='\n';              /* \n since it is kept around in focloir */ 
      *(tail-3)='\0';              /* null terminate the word itself */
-     dictlookup(w+3, mu, attrs, extratags);
+     val=dictlookup(w+3, mu, attrs, extratags);
      *(tail-4)='\0';                
      *w = '\0';
      printf("%s", token);                /** chars before <c> **/
@@ -287,6 +374,7 @@ void markup(char* token, char* w)
      printf("%s", attrs);                /** attributes **/
      printf(">%s", extratags);           /** any additional tags **/
      printf("%s", w+3);                  /** word itself **/
+     if (!val) printf("</Y>");           /** dummy markup in case of repl. **/
      printf("</%s>", mu);                /** end of new markup **/
      printf("%s", tail);                 /** chars after </c> **/
     }
@@ -310,7 +398,7 @@ int main(int argc, char* argv[])
             fprintf(stderr, "An Gramadóir: fadhb leis an logánú\n");
             return 1;
 	   }
-    if (load_dictionary()) {
+      if (load_dictionary() || load_replacements()) {
                    /* "An Gramadóir: problem reading the database\n" */
          fprintf(stderr, "An Gramadóir: fadhb ag léamh an bhunachair sonraí\n");
          return 1;
