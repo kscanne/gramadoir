@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Language" content="en">
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
   <meta name="description" content="Home page for the open source grammar checking engine An Gramad&oacute;ir">
-  <meta name="keywords" content="grammar checker, Gaeilge, Irish language">
+  <meta name="keywords" content="grammar checker, Gaeilge, Irish language, minority languages">
   <meta name="author" content="Kevin P. Scannell">
   <link rel="stylesheet" href="../kps.css" type="text/css">
 </head>
@@ -35,11 +35,12 @@ developed for any minority language.
 
 <hr>
 <h2><a name="Features">Features</a></h2>
-An Gramadóir is:
+<i lang="ga">An Gramadóir</i> is:
 <ul>
 <li><b>Portable</b>.  As of version 0.5 the core engine is 
-written entirely in Perl which it means it will run on just about
-anything that plugs in.   It has been tested on a variety of
+written entirely in Perl which means it will run on just about
+<a href="http://www.cpan.org/ports/index.html">anything that plugs in</a>.
+It has been tested on a variety of
 platforms and operating systems:
 Linux (x86, ppc, amd64),
 *BSD (x86),
@@ -58,20 +59,19 @@ the <a href="sampla.html">Sampler page</a>).
 Or, you can try the software now using the
 <a href="foirm.html">Web Interface</a>.
 There are also interfaces that allow the grammar checker to
-be called from the text editors <a href="eagar.html">emacs and vim</a>
+be called from the text editors <a href="eagar.html">emacs, vim, and OpenOffice</a>
 (here is a <a href="gramadoir.png">screenshot</a> of the
-vim interface in action). A prototype interface to 
-<a href="http://www.openoffice.org/">OpenOffice</a> is available as well.
+vim interface in action).
 Last but not least, I'm working on a nice standalone GUI
 version (with <a href="http://www.cruinneog.com/">Diarmaid Mac Mathúna</a>)
 that should be ready before long.
 <li><b>Corpus-based</b>.  Various components of the engine can be 
 bootstrapped from corpora harvested by my web crawling
 software <a href="/crubadan/index.html">An Crúbadán</a>.  This is
-essential for languages with severely limited resources, allowing
-for rapid development with a minimum of effort.
+essential for languages with severely limited resources, allowing 
+rapid development with a minimum of effort.
 <li><b>Easy to develop</b>.  I've tried to design the language
-developer's pack so that no programming experience is needed.
+developers' pack so that no programming experience is needed.
 All Perl code is generated automatically from a number
 of (hopefully simple) plain text input files.
 This is especially important for minority languages where in 
@@ -81,7 +81,7 @@ developers, or both.
 word lists output by my web crawler) a developer can have a decent
 spell checking package up and running.   On the other hand, the
 engine is flexible enough to allow for full-scale grammar checking
-(as evidenced by the sometimes-rococo Irish version).
+(as evidenced by the rococo Irish version).
 <li><b>Language independent</b>.   (More or less).  Most open source 
 language technology is designed with (Indo-)European languages in mind.
 To counter this trend I've included things like full Unicode support and
@@ -99,81 +99,55 @@ help improve later releases.
 </ul>
 
 <hr>
-<h2>Installation and Usage</h2>
+<h2><a name="Install">Installation and Usage</a></h2>
 
 <p>
-First, <a href="sios.html">Download</a> the tarball.
-Then (assuming you want to install to /usr/local and you
-have the appropriate permissions) 
-try the following standard installation process:
+The Irish grammar checker is distributed as the Perl module
+<a href="http://search.cpan.org/dist/Lingua-GA-Gramadoir/"><i>Lingua::GA::Gramadoir</i></a>.
+If you are using Linux or some other Unix-like 
+operating system, you surely already have Perl installed
+and you can
+<a href="http://www.troubleshooters.com/codecorn/littperl/perlcpan.htm">install the module using <i>CPAN.pm</i></a>.
+If you are running something primitive like 
+<a href="http://www.fainne.org/microbog/">Windows</a>,
+you'll first have to install
+<a href="http://www.activestate.com/Products/ActivePerl/">ActiveState Perl</a>
+and then install <i>An Gramadóir</i> using
+<a href="http://aspn.activestate.com/ASPN/docs/ActivePerl/faq/ActivePerl-faq2.html">ppm</a>.
+</p>
+
+<p>
+You can also install manually:
+<a href="http://sourceforge.net/project/showfiles.php?group_id=114958">download</a>,
+unpack the archive, and
+try the following standard procedure:
 </p>
 <pre>
-% gunzip gramadoir-x.x.tar.gz
-% tar xvf gramadoir-x.x.tar
-% cd gramadoir-x.x
-% ./configure
+% perl Makefile.PL
 % make
 % make install
-% make installcheck
 </pre>
 
 <p>
-The front-end script is called "gr".   To check the grammar of an
-Irish language text file called <i>gaeilge.txt</i>, use the following:
+You should then have the front-end script 
+<i>gram-ga.pl</i> installed.  To check the grammar of an
+Irish language text file called <i>gaeilge.txt</i>,
+use the following from the command line:
 </p>
 <pre>
-% gr gaeilge.txt
+% gram-ga.pl gaeilge.txt
 </pre>
 
-
 <p>
-If there are words you would like to be disregarded while checking
-spelling and grammar you can place them, one per line, in a plain text file
-in your home directory called ".neamhshuim".
+More detailed usage instructions can be found here.
 </p>
-
-<p>
-Here are a few generally useful command line options:
-</p>
-<ul>
-<li><b>--litriu</b>: Write all of the unknown/misspelled words to standard output.
-<li><b>--aschur=FILE</b>: Write output to FILE.
-<li><b>--aspell</b>: Make suggestions for correcting misspellings (requires that <a href="http://aspell.net/">GNU aspell</a> be installed).
-<li><b>--iomlan</b>: Report all errors (do not use the file "~/.neamhshuim").
-<li><b>--teanga=XX</b>: Specify the two-letter ISO-639-1 code for the language of the text to be checked.  Default is ga (Irish).
-<li><b>--ionchod=ENC</b>: Specify the character encoding of the input text.  The default depends on the language; Irish uses ISO88591.
-<li><b>--help</b>: Display some help and exit.
-<li><b>--version</b>: Display version and copyright information and exit.
-</ul>
-
-<p>
-And some for use by developers (see the <a href="sonrai.html">Details</a> page
-for more information on how to use these options effectively):
-</p>
-<ul>
-<li><b>--api</b>: Output errors in a simple XML format for use with other applications.
-<li><b>--brill</b>: Find candidate disambiguation rules using Brill's
-unsupervised learning algorithm.
-<li><b>--html</b>: Produce HTML output which should resemble the output of vanilla "gr" when viewed in a web browser.  This option is used by the 
-<a href="form.html">Web Interface</a>.
-<li><b>--ilchiall</b>: Generate a report consisting of all (part of speech)
-ambiguities remaining after two passes through the disambiguation module,
-sorted by frequency.
-<li><b>--minic</b>: List all part of speech tags appearing in the file, sorted
-by frequency.  This output can be used for the <i>unigram-xx.txt</i> file.
-<li><b>--no-unigram</b>: Do not perform the "last resort" part of speech
-disambiguation according to tag frequency.
-<li><b>--xml</b>: Write the intermediate tagged XML stream to standard output;
-useful for debugging.
-</ul>
 
 <hr>
-<em>© Cóipcheart/Copyright 2003 Kevin P. Scannell</em><br><br>
+<em>© Cóipcheart/Copyright 2003, 2004 Kevin P. Scannell</em><br><br>
 </div>
 <div class="navigation">
 Home<br>
 <a href = "sios.html">Download</a><br>
-<a href = "sonrai.html">Details</a><br>
 <a href = "cuidiu.html">Contributing</a><br>
 <a href = "iompar.html">Languages</a><br>
 <a href = "stair.html">History</a><br>
