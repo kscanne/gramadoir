@@ -148,6 +148,217 @@ test aspell support
 1: Militriu. 
 Unknown word /Mílitriú, Mílitrí, Mhílitriú, Mílitrigh, Mílitrím/?.
 
+test brill algorithm
+<N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+a <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="xx" t="láith">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><U/><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/><V cop="y"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+a <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<D>ANYTHING</D> <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<P>ANYTHING</P> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<P>ANYTHING</P> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<D>ANYTHING</D> <B><Z><N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+<U>ANYTHING</U> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><V p="2ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+an <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><S/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<S>
+<V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="y" gnd="f"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<C>ANYTHING</C> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<P>ANYTHING</P> <B><Z><R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/></Z>ANYTHING</B>:<R>
+<P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<T>ANYTHING</T> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+an <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+atá <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<V p="xx" t="láith">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+seo <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+do <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+do <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<R>ANYTHING</R> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<P>ANYTHING</P> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+<T>ANYTHING</T> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+<V cop="y">ANYTHING</V> <B><Z><S/><R/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<R>
+<P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<C>ANYTHING</C> <B><Z><C/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/></Z>ANYTHING</B>:<C>
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><N pl="n" gnt="y" gnd="f"/><N pl="y" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+<V p="xx" t="fáist">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="1ú" t="láith">ANYTHING</V> <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<O>
+mé <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+Tá <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+agus <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+sé <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+sin <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+bhur <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<V cop="y">ANYTHING</V> <B><Z><O em="y"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<O em="y">
+féin <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+bheidh <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V pl="y" p="2ú" t="ord">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/><V p="3ú" t="gnáth"/><V pl="y" p="2ú" t="gnáth"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<N pl="y" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+do <B><Z><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+sé <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+mo <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+Tá <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+mo <B><Z><N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+tú <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+sin <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<V p="xx" t="láith">ANYTHING</V> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+<C>ANYTHING</C> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+<N pl="y" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<P>ANYTHING</P> <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<O>
+agus <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+test tag frequency counter
+<N pl="n" gnt="n" gnd="m">
+<S>
+<N pl="n" gnt="n" gnd="f">
+<A pl="n" gnt="n">
+<T>
+<P>
+<V p="xx" t="láith">
+<O>
+<D>
+<C>
+<V p="xx" t="caite">
+<R>
+<N pl="y" gnt="n" gnd="m">
+<V cop="y">
+<U>
+<Q>
+<V p="xx" t="fáist">
+<N pl="y" gnt="n" gnd="f">
+<N pl="n" gnt="y" gnd="m">
+<A>
+<N pl="n" gnt="y" gnd="f">
+<N pl="n" gnt="n">
+<V p="xx" t="ord">
+<A pl="n" gnt="y" gnd="f">
+<A pl="y" gnt="n">
+<V p="saor" t="caite">
+<V p="xx" t="coinn">
+<O em="y">
+<V p="saor" t="láith">
+<V p="xx" t="gnáth">
+<N pl="y" gnt="y" gnd="m">
+<N pl="n" gnt="y" gnd="f" h="y">
+<N pl="n" gnt="n" gnd="f" h="y">
+<V p="xx" t="foshuit">
+<V p="saor" t="ord">
+<V p="saor" t="fáist">
+<V p="saor" t="coinn">
+<P h="y">
+<N pl="y" gnt="y" gnd="f">
+<F>
+<A pl="n" gnt="n" h="y">
+test ambiguity report
+17	<S/><D/>
+            17	do
+5	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/>
+             2	Gaeilge
+             1	imní
+             1	faire
+             1	Bhealtaine
+4	<N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/>
+             1	cuireadh
+             1	cinneadh
+             1	Cuireadh
+             1	Ceapadh
+3	<O/><N pl="n" gnt="n" gnd="f"/>
+             3	uaim
+3	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/>
+             3	méid
+3	<A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             2	eile
+             1	déanta
+2	<V p="saor" t="caite"/><V p="3ú" t="ord"/><V p="3ú" t="gnáth"/><V pl="y" p="2ú" t="gnáth"/>
+             1	maitheadh
+             1	Labhraíodh
+2	<R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/>
+             2	beagán
+2	<N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/>
+             1	óga
+             1	ciníocha
+2	<N pl="n" gnt="y" gnd="f"/><N pl="y" gnt="n" gnd="f"/>
+             2	uaire
+2	<N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/><V p="3ú" t="gnáth"/><V pl="y" p="2ú" t="gnáth"/>
+             1	sheoladh
+             1	moladh
+2	<N pl="n" gnt="n" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	scrios
+             1	líon
+2	<N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2ú" t="ord"/>
+             1	gearán
+             1	déan
+2	<N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/>
+             1	úd
+             1	ceart
+2	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/>
+             1	gáire
+             1	ciste
+2	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/>
+             1	Féile
+             1	Fhéile
+2	<A pl="n" gnt="y" gnd="f"/><A pl="y" gnt="n"/>
+             1	oifigiúla
+             1	mhilse
+1	<U/><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/><V cop="y"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/>
+             1	ní
+1	<S/><R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/>
+             1	Timpeall
+1	<S/><R/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/>
+             1	fiú
+1	<S/><N pl="n" gnt="n" gnd="f"/>
+             1	toisc
+1	<O em="y"/><N pl="n" gnt="y" gnd="f"/>
+             1	linne
+1	<N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/>
+             1	bpeacaí
+1	<N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	ráite
+1	<N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/>
+             1	chéadfaí
+1	<N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/>
+             1	aitheanta
+1	<N pl="n" gnt="y" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	Bhraith
+1	<N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><V p="2ú" t="ord"/>
+             1	tosaigh
+1	<N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	cónaithe
+1	<N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	lorg
+1	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	chéanna
+1	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y" gnd="f"/>
+             1	dheoraí
+1	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	beo
+1	<N pl="n" gnt="n" gnd="m" h="y"/><N pl="y" gnt="y" gnd="m" h="y"/><A pl="n" gnt="n" h="y"/>
+             1	holc
+1	<N pl="n" gnt="n" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	ghoid
+1	<N pl="n" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	ghlac
+1	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="m"/>
+             1	cúil
+1	<C/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/>
+             1	óir
+1	<A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	Nua
+1	<A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/>
+             1	breá
 Currently checking /dev/null
 test help flag
 Syntax: gr [OPTIONEN] [DATEIEN]
@@ -301,6 +512,217 @@ test aspell support
 1: Militriu. 
 Unbekanntes Wort /Mílitriú, Mílitrí, Mhílitriú, Mílitrigh, Mílitrím/?.
 
+test brill algorithm
+<N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+a <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="xx" t="láith">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><U/><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/><V cop="y"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+a <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<D>ANYTHING</D> <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<P>ANYTHING</P> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<P>ANYTHING</P> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<D>ANYTHING</D> <B><Z><N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+<U>ANYTHING</U> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><V p="2ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+an <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><S/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<S>
+<V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="y" gnd="f"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<C>ANYTHING</C> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<P>ANYTHING</P> <B><Z><R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/></Z>ANYTHING</B>:<R>
+<P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<T>ANYTHING</T> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+an <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+atá <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<V p="xx" t="láith">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+seo <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+do <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+do <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<R>ANYTHING</R> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<P>ANYTHING</P> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+<T>ANYTHING</T> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+<V cop="y">ANYTHING</V> <B><Z><S/><R/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<R>
+<P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<C>ANYTHING</C> <B><Z><C/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/></Z>ANYTHING</B>:<C>
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><N pl="n" gnt="y" gnd="f"/><N pl="y" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+<V p="xx" t="fáist">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="1ú" t="láith">ANYTHING</V> <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<O>
+mé <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+Tá <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+agus <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+sé <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+sin <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+bhur <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<V cop="y">ANYTHING</V> <B><Z><O em="y"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<O em="y">
+féin <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+bheidh <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V pl="y" p="2ú" t="ord">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/><V p="3ú" t="gnáth"/><V pl="y" p="2ú" t="gnáth"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<N pl="y" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+do <B><Z><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+sé <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+mo <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+Tá <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+mo <B><Z><N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+tú <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+sin <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<V p="xx" t="láith">ANYTHING</V> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+<C>ANYTHING</C> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+<N pl="y" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<P>ANYTHING</P> <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<O>
+agus <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+test tag frequency counter
+<N pl="n" gnt="n" gnd="m">
+<S>
+<N pl="n" gnt="n" gnd="f">
+<A pl="n" gnt="n">
+<T>
+<P>
+<V p="xx" t="láith">
+<O>
+<D>
+<C>
+<V p="xx" t="caite">
+<R>
+<N pl="y" gnt="n" gnd="m">
+<V cop="y">
+<U>
+<Q>
+<V p="xx" t="fáist">
+<N pl="y" gnt="n" gnd="f">
+<N pl="n" gnt="y" gnd="m">
+<A>
+<N pl="n" gnt="y" gnd="f">
+<N pl="n" gnt="n">
+<V p="xx" t="ord">
+<A pl="n" gnt="y" gnd="f">
+<A pl="y" gnt="n">
+<V p="saor" t="caite">
+<V p="xx" t="coinn">
+<O em="y">
+<V p="saor" t="láith">
+<V p="xx" t="gnáth">
+<N pl="y" gnt="y" gnd="m">
+<N pl="n" gnt="y" gnd="f" h="y">
+<N pl="n" gnt="n" gnd="f" h="y">
+<V p="xx" t="foshuit">
+<V p="saor" t="ord">
+<V p="saor" t="fáist">
+<V p="saor" t="coinn">
+<P h="y">
+<N pl="y" gnt="y" gnd="f">
+<F>
+<A pl="n" gnt="n" h="y">
+test ambiguity report
+17	<S/><D/>
+            17	do
+5	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/>
+             2	Gaeilge
+             1	imní
+             1	faire
+             1	Bhealtaine
+4	<N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/>
+             1	cuireadh
+             1	cinneadh
+             1	Cuireadh
+             1	Ceapadh
+3	<O/><N pl="n" gnt="n" gnd="f"/>
+             3	uaim
+3	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/>
+             3	méid
+3	<A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             2	eile
+             1	déanta
+2	<V p="saor" t="caite"/><V p="3ú" t="ord"/><V p="3ú" t="gnáth"/><V pl="y" p="2ú" t="gnáth"/>
+             1	maitheadh
+             1	Labhraíodh
+2	<R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/>
+             2	beagán
+2	<N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/>
+             1	óga
+             1	ciníocha
+2	<N pl="n" gnt="y" gnd="f"/><N pl="y" gnt="n" gnd="f"/>
+             2	uaire
+2	<N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/><V p="3ú" t="gnáth"/><V pl="y" p="2ú" t="gnáth"/>
+             1	sheoladh
+             1	moladh
+2	<N pl="n" gnt="n" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	scrios
+             1	líon
+2	<N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2ú" t="ord"/>
+             1	gearán
+             1	déan
+2	<N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/>
+             1	úd
+             1	ceart
+2	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/>
+             1	gáire
+             1	ciste
+2	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/>
+             1	Féile
+             1	Fhéile
+2	<A pl="n" gnt="y" gnd="f"/><A pl="y" gnt="n"/>
+             1	oifigiúla
+             1	mhilse
+1	<U/><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/><V cop="y"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/>
+             1	ní
+1	<S/><R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/>
+             1	Timpeall
+1	<S/><R/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/>
+             1	fiú
+1	<S/><N pl="n" gnt="n" gnd="f"/>
+             1	toisc
+1	<O em="y"/><N pl="n" gnt="y" gnd="f"/>
+             1	linne
+1	<N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/>
+             1	bpeacaí
+1	<N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	ráite
+1	<N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/>
+             1	chéadfaí
+1	<N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/>
+             1	aitheanta
+1	<N pl="n" gnt="y" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	Bhraith
+1	<N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><V p="2ú" t="ord"/>
+             1	tosaigh
+1	<N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	cónaithe
+1	<N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	lorg
+1	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	chéanna
+1	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y" gnd="f"/>
+             1	dheoraí
+1	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	beo
+1	<N pl="n" gnt="n" gnd="m" h="y"/><N pl="y" gnt="y" gnd="m" h="y"/><A pl="n" gnt="n" h="y"/>
+             1	holc
+1	<N pl="n" gnt="n" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	ghoid
+1	<N pl="n" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	ghlac
+1	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="m"/>
+             1	cúil
+1	<C/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/>
+             1	óir
+1	<A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	Nua
+1	<A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/>
+             1	breá
 /dev/null wird gerade geprüft
 test help flag
 Úsáid: gr [ROGHANNA] [COMHAD]
@@ -453,6 +875,217 @@ test aspell support
 1: Militriu. 
 Focal anaithnid /Mílitriú, Mílitrí, Mhílitriú, Mílitrigh, Mílitrím/?.
 
+test brill algorithm
+<N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+a <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="xx" t="láith">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><U/><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/><V cop="y"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+a <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<D>ANYTHING</D> <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<P>ANYTHING</P> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<P>ANYTHING</P> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<D>ANYTHING</D> <B><Z><N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+<U>ANYTHING</U> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><V p="2ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+an <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><S/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<S>
+<V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="y" gnd="f"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<C>ANYTHING</C> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<P>ANYTHING</P> <B><Z><R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/></Z>ANYTHING</B>:<R>
+<P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<T>ANYTHING</T> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+an <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+atá <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<V p="xx" t="láith">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+seo <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+do <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+do <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<R>ANYTHING</R> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<P>ANYTHING</P> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+<T>ANYTHING</T> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+<V cop="y">ANYTHING</V> <B><Z><S/><R/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<R>
+<P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<C>ANYTHING</C> <B><Z><C/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/></Z>ANYTHING</B>:<C>
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><N pl="n" gnt="y" gnd="f"/><N pl="y" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+<V p="xx" t="fáist">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="1ú" t="láith">ANYTHING</V> <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<O>
+mé <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+Tá <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+agus <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+sé <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+sin <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+bhur <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<V cop="y">ANYTHING</V> <B><Z><O em="y"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<O em="y">
+féin <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+bheidh <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V pl="y" p="2ú" t="ord">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/><V p="3ú" t="gnáth"/><V pl="y" p="2ú" t="gnáth"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<N pl="y" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+do <B><Z><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+sé <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+mo <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+Tá <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+mo <B><Z><N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+tú <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+sin <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<V p="xx" t="láith">ANYTHING</V> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+<C>ANYTHING</C> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+<N pl="y" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<P>ANYTHING</P> <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<O>
+agus <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+test tag frequency counter
+<N pl="n" gnt="n" gnd="m">
+<S>
+<N pl="n" gnt="n" gnd="f">
+<A pl="n" gnt="n">
+<T>
+<P>
+<V p="xx" t="láith">
+<O>
+<D>
+<C>
+<V p="xx" t="caite">
+<R>
+<N pl="y" gnt="n" gnd="m">
+<V cop="y">
+<U>
+<Q>
+<V p="xx" t="fáist">
+<N pl="y" gnt="n" gnd="f">
+<N pl="n" gnt="y" gnd="m">
+<A>
+<N pl="n" gnt="y" gnd="f">
+<N pl="n" gnt="n">
+<V p="xx" t="ord">
+<A pl="n" gnt="y" gnd="f">
+<A pl="y" gnt="n">
+<V p="saor" t="caite">
+<V p="xx" t="coinn">
+<O em="y">
+<V p="saor" t="láith">
+<V p="xx" t="gnáth">
+<N pl="y" gnt="y" gnd="m">
+<N pl="n" gnt="y" gnd="f" h="y">
+<N pl="n" gnt="n" gnd="f" h="y">
+<V p="xx" t="foshuit">
+<V p="saor" t="ord">
+<V p="saor" t="fáist">
+<V p="saor" t="coinn">
+<P h="y">
+<N pl="y" gnt="y" gnd="f">
+<F>
+<A pl="n" gnt="n" h="y">
+test ambiguity report
+17	<S/><D/>
+            17	do
+5	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/>
+             2	Gaeilge
+             1	imní
+             1	faire
+             1	Bhealtaine
+4	<N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/>
+             1	cuireadh
+             1	cinneadh
+             1	Cuireadh
+             1	Ceapadh
+3	<O/><N pl="n" gnt="n" gnd="f"/>
+             3	uaim
+3	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/>
+             3	méid
+3	<A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             2	eile
+             1	déanta
+2	<V p="saor" t="caite"/><V p="3ú" t="ord"/><V p="3ú" t="gnáth"/><V pl="y" p="2ú" t="gnáth"/>
+             1	maitheadh
+             1	Labhraíodh
+2	<R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/>
+             2	beagán
+2	<N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/>
+             1	óga
+             1	ciníocha
+2	<N pl="n" gnt="y" gnd="f"/><N pl="y" gnt="n" gnd="f"/>
+             2	uaire
+2	<N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/><V p="3ú" t="gnáth"/><V pl="y" p="2ú" t="gnáth"/>
+             1	sheoladh
+             1	moladh
+2	<N pl="n" gnt="n" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	scrios
+             1	líon
+2	<N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2ú" t="ord"/>
+             1	gearán
+             1	déan
+2	<N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/>
+             1	úd
+             1	ceart
+2	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/>
+             1	gáire
+             1	ciste
+2	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/>
+             1	Féile
+             1	Fhéile
+2	<A pl="n" gnt="y" gnd="f"/><A pl="y" gnt="n"/>
+             1	oifigiúla
+             1	mhilse
+1	<U/><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/><V cop="y"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/>
+             1	ní
+1	<S/><R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/>
+             1	Timpeall
+1	<S/><R/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/>
+             1	fiú
+1	<S/><N pl="n" gnt="n" gnd="f"/>
+             1	toisc
+1	<O em="y"/><N pl="n" gnt="y" gnd="f"/>
+             1	linne
+1	<N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/>
+             1	bpeacaí
+1	<N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	ráite
+1	<N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/>
+             1	chéadfaí
+1	<N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/>
+             1	aitheanta
+1	<N pl="n" gnt="y" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	Bhraith
+1	<N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><V p="2ú" t="ord"/>
+             1	tosaigh
+1	<N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	cónaithe
+1	<N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	lorg
+1	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	chéanna
+1	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y" gnd="f"/>
+             1	dheoraí
+1	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	beo
+1	<N pl="n" gnt="n" gnd="m" h="y"/><N pl="y" gnt="y" gnd="m" h="y"/><A pl="n" gnt="n" h="y"/>
+             1	holc
+1	<N pl="n" gnt="n" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	ghoid
+1	<N pl="n" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	ghlac
+1	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="m"/>
+             1	cúil
+1	<C/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/>
+             1	óir
+1	<A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	Nua
+1	<A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/>
+             1	breá
 Ag seiceáil /dev/null
 test help flag
 ÃšsÃ¡id: gr [ROGHANNA] [COMHAD]
@@ -605,6 +1238,217 @@ test aspell support
 1: Militriu. 
 Focal anaithnid /Mílitriú, Mílitrí, Mhílitriú, Mílitrigh, Mílitrím/?.
 
+test brill algorithm
+<N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+a <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="xx" t="láith">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><U/><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/><V cop="y"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+a <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<D>ANYTHING</D> <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<P>ANYTHING</P> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<P>ANYTHING</P> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<D>ANYTHING</D> <B><Z><N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+<U>ANYTHING</U> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><V p="2ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+an <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><S/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<S>
+<V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="y" gnd="f"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<C>ANYTHING</C> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<P>ANYTHING</P> <B><Z><R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/></Z>ANYTHING</B>:<R>
+<P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<T>ANYTHING</T> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+an <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+atá <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<V p="xx" t="láith">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+seo <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+do <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+do <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<R>ANYTHING</R> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<P>ANYTHING</P> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+<T>ANYTHING</T> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+<V cop="y">ANYTHING</V> <B><Z><S/><R/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<R>
+<P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<C>ANYTHING</C> <B><Z><C/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/></Z>ANYTHING</B>:<C>
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><N pl="n" gnt="y" gnd="f"/><N pl="y" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+<V p="xx" t="fáist">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="1ú" t="láith">ANYTHING</V> <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<O>
+mé <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+Tá <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+agus <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+sé <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+sin <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+bhur <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<V cop="y">ANYTHING</V> <B><Z><O em="y"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<O em="y">
+féin <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+bheidh <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V pl="y" p="2ú" t="ord">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/><V p="3ú" t="gnáth"/><V pl="y" p="2ú" t="gnáth"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<N pl="y" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+do <B><Z><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+sé <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+mo <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+Tá <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+mo <B><Z><N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+tú <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+sin <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<V p="xx" t="láith">ANYTHING</V> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+<C>ANYTHING</C> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+<N pl="y" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<P>ANYTHING</P> <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<O>
+agus <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+test tag frequency counter
+<N pl="n" gnt="n" gnd="m">
+<S>
+<N pl="n" gnt="n" gnd="f">
+<A pl="n" gnt="n">
+<T>
+<P>
+<V p="xx" t="láith">
+<O>
+<D>
+<C>
+<V p="xx" t="caite">
+<R>
+<N pl="y" gnt="n" gnd="m">
+<V cop="y">
+<U>
+<Q>
+<V p="xx" t="fáist">
+<N pl="y" gnt="n" gnd="f">
+<N pl="n" gnt="y" gnd="m">
+<A>
+<N pl="n" gnt="y" gnd="f">
+<N pl="n" gnt="n">
+<V p="xx" t="ord">
+<A pl="n" gnt="y" gnd="f">
+<A pl="y" gnt="n">
+<V p="saor" t="caite">
+<V p="xx" t="coinn">
+<O em="y">
+<V p="saor" t="láith">
+<V p="xx" t="gnáth">
+<N pl="y" gnt="y" gnd="m">
+<N pl="n" gnt="y" gnd="f" h="y">
+<N pl="n" gnt="n" gnd="f" h="y">
+<V p="xx" t="foshuit">
+<V p="saor" t="ord">
+<V p="saor" t="fáist">
+<V p="saor" t="coinn">
+<P h="y">
+<N pl="y" gnt="y" gnd="f">
+<F>
+<A pl="n" gnt="n" h="y">
+test ambiguity report
+17	<S/><D/>
+            17	do
+5	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/>
+             2	Gaeilge
+             1	imní
+             1	faire
+             1	Bhealtaine
+4	<N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/>
+             1	cuireadh
+             1	cinneadh
+             1	Cuireadh
+             1	Ceapadh
+3	<O/><N pl="n" gnt="n" gnd="f"/>
+             3	uaim
+3	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/>
+             3	méid
+3	<A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             2	eile
+             1	déanta
+2	<V p="saor" t="caite"/><V p="3ú" t="ord"/><V p="3ú" t="gnáth"/><V pl="y" p="2ú" t="gnáth"/>
+             1	maitheadh
+             1	Labhraíodh
+2	<R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/>
+             2	beagán
+2	<N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/>
+             1	óga
+             1	ciníocha
+2	<N pl="n" gnt="y" gnd="f"/><N pl="y" gnt="n" gnd="f"/>
+             2	uaire
+2	<N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/><V p="3ú" t="gnáth"/><V pl="y" p="2ú" t="gnáth"/>
+             1	sheoladh
+             1	moladh
+2	<N pl="n" gnt="n" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	scrios
+             1	líon
+2	<N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2ú" t="ord"/>
+             1	gearán
+             1	déan
+2	<N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/>
+             1	úd
+             1	ceart
+2	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/>
+             1	gáire
+             1	ciste
+2	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/>
+             1	Féile
+             1	Fhéile
+2	<A pl="n" gnt="y" gnd="f"/><A pl="y" gnt="n"/>
+             1	oifigiúla
+             1	mhilse
+1	<U/><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/><V cop="y"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/>
+             1	ní
+1	<S/><R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/>
+             1	Timpeall
+1	<S/><R/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/>
+             1	fiú
+1	<S/><N pl="n" gnt="n" gnd="f"/>
+             1	toisc
+1	<O em="y"/><N pl="n" gnt="y" gnd="f"/>
+             1	linne
+1	<N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/>
+             1	bpeacaí
+1	<N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	ráite
+1	<N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/>
+             1	chéadfaí
+1	<N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/>
+             1	aitheanta
+1	<N pl="n" gnt="y" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	Bhraith
+1	<N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><V p="2ú" t="ord"/>
+             1	tosaigh
+1	<N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	cónaithe
+1	<N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	lorg
+1	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	chéanna
+1	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y" gnd="f"/>
+             1	dheoraí
+1	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	beo
+1	<N pl="n" gnt="n" gnd="m" h="y"/><N pl="y" gnt="y" gnd="m" h="y"/><A pl="n" gnt="n" h="y"/>
+             1	holc
+1	<N pl="n" gnt="n" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	ghoid
+1	<N pl="n" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	ghlac
+1	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="m"/>
+             1	cúil
+1	<C/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/>
+             1	óir
+1	<A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	Nua
+1	<A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/>
+             1	breá
 Ag seiceÃ¡il /dev/null
 test help flag
 Folosire: gr [OPÞIUNI] [FIªIERE]
@@ -756,6 +1600,217 @@ test aspell support
 1: Militriu. 
 Cuvânt necunoscut /Mílitriú, Mílitrí, Mhílitriú, Mílitrigh, Mílitrím/?.
 
+test brill algorithm
+<N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+a <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="xx" t="láith">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><U/><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/><V cop="y"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+a <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<D>ANYTHING</D> <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<P>ANYTHING</P> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<P>ANYTHING</P> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<D>ANYTHING</D> <B><Z><N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+<U>ANYTHING</U> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><V p="2ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+an <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><S/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<S>
+<V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="y" gnd="f"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<C>ANYTHING</C> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<P>ANYTHING</P> <B><Z><R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/></Z>ANYTHING</B>:<R>
+<P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<T>ANYTHING</T> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+an <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+atá <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<V p="xx" t="láith">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+seo <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+do <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+do <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<R>ANYTHING</R> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<P>ANYTHING</P> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+<T>ANYTHING</T> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+<V cop="y">ANYTHING</V> <B><Z><S/><R/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<R>
+<P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<C>ANYTHING</C> <B><Z><C/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/></Z>ANYTHING</B>:<C>
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><N pl="n" gnt="y" gnd="f"/><N pl="y" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+<V p="xx" t="fáist">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="1ú" t="láith">ANYTHING</V> <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<O>
+mé <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+Tá <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+agus <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+sé <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+sin <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+bhur <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<V cop="y">ANYTHING</V> <B><Z><O em="y"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<O em="y">
+féin <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+bheidh <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V pl="y" p="2ú" t="ord">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/><V p="3ú" t="gnáth"/><V pl="y" p="2ú" t="gnáth"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<N pl="y" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+do <B><Z><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+sé <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+mo <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+Tá <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+mo <B><Z><N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+tú <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+sin <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<V p="xx" t="láith">ANYTHING</V> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+<C>ANYTHING</C> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+<N pl="y" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<P>ANYTHING</P> <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<O>
+agus <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+test tag frequency counter
+<N pl="n" gnt="n" gnd="m">
+<S>
+<N pl="n" gnt="n" gnd="f">
+<A pl="n" gnt="n">
+<T>
+<P>
+<V p="xx" t="láith">
+<O>
+<D>
+<C>
+<V p="xx" t="caite">
+<R>
+<N pl="y" gnt="n" gnd="m">
+<V cop="y">
+<U>
+<Q>
+<V p="xx" t="fáist">
+<N pl="y" gnt="n" gnd="f">
+<N pl="n" gnt="y" gnd="m">
+<A>
+<N pl="n" gnt="y" gnd="f">
+<N pl="n" gnt="n">
+<V p="xx" t="ord">
+<A pl="n" gnt="y" gnd="f">
+<A pl="y" gnt="n">
+<V p="saor" t="caite">
+<V p="xx" t="coinn">
+<O em="y">
+<V p="saor" t="láith">
+<V p="xx" t="gnáth">
+<N pl="y" gnt="y" gnd="m">
+<N pl="n" gnt="y" gnd="f" h="y">
+<N pl="n" gnt="n" gnd="f" h="y">
+<V p="xx" t="foshuit">
+<V p="saor" t="ord">
+<V p="saor" t="fáist">
+<V p="saor" t="coinn">
+<P h="y">
+<N pl="y" gnt="y" gnd="f">
+<F>
+<A pl="n" gnt="n" h="y">
+test ambiguity report
+17	<S/><D/>
+            17	do
+5	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/>
+             2	Gaeilge
+             1	imní
+             1	faire
+             1	Bhealtaine
+4	<N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/>
+             1	cuireadh
+             1	cinneadh
+             1	Cuireadh
+             1	Ceapadh
+3	<O/><N pl="n" gnt="n" gnd="f"/>
+             3	uaim
+3	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/>
+             3	méid
+3	<A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             2	eile
+             1	déanta
+2	<V p="saor" t="caite"/><V p="3ú" t="ord"/><V p="3ú" t="gnáth"/><V pl="y" p="2ú" t="gnáth"/>
+             1	maitheadh
+             1	Labhraíodh
+2	<R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/>
+             2	beagán
+2	<N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/>
+             1	óga
+             1	ciníocha
+2	<N pl="n" gnt="y" gnd="f"/><N pl="y" gnt="n" gnd="f"/>
+             2	uaire
+2	<N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/><V p="3ú" t="gnáth"/><V pl="y" p="2ú" t="gnáth"/>
+             1	sheoladh
+             1	moladh
+2	<N pl="n" gnt="n" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	scrios
+             1	líon
+2	<N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2ú" t="ord"/>
+             1	gearán
+             1	déan
+2	<N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/>
+             1	úd
+             1	ceart
+2	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/>
+             1	gáire
+             1	ciste
+2	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/>
+             1	Féile
+             1	Fhéile
+2	<A pl="n" gnt="y" gnd="f"/><A pl="y" gnt="n"/>
+             1	oifigiúla
+             1	mhilse
+1	<U/><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/><V cop="y"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/>
+             1	ní
+1	<S/><R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/>
+             1	Timpeall
+1	<S/><R/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/>
+             1	fiú
+1	<S/><N pl="n" gnt="n" gnd="f"/>
+             1	toisc
+1	<O em="y"/><N pl="n" gnt="y" gnd="f"/>
+             1	linne
+1	<N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/>
+             1	bpeacaí
+1	<N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	ráite
+1	<N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/>
+             1	chéadfaí
+1	<N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/>
+             1	aitheanta
+1	<N pl="n" gnt="y" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	Bhraith
+1	<N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><V p="2ú" t="ord"/>
+             1	tosaigh
+1	<N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	cónaithe
+1	<N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	lorg
+1	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	chéanna
+1	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y" gnd="f"/>
+             1	dheoraí
+1	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	beo
+1	<N pl="n" gnt="n" gnd="m" h="y"/><N pl="y" gnt="y" gnd="m" h="y"/><A pl="n" gnt="n" h="y"/>
+             1	holc
+1	<N pl="n" gnt="n" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	ghoid
+1	<N pl="n" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	ghlac
+1	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="m"/>
+             1	cúil
+1	<C/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/>
+             1	óir
+1	<A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	Nua
+1	<A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/>
+             1	breá
 În prezent se verificã /dev/null
 test help flag
 Gebruik: gr [OPTIE] [BESTAND]
@@ -907,4 +1962,215 @@ test aspell support
 1: Militriu. 
 Onbekend woord /Mílitriú, Mílitrí, Mhílitriú, Mílitrigh, Mílitrím/?.
 
+test brill algorithm
+<N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+a <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="xx" t="láith">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><U/><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/><V cop="y"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+a <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<D>ANYTHING</D> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<D>ANYTHING</D> <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<P>ANYTHING</P> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<P>ANYTHING</P> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<D>ANYTHING</D> <B><Z><N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+<U>ANYTHING</U> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><V p="2ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+an <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><S/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<S>
+<V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="y" gnd="f"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="xx" t="caite">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V cop="y">ANYTHING</V> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<C>ANYTHING</C> <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<P>ANYTHING</P> <B><Z><R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/></Z>ANYTHING</B>:<R>
+<P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<T>ANYTHING</T> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+an <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+atá <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<V p="xx" t="láith">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+seo <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+do <B><Z><N pl="n" gnt="n" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+do <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<R>ANYTHING</R> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<P>ANYTHING</P> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+<T>ANYTHING</T> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+<V cop="y">ANYTHING</V> <B><Z><S/><R/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<R>
+<P>ANYTHING</P> <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<C>ANYTHING</C> <B><Z><C/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/></Z>ANYTHING</B>:<C>
+<A pl="n" gnt="n">ANYTHING</A> <B><Z><N pl="n" gnt="y" gnd="f"/><N pl="y" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+<V p="xx" t="fáist">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V p="1ú" t="láith">ANYTHING</V> <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<O>
+mé <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+Tá <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+agus <B><Z><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+<N pl="n" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+sé <B><Z><N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+sin <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+bhur <B><Z><N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<V cop="y">ANYTHING</V> <B><Z><O em="y"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<O em="y">
+féin <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+bheidh <B><Z><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2ú" t="ord"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<V pl="y" p="2ú" t="ord">ANYTHING</V> <B><Z><N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/><V p="3ú" t="gnáth"/><V pl="y" p="2ú" t="gnáth"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<N pl="y" gnt="n" gnd="m">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+do <B><Z><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/></Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+sé <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+mo <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+Tá <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<N pl="n" gnt="n" gnd="f">ANYTHING</N> <B><Z><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/></Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+mo <B><Z><N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/></Z>ANYTHING</B>:<A pl="n" gnt="n">
+tú <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+sin <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<V p="xx" t="láith">ANYTHING</V> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+<C>ANYTHING</C> <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+<N pl="y" gnt="n" gnd="f">ANYTHING</N> <B><Z><S/><D/></Z>ANYTHING</B>:<S>
+<P>ANYTHING</P> <B><Z><O/><N pl="n" gnt="n" gnd="f"/></Z>ANYTHING</B>:<O>
+agus <B><Z><S/><D/></Z>ANYTHING</B>:<D>
+test tag frequency counter
+<N pl="n" gnt="n" gnd="m">
+<S>
+<N pl="n" gnt="n" gnd="f">
+<A pl="n" gnt="n">
+<T>
+<P>
+<V p="xx" t="láith">
+<O>
+<D>
+<C>
+<V p="xx" t="caite">
+<R>
+<N pl="y" gnt="n" gnd="m">
+<V cop="y">
+<U>
+<Q>
+<V p="xx" t="fáist">
+<N pl="y" gnt="n" gnd="f">
+<N pl="n" gnt="y" gnd="m">
+<A>
+<N pl="n" gnt="y" gnd="f">
+<N pl="n" gnt="n">
+<V p="xx" t="ord">
+<A pl="n" gnt="y" gnd="f">
+<A pl="y" gnt="n">
+<V p="saor" t="caite">
+<V p="xx" t="coinn">
+<O em="y">
+<V p="saor" t="láith">
+<V p="xx" t="gnáth">
+<N pl="y" gnt="y" gnd="m">
+<N pl="n" gnt="y" gnd="f" h="y">
+<N pl="n" gnt="n" gnd="f" h="y">
+<V p="xx" t="foshuit">
+<V p="saor" t="ord">
+<V p="saor" t="fáist">
+<V p="saor" t="coinn">
+<P h="y">
+<N pl="y" gnt="y" gnd="f">
+<F>
+<A pl="n" gnt="n" h="y">
+test ambiguity report
+17	<S/><D/>
+            17	do
+5	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/>
+             2	Gaeilge
+             1	imní
+             1	faire
+             1	Bhealtaine
+4	<N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/>
+             1	cuireadh
+             1	cinneadh
+             1	Cuireadh
+             1	Ceapadh
+3	<O/><N pl="n" gnt="n" gnd="f"/>
+             3	uaim
+3	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/>
+             3	méid
+3	<A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             2	eile
+             1	déanta
+2	<V p="saor" t="caite"/><V p="3ú" t="ord"/><V p="3ú" t="gnáth"/><V pl="y" p="2ú" t="gnáth"/>
+             1	maitheadh
+             1	Labhraíodh
+2	<R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/>
+             2	beagán
+2	<N pl="y" gnt="n" gnd="m"/><A pl="y" gnt="n"/>
+             1	óga
+             1	ciníocha
+2	<N pl="n" gnt="y" gnd="f"/><N pl="y" gnt="n" gnd="f"/>
+             2	uaire
+2	<N pl="n" gnt="n" gnd="m"/><V p="saor" t="caite"/><V p="3ú" t="ord"/><V p="3ú" t="gnáth"/><V pl="y" p="2ú" t="gnáth"/>
+             1	sheoladh
+             1	moladh
+2	<N pl="n" gnt="n" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	scrios
+             1	líon
+2	<N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="2ú" t="ord"/>
+             1	gearán
+             1	déan
+2	<N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/>
+             1	úd
+             1	ceart
+2	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/>
+             1	gáire
+             1	ciste
+2	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/>
+             1	Féile
+             1	Fhéile
+2	<A pl="n" gnt="y" gnd="f"/><A pl="y" gnt="n"/>
+             1	oifigiúla
+             1	mhilse
+1	<U/><N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="f"/><N pl="n" gnt="y" gnd="m"/><V cop="y"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/>
+             1	ní
+1	<S/><R/><N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/>
+             1	Timpeall
+1	<S/><R/><N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/>
+             1	fiú
+1	<S/><N pl="n" gnt="n" gnd="f"/>
+             1	toisc
+1	<O em="y"/><N pl="n" gnt="y" gnd="f"/>
+             1	linne
+1	<N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/>
+             1	bpeacaí
+1	<N pl="y" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	ráite
+1	<N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="f"/><V p="1ú" t="foshuit"/><V p="2ú" t="foshuit"/><V p="3ú" t="foshuit"/><V pl="y" p="2ú" t="foshuit"/><V pl="y" p="3ú" t="foshuit"/>
+             1	chéadfaí
+1	<N pl="y" gnt="n" gnd="f"/><A pl="n" gnt="n"/>
+             1	aitheanta
+1	<N pl="n" gnt="y" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	Bhraith
+1	<N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><V p="2ú" t="ord"/>
+             1	tosaigh
+1	<N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	cónaithe
+1	<N pl="n" gnt="n" gnd="m"/><N pl="y" gnt="y" gnd="m"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	lorg
+1	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	chéanna
+1	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="y" gnd="f"/>
+             1	dheoraí
+1	<N pl="n" gnt="n" gnd="m"/><N pl="n" gnt="y" gnd="m"/><A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="f"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	beo
+1	<N pl="n" gnt="n" gnd="m" h="y"/><N pl="y" gnt="y" gnd="m" h="y"/><A pl="n" gnt="n" h="y"/>
+             1	holc
+1	<N pl="n" gnt="n" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	ghoid
+1	<N pl="n" gnt="n" gnd="f"/><N pl="y" gnt="y" gnd="f"/><V p="1ú" t="caite"/><V p="2ú" t="ord"/><V p="2ú" t="caite"/><V p="3ú" t="caite"/><V pl="y" p="2ú" t="caite"/>
+             1	ghlac
+1	<N pl="n" gnt="n" gnd="f"/><N pl="n" gnt="y" gnd="m"/>
+             1	cúil
+1	<C/><N pl="n" gnt="y" gnd="m"/><N pl="y" gnt="n" gnd="m"/>
+             1	óir
+1	<A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/><A pl="y" gnt="n"/>
+             1	Nua
+1	<A pl="n" gnt="n"/><A pl="n" gnt="y" gnd="m"/>
+             1	breá
 Word momenteel nagekeken
