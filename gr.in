@@ -1,17 +1,12 @@
 #!/bin/bash
 # @configure_input@
-# This is the front-end to An Gramadóir, an Irish language grammar checker.
-# Copyright (C) 2003 Kevin P. Scannell <scannell@slu.edu>
+# This is a front-end script for the An Gramadóir developers' pack.
+# Copyright (C) 2003, 2004 Kevin P. Scannell <scannell@slu.edu>
 #
 # This is free software; see the file COPYING for copying conditions.  There is
 # NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #
 # Usage: gr [OPTIONS] [FILES]
-#
-# This is a script for checking the grammar of Irish language text
-# contained in the files specified on the command line, or read from
-# standard input if no arguments are given.   The default behavior is
-# to write a summary of possible errors to standard output.
 #
 # There are several command line options.  See the web page
 # http://borel.slu.edu/gramadoir/
@@ -19,8 +14,6 @@
 
 # NOT internationalized
 PACKAGE_NAME="@PACKAGE_NAME@"
-packageversion="@PACKAGE_VERSION@"
-bugemail="@PACKAGE_BUGREPORT@"
 TEXTDOMAINDIR="@prefix@/share/locale"
 TEXTDOMAIN="${PACKAGE_NAME}"
 TEANGACHA="@TEANGACHA@"
@@ -42,55 +35,23 @@ export LC_COLLATE="C"
 EXECUTABLE="${0##/*/}"
 HELPCOMMAND="${EXECUTABLE} --help"
 
-# TRANSLATORS: Please leave untranslated, but add an acute accent to the
-# "o" in "Gramadoir" if available in your character set and encoding.
-# If you must translate, this is the Irish for (literally) "The Grammarian"
 CLAR=`@SH_GETTEXT@ "An Gramadoir"`
-checking=`@SH_GETTEXT@ "Currently checking %s"`
-notfound=`@SH_GETTEXT@ "There is no such file."`
-isdir=`@SH_GETTEXT@ "Is a directory"`
-permissions=`@SH_GETTEXT@ "Permission denied"`
-usage1=`@SH_GETTEXT@ "Usage: %s [OPTIONS] [FILES]"`
-usage2=`@SH_GETTEXT@ "Options for end-users:"`
-
-# TRANSLATORS: ~/.neamhshuim is an "ignore file" like those with spellcheckers
-userop1=`@SH_GETTEXT@ "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"`
-userop2=`@SH_GETTEXT@ "    --ionchod=ENC  specify the character encoding of the text to be checked"`
-userop3=`@SH_GETTEXT@ "    --litriu       write misspelled words to standard output"`
-userop4=`@SH_GETTEXT@ "    --aspell       suggest corrections for misspellings (requires GNU aspell)"`
-userop5=`@SH_GETTEXT@ "    --aschur=FILE  write output to FILE"`
-userop6=`@SH_GETTEXT@ "    --teanga=XX    specify the language of the text to be checked (default=ga)"`
-userop7=`@SH_GETTEXT@ "    --help         display this help and exit"`
-userop8=`@SH_GETTEXT@ "    --version      output version information and exit"`
-usage3=`@SH_GETTEXT@ "Options for developers:"`
-
-devop1=`@SH_GETTEXT@ "    --api          output a simple XML format for use with other applications"`
 
 # TRANSLATORS: "disambiguation" is a term from natural language processing.
 # Here it means the process of deciding, for a given word with several
 # possible parts of speech (noun, verb, etc.), the correct part of speech
 # given the context.  Brill's algorithm is "unsupervised" because it relies
 # only on statistics gathered from texts which have not been tagged in advance.
-devop2=`@SH_GETTEXT@ "    --brill        find disambiguation rules via Brill's unsupervised algorithm"`
-devop3=`@SH_GETTEXT@ "    --html         produce HTML output for viewing in a web browser"`
-devop4=`@SH_GETTEXT@ "    --ilchiall     report unresolved ambiguities, sorted by frequency"`
-devop5=`@SH_GETTEXT@ "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"`
+devop1=`@SH_GETTEXT@ "    --brill        find disambiguation rules via Brill's unsupervised algorithm"`
+devop2=`@SH_GETTEXT@ "    --ilchiall     report unresolved ambiguities, sorted by frequency"`
+devop3=`@SH_GETTEXT@ "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"`
 
 # TRANSLATORS: By default, if there is no rule in the disambiguation module
 # for selecting the correct part of speech of an ambiguous word, the program
 # chooses the part of speech with the highest frequency.  This is sometimes
 # called "unigram" tagging.   The --no-unigram option turns this behavior off.
-devop6=`@SH_GETTEXT@ "    --no-unigram   do not resolve ambiguous parts of speech by frequency"`
+devop4=`@SH_GETTEXT@ "    --no-unigram   do not resolve ambiguous parts of speech by frequency"`
 
-# TRANSLATORS: The grammar checker works by piping the input text
-# through a sequence of filters which add XML markup indicating
-# important grammatical information.  The --xml option displays the
-# marked up file as an aid in debugging.
-devop7=`@SH_GETTEXT@ "    --xml          write tagged XML stream to standard output, for debugging"`
-stdinhelp=`@SH_GETTEXT@ "If no file is given, read from standard input."`
-bugreports=`@SH_GETTEXT@ "Send bug reports to <%s>."`
-versionstring=`@SH_GETTEXT@ "version %s"`
-gpl=`@SH_GETTEXT@ "This is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\nto the extent permitted by law."`
 tryhelp=`@SH_GETTEXT@ "Try %s for more information."`
 unknownopt=`@SH_GETTEXT@ "unrecognized option %s"`
 missingarg=`@SH_GETTEXT@ "option %s requires an argument"`
@@ -99,120 +60,27 @@ unsupported=`@SH_GETTEXT@ "Language %s is not supported."`
 
 # TRANSLATORS: "conversion" here means conversion between character encodings
 iconvproblem=`@SH_GETTEXT@ "conversion from %s is not supported"`
-aspellproblem=`@SH_GETTEXT@ "aspell-%s is not installed"`
-ANAITHNID=`@SH_GETTEXT@ "Unknown word"`
-
-# TRANSLATORS: only two unknown words are reported per sentence
-ANAITHNIDSRL=`@SH_GETTEXT@ "Unknown word (ignoring remainder in this sentence)"`
-NEAMHCHOIT=`@SH_GETTEXT@ "Valid word but extremely rare in actual usage"`
-INPHRASE=`@SH_GETTEXT@ "Usually used in the set phrase \/\1\/"`
-BACHOIR=`@SH_GETTEXT@ "You should use \/\1\/ here instead"`
-CAIGHDEAN=`@SH_GETTEXT@ "Non-standard form: perhaps use \/\1\/?"`
-
-# TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
-CLAOCHLU=`@SH_GETTEXT@ "Initial mutation missing"`
-
-# TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
-# It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
-NISEIMHIU=`@SH_GETTEXT@ "Unnecessary lenition"`
-PREFIXH=`@SH_GETTEXT@ "Prefix \/h\/ missing"`
-PREFIXT=`@SH_GETTEXT@ "Prefix \/t\/ missing"`
-SEIMHIU=`@SH_GETTEXT@ "Lenition missing"`
-
-# TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
-# initial consonants in Irish.  It is indicated in writing by the addition
-# of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
-URU=`@SH_GETTEXT@ "Eclipsis missing"`
-DUBAILTE=`@SH_GETTEXT@ "Repeated word"`
-CUPLA=`@SH_GETTEXT@ "Unusual combination of words"`
-BREISCHEIM=`@SH_GETTEXT@ "Comparative adjective required"`
-NIAITCH=`@SH_GETTEXT@ "Unnecessary prefix \/h\/"`
-NITEE=`@SH_GETTEXT@ "Unnecessary prefix \/t\/"`
-ONEART=`@SH_GETTEXT@ "Unnecessary use of the definite article"`
-GENITIVE=`@SH_GETTEXT@ "The genitive case is required here"`
-
-# save for gettext calls within cuardach...
-OLDCTYPE="${LC_CTYPE}"
-export LC_CTYPE="C"
-
-# i18n: grammatical errors.  See rialacha-*.in.
-# If you port to another language, you won't translate these; instead
-# they will be replaced completely with messages corresponding to
-# the errors for your language.
-loganu()
-{
-sed "
-s/\"ANAITHNIDSRL/\"${ANAITHNIDSRL}/g
-s/\"ANAITHNID/\"${ANAITHNID}/g
-s/\"NEAMHCHOIT/\"${NEAMHCHOIT}/g
-s/\"INPHRASE{\([^}]*\)}/\"${INPHRASE}/g
-s/\"BACHOIR{\([^}]*\)}/\"${BACHOIR}/g
-/CAIGHDEAN/s/_/ /g
-s/\"CAIGHDEAN{\([^}]*\)}/\"${CAIGHDEAN}/g
-s/\"CLAOCHLU/\"${CLAOCHLU}/g
-s/\"NISEIMHIU/\"${NISEIMHIU}/g
-s/\"PREFIXH/\"${PREFIXH}/g
-s/\"PREFIXT/\"${PREFIXT}/g
-s/\"SEIMHIU/\"${SEIMHIU}/g
-s/\"URU/\"${URU}/g
-s/\"DUBAILTE/\"${DUBAILTE}/g
-s/\"CUPLA/\"${CUPLA}/g
-s/\"BREISCHEIM/\"${BREISCHEIM}/g
-s/\"NIAITCH/\"${NIAITCH}/g
-s/\"NITEE/\"${NITEE}/g
-s/\"ONEART/\"${ONEART}/g
-s/\"GENITIVE/\"${GENITIVE}/g
-"
-}
-
-TAB=`@AWK@ 'BEGIN{printf "\t";}'`
-
-# this is what happens if --version is passed
-# Do not translate "Copyright" per the GNU coding standards.
-versionout()
-{
-printf "${CLAR}, ${versionstring}\n" "${packageversion}"
-echo "Copyright (C) 2003 Kevin P. Scannell"
-printf "${gpl}\n"
-}
-
-htmlversion()
-{
-echo "<p>"
-printf "<a href=\"http://borel.slu.edu/gramadoir/\">${CLAR}</a>, ${versionstring}<br>\n" "${packageversion}"
-echo "Copyright (C) 2003 <a href=\"http://borel.slu.edu/\">Kevin P. Scannell</a><br><br>"
-echo "<i>"
-printf "${gpl}\n"
-echo "</i></p><hr>"
-}
 
 # this is what happens if --help is passed
 helpout()
 {
-printf "${usage1}\n" "${EXECUTABLE}"
+gram-${TEANGA}.pl --help
 echo
-echo "${usage2}"
-echo "${userop1}"
-echo "${userop2}"
-echo "${userop3}"
-echo "${userop4}"
-echo "${userop5}"
-echo "${userop6}"
-echo "${userop7}"
-echo "${userop8}"
-echo
-echo "${usage3}"
+echo "Additional options in developer pack:";
 echo "${devop1}"
 echo "${devop2}"
 echo "${devop3}"
 echo "${devop4}"
-echo "${devop5}"
-echo "${devop6}"
-echo "${devop7}"
-echo
-echo "${stdinhelp}"
-echo
-printf "${bugreports}\n" "${bugemail}"
+}
+
+htmlversion()
+{
+gram-${TEANGA}.pl --html --version
+}
+
+versionout()
+{
+gram-${TEANGA}.pl --version
 }
 
 # one argument, the erroneous option passed
@@ -412,74 +280,7 @@ rm -f "${TEMPXML}" "${TEMPSED}"
 # number of) errors in the original file and inserts positions into markup
 xml_api()
 {
-"${XML_OUTPUT}" |
-(echo "${GLOBALFILENAME}";
-@PERL@ -n -e '
-/^<line uimhir="([1-9][0-9]*)"/;
-$line = $1;
-while (m!(<E[^>]+>)(([^<]|<[^/]|</[^E])*)</E>!g) {
-	$thiserror = $1;
-	$errortext = $2;
-	$sentence = $_;
-	$sentence =~ s/<[^>]+>//g;
-	$sentence =~ s/"/\\"/g;
-	$sentence =~ s/^ //;
-	$sentence =~ s/ \n//s;
-	$errortext =~ s/<[^>]+>//g;
-	$thiserror =~ s/^<E/<E line="$line" sentence="$sentence" errortext="$errortext"/;
-	print "$thiserror\n";
-}
-') | toutf |
-@PERL@ -e '
-$globalfile = <>;
-open(PRISTINE, "< $globalfile") or die "problem accessing original file\n";
-$current = "";
-$online = 0;
-while (<>) {
-	my $fromx, $tox, $fromy, $toy;
-	m!<E line="([1-9][0-9]*)" sentence=".+" errortext="([^"]+)" msg="[^"]+">!;
-	$lowerbound = $1;
-	$errorregexp = $2;
-	$errorregexp =~ s/ /([\\s&\\\\]|<[^>]+>)+/g;
-	while ($online < $lowerbound) { 
-		$current = <PRISTINE>;
-		$online++;
-		pos($current) = 0;
-	}
-#	print "searching for $errorregexp in:";
-#	print "$current \n";
-	while (1) {
-	   if ($current =~ m!$errorregexp!gs) {
-		$before = $`;   # SLOW, get rid of these.
-		$matched = $&;
-		$fromx = $-[0];
-		$tox = $+[0]-1;
-		if ($before =~ m/.*(\n)/s) {
-		     $fromx = $fromx - $-[1];
-		    }
-		$toy = $online;
-		$fromy = $toy - ($matched =~ tr/\n//);
-		if ($current =~ m/.*(\n).*\n$/s) {
-		     $tox = $tox - $-[1];
-		    }
-		last;
-		}
-	   else {
-	   	if (eof PRISTINE) {
-		    print "ERROR: did not find regexp in original file.\n";
-		    exit;
-		   }
-		$next = <PRISTINE>;
-		$current = "$current$next";
-		$online++;
-#                print "not found, appending line to search space\n";
-	        }
-	}
-	s!<E line="[^"]+" !<E fromy="$fromy" fromx="$fromx" toy="$toy" tox="$tox" !;
-	print;
-}
-' |
-loganu
+gram-${TEANGA}.pl --api
 }
 
 # does the error messaging and returns the boolean 
@@ -502,32 +303,15 @@ drochchomhad()
 	[ ! -e "${1}" ] || [ -d "${1}" ] || [ ! -r "${1}" ]    # return value
 }
 
-USEIGNORE="ignore"
-
-unchecked_xml()
-{
-		diutf | 
-		abairti |
-		LC_CTYPE="${OLDCTYPE}" @prefix@/libexec/cuardach "${USEIGNORE}" "${CLAR}" "${TEANGA}" |
-		sed "/^<.xml/s/ISO-8859-1/${NATIVE}/"
-}
-
 vanilla_xml_output()
 {
-		unchecked_xml |
-		comhshuite |
-		aonchiall | aonchiall |
-		unigram |
-		rialacha |
-		eisceacht
+gram-${TEANGA}.pl --xml
 }
 
 
 nounigram_output()
 {
-		unchecked_xml |
-		comhshuite |
-		aonchiall | aonchiall
+gram-${TEANGA}.pl --no-unigram
 }
 
 ambiguity_report()
@@ -562,13 +346,7 @@ sed 's/^[^<]*//'
 # This is the main sequence of filters for checking a given file
 comhad()
 {
-xml_api |
-sed '
-s/^<E fromy="\([0-9]*\)".*sentence="\(.*\) errortext=\("[^"]*"\) msg="\([^"]*\)">$/echo "\1: \2 | myaibhsigh\3\
-echo "\4."; echo/
-' |
-@AWK@ "{sub(/myaibhsigh/,\"${AIBHSIGHVAR}\"); print}" |
-/bin/bash -s
+gram-${TEANGA}.pl
 }
 
 litriu_comheadan()
@@ -589,7 +367,7 @@ p
 # This replaces "comhad" above when "--litriu" option is given
 litriu()
 {
-	unchecked_xml | litriu_comheadan | toutf
+gram-${TEANGA}.pl --litriu
 }
 
 # used by Brill
@@ -687,7 +465,6 @@ rm -f "${BIGXMLSUBSET}"
 
 # remainder is the "main()"
 
-AIBHSIGHVAR="@EGREP_COLOR@ "
 ACTION="comhad"
 SCRIOBH_HTML="nihea"
 TEANGA="ga"
@@ -743,7 +520,6 @@ do
 			exit 0
 		;;
 		"--html" )
-			AIBHSIGHVAR="@AWK@ -f @prefix@/libexec/hilite.awk pattern="
 			SCRIOBH_HTML="issea"
 		;;
 		"--litriu" )
