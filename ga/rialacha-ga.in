@@ -414,13 +414,14 @@ INITIALMBAPOST:NIURU
 #. Déanaigí beart leis de réir bhur briathra.
 <D>[Bb]hur</D> UNECLIPSED:URU
 # OD méid, corpus; common alternate of "Cé mhéad"
-#. Cé mhéid gealladh a briseadh ar an Indiach bocht?
+#. Cé mhéid gealladh ar briseadh ar an Indiach bocht?
 [Cc][áé] <N>[Mm]h?éid</N>:CAIGHDEAN{mhéad}
 # OD méad, "with s.", MacL00 p.110, LGG p.29
 #. Nach raibh a fhios aige cé mhéad daoine a bhíonn ag éisteacht leis an stáisiún.
 <Q>[Cc][áé] [Mm]héad</Q> <NP>ANYTHING</NP>:UATHA
 #. Faigh amach cé mhéad salainn a bhíonn i sampla d'uisce.
-<Q>[Cc][áé] [Mm]héad</Q> <NGS>ANYTHING</NGS>:NOGENITIVE
+# now subsumed by more general NOGENITIVE rule
+# <Q>[Cc][áé] [Mm]héad</Q> <NGS>ANYTHING</NGS>:NOGENITIVE
 # CB p.24 #11.a.iii, LGG p.113
 #. Cá áit a nochtfadh sé é féin ach i mBostún!
 <V cop="y">[Cc]á</V> <N>INITIALVOWEL</N>:PREFIXH
@@ -1601,7 +1602,8 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 <S>[Ss]na</S> <NCS>ANYTHING</NCS>:BACHOIR{sa, san}
 # and never before gs masculine; no need to trap this with "h" since
 # that will be caught by NIAITCH below
-<S>[Ss]na</S> <N pl="n" gnt="y" gnd="m">ANYTHING</N>:NOGENITIVE
+#   now defunct, caught by more general NOGENITIVE after <S> rule...
+# <S>[Ss]na</S> <N pl="n" gnt="y" gnd="m">ANYTHING</N>:NOGENITIVE
 # corpus; holds for any POS really
 <S>[Ss]na</S> <[^Y]>LENITED</[^Y]>:NISEIMHIU
 <S>[Ss]na</S> [Cc]héad:OK
@@ -1786,8 +1788,7 @@ d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</
 #. Galar crúibe is béil (OK).
 <V cop="y">is</V> <NG>ANYTHING</NG>:OK
 <S>COMPOUND</S> <NG>ANYTHING</NG>:OK
-<S>[Cc]hun</S> <NG>ANYTHING</NG>:OK
-<S>GENITIVEPREP</S> <NG>ANYTHING</NG>:OK
+<S>ALLGENITIVEPREPS</S> <NG>ANYTHING</NG>:OK
 #. Caitheann sé go leor ama ann (OK).
 #  disabled temporarily since <R> is no longer in main rule
 # <R>[Gg]o leor</R> <NGS>ANYTHING</NGS>:OK
@@ -1797,8 +1798,7 @@ d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</
 #. Ní raibh dúil bheo le feiceáil ar na bhfuinneog.
 <S>NONCOMPOUND</S> <T>ANYTHING</T> <NG>ANYTHING</NG>:NOGENITIVE
 #. Bhí, dála an scéil, ocht mbean déag aige (OK).
-<S>[Cc]hun</S> <T>ANYTHING</T> <NG>ANYTHING</NG>:OK
-<S>GENITIVEPREP</S> <T>ANYTHING</T> <NG>ANYTHING</NG>:OK
+<S>ALLGENITIVEPREPS</S> <T>ANYTHING</T> <NG>ANYTHING</NG>:OK
 #. Cá bhfuil an tseomra?
 #. Is iad na nGardaí.
 #  exclude <R> until can tag "amach", "amháin" as <A> correctly:

@@ -82,7 +82,8 @@
 [Aa]r dualgas:<R>
 [Aa]r éigean:<R>
 [Aa]r fad:<R>
-[Aa]r fáil:<R>
+# Ar Fáil in corpus
+[Aa]r [Ff]áil:<R>
 [Aa]r fán:<R>
 [Aa]r faonoscailt:<R>
 [Aa]r farraige:<R>
@@ -434,6 +435,7 @@ Ros Muc:<N pl="n" gnt="n">
 [Ss]aochan céille:<N pl="n" gnt="n" gnd="m">
 [Ss]cun scan:<R>
 [Ss]eo caite:<A pl="n" gnt="n">
+[Ss]h?inn Féin:<N pl="n" gnt="n">
 # infrequent
 [Ss]iún sincín:<N pl="n" gnt="n">
 # infrequent

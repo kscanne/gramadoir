@@ -146,8 +146,11 @@ d?[Tt]h?rí <B>[Bb]liana</B>:<N pl="y" gnt="n" gnd="f">
 <S>FUSEDPREP</S> <B>[Cc]heathrú</B>:<A pl="n" gnt="n">
 <B>g?[Cc]h?eathrú</B> <N>UNLENITED</N>:<A pl="n" gnt="n">
 <B>g?[Cc]h?eathrú</B> <NWITHH>ANYTHING</NWITHH>:<A pl="n" gnt="n">
+# else gets <V> :(
+<B>[Cc]hinn</B> <N pl="n" gnt="y" gnd="f">[Bb]liana</N>:<N pl="n" gnt="y" gnd="m">
 <T>[Nn]a</T> <B>cinn</B>:<N pl="y" gnt="n" gnd="m">
-<S>[Ss]na</S> <B>cinn</B>:<N pl="y" gnt="n" gnd="m">
+# includes "sna"; tá cinn móra aige
+<[SV]>ANYTHING</[SV]> <B>cinn</B>:<N pl="y" gnt="n" gnd="m">
 <B>cinn</B>:<N pl="n" gnt="y" gnd="m">
 <B>[Cc]omhalta</B>:<N pl="n" gnt="n" gnd="m">
 <B>g?ch?ónaí</B>:<N pl="n" gnt="n" gnd="m">
@@ -170,9 +173,8 @@ g?ch?éad <B>dá</B>:<A pl="n" gnt="n">
 # "dá hóige"
 <B>[Dd]á</B> INITIALH:<D>
 <T>an</T> <B>dála</B>:<N pl="n" gnt="n" gnd="f">
+#  names of the days of the week in comhshuite so these are "beannacht Dé"
 <B>Dé</B>:<N pl="n" gnt="y" gnd="m">
-<N pl="n" gnt="y" gnd="m">Dé</N> <B><Z>ANYNMG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
-<N pl="n" gnt="y" gnd="m">Dé</N> <B><Z>ANYNFG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 # noun forms in phrases "ó dheas", "i ndeas", etc. always mutated
 # doing this hear helps "go+<A>"
 <B>[Dd]eas</B>:<A pl="n" gnt="n">
@@ -187,6 +189,8 @@ g?ch?éad <B>dá</B>:<A pl="n" gnt="n">
 <B>do</B> <D>ANYTHING</D>:<S>
 <B>do</B> <Y>ANYTHING</Y>:<S>
 <B>do</B> <A pl="n" gnt="n">gach</A>:<S>
+# fad do shaoil
+<B>do</B> <NG>ANYTHING</NG>:<D>
 # broken because of repeat markup?
 #do <B>do</B>:<D>
 # numerical, last resort <O> at bottom if not noun via Brill xforms
@@ -245,8 +249,9 @@ CAPITAL <B>Gabhann</B>:<Y>
 <S>[Ll]e</S> <B><Z>ANYNFPLH</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f" h="y">
 <B>[Ll]éinn</B>:<N pl="n" gnt="y" gnd="m">
 # see last resort at the end
-<B>[Ll]eis</B> <T>na</T>:<S>
-<B>[Ll]eis</B> an:<S>
+<B>[Ll]eis</B> <T>[Nn]a</T>:<S>
+# "leis An Gharda" in corpus
+<B>[Ll]eis</B> [Aa]n:<S>
 <B>[Ll]eith</B>:<N pl="n" gnt="n" gnd="f">
 <B>[Ll]eo</B>:<O>
 # <T> should be "na" but plenty of errors like "i nGaeilge an linne seo"
@@ -366,7 +371,9 @@ RFORMCONJ <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">
 # leave out "r-form" verbal particle "ar" here!
 [Cc]ár|[Cc]har|[Nn]ár|[Nn]íor <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">
 # OK if before something that is definitely a verb: 
-[Aa]r <B><Z>GENERICPAST</Z>LENITED</B>:<V p="y" t="caite">
+# now subsumed by more general rule that follows.
+# [Aa]r <B><Z>GENERICPAST</Z>LENITED</B>:<V p="y" t="caite">
+[Aa]r <B><Z>ANYPASTIMPER</Z>ANYTHING</B>:!<V p="y" t="ord">
 # lots of exceptions to this like "ar teitheadh/crochadh" are in comhshuite!
 [Aa]r <B><Z>ANYPASTAUT</Z>UNLENITED</B>:<V p="n" t="caite">
 # all the top rules output by Brill algorithm look like these first four!
@@ -479,11 +486,13 @@ a <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 #  shouldn't lenite after verb (but maybe not after NMCS either?)
 # <C>ANYTHING</C> <B><Z>ADHWORD</Z>ANYTHING</B> LENITED:<N pl="n" gnt="n" gnd="m">
 # ...agus glacadh leis, murar glacadh leis.
-<C>ANYTHING</C> <B><Z>ADHWORD</Z>ANYTHING</B>:<V p="n" t="caite">
+#   bad for "tuilleadh", "dearcadh", "ch?leachtadh", craoladh...
+# <C>ANYTHING</C> <B><Z>ADHWORD</Z>ANYTHING</B>:<V p="n" t="caite">
 # really a <C> but not resolved until below
 [Óó] <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
+#  This is the direct relative "nuair a cuireadh"... 
+a <B><Z>ADHWORD</Z>ECLIPSED</B>:<N pl="n" gnt="n" gnd="m">
 a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
-<V cop="y">ANYTHING</V> <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 # doesn't matter
 <B><Z>TEMPORAL</Z>ANYTHING</B>:<R>
 <B><Z>PREPPOSS</Z>NOTDO</B> <V>ANYTHING</V>:<S>
@@ -511,9 +520,6 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 <A pl="n" gnt="n">([Aa]on|[Gg]ach)</A> <B><Z>ANYNMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 [Aa]n <B><Z>ANYNMONEC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <A pl="n" gnt="n">([Aa]on|[Gg]ach)</A> <B><Z>ANYNMONEC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-#<T>na</T> <B><Z>NMONE</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">  see next
-<[^N]>ANYTHING</[^N]> <B><Z>NMONE</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
-<B><Z>NMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <T>na</T> <B><Z>NMONEC</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="m">
 <B><Z>NMONEC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <T>na</T> <B><Z>NFONEC</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
@@ -523,6 +529,9 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 <[^N]>ANYTHING</[^N]> <B><Z>ANDROGYN</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <S>ANYTHING</S> <T>[Aa]n</T> <B><Z>NMFOUR</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <T>[Aa]n</T> <B><Z>NMFOUR</Z>UNLENITED</B>:<N pl="n" gnt="n" gnd="m">
+# exception to next one.  Note compound/genitive preps done above
+<S>ANYTHING</S> <T>[Aa]n</T> <B><Z>NMFOUR</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+[Aa]r <T>[Aa]n</T> <B><Z>NMFOUR</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <T>[Aa]n</T> <B><Z>NMFOUR</Z>LENITED</B>:<N pl="n" gnt="y" gnd="m">
 <[^T]>ANYTHING</[^T]> <N>ANYTHING</N> <T>[Aa]n</T> <B><Z>NMFOUR</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 #<[^N]>ANYTHING</[^N]> <B><Z>NMFOUR</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
@@ -554,11 +563,14 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 <B><Z>BHIODHLIKE</Z>ANYTHING</B>:<V p="y" t="gnáth">
 <B><Z>GENERICPAST</Z>LENITED</B>:<V p="y" t="caite">
 # Ainmnigh na rudaí atá...  (imperative w/o "d'")
-<B><Z>GENERICPAST</Z>INITIALVOWELORF</B>:<V p="y" t="ord">
+# subsumed by the more general ":!" rule that follows...
+# <B><Z>GENERICPAST</Z>INITIALVOWELORF</B>:<V p="y" t="ord">
+# this is only OK since earlier we resolve to past when there is an
+# r-form particle preceding...
+<B><Z>ANYPASTIMPER</Z>INITIALVOWELORF</B>:!<V p="y" t="caite">
 # otherwise unigram=>ORD and need to explain lenition...
 # <B><Z>BHIDISLIKE</Z>ANYTHING</B>:<V p="y" t="gnáth">
 <B><Z>GENERICPAST</Z>ANYTHING</B>:<V p="y" t="caite">
-<B><Z>GENERICAUT</Z>ANYTHING</B>:<V p="n" t="láith">
 <B><Z>GENERICPAUT</Z>ANYTHING</B>:<V p="n" t="caite">
 <B><Z>GENERICFIRST</Z>ANYTHING</B>:<V p="y" t="láith">
 # last resorts
@@ -588,6 +600,9 @@ ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
 <B>Ó</B> <Y>ANYTHING</Y>:<Y>
 <B>[Óó]</B> <V>ANYTHING</V>:<C>
 <B>[Óó]</B>:<S>
+# e.g. na+NMONE; best to wait until "ar", "de", "ó"
+<[^N]>ANYTHING</[^N]> <B><Z>NMONE</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<B><Z>NMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 # like "Ó" above
 <B>Ní</B> CAPITAL:<Y>
 # "Ní hUallacháin", etc.
@@ -668,3 +683,14 @@ ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
 # let some verbs get resolved first!
 <B>[Nn]íor</B> <V>ANYTHING</V>:<U>
 <B>[Nn]íor</B>:<V cop="y">
+<[^ACDNRSTY]>ANYTHING</[^ACDNRSTY]> <B><Z>ANYGENITIVE</Z>ANYTHING</B>:!<N pl="." gnt="y" gnd=".">
+<[^ACNRSY]>ANYTHING</[^ACNRSY]> <T>ANYTHING</T> <B><Z>ANYGENITIVE</Z>ANYTHING</B>:!<N pl="." gnt="y" gnd=".">
+<S>FUSEDPREP</S> <B><Z>ANYGENITIVE</Z>ANYTHING</B>:!<N pl="." gnt="y" gnd=".">
+<S>DATIVEPREP</S> <B><Z>ANYGENITIVE</Z>ANYTHING</B>:!<N pl="." gnt="y" gnd=".">
+# wait until nár, etc. done
+<V cop="y">ANYTHING</V> <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
+#  these are OK because all of the past forms that are eclipsable
+#  (bhfuair, ndearna, etc. CB p.133)  are UNAMBIGOUS
+<B><Z>ANYPAST</Z>ECLIPSED</B>:!<V p="y" t="caite">
+<B><Z>ANYPASTAUT</Z>ECLIPSED</B>:!<V p="n" t="caite">
+<[^C]>NOTNA</[^C]> <B><Z>ANYIMPER</Z>ANYTHING</B>:!<V p="y" t="ord">
