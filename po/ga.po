@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramadoir 0.4\n"
 "Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
-"POT-Creation-Date: 2004-01-08 22:32-0600\n"
-"PO-Revision-Date: 2004-01-08 15:58-0500\n"
+"POT-Creation-Date: 2004-04-01 14:40-0600\n"
+"PO-Revision-Date: 2004-01-11 15:58-0500\n"
 "Last-Translator: Kevin Patrick Scannell <scannell@SLU.EDU>\n"
 "Language-Team: Irish <ga@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -71,30 +71,39 @@ msgstr ""
 "    --aspell       mol ceartúcháin d'fhocail mílitrithe (is gá le GNU aspell)"
 
 #: gr.in:61
+msgid "    --aschur=FILE  write output to FILE"
+msgstr ""
+
+#: gr.in:62
 msgid ""
 "    --teanga=XX    specify the language of the text to be checked "
 "(default=ga)"
 msgstr ""
 "    --teanga=XX    socraigh an teanga den téacs le seiceáil (loicthe=ga)"
 
-#: gr.in:62
+#: gr.in:63
 msgid "    --help         display this help and exit"
 msgstr "    --help         taispeáin an chabhair seo agus éirigh as"
 
-#: gr.in:63
+#: gr.in:64
 msgid "    --version      output version information and exit"
 msgstr "    --version      taispeáin eolas faoin leagan agus éirigh as"
 
-#: gr.in:64
+#: gr.in:65
 msgid "Options for developers:"
 msgstr "Roghanna d'fhorbróirí:"
+
+#: gr.in:67
+msgid ""
+"    --api          output a simple XML format for use with other applications"
+msgstr ""
 
 #. TRANSLATORS: "disambiguation" is a term from natural language processing.
 #. Here it means the process of deciding, for a given word with several
 #. possible parts of speech (noun, verb, etc.), the correct part of speech
 #. given the context.  Brill's algorithm is "unsupervised" because it relies
 #. only on statistics gathered from texts which have not been tagged in advance.
-#: gr.in:71
+#: gr.in:74
 msgid ""
 "    --brill        find disambiguation rules via Brill's unsupervised "
 "algorithm"
@@ -102,15 +111,15 @@ msgstr ""
 "    --brill        gin rialacha aonchiallacha le halgartam féinlathach de "
 "Brill"
 
-#: gr.in:72
+#: gr.in:75
 msgid "    --html         produce HTML output for viewing in a web browser"
 msgstr "    --html         aschur i gcruth HTML chun féachaint le brabhsálaí"
 
-#: gr.in:73
+#: gr.in:76
 msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
 msgstr "    --ilchiall     taispeáin focail ilchiallacha, de réir minicíochta"
 
-#: gr.in:74
+#: gr.in:77
 msgid ""
 "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
 msgstr ""
@@ -121,7 +130,7 @@ msgstr ""
 #. for selecting the correct part of speech of an ambiguous word, the program
 #. chooses the part of speech with the highest frequency.  This is sometimes
 #. called "unigram" tagging.   The --no-unigram option turns this behavior off.
-#: gr.in:80
+#: gr.in:83
 msgid ""
 "    --no-unigram   do not resolve ambiguous parts of speech by frequency"
 msgstr ""
@@ -131,26 +140,26 @@ msgstr ""
 #. through a sequence of filters which add XML markup indicating
 #. important grammatical information.  The --xml option displays the
 #. marked up file as an aid in debugging.
-#: gr.in:86
+#: gr.in:89
 msgid ""
 "    --xml          write tagged XML stream to standard output, for debugging"
 msgstr ""
 "    --xml          scríobh sruth XML chuig aschur caighdeánach, chun "
 "dífhabhtú"
 
-#: gr.in:87
+#: gr.in:90
 msgid "If no file is given, read from standard input."
 msgstr "Mura bhfuil comhad ann, léigh ón ionchur caighdeánach."
 
-#: gr.in:88
+#: gr.in:91
 msgid "Send bug reports to <%s>."
 msgstr "Seol tuairiscí fabhtanna chuig <%s>."
 
-#: gr.in:89
+#: gr.in:92
 msgid "version %s"
 msgstr "leagan %s"
 
-#: gr.in:90
+#: gr.in:93
 msgid ""
 "This is free software; see the source for copying conditions.  There is NO"
 "\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
@@ -161,118 +170,118 @@ msgstr ""
 "\\nd'INDÍOLTACHT nó FEILIÚNACHT DO FHEIDHM AR LEITH, an oiread atá ceadaithe"
 "\\nde réir dlí."
 
-#: gr.in:91
+#: gr.in:94
 msgid "Try %s for more information."
 msgstr "Bain triail as %s chun tuilleadh eolais a fháil."
 
-#: gr.in:92
+#: gr.in:95
 msgid "unrecognized option %s"
 msgstr "rogha anaithnid %s"
 
-#: gr.in:93
+#: gr.in:96
 msgid "option %s requires an argument"
 msgstr "ní foláir argóint don rogha %s"
 
-#: gr.in:94
+#: gr.in:97
 msgid "option %s does not allow an argument"
 msgstr "ní cheadaítear argóint i ndiaidh an rogha %s"
 
-#: gr.in:95 farc.c.in:18 farc.c.in:30 farc.c.in:42
+#: gr.in:98 farc.c.in:18 farc.c.in:30 farc.c.in:42
 #, c-format
 msgid "Language %s is not supported."
 msgstr "Níl an teanga %s ar fáil."
 
 #. TRANSLATORS: "conversion" here means conversion between character encodings
-#: gr.in:98
+#: gr.in:101
 msgid "conversion from %s is not supported"
 msgstr "níl aon fháil ar tiontú ón ionchódú %s"
 
-#: gr.in:99
+#: gr.in:102
 msgid "aspell-%s is not installed"
 msgstr "Níl aspell-%s ar fáil"
 
-#: gr.in:100
+#: gr.in:103
 msgid "Unknown word"
 msgstr "Focal anaithnid"
 
 #. TRANSLATORS: only two unknown words are reported per sentence
-#: gr.in:103
+#: gr.in:106
 msgid "Unknown word (ignoring remainder in this sentence)"
 msgstr "Focal anaithnid (scaoilfear an chuid eile san abairt seo)"
 
-#: gr.in:104
+#: gr.in:107
 msgid "Valid word but extremely rare in actual usage"
-msgstr "Focal bailí ach fíor-neamhchoitianta in úsáid iarbhír"
+msgstr "Focal ceart ach an-neamhchoitianta"
 
-#: gr.in:105
+#: gr.in:108
 msgid "Usually used in the set phrase \\/\\1\\/"
 msgstr "Ní úsáidtear an focal seo ach san abairtín \\/\\1\\/ de ghnáth"
 
-#: gr.in:106
+#: gr.in:109
 msgid "You should use \\/\\1\\/ here instead"
 msgstr "Ba chóir duit \\/\\1\\/ a úsáid anseo"
 
-#: gr.in:107
+#: gr.in:110
 msgid "Non-standard form: perhaps use \\/\\1\\/?"
 msgstr "Focal neamhchaighdeánach: ar mhaith leat \\/\\1\\/?"
 
 #. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
-#: gr.in:110
+#: gr.in:113
 msgid "Initial mutation missing"
 msgstr "Séimhiú nó urú ar iarraidh"
 
 #. TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
 #. It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
-#: gr.in:114
+#: gr.in:117
 msgid "Unnecessary lenition"
 msgstr "Séimhiú gan ghá"
 
-#: gr.in:115
+#: gr.in:118
 msgid "Prefix \\/h\\/ missing"
 msgstr "Réamhlitir \\/h\\/ ar iarraidh"
 
-#: gr.in:116
+#: gr.in:119
 msgid "Prefix \\/t\\/ missing"
 msgstr "Réamhlitir \\/t\\/ ar iarraidh"
 
-#: gr.in:117
+#: gr.in:120
 msgid "Lenition missing"
 msgstr "Séimhiú ar iarraidh"
 
 #. TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
 #. initial consonants in Irish.  It is indicated in writing by the addition
 #. of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
-#: gr.in:122
+#: gr.in:125
 msgid "Eclipsis missing"
 msgstr "Urú ar iarraidh"
 
-#: gr.in:123
+#: gr.in:126
 msgid "Repeated word"
 msgstr "Focal céanna faoi dhó"
 
-#: gr.in:124
+#: gr.in:127
 msgid "Unusual combination of words"
 msgstr "Cor cainte aisteach"
 
-#: gr.in:125
+#: gr.in:128
 msgid "Comparative adjective required"
 msgstr "Ba chóir duit an bhreischéim a úsáid anseo"
 
-#: gr.in:126
+#: gr.in:129
 msgid "Unnecessary prefix \\/h\\/"
 msgstr "Réamhlitir \\/h\\/ gan ghá"
 
-#: gr.in:127
+#: gr.in:130
 msgid "Unnecessary prefix \\/t\\/"
 msgstr "Réamhlitir \\/t\\/ gan ghá"
 
-#: gr.in:128
+#: gr.in:131
 msgid "Unnecessary use of the definite article"
 msgstr "Ní gá leis an alt cinnte anseo"
 
-#: gr.in:129
+#: gr.in:132
 msgid "The genitive case is required here"
-msgstr "Is gá leis an ghinideach anseo"
+msgstr "Tá gá leis an leagan ginideach anseo"
 
 #: cuardach.c:88 cuardach.c:107 cuardach.c:150 cuardach.c:223
 #, c-format
