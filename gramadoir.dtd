@@ -1,0 +1,40 @@
+<!ENTITY % grammar_tag "( A | C | D | I | N | O | P | Q | R | S | T | U | V | X | Y )">
+<!ENTITY % mycontent "( #PCDATA | A | C | D | I | N | O | P | Q | R | S | T | U | V | X | Y | E | B )*">
+<!ELEMENT teacs ( line )+>
+<!ELEMENT line %mycontent; >
+<!ATTLIST line uimhir NMTOKEN #REQUIRED>
+<!ELEMENT A (#PCDATA)>
+<!ATTLIST A 	pl (y|n) #REQUIRED
+		gnt (y|n) #REQUIRED
+		gnd (m|f) #IMPLIED
+		h (y|n) #IMPLIED
+>
+<!ELEMENT C (#PCDATA)>
+<!ELEMENT D (#PCDATA)>
+<!ELEMENT I (#PCDATA)>
+<!ELEMENT N (#PCDATA)>
+<!ATTLIST N 	pl (y|n) #REQUIRED
+		gnt (y|n) #REQUIRED
+		gnd (m|f) #IMPLIED
+		h (y|n) #IMPLIED
+>
+<!ELEMENT O (#PCDATA)>
+<!ATTLIST O em (y|n) #IMPLIED>
+<!ELEMENT P (#PCDATA)>
+<!ATTLIST P h (y|n) #IMPLIED>
+<!ELEMENT Q (#PCDATA)>
+<!ELEMENT R (#PCDATA)>
+<!ELEMENT S (#PCDATA)>
+<!ELEMENT T (#PCDATA)>
+<!ELEMENT U (#PCDATA)>
+<!ELEMENT V (#PCDATA)>
+<!ATTLIST V 	pl (y|n) #IMPLIED
+		p (1ú|2ú|3ú|saor) #REQUIRED
+		t (ord|láith|caite|fáist|gnáth|coinn|foshuit) #REQUIRED
+>
+<!ELEMENT X (#PCDATA)>
+<!ELEMENT Y (#PCDATA)>
+<!ELEMENT B (#PCDATA | Z )*>
+<!ELEMENT E %mycontent; >
+<!ATTLIST E msg CDATA #REQUIRED>
+<!ELEMENT Z (%grammar_tag;)* >
