@@ -186,7 +186,13 @@ installweb :
 	$(INSTALL_DATA) gramadoir.dtd $(webhome)/../dtds
 	$(INSTALL_DATA) gramadoir.lsm $(webhome)
 #	$(INSTALL_DATA) $(HOME)/.neamhshuim $(pkgdatadir)/Neamhshuim
-	runchoip
+	bash runchoip
+
+perl : FORCE
+	bash buildperl ga Irish n
+
+perldb : FORCE
+	bash buildperl ga Irish y
 
 debug : FORCE
 	$(MAKE) all
@@ -199,7 +205,7 @@ benchmark : FORCE
 	then \
 		benchcorp | gr --iomlan > /dev/null; \
 		rm -f ./DEBUG?; \
-		cat DEBUG.log | bmtabla >> ../eile/benchmarks; \
+		cat DEBUG.log | bash bmtabla >> ../eile/benchmarks; \
 		vi ../eile/benchmarks; \
 	else \
 		echo "You need to \"make debug\" and \"make install\" first."; \
@@ -284,20 +290,35 @@ triail.err : FORCE
 	rm -f triail.err
 	LC_ALL=C gr --iomlan triail | sed 's/^[0-9]*: //' > triail.err
 
+#############################################################################
+#              LEXICON BUILDING
+#############################################################################
+
+ISPELLDIR = ${HOME}/gaeilge/ispell
+
+# use "groom" instead of this directly (since it requires ispell personal, etc.)
 FOCAIL-ga.all : FORCE
 	Gin 12
-	((cat ${HOME}/.ispell_gaeilge | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/'; cat ${HOME}/.biobla | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | ispell -dgaeilge -p/dev/null -l) | sed 's/.*/& 44/'; cat FOCAIL) | LC_COLLATE=POSIX sort -u -k1,1 -k2,2n > FOCAIL-ga.all
+	((cat ${HOME}/.ispell_gaeilge; cat ${HOME}/.biobla | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | aspell -dga -p${HOME}/.aspell.blank.pws -l) | sed 's/.*/& 44/'; cat FOCAIL) | LC_COLLATE=POSIX sort -u -k1,1 -k2,2n > FOCAIL-ga.all
 	rm -f FOCAIL
 
+CYSRC = ${HOME}/gaeilge/gramadoir/cy/bangor/cyall.txt
+focail-cy.bs : $(CYSRC)
+	$(MAKE) cabhair
+	(cat $(CYSRC) | sed 's/ [0-9]*//' | uniq | wc -l | sed 's/^ *//'; cat $(CYSRC) | ./cabhair 0) > focail-cy.bs
+	chmod 644 focail-cy.bs
+
+# for convenience (from groom); but also ensures built in correct order
+gafromdb : FORCE
+	$(MAKE) focail-ga.bs
+	$(MAKE) eile-ga.bs
+	$(MAKE) earraidi-ga.bs
+
+# use "groom" instead of this directly
 focail-ga.bs : FOCAIL-ga.all
 	$(MAKE) cabhair
 	(cat FOCAIL-ga.all | sed 's/ [0-9]*//' | uniq | wc -l | sed 's/^ *//'; cat FOCAIL-ga.all | ./cabhair 0) > focail-ga.bs
 	chmod 644 focail-ga.bs
-
-focail-GA.bs : FOCAIL-ga.all
-	$(MAKE) cabhair
-	(cat FOCAIL-ga.all | sed 's/ [0-9]*//' | uniq | wc -l | sed 's/^ *//'; cat FOCAIL-ga.all | iconv -f ISO-8859-1 -t UTF-8 | ./cabhair 0) > focail-GA.bs
-	chmod 644 focail-GA.bs
 
 focail-EN.bs : FORCE
 	$(MAKE) cabhair
@@ -307,14 +328,39 @@ focail-EN.bs : FORCE
 
 focail-en.bs : FORCE
 	$(MAKE) cabhair
-	(cat ${HOME}/gaeilge/ispell/bearla/ENWORDS | wc -l | sed 's/^ *//'; cat ${HOME}/gaeilge/ispell/bearla/ENWORDS | sed 's/$$/ 1/' | ./cabhair 0) > focail-en.bs
+	(cat ${ISPELLDIR}/bearla/ENWORDS | wc -l | sed 's/^ *//'; cat ${ISPELLDIR}/bearla/ENWORDS | sed 's/$$/ 1/' | ./cabhair 0) > focail-en.bs
 	chmod 644 focail-en.bs
+
+ATH = ${ISPELLDIR}/ispell-gaeilge/athfhocail
+
+# use "groom" instead of this directly
+eile-ga.bs : FORCE
+	$(MAKE) cabhair
+	sed 's/ .*//' FOCAIL-ga.all > ./tempfocail
+	sed 's/ .*//' $(ATH) | keepif -n ./tempfocail latin-1 | sort -u | join $(ATH) - | LC_COLLATE=POSIX sort -k1,1 | sed 's/ /_/g; s/_/ /;' | ./cabhair 1 | $(EGREP) . > ./tempeile
+	(cat ./tempeile | wc -l | sed 's/^[^0-9]*//'; cat ./tempeile) > ./eile-ga.bs
+	rm -f tempeile tempfocail
+
+EARR = ${ISPELLDIR}/ispell-gaeilge/gaelu ${ISPELLDIR}/ispell-gaeilge/earraidi
+
+# use "groom" instead of this directly
+earraidi-ga.bs : FORCE
+	$(MAKE) cabhair
+	sed 's/ .*//' FOCAIL-ga.all eile-ga.bs > ./tempfocail
+	sort -k1,1 $(EARR) > ./tempsrc
+	sed 's/ .*//' ./tempsrc | keepif -n ./tempfocail latin-1 | sort -u | join ./tempsrc - | LC_COLLATE=POSIX sort -k1,1 | sed 's/ /_/g; s/_/ /;' | ./cabhair 1 | $(EGREP) . > ./earraidi-ga.bs
+	rm -f tempfocail tempsrc
 
 cabhair : cabhair.o
 	$(CC) -o cabhair $(CFLAGS) cabhair.o
 	
 cabhair.o : cabhair.c
 	$(CC) -c $(CFLAGS) $(DEFS) cabhair.c
+
+###############################################################################
+#                     .IN FILE GRAMMAR/PARSER
+###############################################################################
+
 
 aonchiall.y : ponc.in.y
 	cat ponc.in.y | sed "s/_TAIL_MACRO_/result/; s/_RESULT_MACRO_/POSTAG/" > aonchiall.y
@@ -351,21 +397,13 @@ poncin : aparser eparser rparser
 	@$(ECHO) 'Checking rialacha-ga.in'
 	@cat rialacha-ga.in | ./rparser
 
+###############################################################################
+
 stresstest : FORCE
 	@mv stress.out stress.out.ok
 	@mv stress.err stress.err.ok
 	@./stress
 	@if diff stress.err.ok stress.err && diff stress.out.ok stress.out; then $(ECHO) "OK."; rm -f *.ok; else $(ECHO) "Problem."; fi
-
-eile-ga.bs : FORCE
-	$(MAKE) cabhair
-	replnua
-	cat eile.pre.bs | ./cabhair 1 | $(EGREP) . > tempeile
-	(cat tempeile | wc -l | sed 's/^[^0-9]*//'; cat tempeile) > ./eile-ga.bs
-	rm -f eile.pre.bs tempeile
-
-eile-GA.bs : eile-ga.bs
-	cat eile-ga.bs | iconv -f ISO-8859-1 -t UTF-8 > eile-GA.bs
 
 counts : FORCE
 	head -n 1 focail-ga.bs
@@ -379,7 +417,10 @@ unigram-ga.txt :
 	beocorp | gr --minic --iomlan > unigram-ga.txt
 
 neamhshuim : FORCE
-	cat ../../gnu/gnu/poglac ../../ispell/bearla/glac ../../ispell/bearla/hyphenglac | LC_COLLATE=POSIX sort -u > /tmp/neamhshuim.tmp
+	cat ../../gnu/gnu/poglac ../ga/aspell/aspellbad.txt | LC_COLLATE=POSIX sort -u > /tmp/neamhshuim.tmp
 	(cat /tmp/neamhshuim.tmp | wc -l | sed 's/^[^0-9]*//'; cat /tmp/neamhshuim.tmp) > ${HOME}/.neamhshuim
+
+Lingua-GA-Gramadoir : FORCE
+	h2xs -XA -C -b 5.8.0 -n Lingua::GA::Gramadoir
 
 FORCE :
