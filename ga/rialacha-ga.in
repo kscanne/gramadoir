@@ -1496,7 +1496,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.134 #1.a (unlenited caught by more general rule)
 <S>[Mm]ar</S> <T>an</T> <N pl="n" gnt="n" gnd="f">ECLIPSED</N>:SEIMHIU
 # converse of CB p.16 #7, no lenition after present/future copula
-#. Más mhían leat tuilleadh eolais a fháil, scríobh chugainn.
+#. Más mhian leat tuilleadh eolais a fháil, scríobh chugainn.
 <V cop="y">[Mm]ás</V> <[AN]>LENITED</[AN]>:NISEIMHIU
 <V cop="y">[Mm]ás</V> <A pl="n" gnt="n">[Dd]há</A>:OK
 # OD méad
