@@ -2,7 +2,7 @@
 
 =head1 NAME
 
-@SCRIPTNAME@ - Utilities for An GramadE<oacute>ir developers
+@SCRIPTNAME@ - Utilities for An GramadE<oacute>ir @NAME_ENGLISH@ language developers
 
 =head1 SYNOPSIS
 
@@ -173,7 +173,7 @@ gettext(
 my $gr = new Lingua::@TEANGA@::Gramadoir(
 	fix_spelling => 0,
 	use_ignore_file => 0,
-	unigram_tagging => $minic,
+	unigram_tagging => 0,
 	interface_language => $comheadan,
 	input_encoding => $ionchod,
 );
