@@ -40,7 +40,8 @@ TEANGACHA = @TEANGACHA@
 ALLPL = @ALLPL@
 ALLIN = @ALLIN@
 ALLOH = @ALLOH@
-METAS = gin.meta.sed aonchiall.meta.sed eisceacht.meta.sed rialacha.meta.sed
+ALLMAC = @ALLMAC@
+METAS = $(ALLMAC) gin.meta.sed aonchiall.meta.sed eisceacht.meta.sed rialacha.meta.sed
 
 
 all : allperl cuardach gr
@@ -67,8 +68,9 @@ farc.c : TEANGACHA
 
 .in.pl :
 	cat $< | sed '/^#/!s/:/~:/' | tr "~" "\n" > $<.2
-	cp `echo "$<" | sed 's/-.*//'`.meta.sed temp.meta.sed
-	($(ECHO) "#!$(PERL)"; $(ECHO) "# Users should modify $<, not this file"; $(ECHO) 'while(<>){';  cat $<.2 | sed -f gin.meta.sed | sed -f temp.meta.sed; $(ECHO) 'print;'; $(ECHO) '}'; $(ECHO) 'exit;') | ./rigeail `echo "$<" | sed 's/-.*//'` > $@
+	rm -f temp.meta.sed
+	cat gin.meta.sed macra-`echo "$<" | sed 's/.*-\([^.]*\)\..*/\1/'`.meta.sed `echo "$<" | sed 's/-.*//'`.meta.sed | egrep -v '^#' > temp.meta.sed
+	($(ECHO) "#!$(PERL)"; $(ECHO) "# Users should modify $<, not this file"; $(ECHO) 'while(<>){';  cat $<.2 | LC_ALL="C" sed -f temp.meta.sed; $(ECHO) 'print;'; $(ECHO) '}'; $(ECHO) 'exit;') | ./rigeail `echo "$<" | sed 's/-.*//'` > $@
 	rm -f $<.2 temp.meta.sed
 
 lastperl : $(METAS)
@@ -78,7 +80,7 @@ allperl : $(ALLIN) lastperl
 	$(MAKE) $(ALLPL)
 
 installcheck : FORCE
-	@LC_MESSAGES=C $(bindir)/gr --iomlan triail | sed "s/^[0-9]*: //" > triail.tmp
+	@LC_ALL=C $(bindir)/gr --iomlan triail | sed "s/^[0-9]*: //" > triail.tmp
 	@cat triail.err | sed "s/^[0-9]*: //" > triail2.tmp
 	@if diff triail2.tmp triail.tmp; then $(ECHO) 'OK.'; else $(ECHO) 'Problem.'; fi
 	@rm -f triail.tmp triail2.tmp
@@ -138,7 +140,7 @@ distclean :
 
 topclean :
 	$(MAKE) semiclean
-	rm -f cuardach cuardach*.o $(ALLPL) aparser eparser rparser FOCAIL FOCAIL.all lastperl farc.o *.c~
+	rm -f DEBUG.log cuardach cuardach*.o $(ALLPL) aparser eparser rparser FOCAIL FOCAIL.all lastperl farc.o *.c~
 
 clean :
 	cd po && $(MAKE) clean
@@ -238,6 +240,7 @@ dist : FORCE
 		tar rvhf $(TARBALL).tar -C .. $(TARBALL)/eile-$${teanga}.bs; \
 		tar rvhf $(TARBALL).tar -C .. $(TARBALL)/focail-$${teanga}.bs; \
 		tar rvhf $(TARBALL).tar -C .. $(TARBALL)/giorr-$${teanga}; \
+		tar rvhf $(TARBALL).tar -C .. $(TARBALL)/macra-$${teanga}.meta.sed; \
 	done
 	cd po && $(MAKE) dist
 	gzip $(TARBALL).tar
@@ -247,17 +250,7 @@ dist : FORCE
 
 triail.err : FORCE
 	rm -f triail.err
-	LC_MESSAGES=C gr --iomlan triail > triail.err
-
-utfcheck : triail.utf
-	@LC_MESSAGES=C $(bindir)/gr --iomlan --ionchod=UTF8 triail.utf | sed "s/^[0-9]*: //; s/\.utf//" > triail.tmp
-	@cat triail.err | sed "s/^[0-9]*: //" > triail2.tmp
-	@if diff triail2.tmp triail.tmp; then $(ECHO) 'OK.'; else $(ECHO) 'Problem.'; fi
-	@rm -f triail.tmp triail2.tmp
-
-triail.utf : FORCE
-	@rm -f triail.utf
-	@cat triail | iconv -f ISO88591 -t UTF8 > triail.utf
+	LC_ALL=C gr --iomlan triail > triail.err
 
 focail-ga.bs : FORCE
 	$(MAKE) cabhair
