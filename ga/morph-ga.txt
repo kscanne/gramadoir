@@ -26,7 +26,7 @@
 ^ND				nD		1
 ^NG				nG		1
 ^TS				tS		1
-^([A-Zаимсз'-]+)$		\L$1		-1	# PRмOMH-AIRE
+^([A-Zаимсз])([A-Zаимсз'-]+)$	$1\L$2		-1	# GAELTACHT
 ^([A-Zаимсз])			\l$1		-1 	# PrМomhach
 -([A-Zаимсз])			-\l$1		-1 	# PrМomh-Aire
 ^b'([AEIOUаимсзF])		b'\l$1		-1
