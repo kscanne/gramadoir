@@ -30,9 +30,16 @@
 #. Nach holc an mhaise duit a bheith ag magadh.
 ANYTHING <AWITHH>ANYTHING</AWITHH>:NIAITCH
 # cé,le,ní,pé in eisceacht
+#. Ba hiad na hamhráin i dtosach ba chúis leis.
 ANYTHING <PWITHH>ANYTHING</PWITHH>:NIAITCH
 # many exceptions: na,sna,a (+ina,faoina,etc.),cá,Dé,go,le,ordinals... 
-#ANYTHING <NWITHH>ANYTHING</NWITHH>:NIAITCH
+#. Ba iad na trí háit iad Bostún, Baile Átha Cliath agus Nua Eabhrac.
+ANYTHING <NWITHH>ANYTHING</NWITHH>:NIAITCH
+# CB p.24 #11.a.ix
+<A>ORDINALADJ</A> <N>INITIALVOWEL</N>:PREFIXH
+# CB p.24 #11.a.ix
+#. Sa dara alt, déan cur síos ar a bhfaca siad sa Spáinn.
+<A>[Dd]ara</A> <N>INITIALVOWEL</N>:PREFIXH
 # ná in eisceacht
 #. Oirfeadh síol áitiúil níos fearr ná an síol a húsáidtear go minic.
 ANYTHING <VIMP>INITIALH</VIMP>:NIAITCH
@@ -42,6 +49,10 @@ ANYTHING <VIMP>INITIALH</VIMP>:NIAITCH
 # with t-léine, etc. Note na+NMCS picked up elsewhere.  "cén"+t- in eisceacht
 #. Tá ceacht stairiúil uathúil do chuairteoirí san t-ionad seo.
 <[^T]>ANYTHING</[^T]> <NMCS>PREFIXEDT</NMCS>:NITEE
+# CB p.18-19 converse of #11-13
+#  ní, má, gur, etc.  in eisceacht
+#. In Éirinn chaitheann breis is 30 faoin gcéad de mhná toitíní.
+ANYTHING <VPRFU>LENITED</VPRFU>:NISEIMHIU
 # CB p.16 #9.a  (needs shallow parse) -- subsumes CB p.17 #9.gh after <S>
 #. Tá sé riachtanach ar mhaithe le feidhmiú an phlean a bheidh ceaptha ag an eagraíocht ceannasach.
 <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
@@ -435,6 +446,9 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 <R>[Nn]íos</R> <AMGS>ANYTHING</AMGS>:BREISCHEIM
 <R>[Nn]íos</R> <AP>ANYTHING</AP>:BREISCHEIM
 <R>[Nn]íos</R> <[^A]>ANYTHING</[^A]>:BREISCHEIM
+# not in CB; OD ó^4.II
+#. Ach anois ó cuimhním air, bhí ardán coincréite sa pháirc.
+<C>[Óó]</C> <VPRFU>UNLENITED</VPRFU>:SEIMHIU
 # CB p.13 #4.a
 #. Tabhair an t-ordú seo leanas ó béal.
 <S>[Óó]</S> <N>UNLENITED</N>:SEIMHIU
