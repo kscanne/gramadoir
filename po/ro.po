@@ -6,7 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gramadoir 0.3\n"
-"POT-Creation-Date: 2003-10-21 10:32-0500\n"
+"Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
+"POT-Creation-Date: 2004-01-08 21:54-0600\n"
 "PO-Revision-Date: 2003-10-28 12:23+0200\n"
 "Last-Translator: Eugen Hoanca <eugenh@urban-grafx.ro>\n"
 "Language-Team: Romanian <translation-team-ro@lists.sourceforge.net>\n"
@@ -15,46 +16,302 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: cuardach.c:83 cuardach.c:102 cuardach.c:145 cuardach.c:218
-#, c-format
-msgid "%s: out of memory\n"
-msgstr "%s: Memorie plinã\n"
+#. TRANSLATORS: Please leave untranslated, but add an acute accent to the
+#. "o" in "Gramadoir" if available in your character set and encoding.
+#. If you must translate, this is the Irish for (literally) "The Grammarian"
+#: gr.in:48
+msgid "An Gramadoir"
+msgstr "Un Gramadoir"
 
-#: cuardach.c:92
-#, c-format
-msgid "%s: `%s' corrupted at %s\n"
-msgstr "%s: `%s' corupt la %s\n"
+#: gr.in:49
+msgid "Currently checking %s"
+msgstr "În prezent se verificã %s"
 
-#: cuardach.c:115 cuardach.c:156 cuardach.c:236
-#, c-format
-msgid "%s: warning: check size of %s: %d?\n"
-msgstr "%s: avertisment: verificaþi mãrimea lui %s: %d?\n"
+#: gr.in:50
+msgid "There is no such file."
+msgstr "Nu a existat acest fiºier."
 
-#: cuardach.c:120 cuardach.c:161 cuardach.c:242
-#, c-format
-msgid "%s: warning: problem closing %s\n"
-msgstr "%s: avertisment: problemã la închiderea %s\n"
+#: gr.in:51
+msgid "Is a directory"
+msgstr "E un director."
 
-#: cuardach.c:278
-#, c-format
-msgid "%s: no grammar codes\n"
-msgstr "%s: nu existã codecuri de gramaticã\n"
+#: gr.in:52
+msgid "Permission denied"
+msgstr "Permisiune neacordatã."
 
-#: cuardach.c:518
-msgid "problem with the `cuardach' command\n"
-msgstr "problemã cu comanda `cuardach'\n"
+#: gr.in:53
+msgid "Usage: %s [OPTIONS] [FILES]"
+msgstr "Folosire: %s [OPÞIUNI] [FIªIERE]"
 
-#: cuardach.c:528
-#, c-format
-msgid "%s: problem reading the database\n"
-msgstr "%s: problemã în citirea bazei de date\n"
+#: gr.in:54
+msgid "Options for end-users:"
+msgstr ""
 
-#: farc.c.in:19
+#. TRANSLATORS: ~/.neamhshuim is an "ignore file" like those with spellcheckers
+#: gr.in:57
+msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
+msgstr ""
+"    --iomlan       raporteazã toate erorile (i.e. nu se foloseºte ~/."
+"neamhshuim)"
+
+#: gr.in:58
+msgid ""
+"    --ionchod=ENC  specify the character encoding of the text to be checked"
+msgstr ""
+"    --ionchod=ENC  specificã codarea(encoding) de textului ce urmeazã a fi "
+"verificat"
+
+#: gr.in:59
+msgid "    --litriu       write misspelled words to standard output"
+msgstr "    --litriu       scrie cuvintele greºite la ieºirea standard"
+
+#: gr.in:60
+msgid ""
+"    --aspell       suggest corrections for misspellings (requires GNU aspell)"
+msgstr ""
+
+#: gr.in:61
+msgid ""
+"    --teanga=XX    specify the language of the text to be checked "
+"(default=ga)"
+msgstr ""
+"    --teanga=XX    specificã limba textului care urmeazã a fi verificat"
+"(implicit=ga)"
+
+#: gr.in:62
+msgid "    --help         display this help and exit"
+msgstr "    --help         afiºeazã acest help ºi iese"
+
+#: gr.in:63
+msgid "    --version      output version information and exit"
+msgstr "    --version      afiºeazã informaþii despre versiune ºi iese"
+
+#: gr.in:64
+msgid "Options for developers:"
+msgstr ""
+
+#. TRANSLATORS: "disambiguation" is a term from natural language processing.
+#. Here it means the process of deciding, for a given word with several
+#. possible parts of speech (noun, verb, etc.), the correct part of speech
+#. given the context.  Brill's algorithm is "unsupervised" because it relies
+#. only on statistics gathered from texts which have not been tagged in advance.
+#: gr.in:71
+msgid ""
+"    --brill        find disambiguation rules via Brill's unsupervised "
+"algorithm"
+msgstr ""
+
+#: gr.in:72
+msgid "    --html         produce HTML output for viewing in a web browser"
+msgstr ""
+"    --html         produce output HTML pentru vizualizarea într-un browser "
+"de web"
+
+#: gr.in:73
+msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
+msgstr ""
+
+#: gr.in:74
+msgid ""
+"    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
+msgstr ""
+
+#. TRANSLATORS: By default, if there is no rule in the disambiguation module
+#. for selecting the correct part of speech of an ambiguous word, the program
+#. chooses the part of speech with the highest frequency.  This is sometimes
+#. called "unigram" tagging.   The --no-unigram option turns this behavior off.
+#: gr.in:80
+msgid ""
+"    --no-unigram   do not resolve ambiguous parts of speech by frequency"
+msgstr ""
+
+#. TRANSLATORS: The grammar checker works by piping the input text
+#. through a sequence of filters which add XML markup indicating
+#. important grammatical information.  The --xml option displays the
+#. marked up file as an aid in debugging.
+#: gr.in:86
+msgid ""
+"    --xml          write tagged XML stream to standard output, for debugging"
+msgstr ""
+"    --xml          scrie secvenþã XML marcat(tagged) la ieºirea standard, "
+"pentru debugging"
+
+#: gr.in:87
+msgid "If no file is given, read from standard input."
+msgstr ""
+"Dacã nu este furnizat nici un fiºier, se citeºte de la intrarea standard."
+
+#: gr.in:88
+msgid "Send bug reports to <%s>."
+msgstr "Trimiteþi rapoarte de bug-uri la <%s>."
+
+#: gr.in:89
+msgid "version %s"
+msgstr "versiunea %s"
+
+#: gr.in:90
+msgid ""
+"This is free software; see the source for copying conditions.  There is NO"
+"\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
+"PURPOSE,\\nto the extent permitted by law."
+msgstr ""
+"Acesta este software liber; citiþi sursele pentru condiþiile de copiere.  NU "
+"existã\\nNICI o garanþie; nici mãcar pentru VANDABILITATE SAU MODIFICARE "
+"ÎNTR-UN SCOP PRIVAT,\\npe întinderea permisã de lege."
+
+#: gr.in:91
+msgid "Try %s for more information."
+msgstr "Încercaþi %s pentru mai multe informaþii."
+
+#: gr.in:92
+msgid "unrecognized option %s"
+msgstr "opþiune necunoscutã %s."
+
+#: gr.in:93
+msgid "option %s requires an argument"
+msgstr "opþiunea %s necesitã un parametru"
+
+#: gr.in:94
+msgid "option %s does not allow an argument"
+msgstr "opþiunea %s nu permite parametri"
+
+#: gr.in:95 farc.c.in:18 farc.c.in:30 farc.c.in:42
 #, c-format
 msgid "Language %s is not supported."
 msgstr "Limba %s nu este suportatã."
 
-#: farc.c.in:23
+#. TRANSLATORS: "conversion" here means conversion between character encodings
+#: gr.in:98
+#, fuzzy
+msgid "conversion from %s is not supported"
+msgstr "Limba %s nu este suportatã."
+
+#: gr.in:99
+msgid "aspell-%s is not installed"
+msgstr ""
+
+#: gr.in:100
+msgid "Unknown word"
+msgstr "Cuvânt necunoscut"
+
+#. TRANSLATORS: only two unknown words are reported per sentence
+#: gr.in:103
+msgid "Unknown word (ignoring remainder in this sentence)"
+msgstr ""
+"Cuvânt necunoscut (se ignorã marcajul(remainder) în aceastã propoziþie)"
+
+#: gr.in:104
+msgid "Valid word but extremely rare in actual usage"
+msgstr ""
+
+#: gr.in:105
+msgid "Usually used in the set phrase \\/\\1\\/"
+msgstr ""
+
+#: gr.in:106
+msgid "You should use \\/\\1\\/ here instead"
+msgstr "Ar trebui sã folosiþi mai bine \\/\\1\\/ aici"
+
+#: gr.in:107
+msgid "Non-standard form: perhaps use \\/\\1\\/?"
+msgstr "Formã nestandardizatã: mai bine folosiþi  \\/\\1\\/?"
+
+#. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
+#: gr.in:110
+msgid "Initial mutation missing"
+msgstr "Mutaþie iniþialã lipsã"
+
+#. TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
+#. It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
+#: gr.in:114
+msgid "Unnecessary lenition"
+msgstr "Indulgenþã(lenition) nenecesarã"
+
+#: gr.in:115
+msgid "Prefix \\/h\\/ missing"
+msgstr "Lipseºte prefixul \\/h\\/"
+
+#: gr.in:116
+msgid "Prefix \\/t\\/ missing"
+msgstr "Lipseºte prefixul \\/t\\/"
+
+#: gr.in:117
+msgid "Lenition missing"
+msgstr "Indulgenþã(lenition) lipsã"
+
+#. TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
+#. initial consonants in Irish.  It is indicated in writing by the addition
+#. of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
+#: gr.in:122
+msgid "Eclipsis missing"
+msgstr "Eclipsare(eclipsis) lipsã"
+
+#: gr.in:123
+msgid "Repeated word"
+msgstr ""
+
+#: gr.in:124
+msgid "Unusual combination of words"
+msgstr ""
+
+#: gr.in:125
+msgid "Comparative adjective required"
+msgstr ""
+
+#: gr.in:126
+#, fuzzy
+msgid "Unnecessary prefix \\/h\\/"
+msgstr "Indulgenþã(lenition) nenecesarã"
+
+#: gr.in:127
+#, fuzzy
+msgid "Unnecessary prefix \\/t\\/"
+msgstr "Indulgenþã(lenition) nenecesarã"
+
+#: gr.in:128
+msgid "Unnecessary use of the definite article"
+msgstr ""
+
+#: gr.in:129
+msgid "The genitive case is required here"
+msgstr ""
+
+#: cuardach.c:88 cuardach.c:107 cuardach.c:150 cuardach.c:223
+#, c-format
+msgid "%s: out of memory\n"
+msgstr "%s: Memorie plinã\n"
+
+#: cuardach.c:97
+#, c-format
+msgid "%s: `%s' corrupted at %s\n"
+msgstr "%s: `%s' corupt la %s\n"
+
+#: cuardach.c:120 cuardach.c:161 cuardach.c:241
+#, c-format
+msgid "%s: warning: check size of %s: %d?\n"
+msgstr "%s: avertisment: verificaþi mãrimea lui %s: %d?\n"
+
+#: cuardach.c:125 cuardach.c:166 cuardach.c:247
+#, c-format
+msgid "%s: warning: problem closing %s\n"
+msgstr "%s: avertisment: problemã la închiderea %s\n"
+
+#: cuardach.c:453
+#, c-format
+msgid "%s: no grammar codes: %s\n"
+msgstr "%s: nu existã codecuri de gramaticã: %s\n"
+
+#: cuardach.c:581
+#, c-format
+msgid "problem with the `cuardach' command\n"
+msgstr "problemã cu comanda `cuardach'\n"
+
+#: cuardach.c:591
+#, c-format
+msgid "%s: problem reading the database\n"
+msgstr "%s: problemã în citirea bazei de date\n"
+
+#: farc.c.in:46
 #, c-format
 msgid "%s: illegal grammatical code\n"
 msgstr "%s: cod gramatical incorect\n"
@@ -77,131 +334,3 @@ msgstr[1] "S-au analizat cu succes %d reguli.\n"
 #, c-format
 msgid "Line %d: %s\n"
 msgstr "Linia %d: %s\n"
-
-#: gr.in:35
-msgid "An Gramadoir"
-msgstr "Un Gramadoir"
-
-#: gr.in:36
-msgid "Currently checking %s"
-msgstr "În prezent se verificã %s"
-
-#: gr.in:37
-msgid "There is no such file."
-msgstr "Nu a existat acest fiºier."
-
-#: gr.in:38
-msgid "Is a directory"
-msgstr "E un director."
-
-#: gr.in:39
-msgid "Permission denied"
-msgstr "Permisiune neacordatã."
-
-#: gr.in:40
-msgid "Usage: %s [OPTIONS] [FILES]"
-msgstr "Folosire: %s [OPÞIUNI] [FIªIERE]"
-
-#: gr.in:41
-msgid "    --litriu       write misspelled words to standard output"
-msgstr "    --litriu       scrie cuvintele greºite la ieºirea standard"
-
-#: gr.in:42
-msgid "    --html         produce HTML output for viewing in a web browser"
-msgstr "    --html         produce output HTML pentru vizualizarea într-un browser de web"
-
-#: gr.in:43
-msgid "    --xml          write tagged XML stream to standard output, for debugging"
-msgstr "    --xml          scrie secvenþã XML marcat(tagged) la ieºirea standard, pentru debugging"
-
-#: gr.in:44
-msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
-msgstr "    --iomlan       raporteazã toate erorile (i.e. nu se foloseºte ~/.neamhshuim)"
-
-#: gr.in:45
-msgid "    --teanga=XX    specify the language of the text to be checked (default=ga)"
-msgstr "    --teanga=XX    specificã limba textului care urmeazã a fi verificat(implicit=ga)"
-
-#: gr.in:46
-msgid "    --ionchod=ENC  specify the character encoding of the text to be checked"
-msgstr "    --ionchod=ENC  specificã codarea(encoding) de textului ce urmeazã a fi verificat"
-
-#: gr.in:47
-msgid "    --help         display this help and exit"
-msgstr "    --help         afiºeazã acest help ºi iese"
-
-#: gr.in:48
-msgid "    --version      output version information and exit"
-msgstr "    --version      afiºeazã informaþii despre versiune ºi iese"
-
-#: gr.in:49
-msgid "If no file is given, read from standard input."
-msgstr "Dacã nu este furnizat nici un fiºier, se citeºte de la intrarea standard."
-
-#: gr.in:50
-msgid "Send bug reports to <%s>."
-msgstr "Trimiteþi rapoarte de bug-uri la <%s>."
-
-#: gr.in:51
-msgid "version %s"
-msgstr "versiunea %s"
-
-#: gr.in:52
-msgid "This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law."
-msgstr "Acesta este software liber; citiþi sursele pentru condiþiile de copiere.  NU existã\\nNICI o garanþie; nici mãcar pentru VANDABILITATE SAU MODIFICARE ÎNTR-UN SCOP PRIVAT,\\npe întinderea permisã de lege."
-
-#: gr.in:53
-msgid "Try %s for more information."
-msgstr "Încercaþi %s pentru mai multe informaþii."
-
-#: gr.in:54
-msgid "unrecognized option %s"
-msgstr "opþiune necunoscutã %s."
-
-#: gr.in:55
-msgid "option %s requires an argument"
-msgstr "opþiunea %s necesitã un parametru"
-
-#: gr.in:56
-msgid "option %s does not allow an argument"
-msgstr "opþiunea %s nu permite parametri"
-
-#: gr.in:57
-msgid "Unknown word (ignoring remainder in this sentence)"
-msgstr "Cuvânt necunoscut (se ignorã marcajul(remainder) în aceastã propoziþie)"
-
-#: gr.in:58
-msgid "Unknown word"
-msgstr "Cuvânt necunoscut"
-
-#: gr.in:59
-msgid "You should use \\/\\1\\/ here instead"
-msgstr "Ar trebui sã folosiþi mai bine \\/\\1\\/ aici"
-
-#: gr.in:60
-msgid "Non-standard form: perhaps use \\/\\1\\/?"
-msgstr "Formã nestandardizatã: mai bine folosiþi  \\/\\1\\/?"
-
-#: gr.in:61
-msgid "Initial mutation missing"
-msgstr "Mutaþie iniþialã lipsã"
-
-#: gr.in:62
-msgid "Unnecessary lenition"
-msgstr "Indulgenþã(lenition) nenecesarã"
-
-#: gr.in:63
-msgid "Prefix \\/h\\/ missing"
-msgstr "Lipseºte prefixul \\/h\\/"
-
-#: gr.in:64
-msgid "Prefix \\/t\\/ missing"
-msgstr "Lipseºte prefixul \\/t\\/"
-
-#: gr.in:65
-msgid "Lenition missing"
-msgstr "Indulgenþã(lenition) lipsã"
-
-#: gr.in:66
-msgid "Eclipsis missing"
-msgstr "Eclipsare(eclipsis) lipsã"

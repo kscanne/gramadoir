@@ -6,7 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GNU gramadoir 0.3\n"
-"POT-Creation-Date: 2003-10-21 10:32-0500\n"
+"Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
+"POT-Creation-Date: 2004-01-08 21:54-0600\n"
 "PO-Revision-Date: 2004-01-04 08:00-0500\n"
 "Last-Translator: Michel Robitaille <robitail@IRO.UMontreal.CA>\n"
 "Language-Team: French <traduc@traduc.org>\n"
@@ -15,46 +16,300 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: cuardach.c:83 cuardach.c:102 cuardach.c:145 cuardach.c:218
-#, c-format
-msgid "%s: out of memory\n"
-msgstr "%s: mémoire épuisée\n"
+#. TRANSLATORS: Please leave untranslated, but add an acute accent to the
+#. "o" in "Gramadoir" if available in your character set and encoding.
+#. If you must translate, this is the Irish for (literally) "The Grammarian"
+#: gr.in:48
+msgid "An Gramadoir"
+msgstr "Un Gramadoir"
 
-#: cuardach.c:92
-#, c-format
-msgid "%s: `%s' corrupted at %s\n"
-msgstr "%s: « %s » corrompu à %s\n"
+#: gr.in:49
+msgid "Currently checking %s"
+msgstr "Vérification en cours %s"
 
-#: cuardach.c:115 cuardach.c:156 cuardach.c:236
-#, c-format
-msgid "%s: warning: check size of %s: %d?\n"
-msgstr "%s: AVERTISSEMENT: vérifier la taille de %s: %d?\n"
+#: gr.in:50
+msgid "There is no such file."
+msgstr "Il n'y a pas un tel fichier"
 
-#: cuardach.c:120 cuardach.c:161 cuardach.c:242
-#, c-format
-msgid "%s: warning: problem closing %s\n"
-msgstr "%s: AVERTISSEMENT: problème de fermeture de %s\n"
+#: gr.in:51
+msgid "Is a directory"
+msgstr "Est un répertoire"
 
-#: cuardach.c:278
-#, c-format
-msgid "%s: no grammar codes\n"
-msgstr "%s: pas de codes de grammaire\n"
+#: gr.in:52
+msgid "Permission denied"
+msgstr "Permission refusée"
 
-#: cuardach.c:518
-msgid "problem with the `cuardach' command\n"
-msgstr "problème avec la commande « cuardach »\n"
+#: gr.in:53
+msgid "Usage: %s [OPTIONS] [FILES]"
+msgstr "Usage: %s [OPTIONS] [FICHIERS]"
 
-#: cuardach.c:528
-#, c-format
-msgid "%s: problem reading the database\n"
-msgstr "%s: problème de lecture de la base de données\n"
+#: gr.in:54
+msgid "Options for end-users:"
+msgstr ""
 
-#: farc.c.in:19
+#. TRANSLATORS: ~/.neamhshuim is an "ignore file" like those with spellcheckers
+#: gr.in:57
+msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
+msgstr ""
+"    --iomlan       rapporter toutes les erreurs (i.e. ne pas utiliser ~/."
+"neamhshuim)"
+
+#: gr.in:58
+msgid ""
+"    --ionchod=ENC  specify the character encoding of the text to be checked"
+msgstr ""
+"    --ionchod=ENC  spécifier l'encodage des caractères du texte à vérifier"
+
+#: gr.in:59
+msgid "    --litriu       write misspelled words to standard output"
+msgstr ""
+"    --litriu       écrire les mots mal orthographiés sur la sortie standard"
+
+#: gr.in:60
+msgid ""
+"    --aspell       suggest corrections for misspellings (requires GNU aspell)"
+msgstr ""
+
+#: gr.in:61
+msgid ""
+"    --teanga=XX    specify the language of the text to be checked "
+"(default=ga)"
+msgstr ""
+"    --teanga=XX    spécifier le langage du texte à vérifier (par défaut=ga)"
+
+#: gr.in:62
+msgid "    --help         display this help and exit"
+msgstr "    --help         afficher l'aide-mémoire et quitter"
+
+#: gr.in:63
+msgid "    --version      output version information and exit"
+msgstr "    --version      afficher la version du logiciel et quitter"
+
+#: gr.in:64
+msgid "Options for developers:"
+msgstr ""
+
+#. TRANSLATORS: "disambiguation" is a term from natural language processing.
+#. Here it means the process of deciding, for a given word with several
+#. possible parts of speech (noun, verb, etc.), the correct part of speech
+#. given the context.  Brill's algorithm is "unsupervised" because it relies
+#. only on statistics gathered from texts which have not been tagged in advance.
+#: gr.in:71
+msgid ""
+"    --brill        find disambiguation rules via Brill's unsupervised "
+"algorithm"
+msgstr ""
+
+#: gr.in:72
+msgid "    --html         produce HTML output for viewing in a web browser"
+msgstr ""
+"    --html         produire une sortie HTML pour un logiciel de navigation "
+"Internet"
+
+#: gr.in:73
+msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
+msgstr ""
+
+#: gr.in:74
+msgid ""
+"    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
+msgstr ""
+
+#. TRANSLATORS: By default, if there is no rule in the disambiguation module
+#. for selecting the correct part of speech of an ambiguous word, the program
+#. chooses the part of speech with the highest frequency.  This is sometimes
+#. called "unigram" tagging.   The --no-unigram option turns this behavior off.
+#: gr.in:80
+msgid ""
+"    --no-unigram   do not resolve ambiguous parts of speech by frequency"
+msgstr ""
+
+#. TRANSLATORS: The grammar checker works by piping the input text
+#. through a sequence of filters which add XML markup indicating
+#. important grammatical information.  The --xml option displays the
+#. marked up file as an aid in debugging.
+#: gr.in:86
+msgid ""
+"    --xml          write tagged XML stream to standard output, for debugging"
+msgstr ""
+"    --xml          écrire un flot XML étiqueté sur la sortie standard, pour "
+"mise au point (debug)"
+
+#: gr.in:87
+msgid "If no file is given, read from standard input."
+msgstr "Si aucun fichier n'est fourni, lire l'entrée standard"
+
+#: gr.in:88
+msgid "Send bug reports to <%s>."
+msgstr "Transmettre un rapport d'anomalies à <%s>."
+
+#: gr.in:89
+msgid "version %s"
+msgstr "version %s"
+
+#: gr.in:90
+msgid ""
+"This is free software; see the source for copying conditions.  There is NO"
+"\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
+"PURPOSE,\\nto the extent permitted by law."
+msgstr ""
+"Ce logiciel est libre; voir les sources pour les conditions de\n"
+"reproduction. AUCUNE garantie n'est donnée; tant pour des raisons\n"
+"COMMERCIALES que pour RÉPONDRE À UN BESOIN PARTICULIER,\n"
+"selon que les lois le permettent"
+
+#: gr.in:91
+msgid "Try %s for more information."
+msgstr "Essayez %s pour plus d'informations."
+
+#: gr.in:92
+msgid "unrecognized option %s"
+msgstr "%s option non reconnue"
+
+#: gr.in:93
+msgid "option %s requires an argument"
+msgstr "option %s requiert un argument"
+
+#: gr.in:94
+msgid "option %s does not allow an argument"
+msgstr "option %s ne permet pas un argument"
+
+#: gr.in:95 farc.c.in:18 farc.c.in:30 farc.c.in:42
 #, c-format
 msgid "Language %s is not supported."
 msgstr "Le langage %s n'est pas supporté."
 
-#: farc.c.in:23
+#. TRANSLATORS: "conversion" here means conversion between character encodings
+#: gr.in:98
+#, fuzzy
+msgid "conversion from %s is not supported"
+msgstr "Le langage %s n'est pas supporté."
+
+#: gr.in:99
+msgid "aspell-%s is not installed"
+msgstr ""
+
+#: gr.in:100
+msgid "Unknown word"
+msgstr "Mot inconnu"
+
+#. TRANSLATORS: only two unknown words are reported per sentence
+#: gr.in:103
+msgid "Unknown word (ignoring remainder in this sentence)"
+msgstr "Mot inconnu (le reste de la phrase est ignoré)"
+
+#: gr.in:104
+msgid "Valid word but extremely rare in actual usage"
+msgstr ""
+
+#: gr.in:105
+msgid "Usually used in the set phrase \\/\\1\\/"
+msgstr ""
+
+#: gr.in:106
+msgid "You should use \\/\\1\\/ here instead"
+msgstr "Vous devriez utiliser \\/\\1\\/ ici à la place"
+
+#: gr.in:107
+msgid "Non-standard form: perhaps use \\/\\1\\/?"
+msgstr "Forme non conforme: utiliser plutôt \\/\\1\\/?"
+
+#. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
+#: gr.in:110
+msgid "Initial mutation missing"
+msgstr "Mutation initiale manquante"
+
+#. TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
+#. It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
+#: gr.in:114
+msgid "Unnecessary lenition"
+msgstr "Lénition non nécessaire"
+
+#: gr.in:115
+msgid "Prefix \\/h\\/ missing"
+msgstr "Préfixe \\/h\\/ manquant"
+
+#: gr.in:116
+msgid "Prefix \\/t\\/ missing"
+msgstr "Préfixe \\/t\\/ manquant"
+
+#: gr.in:117
+msgid "Lenition missing"
+msgstr "Lénition manquante"
+
+#. TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
+#. initial consonants in Irish.  It is indicated in writing by the addition
+#. of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
+#: gr.in:122
+msgid "Eclipsis missing"
+msgstr "Éclipsis manquante"
+
+#: gr.in:123
+msgid "Repeated word"
+msgstr ""
+
+#: gr.in:124
+msgid "Unusual combination of words"
+msgstr ""
+
+#: gr.in:125
+msgid "Comparative adjective required"
+msgstr ""
+
+#: gr.in:126
+#, fuzzy
+msgid "Unnecessary prefix \\/h\\/"
+msgstr "Lénition non nécessaire"
+
+#: gr.in:127
+#, fuzzy
+msgid "Unnecessary prefix \\/t\\/"
+msgstr "Lénition non nécessaire"
+
+#: gr.in:128
+msgid "Unnecessary use of the definite article"
+msgstr ""
+
+#: gr.in:129
+msgid "The genitive case is required here"
+msgstr ""
+
+#: cuardach.c:88 cuardach.c:107 cuardach.c:150 cuardach.c:223
+#, c-format
+msgid "%s: out of memory\n"
+msgstr "%s: mémoire épuisée\n"
+
+#: cuardach.c:97
+#, c-format
+msgid "%s: `%s' corrupted at %s\n"
+msgstr "%s: « %s » corrompu à %s\n"
+
+#: cuardach.c:120 cuardach.c:161 cuardach.c:241
+#, c-format
+msgid "%s: warning: check size of %s: %d?\n"
+msgstr "%s: AVERTISSEMENT: vérifier la taille de %s: %d?\n"
+
+#: cuardach.c:125 cuardach.c:166 cuardach.c:247
+#, c-format
+msgid "%s: warning: problem closing %s\n"
+msgstr "%s: AVERTISSEMENT: problème de fermeture de %s\n"
+
+#: cuardach.c:453
+#, fuzzy, c-format
+msgid "%s: no grammar codes: %s\n"
+msgstr "%s: pas de codes de grammaire\n"
+
+#: cuardach.c:581
+#, c-format
+msgid "problem with the `cuardach' command\n"
+msgstr "problème avec la commande « cuardach »\n"
+
+#: cuardach.c:591
+#, c-format
+msgid "%s: problem reading the database\n"
+msgstr "%s: problème de lecture de la base de données\n"
+
+#: farc.c.in:46
 #, c-format
 msgid "%s: illegal grammatical code\n"
 msgstr "%s: code grammatical illégal\n"
@@ -77,135 +332,3 @@ msgstr[1] "Succès d'analyse syntaxique de %d règles.\n"
 #, c-format
 msgid "Line %d: %s\n"
 msgstr "Ligne %d: %s\n"
-
-#: gr.in:35
-msgid "An Gramadoir"
-msgstr "Un Gramadoir"
-
-#: gr.in:36
-msgid "Currently checking %s"
-msgstr "Vérification en cours %s"
-
-#: gr.in:37
-msgid "There is no such file."
-msgstr "Il n'y a pas un tel fichier"
-
-#: gr.in:38
-msgid "Is a directory"
-msgstr "Est un répertoire"
-
-#: gr.in:39
-msgid "Permission denied"
-msgstr "Permission refusée"
-
-#: gr.in:40
-msgid "Usage: %s [OPTIONS] [FILES]"
-msgstr "Usage: %s [OPTIONS] [FICHIERS]"
-
-#: gr.in:41
-msgid "    --litriu       write misspelled words to standard output"
-msgstr "    --litriu       écrire les mots mal orthographiés sur la sortie standard"
-
-#: gr.in:42
-msgid "    --html         produce HTML output for viewing in a web browser"
-msgstr "    --html         produire une sortie HTML pour un logiciel de navigation Internet"
-
-#: gr.in:43
-msgid "    --xml          write tagged XML stream to standard output, for debugging"
-msgstr "    --xml          écrire un flot XML étiqueté sur la sortie standard, pour mise au point (debug)"
-
-#: gr.in:44
-msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
-msgstr "    --iomlan       rapporter toutes les erreurs (i.e. ne pas utiliser ~/.neamhshuim)"
-
-#: gr.in:45
-msgid "    --teanga=XX    specify the language of the text to be checked (default=ga)"
-msgstr "    --teanga=XX    spécifier le langage du texte à vérifier (par défaut=ga)"
-
-#: gr.in:46
-msgid "    --ionchod=ENC  specify the character encoding of the text to be checked"
-msgstr "    --ionchod=ENC  spécifier l'encodage des caractères du texte à vérifier"
-
-#: gr.in:47
-msgid "    --help         display this help and exit"
-msgstr "    --help         afficher l'aide-mémoire et quitter"
-
-#: gr.in:48
-msgid "    --version      output version information and exit"
-msgstr "    --version      afficher la version du logiciel et quitter"
-
-#: gr.in:49
-msgid "If no file is given, read from standard input."
-msgstr "Si aucun fichier n'est fourni, lire l'entrée standard"
-
-#: gr.in:50
-msgid "Send bug reports to <%s>."
-msgstr "Transmettre un rapport d'anomalies à <%s>."
-
-#: gr.in:51
-msgid "version %s"
-msgstr "version %s"
-
-#: gr.in:52
-msgid "This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law."
-msgstr ""
-"Ce logiciel est libre; voir les sources pour les conditions de\n"
-"reproduction. AUCUNE garantie n'est donnée; tant pour des raisons\n"
-"COMMERCIALES que pour RÉPONDRE À UN BESOIN PARTICULIER,\n"
-"selon que les lois le permettent"
-
-#: gr.in:53
-msgid "Try %s for more information."
-msgstr "Essayez %s pour plus d'informations."
-
-#: gr.in:54
-msgid "unrecognized option %s"
-msgstr "%s option non reconnue"
-
-#: gr.in:55
-msgid "option %s requires an argument"
-msgstr "option %s requiert un argument"
-
-#: gr.in:56
-msgid "option %s does not allow an argument"
-msgstr "option %s ne permet pas un argument"
-
-#: gr.in:57
-msgid "Unknown word (ignoring remainder in this sentence)"
-msgstr "Mot inconnu (le reste de la phrase est ignoré)"
-
-#: gr.in:58
-msgid "Unknown word"
-msgstr "Mot inconnu"
-
-#: gr.in:59
-msgid "You should use \\/\\1\\/ here instead"
-msgstr "Vous devriez utiliser \\/\\1\\/ ici à la place"
-
-#: gr.in:60
-msgid "Non-standard form: perhaps use \\/\\1\\/?"
-msgstr "Forme non conforme: utiliser plutôt \\/\\1\\/?"
-
-#: gr.in:61
-msgid "Initial mutation missing"
-msgstr "Mutation initiale manquante"
-
-#: gr.in:62
-msgid "Unnecessary lenition"
-msgstr "Lénition non nécessaire"
-
-#: gr.in:63
-msgid "Prefix \\/h\\/ missing"
-msgstr "Préfixe \\/h\\/ manquant"
-
-#: gr.in:64
-msgid "Prefix \\/t\\/ missing"
-msgstr "Préfixe \\/t\\/ manquant"
-
-#: gr.in:65
-msgid "Lenition missing"
-msgstr "Lénition manquante"
-
-#: gr.in:66
-msgid "Eclipsis missing"
-msgstr "Éclipsis manquante"
