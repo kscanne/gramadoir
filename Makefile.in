@@ -66,7 +66,7 @@ farc.c : TEANGACHA
 	rm -f seal1.sub seal2.sub
 
 .in.pl :
-	cat $< | sed '/^#/!s/:/!:/' | tr "!" "\n" > $<.2
+	cat $< | sed '/^#/!s/:/~:/' | tr "~" "\n" > $<.2
 	cp `echo "$<" | sed 's/-.*//'`.meta.sed temp.meta.sed
 	($(ECHO) "#!$(PERL)"; $(ECHO) "# Users should modify $<, not this file"; $(ECHO) 'while(<>){';  cat $<.2 | sed -f gin.meta.sed | sed -f temp.meta.sed; $(ECHO) 'print;'; $(ECHO) '}'; $(ECHO) 'exit;') | ./rigeail `echo "$<" | sed 's/-.*//'` > $@
 	rm -f $<.2 temp.meta.sed
@@ -262,7 +262,7 @@ triail.utf : FORCE
 focail-ga.bs : FORCE
 	$(MAKE) cabhair
 	Gin 12
-	((cat ${HOME}/.ispell_gaeilge | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/'; cat ${HOME}/.biobla | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | ispell -dgaeilge -p/dev/null -l) | sed 's/.*/& 44/'; cat FOCAIL) | LC_COLLATE=POSIX sort -u > FOCAIL.all
+	((cat ${HOME}/.ispell_gaeilge | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/'; cat ${HOME}/.biobla | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | ispell -dgaeilge -p/dev/null -l) | sed 's/.*/& 44/'; cat FOCAIL) | LC_COLLATE=POSIX sort -u -k1,1 -k2,2n > FOCAIL.all
 	(cat FOCAIL.all | sed 's/ [0-9]*//' | uniq | wc -l | sed 's/^ *//'; cat FOCAIL.all | ./cabhair 0) > focail-ga.bs
 	chmod 644 focail-ga.bs
 #	rm -f FOCAIL FOCAIL.all
