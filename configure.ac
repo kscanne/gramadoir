@@ -1,5 +1,5 @@
 dnl Process this file with autoconf to produce a configure script.
-AC_INIT([gramadoir],[0.4pre1],[scannell@slu.edu], [gramadoir-0.4pre1])
+AC_INIT([gramadoir],[0.4],[scannell@slu.edu], [gramadoir-0.4])
 
 dnl Checks for programs.
 AC_PROG_AWK
@@ -60,8 +60,8 @@ ALLOH=""
 ALLMAC=""
 for cod in ${TEANGACHA}
 do
-	ALLIN="${ALLIN} aonchiall-${cod}.in eisceacht-${cod}.in rialacha-${cod}.in unigram-${cod}.txt unigram-${cod}.pre"
-	ALLPL="${ALLPL} aonchiall-${cod}.pl eisceacht-${cod}.pl rialacha-${cod}.pl unigram-${cod}.pl"
+	ALLIN="${ALLIN} aonchiall-${cod}.in comhshuite-${cod}.in eisceacht-${cod}.in rialacha-${cod}.in unigram-${cod}.txt unigram-${cod}.pre"
+	ALLPL="${ALLPL} aonchiall-${cod}.pl comhshuite-${cod}.pl eisceacht-${cod}.pl rialacha-${cod}.pl unigram-${cod}.pl"
 	ALLOH="${ALLOH} cuardach-${cod}.o"
 	ALLMAC="${ALLMAC} macra-${cod}.meta.sed"
 done
