@@ -63,9 +63,9 @@ install : perl
 	(cd $(PERLD); make pure_install)
 
 installcheck : triail FORCE
-	@LC_ALL=C $(SCRIPTNAME) --dath=none --iomlan --aspell --aschod=iso-8859-1 triail | sed "s/^[0-9]*: //" > triail.tmp
-	@if diff triail.err triail.tmp; then $(ECHO) 'OK.'; else $(ECHO) 'Problem.'; fi
-	@rm -f triail.tmp
+	@LC_ALL=ga_IE $(SCRIPTNAME) --api --iomlan --aspell triail > triail.tmp.xml
+	@if diff triail.xml triail.tmp.xml; then $(ECHO) 'OK.'; else $(ECHO) 'Problem.'; fi
+	@rm -f triail.tmp.xml
 
 lexicon-$(TEANGA).txt : lexicon-$(TEANGA).bs
 	cat lexicon-$(TEANGA).bs | $(PERL) $(GRAMDIR)/cabhair.pl -d --encoding=$(NATIVE) > $@
@@ -130,7 +130,6 @@ $(SHARE)/gramadoir.vim : $(GRAMDIR)/gramadoir.vim
 	sed "s/gram-ga\.pl/$(SCRIPTNAME)/g" $(GRAMDIR)/gramadoir.vim > $@
 
 $(PERLD)/t/$(PERLD).t : $(GRAMDIR)/Lingua-XX-Gramadoir.t triail
-	touch triail.xml
 	cat $(GRAMDIR)/Lingua-XX-Gramadoir.t | sed "s/@TEANGA@/$(UPPERTEANGA)/g; s/@NATIVE@/$(NATIVE)/g; s/tests => 1;/tests => 4+`cat triail.xml | wc -l`;/" > $@
 	sed -i "/<<.EOF.;/r triail" $@
 	sed -i '/<<.RESEOF.;/r triail.xml' $@
@@ -139,13 +138,11 @@ $(PERLD)/t/$(PERLD).t : $(GRAMDIR)/Lingua-XX-Gramadoir.t triail
 triail : rialacha-$(TEANGA).in
 	sed -n '/^#\./{s/^#\. //; p}' rialacha-$(TEANGA).in > triail
 
-triail.xml : FORCE
+triail.xml-update : FORCE
 	$(MAKE) triail
+	$(MAKE) perl
+	rm -f triail.xml
 	LC_ALL=ga_IE $(SCRIPTNAME) --api --iomlan --aspell triail > triail.xml
-
-triail.err : FORCE
-	rm -f triail.err
-	LC_ALL=C $(SCRIPTNAME) --dath=none --iomlan --aspell triail | sed 's/^[0-9]*: //' > triail.err
 
 $(PERLLIB).pm : $(GRAMDIR)/Gramadoir.pm.in $(INTERMEDIATE)
 	sed "/^# morphology code /r morph-$(TEANGA).pl" $(GRAMDIR)/Gramadoir.pm.in > $@
@@ -207,7 +204,6 @@ distclean :
 	rm -f $(PERLTOP) $(PERLCODE) $(LEXICONS) $(EXTRAS) $(TESTS) $(PERLD)/Makefile
 	rm -f Makefile
 	rm -f triail
-#	rm -f triail.xml    # should leave as is
 
 clean :
 	$(MAKE) topclean
@@ -218,8 +214,6 @@ rebuildlex : FORCE
 
 dist : FORCE
 	$(MAKE) rebuildlex
-	$(MAKE) triail
-	$(MAKE) triail.err
 	$(LN_S) $(TEANGA) ../$(TARBALL)
 	sed -i '1s/.*/#!!PERLPATH!/' macra-$(TEANGA).meta.pl
 	tar cvhf $(TARBALL).tar -C .. $(TARBALL)/Changes
@@ -241,6 +235,7 @@ dist : FORCE
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/nocombo-$(TEANGA).txt
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/pos-$(TEANGA).txt
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/rialacha-$(TEANGA).in
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/triail.xml
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/unigram-$(TEANGA).pre
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/unigram-$(TEANGA).txt
 	gzip $(TARBALL).tar
