@@ -371,10 +371,61 @@ my_isupper (const char x)
     return (x >= 'A' && x <= 'Z');
 }
 
+/* return true iff lowered != word, i.e. word has some uppercase letter */
+int
+make_all_lowercase (const char *word, char *lowered)
+{
+  int i = 0, retval = 0;
+  while (word[i] != 0)
+    {
+      if (my_isupper (word[i]))
+	{
+	  lowered[i] = my_tolower (word[i]);
+	  retval = 1;
+	}
+      else
+	lowered[i] = word[i];
+      i++;
+    }
+  lowered[i] = 0;
+  return retval;
+}
+
 int
 sort_bytes (const void *a, const void *b)
 {
   return (*(const unsigned char *) a - *(const unsigned char *) b);
+}
+
+/* called iff word with some caps was found in database AND the 
+  lowercase version was found too -- re-sorts the union of the grammar
+  bytes, stripping repeats and dealing with byte 127 (rare) correctly */
+void
+tidy_codes (unsigned char *codes)
+{
+  int j, k, totlen = strlen (codes) - 1;	/* ASSERT: at least two */
+  unsigned char prev;
+
+  qsort (codes, (size_t) totlen, sizeof (unsigned char), sort_bytes);
+  if (totlen > 2 || codes[0] != codes[1])
+    {
+      j = 0;
+      prev = (unsigned char) 127;
+      for (k = 0; k < totlen; k++)
+	{
+	  if (codes[k] != prev && codes[k] != (unsigned char) 127)
+	    {
+	      if (j < k)
+		codes[j] = codes[k];
+	      j++;
+	    }
+	  prev = codes[j - 1];
+	}
+    }
+  else
+    j = 1;
+  codes[j] = (unsigned char) 13;	/* anything nonzero */
+  codes[j + 1] = 0;
 }
 
 /* Assert, word is non-zero length, terminated with "\n\0" */
@@ -382,23 +433,14 @@ sort_bytes (const void *a, const void *b)
 int
 dictlookup (const char *word, char *fill, char *attrs, char *extratags)
 {
-  int i, j, k, len, totlen, retval = 1;
-  unsigned char prev, unused, codes[2 * GR_AMBIGMAX];
+  int len, retval = 1;
+  unsigned char unused, codes[2 * GR_AMBIGMAX];
   char repl[GR_REPLMAX], lowered[GR_WORDMAX];
+
   *codes = 0;
   rawlookup (word, codes);
-  if (my_isupper (word[0]))
+  if (make_all_lowercase (word, lowered))
     {
-      i = 0;
-      while (word[i] != 0)
-	{
-	  if (my_isupper (word[i]))
-	    lowered[i] = my_tolower (word[i]);
-	  else
-	    lowered[i] = word[i];
-	  i++;
-	}
-      lowered[i] = 0;
       len = strlen (codes) - 1;
       if (len < 0)
 	len = 0;
@@ -409,35 +451,9 @@ dictlookup (const char *word, char *fill, char *attrs, char *extratags)
 	  codes[len] = unused;
 	  codes[len + 1] = 0;
 	}
-      else
-	{
-	  if (len)
-	    {
-	      totlen = strlen (codes) - 1;	/* ASSERT: at least two */
-	      qsort (codes, (size_t) totlen, sizeof (unsigned char),
-		     sort_bytes);
-	      if (totlen > 2 || codes[0] != codes[1])
-		{		/* strip repeats */
-		  j = 0;
-		  prev = (unsigned char) 127;
-		  for (k = 0; k < totlen; k++)
-		    {
-		      if (codes[k] != prev && codes[k] != (unsigned char) 127)
-			{
-			  if (j < k)
-			    codes[j] = codes[k];
-			  j++;
-			}
-		      prev = codes[j - 1];
-		    }
-		}
-	      else
-		j = 1;
-	      codes[j] = unused;
-	      codes[j + 1] = 0;
-	    }			/* if capital word was found originally */
-	}			/* if lowered version found */
-    }				/* if capital */
+      else if (len)
+	tidy_codes (codes);
+    }
   if (*codes)
     {
       if (code_to_markup (codes, fill, attrs, extratags))
