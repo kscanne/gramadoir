@@ -34,14 +34,21 @@
 <B>[Mm]ás</B>:<V cop="y">
 # copula, not "abbot"
 <B>[Aa]b</B>:<V cop="y">
+# with copula, not genitive "ál"
+<B>[Áá]il</B>:<N pl="n" gnt="n">
 #  most of these are the ones REQUIRING a preceding copula so this is important
 #  18 Jan '05 added more needed to disambiguate preceding "ar" as copula
 #  and not a preposition so we don't get "lenition missing" errors:
 # "mian", "gá", "mó", "fiu", "deimhin", "suim", "fearr", "maith", "deacair"
 # "fuath", "cóir", "cuma"
 # only add these unlenited since this disambiguation is not always correct
-<B><Z>ANYCOPULA</Z>ANYTHING</B> <N>(áil|aithnid|ch?uimhin|eol|fh?éidir|fuath|gá|mian|oth|suim)</N>:<V cop="y">
-<B><Z>ANYCOPULA</Z>ANYTHING</B> <A>(dh?ócha|eagal|fearr|fh?oláir|iomaí|ionann|léir|leor|mh?iste|mó|náir)</A>:<V cop="y">
+<B><Z>ANYCOPULA</Z>ANYTHING</B> <N pl="n" gnt="n">(áil|ch?uimhin|eol|fh?éidir|oth)</N>:<V cop="y">
+<B><Z>ANYCOPULA</Z>ANYTHING</B> <N pl="n" gnt="n" gnd="f">(aithnid|mian|suim)</N>:<V cop="y">
+<B><Z>ANYCOPULA</Z>ANYTHING</B> <N pl="n" gnt="n" gnd="m">fuath</N>:<V cop="y">
+<B><Z>ANYCOPULA</Z>ANYTHING</B> <N>gá</N>:<V cop="y">
+<B><Z>ANYCOPULA</Z>ANYTHING</B> <A pl="n" gnt="n">(dh?ócha|eagal|fh?oláir|ionann|leor|mh?iste)</A>:<V cop="y">
+<B><Z>ANYCOPULA</Z>ANYTHING</B> <A pl="n" gnt="y" gnd="f">(fearr|mó)</A>:<V cop="y">
+<B><Z>ANYCOPULA</Z>ANYTHING</B> <A>(iomaí|léir|náir)</A>:<V cop="y">
 <B><Z>ANYCOPULA</Z>ANYTHING</B> cóir|cuma|deacair|dh?éanaí|deimhin|dh?ual|h?ea|éard|fiú|maith|mh?ithid:<V cop="y">
 # lowercase ach under last resorts
 <B>Ach</B>:<C>
@@ -59,8 +66,8 @@
 # "in ann" is now handled in comhshuite; do before "an": "an ann no nach ann?"
 #<S>[Ii]n</S> <B>ann</B>:<N pl="n" gnt="n">
 <B>ann</B>:<O>
-# otherwise these show up as missing lenition
-<B>[Aa]n</B> <NFCS>(maith|cúis)</NFCS>:<V cop="y">
+# otherwise these show up as missing lenition (maith is above)
+<B>[Aa]n</B> <N pl="n" gnt="n" gnd="f">cúis</N>:<V cop="y">
 <B>[Aa]n</B> <V>ANYTHING</V>:<Q>
 # <A><R> so not caught by PRSO rule below
 <B>[Aa]n</B> amhlaidh:<V cop="y">
@@ -135,8 +142,8 @@ g?ch?éad <B>dá</B>:<A pl="n" gnt="n">
 <B>[Dd]á</B> INITIALH:<D>
 an <B>dála</B>:<N pl="n" gnt="n" gnd="f">
 <B>Dé</B>:<N pl="n" gnt="y" gnd="m">
-<N>Dé</N> <B><Z>ANYNMG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
-<N>Dé</N> <B><Z>ANYNFG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+<N pl="n" gnt="y" gnd="m">Dé</N> <B><Z>ANYNMG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<N pl="n" gnt="y" gnd="m">Dé</N> <B><Z>ANYNFG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 # noun forms in phrases "ó dheas", "i ndeas", etc. always mutated
 # doing this hear helps "go+<A>"
 <B>[Dd]eas</B>:<A pl="n" gnt="n">
@@ -230,7 +237,8 @@ an <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
 [Gg]ach <B>[Nn]í</B>:<N pl="n" gnt="n" gnd="m">
 [Aa]on <B>[Nn]í</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Nn]í</B> <V>ANYTHING</V>:<U>
-<B>[Nn]í</B> <A>mór</A>:<V cop="y">
+# mór done above
+<B>[Nn]í</B> <A pl="n" gnt="n">mór</A>:<V cop="y">
 <C>ANYTHING</C> <B>ní</B> <[^V]>ANYTHING</[^V]>:<V cop="y">
 <B>[Nn]í</B> <N>ANYTHING</N>:<V cop="y">
 <B>[Nn]í</B> <P>ANYTHING</P>:<V cop="y">
@@ -340,14 +348,14 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 [Dd]ís|[Dd]h?osaen|[Pp]h?éire <B><Z>ANYNMGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="m">
 [Dd]ís|[Dd]h?osaen|[Pp]h?éire <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 # exceptions to next pair
-<NCS>[Cc]h?úpla</NCS> <B><Z>ANYNMC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<NCS>[Cc]h?úpla</NCS> <B><Z>ANYNFC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<N pl="n" gnt="n" gnd="m">[Cc]h?úpla</N> <B><Z>ANYNMC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<N pl="n" gnt="n" gnd="m">[Cc]h?úpla</N> <B><Z>ANYNFC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <NCS>ANYTHING</NCS> <B><Z>ANYNMG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <NCS>ANYTHING</NCS> <B><Z>ANYNFG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 # amach, síos, suas, aníos, ...  optional <A> on isteach, amuigh, istigh, etc
 <B><Z>PREPADV</Z>ANYTHING</B>:<R>
 # disambiguate adjectives
-# gluaiseacht na gceart sibhialta
+# gluaiseacht na gceart sibhialta; can be masc or fem.
 <NGP>BROADFINALCONSONANT</NGP> <B><Z>ANYWITHCOMMON</Z>ANYTHING</B>:<A pl="n" gnt="n">
 # na fir comhaimseartha
 <NP>ANYTHING</NP> <B><Z>AWITHPL</Z>ANYTHING</B>:<A pl="y" gnt="n">
@@ -356,9 +364,9 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 #<NMGS>ANYTHING</NMGS> <B><Z>AWITHGSM</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="m">
 <NCS>ANYTHING</NCS> <B><Z>AWITHCOMMON</Z>ANYTHING</B>:<A pl="n" gnt="n">
 # next four hopefully "cdr"; get "duine mór eile"
-<AP>ANYTHING</AP> <B><Z>AWITHPL</Z>ANYTHING</B>:<A pl="y" gnt="n">
-<AFGS>ANYTHING</AFGS> <B><Z>AWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
-<AMGS>ANYTHING</AMGS> <B><Z>AWITHGSM</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="m">
+<A pl="y" gnt="n">ANYTHING</A> <B><Z>AWITHPL</Z>ANYTHING</B>:<A pl="y" gnt="n">
+<A pl="n" gnt="y" gnd="f">ANYTHING</A> <B><Z>AWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
+<A pl="n" gnt="y" gnd="m">ANYTHING</A> <B><Z>AWITHGSM</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="m">
 <ACS>ANYTHING</ACS> <B><Z>AWITHCOMMON</Z>ANYTHING</B>:<A pl="n" gnt="n">
 #  four below were previous (poor) attempts at the previous four
 #<NP>ANYTHING</NP> <A>ANYTHING</A> <B><Z>AWITHPL</Z>ANYTHING</B>:<A pl="y" gnt="n">
@@ -422,7 +430,7 @@ a <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 # really a <C> but not resolved until below
 [Óó] <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
-<VCOP>ANYTHING</VCOP> <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
+<V cop="y">ANYTHING</V> <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 # doesn't matter
 <B><Z>TEMPORAL</Z>ANYTHING</B>:<R>
 <B><Z>PREPPOSS</Z>NOTDO</B> <V>ANYTHING</V>:<S>
@@ -528,16 +536,46 @@ ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
 # new Jan '05; <G>=direct relative "a", <H>=indirect relative
 # as refinements of the <U> tag.  When unsure can still use <U>
 # see LGG pp.176-177 for a nice survey
-<C>([Mm]ar|[Nn]uair)</C> <B>[Aa]</B>:<G>
-<Q>([Cc]ad|[Cc]athain|[Cc]é|[Cc]onas)</Q> <B>[Aa]</B>:<G>
-# Cá huair a ... too
-<N>(t?-?[Aa]m|[Bb]h?liain|[Ll]á|[Oo]íche|h?[Uu]air)</N> <B>[Aa]</B>:<G>
+<C>[Nn]uair</C> <B>[Aa]</B>:<G>
+# corpus
+<C>[Ff]ad is</C> <B>[Aa]</B>:<G>
+# corpus; 100%
+[Aa]mhlaidh <B>[Aa]</B>:<G>
+# corpus; 100%
+<R>ar éigean</R> <B>[Aa]</B>:<G>
+# mar is split in the corpus "like, how, as" => direct
+# <C>[Mm]ar</C> <B>[Aa]</B>:<G>
+# exception to next general rule:
+<Q>[Cc]ad [Cc]huige</Q> <B>[Aa]</B>:<H>
+# cad, cathain, cé, céard, conas, cár bith, cá/cé mhéad
+<Q>INITIALC</Q> <B>[Aa]</B>:<G>
+# LGG says can use EITHER direct or indirect after these time words...
+# corpus verifies these are split down the middle
+# <N>(t?-?[Aa]m|[Bb]h?liain|[Ll]á|[Oo]íche|h?[Uu]air)</N> <B>[Aa]</B>:<G>
+# except LGG says "always" for uair - 70/30 in the corpus
+<N pl="n" gnt="n" gnd="f">[Uu]air</N> <B>[Aa]</B>:<G>
+<N pl="n" gnt="n" gnd="f" h="y">h[Uu]air</N> <B>[Aa]</B>:<G>
 [Cc]á <N>[Ff]had</N> <B>[Aa]</B>:<G>
-<N>([Cc]h?aoi|[Ff]h?áth|[Dd]h?óigh)</N> <B>[Aa]</B>:<H>
+# Ó Cóileán, corpus
+# I gcás a ndéanfaidh...
+# faoin gcaoi a bhfoghlaimíonn...
+[Dd]h?óigh <B>[Aa]</B>:<H>
+<N pl="n" gnt="n" gnd="m">([Ff]h?áth|g[Cc]ás)</N> <B>[Aa]</B>:<H>
+<N pl="n" gnt="n" gnd="f">([Áá]it|t[Ss]lí)</N> <B>[Aa]</B>:<H>
+<N pl="n" gnt="n" gnd="f" h="y">h[Áá]it</N> <B>[Aa]</B>:<H>
+<NFS>g?[Cc]h?aoi</NFS> <B>[Aa]</B>:<H>
+# corpus, near 100%
+<A pl="n" gnt="n">[Gg]ach</A> <B>[Aa]</B>:<H>
+# An ceann ar a bhfuil, etc. the most common
+<S>ANYTHING</S> <B>[Aa]</B> <V>ANYTHING</V>:<H>
+# if not disambig'd yet: "cá as a bhfuil tú"
+[Aa]s <B>[Aa]</B> <V>ANYTHING</V>:<H>
+# MacL00 p.117 style
+[Cc]é <O>acu</O> <B>[Aa]</B>:<H>
 <B>[Aa]</B> <V>ECLIPSED</V>:<H>
 <B>[Aa]</B> <V>LENITED</V>:<G>
+<B>[Aa]</B> <V>INITIALDAPOST</V>:<G>
 <B>[Aa]</B> <V>ANYTHING</V>:<U>
-<B>[Aa]</B> UNLENITED:<D>
 # "tarraing sí a hanáil"
 <B>[Aa]</B> INITIALH:<D>
 <B>[Aa]</B> <N>ECLIPSED</N>:<D>
