@@ -71,7 +71,7 @@ Unnecessary lenition.
 Initial mutation missing.
 
 test ionchod flag and ability to read from stdin
-1: Tabhair go leor leor de na na rudaí seo do do chara, a Chaoimhín. 
+1: Tabhair go leor leor de na na rudaÃ­ seo do do chara, a ChaoimhÃ­n. 
 Repeated word.
 
 2: An bhfuil aon uaktar reoite agat? 
@@ -80,22 +80,22 @@ Unknown word.
 3: An bhfuil ayn uachtar roach agat? 
 Unknown word, Unknown word (ignoring remainder in this sentence).
 
-4: Bíonn an geál ag satailt ar an dubh. 
+4: BÃ­onn an geÃ¡l ag satailt ar an dubh. 
 Valid word but extremely rare in actual usage.
 
-5: Ní raibh líon mór daoine bainteach leis an scaifte a bhí ag iarraidh mioscais a chothú. 
+5: NÃ­ raibh lÃ­on mÃ³r daoine bainteach leis an scaifte a bhÃ­ ag iarraidh mioscais a chothÃº. 
 Non-standard form: perhaps use /scata/?.
 
-6: Tá na lachain slachtmhara ar eitilt. 
+6: TÃ¡ na lachain slachtmhara ar eitilt. 
 Lenition missing.
 
-7: Tá an Rialtas tar éis áit na Gaeilge i saol na tíre a ceistiú. 
+7: TÃ¡ an Rialtas tar Ã©is Ã¡it na Gaeilge i saol na tÃ­re a ceistiÃº. 
 Lenition missing.
 
-8: Bhíodar ag rá ar an aonach gur agamsa a bhí na huain ab fearr. 
+8: BhÃ­odar ag rÃ¡ ar an aonach gur agamsa a bhÃ­ na huain ab fearr. 
 Lenition missing.
 
-9: Ní bheidh ach mhallacht i ndán dó ó na ciníocha agus fuath ó na náisiúin. 
+9: NÃ­ bheidh ach mhallacht i ndÃ¡n dÃ³ Ã³ na cinÃ­ocha agus fuath Ã³ na nÃ¡isiÃºin. 
 Unnecessary lenition.
 
 10: An bhfuil aon uachtar reoite ar an cuntar? 
@@ -126,7 +126,6 @@ test English: ASCII character set
 <teacs>
 <line uimhir="1"> <U>This</U> <U>string</U> <U>has</U> <E msg="ANAITHNID"><X>emb</X></E>é<E msg="ANAITHNIDSRL"><X>dded</X></E> <X>non-ASCII</X> <U>characters</U>! </line>
 </teacs>
-Currently checking /dev/null
 test help flag
 Syntax: gr [OPTIONEN] [DATEIEN]
 
@@ -202,7 +201,7 @@ Unnötige Lenierung.
 Veränderung am Anfang des Wortes fehlt.
 
 test ionchod flag and ability to read from stdin
-1: Tabhair go leor leor de na na rudaí seo do do chara, a Chaoimhín. 
+1: Tabhair go leor leor de na na rudaÃ­ seo do do chara, a ChaoimhÃ­n. 
 Repeated word.
 
 2: An bhfuil aon uaktar reoite agat? 
@@ -211,22 +210,22 @@ Unbekanntes Wort.
 3: An bhfuil ayn uachtar roach agat? 
 Unbekanntes Wort, Unbekanntes Wort (der Satz wird nicht weiter bearbeitet).
 
-4: Bíonn an geál ag satailt ar an dubh. 
+4: BÃ­onn an geÃ¡l ag satailt ar an dubh. 
 Valid word but extremely rare in actual usage.
 
-5: Ní raibh líon mór daoine bainteach leis an scaifte a bhí ag iarraidh mioscais a chothú. 
+5: NÃ­ raibh lÃ­on mÃ³r daoine bainteach leis an scaifte a bhÃ­ ag iarraidh mioscais a chothÃº. 
 Nicht dem Standard entsprechende Form: vielleicht besser /scata/ benutzen?.
 
-6: Tá na lachain slachtmhara ar eitilt. 
+6: TÃ¡ na lachain slachtmhara ar eitilt. 
 Lenierung fehlt.
 
-7: Tá an Rialtas tar éis áit na Gaeilge i saol na tíre a ceistiú. 
+7: TÃ¡ an Rialtas tar Ã©is Ã¡it na Gaeilge i saol na tÃ­re a ceistiÃº. 
 Lenierung fehlt.
 
-8: Bhíodar ag rá ar an aonach gur agamsa a bhí na huain ab fearr. 
+8: BhÃ­odar ag rÃ¡ ar an aonach gur agamsa a bhÃ­ na huain ab fearr. 
 Lenierung fehlt.
 
-9: Ní bheidh ach mhallacht i ndán dó ó na ciníocha agus fuath ó na náisiúin. 
+9: NÃ­ bheidh ach mhallacht i ndÃ¡n dÃ³ Ã³ na cinÃ­ocha agus fuath Ã³ na nÃ¡isiÃºin. 
 Unnötige Lenierung.
 
 10: An bhfuil aon uachtar reoite ar an cuntar? 
@@ -257,7 +256,6 @@ test English: ASCII character set
 <teacs>
 <line uimhir="1"> <U>This</U> <U>string</U> <U>has</U> <E msg="ANAITHNID"><X>emb</X></E>é<E msg="ANAITHNIDSRL"><X>dded</X></E> <X>non-ASCII</X> <U>characters</U>! </line>
 </teacs>
-/dev/null wird gerade geprüft
 test help flag
 Úsáid: gr [ROGHANNA] [COMHAD]
 
@@ -332,7 +330,7 @@ Séimhiú gan ghá.
 Séimhiú nó urú ar iarraidh.
 
 test ionchod flag and ability to read from stdin
-1: Tabhair go leor leor de na na rudaí seo do do chara, a Chaoimhín. 
+1: Tabhair go leor leor de na na rudaÃ­ seo do do chara, a ChaoimhÃ­n. 
 Focal céanna faoi dhó.
 
 2: An bhfuil aon uaktar reoite agat? 
@@ -341,22 +339,22 @@ Focal anaithnid.
 3: An bhfuil ayn uachtar roach agat? 
 Focal anaithnid, Focal anaithnid (scaoilfear an chuid eile san abairt seo).
 
-4: Bíonn an geál ag satailt ar an dubh. 
+4: BÃ­onn an geÃ¡l ag satailt ar an dubh. 
 Focal bailí ach fíor-neamhchoitianta in úsáid iarbhír.
 
-5: Ní raibh líon mór daoine bainteach leis an scaifte a bhí ag iarraidh mioscais a chothú. 
+5: NÃ­ raibh lÃ­on mÃ³r daoine bainteach leis an scaifte a bhÃ­ ag iarraidh mioscais a chothÃº. 
 Focal neamhchaighdeánach: ar mhaith leat /scata/?.
 
-6: Tá na lachain slachtmhara ar eitilt. 
+6: TÃ¡ na lachain slachtmhara ar eitilt. 
 Séimhiú ar iarraidh.
 
-7: Tá an Rialtas tar éis áit na Gaeilge i saol na tíre a ceistiú. 
+7: TÃ¡ an Rialtas tar Ã©is Ã¡it na Gaeilge i saol na tÃ­re a ceistiÃº. 
 Séimhiú ar iarraidh.
 
-8: Bhíodar ag rá ar an aonach gur agamsa a bhí na huain ab fearr. 
+8: BhÃ­odar ag rÃ¡ ar an aonach gur agamsa a bhÃ­ na huain ab fearr. 
 Séimhiú ar iarraidh.
 
-9: Ní bheidh ach mhallacht i ndán dó ó na ciníocha agus fuath ó na náisiúin. 
+9: NÃ­ bheidh ach mhallacht i ndÃ¡n dÃ³ Ã³ na cinÃ­ocha agus fuath Ã³ na nÃ¡isiÃºin. 
 Séimhiú gan ghá.
 
 10: An bhfuil aon uachtar reoite ar an cuntar? 
@@ -387,7 +385,135 @@ test English: ASCII character set
 <teacs>
 <line uimhir="1"> <U>This</U> <U>string</U> <U>has</U> <E msg="ANAITHNID"><X>emb</X></E>é<E msg="ANAITHNIDSRL"><X>dded</X></E> <X>non-ASCII</X> <U>characters</U>! </line>
 </teacs>
-Ag seiceáil /dev/null
+test help flag
+ÃšsÃ¡id: gr [ROGHANNA] [COMHAD]
+
+    --litriu       scrÃ­obh focail mÃ­litrithe chuig an aschur caighdeÃ¡nach
+    --html         aschur i gcruth HTML chun fÃ©achaint le brabhsÃ¡laÃ­
+    --xml          scrÃ­obh sruth XML chuig aschur caighdeÃ¡nach, chun dÃ­fhabhtÃº
+    --iomlan       taispeÃ¡in gach earrÃ¡id (.i. nÃ¡ hÃºsÃ¡id ~/.neamhshuim)
+    --teanga=XX    socraigh an teanga den tÃ©acs le seiceÃ¡il (loicthe=ga)
+    --ionchod=CÃ“D  socraigh an t-ionchÃ³dÃº den tÃ©acs le seiceÃ¡il
+    --help         taispeÃ¡in an chabhair seo agus Ã©irigh as
+    --version      taispeÃ¡in eolas faoin leagan agus Ã©irigh as
+
+Mura bhfuil comhad ann, lÃ©igh Ã³n ionchur caighdeÃ¡nach.
+
+Seol tuairiscÃ­ fabhtanna chuig <scannell@slu.edu>.
+test version flag
+An GramadÃ³ir, leagan 0.3
+Copyright (C) 2003 Kevin P. Scannell
+Is saorbhogearra an rÃ­omhchlÃ¡r seo; fÃ©ach ar an bhunchÃ³d le haghaidh
+coinnÃ­ollacha cÃ³ipeÃ¡la.  NÃ­l barÃ¡nta AR BITH ann; go fiÃº nÃ­l barÃ¡nta ann
+d'INDÃOLTACHT nÃ³ FEILIÃšNACHT DO FHEIDHM AR LEITH, an oiread atÃ¡ ceadaithe
+de rÃ©ir dlÃ­.
+test litriu flag
+uaktar
+ayn
+roach
+test xml flag
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE teacs SYSTEM "/dtds/gramadoir.dtd">
+<teacs>
+<line uimhir="1"> <V p="2ú" t="ord">Tabhair</V> <U>go</U> <A pl="n" gnt="n">leor</A> <A pl="n" gnt="n">leor</A> <S>de</S> <T>na</T> <E msg="DUBAILTE"><T>na</T></E> <N pl="y" gnt="n" gnd="m">rudaí</N> <A pl="n" gnt="n">seo</A> <S>do</S> <S>do</S> <N pl="n" gnt="n" gnd="m">chara</N>, <D>a</D> <Y>Chaoimhín</Y>. </line>
+<line uimhir="2"> <Q>An</Q> <V t="láith">bhfuil</V> <A pl="n" gnt="n">aon</A> <E msg="ANAITHNID"><X>uaktar</X></E> <A>reoite</A> <O>agat</O>? </line>
+<line uimhir="3"> <Q>An</Q> <V t="láith">bhfuil</V> <E msg="ANAITHNID"><X>ayn</X></E> <N pl="n" gnt="n" gnd="m">uachtar</N> <E msg="ANAITHNIDSRL"><X>roach</X></E> <O>agat</O>? </line>
+<line uimhir="4"> <V t="láith">Bíonn</V> <T>an</T> <E msg="NEAMHCHOIT"><F>geál</F></E> <S>ag</S> <N pl="n" gnt="n" gnd="f">satailt</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">dubh</N>. </line>
+<line uimhir="5"> <U>Ní</U> <V p="xx" t="caite">raibh</V> <N pl="n" gnt="n" gnd="m">líon</N> <A pl="n" gnt="n">mór</A> <N pl="y" gnt="n" gnd="m">daoine</N> <A pl="n" gnt="n">bainteach</A> <S>leis</S> <T>an</T> <E msg="CAIGHDEAN{scata}"><Y>scaifte</Y></E> <U>a</U> <V p="xx" t="caite">bhí</V> <S>ag</S> <N pl="n" gnt="n" gnd="f">iarraidh</N> <N pl="n" gnt="n" gnd="f">mioscais</N> <S>a</S> <N pl="n" gnt="n" gnd="m">chothú</N>. </line>
+<line uimhir="6"> <V t="láith">Tá</V> <T>na</T> <E msg="SEIMHIU"><N pl="y" gnt="n" gnd="f">lachain</N> <A pl="y" gnt="n">slachtmhara</A></E> <S>ar</S> <N pl="n" gnt="n" gnd="f">eitilt</N>. </line>
+<line uimhir="7"> <V t="láith">Tá</V> <T>an</T> <N pl="n" gnt="n" gnd="m">Rialtas</N> <V p="2ú" t="ord">tar</V> <N pl="n" gnt="n">éis</N> <N pl="n" gnt="n" gnd="f">áit</N> <T>na</T> <N pl="n" gnt="y" gnd="f">Gaeilge</N> <S>i</S> <N pl="n" gnt="n" gnd="m">saol</N> <T>na</T> <N pl="n" gnt="y" gnd="f">tíre</N> <E msg="SEIMHIU"><S>a</S> <N pl="n" gnt="n" gnd="m">ceistiú</N></E>. </line>
+<line uimhir="8"> <V pl="y" p="3ú" t="caite">Bhíodar</V> <S>ag</S> <N pl="n" gnt="n" gnd="m">rá</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">aonach</N> <V>gur</V> <O em="y">agamsa</O> <U>a</U> <V p="xx" t="caite">bhí</V> <T>na</T> <B><Z><N pl="n" gnt="n" gnd="f" h="y"/><N pl="n" gnt="y" gnd="m" h="y"/><N pl="y" gnt="n" gnd="m" h="y"/></Z>huain</B> <E msg="SEIMHIU"><V>ab</V> <A pl="n" gnt="y" gnd="f">fearr</A></E>. </line>
+<line uimhir="9"> <U>Ní</U> <V t="fáist">bheidh</V> <E msg="NISEIMHIU"><S>ach</S> <N pl="n" gnt="n" gnd="f">mhallacht</N></E> <S>i</S> <N pl="n" gnt="n" gnd="m">ndán</N> <O>dó</O> <S>ó</S> <T>na</T> <N pl="y" gnt="n" gnd="m">ciníocha</N> <C>agus</C> <N pl="n" gnt="n" gnd="m">fuath</N> <S>ó</S> <T>na</T> <N pl="y" gnt="n" gnd="m">náisiúin</N>. </line>
+<line uimhir="10"> <Q>An</Q> <V t="láith">bhfuil</V> <A pl="n" gnt="n">aon</A> <N pl="n" gnt="n" gnd="m">uachtar</N> <A>reoite</A> <E msg="CLAOCHLU"><S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">cuntar</N></E>? </line>
+</teacs>
+test html flag
+Ag seiceÃ¡il triail.2
+<br><br>1: Tabhair go leor leor de <b class=gramadoir>na</b> <b class=gramadoir>na</b> rudaí seo do do chara, a Chaoimhín. <br>
+Focal cÃ©anna faoi dhÃ³.
+
+<br><br>2: An bhfuil aon <b class=gramadoir>uaktar</b> reoite agat? <br>
+Focal anaithnid.
+
+<br><br>3: An bhfuil <b class=gramadoir>ayn</b> uachtar <b class=gramadoir>roach</b> agat? <br>
+Focal anaithnid, Focal anaithnid (scaoilfear an chuid eile san abairt seo).
+
+<br><br>4: Bíonn an <b class=gramadoir>geál</b> ag satailt ar an dubh. <br>
+Focal bailÃ­ ach fÃ­or-neamhchoitianta in ÃºsÃ¡id iarbhÃ­r.
+
+<br><br>5: Ní raibh líon mór daoine bainteach leis an <b class=gramadoir>scaifte</b> a bhí ag iarraidh mioscais a chothú. <br>
+Focal neamhchaighdeÃ¡nach: ar mhaith leat /scata/?.
+
+<br><br>6: Tá na <b class=gramadoir>lachain slachtmhara</b> ar eitilt. <br>
+SÃ©imhiÃº ar iarraidh.
+
+<br><br>7: Tá an Rialtas tar éis áit na Gaeilge i saol na tíre <b class=gramadoir>a ceistiú</b>. <br>
+SÃ©imhiÃº ar iarraidh.
+
+<br><br>8: Bhíodar ag rá ar an aonach gur agamsa a bhí na huain <b class=gramadoir>ab fearr</b>. <br>
+SÃ©imhiÃº ar iarraidh.
+
+<br><br>9: Ní bheidh <b class=gramadoir>ach mhallacht</b> i ndán dó ó na ciníocha agus fuath ó na náisiúin. <br>
+SÃ©imhiÃº gan ghÃ¡.
+
+<br><br>10: An bhfuil aon uachtar reoite <b class=gramadoir>ar an cuntar</b>? <br>
+SÃ©imhiÃº nÃ³ urÃº ar iarraidh.
+
+test ionchod flag and ability to read from stdin
+1: Tabhair go leor leor de na na rudaÃ­ seo do do chara, a ChaoimhÃ­n. 
+Focal cÃ©anna faoi dhÃ³.
+
+2: An bhfuil aon uaktar reoite agat? 
+Focal anaithnid.
+
+3: An bhfuil ayn uachtar roach agat? 
+Focal anaithnid, Focal anaithnid (scaoilfear an chuid eile san abairt seo).
+
+4: BÃ­onn an geÃ¡l ag satailt ar an dubh. 
+Focal bailÃ­ ach fÃ­or-neamhchoitianta in ÃºsÃ¡id iarbhÃ­r.
+
+5: NÃ­ raibh lÃ­on mÃ³r daoine bainteach leis an scaifte a bhÃ­ ag iarraidh mioscais a chothÃº. 
+Focal neamhchaighdeÃ¡nach: ar mhaith leat /scata/?.
+
+6: TÃ¡ na lachain slachtmhara ar eitilt. 
+SÃ©imhiÃº ar iarraidh.
+
+7: TÃ¡ an Rialtas tar Ã©is Ã¡it na Gaeilge i saol na tÃ­re a ceistiÃº. 
+SÃ©imhiÃº ar iarraidh.
+
+8: BhÃ­odar ag rÃ¡ ar an aonach gur agamsa a bhÃ­ na huain ab fearr. 
+SÃ©imhiÃº ar iarraidh.
+
+9: NÃ­ bheidh ach mhallacht i ndÃ¡n dÃ³ Ã³ na cinÃ­ocha agus fuath Ã³ na nÃ¡isiÃºin. 
+SÃ©imhiÃº gan ghÃ¡.
+
+10: An bhfuil aon uachtar reoite ar an cuntar? 
+SÃ©imhiÃº nÃ³ urÃº ar iarraidh.
+
+test English
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE teacs SYSTEM "/dtds/gramadoir.dtd">
+<teacs>
+<line uimhir="1"> <E msg="ANAITHNID"><X>GNU</X></E> <U>GENERAL</U> <U>PUBLIC</U> <U>LICENSE</U> <U>Version</U> 2, <U>June</U> 1991 <U>Copyright</U> (<E msg="ANAITHNIDSRL"><X>C</X></E>) 1989, 1991 <U>Free</U> <U>Software</U> <U>Foundation</U>, <U>Inc</U>. 675 <U>Mass</U> <U>Ave</U>, <U>Cambridge</U>, <X>MA</X> 02139, <X>USA</X> <U>Everyone</U> <U>is</U> <U>permitted</U> <U>to</U> <U>copy</U> <U>and</U> <U>distribute</U> <X>verbatim</X> <U>copies</U> <U>of</U> <U>this</U> <U>license</U> <U>document</U>, <U>but</U> <U>changing</U> <U>it</U> <U>is</U> <U>not</U> <U>allowed</U>. </line>
+<line uimhir="9"> <E msg="ANAITHNID"><X>Preamble</X></E> <U>The</U> <U>licenses</U> <U>for</U> <U>most</U> <U>software</U> <U>are</U> <U>designed</U> <U>to</U> <U>take</U> <U>away</U> <U>your</U> <U>freedom</U> <U>to</U> <U>share</U> <U>and</U> <U>change</U> <U>it</U>. </line>
+<line uimhir="12"> <U>By</U> <U>contrast</U>, <U>the</U> <E msg="ANAITHNID"><X>GNU</X></E> <U>General</U> <U>Public</U> <U>License</U> <U>is</U> <U>intended</U> <U>to</U> <U>guarantee</U> <U>your</U> <U>freedom</U> <U>to</U> <U>share</U> <U>and</U> <U>change</U> <U>free</U> <E msg="ANAITHNIDSRL"><X>software--to</X></E> <U>make</U> <U>sure</U> <U>the</U> <U>software</U> <U>is</U> <U>free</U> <U>for</U> <U>all</U> <U>its</U> <U>users</U>. </line>
+<line uimhir="14"> <U>This</U> <U>General</U> <U>Public</U> <U>License</U> <U>applies</U> <U>to</U> <U>most</U> <U>of</U> <U>the</U> <U>Free</U> <U>Software</U> <U>Foundation's</U> <U>software</U> <U>and</U> <U>to</U> <U>any</U> <U>other</U> <U>program</U> <U>whose</U> <U>authors</U> <U>commit</U> <U>to</U> <U>using</U> <U>it</U>. </line>
+<line uimhir="17"> (<U>Some</U> <U>other</U> <U>Free</U> <U>Software</U> <U>Foundation</U> <U>software</U> <U>is</U> <U>covered</U> <U>by</U> <U>the</U> <E msg="ANAITHNID"><X>GNU</X></E> <U>Library</U> <U>General</U> <U>Public</U> <U>License</U> <U>instead</U>.) </line>
+<line uimhir="18"> <U>You</U> <U>can</U> <U>apply</U> <U>it</U> <U>to</U> <U>your</U> <U>programs</U>, <U>too</U>. </line>
+<line uimhir="21"> <U>When</U> <U>we</U> <U>speak</U> <U>of</U> <U>free</U> <U>software</U>, <U>we</U> <U>are</U> <U>referring</U> <U>to</U> <U>freedom</U>, <U>not</U> <U>price</U>. </line>
+<line uimhir="22"> <U>Our</U> <U>General</U> <U>Public</U> <U>Licenses</U> <U>are</U> <U>designed</U> <U>to</U> <U>make</U> <U>sure</U> <U>that</U> <U>you</U> <U>have</U> <U>the</U> <U>freedom</U> <U>to</U> <U>distribute</U> <U>copies</U> <U>of</U> <U>free</U> <U>software</U> (<U>and</U> <U>charge</U> <U>for</U> <U>this</U> <U>service</U> <U>if</U> <U>you</U> <U>wish</U>), <U>that</U> <U>you</U> <U>receive</U> <U>source</U> <U>code</U> <U>or</U> <U>can</U> <U>get</U> <U>it</U> <U>if</U> <U>you</U> <U>want</U> <U>it</U>, <U>that</U> <U>you</U> <U>can</U> <U>change</U> <U>the</U> <U>software</U> <U>or</U> <U>use</U> <U>pieces</U> <U>of</U> <U>it</U> <U>in</U> <U>new</U> <U>free</U> <U>programs</U>; <U>and</U> <U>that</U> <U>you</U> <U>know</U> <U>you</U> <U>can</U> <U>do</U> <U>these</U> <U>things</U>. </line>
+<line uimhir="28"> <U>To</U> <U>protect</U> <U>your</U> <U>rights</U>, <U>we</U> <U>need</U> <U>to</U> <U>make</U> <U>restrictions</U> <U>that</U> <U>forbid</U> <U>anyone</U> <U>to</U> <U>deny</U> <U>you</U> <U>these</U> <U>rights</U> <U>or</U> <U>to</U> <U>ask</U> <U>you</U> <U>to</U> <U>surrender</U> <U>the</U> <U>rights</U>. </line>
+<line uimhir="30"> <U>These</U> <U>restrictions</U> <U>translate</U> <U>to</U> <U>certain</U> <U>responsibilities</U> <U>for</U> <U>you</U> <U>if</U> <U>you</U> <U>distribute</U> <U>copies</U> <U>of</U> <U>the</U> <U>software</U>, <U>or</U> <U>if</U> <U>you</U> <U>modify</U> <U>it</U>. </line>
+<line uimhir="33"> <U>For</U> <U>example</U>, <U>if</U> <U>you</U> <U>distribute</U> <U>copies</U> <U>of</U> <U>such</U> <U>a</U> <U>program</U>, <U>whether</U> <E msg="ANAITHNID"><X>gratis</X></E> <U>or</U> <U>for</U> <U>a</U> <U>fee</U>, <U>you</U> <U>must</U> <U>give</U> <U>the</U> <U>recipients</U> <U>all</U> <U>the</U> <U>rights</U> <U>that</U> <U>you</U> <U>have</U>. </line>
+<line uimhir="35"> <U>You</U> <U>must</U> <U>make</U> <U>sure</U> <U>that</U> <U>they</U>, <U>too</U>, <U>receive</U> <U>or</U> <U>can</U> <U>get</U> <U>the</U> <U>source</U> <U>code</U>. </line>
+<line uimhir="36"> <U>And</U> <U>you</U> <U>must</U> <U>show</U> <U>them</U> <U>these</U> <U>terms</U> <U>so</U> <U>they</U> <U>know</U> <U>their</U> <U>rights</U>. </line>
+<line uimhir="39"> <U>We</U> <U>protect</U> <U>your</U> <U>rights</U> <U>with</U> <U>two</U> <U>steps</U>: (1) <U>copyright</U> <U>the</U> <U>software</U>, <U>and</U> (2) <U>offer</U> <U>you</U> <U>this</U> <U>license</U> <U>which</U> <U>gives</U> <U>you</U> <U>legal</U> <U>permission</U> <U>to</U> <U>copy</U>, <U>distribute</U> <U>and</U>/<U>or</U> <U>modify</U> <U>the</U> <U>software</U>. </line>
+</teacs>
+test English: ASCII character set
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE teacs SYSTEM "/dtds/gramadoir.dtd">
+<teacs>
+<line uimhir="1"> <U>This</U> <U>string</U> <U>has</U> <E msg="ANAITHNID"><X>emb</X></E>é<E msg="ANAITHNIDSRL"><X>dded</X></E> <X>non-ASCII</X> <U>characters</U>! </line>
+</teacs>
 test help flag
 Folosire: gr [OPŞIUNI] [FIªIERE]
 
@@ -461,7 +587,7 @@ Indulgenşã(lenition) nenecesarã.
 Mutaşie inişialã lipsã.
 
 test ionchod flag and ability to read from stdin
-1: Tabhair go leor leor de na na rudaí seo do do chara, a Chaoimhín. 
+1: Tabhair go leor leor de na na rudaÃ­ seo do do chara, a ChaoimhÃ­n. 
 Repeated word.
 
 2: An bhfuil aon uaktar reoite agat? 
@@ -470,22 +596,22 @@ Cuvânt necunoscut.
 3: An bhfuil ayn uachtar roach agat? 
 Cuvânt necunoscut, Cuvânt necunoscut (se ignorã marcajul(remainder) în aceastã propozişie).
 
-4: Bíonn an geál ag satailt ar an dubh. 
+4: BÃ­onn an geÃ¡l ag satailt ar an dubh. 
 Valid word but extremely rare in actual usage.
 
-5: Ní raibh líon mór daoine bainteach leis an scaifte a bhí ag iarraidh mioscais a chothú. 
+5: NÃ­ raibh lÃ­on mÃ³r daoine bainteach leis an scaifte a bhÃ­ ag iarraidh mioscais a chothÃº. 
 Formã nestandardizatã: mai bine folosişi  /scata/?.
 
-6: Tá na lachain slachtmhara ar eitilt. 
+6: TÃ¡ na lachain slachtmhara ar eitilt. 
 Indulgenşã(lenition) lipsã.
 
-7: Tá an Rialtas tar éis áit na Gaeilge i saol na tíre a ceistiú. 
+7: TÃ¡ an Rialtas tar Ã©is Ã¡it na Gaeilge i saol na tÃ­re a ceistiÃº. 
 Indulgenşã(lenition) lipsã.
 
-8: Bhíodar ag rá ar an aonach gur agamsa a bhí na huain ab fearr. 
+8: BhÃ­odar ag rÃ¡ ar an aonach gur agamsa a bhÃ­ na huain ab fearr. 
 Indulgenşã(lenition) lipsã.
 
-9: Ní bheidh ach mhallacht i ndán dó ó na ciníocha agus fuath ó na náisiúin. 
+9: NÃ­ bheidh ach mhallacht i ndÃ¡n dÃ³ Ã³ na cinÃ­ocha agus fuath Ã³ na nÃ¡isiÃºin. 
 Indulgenşã(lenition) nenecesarã.
 
 10: An bhfuil aon uachtar reoite ar an cuntar? 
@@ -516,7 +642,6 @@ test English: ASCII character set
 <teacs>
 <line uimhir="1"> <U>This</U> <U>string</U> <U>has</U> <E msg="ANAITHNID"><X>emb</X></E>é<E msg="ANAITHNIDSRL"><X>dded</X></E> <X>non-ASCII</X> <U>characters</U>! </line>
 </teacs>
-În prezent se verificã /dev/null
 test help flag
 Gebruik: gr [OPTIE] [BESTAND]
 
@@ -590,7 +715,7 @@ Onnodige lenitie.
 Begin mutatie ontbreekt.
 
 test ionchod flag and ability to read from stdin
-1: Tabhair go leor leor de na na rudaí seo do do chara, a Chaoimhín. 
+1: Tabhair go leor leor de na na rudaÃ­ seo do do chara, a ChaoimhÃ­n. 
 Herhaald woord.
 
 2: An bhfuil aon uaktar reoite agat? 
@@ -599,22 +724,22 @@ Onbekend woord.
 3: An bhfuil ayn uachtar roach agat? 
 Onbekend woord, Onbekend word (de rest van deze zin word genegeerd).
 
-4: Bíonn an geál ag satailt ar an dubh. 
+4: BÃ­onn an geÃ¡l ag satailt ar an dubh. 
 Correct woord, maar erg zeldzaam in waarlijk gebruik.
 
-5: Ní raibh líon mór daoine bainteach leis an scaifte a bhí ag iarraidh mioscais a chothú. 
+5: NÃ­ raibh lÃ­on mÃ³r daoine bainteach leis an scaifte a bhÃ­ ag iarraidh mioscais a chothÃº. 
 Geen standard vorm: gebruik misschien /scata/?.
 
-6: Tá na lachain slachtmhara ar eitilt. 
+6: TÃ¡ na lachain slachtmhara ar eitilt. 
 Lenitie (verzachting) ontbreekt.
 
-7: Tá an Rialtas tar éis áit na Gaeilge i saol na tíre a ceistiú. 
+7: TÃ¡ an Rialtas tar Ã©is Ã¡it na Gaeilge i saol na tÃ­re a ceistiÃº. 
 Lenitie (verzachting) ontbreekt.
 
-8: Bhíodar ag rá ar an aonach gur agamsa a bhí na huain ab fearr. 
+8: BhÃ­odar ag rÃ¡ ar an aonach gur agamsa a bhÃ­ na huain ab fearr. 
 Lenitie (verzachting) ontbreekt.
 
-9: Ní bheidh ach mhallacht i ndán dó ó na ciníocha agus fuath ó na náisiúin. 
+9: NÃ­ bheidh ach mhallacht i ndÃ¡n dÃ³ Ã³ na cinÃ­ocha agus fuath Ã³ na nÃ¡isiÃºin. 
 Onnodige lenitie.
 
 10: An bhfuil aon uachtar reoite ar an cuntar? 
@@ -645,4 +770,3 @@ test English: ASCII character set
 <teacs>
 <line uimhir="1"> <U>This</U> <U>string</U> <U>has</U> <E msg="ANAITHNID"><X>emb</X></E>é<E msg="ANAITHNIDSRL"><X>dded</X></E> <X>non-ASCII</X> <U>characters</U>! </line>
 </teacs>
-Word momenteel nagekeken
