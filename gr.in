@@ -327,8 +327,7 @@ unchecked_xml()
 xml_output()
 {
 		unchecked_xml |
-		aonchiall |
-		aonchiall |
+		aonchiall | aonchiall |
 		rialacha |
 		eisceacht
 }

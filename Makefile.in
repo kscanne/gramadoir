@@ -168,6 +168,23 @@ installweb :
 	$(INSTALL_DATA) $(HOME)/.neamhshuim $(pkgdatadir)/Neamhshuim
 	runchoip
 
+debug : FORCE
+	$(MAKE) all
+	cat ./gr | sed -f debug.sed > gr-debug
+	mv -f gr-debug gr
+
+benchmark : FORCE
+	@rm -f ./DEBUG.log
+	@if gr --version | grep DEBUG > /dev/null; \
+	then \
+		benchcorp | gr --iomlan > /dev/null; \
+		rm -f ./DEBUG?; \
+		(cat DEBUG.log; echo) >> ../eile/benchmarks; \
+		cat DEBUG.log; \
+	else \
+		echo "You need to \"make debug\" and \"make install\" first."; \
+	fi
+
 triail.html : FORCE
 	gr --html triail > triail.html
 
@@ -242,7 +259,7 @@ triail.utf : FORCE
 focail-ga.bs : FORCE
 	$(MAKE) cabhair
 	Gin 12
-	(cat ${HOME}/.ispell_gaeilge ${HOME}/.biobla | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | sed 's/.*/& 44/'; cat FOCAIL) | LC_COLLATE=POSIX sort -u > FOCAIL.all
+	((cat ${HOME}/.ispell_gaeilge | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/'; cat ${HOME}/.biobla | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | ispell -dgaeilge -p/dev/null -l) | sed 's/.*/& 44/'; cat FOCAIL) | LC_COLLATE=POSIX sort -u > FOCAIL.all
 	(cat FOCAIL.all | sed 's/ [0-9]*//' | uniq | wc -l | sed 's/^ *//'; cat FOCAIL.all | ./cabhair 0) > focail-ga.bs
 	chmod 644 focail-ga.bs
 #	rm -f FOCAIL FOCAIL.all
