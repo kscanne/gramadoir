@@ -42,6 +42,11 @@ to find errors in languages like English using the same scheme,
 and harder still in languages having free word order.
 </p>
 
+<p>
+In the instructions below, I will use "xx" for
+the two-letter ISO-639-1 code for your language.
+</p>
+
 <hr>
 <h2>Things to do</h2>
 <p>
@@ -56,14 +61,14 @@ if your language has
 cat wordlist | sed 's/.*/&amp; 1/' | cabhair > focail.bs
 </samp>
 <br><br>
-or get rid of the first rule in <i>rialacha.in</i> to turn off
+or get rid of the first rule in <i>rialacha-ga.in</i> to turn off
 spellchecking if you have no word list at all.
 An intermediate possibility would be if, for instance, you want 
 to check for erroneous
 constructions like the English 
 "He done went fishing", or "He done ate his dinner"
 (sadly common in my part of the world).
-You could add a rule to <i>rialacha.in</i> resembling:<br><br>
+You could add a rule to <i>rialacha-xx.in</i> resembling:<br><br>
 <samp>
 &lt;N&gt;ANYTHING&lt;/N&gt; done &lt;VP&gt;ANYTHING&lt;/VP&gt;:MESSAGE
 </samp>
@@ -95,7 +100,7 @@ things as well.
 </p>
 
 <p>
-<b>4. Write <i>aonchiall.in</i></b>.  These are the rules for disambiguation.
+<b>4. Write <i>aonchiall-xx.in</i></b>.  These are the rules for disambiguation.
 In Irish, and I would imagine in many other languages, one can get
 away without too many rules here.  See
 the description of this file on the <a href="cuidiu.html">Contributing</a>
@@ -103,7 +108,7 @@ page.
 </p>
 
 <p>
-<b>5. Write <i>rialacha.in</i> and <i>eisceacht.in</i></b>.  
+<b>5. Write <i>rialacha-xx.in</i> and <i>eisceacht-xx.in</i></b>.  
 These are the grammatical rules and exceptions.
 Again see the <a href="cuidiu.html">Contributing</a> page for information
 on how to create these files.
@@ -114,9 +119,9 @@ Technically this is part of porting the user interface, not
 porting the grammar checker.  I'm guessing however that you'll want to
 see the output in the same language as
 the documents that are being
-checked.  I've kept these strings together at the top of <i>gr.in</i>.
-There are also a couple of rarely seen error messages in <i>cuardach.c</i>.
-I'll move to using <i>gettext</i> in the future to streamline this.
+checked.    As of version 0.3, this is done with the GNU
+gettext package.  The POT file <i>gramadoir.pot</i> is available 
+under the directory "po" in the distribution.
 </p>
 
 <hr>
