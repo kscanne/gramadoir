@@ -1,0 +1,26 @@
+#if STDC_HEADERS
+#include <stdio.h>
+#include <string.h>
+#include <locale.h>
+#include "gettext.h"
+#else
+/* trouble! */
+#endif
+
+/* Prototypes */
+
+void
+byte_to_markup (const char *teanga, const char *packagename, const unsigned char c, char *fill, char *attrs)
+{
+  int ret = 0;
+/* External calls */
+  else
+    {
+      fprintf (stderr, gettext ("Language %s is not supported."), teanga);
+    }
+  if (ret)
+    {
+      fprintf (stderr, gettext ("%s: illegal grammatical code\n"),
+	       packagename);
+    }
+}

@@ -48,27 +48,7 @@ struct foirm *focloir = NULL;
 struct ignorable *toignore = NULL;
 struct replacement *torepl = NULL;
 
-extern int byte_to_markup_ga (const unsigned char c, char *fill, char *attrs);
-extern int byte_to_markup_en (const unsigned char c, char *fill, char *attrs);
-
-void
-byte_to_markup (const unsigned char c, char *fill, char *attrs)
-{
-  int ret = 0;
-  if (!strcmp (teanga, "ga"))
-    ret = byte_to_markup_ga (c, fill, attrs);
-  else if (!strcmp (teanga, "en"))
-    ret = byte_to_markup_en (c, fill, attrs);
-  else
-    {
-      fprintf (stderr, gettext ("Language %s is not supported."), teanga);
-    }
-  if (ret)
-    {
-      fprintf (stderr, gettext ("%s: illegal grammatical code\n"),
-	       packagename);
-    }
-}
+extern void byte_to_markup (const char *tng, const char *pkg, const unsigned char c, char *fill, char *attrs);
 
 /* return 0 if everything went well enough to proceed, non-zero if not */
 int
@@ -278,7 +258,7 @@ code_to_markup (const char *cod, char *fill, char *attrs, char *extratags)
       strcpy (extratags, "<Z>");
       for (j = 0; j < len; j++)
 	{
-	  byte_to_markup (cod[j], temp, tempatt);
+	  byte_to_markup (teanga, packagename, cod[j], temp, tempatt);
 	  strcat (extratags, "<");
 	  strcat (extratags, temp);
 	  if (*tempatt)
@@ -289,7 +269,7 @@ code_to_markup (const char *cod, char *fill, char *attrs, char *extratags)
     }
   else if (len == 1)
     {
-      byte_to_markup (cod[0], fill, attrs);
+      byte_to_markup (teanga, packagename, cod[0], fill, attrs);
       strcpy (extratags, "");
     }
   else
