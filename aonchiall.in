@@ -1,8 +1,12 @@
 # This file contains the disambiguation rules which use local context
 # to select correct stems for ambiguous tokens.
 # Users can add to this list by following the syntax described 
-# on the web page:  http://borel.slu.edu/gr/
+# on the web page:  http://borel.slu.edu/gramadoir/
 # Please send me any useful additional rules for inclusion in
 # future releases: <scannell@slu.edu>
 <B>[Aa]n</B> <[^V]> <T>
 <B>[Aa]n</B> <V> <Q>
+<B>[Mm]á</B> <V> <C>
+<B>[Mm]ar</B> <N> <S>
+<B>[Mm]ar</B> <T> <S>
+<B>ó</B> <N> <S>
