@@ -369,6 +369,7 @@ my_isupper (const char x)
 }
 
 /* Assert, word is non-zero length, terminated with "\n\0" */
+/* return 0 iff found in replacement dict and <E> will be the markup */
 int
 dictlookup (const char *word, char *fill, char *attrs, char *extratags)
 {
@@ -447,11 +448,11 @@ dictlookup (const char *word, char *fill, char *attrs, char *extratags)
   Return 1 if no <c> or </c> and token is filled up (len==511), 0 otherwise
 */
 int
-markup (char *token)
+markup (char *token, char *wrd)
 {
   char mu[8], attrs[128], extratags[512];
   char *tail, *w;
-  int val;
+  int val, doubled;
 
   w = strstr (token, "<c>");
   tail = strstr (token, "</c>");
@@ -467,7 +468,11 @@ markup (char *token)
       val = dictlookup (w + 3, mu, attrs, extratags);
       *tail = '\0';
       *w = '\0';
+      doubled = (val && !strcmp (w + 3, wrd));
+      strcpy (wrd, w + 3);
       printf ("%s", token);		  /** chars before <c> **/
+      if (doubled)
+	printf ("<E msg=\"DUBAILTE\">");
       printf ("<%s", mu);		  /** new markup **/
       printf ("%s", attrs);		  /** attributes **/
       printf (">%s", extratags);	  /** any additional tags **/
@@ -475,7 +480,9 @@ markup (char *token)
       if (!val)
 	printf ("</Y>");		  /** dummy markup in case of repl. **/
       printf ("</%s>", mu);		  /** end of new markup **/
-      markup (tail + 4);		  /** chars after </c> **/
+      if (doubled)
+	printf ("</E>");
+      markup (tail + 4, wrd);		  /** chars after </c> **/
     }
   return 0;
 }
@@ -505,7 +512,7 @@ flush_input (char *buf)
 int
 main (int argc, char *argv[])
 {
-  char token[512], *w;
+  char token[512], w[512];
   int badtoken = 0;
 
   setlocale (LC_MESSAGES, "");	/* read from environment */
@@ -542,10 +549,13 @@ main (int argc, char *argv[])
   while (scanf ("%511s", token) != EOF)
     {
       if (!strcmp (token, "<line"))
-	printf ("\n");
+	{
+	  printf ("\n");
+	  strcpy (w, "");
+	}
       else if (!badtoken)
 	printf (" ");
-      badtoken = markup (token);
+      badtoken = markup (token, w);
     }
   printf ("\n</teacs>\n");
   cleanup ();
