@@ -7,7 +7,8 @@ if( build_hashes() ) {
 	WriteMakefile(
   	  NAME              => 'Lingua::@TEANGA@::Gramadoir',
   	  VERSION_FROM      => 'lib/Lingua/@TEANGA@/Gramadoir.pm',
-	  EXE_FILES         => ['scripts/gram-@LOWERTEANGA@.pl'],
+	  EXE_FILES         => ['scripts/gram-@LOWERTEANGA@.pl',
+	  			'scripts/groo-@LOWERTEANGA@.pl'],
   	  PREREQ_PM         => { 
 	  			'Carp' => '0',
 				'Encode' => '0',
@@ -85,8 +86,14 @@ sub build_hashes {
 #		binmode DATABASE, ":utf8";
 		while (<DATABASE>) {
 			chomp;
-			m/^([^ ]*) (.*)$/;
-			$EILE{$1} = $2;
+			my ($key, $repl) = m/^([^ ]*) (.*)$/;
+			$repl =~ s/ /_/g;
+			if (exists($EILE{$key})) {
+				$EILE{$key} .= ",_$repl";
+			}
+			else {
+				$EILE{$key} = $repl;
+			}
 		}
 		close DATABASE;
 		store \%EILE, $replfile;
@@ -100,8 +107,14 @@ sub build_hashes {
 #		binmode DATABASE, ":utf8";
 		while (<DATABASE>) {
 			chomp;
-			m/^([^ ]*) (.*)$/;
-			$EARRAIDI{$1} = $2;
+			my ($key, $repl) = m/^([^ ]*) (.*)$/;
+			$repl =~ s/ /_/g;
+			if (exists($EARRAIDI{$key})) {
+				$EARRAIDI{$key} .= ",_$repl";
+			}
+			else {
+				$EARRAIDI{$key} = $repl;
+			}
 		}
 		close DATABASE;
 		store \%EARRAIDI, $errfile;
