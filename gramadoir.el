@@ -33,6 +33,11 @@
 "Location of the executable for An Gramadóir"
 )
 
+(defvar gramadoir-highlight-text t
+  "Whether to highlight the words in error in the checked text. A
+value of t highlights, nil prevents not. The words in error in the
+Gramadoir output buffer are always highlighted")
+
 (defvar gramadoir-program-options "--html"
 "options for the executable for An Gramadóir")
 
@@ -56,7 +61,7 @@ identifies the file currently being checked."
 	(format 
 	 (concat "^"
 		 (shell-command-to-string
-		  "/usr/bin/gettext gramadoir \"Currently checking %s\"")) ""))
+		  "gettext gramadoir \"Currently checking %s\"")) ""))
   )
 
 (defvar gramadoir-check-file-msg (gramadoir-set-check-file-msg)
@@ -170,6 +175,24 @@ so it can be presented to the user for possible substitution")
     )
   (set-buffer (get-file-buffer gramadoir-current-file))
   (goto-line gramadoir-current-line)
+
+  ;; now find the words to highlight. Since setting text properties
+  ;; marks the buffer as modified, but we want to preserve modified
+  ;; state, save the current setting to use as argument to
+  ;; set-buffer-modified-p after we highlight.
+  (if gramadoir-highlight-text
+      (let (the-word 
+	    (eol (save-excursion (end-of-line) (point)))
+	    (was-modified (buffer-modified-p)))
+	(while (setq the-word (with-current-buffer gramadoir-display-buffer
+				(gramadoir-get-word)))
+	  ;; search to end of line for the word and highlight
+	  (if (re-search-forward the-word eol t)
+	      (put-text-property (match-beginning 0) (match-end 0)
+				 'face 'font-lock-comment-face)
+	    ))
+	(set-buffer-modified-p was-modified)
+	))
   ;(message "ggm: %s %d " gramadoir-current-file (point))
 
   (switch-to-buffer (get-file-buffer gramadoir-current-file))
@@ -198,6 +221,42 @@ so it can be presented to the user for possible substitution")
     (while (re-search-forward "<br>" nil t)
       (replace-match "" nil t)))
   (message "end of gramadoir-highlight, point=%d" (point))
+  )
+
+(defun gramadoir-get-word ()
+  "Function to retrieve word to which a message refers. This function searches
+for the invisible text surrounding the word in error and returns either the 
+word or an empty string. If a word is found, the pointer is placed after the 
+invisible closing tag so that the next call will search ahead. The function
+only searches within the current line"
+  (interactive)
+  (let ((open-b 0)
+	(start-word 0) 
+	(end-word 0) 
+	(close-b 0)
+	(eol (save-excursion (end-of-line) (point)))
+	(word ""))
+    (setq open-b (text-property-any (point) eol 'invisible t))
+    (setq word
+	  (if open-b
+	      (progn
+		(setq start-word (text-property-any open-b eol 'invisible nil))
+		(if start-word 
+		    (progn
+		      (setq end-word (text-property-any start-word eol 'invisible t))
+		      (buffer-substring-no-properties start-word end-word)
+		      ))
+		))
+	  )
+    (if (stringp word)
+	(progn
+	  (goto-char end-word)
+	  (goto-char (or (text-property-any (point) eol 'invisible nil) eol))
+	  ;;(message "word is: %s, %d" word close-b)
+	  word
+	  )
+      nil)
+    )
   )
 
 (provide 'gramadoir)
