@@ -35,7 +35,11 @@ if ( /^[^#]/ ) {
 		# e.g. <A>word</A>, <A attr="y">word</A>, or <APL>word</APL> 
 		elsif ($tok =~ m/^<[A-Z]/) {
 			$tok =~ s/<($noattrtags)>([^<]+)<\/[A-Z]>/<$1>$2<\\\/$1>/;
-			$tok =~ s/<($attrtags)([^>]*)>([^<]+)<\/[A-Z][^>]*>/(?:<${1}[^>]*${2}[^>]*>$3<\\\/$1>|<B><Z>(?:<${1}[^>]*${2}[^>]*>)+<\\\/Z>$3<\\\/B>)/;
+			# if m/<($attrtags)( [^>]+)>([^<]+)<\/[A-Z][^>]*>/
+			# i.e. space after tag, leave it "as is", just need
+			# to escape the "/" in the closing tag
+			$tok =~ s/<($attrtags)( [^>]+)>([^<]+)<\/[A-Z][^>]*>/<${1}${2}>$3<\\\/$1>/;
+			$tok =~ s/<($attrtags)([^ >]*)>([^<]+)<\/[A-Z][^>]*>/(?:<${1}[^>]*${2}[^>]*>$3<\\\/$1>|<B><Z>(?:<${1}[^>]*${2}[^>]*>)+<\\\/Z>$3<\\\/B>)/;
 		}
 		# e.g. barewords or macros with no tags
 		else {
