@@ -57,18 +57,7 @@ then
 	echo "${DIR} already exists..."
 	exit
 fi
-echo "Creating directory structure..."
 mkdir ${DIR}
-mkdir ${PERLDIR}
-mkdir ${PERLDIR}/lib
-mkdir ${PERLDIR}/lib/Lingua
-mkdir ${PERLDIR}/lib/Lingua/${UPPERTEANGA}
-mkdir ${PERLDIR}/lib/Lingua/${UPPERTEANGA}/Gramadoir
-mkdir ${PERLDIR}/lib/Lingua/${UPPERTEANGA}/Gramadoir/Languages
-mkdir ${PERLDIR}/scripts
-mkdir ${PERLDIR}/share
-mkdir ${PERLDIR}/t
-
 
 echo "Computing good 3-grams from corpus..."
 togail "${TEANGA}" good 15 | sed 's/ *\([0-9]*\) \(.*\)/\2 \1/'  | recoder > ${DIR}/3grams-${TEANGA}.txt
