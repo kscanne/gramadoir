@@ -79,6 +79,11 @@ byte_to_markup_ga (const unsigned char c, char *fill, char *attrs)
   else if (pos == 1 || pos == 2)
     {
       strcpy (attrs, "");
+      if (c == (unsigned char) 127)
+	{
+	  strcpy (fill, "F");
+	  return 0;
+	}
       if (pos == 1)
 	strcpy (fill, "N");
       else
