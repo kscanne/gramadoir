@@ -66,11 +66,15 @@ allperl : $(ALLIN) lastperl
 
 installcheck : FORCE
 	@$(bindir)/gr --iomlan triail | sed "s/^[0-9]*: //" > triail.tmp
-	@$(bindir)/gr --iomlan --ionchod=UTF8 triail.utf | sed "s/^[0-9]*: //; s/\.utf//" > triail3.tmp
 	@cat triail.err | sed "s/^[0-9]*: //" > triail2.tmp
-	@if diff triail2.tmp triail.tmp && diff triail3.tmp triail.tmp; then $(ECHO) 'Ceart go leor.'; else $(ECHO) 'Fadhb.'; fi
-	@rm -f triail.tmp triail2.tmp triail3.tmp
+	@if diff triail2.tmp triail.tmp; then $(ECHO) 'OK.'; else $(ECHO) 'Problem.'; fi
+	@rm -f triail.tmp triail2.tmp
 
+utfcheck : triail.utf
+	@$(bindir)/gr --iomlan --ionchod=UTF8 triail.utf | sed "s/^[0-9]*: //; s/\.utf//" > triail.tmp
+	@cat triail.err | sed "s/^[0-9]*: //" > triail2.tmp
+	@if diff triail2.tmp triail.tmp; then $(ECHO) 'OK.'; else $(ECHO) 'Problem.'; fi
+	@rm -f triail.tmp triail2.tmp
 
 install : all installdirs
 	$(INSTALL_DATA) eile.bs $(pkgdatadir)/eile.bs
@@ -125,7 +129,7 @@ clean :
 	$(MAKE) topclean
 
 semiclean :
-	rm -f triail.html cabhair.o cabhair y.tab.* $(LEX_OUTPUT_ROOT).* aonchiall.y eisceacht.y rialacha.y
+	rm -f triail.html cabhair.o cabhair y.tab.* $(LEX_OUTPUT_ROOT).* aonchiall.y eisceacht.y rialacha.y triail.utf
 
 ###############################################
 # Remaining targets are for use by developers #
@@ -191,7 +195,6 @@ dist : FORCE
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/TEANGACHA
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/triail
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/triail.err
-	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/triail.utf
 	for infile in $(ALLIN); do \
 		tar rvhf $(TARBALL).tar -C .. $(TARBALL)/$$infile; \
 	done
@@ -206,8 +209,8 @@ triail.err : FORCE
 	gr --iomlan triail > triail.err
 
 triail.utf : FORCE
-	rm -f triail.utf
-	cat triail | iconv -f ISO88591 -t UTF8 > triail.utf
+	@rm -f triail.utf
+	@cat triail | iconv -f ISO88591 -t UTF8 > triail.utf
 
 focail.bs : FORCE
 	$(MAKE) cabhair
