@@ -209,7 +209,7 @@ locale_ok : $(PERLDOK)
 	touch locale_ok
 
 .in.pl :
-	cat "$<" | LC_ALL="C" $(PERL) $(GRAMDIR)/gin.meta.pl `sed -n '/<[A-Z] /{s/^[0-9]* <\([A-Z]\).*/\1/; p;}' pos-ga.txt | sort -u | tr -d "\n"` | LC_ALL="C" $(PERL) -p macra-${TEANGA}.meta.pl | LC_ALL="C" $(PERL) -p $(GRAMDIR)/`$(ECHO) $< | sed 's/-.*//'`.meta.pl | sed 's/^/\t/' > $@
+	cat "$<" | LC_ALL="C" $(PERL) $(GRAMDIR)/gin.meta.pl `sed -n '/<[A-Z] /{s/^[0-9]* <\([A-Z]\).*/\1/; p;}' pos-$(TEANGA).txt | sort -u | tr -d "\n"` | LC_ALL="C" $(PERL) -p macra-${TEANGA}.meta.pl | LC_ALL="C" $(PERL) -p $(GRAMDIR)/`$(ECHO) $< | sed 's/-.*//'`.meta.pl | sed 's/^/\t/' > $@
 
 giorr-$(TEANGA).pl : giorr-$(TEANGA).txt giorr-$(TEANGA).pre
 	(cat giorr-$(TEANGA).pre | $(EGREP) '^s/' | sed 's/^/\t/'; cat giorr-$(TEANGA).txt | sed 's/ .*//' | sed 's/.*/\ts\/([^@BDCHARS@@INTCHARS@]&)\\.\/$$1\\\\.\/g;/') > $@
