@@ -34,6 +34,9 @@ s/ 252/ 204/;
 s/ 253/ 205/;
 s/ 254/ 206/;
 s/ 255/ 207/;
+# oiread is treated as masculine in genitive
+s/^((?:[md]'|n-)?oiread) 88$/$1 92/;
+s/^(hoiread) 90$/$1 94/;
 # Next datives...
 s/^(hathláimh) 66$/$1 67/;
 s/^((?:n-|[bmd]')?athláimh) 6[46]$/$1 65/;
