@@ -21,7 +21,7 @@
 # development or debugging purposes.   The standard GNU --version and
 # --help options work in the expected way.
 
-CLAR='gramadóir'        # title that prints to screen, not used as filename
+CLAR='An Gramadóir'        # title that prints to screen, not used as filename
 
 # i18n strings; use gettext eventually
 checking='Ag seiceáil'
@@ -161,19 +161,19 @@ d
 #  that...     distinguishing between ...  is sometimes much harder.
 aonchiall()
 {
-perl @prefix@/libexec/aonchiall.pl
+@PERL@ @prefix@/libexec/aonchiall.pl
 }
 
 # This is the workhorse.  It does the actually marking up of errors.
 rialacha()
 {
-perl @prefix@/libexec/rialacha.pl
+@PERL@ @prefix@/libexec/rialacha.pl
 }
 
 # This strips off errors from exceptions to rules
 eisceacht()
 {
-perl @prefix@/libexec/eisceacht.pl
+@PERL@ @prefix@/libexec/eisceacht.pl
 }
 
 # This is the final filter used by the "gr" program.
