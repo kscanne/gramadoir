@@ -71,19 +71,16 @@ of the programs above, but I haven't tried it yet.
 <h2>Installation and Usage</h2>
 
 <p>
-<a href="sios.html">Download</a> the tarball and 
-unpack the files:
+First, <a href="sios.html">Download</a> the tarball.
+Then (assuming you want to install to /usr/local and you
+have the appropriate permissions) 
+try the following standard installation process:
 </p>
 <pre>
 % gunzip gramadoir-x.x.tar.gz
 % tar xvf gramadoir-x.x.tar
 % cd gramadoir-x.x
-</pre>
-
-<p>
-There is no <i>configure</i> script.   Just try:
-</p>
-<pre>
+% ./configure
 % make
 % make install
 % make check
