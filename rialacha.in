@@ -1,68 +1,278 @@
 # This file contains the grammatical rules which are checked by gr
 # Users can add to this list by following the syntax described 
-# on the web page:  http://borel.slu.edu/gr/
+# on the web page:  http://borel.slu.edu/gramadoir/
 # Please send me any useful additional rules for inclusion in
 # future releases: <scannell@slu.edu>
-<X></X>:ANAITHNID
+# <X></X>:ANAITHNID
+# CB p.16 #9.a  (needs shallow parse)
+#<NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+# CB p.16 #9.b  (needs shallow parse)
+#<NMGS></NMGS> <A>UNLENITED</A>:SEIMHIU
+# CB p.16 #9.c
+<NP>SLENDERFINALCONSONANT</NP> <A>UNLENITED</A>:SEIMHIU
+# CB p.13 #4.a
 <S>a</S> <N>UNLENITED</N>:SEIMHIU
+# CB p.16 #7 (N), p.18 #10 (A)
+<V>[Aa]b</V> UNLENITED:SEIMHIU
+# CB p.14 Note
 [Aa]ch <N>LENITED</N>:NISEIMHIU
+# CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 [Aa][grs] <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+# CB p.17 #9.h
+[Aa][grs] <T>an</T> <NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+# CB p.14 Note
 [Aa][gs] <N>LENITED</N>:NISEIMHIU
+# CB p.14 Note
 [Aa]mhail <N>LENITED</N>:NISEIMHIU
-<T>[Aa]n</T> <NFCS>UNLENITEDBCFGMP</NFCS>:SEIMHIU 
+# CB p.22 #7.b
+<Q>[Aa]n</Q> <V>UNECLIPSED</V>:URU
+# CB p.12 #1.a
+<^S></^S> <T>[Aa]n</T> <NFCS>UNLENITEDBCFGMP</NFCS>:SEIMHIU 
+# CB p.12 #1.b
 <T>[Aa]n</T> <NMGS>UNLENITEDBCFGMP</NMGS>:SEIMHIU 
-[Aa]on <N>UNLENITEDBCFGMP</N>:SEIMHIU
+# CB p.23 #9
+<T>[Aa]n</T> <NFCS>INITIALS</NFCS>:PREFIXT 
+# CB p.23 #10
+<T>[Aa]n</T> <NMGS>INITIALS</NMGS>:PREFIXT 
+# CB p.6 #1
+<T>[Aa]n</T> <NFGS></NFGS>:BACHOIR{na}
+# CB p.6 #1
+<T>[Aa]n</T> <NP></NP>:BACHOIR{na}
+# CB p.13 #3.c
+<A>[Aa]on</A> <N>UNLENITEDBCFGMP</N>:SEIMHIU
+# CB p.19 #13
+<Q>[Aa]r</Q> <V>UNLENITED</V>:SEIMHIU
+# CB p.20 1.a
+<D>[Áá]r</D> UNECLIPSED:URU
+# CB p.20 1.b
+<D>[Áá]r</D> dhá <N>UNECLIPSED</N>:URU
+# CB p.16 #7 (N), p.18 #10 (A)
+<V>[Aa]rbh</V> UNLENITEDF:SEIMHIU
+# CB p.16 #7 (N), p.18 #10 (A)
+<V>[Bb]a</V> UNLENITED:SEIMHIU
+# CB p.5 #17
+<V>[Bb]a</V> INITIALVOWELORF:BACHOIR{b+uaschamóg}
+# CB p.13 #3.e
 [Bb]eirt <N>UNLENITED</N>:SEIMHIU
-[Cc]héad <N>UNLENITEDBCFGMP</N>:SEIMHIU
+# CB p.16 #9.d
+[Bb]h?eirte? <N></N> <A>UNLENITED</A>:SEIMHIU
+# CB p.20 1.a
+<D>[Bb]hur</D> UNECLIPSED:URU
+# CB p.20 1.b
+<D>[Bb]hur</D> dhá <N>UNECLIPSED</N>:URU
+# CB p.22 #7.c
+<Q>[Cc]á</Q> <V>UNECLIPSED</V>:URU
+# CB p.24 #11.a.iii
+<Q>[Cc]á</Q> <N>INITIALVOWEL</N>:PREFIXH
+# CB p.19 #13
+<Q>[Cc]ár</Q> <V>UNLENITED</V>:SEIMHIU
+# CB p.24 #11.c
+<Q>[Cc]é</Q> <P>INITIALVOWEL</P>:PREFIXH
+# CB p.6 #2
+<Q>[Cc]é</Q> <T>an</T>:BACHOIR{cén}
+# CB p.24 #11.a.x
+[Cc]eithre uaire:PREFIXH
+# CB p.13 #3.f
 [Cc]eithre <NCS>UNLENITED</NCS>:SEIMHIU
-[Cc]huig <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
-[Cc]huig <N>LENITED</N>:NISEIMHIU
+# CB p.13 #3.c
+<A>[Cc]héad</A> <N>UNLENITEDBCFGMP</N>:SEIMHIU
+# CB p.24 #11.b.ii
+<R>[Cc]homh</R> <A>INITALVOWEL</A>:PREFIXH
+# CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
+<S>[Cc]huig</S> <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+# CB p.17 #9.h
+<S>[Cc]huig</S> <T>an</T> <NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+# CB p.14 Note
+<S>[Cc]huig</S> <N>LENITED</N>:NISEIMHIU
+# CB p.14 Note
 [Cc]hun <N>LENITED</N>:NISEIMHIU
+# CB p.13 #3.f
 [Cc]úig <NCS>UNLENITED</NCS>:SEIMHIU
-[Dd]ar <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
-[Dd]ar <N>LENITED</N>:NISEIMHIU
+# CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
+<S>[Dd]ar</S> <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+# CB p.17 #9.h
+<S>[Dd]ar</S> <T>an</T> <NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+# CB p.14 Note
+<S>[Dd]ar</S> <N>LENITED</N>:NISEIMHIU
+[Dd]há UNLENITED:SEIMHIU
+# CB p.24 #11.a.iv
+Dé Aoine:PREFIXH
+# CB p.20 #1.c
+[Dd]eich <N>UNECLIPSED</N>:URU
+# CB p.12 #3.a (<D>do</D>), CB p.13 #4.a (<S>d[eo]</S>)
 [Dd][eo] <N>UNLENITED</N>:SEIMHIU
+# CB p.12 #1.c.i
 [Dd][eo]n <N>UNLENITEDBCFGMP</N>:SEIMHIU
-[Dd]o INITIALVOWELORF:BACHOIR{d+uaschama}
-[Dd]o an:BACHOIR{don}
+# CB p.17 #9.g
+[Dd][eo]n <NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+# CB p.6 #2
+[Dd]e <T>an</T>:BACHOIR{den}
+# CB p.6 #2
+[Dd]o <T>an</T>:BACHOIR{don}
+# CB p.5 #17
+[Dd][eo] <N>INITIALVOWELORF</N>:BACHOIR{d+uaschamóg}
 [Dd]o a:BACHOIR{dá}
 [Dd]o ár:BACHOIR{dár}
-[Ff]aoi <N>UNLENITED</N>:SEIMHIU
-[Ff]aoin <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+# CB p.18 #9.j
+[Dd]ó déag:SEIMHIU
+# CB p.13 #4.a
+<S>[Ff]aoi</S> <N>UNLENITED</N>:SEIMHIU
+# CB p.6 #2
+<S>[Ff]aoi</S> <T>an</T>:BACHOIR{faoin}
+# CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
+<S>[Ff]aoin</S> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+# CB p.17 #9.h
+<S>[Ff]aoin</S> <NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+# CB p.16 #8.c
+Fh?éile LENITED:NISEIMHIU
+# CB p.14 #4.c.i
+<S>[Gg]an</S> LENITEDDFST:NISEIMHIU
+# CB p.14 #4.c.iv
+<S>[Gg]an</S> <Y></Y>:NISEIMHIU
+# CB p.24 #11.a.v, #11.b.ii
+[Gg]o INITIALVOWEL:PREFIXH
+# CB p.14 Note
 [Gg]o <N>LENITED</N>:NISEIMHIU
-[Ii] <N>UNECLIPSED</N>:URU
-[Ii] <N>LENITED</N>:NISEIMHIU
-[Ii] [Bb]hur:BACHOIR{in_bhur}
-[Ii] [Dd]há:BACHOIR{in_dhá}
-[Ii] [Aa]n:BACHOIR{sa}
-[Ii] [Nn]a:BACHOIR{sna}
-[Ii] <D>a</D>:BACHOIR{ina}
-[Ii] <D>ár</D>:BACHOIR{inár}
-[Ii] <U>a</U>:BACHOIR{ina}
-[Ii] <U>ar</U>:BACHOIR{inar}
-[Ii]onsar <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
-[Ll]e <N>LENITED</N>:NISEIMHIU
-[Ll]e an:BACHOIR{leis_an}
-[Ll]e na:BACHOIR{leis_na}
-[Ll]eis <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
-[Mm]ar <N>UNLENITED</N>:SEIMHIU
-[Mm]o INITIALVOWELORF:BACHOIR{m+uaschama}
-[Mm]o <N>UNLENITED</N>:SEIMHIU
-[Mm]urach <N>LENITED</N>:NISEIMHIU
+# CB p.14 Note
+[Gg]o dtí <N>LENITED</N>:NISEIMHIU
+# CB p.19 #13
+<C>gur</C> <V>UNLENITED</V>:SEIMHIU
+# CB p.16 #7 (N), p.18 #10 (A)
+<V>[Gg]urbh</V> UNLENITEDF:SEIMHIU
+# CB p.20 #1.c
+<S>[Ii]</S> <N>UNECLIPSED</N>:URU
+# CB p.14 Note
+<S>[Ii]</S> <N>LENITED</N>:NISEIMHIU
+# CB p.20 Note
+<S>[Ii]</S> [Bb]hur:BACHOIR{in_bhur}
+# CB p.20 Note
+<S>[Ii]</S> [Dd]há:BACHOIR{in_dhá}
+# CB p.6 #2
+<S>[Ii]</S> [Aa]n:BACHOIR{sa}
+<S>[Ii]</S> [Nn]a:BACHOIR{sna}
+<S>[Ii]</S> <D>a</D>:BACHOIR{ina}
+<S>[Ii]</S> <D>ár</D>:BACHOIR{inár}
+<S>[Ii]</S> <U>a</U>:BACHOIR{ina}
+<S>[Ii]</S> <U>ar</U>:BACHOIR{inar}
+# CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
+<S>[Ii]onsar</S> <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+# CB p.17 #9.h
+<S>[Ii]onsar</S> <T>an</T> <NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+# CB p.14 Note
+<S>[Ll]e</S> <N>LENITED</N>:NISEIMHIU
+# CB p.24 #11.a.v (N) #11.b.ii (A) #11.c (P)
+<S>[Ll]e</S> INITALVOWEL:PREFIXH
+# CB p.6 #2
+<S>[Ll]e</S> <T>an</T>:BACHOIR{leis_an}
+# CB p.6 #2
+<S>[Ll]e</S> <T>na</T>:BACHOIR{leis_na}
+# CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
+<S>[Ll]eis</S> <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+# CB p.17 #9.h
+<S>[Ll]eis</S> <T>an</T> <NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+# CB p.19 #13
+<C>[Mm]á</C> <V>UNLENITED</V>:SEIMHIU
+# CB p.13 #4.a
+<S>[Mm]ar</S> <N>UNLENITED</N>:SEIMHIU
+# CB p.5 #17
+<D>[Mm]o</D> <N>INITIALVOWELORF</N>:BACHOIR{m+uaschamóg}
+# CB p.12 #3.a
+<D>[Mm]o</D> <N>UNLENITED</N>:SEIMHIU
+# CB p.22 #7.f
+<C>[Mm]ura</C> <V>UNECLIPSED</V>:URU
+# CB p.14 Note
+<C>[Mm]urach</C> <N>LENITED</N>:NISEIMHIU
+# CB p.19 #13
+<C>[Mm]urar</C> UNLENITED:SEIMHIU
+# CB p.21 #2.b
+<T>na</T> <NGP>UNECLIPSED</NGP>:URU
+# CB p.24 #11.a.vi
+<T>na</T> <NFGS>INITIALVOWEL</NFGS>:PREFIXH
+# CB p.24 #11.a.vii (eclipsis in genitive plural, rule above)
+<T>na</T> <NCP>INITIALVOWEL</NCP>:PREFIXH
+# CB p.24 #11.d
+[Nn]á <V>INITIALVOWEL</V>:PREFIXH
+# CB p.14 Note
 [Nn]á <N>LENITED</N>:NISEIMHIU
-[Nn]íorbh <N>UNLENITED</N>:SEIMHIU
+# CB p.22 #7.e
+[Nn]ach <V>UNECLIPSED</V>:URU
+# CB p.20 #1.c
+[Nn]aoi <N>UNECLIPSED</N>:URU
+# CB p.16 #8.c
+Naomh LENITED:NISEIMHIU
+# CB p.16 #7 (N), p.18 #10 (A), p.19 #13 (V)
+[Nn]ár UNLENITED:SEIMHIU
+# CB p.16 #7 (N), p.18 #10 (A)
+<V>[Nn]árbh</V> UNLENITEDF:SEIMHIU
+# CB p.19 #13
+[Nn]í <V>UNLENITED</V>:SEIMHIU
+# CB p.24 #11.c
+[Nn]í <P>INITIALVOWEL</P>:PREFIXH
+# CB p.16 #7 (N), p.18 #10 (A), p.19 #13 (V)
+[Nn]íor UNLENITED:SEIMHIU
+# CB p.16 #7 (N), p.18 #10 (A)
+<V>[Nn]íorbh</V> UNLENITEDF:SEIMHIU
+# CB p.13 #4.a
 <S>[Óó]</S> <N>UNLENITED</N>:SEIMHIU
-[Óó]n <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+# CB p.6 #2
+<S>[Óó]</S> <T>an</T>:BACHOIR{ón}
+# CB p.20 #1.c
+[Oo]cht <N>UNECLIPSED</N>:URU
+# CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
+<S>[Óó]n</S> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+# CB p.17 #9.h
+<S>[Óó]n</S> <NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+# CB p.14 Note
 [Oo]s <N>LENITED</N>:NISEIMHIU
-[Rr]oimh <N>UNLENITED</N>:SEIMHIU
-[Ss]a INITIALVOWELORF:BACHOIR{san}
-[Ss]a UNLENITEDBCGMP:SEIMHIU
-[Ss]a <NFCS>INITIALS</NFCS>:PREFIXT
-[Ss]an UNLENITEDF:SEIMHIU
+# CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
+<S>[Rr]oimh</S> <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+# CB p.17 #9.h
+<S>[Rr]oimh</S> <T>an</T> <NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+# CB p.13 #4.a
+<S>[Rr]oimh</S> <N>UNLENITED</N>:SEIMHIU
+# CB p.6 #2
+<S>[Ss]a</S> INITIALVOWELORF:BACHOIR{san}
+# CB p.12 #1.c.i
+<S>[Ss]a</S> UNLENITEDBCGMP:SEIMHIU
+# CB p.23 #9 (subtle - implicit article)
+<S>[Ss]a</S> <NFCS>INITIALS</NFCS>:PREFIXT
+# CB p.17 #9.g
+<S>[Ss]an?</S> <NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+# CB p.16 #8.c
+<N>San</N> LENITED:NISEIMHIU
+# CB p.12 #1.c.i
+<S>[Ss]an</S> UNLENITEDF:SEIMHIU
+# CB p.24 #11.a.x
+[Ss]é uaire:PREFIXH
+# CB p.13 #3.f
 <A>[Ss]é</A> <NCS>UNLENITED</NCS>:SEIMHIU
-[Ss]eachas <N>LENITED</N>:NISEIMHIU
+# CB p.14 Note
+<S>[Ss]eachas</S> <N>LENITED</N>:NISEIMHIU
+# CB p.20 #1.c
+[Ss]eacht <N>UNECLIPSED</N>:URU
+# CB p.22 #7.g
+<C>[Ss]ula</C> UNECLIPSED:URU
+# CB p.19 #13
+<C>sular</C> <V>UNLENITED</V>:SEIMHIU
+# CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 [Tt]har <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
-[Tt]rí <N>UNLENITED</N>:SEIMHIU
+# CB p.17 #9.h
+<S>[Tt]har</S> <T>an</T> <NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+# CB p.24 #11.a.x
+[Tt]rí uaire:PREFIXH
+# CB p.6 #2
+[Tt]rí <T>an</T>:BACHOIR{tríd}
+# CB p.13 #3.f (<A>trí</A>) p.13 #4.a (<S>trí</S>)
+[Tt]rí <NCS>UNLENITED</NCS>:SEIMHIU
+# CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 [Tt]ríd <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
-[Uu]ile UNLENITED:SEIMHIU
-[Uu]m <N>UNLENITED</N>:SEIMHIU
+# CB p.17 #9.h
+<S>[Tt]ríd</S> <T>an</T> <NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+# CB p.13 #3.b
+[Uu]ile <N>UNLENITED</N>:SEIMHIU
+# CB p.13 #4.a
+<S>[Uu]m</S> <N>UNLENITED</N>:SEIMHIU
+# CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
+<S>[Uu]m</S> <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+# CB p.17 #9.h
+<S>[Uu]m</S> <T>an</T> <NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
