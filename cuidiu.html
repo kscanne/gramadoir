@@ -144,6 +144,16 @@ The tag syntax
 "&lt;[^S]&gt;do&lt;/[^S]&gt;"
 is permitted as well; this will match instances of the word "do"
 which are <em>not</em> prepositions.
+Complicated regular expressions should be defined as 
+macros in <i>macra-xx.meta.pl</i>; simple expressions
+such as optional substrings or alternation are fine:
+<pre>
+(bh)?fh?ás
+</pre>
+In such cases, you should avoid using "non-capturing parentheses"
+and plain (capturing) parentheses as above; the conversion scripts 
+will treat these correctly when generating the 
+final Perl code.
 </p>
 
 <p>
