@@ -194,25 +194,17 @@ perl : FORCE
 perldb : FORCE
 	bash buildperl ga Irish y native @PACKAGE_VERSION@
 
-debug : FORCE
-	$(MAKE) all
-	cat ./gr | sed -f debug.sed > gr-debug
-	mv -f gr-debug gr
-
 benchmark : FORCE
-	@rm -f ./DEBUG.log
-	@if gr --version | grep DEBUG > /dev/null; \
-	then \
-		benchcorp | gr --iomlan > /dev/null; \
-		rm -f ./DEBUG?; \
-		cat DEBUG.log | bash bmtabla >> ../eile/benchmarks; \
-		vi ../eile/benchmarks; \
-	else \
-		echo "You need to \"make debug\" and \"make install\" first."; \
-	fi
+	benchcorp | LC_ALL=ga_IE perl -d:DProf /usr/bin/gram-ga.pl --iomlan --dath=none > /dev/null
+	bash bmtabla >> ../eile/benchmarks
+	vi ../eile/benchmarks
+	rm -f tmon.out
 
 triail.html : FORCE
 	gr --html triail > triail.html
+
+triail.xml : FORCE
+	LC_ALL=ga_IE gram-ga.pl --api --iomlan --aspell triail > triail.xml
 
 maintainer-clean :
 	$(MAKE) distclean
@@ -220,6 +212,9 @@ maintainer-clean :
 
 ChangeLog : FORCE
 	cvs2cl.pl
+
+CHANGES : FORCE
+	vilistextum stair.html - | sed -n '/^ChangeLog/,/----/p' | egrep -v -- '---' > CHANGES
 
 zipped : FORCE
 	(cd Lingua-GA-Gramadoir; make distclean; find . -name '*.hash' | xargs rm -f)
