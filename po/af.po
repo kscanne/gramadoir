@@ -1,0 +1,309 @@
+# An Gramadóir - The Grammarian
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Petri Jooste <rkwjpj@puk.ac.za>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramadoir 0.4\n"
+"Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
+"POT-Creation-Date: 2004-01-08 22:32-0600\n"
+"PO-Revision-Date: 2004-03-02 16:38+0200\n"
+"Last-Translator: Petri Jooste <rkwjpj@puk.ac.za>\n"
+"Language-Team: Afrikaans <i18n@af.org.za>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. TRANSLATORS: Please leave untranslated, but add an acute accent to the
+#. "o" in "Gramadoir" if available in your character set and encoding.
+#. If you must translate, this is the Irish for (literally) "The Grammarian"
+#: gr.in:48
+msgid "An Gramadoir"
+msgstr "An Gramadóir"
+
+#: gr.in:49
+msgid "Currently checking %s"
+msgstr "%s word tans nagegaan"
+
+#: gr.in:50
+msgid "There is no such file."
+msgstr "Daardie lêer bestaan nie."
+
+#: gr.in:51
+msgid "Is a directory"
+msgstr "Dit is 'n lêergids"
+
+#: gr.in:52
+msgid "Permission denied"
+msgstr "Toegang geweier"
+
+#: gr.in:53
+msgid "Usage: %s [OPTIONS] [FILES]"
+msgstr "Gebruik so: %s [OPSIES] [LÊERS]"
+
+#: gr.in:54
+msgid "Options for end-users:"
+msgstr "Opsies vir eindgebruikers:"
+
+#. TRANSLATORS: ~/.neamhshuim is an "ignore file" like those with spellcheckers
+#: gr.in:57
+msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
+msgstr "    --iomlan       wys alle foute (d.w.s. ignoreer die lêer ~/.neamhshuim)"
+
+#: gr.in:58
+msgid "    --ionchod=ENC  specify the character encoding of the text to be checked"
+msgstr "    --ionchod=ENC  spesifiseer die karakterkodering van die teks wat nagegaan moet word"
+
+#: gr.in:59
+msgid "    --litriu       write misspelled words to standard output"
+msgstr "    --litriu       skryf spelfoute na standaardafvoer"
+
+#: gr.in:60
+msgid "    --aspell       suggest corrections for misspellings (requires GNU aspell)"
+msgstr "    --aspell       maak suggesties vir spelfoute (benodig GNU aspell)"
+
+#: gr.in:61
+msgid "    --teanga=XX    specify the language of the text to be checked (default=ga)"
+msgstr "    --teanga=XX    spesifiseer die taal van die teks wat nagegaan moet word (verstek=ga)"
+
+#: gr.in:62
+msgid "    --help         display this help and exit"
+msgstr "    --help         wys hierdie hulpteks en stop"
+
+#: gr.in:63
+msgid "    --version      output version information and exit"
+msgstr "    --version      wys weergawe-inligting en stop"
+
+#: gr.in:64
+msgid "Options for developers:"
+msgstr "Opsies vir ontwikkelaars:"
+
+#. TRANSLATORS: "disambiguation" is a term from natural language processing.
+#. Here it means the process of deciding, for a given word with several
+#. possible parts of speech (noun, verb, etc.), the correct part of speech
+#. given the context.  Brill's algorithm is "unsupervised" because it relies
+#. only on statistics gathered from texts which have not been tagged in advance.
+#: gr.in:71
+msgid "    --brill        find disambiguation rules via Brill's unsupervised algorithm"
+msgstr "    --brill        bepaal reëls vir ondubbelsinnigmaking deur Brill se toesiglose algoritme"
+
+#: gr.in:72
+msgid "    --html         produce HTML output for viewing in a web browser"
+msgstr "    --html         produseer HTML-afvoer wat met 'n webblaaier bekyk kan word"
+
+#: gr.in:73
+msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
+msgstr "    --ilchiall     wys onopgeloste dubbelsinnighede, gesorteer volgens frekwensie"
+
+#: gr.in:74
+msgid "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
+msgstr "    --minic        wys alle merkers, gesorteer volgens frekwensie (vir unigram-xx.txt)"
+
+#. TRANSLATORS: By default, if there is no rule in the disambiguation module
+#. for selecting the correct part of speech of an ambiguous word, the program
+#. chooses the part of speech with the highest frequency.  This is sometimes
+#. called "unigram" tagging.   The --no-unigram option turns this behavior off.
+#: gr.in:80
+msgid "    --no-unigram   do not resolve ambiguous parts of speech by frequency"
+msgstr "    --no-unigram   moenie frekwensie gebruik om dubbelsinnige woordsoorte op te los nie"
+
+#. TRANSLATORS: The grammar checker works by piping the input text
+#. through a sequence of filters which add XML markup indicating
+#. important grammatical information.  The --xml option displays the
+#. marked up file as an aid in debugging.
+#: gr.in:86
+msgid "    --xml          write tagged XML stream to standard output, for debugging"
+msgstr "    --xml          skryf die XML-stroom met merkers na standaardafvoer, vir ontfouting"
+
+#: gr.in:87
+msgid "If no file is given, read from standard input."
+msgstr "As geen lêer gegee is nie, lees van standaardtoevoer"
+
+#: gr.in:88
+msgid "Send bug reports to <%s>."
+msgstr "Stuur foutverslae aan <%s>."
+
+#: gr.in:89
+msgid "version %s"
+msgstr "weergawe %s"
+
+#: gr.in:90
+msgid "This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law."
+msgstr "Hierdie is vry sagteware; sien die bronkode vir kopieervoorwaardes.  Daar is GEEN\\nwaarborg nie; selfs nie eers vir MERCHANTABILITY of GESKIKTHEID VIR 'N SPESIFIEKE DOEL nie,\\ntot die mate wat deur die wet toegelaat word."
+
+#: gr.in:91
+msgid "Try %s for more information."
+msgstr "Probeer %s vir meer inligting."
+
+#: gr.in:92
+msgid "unrecognized option %s"
+msgstr "onbekende opsie %s"
+
+#: gr.in:93
+msgid "option %s requires an argument"
+msgstr "opsie %s: benodig 'n parameter"
+
+#: gr.in:94
+msgid "option %s does not allow an argument"
+msgstr "opsie %s laat nie 'n parameter toe nie"
+
+#: gr.in:95 farc.c.in:18 farc.c.in:30 farc.c.in:42
+#, c-format
+msgid "Language %s is not supported."
+msgstr "Taal %s word nie ondersteun nie."
+
+#. TRANSLATORS: "conversion" here means conversion between character encodings
+#: gr.in:98
+msgid "conversion from %s is not supported"
+msgstr "Omsetting van %s word nie ondersteun nie"
+
+#: gr.in:99
+msgid "aspell-%s is not installed"
+msgstr "aspell-%s is nie geïnstalleer nie"
+
+#: gr.in:100
+msgid "Unknown word"
+msgstr "Onbekende woord"
+
+#. TRANSLATORS: only two unknown words are reported per sentence
+#: gr.in:103
+msgid "Unknown word (ignoring remainder in this sentence)"
+msgstr "Onbekende woord (die res van die sin word geïgnoreer)"
+
+#: gr.in:104
+msgid "Valid word but extremely rare in actual usage"
+msgstr "Geldige woord, maar baie seldsaam"
+
+#: gr.in:105
+msgid "Usually used in the set phrase \\/\\1\\/"
+msgstr "Word normaalweg gebruik in die vaste konstruksie \\/\\1\\/"
+
+#: gr.in:106
+msgid "You should use \\/\\1\\/ here instead"
+msgstr "U moet hier eerder \\/\\1\\/ gebruik"
+
+#: gr.in:107
+msgid "Non-standard form: perhaps use \\/\\1\\/?"
+msgstr "Nie-standaardvorm: gebruik miskien \\/\\1\\/?"
+
+#. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
+#: gr.in:110
+#, fuzzy
+msgid "Initial mutation missing"
+msgstr "Initial mutation missing"
+
+#. TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
+#. It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
+#: gr.in:114
+#, fuzzy
+msgid "Unnecessary lenition"
+msgstr "Unnecessary lenition"
+
+#: gr.in:115
+msgid "Prefix \\/h\\/ missing"
+msgstr "Voorvoegsel \\/h\\/ ontbreek"
+
+#: gr.in:116
+msgid "Prefix \\/t\\/ missing"
+msgstr "Voorvoegsel \\/t\\/ ontbreekkdesu is weg"
+
+#: gr.in:117
+#, fuzzy
+msgid "Lenition missing"
+msgstr "Lenition missing"
+
+#. TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
+#. initial consonants in Irish.  It is indicated in writing by the addition
+#. of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
+#: gr.in:122
+#, fuzzy
+msgid "Eclipsis missing"
+msgstr "Eclipsis missing"
+
+#: gr.in:123
+msgid "Repeated word"
+msgstr "Herhaalde woord"
+
+#: gr.in:124
+msgid "Unusual combination of words"
+msgstr "Ongewone kombinasie van woorde"
+
+#: gr.in:125
+msgid "Comparative adjective required"
+msgstr "Vergelykende adjektief benodig"
+
+#: gr.in:126
+msgid "Unnecessary prefix \\/h\\/"
+msgstr "Onnodige voorvoegsel \\/h\\/"
+
+#: gr.in:127
+msgid "Unnecessary prefix \\/t\\/"
+msgstr "Onnodige voorvoegsel \\/t\\/"
+
+#: gr.in:128
+msgid "Unnecessary use of the definite article"
+msgstr "Onnodige gebruik van die bepaalde lidwoord"
+
+#: gr.in:129
+msgid "The genitive case is required here"
+msgstr "Die genitief word hier benodig"
+
+#: cuardach.c:88 cuardach.c:107 cuardach.c:150 cuardach.c:223
+#, c-format
+msgid "%s: out of memory\n"
+msgstr "%s: te min geheue\n"
+
+#: cuardach.c:97
+#, c-format
+msgid "%s: `%s' corrupted at %s\n"
+msgstr "%s: `%s' is korrup by at %s\n"
+
+#: cuardach.c:120 cuardach.c:161 cuardach.c:241
+#, c-format
+msgid "%s: warning: check size of %s: %d?\n"
+msgstr "%s: waarskuwing: gaan die groote na van %s: %d?\n"
+
+#: cuardach.c:125 cuardach.c:166 cuardach.c:247
+#, c-format
+msgid "%s: warning: problem closing %s\n"
+msgstr "%s: waarskuwing: problem met toemaak van %s\n"
+
+#: cuardach.c:453
+#, c-format
+msgid "%s: no grammar codes: %s\n"
+msgstr "%s: geen grammatika-kodes: %s\n"
+
+#: cuardach.c:581
+#, c-format
+msgid "problem with the `cuardach' command\n"
+msgstr "probleem met die `cuardach' bevel\n"
+
+#: cuardach.c:591
+#, c-format
+msgid "%s: problem reading the database\n"
+msgstr "%s: probleem met lees van databasis\n"
+
+#: farc.c.in:46
+#, c-format
+msgid "%s: illegal grammatical code\n"
+msgstr "%s: ongeldige grammatika-kode\n"
+
+#: ponc.in.y:63
+#, c-format
+msgid "There was %d error.\n"
+msgid_plural "There were %d errors.\n"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ponc.in.y:69
+#, c-format
+msgid "Successfully parsed %d rule.\n"
+msgid_plural "Successfully parsed %d rules.\n"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ponc.in.y:79
+#, c-format
+msgid "Line %d: %s\n"
+msgstr "Reël %d: %s\n"
