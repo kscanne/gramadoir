@@ -72,7 +72,7 @@ distclean :
 
 topclean :
 	$(MAKE) semiclean
-	rm -f aparser rparser *.c~ ChangeLog.bak
+	rm -f aparser rparser *.c~ ChangeLog.bak messages.pl
 
 clean :
 	cd po && $(MAKE) clean
