@@ -59,6 +59,7 @@ sin sin:OK
 #. Sílim nárbh ea, agus is docha nach bhfuil i gceist ach easpa smaoinimh.
 #    "MICHEART" common misspelling marked up
 #. Tá súil le feabhas nuair a thosóidh airgead ag teacht isteach ó ola agus gás i mBearna Timor.
+#. Bhí sí cosúil le claíomh Damocles ar crochadh sa spéir.
 #    also marked as "MICHEART" but this is "ag gaelú".
 #. Beidh nuachtáin shuaracha i ngreim cé nach mbeadh cinsireacht den droch-chinéal i gceist.
 #    "MIMHOIRF" derived from common misspelling
@@ -84,8 +85,11 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 <C>([Dd]á|[Gg]o|[Ss]ula|[Mm]ura)</C> <E><VSUBJ>ANYTHING</VSUBJ></E>:OK
 <U>[Nn]ár</U> <E><VSUBJ>ANYTHING</VSUBJ></E>:OK
 # CB p.138
-#. Ach bhí mé ag leanúint ar aghaidh an t-am ar fad leis.
+#. Déantar an glas seo a scriúáil ar chúl an doras.
 <S>COMPOUND</S> <T>ANYTHING</T> <NCS>ANYTHING</NCS>:GENITIVE
+#. Ach bhí mé ag leanúint ar aghaidh an t-am ar fad leis (OK).
+#. Bhain sé sult as clár toghcháin TG4 a chur i láthair an mhí seo caite (OK).
+<S>[Aa]g?</S> <N>ANYTHING</N> <E><S>COMPOUND</S> <T>ANYTHING</T> <NCS>ANYTHING</NCS></E>:OK
 #. Bhrostaigh sé go dtí an t-ospidéal (OK).
 <S>[Gg]o dtí</S> <T>ANYTHING</T> <NCS>ANYTHING</NCS>:OK
 # CB p.138; needs shallow parse; tar éis "an dinnéir" vs "dinnéar a dhéanamh"
@@ -101,7 +105,7 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 #. Sa dara alt, déan cur síos ar a bhfaca siad sa Spáinn.
 <A pl="n" gnt="n">[Dd]ara</A> <N>INITIALVOWEL</N>:PREFIXH
 #   note that prefix h on non-imperative V is handled by spelling...
-#. D'oirfeadh síol áitiúil níos fearr ná an síol a húsáidtear go minic.
+#. D'oirfeadh síol áitiúil níos fearr ná an síol a hadhlaic sé anuraidh.
 <VIMP>INITIALH</VIMP>:NIAITCH
 # CB p.24 #11.d
 #. Ná hinis do dhuine ar bith é (OK).
@@ -144,7 +148,7 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 <NFCS>ANYTHING</NFCS> <A pl="n" gnt="n">COMPOUND</A>:OK
 # corpus; exception to "lenite adj after feminine noun" (céad comes before)
 #. Léimeann an fharraige céad méadar suas sa spéir (OK).
-<NFCS>ANYTHING</NFCS> <A pl="n" gnt="n">(bainte|céad|curtha|deich|dulta|gach|seacht|seo|sin|tugtha)</A>:OK
+<NFCS>ANYTHING</NFCS> <A pl="n" gnt="n">(bainte|céad|cibé|curtha|deich|dulta|gach|seacht|seo|sin|tugtha)</A>:OK
 <N pl="n" gnt="n" gnd="f">[Bb]heith</N> <A pl="n" gnt="n">UNLENITED</A>:OK
 # next rule doesn't make sense: "bileog bholscaireachta dhátheangach" is fine
 # will need a shallow parse to link up adjectives to nouns they modify
@@ -171,7 +175,7 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 # corpus exceptions
 #. Mhair cuid mhór dár sinsir céad caoga bliain ó shin (OK).
 #. Tá sé le cloisteáil sna meáin gach seachtain (OK).
-<NP>SLENDERFINALCONSONANT</NP> <A pl="y" gnt="n">(bainte|curtha|dulta|tugtha)</A>:OK
+<NP>SLENDERFINALCONSONANT</NP> <A pl="y" gnt="n">(bainte|cibé|curtha|dulta|tugtha)</A>:OK
 # INPHRASE rule, but example sentence is best caught before "na" rules
 #. Maidin lá ar na mhárach thug a fhear gaoil cuairt air.
 <N pl="n" gnt="n">[Mm]hárach</N>:INPHRASE{arna mhárach}
@@ -476,7 +480,8 @@ INITIALMBAPOST:NIURU
 # CB p.6 #2, LGG p.26
 #. Cé an ceart atá agamsa a thuilleadh fós a lorg ar an rí?
 <Q>[Cc]é</Q> <T>an</T>:BACHOIR{cén}
-# corpus  (urú in the genitive plural)
+# OD céad^2 + corpus  (lenite in all cases except genitive plural => eclipse)
+#  a pretty common error....
 <T>ANYTHING</T> <A pl="n" gnt="n">céad</A>:CLAOCHLU
 # corpus
 <S>[Ss]na</S> <A pl="n" gnt="n">céad</A>:SEIMHIU
@@ -657,38 +662,46 @@ ndéag:CAIGHDEAN{déag}
 # CB p.74; correct forms in comhshuite, exceptions to existence of "a" p.75 #4
 #. Tabharfaidh an tUachtarán a óráid ag leath i ndiaidh a dó déag Dé Sathairn.
 n?[Dd]h?ó [Dd]h?éag:INPHRASE{a dó dhéag, dhá X déag}
+<A pl="n" gnt="n">[Aa] [Dd]ó</A> [Dd]éag:INPHRASE{a dó dhéag, dhá X déag}
 <A pl="n" gnt="n">[Dd]ó [Dd]héag</A>:INPHRASE{a dó dhéag, dhá X déag}
-[Aa] <E><A pl="n" gnt="n">[Dd]ó [Dd]héag</A></E>:OK
+# [Aa] <E><A pl="n" gnt="n">[Dd]ó [Dd]héag</A></E>:OK
 <C>[Nn]ó</C> <E><A pl="n" gnt="n">[Dd]ó [Dd]héag</A></E>:OK
 #. Bhuail an clog a trí dhéag.
 d?[Tt]h?rí [Dd]h?éag:INPHRASE{a trí déag, trí X déag}
+<A pl="n" gnt="n">[Aa] [Tt]rí</A> [Dd]héag:INPHRASE{a trí déag, trí X déag}
 #. Tá trí déag litir san fhocal seo.
 <A pl="n" gnt="n">[Tt]rí [Dd]éag</A>:INPHRASE{a trí déag, trí X déag}
-[Aa] <E><A pl="n" gnt="n">[Tt]rí [Dd]éag</A></E>:OK
+# [Aa] <E><A pl="n" gnt="n">[Tt]rí [Dd]éag</A></E>:OK
 <C>[Nn]ó</C> <E><A pl="n" gnt="n">[Tt]rí [Dd]éag</A></E>:OK
 g?[Cc]h?eathair [Dd]h?éag:INPHRASE{a ceathair déag, ceithre X déag}
+<A pl="n" gnt="n">[Aa] [Cc]eathair</A> [Dd]héag:INPHRASE{a ceathair déag, ceathair X déag}
 <A pl="n" gnt="n">[Cc]eathair [Dd]éag</A>:INPHRASE{a ceathair déag, ceithre X déag}
-[Aa] <E><A pl="n" gnt="n">[Cc]eathair [Dd]éag</A></E>:OK
+# [Aa] <E><A pl="n" gnt="n">[Cc]eathair [Dd]éag</A></E>:OK
 <C>[Nn]ó</C> <E><A pl="n" gnt="n">[Cc]eathair [Dd]éag</A></E>:OK
 g?[Cc]h?úig [Dd]h?éag:INPHRASE{a cúig déag, cúig X déag}
+<A pl="n" gnt="n">[Aa] [Cc]úig</A> [Dd]héag:INPHRASE{a cúig déag, cúig X déag}
 <A pl="n" gnt="n">[Cc]úig [Dd]éag</A>:INPHRASE{a cúig déag, cúig X déag}
-[Aa] <E><A pl="n" gnt="n">[Cc]úig [Dd]éag</A></E>:OK
+# [Aa] <E><A pl="n" gnt="n">[Cc]úig [Dd]éag</A></E>:OK
 <C>[Nn]ó</C> <E><A pl="n" gnt="n">[Cc]úig [Dd]éag</A></E>:OK
 [Ss]h?é [Dd]h?éag:INPHRASE{a sé déag, sé X déag}
+<A pl="n" gnt="n">[Aa] [Ss]é</A> [Dd]héag:INPHRASE{a sé déag, sé X déag}
 <A pl="n" gnt="n">[Ss]é [Dd]éag</A>:INPHRASE{a sé déag, sé X déag}
-[Aa] <E><A pl="n" gnt="n">[Ss]é [Dd]éag</A></E>:OK
+# [Aa] <E><A pl="n" gnt="n">[Ss]é [Dd]éag</A></E>:OK
 <C>[Nn]ó</C> <E><A pl="n" gnt="n">[Ss]é [Dd]éag</A></E>:OK
 [Ss]h?eacht [Dd]h?éag:INPHRASE{a seacht déag, seacht X déag}
+<A pl="n" gnt="n">[Aa] [Ss]eacht</A> [Dd]héag:INPHRASE{a seacht déag, seacht X déag}
 <A pl="n" gnt="n">[Ss]eacht [Dd]éag</A>:INPHRASE{a seacht déag, seacht X déag}
-[Aa] <E><A pl="n" gnt="n">[Ss]eacht [Dd]éag</A></E>:OK
+# [Aa] <E><A pl="n" gnt="n">[Ss]eacht [Dd]éag</A></E>:OK
 <C>[Nn]ó</C> <E><A pl="n" gnt="n">[Ss]eacht [Dd]éag</A></E>:OK
 h?[Oo]cht [Dd]h?éag:INPHRASE{a hocht déag, ocht X déag}
-<A pl="n" gnt="n">[Oo]cht [Dd]éag</A>:INPHRASE{a ocht déag, ocht X déag}
-[Aa] <E><A pl="n" gnt="n">h[Oo]cht [Dd]éag</A></E>:OK
+<A pl="n" gnt="n">[Aa] h[Oo]cht</A> [Dd]héag:INPHRASE{a hocht déag, ocht X déag}
+<A pl="n" gnt="n">[Oo]cht [Dd]éag</A>:INPHRASE{a hocht déag, ocht X déag}
+# [Aa] <E><A pl="n" gnt="n">h[Oo]cht [Dd]éag</A></E>:OK
 <C>[Nn]ó</C> <E><A pl="n" gnt="n">[Oo]cht [Dd]éag</A></E>:OK
 [Nn]aoi [Dd]h?éag:INPHRASE{a naoi déag, naoi X déag}
+<A pl="n" gnt="n">[Aa] [Nn]aoi</A> [Dd]héag:INPHRASE{a naoi déag, naoi X déag}
 <A pl="n" gnt="n">[Nn]aoi [Dd]éag</A>:INPHRASE{a naoi déag, naoi X déag}
-[Aa] <E><A pl="n" gnt="n">[Nn]aoi [Dd]éag</A></E>:OK
+# [Aa] <E><A pl="n" gnt="n">[Nn]aoi [Dd]éag</A></E>:OK
 <C>[Nn]ó</C> <E><A pl="n" gnt="n">[Nn]aoi [Dd]éag</A></E>:OK
 # CB p.20 #1.c, p.76 #8.c (even in plural)
 #. Bhí deich tobar fíoruisce agus seachtó crann pailme ann.
@@ -1144,6 +1157,8 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.133 #12.c
 #. Má tá suim agat sa turas seo, seol d'ainm chugamsa (OK).
 <C>[Mm]á</C> <V>JUSTTA</V>:OK
+#. Má fuair níor fhreagair sé an facs (OK).
+<C>[Mm]á</C> <V>FAIGHTOECLIPSE</V>:OK
 # CB p.113
 <C>[Mm]á</C> <V cop="y">(is|ar|arb)</V>:BACHOIR{más}
 # CB p.13 #4.a
@@ -1400,6 +1415,8 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <C>[Óó]</C> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
 #. Bhuel, fan ar strae mar sin ó tá tú chomh mímhúinte sin (OK).
 <C>[Óó]</C> <V>JUSTTA</V>:OK
+#. Ní maith liom é ar chor ar bith ó fuair sé an litir sin (OK).
+<C>[Óó]</C> <V>FAIGHTOECLIPSE</V>:OK
 # CB p.13 #4.a
 #. Tabhair an t-ordú seo leanas ó béal.
 <S>[Óó]</S> <N>UNLENITED</N>:SEIMHIU
@@ -1408,9 +1425,11 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Óó]</S> <T>an</T>:BACHOIR{ón}
 # CB p.113
 <[CS]>[Óó]</[CS]> <V cop="y">is</V>:BACHOIR{ós}
-[Óó]n? <V cop="y">(ar|arb)</V>:BACHOIR{ónar, ónarb}
-[Óó]n? <V cop="y">(ba|ab|arbh)</V>:BACHOIR{ónar, ónarbh}
-[Óó]n? INITIALBAPOST:BACHOIR{ónarbh}
+#   these three appear to be non-rules when ó is a <C>:
+#   "Agus ó ba mhó é a mbuaireamh", "ó b'annamh go..."
+# [Óó]n? <V cop="y">(ar|arb)</V>:BACHOIR{ónar, ónarb}
+# [Óó]n? <V cop="y">(ba|ab|arbh)</V>:BACHOIR{ónar, ónarbh}
+# [Óó]n? INITIALBAPOST:BACHOIR{ónarbh}
 # CB p.20 #1.c, p.76 #8.c (even in plural)
 #. Bhí ocht tábla ar fad ar a maraídís na híobairtí.
 #. Sáraíonn sé na seacht nó na hocht bliana.
@@ -1845,6 +1864,10 @@ d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</
 <D>([Aa]|[Áá]r|[Bb]hur)</D> <A pl="n" gnt="n">[Dd]há</A> <E><N>ECLIPSED</N></E>:OK
 # numbers sometimes tagged as "<N>" so leave like this
 ECLIPSINGNUMBER <E><N>ECLIPSED</N></E>:OK
+#  "a seacht ndícheall"
+<A pl="n" gnt="n">[Aa] [Ss]eacht</A> <E><N>ECLIPSED</N></E>:OK
+<A pl="n" gnt="n">[Aa] h[Oo]cht</A> <E><N>ECLIPSED</N></E>:OK
+<A pl="n" gnt="n">[Aa] [Nn]aoi</A> <E><N>ECLIPSED</N></E>:OK
 <D>ECLIPSINGPOSS</D> <E><N>ECLIPSED</N></E>:OK
 <S>[Uu]m</S> <T>an</T> <E><N>dtaca</N></E>:OK
 [Mm]ar <T>an</T> <E><N>gcéanna</N></E>:OK
@@ -2003,6 +2026,8 @@ d?[tT]h?rí|g?[Cc]h?eithre|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 #############################################################################
 <T>ANYTHING</T> <A pl="y" gnt="n">ANYTHING</A>:CUPLA
 <T>ANYTHING</T> <[^AFNXY]>ANYTHING</[^AFNXY]>:CUPLA
+# the United Nations
+<T>[Nn]a</T> <T>NA</T>:OK
 #. Nochtadh na fírinne sa dóigh a n-admhódh an té is bréagaí í (OK).
 <T>[Aa]n</T> <P>[Tt]é</P>:OK
 # got níos * above
@@ -2278,7 +2303,8 @@ d?[tT]h?rí|g?[Cc]h?eithre|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 <N>m?[Bb]h?uaileam</N>:INPHRASE{buaileam sciath}
 <Q>[Cc]árb</Q>:INPHRASE{cárb as}
 <E><Q>[Cc]árb</Q></E> [Aa]s:OK
-<N>g?[Cc]h?eannann</N>:INPHRASE{ceannann céanna}
+#  no way -- cál ceannann, etc.
+# <N>g?[Cc]h?eannann</N>:INPHRASE{ceannann céanna}
 <N pl="n" gnt="n" gnd="m">g[Cc]eartlár</N>:INPHRASE{i gceartlár}
 # done with dative now
 # <N>g[Cc]éin</N>:INPHRASE{i gcéin}
@@ -2323,7 +2349,7 @@ m?Bh?éal <E><A pl="n" gnt="n">Feirsteach</A></E>:OK
 <[AN]>[Ff]ras</[AN]>:INPHRASE{go fras}
 # both have same genderless tag
 <N pl="n" gnt="n">[Ff][ua]ta</N>:INPHRASE{futa fata}
-<N pl="n" gnt="n">[Ff]ud</N>:INPHRASE{ar fud}
+<N pl="n" gnt="n">[Ff]ud</N>:INPHRASE{ar fud, fud fad}
 # see bhfearr above
 <A pl="n" gnt="n">bhfusa</A>:INPHRASE{gura seacht bhfusa}
 <V cop="y">(mba|gura)</V> sh?eacht <E><A pl="n" gnt="n">bhfusa</A></E>:OK

@@ -109,7 +109,8 @@
 <B>[Bb]a</B>:<V cop="y">
 [Gg]o|[Nn]ach <B>m[Bb]a</B>:<V cop="y">
 [Dd]h?· <B>m[Bb]a</B>:<V cop="y">
-<B>m?[Bb]h?aile</B>:<N pl="n" gnt="n" gnd="m">
+#   why do I need this?   kills me in "i l·r an bhaile"
+# <B>m?[Bb]h?aile</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Bb]haineann</B>:<V p="y" t="l·ith">
 # catch barra here otherwise looks like nm1 gs/pl (really nm4 gs+pl of barr)
 #  and gets disambiguated as the gs after "an"
@@ -255,6 +256,7 @@ CAPITAL <B>Gabhann</B>:<Y>
 <B>[Ll]eith</B>:<N pl="n" gnt="n" gnd="f">
 <B>[Ll]eo</B>:<O>
 # <T> should be "na" but plenty of errors like "i nGaeilge an linne seo"
+a <B>[Ll]inne</B>:<N pl="n" gnt="y" gnd="f">
 <[DT]>ANYTHING</[DT]> <B>[Ll]inne</B>:<N pl="n" gnt="y" gnd="f">
 <B>[Ll]inne</B>:<O em="y">
 <B>[Mm]·</B> <V>ANYTHING</V>:<C>
@@ -602,7 +604,6 @@ ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
 <B>[”Û]</B>:<S>
 # e.g. na+NMONE; best to wait until "ar", "de", "Û"
 <[^N]>ANYTHING</[^N]> <B><Z>NMONE</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
-<B><Z>NMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 # like "”" above
 <B>NÌ</B> CAPITAL:<Y>
 # "NÌ hUallach·in", etc.
@@ -683,14 +684,20 @@ ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
 # let some verbs get resolved first!
 <B>[Nn]Ìor</B> <V>ANYTHING</V>:<U>
 <B>[Nn]Ìor</B>:<V cop="y">
+# wait until n·r, etc. done; but before :!genitive (gur ceapadh prionsabail...)
+<V cop="y">ANYTHING</V> <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 <[^ACDNRSTY]>ANYTHING</[^ACDNRSTY]> <B><Z>ANYGENITIVE</Z>ANYTHING</B>:!<N pl="." gnt="y" gnd=".">
 <[^ACNRSY]>ANYTHING</[^ACNRSY]> <T>ANYTHING</T> <B><Z>ANYGENITIVE</Z>ANYTHING</B>:!<N pl="." gnt="y" gnd=".">
 <S>FUSEDPREP</S> <B><Z>ANYGENITIVE</Z>ANYTHING</B>:!<N pl="." gnt="y" gnd=".">
 <S>DATIVEPREP</S> <B><Z>ANYGENITIVE</Z>ANYTHING</B>:!<N pl="." gnt="y" gnd=".">
-# wait until n·r, etc. done
-<V cop="y">ANYTHING</V> <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
+# last resort if none of this helps!
+<N>ANYTHING</N> <B><Z>NMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 #  these are OK because all of the past forms that are eclipsable
 #  (bhfuair, ndearna, etc. CB p.133)  are UNAMBIGOUS
 <B><Z>ANYPAST</Z>ECLIPSED</B>:!<V p="y" t="caite">
 <B><Z>ANYPASTAUT</Z>ECLIPSED</B>:!<V p="n" t="caite">
+# ceann an bhealaigh
+[Aa]n <B><Z>ANYPAST</Z>ANYTHING</B>:!<V p="y" t="caite">
+[Aa]n <B><Z>ANYPASTAUT</Z>ANYTHING</B>:!<V p="n" t="caite">
 <[^C]>NOTNA</[^C]> <B><Z>ANYIMPER</Z>ANYTHING</B>:!<V p="y" t="ord">
+<B><Z>ANYVERB</Z>ANYTHING</B> <NG>ANYTHING</NG>:!<V.*>

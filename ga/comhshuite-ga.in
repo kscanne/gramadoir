@@ -220,15 +220,33 @@ Dé Domhnaigh:<N pl="n" gnt="n">
 # next batch to avoid "déag" exceptions to mutation
 # caps on D a non-trivial amount in corpus
 # CB p.74
-h?[Aa]on [Dd]éag:<A pl="n" gnt="n">
+[Aa] h[Aa]on [Dd]éag:<A pl="n" gnt="n">
+[Aa] [Dd]ó [Dd]héag:<A pl="n" gnt="n">
+[Aa] [Tt]rí [Dd]éag:<A pl="n" gnt="n">
+[Aa] [Cc]eathair [Dd]éag:<A pl="n" gnt="n">
+[Aa] [Cc]úig [Dd]éag:<A pl="n" gnt="n">
+[Aa] [Ss]é [Dd]éag:<A pl="n" gnt="n">
+[Aa] [Ss]eacht [Dd]éag:<A pl="n" gnt="n">
+[Aa] h[Oo]cht [Dd]éag:<A pl="n" gnt="n">
+[Aa] [Nn]aoi [Dd]éag:<A pl="n" gnt="n">
+[Aa]on [Dd]éag:<A pl="n" gnt="n">
 [Dd]ó [Dd]héag:<A pl="n" gnt="n">
 [Tt]rí [Dd]éag:<A pl="n" gnt="n">
 [Cc]eathair [Dd]éag:<A pl="n" gnt="n">
 [Cc]úig [Dd]éag:<A pl="n" gnt="n">
 [Ss]é [Dd]éag:<A pl="n" gnt="n">
 [Ss]eacht [Dd]éag:<A pl="n" gnt="n">
-h?[Oo]cht [Dd]éag:<A pl="n" gnt="n">
+[Oo]cht [Dd]éag:<A pl="n" gnt="n">
 [Nn]aoi [Dd]éag:<A pl="n" gnt="n">
+[Aa] h[Aa]on:<A pl="n" gnt="n">
+[Aa] [Dd]ó:<A pl="n" gnt="n">
+[Aa] [Tt]rí:<A pl="n" gnt="n">
+[Aa] [Cc]eathair:<A pl="n" gnt="n">
+[Aa] [Cc]úig:<A pl="n" gnt="n">
+[Aa] [Ss]é:<A pl="n" gnt="n">
+[Aa] [Ss]eacht:<A pl="n" gnt="n">
+[Aa] h[Oo]cht:<A pl="n" gnt="n">
+[Aa] [Nn]aoi:<A pl="n" gnt="n">
 # [Dd]rioll ar an dreall
 [Ff]ad is:<C>
 [Ff]aoi bhráid:<S>
@@ -246,6 +264,8 @@ Fear Manach:<N pl="n" gnt="n">
 # infrequent
 [Ff]íorchaoin fáilte:<N pl="n" gnt="n">
 [Ff]ite [Ff]uaite:<R>
+# corpus; "fud" in this phrase or else "ar fud" 
+[Ff]ud [Ff]ad:<N pl="n" gnt="n">
 [Ff]uta [Ff]ata:<R>
 [Gg]ach re:<A>
 # exception to lots of "don't lenite after gan" rules, so easier this way
