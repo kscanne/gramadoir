@@ -28,8 +28,8 @@
 <E offset="29" fromy="26" fromx="29" toy="26" tox="34" sentence="An bhfuil ayn uachtar roeite agattt?" errortext="agattt" msg="Is féidir gur focal iasachta é seo (tá na litreacha /ttt/ neamhdhóchúil)">
 <E offset="9" fromy="27" fromx="9" toy="27" tox="12" sentence="Bíonn an geál ag satailt ar an dubh." errortext="geál" msg="Focal ceart ach an-neamhchoitianta">
 <E offset="79" fromy="28" fromx="79" toy="28" tox="80" sentence="Ach go rithe an fhíréantacht mar uisce agus an t-ionracas mar shruth gan dísc (OK)!" errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
-<E offset="19" fromy="29" fromx="19" toy="29" tox="23" sentence="Ba iad mo shinsear rithe Chúige Uladh." errortext="rithe" msg="Ní dócha go raibh intinn leat an modh foshuiteach a úsáid anseo">
-<E offset="28" fromy="30" fromx="28" toy="30" tox="33" sentence="Is iad na trí cholún sin le cheile an tAontas Eorpach." errortext="cheile" msg="Ní dócha go raibh intinn leat an modh foshuiteach a úsáid anseo">
+<E offset="19" fromy="29" fromx="19" toy="29" tox="23" sentence="Ba iad mo shinsear rithe Chúige Uladh." errortext="rithe" msg="Ní dócha go raibh intinn agat an modh foshuiteach a úsáid anseo">
+<E offset="28" fromy="30" fromx="28" toy="30" tox="33" sentence="Is iad na trí cholún sin le cheile an tAontas Eorpach." errortext="cheile" msg="Ní dócha go raibh intinn agat an modh foshuiteach a úsáid anseo">
 <E offset="23" fromy="31" fromx="23" toy="31" tox="40" sentence="Ach bhí mé ag leanúint ar aghaidh an t-am ar fad leis." errortext="ar aghaidh an t-am" msg="Tá gá leis an leagan ginideach anseo">
 <E offset="36" fromy="32" fromx="36" toy="32" tox="37" sentence="Bhrostaigh sé go dtí an t-ospidéal (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
 <E offset="3" fromy="33" fromx="3" toy="33" tox="10" sentence="Sa dara alt, déan cur síos ar a bhfaca siad sa Spáinn." errortext="dara alt" msg="Réamhlitir /h/ ar iarraidh">
