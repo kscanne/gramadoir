@@ -521,7 +521,7 @@ sub tokenize
 sub tokenize_real
 {
 	my ( $self, $sentence ) = @_;
-	my $answer;
+	my $answer="";
 	foreach my $chunk (split / /,$sentence) {
 		unless ($chunk =~ /^(?:(?:https?|ftp):\/\/|www\.)/) {
 			$chunk =~ s/([@BDCHARS@][@BDCHARS@@INTCHARS@]*)/<c>$1<\/c>/g;
