@@ -26,12 +26,14 @@ INSTALL_PROGRAM = @INSTALL@
 AWK = @AWK@
 CC = @CC@
 CFLAGS = @CFLAGS@
+DEFS = @DEFS@
 ECHO = echo
+EGREP = @EGREP@
 LEX = @LEX@
 LEXLIB = @LEXLIB@
+LEX_OUTPUT_ROOT = @LEX_OUTPUT_ROOT@
 LN_S = @LN_S@
 PERL = @PERL@
-VERSION = @VERSION@
 YACC = @YACC@
 
 all : aonchiall.pl eisceacht.pl rialacha.pl cuardach gr
@@ -40,7 +42,7 @@ cuardach : cuardach.o
 	$(CC) -o cuardach $(CFLAGS) cuardach.o
 	
 cuardach.o : cuardach.c
-	$(CC) -c $(CFLAGS) -DBSONRAI=\"$(pkgdatadir)/focail.bs\" cuardach.c
+	$(CC) -c $(CFLAGS) $(DEFS) -DBSONRAI=\"$(pkgdatadir)/focail.bs\" cuardach.c
 
 rialacha.pl : rialacha.in rialacha.meta.sed gin.meta.sed
 	($(ECHO) "#!$(PERL)"; $(ECHO) '# Users should modify rialacha.in, not this file'; $(ECHO) 'while(<>){';  cat rialacha.in | sed -f gin.meta.sed | sed -f rialacha.meta.sed; $(ECHO) 'print;'; $(ECHO) '}'; $(ECHO) 'exit;') > rialacha.pl
@@ -91,15 +93,15 @@ config.status: configure
 	./config.status --recheck
 
 distclean :
-	${MAKE} clean
+	$(MAKE) clean
 	rm -f gr config.log config.status Makefile
 
 clean :
-	${MAKE} semiclean
+	$(MAKE) semiclean
 	rm -f cuardach cuardach.o rialacha.pl aonchiall.pl eisceacht.pl aparser eparser rparser FOCAIL FOCAIL.all
 
 semiclean :
-	rm -f triail.html cabhair.o cabhair y.tab.* lex.yy.* aonchiall.y eisceacht.y rialacha.y
+	rm -f triail.html cabhair.o cabhair y.tab.* $(LEX_OUTPUT_ROOT).* aonchiall.y eisceacht.y rialacha.y
 
 ###############################################
 # Remaining targets are for use by developers #
@@ -120,7 +122,7 @@ triail.html : FORCE
 	gr --html triail > triail.html
 
 maintainer-clean :
-	${MAKE} distclean
+	$(MAKE) distclean
 	rm -f focail.bs
 
 dist : FORCE
@@ -159,9 +161,9 @@ triail.err : FORCE
 	gr triail > triail.err
 
 focail.bs : FORCE
-	${MAKE} cabhair
+	$(MAKE) cabhair
 	Gin 12
-	(cat ${HOME}/.ispell_gaeilge ${HOME}/.biobla | ispell -dgaeilge -e3 | tr " " "\n" | egrep -v '\/' | sed 's/.*/& 44/'; cat FOCAIL) | LC_COLLATE=POSIX sort -u > FOCAIL.all
+	(cat ${HOME}/.ispell_gaeilge ${HOME}/.biobla | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | sed 's/.*/& 44/'; cat FOCAIL) | LC_COLLATE=POSIX sort -u > FOCAIL.all
 	cat FOCAIL.all | ./cabhair > focail.bs
 	chmod 644 focail.bs
 	@$(ECHO) 'Verify count in cuardach.c:' 
@@ -172,7 +174,7 @@ cabhair : cabhair.o
 	$(CC) -o cabhair $(CFLAGS) cabhair.o
 	
 cabhair.o : cabhair.c
-	$(CC) -c $(CFLAGS) cabhair.c
+	$(CC) -c $(CFLAGS) $(DEFS) cabhair.c
 
 aonchiall.y : ponc.in.y
 	cat ponc.in.y | sed "s/_TAIL_MACRO_/result/; s/_RESULT_MACRO_/POSTAG/" > aonchiall.y
@@ -186,20 +188,20 @@ rialacha.y : ponc.in.y
 aparser : aonchiall.y ponc.in.l
 	$(LEX) ponc.in.l
 	$(YACC) -d aonchiall.y
-	$(CC) -c $(CFLAGS) lex.yy.c y.tab.c
-	$(CC) -o aparser $(CFLAGS) lex.yy.o y.tab.o $(LEXLIB)
+	$(CC) -c $(CFLAGS) $(LEX_OUTPUT_ROOT).c y.tab.c
+	$(CC) -o aparser $(CFLAGS) $(LEX_OUTPUT_ROOT).o y.tab.o $(LEXLIB)
 
 eparser : eisceacht.y ponc.in.l
 	$(LEX) ponc.in.l
 	$(YACC) -d eisceacht.y
-	$(CC) -c $(CFLAGS) lex.yy.c y.tab.c
-	$(CC) -o eparser $(CFLAGS) lex.yy.o y.tab.o $(LEXLIB)
+	$(CC) -c $(CFLAGS) $(LEX_OUTPUT_ROOT).c y.tab.c
+	$(CC) -o eparser $(CFLAGS) $(LEX_OUTPUT_ROOT).o y.tab.o $(LEXLIB)
 
 rparser : rialacha.y ponc.in.l
 	$(LEX) ponc.in.l
 	$(YACC) -d rialacha.y
-	$(CC) -c $(CFLAGS) lex.yy.c y.tab.c
-	$(CC) -o rparser $(CFLAGS) lex.yy.o y.tab.o $(LEXLIB)
+	$(CC) -c $(CFLAGS) $(LEX_OUTPUT_ROOT).c y.tab.c
+	$(CC) -o rparser $(CFLAGS) $(LEX_OUTPUT_ROOT).o y.tab.o $(LEXLIB)
 
 poncin : aparser eparser rparser
 	@$(ECHO) 'Checking aonchiall.in'
