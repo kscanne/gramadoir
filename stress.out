@@ -1,24 +1,40 @@
 test help flag
 Usage: gr [OPTIONS] [FILES]
 
-    --litriu       write misspelled words to standard output
-    --html         produce HTML output for viewing in a web browser
-    --xml          write tagged XML stream to standard output, for debugging
+Options for end-users:
     --iomlan       report all errors (i.e. do not use ~/.neamhshuim)
-    --teanga=XX    specify the language of the text to be checked (default=ga)
     --ionchod=ENC  specify the character encoding of the text to be checked
+    --litriu       write misspelled words to standard output
+    --teanga=XX    specify the language of the text to be checked (default=ga)
     --help         display this help and exit
     --version      output version information and exit
+
+Options for developers:
+    --html         produce HTML output for viewing in a web browser
+    --ilchiall     report unresolved ambiguities, sorted by frequency
+    --minic        output all tags, sorted by frequency (for unigram-xx.txt)
+    --no-unigram   do not resolve ambiguous parts of speech by frequency
+    --xml          write tagged XML stream to standard output, for debugging
 
 If no file is given, read from standard input.
 
 Send bug reports to <scannell@slu.edu>.
 test version flag
-An Gramadoir, version 0.3
+An Gramadoir, version 0.4pre1
 Copyright (C) 2003 Kevin P. Scannell
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,
 to the extent permitted by law.
+test segmentation
+1: Several. 
+Unknown word.
+
+1: Sentences. 
+Unknown word.
+
+1: Here! 
+Unknown word.
+
 test litriu flag
 uaktar
 ayn
@@ -34,7 +50,7 @@ test xml flag
 <line uimhir="5"> <U>Ní</U> <V p="xx" t="caite">raibh</V> <N pl="n" gnt="n" gnd="m">líon</N> <A pl="n" gnt="n">mór</A> <N pl="y" gnt="n" gnd="m">daoine</N> <A pl="n" gnt="n">bainteach</A> <S>leis</S> <T>an</T> <E msg="CAIGHDEAN{scata}"><Y>scaifte</Y></E> <U>a</U> <V p="xx" t="caite">bhí</V> <S>ag</S> <N pl="n" gnt="n" gnd="f">iarraidh</N> <N pl="n" gnt="n" gnd="f">mioscais</N> <S>a</S> <N pl="n" gnt="n" gnd="m">chothú</N>. </line>
 <line uimhir="6"> <V t="láith">Tá</V> <T>na</T> <E msg="SEIMHIU"><N pl="y" gnt="n" gnd="f">lachain</N> <A pl="y" gnt="n">slachtmhara</A></E> <S>ar</S> <N pl="n" gnt="n" gnd="f">eitilt</N>. </line>
 <line uimhir="7"> <V t="láith">Tá</V> <T>an</T> <N pl="n" gnt="n" gnd="m">Rialtas</N> <V p="2ú" t="ord">tar</V> <N pl="n" gnt="n">éis</N> <N pl="n" gnt="n" gnd="f">áit</N> <T>na</T> <N pl="n" gnt="y" gnd="f">Gaeilge</N> <S>i</S> <N pl="n" gnt="n" gnd="m">saol</N> <T>na</T> <N pl="n" gnt="y" gnd="f">tíre</N> <E msg="SEIMHIU"><S>a</S> <N pl="n" gnt="n" gnd="m">ceistiú</N></E>. </line>
-<line uimhir="8"> <V pl="y" p="3ú" t="caite">Bhíodar</V> <S>ag</S> <N pl="n" gnt="n" gnd="m">rá</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">aonach</N> <V>gur</V> <O em="y">agamsa</O> <U>a</U> <V p="xx" t="caite">bhí</V> <T>na</T> <B><Z><N pl="n" gnt="n" gnd="f" h="y"/><N pl="n" gnt="y" gnd="m" h="y"/><N pl="y" gnt="n" gnd="m" h="y"/></Z>huain</B> <E msg="SEIMHIU"><V>ab</V> <A pl="n" gnt="y" gnd="f">fearr</A></E>. </line>
+<line uimhir="8"> <V pl="y" p="3ú" t="caite">Bhíodar</V> <S>ag</S> <N pl="n" gnt="n" gnd="m">rá</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">aonach</N> <V cop="y">gur</V> <O em="y">agamsa</O> <U>a</U> <V p="xx" t="caite">bhí</V> <T>na</T> <N pl="n" gnt="n" gnd="f" h="y">huain</N> <E msg="SEIMHIU"><V cop="y">ab</V> <A pl="n" gnt="y" gnd="f">fearr</A></E>. </line>
 <line uimhir="9"> <U>Ní</U> <V t="fáist">bheidh</V> <E msg="NISEIMHIU"><S>ach</S> <N pl="n" gnt="n" gnd="f">mhallacht</N></E> <S>i</S> <N pl="n" gnt="n" gnd="m">ndán</N> <O>dó</O> <S>ó</S> <T>na</T> <N pl="y" gnt="n" gnd="m">ciníocha</N> <C>agus</C> <N pl="n" gnt="n" gnd="m">fuath</N> <S>ó</S> <T>na</T> <N pl="y" gnt="n" gnd="m">náisiúin</N>. </line>
 <line uimhir="10"> <Q>An</Q> <V t="láith">bhfuil</V> <A pl="n" gnt="n">aon</A> <N pl="n" gnt="n" gnd="m">uachtar</N> <A>reoite</A> <E msg="CLAOCHLU"><S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">cuntar</N></E>? </line>
 </teacs>
@@ -129,26 +145,42 @@ test English: ASCII character set
 test help flag
 Syntax: gr [OPTIONEN] [DATEIEN]
 
-    --litriu       falsch geschriebene Wörter auf Standardausgabe ausgeben
-    --html         Ausgabe im HTML-Format erzeugen
-    --xml          Ausgabe im XML-Format zu Zwecken der Fehlersuche erzeugen
+Options for end-users:
     --iomlan       alle Fehler protokollieren; ~/.neamhshuim wird nicht gelesen
-    --teanga=XX    Sprache des zu überprüfenden Textes (Voreinstellung=ga)
     --ionchod=ENC  Zeichensatz des zu überprüfenden Textes
+    --litriu       falsch geschriebene Wörter auf Standardausgabe ausgeben
+    --teanga=XX    Sprache des zu überprüfenden Textes (Voreinstellung=ga)
     --help         diese Kurzanleitung anzeigen
     --version      Versionsnummer anzeigen
+
+Options for developers:
+    --html         Ausgabe im HTML-Format erzeugen
+    --ilchiall     report unresolved ambiguities, sorted by frequency
+    --minic        output all tags, sorted by frequency (for unigram-xx.txt)
+    --no-unigram   do not resolve ambiguous parts of speech by frequency
+    --xml          Ausgabe im XML-Format zu Zwecken der Fehlersuche erzeugen
 
 Falls keine Datei angegeben wird, wird von der Standardeingabe gelesen.
 
 Fehlermeldungen an <scannell@slu.edu> schicken.
 Probleme mit der Übersetzung an die Mailingliste de@li.org melden.
 test version flag
-An Gramadóir, Version 0.3
+An Gramadóir, Version 0.4pre1
 Copyright (C) 2003 Kevin P. Scannell
 Dieses Programm ist freie Software; die Bedingungen, unter denen Sie es
 kopieren dürfen, finden Sie in dem Quellcode. Es ist OHNE IRGENDEINE GARANTIE,
 sogar ohne die implizite Garantie der MARKTREIFE oder der VERWENDBARKEIT FÜR
 EINEN BESTIMMTEN ZWECK.
+test segmentation
+1: Several. 
+Unbekanntes Wort.
+
+1: Sentences. 
+Unbekanntes Wort.
+
+1: Here! 
+Unbekanntes Wort.
+
 test litriu flag
 uaktar
 ayn
@@ -164,7 +196,7 @@ test xml flag
 <line uimhir="5"> <U>Ní</U> <V p="xx" t="caite">raibh</V> <N pl="n" gnt="n" gnd="m">líon</N> <A pl="n" gnt="n">mór</A> <N pl="y" gnt="n" gnd="m">daoine</N> <A pl="n" gnt="n">bainteach</A> <S>leis</S> <T>an</T> <E msg="CAIGHDEAN{scata}"><Y>scaifte</Y></E> <U>a</U> <V p="xx" t="caite">bhí</V> <S>ag</S> <N pl="n" gnt="n" gnd="f">iarraidh</N> <N pl="n" gnt="n" gnd="f">mioscais</N> <S>a</S> <N pl="n" gnt="n" gnd="m">chothú</N>. </line>
 <line uimhir="6"> <V t="láith">Tá</V> <T>na</T> <E msg="SEIMHIU"><N pl="y" gnt="n" gnd="f">lachain</N> <A pl="y" gnt="n">slachtmhara</A></E> <S>ar</S> <N pl="n" gnt="n" gnd="f">eitilt</N>. </line>
 <line uimhir="7"> <V t="láith">Tá</V> <T>an</T> <N pl="n" gnt="n" gnd="m">Rialtas</N> <V p="2ú" t="ord">tar</V> <N pl="n" gnt="n">éis</N> <N pl="n" gnt="n" gnd="f">áit</N> <T>na</T> <N pl="n" gnt="y" gnd="f">Gaeilge</N> <S>i</S> <N pl="n" gnt="n" gnd="m">saol</N> <T>na</T> <N pl="n" gnt="y" gnd="f">tíre</N> <E msg="SEIMHIU"><S>a</S> <N pl="n" gnt="n" gnd="m">ceistiú</N></E>. </line>
-<line uimhir="8"> <V pl="y" p="3ú" t="caite">Bhíodar</V> <S>ag</S> <N pl="n" gnt="n" gnd="m">rá</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">aonach</N> <V>gur</V> <O em="y">agamsa</O> <U>a</U> <V p="xx" t="caite">bhí</V> <T>na</T> <B><Z><N pl="n" gnt="n" gnd="f" h="y"/><N pl="n" gnt="y" gnd="m" h="y"/><N pl="y" gnt="n" gnd="m" h="y"/></Z>huain</B> <E msg="SEIMHIU"><V>ab</V> <A pl="n" gnt="y" gnd="f">fearr</A></E>. </line>
+<line uimhir="8"> <V pl="y" p="3ú" t="caite">Bhíodar</V> <S>ag</S> <N pl="n" gnt="n" gnd="m">rá</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">aonach</N> <V cop="y">gur</V> <O em="y">agamsa</O> <U>a</U> <V p="xx" t="caite">bhí</V> <T>na</T> <N pl="n" gnt="n" gnd="f" h="y">huain</N> <E msg="SEIMHIU"><V cop="y">ab</V> <A pl="n" gnt="y" gnd="f">fearr</A></E>. </line>
 <line uimhir="9"> <U>Ní</U> <V t="fáist">bheidh</V> <E msg="NISEIMHIU"><S>ach</S> <N pl="n" gnt="n" gnd="f">mhallacht</N></E> <S>i</S> <N pl="n" gnt="n" gnd="m">ndán</N> <O>dó</O> <S>ó</S> <T>na</T> <N pl="y" gnt="n" gnd="m">ciníocha</N> <C>agus</C> <N pl="n" gnt="n" gnd="m">fuath</N> <S>ó</S> <T>na</T> <N pl="y" gnt="n" gnd="m">náisiúin</N>. </line>
 <line uimhir="10"> <Q>An</Q> <V t="láith">bhfuil</V> <A pl="n" gnt="n">aon</A> <N pl="n" gnt="n" gnd="m">uachtar</N> <A>reoite</A> <E msg="CLAOCHLU"><S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">cuntar</N></E>? </line>
 </teacs>
@@ -259,25 +291,41 @@ test English: ASCII character set
 test help flag
 Úsáid: gr [ROGHANNA] [COMHAD]
 
-    --litriu       scríobh focail mílitrithe chuig an aschur caighdeánach
-    --html         aschur i gcruth HTML chun féachaint le brabhsálaí
-    --xml          scríobh sruth XML chuig aschur caighdeánach, chun dífhabhtú
+Options for end-users:
     --iomlan       taispeáin gach earráid (.i. ná húsáid ~/.neamhshuim)
-    --teanga=XX    socraigh an teanga den téacs le seiceáil (loicthe=ga)
     --ionchod=CÓD  socraigh an t-ionchódú den téacs le seiceáil
+    --litriu       scríobh focail mílitrithe chuig an aschur caighdeánach
+    --teanga=XX    socraigh an teanga den téacs le seiceáil (loicthe=ga)
     --help         taispeáin an chabhair seo agus éirigh as
     --version      taispeáin eolas faoin leagan agus éirigh as
+
+Options for developers:
+    --html         aschur i gcruth HTML chun féachaint le brabhsálaí
+    --ilchiall     report unresolved ambiguities, sorted by frequency
+    --minic        output all tags, sorted by frequency (for unigram-xx.txt)
+    --no-unigram   do not resolve ambiguous parts of speech by frequency
+    --xml          scríobh sruth XML chuig aschur caighdeánach, chun dífhabhtú
 
 Mura bhfuil comhad ann, léigh ón ionchur caighdeánach.
 
 Seol tuairiscí fabhtanna chuig <scannell@slu.edu>.
 test version flag
-An Gramadóir, leagan 0.3
+An Gramadóir, leagan 0.4pre1
 Copyright (C) 2003 Kevin P. Scannell
 Is saorbhogearra an ríomhchlár seo; féach ar an bhunchód le haghaidh
 coinníollacha cóipeála.  Níl baránta AR BITH ann; go fiú níl baránta ann
 d'INDÍOLTACHT nó FEILIÚNACHT DO FHEIDHM AR LEITH, an oiread atá ceadaithe
 de réir dlí.
+test segmentation
+1: Several. 
+Focal anaithnid.
+
+1: Sentences. 
+Focal anaithnid.
+
+1: Here! 
+Focal anaithnid.
+
 test litriu flag
 uaktar
 ayn
@@ -293,7 +341,7 @@ test xml flag
 <line uimhir="5"> <U>Ní</U> <V p="xx" t="caite">raibh</V> <N pl="n" gnt="n" gnd="m">líon</N> <A pl="n" gnt="n">mór</A> <N pl="y" gnt="n" gnd="m">daoine</N> <A pl="n" gnt="n">bainteach</A> <S>leis</S> <T>an</T> <E msg="CAIGHDEAN{scata}"><Y>scaifte</Y></E> <U>a</U> <V p="xx" t="caite">bhí</V> <S>ag</S> <N pl="n" gnt="n" gnd="f">iarraidh</N> <N pl="n" gnt="n" gnd="f">mioscais</N> <S>a</S> <N pl="n" gnt="n" gnd="m">chothú</N>. </line>
 <line uimhir="6"> <V t="láith">Tá</V> <T>na</T> <E msg="SEIMHIU"><N pl="y" gnt="n" gnd="f">lachain</N> <A pl="y" gnt="n">slachtmhara</A></E> <S>ar</S> <N pl="n" gnt="n" gnd="f">eitilt</N>. </line>
 <line uimhir="7"> <V t="láith">Tá</V> <T>an</T> <N pl="n" gnt="n" gnd="m">Rialtas</N> <V p="2ú" t="ord">tar</V> <N pl="n" gnt="n">éis</N> <N pl="n" gnt="n" gnd="f">áit</N> <T>na</T> <N pl="n" gnt="y" gnd="f">Gaeilge</N> <S>i</S> <N pl="n" gnt="n" gnd="m">saol</N> <T>na</T> <N pl="n" gnt="y" gnd="f">tíre</N> <E msg="SEIMHIU"><S>a</S> <N pl="n" gnt="n" gnd="m">ceistiú</N></E>. </line>
-<line uimhir="8"> <V pl="y" p="3ú" t="caite">Bhíodar</V> <S>ag</S> <N pl="n" gnt="n" gnd="m">rá</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">aonach</N> <V>gur</V> <O em="y">agamsa</O> <U>a</U> <V p="xx" t="caite">bhí</V> <T>na</T> <B><Z><N pl="n" gnt="n" gnd="f" h="y"/><N pl="n" gnt="y" gnd="m" h="y"/><N pl="y" gnt="n" gnd="m" h="y"/></Z>huain</B> <E msg="SEIMHIU"><V>ab</V> <A pl="n" gnt="y" gnd="f">fearr</A></E>. </line>
+<line uimhir="8"> <V pl="y" p="3ú" t="caite">Bhíodar</V> <S>ag</S> <N pl="n" gnt="n" gnd="m">rá</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">aonach</N> <V cop="y">gur</V> <O em="y">agamsa</O> <U>a</U> <V p="xx" t="caite">bhí</V> <T>na</T> <N pl="n" gnt="n" gnd="f" h="y">huain</N> <E msg="SEIMHIU"><V cop="y">ab</V> <A pl="n" gnt="y" gnd="f">fearr</A></E>. </line>
 <line uimhir="9"> <U>Ní</U> <V t="fáist">bheidh</V> <E msg="NISEIMHIU"><S>ach</S> <N pl="n" gnt="n" gnd="f">mhallacht</N></E> <S>i</S> <N pl="n" gnt="n" gnd="m">ndán</N> <O>dó</O> <S>ó</S> <T>na</T> <N pl="y" gnt="n" gnd="m">ciníocha</N> <C>agus</C> <N pl="n" gnt="n" gnd="m">fuath</N> <S>ó</S> <T>na</T> <N pl="y" gnt="n" gnd="m">náisiúin</N>. </line>
 <line uimhir="10"> <Q>An</Q> <V t="láith">bhfuil</V> <A pl="n" gnt="n">aon</A> <N pl="n" gnt="n" gnd="m">uachtar</N> <A>reoite</A> <E msg="CLAOCHLU"><S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">cuntar</N></E>? </line>
 </teacs>
@@ -388,25 +436,41 @@ test English: ASCII character set
 test help flag
 ÃšsÃ¡id: gr [ROGHANNA] [COMHAD]
 
-    --litriu       scrÃ­obh focail mÃ­litrithe chuig an aschur caighdeÃ¡nach
-    --html         aschur i gcruth HTML chun fÃ©achaint le brabhsÃ¡laÃ­
-    --xml          scrÃ­obh sruth XML chuig aschur caighdeÃ¡nach, chun dÃ­fhabhtÃº
+Options for end-users:
     --iomlan       taispeÃ¡in gach earrÃ¡id (.i. nÃ¡ hÃºsÃ¡id ~/.neamhshuim)
-    --teanga=XX    socraigh an teanga den tÃ©acs le seiceÃ¡il (loicthe=ga)
     --ionchod=CÃ“D  socraigh an t-ionchÃ³dÃº den tÃ©acs le seiceÃ¡il
+    --litriu       scrÃ­obh focail mÃ­litrithe chuig an aschur caighdeÃ¡nach
+    --teanga=XX    socraigh an teanga den tÃ©acs le seiceÃ¡il (loicthe=ga)
     --help         taispeÃ¡in an chabhair seo agus Ã©irigh as
     --version      taispeÃ¡in eolas faoin leagan agus Ã©irigh as
+
+Options for developers:
+    --html         aschur i gcruth HTML chun fÃ©achaint le brabhsÃ¡laÃ­
+    --ilchiall     report unresolved ambiguities, sorted by frequency
+    --minic        output all tags, sorted by frequency (for unigram-xx.txt)
+    --no-unigram   do not resolve ambiguous parts of speech by frequency
+    --xml          scrÃ­obh sruth XML chuig aschur caighdeÃ¡nach, chun dÃ­fhabhtÃº
 
 Mura bhfuil comhad ann, lÃ©igh Ã³n ionchur caighdeÃ¡nach.
 
 Seol tuairiscÃ­ fabhtanna chuig <scannell@slu.edu>.
 test version flag
-An GramadÃ³ir, leagan 0.3
+An GramadÃ³ir, leagan 0.4pre1
 Copyright (C) 2003 Kevin P. Scannell
 Is saorbhogearra an rÃ­omhchlÃ¡r seo; fÃ©ach ar an bhunchÃ³d le haghaidh
 coinnÃ­ollacha cÃ³ipeÃ¡la.  NÃ­l barÃ¡nta AR BITH ann; go fiÃº nÃ­l barÃ¡nta ann
 d'INDÃOLTACHT nÃ³ FEILIÃšNACHT DO FHEIDHM AR LEITH, an oiread atÃ¡ ceadaithe
 de rÃ©ir dlÃ­.
+test segmentation
+1: Several. 
+Focal anaithnid.
+
+1: Sentences. 
+Focal anaithnid.
+
+1: Here! 
+Focal anaithnid.
+
 test litriu flag
 uaktar
 ayn
@@ -422,7 +486,7 @@ test xml flag
 <line uimhir="5"> <U>Ní</U> <V p="xx" t="caite">raibh</V> <N pl="n" gnt="n" gnd="m">líon</N> <A pl="n" gnt="n">mór</A> <N pl="y" gnt="n" gnd="m">daoine</N> <A pl="n" gnt="n">bainteach</A> <S>leis</S> <T>an</T> <E msg="CAIGHDEAN{scata}"><Y>scaifte</Y></E> <U>a</U> <V p="xx" t="caite">bhí</V> <S>ag</S> <N pl="n" gnt="n" gnd="f">iarraidh</N> <N pl="n" gnt="n" gnd="f">mioscais</N> <S>a</S> <N pl="n" gnt="n" gnd="m">chothú</N>. </line>
 <line uimhir="6"> <V t="láith">Tá</V> <T>na</T> <E msg="SEIMHIU"><N pl="y" gnt="n" gnd="f">lachain</N> <A pl="y" gnt="n">slachtmhara</A></E> <S>ar</S> <N pl="n" gnt="n" gnd="f">eitilt</N>. </line>
 <line uimhir="7"> <V t="láith">Tá</V> <T>an</T> <N pl="n" gnt="n" gnd="m">Rialtas</N> <V p="2ú" t="ord">tar</V> <N pl="n" gnt="n">éis</N> <N pl="n" gnt="n" gnd="f">áit</N> <T>na</T> <N pl="n" gnt="y" gnd="f">Gaeilge</N> <S>i</S> <N pl="n" gnt="n" gnd="m">saol</N> <T>na</T> <N pl="n" gnt="y" gnd="f">tíre</N> <E msg="SEIMHIU"><S>a</S> <N pl="n" gnt="n" gnd="m">ceistiú</N></E>. </line>
-<line uimhir="8"> <V pl="y" p="3ú" t="caite">Bhíodar</V> <S>ag</S> <N pl="n" gnt="n" gnd="m">rá</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">aonach</N> <V>gur</V> <O em="y">agamsa</O> <U>a</U> <V p="xx" t="caite">bhí</V> <T>na</T> <B><Z><N pl="n" gnt="n" gnd="f" h="y"/><N pl="n" gnt="y" gnd="m" h="y"/><N pl="y" gnt="n" gnd="m" h="y"/></Z>huain</B> <E msg="SEIMHIU"><V>ab</V> <A pl="n" gnt="y" gnd="f">fearr</A></E>. </line>
+<line uimhir="8"> <V pl="y" p="3ú" t="caite">Bhíodar</V> <S>ag</S> <N pl="n" gnt="n" gnd="m">rá</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">aonach</N> <V cop="y">gur</V> <O em="y">agamsa</O> <U>a</U> <V p="xx" t="caite">bhí</V> <T>na</T> <N pl="n" gnt="n" gnd="f" h="y">huain</N> <E msg="SEIMHIU"><V cop="y">ab</V> <A pl="n" gnt="y" gnd="f">fearr</A></E>. </line>
 <line uimhir="9"> <U>Ní</U> <V t="fáist">bheidh</V> <E msg="NISEIMHIU"><S>ach</S> <N pl="n" gnt="n" gnd="f">mhallacht</N></E> <S>i</S> <N pl="n" gnt="n" gnd="m">ndán</N> <O>dó</O> <S>ó</S> <T>na</T> <N pl="y" gnt="n" gnd="m">ciníocha</N> <C>agus</C> <N pl="n" gnt="n" gnd="m">fuath</N> <S>ó</S> <T>na</T> <N pl="y" gnt="n" gnd="m">náisiúin</N>. </line>
 <line uimhir="10"> <Q>An</Q> <V t="láith">bhfuil</V> <A pl="n" gnt="n">aon</A> <N pl="n" gnt="n" gnd="m">uachtar</N> <A>reoite</A> <E msg="CLAOCHLU"><S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">cuntar</N></E>? </line>
 </teacs>
@@ -517,24 +581,40 @@ test English: ASCII character set
 test help flag
 Folosire: gr [OPŞIUNI] [FIªIERE]
 
-    --litriu       scrie cuvintele greºite la ieºirea standard
-    --html         produce output HTML pentru vizualizarea într-un browser de web
-    --xml          scrie secvenşã XML marcat(tagged) la ieºirea standard, pentru debugging
+Options for end-users:
     --iomlan       raporteazã toate erorile (i.e. nu se foloseºte ~/.neamhshuim)
-    --teanga=XX    specificã limba textului care urmeazã a fi verificat(implicit=ga)
     --ionchod=ENC  specificã codarea(encoding) de textului ce urmeazã a fi verificat
+    --litriu       scrie cuvintele greºite la ieºirea standard
+    --teanga=XX    specificã limba textului care urmeazã a fi verificat(implicit=ga)
     --help         afiºeazã acest help ºi iese
     --version      afiºeazã informaşii despre versiune ºi iese
+
+Options for developers:
+    --html         produce output HTML pentru vizualizarea într-un browser de web
+    --ilchiall     report unresolved ambiguities, sorted by frequency
+    --minic        output all tags, sorted by frequency (for unigram-xx.txt)
+    --no-unigram   do not resolve ambiguous parts of speech by frequency
+    --xml          scrie secvenşã XML marcat(tagged) la ieºirea standard, pentru debugging
 
 Dacã nu este furnizat nici un fiºier, se citeºte de la intrarea standard.
 
 Trimiteşi rapoarte de bug-uri la <scannell@slu.edu>.
 test version flag
-Un Gramadoir, versiunea 0.3
+Un Gramadoir, versiunea 0.4pre1
 Copyright (C) 2003 Kevin P. Scannell
 Acesta este software liber; citişi sursele pentru condişiile de copiere.  NU existã
 NICI o garanşie; nici mãcar pentru VANDABILITATE SAU MODIFICARE ÎNTR-UN SCOP PRIVAT,
 pe întinderea permisã de lege.
+test segmentation
+1: Several. 
+Cuvânt necunoscut.
+
+1: Sentences. 
+Cuvânt necunoscut.
+
+1: Here! 
+Cuvânt necunoscut.
+
 test litriu flag
 uaktar
 ayn
@@ -550,7 +630,7 @@ test xml flag
 <line uimhir="5"> <U>Ní</U> <V p="xx" t="caite">raibh</V> <N pl="n" gnt="n" gnd="m">líon</N> <A pl="n" gnt="n">mór</A> <N pl="y" gnt="n" gnd="m">daoine</N> <A pl="n" gnt="n">bainteach</A> <S>leis</S> <T>an</T> <E msg="CAIGHDEAN{scata}"><Y>scaifte</Y></E> <U>a</U> <V p="xx" t="caite">bhí</V> <S>ag</S> <N pl="n" gnt="n" gnd="f">iarraidh</N> <N pl="n" gnt="n" gnd="f">mioscais</N> <S>a</S> <N pl="n" gnt="n" gnd="m">chothú</N>. </line>
 <line uimhir="6"> <V t="láith">Tá</V> <T>na</T> <E msg="SEIMHIU"><N pl="y" gnt="n" gnd="f">lachain</N> <A pl="y" gnt="n">slachtmhara</A></E> <S>ar</S> <N pl="n" gnt="n" gnd="f">eitilt</N>. </line>
 <line uimhir="7"> <V t="láith">Tá</V> <T>an</T> <N pl="n" gnt="n" gnd="m">Rialtas</N> <V p="2ú" t="ord">tar</V> <N pl="n" gnt="n">éis</N> <N pl="n" gnt="n" gnd="f">áit</N> <T>na</T> <N pl="n" gnt="y" gnd="f">Gaeilge</N> <S>i</S> <N pl="n" gnt="n" gnd="m">saol</N> <T>na</T> <N pl="n" gnt="y" gnd="f">tíre</N> <E msg="SEIMHIU"><S>a</S> <N pl="n" gnt="n" gnd="m">ceistiú</N></E>. </line>
-<line uimhir="8"> <V pl="y" p="3ú" t="caite">Bhíodar</V> <S>ag</S> <N pl="n" gnt="n" gnd="m">rá</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">aonach</N> <V>gur</V> <O em="y">agamsa</O> <U>a</U> <V p="xx" t="caite">bhí</V> <T>na</T> <B><Z><N pl="n" gnt="n" gnd="f" h="y"/><N pl="n" gnt="y" gnd="m" h="y"/><N pl="y" gnt="n" gnd="m" h="y"/></Z>huain</B> <E msg="SEIMHIU"><V>ab</V> <A pl="n" gnt="y" gnd="f">fearr</A></E>. </line>
+<line uimhir="8"> <V pl="y" p="3ú" t="caite">Bhíodar</V> <S>ag</S> <N pl="n" gnt="n" gnd="m">rá</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">aonach</N> <V cop="y">gur</V> <O em="y">agamsa</O> <U>a</U> <V p="xx" t="caite">bhí</V> <T>na</T> <N pl="n" gnt="n" gnd="f" h="y">huain</N> <E msg="SEIMHIU"><V cop="y">ab</V> <A pl="n" gnt="y" gnd="f">fearr</A></E>. </line>
 <line uimhir="9"> <U>Ní</U> <V t="fáist">bheidh</V> <E msg="NISEIMHIU"><S>ach</S> <N pl="n" gnt="n" gnd="f">mhallacht</N></E> <S>i</S> <N pl="n" gnt="n" gnd="m">ndán</N> <O>dó</O> <S>ó</S> <T>na</T> <N pl="y" gnt="n" gnd="m">ciníocha</N> <C>agus</C> <N pl="n" gnt="n" gnd="m">fuath</N> <S>ó</S> <T>na</T> <N pl="y" gnt="n" gnd="m">náisiúin</N>. </line>
 <line uimhir="10"> <Q>An</Q> <V t="láith">bhfuil</V> <A pl="n" gnt="n">aon</A> <N pl="n" gnt="n" gnd="m">uachtar</N> <A>reoite</A> <E msg="CLAOCHLU"><S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">cuntar</N></E>? </line>
 </teacs>
@@ -645,24 +725,40 @@ test English: ASCII character set
 test help flag
 Gebruik: gr [OPTIE] [BESTAND]
 
-    --litriu       schrijf verkeerd gespelde woorden naar een standard output
-    --html         creeer HTML output om te bekijken in een web browser
-    --xml          write tagged XML stream to standard output, for debugging
+Options for end-users:
     --iomlan       geef alle fouten aan (m.a.w. gebruik niet ~/.neamhshuim)
-    --teanga=XX    Specificeer de taal van de betreffende text (default=ga)
     --ionchod=ENC  specificeer de character codering van de betreffende text
+    --litriu       schrijf verkeerd gespelde woorden naar een standard output
+    --teanga=XX    Specificeer de taal van de betreffende text (default=ga)
     --help         toon deze hulptekst en beëindig programma
     --version      toon versie-informatie en beëindig programma
+
+Options for developers:
+    --html         creeer HTML output om te bekijken in een web browser
+    --ilchiall     report unresolved ambiguities, sorted by frequency
+    --minic        output all tags, sorted by frequency (for unigram-xx.txt)
+    --no-unigram   do not resolve ambiguous parts of speech by frequency
+    --xml          write tagged XML stream to standard output, for debugging
 
 Als geen bestand wordt gegeven, lees van standard invoering.
 
 Meld fouten in het programma aan <scannell@slu.edu>.
 test version flag
-An Gramadóir, versie 0.3
+An Gramadóir, versie 0.4pre1
 Copyright (C) 2003 Kevin P. Scannell
 Dit is vrije programmatuur; zie de broncode voor distributie-
 voorwaarden. Er is GEEN garantie; zelfs niet voor VERKOOPBAARHEID of
 GESCHIKTHEID VOOR EEN BEPAALD DOEL, zo ver als wettelijk mogelijk is.
+test segmentation
+1: Several. 
+Onbekend woord.
+
+1: Sentences. 
+Onbekend woord.
+
+1: Here! 
+Onbekend woord.
+
 test litriu flag
 uaktar
 ayn
@@ -678,7 +774,7 @@ test xml flag
 <line uimhir="5"> <U>Ní</U> <V p="xx" t="caite">raibh</V> <N pl="n" gnt="n" gnd="m">líon</N> <A pl="n" gnt="n">mór</A> <N pl="y" gnt="n" gnd="m">daoine</N> <A pl="n" gnt="n">bainteach</A> <S>leis</S> <T>an</T> <E msg="CAIGHDEAN{scata}"><Y>scaifte</Y></E> <U>a</U> <V p="xx" t="caite">bhí</V> <S>ag</S> <N pl="n" gnt="n" gnd="f">iarraidh</N> <N pl="n" gnt="n" gnd="f">mioscais</N> <S>a</S> <N pl="n" gnt="n" gnd="m">chothú</N>. </line>
 <line uimhir="6"> <V t="láith">Tá</V> <T>na</T> <E msg="SEIMHIU"><N pl="y" gnt="n" gnd="f">lachain</N> <A pl="y" gnt="n">slachtmhara</A></E> <S>ar</S> <N pl="n" gnt="n" gnd="f">eitilt</N>. </line>
 <line uimhir="7"> <V t="láith">Tá</V> <T>an</T> <N pl="n" gnt="n" gnd="m">Rialtas</N> <V p="2ú" t="ord">tar</V> <N pl="n" gnt="n">éis</N> <N pl="n" gnt="n" gnd="f">áit</N> <T>na</T> <N pl="n" gnt="y" gnd="f">Gaeilge</N> <S>i</S> <N pl="n" gnt="n" gnd="m">saol</N> <T>na</T> <N pl="n" gnt="y" gnd="f">tíre</N> <E msg="SEIMHIU"><S>a</S> <N pl="n" gnt="n" gnd="m">ceistiú</N></E>. </line>
-<line uimhir="8"> <V pl="y" p="3ú" t="caite">Bhíodar</V> <S>ag</S> <N pl="n" gnt="n" gnd="m">rá</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">aonach</N> <V>gur</V> <O em="y">agamsa</O> <U>a</U> <V p="xx" t="caite">bhí</V> <T>na</T> <B><Z><N pl="n" gnt="n" gnd="f" h="y"/><N pl="n" gnt="y" gnd="m" h="y"/><N pl="y" gnt="n" gnd="m" h="y"/></Z>huain</B> <E msg="SEIMHIU"><V>ab</V> <A pl="n" gnt="y" gnd="f">fearr</A></E>. </line>
+<line uimhir="8"> <V pl="y" p="3ú" t="caite">Bhíodar</V> <S>ag</S> <N pl="n" gnt="n" gnd="m">rá</N> <S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">aonach</N> <V cop="y">gur</V> <O em="y">agamsa</O> <U>a</U> <V p="xx" t="caite">bhí</V> <T>na</T> <N pl="n" gnt="n" gnd="f" h="y">huain</N> <E msg="SEIMHIU"><V cop="y">ab</V> <A pl="n" gnt="y" gnd="f">fearr</A></E>. </line>
 <line uimhir="9"> <U>Ní</U> <V t="fáist">bheidh</V> <E msg="NISEIMHIU"><S>ach</S> <N pl="n" gnt="n" gnd="f">mhallacht</N></E> <S>i</S> <N pl="n" gnt="n" gnd="m">ndán</N> <O>dó</O> <S>ó</S> <T>na</T> <N pl="y" gnt="n" gnd="m">ciníocha</N> <C>agus</C> <N pl="n" gnt="n" gnd="m">fuath</N> <S>ó</S> <T>na</T> <N pl="y" gnt="n" gnd="m">náisiúin</N>. </line>
 <line uimhir="10"> <Q>An</Q> <V t="láith">bhfuil</V> <A pl="n" gnt="n">aon</A> <N pl="n" gnt="n" gnd="m">uachtar</N> <A>reoite</A> <E msg="CLAOCHLU"><S>ar</S> <T>an</T> <N pl="n" gnt="n" gnd="m">cuntar</N></E>? </line>
 </teacs>
