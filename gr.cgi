@@ -36,7 +36,7 @@ my $pure_lang = $q->param( "teanga" );
 my $teanga;
 
 ( $ionchur ) = $pure_input =~ /^(.+)$/s if defined $pure_input;
-( $teanga ) = $pure_lang =~ /^([a-z][a-z]_[A-Z][A-Z])$/ if defined $pure_lang;
+( $teanga ) = $pure_lang =~ /^([a-z][a-z](?:_[A-Z][A-Z])?)$/ if defined $pure_lang;
 
 if (defined $teanga) {
 	$lh = Lingua::GA::Gramadoir::Languages->get_handle($teanga);
