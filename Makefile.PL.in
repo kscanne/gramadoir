@@ -68,7 +68,7 @@ sub build_hashes {
 #			binmode DATABASE, ":utf8";
 			while (<DATABASE>) {
 				chomp;
-				m/^([0-9]*)(.*)/;
+				m/^([0-9]?)(.*)/;
 				$currword = substr($currword,0,$1).$2;
 #				binmode DATABASE, ":bytes";
 				chomp ($grambytes = <DATABASE>);

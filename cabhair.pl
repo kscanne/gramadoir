@@ -45,6 +45,7 @@ sub sq
 				$count++;
 			}
 		}
+		$count = 9 if ($count > 9);
 		return "$count".substr($word,$count);
 	}
 	else {
@@ -107,7 +108,7 @@ else {
 	binmode STDIN, ":utf8" if $unicode;
 	while (<STDIN>) {
 		chomp;
-		m/^([0-9]*)(.*)/;
+		m/^([0-9]?)(.*)/;
 		$currword = substr($currword,0,$1).$2;
 		binmode STDIN, ":bytes" if $unicode;
 		chomp ($grambytes = <STDIN>);
