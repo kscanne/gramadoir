@@ -360,7 +360,8 @@
 <E offset="0" fromy="357" fromx="0" toy="357" tox="12" sentence="Ní gheobhaidh an mealltóir nathrach aon táille." errortext="Ní gheobhaidh" msg="Tá gá leis an fhoirm spleách anseo">
 <E offset="10" fromy="358" fromx="10" toy="358" tox="13" sentence="Cad é mar a tá tú?" errortext="a tá" msg="Urú nó séimhiú ar iarraidh">
 <E offset="3" fromy="359" fromx="3" toy="359" tox="9" sentence="Má dhearna sí praiseach de, thosaigh sí arís go bhfuair sí ceart é." errortext="dhearna" msg="Ní gá leis an fhoirm spleách">
-<E offset="61" fromy="360" fromx="61" toy="360" tox="62" sentence="Nochtadh na fírinne sa dóigh a n-admhódh an té is bréagaí í (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
-<E offset="38" fromy="361" fromx="38" toy="361" tox="39" sentence="Tá sé-- tá sé- mo ---shin-seanathair (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
-<E offset="3" fromy="362" fromx="3" toy="362" tox="8" sentence="Is foláir dóibh a ndualgais a chomhlíonadh." errortext="foláir" msg="Ní úsáidtear an focal seo ach san abairtín /ní foláir/ de ghnáth">
-<E offset="23" fromy="363" fromx="23" toy="363" tox="24" sentence="Bhain na toibreacha le re eile agus le dream daoine atá imithe." errortext="re" msg="Ní úsáidtear an focal seo ach san abairtín /gach re/ de ghnáth">
+<E offset="58" fromy="360" fromx="58" toy="360" tox="59" sentence="Chan fhacthas dom go raibh an saibhreas céanna i mBéarla (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
+<E offset="61" fromy="361" fromx="61" toy="361" tox="62" sentence="Nochtadh na fírinne sa dóigh a n-admhódh an té is bréagaí í (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
+<E offset="38" fromy="362" fromx="38" toy="362" tox="39" sentence="Tá sé-- tá sé- mo ---shin-seanathair (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
+<E offset="3" fromy="363" fromx="3" toy="363" tox="8" sentence="Is foláir dóibh a ndualgais a chomhlíonadh." errortext="foláir" msg="Ní úsáidtear an focal seo ach san abairtín /ní foláir/ de ghnáth">
+<E offset="23" fromy="364" fromx="23" toy="364" tox="24" sentence="Bhain na toibreacha le re eile agus le dream daoine atá imithe." errortext="re" msg="Ní úsáidtear an focal seo ach san abairtín /gach re/ de ghnáth">
