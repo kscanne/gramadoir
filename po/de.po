@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramadoir 0.4\n"
 "Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
-"POT-Creation-Date: 2004-08-25 11:22-0500\n"
+"POT-Creation-Date: 2004-09-09 22:13-0500\n"
 "PO-Revision-Date: 2004-03-28 22:28+0100\n"
 "Last-Translator: Roland Illig <roland.illig@gmx.de>\n"
 "Language-Team: German <de@li.org>\n"
@@ -58,29 +58,34 @@ msgstr ""
 
 #: gram.pl:177
 #, perl-format
+msgid "Unable to set output color to %s"
+msgstr ""
+
+#: gram.pl:180
+#, perl-format
 msgid "Language %s is not supported."
 msgstr "Die Sprache %s wird nicht unterstützt."
 
 #. TRANSLATORS: Please leave untranslated, but add an acute accent to the
 #. "o" in "Gramadoir" if available in your character set and encoding.
 #. If you must translate, this is the Irish for (literally) "The Grammarian"
-#: gram.pl:182 gram.pl:242 gramdev.pl:93 gramdev.pl:118 Gramadoir.pm.in:119
+#: gram.pl:185 gram.pl:248 gramdev.pl:93 gramdev.pl:118 Gramadoir.pm.in:119
 #: Gramadoir.pm.in:147 Gramadoir.pm.in:243 Gramadoir.pm.in:257
 #: Gramadoir.pm.in:264
 msgid "An Gramadoir"
 msgstr "An Gramadóir"
 
-#: gram.pl:183 gramdev.pl:94
+#: gram.pl:186 gramdev.pl:94
 #, perl-format
 msgid "Try %s for more information."
 msgstr "%s eingeben, um weitere Informationen zu erhalten."
 
-#: gram.pl:245 gramdev.pl:151
+#: gram.pl:251 gramdev.pl:151
 #, perl-format
 msgid "version %s"
 msgstr "Version %s"
 
-#: gram.pl:247 gramdev.pl:153
+#: gram.pl:253 gramdev.pl:153
 msgid ""
 "This is free software; see the source for copying conditions.  There is NO"
 "\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
@@ -93,113 +98,113 @@ msgstr ""
 "FÜR\n"
 "EINEN BESTIMMTEN ZWECK."
 
-#: gram.pl:261
+#: gram.pl:267
 #, perl-format
 msgid "Usage: %s [OPTIONS] [FILES]"
 msgstr "Syntax: %s [OPTIONEN] [DATEIEN]"
 
-#: gram.pl:264
+#: gram.pl:270
 msgid "Options for end-users:"
 msgstr "Optionen für Endbenutzer:"
 
-#: gram.pl:268
+#: gram.pl:274
 msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
 msgstr ""
 "    --iomlan       alle Fehler protokollieren; ~/.neamhshuim wird nicht "
 "gelesen"
 
-#: gram.pl:271
+#: gram.pl:277
 msgid ""
 "    --ionchod=ENC  specify the character encoding of the text to be checked"
 msgstr "    --ionchod=ENC  Zeichensatz des zu überprüfenden Textes"
 
-#: gram.pl:274
+#: gram.pl:280
 msgid "    --aschod=ENC   specify the character encoding for output"
 msgstr ""
 
-#: gram.pl:277
+#: gram.pl:283
 msgid "    --comheadan=xx choose the language for error messages"
 msgstr ""
 
-#: gram.pl:280
+#: gram.pl:286
 msgid "    --dath=COLOR   specify the color to use for highlighting errors"
 msgstr ""
 
-#: gram.pl:283
+#: gram.pl:289
 msgid "    --litriu       write misspelled words to standard output"
 msgstr ""
 "    --litriu       falsch geschriebene Wörter auf Standardausgabe ausgeben"
 
-#: gram.pl:286
+#: gram.pl:292
 msgid "    --aspell       suggest corrections for misspellings"
 msgstr "    --aspell       Rechtschreibkorrekturen vorschlagen"
 
-#: gram.pl:289
+#: gram.pl:295
 msgid "    --aschur=FILE  write output to FILE"
 msgstr ""
 
-#: gram.pl:292 gramdev.pl:133
+#: gram.pl:298 gramdev.pl:133
 msgid "    --help         display this help and exit"
 msgstr "    --help         diese Kurzanleitung anzeigen"
 
-#: gram.pl:295 gramdev.pl:136
+#: gram.pl:301 gramdev.pl:136
 msgid "    --version      output version information and exit"
 msgstr "    --version      Versionsnummer anzeigen"
 
-#: gram.pl:298
+#: gram.pl:304
 msgid "Options for developers:"
 msgstr "Optionen für Entwickler:"
 
-#: gram.pl:300
+#: gram.pl:306
 msgid ""
 "    --api          output a simple XML format for use with other applications"
 msgstr ""
 
-#: gram.pl:302
+#: gram.pl:308
 msgid "    --html         produce HTML output for viewing in a web browser"
 msgstr "    --html         Ausgabe im HTML-Format erzeugen"
 
-#: gram.pl:308
+#: gram.pl:314
 msgid ""
 "    --no-unigram   do not resolve ambiguous parts of speech by frequency"
 msgstr "    --no-unigram   Mehrdeutige Satzteile nicht auflösen"
 
-#: gram.pl:314
+#: gram.pl:320
 msgid ""
 "    --xml          write tagged XML stream to standard output, for debugging"
 msgstr ""
 "    --xml          Ausgabe im XML-Format zu Zwecken der Fehlersuche erzeugen"
 
-#: gram.pl:317 gramdev.pl:139
+#: gram.pl:323 gramdev.pl:139
 msgid "If no file is given, read from standard input."
 msgstr ""
 "Falls keine Datei angegeben wird, wird von der Standardeingabe gelesen."
 
-#: gram.pl:320 gramdev.pl:142
+#: gram.pl:326 gramdev.pl:142
 #, perl-format
 msgid "Send bug reports to <%s>."
 msgstr ""
 "Fehlermeldungen an <%s> schicken.\n"
 "Probleme mit der Übersetzung an die Mailingliste de@li.org melden."
 
-#: gram.pl:342
+#: gram.pl:348
 msgid "There is no such file."
 msgstr "Datei nicht vorhanden."
 
-#: gram.pl:346
+#: gram.pl:352
 msgid "Is a directory"
 msgstr "Ist ein Verzeichnis"
 
-#: gram.pl:354
+#: gram.pl:360
 msgid "Permission denied"
 msgstr "Zugriff nicht erlaubt"
 
-#: gram.pl:364
+#: gram.pl:370
 #, perl-format
 msgid "%s: warning: problem closing %s\n"
 msgstr "%s: Warnung: Problem beim Schließen von %s\n"
 
-#: gram.pl:381
+#: gram.pl:387
 #, perl-format
 msgid "Currently checking %s"
 msgstr "%s wird gerade geprüft"
