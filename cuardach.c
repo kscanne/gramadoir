@@ -10,8 +10,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>		/* atoi, strtol */
-#include <ctype.h>		/* tolower, isupper, etc. */
-#include <locale.h>		/* so tolower, etc. actually WORK! */
 #else
 /* trouble! */
 #endif
@@ -470,6 +468,26 @@ replacementlookup (const char *word, char *repl)
   return 0;
 }
 
+/* used to set the locale for these and use ctype functions.
+  Might as well do them myself for those without Latin-1 locales. 
+  In each case we may assume that "x" is an Irish latin-1 character
+  since others are filtered out earlier */
+
+char
+my_tolower (const char x)
+{
+  return (x | 0x20);	/* know that x is upper as determined by my_isupper */
+}
+
+int
+my_isupper (const char x)
+{
+  if (x & 0x80)
+    return !(x & 0x20);
+  else
+    return (x >= 'A' && x <= 'Z');
+}
+
 /* Assert, word is non-zero length, terminated with "\n\0" */
 int
 dictlookup (const char *word, char *fill, char *attrs, char *extratags)
@@ -478,13 +496,13 @@ dictlookup (const char *word, char *fill, char *attrs, char *extratags)
   char unused, repl[GR_REPLMAX], codes[2 * GR_AMBIGMAX], lowered[GR_WORDMAX];
   *codes = 0;
   rawlookup (word, codes);
-  if (isupper (word[0]))
+  if (my_isupper (word[0]))
     {
       i = 0;
       while (word[i] != 0)
 	{
-	  if (isupper (word[i]))
-	    lowered[i] = (char) tolower (word[i]);
+	  if (my_isupper (word[i]))
+	    lowered[i] = my_tolower (word[i]);
 	  else
 	    lowered[i] = word[i];
 	  i++;
@@ -513,7 +531,7 @@ dictlookup (const char *word, char *fill, char *attrs, char *extratags)
 	      strcpy (fill, "Y");
 	      return 1;
 	    }
-	  else if (isupper (word[0]))
+	  else if (my_isupper (word[0]))
 	    {
 	      if (rawignorelookup (lowered))
 		{
@@ -524,7 +542,7 @@ dictlookup (const char *word, char *fill, char *attrs, char *extratags)
 	}
       if (replacementlookup (word, repl))
 	retval = 0;
-      else if (isupper (word[0]))
+      else if (my_isupper (word[0]))
 	{
 	  if (replacementlookup (lowered, repl))
 	    retval = 0;
@@ -604,17 +622,6 @@ main (int argc, char *argv[])
       return 1;
     }
 
-  /* set locale for the toupper/tolower stuff, NOT for sorting
-     since I use strcmp instead of strcoll -- if you look in the 
-     makefile when focail.bs is built I set LC_COLLATE to POSIX */
-  if (!setlocale (LC_CTYPE, "ga_IE.iso88591"))
-    if (!setlocale (LC_CTYPE, "en_US.iso88591"))
-      if (!setlocale (LC_CTYPE, "en_US.ISO8859-1"))
-	{
-	  /* "An Gramadóir: problem with the locale\n" */
-	  fprintf (stderr, "An Gramadóir: fadhb leis an logánú\n");
-	  return 1;
-	}
   if (load_dictionary () || load_replacements ())
     {
       /* "An Gramadóir: problem reading the database\n" */
