@@ -38,7 +38,7 @@
 value of t highlights, nil prevents not. The words in error in the
 Gramadoir output buffer are always highlighted")
 
-(defvar gramadoir-program-options "--html --aspell --aschod=ISO-8859-1"
+(defvar gramadoir-program-options "--html --aschod=ISO-8859-1"
 "options for the executable for An Gramadóir")
 
 (defvar gramadoir-display-buffer "*Gramadoir Output*"
