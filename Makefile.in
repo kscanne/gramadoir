@@ -9,8 +9,6 @@
 
 SHELL = @SHELL@
 
-.SUFFIXES:
-
 .SUFFIXES: .in .pl
 
 prefix=@prefix@
@@ -41,16 +39,31 @@ YACC = @YACC@
 TEANGACHA = @TEANGACHA@
 ALLPL = @ALLPL@
 ALLIN = @ALLIN@
+ALLOH = @ALLOH@
 METAS = gin.meta.sed aonchiall.meta.sed eisceacht.meta.sed rialacha.meta.sed
 
 
 all : allperl cuardach gr
 
-cuardach : cuardach.o
-	$(CC) -o cuardach $(CFLAGS) cuardach.o
+cuardach : cuardach.o $(ALLOH) farc.o
+	$(CC) -o cuardach $(CFLAGS) cuardach.o $(ALLOH) farc.o
 	
 cuardach.o : cuardach.c gettext.h
 	$(CC) -c $(CFLAGS) $(DEFS) -DBSONRAI=\"$(pkgdatadir)\" cuardach.c
+
+farc.o : farc.c
+	$(CC) -c $(CFLAGS) $(DEFS) farc.c
+
+farc.c : TEANGACHA
+	for teanga in $(TEANGACHA); do \
+		$(ECHO) "extern int byte_to_markup_$${teanga} (const unsigned char c, char *fill, char *attrs);"; \
+	done > seal1.sub
+	for teanga in $(TEANGACHA); do \
+		$(ECHO) "  else if (!strcmp (teanga, \"$${teanga}\"))"; \
+		$(ECHO) "    ret = byte_to_markup_$${teanga} (c, fill, attrs);"; \
+	done | sed '1s/else //' > seal2.sub
+	cat farc.c.in | sed "/Prototypes/r seal1.sub" | sed "/External calls/r seal2.sub" > farc.c
+	rm -f seal1.sub seal2.sub
 
 .in.pl :
 	cat $< | sed '/^#/!s/:/!:/' | tr "!" "\n" > $<.2
@@ -77,12 +90,14 @@ utfcheck : triail.utf
 	@rm -f triail.tmp triail2.tmp
 
 install : all installdirs
-	$(INSTALL_DATA) eile.bs $(pkgdatadir)/eile.bs
-	$(INSTALL_DATA) focail.bs $(pkgdatadir)/focail.bs
 	$(INSTALL_DATA) TEANGACHA $(pkgdatadir)/TEANGACHA
 	$(INSTALL_PROGRAM) cuardach $(libexecdir)/cuardach
 	$(INSTALL_PROGRAM) hilite.awk $(libexecdir)/hilite.awk
 	$(INSTALL_PROGRAM) gr $(bindir)/gr
+	for teanga in $(TEANGACHA); do \
+		$(INSTALL_DATA) eile-$${teanga}.bs $(pkgdatadir)/eile-$${teanga}.bs; \
+		$(INSTALL_DATA) focail-$${teanga}.bs $(pkgdatadir)/focail-$${teanga}.bs; \
+	done
 	for perlfile in $(ALLPL); do \
 		$(INSTALL_PROGRAM) $$perlfile $(libexecdir)/$$perlfile; \
 	done
@@ -94,12 +109,14 @@ installdirs : mkinstalldirs
 #	chmod 755 $(bindir) $(pkgdatadir) $(libexecdir)
 
 uninstall :
-	rm -f $(pkgdatadir)/eile.bs
-	rm -f $(pkgdatadir)/focail.bs
 	rm -f $(pkgdatadir)/TEANGACHA
 	rm -f $(libexecdir)/cuardach
 	rm -f $(libexecdir)/hilite.awk
 	rm -f $(bindir)/gr
+	for teanga in $(TEANGACHA); do \
+		rm -f $(pkgdatadir)/eile-$${teanga}.bs; \
+		rm -f $(pkgdatadir)/focail-$${teanga}.bs; \
+	done
 	for perlfile in $(ALLPL); do \
 		rm -f $(libexecdir)/$$perlfile; \
 	done
@@ -118,11 +135,11 @@ config.status: configure
 distclean :
 	cd po && $(MAKE) distclean
 	$(MAKE) topclean
-	rm -f gr config.log config.status Makefile
+	rm -f gr config.log config.status Makefile farc.c
 
 topclean :
 	$(MAKE) semiclean
-	rm -f cuardach cuardach.o $(ALLPL) aparser eparser rparser FOCAIL FOCAIL.all lastperl
+	rm -f cuardach cuardach*.o $(ALLPL) aparser eparser rparser FOCAIL FOCAIL.all lastperl farc.o *.c~
 
 clean :
 	cd po && $(MAKE) clean
@@ -158,7 +175,7 @@ triail.html : FORCE
 
 maintainer-clean :
 	$(MAKE) distclean
-	rm -f focail.bs eile.bs
+	rm -f *.bs
 
 ChangeLog : FORCE
 	cvs2cl.pl
@@ -167,6 +184,7 @@ dist : FORCE
 	$(MAKE) ChangeLog
 	$(LN_S) gr ../$(TARBALL)
 	tar cvhf $(TARBALL).tar -C .. $(TARBALL)/ABOUT-NLS
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/aclocal.m4
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/aonchiall.meta.sed
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/cabhair.c
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/ChangeLog
@@ -177,9 +195,8 @@ dist : FORCE
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/configure.ac
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/COPYING
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/cuardach.c
-	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/eile.bs
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/eisceacht.meta.sed
-	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/focail.bs
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/farc.c.in
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gettext.h
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gin.meta.sed
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gr.in
@@ -198,6 +215,11 @@ dist : FORCE
 	for infile in $(ALLIN); do \
 		tar rvhf $(TARBALL).tar -C .. $(TARBALL)/$$infile; \
 	done
+	for teanga in $(TEANGACHA); do \
+		tar rvhf $(TARBALL).tar -C .. $(TARBALL)/cuardach-$${teanga}.c; \
+		tar rvhf $(TARBALL).tar -C .. $(TARBALL)/eile-$${teanga}.bs; \
+		tar rvhf $(TARBALL).tar -C .. $(TARBALL)/focail-$${teanga}.bs; \
+	done
 	cd po && $(MAKE) dist
 	gzip $(TARBALL).tar
 	chmod 444 $(TARBALL).tar.gz
@@ -212,15 +234,18 @@ triail.utf : FORCE
 	@rm -f triail.utf
 	@cat triail | iconv -f ISO88591 -t UTF8 > triail.utf
 
-focail.bs : FORCE
+focail-ga.bs : FORCE
 	$(MAKE) cabhair
 	Gin 12
 	(cat ${HOME}/.ispell_gaeilge ${HOME}/.biobla | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | sed 's/.*/& 44/'; cat FOCAIL) | LC_COLLATE=POSIX sort -u > FOCAIL.all
-	cat FOCAIL.all | ./cabhair 0 > focail.bs
-	chmod 644 focail.bs
-	@$(ECHO) 'Verify count in cuardach.c:' 
-	@$(ECHO) `cat FOCAIL.all | sed 's/ [0-9]*//' | uniq | wc -l`
+	(cat FOCAIL.all | sed 's/ [0-9]*//' | uniq | wc -l | sed 's/^ *//'; cat FOCAIL.all | ./cabhair 0) > focail-ga.bs
+	chmod 644 focail-ga.bs
 #	rm -f FOCAIL FOCAIL.all
+
+focail-en.bs : FORCE
+	$(MAKE) cabhair
+	(cat ${HOME}/gaeilge/ispell/bearla/ENWORDS | wc -l | sed 's/^ *//'; cat ${HOME}/gaeilge/ispell/bearla/ENWORDS | sed 's/.*/& 1/' | ./cabhair 0) > focail-en.bs
+	chmod 644 focail-en.bs
 
 cabhair : cabhair.o
 	$(CC) -o cabhair $(CFLAGS) cabhair.o
@@ -271,11 +296,11 @@ stresstest : FORCE
 	@rm -f stress.err.bak stress.out.bak
 
 
-eile.bs : FORCE
+eile-ga.bs : FORCE
 	$(MAKE) cabhair
 	replnua
 	cat eile.pre.bs | ./cabhair 1 | egrep . > tempeile
-	(cat tempeile | wc -l | sed 's/^[^0-9]*//'; cat tempeile) > ./eile.bs
+	(cat tempeile | wc -l | sed 's/^[^0-9]*//'; cat tempeile) > ./eile-ga.bs
 	rm -f eile.pre.bs tempeile
 
 neamhshuim : FORCE
