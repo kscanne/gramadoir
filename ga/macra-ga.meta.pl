@@ -73,6 +73,7 @@ s/BROADFINALCONSONANT/[^<]*[aáoóuú][^aeiouáéíóú<]+/g;
 s/FINALVOWEL/[^<]*[^bcdfghjlmnprstvxz<]+/g;
 s/FINALA/[^<]*[AÁaá]/g;
 s/NOBEEAPOST/(?:[^b]|b[^'])[^<]+/g;
+s/NOTVNISHVN/(?:bheith|cheannach|chur|dhíol|dhul|fhoghlaim|íoc|iompar|oscailt|rá|roinnt|scríobh|sholáthar|theacht)/g;
 s/VNISH/[^<]*(?:a[dm]h|i[nr]t|áil|ú)/g;
 s/NOTDO/[^<][^<][^<]+/g;
 ############################################################################

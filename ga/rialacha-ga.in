@@ -715,18 +715,32 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.134 #1.a (unlenited caught by more general rule)
 <S>[Gg]an</S> <T>an</T> <NFCS>ECLIPSED</NFCS>:SEIMHIU
 # CB p.14 #4.c  (note no "Y"'s, initial d,f,s,t here)
+#. Deir daoine eile, áfach, gur dailtín gan maith é.
+#. Fuarthas an fear marbh ar an trá, a chorp gan máchail gan ghortú.
 <S>[Gg]an</S> <N>UNLENITEDBCGMP</N>:SEIMHIU
-# next few are exceptions CB p.14 #4.c.ii for "qualified" nouns
-<S>[Gg]an</S> <N>([Bb]eann|[Cc]uimhneamh|[Mm]órán)</N>:OK
+# a few general exceptions, e.g. "cead" in phrases in OD
+# mórán,puinn *should* be handled by "qualified" exceptions below,
+# but in practice this is dicey so put them here since they are uniformly unlen.
+<S>[Gg]an</S> <N>([Bb]eann|[Bb]reith|[Cc]ead|[Cc][ou]r|[Mm]órán|[Pp]uinn)</N>:OK
+#  this handles "gan cuimhneamh" by accident
 #. Dúirt sé liom gan pósadh (OK).
 <S>[Gg]an</S> <N>VNISH</N>:OK
+# next few are exceptions CB p.14 #4.c.ii for "qualified" nouns
+<E><S>[Gg]an</S> <N>UNLENITEDBCGMP</N></E> <C>ná</C>:OK
 <E><S>[Gg]an</S> <N>UNLENITEDBCGMP</N></E> <A>ANYTHING</A>:OK
+#. Na duilleoga ar an ngas beag, cruth lansach orthu agus iad gan cos fúthu (OK).
+<E><S>[Gg]an</S> <N>UNLENITEDBCGMP</N></E> <O>ANYTHING</O>:OK
+#. D'fhág sin gan meas dá laghad ag duine ar bith air (OK).
+<E><S>[Gg]an</S> <N>UNLENITEDBCGMP</N></E> dá <N>laghad</N>:OK
 <E><S>[Gg]an</S> <N>UNLENITEDBCGMP</N></E> <R>ar bith</R>:OK
+#. Tá mé gan cos go brách (OK).
+<E><S>[Gg]an</S> <N>UNLENITEDBCGMP</N></E> <R>go brách</R>:OK
 <E><S>[Gg]an</S> <N>UNLENITEDBCGMP</N></E> <R>(amach|amháin)</R>:OK
 <E><S>[Gg]an</S> <N>UNLENITEDBCGMP</N></E> <NG>ANYTHING</NG>:OK
 <E><S>[Gg]an</S> <N>UNLENITEDBCGMP</N></E> <T>ANYTHING</T> <NG>ANYTHING</NG>:OK
 #. Níl sé ceadaithe aistriú ó rang go chéile gan cead a fháil uaim (OK).
 <E><S>[Gg]an</S> <N>UNLENITEDBCGMP</N></E> a <N>VNISH</N>:OK
+<E><S>[Gg]an</S> <N>UNLENITEDBCGMP</N></E> a <N>NOTVNISHVN</N>:OK
 <S>[Gg]an</S> <N>[Ff]ios</N>:SEIMHIU
 # CB p.132 #5
 [Gg]o <VPAST>ANYTHING</VPAST>:BACHOIR{gur}
