@@ -13,25 +13,18 @@
 # standard input if no arguments are given.   The default behavior is
 # to write a summary of possible errors to standard output.
 #
-# There are several command line options.  The --html command line argument
-# produces HTML output which should resemble the terminal output when
-# viewed in a standard web brower.  The --litriu argument tells gr to
-# act like classical UNIX "spell" (or ispell -l), and the --xml argument
-# writes the intermediate tagged XML stream to standard output for 
-# development or debugging purposes.  By default, the script looks in the
-# user's home directory for a file .neamhshuim of words to ignore while
-# checking the spelling and grammar.  Use the --iomlan flag to disregard
-# this file.  The standard GNU --version and --help options work in the 
-# expected way.   The language of the text to be checked can be specified
-# with --teanga=xx; the list of available language codes is in the file
-# TEANGACHA.
+# There are several command line options.  See the web page
+# http://borel.slu.edu/gramadoir/
+# for a description of these, or use "gr --help"
 
 # NOT internationalized
+PACKAGE_NAME="@PACKAGE_NAME@"
 packageversion="@PACKAGE_VERSION@"
 bugemail="@PACKAGE_BUGREPORT@"
 TEXTDOMAINDIR="@prefix@/share/locale"
-TEXTDOMAIN="@PACKAGE_NAME@"
+TEXTDOMAIN="${PACKAGE_NAME}"
 TEANGACHA="@TEANGACHA@"
+DATADIR="@prefix@/share/${PACKAGE_NAME}"
 export TEXTDOMAINDIR TEXTDOMAIN
 
 EXECUTABLE="${0##/*/}"
@@ -50,6 +43,7 @@ usage3=`@SH_GETTEXT@ "    --html         produce HTML output for viewing in a we
 usage4=`@SH_GETTEXT@ "    --xml          write tagged XML stream to standard output, for debugging"`
 usage5=`@SH_GETTEXT@ "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"`
 usage8=`@SH_GETTEXT@ "    --teanga=XX    specify the language of the text to be checked (default=ga)"`
+usage9=`@SH_GETTEXT@ "    --ionchod=ENC  specify the character encoding of the text to be checked"`
 usage6=`@SH_GETTEXT@ "    --help         display this help and exit"`
 usage7=`@SH_GETTEXT@ "    --version      output version information and exit"`
 stdinhelp=`@SH_GETTEXT@ "If no file is given, read from standard input."`
@@ -57,7 +51,9 @@ bugreports=`@SH_GETTEXT@ "Send bug reports to <%s>."`
 versionstring=`@SH_GETTEXT@ "version %s"`
 gpl=`@SH_GETTEXT@ "This is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\nto the extent permitted by law."`
 tryhelp=`@SH_GETTEXT@ "Try %s for more information."`
-unknownopt=`@SH_GETTEXT@ "unknown option"`
+unknownopt=`@SH_GETTEXT@ "unrecognized option %s"`
+missingarg=`@SH_GETTEXT@ "option %s requires an argument"`
+unwanted=`@SH_GETTEXT@ "option %s does not allow an argument"`
 unsupported=`@SH_GETTEXT@ "Language %s is not supported."`
 ANAITHNIDSRL=`@SH_GETTEXT@ "Unknown word (ignoring remainder in this sentence)"`
 ANAITHNID=`@SH_GETTEXT@ "Unknown word"`
@@ -121,6 +117,8 @@ echo "${usage2}"
 echo "${usage3}"
 echo "${usage4}"
 echo "${usage5}"
+echo "${usage8}"
+echo "${usage9}"
 echo "${usage6}"
 echo "${usage7}"
 echo
@@ -132,17 +130,36 @@ printf "${bugreports}\n" "${bugemail}"
 # one argument, the erroneous option passed
 option_error()
 {
-echo "${CLAR}: ${unknownopt} \`${1}'"
+printf "${CLAR}: ${unknownopt}\n" "${1}"
+printf "${tryhelp}\n" "${HELPCOMMAND}"
+}
+
+# one argument, the erroneous option passed
+no_argument()
+{
+printf "${CLAR}: ${missingarg}\n" "${1}"
+printf "${tryhelp}\n" "${HELPCOMMAND}"
+}
+
+# one argument, the erroneous option passed
+unwanted_arg()
+{
+printf "${CLAR}: ${unwanted}\n" "${1}"
 printf "${tryhelp}\n" "${HELPCOMMAND}"
 }
 
 
-# This function is intended to convert a utf-8 stream into ISO-8859-1.  I'm 
-# assuming the input stream contains Irish text.  This is reasonable because 
-# the actual grammar checking will be a terrible mess otherwise. 
+# This function used to simply convert a utf-8 stream into ISO-8859-1,
+# hence the name.  It has now been generalized to use GNU libc "iconv"
+# to do all conversions of character encodings.
 diutf()
 {
-tr -d "\303" | tr "[\200-\277]" "[\300-\377]"
+if [ "${IONCHOD}" != "${NATIVE}" ]
+then
+	iconv -f ${IONCHOD} -t ${NATIVE}
+else
+	cat
+fi
 }
 
 # strips any pre-existing markup, tokenizes with <c></c>,
@@ -356,6 +373,7 @@ AIBHSIGHVAR="@EGREP_COLOR@ "
 ACTION=comhad
 SCRIOBH_HTML=nihea
 TEANGA=ga
+IONCHOD=unspecified
 while [ ${1%%[^-]*} ]
 do
 	if echo ${1} | grep "=" > /dev/null
@@ -372,8 +390,16 @@ do
 				exit 1
 			fi
 		;;
+		"--ionchod" )
+			IONCHOD="${OPTARG}"
+		;;
+		"--help" | "--version" | "--html" | "--xml" | "--litriu" | "--iomlan" )
+			unwanted_arg ${JUSTOPT}
+			exit 1
+		;;
 		* )
 			option_error ${JUSTOPT}
+			exit 1
 		;;
 		esac
 	else
@@ -404,13 +430,24 @@ do
 		"--iomlan" )
 			USEIGNORE="noignore"
 		;;
+		"--ionchod" | "--teanga" )
+			no_argument ${1}
+			exit 1
+		;;
 		* )
 			option_error ${1}
+			exit 1
 		;;
 		esac
 	fi
 	shift
 done
+
+NATIVE=`grep "^${TEANGA} " ${DATADIR}/TEANGACHA | sed "s/^${TEANGA} *\([^ ]*\).*/\1/"`
+if [ "${IONCHOD}" = "unspecified" ]
+then
+	IONCHOD=${NATIVE}
+fi
 
 if [ -z "${1}" ]
 then
