@@ -1,17 +1,22 @@
 # Exceptions to grammatical rules.   Patterns here are "OK".
-[Aa]ch bheith:
 ANYTHING [Aa]n méid:
 [Bb]a é|ea|eisean|í|iad:
+ANYTHING bheith:
 [Cc]á as:
 [Cc]á mhinice|fhad|mhéad:
-[Cc]hun bheith:
+# CB p.133 #12.b
+ANYTHING deir(im|imid|tear|inn|eadh|imis|teá|idís|tí)?:
+# CB p.133 #12.b
+ANYTHING déarf(aidh|aimi[ds]|ar|ainn|á|adh|aidís|aí):
+# CB p.133 #12.b
+ANYTHING dú(irt|ra[dm]ar|radh):
 [Ff]aoi deara:
 [Gg]an fhios:
 [Gg]o chéile:
-[Ll]e bheith|bhur|[Cc]héile|dhá:
+[Ll]e bhur|[Cc]héile|dhá:
+# CB p.133 #12.c
 [Mm]á tá(im|imid|thar)?:
-[Mm]á deir(im|imid)?:
-[Nn]í bhfuair(ea[md]ar)?:
+# CB p.133 #12.e (past)
+[Nn]í bhfua(ir|rthas|irea[md]ar):
+# CB p.133 #12.e (future/cond)
 [Nn]í bhfaigh(idh|imi[ds]|fear|inn|feá|eadh|idís|fí):
-[Nn]í deir(im|imid|tear|inn|eadh|imis|teá|idís|tí|e)?:
-[Nn]í dúirt:
