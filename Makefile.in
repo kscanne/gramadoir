@@ -50,7 +50,7 @@ distclean :
 
 topclean :
 	$(MAKE) semiclean
-	rm -f aparser eparser rparser *.c~
+	rm -f aparser eparser rparser *.c~ ChangeLog.bak
 
 clean :
 	cd po && $(MAKE) clean
@@ -110,7 +110,9 @@ dist : FORCE
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gramadoir.el
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/Gramadoir.pm.in
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gramadoir.vim
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gramdev.pl
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gram.pl
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/install-sh
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/Languages-en_us.pm
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/Languages.pm
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/lexbuild
