@@ -410,8 +410,13 @@ h?[Aa]on <N>LENITEDDST</N>:NISEIMHIU
 #. Cá chás dúinn bheith ag máinneáil thart anseo?
 <V cop="y">[Cc]á</V> <N>LENITED</N>:NISEIMHIU
 # exceptions in OD too: cá.3a; "cá mhéad" is in comhshuite
+# conceivably any abstract noun of degree, but corpus only has these!
 #. Cá mhinice ba riachtanach dó stad (OK)?
 <V cop="y">[Cc]á</V> <N>(mhinice|fhad)</N>:OK
+# converse; see OD, says "lenites" explicitly, CB p.152
+# "Cá méad" trapped by INPHRASE type rule
+<V cop="y">[Cc]á</V> <N pl="n" gnt="n" gnd="f">minice</N>:SEIMHIU
+<V cop="y">[Cc]á</V> <N pl="n" gnt="n" gnd="m">fad</N>:SEIMHIU
 # CB p.132 #5
 #. Cá n-oibrigh an t-údar sular imigh sí le ceol?
 <Q>[Cc]á</Q> <VPAST>ANYTHING</VPAST>:BACHOIR{cár}
