@@ -754,6 +754,7 @@ sub grammatical_errors
 	croak gettext('conversion from %s is not supported', 
 			$self->{'input_encoding'}) if $@;
 	my $pristine = $text;  # so actually NOT pristine e.g. if input is utf8
+	$pristine =~ s/(<[^>]*>)/" " x length($1);/eg;
 	$pristine =~ s/^/ /;
 	$pristine =~ s/\n/ \n /g;
 	$pristine =~ s/$/ /;
