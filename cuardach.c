@@ -380,8 +380,9 @@ int dictlookup(const char* word, char* fill, char* attrs, char* extratags)
   w points into the "token": looks like "<c>word</c>!!'" or the like.
   token includes leading characters too: "`<c>word</c>!!'"
   No guarantee that the token is well-formed (e.g. if len>=512)
+  Return 1 if no <c> or </c> and token is filled up (len==511), 0 otherwise
 */
-void markup(char* token)
+int markup(char* token)
     {
      char mu[8], attrs[128], extratags[512];
      char* tail, *w; 
@@ -389,8 +390,10 @@ void markup(char* token)
 
      w=strstr(token, "<c>");
      tail = strstr(token, "</c>");
-     if (tail==NULL || w==NULL)     /* e.g. punct, "<line", length>511, etc. */
+     if (tail==NULL || w==NULL) {   /* e.g. punct, "<line", length>511, etc. */
           printf("%s",token);
+	  return (strlen(token)==511);
+	 }
      else {
         *tail='\n';              /* \n since it is kept around in focloir */ 
         *(tail+1)='\0';              /* null terminate the word itself */
@@ -406,6 +409,7 @@ void markup(char* token)
         printf("</%s>", mu);              /** end of new markup **/
         printf("%s", tail+4);             /** chars after </c> **/
        }
+     return 0;
     }
 
 void cleanup()
@@ -419,6 +423,7 @@ void cleanup()
 int main(int argc, char* argv[])
    {
     char token[512], *w;
+    int badtoken=0;
 
     if (argc != 2) {
                       /* "An Gramadóir: problem with the 'cuardach' command" */
@@ -451,8 +456,8 @@ int main(int argc, char* argv[])
     while (scanf("%511s",token) != EOF)
           {
            if (!strcmp(token, "<line")) printf("\n");
-           else printf(" ");
-	   markup(token);
+           else if (!badtoken) printf(" ");
+	   badtoken=markup(token);
           }
     printf("\n</teacs>\n");
     cleanup();
