@@ -18,6 +18,7 @@ local *PIPE;
 print $q->header( "text/plain" ),
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\"\n",
 "\"http://www.w3.org/TR/html4/strict.dtd\">\n",
+"<html lang=\"ga\">\n",
 "<head>\n",
 "<title>An Gramad&oacute;ir: Tortha&iacute;</title>\n",
 "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\">\n",
