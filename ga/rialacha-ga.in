@@ -273,6 +273,8 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 # CB p.12 #1.b
 #. Chóirigh sé na lampaí le solas a chaitheamh os comhair an coinnleora.
 <T>[Aa]n</T> <N pl="n" gnt="y" gnd="m">UNLENITEDBCFGMP</N>:SEIMHIU
+# exception CB p.152 #7.a  (never applies currently since disambigs to NMC)
+<T>[Aa]n</T> <N pl="n" gnt="y" gnd="m">[Mm]éid</N>:OK
 # CB p.23 #9
 #. Comhlánóidh saoránacht an Aontais an saoránacht náisiúnta agus ní ghabhfaidh sí a hionad.
 <T>[Aa]n</T> <N pl="n" gnt="n" gnd="f">INITIALS</N>:PREFIXT
@@ -1708,22 +1710,22 @@ ECLIPSINGNUMBER <E><N>ECLIPSED</N></E>:OK
 #  <=> Prefix h rules (verbs handled at top)
 #############################################################################
 #. Nach holc an mhaise duit a bheith ag magadh.
-<AWITHH>ANYTHING</AWITHH>:NIAITCH
+<A pl="n" gnt="n" h="y">ANYTHING</A>:NIAITCH
 # CB p.24 #11.b
 #. Dún do bhéal, a mhiúil na haon chloiche (OK)!
-<T>[Nn]a</T> <E><AWITHH>(haon|hocht)</AWITHH></E>:OK
+<T>[Nn]a</T> <E><A pl="n" gnt="n" h="y">(haon|hocht)</A></E>:OK
 # CB p.24 #11.b
 #. Scaoileadh seachtar duine chun báis i mBaile Átha Cliath le hocht mí anuas (OK).
-<S>([Ll]e|[Ss]na)</S> <E><AWITHH>(haon|hocht)</AWITHH></E>:OK
+<S>([Ll]e|[Ss]na)</S> <E><A pl="n" gnt="n" h="y">(haon|hocht)</A></E>:OK
 # CB p.24 #11.b; of course "a hAon" in the corpus just to irritate me
 #. Ní dhúnfaidh an t-ollmhargadh go dtí a haon a chlog ar maidin (OK).
-[Aa] <E><AWITHH>(h[Aa]on|h[Oo]cht)</AWITHH></E>:OK
+[Aa] <E><A pl="n" gnt="n" h="y">(h[Aa]on|h[Oo]cht)</A></E>:OK
 # CB p.24 #11.b
 #. Is mar gheall ar sin atá líníocht phictiúrtha chomh húsáideach sin (OK).
-[Cc]homh <E><AWITHH>ANYTHING</AWITHH></E>:OK
+[Cc]homh <E><A pl="n" gnt="n" h="y">ANYTHING</A></E>:OK
 # CB p.24 #11.b
 #. Tá sí ag feidhmiú go héifeachtach (OK).
-[Gg]o <E><AWITHH>ANYTHING</AWITHH></E>:OK
+[Gg]o <E><A pl="n" gnt="n" h="y">ANYTHING</A></E>:OK
 # OD has "ní hansa", "ní hamháin", "ní hamhlaidh" (now in comhshuite)
 # See LGG p.112 too; but CB gives "ní ionann"; corpus split.
 #. Ní hionann cuingir na ngabhar agus cuingir na lánúine (OK).
@@ -2174,7 +2176,7 @@ m?Bh?éal <E><A pl="n" gnt="n">Feirsteach</A></E>:OK
 háirithe:INPHRASE{go háirithe}
 <A pl="n" gnt="n" h="y">hamháin</A>:INPHRASE{ní hamháin}
 <[AR]>hamhlaidh</[AR]>:INPHRASE{ní hamhlaidh}
-<A pl="n" gnt="y" gnd="f" h="y">hansa</A>:INPHRASE{ní hansa}
+<A pl="n" gnt="y" gnd="f">hansa</A>:INPHRASE{ní hansa}
 # both have genderless tag
 <N pl="n" gnt="n">[HC]ong</N>:INPHRASE{Hong Cong}
 <N pl="n" gnt="n">[Hh]úta</N>:INPHRASE{raiple húta}
