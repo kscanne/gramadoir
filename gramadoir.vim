@@ -52,12 +52,17 @@ function s:NextError()
   let l:boldplustail=strpart(l:currline, l:position-1, strlen(l:currline)-l:position)
   let l:bolderror=matchstr(l:boldplustail, "<b>[^<]*<.b>")
   let s:errorwords=strpart(l:bolderror, 3, strlen(l:bolderror)-7)
-  let s:errorpattern=substitute(s:errorwords," ",'[ \\t\\n]',"g")
+  let s:errorpattern=substitute(s:errorwords," ",'[ \\t\\n]\\+',"g")
   execute "normal jk0".l:position."l"
   execute "normal ll"
   execute "syntax match grError /".s:errorwords."/"
   execute "normal \<C-W>t"
   execute "normal ".l:linenumber."G"
+  if l:linenumber == "1"
+      execute "normal G$"
+  else
+      execute "normal k$"
+  endif
   call search(s:errorpattern)
   execute "syntax match grError /".s:errorpattern."/"
   highlight grError cterm=bold ctermfg=Red guifg=Red
@@ -72,7 +77,9 @@ endfunction
 
 function s:Neamhshuim()
   if s:errorwords !~ ".* .*"
-     let l:dummy2=system("(cat ". s:ignore . "; echo \"". s:errorwords ."\") | LC_COLLATE=C sort -u -o ". s:ignore ."; sed -i \"1s/.*/`cat ". s:ignore . " | grep -v '^[0-9]' | wc -l`/\" ". s:ignore)
+     let l:dummy2=system("touch ". s:ignore)
+     let l:dummy3=system("(echo \"0\"; grep -v '^[0-9]' ". s:ignore . "; echo \"". s:errorwords ."\") | LC_COLLATE=C sort -u -o ". s:ignore)
+     let l:dummy4=system("sed -i \"1s/.*/`cat ". s:ignore . " | grep -v '^0$' | wc -l`/\" ". s:ignore)
      execute "normal \<C-W>b"
      execute "normal ma"
      silent execute "%s/<b>".s:errorwords."<.b>/".s:errorwords."/g"
