@@ -75,14 +75,91 @@ construct the appropriate entry.
 </p>
 
 <hr>
+<h2>Common structure of the *.in files</h2>
+<p>
+The structure of all three input files is essentially the same.
+I've included a <i>flex/bison</i> parser in the distribution 
+that can be used for error-checking these files during development
+(see the "poncin" target in the Makefile).   Also, those who might prefer
+a formal (BNF-like) grammar can look at the files <i>ponc.in.l</i>
+and <i>ponc.in.y</i>.
+</p>
+
+<p>Lines beginning with a '#' or lines containing only whitespace are ignored.
+All other lines contain "rules", which are structured as follows:</p>
+
+<pre>
+phrase:action
+</pre>
+
+<p>
+A phrase is a simplified description of the regular expression you want 
+to match in the XML stream.   The phrase syntax is the same for all
+three files: a sequence of words separated by single spaces.
+A word can either be an explicit regular expression
+(e.g. "[Aa]ch" to match upper or lowercase "ach") or one
+of a collection of macros defined in the file <i>gin.meta.sed</i>
+(e.g. "LENITEDDFST" expands to the regular expression
+"[DdFfSsTt]h[^&lt;]*").  In addition, a word can be provided with
+a grammatical tag when there is a danger of ambiguity.
+For instance
+"&lt;T&gt;[Aa]n&lt;/T&gt;"
+refers specifically to the word "an" as the definite article and 
+not, say, as an interrogative particle.  It is a good idea to
+include these tags even for unambiguous words, in case the database
+changes in the future (it is also marginally faster this way).
+The tag syntax
+"&lt;^S&gt;do&lt;/^S&gt;"
+is permitted as well; this will match instances of the word "do"
+which are <em>not</em> prepositions.
+</p>
+
+<p>
+Because the syntax of the "action" differs among the three
+files, we will discuss them one by one.   In the sections below
+you will also find advice for what kinds of rules you might like
+to include, ways of optimizing your rule set, etc.
+</p>
+
 <h2>Disambiguation: <i>aonchiall.in</i></h2>
-A detailed description of this file will appear here shortly.
+The phrase portion of a rule in <i>aonchiall.in</i>
+is required to contain a single word marked up with
+"&lt;B&gt;&lt;/B&gt;".  Naturally, this is the word to disambiguate
+and the phrase is the context in which the disambiguation is to occur.
+The "action" portion contains a single (opening) part of speech tag
+like 
+"&lt;N&gt;"
+which represents the disambiguated part of speech when the given
+phrase is matched.
 
 <h2>Grammar checking: <i>rialacha.in</i></h2>
-A detailed description of this file will appear here shortly.
+<p>
+The phrase portion of a rule in <i>rialacha.in</i>
+is converted to a regular expression which matches a grammatical error.
+The action portion consists simply of a macro which expands
+to the error message you want to be printed when the rule
+applies.   As they belong to the user interface, these macros
+are defined in <i>gr.in</i>.  The most common one is
+"SEIMHIU" which expands to 
+"Seimhiú ar iarraidh" ("Missing aspiration/lenition").
+Certain macros can also take an parameter inside curly braces: 
+the action "BACHOIR{ina}"
+expands to "Ba chóir duit /ina/ a úsáid anseo"
+("You ought to use /ina/ here") with the parameter inserted between the 
+slashes.
+</p>
 
 <h2>Exceptions: <i>eisceacht.in</i></h2>
-A detailed description of this file will appear here shortly.
+<p>
+The phrases in <i>eisceacht.in</i> represent patterns which are
+matched as errors by <i>rialacha.in</i> but which are actually 
+grammatical and should not be reported as errors.
+For instance, the preposition <i lang="ga">faoi</i> causes
+aspiration in general, but not in the phrase <i lang="ga">faoi deara</i>;
+this phrase is therefore included in <i>eisceacht.in</i>.
+The action portion of a rule is left blank (though, to keep
+the grammars the same, each line should be terminated by a colon).
+</p>
 
 <hr>
 <h2>Contributors</h2>
