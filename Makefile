@@ -26,7 +26,7 @@ datarootdir = $(prefix)/share
 datadir = $(datarootdir)/$(APPNAME_ASCII)
 webhome = $(HOME)/public_html/gramadoir
 
-all : aonchiall.pl rialacha.pl cuardach gr
+all : aonchiall.pl eisceacht.pl rialacha.pl cuardach gr
 
 gr : gr.in
 	rm -f gr
@@ -51,6 +51,11 @@ aonchiall.pl : aonchiall.in aonchiall.meta.sed
 	(echo "#!$(PERL)"; echo '# Users should modify aonchiall.in, not this file'; echo 'while(<>){'; cat aonchiall.in | sed -f aonchiall.meta.sed; echo 'print;'; echo '}'; echo 'exit;') > aonchiall.pl
 	chmod 555 aonchiall.pl
 
+eisceacht.pl : eisceacht.in eisceacht.meta.sed
+	rm -f eisceacht.pl
+	(echo "#!$(PERL)"; echo '# Users should modify eisceacht.in, not this file'; echo 'while(<>){'; cat eisceacht.in | sed -f eisceacht.meta.sed; echo 'print;'; echo '}'; echo 'exit;') > eisceacht.pl
+	chmod 555 eisceacht.pl
+
 check : all
 	@./gr triail > triail.tmp
 	@if diff triail.tmp triail.err; then echo 'Ceart go leor.'; else echo 'Fadhb.'; fi
@@ -64,6 +69,7 @@ install : all
 	$(INSTALL_PROGRAM) cuardach $(libexecdir)
 	$(INSTALL_PROGRAM) hilite.awk $(libexecdir)
 	$(INSTALL_PROGRAM) aonchiall.pl $(libexecdir)
+	$(INSTALL_PROGRAM) eisceacht.pl $(libexecdir)
 	$(INSTALL_PROGRAM) rialacha.pl $(libexecdir)
 	$(INSTALL_DIR) $(bindir)
 	$(INSTALL_PROGRAM) gr $(bindir)
@@ -73,12 +79,14 @@ uninstall :
 	rm -f $(libexecdir)/cuardach
 	rm -f $(libexecdir)/hilite.awk
 	rm -f $(libexecdir)/aonchiall.pl
+	rm -f $(libexecdir)/eisceacht.pl
 	rm -f $(libexecdir)/rialacha.pl
 	rm -f $(bindir)/gr
 
 installweb :
 	$(INSTALL_DATA) cuidiu.html $(webhome)
 	$(INSTALL_DATA) index.html $(webhome)
+	$(INSTALL_DATA) iompar.html $(webhome)
 	$(INSTALL_DATA) sios.html $(webhome)
 	$(INSTALL_DATA) sonrai.html $(webhome)
 	$(INSTALL_DATA) sampla.html $(webhome)
@@ -87,10 +95,10 @@ triail.html : all triail
 	./gr --html triail > triail.html
 
 distclean :
-	rm -f triail.html cuardach cuardach.o rialacha.pl aonchiall.pl gr cabhair.o cabhair
+	rm -f triail.html cuardach cuardach.o rialacha.pl aonchiall.pl eisceacht.pl gr cabhair.o cabhair
 
 clean :
-	rm -f triail.html cuardach cuardach.o rialacha.pl aonchiall.pl gr
+	rm -f triail.html cuardach cuardach.o rialacha.pl aonchiall.pl eisceacht.pl gr cabhair.o cabhair
 
 maintainer-clean :
 	make distclean
@@ -100,8 +108,11 @@ dist : triail.err
 	ln -s gr ../$(APPNAME)
 	tar cvhf $(APPNAME).tar -C .. $(APPNAME)/aonchiall.in
 	tar rvhf $(APPNAME).tar -C .. $(APPNAME)/aonchiall.meta.sed
+	tar rvhf $(APPNAME).tar -C .. $(APPNAME)/cabhair.c
 	tar rvhf $(APPNAME).tar -C .. $(APPNAME)/COPYING
 	tar rvhf $(APPNAME).tar -C .. $(APPNAME)/cuardach.c
+	tar cvhf $(APPNAME).tar -C .. $(APPNAME)/eisceacht.in
+	tar rvhf $(APPNAME).tar -C .. $(APPNAME)/eisceacht.meta.sed
 	tar rvhf $(APPNAME).tar -C .. $(APPNAME)/focail.bs
 	tar rvhf $(APPNAME).tar -C .. $(APPNAME)/gr.in
 	tar rvhf $(APPNAME).tar -C .. $(APPNAME)/hilite.awk
