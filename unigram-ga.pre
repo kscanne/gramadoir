@@ -1,7 +1,0 @@
-#!PERLPATH
-while(<>){
-s/<V(?: pl="y")? p=".." t="([^"]*)"/<V p="xx" t="$1"/g;
-# UNIGRAMS
-print;
-}
-exit;
