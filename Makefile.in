@@ -42,7 +42,7 @@ cuardach : cuardach.o
 	$(CC) -o cuardach $(CFLAGS) cuardach.o
 	
 cuardach.o : cuardach.c
-	$(CC) -c $(CFLAGS) $(DEFS) -DBSONRAI=\"$(pkgdatadir)/focail.bs\" cuardach.c
+	$(CC) -c $(CFLAGS) $(DEFS) -DBSONRAI=\"$(pkgdatadir)\" cuardach.c
 
 rialacha.pl : rialacha.in rialacha.meta.sed gin.meta.sed
 	($(ECHO) "#!$(PERL)"; $(ECHO) '# Users should modify rialacha.in, not this file'; $(ECHO) 'while(<>){';  cat rialacha.in | sed -f gin.meta.sed | sed -f rialacha.meta.sed; $(ECHO) 'print;'; $(ECHO) '}'; $(ECHO) 'exit;') > rialacha.pl
@@ -60,6 +60,7 @@ installcheck : FORCE
 
 
 install : all installdirs
+	$(INSTALL_DATA) eile.bs $(pkgdatadir)/eile.bs
 	$(INSTALL_DATA) focail.bs $(pkgdatadir)/focail.bs
 	$(INSTALL_PROGRAM) cuardach $(libexecdir)/cuardach
 	$(INSTALL_PROGRAM) hilite.awk $(libexecdir)/hilite.awk
@@ -74,6 +75,7 @@ installdirs : mkinstalldirs
 #	chmod 755 $(bindir) $(pkgdatadir) $(libexecdir)
 
 uninstall :
+	rm -f $(pkgdatadir)/eile.bs
 	rm -f $(pkgdatadir)/focail.bs
 	rm -f $(libexecdir)/cuardach
 	rm -f $(libexecdir)/hilite.awk
@@ -123,7 +125,7 @@ triail.html : FORCE
 
 maintainer-clean :
 	$(MAKE) distclean
-	rm -f focail.bs
+	rm -f focail.bs eile.bs
 
 dist : FORCE
 	$(LN_S) gr ../$(TARBALL)
@@ -134,6 +136,7 @@ dist : FORCE
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/configure.ac
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/COPYING
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/cuardach.c
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/eile.bs
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/eisceacht.in
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/eisceacht.meta.sed
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/focail.bs
@@ -210,5 +213,12 @@ poncin : aparser eparser rparser
 	@cat eisceacht.in | ./eparser
 	@$(ECHO) 'Checking rialacha.in'
 	@cat rialacha.in | ./rparser
+
+eile.bs : FORCE
+	replnua
+
+neamhshuim : FORCE
+	cat ../../ispell/bearla/glac ../../ispell/bearla/hyphenglac | LC_COLLATE=POSIX sort -u > /tmp/neamhshuim.tmp
+	(cat /tmp/neamhshuim.tmp | wc -l | sed 's/^[^0-9]*//'; cat /tmp/neamhshuim.tmp) > ${HOME}/.neamhshuim
 
 FORCE :
