@@ -1,5 +1,5 @@
---- Makefile	2005-01-24 15:42:08.176212616 -0600
-+++ Makefile.ok	2005-01-24 15:24:30.546996696 -0600
+--- Makefile	2005-03-01 16:18:16.729868744 -0600
++++ Makefile.ok	2005-03-01 16:18:12.102572200 -0600
 @@ -76,6 +76,15 @@
  
  Makefile : $(GRAMDIR)/Makefile-xx.in configure
@@ -16,7 +16,7 @@
  
  test : perl
  	(cd $(PERLD); make test)
-@@ -174,6 +183,12 @@
+@@ -179,6 +188,12 @@
  triail : rialacha-$(TEANGA).in
  	sed -n '/^#\./{s/^#\. //; p;}' rialacha-$(TEANGA).in > triail
  
@@ -29,7 +29,15 @@
  triail.xml-update : FORCE
  	$(MAKE) triail
  	$(MAKE) perl
-@@ -319,4 +334,84 @@
+@@ -263,6 +278,7 @@
+ 	$(MAKE) rebuildlex
+ 	rm -f Makefile $(PERLDOK) lexicon-$(TEANGA).txt
+ 	rm -fR $(PERLD)
++	rm -fR gramadoir
+ 
+ clean :
+ 	if [ -e $(PERLD)/Makefile ]; then (cd $(PERLD);  make distclean); fi
+@@ -324,4 +340,95 @@
  zipped : perl
  	(cd $(PERLD); make zipdist)
  
@@ -112,5 +120,16 @@
 +
 +bugs.html : bugs.txt
 +	cat bugs.txt | sed '/^[^#]/s/\*\([^\*]*\)\*/<b class=gramadoir>\1<\/b>/g; s/^[^#].*/<i>&<\/i><br>/; s/^# *HEADING: *\(.*\)/<hr><h2>\1<\/h2><p>/; s/^# *BUG.*/<\/p><p>/; s/^# \(.*\)/\1<br>/;' > $@
++
++gram-ga.exe : FORCE
++	rm -fR gramadoir
++	rm -f gramadoir.zip
++	mkdir gramadoir
++	cp -Rf $(PERLD)/lib/Lingua gramadoir
++	rm -fR gramadoir/Lingua/GA/Gramadoir/Languages*
++	rm -f gramadoir/Lingua/GA/Gramadoir.pm
++#	(cd gramadoir; pp -o gram-ga.exe -l /lib/libc.so.6 -l /lib/libpthread.so.0 /usr/bin/gram-ga.pl)
++	(cd gramadoir; pp -o gram-ga.exe -x ../$(PERLD)/scripts/gram-ga.pl)
++	zip -r gramadoir.zip gramadoir
 +
  FORCE :
