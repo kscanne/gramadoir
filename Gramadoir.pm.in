@@ -810,6 +810,10 @@ sub localize_me
 			$msgid = gettext('Unnecessary prefix \/d\'\/');
 			s/NIDEE/$msgid/;
 		}
+		if (/NEEDART/) {
+			$msgid = gettext('Definite article required');
+			s/NEEDART/$msgid/;
+		}
 		if (/ONEART/) {
 			$msgid = gettext('Unnecessary use of the definite article');
 			s/ONEART/$msgid/;
