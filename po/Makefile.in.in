@@ -101,7 +101,7 @@ $(DOMAIN).pot-update: $(POTFILES) $(srcdir)/POTFILES.in remove-potcdate.sed
 	    mv $(DOMAIN).po $(srcdir)/$(DOMAIN).pot; \
 	  fi; \
 	}
-	sed -i 's/gr\.sh:/gr.in:/' $(srcdir)/$(DOMAIN).pot
+	sed -i 's/\\\\n"/\\n"/' $(srcdir)/$(DOMAIN).pot
 
 $(srcdir)/$(DOMAIN).pot:
 	$(MAKE) $(DOMAIN).pot-update
