@@ -83,8 +83,8 @@ my $xml = '';
 GetOptions (	
 		'all|iomlan|a'          => \$iomlan,
 		'api'                   => \$api,
-		'aspell'                => \$aspell,
-		'check|litriu|l'        => \$litriu,
+		'aspell|moltai'         => \$aspell,
+		'list|litriu|l'         => \$litriu,
 		'color|colour|dath=s'	=> \$dath,
 		'incode|ionchod|f=s'    => \$ionchod,
 		'outcode|aschod|t=s'    => \$aschod,
@@ -142,18 +142,34 @@ gettext(
 gettext(
 "Options for end-users:"),
 # TRANSLATORS: ~/.neamhshuim is an "ignore file" like those with spellcheckers
+"  -a, --all,",
 gettext(
 "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"),
+"  -f, --incode,",
 gettext(
 "    --ionchod=ENC  specify the character encoding of the text to be checked"),
+"  -t, --outcode,",
+gettext(
+"    --aschod=ENC   specify the character encoding for output"),
+"  --interface,",
+gettext(
+"    --comheadan=xx choose the language for error messages"),
+"  --color, --colour,",
+gettext(
+"    --dath=COLOR   specify the color to use for highlighting errors"),
+"  -l, --list,",
 gettext(
 "    --litriu       write misspelled words to standard output"),
+"  --moltai,",
 gettext(
-"    --aspell       suggest corrections for misspellings (requires GNU aspell)"),
+"    --aspell       suggest corrections for misspellings"),
+"  -o, --output,",
 gettext(
 "    --aschur=FILE  write output to FILE"),
+"  -h, --cabhair,",
 gettext(
 "    --help         display this help and exit"),
+"  -v, --leagan,",
 gettext(
 "    --version      output version information and exit"),
 "",
@@ -219,8 +235,8 @@ while ($ARGV = shift @ARGV) {
 	$_ = <ARGV>;
 	close ARGV;
 	if ($litriu) {
-		my $output = $gr->spell_check($_);
-		foreach (@$output) {
+		my $missp = $gr->spell_check($_);
+		foreach (@$missp) {
 			print OUTSTREAM "$_\n";
 		}
 	}
@@ -228,16 +244,16 @@ while ($ARGV = shift @ARGV) {
 		print OUTSTREAM $gr->xml_stream($_);
 	}
 	elsif ($api) {
-		my $output = $gr->grammatical_errors($_);
-		foreach (@$output) {
+		my $apierr = $gr->grammatical_errors($_);
+		foreach (@$apierr) {
 			print OUTSTREAM "$_\n";
 		}
 	}
 	else {   # vanilla or html
 		my $status = gettext('Currently checking %s', $ARGV);
 		print OUTSTREAM "$status\n" unless ($ARGV eq "-");
-		my $output = $gr->grammatical_errors($_);
-		foreach my $error (@$output) {
+		my $errs = $gr->grammatical_errors($_);
+		foreach my $error (@$errs) {
 			$error =~ m/^<E offset="([0-9]+)" fromy="([0-9]+)".* sentence="(.*)" errortext="([^"]+)" msg="([^"]+)">$/;
 			my $s = "<br><br>$2: ".substr($3,0,$1);
 			if ($html) {
