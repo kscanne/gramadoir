@@ -106,7 +106,7 @@ install : all installdirs
 	for perlfile in $(ALLPL); do \
 		$(INSTALL_PROGRAM) $$perlfile $(libexecdir)/$$perlfile; \
 	done
-	rm -f gr
+	mv -f gr gr.sh
 	cd po && $(MAKE) install
 
 installdirs : mkinstalldirs

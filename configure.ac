@@ -47,7 +47,7 @@ AM_GNU_GETTEXT([external])
 if test "$USE_NLS" = "yes"
 then
 	AC_MSG_RESULT([NLS activated])
-	SH_GETTEXT="gettext -s"
+	SH_GETTEXT="gettext"
 else
 	AC_MSG_WARN([NLS deactivated])
 	SH_GETTEXT="echo"
