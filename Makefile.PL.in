@@ -46,6 +46,7 @@ sub build_hashes {
 	my $errfile = File::Spec->catfile( $dir, 'earraidi.hash');
 	my $posfile = File::Spec->catfile( $dir, 'pos.hash');
 	my $gramfile = File::Spec->catfile( $dir, '3grams.hash');
+	my $morphfile = File::Spec->catfile( $dir, 'morph.hash');
 	my $rawfile;
 
 	for my $i (0 .. 6) {
@@ -136,6 +137,26 @@ sub build_hashes {
 		store \%POS, $posfile;
 	}
 
+	unless ( -f $morphfile ) {
+		my @MorphRules;
+		$rawfile = File::Spec->catfile( $srcdir, 'morph.bs');
+		open(DATABASE, $rawfile) or die "Can't open dictionary: $!";
+		binmode DATABASE, ":bytes";
+#		binmode DATABASE, ":utf8";
+		while (<DATABASE>) {
+			s/#.*$//;
+			if (/\S/) {
+				my ($patt, $repl, $level) = /\s*(\S+)\s+(\S+)\s+(\S+)/;
+				$repl =~ s/(.*)/"$1"/;
+				$repl =~ s/\\l\$([1-9])/".mylcfirst(\$$1)."/g;
+				$repl =~ s/\\L\$([1-9])/".mylc(\$$1)."/g;
+				push @MorphRules, {'patt' => $patt, 'repl' => $repl, 'level' => $level};
+			}
+		}
+		close DATABASE;
+		store \@MorphRules, $morphfile;
+	}
+
 	unless ( -f $gramfile ) {
 		my %GRAMS;
 		$rawfile = File::Spec->catfile( $srcdir, '3grams.bs');
@@ -163,6 +184,6 @@ sub build_hashes {
 		close DATABASE;
 		store \%COMBO, $combofile;
 	}
-	return ( -f $replfile and -f $combofile and
+	return ( -f $replfile and -f $combofile and -f $morphfile and
 		-f $errfile and -f $posfile and -f $gramfile );
 }
