@@ -7,7 +7,7 @@ use CGI;
 use Lingua::GA::Gramadoir;
 use Lingua::GA::Gramadoir::Languages;
 
-my $VERSION = '0.51';
+my $VERSION = '0.60';
 
 my $lh;
 
