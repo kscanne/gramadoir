@@ -1,6 +1,6 @@
 #!PERLPATH
 while(<>){
-s/<V( pl="y")? p=".." t="(láith|caite|fáist|coinn)"/<V p="xx" t="$2"/g;
+s/<V( pl="y")? p=".." t="([a-zá]*)"/<V p="xx" t="$2"/g;
 # UNIGRAMS
 print;
 }
