@@ -1,21 +1,21 @@
 # translation of gramadoir to Slovak
 # Copyright (C) 2004 Kevin P. Scannell.
 # This file is distributed under the same license as the gramadoir package.
-# Andrej Kacian <andrej@kacian.sk>, 2004.
+# Andrej Kacian <andrej@kacian.sk>, 2004, 2005.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gramadoir 0.5\n"
+"Project-Id-Version: gramadoir 0.6\n"
 "Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
 "POT-Creation-Date: 2005-03-02 22:40-0600\n"
-"PO-Revision-Date: 2004-08-25 21:20+0200\n"
+"PO-Revision-Date: 2005-03-05 12:09+0100\n"
 "Last-Translator: Andrej Kacian <andrej@kacian.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: KBabel 1.3\n"
+"X-Generator: KBabel 1.10\n"
 
 #: ponc.in.y:63
 #, c-format
@@ -60,7 +60,7 @@ msgstr "chyba pri čítaní parametrov príkazového riadku"
 #: gram.pl:177
 #, perl-format
 msgid "Unable to set output color to %s"
-msgstr ""
+msgstr "Nepodarilo sa nastaviť farbu výstupu na %s"
 
 #: gram.pl:180
 #, perl-format
@@ -87,14 +87,8 @@ msgid "version %s"
 msgstr "verzia %s"
 
 #: gram.pl:253 gramdev.pl:153
-msgid ""
-"This is free software; see the source for copying conditions.  There is NO"
-"\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
-"PURPOSE,\\nto the extent permitted by law."
-msgstr ""
-"Toto je voľne šíriteľný program, pozrite si zdrojové súbory. Neposkytuje sa"
-"\\nžiadna záruka, dokonca ani záruka PREDAJNOSTI alebo VHODNOSTI PRE "
-"\\nURČITÝ ÚČEL, v rozsahu povolenom zákonom."
+msgid "This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law."
+msgstr "Toto je voľne šíriteľný program, pozrite si zdrojové súbory. Neposkytuje sa\\nžiadna záruka, dokonca ani záruka PREDAJNOSTI alebo VHODNOSTI PRE \\nURČITÝ ÚČEL, v rozsahu povolenom zákonom."
 
 #: gram.pl:267
 #, perl-format
@@ -110,8 +104,7 @@ msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
 msgstr "    --iomlan       hlásiť všetky chyby (teda nepoužívať ~/.neamhshuim)"
 
 #: gram.pl:277
-msgid ""
-"    --ionchod=ENC  specify the character encoding of the text to be checked"
+msgid "    --ionchod=ENC  specify the character encoding of the text to be checked"
 msgstr "    --ionchod=ENC  určenie kódovania overovaného textu"
 
 #: gram.pl:280
@@ -151,27 +144,20 @@ msgid "Options for developers:"
 msgstr "Voľby pre vývojárov:"
 
 #: gram.pl:306
-msgid ""
-"    --api          output a simple XML format for use with other applications"
-msgstr ""
-"    --api          formátovať výstup ako jednoduché XML, pre iné aplikácie"
+msgid "    --api          output a simple XML format for use with other applications"
+msgstr "    --api          formátovať výstup ako jednoduché XML, pre iné aplikácie"
 
 #: gram.pl:308
 msgid "    --html         produce HTML output for viewing in a web browser"
-msgstr ""
-"    --html         vytvorí HTML výstup pre prezeranie vo webovom prehliadači"
+msgstr "    --html         vytvorí HTML výstup pre prezeranie vo webovom prehliadači"
 
 #: gram.pl:314
-msgid ""
-"    --no-unigram   do not resolve ambiguous parts of speech by frequency"
+msgid "    --no-unigram   do not resolve ambiguous parts of speech by frequency"
 msgstr "    --no-unigram   neurčovať význam slov podľa počtu výskytu"
 
 #: gram.pl:320
-msgid ""
-"    --xml          write tagged XML stream to standard output, for debugging"
-msgstr ""
-"    --xml          zapísať označkovaný XML stream na štandardný výstup, pre "
-"odlaďovanie"
+msgid "    --xml          write tagged XML stream to standard output, for debugging"
+msgstr "    --xml          zapísať označkovaný XML stream na štandardný výstup, pre odlaďovanie"
 
 #: gram.pl:323
 msgid "If no file is given, read from standard input."
@@ -206,24 +192,15 @@ msgstr "Práve overujem %s"
 
 #: gramdev.pl:125
 msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
-msgstr ""
-"    --ilchiall     vypísať slová s nenájdeným významom, zotriedené podľa "
-"počtu výskytu"
+msgstr "    --ilchiall     vypísať slová s nenájdeným významom, zotriedené podľa počtu výskytu"
 
 #: gramdev.pl:128
-msgid ""
-"    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
-msgstr ""
-"    --minic        vypíše všetky značky, zotriedené podľa počtu výskytu (pre "
-"unigram-xx.txt)"
+msgid "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
+msgstr "    --minic        vypíše všetky značky, zotriedené podľa počtu výskytu (pre unigram-xx.txt)"
 
 #: gramdev.pl:130
-msgid ""
-"    --brill        find disambiguation rules via Brill's unsupervised "
-"algorithm"
-msgstr ""
-"    --brill        nájsť pravidlá pre určenie významu slov pomocou Brillovho "
-"algoritmu"
+msgid "    --brill        find disambiguation rules via Brill's unsupervised algorithm"
+msgstr "    --brill        nájsť pravidlá pre určenie významu slov pomocou Brillovho algoritmu"
 
 #: Gramadoir.pm.in:118
 #, perl-format
@@ -254,9 +231,9 @@ msgid "%s: no grammar codes: %s\n"
 msgstr "%s: žiadne gramatické kódy: %s\n"
 
 #: Gramadoir.pm.in:723
-#, fuzzy, perl-format
+#, perl-format
 msgid "%s: unrecognized error macro: %s\n"
-msgstr "neznáma voľba %s"
+msgstr "%s: neznáme chybové makro: %s\n"
 
 #. TRANSLATORS: The remaining strings are errors reported by the grammar
 #. checking engine.  The first batch consists of messages intended to be
@@ -274,14 +251,12 @@ msgid "Unusual combination of words"
 msgstr "Nezvyklá kombinácia slov"
 
 #: messages.txt:7
-#, fuzzy
 msgid "The plural form is required here"
-msgstr "Je tu potrebný genitív"
+msgstr "Je tu potrebné množné číslo"
 
 #: messages.txt:8
-#, fuzzy
 msgid "The singular form is required here"
-msgstr "Je tu potrebný genitív"
+msgstr "Je tu potrebné jednotné číslo"
 
 #: messages.txt:9
 msgid "Comparative adjective required"
@@ -289,16 +264,15 @@ msgstr "Je potrebné porovnávacie prídavné meno"
 
 #: messages.txt:10
 msgid "Definite article required"
-msgstr ""
+msgstr "Je tu potrebný určitý člen"
 
 #: messages.txt:11
 msgid "Unnecessary use of the definite article"
 msgstr "Nepotrebné použitie určitého člena"
 
 #: messages.txt:12
-#, fuzzy
 msgid "Unnecessary use of the genitive case"
-msgstr "Nepotrebné použitie určitého člena"
+msgstr "Nepotrebné použitie genitívu"
 
 #: messages.txt:13
 msgid "The genitive case is required here"
@@ -306,7 +280,7 @@ msgstr "Je tu potrebný genitív"
 
 #: messages.txt:14
 msgid "It seems unlikely that you intended to use the subjunctive here"
-msgstr ""
+msgstr "Tu ste pravdepodobne nechceli použiť subjunktív"
 
 #. TRANSLATORS: You can use whatever kind of quotes you prefer for your locale
 #. around the variable \\1.  You should keep the double backslash before the 1,
@@ -337,13 +311,12 @@ msgstr "Neznáme slovo"
 
 #. TRANSLATORS: \\1 is substituted with one or more suggested replacements
 #: messages.txt:25
-#, fuzzy
 msgid "Unknown word: \\/\\1\\/?"
-msgstr "Neznáme slovo"
+msgstr "Neznáme slovo: \\/\\1\\/?"
 
 #: messages.txt:26
 msgid "Valid word but more often found in place of \\/\\1\\/"
-msgstr ""
+msgstr "Platné slovo, ale častejšie nájdené namiesto \\/\\1\\/"
 
 #: messages.txt:27
 msgid "Not in database but apparently formed from the root \\/\\1\\/"
@@ -351,7 +324,7 @@ msgstr "Nenašlo sa v databáze, ale očividne získané z koreňa \\/\\1\\/"
 
 #: messages.txt:28
 msgid "The word \\/\\1\\/ is not needed"
-msgstr ""
+msgstr "Slovo \\/\\1\\/ nie je potrebné"
 
 #: messages.txt:29
 msgid "Do you mean \\/\\1\\/?"
@@ -367,13 +340,11 @@ msgstr "Nenašlo sa v databáze, môže ísť o zložené slovo \\/\\1\\/?"
 
 #: messages.txt:32
 msgid "Not in database but may be a non-standard compound \\/\\1\\/?"
-msgstr ""
-"Nenašlo sa v databáze, môže ísť o neštandardné zložené slovo \\/\\1\\/?"
+msgstr "Nenašlo sa v databáze, môže ísť o neštandardné zložené slovo \\/\\1\\/?"
 
 #: messages.txt:33
 msgid "Possibly a foreign word (the sequence \\/\\1\\/ is highly improbable)"
-msgstr ""
-"Pravdepodobne cudzie slovo (sekvencia \\/\\1\\/ je veľmi nepravdepodobná)"
+msgstr "Pravdepodobne cudzie slovo (sekvencia \\/\\1\\/ je veľmi nepravdepodobná)"
 
 #. TRANSLATORS: Rules specific to the Irish language (ga)
 #: messages.txt:35
@@ -385,9 +356,8 @@ msgid "Prefix \\/t\\/ missing"
 msgstr "Predpona \\/t\\/ chýba"
 
 #: messages.txt:37
-#, fuzzy
 msgid "Prefix \\/d'\\/ missing"
-msgstr "Predpona \\/h\\/ chýba"
+msgstr "Predpona \\/d'\\/ chýba"
 
 #: messages.txt:38
 msgid "Unnecessary prefix \\/h\\/"
@@ -398,15 +368,13 @@ msgid "Unnecessary prefix \\/t\\/"
 msgstr "Nepotrebná predpona \\/t\\/"
 
 #: messages.txt:40
-#, fuzzy
 msgid "Unnecessary prefix \\/d'\\/"
-msgstr "Nepotrebná predpona \\/h\\/"
+msgstr "Nepotrebná predpona \\/d'\\/"
 
 #. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
 #: messages.txt:42
-#, fuzzy
 msgid "Unnecessary initial mutation"
-msgstr "Nepotrebná lenícia"
+msgstr "Nepotrebná počiatočná mutácia"
 
 #: messages.txt:43
 msgid "Initial mutation missing"
@@ -419,9 +387,8 @@ msgid "Unnecessary lenition"
 msgstr "Nepotrebná lenícia"
 
 #: messages.txt:47
-msgid ""
-"Often the preposition \\/\\1\\/ causes lenition, but this case is unclear"
-msgstr ""
+msgid "Often the preposition \\/\\1\\/ causes lenition, but this case is unclear"
+msgstr "Predložka \\/\\1\\/ často spôsobuje leníciu, ale tento prípad je nejasný"
 
 #: messages.txt:48
 msgid "Lenition missing"
@@ -431,9 +398,8 @@ msgstr "Chýba eklipsa"
 #. initial consonants in Irish.  It is indicated in writing by the addition
 #. of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
 #: messages.txt:52
-#, fuzzy
 msgid "Unnecessary eclipsis"
-msgstr "Nepotrebná lenícia"
+msgstr "Nepotrebná eklipsia"
 
 #: messages.txt:53
 msgid "Eclipsis missing"
@@ -441,44 +407,37 @@ msgstr "Chýba eklipsa"
 
 #: messages.txt:54
 msgid "The dative is used only in special phrases"
-msgstr ""
+msgstr "Datív sa používa len v špeciálnych frázach"
 
 #: messages.txt:55
-#, fuzzy
 msgid "The dependent form of the verb is required here"
-msgstr "Je tu potrebný genitív"
+msgstr "Je tu potrebná závislý tvar slovesa"
 
 #: messages.txt:56
-#, fuzzy
 msgid "Unnecessary use of the dependent form of the verb"
-msgstr "Nepotrebné použitie určitého člena"
+msgstr "Nepotrebné použitie závislého tvaru slovesa"
 
 #: messages.txt:57
 msgid "The synthetic (combined) form, ending in \\/\\1\\/, is often used here"
-msgstr ""
+msgstr "Tu sa často používa umelý (kombinovaný) tvar, končiaci na \\/\\1\\/"
 
 #. TRANSLATORS: Rules specific to the Cornish language (kw)
 #: messages.txt:59
-#, fuzzy
 msgid "Second (soft) mutation missing"
-msgstr "Počiatočná mutácia chýba"
+msgstr "Druhá (mäkká) mutácia chýba"
 
 #: messages.txt:60
-#, fuzzy
 msgid "Third (breathed) mutation missing"
-msgstr "Počiatočná mutácia chýba"
+msgstr "Tretia (dychová) mutácia chýba"
 
 #: messages.txt:61
-#, fuzzy
 msgid "Fourth (hard) mutation missing"
-msgstr "Počiatočná mutácia chýba"
+msgstr "Štvrtá (tvrdá) mutácia chýba"
 
 #: messages.txt:62
-#, fuzzy
 msgid "Fifth (mixed) mutation missing"
-msgstr "Počiatočná mutácia chýba"
+msgstr "Piata (zmiešaná) mutácia chýba"
 
 #: messages.txt:63
-#, fuzzy
 msgid "Fifth (mixed) mutation after 'th missing"
-msgstr "Počiatočná mutácia chýba"
+msgstr "Chýba piata (zmiešaná) mutácia po 'th"
