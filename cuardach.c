@@ -8,7 +8,7 @@ struct foirm {
       char focal[32], coid[16];
     };
 
-#define DICTTOTAL 312533
+#define DICTTOTAL 312627
 
 struct foirm focloir[DICTTOTAL];
 
@@ -43,11 +43,13 @@ if (strcmp(focloir[meid-1].focal, focloir[meid].focal) >= 0)
    using same markup code for part of speech as the National Irish Corpus
    www.ite.ie/corpus/pos.htm
    Though they use a generic "w" word tag and attributes for grammar.
-     Used:        ACDINPQRSTUV
+     Used:        ACDINOPQRSTUV
     "E" is used as error markup code in my stuff
     "B" is used to markup ambiguous words
     "Z" is used inside <B></B> to markup list of ambigous parts of speech 
     "Y" is used for words to ignore (proper words or from .grignore)
+    "X" is used when a word is not in database
+     Changes to these codes need to be reflected in rialacha.meta.sed too
  */
 void byte_to_markup(const unsigned char c, char* fill, char* attrs)
    {
@@ -64,7 +66,7 @@ void byte_to_markup(const unsigned char c, char* fill, char* attrs)
 		            if (c & 2) 
 			      strcpy(attrs, " h=\"y\"");
 		            break;
-                 case 5:    strcpy(fill, "S");          /* adposition (pronm) */
+                 case 5:    strcpy(fill, "O");          /* adposition (pronm) */
 		            if (c & 2) 
 			      strcpy(attrs, " em=\"y\"");
 		            break;
