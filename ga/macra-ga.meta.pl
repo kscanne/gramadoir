@@ -50,7 +50,7 @@ s/ECLIPSEDDT/(?:d[Tt]|n[Dd])[^<]+/g;
 s/ECLIPSEDBCFGP/(?:g[Cc]|b[Pp]|m[Bb]|n[Gg]|bh[fF])[^<]+/g;
 s/ECLIPSED/(?:n(?:-[aeiouáéíóú]|[AEIOUÁÉÍÓÚ])|d[Tt]|g[Cc]|b[Pp]|m[Bb]|n[DdGg]|bh[fF])[^<]*/g;
 s/ECLIPSINGNUMBER/(?:n?[Dd]h?eich|[Nn]aoi|(?:h|[mbd]')?[Oo]cht|[Ss]h?eacht|[0-9]*[789]|[0-9]*10)/g;
-s/ECLIPSINGPOSS/(?:(?:[Ff]aoin|[Ii]n|[Ll]en|[Óó]n|[Tt]rín)?(?:[Aa]|ár)|[Dd]?[Áá]r?|[Bb]hur)/g;
+s/ECLIPSINGPOSS/(?:(?:[Ff]aoin|[Ii]n|[Ll]en|[Óó]n|[Tt]rín)?(?:[Aa]|ár)|[Dd]?[Áá]r?|[Bb]hur|[Aa]rna)/g;
 # all feminine
 s/INITIALC/[Cc][^<]+/g;
 s/INITIALH/h[^<]+/g;
