@@ -32,9 +32,15 @@
 <B>[Mm]ás</B>:<V cop="y">
 # copula, not "abbot"
 <B>[Aa]b</B>:<V cop="y">
-<B><Z>ANYCOPULA</Z>ANYTHING</B> <N>(áil|aithnid|ch?uimhin|eol|fh?éidir|oth)</N>:<V cop="y">
-<B><Z>ANYCOPULA</Z>ANYTHING</B> <A>(dh?ócha|eagal|fh?oláir|iomaí|ionann|léir|leor|mh?iste|náir)</A>:<V cop="y">
-<B><Z>ANYCOPULA</Z>ANYTHING</B> dh?éanaí|dh?ual|h?ea|éard|mh?ithid:<V cop="y">
+#  most of these are the ones REQUIRING a preceding copula so this is important
+#  18 Jan '05 added more needed to disambiguate preceding "ar" as copula
+#  and not a preposition so we don't get "lenition missing" errors:
+# "mian", "gá", "mó", "fiu", "deimhin", "suim", "fearr", "maith", "deacair"
+# "fuath", "cóir", "cuma"
+# only add these unlenited since this disambiguation is not always correct
+<B><Z>ANYCOPULA</Z>ANYTHING</B> <N>(áil|aithnid|ch?uimhin|eol|fh?éidir|fuath|gá|mian|oth|suim)</N>:<V cop="y">
+<B><Z>ANYCOPULA</Z>ANYTHING</B> <A>(dh?ócha|eagal|fearr|fh?oláir|iomaí|ionann|léir|leor|mh?iste|mó|náir)</A>:<V cop="y">
+<B><Z>ANYCOPULA</Z>ANYTHING</B> cóir|cuma|deacair|dh?éanaí|deimhin|dh?ual|h?ea|éard|fiú|maith|mh?ithid:<V cop="y">
 # lowercase ach under last resorts
 <B>Ach</B>:<C>
 # Not needed until corpus ref turns up for "ar" nm1
@@ -303,6 +309,8 @@ RFORMCONJ <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">
 [Cc]ár|[Cc]har|[Nn]ár|[Nn]íor <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">
 # OK if before something that is definitely a verb: 
 [Aa]r <B><Z>GENERICPAST</Z>LENITED</B>:<V p="y" t="caite">
+# lots of exceptions to this like "ar teitheadh/crochadh" are in comhshuite!
+[Aa]r <B><Z>ANYPASTAUT</Z>UNLENITED</B>:<V p="n" t="caite">
 # all the top rules output by Brill algorithm look like these first four!
 # don't seem to have any androgynous words in the COMMON form
 #  There are some words which are androgynous plurals: "Fianna", "ceannaithe"

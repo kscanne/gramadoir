@@ -318,7 +318,20 @@ h?[Aa]on <N>LENITEDDST</N>:NISEIMHIU
 # CB p.133 #12.a
 #. Bhí daoine le fáil i Sasana a chreid gach ar dúradh sa bholscaireacht.
 <[QU]>[Aa]r</[QU]> <VPAST>PASTNORFORMLEN</VPAST>:BACHOIR{a, an}
+#   Some improved messages before "ar+unlenited":
+# not "incense"; 124 times in corpus Jan '05
+<S>[Aa]r</S> <N>dtúis</N>:MICHEART{ar dtús}
+# amazingly common, and always in place of "ar siúl":
+<S>[Aa]r</S> <N>súil</N>:MICHEART{ar siúl}
 # CB p.13 #4.b
+# Lots of exceptions in comhshuite of course.
+# As a side-benefit, since "fail", "domhain", "fead", etc. aren't explicit
+# exceptions, these are caught here as errors:
+#. Tá treoirlínte mionsonraithe curtha ar fail ag an gCoimisiún.
+#. Bhí cead againn fanacht ag obair ar an talamh ar fead trí mhí.
+#. Tá sé an chéad suíomh gréasán ar bronnadh teastas air (OK).
+#  Also when accent left off of possessive "ár":
+#. Bhíomar ag féachaint ar an Ghaeltacht mar ionad chun feabhas a chur ar ar gcuid Gaeilge.
 <S>[Aa]r</S> <N>UNLENITED</N>:SEIMHIU
 # CB p.19 #13, p.132 #5, OD ar^5
 #. Ar gcaith tú do chiall agus do chéadfaí ar fad?
@@ -1684,10 +1697,14 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 #  as the error for these, but INPHRASE is clearer, softened by "usually" too.
 #  Ar+eclipsis trapped by general "ar+UNLENITED" rule.
 #############################################################################
+<S>[Aa]r</S> <N>bhallchrith</N>:INPHRASE{ar ballchrith}
 <S>[Aa]r</S> <N>bhís</N>:INPHRASE{ar bís}
 <S>[Aa]r</S> <N>bhuile</N>:INPHRASE{ar buile}
+<S>[Aa]r</S> <N>cheal</N>:INPHRASE{ar ceal}
 <S>[Aa]r</S> <N>chéalacan</N>:INPHRASE{ar céalacan}
 <S>[Aa]r</S> <N>cheant</N>:INPHRASE{ar ceant}
+<S>[Aa]r</S> <N>cheathrúin</N>:INPHRASE{ar ceathrúin}
+<S>[Aa]r</S> <N>chíos</N>:INPHRASE{ar cíos}
 <S>[Aa]r</S> <N>chipíní</N>:INPHRASE{ar cipíní}
 <S>[Aa]r</S> <N>chóimhéid</N>:INPHRASE{ar cóimhéid}
 <S>[Aa]r</S> <N>chomhbhrí</N>:INPHRASE{ar comhbhrí}
@@ -1706,11 +1723,13 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 <S>[Aa]r</S> <N>fheadh</N>:INPHRASE{ar feadh}
 <S>[Aa]r</S> <N>fhéarach</N>:INPHRASE{ar féarach}
 <S>[Aa]r</S> <N>fheitheamh</N>:INPHRASE{ar feitheamh}
+<S>[Aa]r</S> <N>fhiannas</N>:INPHRASE{ar fiannas}
 <S>[Aa]r</S> <N>fhiar</N>:INPHRASE{ar fiar}
 <S>[Aa]r</S> <N>fhionraí</N>:INPHRASE{ar fionraí}
 <S>[Aa]r</S> <N>fhiuchadh</N>:INPHRASE{ar fiuchadh}
 <S>[Aa]r</S> <N>fhónamh</N>:INPHRASE{ar fónamh}
 <S>[Aa]r</S> <N>fhorbhás</N>:INPHRASE{ar forbhás}
+<S>[Aa]r</S> <N>fhoscadh</N>:INPHRASE{ar foscadh}
 <S>[Aa]r</S> <N>fhostú</N>:INPHRASE{ar fostú}
 <S>[Aa]r</S> <N>fhruiliú</N>:INPHRASE{ar fruiliú}
 <S>[Aa]r</S> <N>ghor</N>:INPHRASE{ar gor}
@@ -1858,6 +1877,4 @@ n[gG]an:INPHRASE{i ngan fhios}
 <N>[Tt]hiarcais</N>:INPHRASE{a thiarcais}
 <N>[Tt]inneall</N>:INPHRASE{ar tinneall}
 <N>[Tt]reis</N>:INPHRASE{go treis, sa treis}
-# not "incense"; 124 times in corpus Jan '05
-<S>[Aa]r</S> <N>dtúis</N>:MICHEART{ar dtús}
 <N>[Uu]airibh</N>:INPHRASE{ar uairibh}

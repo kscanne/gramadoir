@@ -93,6 +93,7 @@ s/ANYNFPL/(?:<[^>]*>)*<N pl="y" gnt="n" gnd="f"(?: h="y")?.>(?:<[^>]*>)*/g;
 s/ANYCOPULA/(?:<[^>]*>)*<V cop="y".>(?:<[^>]*>)*/g;
 s/ANYPASTIMPER/(?:<[^>]*>)*<V p="y" t="ord".><V p="y" t="caite".>(?:<[^>]*>)*/g;
 s/ANYIMPER/(?:<[^>]*>)*<V p="y" t="ord".>(?:<[^>]*>)*/g;
+s/ANYPASTAUT/(?:<[^>]*>)*<V p="n" t="caite".>(?:<[^>]*>)*/g;
 s/ANYPAST/(?:<[^>]*>)*<V p="y" t="caite".>(?:<[^>]*>)*/g;
 s/NMWITHHIMPER/<N pl="n" gnt="n" gnd="m" h="y".><V p="y" t="ord".>/g;
 s/NFWITHHIMPER/<N pl="n" gnt="n" gnd="f" h="y".><V p="y" t="ord".>/g;

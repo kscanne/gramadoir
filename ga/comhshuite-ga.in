@@ -28,6 +28,7 @@
 [Aa]r athláimh:<R>
 [Aa]r atráth:<R>
 [Aa]r ba[lo]l:<R>
+[Aa]r ballchrith:<R>
 [Aa]r barr:<R>
 [Aa]r bior:<R>
 [Aa]r bís:<R>
@@ -35,6 +36,7 @@
 [Aa]r bhíthin:<S>
 [Aa]r bogadh:<R>
 [Aa]r bóiléagar:<R>
+# ar bolg only in "cos ar bolg" below
 [Aa]r bord:<R>
 [Aa]r buile:<R>
 [Aa]r bun:<R>
@@ -42,16 +44,19 @@
 [Aa]r ceal:<R>
 [Aa]r céalacan:<R>
 [Aa]r ceant:<R>
+[Aa]r ceathrúin:<R>
 [Aa]r chúl:<S>
 [Aa]r cíos:<R>
 [Aa]r cipíní:<R>
 # mixed bag in corpus, OD has clé, OF81 chlé throughout.
 [Aa]r clé:<R>
 [Aa]r cois:<R>
+[Aa]r comhaois:<R>
 [Aa]r comhbhrí:<R>
 [Aa]r comhchéim:<R>
 [Aa]r comhfhad:<R>
 [Aa]r cosaint:<R>
+[Aa]r cothrom:<R>
 [Aa]r crith:<R>
 [Aa]r crochadh:<R>
 [Aa]r cuairt:<R>
@@ -61,12 +66,16 @@
 # infrequent
 [Aa]r deargmheisce:<R>
 [Aa]r dei[cl]:<R>
+[Aa]r deighilt:<R>
 [Aa]r deireadh:<R>
 [Aa]r deiseal:<R>
 [Aa]r deoraíocht:<R>
+[Aa]r díbirt:<R>
 [Aa]r díol:<R>
+[Aa]r díotáil:<R>
 [Aa]r diúité:<R>
 [Aa]r dóigh:<R>
+[Aa]r doimhneacht:<R>
 [Aa]r domhan:<R>
 [Aa]r dtús:<R>
 [Aa]r dualgas:<R>
@@ -75,9 +84,11 @@
 [Aa]r fáil:<R>
 [Aa]r fán:<R>
 [Aa]r faonoscailt:<R>
+[Aa]r farraige:<R>
 [Aa]r feadh:<S>
 [Aa]r féarach:<R>
 [Aa]r feitheamh:<R>
+[Aa]r fiannas:<R>
 [Aa]r fiar:<R>
 [Aa]r fionraí:<R>
 [Aa]r fiuchadh:<R>
@@ -85,11 +96,13 @@
 [Aa][gr] foluain:<R>
 [Aa]r fónamh:<R>
 [Aa]r forbhás:<R>
+[Aa]r foscadh:<R>
 [Aa]r fostú:<R>
 [Aa]r fruiliú:<R>
 # both in OF81 e.g.
 [Aa][gr] fuaidreamh:<R>
 [Aa]r fud:<S>
+[Aa]r garda:<R>
 [Aa]r gcúl:<R>
 [Aa]r gor:<R>
 # see rialacha "INPHRASE" rules for "ar inn *"
@@ -100,22 +113,30 @@
 [Aa]r maidin:<R>
 [Aa]r maos:<R>
 [Aa]r marthain:<R>
+[Aa]r meán:<R>
 [Aa]r mearaí:<R>
 [Aa]r mearbhall:<R>
 [Aa]r mearú:<R>
 [Aa]r meisce:<R>
 [Aa]r mire:<R>
+[Aa]r míthreoir:<R>
+# ar muin capaill, ar muin asail  OD muin^1
+[Aa]r muin:<S>
 [Aa]r muir:<R>
 # [Aa]r na mallaibh
 [Aa]r ndóigh:<R>
 [Aa]r neamhchead:<R>
 [Aa]r nós:<S>
+[Aa]r pár:<R>
+[Aa]r pinsean:<R>
 [Aa]r promhadh:<R>
 [Aa]r saoire:<R>
 [Aa]r seachrán:<R>
+[Aa]r seirbhís:<R>
 [Aa]r sileadh:<R>
 [Aa]r siúl:<R>
 [Aa]r snámh:<R>
+[Aa]r sochar:<R>
 [Aa]r sodar:<R>
 [Aa]r son:<S>
 [Aa]r strae:<R>
@@ -127,8 +148,11 @@
 [Aa]r tí:<R>
 # infrequent
 [Aa]r tinneall:<R>
+[Aa]r tír:<R>
+[Aa]r tiús:<R>
 [Aa]r togradh:<R>
 [Aa]r tosach:<R>
+[Aa]r triail:<R>
 [Aa]r tuathal:<R>
 [Aa]r uairibh:<R>
 [Aa]rna mhárach:<R>
@@ -158,6 +182,7 @@ m?[Bb]h?uaileam sciath:<N pl="n" gnt="n">
 [Cc]úig chéad:<A pl="n" gnt="n">
 [Ss]é chéad:<A pl="n" gnt="n">
 g?[Cc]h?odladh grifín:<N pl="n" gnt="n" gnd="m">
+g?[Cc]h?os ar bolg:<N pl="n" gnt="n" gnd="m">
 g?[Cc]h?othrom na [Ff]éinne:<N pl="n" gnt="n" gnd="m">
 [Cc]hun cinn:<R>
 [Cc]hun tosaigh:<R>
