@@ -7,6 +7,4 @@
 # This is free software; see the file COPYING for copying conditions.  There is
 # NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #
-#  first line handles <X> spelling rules only
-s/^\(<X>[^ :]*\):\(.*\)/s\/(?<![<>])(\1)(?![<>])\/<E msg="\2">$1<\\\/E>\/;/
 s/^\([^:]*\):\(.*\)/s\/(?<![<>])(\1)(?![<>])\/<E msg="\2">$1<\\\/E>\/g;/
