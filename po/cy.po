@@ -6,38 +6,25 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gramadoir 0.4\n"
-"Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
+"Project-Id-Version: gramadoir 0.5\n"
 "POT-Creation-Date: 2004-09-09 22:13-0500\n"
-"PO-Revision-Date: 2004-09-17 10:23+0100\n"
+"PO-Revision-Date: 2004-09-19 11:43+0100\n"
 "Last-Translator: Kyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==1 ? 0 : 1;\n"
-"X-Generator: KBabel 1.2\n"
 
 #: ponc.in.y:63
-#, c-format
-msgid "There was %d error.\n"
-msgid_plural "There were %d errors.\n"
-msgstr[0] "Roedd %d gwall.\n"
-msgstr[1] "Roedd %d gwall.\n"
-
 #: ponc.in.y:69
-#, c-format
-msgid "Successfully parsed %d rule.\n"
-msgid_plural "Successfully parsed %d rules.\n"
-msgstr[0] "Wedi dosrannu %d rheol yn llwyddiannus.\n"
-msgstr[1] "Wedi dosrannu %d rheol yn llwyddiannus.\n"
-
 #: ponc.in.y:79
 #, c-format
 msgid "Line %d: %s\n"
 msgstr "Llinell %d: %s\n"
 
-#: gram.pl:165 gramdev.pl:82
+#: gram.pl:165
+#: gramdev.pl:82
 #, perl-format
 msgid "unrecognized option %s"
 msgstr "dewisiad anadnabyddus %s"
@@ -47,19 +34,21 @@ msgstr "dewisiad anadnabyddus %s"
 msgid "option %s requires an argument"
 msgstr "mae ymresymiad yn gofynnol ar gyfer dewisiad %s"
 
-#: gram.pl:171 gramdev.pl:85
+#: gram.pl:171
+#: gramdev.pl:85
 #, perl-format
 msgid "option %s does not allow an argument"
 msgstr "nid yw'r dewisiad %s yn caniatáu ymresymiad"
 
-#: gram.pl:174 gramdev.pl:88
+#: gram.pl:174
+#: gramdev.pl:88
 msgid "error parsing command-line options"
-msgstr ""
+msgstr "gwall wrth ddosrannu'r dewisiadau llinell orchymyn"
 
 #: gram.pl:177
 #, perl-format
 msgid "Unable to set output color to %s"
-msgstr ""
+msgstr "Methu gosod y lliw allbwn i %s"
 
 #: gram.pl:180
 #, perl-format
@@ -69,31 +58,40 @@ msgstr "Ni chynhelir yr iaith %s"
 #. TRANSLATORS: Please leave untranslated, but add an acute accent to the
 #. "o" in "Gramadoir" if available in your character set and encoding.
 #. If you must translate, this is the Irish for (literally) "The Grammarian"
-#: gram.pl:185 gram.pl:248 gramdev.pl:93 gramdev.pl:118 Gramadoir.pm.in:119
-#: Gramadoir.pm.in:147 Gramadoir.pm.in:243 Gramadoir.pm.in:257
+#: gram.pl:185
+#: gram.pl:248
+#: gramdev.pl:93
+#: gramdev.pl:118
+#: Gramadoir.pm.in:119
+#: Gramadoir.pm.in:147
+#: Gramadoir.pm.in:243
+#: Gramadoir.pm.in:257
 #: Gramadoir.pm.in:264
 msgid "An Gramadoir"
 msgstr "An Gramadóir"
 
-#: gram.pl:186 gramdev.pl:94
+#: gram.pl:186
+#: gramdev.pl:94
 #, perl-format
 msgid "Try %s for more information."
 msgstr "Ceisiwch %s am ragor o wybodaeth."
 
-#: gram.pl:251 gramdev.pl:151
+#: gram.pl:251
+#: gramdev.pl:151
 #, perl-format
 msgid "version %s"
 msgstr "fersiwn %s"
 
-#: gram.pl:253 gramdev.pl:153
+#: gram.pl:253
+#: gramdev.pl:153
 msgid ""
-"This is free software; see the source for copying conditions.  There is NO"
-"\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
-"PURPOSE,\\nto the extent permitted by law."
+"This is free software; see the source for copying conditions.  There is NO\\n"
+"warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\n"
+"to the extent permitted by law."
 msgstr ""
-"Meddalwedd rhydd yw hwn; gweler y tarddiad ar gyfer amodau copïo.  Nid oes "
-"DIM\\ngwarant; nid hyd yn oed ar gyfer MASNACHEIDDRWYDD neu ADDASRWYDD AR "
-"GYFER PWRPAS PENODOL, \\nhyd yr eithaf a ganiateir gan y gyfraith."
+"Meddalwedd rhydd yw hwn; gweler y tarddiad ar gyfer amodau copïo.  Nid oes DIM\\n"
+"gwarant; nid hyd yn oed ar gyfer MASNACHEIDDRWYDD neu ADDASRWYDD AR GYFER PWRPAS PENODOL, \\n"
+"hyd yr eithaf a ganiateir gan y gyfraith."
 
 #: gram.pl:267
 #, perl-format
@@ -106,26 +104,23 @@ msgstr "Dewisiadau ar gyfer defnyddwyr:"
 
 #: gram.pl:274
 msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
-msgstr ""
-"    --iomlan       adrodd pob gwall (h.y. peidiwch â defnyddio ~/.neamhshuim "
-"- ffeil anwybyddu)"
+msgstr "    --iomlan       adrodd pob gwall (h.y. peidiwch â defnyddio ~/.neamhshuim - ffeil anwybyddu)"
 
 #: gram.pl:277
-msgid ""
-"    --ionchod=ENC  specify the character encoding of the text to be checked"
+msgid "    --ionchod=ENC  specify the character encoding of the text to be checked"
 msgstr "    --ionchod=AMG  penodi'r amgodiad nodau o'r testun i'w gywiro"
 
 #: gram.pl:280
 msgid "    --aschod=ENC   specify the character encoding for output"
-msgstr ""
+msgstr "    --aschod=AMG   penodi'r amgodiad nodau ar gyfer allbwn"
 
 #: gram.pl:283
 msgid "    --comheadan=xx choose the language for error messages"
-msgstr ""
+msgstr "    --comheadan=xx dewis yr iaith ar gyfer negeseuon gwall"
 
 #: gram.pl:286
 msgid "    --dath=COLOR   specify the color to use for highlighting errors"
-msgstr ""
+msgstr "    --dath=LLIW   penodi'r lliw i'w ddefnyddio ar gyfer amlygu gwallau"
 
 #: gram.pl:289
 msgid "    --litriu       write misspelled words to standard output"
@@ -133,18 +128,19 @@ msgstr "    --litriu       ysgrifennu geiriau a gamsillafwyd i allbwn safonol"
 
 #: gram.pl:292
 msgid "    --aspell       suggest corrections for misspellings"
-msgstr ""
-"    --aspell       awgrymu cywiriadau ar gyfer camsillafiadau"
+msgstr "    --aspell       awgrymu cywiriadau ar gyfer camsillafiadau"
 
 #: gram.pl:295
 msgid "    --aschur=FILE  write output to FILE"
 msgstr "    --aschur=FFEIL ysgrifennu allbwn i FFEIL"
 
-#: gram.pl:298 gramdev.pl:133
+#: gram.pl:298
+#: gramdev.pl:133
 msgid "    --help         display this help and exit"
 msgstr "    --help         dangos y cymorth yma a terfynu"
 
-#: gram.pl:301 gramdev.pl:136
+#: gram.pl:301
+#: gramdev.pl:136
 msgid "    --version      output version information and exit"
 msgstr "    --version      dangos gwybodaeth am y fersiwn a terfynu"
 
@@ -153,33 +149,28 @@ msgid "Options for developers:"
 msgstr "Dewisiadau ar gyfer datblygwyr:"
 
 #: gram.pl:306
-msgid ""
-"    --api          output a simple XML format for use with other applications"
-msgstr ""
-"    --api          allbynnu fformat XML syml i'w defnyddio efo cymhwysiadau "
-"eraill"
+msgid "    --api          output a simple XML format for use with other applications"
+msgstr "    --api          allbynnu fformat XML syml i'w defnyddio efo cymhwysiadau eraill"
 
 #: gram.pl:308
 msgid "    --html         produce HTML output for viewing in a web browser"
 msgstr "    --html         cynhyrchu allbwn HTML i'w weld mewn porydd gwe"
 
 #: gram.pl:314
-msgid ""
-"    --no-unigram   do not resolve ambiguous parts of speech by frequency"
+msgid "    --no-unigram   do not resolve ambiguous parts of speech by frequency"
 msgstr "    --no-unigram   peidio â datrys rhannau ymadrodd amwys gan amlder"
 
 #: gram.pl:320
-msgid ""
-"    --xml          write tagged XML stream to standard output, for debugging"
-msgstr ""
-"    --xml          ysgrifennu llif XML wedi'i dagio i allbwn safonol, ar "
-"gyfer dadnamu"
+msgid "    --xml          write tagged XML stream to standard output, for debugging"
+msgstr "    --xml          ysgrifennu llif XML wedi'i dagio i allbwn safonol, ar gyfer dadnamu"
 
-#: gram.pl:323 gramdev.pl:139
+#: gram.pl:323
+#: gramdev.pl:139
 msgid "If no file is given, read from standard input."
 msgstr "Os ni roddir ffeil, darllenir o fewnbwn safonol."
 
-#: gram.pl:326 gramdev.pl:142
+#: gram.pl:326
+#: gramdev.pl:142
 #, perl-format
 msgid "Send bug reports to <%s>."
 msgstr "Anfonwch adroddiadau nam i <%s>"
@@ -208,23 +199,15 @@ msgstr "Gwirio %s ar hyn o bryd"
 
 #: gramdev.pl:125
 msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
-msgstr ""
-"    --ilchiall     adrodd amwyseddau annatrys, wedi eu trefnu gan amlder"
+msgstr "    --ilchiall     adrodd amwyseddau annatrys, wedi eu trefnu gan amlder"
 
 #: gramdev.pl:128
-msgid ""
-"    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
-msgstr ""
-"    --minic        allbynnu pob tag, wedi'u trefnu gan amlder (ar gyfer "
-"unigram-xx.txt)"
+msgid "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
+msgstr "    --minic        allbynnu pob tag, wedi'u trefnu gan amlder (ar gyfer unigram-xx.txt)"
 
 #: gramdev.pl:130
-msgid ""
-"    --brill        find disambiguation rules via Brill's unsupervised "
-"algorithm"
-msgstr ""
-"    --brill        canfod rheolau dileu amwysedd gan ddefnyddio algorithm "
-"diarolygiaeth Brill"
+msgid "    --brill        find disambiguation rules via Brill's unsupervised algorithm"
+msgstr "    --brill        canfod rheolau dileu amwysedd gan ddefnyddio algorithm diarolygiaeth Brill"
 
 #: Gramadoir.pm.in:118
 #, perl-format
@@ -237,13 +220,17 @@ msgid "%s: `%s' corrupted at %s\n"
 msgstr "%s: `%s' wedi ei lygru wrth %s\n"
 
 #. TRANSLATORS: "conversion" here means conversion between character encodings
-#: Gramadoir.pm.in:197 Gramadoir.pm.in:511 Gramadoir.pm.in:546
-#: Gramadoir.pm.in:602 Gramadoir.pm.in:754
+#: Gramadoir.pm.in:197
+#: Gramadoir.pm.in:511
+#: Gramadoir.pm.in:546
+#: Gramadoir.pm.in:602
+#: Gramadoir.pm.in:754
 #, perl-format
 msgid "conversion from %s is not supported"
 msgstr "ni chynhelir trosi o %s"
 
-#: Gramadoir.pm.in:242 Gramadoir.pm.in:256
+#: Gramadoir.pm.in:242
+#: Gramadoir.pm.in:256
 #, perl-format
 msgid "%s: illegal grammatical code\n"
 msgstr "%s: côd gramadegol anghyfreithlon\n"
@@ -263,24 +250,23 @@ msgstr "Gair dilys, ond eithriadol o brin mewn defnydd gwirioneddol"
 
 #: Gramadoir.pm.in:630
 msgid "Usually used in the set phrase \\/\\1\\/"
-msgstr "Defyddir fel rheol yn yr ymadrodd sefydlog \\/\\1\\/"
+msgstr "Defnyddir fel rheol yn yr ymadrodd sefydlog \\/\\1\\/"
 
 #: Gramadoir.pm.in:634
 msgid "You should use \\/\\1\\/ here instead"
 msgstr "Dylech ddefnyddio \\/\\1\\/ yma yn lle"
 
 #: Gramadoir.pm.in:638
-#, fuzzy
 msgid "Non-standard form of \\/\\1\\/"
-msgstr "Ffurf ansafonol: defnyddiwch \\/\\1\\/ efallai?"
+msgstr "Ffurf ansafonol o \\/\\1\\/"
 
 #: Gramadoir.pm.in:642
 msgid "Derived from a non-standard form of \\/\\1\\/"
-msgstr ""
+msgstr "Deilliwyd o ffurf ansafonol o \\/\\1\\/"
 
 #: Gramadoir.pm.in:646
 msgid "Derived incorrectly from the root \\/\\1\\/"
-msgstr ""
+msgstr "Deilliwyd yn anghywir o'r gwreiddyn \\/\\1\\/"
 
 #. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
 #: Gramadoir.pm.in:651
@@ -342,45 +328,25 @@ msgstr "Mae'r cyflwr genidol yn ofynnol yma"
 
 #: Gramadoir.pm.in:708
 msgid "Not in database but apparently formed from the root \\/\\1\\/"
-msgstr ""
+msgstr "Dim yn y gronfa ddata, ond yn ôl pob golwg deilliwyd o'r gwreiddyn \\/\\1\\/"
 
 #: Gramadoir.pm.in:712
 msgid "Do you mean \\/\\1\\/?"
-msgstr ""
+msgstr "Ydych yn golygu \\/\\1\\/?"
 
 #: Gramadoir.pm.in:716
 msgid "Derived form of common misspelling \\/\\1\\/?"
-msgstr ""
+msgstr "Ffurf ddeilliedig o'r camsillafiad cyffredin \\/\\1\\/?"
 
 #: Gramadoir.pm.in:720
 msgid "Not in database but may be a compound \\/\\1\\/?"
-msgstr ""
+msgstr "Dim yn y gronfa ddata ond efallai cyfansoddair o \\/\\1\\/?"
 
 #: Gramadoir.pm.in:724
 msgid "Not in database but may be a non-standard compound \\/\\1\\/?"
-msgstr ""
+msgstr "Dim yn y gronfa ddata ond efallai cyfansoddair ansafonol o \\/\\1\\/?"
 
 #: Gramadoir.pm.in:728
 msgid "Possibly a foreign word (the sequence \\/\\1\\/ is highly improbable)"
-msgstr ""
+msgstr "Efallai gair dieithr (mae'r dilyniant \\/\\1\\/ yn annhebygol iawn)"
 
-#~ msgid ""
-#~ "    --teanga=XX    specify the language of the text to be checked "
-#~ "(default=ga)"
-#~ msgstr ""
-#~ "    --teanga=XX    penodi iaith y testun i'w gywiro (rhagosodiad=ga)"
-
-#~ msgid "aspell-%s is not installed"
-#~ msgstr "ni arsefydlir aspell-%s"
-
-#~ msgid "Unknown word (ignoring remainder in this sentence)"
-#~ msgstr "Gair anhysbys (yn adnabyddu'r gweddill yn y frawddeg yma)"
-
-#~ msgid "%s: out of memory\n"
-#~ msgstr "%s: allan o gof\n"
-
-#~ msgid "%s: warning: check size of %s: %d?\n"
-#~ msgstr "%s: rhybudd: gwiriwch maint %s: %d?\n"
-
-#~ msgid "problem with the `cuardach' command\n"
-#~ msgstr "problem efo'r gorchymyn `cuardach'\n"
