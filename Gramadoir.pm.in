@@ -983,7 +983,7 @@ sub tag_recurse
 						my $cand = $1;
 						if ($cand =~ m/$pos/) {
 							$r = $rule->{'replpos'};
-							$cand =~ s/$pos/$r/ unless ($r eq '<&>');
+							$cand =~ s/$pos/$r/ee unless ($r eq '"<&>"');
 							$$posans .= $cand;
 						}
 					}
@@ -1014,7 +1014,7 @@ sub clean_tag_recurse
 				my $cand = $1;
 				if ($cand =~ m/$pos/) {
 					$r = $rule->{'replpos'};
-					$cand =~ s/$pos/$r/ unless ($r eq '<&>');
+					$cand =~ s/$pos/$r/ee unless ($r eq '"<&>"');
 					$ans .= $cand;
 				}
 			}

@@ -151,6 +151,8 @@ sub build_hashes {
 				$repl =~ s/(.*)/"$1"/;
 				$repl =~ s/\\l\$([1-9])/".mylcfirst(\$$1)."/g;
 				$repl =~ s/\\L\$([1-9])/".mylc(\$$1)."/g;
+				$replpos =~ s/"/\\"/g;
+				$replpos =~ s/(.*)/"$1"/;
 				push @MorphRules, {'patt' => $patt, 'repl' => $repl, 'level' => $level, 'rootpos' => $rootpos, 'replpos' => $replpos};
 			}
 		}
