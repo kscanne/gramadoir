@@ -1,7 +1,12 @@
 #!/bin/bash
 # @configure_input@
-# This script is the front-end to an Irish language grammar checker.
+# This is the front-end to An Gramadóir, an Irish language grammar checker.
 # Copyright (C) 2003 Kevin P. Scannell <scannell@slu.edu>
+#
+# This is free software; see the file COPYING for copying conditions.  There is
+# NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#
+# Usage: gr [--help] [--version] [--html] [--xml] [--litriu] [FILES]
 #
 # This is a script for checking the grammar of Irish language text
 # contained in the files specified on the command line, or read from
