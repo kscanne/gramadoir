@@ -22,12 +22,14 @@ isdir='is comhadlann í'
 permissions='cead diúltaithe'
 usage="Úsáid: gr [--help] [--version] [--html] [COMHAID]"
 stdinhelp="Mura bhfuil comhad ann, léigh ón ionchur caighdeánach"
-bugreports="Seol tuairiscí fabhtanna chuig <scannell@slu.edu>."
+bugreports="Seol tuairiscí fabhtanna chuig <@PACKAGE_BUGREPORT@>."
 versionstring="leagan @PACKAGE_VERSION@"
 gpl1="Is saorbhogearra an ríomhchlár seo; féach ar an bhunchód le haghaidh"
 gpl2="coinníollacha cóipeála.  Níl baránta AR BITH ann; go fiú níl baránta ann"
 gpl3="d'INDÍOLTACHT nó FEILIÚNACHT DO FHEIDHM AR LEITH, an oiread atá ceadaithe"
 gpl4="de réir dlí."
+
+TAB=`@AWK@ 'BEGIN{printf "\t";}'`
 
 # i18n: grammatical errors.  See rialacha.in.
 loganu()
@@ -88,7 +90,7 @@ egrep -n '^' | sed "
 		s/<c>\([BDMbdm]\)<\/c>'<c>/<c>\1'/g;
 		s/<c>\([Mm]b\)<\/c>'<c>/<c>\1'/g;
 		s/^\([1-9][0-9]*\):/<line uimhir=\"\1\"> /; 
-		s/\([^.][^.][^.][.?!][]\"\')}]*\) [ \t\n]*/\1 <\/line>\n/g;
+		s/\([^.][^.][^.][.?!][]\"\')}]*\) [ ${TAB}\n]*/\1 <\/line>\n/g;
 		s/[^.][^.][^.][.?!][]\"\')}]*$/& <\/line>/" |
 		athuimhir | athcheang |
 		sed 's/\(.\)<line uimhir[^>]*>/\1/g'
@@ -129,7 +131,7 @@ H
 s/^.*$//
 x
 s/\n//g
-s/[ \t][ \t]*/ /g
+s/[ ${TAB}][ ${TAB}]*/ /g
 }
 
 /<\/line>$/!{
@@ -237,7 +239,7 @@ comhad()
 		rialacha |
 		eisceacht |
 		comheadan |
-		awk "{sub(/myaibhsigh/,\"${AIBHSIGHVAR}\"); print}" | 
+		@AWK@ "{sub(/myaibhsigh/,\"${AIBHSIGHVAR}\"); print}" | 
 		loganu |
 		/bin/bash -s
 }
@@ -262,7 +264,7 @@ else
 
 	if [ ${1} = "--html" ]
 	then
-		AIBHSIGHVAR="awk -f @prefix@/libexec/hilite.awk pattern="
+		AIBHSIGHVAR="@AWK@ -f @prefix@/libexec/hilite.awk pattern="
 		shift
 	else
 		AIBHSIGHVAR="@EGREP@ --color -h "
