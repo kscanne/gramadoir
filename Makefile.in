@@ -95,9 +95,8 @@ allperl : $(ALLIN) lastperl
 
 installcheck : FORCE
 	@LC_ALL=C $(bindir)/gr --iomlan triail | sed "s/^[0-9]*: //" > triail.tmp
-	@cat triail.err | sed "s/^[0-9]*: //" > triail2.tmp
-	@if diff triail2.tmp triail.tmp; then $(ECHO) 'OK.'; else $(ECHO) 'Problem.'; fi
-	@rm -f triail.tmp triail2.tmp
+	@if diff triail.err triail.tmp; then $(ECHO) 'OK.'; else $(ECHO) 'Problem.'; fi
+	@rm -f triail.tmp
 
 install : all installdirs
 	$(INSTALL_DATA) TEANGACHA $(pkgdatadir)/TEANGACHA
@@ -281,7 +280,7 @@ triail : rialacha-ga.in
 
 triail.err : FORCE
 	rm -f triail.err
-	LC_ALL=C gr --iomlan triail > triail.err
+	LC_ALL=C gr --iomlan triail | sed 's/^[0-9]*: //' > triail.err
 
 FOCAIL-ga.all : FORCE
 	Gin 12
