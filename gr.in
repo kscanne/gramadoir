@@ -479,45 +479,6 @@ toutf |
 loganu
 }
 
-# This is the final filter used by the "gr" program.
-# It generates a Bourne shell script which produces the
-# final output.  It is the part I like the least and 
-# users should feel free to replace it with their own
-# front ends.
-comheadan()
-{
-sed -n '
-/<E/ {
-h
-s/^<line uimhir=\"\([1-9][0-9]*\)\">/echo "\1:/
-s/<[^>]*>//g
-s/\(["$`]\)/\\\1/g
-s/^echo \\"/echo "/
-s/$/" | myaibhsigh"(/
-G
-x
-s/<[^E][^>]*>//g
-s/^[^<]*</</
-s/>[^<]*</></g
-s/>[^<]*$/>/
-s/<E[^>]*msg=\"\([^"]*\)\"[^>]*>/"\1," /g
-s/^/echo /
-s/,\" $/."; echo/
-x
-s/<[^E\/][^>]*>//g
-s/<\/[^E][^>]*>//g
-s/\n[^<]*</</
-s/>[^<]*$/>/
-s/<\/E>[^<]*<E/<\/E><E/g
-s/<E[^>]*>\([^<]*\)<\/E>/\1|/g
-s/<[^>]*>//g
-s/|$/)"/
-G
-p
-}
-'
-}
-
 # does the error messaging and returns the boolean 
 drochchomhad()
 {
@@ -597,12 +558,13 @@ sed 's/^[^<]*//'
 # This is the main sequence of filters for checking a given file
 comhad()
 {
-		"${XML_OUTPUT}" |
-		comheadan |
-		@AWK@ "{sub(/myaibhsigh/,\"${AIBHSIGHVAR}\"); print}" |
-		toutf |
-		loganu |
-		/bin/bash -s
+xml_api |
+sed '
+s/^<E fromy="\([0-9]*\)".*sentence="\(.*\) errortext=\("[^"]*"\) msg="\([^"]*\)">$/echo "\1: \2 | myaibhsigh\3\
+echo "\4."; echo/
+' |
+@AWK@ "{sub(/myaibhsigh/,\"${AIBHSIGHVAR}\"); print}" |
+/bin/bash -s
 }
 
 litriu_comheadan()
