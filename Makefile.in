@@ -1,0 +1,204 @@
+# @configure_input@ 
+# Copyright (C) 2003 Kevin P. Scannell
+# Released under the GNU Public License
+# See the file COPYING for more information.
+
+@SET_MAKE@
+
+SHELL = @SHELL@
+
+.SUFFIXES:
+
+prefix=@prefix@
+exec_prefix = $(prefix)
+
+bindir = $(exec_prefix)/bin
+libexecdir = $(exec_prefix)/libexec
+datadir = $(prefix)/share
+PACKAGE_NAME = @PACKAGE_NAME@
+TARBALL = @PACKAGE_TARNAME@
+pkgdatadir = $(datadir)/$(PACKAGE_NAME)
+INSTALL = @INSTALL@
+INSTALL_DATA = @INSTALL_DATA@
+INSTALL_PROGRAM = @INSTALL_PROGRAM@
+AWK = @AWK@
+CC = @CC@
+CFLAGS = @CFLAGS@
+ECHO = echo
+LEX = @LEX@
+LEXLIB = @LEXLIB@
+LN_S = @LN_S@
+PERL = @PERL@
+VERSION = @VERSION@
+YACC = @YACC@
+
+all : aonchiall.pl eisceacht.pl rialacha.pl cuardach
+
+cuardach : cuardach.o
+	rm -f cuardach
+	$(CC) -o cuardach $(CFLAGS) cuardach.o
+	chmod 555 cuardach
+	
+cuardach.o : cuardach.c
+	$(CC) -c $(CFLAGS) -DBSONRAI=\"$(pkgdatadir)/focail.bs\" cuardach.c
+
+rialacha.pl : rialacha.in rialacha.meta.sed gin.meta.sed
+	rm -f rialacha.pl
+	($(ECHO) "#!$(PERL)"; $(ECHO) '# Users should modify rialacha.in, not this file'; $(ECHO) 'while(<>){';  cat rialacha.in | sed -f gin.meta.sed | sed -f rialacha.meta.sed; $(ECHO) 'print;'; $(ECHO) '}'; $(ECHO) 'exit;') > rialacha.pl
+	chmod 555 rialacha.pl
+
+aonchiall.pl : aonchiall.in aonchiall.meta.sed gin.meta.sed
+	rm -f aonchiall.pl
+	($(ECHO) "#!$(PERL)"; $(ECHO) '# Users should modify aonchiall.in, not this file'; $(ECHO) 'while(<>){'; cat aonchiall.in | sed -f gin.meta.sed | sed -f aonchiall.meta.sed; $(ECHO) 'print;'; $(ECHO) '}'; $(ECHO) 'exit;') > aonchiall.pl
+	chmod 555 aonchiall.pl
+
+eisceacht.pl : eisceacht.in eisceacht.meta.sed gin.meta.sed
+	rm -f eisceacht.pl
+	($(ECHO) "#!$(PERL)"; $(ECHO) '# Users should modify eisceacht.in, not this file'; $(ECHO) 'while(<>){'; cat eisceacht.in | sed -f gin.meta.sed | sed -f eisceacht.meta.sed; $(ECHO) 'print;'; $(ECHO) '}'; $(ECHO) 'exit;') > eisceacht.pl
+	chmod 555 eisceacht.pl
+
+check : all
+	@gr triail > triail.tmp
+	@if diff triail.tmp triail.err; then $(ECHO) 'Ceart go leor.'; else $(ECHO) 'Fadhb.'; fi
+	@rm -f triail.tmp
+
+
+install : all
+	$(INSTALL_DIR) $(pkgdatadir)
+	$(INSTALL_DATA) focail.bs $(pkgdatadir)
+	$(INSTALL_DIR) $(libexecdir)
+	$(INSTALL_PROGRAM) cuardach $(libexecdir)
+	$(INSTALL_PROGRAM) hilite.awk $(libexecdir)
+	$(INSTALL_PROGRAM) aonchiall.pl $(libexecdir)
+	$(INSTALL_PROGRAM) eisceacht.pl $(libexecdir)
+	$(INSTALL_PROGRAM) rialacha.pl $(libexecdir)
+	$(INSTALL_DIR) $(bindir)
+	$(INSTALL_PROGRAM) gr $(bindir)
+
+uninstall :
+	rm -f $(pkgdatadir)/focail.bs
+	rm -f $(libexecdir)/cuardach
+	rm -f $(libexecdir)/hilite.awk
+	rm -f $(libexecdir)/aonchiall.pl
+	rm -f $(libexecdir)/eisceacht.pl
+	rm -f $(libexecdir)/rialacha.pl
+	rm -f $(bindir)/gr
+
+Makefile gr : Makefile.in gr.in
+	./configure
+
+distclean :
+	${MAKE} clean
+	rm -f config.log config.status Makefile
+
+clean :
+	rm -f triail.html cuardach cuardach.o rialacha.pl aonchiall.pl eisceacht.pl gr cabhair.o cabhair triail.err.old y.tab.* lex.yy.* aparser eparser rparser aonchiall.y eisceacht.y rialacha.y
+
+semiclean :
+	rm -f triail.html cuardach.o cabhair.o cabhair triail.err.old y.tab.* lex.yy.*
+
+###############################################
+# Remaining targets are for use by developers #
+###############################################
+
+webhome = $(HOME)/public_html/$(PACKAGE_NAME)
+
+installweb :
+	$(INSTALL_DATA) cuidiu.html $(webhome)
+	$(INSTALL_DATA) index.html $(webhome)
+	$(INSTALL_DATA) iompar.html $(webhome)
+	$(INSTALL_DATA) sios.html $(webhome)
+	$(INSTALL_DATA) sonrai.html $(webhome)
+	$(INSTALL_DATA) sampla.html $(webhome)
+	$(INSTALL_DATA) gramadoir.dtd $(webhome)/../dtds
+
+triail.html : all triail
+	./gr --html triail > triail.html
+
+maintainer-clean :
+	make distclean
+	rm -f focail.bs triail.err
+
+dist : triail.err
+	ln -s gr ../$(TARBALL)
+	tar cvhf $(TARBALL).tar -C .. $(TARBALL)/aonchiall.in
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/aonchiall.meta.sed
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/cabhair.c
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/configure
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/configure.ac
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/COPYING
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/cuardach.c
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/eisceacht.in
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/eisceacht.meta.sed
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/focail.bs
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gin.meta.sed
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gr.in
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gramadoir.dtd
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/hilite.awk
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/makefile.in
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/README
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/rialacha.in
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/rialacha.meta.sed
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/triail
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/triail.err
+	gzip $(TARBALL).tar
+	chmod 444 $(TARBALL).tar.gz
+	rm -f ../$(TARBALL)
+
+triail.err : all triail
+	mv -f triail.err triail.err.old
+	./gr triail > triail.err
+	- diff triail.err.old triail.err
+
+focail.bs : FORCE
+	make cabhair
+	Gin 12
+	(cat ${HOME}/.ispell_gaeilge ${HOME}/.biobla | sed 's/.*/& 44/'; cat FOCAIL) | LC_COLLATE=POSIX sort -u > FOCAIL.all
+	cat FOCAIL.all | ./cabhair > focail.bs
+	chmod 644 focail.bs
+	@$(ECHO) 'Verify count in cuardach.c:' 
+	@$(ECHO) `cat FOCAIL.all | sed 's/ [0-9]*//' | uniq | wc -l`
+	rm -f FOCAIL FOCAIL.all
+
+cabhair : cabhair.o
+	$(CC) -o cabhair $(CFLAGS) cabhair.o
+	
+cabhair.o : cabhair.c
+	$(CC) -c $(CFLAGS) cabhair.c
+
+aonchiall.y : ponc.in.y
+	cat ponc.in.y | sed "s/_TAIL_MACRO_/result/; s/_RESULT_MACRO_/POSTAG/" > aonchiall.y
+
+eisceacht.y : ponc.in.y
+	cat ponc.in.y | sed "s/_TAIL_MACRO_//; /^result/d" > eisceacht.y
+
+rialacha.y : ponc.in.y
+	cat ponc.in.y | sed "s/_TAIL_MACRO_/result/; s/_RESULT_MACRO_/MESSAGE | MESSAGEPLUS MESSAGEARG/" > rialacha.y
+
+aparser : aonchiall.y ponc.in.l
+	$(LEX) ponc.in.l
+	$(YACC) -d aonchiall.y
+	$(CC) -c $(CFLAGS) lex.yy.c y.tab.c
+	$(CC) -o aparser $(CFLAGS) lex.yy.o y.tab.o $(LEXLIB)
+
+eparser : eisceacht.y ponc.in.l
+	$(LEX) ponc.in.l
+	$(YACC) -d eisceacht.y
+	$(CC) -c $(CFLAGS) lex.yy.c y.tab.c
+	$(CC) -o eparser $(CFLAGS) lex.yy.o y.tab.o $(LEXLIB)
+
+rparser : rialacha.y ponc.in.l
+	$(LEX) ponc.in.l
+	$(YACC) -d rialacha.y
+	$(CC) -c $(CFLAGS) lex.yy.c y.tab.c
+	$(CC) -o rparser $(CFLAGS) lex.yy.o y.tab.o $(LEXLIB)
+
+poncin : aparser eparser rparser
+	@$(ECHO) 'Checking aonchiall.in'
+	@cat aonchiall.in | ./aparser
+	@$(ECHO) 'Checking eisceacht.in'
+	@cat eisceacht.in | ./eparser
+	@$(ECHO) 'Checking rialacha.in'
+	@cat rialacha.in | ./rparser
+
+FORCE :
