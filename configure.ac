@@ -43,6 +43,8 @@ else
 fi
 AC_SUBST(EGREP_COLOR)
 
+AM_GNU_GETTEXT([external])
 
-AC_CONFIG_FILES(Makefile gr)
+
+AC_CONFIG_FILES(Makefile gr po/Makefile.in )
 AC_OUTPUT

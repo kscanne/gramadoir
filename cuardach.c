@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>		/* atoi, strtol */
+#include <libintl.h>
 #else
 /* trouble! */
 #endif
@@ -34,6 +35,9 @@ struct replacement
   char focal[GR_WORDMAX];
   char *athfhocal;
 };
+
+char packagename[16] = "An Gramadóir";
+char dictfile[16] = "focail.bs";
 
 #define DICTTOTAL 314027
 int ignore_total = 0;
@@ -69,8 +73,7 @@ load_replacements ()
       torepl = malloc (iomlan * sizeof (struct replacement));
       if (torepl == NULL)
 	{
-	  /* "An Gramadóir: out of memory\n" */
-	  fprintf (stderr, "An Gramadóir: cuimhne ídithe\n");
+	  fprintf (stderr, gettext ("%s: out of memory\n"), packagename);
 	  return 1;
 	}
       while (!feof (repl) && repl_total != iomlan)
@@ -79,9 +82,8 @@ load_replacements ()
 	  split = strchr (token, ' ');
 	  if (split == NULL)
 	    {
-	      /* "An Gramadóir: corrupted eile.bs at %s\n" */
-	      fprintf (stderr, "An Gramadóir: eile.bs truaillithe ag %s\n",
-		       token);
+	      fprintf (stderr, gettext ("%s: `eile.bs' corrupted at %s\n"),
+		       packagename, token);
 	      return 0;		/* muddle on thru */
 	    }
 	  else
@@ -90,8 +92,8 @@ load_replacements ()
 	      torepl[repl_total].athfhocal = malloc (strlen (split));
 	      if (torepl[repl_total].athfhocal == NULL)
 		{
-		  /* "An Gramadóir: out of memory\n" */
-		  fprintf (stderr, "An Gramadóir: cuimhne ídithe\n");
+		  fprintf (stderr, gettext ("%s: out of memory\n"),
+			   packagename);
 		  return 1;
 		}
 	      strncpy (torepl[repl_total].focal, token, wordlen);
@@ -103,15 +105,13 @@ load_replacements ()
 	}
       if (repl_total != iomlan)
 	{
-	  /* "An Gramadóir: warning: check size of %s: %d?\n" */
-	  fprintf (stderr,
-		   "An Gramadóir: rabhadh: deimhnigh méid de %s: %d?\n", fn,
-		   ignore_total);
+	  fprintf (stderr, gettext ("%s: warning: check size of %s: %d?\n"),
+		   packagename, fn, ignore_total);
 	}
       if (fclose (repl))
 	{
-	  /* "An Gramadóir: warning: problem closing %s\n" */
-	  fprintf (stderr, "An Gramadóir: rabhadh: fadhb ag dúnadh %s\n", fn);
+	  fprintf (stderr, gettext ("%s: warning: problem closing %s\n"),
+		   packagename, fn);
 	}
     }
   else
@@ -135,8 +135,7 @@ real_loader (char *grignore, FILE * grig)
   toignore = malloc (iomlan * sizeof (struct ignorable));
   if (toignore == NULL)
     {
-      /* "An Gramadóir: warning: out of memory\n" */
-      fprintf (stderr, "An Gramadóir: rabhadh: cuimhne ídithe\n");
+      fprintf (stderr, gettext ("%s: out of memory\n"), packagename);
       return;
     }
   while (!feof (grig) && ignore_total != iomlan)
@@ -146,16 +145,14 @@ real_loader (char *grignore, FILE * grig)
     }
   if (ignore_total != iomlan)
     {
-      /* "An Gramadóir: warning: check size of %s: %d?\n" */
       fprintf (stderr,
-	       "An Gramadóir: rabhadh: deimhnigh méid de %s: %d?\n",
-	       grignore, ignore_total);
+	       gettext ("%s: warning: check size of %s: %d?\n"),
+	       packagename, grignore, ignore_total);
     }
   if (fclose (grig))
     {
-      /* "An Gramadóir: warning: problem closing %s\n" */
-      fprintf (stderr, "An Gramadóir: rabhadh: fadhb ag dúnadh %s\n",
-	       grignore);
+      fprintf (stderr, gettext ("%s: warning: problem closing %s\n"),
+	       packagename, grignore);
     }
 }
 
@@ -195,7 +192,8 @@ load_dictionary ()
   int cp, meid = 1;
 
   strcpy (fn, BSONRAI);
-  strcat (fn, "/focail.bs");
+  strcat (fn, "/");
+  strcat (fn, dictfile);
   if ((bs = fopen (fn, "r")) == NULL)
     return 1;
   if (fgets (focloir[0].focal, GR_WORDMAX, bs) == NULL)
@@ -212,15 +210,15 @@ load_dictionary ()
     }
   if (meid != DICTTOTAL)
     {
-      /* "An Gramadóir: warning: check dictionary size: %d?\n" */
-      fprintf (stderr, "An Gramadóir: rabhadh: deimhnigh méid foclóra: %d?\n",
-	       meid);
+      fprintf (stderr,
+	       gettext ("%s: warning: check size of %s: %d?\n"),
+	       packagename, dictfile, meid);
     }
   if (fclose (bs))
     {
-      /* "An Gramadóir: warning: problem closing the dictionary\n" */
       fprintf (stderr,
-	       "An Gramadóir: rabhadh: fadhb ag dúnadh an fhoclóra\n");
+	       gettext ("%s: warning: problem closing %s\n"), packagename,
+	       dictfile);
     }
   return 0;
 }
@@ -342,8 +340,8 @@ byte_to_markup (const unsigned char c, char *fill, char *attrs)
 	  strcat (attrs, " t=\"láith\"");
 	  break;
 	case 2:
-	  /*      "An Gramadóir: illegal grammatical code\n" */
-	  fprintf (stderr, "An Gramadóir: cód gramadach neamhcheadaithe\n");
+	  fprintf (stderr, gettext ("%s: illegal grammatical code\n"),
+		   packagename);
 	  break;
 	case 3:
 	  strcat (attrs, " t=\"caite\"");
@@ -394,8 +392,7 @@ code_to_markup (const char *cod, char *fill, char *attrs, char *extratags)
     }
   else
     {
-      /* "An Gramadóir: no grammar codes\n" */
-      fprintf (stderr, "An Gramadóir: cód gramadach folamh\n");
+      fprintf (stderr, gettext ("%s: no grammar codes\n"), packagename);
     }
 }
 
@@ -476,7 +473,7 @@ replacementlookup (const char *word, char *repl)
 char
 my_tolower (const char x)
 {
-  return (x | 0x20);	/* know that x is upper as determined by my_isupper */
+  return (x | 0x20);		/* know that x is upper as determined by my_isupper */
 }
 
 int
@@ -615,17 +612,21 @@ main (int argc, char *argv[])
   char token[512], *w;
   int badtoken = 0;
 
+  setlocale (LC_MESSAGES, "");	/* read from environment */
+  bindtextdomain (PACKAGE_NAME, LOCALEDIR);
+  textdomain (PACKAGE_NAME);
+
   if (argc != 2)
     {
-      /* "An Gramadóir: problem with the 'cuardach' command" */
-      fprintf (stderr, "An Gramadóir: fadhb leis an ordú 'cuardach'\n");
+      fprintf (stderr, gettext ("%s: problem with the `cuardach' command\n"),
+	       packagename);
       return 1;
     }
 
   if (load_dictionary () || load_replacements ())
     {
-      /* "An Gramadóir: problem reading the database\n" */
-      fprintf (stderr, "An Gramadóir: fadhb ag léamh an bhunachair sonraí\n");
+      fprintf (stderr, gettext ("%s: problem reading the database\n"),
+	       packagename);
       cleanup ();
       return 1;
     }
