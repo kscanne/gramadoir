@@ -40,10 +40,14 @@ int load_dictionary()
 	  fgets(focloir[meid].coid, 16, bs);
 	  meid++;
          }
-     if (meid != DICTTOTAL) 
-         fprintf(stderr, "gramadóir: rabhadh: deimhnigh méid foclóra: %d?\n", meid);
-     if (fclose(bs)) 
-         fprintf(stderr, "gramadóir: rabhadh: fadhb ag dúnadh an fhoclóra\n");
+     if (meid != DICTTOTAL) {
+                    /* "An Gramadóir: warning: check dictionary size: %d?\n" */
+         fprintf(stderr, "An Gramadóir: rabhadh: deimhnigh méid foclóra: %d?\n", meid);
+	 }
+     if (fclose(bs)) {
+                /* "An Gramadóir: warning: problem closing the dictionary\n" */
+         fprintf(stderr, "An Gramadóir: rabhadh: fadhb ag dúnadh an fhoclóra\n");
+	 }
      return 0;
     }
 
@@ -113,7 +117,8 @@ void byte_to_markup(const unsigned char c, char* fill, char* attrs)
 	        case 0: strcat(attrs, " t=\"ord\""); break;
 	        case 1: strcat(attrs, " t=\"láith\""); break;
 		case 2:
-		  fprintf(stderr,"gramadóir: cód gramadach neamhcheadaithe\n");
+		/*      "An Gramadóir: illegal grammatical code\n" */
+		  fprintf(stderr,"An Gramadóir: cód gramadach neamhcheadaithe\n");
 		  break;
 	        case 3: strcat(attrs, " t=\"caite\""); break;
 	        case 4: strcat(attrs, " t=\"fáist\""); break;
@@ -147,7 +152,10 @@ void code_to_markup(const char* cod, char* fill, char* attrs, char* extratags)
          byte_to_markup(cod[0], fill, attrs);
 	 strcpy(extratags,"");
         }
-    else fprintf(stderr, "gramadóir: cód gramadach folamh\n");
+    else {
+                       /* "An Gramadóir: no grammar codes\n" */
+          fprintf(stderr, "An Gramadóir: cód gramadach folamh\n");
+	 }
    }
 
 /* this does the actual log search, concatenates codes */
@@ -226,11 +234,13 @@ int main()
     if (!setlocale(LC_CTYPE, "ga_IE.iso88591")) 
        if (!setlocale(LC_CTYPE, "en_US.iso88591"))
          if (!setlocale(LC_CTYPE, "en_US.ISO8859-1")) {
-            fprintf(stderr, "gramadóir: fadhb leis an logánú\n");
+                         /* "An Gramadóir: problem with the locale\n" */
+            fprintf(stderr, "An Gramadóir: fadhb leis an logánú\n");
             return 1;
 	   }
     if (load_dictionary()) {
-         fprintf(stderr, "gramadóir: fadhb ag léamh an bhunachair sonraí\n");
+                   /* "An Gramadóir: problem reading the database\n" */
+         fprintf(stderr, "An Gramadóir: fadhb ag léamh an bhunachair sonraí\n");
          return 1;
         }
     
