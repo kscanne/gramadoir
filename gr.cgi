@@ -36,11 +36,6 @@ my( $teanga ) = $q->param( "teanga" ) =~ /^([a-z][a-z]_[A-Z][A-Z])$/;
 $lh = Lingua::GA::Gramadoir::Languages->get_handle($teanga);
 die "Problem setting language handle" unless $lh;
 
-my $gr = new Lingua::GA::Gramadoir(
-	fix_spelling => 1,
-	interface_language => $teanga,
-);
-
 # rightfully this file should go in po/POTFILES.in
 # but each string is taken directly from gram.pl
 my $clar = gettext('An Gramadoir');
@@ -61,10 +56,21 @@ print $q->header(-type=>"text/html",
 
 print "<p>\n<a href=\"http://borel.slu.edu/gramadoir/\">$clar</a>, $vstring<br>\n$copyright\n<i>$gpl</i></p><hr>\n";
 
-foreach (@{$gr->grammatical_errors($ionchur)}) {
-	m/^<E offset="([0-9]+)" fromy="([0-9]+)".* sentence="(.*)" errortext="([^"]+)" msg="([^"]+)">$/;
-	print "<br><br>$2: ".substr($3,0,$1)."<b class=gramadoir>$4</b>".substr($3,$1+length($4))."<br>\n$5.\n\n";
+if (defined($ionchur)) {
+	my $gr = new Lingua::GA::Gramadoir(
+		fix_spelling => 1,
+		interface_language => $teanga,
+	);
+
+	foreach (@{$gr->grammatical_errors($ionchur)}) {
+		m/^<E offset="([0-9]+)" fromy="([0-9]+)".* sentence="(.*)" errortext="([^"]+)" msg="([^"]+)">$/;
+		print "<br><br>$2: ".substr($3,0,$1)."<b class=gramadoir>$4</b>".substr($3,$1+length($4))."<br>\n$5.\n\n";
+	}
 }
+else {
+	$ionchur = '<<empty input>>';
+}
+
 print $q->hr;
 print $q->end_html;
 
