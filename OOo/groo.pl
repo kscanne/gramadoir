@@ -2,7 +2,7 @@
 
 =head1 NAME
 
-@SCRIPTNAME@ - Check the grammar of @NAME_ENGLISH@ language OpenOffice documents
+@SCRIPTNAME@ - Check the grammar of @NAME_ENGLISH@ language OpenOffice.org documents
 
 =head1 SYNOPSIS
 
@@ -10,7 +10,7 @@ B<@SCRIPTNAME@> I<filetocheck[.sxw]> I<errorfile[.sxw]>
 
 =head1 DESCRIPTION
 
-This script checks the grammar of the @NAME_ENGLISH@ language OpenOffice
+This script checks the grammar of the @NAME_ENGLISH@ language OpenOffice.org
 document given as the first argument, and creates a new document 
 with the errors highlighted and annotated with appropriate messages.
 
