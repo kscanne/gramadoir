@@ -3,15 +3,18 @@
 # This script is the front-end to an Irish language grammar checker.
 # Copyright (C) 2003 Kevin P. Scannell <scannell@slu.edu>
 #
-# Usage: gr [--html] [FILES]
-#
 # This is a script for checking the grammar of Irish language text
-# contained in the FILES specified on the command line, or read from
-# standard input if no arguments are given.   It writes a summary of
-# possible errors to standard output.   The --html command line argument
-# produces HTML output which should resemble the terminal output when
-# viewed in a standard web brower.
+# contained in the files specified on the command line, or read from
+# standard input if no arguments are given.   The default behavior is
+# to write a summary of possible errors to standard output.   
 #
+# There are several command line options.  The --html command line argument
+# produces HTML output which should resemble the terminal output when
+# viewed in a standard web brower.  The --litriu argument tells gr to
+# act like classical UNIX "spell" (or ispell -l), and the --xml argument
+# writes the intermediate tagged XML stream to standard output for 
+# development or debugging purposes.   The standard GNU --version and
+# --help options work in the expected way.
 
 CLAR='gramadóir'        # title that prints to screen, not used as filename
 
@@ -20,7 +23,7 @@ checking='Ag seiceáil'
 notfound='ní a leithéid de chomhad ann'
 isdir='is comhadlann í'
 permissions='cead diúltaithe'
-usage="Úsáid: gr [--help] [--version] [--html] [COMHAID]"
+usage="Úsáid: gr [--help] [--version] [--html] [--xml] [--litriu] [COMHAID]"
 stdinhelp="Mura bhfuil comhad ann, léigh ón ionchur caighdeánach"
 bugreports="Seol tuairiscí fabhtanna chuig <@PACKAGE_BUGREPORT@>."
 versionstring="leagan @PACKAGE_VERSION@"
@@ -244,12 +247,45 @@ comhad()
 		/bin/bash -s
 }
 
+# same as filters in comhad up to the interface
+xml_output()
+{
+	cat $1 | diutf | 
+		abairti |
+		@prefix@/libexec/cuardach |
+		aonchiall |
+		rialacha |
+		eisceacht
+}
+
+litriu_comheadan()
+{
+sed -n "
+/<X>/{
+s/<[^X\/][^>]*>//g
+s/<\/[^X][^>]*>//g
+s/^[^<]*<X>//
+s/<\/X>[^<]*$//
+s/<\/X>[^<]*<X>/\n/g
+p
+}
+"
+}
+
+litriu()
+{
+	cat $1 | diutf | 
+		abairti |
+		@prefix@/libexec/cuardach |
+		litriu_comheadan
+}
+
 # remainder is the "main()"
 
-if [ $# -eq 0 ]
-then
-	comhad
-else
+AIBHSIGHVAR="@EGREP@ --color -h "
+ACTION=comhad
+while [ ${1%%[^-]*} ]
+do
 	if [ ${1} = "--version" ]
 	then
 		versionout
@@ -265,17 +301,35 @@ else
 	if [ ${1} = "--html" ]
 	then
 		AIBHSIGHVAR="@AWK@ -f @prefix@/libexec/hilite.awk pattern="
-		shift
-	else
-		AIBHSIGHVAR="@EGREP@ --color -h "
 	fi
 
-	for file in "$@"; do
-		if ! drochchomhad ${file}
+	if [ ${1} = "--litriu" ]
+	then
+		ACTION=litriu
+	fi
+
+	if [ ${1} = "--xml" ]
+	then
+		ACTION=xml_output
+	fi
+	shift
+done
+
+if [ -z "${1}" ]
+then
+	${ACTION}
+else
+	until [ -z "$1" ]
+	do
+		if ! drochchomhad ${1}
 		then
-			echo $checking ${file}
-			comhad ${file}
+			if [ ${ACTION} = "comhad" ]
+			then
+				echo $checking ${1}
+			fi
+			${ACTION} ${1}
 		fi	
+		shift
 	done
 fi
 exit 0
