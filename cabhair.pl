@@ -17,16 +17,19 @@ use Getopt::Long qw(:config gnu_getopt);
 my $rarebyte = 127;
 
 my $unicode = '';
+my $encoding = 'ISO-8859-1';
 my $compress = '';
 my $decompress = '';
 GetOptions (
-		'unicode|utf8|u'		=> \$unicode,
+		'encoding=s'			=> \$encoding,
 		'unsq|decompress|uncompress|d'	=> \$decompress,
 		'sq|compress|c'			=> \$compress,
 	) or die "Error parsing command line options";
 
 die "You must specify either -d(ecompress) or -c(ompress)"
 unless ($compress or $decompress);
+
+$unicode=1 if ($encoding =~ m/utf-?8/i);
 
 sub sq
 {
