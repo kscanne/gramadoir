@@ -1,6 +1,6 @@
 #!/bin/sh
 GRAMDIR=".."
-VERSION="0.51"
+VERSION="0.60"
 TEANGA="ga"
 UPPERTEANGA="GA"
 AUTHOR=""
