@@ -22,7 +22,9 @@
 # user's home directory for a file .neamhshuim of words to ignore while
 # checking the spelling and grammar.  Use the --iomlan flag to disregard
 # this file.  The standard GNU --version and --help options work in the 
-# expected way.
+# expected way.   The language of the text to be checked can be specified
+# with --teanga=xx; the list of available language codes is in the file
+# TEANGACHA.
 
 # NOT internationalized
 packageversion="@PACKAGE_VERSION@"
@@ -49,6 +51,7 @@ usage2=`gettext -s "    --litriu       write misspelled words to standard output
 usage3=`gettext -s "    --html         produce HTML output for viewing in a web browser"`
 usage4=`gettext -s "    --xml          write tagged XML stream to standard output, for debugging"`
 usage5=`gettext -s "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"`
+usage8=`gettext -s "    --teanga=XX    specify the language of the text to be checked (default=ga)"`
 usage6=`gettext -s "    --help         display this help and exit"`
 usage7=`gettext -s "    --version      output version information and exit"`
 stdinhelp=`gettext -s "If no file is given, read from standard input."`
