@@ -182,6 +182,11 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 ##############################################################################
 #   Rules A->Z begin here...
 ##############################################################################
+# CB p.24 #11.b
+#. A aon, a dó, a trí.
+[Aa] <A pl="n" gnt="n">([Aa]on|[Oo]cht)</A>:PREFIXH
+#. Ba é a aon aidhm ar an saol daoine a ghnóthú don chúis (OK).
+<E>[Aa] <A pl="n" gnt="n">([Aa]on|[Oo]cht)</A></E> <N>ANYTHING</N>:OK
 # CB p.13 #4.a
 #. Tá an Rialtas tar éis áit na Gaeilge i saol na tíre a ceistiú.
 <S>a</S> <N>UNLENITED</N>:SEIMHIU
@@ -1736,6 +1741,7 @@ ECLIPSINGNUMBER <E><N>ECLIPSED</N></E>:OK
 #. Tá sí ag feidhmiú go héifeachtach (OK).
 [Gg]o <E><A pl="n" gnt="n" h="y">ANYTHING</A></E>:OK
 # OD has "ní hansa", "ní hamháin", "ní hamhlaidh" (now in comhshuite)
+# OF81 has "ní amhlaidh", "ní amháin", "ní ionann" consistently
 # See LGG p.112 too; but CB gives "ní ionann"; corpus split.
 #. Ní hionann cuingir na ngabhar agus cuingir na lánúine (OK).
 [Nn]í <E><A pl="n" gnt="n" h="y">hionann</A></E>:OK

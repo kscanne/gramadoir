@@ -128,8 +128,11 @@
 # next is always "an am gcéanna"; all others are "mar an? gcéanna" <N> unigram
 <N>ANYTHING</N> <B>gcéanna</B>:<A pl="n" gnt="n">
 <B>[Cc]h?éanna</B>:<A pl="n" gnt="n">
+# handles fichiú, etc. by brute force; ceathrú is feminine so get separate rules
+<B><Z>NUMERICAL</Z>ANYTHING</B>:<A pl="n" gnt="n">
 # others unigram to <N pl="n" gnt="n" gnd="f">
 <T>[Aa]n</T> <B>[Cc]heathrú</B>:<A pl="n" gnt="n">
+<S>FUSEDPREP</S> <B>[Cc]heathrú</B>:<A pl="n" gnt="n">
 <B>g?[Cc]h?eathrú</B> <N>UNLENITED</N>:<A pl="n" gnt="n">
 <B>g?[Cc]h?eathrú</B> <NWITHH>ANYTHING</NWITHH>:<A pl="n" gnt="n">
 <T>[Nn]a</T> <B>cinn</B>:<N pl="y" gnt="n" gnd="m">
@@ -354,7 +357,6 @@ RFORMCONJ <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">
 #  the order below prefers the feminine.   
 #  Somewhat more frequent are words which can be common singular+plural
 #  simultaneously:  ailt, cóir, uain.  Order prefers singular
-<B><Z>NUMERICAL</Z>ANYTHING</B>:<A pl="n" gnt="n">
 # these two before all of the compound preps (e.g. i ndiaidh na n-uaisle)
 <T>na</T> <B><Z>ANYNMGPL</Z>ECLIPSED</B>:<N pl="y" gnt="y" gnd="m">
 <T>na</T> <B><Z>ANYNFGPL</Z>ECLIPSED</B>:<N pl="y" gnt="y" gnd="f">
@@ -479,6 +481,11 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 # Roinne, vótála, etc.
 <B><Z>NFGSUBJ</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 <B><Z>PLADJSUBJ</Z>ANYTHING</B>:<A pl="y" gnt="n">
+# GENADJ are generic verbal adjectives, a3+gs of vn.  
+# Usually it doesn't matter which unless after an article, e.g. to catch
+# missing prefixh on "caighdeán na imeartha"
+<T>ANYTHING</T> <B><Z>GENADJF</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+<T>ANYTHING</T> <B><Z>GENADJM</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <B><Z>GENADJ</Z>ANYTHING</B>:<A pl="n" gnt="n">
 # next one better without <T>, "an chnuasaigh", etc.
 [Aa]n <B><Z>ANYNMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">

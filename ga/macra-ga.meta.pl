@@ -149,8 +149,9 @@ s/NPLF/<N pl="y" gnt="n".><N pl="y" gnt="n" gnd="f".>/g;
 s/PLADJSUBJ/<A pl="y" gnt="n".><V p="." t="foshuit".>/g;
 s/PRESSUBJ/<V p="y" t="láith".><V p="y" t="foshuit".>/g;
 s/NFGSUBJ/<N pl="n" gnt="y" gnd="f".><V p="." t="foshuit".>/g;
-# allowing feminine noun catches "breise" too; gets some absurdities like "ait"
-s/GENADJ/<N pl="n" gnt="y" gnd=".".><A pl="n" gnt="n".><A pl="n" gnt="y" gnd="f".><A pl="n" gnt="y" gnd="m".><A pl="y" gnt="n".>/g;
+# allowing feminine noun catches "breise", "imeartha", etc
+s/GENADJF/<N pl="n" gnt="y" gnd="f".><A pl="n" gnt="n".><A pl="n" gnt="y" gnd="f".><A pl="n" gnt="y" gnd="m".><A pl="y" gnt="n".>/g;
+s/GENADJM/<N pl="n" gnt="y" gnd="m".><A pl="n" gnt="n".><A pl="n" gnt="y" gnd="f".><A pl="n" gnt="y" gnd="m".><A pl="y" gnt="n".>/g;
 s/PROPER/<Y.>(?:<[^>]*>)+/g;
 s/MASCPL/<N pl="y" gnt="n".><N pl="y" gnt="n" gnd="m".>/g;
 s/ADJADV/<R.><A pl="n" gnt="n".>/g;
