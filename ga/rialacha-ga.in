@@ -131,7 +131,7 @@ sin sin:OK
 <NFCS>ANYTHING</NFCS> <A>COMPOUND</A>:OK
 # corpus; exception to "lenite adj after feminine noun" (céad comes before)
 #. Léimeann an fharraige céad méadar suas sa spéir (OK).
-<NFCS>ANYTHING</NFCS> <A>(céad|gach|seo|sin)</A>:OK
+<NFCS>ANYTHING</NFCS> <A>(céad|curtha|gach|seo|sin)</A>:OK
 <NFCS>[Bb]heith</NFCS> <A>UNLENITED</A>:OK
 # next rule doesn't make sense: "bileog bholscaireachta dhátheangach" is fine
 # will need a shallow parse to link up adjectives to nouns they modify
@@ -157,7 +157,7 @@ sin sin:OK
 # corpus exceptions
 #. Mhair cuid mhór dár sinsir céad caoga bliain ó shin (OK).
 #. Tá sé le cloisteáil sna meáin gach seachtain (OK).
-<NP>SLENDERFINALCONSONANT</NP> <A>(céad|gach|seo|sin)</A>:OK
+<NP>SLENDERFINALCONSONANT</NP> <A>(céad|curtha|gach|seo|sin)</A>:OK
 # INPHRASE rule, but example sentence is best caught before "na" rules
 #. Maidin lá ar na mhárach thug a fhear gaoil cuairt air.
 <N>[Mm]hárach</N>:INPHRASE{arna mhárach}
@@ -261,7 +261,7 @@ sin sin:OK
 # CB p.8 #4
 #. Tá dhá shiombail ag an bharr gach leathanaigh.
 <T>ANYTHING</T> <NC>ANYTHING</NC> <A>gach</A> <NG>ANYTHING</NG>:ONEART
-# CB p.13 #3.c
+# CB p.13 #3.c, p.76 #8.b
 #. Ní bheidh aon buntáiste againn orthu sin.
 h?[Aa]on <N>UNLENITEDBCFGMP</N>:SEIMHIU
 # CB p.132 #5, OD ar^5
@@ -364,9 +364,18 @@ h?[Aa]on <N>UNLENITEDBCFGMP</N>:SEIMHIU
 # CB p.24 #11.a.x
 #. Chuir siad fios orm ceithre uaire ar an tslí sin.
 [Cc]eithre uaire?:BACHOIR{huaire}
-# CB p.13 #3.f
+# CB p.13 #3.f, p.76 #8.b
 #. Beidh ar Bhord Feidhmiúcháin an tUachtarán agus ceithre ball eile.
-[Cc]eithre <NCS>UNLENITED</NCS>:SEIMHIU
+g?[Cc]h?eithre <N>UNLENITED</N>:SEIMHIU
+# CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
+g?[Cc]h?eithre <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</N>:OK
+# CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
+g?[Cc]h?eithre <N>[Bb]hliain</N>:BACHOIR{bliana}
+g?[Cc]h?eithre <N>[Cc]heann</N>:BACHOIR{cinn}
+g?[Cc]h?eithre <N>[Cc]hloigeann</N>:BACHOIR{cloigne}
+g?[Cc]h?eithre <N>[Cc]huairt</N>:BACHOIR{cuarta}
+g?[Cc]h?eithre <N>[Ff]hiche</N>:BACHOIR{fichid}
+g?[Cc]h?eithre <N>[Ss]heachtain</N>:BACHOIR{seachtaine}
 # CB p.22 #8 (implicit), corpus confirms
 #. Cén amhránaí is fearr leat?
 <Q>[Cc]én</Q> <NMCS>INITIALVOWEL</NMCS>:PREFIXT
@@ -413,9 +422,18 @@ h?[Aa]on <N>UNLENITEDBCFGMP</N>:SEIMHIU
 # "her bell/clock" is a potential exception but never in the corpus.
 #. D'éirídís ar maidin ar a ceathair a clog.
 [Aa] g?[Cc]loi?g:SEIMHIU
-# CB p.13 #3.f
+# CB p.13 #3.f, p.76 #8.b
 #. Bhí sé cúig bhanlámh ar fhad, cúig banlámh ar leithead.
-[Cc]úig <NCS>UNLENITED</NCS>:SEIMHIU
+g?[Cc]h?úig <N>UNLENITED</N>:SEIMHIU
+# CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
+g?[Cc]h?úig <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</N>:OK
+# CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
+g?[Cc]h?úig <N>[Bb]hliain</N>:BACHOIR{bliana}
+g?[Cc]h?úig <N>[Cc]heann</N>:BACHOIR{cinn}
+g?[Cc]h?úig <N>[Cc]hloigeann</N>:BACHOIR{cloigne}
+g?[Cc]h?úig <N>[Cc]huairt</N>:BACHOIR{cuarta}
+g?[Cc]h?úig <N>[Ff]hiche</N>:BACHOIR{fichid}
+g?[Cc]h?úig <N>[Ss]heachtain</N>:BACHOIR{seachtaine}
 # OD méid is alt of méad
 [Dd]á <N>[Mm]h?éid</N>:CAIGHDEAN{mhéad}
 # CB p.22 #7.h, p.132 #6
@@ -437,9 +455,16 @@ h?[Aa]on <N>UNLENITEDBCFGMP</N>:SEIMHIU
 # CB p.24 #11.a.iv, LGG p.112
 #. D'oibrigh mé liom go dtí Dé Aoine.
 Dé Aoine:PREFIXH
-# CB p.20 #1.c
+# CB p.20 #1.c, p.76 #8.c (even in plural)
 #. Bhí deich tobar fíoruisce agus seachtó crann pailme ann.
-[Dd]eich <N>UNECLIPSED</N>:URU
+n?[Dd]h?eich <N>UNECLIPSED</N>:URU
+# CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
+n?[Dd]h?eich <N>m[Bb]liain</N>:BACHOIR{mbliana}
+n?[Dd]h?eich <N>g[Cc]eann</N>:BACHOIR{gcinn}
+n?[Dd]h?eich <N>g[Cc]loigeann</N>:BACHOIR{gcloigne}
+n?[Dd]h?eich <N>g[Cc]uairt</N>:BACHOIR{gcuarta}
+n?[Dd]h?eich <N>bh[Ff]iche</N>:BACHOIR{bhfichid}
+n?[Dd]h?eich <N>[Ss]eachtain</N>:BACHOIR{seachtaine}
 # CB p.12 #3.a (<D>do</D>), CB p.13 #4.a (<S>d[eo]</S>)
 #. Tógfaidh mé do coinnleoir óna ionad, mura ndéana tú aithrí.
 [Dd][eo] <N>UNLENITED</N>:SEIMHIU
@@ -452,7 +477,7 @@ Dé Aoine:PREFIXH
 # CB p.6 #2
 #. Creidim go raibh siad de an thuairim chéanna.
 [Dd]e <T>an</T>:BACHOIR{den}
-# CB p.13 #3.d
+# CB p.13 #3.d, p.76 #8.b
 #. Tá dhá teanga oifigiúla le stádas bunreachtúil á labhairt sa tír seo.
 #. Dhá fiacail lárnacha i ngach aon chomhla.
 #. Rug sí greim ar mo dhá gualainn agus an fhearg a bhí ina súile.
@@ -460,16 +485,18 @@ Dé Aoine:PREFIXH
 # CB p.13 #3.d
 #. Bhí Eibhlín ar a dhá glúin (OK).
 <D>([Aa]|[Áá]r|[Bb]hur)</D> <E>[Dd]há UNLENITED</E>:OK
+# CB p.77 #8.e
+[Dd]há [Cc]hinn:BACHOIR{cheann}
 # CB p.77 #8.d; no such rule in OD/LGG
-#[Dd]há m?[Bb]h?os:BACHOIR{bhois}
+[Dd]há m?[Bb]h?os:BACHOIR{bhois}
 # CB p.77 #8.d; no such rule in OD/LGG
-#[Dd]há m?[Bb]h?róg:BACHOIR{bhróig}
+[Dd]há m?[Bb]h?róg:BACHOIR{bhróig}
 # CB p.77 #8.d; no such rule in OD/LGG, in fact "mo dhá chluas" explicitly in OD
-#[Dd]há g?[Cc]h?luas:BACHOIR{chluais}
+[Dd]há g?[Cc]h?luas:BACHOIR{chluais}
 # CB p.77 #8.d; no such rule in OD/LGG
-#[Dd]há g?[Cc]h?os:BACHOIR{chois}
+[Dd]há g?[Cc]h?os:BACHOIR{chois}
 # CB p.77 #8.d; no such rule in OD/LGG, in fact "do dhá lámh" explicitly in OD
-#[Dd]há [Ll]ámh:BACHOIR{láimh}
+[Dd]há [Ll]ámh:BACHOIR{láimh}
 # OD dhá^1
 #. Is léir nach bhfuil an dhá theanga ar chomhchéim lena chéile.
 <T>[Aa]n</T> [Dd]há:NISEIMHIU
@@ -761,9 +788,16 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.133 #12 irreg. exceptions
 #. Nach raibh dóthain eolais aige (OK)?
 [Nn]ach <VPAST>PASTNORFORM</VPAST>:OK
-# CB p.20 #1.c
+# CB p.20 #1.c, p.76 #8.c (even in plural)
 #. Rinneadh an roinnt don naoi treibh go leith ar cranna.
 <[^Y]>[Nn]aoi</[^Y]> <N>UNECLIPSED</N>:URU
+# CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
+<[^Y]>[Nn]aoi</[^Y]> <N>m[Bb]liain</N>:BACHOIR{mbliana}
+<[^Y]>[Nn]aoi</[^Y]> <N>g[Cc]eann</N>:BACHOIR{gcinn}
+<[^Y]>[Nn]aoi</[^Y]> <N>g[Cc]loigeann</N>:BACHOIR{gcloigne}
+<[^Y]>[Nn]aoi</[^Y]> <N>g[Cc]uairt</N>:BACHOIR{gcuarta}
+<[^Y]>[Nn]aoi</[^Y]> <N>bh[Ff]iche</N>:BACHOIR{bhfichid}
+<[^Y]>[Nn]aoi</[^Y]> <N>[Ss]eachtain</N>:BACHOIR{seachtaine}
 # CB p.16 #8.c
 #. Tháinig na bróga chomh fada siar le haimsir Naomh Phádraig féin.
 <N>Naomh</N> CAPITALLENITED:NISEIMHIU
@@ -846,9 +880,17 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.6 #2
 #. Bíodh bhur ngrá saor ó an gcur i gcéill.
 <S>[Óó]</S> <T>an</T>:BACHOIR{ón}
-# CB p.20 #1.c
+# CB p.20 #1.c, p.76 #8.c (even in plural)
 #. Bhí ocht tábla ar fad ar a maraídís na híobairtí.
-[Oo]cht <N>UNECLIPSED</N>:URU
+#. Sáraíonn sé na seacht nó na hocht bliana.
+h?[Oo]cht <N>UNECLIPSED</N>:URU
+# CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
+h?[Oo]ocht <N>m[Bb]liain</N>:BACHOIR{mbliana}
+h?[Oo]ocht <N>g[Cc]eann</N>:BACHOIR{gcinn}
+h?[Oo]ocht <N>g[Cc]loigeann</N>:BACHOIR{gcloigne}
+h?[Oo]ocht <N>g[Cc]uairt</N>:BACHOIR{gcuarta}
+h?[Oo]ocht <N>bh[Ff]iche</N>:BACHOIR{bhfichid}
+h?[Oo]ocht <N>[Ss]eachtain</N>:BACHOIR{seachtaine}
 # MacL00 p.118
 #. Beidh an chéad chruinniú oifigiúil ag an gcoiste oíche Dé Luain.
 <N>[Oo]íche</N> <N>Dé</N>:NIGA{Dé}
@@ -919,9 +961,18 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 #. Ní féidir iad a sheinm le snáthaid ach cúig nó sé uaire.
 #. Dúirt sé uair amháin nach raibh áit eile ar mhaith leis cónaí ann (OK).
 <A>[Ss]é</A> uaire?:BACHOIR{huaire}
-# CB p.13 #3.f
+# CB p.13 #3.f, p.76 #8.b
 #. Céard atá ann ná sé cathaoirleach coiste.
-<A>[Ss]é</A> <NCS>UNLENITED</NCS>:SEIMHIU
+<A>[Ss]h?é</A> <N>UNLENITED</N>:SEIMHIU
+# CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
+<A>[Ss]h?é</A> <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</N>:OK
+# CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
+<A>[Ss]h?é</A> <N>[Bb]hliain</N>:BACHOIR{bliana}
+<A>[Ss]h?é</A> <N>[Cc]heann</N>:BACHOIR{cinn}
+<A>[Ss]h?é</A> <N>[Cc]hloigeann</N>:BACHOIR{cloigne}
+<A>[Ss]h?é</A> <N>[Cc]huairt</N>:BACHOIR{cuarta}
+<A>[Ss]h?é</A> <N>[Ff]hiche</N>:BACHOIR{fichid}
+<A>[Ss]h?é</A> <N>[Ss]heachtain</N>:BACHOIR{seachtaine}
 # CB p.14 Note
 #. Cuireadh boscaí ticeála isteach seachas bhoscaí le freagraí a scríobh isteach.
 <S>[Ss]eachas</S> <N>LENITED</N>:NISEIMHIU
@@ -933,7 +984,14 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Ss]eachas</S> <T>an</T> <NFCS>ECLIPSED</NFCS>:SEIMHIU
 # CB p.20 #1.c
 #. Tá seacht lampa air agus seacht píopa ar gach ceann díobh.
-[Ss]eacht <N>UNECLIPSED</N>:URU
+[Ss]h?eacht <N>UNECLIPSED</N>:URU
+# CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
+[Ss]h?eacht <N>m[Bb]liain</N>:BACHOIR{mbliana}
+[Ss]h?eacht <N>g[Cc]eann</N>:BACHOIR{gcinn}
+[Ss]h?eacht <N>g[Cc]loigeann</N>:BACHOIR{gcloigne}
+[Ss]h?eacht <N>g[Cc]uairt</N>:BACHOIR{gcuarta}
+[Ss]h?eacht <N>bh[Ff]iche</N>:BACHOIR{bhfichid}
+[Ss]h?eacht <N>[Ss]eachtain</N>:BACHOIR{seachtaine}
 # CB p.24 #11.a.vii (implicitly)
 #. Tá ar a laghad ceithre ní sa litir a chuir scaoll sna oifigigh.
 <S>[Ss]na</S> <NCP>INITIALVOWEL</NCP>:PREFIXH
@@ -974,9 +1032,20 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.84 #8
 #. Coinníodh lenár sála sa chaoi nárbh fhéidir siúl trí ár sráideanna.
 <S>[Tt]rí</S> <D>ár</D>:BACHOIR{trínár}
-# CB p.13 #3.f (<A>trí</A>) p.13 #4.a (<S>trí</S>)
+# CB p.13 #3.f, p.76 #8.b (<A>trí</A>) p.13 #4.a (<S>trí</S>)
 #. Gabhfaidh siad trí muir na hÉigipte.
-[Tt]rí <NCS>UNLENITED</NCS>:SEIMHIU
+d?[Tt]h?rí <N>UNLENITED</N>:SEIMHIU
+# CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
+d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</N>:OK
+#   next batch needs disambiguation; "Rinne mé é trí bhliain a chaitheamh..."
+#  "I did it by spending a year"
+# CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
+# <A>d?[Tt]h?rí</A> <N>[Bb]hliain</N>:BACHOIR{bliana}
+# <A>d?[Tt]h?rí</A> <N>[Cc]heann</N>:BACHOIR{cinn}
+# <A>d?[Tt]h?rí</A> <N>[Cc]hloigeann</N>:BACHOIR{cloigne}
+# <A>d?[Tt]h?rí</A> <N>[Cc]huairt</N>:BACHOIR{cuarta}
+# <A>d?[Tt]h?rí</A> <N>[Ff]hiche</N>:BACHOIR{fichid}
+# <A>d?[Tt]h?rí</A> <N>[Ss]heachtain</N>:BACHOIR{seachtaine}
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 <S>[Tt]ríd</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.6 #2 _singular_ article only; corpus
@@ -1003,6 +1072,9 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.24 #11.b
 #. Scaoileadh seachtar duine chun báis i mBaile Átha Cliath le hocht mí anuas (OK).
 <S>[Ll]e</S> <E><AWITHH>(haon|hocht)</AWITHH></E>:OK
+# CB p.24 #11.b
+#. Ní dhúnfaidh an t-ollmhargadh go dtí a haon a chlog ar maidin (OK).
+[Aa] <E><AWITHH>(haon|hocht)</AWITHH></E>:OK
 # CB p.24 #11.b
 #. Is mar gheall ar sin atá líníocht phictiúrtha chomh húsáideach sin (OK).
 [Cc]homh <E><AWITHH>ANYTHING</AWITHH></E>:OK
