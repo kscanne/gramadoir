@@ -371,8 +371,10 @@ a <B>sé</B>:<A pl="n" gnt="n">
 #############################################################
 # Brill transformations (not associated to particular words)#
 #############################################################
+# Tá an ghlóir...
+<[^ACNRSY]>ANYTHING</[^ACNRSY]> [Aa]n <B>[Gg]hlóir</B>:<N pl="n" gnt="n" gnd="f">
 # exceptions to next
-[Aa]n <B>([Cc]háil|[Gg]hráin)</B>:<N pl="n" gnt="n" gnd="f">
+[Aa]n <B>([Cc]háil|[CcMm]hoill|[Cc]hoir|[Gg]hráin)</B>:<N pl="n" gnt="n" gnd="f">
 # ar cheannaireacht an pháirtí => genitive
 <[^S]>ANYTHING</[^S]> [Aa]n <B><Z>ANYNMG</Z>LENITED</B>:<N pl="n" gnt="y" gnd="m">
 # chun an bhaile...
@@ -432,6 +434,8 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 # exceptions to next pair
 <N pl="n" gnt="n" gnd="m">[Cc]h?úpla</N> <B><Z>ANYNMC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <N pl="n" gnt="n" gnd="m">[Cc]h?úpla</N> <B><Z>ANYNFC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+# exception to next:  tugann litir dó, avoids complaint about missing lenition
+<NFCS>ANYTHING</NFCS> <B>dó</B>:<O>
 <NCS>ANYTHING</NCS> <B><Z>ANYNMG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <NCS>ANYTHING</NCS> <B><Z>ANYNFG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 # amach, síos, suas, aníos, ...  optional <A> on isteach, amuigh, istigh, etc

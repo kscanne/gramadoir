@@ -156,6 +156,8 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 <S>[Aa]g</S> <N pl="n" gnt="n" gnd="f">[Ff]áil</N> <N pl="n" gnt="y" gnd="m">báis</N>:SEIMHIU
 <S>[Aa]g</S> <N pl="n" gnt="n" gnd="f">[Gg]abháil</N> <N pl="n" gnt="y" gnd="m">(foinn|ceoil)</N>:SEIMHIU
 <NFCS>ANYTHING</NFCS> <NG>UNLENITED</NG>:SEIMHIU
+# never lenite "Dé": "lámh Dé"
+<NFCS>ANYTHING</NFCS> <N pl="n" gnt="y" gnd="m">Dé</N>:OK
 # Next two are LGG p.59 (d)
 <E><NFCS>ANYTHING</NFCS> <N pl="n" gnt="y" gnd="m">ANYTHING</N></E> <A pl="n" gnt="y" gnd="m">ANYTHING</A>:OK
 #. Briseadh bád Éamoinn Óig oíche gaoithe móire (OK).
@@ -240,6 +242,8 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 #. Déanann siad na breiseáin brabhsála don tionscal ríomhaireachta.
 #. Is ar éisc mara agus ar na hainmhithe mara eile atáimid ag díriú.
 <NP>SLENDERFINALCONSONANT</NP> <NG>UNLENITED</NG>:SEIMHIU
+# never lenite "Dé":  "mic Dé".
+<NP>SLENDERFINALCONSONANT</NP> <N pl="n" gnt="y" gnd="m">Dé</N>:OK
 #. Chonaic mé líon agus crainn tógála ann (OK).
 <NP>FINALDLNST</NP> <NG>INITIALDST</NG>:OK
 # CB p.15 #5.i; converse of previous
@@ -293,6 +297,7 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 <S>[Aa]ch</S> <A pl="n" gnt="n">[Dd]há</A>:OK
 # CB p.22 #8.a, also CB p.134 #1.a
 <S>[Aa]ch</S> <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N>:PREFIXT
+<S>[Aa]ch</S> <T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A>:PREFIXT
 # CB p.134 #1.a (unlenited caught by more general rule)
 <S>[Aa]ch</S> <T>an</T> <N pl="n" gnt="n" gnd="f">ECLIPSED</N>:SEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
@@ -315,6 +320,7 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 <S>[Aa]mhail</S> <A pl="n" gnt="n">[Dd]há</A>:OK
 # CB p.22 #8.a, also CB p.134 #1.a
 <S>[Aa]mhail</S> <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N>:PREFIXT
+<S>[Aa]mhail</S> <T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A>:PREFIXT
 # CB p.134 #1.a (unlenited caught by more general rule)
 <S>[Aa]mhail</S> <T>an</T> <N pl="n" gnt="n" gnd="f">ECLIPSED</N>:SEIMHIU
 # CB p.132 #5
@@ -348,6 +354,9 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 #  BUT, not OK before common-form prepositions so these must be trapped
 #  elsewhere: see ach, amhail, seachas, etc.
 <S>ANYTHING</S> <E><T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N></E>:OK
+# "aon/ocht" rules are the same as the Noun rules above
+<T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A> <NCS>ANYTHING</NCS>:PREFIXT
+<S>ANYTHING</S> <E><T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A> <NCS>ANYTHING</NCS></E>:OK
 # CB p.12 #1.b
 #. Chóirigh sé na lampaí le solas a chaitheamh os comhair an coinnleora.
 <T>[Aa]n</T> <N pl="n" gnt="y" gnd="m">UNLENITEDBCFGMP</N>:SEIMHIU
@@ -591,7 +600,7 @@ g?[Cc]h?eithre <N>airde</N>:BACHOIR{hairde}
 # NGBC p.184, CB p.76 #8.a
 <A pl="n" gnt="n">g?[Cc]h?eithre</A> <NP>ANYTHING</NP>:UATHA
 <A pl="n" gnt="n">g?[Cc]h?eithre</A> <NP>(bliana|cinn|cloigne|fichid|huaire)</NP>:OK
-# CB p.22 #8 (implicit), corpus confirms
+# CB p.22 #8 (implicit), corpus confirms -- never on adj. "t-aon" in corpus...
 #. Cén amhránaí is fearr leat?
 <Q>[Cc]én</Q> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N>:PREFIXT
 # CB p.23 #9 (implicit article)
@@ -647,6 +656,10 @@ g?[Cc]h?eithre <N>airde</N>:BACHOIR{hairde}
 #. Tiocfaidh deontas faoin alt seo chun bheith iníoctha (OK).
 [Cc]hun <N pl="n" gnt="n" gnd="f">bheith</N>:OK
 [Cc]hun bhur|dhá|thú:OK
+# here the noun is either NOT governed by chun:
+# "íoc chun an t-idirlíon a rochtain" or it is and should be tagged genitive:
+# "chun an idirlín"
+<S>[Cc]hun</S> <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N>:PREFIXT
 # OD clog^1.2b; "a chloi?g" is in comhshuite; worth trapping 
 # since this can follow "trí", exception to "trí a" => "trína" rule
 # "her bell/clock" is a potential exception but never in the corpus.
@@ -971,6 +984,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Gg]an</S> <N>LENITED</N> a <N>NOTVNISHVN</N>:NISEIMHIU
 # CB p.22 #8.a, also CB p.134 #1.a
 <S>[Gg]an</S> <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N>:PREFIXT
+<S>[Gg]an</S> <T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A>:PREFIXT
 # CB p.134 #1.a (unlenited caught by more general rule)
 <S>[Gg]an</S> <T>an</T> <N pl="n" gnt="n" gnd="f">ECLIPSED</N>:SEIMHIU
 # CB p.14 #4.c  (note no "Y"'s, initial d,f,s,t here)
@@ -1037,6 +1051,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Gg]o dtí</S> bhur|dhá|thart|thú:OK
 # CB p.22 #8.a, also CB p.134 #1.a
 <S>[Gg]o dtí</S> <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N>:PREFIXT
+<S>[Gg]o dtí</S> <T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A>:PREFIXT
 # CB p.134 #1.a (unlenited caught by more general rule)
 <S>[Gg]o dtí</S> <T>an</T> <N pl="n" gnt="n" gnd="f">ECLIPSED</N>:SEIMHIU
 # CB p.132 #4
@@ -1104,6 +1119,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Ii]n?</S> INITIALBAPOST:BACHOIR{inarbh}
 # CB p.22 #8.a, also CB p.134 #1.a
 <S>[Ii]dir</S> <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N>:PREFIXT
+<S>[Ii]dir</S> <T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A>:PREFIXT
 # CB p.134 #1.a (unlenited caught by more general rule)
 <S>[Ii]dir</S> <T>an</T> <N pl="n" gnt="n" gnd="f">ECLIPSED</N>:SEIMHIU
 # OD; lenited version in comhshuite
@@ -1234,6 +1250,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.22 #8.a, also CB p.134 #1.a
 #. Aithnítear é mar an údarás.
 <S>[Mm]ar</S> <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N>:PREFIXT
+<S>[Mm]ar</S> <T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A>:PREFIXT
 # CB p.134 #1.a (unlenited caught by more general rule)
 <S>[Mm]ar</S> <T>an</T> <N pl="n" gnt="n" gnd="f">ECLIPSED</N>:SEIMHIU
 # converse of CB p.16 #7, no lenition after present/future copula
@@ -1290,6 +1307,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <C>[Mm]urach</C> bheith|chomh|thú:OK
 # CB p.22 #8.a, also CB p.134 #1.a
 <S>[Mm]urach</S> <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N>:PREFIXT
+<S>[Mm]urach</S> <T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A>:PREFIXT
 # CB p.134 #1.a (unlenited caught by more general rule)
 <S>[Mm]urach</S> <T>an</T> <N pl="n" gnt="n" gnd="f">ECLIPSED</N>:SEIMHIU
 # CB p.132 #4
@@ -1356,6 +1374,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 [Nn]á <A pl="n" gnt="n">[Dd]há</A>:OK
 # CB p.22 #8.a, also CB p.134 #1.a
 <S>[Nn]á</S> <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N>:PREFIXT
+<S>[Nn]á</S> <T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A>:PREFIXT
 # CB p.134 #1.a (unlenited caught by more general rule)
 <S>[Nn]á</S> <T>an</T> <N pl="n" gnt="n" gnd="f">ECLIPSED</N>:SEIMHIU
 # CB p.132 #5 (implicit), OD nach/nár
@@ -1655,6 +1674,7 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 <S>[Ss]eachas</S> <A pl="n" gnt="n">[Dd]há</A>:OK
 # CB p.22 #8.a, also CB p.134 #1.a
 <S>[Ss]eachas</S> <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N>:PREFIXT
+<S>[Ss]eachas</S> <T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A>:PREFIXT
 # CB p.134 #1.a (unlenited caught by more general rule)
 <S>[Ss]eachas</S> <T>an</T> <N pl="n" gnt="n" gnd="f">ECLIPSED</N>:SEIMHIU
 # CB p.20 #1.c
@@ -2098,6 +2118,9 @@ d?[tT]h?rí|g?[Cc]h?eithre|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 #############################################################################
 ###### next batch came from analyses of "tag 2-grams" in the corpus    ######
 #############################################################################
+<[GH]>[Aa]</[GH]> <[^V]>ANYTHING</[^V]>:CUPLA
+#. Ritheann an Sláine tríd an pháirc.
+<T>ANYTHING</T> <A pl="n" gnt="y" gnd="f">ANYTHING</A>:CUPLA
 <T>ANYTHING</T> <A pl="y" gnt="n">ANYTHING</A>:CUPLA
 <T>ANYTHING</T> <[^AFNXY]>ANYTHING</[^AFNXY]>:CUPLA
 # the United Nations
