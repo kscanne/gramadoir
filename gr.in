@@ -24,51 +24,35 @@
 # this file.  The standard GNU --version and --help options work in the 
 # expected way.
 
-CLAR='An Gramadóir'        # title that prints to screen, not used as filename
+# NOT internationalized
+packageversion="@PACKAGE_VERSION@"
+bugemail="@PACKAGE_BUGREPORT@"
+TEXTDOMAINDIR="@prefix@/share/locale"
+TEXTDOMAIN="@PACKAGE_NAME@"
 
-# i18n strings; use gettext eventually
+# title that prints to screen, not used as filename.  I'd also prefer
+# that it not be localized even for non-Irish grammar checking.
+CLAR='An Gramadóir'    
 
-# "Currently checking x"  (message printed as each file is checked)
-checking='Ag seiceáil'
-# "There is no such file" (file you tried to check doesn't exist)
-notfound='níl a leithéid de chomhad ann'
-# "Is a directory" (file you tried to check is a directory)
-isdir='is comhadlann í'
-# "Permission denied"  (tried to check a file without having read permission)
-permissions='cead diúltaithe'
-# "Usage: gr [OPTIONS] [FILES]"
-usage1="Úsáid: gr [ROGHANNA] [COMHAID]"
-#      "    --litriu       write misspelled words to standard output"
-usage2="    --litriu       scríobh focail mílitrithe chuig an aschur caighdeánach"
-#      "    --html         produce HTML output for viewing in a web browser"
-usage3="    --html         aschur i gcruth HTML chun féachaint le brabhsaer"
-#      "    --xml          write tagged XML stream to standard output, for debugging"
-usage4="    --xml          scríobh sruth XML chuig aschur caighdeánach, chun dífhabhtú"
-#      "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
-usage5="    --iomlan       taispeáin gach earráid (.i. ná húsáid ~/.neamhshuim)"
-#      "    --help         display this help and exit"
-usage6="    --help         taispeáin an chabhair seo agus éirigh as"
-#      "    --version      output version information and exit"
-usage7="    --version      taispeáin eolas faoin leagan agus éirigh as"
-# "If no file is given, read from standard input"
-stdinhelp="Mura bhfuil comhad ann, léigh ón ionchur caighdeánach"
-# "Send bug reports to <...>"   Leave the @PACKAGE_BUGREPORT@ alone.
-bugreports="Seol tuairiscí fabhtanna chuig <@PACKAGE_BUGREPORT@>."
-# "version" Leave the @PACKAGE_VERSION@ alone.
-versionstring="leagan @PACKAGE_VERSION@"
-# "This is free software; see the source for copying conditions.  There is NO
-# warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,
-# to the extent permitted by law."
-gpl1="Is saorbhogearra an ríomhchlár seo; féach ar an bhunchód le haghaidh"
-gpl2="coinníollacha cóipeála.  Níl baránta AR BITH ann; go fiú níl baránta ann"
-gpl3="d'INDÍOLTACHT nó FEILIÚNACHT DO FHEIDHM AR LEITH, an oiread atá ceadaithe"
-gpl4="de réir dlí."
-# "unknown option"
-unknownopt="rogha anaithnid"
-# "Try \'gr --help' for more information."
-tryhelp="Bain triail as \`gr --help' chun tuilleadh eolais a fháil."
-
-TAB=`@AWK@ 'BEGIN{printf "\t";}'`
+# All i18n strings collected here.  See gramadoir.pot for some 
+# translation hints.
+checking=$"Currently checking %s"
+notfound=$"There is no such file."
+isdir=$"Is a directory"
+permissions=$"Permission denied"
+usage1=$"Usage: gr [OPTIONS] [FILES]"
+usage2=$"    --litriu       write misspelled words to standard output"
+usage3=$"    --html         produce HTML output for viewing in a web browser"
+usage4=$"    --xml          write tagged XML stream to standard output, for debugging"
+usage5=$"    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
+usage6=$"    --help         display this help and exit"
+usage7=$"    --version      output version information and exit"
+stdinhelp=$"If no file is given, read from standard input"
+bugreports=$"Send bug reports to <%s>.\n"
+versionstring=$"version %s"
+gpl=$"This is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\nto the extent permitted by law."
+unknownopt=$"unknown option"
+tryhelp=$"Try \"gr --help\" for more information."
 
 # i18n: grammatical errors.  See rialacha.in.
 # If you port to another language, you won't translate these; instead
@@ -91,28 +75,24 @@ s/\"URU/\"Urú ar iarraidh/g
 "
 }
 
+TAB=`@AWK@ 'BEGIN{printf "\t";}'`
+
 # this is what happens if --version is passed
 # Do not translate "Copyright" per the GNU coding standards.
 versionout()
 {
-echo "${CLAR}, ${versionstring}"
+printf "${CLAR}, ${versionstring}\n" "${packageversion}"
 echo "Cóipcheart/Copyright (C) 2003 Kevin P. Scannell"
-echo ${gpl1}
-echo ${gpl2}
-echo ${gpl3}
-echo ${gpl4}
+printf "${gpl}\n"
 }
 
 htmlversion()
 {
 echo "<p>"
-echo "<a href=\"http://borel.slu.edu/gramadoir/\">${CLAR}</a>, ${versionstring}<br>"
+printf "<a href=\"http://borel.slu.edu/gramadoir/\">${CLAR}</a>, ${versionstring}<br>\n" "${packageversion}"
 echo "Cóipcheart/Copyright (C) 2003 <a href=\"http://borel.slu.edu/\">Kevin P. Scannell</a><br><br>"
 echo "<i>"
-echo "${gpl1}"
-echo "${gpl2}"
-echo "${gpl3}"
-echo "${gpl4}"
+printf "${gpl}\n"
 echo "</i></p><hr>"
 }
 
@@ -130,7 +110,7 @@ echo "${usage7}"
 echo
 echo "${stdinhelp}"
 echo
-echo "${bugreports}"
+printf "${bugreports}" "${bugemail}"
 }
 
 # one argument, the erroneous option passed
@@ -405,7 +385,7 @@ else
 		then
 			if [ ${ACTION} = "comhad" ]
 			then
-				echo $checking ${1}
+				printf "${checking}\n" ${1}
 			fi
 			${ACTION} ${1}
 		fi	
