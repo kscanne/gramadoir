@@ -122,7 +122,7 @@ distclean :
 
 topclean :
 	$(MAKE) semiclean
-	rm -f cuardach cuardach.o $(ALLPL) aparser eparser rparser FOCAIL FOCAIL.all
+	rm -f cuardach cuardach.o $(ALLPL) aparser eparser rparser FOCAIL FOCAIL.all lastperl
 
 clean :
 	cd po && $(MAKE) clean
