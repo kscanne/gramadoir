@@ -25,6 +25,7 @@ then
 	echo "\"y\" means use the internal crubadan encoding, \"n\" for utf8"
 	exit
 fi
+TEMPLATE=${HOME}/gaeilge/gramadoir/gr/xx
 TEANGA="${1}"
 UPPERTEANGA=`echo "${TEANGA}" | tr "[:lower:]" "[:upper:]"`
 VERSION="${2}"
@@ -70,9 +71,9 @@ mkdir ${PERLDIR}/t
 
 echo "Computing good 3-grams from corpus..."
 togail "${TEANGA}" good 15 | sed 's/ *\([0-9]*\) \(.*\)/\2 \1/'  | recoder > ${DIR}/3grams-${TEANGA}.txt
-cp xx/aonchiall-xx.in ${DIR}/aonchiall-${TEANGA}.in
+cp ${TEMPLATE}/aonchiall-xx.in ${DIR}/aonchiall-${TEANGA}.in
 (echo "ChangeLog Summary"; echo; echo "Version ${VERSION}"; echo "  * Initial Release") > ${DIR}/Changes
-cp xx/comhshuite-xx.in ${DIR}/comhshuite-${TEANGA}.in
+cp ${TEMPLATE}/comhshuite-xx.in ${DIR}/comhshuite-${TEANGA}.in
 sed "
 s/\^NAME_ENG\^/${NAME_ENG}/
 s/\^TEANGA\^/${TEANGA}/
@@ -84,17 +85,17 @@ s/\^INTCHARS\^/${INTCHARS}/
 s/\^UPPERS\^/${UPPERS}/
 s/\^LOWERS\^/${LOWERS}/
 s/\^AUTHOR\^/${AUTHOR}/
-" xx/configure > ${DIR}/configure
+" ${TEMPLATE}/configure > ${DIR}/configure
 chmod 755 ${DIR}/configure
 cp COPYING ${DIR}/COPYING
 touch ${DIR}/earraidi-${TEANGA}.bs
 touch ${DIR}/eile-${TEANGA}.bs
-cp xx/eisceacht-xx.in ${DIR}/eisceacht-${TEANGA}.in
+cp ${TEMPLATE}/eisceacht-xx.in ${DIR}/eisceacht-${TEANGA}.in
 echo "Creating lexicon..."
 LC_ALL=C sort -u ${CRUBADAN}/GLAN > ${DIR}/lexicon-${TEANGA}.txt
 ONELETTER=`egrep '^.$' ${DIR}/lexicon-${TEANGA}.txt | tr -d "\n"`
-sed "s/\[\.\]/[${ONELETTER}]/" xx/giorr-xx.pre > ${DIR}/giorr-${TEANGA}.pre
-cp xx/giorr-xx.txt ${DIR}/giorr-${TEANGA}.txt
+sed "s/\[\.\]/[${ONELETTER}]/" ${TEMPLATE}/giorr-xx.pre > ${DIR}/giorr-${TEANGA}.pre
+cp ${TEMPLATE}/giorr-xx.txt ${DIR}/giorr-${TEANGA}.txt
 echo "Computing likely abbreviations..."
 togail "${TEANGA}" abbs | egrep ' (100|[789][0-9]) ' | sed 's/ \([0-9]*\) / # \1% /' >> ${DIR}/giorr-${TEANGA}.txt
 counts.pl ${CRUBADAN}/FREQ ${DIR}/lexicon-${TEANGA}.txt | egrep -v ' 0$' > ${DIR}/freq-${TEANGA}.txt
@@ -104,14 +105,14 @@ rm -f ${DIR}/lexicon-${TEANGA}.txt
 TEMPFILE=`mktemp`
 cat ${DIR}/freq-${TEANGA}.txt | recoder > ${TEMPFILE}
 mv -f ${TEMPFILE} ${DIR}/freq-${TEANGA}.txt
-sed "/CAPITAL/s/A-Z/${UPPERS}/" xx/macra-xx.meta.pl > ${DIR}/macra-${TEANGA}.meta.pl
-sed "s/A-Z/${UPPERS}/" xx/morph-xx.txt > ${DIR}/morph-${TEANGA}.txt
+sed "/CAPITAL/s/A-Z/${UPPERS}/" ${TEMPLATE}/macra-xx.meta.pl > ${DIR}/macra-${TEANGA}.meta.pl
+sed "s/A-Z/${UPPERS}/" ${TEMPLATE}/morph-xx.txt > ${DIR}/morph-${TEANGA}.txt
 touch ${DIR}/nocombo-${TEANGA}.txt
 (echo "1 <U>"; echo "127 <F>") > ${DIR}/pos-${TEANGA}.txt
 sed "s/@TEANGA@/${TEANGA}/; s/@NAME_ENGLISH@/${NAME_ENG}/" README-xx > ${DIR}/README
-cp xx/rialacha-xx.in ${DIR}/rialacha-${TEANGA}.in
-cp xx/unigram-xx.pre ${DIR}/unigram-${TEANGA}.pre
-cp xx/unigram-xx.txt ${DIR}/unigram-${TEANGA}.txt
+cp ${TEMPLATE}/rialacha-xx.in ${DIR}/rialacha-${TEANGA}.in
+cp ${TEMPLATE}/unigram-xx.pre ${DIR}/unigram-${TEANGA}.pre
+cp ${TEMPLATE}/unigram-xx.txt ${DIR}/unigram-${TEANGA}.txt
 sed -i "s/(C) 20.. /(C) ${THISYEAR} /" ${DIR}/*-${TEANGA}.in ${DIR}/macra-${TEANGA}.meta.pl
 sed -i "/Copyright.*Kevin P\. Scannell/s/.*/&\n#                    ${AUTHOR}/" ${DIR}/*-${TEANGA}.in ${DIR}/macra-${TEANGA}.meta.pl ${DIR}/morph-${TEANGA}.txt
 sed -i "/Copyright.*Kevin P\. Scannell/s/.*/&\n                     ${AUTHOR}/" ${DIR}/README
