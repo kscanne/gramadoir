@@ -179,7 +179,7 @@ if ($brill) {
 
 	my %wordsseen;
 	pos $big = 0;
-	while ($big =~ /(?<=[>])([A-ZΑΙΝΣΪa-zαινσϊ'-]+)(?=[<])/g) {
+	while ($big =~ /(?<=[>])([@BDCHARS@@INTCHARS@]+)(?=[<])/g) {
 		$wordsseen{$1}++;
 	}
 
