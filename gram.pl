@@ -1,20 +1,127 @@
 #!/usr/bin/perl
-# This is a command-line front end to An Gramadoir,
-# an open-source @NAME_ENGLISH@ language grammar checker.
-# Copyright (C) 2004 Kevin P. Scannell <scannell@slu.edu>
-#
-# This script will check the grammar of @NAME_ENGLISH@ language text files
-# specified on the command line, or read from standard input if no arguments
-# are given.   The default behavior is to write a summary of possible errors
-# to standard output.
-#
-# Use "--help" to see a list of available command line options.  
-# More detailed information is available from the project web page:
-# http://borel.slu.edu/gramadoir/
-#
-# This is free software; you can redistribute it and/or modify
-# it under the same terms as Perl itself, either Perl version 5.8.2 or,
-# at your option, any later version of Perl 5 you may have available.
+
+=head1 NAME
+
+@SCRIPTNAME@ - Command-line interface to An GramadE<oacute>ir
+
+=head1 SYNOPSIS
+
+B<@SCRIPTNAME@> [I<options>] [I<FILE>...]
+
+=head1 DESCRIPTION
+
+This script checks the grammar of @NAME_ENGLISH@ language input
+I<FILE>s (or standard input if no files are named).  The default behavior 
+is to write a summary of possible errors to standard output.
+
+=head1 OPTIONS
+
+=over 4
+
+=item B<-a>, B<--all>,
+    B<--iomlan>     
+
+report all errors (i.e. do not use ~/.neamhshuim)
+
+=item B<-f>, B<--incode>,
+    B<--ionchod>=I<ENC>
+
+specify the character encoding of the text to be checked
+
+=item B<-t>, B<--outcode>,
+    B<--aschod>=I<ENC> 
+
+specify the character encoding for output
+
+=item B<--interface>,
+    B<--comheadan>=xx
+
+choose the language for error messages
+
+=item B<--color>, B<--colour>,
+    B<--dath>=I<COLOR> 
+
+specify the color to use for highlighting errors
+
+=item B<-l>, B<--list>,
+    B<--litriu>     
+
+write misspelled words to standard output
+
+=item B<--moltai>,
+    B<--aspell>     
+
+suggest corrections for misspellings
+
+=item B<-o>, B<--output>,
+    B<--aschur>=I<FILE>
+
+write output to I<FILE>
+
+=item B<-h>, B<--cabhair>,
+    B<--help>       
+
+display this help and exit
+
+=item B<-v>, B<--leagan>,
+    B<--version>    
+
+output version information and exit
+
+
+=item B<--api>        
+
+output a simple XML format for use with other applications
+
+=item B<--html>       
+
+produce HTML output for viewing in a web browser
+
+=item B<--xml>        
+
+write tagged XML stream to standard output, for debugging
+
+
+=back
+
+=head1 FILES
+
+If there are words you wish to be ignored by the grammar checker
+(proper names, etc.) you can place them in a file called I<.neamhshuim>
+in your home directory, one word per line.
+
+=head1 REQUIRES
+
+Perl 5.8, Lingua::@TEANGA@::Gramadoir
+
+=head1 SEE ALSO
+
+=over 4
+
+=item *
+L<http://borel.slu.edu/gramadoir/>
+
+=item *
+L<Lingua::@TEANGA@::Gramadoir>
+
+=item *
+L<perl(1)>
+
+=back
+
+=head1 AUTHOR
+
+Kevin P. Scannell, E<lt>scannell@slu.eduE<gt>.
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright (C) 2004 Kevin P. Scannell
+
+This is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself, either Perl version 5.8.2 or,
+at your option, any later version of Perl 5 you may have available.
+
+=cut
 
 use strict;
 use warnings;
@@ -137,7 +244,7 @@ if ($version) {
 if ($help) {
 	my @helpmessages = (
 gettext(
-'Usage: %s [OPTIONS] [FILES]'),
+'Usage: %s [OPTIONS] [FILES]', "@SCRIPTNAME@"),
 "",
 gettext(
 "Options for end-users:"),
