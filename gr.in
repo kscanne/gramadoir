@@ -37,6 +37,7 @@ s/\"ANAITHNID/\"Focal anaithnid/g
 s/\"BACHOIR{\([^}]*\)}/\"Ba chóir duit \/\1\/ a úsáid anseo/g
 s/\"CLAOCHLU/\"Seimhiú nó urú ar iarraidh/g
 s/\"NISEIMHIU/\"Seimhiú gan ghá/g
+s/\"PREFIXH/\"Réamhlitir \/h\/ ar iarraidh/g
 s/\"PREFIXT/\"Réamhlitir \/t\/ ar iarraidh/g
 s/\"SEIMHIU/\"Seimhiú ar iarraidh/g
 s/\"URU/\"Urú ar iarraidh/g
@@ -148,6 +149,12 @@ rialacha()
 perl __libexecdir_/rialacha.pl
 }
 
+# This strips off errors from exceptions to rules
+eisceacht()
+{
+perl __libexecdir_/eisceacht.pl
+}
+
 # This is the final filter used by the "gr" program.
 # It generates a Bourne shell script which produces the
 # final output.  It is the part I like the least and 
@@ -216,10 +223,11 @@ comhad()
 		__libexecdir_/cuardach |
 		aonchiall | 
 		rialacha |
+		eisceacht |
 		comheadan | 
 		awk "{sub(/myaibhsigh/,\"${AIBHSIGHVAR}\"); print}" | 
 		loganu |
-		/bin/sh -s
+		/bin/bash -s
 }
 
 # remainder is the "main()"
