@@ -114,12 +114,14 @@ webhome = $(HOME)/public_html/$(PACKAGE_NAME)
 
 installweb :
 	$(INSTALL_DATA) cuidiu.html $(webhome)
+	$(INSTALL_DATA) foirm.html $(webhome)
 	$(INSTALL_DATA) index.html $(webhome)
 	$(INSTALL_DATA) iompar.html $(webhome)
 	$(INSTALL_DATA) sios.html $(webhome)
 	$(INSTALL_DATA) sonrai.html $(webhome)
 	$(INSTALL_DATA) sampla.html $(webhome)
 	$(INSTALL_DATA) gramadoir.dtd $(webhome)/../dtds
+	runchoip
 
 triail.html : FORCE
 	gr --html triail > triail.html
