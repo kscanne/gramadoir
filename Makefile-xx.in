@@ -125,7 +125,7 @@ $(PERLD)/scripts/$(SCRIPTNAME) : $(GRAMDIR)/gram.pl $(PERLDOK)
 	chmod 644 $@
 
 $(PERLD)/scripts/$(OOSCRIPTNAME) : $(GRAMDIR)/OOo/groo.pl $(PERLDOK)
-	cat $(GRAMDIR)/OOo/groo.pl | sed "s/@SCRIPTNAME@/$(SCRIPTNAME)/; s/@TEANGA@/$(UPPERTEANGA)/g; s/@LOWERTEANGA@/$(TEANGA)/g; s/@NAME_ENGLISH@/$(NAME_ENG)/g" | LC_ALL="C" $(PERL) -p -e 's/(.*)/$$1\n                   $(AUTHOR)/ if m/^Copyright \(C\)/;' > $@
+	cat $(GRAMDIR)/OOo/groo.pl | sed "s/@SCRIPTNAME@/$(OOSCRIPTNAME)/; s/@TEANGA@/$(UPPERTEANGA)/g; s/@LOWERTEANGA@/$(TEANGA)/g; s/@NAME_ENGLISH@/$(NAME_ENG)/g" | LC_ALL="C" $(PERL) -p -e 's/(.*)/$$1\n                   $(AUTHOR)/ if m/^Copyright \(C\)/;' > $@
 	chmod 644 $@
 
 $(SHARE)/3grams.bs : 3grams-$(TEANGA).txt $(PERLDOK)
