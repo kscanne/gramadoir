@@ -1,6 +1,6 @@
---- Makefile.raw	2004-08-25 14:42:11.805848552 -0500
-+++ Makefile	2004-08-25 14:42:15.896226720 -0500
-@@ -295,4 +295,45 @@
+--- Makefile	2004-08-25 22:17:34.271202464 -0500
++++ Makefile.ok	2004-08-25 22:17:17.894692072 -0500
+@@ -295,4 +295,48 @@
  zipped : perl
  	(cd $(PERLD); make zipdist)
  
@@ -12,6 +12,9 @@
 +
 +Changes : ../stair.html
 +	vilistextum $(GRAMDIR)/stair.html - | sed -n '/^ChangeLog/,/----/p' | egrep -v -- '---' > $@
++
++triail.html : triail
++	gram-ga.pl --iomlan --aschod=iso-8859-1 --html --aspell triail > $@
 +
 +ISPELLDIR = ${HOME}/gaeilge/ispell
 +
