@@ -1,5 +1,5 @@
---- Makefile	2005-01-30 14:51:18.241094296 -0600
-+++ Makefile.ok	2005-01-30 14:49:17.804403456 -0600
+--- Makefile	2005-02-17 23:01:54.414778896 -0600
++++ Makefile.ok	2005-02-17 23:01:45.558125312 -0600
 @@ -60,8 +60,16 @@
  
  Makefile : Makefile.in config.status
@@ -17,7 +17,7 @@
  config.status: configure
  	./config.status --recheck
  
-@@ -81,4 +89,159 @@
+@@ -81,4 +89,162 @@
  semiclean :
  	rm -f y.tab.* $(LEX_OUTPUT_ROOT).* aonchiall.y rialacha.y
  
@@ -99,6 +99,7 @@
 +	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/Makefile-xx.in
 +	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/MANIFEST
 +	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/MANIFEST.SKIP
++	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/messages.txt
 +	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/po2perl.pl
 +	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/ponc.in.l
 +	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/ponc.in.y
@@ -144,6 +145,7 @@
 +	cp -f Makefile-xx.in engine
 +	cp -f MANIFEST engine
 +	cp -f MANIFEST.SKIP engine
++	cp -f messages.txt engine
 +	cp -f po2perl.pl engine
 +	cp -f ponc.in.l engine
 +	cp -f ponc.in.y engine
@@ -174,6 +176,7 @@
 +	cp -f po/ro.po engine/po
 +	cp -f po/Rules-quot engine/po
 +	cp -f po/sk.po engine/po
++	cp -f po/vi.po engine/po
 +	cvs commit -m "sync'd with borel repository" engine
 +
  FORCE :
