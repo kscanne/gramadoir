@@ -756,6 +756,10 @@ sub localize_me
 			$msgid = gettext('Prefix \/t\/ missing');
 			s/PREFIXT/$msgid/;
 		}
+		if (/PREFIXD/) {
+			$msgid = gettext('Prefix \/d\'\/ missing');
+			s/PREFIXD/$msgid/;
+		}
 		if (/SEIMHIU/) {
 			$msgid = gettext('Lenition missing');
 			s/SEIMHIU/$msgid/;
@@ -779,6 +783,10 @@ sub localize_me
 			$msgid = gettext('Unusual combination of words');
 			s/CUPLA/$msgid/;
 		}
+		if (/NOSUBJ/) {
+			$msgid = gettext('It seems unlikely that you intended to use the subjunctive here');
+			s/NOSUBJ/$msgid/;
+		}
 		if (/BREISCHEIM/) {
 			$msgid = gettext('Comparative adjective required');
 			s/BREISCHEIM/$msgid/;
@@ -791,6 +799,10 @@ sub localize_me
 			$msgid = gettext('Unnecessary prefix \/t\/');
 			s/NITEE/$msgid/;
 		}
+		if (/NIDEE/) {
+			$msgid = gettext('Unnecessary prefix \/d\'\/');
+			s/NIDEE/$msgid/;
+		}
 		if (/ONEART/) {
 			$msgid = gettext('Unnecessary use of the definite article');
 			s/ONEART/$msgid/;
@@ -802,6 +814,18 @@ sub localize_me
 		if (/GENITIVE/) {
 			$msgid = gettext('The genitive case is required here');
 			s/GENITIVE/$msgid/;
+		}
+		if (/RELATIVE/) {
+			$msgid = gettext('The dependent form of the verb is required here');
+			s/RELATIVE/$msgid/;
+		}
+		if (/ABSOLUTE/) {
+			$msgid = gettext('Unnecessary use of the dependent form of the verb');
+			s/ABSOLUTE/$msgid/;
+		}
+		if (/IOLRA/) {
+			$msgid = gettext('The plural form is required here');
+			s/IOLRA/$msgid/;
 		}
 		if (/UATHA/) {
 			$msgid = gettext('The singular form is required here');
