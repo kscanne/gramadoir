@@ -48,7 +48,8 @@ struct foirm *focloir = NULL;
 struct ignorable *toignore = NULL;
 struct replacement *torepl = NULL;
 
-extern void byte_to_markup (const char *tng, const char *pkg, const unsigned char c, char *fill, char *attrs);
+extern void byte_to_markup (const char *tng, const char *pkg,
+			    const unsigned char c, char *fill, char *attrs);
 
 /* return 0 if everything went well enough to proceed, non-zero if not */
 int
@@ -440,6 +441,7 @@ dictlookup (const char *word, char *fill, char *attrs, char *extratags)
 
 /* 
   w points into the "token": looks like "<c>word</c>!!'" or the like.
+  Can also just be some non-word chars: "+++++" in which case no change
   token includes leading characters too: "`<c>word</c>!!'"
   No guarantee that the token is well-formed (e.g. if len>=512)
   Return 1 if no <c> or </c> and token is filled up (len==511), 0 otherwise
@@ -473,7 +475,7 @@ markup (char *token)
       if (!val)
 	printf ("</Y>");		  /** dummy markup in case of repl. **/
       printf ("</%s>", mu);		  /** end of new markup **/
-      printf ("%s", tail + 4);		  /** chars after </c> **/
+      markup (tail + 4);		  /** chars after </c> **/
     }
   return 0;
 }
