@@ -228,7 +228,7 @@ msgstr "Focal neamhchaighdeánach: ar mhaith leat \\/\\1\\/?"
 #. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
 #: gr.in:113
 msgid "Initial mutation missing"
-msgstr "Séimhiú nó urú ar iarraidh"
+msgstr "Urú nó séimhiú ar iarraidh"
 
 #. TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
 #. It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
