@@ -70,14 +70,14 @@
 # (1) efficiency; morph. analysis happens well before the check for
 #  compounds/run-togethers (2) allows for a more refined check for
 #  lenition of the prefixed word or other changes (comh-mh, comh->có, etc.)
-^ain([deéiílnrst])	$1		0	<[AN].*>
-^ain([bcfgmp]h)		$1		0	<[AN].*>
-^ath([^bcdfgmpst-])	$1		0	<[ANV].*>
-^ath([bcdfgmp]h)	$1		0	<[ANV].*>
-^ath(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>
-^ath(s[^aeiouáéíóúlnrh])	$1	0	<[ANV].*>
-^ath-?th		at		1	<[ANV].*>
-^ath-?th		th		1	<[ANV].*>
+^h?ain([deéiílnrst])	$1		0	<[AN].*>
+^h?ain([bcfgmp]h)	$1		0	<[AN].*>
+^h?ath([^bcdfgmpst-])	$1		0	<[ANV].*>
+^h?ath([bcdfgmp]h)	$1		0	<[ANV].*>
+^h?ath(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>
+^h?ath(s[^aeiouáéíóúlnrh])	$1	0	<[ANV].*>
+^h?ath-?th		at		1	<[ANV].*>
+^h?ath-?th		th		1	<[ANV].*>
 ^comh([^bcdfgmnpst-])	$1		0	<[ANV].*>
 ^comh([bcdfgpt]h)	$1		0	<[ANV].*>
 ^comh(sh[aeiouáéíóúlnr])	$1	0	<[ANV].*>
@@ -123,21 +123,21 @@
 ^frith([bcdfgmp]h)	$1		0	<[ANV].*>
 ^frith(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>
 ^frith(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>
-^iar([^bcdfgmprst-])	$1		0	<[ANV].*>
-^iar-(r)		$1		0	<[ANV].*>
-^iar([bcdfgmpt]h)	$1		0	<[ANV].*>
-^iar(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>
-^iar(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>
+^h?iar([^bcdfgmprst-])	$1		0	<[ANV].*>
+^h?iar-(r)		$1		0	<[ANV].*>
+^h?iar([bcdfgmpt]h)	$1		0	<[ANV].*>
+^h?iar(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>
+^h?iar(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>
 # ilsiamsa, ilsiollach, etc.  no special case
-^il([^bcfgmp-]..)	$1		0	<[AN].*>
-^il([bcfgmp]h.)		$1		0	<[AN].*>
-^im([^bcdfghmpst-]..)	$1		0	<[ANV].*>
-^im([bcdfgmpt]h.)	$1		0	<[ANV].*>
-^im(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>
-^im(s[^aeiouáéíóúlnrh].)	$1		0	<[ANV].*>
+^h?il([^bcfgmp-]..)	$1		0	<[AN].*>
+^h?il([bcfgmp]h.)	$1		0	<[AN].*>
+^h?im([^bcdfghmpst-]..)	$1		0	<[ANV].*>
+^h?im([bcdfgmpt]h.)	$1		0	<[ANV].*>
+^h?im(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>
+^h?im(s[^aeiouáéíóúlnrh].)	$1		0	<[ANV].*>
 # ^in([^bcfgmp-]) BELOW
-^in-(n)			$1		0	<[AN].*>
-^in([bcfgmp]h..)	$1		0	<[AN].*>
+^h?in-(n)		$1		0	<[AN].*>
+^h?in([bcfgmp]h..)	$1		0	<[AN].*>
 ^leas-(s)		$1		0	<[AN].*>
 ^leas([aeiouáéíóúd]..)	$1		0	<[AN].*>
 ^leas([bcfgm]h..)	$1		0	<[AN].*>
@@ -182,11 +182,11 @@
 ^tras([bcfgmp]h)	$1		0	<[ANV].*>
 ^tras-(s)		$1		0	<[ANV].*>
 # next batch are non-words so really need to be here, but VERY infrequent
-^(cil|gig|is|meig|micr|pic|teil)ea-?([^aeiouáéíóú-]+[aouáóú])	$2	0	 <.+>
-^(cil|gig|is|meig|micr|pic|teil)i-?([^aeiouáéíóú-]+[eiéí])	$2	0	 <.+>
-^(ant|fót|nan|par|pol|ultr)a-?([^aeiouáéíóú-]+[aouáóú])		$2	0	 <.+>
-^(ant|fót|nan|par|pol|ultr)ai-?([^aeiouáéíóú-]+[eiéí])		$2	0	<.+>
-^(eachtar|freas|íos|neas|réalt|tob|uas|uath)-?([^-])		$2	0	 <.+>
+^(cil|gig|h?is|meig|micr|pic|teil)ea-?([^aeiouáéíóú-]+[aouáóú])	$2	0	 <.+>
+^(cil|gig|h?is|meig|micr|pic|teil)i-?([^aeiouáéíóú-]+[eiéí])	$2	0	 <.+>
+^(h?ant|fót|nan|par|pol|h?ultr)a-?([^aeiouáéíóú-]+[aouáóú])		$2	0	 <.+>
+^(h?ant|fót|nan|par|pol|h?ultr)ai-?([^aeiouáéíóú-]+[eiéí])		$2	0	<.+>
+^(h?eachtar|freas|h?íos|neas|réalt|tob|h?uas|h?uath)-?([^-])		$2	0	 <.+>
 #  derivational morphology
 ([ao])chai?s$		$1ch		0	<A pl="n" gnt="n".*>
 acht$			ach		0	<A pl="n" gnt="n".*>
@@ -199,31 +199,31 @@ uithe$			ú		0	<N.*>
 ################## CAIGHDEÁN OIFIGIÚIL SPELLING REFORMS #####################
 #############################################################################
 #   modernize prefixes (no need to trap mutated versions, stripped below
-^aith			ath		1	<.+>
-^eadar			idir		1	<.+>
+^h?aith			ath		1	<.+>
+^h?eadar		idir		1	<.+>
 ^dh'			d'		1	<.+>
 ^h-			h		1	<.+>    # CO p.126
 ^n-([AEIOUÁÉÍÓÚ])	n$1		1	<.+>    # CO p.125
 ^t-([AEIOUÁÉÍÓÚ])	t$1		1	<.+>    # CO p.125
-^ana-			an-		1	<.+>    # ana-eagraithe
+^h?ana-			an-		1	<.+>    # ana-eagraithe
 ^coimh			comh		1	<.+>    # coimhlíonadh
 ^de[ai]gh		dea		1	<.+>
 ^dligh(i?)		dlí		1	<.+>
 ^duibh			dubh		1	<.+>
-^ion			in		1	<.+>
+^h?ion			in		1	<.+>
 ^maill			mall		1	<.+>
 ^nea-mb			neamhbh		1	<.+>
 ^nea-			neamh-		1	<.+>    # strip hyphen later
 ^nea([cdfgpt]h)		neamh$1		1	<.+>
-^óig			óg		1	<.+>
+^h?óig			óg		1	<.+>
 ^prímh			príomh		1	<.+>
 ^réimh			réamh		1	<.+>
 ^roimh			réamh		1	<.+>
 ^seana-			sean-		1	<.+>    # strip hyphen later
 ^tele([^aeiouáéíóú]+[eéií])	teili$1		1	<.+>    # OD77
 ^tele([^aeiouáéíóú]+[aáoóuú])	teilea$1	1	<.+>
-^uaith			uath		1	<.+>
-^úir			úr		1	<.+>
+^h?uaith		uath		1	<.+>
+^h?úir			úr		1	<.+>
 #   Now various general spelling reforms from CO handbook
 ai(cht?ín)		a$1		1	<.+>    # CO p.120, smaichtín
 sg			sc		1	<.+>    # CO p.115
@@ -370,7 +370,7 @@ eail$			eáil		2	<.+>    # common missing accent
 #  verb endings to avoid "foluíonn"  parsing as "fo+luíonn"
 ^do([lnr]..)		$1		0	<[AN].*>
 ^fo([lnr]..)		$1		0	<[ANV].*>
-^in([^bcfgmp-]..)	$1		0	<[AN].*>
+^h?in([^bcfgmp-]..)	$1		0	<[AN].*>
 # last resort for weird caps
 ([A-ZÁÉÍÓÚ])		\l$1		2	<.+>	# pRíOMhach
 ([eiéí][^aeiouáéíóú]+)íní?$	$1		0	<.+>	# diminutive
