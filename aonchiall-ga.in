@@ -71,6 +71,14 @@ an <B>Níl</B>:<N pl="n" gnt="n" gnd="f">
 <V>ANYTHING</V> <B>sé</B>:<P>
 <^V>ANYTHING</^V> <B>sé</B>:<A pl="n" gnt="n">
 <B>[Tt]har</B>:<S>
+# Brill transformations (not associated to particular words)
+<S>ANYTHING</S> <T>an</T> <B><Z>NMFOUR</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<T>an</T> <B><Z>NMFOUR</Z>UNLENITED</B>:<N pl="n" gnt="n" gnd="m">
+<T>an</T> <B><Z>NMFOUR</Z>LENITED</B>:<N pl="n" gnt="y" gnd="m">
+<N>ANYTHING</N> <T>an</T> <B><Z>NMFOUR</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<^N>ANYTHING</^N> <B><Z>NMFOUR</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<T>na</T> <B><Z>NFFOUR</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+<^N>ANYTHING</^N> <B><Z>NFFOUR</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 # last resorts
 # e.g.  next rule gets "ar siad" since siad -> <P> above 
 <B>[Aa]r</B> s[éí]:<V p="2ú" t="ord">
