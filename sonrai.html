@@ -1,0 +1,224 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+  <title>An Gramad&oacute;ir: Details</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta http-equiv="Content-Language" content="en">
+  <meta name="description" content="Implementation details for An Gramad&oacute;ir">
+  <meta name="keywords" content="grammar checking, Gaeilge, Irish language">
+  <meta name="author" content="Kevin P. Scannell">
+  <link rel="stylesheet" href="../kps.css" type="text/css">
+</head>
+
+<body>
+<div class="content">
+<h1>An Gramad&oacute;ir:<br>
+Architecture and implementation details</h1>
+
+<h2>Overview</h2>
+<p>
+The <i>gr</i> front-end script is intended to be used like the
+standard Unix "filter" programs upon which it is built: "grep",
+"sed", etc.   At its simplest, it reads standard input
+and writes the grammatical errors to standard output.   
+</p>
+
+<p>
+Programs of this type are useful because they can be easily
+used as building blocks for more complicated software.
+In the same way that <i lang="ga">An Gramad&oacute;ir</i> is built from 
+simpler filters, we expect that much more complex natural
+language processing applications can be built using
+<i lang="ga">An Gramad&oacute;ir</i> and its components.
+</p>
+
+<p>
+Before we elaborate on this point, it is worth having a look
+at the guts of the <i>gr</i> script.   The line which does
+all of the real work is simply a sequence of filters:
+<pre>
+diutf | abairti | cuardach | aonchiall | rialacha | comheadan | loganu
+</pre>
+</p>
+
+<table>
+<tr>
+<td><i>diutf</i></td> 
+<td>naively converts utf-8 encoded files to ISO-8859-1 if necessary</td>
+</tr>
+<tr>
+<td><i>abairti</i></td>
+<td>marks up words; breaks up into one sentence per line</td>
+</tr>
+<tr>
+<td><i>cuardach</i></td>
+<td>looks up words in the database; adds grammatical tags</td>
+</tr>
+<tr>
+<td><i>aonchiall</i></td>
+<td>attempts to disambiguate parts of speech from context</td>
+</tr>
+<tr>
+<td><i>rialacha</i></td>
+<td>searches for and marks up grammatical errors</td>
+</tr>
+<tr>
+<td><i>comheadan</i></td>
+<td>extracts the error markup and generates the output script</td>
+</tr>
+<tr>
+<td><i>loganu</i></td>
+<td>localization of the output</td>
+</tr>
+<tr>
+</table>
+
+<p>
+Each of the four filters from <i>abairti</i> through <i>rialacha</i> 
+adds some XML markup to the text stream. 
+An XML-based architecture will, I hope, facilitate the integration 
+of these components into
+more complicated future software projects.  For instance, the XML file 
+created by stopping after <i>cuardach</i>
+can be used as a spellchecker (grep out all &lt;X&gt; tags).   
+Use one more filter and you have a part-of-speech tagger that can be used
+for corpus linguistics or as the first stage of a (conjectural) 
+Irish language parser.
+</p>
+
+
+<h2>Detailed module descriptions</h2>
+
+<h3><i>abairti</i></h3>
+<p>
+Coming soon...
+</p>
+ 
+<h3><i>cuardach</i></h3>
+<p>
+This is the only part of the code which uses the dictionary
+database <i>focail.bs</i>.  It is (for this reason) the only module
+which is written in C.   The database consists of around 300,000 
+records, each representing an Irish word, of the form:
+</p>
+<pre>
+agree# tail delimiter inflectionbytes delimiter
+</pre>
+<p>
+Here "agree#" is an integer indicating the number of initial characters
+shared by the current and previous word (for compression);
+"tail" is the remainder of the word starting at the first character of
+disagreement; "delimiter" is a single byte not used for any other
+purpose in the database (currently using '\n', ASCII 10); 
+"inflectionbytes" is a string of bytes, each representing a possible
+grammatical description of the current word.
+</p>
+
+<p>
+The individual bytes of "inflectionbytes" are bitmasks.   The two
+high bits are the main part of speech determiners: 01=noun, 10=adjective,
+11=verb, 00=all others.
+The remaining six bits have the same meaning for both nouns and adjectives:
+</p>
+
+<ul>
+<li>Bit 0 (lowest): unused.
+<li>Bit 1: word has a prefixed "h"
+<li>Bit 2: word is masculine
+<li>Bit 3: word has a gender
+<li>Bit 4: word is genitive
+<li>Bit 5: word is plural
+</ul>
+
+<p>
+For instance, <i lang="ga">dlúthdhioscaí</i> appears in the database 
+with just a single inflection byte, 
+value 108=64 (noun) + 32 (plural) + 8 (gender) + 4 (masculine).
+</p>
+
+<p>
+Verbs use the remaining bits somewhat differently.   The highest remaining
+bit (Bit 5 using the scheme above) indicates whether the word is
+plural.  The next two indicate "person": 00=autonomous, 01=first, 10=second,
+11=third; and the three lowest bits together represent the "tense":
+</p>
+
+<ul>
+<li>000: imperative
+<li>001: present
+<li>010: unused
+<li>011: past
+<li>100: future
+<li>101: imperfect
+<li>110: conditional
+<li>111: subjunctive
+</ul>
+
+<p>
+Finally, there are the "others" (two highest bits zero).
+The lowest bit is unused, and Bit 1 is used to indicate 
+a prefixed "h" (for pronouns) or an emphatic form
+(for pronomials).
+Bits 2 through 5 together determine the part of speech:
+</p>
+<ul>
+<li>0000: unused
+<li>0001: unknown
+<li>0010: article
+<li>0011: preposition
+<li>0100: pronoun
+<li>0101: pronomial
+<li>0110: adverb
+<li>0111: conjunction
+<li>1000: interrogative
+<li>1001: interjection
+<li>1010: possessive
+<li>1011: proper name
+<li>1100-1111: unused
+</ul>
+<p>
+Note that I was careful to avoid the bytes 0 and 10 as allowable
+inflection codes since these have other meanings in the database file.
+</p>
+
+<p>
+Naturally you're wondering what word form in Irish has the largest
+number of possible grammatical interpretations.   Skip to the 
+<a href="#answer">bottom of the page</a> for the answer.
+</p>
+
+<h3><i>aonchiall</i></h3>
+<p>
+Coming soon...
+</p>
+
+<h3><i>rialacha</i></h3>
+<p>
+Coming soon...
+</p>
+
+<p>
+<a name="answer">Answer</a>: <i lang="ga">rua</i> appears 
+in the database with thirteen
+different inflection bytes.  Several of these are theoretically possible
+but improbable subjunctives of <i lang="ga">ruaigh</i>. 
+"May you redden..." !
+</p>
+
+<hr>
+<em>© Cóipcheart/Copyright 2003 Kevin P. Scannell</em><br>
+</div>
+<div class="navigation">
+<a href = "index.html">Home</a><br>
+<a href = "sios.html">Download</a><br>
+Details<br>
+<a href = "cuidiu.html">Contributing</a><br>
+<a href = "sampla.html">Sampler</a><br>
+<a href = "/saorbhog/index.html">Sponsor</a><br>
+<p class="centered">
+<img src="gram.jpg" alt="dictionary excerpt" height="160" width="125">
+</p>
+</div>
+</body>
+</html>

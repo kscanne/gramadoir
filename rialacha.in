@@ -1,0 +1,68 @@
+# This file contains the grammatical rules which are checked by gr
+# Users can add to this list by following the syntax described 
+# on the web page:  http://borel.slu.edu/gr/
+# Please send me any useful additional rules for inclusion in
+# future releases: <scannell@slu.edu>
+<X></X>:ANAITHNID
+<S>a</S> <N>UNLENITED</N>:SEIMHIU
+[Aa]ch <N>LENITED</N>:NISEIMHIU
+[Aa][grs] <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+[Aa][gs] <N>LENITED</N>:NISEIMHIU
+[Aa]mhail <N>LENITED</N>:NISEIMHIU
+<T>[Aa]n</T> <NFCS>UNLENITEDBCFGMP</NFCS>:SEIMHIU 
+<T>[Aa]n</T> <NMGS>UNLENITEDBCFGMP</NMGS>:SEIMHIU 
+[Aa]on <N>UNLENITEDBCFGMP</N>:SEIMHIU
+[Bb]eirt <N>UNLENITED</N>:SEIMHIU
+[Cc]héad <N>UNLENITEDBCFGMP</N>:SEIMHIU
+[Cc]eithre <NCS>UNLENITED</NCS>:SEIMHIU
+[Cc]huig <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+[Cc]huig <N>LENITED</N>:NISEIMHIU
+[Cc]hun <N>LENITED</N>:NISEIMHIU
+[Cc]úig <NCS>UNLENITED</NCS>:SEIMHIU
+[Dd]ar <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+[Dd]ar <N>LENITED</N>:NISEIMHIU
+[Dd][eo] <N>UNLENITED</N>:SEIMHIU
+[Dd][eo]n <N>UNLENITEDBCFGMP</N>:SEIMHIU
+[Dd]o INITIALVOWELORF:BACHOIR{d+uaschama}
+[Dd]o an:BACHOIR{don}
+[Dd]o a:BACHOIR{dá}
+[Dd]o ár:BACHOIR{dár}
+[Ff]aoi <N>UNLENITED</N>:SEIMHIU
+[Ff]aoin <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+[Gg]o <N>LENITED</N>:NISEIMHIU
+[Ii] <N>UNECLIPSED</N>:URU
+[Ii] <N>LENITED</N>:NISEIMHIU
+[Ii] [Bb]hur:BACHOIR{in_bhur}
+[Ii] [Dd]há:BACHOIR{in_dhá}
+[Ii] [Aa]n:BACHOIR{sa}
+[Ii] [Nn]a:BACHOIR{sna}
+[Ii] <D>a</D>:BACHOIR{ina}
+[Ii] <D>ár</D>:BACHOIR{inár}
+[Ii] <U>a</U>:BACHOIR{ina}
+[Ii] <U>ar</U>:BACHOIR{inar}
+[Ii]onsar <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+[Ll]e <N>LENITED</N>:NISEIMHIU
+[Ll]e an:BACHOIR{leis_an}
+[Ll]e na:BACHOIR{leis_na}
+[Ll]eis <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+[Mm]ar <N>UNLENITED</N>:SEIMHIU
+[Mm]o INITIALVOWELORF:BACHOIR{m+uaschama}
+[Mm]o <N>UNLENITED</N>:SEIMHIU
+[Mm]urach <N>LENITED</N>:NISEIMHIU
+[Nn]á <N>LENITED</N>:NISEIMHIU
+[Nn]íorbh <N>UNLENITED</N>:SEIMHIU
+<S>[Óó]</S> <N>UNLENITED</N>:SEIMHIU
+[Óó]n <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+[Oo]s <N>LENITED</N>:NISEIMHIU
+[Rr]oimh <N>UNLENITED</N>:SEIMHIU
+[Ss]a INITIALVOWELORF:BACHOIR{san}
+[Ss]a UNLENITEDBCGMP:SEIMHIU
+[Ss]a <NFCS>INITIALS</NFCS>:PREFIXT
+[Ss]an UNLENITEDF:SEIMHIU
+<A>[Ss]é</A> <NCS>UNLENITED</NCS>:SEIMHIU
+[Ss]eachas <N>LENITED</N>:NISEIMHIU
+[Tt]har <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+[Tt]rí <N>UNLENITED</N>:SEIMHIU
+[Tt]ríd <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+[Uu]ile UNLENITED:SEIMHIU
+[Uu]m <N>UNLENITED</N>:SEIMHIU

@@ -1,0 +1,32 @@
+<This file is a sample text file containing examples of the errors>
+<which are caught by the grammar checker.>
+<Note first that one of the preprocessing steps strips any SGML-like>
+<markup, so for instance these lines will not be checked.>
+
+
+<Word forms not in the database are flagged and reported.>
+An bhfuil aon uaktar reoite agat?
+
+<Multiple errors on a single line are all highlighted and reported>
+An bhfuil ayn uachtar roach agat?
+
+<"a" is a preposition here and should cause lenition -- need to disambiguate!>
+Tá muid in ann an t-uachtar reoite a placadh.
+Níl aon duine ann ach mhangaire. 
+An bhfuil aon uachtar reoite ar an cuntar?
+An bhfuil aon duine ag mhaireachtáil?
+Níl an cliath ar an chuntar.
+Níl uachtar an míl ag snámh.
+An bhfuil aon uachtar reoite agat i cuisneoir?
+An bhfuil aon uachtar reoite agaibh i bhur gcuisneoir?
+An bhfuil aon uachtar reoite agat i dhá cuisneoir?
+An bhfuil aon uachtar reoite agat i an chuisneoir?
+An bhfuil aon uachtar reoite agat i na cuisneoirí?
+An bhfuil aon uachtar reoite i a cuisneoir?
+An bhfuil aon uachtar reoite i ár cuisneoir?
+An bhfuil aon uachtar reoite agat sa cuisneoir?
+An bhfuil aon uachtar reoite agat sa oighear?
+An bhfuil aon uachtar reoite agat sa seamair?
+An bhfuil aon uachtar reoite agat sa scoil (OK)?
+An bhfuil aon uachtar reoite agat sa samhradh (OK)?
+An bhfuil aon uachtar reoite agat san foraois?

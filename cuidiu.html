@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+  <title>An Gramad&oacute;ir : Contributing</title>
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="description" content="An Gramad&oacute;ir contributing page">
+  <meta name="keywords" content="grammar checking, Gaeilge, Irish language">
+  <meta name="author" content="Kevin P. Scannell">
+  <link rel="stylesheet" href="../kps.css" type="text/css">
+</head>
+
+<body>
+<div class="content">
+<h1>An Gramad&oacute;ir:<br>
+How to Contribute</h1>
+
+<h2>Contributing words</h2>
+The database of Irish words used by <i>An Gramad&oacute;ir</i>
+is the same one used by my other Irish language applications:
+the 
+<a href="/ispell/index.html">GaelSpell</a> spellchecker
+and <a href="/teasaras/index.html">An Teas&aacute;ras Leictreonach</a>.
+Thus, if you take the time to contribute new words to any one of 
+these packages, your contributions will be reflected in future 
+releases of all of them.  Also, my software adds all inflections
+and mutations of a given word to the database, so you don't have 
+to worry about <i lang="ga">nGaeltacht, Ghaeltacht, Gaeltachta</i>,
+etc. once the headword <i lang="ga">Gaeltacht</i> has been entered.
+
+<h2>Hacking the rule set</h2>
+<p>
+The easiest and most valuable way to contribute is by
+helping add new rules to the checker.   Rules are contained in
+two plain text files called <i>aonchiall.in</i> and <i>rialacha.in</i>.
+Complicated "meta"-scripts convert these (somewhat) human-readable
+files into the scripts which actually find and mark up the grammatical
+errors.   You 
+fortunately don't need to understand this process to contribute rules
+(although anyone who is curious can read the  
+<a href="sonrai.html">Details</a> page).
+</p>
+
+<p>
+The file <i>aonchiall.in</i> contains rules for disambiguating 
+parts of speech; for instance, the word <i>an</i> in Irish can either be
+the definite article or an interrogative particle.   The first
+couple of lines of <i>aonchiall.in</i> are rules which indicate
+that if <i>an</i> is followed by a verb, we expect it to be
+an interrogative and otherwise it is the article. 
+This kind of disambiguation is obviously a necessary preliminary step 
+before one
+can try to apply grammatical rules depending on part of speech.
+</p>
+
+<p>
+The file <i>rialacha.in</i> contains the grammatical rules proper.
+The sections which follow describe the structure of these files
+in sufficient detail that (I hope) you will be able to write
+and contribute your own rules for inclusion in later releases.
+Alternatively, if you provide me with a brief description 
+(in plain English or Irish) of
+a rule you think is missing from the database, I will try and
+construct the appropriate entry.
+</p>
+
+<h2>Disambiguation: <i>aonchiall.in</i></h2>
+A detailed description of this file will appear here shortly.
+
+<h2>Grammar checking: <i>rialacha.in</i></h2>
+A detailed description of this file will appear here shortly.
+
+<h2>Contributors</h2>
+<ul>
+<li>None yet!
+</ul>
+
+<hr>
+<em>© Cóipcheart/Copyright 2003 Kevin P. Scannell</em><br><br>
+</ul>
+</div>
+<div class="navigation">
+<a href = "index.html">Home</a><br>
+<a href = "sios.html">Download</a><br>
+<a href = "sonrai.html">Details</a><br>
+Contributing<br>
+<a href = "sampla.html">Sampler</a><br>
+<a href = "/saorbhog/index.html">Sponsor</a><br>
+<p class="centered">
+<img src="gram.jpg" alt="dictionary excerpt" height="160" width="125">
+</p>
+</div>
+</body>
+</html>

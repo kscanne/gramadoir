@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+  <title lang="ga">An Gramad&oacute;ir</title>
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="description" content="Home page for Irish language grammar and style checker">
+  <meta name="keywords" content="grammar checker, Gaeilge, Irish language">
+  <meta name="author" content="Kevin P. Scannell">
+  <link rel="stylesheet" href="../kps.css" type="text/css">
+</head>
+
+<body>
+<div class="content">
+<h1 lang="ga">An Gramad&oacute;ir</h1>
+
+<h2>
+<a href = "/index.html">Kevin P. Scannell</a>
+</h2>
+
+<hr>
+<h2><a name="Summary">Summary</a></h2>
+
+<p>
+This is the home page for <i lang="ga">An Gramad&oacute;ir</i>,
+the first grammar and style checker for the Irish language.
+In fact, to the best of my knowledge, this is the first
+such package for any minority language.
+</p>
+
+<p>
+You are welcome to <a href="sios.html">download</a> the software
+for free from this site.  It is released under the 
+<a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a>
+which means (roughly speaking) 
+that you are free to copy, modify, or even sell this 
+software as long as redistributed versions preserve these same freedoms.
+Please consider 
+<a href="cuidiu.html">contributing</a> your own rules to
+help improve later releases.
+</p>
+
+<hr>
+<h2>System Requirements</h2>
+<p>
+This is software for Unix and Linux platforms.
+If you are an Irish speaker and are using, say, Windows, 
+you should format your hard drive and install something
+like <a href="http://www.gentoo.org">Gentoo Linux</a>.
+It's free and the grassroots
+<a href="http://www.iro.umontreal.ca/contrib/po/HTML/team-ga.html">translation of GNU/Linux into Irish</a> is well underway.
+Otherwise, have fun waiting for Microsoft to release 
+<a href="http://www.fainne.org/microbog/">Windows in Irish</a>.
+</p>
+
+<p>
+There are (intentionally) very few software dependencies for this package. 
+Everything you need should come pre-loaded with any self-respecting
+Linux distribution: <i>bash</i>, 
+<i>sed</i>, <i>awk</i>, <i>perl</i>,
+<i>grep</i>, and a C compiler.
+</p>
+
+<hr>
+<h2>Installation and Usage</h2>
+
+<p>
+<a href="sios.html">Download</a> the tarball and 
+unpack the files:
+</p>
+<pre>
+% gunzip gramadoir-x.x.tar.gz
+% tar xvf gramadoir-x.x.tar
+% cd gramadoir-x.x
+</pre>
+
+<p>
+There is no <i>configure</i> script.   Just try:
+</p>
+<pre>
+% make
+% make install
+% make check
+</pre>
+
+<p>
+The front-end script is called "gr".   To check the grammar of an
+Irish language text file called <i>gaeilge.txt</i>, use the following:
+</p>
+<pre>
+% gr gaeilge.txt
+</pre>
+
+<p>
+Each sentence containing an error is written to standard output.
+The sentence is preceded by the line number (in the original text file)
+on which it starts and is followed by a brief description of the errors
+found in the sentence.   You can see some actual output on
+the <a href="sampla.html">Sampler page</a>.
+</p>
+
+<hr>
+<em>© Cóipcheart/Copyright 2003 Kevin P. Scannell</em><br><br>
+</div>
+<div class="navigation">
+Home<br>
+<a href = "sios.html">Download</a><br>
+<a href = "sonrai.html">Details</a><br>
+<a href = "cuidiu.html">Contributing</a><br>
+<a href = "sampla.html">Sampler</a><br>
+<a href = "/saorbhog/index.html">Sponsor</a><br>
+<p class="centered">
+<img src="gram.jpg" alt="dictionary excerpt" height="160" width="125">
+</p>
+</div>
+</body>
+</html>
