@@ -209,6 +209,7 @@ the ambiguous word "an" followed by any verb; in this case
 "an" is likely to be an interrogative particle and not the definite
 article.
 </p>
+
 <p>
 The pattern-matching and disambiguation are implemented 
 as a Perl script <i>aonchiall.pl</i>.
@@ -221,9 +222,20 @@ the same syntax as the input files <i>rialacha.in</i> and <i>eisceacht.in</i>
 discussed below.  There is a bison
 grammar included in the distribution which contains a precise description of 
 of all three files.
+</p>
+
+<p>
 The great majority of the actual conversion into Perl 
 (again in all three cases) is performed by 
-the "meta" script <i>gin.meta.sed</i>.  
+the script <i>gin.meta.sed</i>.    The "meta" here refers to the fact
+that you should think of this script as written in a meta-language
+which is making reference to the languages of the *.in and *.pl
+files.   In practical terms this means that there is an extra
+level of "escape" in the shell (sed) commands: if you want to
+create a pattern matching "&lt;/N&rt;" in the Perl file, it will look like
+"&lt;\\\/N&rt;" in <i>gin.meta.sed</i>.   The language of the Perl
+file is itself a meta-language, one level above the language of the 
+actual XML stream.
 </p>
 
 <h3><i>rialacha</i></h3>
