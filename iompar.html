@@ -53,7 +53,7 @@ constructions like the English
 (sadly common in my part of the world).
 You could add a rule to <i>rialacha.in</i> resembling:<br><br>
 <samp>
-&lt;N&gt; done &lt;VP&gt;&lt;/VP&gt;
+&lt;N&gt; done &lt;VP&gt;&lt;/VP&gt;:MESSAGE
 </samp>
 <br><br>
 and populate <i>focail.bs</i> with verbs in the past tense.
@@ -72,7 +72,10 @@ just decode them correctly in this one function.
 If your language has unusual conventions for ends of sentences,
 you may need to play with the <i>abairti</i> module.  Or if
 you need characters outside of Latin-1, the <i>di-utf</i> 
-function will need to be generalized.  There may be other minor
+function will need to be generalized.  The buffers in <i>cuardach.c</i>
+for storing Irish words are 32 bytes long
+(longest word: <i>ngearr-chlóscríobhneoireachta</i>, 28 bytes) and
+may need to be increased.  There may be other minor
 things as well.
 </p>
 
