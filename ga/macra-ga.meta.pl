@@ -25,13 +25,15 @@ s/INITIALVOWEL/[aeiouAEIOUαινσϊΑΙΝΣΪ][^<]*/g;
 s/INITIALCONSONANT/[^aeiouAEIOUαινσϊΑΙΝΣΪ][^<]+/g;
 s/NONVOWELNONF/(?:[^aeiouAEIOUαινσϊΑΙΝΣΪfF]|[Ff]h?[lr])[^<]+/g;
 s/UNECLIPSEDDT/(?:[tT]|d[^Tt'])[^<]+/g;
+# note this rule doesn't represent all possible eclipses since m doesn't 
 s/UNECLIPSEDCONS/(?:[cfptCFPT]|d[^Tt']|g[^Cc]|b[^Pph]|bh[^fF])[^<]+/g;
 s/UNECLIPSED/(?:[aeiouAEIOUαινσϊΑΙΝΣΪcfptCFPT]|d[^Tt']|g[^Cc]|b[^Pph]|bh[^fF])[^<]*/g;
 s/ECLIPSEDVOWEL/n(?:-[aeiouαινσϊ]|[AEIOUΑΙΝΣΪ])[^<]*/g;
-s/ECLIPSED/(?:n(?:-[aeiouαινσϊ]|[AEIOUΑΙΝΣΪ])|d[Tt]|g[Cc]|b[Pp]|bh[fF])[^<]*/g;
+s/ECLIPSED/(?:n(?:-[aeiouαινσϊ]|[AEIOUΑΙΝΣΪ])|d[Tt]|g[Cc]|b[Pp]|m[Bb]|bh[fF])[^<]*/g;
 s/UNLENITABLE/(?:[^BbCcDdFfGgMmPpTt]|[Ss][^lnraeiouαινσϊ])[^<]*/g;
 s/UNLENITEDBCFGMP/(?:[BbCcFfGgMmPp][^h']|bh[fF])[^<]*/g;
 s/UNMUTATEDBCFGP/[BbCcFfGgPp][^hcCpP'][^<]*/g;
+# s,m+vowel not *definitely* UNMUTATED since it could be an eclipsis scenario 
 s/UNMUTATED/[BbCcDdFfGgPpTt][^hcCpPtT'][^<]*/g;
 s/UNLENITEDF/[Ff][aeiouαινσϊ][^<]*/g;
 s/UNLENITED/(?:[BbCcDdFfGgMmPpTt][^h']|[Ss][lnraeiouαινσϊ]|bh[Ff])[^<]*/g;

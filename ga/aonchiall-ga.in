@@ -287,6 +287,9 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 #<NFGS>ANYTHING</NFGS> <A>ANYTHING</A> <B><Z>AWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
 #<NMGS>ANYTHING</NMGS> <A>ANYTHING</A> <B><Z>AWITHGSM</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="m">
 #<NCS>ANYTHING</NCS> <A>ANYTHING</A> <B><Z>AWITHCOMMON</Z>ANYTHING</B>:<A pl="n" gnt="n">
+# strong plurals after "na" must be done before the ANYNMPL rules that follow
+<T>na</T> <B><Z>STRONGPLM</Z>ECLIPSED</B>:<N pl="y" gnt="y" gnd="m">
+<T>na</T> <B><Z>STRONGPLF</Z>ECLIPSED</B>:<N pl="y" gnt="y" gnd="f">
 # s?na=>plural
 <T>[Nn]a</T> <B><Z>ANYNFPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
 <T>[Nn]a</T> <B><Z>ANYNMPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
@@ -377,9 +380,7 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="saor" t="caite">
 <[^T]>ANYTHING</[^T]> <N>ANYTHING</N> <T>[Aa]n</T> <B><Z>NMFOUR</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 #<[^N]>ANYTHING</[^N]> <B><Z>NMFOUR</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <B><Z>NMFOUR</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<T>na</T> <B><Z>STRONGPLM</Z>ECLIPSED</B>:<N pl="y" gnt="y" gnd="m">
 <B><Z>STRONGPLM</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
-<T>na</T> <B><Z>STRONGPLF</Z>ECLIPSED</B>:<N pl="y" gnt="y" gnd="f">
 <B><Z>STRONGPLF</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
 <T>na</T> <B><Z>ANYNFG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 <[^N]>ANYTHING</[^N]> <B><Z>NFFOUR</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
