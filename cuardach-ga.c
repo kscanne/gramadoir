@@ -13,17 +13,93 @@
 /* trouble! */
 #endif
 
+int
+my_tolower_ga (const char *w, int *pos, char *lowered)
+{
+  char x = w[*pos];
+  int ans;
+  if (x & 0x80)
+    ans = !(x & 0x20);
+  else
+    ans = (x >= 'A' && x <= 'Z');
+  if (ans)
+    lowered[*pos] = (x | 0x20);
+  else
+    lowered[*pos] = x;
+  return ans;
+}
+
+/* exploit the fact that the only non-ASCII chars in Irish are vowels! */
+int
+vowel_p_ga (char w)
+{
+  char z = (w | 0x20);		/* tolower */
+  return ((z & 0x80) || z == 'a' || z == 'e' || z == 'i' || z == 'o'
+	  || z == 'u');
+}
+
+int
+make_all_lowercase_ga (const char *word, char *lowered, int lowers,
+		       int uppers, int firstupper)
+{
+  int i = 0;
+
+  if (uppers == 0)
+    return 0;
+  else if (lowers == 0)
+    return 1;
+  else if (uppers > 1 && (lowers > 2 || lowers != firstupper))
+    return 0;
+  /* here, either exactly one upper, or one/two lowers+all uppers */
+  else if (firstupper == 0)
+    return 1;
+  else if (firstupper == 1)
+    {
+      if (vowel_p_ga (word[1]))
+	{
+	  if (word[0] == 'n' || word[0] == 't')
+	    {
+	      i = strlen (lowered);
+	      while (i > 0)
+		{
+		  lowered[i + 1] = lowered[i];
+		  i--;
+		}
+	      lowered[1] = '-';
+	      return 1;
+	    }
+	  else
+	    return (word[0] == 'h');
+	}
+      else
+	return ((word[0] == 'b' && word[1] == 'P') ||
+		(word[0] == 'd' && word[1] == 'T') ||
+		(word[0] == 'g' && word[1] == 'C') ||
+		(word[0] == 'm' && word[1] == 'B') ||
+		(word[0] == 'n' && (word[1] == 'D' || word[1] == 'G')) ||
+		(word[0] == 't' && word[1] == 'S'));
+    }
+
+  else if (firstupper == 2)
+    {
+      return (word[0] == 'b' && word[1] == 'h' && word[2] == 'F');
+    }
+  else
+    return 0;
+}
+
 /* all encoding conventions should be contained in here!
    using same markup code for part of speech as the National Irish Corpus
    www.ite.ie/corpus/pos.htm
    Though they use a generic "w" word tag and attributes for grammar.
-     Used:        ACDINOPQRSTUV
+     Used:        ACDGHIJKLMNOPQRSTUVW
+                  ***  *    ********* 
     "E" is used as error markup code in my stuff
+    "F" is used for marking up rare words
     "B" is used to markup ambiguous words
     "Z" is used inside <B></B> to markup list of ambigous parts of speech 
     "Y" is used for words to ignore (proper words or from .neamhshuim)
     "X" is used when a word is not in database
-     Changes to these codes need to be reflected in rialacha.meta.sed too
  */
 int
 byte_to_markup_ga (const unsigned char c, char *fill, char *attrs)
