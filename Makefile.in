@@ -68,7 +68,7 @@ farc.c : TEANGACHA
 .in.pl :
 	cat $< | sed '/^#/!s/:/!:/' | tr "!" "\n" > $<.2
 	cp `echo "$<" | sed 's/-.*//'`.meta.sed temp.meta.sed
-	($(ECHO) "#!$(PERL)"; $(ECHO) "# Users should modify $<, not this file"; $(ECHO) 'while(<>){';  cat $<.2 | sed -f gin.meta.sed | sed -f temp.meta.sed; $(ECHO) 'print;'; $(ECHO) '}'; $(ECHO) 'exit;') > $@
+	($(ECHO) "#!$(PERL)"; $(ECHO) "# Users should modify $<, not this file"; $(ECHO) 'while(<>){';  cat $<.2 | sed -f gin.meta.sed | sed -f temp.meta.sed; $(ECHO) 'print;'; $(ECHO) '}'; $(ECHO) 'exit;') | ./rigeail `echo "$<" | sed 's/-.*//'` > $@
 	rm -f $<.2 temp.meta.sed
 
 lastperl : $(METAS)
@@ -79,12 +79,6 @@ allperl : $(ALLIN) lastperl
 
 installcheck : FORCE
 	@LC_MESSAGES=C $(bindir)/gr --iomlan triail | sed "s/^[0-9]*: //" > triail.tmp
-	@cat triail.err | sed "s/^[0-9]*: //" > triail2.tmp
-	@if diff triail2.tmp triail.tmp; then $(ECHO) 'OK.'; else $(ECHO) 'Problem.'; fi
-	@rm -f triail.tmp triail2.tmp
-
-utfcheck : triail.utf
-	@LC_MESSAGES=C $(bindir)/gr --iomlan --ionchod=UTF8 triail.utf | sed "s/^[0-9]*: //; s/\.utf//" > triail.tmp
 	@cat triail.err | sed "s/^[0-9]*: //" > triail2.tmp
 	@if diff triail2.tmp triail.tmp; then $(ECHO) 'OK.'; else $(ECHO) 'Problem.'; fi
 	@rm -f triail.tmp triail2.tmp
@@ -122,6 +116,9 @@ uninstall :
 	done
 	cd po && $(MAKE) uninstall
 
+vim : FORCE
+	cp -f ./gramadoir.vim ${HOME}/.vim/plugin
+
 configure: configure.ac
 	autoconf
 
@@ -156,6 +153,7 @@ webhome = $(HOME)/public_html/$(PACKAGE_NAME)
 
 installhtml :
 	$(INSTALL_DATA) cuidiu.html $(webhome)
+	$(INSTALL_DATA) eagar.html $(webhome)
 	$(INSTALL_DATA) foirm.html $(webhome)
 	$(INSTALL_DATA) index.html $(webhome)
 	$(INSTALL_DATA) iompar.html $(webhome)
@@ -200,6 +198,8 @@ dist : FORCE
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gin.meta.sed
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gr.in
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gramadoir.dtd
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gramadoir.el
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gramadoir.vim
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/hilite.awk
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/install-sh
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/Makefile.in
@@ -228,6 +228,12 @@ dist : FORCE
 triail.err : FORCE
 	rm -f triail.err
 	LC_MESSAGES=C gr --iomlan triail > triail.err
+
+utfcheck : triail.utf
+	@LC_MESSAGES=C $(bindir)/gr --iomlan --ionchod=UTF8 triail.utf | sed "s/^[0-9]*: //; s/\.utf//" > triail.tmp
+	@cat triail.err | sed "s/^[0-9]*: //" > triail2.tmp
+	@if diff triail2.tmp triail.tmp; then $(ECHO) 'OK.'; else $(ECHO) 'Problem.'; fi
+	@rm -f triail.tmp triail2.tmp
 
 triail.utf : FORCE
 	@rm -f triail.utf
