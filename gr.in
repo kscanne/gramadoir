@@ -57,6 +57,7 @@ unwanted=`@SH_GETTEXT@ "option %s does not allow an argument"`
 unsupported=`@SH_GETTEXT@ "Language %s is not supported."`
 ANAITHNIDSRL=`@SH_GETTEXT@ "Unknown word (ignoring remainder in this sentence)"`
 ANAITHNID=`@SH_GETTEXT@ "Unknown word"`
+NEAMHCHOIT=`@SH_GETTEXT@ "Valid word but extremely rare in actual usage"`
 BACHOIR=`@SH_GETTEXT@ "You should use \/\1\/ here instead"`
 CAIGHDEAN=`@SH_GETTEXT@ "Non-standard form: perhaps use \/\1\/?"`
 CLAOCHLU=`@SH_GETTEXT@ "Initial mutation missing"`
@@ -66,6 +67,9 @@ PREFIXT=`@SH_GETTEXT@ "Prefix \/t\/ missing"`
 SEIMHIU=`@SH_GETTEXT@ "Lenition missing"`
 URU=`@SH_GETTEXT@ "Eclipsis missing"`
 DUBAILTE=`@SH_GETTEXT@ "Repeated word"`
+CUPLA=`@SH_GETTEXT@ "Unusual combination of words"`
+BREISCHEIM=`@SH_GETTEXT@ "Comparative adjective required"`
+NIAITCH=`@SH_GETTEXT@ "Unnecessary prefix \/h\/"`
 
 # i18n: grammatical errors.  See rialacha-*.in.
 # If you port to another language, you won't translate these; instead
@@ -76,6 +80,7 @@ loganu()
 sed "
 s/\"ANAITHNIDSRL/\"${ANAITHNIDSRL}/g
 s/\"ANAITHNID/\"${ANAITHNID}/g
+s/\"NEAMHCHOIT/\"${NEAMHCHOIT}/g
 s/\"BACHOIR{\([^}]*\)}/\"${BACHOIR}/g
 /CAIGHDEAN/s/_/ /g
 s/\"CAIGHDEAN{\([^}]*\)}/\"${CAIGHDEAN}/g
@@ -86,6 +91,9 @@ s/\"PREFIXT/\"${PREFIXT}/g
 s/\"SEIMHIU/\"${SEIMHIU}/g
 s/\"URU/\"${URU}/g
 s/\"DUBAILTE/\"${DUBAILTE}/g
+s/\"CUPLA/\"${CUPLA}/g
+s/\"BREISCHEIM/\"${BREISCHEIM}/g
+s/\"NIAITCH/\"${NIAITCH}/g
 "
 }
 
