@@ -26,7 +26,7 @@
 ^ND			nD		1	<.+>
 ^NG			nG		1	<.+>
 ^TS			tS		1	<.+>
-^([A-ZÁÉÍÓÚ])([A-ZÁÉÍÓÚ'-]+)$	$1\L$2		-1	<.+>	# GAELTACHT
+^([A-ZÁÉÍÓÚ])([A-ZÁÉÍÓÚ'-]*[A-ZÁÉÍÓÚ][A-ZÁÉÍÓÚ'-]*)$	$1\L$2		-1	 <.+>	# GAELTACHT but not "D'" (after recursion)
 ^([A-ZÁÉÍÓÚ])		\l$1		-1	<.+> 	# Príomhach
 (...)-([A-ZÁÉÍÓÚ])	$1-\l$2		-1	<.+> 	# Príomh-Aire
 ^b'([AEIOUÁÉÍÓÚF])	b'\l$1		-1	<.+>
@@ -52,8 +52,8 @@
 ^nG			ng		-1	<.+>
 ^tS([A-ZÁÉÍÓÚ'-]+)$	ts\L$1		-1	<.+>
 ^tS			ts		-1	<.+>
-^t([AEIOUÁÉÍÓÚ])([A-ZÁÉÍÓÚ'-]+)$	t$1\L$2	-1	<.+>	# tUASAL
-^t([AEIOUÁÉÍÓÚ])	t-\l$1		-1	<.+>
+^t([AEIOUÁÉÍÓÚ])([A-ZÁÉÍÓÚ'-]+)$	t$1\L$2	-1	<N.*>	# tUASAL
+^t([AEIOUÁÉÍÓÚ])	t-\l$1		-1	<N.*>
 # hyphened prefixes, an-, dea-
 ^h?an-([bcfgmp]h)	$1		0	<[AN].*>
 ^h?an-([bcfgmp][^h])	$1		2	<[AN].*>
@@ -75,21 +75,25 @@
 ^ath([^bcdfgmpst-])	$1		0	<[ANV].*>
 ^ath([bcdfgmp]h)	$1		0	<[ANV].*>
 ^ath(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>
-^ath(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>
+^ath(s[^aeiouáéíóúlnrh])	$1	0	<[ANV].*>
+^ath-?th		th		1	<[ANV].*>
 ^comh([^bcdfgmnpst-])	$1		0	<[ANV].*>
 ^comh([bcdfgpt]h)	$1		0	<[ANV].*>
-^comh(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>
-^comh(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>
+^comh(sh[aeiouáéíóúlnr])	$1	0	<[ANV].*>
+^comh(s[^aeiouáéíóúlnrh])	$1	0	<[ANV].*>
 ^có(mh[aáoóuú])		$1		0	<[ANV].*>
 ^cói(mh[eéií])		$1		0	<[ANV].*>
 ^comh-mh		mh		1	<[ANV].*>
+^comhn			cón		1	<[ANV].*>
 ^có(n[aáoóuú])		$1		0	<[ANV].*>
 ^cói(n[eéií])		$1		0	<[ANV].*>
+^có-(..)		$1		1	<[ANV].*>
 ^do-([aeiouáéíóú])	$1		0	<[AN].*>
-^do([lnr])		$1		0	<[AN].*>
+# ^do([lnr]) BELOW
 ^do([bcdfgmpt]h)	$1		0	<[AN].*>
 ^do(sh[aeiouáéíóúlnr])	$1		0	<[AN].*>
 ^do(s[^aeiouáéíóúlnrh])	$1		0	<[AN].*>
+^do-([aeiouáéíóú])	$1		0	<[ANV].*>
 ^droch([^bcdfgmpst-])	$1		0	<[AN].*>
 ^droch-(ch)		$1		0	<[AN].*>
 ^droch([bdfgmpt]h)	$1		0	<[AN].*>
@@ -106,10 +110,11 @@
 ^for(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>
 ^for(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>
 ^fo-([aeiouáéíóú])	$1		0	<[ANV].*>
-^fo([lnr])		$1		0	<[ANV].*>
+# ^fo([lnr]) BELOW
 ^fo([bcdfgmpt]h)	$1		0	<[ANV].*>
 ^fo(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>
 ^fo(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>
+^fo-(..)		$1		1	<[ANV].*>
 ^frith([^bcdfgmpst-])	$1		0	<[ANV].*>
 ^fri(t[^h])		$1		0	<[ANV].*>
 ^frith([bcdfgmp]h)	$1		0	<[ANV].*>
@@ -121,21 +126,27 @@
 ^iar(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>
 ^iar(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>
 # ilsiamsa, ilsiollach, etc.  no special case
-^il([^bcfgmp-])		$1		0	<[AN].*>
-^il([bcfgmp]h)		$1		0	<[AN].*>
-^im([^bcdfgmpst-])	$1		0	<[ANV].*>
-^im([bcdfgmpt]h)	$1		0	<[ANV].*>
+^il([^bcfgmp-]..)	$1		0	<[AN].*>
+^il([bcfgmp]h.)		$1		0	<[AN].*>
+^im([^bcdfgmpst-]..)	$1		0	<[ANV].*>
+^im([bcdfgmpt]h.)	$1		0	<[ANV].*>
 ^im(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>
-^im(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>
-^in([^bcfgmp-])		$1		0	<[AN].*>
+^im(s[^aeiouáéíóúlnrh].)	$1		0	<[ANV].*>
+# ^in([^bcfgmp-]) BELOW
 ^in-(n)			$1		0	<[AN].*>
-^in([bcfgmp]h)		$1		0	<[AN].*>
+^in([bcfgmp]h..)	$1		0	<[AN].*>
 ^mí-([aeiouáéíóú])	$1		0	<[ANV].*>
-^mí([aeiouáéíóú])	$1		2	<[ANV].*>  # míúsáid
-^mí([lnr])		$1		0	<[ANV].*>
-^mí([bcdfgmpt]h)	$1		0	<[ANV].*>
+^mí([aeiouáéíóú]..)	$1		2	<[ANV].*>  # míúsáid
+^mí([lnr]..)		$1		0	<[ANV].*>
+^mí([bcdfgmpt]h.)	$1		0	<[ANV].*>
 ^mí(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>
 ^mí(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>
+^neamh-?([aeiouáéíóú])	$1		0	<[ANV].*>  # neamh-aistear but neamhaithne
+^neamh([lnr])		$1		0	<[ANV].*>
+^neamh([bcdfgpt]h)	$1		0	<[ANV].*>
+^neamh-(mh)		$1		0	<[ANV].*>
+^neamh(sh[aeiouáéíóúlnr])	$1	0	<[ANV].*>
+^neamh(s[^aeiouáéíóúlnrh])	$1	0	<[ANV].*>
 ^príomh([^bcdfgmpst-])	$1		0	<N.*>
 ^príomh([bcdfgpt]h)	$1		0	<N.*>
 ^príomh-(mh)		$1		0	<N.*>
@@ -146,21 +157,21 @@
 ^réamh-(mh)		$1		0	<[ANV].*>
 ^réamh(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>
 ^réamh(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>
-^ró-([aeiouáéíóú])	$1		0	<[AN].*>
-^ró([aeiouáéíóú])	$1		2	<[AN].*>
-^ró([lnr])		$1		0	<[AN].*>
-^ró([bcdfgmpt]h)	$1		0	<[AN].*>
+^ró-([aeiouáéíóú]..)	$1		0	<[AN].*>
+^ró([aeiouáéíóú]..)	$1		2	<[AN].*>
+^ró([lnr]..)		$1		0	<[AN].*>
+^ró([bcdfgmpt]h.)	$1		0	<[AN].*>
 ^ró(sh[aeiouáéíóúlnr])	$1		0	<[AN].*>
 ^ró(s[^aeiouáéíóúlnrh])	$1		0	<[AN].*>
 ^sain([^bcdfgmpst-])	$1		0	<[ANV].*>
 ^sain([bcdfgmpt]h)	$1		0	<[ANV].*>
 ^sain(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>
 ^sain(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>
-^so-([aeiouáéíóú])	$1		0	<[AN].*>
-^so([lnr])		$1		0	<[AN].*>
-^so([bcdfgmpt]h)	$1		0	<[AN].*>
-^so(sh[aeiouáéíóúlnr])	$1		0	<[AN].*>
-^so(s[^aeiouáéíóúlnrh])	$1		0	<[AN].*>
+^so-([aeiouáéíóú]..)	$1		0	<[AN].*>
+^so([lnr]..)		$1		0	<[AN].*>
+^so([bcdfgmpt]h.)	$1		0	<[AN].*>
+^so(sh[aeiouáéíóúlnr].)	$1		0	<[AN].*>
+^so(s[^aeiouáéíóúlnrh]..)	$1		0	<[AN].*>
 ^tras([^bcfgmnps-])	$1		0	<[ANV].*>   # leave "^trasn" alone
 ^tras([bcfgmp]h)	$1		0	<[ANV].*>
 ^tras-(s)		$1		0	<[ANV].*>
@@ -176,7 +187,12 @@ acht$			ach		0	<A pl="n" gnt="n".*>
 íocht$			íoch		0	<A pl="n" gnt="n".*>
 úlachta?$		úil		0	<A pl="n" gnt="n".*> # CO p.120
 úchái?n$		ú		0	<N.*>
+# but actually non-standard if it's gs or pp; general  uith -> aith below
+uithe$			ú		0	<N.*>
+#############################################################################
 ################## CAIGHDEÁN OIFIGIÚIL SPELLING REFORMS #####################
+#############################################################################
+#   modernize prefixes (no need to trap mutated versions, stripped below
 ^aith			ath		1	<.+>
 ^eadar			idir		1	<.+>
 ^dh'			d'		1	<.+>
@@ -184,14 +200,23 @@ acht$			ach		0	<A pl="n" gnt="n".*>
 ^n-([AEIOUÁÉÍÓÚ])	n$1		1	<.+>    # CO p.125
 ^t-([AEIOUÁÉÍÓÚ])	t$1		1	<.+>    # CO p.125
 ^ana-			an-		1	<.+>    # ana-eagraithe
-^(g?ch?)oimh		$1omh		1	<.+>    # coimhlíonadh
-^(n?dh?)e[ai]gh		$1ea		1	<.+>
-^(n?dh?)ligh		$1lí		1	<.+>
+^coimh			comh		1	<.+>    # coimhlíonadh
+^de[ai]gh		dea		1	<.+>
+^dligh(i?)		dlí		1	<.+>
+^duibh			dubh		1	<.+>
 ^ion			in		1	<.+>
-^(mh?a)ill		$1ll		1	<.+>
+^maill			mall		1	<.+>
+^nea-			neamh-		1	<.+>    # strip hyphen later
 ^óig			óg		1	<.+>
+^prímh			príomh		1	<.+>
+^réimh			réamh		1	<.+>
+^roimh			réamh		1	<.+>
+^seana-			sean-		1	<.+>    # strip hyphen later
+^tele([^aeiouáéíóú]+[eéií])	teili$1		1	<.+>    # OD77
+^tele([^aeiouáéíóú]+[aáoóuú])	teilea$1	1	<.+>
 ^uaith			uath		1	<.+>
 ^úir			úr		1	<.+>
+#   Now various general spelling reforms from CO handbook
 ai(cht?ín)		a$1		1	<.+>    # CO p.120, smaichtín
 sg			sc		1	<.+>    # CO p.115
 sb			sp		1	<.+>    # CO p.115
@@ -209,10 +234,12 @@ eamhla			iúla		1	<[AN].*>
 aíle$			aíola		1	<.+>    # *3ú* decl.
 aibh$			a		1	<.+>    # fearaibh, fiachaibh
 ([^a])ibh$		$1e		1	<.+>    # coinnibh, etc.
-eu			éa		1	<.+>    # sgeul, ceudna, srl.
+(.)eu			$1éa		1	<.+>    # sgeul, ceudna, srl.
 tch			t		1	<.+>    # CO p.103
 i[dg]hea		ío		1	<.+>    # CO p.105,107
 i[dg]he			í		1	<.+>    # CO p.104,106
+uí([to])		aí$1		1	<.+>	# cialluíonn, ionaduíochta, leasuítear
+uith			aith		1	<.+>    # rialuitheoir
 adha			ú		1	<.+>    # CO p.105
 ádh			á		1	<.+>    # ádhbhar, rádh, etc.
 [mb]hth			f		1	<.+>    # CO p.106
@@ -231,18 +258,35 @@ ighile$			íola		1	<N pl="n" gnt="y" gnd="f".*>
 (dh?í?)omb		$1om		1	<.+>    # CO p.109
 (ai?n)bhf		$1bh		1	<.+>    # CO p.109  ainbhfiosach
 (..)u(i?s)$		$1a$2		1	<.+>    # solus, árus, etc.
+#   some dialect/pre-standard noun/adjective inflections
 ([oó]ga)í$		$1		1	<N pl="y".*>   # duilleogaí
 nnaí$			nna		1	<N pl="y".*>   # ceisteannaí
 thaí$			tha		1	<.+>    # glórthaí, spéarthaí
 dha$			tha		1	<.+>    # measardha, muinteardha
 dha$			a		1	<.+>    # stuamdha, príomhdha
+(.[aá])igh$		$1ch		1	<N.*>	# nb2 -aí genitives
+(..)igh$		$1each		1	<N.*>   #  same
+aidh$			a		1	<.+>    # bhfágaidh
+óig$			óg		1	<N.*>   # nb2 
+lainn$			lann		1	<N.*>   # nb2
+aisí$			ais		1	<N.*>   # cuntaisí, bronntanaisí
+dth([ea])$		dt$1		1	<.+>    # goidthe
 ##################  NON/PRE-STANDARD VERB ENDINGS #########################
+# future/conditional 2nd declension with -cha?- see CO p.103
+e[oó]cha(i?dh)$		eo$1		1	<V.*>
+([^e])ócha(i?dh)$	$1ó$2		1	<V.*>
+e[oó]chaimi([ds])$	eoimi$1		1	<V.*>
+([^e])óchaimi([ds])$	$1óimi$2	1	<V.*>
+e[oó]chai(nn|dís)$	eoi$1		1	<V .* t="coinn">
+([^e])óchai(nn|dís)$	$1ói$2		1	<V .* t="coinn">
 #   2nd declension Dinneen-style endings
 u(i?gh)			a$1		1	<.+>  # see next few
 aghadh			ú		1	<N.*>  # broad and slender
-i[dg]hth		ith		1	<.+>  # marcaidhthe, masluighthe
+i[dg]h(th?.)		i$1		1	<.+>  # marcaidhthe, masluighthe, beannuighth?ear
+thear$			tear		1	<V.*> # aut. present
 ighim			ím		1	<V.*>    # broad and slender
 ighidh			í		1	<.+>    # subjunctive?
+ighinn			ínn		1	<.+>    # imperfect
 # Future forms: see OS88 p.215 for these (fe?as, etc. on p.63)
 fa[ds]$			faidh		1	<V .* t="fáist">
 fea[ds]$		fidh		1	<V .* t="fáist">
@@ -250,9 +294,11 @@ fea[ds]$		fidh		1	<V .* t="fáist">
 eo[ds]$			eoidh		1	<V .* t="fáist">
 # Future 2nd p., "r" forms noted on p.216
 fai[rs]$		faidh		1	<V .* t="fáist">
-fi[rs]$			fidh		1	<V .* t="fáist">
+fi[rsd]$		fidh		1	<V .* t="fáist">  # bainfid
 óis$			óidh		1	<V .* t="fáist">
 eois$			eoidh		1	<V .* t="fáist">
+# Future autonomous; unwanted prefix h is common in achtanna
+^h(.+fe?ar)$		$1		1	<V .* t="fáist">
 # Past; also see Di27 (present).  "r" forms on p.216
 (...)eas$		$1		1	<V .* t="caite">
 (..[^aeiouáéíóú])as$	$1		1	<V .* t="caite">
@@ -267,8 +313,8 @@ ins$			eann		1	<V .* t="láith">
 #  OS88 p.126  present
 anns$			ann		1	<V .* t="láith">
 íonns$			íonn		1	<V .* t="láith">
-#  corpus - imperfect
-theá$			teá		1	<V .* t="gnáth">
+#  corpus 
+th(eá|ear)$		t$1		1	<V.*>
 #  various -áil  endings should be broad, CO p.120
 áilim$			álaim		1	<V.*>
 áileann$		álann		1	<V.*>
@@ -280,18 +326,26 @@ theá$			teá		1	<V .* t="gnáth">
 áilea([dm]ar)$		ála$1		1	<V.*>
 ái(lf?)idís$		á$1aidís	1	<V.*>
 áltar$			áiltear		1	<V.*>
+álta$			áilte		1	<A.*>
+álanna$			álacha		1	<N.*>  # nb3 pl
 #############################################################################
 #  emphatic suffixes
-(.[aouáóú])(san?|na)$	$1		0	<.+>
-(.[eiéí])(sean|[sn]e)$	$1		0	<.+>
-([aouáóú][^aeiouáéíóú-]*[^aeiouáéíóús-])san?$	$1		0	<.+>
-([aouáóú][^aeiouáéíóú-]*[^aeiouáéíóún-])na$	$1		0	<.+>
-([eiéí][^aeiouáéíóú-]*[^aeiouáéíóús-])se(an)?$	$1		0	<.+>
-([eiéí][^aeiouáéíóú-]*[^aeiouáéíóún-])ne$	$1		0	<.+>
-([aouáóú][^aeiouáéíóú-]*s)-san?$		$1		0	<.+>
-([aouáóú][^aeiouáéíóú-]*n)-na$			$1		0	<.+>
-([eiéí][^aeiouáéíóú-]*s)-se(an)?$		$1		0	<.+>
-([eiéí][^aeiouáéíóú-]*n)ne$			$1		0	<.+>
+(.[aouáóú])(san?|na)$	$1		0	<[NV].*>
+(.[eiéí])(sean|[sn]e)$	$1		0	<[NV].*>
+([aouáóú][^aeiouáéíóú-]*[^aeiouáéíóús-])san?$	$1	0	<[NV].*>
+([aouáóú][^aeiouáéíóú-]*[^aeiouáéíóún-])na$	$1	0	<[NV].*>
+([eiéí][^aeiouáéíóú-]*[^aeiouáéíóús-])se(an)?$	$1	0	<[NV].*>
+([eiéí][^aeiouáéíóú-]*[^aeiouáéíóún-])ne$	$1	0	<[NV].*>
+([aouáóú][^aeiouáéíóú-]*s)-san?$		$1	0	<[NV].*>
+([aouáóú][^aeiouáéíóú-]*n)-na$			$1	0	<[NV].*>
+([eiéí][^aeiouáéíóú-]*s)-se(an)?$		$1	0	<[NV].*>
+([eiéí][^aeiouáéíóú-]*n)ne$			$1	0	<[NV].*>
+#############################################################################
+#  rules with somewhat lower probability (e.g. fo-, must be after non-stnd
+#  verb endings to avoid "foluíonn"  parsing as "fo+luíonn"
+^do([lnr]..)		$1		0	<[AN].*>
+^fo([lnr]..)		$1		0	<[ANV].*>
+^in([^bcfgmp-]..)	$1		0	<[AN].*>
 # last resort for weird caps
 ([A-ZÁÉÍÓÚ])		\l$1		2	<.+>	# pRíOMhach
 ([eiéí][^aeiouáéíóú]+)íní?$	$1		0	<.+>	# diminutive
@@ -302,16 +356,16 @@ theá$			teá		1	<V .* t="gnáth">
 (.)-			$1		1	<.+>       # ró-bheag / róbheag
 # delenite, de-eclipse.  
 # Only helps when we recurse and find a standard unmutated prefix above!
-^bp([^h])		p$1		0	<.+>
-^bhf([^h])		f$1		0	<.+>
-^dt([^h])		t$1		0	<.+>
-^gc([^h])		c$1		0	<.+>
-^mb([^h])		b$1		0	<.+>
-^nd([^h])		d$1		0	<.+>
-^ng([^h])		g$1		0	<.+>
-^ts([^h])		s$1		0	<.+>
-^([bcdfgmp])h		$1		0	<.+>
-^th([^s])		t$1		0	<.+>   # luathscéal danger
-^sh([lnraeiouáéíóú])	s$1		0	<.+>
-^[bdm]'([AEIOUÁÉÍÓÚaeiouáéíóú])	$1		0	<.+>	# d'Éamonn too
-^[nt]-([aeiouáéíóú])	$1		0	<.+>
+^bp([^h])		p$1		0	<[ANV].*>
+^bhf([^h])		f$1		0	<[ANV].*>
+^dt([^h])		t$1		0	<[ANV].*>
+^gc([^h])		c$1		0	<[ANV].*>
+^mb([^h])		b$1		0	<[ANV].*>
+^nd([^h])		d$1		0	<[ANV].*>
+^ng([^h])		g$1		0	<[ANV].*>
+^ts([^h])		s$1		0	<[ANV].*>
+^([bcdfgmpBCDFGMP])h	$1		0	<[ANVY].*>
+^([Tt])h([^s])		$1$2		0	<[ANVY].*>   # luathscéal danger
+^([Ss])h([lnraeiouáéíóú])	$1$2	0	<[ANVY].*>
+^[bdm]'([AEIOUÁÉÍÓÚaeiouáéíóú])	$1	0	<[ANVY].*>	# d'Éamonn too
+^[nt]-([aeiouáéíóú])	$1		0	<[ANV].*>
