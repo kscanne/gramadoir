@@ -27,7 +27,7 @@ ar ar:OK
 #. Aithníonn ciaróg ciaróg eile (OK).
 ciaróg ciaróg:OK
 #. Go deo deo arís ní fheicfeadh sí a cheannaithe snoite (OK).
-deo deo:OK
+[Gg]o <E>deo deo</E>:OK
 #. Tabhair iad seo do do mháthair (OK).
 do do:OK
 #. Sin é é ...  Tá sé anseo (OK)!
@@ -35,13 +35,14 @@ do do:OK
 #. Tá siad le feiceáil ann le fada fada an lá (OK).
 fada fada:OK
 #. Bhí go leor leor le rá aici (OK).
-leor leor:OK
+[Gg]o <E>leor leor</E>:OK
 #. Cuirfidh mé mé féin in aithne dá lán ciníocha (OK).
 mé mé:OK
 #. Fanann réalta chobhsaí ar feadh idir milliún agus milliún milliún bliain (OK).
 milliún milliún:OK
 #. Bhíodh an-tóir ar spíosraí go mór mór (OK).
-mór mór:OK
+#. Bhí an dara cupán tae ólta agam nuair a tháinig an fear mór mór.
+[Gg]o <E>mór mór</E>:OK
 #. Agus sin sin de sin (OK)!
 # See OD sin^1.1c
 sin sin:OK
@@ -987,7 +988,8 @@ g?[Cc]h?eithre hairde:OK
 <A>ORDINALADJ</A> <NWITHH>ANYTHING</NWITHH>:OK
 # CB p.23 #11.a.ii
 #. Chuir sí a dhá huilleann ar an bhord (OK).
-[Dd]há <NWITHH>ANYTHING</NWITHH>:OK
+#. Chuir mé mo dhá huilleann ar an bhord.
+a <E><A>[Dd]há</A> <NWITHH>ANYTHING</NWITHH></E>:OK
 # CB p.24 #11.a.v (not always resolved as <S> yet)
 #. Cuireadh cuid mhaith acu go hÉirinn (OK).
 [Gg]o <NWITHH>ANYTHING</NWITHH>:OK
