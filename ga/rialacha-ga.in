@@ -21,7 +21,30 @@
 #. Ach thosnaíos-sa ag léamh agus bhog mé isteach ionam féin.
 #    Also marked "CAIGHDEAN" by cuardach but only after applying morphology
 #. Tabhair go leor leor de na na rudaí seo do do chara, a Chaoimhín.
-#    the doubled "na na" is marked up directly by "cuardach"
+#    the doubled "na na" is marked up directly; following are OK though:
+#. Seo é a chuntas féin ar ar tharla ina dhiaidh sin (OK).
+ar ar:OK
+#. Aithníonn ciaróg ciaróg eile (OK).
+ciaróg ciaróg:OK
+#. Go deo deo arís ní fheicfeadh sí a cheannaithe snoite (OK).
+deo deo:OK
+#. Tabhair iad seo do do mháthair (OK).
+do do:OK
+#. Sin é é ...  Tá sé anseo (OK)!
+é é:OK
+#. Tá siad le feiceáil ann le fada fada an lá (OK).
+fada fada:OK
+#. Bhí go leor leor le rá aici (OK).
+leor leor:OK
+#. Cuirfidh mé mé féin in aithne dá lán ciníocha (OK).
+mé mé:OK
+#. Fanann réalta chobhsaí ar feadh idir milliún agus milliún milliún bliain (OK).
+milliún milliún:OK
+#. Bhíodh an-tóir ar spíosraí go mór mór (OK).
+mór mór:OK
+#. Agus sin sin de sin (OK)!
+# See OD sin^1.1c
+sin sin:OK
 #. Chuaigh sí in olcas ina dhiaidh sin agus bhí an-imní orthu.
 #    "MOIRF" warning inserted by cuardach
 #. Tharla sé seo ar lá an-mífheiliúnach, an Déardaoin.
@@ -49,6 +72,8 @@
 # CB p.138
 #. Ach bhí mé ag leanúint ar aghaidh an t-am ar fad leis.
 <S>COMPOUND</S> <T>ANYTHING</T> <NCS>ANYTHING</NCS>:GENITIVE
+#. Bhrostaigh sé go dtí an t-ospidéal (OK).
+<S>[Gg]o dtí</S> <T>ANYTHING</T> <NCS>ANYTHING</NCS>:OK
 # CB p.138; needs shallow parse; tar éis "an dinnéir" vs "dinnéar a dhéanamh"
 #   will also need "i ngach" exception too
 #<S>COMPOUND</S> <NCS>ANYTHING</NCS>:GENITIVE
@@ -61,19 +86,35 @@
 # CB p.24 #11.a.ix
 #. Sa dara alt, déan cur síos ar a bhfaca siad sa Spáinn.
 <A>[Dd]ara</A> <N>INITIALVOWEL</N>:PREFIXH
-# ná in eisceacht
 #. Oirfeadh síol áitiúil níos fearr ná an síol a húsáidtear go minic.
 ANYTHING <VIMP>INITIALH</VIMP>:NIAITCH
+# CB p.24 #11.d
+#. Ná hinis do dhuine ar bith é (OK).
+[Nn]á <VIMP>INITIALH</VIMP>:OK
 #   note in previous batch that prefix h on other tags or on non-imperative V
 #   is handled by spelling...
 # using NMCS vs. nothing in next rule is faster and avoids false positive
 # with t-léine, etc. Note na+NMCS picked up elsewhere.  "cén"+t- in eisceacht
 #. Tá ceacht stairiúil uathúil do chuairteoirí san t-ionad seo.
 <[^T]>ANYTHING</[^T]> <NMCS>PREFIXEDT</NMCS>:NITEE
+# corpus exception
+#. Cén t-ainm atá air (OK)?
+<Q>[Cc]én</Q> <NMCS>PREFIXEDT</NMCS>:OK
 # CB p.18-19 converse of #11-13
 #  ní, má, gur, etc. + "gheo*" forms in eisceacht
 #. In Éirinn chaitheann breis is 30 faoin gcéad de mhná toitíní.
 ANYTHING <VNOLEN>LENITED</VNOLEN>:NISEIMHIU
+#. Déan cur síos ar dhá thoradh a bhíonn ag caitheamh tobac ar an tsláinte (OK).
+#. Má bhrúitear idir chnónna agus bhlaoscanna faightear ola inchaite (OK).
+#. Ní chothaíonn na briathra na bráithre (OK).
+[Aa]|[Mm]á|[Nn]í <VNOLEN>LENITED</VNOLEN>:OK
+#. Cha bhíonn striapachas agus seafóid Mheiriceá ann feasta (OK).
+<U>[Cc]ha</U> <VNOLEN>LENITEDBCFGMPS</VNOLEN>:OK
+#. Tá cleachtadh ag daoine ó bhíonn siad an-óg ar uaigneas imeachta (OK).
+<C>[Óó]</C> <VNOLEN>LENITED</VNOLEN>:OK
+# gheobh*, gheofar always OK
+#. Ar an láithreán seo gheofar foclóirí agus liostaí téarmaíochta (OK).
+ANYTHING <VNOLEN>LENITEDFUTURE</VNOLEN>:OK
 # MacL00 p.114 (Béarlachas)
 # Lá fuar agus fliuch a bhí ann.
 #  many exceptions?
@@ -81,6 +122,14 @@ ANYTHING <VNOLEN>LENITED</VNOLEN>:NISEIMHIU
 # CB p.16 #9.a  (needs shallow parse) -- subsumes CB p.17 #9.gh after <S>
 #. Tá sé riachtanach ar mhaithe le feidhmiú an phlean a bheidh ceaptha ag an eagraíocht ceannasach.
 <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
+# corpas; most compound adjs are #'s
+# NB "ceannann céanna" lenites as it should, but handled by comhshuite.
+#. Bhí na ranganna seo ar siúl an bhliain seo caite (OK).
+<NFCS>ANYTHING</NFCS> <A>COMPOUND</A>:OK
+# corpus; exception to "lenite adj after feminine noun" (céad comes before)
+#. Léimeann an fharraige céad méadar suas sa spéir (OK).
+<NFCS>ANYTHING</NFCS> <A>(céad|gach|seo|sin)</A>:OK
+<NFCS>[Bb]heith</NFCS> <A>UNLENITED</A>:OK
 # next rule doesn't make sense: "bileog bholscaireachta dhátheangach" is fine
 # will need a shallow parse to link up adjectives to nouns they modify
 #<NFGS>ANYTHING</NFGS> <A>LENITED</A>:NISEIMHIU
@@ -89,7 +138,11 @@ ANYTHING <VNOLEN>LENITED</VNOLEN>:NISEIMHIU
 #<NMGS>ANYTHING</NMGS> <A>UNLENITED</A>:SEIMHIU
 <NMCS>UNLENITED</NMCS> <A>LENITED</A>:NISEIMHIU
 <NMCS>UNLENITABLE</NMCS> <A>LENITED</A>:NISEIMHIU
-#  requires shallow parse;  else false positive like the following:
+# corpus exceptions
+#. Tá dún cosanta eile ar an taobh thoir den oileán (OK).
+#. Déan teagmháil leis an Rannóg ag an seoladh thuasluaite (OK).
+<NMCS>ANYTHING</NMCS> <A>([Dd]há|[Tt]hoir|[Tt]huasluaite)</A>:OK
+#  Next rule requires shallow parse;  else false positive like the following:
 #  "Tugann an <b>clár deis</b> do dhaoine taithí oibre a fháil"
 #  "Rinne mé <b>iarracht scéal</b> a scríobh"
 #  "Tá sé de <b>chúram seirbhís</b> a chur ar fáil"
@@ -98,6 +151,10 @@ ANYTHING <VNOLEN>LENITED</VNOLEN>:NISEIMHIU
 # CB p.16 #9.c
 #. Tá na lachain slachtmhara ar eitilt.
 <NP>SLENDERFINALCONSONANT</NP> <A>UNLENITED</A>:SEIMHIU
+# corpus exceptions
+#. Mhair cuid mhór dár sinsir céad caoga bliain ó shin (OK).
+#. Tá sé le cloisteáil sna meáin gach seachtain (OK).
+<NP>SLENDERFINALCONSONANT</NP> <A>(céad|gach|seo|sin)</A>:OK
 # INPHRASE rule, but example sentence is best caught before "na" rules
 #. Maidin lá ar na mhárach thug a fhear gaoil cuairt air.
 <N>[Mm]hárach</N>:INPHRASE{arna mhárach}
@@ -106,16 +163,28 @@ ANYTHING <VNOLEN>LENITED</VNOLEN>:NISEIMHIU
 <S>a</S> <N>UNLENITED</N>:SEIMHIU
 # CB p.19 #13.j, p.132 #8 (seimhiú), p.21 #7.a (urú)
 <U>[Aa]</U> <VNOPAUT>UNMUTATED</VNOPAUT>:CLAOCHLU
+# exception to rule requiring mutation after "a"
+# unlike similar rule for "má", etc. use <V> here since no lenition in
+# conditional is ok as well:
+#. Ach sin scéal eile mar a déarfadh an té a déarfadh (OK).
+<U>[Aa]</U> <VNOPAUT>ABAIRPRFU</VNOPAUT>:OK
+# a fuair, a dúirt, etc. also ok
+#. Is iomaí uair a fuair mé locht ar an rialtas (OK).
+<U>[Aa]</U> <VPAST>PASTNORFORMLEN</VPAST>:OK
 # fictional rule below, analogue of "cár", "níor", etc. (CB p.132 #5)
 # does not hold in general because "a" can also be the direct relative
 # conjunction, CB p. 132 #8
 #<U>[Aa]</U> <VPAST>ANYTHING</VPAST>:BACHOIR{ar}
+# would need this exception if we ever try it (CB p.133 #12)
+# <U>[Aa]</U> <VPAST>PASTNORFORM</VPAST>:OK
 # CB p.16 #7 (N), p.18 #10 (A)
 #. Bhíodar ag rá ar an aonach gur agamsa a bhí na huain ab fearr.
 <V>[Aa]b</V> UNLENITED:SEIMHIU
 # CB p.14 Note
 #. Ní bheidh ach mhallacht i ndán dó ó na ciníocha agus fuath ó na náisiúin.
 <S>[Aa]ch</S> <N>LENITED</N>:NISEIMHIU
+#. Ní theastaíonn uaithi ach bheith ina ball den chumann (OK).
+<S>[Aa]ch</S> <N>bheith</N>:OK
 # CB p.22 #8.a, also CB p.134 #1.a
 <S>[Aa]ch</S> <T>an</T> <NMCS>INITIALVOWEL</NMCS>:PREFIXT
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
@@ -124,7 +193,9 @@ ANYTHING <VNOLEN>LENITED</VNOLEN>:NISEIMHIU
 # CB p.14 Note
 #. Má shuíonn tú ag bhord le flaith, tabhair faoi deara go cúramach céard atá leagtha romhat.
 <S>[Aa][gs]</S> <N>LENITED</N>:NISEIMHIU
-# CB p.14 Note
+# "ag bheith" not in corpus so leave as error
+<S>[Aa]s</S> <N>bheith</N>:OK
+# CB p.14 Note; "~ bheith" not in corpus
 #. Bláthaíonn sé amhail bhláth an mhachaire.
 <S>[Aa]mhail</S> <N>LENITED</N>:NISEIMHIU
 # CB p.22 #8.a, also CB p.134 #1.a
@@ -134,6 +205,10 @@ ANYTHING <VNOLEN>LENITED</VNOLEN>:NISEIMHIU
 <Q>[Aa]n</Q> <V>UNECLIPSEDCONS</V>:URU
 # CB p.132 #5
 <Q>[Aa]n</Q> <VPAST>ANYTHING</VPAST>:BACHOIR{ar}
+# CB p.133 #12; An raibh, An bhfuair, etc. ok
+#. An ndeachaigh tú ag iascaireacht inniu (OK)?
+#. An raibh aon bhealach praiticiúil eile chun na hInd (OK)?
+<Q>[Aa]n</Q> <VPAST>PASTNORFORM</VPAST>:OK
 # CB p.12 #1.a
 #. Ní féidir an Gaeltacht a choinneáil mar réigiún Gaeilge go náisiúnta gan athrú bunúsach.
 #. I gcás An Comhairle Ealaíon ní mór é seo a dhéanamh.
@@ -185,8 +260,6 @@ h?[Aa]on <N>UNLENITEDBCFGMP</N>:SEIMHIU
 # CB p.16 #7 (N), p.18 #10 (A)
 #. Níl aon ní arbh fiú a shantú seachas í.
 <V>[Aa]rbh</V> UNLENITEDF:SEIMHIU
-#
-<D>[Aa]rna</D> UNLENITED:SEIMHIU
 # CB p.16 #7 (N), p.18 #10 (A)
 #. Ba maith liom fios a thabhairt anois daoibh.
 #. Dúirt daoine go mba ceart an poll a dhúnadh suas ar fad.
@@ -200,6 +273,8 @@ h?[Aa]on <N>UNLENITEDBCFGMP</N>:SEIMHIU
 # CB p.16 #9.d
 #. D'fhan beirt bhuachaill cancrach sa champa.
 <N>[Bb]h?eirte?</N> <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
+#. Mothóidh Pobal Osraí an bheirt laoch sin uathu (OK).
+<N>[Bb]h?eirte?</N> <N>ANYTHING</N> seo|sin:OK
 # CB p.20 1.b, keep before following
 #. Ní amháin bhur dhá chosa, ach nigh bhur lámha!
 <D>[Bb]hur</D> dhá <N>UNECLIPSED</N>:URU
@@ -220,11 +295,18 @@ h?[Aa]on <N>UNLENITEDBCFGMP</N>:SEIMHIU
 # CB p.24 #11.a.iii, LGG p.113
 #. Cá áit a nochtfadh sé é féin ach i mBostún!
 <V>[Cc]á</V> <N>INITIALVOWEL</N>:PREFIXH
-# OD cá; see exceptions
+# OD cá; "~ bheith" not in corpus so no exception
 #. Cá chás dúinn bheith ag máinneáil thart anseo?
 <V>[Cc]á</V> <N>LENITED</N>:NISEIMHIU
+# exceptions in OD too: cá.3a; "cá mhéad" is in comhshuite
+#. Cá mhinice ba riachtanach dó stad (OK)?
+<V>[Cc]á</V> <N>(mhinice|fhad)</N>:OK
 # CB p.132 #5
+#. Cá n-oibrigh an t-údar sular imigh sí le ceol?
 <Q>[Cc]á</Q> <VPAST>ANYTHING</VPAST>:BACHOIR{cár}
+# CB p.133 #12; An raibh, An bhfuair, etc. ok
+#. Cá raibh na rudaí go léir (OK)?
+<Q>[Cc]á</Q> <VPAST>PASTNORFORM</VPAST>:OK
 # CB p.132 #5
 #. Cár fág tú eisean?
 <Q>[Cc]ár</Q> <VNOTPAST>ANYTHING</VNOTPAST>:BACHOIR{cá}
@@ -243,6 +325,9 @@ h?[Aa]on <N>UNLENITEDBCFGMP</N>:SEIMHIU
 # CB p.24 #11.c
 #. Cé iad na fir seo ag fanacht farat?
 <Q>[Cc]é</Q> <P>INITIALVOWEL</P>:PREFIXH
+# OD ea^1.5b, LGG p.114 -- literary form, not in corpus at all
+#. Cé ea, rachaidh mé ann leat (OK).
+<Q>[Cc]é</Q> <P>ea</P>:OK
 # CB p.6 #2
 #. Cé an ceart atá agamsa a thuilleadh fós a lorg ar an rí?
 <Q>[Cc]é</Q> <T>an</T>:BACHOIR{cén}
@@ -273,6 +358,8 @@ h?[Aa]on <N>UNLENITEDBCFGMP</N>:SEIMHIU
 <U>[Cc]ha</U> INITIALVOWELORF:BACHOIR{chan}
 # OD cha, compare CB p.132 #5 rules
 <U>[Cc]ha</U> <VPAST>ANYTHING</VPAST>:BACHOIR{char}
+#. Cha dtug mé cur síos ach ar dhá bhabhta collaíochta san úrscéal ar fad (OK).
+<U>[Cc]ha</U> <VPAST>IRREGULARPAST</VPAST>:OK
 # OD cha, compare CB p.132 #5 rules
 <U>[Cc]har</U> <VNOTPAST>ANYTHING</VNOTPAST>:BACHOIR{cha}
 # by analogy
@@ -292,11 +379,13 @@ h?[Aa]on <N>UNLENITEDBCFGMP</N>:SEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. Chuir mé céad punta chuig an banaltra.
 <S>[Cc]huig</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
-# CB p.14 Note
+# CB p.14 Note; "~ bheith' not in corpus so no exception
 #. Níl tú do do sheoladh chuig dhaoine a labhraíonn teanga dhothuigthe.
 <S>[Cc]huig</S> <N>LENITED</N>:NISEIMHIU
 # CB p.14 Note
 [Cc]hun <N>LENITED</N>:NISEIMHIU
+#. Tiocfaidh deontas faoin alt seo chun bheith iníoctha (OK).
+[Cc]hun <N>bheith</N>:OK
 # CB p.13 #3.f
 #. Bhí sé cúig bhanlámh ar fhad, cúig banlámh ar leithead.
 [Cc]úig <NCS>UNLENITED</NCS>:SEIMHIU
@@ -414,9 +503,12 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # noun "fríd" used almost exclusively in gen. "faic na fríde, oiread na fríde"
 <N>fríd</N>:CAIGHDEAN{trí, tríd}
 # CB p.14 #4.c.i (says "nouns" specif.)
+# Don't worry about "i ngan" since that always precedes "fhios" (INPHRASE rule)
 #. Tá ar chumas an duine saol iomlán a chaitheamh gan theanga eile á brú air.
 <S>[Gg]an</S> <N>LENITEDDFST</N>:NISEIMHIU
-# CB p.14 #4.c.iv, exception "gan fhios" in eisceacht
+# corpus, OD fios.4
+<S>[Gg]an</S> <N>[Ff]hios</N>:OK
+# CB p.14 #4.c.iv
 #. Tá gruaim mhór orm gan Chaitlín.
 <S>[Gg]an</S> <Y>LENITED</Y>:NISEIMHIU
 # CB p.22 #8.a, also CB p.134 #1.a
@@ -429,9 +521,15 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 [Gg]o <V>UNECLIPSED</V>:URU
 # CB p.132 #5
 [Gg]o <VPAST>ANYTHING</VPAST>:BACHOIR{gur}
+# CB p.133 #12 irreg. exceptions
+[Gg]o <VPAST>PASTNORFORM</VPAST>:OK
 # CB p.14 Note
 #. Rug sé ar ais mé go dhoras an Teampaill.
+# "go chéile" is in comhshuite
+#. Tiocfaidh coimhlintí chun tosaigh sa Chumann ó am go chéile (OK).
 [Gg]o <N>LENITED</N>:NISEIMHIU
+#. Is turas iontach é an turas ó bheith i do thosaitheoir go bheith i do mhúinteoir (OK).
+[Gg]o <N>bheith</N>:OK
 # corpus; see also CB p.6 #2, analogous to leis, tríd; no converse
 #. Chuaigh mé suas go an doras cúil a chaisleáin.
 [Gg]o <T>ANYTHING</T>:BACHOIR{go dtí}
@@ -486,6 +584,11 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.20 Note, OD i^1, "in bhur", "in dhá" in eisceacht
 #. Thug sé seo deis dom breathnú in mo thimpeall.
 <S>[Ii]n</S> INITIALCONSONANT:BACHOIR{i}
+# two exceptions when "in" is OK before a consonant:
+#. Theastaigh uaibh beirt bheith in bhur scríbhneoirí (OK).
+<S>[Ii]n</S> <D>[Bb]hur</D>:OK
+#. Beidh an spórt seo á imirt in dhá ionad (OK).
+<S>[Ii]n</S> [Dd]há:OK
 # CB p.84 #8 keep before following
 <D>[Ii]nár</D> dhá <N>UNECLIPSED</N>:URU
 # CB p.84 #8
@@ -496,6 +599,8 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.14 Note
 #. Is tuar dóchais é an méid dul chun cinn atá déanta le bhlianta beaga.
 <S>[Ll]e</S> <N>LENITED</N>:NISEIMHIU
+#. Leanaigí oraibh le bhur ndílseacht dúinn (OK).
+<S>[Ll]e</S> bheith|bhur|[Cc]héile|dhá:OK
 # CB p.6 #2, converse handled by aonchiall  (leis +<[^T]> => <O>leis</O>)
 #. D'fhéadfadh tábhacht a bheith ag baint le an gcéad toisc díobh sin.
 <S>[Ll]e</S> <T>an</T>:BACHOIR{leis an}
@@ -524,6 +629,12 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.19 #13, p.133 #9
 #. Má tugann rí breith ar na boicht le cothromas, bunófar a ríchathaoir go brách.
 <C>[Mm]á</C> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
+# CB p.133 #12.b
+#. Má deirim libh é, ní chreidfidh sibh (OK).
+[Mm]á <VNOLEN>ABAIRPRFU</VNOLEN>:OK
+# CB p.133 #12.c
+#. Má tá suim agat sa turas seo, seol d'ainm chugamsa (OK).
+[Mm]á tá(i[dm]|imid|thar)?:OK
 # CB p.13 #4.a
 #. Roghnaítear an bhliain 1961 mar pointe tosaigh don anailís.
 <S>[Mm]ar</S> <N>UNLENITED</N>:SEIMHIU
@@ -543,9 +654,16 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 #. Mura tagann aon duine i gcabhair orainn, rachaimid anonn chugaibh.
 <C>[Mm]ura</C> <V>UNECLIPSED</V>:URU
 # CB p.132 #5
+#. Mura dtuig siad é, nach dóibh féin is mó náire?
 <C>[Mm]ura</C> <VPAST>ANYTHING</VPAST>:BACHOIR{murar}
+# CB p.133 #12 irreg. exceptions
+#. Mura bhfuair, sin an chraobh aige (OK).
+<C>[Mm]ura</C> <VPAST>PASTNORFORM</VPAST>:OK
 # CB p.14 Note
+# Murach fhear na haislinge cén áit a mbeadh tír na hÉireann inniu?
 <C>[Mm]urach</C> <N>LENITED</N>:NISEIMHIU
+#. Murach bheith mar sin, bheadh sé dodhéanta dó oibriú na huaireanta fada (OK).
+<C>[Mm]urach</C> <N>bheith</N>:OK
 # CB p.132 #5
 #. Murar chruthaítear lá agus oíche... teilgim uaim sliocht Iacóib.
 <C>[Mm]urar</C> <VNOTPAST>ANYTHING</VNOTPAST>:BACHOIR{mura}
@@ -572,14 +690,24 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.24 #11.d
 #. Ná iompaígí chun na n-íol, agus ná dealbhaígí déithe de mhiotal.
 [Nn]á <V>INITIALVOWEL</V>:PREFIXH
+# corpus exceptions
+#. Tá tú níos faide sa tír ná is dleathach duit a bheith (OK).
+[Nn]á is:OK
+#. Ach ní sin an cultúr a bhí ná atá go fóill (OK).
+[Nn]á atá(i[dm]|imid|thar)?:OK
 # CB p.14 Note
 #. Is fearr de bhéile luibheanna agus grá leo ná mhart méith agus gráin leis.
 [Nn]á <N>LENITED</N>:NISEIMHIU
+#. Is fearr an bás ná bheith beo ar dhéirc (OK).
+[Nn]á <N>bheith</N>:OK
 # CB p.22 #7.e
 #. Nach bainfidh mé uaidh an méid a ghoid sé uaim?
 [Nn]ach <V>UNECLIPSED</V>:URU
 # CB p.132 #5 (implicit), OD nach/nár
 [Nn]ach <VPAST>ANYTHING</VPAST>:BACHOIR{nár}
+# CB p.133 #12 irreg. exceptions
+#. Nach raibh dóthain eolais aige (OK)?
+[Nn]ach <VPAST>PASTNORFORM</VPAST>:OK
 # CB p.20 #1.c
 #. Rinneadh an roinnt don naoi treibh go leith ar cranna.
 <[^Y]>[Nn]aoi</[^Y]> <N>UNECLIPSED</N>:URU
@@ -597,21 +725,41 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.16 #7 (N), p.18 #10 (A)
 #. Feicimid gur de dheasca a n-easumhlaíochta nárbh féidir leo dul isteach ann.
 <V>[Nn]árbh</V> UNLENITEDF:SEIMHIU
+# same as next rule, but with correct message for "fuair"
+# No need for future forms "Ní faighidh" since these aren't 
+# legal words and will show up as unknown
+#. Ní fuaireamar puinn eile tuairisce air i ndiaidh sin.
+<U>[Nn]í</U> <V>FAIGHECLIPSE</V>:URU
 # CB p.19 #13, p.132 #4 (aut. too)
 #. Ní féadfaidh a gcuid airgid ná óir iad a shábháil.
 <U>[Nn]í</U> <V>UNLENITED</V>:SEIMHIU
+# CB p.133 #12.e (future/cond eclipsed)
+#. Ní bhfaighidh tú aon déirce uaim (OK).
+<U>[Nn]í</U> <V>FAIGHFC</V>:OK
+<U>[Nn]í</U> <V>ba</V>:OK
+# CB p.133 #12.a
+# same exception below under "BACHOIR{níor}"; here only applies to "ní dúirt"
+<U>[Nn]í</U> <VPAST>PASTAFTERNI</VPAST>:OK
+# CB p.133 #12.b
+#. Ní deir sé é seo le haon ghráin (OK).
+<U>[Nn]í</U> <VNOLEN>ABAIRPRFU</VNOLEN>:OK
 # CB p.132 #5
+#. Ní chuireadar aon áthas ar Mhac Dara.
 [Nn]í <VPAST>ANYTHING</VPAST>:BACHOIR{níor}
+# CB p.133 #12.a
+#. Ní dúirt sé cad a bhí déanta acu (OK).
+[Nn]í <VPAST>PASTAFTERNI</VPAST>:OK
 # CB p.24 #11.c
 #. Ní iad sin do phíopaí ar an tábla!
 <V>[Nn]í</V> <P>INITIALVOWEL</P>:PREFIXH
 # CB pp.70-71
 #. Bhí an méid sin airgid níba luachmhar dúinn ná maoin an domhain.
-<R>[Nn]íba?</R> <ACS>ANYTHING</ACS>:BREISCHEIM
-<R>[Nn]íba?</R> <AMGS>ANYTHING</AMGS>:BREISCHEIM
+#. An raibh duine ar bith acu ní ba bhocht ná eisean?
+<R>NIBS</R> <ACS>ANYTHING</ACS>:BREISCHEIM
+<R>NIBS</R> <AMGS>ANYTHING</AMGS>:BREISCHEIM
 #. Eisean beagán níb óga ná mise.
-<R>[Nn]íba?</R> <AP>ANYTHING</AP>:BREISCHEIM
-<R>[Nn]íba?</R> <[^A]>ANYTHING</[^A]>:BREISCHEIM
+<R>NIBS</R> <AP>ANYTHING</AP>:BREISCHEIM
+<R>NIBS</R> <[^A]>ANYTHING</[^A]>:BREISCHEIM
 #. Eisean beagán níba óige ná mise.
 <R>[Nn]íba</R> <AFGS>INITIALVOWELORF</AFGS>:BACHOIR{níb}
 #. Bhí na páistí ag éirí níba tréine.
@@ -641,6 +789,8 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.133 #9 (with "má"), OD ó^4.II
 #. Ach anois ó cuimhním air, bhí ardán coincréite sa pháirc.
 <C>[Óó]</C> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
+#. Bhuel, fan ar strae mar sin ó tá tú chomh mímhúinte sin (OK).
+<C>[Óó]</C> tá(i[dm]|imid|thar)?:OK
 # CB p.13 #4.a
 #. Tabhair an t-ordú seo leanas ó béal.
 <S>[Óó]</S> <N>UNLENITED</N>:SEIMHIU
@@ -676,7 +826,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.84 #8
 #. Bhíodh súil in airde againn ónár túir faire.
 <D>[Óó]nár</D> UNECLIPSED:URU
-# CB p.14 Note
+# CB p.14 Note; no "os bheith" in corpus so no exception
 #. Tá do ghéaga spréite ar bhraillín ghléigeal os fharraige faoileán.
 [Oo]s <N>LENITED</N>:NISEIMHIU
 # OD pé
@@ -694,6 +844,9 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.12 #1.c.i; prev. rule handles f+vowel, so next one is f[lr] only
 #. An bhfuil aon uachtar reoite agat sa cuisneoir?
 <S>[Ss]a</S> UNLENITEDBCFGMP:SEIMHIU
+# had an exception for "sa méid" at one point since it's common enough
+# in the corpus; but OF81 and OD77 both have "sa mhéid"
+# <S>[Ss]a</S> [Mm]éid:OK
 # CB p.12 #1.c, p.20 #2a
 #. Ní mór dom umhlú agus cic maith sa thóin a thabhairt duit. 
 <S>[Ss]a</S> <N>MUTATEDDST</N>:NICLAOCHLU
@@ -722,6 +875,8 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.14 Note
 #. Cuireadh boscaí ticeála isteach seachas bhoscaí le freagraí a scríobh isteach.
 <S>[Ss]eachas</S> <N>LENITED</N>:NISEIMHIU
+#. Dá ndéanfadh sí amhlaidh réiteodh sí an fhadhb seachas bheith á ghéarú (OK).
+<S>[Ss]eachas</S> <N>bheith</N>:OK
 # CB p.22 #8.a, also CB p.134 #1.a
 <S>[Ss]eachas</S> <T>an</T> <NMCS>INITIALVOWEL</NMCS>:PREFIXT
 # CB p.20 #1.c
@@ -736,7 +891,11 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 #. Iompróidh siad thú lena lámha sula bhuailfeá do chos in aghaidh cloiche.
 <C>[Ss]ula</C> UNECLIPSED:URU
 # CB p.132 #5
+#. Sula sroicheadar an bun arís, bhí an oíche ann agus chuadar ar strae.
 <C>[Ss]ula</C> <VPAST>ANYTHING</VPAST>:BACHOIR{sular}
+# CB p.133 #12; irreg. exceptions
+#. Sula ndearna sé amhlaidh, más ea, léirigh sé a chreidiúint san fhoireann (OK).
+<C>[Ss]ula</C> <VPAST>PASTNORFORM</VPAST>:OK
 # CB p.132 #5
 <C>[Ss]ular</C> <VNOTPAST>ANYTHING</VNOTPAST>:BACHOIR{sula}
 # CB p.133 #12.a
@@ -783,23 +942,63 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 <S>[Uu]m</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 #############################################################################
-#  These have many exceptions so good to flag near the bottom;
-#  in particular after "haon"+lenition rule or else that won't show up
-# chomh,go in eisceacht
 #. Nach holc an mhaise duit a bheith ag magadh.
 ANYTHING <AWITHH>ANYTHING</AWITHH>:NIAITCH
-# cé,le,ní,pé in eisceacht
+# CB p.24 #11.b
+#. Is mar gheall ar sin atá líníocht phictiúrtha chomh húsáideach sin (OK).
+[Cc]homh <AWITHH>ANYTHING</AWITHH>:OK
+# CB p.24 #11.b
+#. Tá sí ag feidhmiú go héifeachtach (OK).
+[Gg]o <AWITHH>ANYTHING</AWITHH>:OK
+# OD has "ní hansa", "ní hamháin", "ní hamhlaidh" (now in comhshuite)
+# See LGG p.112 too; but CB gives "ní ionann"; corpus split.
+#. Ní hionann cuingir na ngabhar agus cuingir na lánúine (OK).
+[Nn]í <A>hionann</A>:OK
 #. Ba hiad na hamhráin i dtosach ba chúis leis.
 ANYTHING <PWITHH>ANYTHING</PWITHH>:NIAITCH
-# many exceptions: na,sna,a (+ina,faoina,etc.),cá,Dé,go,le,ordinals... 
+# CB p.24 #11.c  exceptions
+#. Ní hé lá na gaoithe lá na scolb (OK).
+[Cc]é|[Nn]í|[Ll]e|[Pp]é <PWITHH>ANYTHING</PWITHH>:OK
 #. Ba iad na trí háit iad Bostún, Baile Átha Cliath agus Nua Eabhrac.
 ANYTHING <NWITHH>ANYTHING</NWITHH>:NIAITCH
+# feminine possessives are ok (+ina,faoina,etc.)
+#. Phós sé bean eile ina háit (OK).
+<D>FINALA</D> <NWITHH>ANYTHING</NWITHH>:OK
+# CB p.24 #11.a.iii; "cá"+h is ok
+#. Cá ham a tháinig sí a staidéar anseo ó thús (OK)?
+<V>[Cc]á</V> <NWITHH>ANYTHING</NWITHH>:OK
+# corpus exception to general "no prefix h" on nouns rule; not in CB
+#. Bhí a dheartháir ag siúl na gceithre hairde agus bhí seisean ina shuí (OK).
+g?[Cc]h?eithre hairde:OK
+# CB p.23 #11.a.ix
+#. Chaith sé an dara hoíche i Sligeach (OK).
+[Dd]ara <NWITHH>ANYTHING</NWITHH>:OK
+# CB p.23 #11.a.ix
+#. Tá sé i gcóip a rinneadh i lár na cúigiú haoise déag (OK).
+<A>ORDINALADJ</A> <NWITHH>ANYTHING</NWITHH>:OK
+# CB p.23 #11.a.ii
+#. Chuir sí a dhá huilleann ar an bhord (OK).
+[Dd]há <NWITHH>ANYTHING</NWITHH>:OK
+# CB p.24 #11.a.v (not always resolved as <S> yet)
+#. Cuireadh cuid mhaith acu go hÉirinn (OK).
+[Gg]o <NWITHH>ANYTHING</NWITHH>:OK
+# CB p.24 #11.a.v/vii
+#. Tá tús curtha le clár chun rampaí luchtaithe a chur sna hotharchairr (OK).
+<S>([Ll]e|[Ss]na)</S> <NWITHH>ANYTHING</NWITHH>:OK
+# CB p.24 #11.a.vi/vii
+#. Cuimhnígí ar na héachtaí a rinne sé (OK).
+#. Creidim go mbeidh iontas ar mhuintir na hÉireann nuair a fheiceann siad an feidhmchlár seo (OK).
+<T>[Nn]a</T> <NWITHH>ANYTHING</NWITHH>:OK
+# CB p.24 #11.a.x
+#. Tháinig múinteoir úr i gceithre huaire fichead (OK).
+d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <NWITHH>huaire</NWITHH>:OK
 #############################################################################
 ###### next batch came from analyses of "tag 2-grams" in the corpus    ######
 #############################################################################
 <T>ANYTHING</T> <AP>ANYTHING</AP>:CUPLA
-# "an <P>té</P>" in eisceacht
 <T>ANYTHING</T> <[^AFNXY]>ANYTHING</[^AFNXY]>:CUPLA
+#. Nochtadh na fírinne sa dóigh a n-admhódh an té is bréagaí í (OK).
+<T>[Aa]n</T> <P>[Tt]é</P>:OK
 # got níos * above
 <R>ANYTHING</R> <AP>ANYTHING</AP>:CUPLA
 <Q>ANYTHING</Q> <AFGS>ANYTHING</AFGS>:CUPLA
@@ -861,7 +1060,10 @@ ANYTHING <NWITHH>ANYTHING</NWITHH>:NIAITCH
 <N>[Dd]hea</N>:INPHRASE{mar dhea}
 <N>n?[Dd]h?earglasadh</N>:INPHRASE{ar dearglasadh}
 <N>n?[Dd]h?eargmheisce</N>:INPHRASE{ar deargmheisce}
-<N>[Dd]eo</N>:INPHRASE{go deo}
+ANYTHING <N>[Dd]eo</N>:INPHRASE{go deo}
+# not in comhshuite when in phr. "go deo deo"; see doubled word exception above
+[Gg]o <N>[Dd]eo</N>:OK
+<N>[Dd]eo</N> <N>[Dd]eo</N>:OK
 <N>[Dd]heoidh</N>:INPHRASE{faoi dheoidh}
 <N>ndóigh</N>:INPHRASE{ar ndóigh}
 <N>[Éé]atar</N>:INPHRASE{liútar éatar}
@@ -902,7 +1104,7 @@ háirithe:INPHRASE{go háirithe}
 <N>ndáiríre</N>:INPHRASE{i ndáiríre}
 <N>[Nn]eamhchead</N>:INPHRASE{ar neamhchead}
 n[gG]ach:INPHRASE{i ngach}
-n[gG]an:INPHRASE{i ngan}
+n[gG]an:INPHRASE{i ngan fhios}
 <N>[Nn][ie][áú]dar</N>:INPHRASE{niúdar neádar}
 <R>[Nn]uige</R>:INPHRASE{go nuige}
 <R>[Pp]l(ea)?inc</R>:INPHRASE{plinc pleainc}
