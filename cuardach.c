@@ -25,10 +25,6 @@ int load_dictionary()
 	  strncpy(focloir[meid].focal, focloir[meid-1].focal, 
 	          (int) strtol(temp, &hold, 10));
 	  strcat(focloir[meid].focal, hold);
-if (strcmp(focloir[meid-1].focal, focloir[meid].focal) >= 0)
-   fprintf(stderr, "%s < %s in db, but %s >= %s in C code\n",  
-           focloir[meid-1].focal, focloir[meid].focal,
-           focloir[meid-1].focal, focloir[meid].focal);
 	  fgets(focloir[meid].coid, 16, bs);
 	  meid++;
          }
@@ -116,6 +112,7 @@ void byte_to_markup(const unsigned char c, char* fill, char* attrs)
 	  }
    }
 
+/* cod has trailing newline on there */
 void code_to_markup(const char* cod, char* fill, char* attrs, char* extratags)
    {
     int len=strlen(cod)-1, j;
@@ -141,32 +138,49 @@ void code_to_markup(const char* cod, char* fill, char* attrs, char* extratags)
     else fprintf(stderr, "gramadóir: cód gramadach folamh\n");
    }
 
-/* Assert, word is non-zero length */
-void dictlookup(const char* word, char* fill, char* attrs, char* extratags)
+/* this does the actual log search, concatenates codes */
+int rawlookup(const char* word, char* codes)
     {
      int min=0, max=DICTTOTAL-1;
      int guess, cmp;
-     char lowered[32];
      while (min <= max) {
           guess = (max+min)/2;
 	  cmp = strcmp(focloir[guess].focal, word);
 	  if (cmp == 0) {
-	       code_to_markup(focloir[guess].coid, fill, attrs, extratags);
-	       return;
+	       strcat(codes, focloir[guess].coid);
+	       return 1;
 	      }
           else if (cmp < 0) min = guess+1;
           else max = guess-1;
          }
+     return 0;
+    }
+
+/* Assert, word is non-zero length */
+/* return non-zero iff some match found, so zero iff <X> markup */
+void dictlookup(const char* word, char* fill, char* attrs, char* extratags)
+    {
+     int len;
+     char unused, codes[32], lowered[32];
+     *codes = 0;
+     rawlookup(word, codes);
      if (isupper(word[0])) {
           strcpy(lowered, word);
 	  *lowered = (char) tolower(word[0]);
-	  dictlookup(lowered, fill, attrs, extratags);
-         }
+	  len = strlen(codes);
+	  unused = codes[len-1];
+	  codes[len-1] = 0;
+	  if (!rawlookup(lowered, codes)) {/* strip repeats? */
+	      codes[len-1] = unused;
+	      codes[len] = 0;
+	     }
+	 }
+     if (*codes) code_to_markup(codes, fill, attrs, extratags);
      else {
            strcpy(fill, "X");   /* "residual" tag -- not in dictionary */
            strcpy(attrs, "");
            strcpy(extratags, "");
-	  }
+          }
     }
 
 /* 
