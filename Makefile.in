@@ -9,7 +9,7 @@
 
 SHELL = @SHELL@
 
-.SUFFIXES: .in .pl
+.SUFFIXES: .in .pl .pre
 
 prefix=@prefix@
 exec_prefix = $(prefix)
@@ -72,6 +72,11 @@ farc.c : TEANGACHA
 	cat gin.meta.sed macra-`echo "$<" | sed 's/.*-\([^.]*\)\..*/\1/'`.meta.sed `echo "$<" | sed 's/-.*//'`.meta.sed | egrep -v '^#' > temp.meta.sed
 	($(ECHO) "#!$(PERL)"; $(ECHO) "# Users should modify $<, not this file"; $(ECHO) 'while(<>){';  cat $<.2 | LC_ALL="C" sed -f temp.meta.sed; $(ECHO) 'print;'; $(ECHO) '}'; $(ECHO) 'exit;') | ./rigeail `echo "$<" | sed 's/-.*//'` > $@
 	rm -f $<.2 temp.meta.sed
+
+.pre.pl :
+	cat `echo "$<" | sed 's/\.pre/.txt/'` | sed 's/^\(<\([A-Z]\)[^>]*\)>/s\/<B><Z>(<[^>]*>)*\1.>(<[^>]*>)*<\\\/Z>([^<]*)<\\\/B>\/\1>$$3<\\\/\2>\/g;/' > ug.temp.pl
+	cat "$<" | sed "s@PERLPATH@$(PERL)@" | sed "/UNIGRAMS/r ug.temp.pl" > $@
+	rm -f ug.temp.pl
 
 lastperl : $(METAS)
 	touch lastperl $(ALLIN)
@@ -242,6 +247,8 @@ dist : FORCE
 		tar rvhf $(TARBALL).tar -C .. $(TARBALL)/focail-$${teanga}.bs; \
 		tar rvhf $(TARBALL).tar -C .. $(TARBALL)/giorr-$${teanga}; \
 		tar rvhf $(TARBALL).tar -C .. $(TARBALL)/macra-$${teanga}.meta.sed; \
+		tar rvhf $(TARBALL).tar -C .. $(TARBALL)/unigram-$${teanga}.pre; \
+		tar rvhf $(TARBALL).tar -C .. $(TARBALL)/unigram-$${teanga}.txt; \
 	done
 	cd po && $(MAKE) dist
 	gzip $(TARBALL).tar
@@ -319,6 +326,9 @@ eile-ga.bs : FORCE
 	cat eile.pre.bs | ./cabhair 1 | egrep . > tempeile
 	(cat tempeile | wc -l | sed 's/^[^0-9]*//'; cat tempeile) > ./eile-ga.bs
 	rm -f eile.pre.bs tempeile
+
+unigram-ga : FORCE
+	beocorp | gr --xml --iomlan | tagfreq | sort -r -n | sed 's/^[^<]*//' > unigram-ga.txt
 
 neamhshuim : FORCE
 	cat ../../gnu/gnu/poglac ../../ispell/bearla/glac ../../ispell/bearla/hyphenglac | LC_COLLATE=POSIX sort -u > /tmp/neamhshuim.tmp
