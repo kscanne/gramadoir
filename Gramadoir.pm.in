@@ -299,7 +299,8 @@ sub mylcfirst {
 }
 
 # look up in the hash tables FOCAIL, EILE, EARRAIDI consecutively
-# same arguments, return conventions as tag_recurse, just no recursion!
+# same arguments, return conventions as tag_recurse, except
+# no maximum depth set since this doesn't recurse.
 sub lookup
 {
 	my ( $self, $original, $current, $level, $rootpos ) = @_;
@@ -322,8 +323,8 @@ sub lookup
 				}
 			}
 			$ans = $self->add_grammar_tags($original, $codez);
-			if ($rootpos) {
-				return "STOP" unless ($ans =~ m/$rootpos/);
+			foreach my $patt (@$rootpos) {
+				return "STOP" unless ($ans =~ m/$patt/);
 			}
 			if ( $level == 0 ) {
 				$ans = "<E msg=\"MOIRF{$current}\"><X>".$original."</X></E>";
@@ -376,8 +377,8 @@ sub tag_as_compound
 	if ($word =~ m/^([^-]+)-(.*)$/) {
 		my $l = $1;
 		my $r = $2;
-		my $t1 = $self->tag_recurse( $l, $l, -1, "" );
-		my $t2 = $self->tag_recurse( $r, $r, -1, "" );
+		my $t1 = $self->tag_recurse( $l, $l, -1, [], 2 );
+		my $t2 = $self->tag_recurse( $r, $r, -1, [], 2 );
 		if ($t1 && $t2) {
 			if ($t1 !~ m/<E/ && $t2 !~ m/<E/) {
 				return "<E msg=\"COMHFHOCAL{$l+$r}\"><X>".$word."</X></E>";
@@ -394,8 +395,8 @@ sub tag_as_compound
 			my $r = substr($word, $i, $len - $i);
 			if (!exists($NOCOMBO{$l}) &&
 			    !exists($NOCOMBO{$r})) {
-				my $tl = $self->tag_recurse($l,$l,-1, "");
-				my $tr = $self->tag_recurse($r,$r,-1, "");
+				my $tl = $self->tag_recurse($l,$l,-1,[],2);
+				my $tr = $self->tag_recurse($r,$r,-1,[],2);
 			    	if ( $tl && $tr ) {
 					if ($tl !~ m/<E/ && $tr !~ m/<E/) {
 						return "<E msg=\"COMHFHOCAL{$l+$r}\"><X>".$word."</X></E>";
@@ -472,7 +473,7 @@ sub tag_one_word
 	if ($self->{'use_ignore_file'}) {
 		return "<Y>".$word."</Y>" if ( exists($IGNORE{$word}) );
 	}
-	my $ans = $self->tag_recurse($word, $word, -1, "");
+	my $ans = $self->tag_recurse($word, $word, -1, [], 6);
 	return $ans if $ans;
 	$ans = $self->tag_as_compound($word);
 	return $ans if $ans;
@@ -954,32 +955,36 @@ sub unigram
 }
 
 # recursive helper function for "tag_one_word".  
-# ** This function is generated automatically from a higher level 
-#    description of @NAME_ENGLISH@ morphology ** 
 #
-#  Takes three arguments; original word to be tagged; the current
+#  Arguments: "original" word to be tagged; the "current"
 #  decomposed version for lookup (and possible further decomp)
-#  and a "level" which determines whether, if a match is found,
+#  a "level" which determines whether, if a match is found,
 #  whether it should be untagged (-1), tagged as OK but noting decomp (0),
-#  tagged as non-standard (1), or tagged as a misspelling (2).
+#  tagged as non-standard (1), or tagged as a misspelling (2),
+#  a reference "rootpos" to an array of regexps that must match if
+#  the current is found in the lexicon,
+#  and the maximum allowed recursion depth (decremented on each recursion)
 #
 #   Returns the word tagged appropriately if a match is found, returns
 #   false ("") if the recursion bottoms out with no matches
 sub tag_recurse
 {
-	my ( $self, $original, $current, $level, $rootpos ) = @_;
+	my ( $self, $original, $current, $level, $rootpos, $maxdepth ) = @_;
 
 	my $ans = $self->lookup( $original, $current, $level, $rootpos );
-	return "" if ($ans eq "STOP");
+	return "" if ($ans eq "STOP" or $maxdepth == 0);
 	return $ans if $ans;
 	my $newcurrent;
 	foreach my $rule (@MORPH) {
 		my $p = $rule->{'compiled'};
 		if ( $current =~ m/$p/ ) {
 			my $r = $rule->{'repl'};
+			my $pos = $rule->{'poscompiled'};
 			$newcurrent = $current;
 			$newcurrent =~ s/$p/$r/eeg;
-			$ans = $self->tag_recurse($original, $newcurrent, ($level > $rule->{'level'}) ? $level : $rule->{'level'}, $rule->{'poscompiled'});
+			push @$rootpos, $pos if $pos;
+			$ans = $self->tag_recurse($original, $newcurrent, ($level > $rule->{'level'}) ? $level : $rule->{'level'}, $rootpos, $maxdepth - 1);
+			pop @$rootpos if $pos;
 			return $ans if $ans;
 		}
 	}
