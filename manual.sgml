@@ -545,8 +545,12 @@ U engine/COPYING
 	  Creating the necessary files for the
 	  <application>Lingua::XX::Gramadoir</application>
 	  Perl module is as simple as running
-	  <command>make</command> in the
-	  <filename>xx</filename> (language code)
+	</para>
+	<screen>
+<prompt>$</prompt> <userinput>make</userinput>
+	</screen>
+	<para>
+	  in the <filename>xx</filename> (language code)
 	  directory.
 	  This will generate the files
 	  in the subdirectory <filename>Lingua-XX-Gramadoir</filename>.
@@ -590,7 +594,140 @@ U engine/COPYING
         the syntax of the input files and some tricks for building them
         quickly.
       </para>
-
+      <para>
+        In case you're just curious about a single file (what it does
+	or how to create it), here are brief descriptions of each of the
+	files, with links to the more detailed descriptions later in
+	this chapter.
+      </para>
+      <itemizedlist>
+        <listitem>
+	  <para>
+	    <link linkend="crubadanstats"><filename>3grams-xx.txt</filename></link>.
+	    List of 3-grams, sorted by frequency.
+	  </para>
+	</listitem>
+        <listitem>
+	  <para>
+	    <link linkend="disambiguation"><filename>aonchiall-xx.in</filename></link>.
+	    Disambiguation rules. 
+	  </para>
+	</listitem>
+        <listitem>
+	  <para>
+	    <link linkend="distro"><filename>Changes</filename></link>.
+	    ChangeLog to be included in the Lingua::XX::Gramadoir distribution.
+	  </para>
+	</listitem>
+        <listitem>
+	  <para>
+	    <link linkend="chunks"><filename>comhshuite-xx.in</filename></link>.
+	    List of set phrases. 
+	  </para>
+	</listitem>
+        <listitem>
+	  <para>
+	    <link linkend="configure"><filename>configure</filename></link>.
+	    Script used to create the langpack <filename>Makefile</filename>. 
+	  </para>
+	</listitem>
+        <listitem>
+	  <para>
+	    <link linkend="distro"><filename>COPYING</filename></link>.
+	    License for the <emphasis>language pack</emphasis> (not necessarily for the perl module).
+	  </para>
+	</listitem>
+        <listitem>
+	  <para>
+	    <link linkend="replacements"><filename>earraidi-xx.bs</filename></link>.
+	    Database of misspellings and replacements.
+	  </para>
+	</listitem>
+        <listitem>
+	  <para>
+	    <link linkend="replacements"><filename>eile-xx.bs</filename></link>.
+	    Database of non-standard spellings and replacements.
+	  </para>
+	</listitem>
+        <listitem>
+	  <para>
+	    <link linkend="crubadanstats"><filename>freq-xx.txt</filename></link>.
+	    Frequency counts for words in the lexicon.
+	  </para>
+	</listitem>
+        <listitem>
+	  <para>
+	    <link linkend="segmentation"><filename>giorr-xx.pre</filename></link>.
+	    Optional preprocessing step used by the segmentation module.
+	  </para>
+	</listitem>
+        <listitem>
+	  <para>
+	    <link linkend="segmentation"><filename>giorr-xx.txt</filename></link>.
+	    List of abbreviations that are usually followed by a period/full stop.
+	  </para>
+	</listitem>
+        <listitem>
+	  <para>
+	    <link linkend="dictionary"><filename>lexicon-xx.bs</filename></link>.
+	    Main database of words and parts of speech, compressed.
+	  </para>
+	</listitem>
+        <listitem>
+	  <para>
+	    <link linkend="syntax"><filename>macra-xx.meta.pl</filename></link>.
+	    Macro definitions for use in input files.
+	  </para>
+	</listitem>
+        <listitem>
+	  <para>
+	    <link linkend="morphology"><filename>morph-xx.txt</filename></link>.
+	    Morphological rules.
+	  </para>
+	</listitem>
+        <listitem>
+	  <para>
+	    <link linkend="morphology"><filename>nocombo-xx.txt</filename></link>.
+	    List of morphologically non-productive words.
+	  </para>
+	</listitem>
+        <listitem>
+	  <para>
+	    <link linkend="pos"><filename>pos-xx.txt</filename></link>.
+	    Table of parts of speech and internally-used numerical codes.
+	  </para>
+	</listitem>
+        <listitem>
+	  <para>
+	    <link linkend="distro"><filename>README</filename></link>.
+	    Language pack README; will be included in the general perl module also.
+	  </para>
+	</listitem>
+        <listitem>
+	  <para>
+	    <link linkend="rules"><filename>rialacha-xx.in</filename></link>.
+	    Grammatical rules and exceptions.
+	  </para>
+	</listitem>
+        <listitem>
+	  <para>
+	    <link linkend="testing"><filename>triail.xml</filename></link>.
+	    Expected output of perl module test script.
+	  </para>
+	</listitem>
+        <listitem>
+	  <para>
+	    <link linkend="unigrams"><filename>unigram-xx.pre</filename></link>.
+	    Optional preprocessing step used before applying unigram tagger.
+	  </para>
+	</listitem>
+        <listitem>
+	  <para>
+	    <link linkend="unigrams"><filename>unigram-xx.txt</filename></link>.
+	    List of all parts of speech, sorted by frequency.
+	  </para>
+	</listitem>
+      </itemizedlist>
       <sect1 id="lexicon">
         <title>The lexicon</title>
 	<para>
@@ -629,9 +766,20 @@ U engine/COPYING
 	        The numerical codes must be integers
 		between 1 and 65535, excluding
 		10 (used as a file delimiter).
+        	<footnote id="legalcodes">
+    	  	<para>
+		  This is a white lie; the legal numerical codes
+		  are, in actuality, precisely those positive integers
+		  corresponding to Unicode code points.  So this means
+		  there are more than a million possible codes (but 
+		  it also means that you need to avoid the so-called
+		  surrogates, 55296 to 56320).   Hopefully no one will
+		  ever need to know this.
+	  	</para>
+        	</footnote>
 	      </para>
 	    </listitem>
-	    <listitem>
+	    <listitem id="raretag">
 	      <para>
 	        Code 127 has a special meaning across all languages: it is
 		used to markup words which are correct but are very rare or
@@ -647,7 +795,7 @@ U engine/COPYING
 		examples in English.
 	      </para>
 	    </listitem>
-	    <listitem>
+	    <listitem id="possibletags">
 	      <para>
 	        The <acronym>XML</acronym> tags must be
 		<acronym>ASCII</acronym> capital letters,
@@ -659,7 +807,9 @@ U engine/COPYING
 		<sgmltag>Y</sgmltag>,
 		and <sgmltag>Z</sgmltag>
 		(which are all tags added to the <acronym>XML</acronym> stream
-		by &gram; while checking grammar).  This leaves
+		by &gram; while checking grammar; see the
+		<link linkend="reserved">FAQ</link> for explanations 
+		of these).  This leaves
 		20 possible tags,
 		which should be more than enough in light of the
 		fact that you can refine the semantics of your tags by adding
@@ -1005,7 +1155,9 @@ phrase:action
 	    necessary preliminary step before one
 	    can try to apply grammatical rules depending on part of speech.
 	  </para>
-	  <para>
+          <sect3>
+	    <title><filename>aonchiall-xx.in</filename> syntax</title>
+	    <para>
 	    More specifically, the phrase portion of a rule in
 	    <filename>aonchiall-xx.in</filename>
 	    is required to contain a single word marked up with
@@ -1013,20 +1165,57 @@ phrase:action
 	    Naturally, this is the word to disambiguate
 	    and the phrase is the context in which the disambiguation
 	    is to occur.
+	    The full syntax used by &gram; for an ambiguous word looks
+	    something like this:
+	    </para>
+	    <screen>
+&lt;B&gt;&lt;Z&gt;&lt;J/&gt;&lt;R/&gt;&lt;V/&gt;&lt;/Z&gt;direct&lt;/B&gt;
+	    </screen>
+	    <para>
+	    with the list of all possible part of speech tags given
+	    within the <literal>&lt;Z&gt;</literal> markup (note that
+	    trailing slashes are required on these tags to ensure
+	    valid XML).
+	    If you don't care about matching the part of speech tags
+	    for an ambiguous word, it is acceptable to leave out the
+	    &lt;Z&gt; markup entirely: 
+	    </para>
+	    <screen>
+&lt;B&gt;direct&lt;/B&gt;
+	    </screen>
+	    <para>
+	    will match any ambiguous instance of the word 
+	    "<wordasword>direct</wordasword>".
+	    It is also common to define macros to match certain
+	    regular expressions in the part of speech tags; for example,
+	    one could define a macro <literal>ANYNOUN</literal> 
+	    to match any sequence of tags
+	    containing <literal>&lt;N[^&gt;]*/&gt;</literal>; then the
+	    following
+	    will match all ambiguous words that can possibly be
+	    resolved as nouns:
+	    </para>
+	    <screen>
+&lt;B&gt;&lt;Z&gt;ANYNOUN&lt;/Z&gt;ANYTHING&lt;/B&gt;
+	    </screen>
+	    <para>
 	    Like <filename>comhshuite-xx.in</filename>,
 	    the "action" portion consists of a single
 	    part of speech tag, representing the disambiguated part of speech
 	    when the given phrase is matched.
-	  </para>
-	  <para>
+	    </para>
+	    <para>
 	    The rules specified in
 	    <filename>aonchiall-xx.in</filename> are applied
 	    (in the order they appear) two times.  The second pass
 	    is quite useful for Irish, allowing rules to be applied
 	    in cases that the contextual parts of speech are disambiguated
 	    in the first pass.
-	  </para>
-	  <para>
+	    </para>
+	  </sect3>
+	  <sect3 id="unigrams">
+	    <title>Unigram tagging</title>
+	    <para>
 	    If an ambiguity is not resolved after two passes through
 	    <filename>aonchiall-xx.in</filename>, then the default
 	    behavior is to simply assign the candidate tag with the
@@ -1047,7 +1236,10 @@ phrase:action
 	  <screen>
 <prompt>%</prompt> <userinput>cat big.txt | gramdev-xx.pl --minic &gt; unigram-xx.txt</userinput>
 	  </screen>
+	</sect3>
 
+	<sect3 id="Brill">
+	  <title>Unsupervised training algorithms</title>
 	  <para>
 	    In fact, it is even possible for &gram; to apply
 	    statistical methods to help find candidate rules for
@@ -1063,6 +1255,7 @@ phrase:action
 	  <screen>
 <prompt>$</prompt> <userinput>cat big.txt | gramdev-xx.pl --brill &gt; rules.txt</userinput>
 	  </screen>
+	</sect3>
         </sect2>
 
         <sect2 id="rules">
@@ -1070,6 +1263,10 @@ phrase:action
 	  <para>The file <filename>rialacha-xx.in</filename>
 	    contains the grammatical rules proper,
 	    and lists any exceptions to these rules.
+	  </para>
+	  <sect3>
+	    <title><filename>rialacha-xx.in</filename> syntax</title>
+	    <para>
 	    The phrase portion of a rule in
 	    <filename>rialacha-xx.in</filename>
 	    is converted to a regular expression which matches
@@ -1094,8 +1291,8 @@ phrase:action
 	    language pack:
 	  </para>
 	  <screen>
-&lt;X&gt;ANYTHING&lt;X&gt;UNKNOWN
-&lt;F&gt;ANYTHING&lt;F&gt;UNCOMMON
+&lt;X&gt;ANYTHING&lt;X&gt;:UNKNOWN
+&lt;F&gt;ANYTHING&lt;F&gt;:UNCOMMON
 	  </screen>
 	  <para>
 	    Words not found in the lexicon are marked up with the tag
@@ -1107,6 +1304,9 @@ phrase:action
 	    <literal>&lt;<sgmltag>F</sgmltag>&gt;</literal>
 	    and so the second rule reports these as "uncommon".
 	  </para>
+	</sect3>
+	<sect3>
+	  <title>Exceptions</title>
 	  <para>
 	    In earlier versions, the exceptions were kept in a separate input
 	    file called <filename>eisceacht-xx.in</filename>.
@@ -1140,6 +1340,9 @@ phrase:action
 	    but note that exceptions only apply to the rule that
 	    they follow.
 	  </para>
+	</sect3>
+	<sect3 id="testing">
+	  <title>Testing</title>
 	  <para>
 	    It is a good idea to include one or more sample 
 	    sentences for each rule in
@@ -1154,18 +1357,27 @@ phrase:action
 	    The "expected output" when the grammar checker
 	    is applied to <filename>triail</filename> is stored
 	    in <filename>triail.xml</filename>.
-	    The command <command>make test</command> will 
-	    rebuild the Perl module and test scripts (if necessary),
+	    The command:
+	    </para>
+            <screen>
+<prompt>$</prompt> <userinput>make test</userinput>
+            </screen>
+	    <para>will rebuild the Perl module and test scripts (if necessary),
 	    and then compare the results of checking
 	    <filename>triail</filename> with the contents of
 	    <filename>triail.xml</filename>, complaining with 
 	    great bitterness when they differ.
 	    When new sample sentences are added, you'll need to
 	    update <filename>triail.xml</filename>; use
-	    <command>make triail.xml-update</command> to do this
+	    </para>
+            <screen>
+<prompt>$</prompt> <userinput>make triail.xml-update</userinput>
+            </screen>
+	    <para>to do this
 	    (but be sure before you update that you haven't accidentally
 	    broken any other rules).
-	  </para>
+	    </para>
+	</sect3>
         </sect2>
       </sect1>
 
@@ -1196,21 +1408,73 @@ phrase:action
         </sect2>
 	<sect2 id="static">
 	  <title>Files to leave alone</title>
-	  <para>
-	    The statistics in <filename>3grams-xx.txt</filename> and
-	    <filename>freq-xx.txt</filename>
-	    are generated by my web crawler and don't need to be edited.
-	    Periodically I can provide updates to these files if the
-	    web corpora grow substantially.   The <filename>README</filename>
-	    and <filename>COPYING</filename> files only need to be changed
-	    if you prefer a license other than the
-	    <ulink url="http://www.gnu.org/licenses/gpl.html"><acronym>GPL</acronym></ulink>.
-	    You only need to worry about the <filename>Changes</filename>
-	    file before a release; this gets copied into the top-level
-	    directory of the Perl module.
-	    The files <filename>configure</filename> and
-	    <filename>triail.xml</filename> should not be edited at all.
-	  </para>
+          <itemizedlist>
+            <listitem id="crubadanstats">
+	     <para>
+	      <filename>3grams-xx.txt</filename> and <filename>freq-xx.txt</filename>.
+	      The first of these files contains a list all
+	      3-character sequences appearing
+	      above a certain frequency threshold in the corpus generated
+	      by my web crawler.   Zero-width word boundaries are
+	      treated as characters in these counts; the initial 
+	      word boundary is denoted "<" and the terminal 
+	      word boundary is denoted ">".
+	      This is (currently) just used to improve
+	      the error messages when unknown words are encountered;
+	      if the word contains "suspect" 3-grams, &gram; will
+	      report it is "possibly a foreign word".  Eventually
+	      I'd like to allow &gram; to skip over entire 
+	      sentences or paragraphs that it detects as being
+	      written in a different language.
+              The file <filename>freq-xx.txt</filename> contains
+	      frequency counts from the same corpus for all 
+	      words appearing in <filename>lexicon-xx.txt</filename>.
+	      There should be no reason to edit either file directly.
+	      Periodically I can provide updates if the
+	      web corpora grow substantially, or if new words are 
+	      added to the lexicon.
+	     </para>
+	    </listitem>
+	    <listitem id="distro">
+	     <para>
+	       You only need to worry about the <filename>Changes</filename>
+	       file before releasing a version of the Perl module;
+	       this gets copied as-is into Lingua-XX-Gramadoir.
+	       The <filename>README</filename>
+	       and <filename>COPYING</filename> files only need to be changed
+	       if you prefer a license other than the
+	       <ulink url="http://www.gnu.org/licenses/gpl.html"><acronym>GPL</acronym></ulink>.
+	       Also be aware that you have control over the licensing of
+	       two distinct packages: the language pack and
+	       the generated Perl module. 
+	       The default behavior is to generate a
+	       <filename>README</filename> for the Perl module
+	       which says something like
+	       "Lingua-XX-Gramadoir is released under the same terms as the
+	       gramadoir-xx package from which it was built:",
+	       and then to include the language pack
+	       <filename>README</filename> verbatim.  Let me know
+	       if you need to do something more complicated.
+	     </para>
+	    </listitem>
+	    <listitem id="configure">
+	      <para>
+	        The file <filename>configure</filename> is run once
+		when you first set up the language pack to create
+		the <filename>Makefile</filename> with all of the
+		targets you'll need for day-to-day development.
+		Only a couple of lines of this script should ever need
+		to be edited.   The first variable <literal>GRAMDIR</literal>
+		should point to the directory containing the
+		<application>gramadoir</application> "engine".  
+		If you're working out of <acronym>CVS</acronym>,
+		this should probably be <literal>../engine</literal>.
+		The next line contains the version number and should
+		be edited when you want to create a new release
+		of the language pack and/or Perl module.
+	      </para>
+	    </listitem>
+	  </itemizedlist>
 	</sect2>
       </sect1>
   </chapter>
@@ -1262,6 +1526,56 @@ phrase:action
 	  </para>
 	</answer>
       </qandaentry>
+      <qandaentry id="reserved">
+        <question>
+	  <para>
+	    Six XML tags are reserved for use by &gram; while checking grammar:
+		<sgmltag>B</sgmltag>,
+		<sgmltag>E</sgmltag>,
+		<sgmltag>F</sgmltag>,
+		<sgmltag>X</sgmltag>,
+		<sgmltag>Y</sgmltag>,
+		and <sgmltag>Z</sgmltag>.  What do these mean?
+	  </para>
+	</question>
+        <answer>
+	  <para>
+	    Some of these can be seen in action in the extended example
+	    presented in <xref linkend="process">.
+	  </para>
+	  <para>
+   	<sgmltag>E</sgmltag> is used to mark up errors, something like this:
+          </para>
+	  <screen>
+&lt;E msg="PREFIXT"&gt;&lt;T&gt;an&lt;/T&gt; &lt;N pl="n" gnt="n" gnd="m"&gt;ainm&lt;/N&gt;&lt;/E&gt;
+	  </screen>
+	  <para>
+		<sgmltag>B</sgmltag> and <sgmltag>Z</sgmltag> are used to
+		mark up ambiguous words; see <xref linkend="disambiguation">
+		for examples.
+		<sgmltag>F</sgmltag> is used to mark up "rare" words,
+		and should correspond to grammatical code 127 in your
+		<filename>pos-xx.txt</filename> file.
+		<sgmltag>X</sgmltag> is used to mark up words that do not
+		appear in the lexicon.
+		<sgmltag>Y</sgmltag> is used to mark up words that should
+		be ignored, for instance if they appear in the user's
+		ignore file.
+	  </para>
+	</answer>
+      </qandaentry>
+<!--
+      <qandaentry>
+        <question>
+	  <para>
+	  </para>
+	</question>
+        <answer>
+	  <para>
+	  </para>
+	</answer>
+      </qandaentry>
+-->
     </qandaset>
   </chapter>
 </book>
