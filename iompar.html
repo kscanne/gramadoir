@@ -23,43 +23,76 @@ I would be excited to help port this software
 for use with languages other than Irish.  Getting 
 something simple up and running should be easy,
 even if your language lacks some of the basic tools for
-doing natural language processing.  If, however, you 
-already have a word list (ideally with all possible parts of
-speech indicated for each word),
-then you should be able to begin implementing 
-sophisticated grammatical rules immediately.
+doing natural language processing.
 </p>
 
 <p>
-Caveat Emptor: If you've read the <a href="sonrai.html">Details</a> page,
-you know that <i lang="ga">An Gramad&oacute;ir</i> is a rule-based
-grammar checker that uses pattern matching to find errors. 
-This is quite satisfactory for Irish where many of the common 
+Caveat Emptor: <i lang="ga">An Gramad&oacute;ir</i> finds errors
+by first marking up the input text with grammatical information
+(ranging from simple part-of-speech tags to full phrase structure)
+and then performing 
+pattern-matching on the marked up text.   The complexity of
+the errors that can be trapped and reported is therefore limited
+only by the sophistication of the markup that is added.
+For Irish and the other Celtic languages,
+relatively little markup is required because many of the common 
 errors made in writing involve misuse of the initial mutations
 which are determined almost entirely by local context
-(usually, just the preceding word).   It is much harder
-to find errors in languages like English using the same scheme,
-and harder still in languages having free word order.
+(usually, just the preceding word).  Finding errors reliably in languages
+like English (or languages with free word order) will require at least
+a shallow parse of the input text.
 </p>
 
 <p>
 In the instructions below, I will use "xx" for
 the two-letter ISO-639-1 code for your language.
-As of version 0.3, I've included in the distribution
-a trivial port to English which can be used as a template
-for adding new languages.  For those interested in getting
-something simple up and running as quickly as possible,
-I've included "Quick and Dirty" instructions under each step below.
 </p>
 
 <hr>
 <h2>Things to do</h2>
 <p>
-<b>1. Build focail-xx.bs</b>.
+<b>1. <a href="http://borel.slu.edu/">Contact me</a></b>.
+Assuming your language is one of the 150+ languages
+for which my <a href="http://borel.slu.edu/crubadan/stadas.html">web crawler</a>
+is running, I will create a new language pack for you using
+this data.  If you don't have a clean word list there will be
+some preliminary work involved in constructing one.
+
+<p>
+<b>2. Design a tag set</b>.
+Part-of-speech markup is added to input texts as 
+XML tags; you'll need to choose these tags first. 
+The default is to do no part-of-speech tagging at all
+and markup all words with "&lt;U&gt;" (unknown).
+If you just want a fancy spellchecker this is sufficient.
+Otherwise you can place your tags
+(e.g. &lt;N&gt;, &lt;V&gt;, &lt;N plural="y"&gt;, etc.)
+in <i>pos-xx.txt</i>
+and assign a numerical to each (used internally).
+There are a couple of mild restrictions:
+<ul>
+<li>The numerical codes must lie between 0 and 255, excluding 
+the values 0 and 10 (used as file delimiters).
+<li>Code 127 has a special meaning across all languages: it is
+used to markup words which are correct but are very rare or
+might hide common misspellings.   A good example in Irish
+is <i lang="ga">brúitíneach</i> which means "a small fat person"
+and does not appear in my corpus of over 20 million words
+except as a misspelling of <i lang="ga">bruitíneach</i> ("the measles").
+<li>The XML tags must be ASCII capital letters, excluding "B",
+"E", "F", "X", "Y", and "Z" (which are all tags added to the XML stream
+by <i lang="ga">An Gramadóir</i> while checking grammar).  This leaves
+20 possible tags, which should be more than enough in light of the
+fact that you can refine the semantics of your tags by adding
+XML attributes where appropriate.
+</ul>
+</p>
+
+<p>
+<b>3. Build lexicon-xx.txt</b>.
 This is the main database of recognized words.
-The file <i>focail-xx.bs</i> is most easily constructed from a plain text
-file containing one word per line followed by whitespace and a
-grammatical code; e.g.:
+This file contains one word per line followed by whitespace and one of
+the numerical grammatical codes from <i>pos-xx.txt</i>; e.g.:
 <pre>
 dipper 31
 dire 36
@@ -71,146 +104,57 @@ direction 31
 directional 36
 directions 32
 </pre>
-You can use the C program <i lang="ga">cabhair</i>
-(provided in the distribution)
-to convert such a file into <i>focail-xx.bs</i>; see the Makefile
-target <i>focail-en.bs</i> for the exact commands.
-It is important to sort alphabetically on the word first and 
-then numerically on the code.
+Initially the grammatical codes are all set to "1" (&lt;U&gt;)
+as a placeholder.
 </p>
 
 <p>
-<i>Quick and Dirty:</i>
-Create a word list by tokenizing a large text file
-and use "fake" grammatical codes:
-<pre>
-% cat bigtextfile | 
-  grep -o "[A-Za-z][A-Za-z'-]*" |
-  LC_COLLATE=C sort -u |
-  sed 's/$/ 1/'
-</pre>
-Of course if you do this you'll have no more than a glorified spellchecker,
-and a pretty bad one at that.  But on the other hand, one of the lessons 
-from having done all
-of this for Irish is that the process accelerates greatly when you
-can bootstrap from some existing data set, of even middling quality
-(e.g. in this instance, where one can use the word list generated
-as above to collect n-gram statistics which can root out misspellings.
-Add to this some awareness of morphology and you're on your way).
-</p>
-
-<p>
-<b>2. Build eile-xx.bs</b>.
+<b>4. Build eile-xx.bs and earraidi-xx.bs</b>.
 The file <i>eile-xx.bs</i> is a "replacement" file which contains on 
-each line a misspelled
-(or, as in the case of Irish, pre-standard or dialect) word followed by
-a suggested replacement.   I built the file 
-<i>eile-en.bs</i> in the distribution by collating the
+each line a non-standard or dialect spelling of a legitimate word 
+followed by a suggested replacement.   The file <i>earraidi-xx.bs</i>
+is the same, but should be used for true misspellings.
+The only difference is how the replacements are reported to
+the end-user.
+I built the file 
+<i>eile-en.bs</i> in the English language pack by collating the
 specifically American and British word lists that are distributed with
 <i>ispell</i>.  The Irish file <i>eile-ga.bs</i> is a by-product of
 my work on dialect support for 
 <a href="http://borel.slu.edu/ispell/">Irish language spellcheckers</a>.
 </p>
-<p>
-<i>Quick and Dirty:</i>
-If this isn't relevant for your language, or you don't have access
-to the appropriate data, then just create a blank database:
-<pre>
-% echo "0" &gt; eile-xx.bs
-</pre>
-</p>
 
 <p>
-<b>3. Write "byte_to_markup_xx", "my_tolower_xx", and "make_all_lowercase_xx"
-in cuardach-xx.c</b>.
-You can choose the grammatical codes that go into <i>focail-xx.bs</i>
-and the corresponding XML tags as you see fit;
-just correctly convert the former to the latter in
-"byte_to_markup_xx".
-There are a couple of mild restrictions:
-<ul>
-<li>The grammatical codes must lie between 0 and 255, excluding 
-the values 0 and 10 (the first would confuse the C program which
-manages the database
-and the second is used as a delimiter in <i>focail-xx.bs</i>).
-<li>Code 127 has a special meaning across all languages: it is
-used to markup words which are correct but are very rare or
-might hide common misspellings.   A good example in Irish
-is <i lang="ga">brúitíneach</i> which means "a small fat person"
-and does not appear in my corpus of over 20 million words
-except as a misspelling of <i lang="ga">bruitíneach</i> ("the measles").
-It is automatically converted to the XML tag "&lt;F&gt;" so
-you need not include it in your <i>cuardach-xx.c</i>.
-<li>The XML tags must be ASCII capital letters, excluding "B",
-"E", "F", "X", "Y", and "Z" (which are all tags added to the XML stream
-by <i lang="ga">An Gramadóir</i> while checking grammar).  This leaves
-20 possible tags, which should be more than enough in light of the
-fact that you can refine the semantics of your tags by adding
-XML attributes where appropriate.
-</ul>
-Also, be aware that the buffers in <i>cuardach.c</i>
-for storing words are currently 32 bytes long
-(longest Irish word: <i lang="ga">ngearr-chlóscríobhneoireachta</i>,
-28 bytes) and may need to be increased.
-</p>
-Raw word tokens are always looked up in the database precisely as they appear
-in the text being checked; additionally you can specify when a 
-"lowercase" version should be looked up also.   
-The rules for converting individual characters
-from upper to lowercase are given in the function "my_tolower_xx",
-while "make_all_lowercase_ga" is essentially a boolean function
-indicating whether the "lowered" word ought to be looked up at all
-(the rule given for English is to do so if and only if the original 
-token was all capitals or had exactly one capital, in the first position;
-for Irish it is wildly more complicated because of eclipsis
-of capitalized words).
-Any other unusual conventions for converting words to "lowercase"
-can be placed here (for instance for Irish, where the correct "lowering"
-of the token <i lang="ga">tAcht</i> is <i lang="ga">t-acht</i>, not
-<i lang="ga">tacht</i>).
-<p>
-<i>Quick and Dirty:</i>
-If you used the fake grammatical codes from step one above, copying
-<i>cuardach-en.c</i> suffices:
-<pre>
-% cp cuardach-en.c cuardach-xx.c
-</pre>
-</p>
-
-<p>
-<b>4. Write giorr-xx</b>.
-This is a sed script containing common abbreviations for your language,
-so that the module which segments the text into sentences doesn't get
-confused.   Any other unusual conventions for ends of sentences should
-get encoded here.
+<b>5. Encode morphological rules in morph-xx.txt</b>.
+This file is structured as a sequence of substitutions,
+one per line, using Perl regular expression syntax,
+with fields separated by whitespace. 
+When an unknown word is encountered, these replacements
+are applied recursively (depth first) until a match is
+found.  
+The first field contains the pattern to be replaced,
+the second field is the replacement (backreferences allowed,
+which moves us beyond the usual realm of finite state 
+morphology), and the third field is a code indicating the
+"violence level" the change represents.   Level -1 means
+that no message should be reported if the rule is applied and
+the modified word is found (as in the default 
+rule which turn uppercase words into lowercase).
+Level 0 means that a message is given which just alerts the
+user that the surface form was not found in the database but
+that the modified version was.  
+Level 1 indicates that the rule applies only to non-standard
+or variant
+forms and will be reported as such (e.g. for American English you could
+define a level 1 rule that changes "^anaesth" to "anesth", 
+or globally changes "centre" to "center", etc.)
+Level 2 indicates that the rule applies only when the surface
+form is truly incorrect in some way.  
 </p>
 <p>
-<i>Quick and Dirty:</i>
-<pre>
-% cp giorr-en giorr-xx
-</pre>
-You might want to delete some of the plainly English abbreviations
-and keep others that tend to recur across languages 
-("etc.", "e.g.", etc. e.g.).
-</p>
-
-<p>
-<b>5. Update <i>TEANGACHA</i></b>.
-Be sure to add a line for your language to
-the TEANGACHA file of the form:<br><br>
-<samp>
-xx ENCODING BOUNDARYCHARS INTERNALCHARS CAPITALS LOWERCASE
-</samp>
-<br><br>
-where "ENCODING" is the default character encoding for texts in your
-language (and also the character encoding used in the rule files),
-e.g. "ISO-8859-1" or "UTF-8", etc.  "BOUNDARYCHARS" is a regular expression
-containing all characters which are allowed to appear at the beginning
-or end of a word, and INTERNALCHARS matches any additional legal characters
-which never appear at the beginning or end of a word (like hyphens in
-many European languages).  "CAPITALS" and "LOWERCASE" are regular
-expressions that are used as the two halves of a "tr" command
-to convert to lowercase when looking up words in the lexicon.
+False positives can be avoided by placing 
+words that are not morphologically productive
+in the file <i>nocombo-gd.txt</i>.
 </p>
 
 <p>
@@ -220,24 +164,14 @@ to be marked up as a single unit.  See the description of this file on the
 <a href="cuidiu.html">Contributing</a> page.
 </p>
 <p>
-<i>Quick and Dirty:</i>
-<pre>
-% touch comhshuite-xx.in 
-</pre>
-</p>
 
 <p>
 <b>7. Write <i>aonchiall-xx.in</i></b>.  These are the rules for disambiguation.
 See the description of this file on the <a href="cuidiu.html">Contributing</a>
 page.  This, and the other input files, also require the macros stored
-in <i>macra-xx.meta.sed</i>.
+in <i>macra-xx.meta.pl</i>.
 </p>
 <p>
-<i>Quick and Dirty:</i>
-<pre>
-% touch aonchiall-xx.in
-% cp macra-en.meta.sed macra-xx.meta.sed
-</pre>
 After you have a first version working, you can use
 <i lang="ga">An Gramadóir</i> itself to help find rules for 
 <i>aonchiall-xx.in</i>.   I've implemented the algorithm from 
@@ -260,11 +194,6 @@ sorted in order of frequency highest to lowest.   The disambiguation
 module uses this as a "last resort" tagging method.
 </p>
 <p>
-<i>Quick and Dirty:</i>
-<pre>
-% cp unigram-en.pre unigram-xx.pre
-% echo "&lt;U&gt;" &gt; unigram-xx.txt
-</pre>
 If you actually have some part of speech markup, then after things
 are up and running you can create this file using:
 <pre>
@@ -277,41 +206,41 @@ are up and running you can create this file using:
 These are the grammatical rules and exceptions.
 Again see the <a href="cuidiu.html">Contributing</a> page for information
 on how to create these files.
-</p>
-<p>
-<i>Quick and Dirty:</i>
-<pre>
-% cp rialacha-en.in rialacha-xx.in
-% touch eisceacht-xx.in
-</pre>
-The existing <i>rialacha-en.in</i> contains the rules for matching
-unrecognized words and "rare" words marked up with grammatical code 127.
+The two default rules report unrecognized words and
+"rare" words marked up with grammatical code 127.
 </p>
 
 <p>
-<b>10. Localize message strings</b>.
+<b>10. Deal with abbreviations</b>.
+The default language pack uses statistical methods to extract
+likely abbreviations from a text corpus (i.e. words that appear almost
+exclusively followed by a period ".").
+You'll find these in <i>giorr-xx.txt</i>.
+You may also want to uncomment the lines in 
+<i>giorr-xx.pre</i> so that one letter abbreviations
+are escaped properly.
+Any other unusual conventions for ends of sentences should
+get encoded here.
+</p>
+
+<p>
+<b>11. Localize message strings</b>.
 Technically this is part of porting the user interface, not
 porting the grammar checker.  I'm guessing however that you'll want to
 see the output in the same language as
 the documents that are being
-checked.    As of version 0.3, this is done with the GNU
-gettext package.  
+checked.   
 You can find out more from our page at the 
 <a href="http://www2.iro.umontreal.ca/~gnutra/registry.cgi?domain=gramadoir">GNU Translation Project</a>.
 </p>
-<p>
-<i>Quick and Dirty:</i>
-Do nothing; all output messages will appear in English.
-</p>
 
 <hr>
-<em>© Cóipcheart/Copyright 2003 Kevin P. Scannell</em><br><br>
+<em>© Cóipcheart/Copyright 2003, 2004 Kevin P. Scannell</em><br><br>
 </ul>
 </div>
 <div class="navigation">
 <a href = "index.html">Home</a><br>
 <a href = "sios.html">Download</a><br>
-<a href = "sonrai.html">Details</a><br>
 <a href = "cuidiu.html">Contributing</a><br>
 Languages<br>
 <a href = "stair.html">History</a><br>
