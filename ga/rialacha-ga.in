@@ -92,15 +92,20 @@ sin sin:OK
 <F>g?[Cc]h?onach</F>:IONADAI{confadh}
 <F>[Cc]huile</F>:IONADAI{gach uile}
 <F>[Cc]h?láracha</F>:IONADAI{cláir}
-<F>[Cc]h?láraí</F>:IONADAI{cláir}
+# eclipsed/lenited are subjunctives
+<F>[Cc]láraí</F>:IONADAI{cláir}
 # lenited too: "Ba é a dhálta sin"
 <F>[Dd]h?álta</F>:IONADAI{dála}
-<F>n?[Dd]h?rud</F>:IONADAI{druidim}
 <E><F>[Dd]álta</F></E> <R>le chéile</R>:OK
+<F>n?[Dd]h?eire</F>:IONADAI{deireadh}
+<F>[Dd]íofa</F>:IONADAI{díobh}
+<S>[Ii]</S> <F>n[Dd]oimhne</F>:IONADAI{i ndoimhneacht}
+<F>n?[Dd]h?rud</F>:IONADAI{druidim}
 <F>[Ff]h?iní</F>:IONADAI{finte}
 <F>[Ff]h?irinne</F>:IONADAI{fírinne}
 <S>[Aa]r</S> <F>[Ff]his</F>:IONADAI{ris}
 <F>[Ff]os</F>:IONADAI{fós}
+<S>[Ii]</S> <F>bh[Ff]os</F>:CAIGHDEAN{abhus}
 <S>[Aa]r</S> <F>[Ff]uaid</F>:IONADAI{ar fud}
 <F>n?[Gg]h?oire</F>:IONADAI{gaire}
 <F>n?[Gg]h?reas</F>:IONADAI{dreas}
@@ -109,6 +114,7 @@ sin sin:OK
 # OD
 <S>[Ii]n</S> <F>[Ii]nne</F>:OK
 #  leithe -> léithe is split
+<F>[Ll]éithe</F>:IONADAI{léi}
 # but not caps!
 <F>leitir</F>:IONADAI{litir}
 <F>[Ll]eitreacha?</F>:IONADAI{litreach, litreacha}
@@ -119,8 +125,12 @@ sin sin:OK
 <F>[Óó]m</F>:IONADAI{ó mo}
 <F>[Rr]ataí?</F>:IONADAI{ráta, rachta}
 <Y>pro</Y> <E><F>rata</F></E>:OK
+<F>[Rr]uadh</F>:IONADAI{rua}
+<F>[Ss]h?oláthraigh</F>:IONADAI{soláthair}
 <F>[Tt]hairgeadh</F>:IONADAI{tháirgeadh}
 <F>[Tt]h?arrach</F>:IONADAI{tarraingt}
+<F>d?[Tt]h?oiseach</F>:IONADAI{tosach}
+<F>[Tt]h?oisigh</F>:IONADAI{tosaigh}
 #. Bíonn an geál ag satailt ar an dubh.
 <F>ANYTHING</F>:NEAMHCHOIT
 # this is here for the clearer error message, otherwise it's NOSUBJ
