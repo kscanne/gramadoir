@@ -50,9 +50,8 @@
 # hyphened prefixes, an-, dea-
 ^h?an-([bcfgmp]h)		$1		0
 ^h?an-([bcfgmp][^h])		$1		2
-^h?an-([^bcfgmp])		$1		0
+^h?an-([^bcfgmp][^h])		$1		0
 ^h?an-([^bcfgmp]h)		$1		2    # an-dhuine 
-^ana-				an-		1    # ana-eagraithe
 ^dea-([bcdfgmpt]h)		$1		0
 ^dea-([bcdfgmpt][^h])		$1		2
 ^dea-(sh[aeiouáéíóúlnr])	$1		0
@@ -76,6 +75,7 @@
 ^comh(s[^aeiouáéíóúlnrh])	$1		0
 ^có(mh[aáoóuú])			$1		0
 ^cói(mh[eéií])			$1		0
+^comh-mh			mh		1
 ^có(n[aáoóuú])			$1		0
 ^cói(n[eéií])			$1		0
 ^do-([aeiouáéíóú])		$1		0
@@ -83,7 +83,7 @@
 ^do([bcdfgmpt]h)		$1		0
 ^do(sh[aeiouáéíóúlnr])		$1		0
 ^do(s[^aeiouáéíóúlnrh])		$1		0
-^droch([^bcdfgmpst]h)		$1		0
+^droch([^bcdfgmpst])		$1		0
 ^droch-(ch)			$1		0
 ^droch([bdfgmpt]h)		$1		0
 ^droch(sh[aeiouáéíóúlnr])	$1		0
@@ -124,27 +124,45 @@
 ^in-(n)				$1		0
 ^in([bcfgmp]h)			$1		0
 ^mí-([aeiouáéíóú])		$1		0
-^mí([aeiouáéíóú])		$1		1
+^mí([aeiouáéíóú])		$1		2  # míúsáid
 ^mí([lnr])			$1		0
 ^mí([bcdfgmpt]h)		$1		0
 ^mí(sh[aeiouáéíóúlnr])		$1		0
 ^mí(s[^aeiouáéíóúlnrh])		$1		0
+^príomh([^bcdfgmpst])		$1		0
+^príomh([bcdfgpt]h)		$1		0
+^príomh-(mh)			$1		0
+^príomh(sh[aeiouáéíóúlnr])	$1		0
+^príomh(s[^aeiouáéíóúlnrh])	$1		0
 ^réamh([^bcdfgmpst])		$1		0
 ^réamh([bcdfgpt]h)		$1		0
 ^réamh-(mh)			$1		0
 ^réamh(sh[aeiouáéíóúlnr])	$1		0
 ^réamh(s[^aeiouáéíóúlnrh])	$1		0
 ^ró-([aeiouáéíóú])		$1		0
-^ró([aeiouáéíóú])		$1		1
+^ró([aeiouáéíóú])		$1		2
 ^ró([lnr])			$1		0
 ^ró([bcdfgmpt]h)		$1		0
 ^ró(sh[aeiouáéíóúlnr])		$1		0
 ^ró(s[^aeiouáéíóúlnrh])		$1		0
+^sain([^bcdfgmpst])		$1		0
+^sain([bcdfgmpt]h)		$1		0
+^sain(sh[aeiouáéíóúlnr])	$1		0
+^sain(s[^aeiouáéíóúlnrh])	$1		0
 ^so-([aeiouáéíóú])		$1		0
 ^so([lnr])			$1		0
 ^so([bcdfgmpt]h)		$1		0
 ^so(sh[aeiouáéíóúlnr])		$1		0
 ^so(s[^aeiouáéíóúlnrh])		$1		0
+^tras([^bcfgmnps])		$1		0   # leave "^trasn" alone
+^tras([bcfgmp]h)		$1		0
+^tras-(s)			$1		0
+# next batch are non-words so really need to be here, but VERY infrequent
+^(cil|gig|is|meig|micr|pic|teil)ea-?([^aeiouáéíóú-]+[aouáóú])	$2	0
+^(cil|gig|is|meig|micr|pic|teil)i-?([^aeiouáéíóú-]+[eiéí])	$2	0
+^(ant|fót|nan|par|pol|ultr)a-?([^aeiouáéíóú-]+[aouáóú])		$2	0
+^(ant|fót|nan|par|pol|ultr)ai-?([^aeiouáéíóú-]+[eiéí])		$2	0
+^(eachtar|freas|íos|neas|réalt|tob|uas|uath)-?([^-])		$2	0
 achai?s$			ach		0
 acht$				ach		0
 íocht$				íoch		0
@@ -160,11 +178,17 @@ acht$				ach		0
 ^h-				h		1
 ^n-([AEIOUÁÉÍÓÚ])		n-\l$1		1
 ^t-([AEIOUÁÉÍÓÚ])		t-\l$1		1
-^sg				sc		1
+^ana-				an-		1    # ana-eagraithe
 ^ion				in		1
+^óig				óg		1
+^ósd				óst		1
+^sg				sc		1
+^uaith				uath		1
 ^úir				úr		1
 #   bhth, mhth, etc.
 aíle$				aíola		1    # *3ú* decl.
+aibh$				a		1    # fearaibh, fiachaibh,...
+([^a])ibh$			$1e		1    # coinnibh, etc.
 # Future forms: see OS88 p.215 for these (fe?as, etc. on p.63)
 fa[ds]$				faidh		1
 fea[ds]$			fidh		1
@@ -202,7 +226,8 @@ anns$				ann		1
 ^nd([^h])			d$1		0
 ^ng([^h])			g$1		0
 ^ts([^h])			s$1		0
-^([bcdfgmpt])h			$1		0
+^([bcdfgmp])h			$1		0
+^th([^s])			t$1		0   # luathscéal danger
 ^sh([lnraeiouáéíóú])		s$1		0
-^[bdm]'([aeiouáéíóú])		$1		0
+^[bdm]'([AEIOUÁÉÍÓÚaeiouáéíóú])	$1		0	# d'Éamonn too
 ^[nt]-([aeiouáéíóú])		$1		0
