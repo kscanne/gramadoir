@@ -2128,6 +2128,41 @@ d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</
 <S>[Uu]m</S> <P>[Ss]ibh</P>:BACHOIR{umaibh}
 <S>[Uu]m</S> <P>[Ii]ad</P>:BACHOIR{umpu}
 #############################################################################
+#   combined verb forms 
+#   obviously can't match on <VPRES>BROADENDING</VPRES> since we only want -ann
+#   so we need the various macros below...
+#############################################################################
+<V>BROADFIRSTPRES</V> <P>mé</P>:SYNTHETIC{-aim}
+<V>SLENDERFIRSTPRES</V> <P>mé</P>:SYNTHETIC{-im}
+<V>BROADSECONDPRES</V> <P>mé</P>:SYNTHETIC{-aím}
+<V>SLENDERSECONDPRES</V> <P>mé</P>:SYNTHETIC{-ím}
+#   should do "muid" also but way too many exceptions in corpus
+<V>BROADFIRSTPRES</V> <P>sinn</P>:SYNTHETIC{-aimid}
+<V>SLENDERFIRSTPRES</V> <P>sinn</P>:SYNTHETIC{-imid}
+<V>BROADSECONDPRES</V> <P>sinn</P>:SYNTHETIC{-aímid}
+<V>SLENDERSECONDPRES</V> <P>sinn</P>:SYNTHETIC{-ímid}
+<V>BROADFIRSTFUTURE</V> <P>sinn</P>:SYNTHETIC{-faimid}
+<V>SLENDERFIRSTFUTURE</V> <P>sinn</P>:SYNTHETIC{-fimid}
+<V>BROADSECONDFUTURE</V> <P>sinn</P>:SYNTHETIC{-óimid}
+<V>SLENDERSECONDFUTURE</V> <P>sinn</P>:SYNTHETIC{-eoimid}
+<V>BROADFIRSTCOND</V> <P>mé</P>:SYNTHETIC{-fainn}
+<V>SLENDERFIRSTCOND</V> <P>mé</P>:SYNTHETIC{-finn}
+<V>BROADSECONDCOND</V> <P>mé</P>:SYNTHETIC{-óinn}
+<V>SLENDERSECONDCOND</V> <P>mé</P>:SYNTHETIC{-eoinn}
+<V>BROADFIRSTCOND</V> <P>tú</P>:SYNTHETIC{-fá}
+<V>SLENDERFIRSTCOND</V> <P>tú</P>:SYNTHETIC{-feá}
+<V>BROADSECONDCOND</V> <P>tú</P>:SYNTHETIC{-ófá}
+<V>SLENDERSECONDCOND</V> <P>tú</P>:SYNTHETIC{-eofá}
+<V>BROADFIRSTCOND</V> <P>sinn</P>:SYNTHETIC{-faimis}
+<V>SLENDERFIRSTCOND</V> <P>sinn</P>:SYNTHETIC{-fimis}
+<V>BROADSECONDCOND</V> <P>sinn</P>:SYNTHETIC{-óimis}
+<V>SLENDERSECONDCOND</V> <P>sinn</P>:SYNTHETIC{-eoimis}
+#  too many exceptions for this one
+#<V>BROADFIRSTCOND</V> <P>siad</P>:SYNTHETIC{-faidís}
+#<V>SLENDERFIRSTCOND</V> <P>siad</P>:SYNTHETIC{-fidís}
+#<V>BROADSECONDCOND</V> <P>siad</P>:SYNTHETIC{-óidís}
+#<V>SLENDERSECONDCOND</V> <P>siad</P>:SYNTHETIC{-eoidís}
+#############################################################################
 #   Nouns appearing only in the dative; see CB p.46 #13, p.55 #6 (Éirinn)
 # good to keep this before the <=> eclipsis for things like "dar gcionn"
 #############################################################################
