@@ -51,10 +51,10 @@
 [Aa]on <N>UNLENITEDBCFGMP</N>:SEIMHIU
 # CB p.19 #13, p.132 #5
 [Aa]r <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
+# CB p.20 1.b. keep before following
+[¡·]r dh· <N>UNECLIPSED</N>:URU
 # CB p.20 1.a
 <D>[¡·]r</D> UNECLIPSED:URU
-# CB p.20 1.b
-[¡·]r dh· <N>UNECLIPSED</N>:URU
 # CB p.16 #7 (N), p.18 #10 (A)
 <V>[Aa]rbh</V> UNLENITEDF:SEIMHIU
 # CB p.16 #7 (N), p.18 #10 (A)
@@ -65,10 +65,10 @@
 <N>[Bb]eirt</N> <N>UNLENITED</N>:SEIMHIU
 # CB p.16 #9.d
 <N>[Bb]h?eirte?</N> <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
+# CB p.20 1.b, keep before following
+<D>[Bb]hur</D> dh· <N>UNECLIPSED</N>:URU
 # CB p.20 1.a
 <D>[Bb]hur</D> UNECLIPSED:URU
-# CB p.20 1.b
-<D>[Bb]hur</D> dh· <N>UNECLIPSED</N>:URU
 # CB p.22 #7.c, p.132 #4
 <Q>[Cc]·</Q> <V>UNECLIPSED</V>:URU
 # CB p.24 #11.a.iii
