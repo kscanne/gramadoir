@@ -44,6 +44,7 @@ arna
 art
 artha
 arú
+arus
 asú
 athach
 athan
@@ -115,6 +116,7 @@ gán
 gCo
 gcom
 ghacht
+ghil
 ghinn
 gidh
 góirí
@@ -183,6 +185,7 @@ lic
 ling
 liom
 lís
+mair
 mba
 mha
 mhacht
