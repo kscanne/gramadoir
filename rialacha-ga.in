@@ -11,6 +11,9 @@
 #
 # References
 # CB=The Christian Brothers, New Irish Grammar, C. J. Fallon, 1994.
+# BH=Mac Congáil, Irish Grammar: A Basic Handbook, Hippocrene, 1998.
+# LGG=Mac Congáil, Leabhar Gramadaí Gaeilge, CIC, 2002.
+# OD=Ó Donaill, Foclóir Gaeilge-Béarla, 1977.
 #
 <X>ANYTHING</X>:ANAITHNID
 <X>ANYTHING</X>:ANAITHNIDSRL
@@ -54,8 +57,8 @@ ANYTHING <VIMP>INITIALH</VIMP>:NIAITCH
 <S>[Aa]mhail</S> <N>LENITED</N>:NISEIMHIU
 # CB p.22 #8.a, also CB p.134 #1.a
 <S>[Aa]mhail</S> <T>an</T> <NMCS>INITIALVOWEL</NMCS>:PREFIXT
-# CB p.22 #7.b, p.132 #4
-<Q>[Aa]n</Q> <V>UNECLIPSED</V>:URU
+# CB p.22 #7.b, p.132 #4; vowel exception from corpus
+<Q>[Aa]n</Q> <V>UNECLIPSEDCONS</V>:URU
 # CB p.12 #1.a
 <[^S]>ANYTHING</[^S]> <T>an</T> <NFCS>UNLENITEDBCFGMP</NFCS>:SEIMHIU
 # CB p.22 #8.a
@@ -70,6 +73,9 @@ ANYTHING <VIMP>INITIALH</VIMP>:NIAITCH
 <T>[Aa]n</T> <NFGS>ANYTHING</NFGS>:BACHOIR{na}
 # CB p.6 #1
 <T>[Aa]n</T> <NP>ANYTHING</NP>:BACHOIR{na}
+# CB p.8 #4
+<T>ANYTHING</T> <NC>ANYTHING</NC> <T>ANYTHING</T> <NG>ANYTHING</NG>:ONEART
+<T>ANYTHING</T> <NC>ANYTHING</NC> <A>gach</A> <NG>ANYTHING</NG>:ONEART
 # CB p.13 #3.c
 [Aa]on <N>UNLENITEDBCFGMP</N>:SEIMHIU
 # CB p.19 #13, p.132 #5
@@ -98,7 +104,7 @@ ANYTHING <VIMP>INITIALH</VIMP>:NIAITCH
 <Q>[Cc]á</Q> <V>UNECLIPSED</V>:URU
 # CB p.24 #11.a.iii
 <Q>[Cc]á</Q> <N>INITIALVOWEL</N>:PREFIXH
-# OD77 cá; see exceptions
+# OD cá; see exceptions
 <Q>[Cc]á</Q> <N>LENITED</N>:NISEIMHIU
 # CB p.19 #13, p.132 #5
 [Cc]ár <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
@@ -200,6 +206,8 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 [Gg]o <V>UNECLIPSED</V>:URU
 # CB p.14 Note
 [Gg]o <N>LENITED</N>:NISEIMHIU
+# corpus; see also CB p.6 #2, analogous to leis, tríd; no converse
+[Gg]o <T>ANYTHING</T>:BACHOIR{go dtí}
 # CB p.14 Note
 [Gg]o dtí <N>LENITED</N>:NISEIMHIU
 # CB p.19 #13, p.132 #5
@@ -233,9 +241,8 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 <S>[Ii]onsar</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.14 Note
 <S>[Ll]e</S> <N>LENITED</N>:NISEIMHIU
-# CB p.6 #2
+# CB p.6 #2, converse handled by aonchiall  (leis +<[^T]> => <O>leis</O>)
 <S>[Ll]e</S> <T>an</T>:BACHOIR{leis an}
-# CB p.6 #2
 <S>[Ll]e</S> <T>na</T>:BACHOIR{leis na}
 # CB p.84 #8, p.132 #2
 <S>[Ll]e</S> a:BACHOIR{lena}
@@ -341,8 +348,6 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 <S>[Rr]oimh</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.13 #4.a
 <S>[Rr]oimh</S> <N>UNLENITED</N>:SEIMHIU
-# CB p.6 #2
-<S>[Ss]a</S> INITIALVOWELORF:BACHOIR{san}
 # CB p.12 #1.c.i
 <S>[Ss]a</S> UNLENITEDBCGMP:SEIMHIU
 # CB p.23 #9 (implicit article)
@@ -353,6 +358,9 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 <N>San</N> LENITED:NISEIMHIU
 # CB p.12 #1.c.i
 <S>[Ss]an</S> UNLENITEDF:SEIMHIU
+# CB p.6 #2 <=>
+<S>[Ss]a</S> INITIALVOWELORF:BACHOIR{san}
+<S>[Ss]an</S> NONVOWELNONF:BACHOIR{sa}
 # CB p.24 #11.a.x
 [Ss]é uaire?:BACHOIR{huaire}
 # CB p.13 #3.f
@@ -378,15 +386,17 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 # CB p.84 #8 <D>a</D>, p.132 #2 <S>a</D>
 <S>[Tt]rí</S> <[^U]>a</[^U]>:BACHOIR{trína}
 # CB p.132 #2
-[Tt]rí ar:BACHOIR{trínar}
-# CB p.6 #2
-[Tt]rí <T>an</T>:BACHOIR{tríd an}
+<S>[Tt]rí</S> <S>ar</S>:BACHOIR{trínar}
+# CB p.6 #2, converse done via aonchiall (tríd <[^T]> -> <O>), "tríd na" below
+<S>[Tt]rí</S> <T>an</T>:BACHOIR{tríd an}
 # CB p.84 #8
-[Tt]rí ár:BACHOIR{trínár}
+<S>[Tt]rí</S> <D>ár</D>:BACHOIR{trínár}
 # CB p.13 #3.f (<A>trí</A>) p.13 #4.a (<S>trí</S>)
 [Tt]rí <NCS>UNLENITED</NCS>:SEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
-[Tt]ríd <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
+<S>[Tt]ríd</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
+# CB p.6 #2 _singular_ article only; corpus
+<S>[Tt]ríd</S> <T>na</T>:BACHOIR{trí na}
 # CB p.17 #9.h
 <S>[Tt]ríd</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.84 #8 keep before following
@@ -403,13 +413,7 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 <S>[Uu]m</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 ###### next batch came from analyses of "tag 2-grams" in the corpus ######
 <T>ANYTHING</T> <AP>ANYTHING</AP>:CUPLA
-<T>ANYTHING</T> <C>ANYTHING</C>:CUPLA
-<T>ANYTHING</T> <D>ANYTHING</D>:CUPLA
-<T>[Nn]a</T> <O>ANYTHING</O>:CUPLA
-<T>ANYTHING</T> <Q>ANYTHING</Q>:CUPLA
-<T>[Nn]a</T> <S>ANYTHING</S>:CUPLA
-<T>ANYTHING</T> <T>ANYTHING</T>:CUPLA
-<T>[Nn]a</T> <V>ANYTHING</V>:CUPLA
+<T>ANYTHING</T> <[^ANY]>ANYTHING</[^ANY]>:CUPLA
 # got níos * above
 <R>ANYTHING</R> <AP>ANYTHING</AP>:CUPLA
 <Q>ANYTHING</Q> <AFGS>ANYTHING</AFGS>:CUPLA
