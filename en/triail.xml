@@ -1,0 +1,4 @@
+<E offset="0" fromy="1" fromx="0" toy="1" tox="2" sentence="Dis in't speled righte." errortext="Dis" msg="Focal anaithnid /did, his, die, is/?">
+<E offset="4" fromy="1" fromx="4" toy="1" tox="7" sentence="Dis in't speled righte." errortext="in't" msg="Focal anaithnid /isn't/?">
+<E offset="9" fromy="1" fromx="9" toy="1" tox="14" sentence="Dis in't speled righte." errortext="speled" msg="Focal anaithnid /speed/?">
+<E offset="16" fromy="1" fromx="16" toy="1" tox="21" sentence="Dis in't speled righte." errortext="righte" msg="Focal anaithnid /rights, right/?">

@@ -1,0 +1,4 @@
+<E offset="0" fromy="1" fromx="0" toy="1" tox="3" sentence="This has lotsa misspellings." errortext="This" msg="Focal anaithnid /thir/?">
+<E offset="5" fromy="1" fromx="5" toy="1" tox="7" sentence="This has lotsa misspellings." errortext="has" msg="Focal anaithnid /nas, mas, had, hau, gas, hap, cas, ha, las, was, as, ras, bas, haws, haf/?">
+<E offset="9" fromy="1" fromx="9" toy="1" tox="13" sentence="This has lotsa misspellings." errortext="lotsa" msg="Is féidir gur focal iasachta é seo (tá na litreacha /ots/ neamhdhóchúil)">
+<E offset="15" fromy="1" fromx="15" toy="1" tox="26" sentence="This has lotsa misspellings." errortext="misspellings" msg="Is féidir gur focal iasachta é seo (tá na litreacha /iss/ neamhdhóchúil)">
