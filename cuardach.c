@@ -34,7 +34,7 @@ struct replacement {
       char* athfhocal;
     };
 
-#define DICTTOTAL 313956
+#define DICTTOTAL 314027
 int ignore_total=0;
 int repl_total=0;
 
