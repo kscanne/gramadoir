@@ -1112,9 +1112,8 @@ L<perl(1)>
 The grammar checker does not attempt a full parse of the input
 sentences nor does it attempt to exploit any semantic information.
 There are, therefore, certain constructs that cannot be dealt with
-correctly.  For instance, in Irish the possessive adjective "a" mutates the
-word which follows differently depending on whether it means
-"his", "her", or "their".
+correctly. See L<http://borel.slu.edu/gramadoir/bugs.html> for a
+detailed discussion and specific examples.
 
 =head1 AUTHOR
 
