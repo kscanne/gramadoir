@@ -1,5 +1,5 @@
---- Makefile	2005-03-02 20:44:50.893589784 -0600
-+++ Makefile.ok	2005-03-02 20:44:45.022482328 -0600
+--- Makefile	2005-03-02 22:19:41.115544560 -0600
++++ Makefile.ok	2005-03-02 22:19:33.861647320 -0600
 @@ -60,8 +60,16 @@
  
  Makefile : Makefile.in config.status
@@ -61,7 +61,7 @@
 +
 +maintainer-clean :
 +	$(MAKE) distclean
-+	rm -f ChangeLog configure sampla.html
++	rm -f ChangeLog configure sampla.html bugs.html
 +
 +ChangeLog : FORCE
 +	cvs2cl --FSF
