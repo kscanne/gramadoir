@@ -42,35 +42,35 @@ HELPCOMMAND="${EXECUTABLE} --help"
 
 # All i18n strings collected here.  See gramadoir.pot for some 
 # translation hints.
-checking=`gettext -s "Currently checking %s"`
-notfound=`gettext -s "There is no such file."`
-isdir=`gettext -s "Is a directory"`
-permissions=`gettext -s "Permission denied"`
-usage1=`gettext -s "Usage: %s [OPTIONS] [FILES]"`
-usage2=`gettext -s "    --litriu       write misspelled words to standard output"`
-usage3=`gettext -s "    --html         produce HTML output for viewing in a web browser"`
-usage4=`gettext -s "    --xml          write tagged XML stream to standard output, for debugging"`
-usage5=`gettext -s "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"`
-usage8=`gettext -s "    --teanga=XX    specify the language of the text to be checked (default=ga)"`
-usage6=`gettext -s "    --help         display this help and exit"`
-usage7=`gettext -s "    --version      output version information and exit"`
-stdinhelp=`gettext -s "If no file is given, read from standard input."`
-bugreports=`gettext -s "Send bug reports to <%s>."`
-versionstring=`gettext -s "version %s"`
-gpl=`gettext -s "This is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\nto the extent permitted by law."`
-tryhelp=`gettext -s "Try %s for more information."`
-unknownopt=`gettext -s "unknown option"`
-unsupported=`gettext -s "Language %s is not supported."`
-ANAITHNIDSRL=`gettext -s "Unknown word (ignoring remainder in this sentence)"`
-ANAITHNID=`gettext -s "Unknown word"`
-BACHOIR=`gettext -s "You should use \/\1\/ here instead"`
-CAIGHDEAN=`gettext -s "Non-standard form: perhaps use \/\1\/?"`
-CLAOCHLU=`gettext -s "Initial mutation missing"`
-NISEIMHIU=`gettext -s "Unnecessary lenition"`
-PREFIXH=`gettext -s "Prefix \/h\/ missing"`
-PREFIXT=`gettext -s "Prefix \/t\/ missing"`
-SEIMHIU=`gettext -s "Lenition missing"`
-URU=`gettext -s "Eclipsis missing"`
+checking=`@SH_GETTEXT@ "Currently checking %s"`
+notfound=`@SH_GETTEXT@ "There is no such file."`
+isdir=`@SH_GETTEXT@ "Is a directory"`
+permissions=`@SH_GETTEXT@ "Permission denied"`
+usage1=`@SH_GETTEXT@ "Usage: %s [OPTIONS] [FILES]"`
+usage2=`@SH_GETTEXT@ "    --litriu       write misspelled words to standard output"`
+usage3=`@SH_GETTEXT@ "    --html         produce HTML output for viewing in a web browser"`
+usage4=`@SH_GETTEXT@ "    --xml          write tagged XML stream to standard output, for debugging"`
+usage5=`@SH_GETTEXT@ "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"`
+usage8=`@SH_GETTEXT@ "    --teanga=XX    specify the language of the text to be checked (default=ga)"`
+usage6=`@SH_GETTEXT@ "    --help         display this help and exit"`
+usage7=`@SH_GETTEXT@ "    --version      output version information and exit"`
+stdinhelp=`@SH_GETTEXT@ "If no file is given, read from standard input."`
+bugreports=`@SH_GETTEXT@ "Send bug reports to <%s>."`
+versionstring=`@SH_GETTEXT@ "version %s"`
+gpl=`@SH_GETTEXT@ "This is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\nto the extent permitted by law."`
+tryhelp=`@SH_GETTEXT@ "Try %s for more information."`
+unknownopt=`@SH_GETTEXT@ "unknown option"`
+unsupported=`@SH_GETTEXT@ "Language %s is not supported."`
+ANAITHNIDSRL=`@SH_GETTEXT@ "Unknown word (ignoring remainder in this sentence)"`
+ANAITHNID=`@SH_GETTEXT@ "Unknown word"`
+BACHOIR=`@SH_GETTEXT@ "You should use \/\1\/ here instead"`
+CAIGHDEAN=`@SH_GETTEXT@ "Non-standard form: perhaps use \/\1\/?"`
+CLAOCHLU=`@SH_GETTEXT@ "Initial mutation missing"`
+NISEIMHIU=`@SH_GETTEXT@ "Unnecessary lenition"`
+PREFIXH=`@SH_GETTEXT@ "Prefix \/h\/ missing"`
+PREFIXT=`@SH_GETTEXT@ "Prefix \/t\/ missing"`
+SEIMHIU=`@SH_GETTEXT@ "Lenition missing"`
+URU=`@SH_GETTEXT@ "Eclipsis missing"`
 
 # i18n: grammatical errors.  See rialacha-*.in.
 # If you port to another language, you won't translate these; instead

@@ -44,6 +44,14 @@ fi
 AC_SUBST(EGREP_COLOR)
 
 AM_GNU_GETTEXT([external])
+if test "$USE_NLS" = "yes"
+then
+	AC_MSG_RESULT([NLS activated])
+	SH_GETTEXT="gettext -s"
+else
+	AC_MSG_WARN([NLS deactivated])
+	SH_GETTEXT="echo"
+fi
 
 TEANGACHA=`sed '/^#/d' TEANGACHA | tr "\n" " "`
 ALLPL=""
@@ -53,6 +61,7 @@ do
 done
 ALLIN=`echo ${ALLPL} | sed "s/\.pl/.in/g"`
 
+AC_SUBST(SH_GETTEXT)
 AC_SUBST(TEANGACHA)
 AC_SUBST(ALLPL)
 AC_SUBST(ALLIN)
