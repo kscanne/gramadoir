@@ -232,6 +232,8 @@ Fear Manach:<N pl="n" gnt="n">
 [Ff]íorchaoin fáilte:<N pl="n" gnt="n">
 [Ff]uta [Ff]ata:<R>
 [Gg]ach re:<A>
+# exception to lots of "don't lenite after gan" rules, so easier this way
+[Gg]an [Ff]hios:<R>
 [Gg]liog gleag:<N pl="n" gnt="n">
 [Gg]o brách:<R>
 [Gg]o ceann:<S>
@@ -421,7 +423,25 @@ Ros Muc:<N pl="n" gnt="n">
 # infrequent
 [Tt]h?amhach táisc:<N pl="n" gnt="n">
 [Tt]ar éis:<S>
+[Tt]har barr:<R>
+[Tt]har bord:<R>
+[Tt]har bráid:<R>
+[Tt]har cailc:<R>
+[Tt]har ceal:<R>
 [Tt]har ceann:<S>
+[Tt]har cionn:<R>
+[Tt]har cuimse:<R>
+[Tt]har farraige:<R>
 [Tt]har fóir:<R>
+[Tt]har lear:<R>
+[Tt]har maoil:<R>
+[Tt]har meán:<R>
+[Tt]har muir:<R>
+[Tt]har [Ss]áile:<R>
+[Tt]har tairseach:<R>
+[Tt]har téarma:<R>
+[Tt]har teorainn:<R>
+[Tt]har tír:<R>
+[Tt]har toinn:<R>
 [Tt]rí bhíthin:<S>
 [Uu]m an dtaca:<R>

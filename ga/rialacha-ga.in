@@ -701,15 +701,23 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <N>fríd</N>:CAIGHDEAN{trí, tríd}
 # corpus
 <A>[Gg]ach</A> <NP>ANYTHING</N>:UATHA
-# CB p.14 #4.c.i (says "nouns" specif.)
+# CB p.14 #4.c.i (says "nouns" specif.);  "gan fhios" is in comhshuite
 # Don't worry about "i ngan" since that always precedes "fhios" (INPHRASE rule)
 #. Tá ar chumas an duine saol iomlán a chaitheamh gan theanga eile á brú air.
 <S>[Gg]an</S> <N>LENITEDDFST</N>:NISEIMHIU
-# corpus, OD fios.4
-<S>[Gg]an</S> <N>[Ff]hios</N>:OK
 # CB p.14 #4.c.iv (worth adding exceptions for "Charles", etc. from gall?)
 #. Tá gruaim mhór orm gan Chaitlín.
 <S>[Gg]an</S> <Y>LENITED</Y>:NISEIMHIU
+<S>[Gg]an</S> <N>LENITED</N> <C>ná</C>:NISEIMHIU
+<S>[Gg]an</S> <N>LENITED</N> <[AO]>ANYTHING</[AO]>:NISEIMHIU
+<S>[Gg]an</S> <N>LENITED</N> dá <N>laghad</N>:NISEIMHIU
+<S>[Gg]an</S> <N>LENITED</N> <R>ar bith</R>:NISEIMHIU
+<S>[Gg]an</S> <N>LENITED</N> <R>go brách</R>:NISEIMHIU
+<S>[Gg]an</S> <N>LENITED</N> <R>(amach|amháin)</R>:NISEIMHIU
+<S>[Gg]an</S> <N>LENITED</N> <NG>ANYTHING</NG>:NISEIMHIU
+<S>[Gg]an</S> <N>LENITED</N> <T>ANYTHING</T> <NG>ANYTHING</NG>:NISEIMHIU
+<S>[Gg]an</S> <N>LENITED</N> a <N>VNISH</N>:NISEIMHIU
+<S>[Gg]an</S> <N>LENITED</N> a <N>NOTVNISHVN</N>:NISEIMHIU
 # CB p.22 #8.a, also CB p.134 #1.a
 <S>[Gg]an</S> <T>an</T> <NMCS>INITIALVOWEL</NMCS>:PREFIXT
 # CB p.134 #1.a (unlenited caught by more general rule)
@@ -727,9 +735,8 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Gg]an</S> <N>VNISH</N>:OK
 # next few are exceptions CB p.14 #4.c.ii for "qualified" nouns
 <E><S>[Gg]an</S> <N>UNLENITEDBCGMP</N></E> <C>ná</C>:OK
-<E><S>[Gg]an</S> <N>UNLENITEDBCGMP</N></E> <A>ANYTHING</A>:OK
 #. Na duilleoga ar an ngas beag, cruth lansach orthu agus iad gan cos fúthu (OK).
-<E><S>[Gg]an</S> <N>UNLENITEDBCGMP</N></E> <O>ANYTHING</O>:OK
+<E><S>[Gg]an</S> <N>UNLENITEDBCGMP</N></E> <[AO]>ANYTHING</[AO]>:OK
 #. D'fhág sin gan meas dá laghad ag duine ar bith air (OK).
 <E><S>[Gg]an</S> <N>UNLENITEDBCGMP</N></E> dá <N>laghad</N>:OK
 <E><S>[Gg]an</S> <N>UNLENITEDBCGMP</N></E> <R>ar bith</R>:OK
@@ -1343,6 +1350,12 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 [Tt]har <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.22 #8.a
 <S>[Tt]har</S> <T>an</T> <NMCS>PREFIXEDT</NMCS>:NITEE
+# common mistake; before UNLENITED rule below for clearer message
+# but technically not a conflict for "maol" since that's an adjective
+#. Bhí an chathair ag cur thar maol le filí de gach cineál.
+<S>[Tt]har</S> [Mm]h?aoi?l:INPHRASE{thar maoil}
+# CB p.14 #4.e; several adverbial exceptions in comhshuite
+<S>[Tt]har</S> <N>UNLENITED</N>:SEIMHIU
 # CB p.24 #11.a.x
 #. Timpeall trí uaire a chloig ina dhiaidh sin tháinig an bhean isteach.
 [Tt]rí uaire?:BACHOIR{huaire}
@@ -1788,6 +1801,22 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 <S>[Aa]r</S> <N>thí</N>:INPHRASE{ar tí}
 <S>[Aa]r</S> <N>thogradh</N>:INPHRASE{ar togradh}
 <S>[Aa]r</S> <N>thuathal</N>:INPHRASE{ar tuathal}
+#############################################################################
+#  now, same for "thar" phrases
+#############################################################################
+<S>[Tt]har</S> <N>bhord</N>:INPHRASE{thar bord}
+<S>[Tt]har</S> <N>bhráid</N>:INPHRASE{thar bráid}
+<S>[Tt]har</S> <N>chailc</N>:INPHRASE{thar cailc}
+<S>[Tt]har</S> <N>cheal</N>:INPHRASE{thar ceal}
+<S>[Tt]har</S> <N>chionn</N>:INPHRASE{thar cionn}
+<S>[Tt]har</S> <N>chuimse</N>:INPHRASE{thar cuimse}
+<S>[Tt]har</S> <N>fharraige</N>:INPHRASE{thar farraige}
+<S>[Tt]har</S> <N>fhóir</N>:INPHRASE{thar fóir}
+<S>[Tt]har</S> <N>mheán</N>:INPHRASE{thar meán}
+<S>[Tt]har</S> <N>mhuir</N>:INPHRASE{thar muir}
+<S>[Tt]har</S> <N>sháile</N>:INPHRASE{thar sáile}
+<S>[Tt]har</S> <N>théarma</N>:INPHRASE{thar téarma}
+<S>[Tt]har</S> <N>thír</N>:INPHRASE{thar tír}
 #############################################################################
 #  Now, just random words that appear only in the specificed phrase(s)
 #############################################################################
