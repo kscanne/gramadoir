@@ -168,13 +168,11 @@ fi
 # whether I like the line number markups on the interiors of lines
 abairti()
 {
-tr -d "\015" | @EGREP@ -n '^' | sed "
+tr -d "\015" | @EGREP@ -n '^' | LC_COLLATE=C sed "
 		s/<[^>]*>//g; 
 		s/[&\<>]/ /g; 
-		s/[A-Za-z·ÈÌÛ˙¡…Õ”⁄][A-Za-z·ÈÌÛ˙¡…Õ”⁄-]*/<c>&<\/c>/g; 
-		s/\(--*\)<\/c>/<\/c>\1/g;
-		s/<c>\([BDMbdm]\)<\/c>'<c>/<c>\1'/g;
-		s/<c>\([Mm]b\)<\/c>'<c>/<c>\1'/g;
+		s/[${BDCHARS}][${BDCHARS}${INTCHARS}]*/<c>&<\/c>/g;
+		s/\([${INTCHARS}][${INTCHARS}]*\)<\/c>/<\/c>\1/g;
 		s/^\([1-9][0-9]*\):/<line uimhir=\"\1\"> /; 
 		s/\([^.][^.][^.][.?!][]\"\')}]*\) [ ${TAB}\n]*/\1 <\/line>\n/g;
 		s/[^.][^.][^.][.?!][]\"\')}]*$/& <\/line>/" |
@@ -438,7 +436,10 @@ do
 	shift
 done
 
-NATIVE=`grep "^${TEANGA} " ${DATADIR}/TEANGACHA | sed "s/^${TEANGA} *\([^ ]*\).*/\1/"`
+NATIVE=`grep "^${TEANGA} " ${DATADIR}/TEANGACHA | sed "s/^${TEANGA}  *\([^ ]*\).*/\1/"`
+CHARSPEC=`grep "^${TEANGA} " ${DATADIR}/TEANGACHA | sed "s/^${TEANGA}  *[^ ]*  *//"`
+BDCHARS=`echo "${CHARSPEC}" | sed "s/ .*//"`
+INTCHARS=`echo "${CHARSPEC}" | sed "s/^[^ ]*  *//"`
 if [ "${IONCHOD}" = "unspecified" ]
 then
 	IONCHOD="${NATIVE}"
