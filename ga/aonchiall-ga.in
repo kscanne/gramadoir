@@ -66,6 +66,8 @@
 <B>[Aa]tá</B>:<V p="xx" t="láith">
 <T>[Nn]a</T> <B>ba</B>:<N pl="y" gnt="n" gnd="f">
 <B>[Bb]a</B>:<V cop="y">
+[Gg]o <B>m[Bb]a</B>:<V cop="y">
+[Dd]h?á <B>m[Bb]a</B>:<V cop="y">
 <B>m?[Bb]h?aile</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Bb]haineann</B>:<V p="xx" t="láith">
 # catch barra here otherwise looks like nm1 gs/pl (really nm4 gs+pl of barr)
@@ -80,6 +82,9 @@
 <B>[Cc]ár</B> LENITED:<Q>
 <T>na</T> <B>[Cc]é</B>:<N pl="n" gnt="y" gnd="f">
 <B>[Cc][Éé]</B>:<Q>
+# next is always "an am gcéanna"; all others are "mar an? gcéanna" <N> unigram
+<N>ANYTHING</N> <B>gcéanna</B>:<A pl="n" gnt="n">
+<B>[Cc]h?éanna</B>:<A pl="n" gnt="n">
 # others unigram to <N pl="n" gnt="n" gnd="f">
 [Aa]n <B>[Cc]heathrú</B>:<A pl="n" gnt="n">
 <B>g?[Cc]h?eathrú</B> <N>UNLENITED</N>:<A pl="n" gnt="n">
