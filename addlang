@@ -1,28 +1,86 @@
 #!/bin/bash
+#
+#  This is not for distribution.  I can set up these initial packages
+#   for potential authors.   In particular, this script relies on data
+#   contained in the appropriate Crubadan data files in /usr/local/share/...
+#
+#     Guaranteed only to (create and) write in a subdirectory  
+#
+#  version number can be independent of gramadoir-x.x (and of the 
+#  perl versions which are tied to these)
+  
 if [ $# -ne 2 ]
 then
-	echo "Usage: addlang xx WORDLIST"
+	echo "Usage: addlang xx VERSION"
 	exit
 fi
-if grep "^${1} " TEANGACHA > /dev/null
+TEANGA="${1}"
+UPPERTEANGA=`echo "${TEANGA}" | tr "[:lower:]" "[:upper:]"`
+VERSION="${2}"
+CRUBADAN="/usr/local/share/crubadan/${TEANGA}"
+if [ ! -e ${CRUBADAN} ]
 then
-	echo "Language ${1} is already in TEANGACHA"
+	echo "Need to start crawler first for this language"
 	exit
 fi
-make cabhair
-cp aonchiall-en.in aonchiall-${1}.in
-cp comhshuite-en.in comhshuite-${1}.in
-cp cuardach-en.c cuardach-${1}.c
-sed -i "s/_en/_${1}/g" cuardach-${1}.c
-echo "0" > eile-${1}.bs
-cp eisceacht-en.in eisceacht-${1}.in
-sed -i '1d; 7,$d' eisceacht-${1}.in
-(cat ${2} | wc -l | sed 's/^ *//'; cat ${2} | sed 's/$/ 1/' | ./cabhair 0) > focail-${1}.bs
-chmod 644 focail-en.bs
-cp giorr-xx giorr-${1}
-chmod 755 giorr-${1}
-cp macra-en.meta.sed macra-${1}.meta.sed
-cp rialacha-en.in rialacha-${1}.in
-cp unigram-en.pre unigram-${1}.pre
-cp unigram-en.txt unigram-${1}.txt
-vi TEANGACHA
+NAME_ENG=`egrep '^name_english ' ${CRUBADAN}/EOLAS | sed 's/^name_english  *//'`
+NATIVE=`egrep '^encoding ' ${CRUBADAN}/EOLAS | sed 's/^encoding  *//'`
+CHARSET=`egrep '^charset ' ${CRUBADAN}/EOLAS | sed 's/^charset  *//'`
+BDCHARS=`egrep '^boundary ' ${CRUBADAN}/EOLAS | sed 's/^boundary  *//'`
+INTCHARS=`egrep '^interior ' ${CRUBADAN}/EOLAS | sed 's/^interior  *//'`
+UPPERS=`caps.pl -U ${CHARSET}`
+LOWERS=`caps.pl -L ${CHARSET}`
+DIR="${TEANGA}" # gramadoir-${TEANGA}-${VERSION}"
+PERLDIR="${DIR}/Lingua-${UPPERTEANGA}-Gramadoir"
+if [ -e "${DIR}" ]
+then
+	echo "${DIR} already exists..."
+	exit
+fi
+mkdir ${DIR}
+mkdir ${PERLDIR}
+mkdir ${PERLDIR}/lib
+mkdir ${PERLDIR}/lib/Lingua
+mkdir ${PERLDIR}/lib/Lingua/${UPPERTEANGA}
+mkdir ${PERLDIR}/lib/Lingua/${UPPERTEANGA}/Gramadoir
+mkdir ${PERLDIR}/lib/Lingua/${UPPERTEANGA}/Gramadoir/Languages
+mkdir ${PERLDIR}/scripts
+mkdir ${PERLDIR}/share
+mkdir ${PERLDIR}/t
+
+
+togail "${TEANGA}" good 15 | sed 's/ *\([0-9]*\) \(.*\)/\2 \1/' > ${DIR}/3grams-${TEANGA}.txt
+cp aonchiall-en.in ${DIR}/aonchiall-${TEANGA}.in
+(echo "ChangeLog Summary"; echo; echo "Version ${VERSION}"; echo "  * Initial Release") > ${DIR}/Changes
+cp comhshuite-en.in ${DIR}/comhshuite-${TEANGA}.in
+sed "
+s/\^NAME_ENG\^/${NAME_ENG}/
+s/\^TEANGA\^/${TEANGA}/
+s/\^UPPERTEANGA\^/${UPPERTEANGA}/
+s/\^VERSION\^/${VERSION}/
+s/\^NATIVE\^/${NATIVE}/
+s/\^BDCHARS\^/${BDCHARS}/
+s/\^INTCHARS\^/${INTCHARS}/
+s/\^UPPERS\^/${UPPERS}/
+s/\^LOWERS\^/${LOWERS}/
+" configure-xx > ${DIR}/configure
+chmod 755 ${DIR}/configure
+cp COPYING ${DIR}/COPYING
+touch ${DIR}/earraidi-${TEANGA}.bs
+echo "0" > ${DIR}/eile-${TEANGA}.bs
+sed '1d; 7,$d' eisceacht-en.in > ${DIR}/eisceacht-${TEANGA}.in
+cp giorr-xx ${DIR}/giorr-${TEANGA}
+LC_ALL=C sort -u ${CRUBADAN}/GLAN > ${DIR}/lexicon-${TEANGA}.txt
+counts.pl ${CRUBADAN}/FREQ ${DIR}/lexicon-${TEANGA}.txt > ${DIR}/freq-${TEANGA}.txt
+sed -i 's/.*/& 1/' ${DIR}/lexicon-${TEANGA}.txt
+##  create "squished" version too since in future lexicon will be built from
+##  that (distributed) file
+cp macra-en.meta.sed ${DIR}/macra-${TEANGA}.meta.sed
+# get MANIFEST, MANIFEST.SKIP from gramadoir 
+egrep '^#' morph-en.txt | sed '1d' > ${DIR}/morph-${TEANGA}.txt
+touch ${DIR}/nocombo-${TEANGA}.txt
+echo "0 <U>" > ${DIR}/pos-${TEANGA}.txt
+sed "s/@TEANGA@/${TEANGA}/; s/@NAME_ENGLISH@/${NAME_ENG}/" README-xx > ${DIR}/README
+cp rialacha-en.in ${DIR}/rialacha-${TEANGA}.in
+cp unigram-en.pre ${DIR}/unigram-${TEANGA}.pre
+cp unigram-en.txt ${DIR}/unigram-${TEANGA}.txt
