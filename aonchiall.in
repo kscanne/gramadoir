@@ -8,8 +8,14 @@
 <B>[Aa]n</B> <V>ANYTHING</V>:<Q>
 <B>[Aa]r</B> <T>ANYTHING</T>:<S>
 <B>[Aa]s</B> <T>ANYTHING</T>:<S>
+<T>[Nn]a</T> <B>ba</B>:<N>
+<B>[Bb]a</B>:<V>
 <B>[Cc]é</B> <P>ANYTHING</P>:<Q>
+<B>[Ff]aoin</B>:<S>
+<B>gur</B> <V>ANYTHING</V>:<C>
 <B>[Mm]á</B> <V>ANYTHING</V>:<C>
 <B>[Mm]ar</B> <N>ANYTHING</N>:<S>
 <B>[Mm]ar</B> <T>ANYTHING</T>:<S>
-<B>ó</B> <N>ANYTHING</N>:<S>
+<B>ó</B> <^V>ANYTHING</^V>:<S>
+<B>ó</B> <V>ANYTHING</V>:<C>
+<B>San</B> CAPITAL:<N>
