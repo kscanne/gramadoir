@@ -9,21 +9,13 @@
 
 SHELL = @SHELL@
 
-prefix=@prefix@
-exec_prefix = $(prefix)
-
-bindir = $(exec_prefix)/bin
-libexecdir = $(exec_prefix)/libexec
-datadir = $(prefix)/share
-localedir = $(datadir)/locale
 PACKAGE_NAME = @PACKAGE_NAME@
 TARBALL = @PACKAGE_TARNAME@
-pkgdatadir = $(datadir)/$(PACKAGE_NAME)
 INSTALL = @INSTALL@
 INSTALL_DATA = @INSTALL_DATA@
 CC = @CC@
 CFLAGS = @CFLAGS@
-DEFS = -DLOCALEDIR=\"$(localedir)\" @DEFS@
+DEFS = -DLOCALEDIR=\"po\" @DEFS@
 ECHO = echo
 EGREP = @EGREP@
 LEX = @LEX@
@@ -32,6 +24,43 @@ LEX_OUTPUT_ROOT = @LEX_OUTPUT_ROOT@
 LN_S = @LN_S@
 PERL = @PERL@
 YACC = @YACC@
+
+###############################################################################
+#                     .IN FILE GRAMMAR/PARSER
+###############################################################################
+
+all : aparser eparser rparser
+
+aonchiall.y : ponc.in.y
+	cat ponc.in.y | sed "s/_TAIL_MACRO_/result/; s/_RESULT_MACRO_/POSTAG/" > aonchiall.y
+
+eisceacht.y : ponc.in.y
+	cat ponc.in.y | sed "s/_TAIL_MACRO_//; /^result/d" > eisceacht.y
+
+rialacha.y : ponc.in.y
+	cat ponc.in.y | sed "s/_TAIL_MACRO_/result/; s/_RESULT_MACRO_/MESSAGE | MESSAGEPLUS MESSAGEARG/" > rialacha.y
+
+aparser : aonchiall.y ponc.in.l gettext.h
+	$(LEX) ponc.in.l
+	$(YACC) -d aonchiall.y
+	$(CC) -c $(CFLAGS) $(DEFS) $(LEX_OUTPUT_ROOT).c y.tab.c
+	$(CC) -o aparser $(CFLAGS) $(LEX_OUTPUT_ROOT).o y.tab.o $(LEXLIB)
+
+eparser : eisceacht.y ponc.in.l gettext.h
+	$(LEX) ponc.in.l
+	$(YACC) -d eisceacht.y
+	$(CC) -c $(CFLAGS) $(DEFS) $(LEX_OUTPUT_ROOT).c y.tab.c
+	$(CC) -o eparser $(CFLAGS) $(LEX_OUTPUT_ROOT).o y.tab.o $(LEXLIB)
+
+rparser : rialacha.y ponc.in.l gettext.h
+	$(LEX) ponc.in.l
+	$(YACC) -d rialacha.y
+	$(CC) -c $(CFLAGS) $(DEFS) $(LEX_OUTPUT_ROOT).c y.tab.c
+	$(CC) -o rparser $(CFLAGS) $(LEX_OUTPUT_ROOT).o y.tab.o $(LEXLIB)
+
+###############################################################################
+#                     AUTOCONF STUFF AND CLEANUP                              #
+###############################################################################
 
 configure: configure.ac
 	autoconf
@@ -59,6 +88,10 @@ clean :
 semiclean :
 	rm -f triail.html y.tab.* $(LEX_OUTPUT_ROOT).* aonchiall.y eisceacht.y rialacha.y
 
+###############################################################################
+#                    REMAINDER IS FOR MAINTAINER ONLY                         #
+###############################################################################
+
 webhome = $(HOME)/public_html/$(PACKAGE_NAME)
 
 installhtml :
@@ -74,10 +107,8 @@ installhtml :
 
 installweb :
 	$(MAKE) installhtml
-#	$(MAKE) neamhshuim
 	$(INSTALL_DATA) gramadoir.dtd $(webhome)/../dtds
 	$(INSTALL_DATA) gramadoir.lsm $(webhome)
-#	$(INSTALL_DATA) $(HOME)/.neamhshuim $(pkgdatadir)/Neamhshuim
 	bash runchoip
 
 triail.html : FORCE
@@ -133,53 +164,5 @@ dist : FORCE
 	gzip $(TARBALL).tar
 	chmod 444 $(TARBALL).tar.gz
 	rm -f ../$(TARBALL)
-
-###############################################################################
-#                     .IN FILE GRAMMAR/PARSER
-###############################################################################
-
-
-aonchiall.y : ponc.in.y
-	cat ponc.in.y | sed "s/_TAIL_MACRO_/result/; s/_RESULT_MACRO_/POSTAG/" > aonchiall.y
-
-eisceacht.y : ponc.in.y
-	cat ponc.in.y | sed "s/_TAIL_MACRO_//; /^result/d" > eisceacht.y
-
-rialacha.y : ponc.in.y
-	cat ponc.in.y | sed "s/_TAIL_MACRO_/result/; s/_RESULT_MACRO_/MESSAGE | MESSAGEPLUS MESSAGEARG/" > rialacha.y
-
-aparser : aonchiall.y ponc.in.l gettext.h
-	$(LEX) ponc.in.l
-	$(YACC) -d aonchiall.y
-	$(CC) -c $(CFLAGS) $(DEFS) $(LEX_OUTPUT_ROOT).c y.tab.c
-	$(CC) -o aparser $(CFLAGS) $(LEX_OUTPUT_ROOT).o y.tab.o $(LEXLIB)
-
-eparser : eisceacht.y ponc.in.l gettext.h
-	$(LEX) ponc.in.l
-	$(YACC) -d eisceacht.y
-	$(CC) -c $(CFLAGS) $(DEFS) $(LEX_OUTPUT_ROOT).c y.tab.c
-	$(CC) -o eparser $(CFLAGS) $(LEX_OUTPUT_ROOT).o y.tab.o $(LEXLIB)
-
-rparser : rialacha.y ponc.in.l gettext.h
-	$(LEX) ponc.in.l
-	$(YACC) -d rialacha.y
-	$(CC) -c $(CFLAGS) $(DEFS) $(LEX_OUTPUT_ROOT).c y.tab.c
-	$(CC) -o rparser $(CFLAGS) $(LEX_OUTPUT_ROOT).o y.tab.o $(LEXLIB)
-
-poncin : aparser eparser rparser
-	@$(ECHO) 'Checking aonchiall-ga.in'
-	@cat aonchiall-ga.in | ./aparser
-	@$(ECHO) 'Checking eisceacht-ga.in'
-	@cat eisceacht-ga.in | ./eparser
-	@$(ECHO) 'Checking rialacha-ga.in'
-	@cat rialacha-ga.in | ./rparser
-
-###############################################################################
-
-stresstest : FORCE
-	@mv stress.out stress.out.ok
-	@mv stress.err stress.err.ok
-	@./stress
-	@if diff stress.err.ok stress.err && diff stress.out.ok stress.out; then $(ECHO) "OK."; rm -f *.ok; else $(ECHO) "Problem."; fi
 
 FORCE :
