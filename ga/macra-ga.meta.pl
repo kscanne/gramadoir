@@ -47,7 +47,11 @@ s/UNECLIPSEDDT/(?:[tT]|d[^Tt'])[^<]+/g;
 s/UNECLIPSEDCONS/(?:[cfptCFPT]|d[^Tt']|g[^Cc]|b[^Pph]|bh[^fF])[^<]+/g;
 s/UNECLIPSED/(?:[aeiouAEIOUáéíóúÁÉÍÓÚcfptCFPT]|d[^Tt']|g[^Cc]|b[^Pph]|bh[^fF])[^<]*/g;
 s/ECLIPSEDVOWEL/n(?:-[aeiouáéíóú]|[AEIOUÁÉÍÓÚ])[^<]*/g;
+s/ECLIPSEDBCFGP/(?:g[Cc]|b[Pp]|m[Bb]|n[Gg]|bh[fF])[^<]+/g;
 s/ECLIPSED/(?:n(?:-[aeiouáéíóú]|[AEIOUÁÉÍÓÚ])|d[Tt]|g[Cc]|b[Pp]|m[Bb]|n[DdGg]|bh[fF])[^<]*/g;
+s/ECLIPSINGNUMBER/(?:n?[Dd]h?eich|[Nn]aoi|h?[Oo]cht|[Ss]h?eacht)/g;
+# matches "da" but that's not a word anyway
+s/ECLIPSINGPOSS/(?:[Dd]|[Ff]aoin|[Ii]n|[Ll]en|[Óó]n|[Tt]rín)(?:a|ár)/g;
 s/INITIALM/[Mm][^<]+/g;
 s/UNLENITABLE/(?:[^BbCcDdFfGgMmPpTt]|[Ss][^lnraeiouáéíóú])[^<]*/g;
 s/UNLENITEDBCGMP/[BbCcGgMmPp][^h'][^<]*/g;
@@ -60,10 +64,15 @@ s/UNLENITED/(?:[BbCcDdFfGgMmPpTt][^h']|[Ss][lnraeiouáéíóú]|bh[Ff])[^<]*/g;
 s/LENITEDF/[Ff]h[aeiouáéíóú][^<]*/g;
 s/ORDINALADJ/(?:[^<][^<]*[^m]|[0-9]+)ú/g;
 s/PREFIXEDT/t(?:[AEIOUÁÉÍÓÚ]|-[aeiouáéíóú])[^<]+/g;
+s/EIRE/(?:[nh])?Éire[^<]*/g;
 # gan/chun/ainneoin disallow "[^ >]+n"
 s/FUSEDPOSS/(?:[Dd]ár?|(?:[Ff]aoi|[Ii]|[Ll]e|[Tt]rí)n(?:a|ár))/g;
 s/FUSEDPREP/(?:[Dd][eo]n|[Ss]an?|[Ff]aoin|[Óó]n)/g;
-s/DATIVEPREP/(?:[Aa][grs]|[Dd][eo]|[Ff]aoi|[Gg]an|[Gg]o|[Ll]e|[Óó]|[Ii]n?)/g;
+# LGG p.32, CB p.134 (omitting infreq "dar", "ionsar", "os")
+# neither lists "gan" but in practice dative forms used after it
+# ok to include "tríd" here since it won't be resolved as <S>
+# unless there is an article after it...
+s/DATIVEPREP/(?:[Aa][grs]|[Cc]huig|[Dd][eo]|[Ff]aoi|[Gg]an|[Gg]o|[Ll]e|[Óó]|[Ii]n?|[Rr]oimh|[Tt]har|[Tt]ríd?|[Uu]m)/g;
 s/INITIALTS/t[sS][^<]+/g;
 s/INITIALL/[Ll][^<]+/g;
 s/INITIALDAPOST/d'[^<]+/g;
@@ -158,6 +167,7 @@ s/\*CP\[/*pl="y" gnt="n"[/g;
 s/\*GP\[/*pl="y" gnt="y"[/g;
 s/\*CS\[/*pl="n" gnt="n"[/g;
 s/\*GS\[/*pl="n" gnt="y"[/g;
+s/\*CDS\[/*pl="n" gnt="[nd]"[/g;
 s/\*FCS\[/*pl="n" gnt="n" gnd="f"[/g;
 s/\*FCP\[/*pl="y" gnt="n" gnd="f"[/g;
 s/\*FGS\[/*pl="n" gnt="y" gnd="f"[/g;

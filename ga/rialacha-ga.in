@@ -99,13 +99,12 @@ sin sin:OK
 # CB p.24 #11.a.ix
 #. Sa dara alt, déan cur síos ar a bhfaca siad sa Spáinn.
 <A>[Dd]ara</A> <N>INITIALVOWEL</N>:PREFIXH
+#   note that prefix h on non-imperative V is handled by spelling...
 #. D'oirfeadh síol áitiúil níos fearr ná an síol a húsáidtear go minic.
 <VIMP>INITIALH</VIMP>:NIAITCH
 # CB p.24 #11.d
 #. Ná hinis do dhuine ar bith é (OK).
 [Nn]á <E><VIMP>INITIALH</VIMP></E>:OK
-#   note in previous batch that prefix h on other tags or on non-imperative V
-#   is handled by spelling...
 # using NMCS vs. nothing in next rule is faster and avoids false positive
 # with t-léine, etc.  Macro means "prefix t on a vowel"
 #. Tá ceacht stairiúil uathúil do chuairteoirí san t-ionad seo.
@@ -441,7 +440,7 @@ h?[Aa]on <N>LENITEDDST</N>:NISEIMHIU
 # OD ea^1.5b, LGG p.114 -- literary form, not in corpus at all
 #. Cé ea, rachaidh mé ann leat (OK).
 <Q>[Cc]é</Q> <P>ea</P>:OK
-# CB p.6 #2
+# CB p.6 #2, LGG p.26
 #. Cé an ceart atá agamsa a thuilleadh fós a lorg ar an rí?
 <Q>[Cc]é</Q> <T>an</T>:BACHOIR{cén}
 # corpus  (urú in the genitive plural)
@@ -536,6 +535,9 @@ g?[Cc]h?eithre <NP>(bliana|cinn|cloigne|fichid|huaire)</NP>:OK
 # "her bell/clock" is a potential exception but never in the corpus.
 #. D'éirídís ar maidin ar a ceathair a clog.
 [Aa] g?[Cc]loi?g:SEIMHIU
+# CB p.68 #19
+<A>cuibheasach</A> <A>ANYTHING</A>:UATHA
+<A>cuibheasach</A> <ACS>ANYTHING</ACS>:OK
 # CB p.13 #3.f, p.76 #8.b
 #. Bhí sé cúig bhanlámh ar fhad, cúig banlámh ar leithead.
 g?[Cc]h?úig <N>UNLENITED</N>:SEIMHIU
@@ -625,7 +627,7 @@ n?[Dd]h?eich <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 # CB p.12 #1.c, p.20 #2a
 #. Daoine eile atá ina mbaill den dhream seo.
 [Dd][eo]n <N>MUTATEDDST</N>:NICLAOCHLU
-# CB p.6 #2
+# CB p.6 #2, LGG p.26
 #. Creidim go raibh siad de an thuairim chéanna.
 [Dd]e <T>an</T>:BACHOIR{den}
 # CB p.13 #3.d, p.76 #8.b
@@ -663,7 +665,7 @@ n?[Dd]h?eich <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 # CB p.77 #8.g
 [Dd]h?ís <NC>ANYTHING</NC>:GENITIVE
 [Dd]h?ís <NS>ANYTHING</NS>:IOLRA
-# CB p.6 #2
+# CB p.6 #2, LGG p.26
 #. Cá bhfuil feoil le fáil agamsa le tabhairt do an mhuintir seo?
 [Dd]o <T>an</T>:BACHOIR{don}
 # CB p.5 #17
@@ -673,10 +675,10 @@ n?[Dd]h?eich <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 # aonchiall disambiguates "de" to <O> in this context, so rule never applies
 #<S>[Dd]e</S> a:BACHOIR{dá}
 # CB p.84 #8, p.132 #2
-#. Tá sé de chúram seirbhís a chur ar fáil do a gcustaiméirí i nGaeilge.
+#. Tá sé de chúram seirbhís a chur ar fáil do a chustaiméirí i nGaeilge.
 [Dd]o a:BACHOIR{dá}
 # CB p.84 #8, p.132 #2
-#. Seinnigí moladh ar an gcruit do ár nDia.
+#. Seinnigí moladh ar an gcruit do ár máthair.
 #. Is é seo mo Mhac muirneach do ar thug mé gnaoi.
 [Dd][eo] [áa]r:BACHOIR{dár}
 # CB p.18 #9.j, p.74 #2; "dó dhéag" in comhshuite
@@ -687,10 +689,12 @@ n?[Dd]h?eich <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 # CB p.77 #8.g
 [Dd]h?osaen <NC>ANYTHING</NC>:GENITIVE
 [Dd]h?osaen <NS>ANYTHING</NS>:IOLRA
+# CB p.55
+<S>DATIVEPREP</S> <N>EIRE</N>:BACHOIR{Éirinn}
 # CB p.13 #4.a
 #. Tá an domhan go léir faoi suaimhneas.
 <S>[Ff]aoi</S> <N>UNLENITED</N>:SEIMHIU
-# CB p.6 #2
+# CB p.6 #2, LGG p.26
 #. Caithfidh pobal na Gaeltachta iad féin cinneadh a dhéanamh faoi an Ghaeilge.
 <S>[Ff]aoi</S> <T>an</T>:BACHOIR{faoin}
 # CB p.84 #8, p.132 #2
@@ -846,7 +850,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.16 #7 (N), p.18 #10 (A)
 #. B'fhéidir gurbh fearr é seo duit ná leamhnacht na bó ba mhilse i gcontae Chill Mhantáin.
 <V>[Gg]urbh</V> UNLENITEDF:SEIMHIU
-# CO p.127
+# CO p.127; "in n-easnamh" will be caught by NIURU below (better message)
 #. Tá ainm i n-easnamh a mbeadh coinne agat leis.
 <S>[Ii]</S> <N>ECLIPSEDVOWEL</N>:BACHOIR{in}
 # CO p.127
@@ -859,7 +863,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 #. Táimid ag lorg 200 Club Gailf i gach cearn d'Éirinn.
 <S>[Ii]</S> [Gg]ach:URU
 # CB p.20 Note, OD i^1
-#. An bhfuil aon uachtar reoite agaibh i bhur gcuisneoir?
+#. An bhfuil aon uachtar reoite agaibh i bhur mála?
 <S>[Ii]</S> <D>[Bb]hur</D>:BACHOIR{in bhur}
 # CB p.20 Note, OD i^1
 #. An bhfuil aon uachtar reoite agat i dhá chuisneoir?
@@ -873,20 +877,20 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Ii]</S> <R>thart</R>:OK
 # CB p.6 #2
 #. An bhfuil aon uachtar reoite agat i an chuisneoir?
-<S>[Ii]</S> [Aa]n:BACHOIR{sa}
-# CB p.6 #2
+<S>[Ii]n?</S> [Aa]n:BACHOIR{sa}
+# CB p.6 #2; keep the "n?" or else "in na cuisneoirí" says "use «i»"
 #. An bhfuil aon uachtar reoite agat i na cuisneoirí?
-<S>[Ii]</S> [Nn]a:BACHOIR{sna}
+<S>[Ii]n?</S> [Nn]a:BACHOIR{sna}
 # CB p.84 #8, p.132 #2
 #. An bhfuil aon uachtar reoite i a cuisneoir?
 #. Roghnaigh na teangacha i a dtaispeánfar na leathanaigh seo.
-<S>[Ii]</S> a:BACHOIR{ina}
+<S>[Ii]n?</S> a:BACHOIR{ina}
 # CB p.132 #2
 #. Rinne gach cine é sin sna cathracha i ar lonnaíodar.
-<S>[Ii]</S> ar:BACHOIR{inar}
+<S>[Ii]n?</S> ar:BACHOIR{inar}
 # CB p.84 #8
-#. An bhfuil aon uachtar reoite i ár gcuisneoir?
-<S>[Ii]</S> <D>ár</D>:BACHOIR{inár}
+#. An bhfuil aon uachtar reoite i ár mála?
+<S>[Ii]n?</S> <D>ár</D>:BACHOIR{inár}
 # CB p.113
 <S>[Ii]n?</S> <VCOP>(is|ar|arb)</VCOP>:BACHOIR{inar, inarb}
 <S>[Ii]n?</S> <VCOP>(ba|ab|arbh)</VCOP>:BACHOIR{inar, inarbh}
@@ -902,6 +906,8 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 #. Thug sé seo deis dom breathnú in mo thimpeall.
 #. Phós sí Pádraig, fear ón mBlascaod Mór, in 1982.
 <S>[Ii]n</S> INITIALCONSONANT:BACHOIR{i}
+# not really an exception but get better error message below with NIURU
+<S>[Ii]n</S> ECLIPSEDVOWEL:OK
 #. Phós sí Pádraig, fear ón mBlascaod Mór, in 1892 (OK).
 <S>[Ii]n</S> <A>VOWELNUMERAL</A>:OK
 # two exceptions when "in" is OK before a consonant:
@@ -964,7 +970,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 #. Beir i do láimh ar an tslat le ar bhuail tú an abhainn, agus seo leat.
 <S>[Ll]e</S> ar:BACHOIR{lenar}
 # CB p.84 #8
-#. Ba mhaith liom buíochas a ghlacadh le ár bhfoireann riaracháin.
+#. Ba mhaith liom buíochas a ghlacadh le ár seirbhís riaracháin.
 <S>[Ll]e</S> ár:BACHOIR{lenár}
 # CB p.24 #11.a.v (N) #11.b.ii (A) #11.c (P), LGG p.112-113
 #. Tógann siad cuid de le iad féin a théamh.
@@ -1027,7 +1033,11 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <VCOP>[Mm]ás</VCOP> <A>[Dd]há</A>:OK
 # OD méad
 #. Tá caitheamh na hola ag dul i méad i gcónaí.
-[Mm]h?éad:CAIGHDEAN{méid, mhéid}
+<N>[Mm]h?éad</N>:CAIGHDEAN{méid, mhéid}
+# CB p.68 #19
+#. Tosaíodh ar mhodh adhlactha eile ina mbaintí úsáid as clocha measartha móra.
+<A>measartha</A> <A>ANYTHING</A>:UATHA
+<A>measartha</A> <ACS>ANYTHING</ACS>:OK
 # CB p.5 #17
 #. Comhlíon mo aitheanta agus mairfidh tú beo.
 <D>[Mm]o</D> INITIALVOWELORF:BACHOIR{m+uaschamóg}
@@ -1097,8 +1107,6 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <T>[Nn]a</T> [Cc]héad:OK
 #. Tá an tréith sin coitianta i measc na nÉireannaigh sa tír seo.
 <T>[Nn]a</T> <NCP>ECLIPSED</NCP>:GENITIVE
-#. Clann na bPoblachta a thug siad orthu féin.
-<T>[Nn]a</T> <NGS>ECLIPSED</NGS>:NIURU
 #. Athdhéantar na snáithe i ngach ceann de na curaclaim seo.
 <T>[Nn]a</T> <NCS>ANYTHING</NCS>:BACHOIR{an}
 # Literary refs, OF81 m.sh. "An Tiarna Dia na Slua" and "Béal Átha na Slua"
@@ -1263,8 +1271,8 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.13 #4.a
 #. Tabhair an t-ordú seo leanas ó béal.
 <S>[Óó]</S> <N>UNLENITED</N>:SEIMHIU
-# CB p.6 #2
-#. Bíodh bhur ngrá saor ó an gcur i gcéill.
+# CB p.6 #2, LGG p.26
+#. Bíodh bhur ngrá saor ó an chur i gcéill.
 <S>[Óó]</S> <T>an</T>:BACHOIR{ón}
 # CB p.113
 <[CS]>[Óó]</[CS]> <VCOP>is</VCOP>:BACHOIR{ós}
@@ -1349,6 +1357,9 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 # CB p.77 #8.g
 [Pp]h?éire <NC>ANYTHING</NC>:GENITIVE
 [Pp]h?éire <NS>ANYTHING</NS>:IOLRA
+# CB p.68 #19
+<A>réasúnta</A> <A>ANYTHING</A>:UATHA
+<A>réasúnta</A> <ACS>ANYTHING</ACS>:OK
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. Agus tháinig scéin air roimh an pobal seo ar a líonmhaire.
 <S>[Rr]oimh</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
@@ -1360,6 +1371,8 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 # CB p.6 #2 <=>
 #. An bhfuil aon uachtar reoite agat sa oighear?
 <S>[Ss]a</S> INITIALVOWELORF:BACHOIR{san}
+#. Gortaíodh ceathrar sa n-eachtra.
+<S>[Ss]a</S> ECLIPSEDVOWEL:BACHOIR{san}
 #. Abairt a chuireann in iúl dearóile na hÉireann sa 18ú agus sa 19ú haois.
 <S>[Ss]a</S> VOWELORDINAL:BACHOIR{san}
 # CB p.12 #1.c.i; prev. rule handles f+vowel, so next one is f[lr] only
@@ -1581,7 +1594,51 @@ d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</
 # CB p.22 #8.a
 <S>[Uu]m</S> <T>an</T> <NMCS>PREFIXEDT</NMCS>:NITEE
 #############################################################################
-#  <=> Prefix h rules
+#   Nouns appearing only in the dative; see CB p.46 #13, p.55 #6 (Éirinn)
+# good to keep this before the <=> eclipsis for things like "dar gcionn"
+#############################################################################
+# stronger message in some cases first:
+<N>g?[Cc]h?ianaibh</N>:INPHRASE{ó chianaibh}
+#. An lá dar gcionn nochtadh gealltanas an Taoisigh sa nuachtán.
+#. Conas a bheadh Éirinn agus Meiriceá difriúil?
+<ND>ANYTHING</ND>:NODATIVE
+# These two are prepositions in addition, even lenited:
+#. Ba chois tine é (OK).
+<ND>([Cc]h?ois|[Ll]áimh)</ND>:OK
+<E><ND>[Cc]ionn</ND> <VCOP>is</VCOP>:OK
+<ND>INITIALDAPOST</ND>:OK
+<S>FUSEDPREP</S> <E><ND>ANYTHING</ND></E>:OK
+<S>DATIVEPREP</S> <E><ND>ANYTHING</ND></E>:OK
+<S>DATIVEPREP</S> <D>ANYTHING</D> <E><ND>ANYTHING</ND></E>:OK
+<S>([Aa][rs]|[Ll]eis)</S> <T>ANYTHING</T> <E><ND>ANYTHING</ND></E>:OK
+<D>FUSEDPOSS</D> <E><ND>ANYTHING</ND></E>:OK
+[Dd]há <E><ND>ANYTHING</ND></E>:OK
+<T>[Aa]n</T> [Dd]á <E><ND>ANYTHING</ND></E>:OK
+#############################################################################
+#  <=> Eclipsis rules
+#############################################################################
+#  LGG pp.54-55; "ar gcúl", "ar ndóigh", "ar dtús" in comhshuite
+#. Clann na bPoblachta a thug siad orthu féin.
+#  used to be handled by this: <T>[Nn]a</T> <NGS>ECLIPSED</NGS>:NIURU
+#. Cruthaíodh an chloch sin go domhain faoin dtalamh.
+#. Tá ainm in n-easnamh a mbeadh coinne agat leis.
+<N>ECLIPSED</N>:NIURU
+#  "de an gcrann" etc. won't even make it here, caught earlier
+<S>DATIVEPREP</S> <T>[Aa]n</T> <E><NCDS>ECLIPSEDBCFGP</NCDS></E>:OK
+<S>[Ll]eis</S> <T>[Aa]n</T> <E><NCDS>ECLIPSEDBCFGP</NCDS></E>:OK
+#  "san? gcrann/n-eatramh" etc. never gets to this exception, caught earlier
+#. Cruthaíodh an chloch sin go domhain faoin gcrann (OK).
+<S>FUSEDPREP</S> <E><NCDS>ECLIPSEDBCFGP</NCDS></E>:OK
+<T>[Nn]a</T> <E><NGP>ECLIPSED</NGP></E>:OK
+# this exception applies to eclipsed consonants, but "i n-[aeiou]" caught above
+<S>[Ii]</S> <E><NCDS>ECLIPSED</NCDS></E>:OK
+[Cc]á|[Gg]o <E><N>bh[Ff]ios</N></E>:OK
+<D>([Aa]|[Áá]r|[Bb]hur)</D> <E><N>ECLIPSED</N></E>:OK
+<D>([Aa]|[Áá]r|[Bb]hur)</D> [Dd]há <E><N>ECLIPSED</N></E>:OK
+<A>ECLIPSINGNUMBER</A> <E><N>ECLIPSED</N></E>:OK
+<D>ECLIPSINGPOSS</D> <E><N>ECLIPSED</N></E>:OK
+#############################################################################
+#  <=> Prefix h rules (verbs handled at top)
 #############################################################################
 #. Nach holc an mhaise duit a bheith ag magadh.
 <AWITHH>ANYTHING</AWITHH>:NIAITCH
@@ -1854,26 +1911,6 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 <VCOP>ANYTHING</VCOP> <E><A>[Nn]áir</A></E>:OK
 <N>[Oo]th</N>:INPHRASE{is oth}
 <VCOP>ANYTHING</VCOP> <E><N>[Oo]th</N></E>:OK
-#############################################################################
-#   Nouns appearing only in the dative; see CB p.46 #13, p.55 #6 (Éirinn)
-#############################################################################
-# stronger message in some cases first:
-<N>g?[Cc]h?ianaibh</N>:INPHRASE{ó chianaibh}
-#. An lá dar gcionn nochtadh gealltanas an Taoisigh sa nuachtán.
-#. Conas a bheadh Éirinn agus Meiriceá difriúil?
-<ND>ANYTHING</ND>:DATIVE
-# These two are prepositions in addition, even lenited:
-#. Ba chois tine é (OK).
-<ND>([Cc]h?ois|[Ll]áimh)</ND>:OK
-<E><ND>[Cc]ionn</ND> <VCOP>is</VCOP>:OK
-<ND>INITIALDAPOST</ND>:OK
-<S>FUSEDPREP</S> <E><ND>ANYTHING</ND></E>:OK
-<S>DATIVEPREP</S> <E><ND>ANYTHING</ND></E>:OK
-<S>DATIVEPREP</S> <D>ANYTHING</D> <E><ND>ANYTHING</ND></E>:OK
-<S>([Aa][rs]|[Ll]eis)</S> <T>ANYTHING</T> <E><ND>ANYTHING</ND></E>:OK
-<D>FUSEDPOSS</D> <E><ND>ANYTHING</ND></E>:OK
-[Dd]há <E><ND>ANYTHING</ND></E>:OK
-<T>[Aa]n</T> [Dd]á <E><ND>ANYTHING</ND></E>:OK
 #############################################################################
 # Now, some irregular comparatives that follow copula OR níos/níba?
 #   A similar rule for general gsf adjs would have to allow them to 
