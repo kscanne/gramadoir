@@ -1,5 +1,5 @@
 dnl Process this file with autoconf to produce a configure script.
-AC_INIT([gramadoir],[0.3],[scannell@slu.edu], [gramadoir-0.3])
+AC_INIT([gramadoir],[0.4pre1],[scannell@slu.edu], [gramadoir-0.4pre1])
 
 dnl Checks for programs.
 AC_PROG_AWK
@@ -54,20 +54,24 @@ else
 fi
 
 TEANGACHA=`sed '/^#/d; s/ .*//' TEANGACHA | tr "\n" " "`
+ALLIN=""
 ALLPL=""
 ALLOH=""
+ALLMAC=""
 for cod in ${TEANGACHA}
 do
-	ALLPL="${ALLPL} aonchiall-${cod}.pl eisceacht-${cod}.pl rialacha-${cod}.pl"
+	ALLIN="${ALLIN} aonchiall-${cod}.in eisceacht-${cod}.in rialacha-${cod}.in unigram-${cod}.txt unigram-${cod}.pre"
+	ALLPL="${ALLPL} aonchiall-${cod}.pl eisceacht-${cod}.pl rialacha-${cod}.pl unigram-${cod}.pl"
 	ALLOH="${ALLOH} cuardach-${cod}.o"
+	ALLMAC="${ALLMAC} macra-${cod}.meta.sed"
 done
-ALLIN=`echo ${ALLPL} | sed "s/\.pl/.in/g"`
 
 AC_SUBST(SH_GETTEXT)
 AC_SUBST(TEANGACHA)
 AC_SUBST(ALLPL)
 AC_SUBST(ALLIN)
 AC_SUBST(ALLOH)
+AC_SUBST(ALLMAC)
 
 AC_CONFIG_FILES(Makefile gr po/Makefile.in )
 AC_OUTPUT
