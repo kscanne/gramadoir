@@ -68,6 +68,9 @@
 <B>[Bb]a</B>:<V cop="y">
 <B>m?[Bb]h?aile</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Bb]haineann</B>:<V p="xx" t="láith">
+# catch barra here otherwise looks like nm1 gs/pl (really nm4 gs+pl of barr)
+#  and gets disambiguated as the gs after "an"
+[Aa]n <B>[Bb]arra</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Bb]h?arr</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Bb]h?eag</B>:<A pl="n" gnt="n">
 <B>[Bb]hí</B>:<V p="xx" t="caite">
