@@ -236,8 +236,6 @@ an <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
 an <B>NÌl</B>:<N pl="n" gnt="n" gnd="f">
 <S>ANYTHING</S> <B>NÌl</B>:<N pl="n" gnt="n" gnd="f">
 <B>NÌl</B>:<V p="y" t="l·ith">
-<B>[Nn]Ìor</B> <V>ANYTHING</V>:<U>
-<B>[Nn]Ìor</B>:<V cop="y">
 <B>[Nn]uair</B>:<C>
 # not "deer"
 <B>os</B>:<S>
@@ -507,6 +505,7 @@ ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
 <B>gur</B>:<V cop="y">
 # "is fada anois Û rinne ..." needs rinne -> <V>, also want <Y> resolved too
 <B>”</B> CAPITAL:<Y>
+<B>”</B> CAPVOWELWITHH:<Y>
 # need this next one for "” hE.*", etc.
 <B>”</B> <Y>ANYTHING</Y>:<Y>
 <B>[”Û]</B> <V>ANYTHING</V>:<C>
@@ -546,3 +545,6 @@ ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
 # dar le/liom/liomsa/lena etc.
 <B>[Dd]ar</B> <[DOST]>ANYTHING</[DOST]>:<S>
 <B>[Dd]ar</B>:<V cop="y">
+# let some verbs get resolved first!
+<B>[Nn]Ìor</B> <V>ANYTHING</V>:<U>
+<B>[Nn]Ìor</B>:<V cop="y">
