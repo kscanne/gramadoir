@@ -1,6 +1,14 @@
---- Makefile	2004-08-25 22:29:55.283551464 -0500
-+++ Makefile.ok	2004-08-25 22:25:07.820252528 -0500
-@@ -90,4 +90,85 @@
+--- Makefile	2004-08-25 22:42:56.527784288 -0500
++++ Makefile.ok	2004-08-25 22:43:36.661683008 -0500
+@@ -69,6 +69,7 @@
+ 
+ Makefile : Makefile.in config.status
+ 	./config.status
++	patch < Makefile.patch
+ 	chmod 444 Makefile
+ 
+ config.status: configure
+@@ -90,4 +91,85 @@
  semiclean :
  	rm -f y.tab.* $(LEX_OUTPUT_ROOT).* aonchiall.y eisceacht.y rialacha.y
  
