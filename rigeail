@@ -10,8 +10,8 @@ do
 	then
 		PRESTUFF=`echo "${perlline}" | sed 's/<\\/Z>(.*//'`
 		PREANDWORD=`echo "${perlline}" | sed 's@)<\\/B>.*@@'`
-		WORDNUM=`echo "(${PRESTUFF}" | tr -d -c "(" | wc -c | sed 's/^ *//'`
-		TAILNUM=`echo "(${PREANDWORD}" | tr -d -c "(" | wc -c | sed 's/^ *//'`
+		WORDNUM=`echo "(${PRESTUFF}" | tr -d -c "(" | wc -c | tr -d " "`
+		TAILNUM=`echo "(${PREANDWORD}" | tr -d -c "(" | wc -c | tr -d " "`
 		echo "${perlline}" | sed "s/\$4/\$${TAILNUM}/; s/\$3/\$${WORDNUM}/" | sed 's/\([[<^]\)\//\1\\\//g'
 	else
 		echo "${perlline}" | sed 's/\([[<^]\)\//\1\\\//g'
