@@ -150,6 +150,7 @@ sub gettext
 	$string =~ s/\[/~[/g;
 	$string =~ s/\]/~]/g;
 	$string =~ s/\%s/[_1]/;
+	$string =~ s/\%s/[_2]/;
 	return $lh->maketext($string, @rest);
 }
 
@@ -229,7 +230,7 @@ else {
 
 binmode STDERR, ":encoding($aschod)";
 
-f ($comheadan) {
+if ($comheadan) {
 	$lh = Lingua::@TEANGA@::Gramadoir::Languages->get_handle($comheadan);
 	die "gram: maketext $comheadan" unless $lh;
 }
@@ -360,7 +361,7 @@ while ($ARGV = shift @ARGV) {
 	}
 	local $/;  # slurp a file at a time
 	$_ = <ARGV>;
-	close ARGV;
+	warn gettext('%s: warning: problem closing %s\n', $clar, $ARGV) unless close ARGV;
 	if ($litriu) {
 		my $missp = $gr->spell_check($_);
 		foreach (@$missp) {
