@@ -335,7 +335,7 @@ h?[Aa]on <N>LENITEDDST</N>:NISEIMHIU
 #. Bhíomar ag féachaint ar an Ghaeltacht mar ionad chun feabhas a chur ar ar gcuid Gaeilge.
 #. Cosc a bheith ar cic a thabhairt don sliotar.
 #. Cosc a bheith ar CIC leabhair a dhíol (OK).
-<S>[Aa]r</S> <N>UNLENITED</N>:SEIMHIU
+<S>[Aa]r</S> <N>UNLENITED</N>:WEAKSEIMHIU{ar}
 # most of the time the construction here means "ar" is a copula,
 # but I'm not sure enough to move this to a "aonchiall" rule.
 #. Beidh cairde dá cuid ar Gaeilgeoirí iad (OK).
@@ -702,6 +702,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # corpus
 <A>[Gg]ach</A> <NP>ANYTHING</N>:UATHA
 # CB p.14 #4.c.i (says "nouns" specif.);  "gan fhios" is in comhshuite
+# But also see LGG p.74 which lenites "f" (except "gan fáth")...
 # Don't worry about "i ngan" since that always precedes "fhios" (INPHRASE rule)
 #. Tá ar chumas an duine saol iomlán a chaitheamh gan theanga eile á brú air.
 <S>[Gg]an</S> <N>LENITEDDFST</N>:NISEIMHIU
@@ -725,7 +726,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.14 #4.c  (note no "Y"'s, initial d,f,s,t here)
 #. Deir daoine eile, áfach, gur dailtín gan maith é.
 #. Fuarthas an fear marbh ar an trá, a chorp gan máchail gan ghortú.
-<S>[Gg]an</S> <N>UNLENITEDBCGMP</N>:SEIMHIU
+<S>[Gg]an</S> <N>UNLENITEDBCGMP</N>:WEAKSEIMHIU{gan}
 # a few general exceptions, e.g. "cead" in phrases in OD
 # mórán,puinn *should* be handled by "qualified" exceptions below,
 # but in practice this is dicey so put them here since they are uniformly unlen.
@@ -1355,7 +1356,7 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 #. Bhí an chathair ag cur thar maol le filí de gach cineál.
 <S>[Tt]har</S> [Mm]h?aoi?l:INPHRASE{thar maoil}
 # CB p.14 #4.e; several adverbial exceptions in comhshuite
-<S>[Tt]har</S> <N>UNLENITED</N>:SEIMHIU
+<S>[Tt]har</S> <N>UNLENITED</N>:WEAKSEIMHIU{thar}
 # CB p.24 #11.a.x
 #. Timpeall trí uaire a chloig ina dhiaidh sin tháinig an bhean isteach.
 [Tt]rí uaire?:BACHOIR{huaire}
