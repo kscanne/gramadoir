@@ -163,6 +163,10 @@
 ^réamh-(mh)		$1		0	<[ANV].*>
 ^réamh(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>
 ^réamh(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>
+^rí([lnr]..)		$1		0	<[ANV].*>
+^rí([bcdfgmpt]h.)	$1		0	<[ANV].*>
+^rí(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>
+^rí(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>
 ^ró-([aeiouáéíóú]..)	$1		0	<[AN].*>
 ^ró([aeiouáéíóú]..)	$1		2	<[AN].*>
 ^ró([lnr]..)		$1		0	<[AN].*>
@@ -190,6 +194,7 @@
 #  derivational morphology
 ([ao])chai?s$		$1ch		0	<A pl="n" gnt="n".*>
 acht$			ach		0	<A pl="n" gnt="n".*>
+([ao])chtaí$		$1cht		1	<N pl="n" gnt="n".*>
 íocht$			íoch		0	<A pl="n" gnt="n".*>
 úlachta?$		úil		0	<A pl="n" gnt="n".*> # CO p.120
 úchái?n$		ú		0	<N.*>
@@ -246,7 +251,7 @@ aibh$			a		1	<.+>    # fearaibh, fiachaibh
 tch			t		1	<.+>    # CO p.103
 i[dg]hea		ío		1	<.+>    # CO p.105,107
 i[dg]he			í		1	<.+>    # CO p.104,106
-uí([to])		aí$1		1	<.+>	# cialluíonn, ionaduíochta, leasuítear
+uí([mto])		aí$1		1	<.+>	# cialluíonn, ionaduíochta, leasuítear, mionnuím
 uith			aith		1	<.+>    # rialuitheoir
 adha			ú		1	<.+>    # CO p.105
 ádh			á		1	<.+>    # ádhbhar, rádh, etc.
@@ -270,11 +275,11 @@ ighile$			íola		1	<N pl="n" gnt="y" gnd="f".*>
 ([oó]ga)í$		$1		1	<N pl="y".*>   # duilleogaí
 nnaí$			nna		1	<N pl="y".*>   # ceisteannaí
 thaí$			tha		1	<.+>    # glórthaí, spéarthaí
-dha$			tha		1	<.+>    # measardha, muinteardha
-dha$			a		1	<.+>    # stuamdha, príomhdha
+(..)dha$		$1tha		1	<.+>    # measardha, muinteardha
+(..)dha$		$1a		1	<.+>    # stuamdha, príomhdha
 (.[aá])igh$		$1ch		1	<N.*>	# nb2 -aí genitives
 (..)igh$		$1each		1	<N.*>   #  same
-aidh$			a		1	<.+>    # bhfágaidh
+(..)aidh$		$1a		1	<.+>    # bhfágaidh
 óig$			óg		1	<N.*>   # nb2 
 lainn$			lann		1	<N.*>   # nb2
 aisí$			ais		1	<N.*>   # cuntaisí, bronntanaisí
@@ -289,10 +294,10 @@ e[oó]chai(nn|dís)$	eoi$1		1	<V .* t="coinn">
 ([^e])óchai(nn|dís)$	$1ói$2		1	<V .* t="coinn">
 #   2nd declension Dinneen-style endings
 u(i?gh)			a$1		1	<.+>  # see next few
-aíd$			aíonn		1	<V .* t="láith"> # cialluíd
+(..)aíd$		$1aíonn		1	<V .* t="láith"> # cialluíd
 aghadh			ú		1	<N.*>  # broad and slender
 i[dg]h(th?.)		i$1		1	<.+>  # marcaidhthe, masluighthe, beannuighth?ear
-thear$			tear		1	<V.*> # aut. present
+(..)thear$		$1tear		1	<V.*> # aut. present
 ighim			ím		1	<V.*>    # broad and slender
 ighidh			í		1	<.+>    # subjunctive?
 ighinn			ínn		1	<.+>    # imperfect
@@ -317,8 +322,8 @@ fi[rsd]$		fidh		1	<V .* t="fáist">
 óis$			óidh		1	<V .* t="fáist">
 eois$			eoidh		1	<V .* t="fáist">
 # Future/Cond autonomous; unwanted prefix h is common in achtanna
-^h(.+fe?ar)$		$1		1	<V .* t="fáist">
-^h(.+faí)$		$1		1	<V .* t="coinn">
+^h([aeiouáéíóú].+fe?ar)$	$1	1	<V .* t="fáist">
+^h([aeiouáéíóú].+fa?í)$		$1	1	<V .* t="coinn">
 # Past; also see Di27 (present).  "r" forms on p.216
 (...)eas$		$1		1	<V .* t="caite">
 (..[^aeiouáéíóú])as$	$1		1	<V .* t="caite">
@@ -335,11 +340,14 @@ anns$			ann		1	<V .* t="láith">
 íonns$			íonn		1	<V .* t="láith">
 #  corpus 
 th(eá|ear)$		t$1		1	<V.*>
+(..)faimís$		$1faimis	2	<V .* t="coinn">
 #  various -áil  endings should be broad, CO p.120
 áilim$			álaim		1	<V.*>
 áileann$		álann		1	<V.*>
 áilfidh$		álfaidh		1	<V.*>
 áilfeá$			álfá		1	<V.*>
+áilfear$		álfar		1	<V.*>
+áilfí$			álfaí		1	<V.*>
 ái(lf?)eadh$		á$1adh		1	<V.*>
 ái(lf?)im(i[sd])$	á$1aim$2	1	<V.*>
 áiligí$			álaigí		1	<V.*>
@@ -365,6 +373,8 @@ th(eá|ear)$		t$1		1	<V.*>
 uil$			úil		2	<A.*>
 ula$			úla		2	<A.*>
 eail$			eáil		2	<.+>    # common missing accent
+u$			ú		2	<N.*>
+# i$			í		2	<.+>  # lotsa false compounds with this
 #############################################################################
 #  rules with somewhat lower probability (e.g. fo-, must be after non-stnd
 #  verb endings to avoid "foluíonn"  parsing as "fo+luíonn"
@@ -375,6 +385,7 @@ eail$			eáil		2	<.+>    # common missing accent
 ([A-ZÁÉÍÓÚ])		\l$1		2	<.+>	# pRíOMhach
 ([eiéí][^aeiouáéíóú]+)íní?$	$1		0	<.+>	# diminutive
 ([aouáóú][^aeiouáéíóú]+)íní?$	$1		2	<.+>	# diminutive
+([óo])igíní?$		$1g		0	<N.*>
 #  the next rule handles a lot of stuff, including unwanted hyphens
 #  after prefixes (since the prefix rules will apply after recursing)
 #  and similarly unwanted hyphens before emphatic endings (CO p.126)
@@ -392,5 +403,6 @@ eail$			eáil		2	<.+>    # common missing accent
 ^([bcdfgmpBCDFGMP])h	$1		0	<[ANVY].*>
 ^([Tt])h([^s])		$1$2		0	<[ANVY].*>   # luathscéal danger
 ^([Ss])h([lnraeiouáéíóú])	$1$2	0	<[ANVY].*>
-^[bdm]'([AEIOUÁÉÍÓÚaeiouáéíóú])	$1	0	<[ANVY].*>	# d'Éamonn too
+^t'([AEIOUÁÉÍÓÚaeiouáéíóú]|[Ff]h)	d'$1	1	<[ANVY].*>	# t'athair
+^[bdm]'([AEIOUÁÉÍÓÚaeiouáéíóú]|[Ff]h)	$1	0	<[ANVY].*>	# d'Éamonn too
 ^[nt]-([aeiouáéíóú])	$1		0	<[ANV].*>
