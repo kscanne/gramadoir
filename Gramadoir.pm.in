@@ -13,7 +13,7 @@ use String::Approx qw(amatch adist);
 use Lingua::@TEANGA@::Gramadoir::Languages;
 
 our $VERSION = '@PACKAGE_VERSION@';
-use vars qw(@FOCAIL @MORPH %EILE %EARRAIDI %NOCOMBO %POS %GRAMS %MESSAGES %IGNORE $lh);
+use vars qw(@FOCAIL @MORPH @PUREMORPH %EILE %EARRAIDI %NOCOMBO %POS %SOP %GRAMS %MESSAGES %IGNORE $lh);
 
 memoize('tag_one_word', TIE => [ 'Memoize::ExpireLRU',
 				CACHESIZE => 5000,
@@ -129,6 +129,7 @@ sub new {
 	eval {$ref = retrieve(File::Spec->catfile($datapath, 'pos.hash'))};
 	croak $errormsg if ($@ or !$ref);
 	%POS = %$ref;
+	%SOP = reverse %POS;
 	eval {$ref = retrieve(File::Spec->catfile($datapath, '3grams.hash'))};
 	croak $errormsg if ($@ or !$ref);
 	%GRAMS = %$ref;
@@ -155,6 +156,7 @@ sub new {
 			$patt =~ s/>$/\/?>/;
 			$rule->{'poscompiled'} = qr/$patt/;
 		}
+		push @PUREMORPH, $rule if ($rule->{'level'} == -1);
 	}
 
 	if ($self->{'use_ignore_file'}) {
@@ -252,44 +254,41 @@ sub get_sentences_real
 sub add_grammar_tags
 {
 	my ( $self, $word, $grambytes ) = @_;
-
+	my $tagz = $self->get_grammar_tags($grambytes);
 	my $ans;
-	my $num = length( $grambytes );
-	if ( $num == 1) {
-		my $tag = $POS{$grambytes};
-		if (defined($tag)) {
-			$tag =~ m/^<([A-Z])/;
-			$ans = $tag.$word."</".$1.">";
-		}
-		else {
-			carp gettext('%s: illegal grammatical code\n',
-					gettext('An Gramadoir'));
-			$ans = "<U>$word</U>";
-		}
-	}
-	elsif ( $num > 1 ) {
-		$ans = "<B><Z>";
-		foreach my $byte (split //, $grambytes) {
-			my $tag = $POS{$byte};
-			if (defined($tag)) {
-				$tag =~ s/>$/\/>/;
-				$ans = $ans.$tag;
-			}
-			else {
-				carp gettext('%s: illegal grammatical code\n',
-					gettext('An Gramadoir'));
-			}
-		}
-		$ans = $ans."</Z>".$word."</B>";
+	if ( length($grambytes) == 1) {
+		$tagz =~ m/^<([A-Z])/;
+		$ans = $tagz.$word."</".$1.">";
 	}
 	else {
-		carp gettext('%s: no grammar codes: %s\n',
-			gettext('An Gramadoir'), "x");    # recode word?
+		$tagz =~ s/>/\/>/g;
+		$ans = "<B><Z>".$tagz."</Z>".$word."</B>";
 	}
-
 	return $ans;
 }
 
+# convert grammar bytes into string of tags like "<N><V><A>"
+sub get_grammar_tags
+{
+	my ( $self, $grambytes ) = @_;
+
+	my $ans='';
+	foreach my $byte (split //, $grambytes) {
+		my $tag = $POS{$byte};
+		if (defined($tag)) {
+			$ans = $ans.$tag;
+		}
+		else {
+			carp gettext('%s: illegal grammatical code\n', gettext('An Gramadoir'));
+		}
+	}
+	carp gettext('%s: no grammar codes: %s\n', gettext('An Gramadoir'), "x") unless ($ans);
+	return $ans;
+}
+
+# even though not called explicitly in this module,
+# these functions are called indirectly to implement
+# \l and \L in morphological rules; see Makefile.PL.in
 sub mylc {
 	my ($string) = @_;
 	$string =~ tr/@CAPITALS@/@LOWERS@/;
@@ -302,46 +301,46 @@ sub mylcfirst {
 	return $string;
 }
 
+sub clean_lookup
+{
+	my ( $self, $current ) = @_;
+
+	for my $href ( @FOCAIL ) {
+		if ( exists($href->{$current}) ) {
+			return $self->get_grammar_tags($href->{$current});
+		}
+	}
+	return "";
+}
+
 # look up in the hash tables FOCAIL, EILE, EARRAIDI consecutively
 # same arguments, return conventions as tag_recurse, except
 # no maximum depth set since this doesn't recurse.
 sub lookup
 {
-	my ( $self, $original, $current, $level, $rootpos ) = @_;
+	my ( $self, $original, $current, $level, $posans ) = @_;
 
+	$$posans = $self->clean_lookup($current);
 	my $ans;
-	for my $href ( @FOCAIL ) {
-		if ( exists($href->{$current}) ) {
-			my $codez = $href->{$current};
-			my %tempseen;
-			if ( $current =~ m/^[@CAPITALS@]/ ) {
-				my $lower = mylcfirst($current);
-				if ( exists($href->{$lower}) ) {
-					foreach my $bee (split //, $codez.$href->{$lower}) {
-						$tempseen{$bee}++;
-					}
-					$codez = join('', sort(keys %tempseen));
-					if ( length( $codez ) > 1 ) {
-						$codez =~ s/\177//;
-					}
-				}
-			}
-			$ans = $self->add_grammar_tags($original, $codez);
-			foreach my $patt (@$rootpos) {
-				return "STOP" unless ($ans =~ m/$patt/);
-			}
-			if ( $level == 0 ) {
-				$ans = "<E msg=\"MOIRF{$current}\"><X>".$original."</X></E>";
-			}
-			elsif ( $level == 1 ) {
-				$ans = "<E msg=\"CAIGHDEAN{$current}\"><X>".$original."</X></E>";
-			}
-			elsif ( $level == 2 ) {
-				$ans = "<E msg=\"DROCHMHOIRF{$current}\"><X>".$original."</X></E>";
-			}
-			return $ans;
+	if ($$posans) {
+		if ( $level == 0 ) {
+			$ans = "<E msg=\"MOIRF{$current}\"><X>".$original."</X></E>";
 		}
+		elsif ( $level == 1 ) {
+			$ans = "<E msg=\"CAIGHDEAN{$current}\"><X>".$original."</X></E>";
+		}
+		elsif ( $level == 2 ) {
+			$ans = "<E msg=\"DROCHMHOIRF{$current}\"><X>".$original."</X></E>";
+		}
+		else {
+			# -1 will only occur when tagging as compound and
+			# recursing on the two components, in which case
+			# (for now), the tags don't matter
+			$ans = '<X>';
+		}
+		return $ans;
 	}
+	$$posans = '<OK>';
 	if ( exists($EILE{$current}) ) {
 		my $correction = $EILE{$current};
 		if ( $level == -1 ) {
@@ -378,11 +377,12 @@ sub lookup
 sub tag_as_compound
 {
 	my ( $self, $word ) = @_;
+	my $dummy;
 	if ($word =~ m/^([^-]+)-(.*)$/) {
 		my $l = $1;
 		my $r = $2;
-		my $t1 = $self->tag_recurse( $l, $l, -1, [], 2 );
-		my $t2 = $self->tag_recurse( $r, $r, -1, [], 2 );
+		my $t1 = $self->tag_recurse( $l, $l, -1, \$dummy, 2 );
+		my $t2 = $self->tag_recurse( $r, $r, -1, \$dummy, 2 );
 		if ($t1 && $t2) {
 			if ($t1 !~ m/<E/ && $t2 !~ m/<E/) {
 				return "<E msg=\"COMHFHOCAL{$l+$r}\"><X>".$word."</X></E>";
@@ -399,8 +399,8 @@ sub tag_as_compound
 			my $r = substr($word, $i, $len - $i);
 			if (!exists($NOCOMBO{$l}) &&
 			    !exists($NOCOMBO{$r})) {
-				my $tl = $self->tag_recurse($l,$l,-1,[],2);
-				my $tr = $self->tag_recurse($r,$r,-1,[],2);
+				my $tl = $self->tag_recurse($l,$l,-1,\$dummy,2);
+				my $tr = $self->tag_recurse($r,$r,-1,\$dummy,2);
 			    	if ( $tl && $tr ) {
 					if ($tl !~ m/<E/ && $tr !~ m/<E/) {
 						return "<E msg=\"COMHFHOCAL{$l+$r}\"><X>".$word."</X></E>";
@@ -468,6 +468,31 @@ sub find_bad_three_grams
 	return "";
 }
 
+sub tag_one_word_clean
+{
+	my ( $self, $word ) = @_;
+
+	my $ans = $self->clean_tag_recurse($word, 4);
+	if ($ans) {
+		# sort -u, plus take out <F> if there are others
+		my %tempseen;
+		while ($ans =~ m/(<[^>]+>)/g) {
+			my $cod = $SOP{$1};
+			if (defined($cod)) {
+				$tempseen{$cod}++;
+			}
+			else {
+				carp gettext('%s: illegal grammatical code\n',
+						gettext('An Gramadoir'));
+			}
+		}
+		my $codez = join('', sort(keys %tempseen));
+		$codez =~ s/\177// if (length($codez) > 1);
+		$ans = $self->add_grammar_tags($word, $codez);
+	}
+	return $ans;
+}
+
 # takes a single word as an argument and returns it tagged, without fail
 # e.g. it will get something like <X>neamhword</X> if it is unknown
 sub tag_one_word
@@ -478,7 +503,10 @@ sub tag_one_word
 		return "<Y>".$word."</Y>" if ( exists($IGNORE{$word}) );
 	}
 	return "<A>".$word."</A>" if ($word =~ /^[0-9,'-]+$/);
-	my $ans = $self->tag_recurse($word, $word, -1, [], 6);
+	my $ans = $self->tag_one_word_clean($word);
+	return $ans if $ans;
+	my $dummy;
+	$ans = $self->tag_recurse($word, $word, -1, \$dummy, 6);
 	return $ans if $ans;
 	$ans = $self->tag_as_compound($word);
 	return $ans if $ans;
@@ -925,18 +953,18 @@ sub unigram
 #  a "level" which determines whether, if a match is found,
 #  whether it should be untagged (-1), tagged as OK but noting decomp (0),
 #  tagged as non-standard (1), or tagged as a misspelling (2),
-#  a reference "rootpos" to an array of regexps that must match if
-#  the current is found in the lexicon,
+#  a scalar reference "posans" to be filled in with the list of POS tags
+#  found for "current" (useful if return value has "<E..."),
 #  and the maximum allowed recursion depth (decremented on each recursion)
 #
 #   Returns the word tagged appropriately if a match is found, returns
 #   false ("") if the recursion bottoms out with no matches
 sub tag_recurse
 {
-	my ( $self, $original, $current, $level, $rootpos, $maxdepth ) = @_;
+	my ( $self, $original, $current, $level, $posans, $maxdepth ) = @_;
 
-	my $ans = $self->lookup( $original, $current, $level, $rootpos );
-	return "" if ($ans eq "STOP" or $maxdepth == 0);
+	my $ans = $self->lookup( $original, $current, $level, $posans );
+	return "" if ($maxdepth == 0);
 	return $ans if $ans;
 	my $newcurrent;
 	foreach my $rule (@MORPH) {
@@ -946,13 +974,45 @@ sub tag_recurse
 			my $pos = $rule->{'poscompiled'};
 			$newcurrent = $current;
 			$newcurrent =~ s/$p/$r/eeg;
-			push @$rootpos, $pos if $pos;
-			$ans = $self->tag_recurse($original, $newcurrent, ($level > $rule->{'level'}) ? $level : $rule->{'level'}, $rootpos, $maxdepth - 1);
-			pop @$rootpos if $pos;
-			return $ans if $ans;
+			$ans = $self->tag_recurse($original, $newcurrent, ($level > $rule->{'level'}) ? $level : $rule->{'level'}, $posans, $maxdepth - 1);
+			if ($ans) {
+				unless ($$posans eq '<OK>') {
+					my $temp = $$posans;
+					$$posans = '';
+					while ($temp =~ m/(<[ACDF-Y][^>]*>)/g) {
+						my $cand = $1;
+						$$posans .= $cand if ($cand =~ m/$pos/);
+					}
+				}
+				return $ans if $$posans;
+			}
 		}
 	}
 	return "";
+}
+
+sub clean_tag_recurse
+{
+	my ( $self, $current, $maxdepth ) = @_;
+
+	my $ans = $self->clean_lookup( $current );
+	return $ans if ($maxdepth == 0);
+	my $newcurrent;
+	foreach my $rule (@PUREMORPH) {
+		my $p = $rule->{'compiled'};
+		if ( $current =~ m/$p/ ) {
+			my $r = $rule->{'repl'};
+			my $pos = $rule->{'poscompiled'};
+			$newcurrent = $current;
+			$newcurrent =~ s/$p/$r/eeg;
+			my $toadd = $self->clean_tag_recurse($newcurrent, $maxdepth - 1);
+			while ($toadd =~ m/(<[^>]+>)/g) {
+				my $cand = $1;
+				$ans .= $cand if ($cand =~ m/$pos/);
+			}
+		}
+	}
+	return $ans;
 }
 
 
