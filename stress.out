@@ -14,7 +14,7 @@ If no file is given, read from standard input.
 
 Send bug reports to <scannell@slu.edu>.
 test version flag
-An Gramadoir, version 0.2-r1
+An Gramadoir, version 0.3
 Copyright (C) 2003 Kevin P. Scannell
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,
@@ -1073,7 +1073,7 @@ Falls keine Datei angegeben wird, wird von der Standardeingabe gelesen.
 
 Fehlermeldungen an <scannell@slu.edu> schicken.
 test version flag
-An Gramadóir, Version 0.2-r1
+An Gramadóir, Version 0.3
 Copyright (C) 2003 Kevin P. Scannell
 Dieses Programm is freie Software; die Bedingung unter denen Sie es kopieren
 dürfen, finden Sie in dem Quellcode. Es ist OHNE IRGENDEINE GARANTIE, sogar
@@ -2132,7 +2132,7 @@ Mura bhfuil comhad ann, léigh ón ionchur caighdeánach.
 
 Seol tuairiscí fabhtanna chuig <scannell@slu.edu>.
 test version flag
-An Gramadóir, leagan 0.2-r1
+An Gramadóir, leagan 0.3
 Copyright (C) 2003 Kevin P. Scannell
 Is saorbhogearra an ríomhchlár seo; féach ar an bhunchód le haghaidh
 coinníollacha cóipeála.  Níl baránta AR BITH ann; go fiú níl baránta ann
