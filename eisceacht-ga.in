@@ -4,12 +4,22 @@
 # This is free software; see the file COPYING for copying conditions.  There is
 # NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #
+<U>(a|[Nn]ár|[Nn]í)</U> <VPRFU>LENITED</VPRFU>:
+<D>FINALA</D> <NWITHH>ANYTHING</NWITHH>:
 ANYTHING [Aa]n méid:
+# corpus
+<T>[Aa]n</T> <P>[Tt]é</P>:
 # An talamh ar ar leag tú...
 ar:
+[Aa]r <VPRFU>LENITED</VPRFU>:
 ANYTHING bheith:
 bheith ANYTHING:
 [Cc]á mhinice|fhad|mhéad:
+# CB p.24 #11.a.iii
+<Q>[Cc]á</Q> <NWITHH>ANYTHING</NWITHH>:
+<Q>[Cc]ár</Q> <VPRFU>LENITED</VPRFU>:
+# OD ea^1.5b, LGG p.114
+[Cc]é ea:
 # CB p.24 #11.c
 [Cc]é|[Nn]í|[Ll]e|[Pp]é <PWITHH>ANYTHING</PWITHH>:
 # corpus
@@ -24,6 +34,12 @@ ANYTHING deir(im|imid|tear|inn|eadh|imis|teá|idís|tí)?:
 ANYTHING déarf(aidh|aimi[ds]|ar|ainn|á|adh|aidís|aí):
 # go deo deo
 deo:
+# CB p.23 #11.a.ix
+[Dd]ara <NWITHH>ANYTHING</NWITHH>:
+# CB p.23 #11.a.ix
+<A>ORDINALADJ</A> <NWITHH>ANYTHING</NWITHH>:
+# CB p.23 #11.a.ii
+[Dd]há <NWITHH>ANYTHING</NWITHH>:
 # Tabhair iad seo do do chara
 do:
 # CB p.133 #12.b
@@ -36,12 +52,17 @@ ANYTHING gach:
 [Gg]o chéile:
 # CB p.24 #11.b
 [Gg]o <AWITHH>ANYTHING</AWITHH>:
+# CB p.24 #11.a.v (not always resolved as <S> yet)
+[Gg]o <NWITHH>ANYTHING</NWITHH>:
+<C>([Gg]ur|[Mm]á|[Mm]urar|[Óó]|[Ss]ular)</C> <VPRFU>LENITED</VPRFU>:
 [Ll]e bhur|[Cc]héile|dhá:
+<S>([Ll]e|[Ss]na)</S> <NWITHH>ANYTHING</NWITHH>:
 # go leor leor
 leor:
 # CB p.133 #12.c
 [Mm]á tá(im|imid|thar)?:
 mé:
+<T>[Nn]a</T> <NWITHH>ANYTHING</NWITHH>:
 [Nn]á is:
 # CB p.24 #11.d
 [Nn]á <VIMP>INITIALH</VIMP>:
@@ -50,6 +71,11 @@ mé:
 [Nn]í bhfua(ir|rthas|irea[md]ar):
 # CB p.133 #12.e (future/cond)
 [Nn]í bhfaigh(idh|imi[ds]|fear|inn|feá|eadh|idís|fí):
+# OD has all of these, LGG p.112 too; CB gives "ní ionann"; corpus split
+[Nn]í h(ansa|amháin|ionann|amhlaidh):
+[Nn]íor <VPRFU>LENITED</VPRFU>:
 [Ss]a méid:
 ANYTHING seo:
 ANYTHING sin:
+# CB p.24 #11.a.x 
+ANYTHING <NWITHH>huaire</NWITHH>:
