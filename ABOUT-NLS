@@ -24,7 +24,8 @@ Quick configuration advice
    Unlike many official GNU packages, An Gramadóir requires that you 
 have GNU gettext installed and does not included a gettext implementation 
 in the tarball.  This is because it contains localizable strings inside
-the main bash script wrapper.  The standard configuration script
+the main bash script wrapper which need the command line "gettext" interface.  
+The standard configuration script
 
      ./configure
 
