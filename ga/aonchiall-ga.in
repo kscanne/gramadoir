@@ -17,8 +17,13 @@
 <S>[Ii]</S> <B>bhfuil</B>:<N pl="n" gnt="n" gnd="f">
 <B>bhfuil</B>:<V p="y" t="láith">
 <B>raibh</B>:<V p="y" t="caite">
+# Before a verb it's "not", not "sang"
+<B>[Cc]han</B> <V>ANYTHING</V>:<U>
+# "under the" not "supine"
 <B>[Ff]aoin</B>:<S>
 <S>[Ff]aoin</S> <B>g?ch?éad</B>:<N pl="n" gnt="n">
+# "down" not lenited "housekeeping"
+<B>[Tt]híos</B>:<R>
 # this century
 <B>g?[Cc]h?éad</B> seo:<N pl="n" gnt="n" gnd="m">
 <B>g?[Cc]h?éad</B>:<A pl="n" gnt="n">
@@ -27,6 +32,9 @@
 <B>[Mm]ás</B>:<V cop="y">
 # copula, not "abbot"
 <B>[Aa]b</B>:<V cop="y">
+<B><Z>ANYCOPULA</Z>ANYTHING</B> <N>(áil|aithnid|ch?uimhin|eol|fh?éidir|oth)</N>:<V cop="y">
+<B><Z>ANYCOPULA</Z>ANYTHING</B> <A>(dh?ócha|eagal|fh?oláir|iomaí|ionann|léir|leor|mh?iste|náir)</A>:<V cop="y">
+<B><Z>ANYCOPULA</Z>ANYTHING</B> dh?éanaí|dh?ual|h?ea|éard|mh?ithid:<V cop="y">
 # lowercase ach under last resorts
 <B>Ach</B>:<C>
 # Not needed until corpus ref turns up for "ar" nm1
@@ -46,8 +54,11 @@
 # otherwise these show up as missing lenition
 <B>[Aa]n</B> <NFCS>(maith|cúis)</NFCS>:<V cop="y">
 <B>[Aa]n</B> <V>ANYTHING</V>:<Q>
+# <A><R> so not caught by PRSO rule below
 <B>[Aa]n</B> amhlaidh:<V cop="y">
+# <S><C> so not caught by PRSO
 <B>[Aa]n</B> mar:<V cop="y">
+# exception to PRSO rule
 <B>[Aa]n</B> <P>té</P>:<T>
 <B>[Aa]n</B> <[PRSO]>ANYTHING</[PRSO]>:<V cop="y">
 <B>[Aa]n</B> leis:<V cop="y">
@@ -95,8 +106,6 @@
 [Aa]n <B>[Cc]heathrú</B>:<A pl="n" gnt="n">
 <B>g?[Cc]h?eathrú</B> <N>UNLENITED</N>:<A pl="n" gnt="n">
 <B>g?[Cc]h?eathrú</B> <NWITHH>ANYTHING</NWITHH>:<A pl="n" gnt="n">
-# an unusual step -- surely misspelling of "chéile" and not subjunctive.
-<B>cheile</B>:<F>
 <B>cinn</B>:<N pl="n" gnt="y" gnd="m">
 <B>[Cc]omhalta</B>:<N pl="n" gnt="n" gnd="m">
 <B>g?ch?ónaí</B>:<N pl="n" gnt="n" gnd="m">
@@ -156,6 +165,8 @@ an <B>dó</B>:<A pl="n" gnt="n">
 <B>(bh)?[Ff]h?ear</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Ff]éin</B>:<R>
 <B>(bh)?[Ff]uair</B>:<V p="y" t="caite">
+CAPITAL <B>Gabhann</B>:<Y>
+<B>Gabhann</B>:<V p="y" t="láith">
 <B>[Gg]ach</B> a:<N pl="n" gnt="n">
 <B>[Gg]ach</B> ar:<N pl="n" gnt="n">
 <B>[Gg]ach</B> is:<N pl="n" gnt="n">
@@ -223,8 +234,6 @@ an <B>Níl</B>:<N pl="n" gnt="n" gnd="f">
 <B>os</B>:<S>
 <T>na</T> <B>[Rr]inne</B>:<N pl="n" gnt="y" gnd="f">
 <B>[Rr]inne</B>:<V p="y" t="caite">
-# missp. of ríthe
-<B>[Rr]ithe</B>:<F>
 <B>San</B> CAPITAL:<N pl="n" gnt="n">
 <B>San</B>:<S>
 # gender problem?
@@ -298,6 +307,12 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 <S>ANYTHING</S> <B><Z>ANYNFC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <S>ANYTHING</S> <B><Z>ANYNFPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
 <S>ANYTHING</S> <B><Z>ANYNMPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+# see rialacha
+[Dd]ís|[Dd]h?osaen|[Pp]h?éire <B><Z>ANYNMGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="m">
+[Dd]ís|[Dd]h?osaen|[Pp]h?éire <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
+# exceptions to next one
+<N>[Cc]h?úpla</N> <B><Z>ANYNMC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<N>[Cc]h?úpla</N> <B><Z>ANYNFC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <NCS>ANYTHING</NCS> <B><Z>ANYNMG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <NCS>ANYTHING</NCS> <B><Z>ANYNFG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 # amach, síos, suas, aníos, ...  optional <A> on isteach, amuigh, istigh, etc
@@ -326,7 +341,8 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 <S>[Ss]na</S> <B><Z>ANYNFPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
 <S>[Ss]na</S> <B><Z>ANYNMPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 # "saol pearsanta an iománaí";  compare PREFIXT rule in rialacha-ga.in
-<[^S]>ANYTHING</[^S]> an <B><Z>ANYNMG</Z>INITIALVOWEL</B>:<N pl="n" gnt="y" gnd="m">
+# "R" for "tabhairt isteach an airgeadra"
+<[ANR]>ANYTHING</[ANR]> an <B><Z>ANYNMG</Z>INITIALVOWEL</B>:<N pl="n" gnt="y" gnd="m">
 # go léir, go fóill
 [Gg]o <B><Z>AWITHCOMMON</Z>ANYTHING</B>:<A pl="n" gnt="n">
 <R>[Cc]homh</R> <B><Z>ANYWITHCOMMON</Z>ANYTHING</B>:<A pl="n" gnt="n">
@@ -368,6 +384,9 @@ a <B><Z>NFVERB</Z>ANYTHING</B> <N>ANYTHING</N>:<V p="y" t="caite">
 a <B><Z>NFVERB</Z>ANYTHING</B> <Y>ANYTHING</Y>:<V p="y" t="caite">
 a <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <V>ANYTHING</V> <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+# agus cogaint na círe agus scríobadh thochas na tóna
+#  shouldn't lenite after verb (but maybe not after NMCS either?)
+# <C>ANYTHING</C> <B><Z>ADHWORD</Z>ANYTHING</B> LENITED:<N pl="n" gnt="n" gnd="m">
 # ...agus glacadh leis, murar glacadh leis.
 <C>ANYTHING</C> <B><Z>ADHWORD</Z>ANYTHING</B>:<V p="n" t="caite">
 # really a <C> but not resolved until below
@@ -391,9 +410,8 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 <B><Z>PLADJSUBJ</Z>ANYTHING</B>:<A pl="y" gnt="n">
 <B><Z>GENADJ</Z>ANYTHING</B>:<A>
 # next one better without <T>, "an chnuasaigh", etc.
-[Aa]n <B><Z>ANYNMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
-[Gg]ach <B><Z>ANYNMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
-[Aa]n <B><Z>ANYNMONEC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+[Aa]o?n|[Gg]ach <B><Z>ANYNMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+[Aa]o?n <B><Z>ANYNMONEC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 #<T>na</T> <B><Z>NMONE</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">  see next
 <[^N]>ANYTHING</[^N]> <B><Z>NMONE</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 <B><Z>NMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
