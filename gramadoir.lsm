@@ -1,17 +1,17 @@
 Begin4
 Title: gramadoir
-Version: 0.4
-Entered-date: 2004-02-05
-Description: An Gramadóir is an grammar checking engine designed for
-             rapid development of grammar checkers for minority languages
-	     and languages with limited computational resources.  It is
-	     currently implemented for Irish (Gaeilge).
-Keywords: grammar checker, Irish, Gaelic, Gaeilge, natural language, localization, parsing, tagging
+Version: 0.5
+Entered-date: 2004-08-25
+Description: An Gramadóir is a grammar checking engine.
+             It is designed for the rapid development of grammar checkers
+	     for minority languages and languages with limited computational
+	     resources.  It is currently implemented for Irish (Gaeilge).
+Keywords: grammar checker, Irish, Gaelic, Gaeilge, natural language, localization, parsing, tagging, minority languages
 Author: scannell@slu.edu (Kevin P. Scannell)
 Maintained-by: scannell@slu.edu (Kevin P. Scannell)
 Primary-site: borel.slu.edu gramadoir
-              1kb gramadoir.lsm
-              943kb gramadoir-0.4.tar.gz
+              1K gramadoir.lsm
+              164K gramadoir-0.5.tar.gz
 Alternate-site: ibiblio.org /pub/Linux/apps/misc/
 Original-site:
 Platforms: 
