@@ -81,15 +81,17 @@ s/\^BDCHARS\^/${BDCHARS}/
 s/\^INTCHARS\^/${INTCHARS}/
 s/\^UPPERS\^/${UPPERS}/
 s/\^LOWERS\^/${LOWERS}/
+s/\^AUTHOR\^/${AUTHOR}/
 " xx/configure > ${DIR}/configure
 chmod 755 ${DIR}/configure
 cp COPYING ${DIR}/COPYING
 touch ${DIR}/earraidi-${TEANGA}.bs
 touch ${DIR}/eile-${TEANGA}.bs
 cp xx/eisceacht-xx.in ${DIR}/eisceacht-${TEANGA}.in
-cp xx/giorr-xx ${DIR}/giorr-${TEANGA}
+cp xx/giorr-xx.pre ${DIR}/giorr-${TEANGA}.pre
+cp xx/giorr-xx.txt ${DIR}/giorr-${TEANGA}.txt
 LC_ALL=C sort -u ${CRUBADAN}/GLAN > ${DIR}/lexicon-${TEANGA}.txt
-counts.pl ${CRUBADAN}/FREQ ${DIR}/lexicon-${TEANGA}.txt > ${DIR}/freq-${TEANGA}.txt
+counts.pl ${CRUBADAN}/FREQ ${DIR}/lexicon-${TEANGA}.txt | egrep -v ' 0$' > ${DIR}/freq-${TEANGA}.txt
 sed -i 's/.*/& 1/' ${DIR}/lexicon-${TEANGA}.txt
 cat ${DIR}/lexicon-${TEANGA}.txt | recoder | ./cabhair.pl -c --encoding=${NATIVE} > ${DIR}/lexicon-${TEANGA}.bs
 rm -f ${DIR}/lexicon-${TEANGA}.txt
