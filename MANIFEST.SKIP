@@ -1,0 +1,10 @@
+\.hash$
+\.old$
+\.bak$
+\.tar$
+\.tar\.gz$
+\.SKIP$
+^\.
+^blib
+^Makefile$
+^pm_to_blib$
