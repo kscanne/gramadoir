@@ -1,5 +1,5 @@
---- Makefile	2005-01-10 23:14:27.053626984 -0600
-+++ Makefile.ok	2005-01-10 23:01:45.524397024 -0600
+--- Makefile	2005-01-24 15:42:08.176212616 -0600
++++ Makefile.ok	2005-01-24 15:24:30.546996696 -0600
 @@ -76,6 +76,15 @@
  
  Makefile : $(GRAMDIR)/Makefile-xx.in configure
@@ -29,7 +29,7 @@
  triail.xml-update : FORCE
  	$(MAKE) triail
  	$(MAKE) perl
-@@ -319,4 +334,80 @@
+@@ -319,4 +334,84 @@
  zipped : perl
  	(cd $(PERLD); make zipdist)
  
@@ -39,6 +39,10 @@
 +	bash bmtabla >> ../../eile/benchmarks
 +	vi ../../eile/benchmarks
 +	rm -f tmon.out
++
++unigram-cand.txt : $(DEVSCRIPTNAME)
++	$(MAKE) perl
++	benchcorp | $(PERL) -I $(PERLD)/lib $(DEVSCRIPTNAME) --minic | iconv -f utf8 -t iso-8859-1 > $@
 +
 +Changes : ../stair.html
 +	vilistextum $(GRAMDIR)/stair.html - | sed -n '/^ChangeLog/,/----/p' | $(EGREP) -v -- '---' > $@
