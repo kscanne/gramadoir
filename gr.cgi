@@ -1,4 +1,6 @@
 #!/usr/bin/perl -wT
+#  Under gentoo's apache configuration, this goes in /home/httpd/cgi-bin
+#  owner and group are "apache".
 
 use strict;
 use CGI;
