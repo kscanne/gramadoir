@@ -73,11 +73,11 @@ s/\"ANAITHNID/\"Focal anaithnid/g
 s/\"BACHOIR{\([^}]*\)}/\"Ba chóir duit \/\1\/ a úsáid anseo/g
 /CAIGHDEAN/s/_/ /g
 s/\"CAIGHDEAN{\([^}]*\)}/\"Focal neamhchaighdeánach: ar mhaith leat \/\1\/?/g
-s/\"CLAOCHLU/\"Seimhiú nó urú ar iarraidh/g
-s/\"NISEIMHIU/\"Seimhiú gan ghá/g
+s/\"CLAOCHLU/\"Séimhiú nó urú ar iarraidh/g
+s/\"NISEIMHIU/\"Séimhiú gan ghá/g
 s/\"PREFIXH/\"Réamhlitir \/h\/ ar iarraidh/g
 s/\"PREFIXT/\"Réamhlitir \/t\/ ar iarraidh/g
-s/\"SEIMHIU/\"Seimhiú ar iarraidh/g
+s/\"SEIMHIU/\"Séimhiú ar iarraidh/g
 s/\"URU/\"Urú ar iarraidh/g
 "
 }
