@@ -37,31 +37,25 @@ CLAR='An Gramadóir'
 EXECUTABLE="${0##/*/}"
 HELPCOMMAND="${EXECUTABLE} --help"
 
-d_usage1=$"Usage: %s [OPTIONS] [FILES]"
-d_bugreports=$"Send bug reports to <%s>."
-d_gpl=$"This is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\nto the extent permitted by law."
-d_stdinhelp=$"If no file is given, read from standard input."
-d_tryhelp=$"Try %s for more information."
-
 # All i18n strings collected here.  See gramadoir.pot for some 
 # translation hints.
-checking=$"Currently checking %s"
-notfound=$"There is no such file."
-isdir=$"Is a directory"
-permissions=$"Permission denied"
+checking=`gettext -s "Currently checking %s"`
+notfound=`gettext -s "There is no such file."`
+isdir=`gettext -s "Is a directory"`
+permissions=`gettext -s "Permission denied"`
 usage1=`gettext -s "Usage: %s [OPTIONS] [FILES]"`
-usage2=$"    --litriu       write misspelled words to standard output"
-usage3=$"    --html         produce HTML output for viewing in a web browser"
-usage4=$"    --xml          write tagged XML stream to standard output, for debugging"
-usage5=$"    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
-usage6=$"    --help         display this help and exit"
-usage7=$"    --version      output version information and exit"
+usage2=`gettext -s "    --litriu       write misspelled words to standard output"`
+usage3=`gettext -s "    --html         produce HTML output for viewing in a web browser"`
+usage4=`gettext -s "    --xml          write tagged XML stream to standard output, for debugging"`
+usage5=`gettext -s "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"`
+usage6=`gettext -s "    --help         display this help and exit"`
+usage7=`gettext -s "    --version      output version information and exit"`
 stdinhelp=`gettext -s "If no file is given, read from standard input."`
 bugreports=`gettext -s "Send bug reports to <%s>."`
-versionstring=$"version %s"
+versionstring=`gettext -s "version %s"`
 gpl=`gettext -s "This is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\nto the extent permitted by law."`
 tryhelp=`gettext -s "Try %s for more information."`
-unknownopt=$"unknown option"
+unknownopt=`gettext -s "unknown option"`
 
 # i18n: grammatical errors.  See rialacha.in.
 # If you port to another language, you won't translate these; instead
