@@ -191,6 +191,7 @@ s/\*MGS\[/*pl="n" gnt="y" gnd="m"[/g;
 s/\*MGP\[/*pl="y" gnt="y" gnd="m"[/g;
 s/\*NOPAUT\[/*(?: p=.y|t=..[^a])[/g;
 s/\*DEE\[/*t="(?:caite|gnáth|coinn)"[/g;
+s/\*PWITHH\[/*pl="y" .+ h="y"[/g;
 s/\*WITHH\[/*h="y"[/g;
 s/\*IMP\[/*t="ord"[/g;
 s/\*NOLEN\[/*t="[flo][^o][/g;

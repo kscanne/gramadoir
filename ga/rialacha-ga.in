@@ -477,9 +477,11 @@ h?[Aa]on <N>LENITEDDST</N>:NISEIMHIU
 <N pl="n" gnt="n" gnd="m">g?[Cc]h?eathrar</N> <NP>ANYTHING</NP>:UATHA
 <N pl="n" gnt="n" gnd="m">g?[Cc]h?eathrar</N> <N pl="y" gnt="y" gnd="f">ban</N>:OK
 <N pl="n" gnt="n" gnd="m">g?[Cc]h?eathrar</N> <N pl="n" gnt="n" gnd="f">m?bh?ean</N>:BACHOIR{ban}
-# CB p.24 #11.a.x
+# CB p.24 #11.a.x; corpus examples lenited/eclipsed
 #. Chuir siad fios orm ceithre uaire ar an tslí sin.
-<A pl="n" gnt="n">[Cc]eithre</A> uaire?:BACHOIR{huaire}
+<A pl="n" gnt="n">g?[Cc]h?eithre</A> uaire?:BACHOIR{huaire}
+# uniformly in corpus; no CB/OD
+g?[Cc]h?eithre <N>airde</N>:BACHOIR{hairde}
 # CB p.13 #3.f, p.76 #8.b
 #. Beidh ar Bhord Feidhmiúcháin an tUachtarán agus ceithre ball eile.
 <A pl="n" gnt="n">g?[Cc]h?eithre</A> <N>UNLENITED</N>:SEIMHIU
@@ -1007,7 +1009,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Ll]e</S> ár:BACHOIR{lenár}
 # CB p.24 #11.a.v (N) #11.b.ii (A) #11.c (P), LGG p.112-113
 #. Tógann siad cuid de le iad féin a théamh.
-<S>[Ll]e</S> <[ANP]>INITIALVOWEL</[ANP]>:PREFIXH
+<S>[Ll]e</S> <[ANPY]>INITIALVOWEL</[ANPY]>:PREFIXH
 # CB p.113
 <S>[Ll]e</S> <V cop="y">(is|ar|arb)</V>:BACHOIR{lenar, lenarb}
 <S>[Ll]e</S> <V cop="y">(ba|ab|arbh)</V>:BACHOIR{lenar, lenarbh}
@@ -1128,13 +1130,17 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <V cop="y">[Mm]urarbh</V> NONVOWELNONF:BACHOIR{murar}
 # CB p.21 #2.b
 #. An bhfuil aon uachtar reoite ag fear na bád?
-<T>na</T> <NGP>UNECLIPSED</NGP>:URU
+<T>[Nn]a</T> <NGP>UNECLIPSED</NGP>:URU
 # CB p.24 #11.a.vi, LGG p.112
 #. Is mór ag náisiún na Éireann a choibhneas speisialta le daoine de bhunadh na hÉireann atá ina gcónaí ar an gcoigríoch.
-<T>na</T> <N pl="n" gnt="y" gnd="f">INITIALVOWEL</N>:PREFIXH
+<T>[Nn]a</T> <N pl="n" gnt="y" gnd="f">INITIALVOWEL</N>:PREFIXH
+# and never before gs masculine; macro includes prefix h
+<T>[Nn]a</T> <NMGS>ANYTHING</NMGS>:NOGENITIVE
 # CB p.24 #11.a.vii (eclipsis in genitive plural, rule above), LGG p.112
 #. Chuir an Coimisiún féin comhfhreagras chuig na eagraíochtaí seo ag lorg eolais faoina ngníomhaíochtaí.
-<T>na</T> <NCP>INITIALVOWEL</NCP>:PREFIXH
+<T>[Nn]a</T> <NCP>INITIALVOWEL</NCP>:PREFIXH
+# corpus
+<T>[Nn]a</T> <Y>INITIALVOWEL</Y>:PREFIXH
 # corpus; holds for any POS really
 <T>[Nn]a</T> <[^Y]>LENITED</[^Y]>:NISEIMHIU
 <T>[Nn]a</T> [Cc]héad:OK
@@ -1500,6 +1506,9 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 <S>[Ss]na</S> <NCP>INITIALVOWEL</NCP>:PREFIXH
 #. Soláthraíonn an Roinn seisiúin sna Gaeilge labhartha do na mic léinn.
 <S>[Ss]na</S> <NCS>ANYTHING</NCS>:BACHOIR{sa, san}
+# and never before gs masculine; no need to trap this with "h" since
+# that will be caught by NIAITCH below
+<S>[Ss]na</S> <N pl="n" gnt="y" gnd="m">ANYTHING</N>:NOGENITIVE
 # corpus; holds for any POS really
 <S>[Ss]na</S> <[^Y]>LENITED</[^Y]>:NISEIMHIU
 <S>[Ss]na</S> [Cc]héad:OK
@@ -1744,7 +1753,7 @@ ECLIPSINGNUMBER <E><N>ECLIPSED</N></E>:OK
 # CB p.24 #11.a.iii; "cá"+h is ok
 #. Cá ham a tháinig sí a staidéar anseo ó thús (OK)?
 <V cop="y">[Cc]á</V> <E><NWITHH>ANYTHING</NWITHH></E>:OK
-# corpus exception to general "no prefix h" on nouns rule; not in CB
+# corpus exception to general "no prefix h" on nouns rule; not in CB/OD
 #. Bhí a dheartháir ag siúl na gceithre hairde agus bhí seisean ina shuí (OK).
 g?[Cc]h?eithre <E><NWITHH>hairde</NWITHH></E>:OK
 # CB p.23 #11.a.ix
@@ -1761,15 +1770,17 @@ a <A pl="n" gnt="n">[Dd]há</A> <E><NWITHH>ANYTHING</NWITHH></E>:OK
 #. Cuireadh cuid mhaith acu go hÉirinn (OK).
 [Gg]o <E><NWITHH>ANYTHING</NWITHH></E>:OK
 # CB p.24 #11.a.v/vii
-#. Tá tús curtha le clár chun rampaí luchtaithe a chur sna hotharchairr (OK).
-<S>([Ll]e|[Ss]na)</S> <E><NWITHH>ANYTHING</NWITHH></E>:OK
+#. Tá tús curtha le clár chun rampaí luchtaithe a chur sna hotharcharranna (OK).
+<S>[Ss]na</S> <E><NPWITHH>ANYTHING</NPWITHH></E>:OK
+<S>[Ll]e</S> <E><NWITHH>ANYTHING</NWITHH></E>:OK
 # CB p.24 #11.a.vi/vii
 #. Cuimhnígí ar na héachtaí a rinne sé (OK).
 #. Creidim go mbeidh iontas ar mhuintir na hÉireann nuair a fheiceann siad an feidhmchlár seo (OK).
 <T>[Nn]a</T> <E><NWITHH>ANYTHING</NWITHH></E>:OK
-# CB p.24 #11.a.x
+# CB p.24 #11.a.x (NOT cúig)
 #. Tháinig múinteoir úr i gceithre huaire fichead (OK).
-d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
+#. Caithfidh siad turas cúig huaire a chloig a dhéanamh.
+d?[tT]h?rí|g?[Cc]h?eithre|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 #############################################################################
 # CB p.18-19 converse of #11-13
 #. In Éirinn chaitheann breis is 30 faoin gcéad de mhná toitíní.
