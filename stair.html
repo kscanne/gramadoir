@@ -47,6 +47,30 @@ dual Xeon box running Gentoo Linux).   WPM = words per minute.
 
 <h2>ChangeLog Summary</h2>
 <p>
+<b>Version 0.3->0.4</b>
+<ul>
+<li>Rule set more than double the size of 0.3 (improved generation of Perl code
+means no loss in efficiency)
+<li>"tag 2-gram" rules added that flag unlikely part-of-speech combinations
+<li>Complete Brill-like rule-based tagger added with 331 disambiguation rules
+followed by a default unigram tagger
+<li>Added developer options "--brill", "--ilchiall",
+"--minic", and "--no-unigram" useful for developing the tagger
+<li>Module for "chunking" of set phrases added
+<li>Language-dependent modules added for recognizing abbreviations; improves
+sentence segmentation
+<li>Added "--aspell" option which makes suggestions for misspelled words
+<li>Modularized more language-specific material (tolower, macro files, etc.)
+<li>Flagging of repeated words
+<li>Flagging of extremely rare words (which sometimes disguise misspellings)
+<li>Dutch, French, and Romanian localizations
+<li>Now builds and runs cleanly in a UTF-8 locale
+<li>Vim interface <i>gramadoir.vim</i> included
+<li>Minor bug fixes
+</ul>
+</p>
+
+<p>
 <b>Version 0.2->0.3</b>
 <ul>
 <li>Optional native language support with GNU gettext (with translations to
