@@ -407,7 +407,8 @@ make_all_lowercase (const char *word, char *lowered)
       else
 	{
 	  lowered[i + offset] = word[i];
-	  lowers++;
+	  if (word[i] != '\n')
+	    lowers++;
 	}
       i++;
     }
