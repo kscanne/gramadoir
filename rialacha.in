@@ -3,11 +3,11 @@
 # on the web page:  http://borel.slu.edu/gramadoir/
 # Please send me any useful additional rules for inclusion in
 # future releases: <scannell@slu.edu>
-# <X></X>:ANAITHNID
+#<X>ANYTHING</X>:ANAITHNID
 # CB p.16 #9.a  (needs shallow parse)
-#<NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+#<NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.16 #9.b  (needs shallow parse)
-#<NMGS></NMGS> <A>UNLENITED</A>:SEIMHIU
+#<NMGS>ANYTHING</NMGS> <A>UNLENITED</A>:SEIMHIU
 # CB p.16 #9.c
 <NP>SLENDERFINALCONSONANT</NP> <A>UNLENITED</A>:SEIMHIU
 # CB p.13 #4.a
@@ -17,17 +17,17 @@
 # CB p.14 Note
 [Aa]ch <N>LENITED</N>:NISEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
-[Aa][grs] <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+<S>[Aa][grs]</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
-[Aa][grs] <T>an</T> <NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+<S>[Aa][grs]</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.14 Note
-[Aa][gs] <N>LENITED</N>:NISEIMHIU
+<S>[Aa][gs]</S> <N>LENITED</N>:NISEIMHIU
 # CB p.14 Note
 [Aa]mhail <N>LENITED</N>:NISEIMHIU
 # CB p.22 #7.b
 <Q>[Aa]n</Q> <V>UNECLIPSED</V>:URU
 # CB p.12 #1.a
-<^S></^S> <T>[Aa]n</T> <NFCS>UNLENITEDBCFGMP</NFCS>:SEIMHIU 
+<^S>ANYTHING</^S> <T>an</T> <NFCS>UNLENITEDBCFGMP</NFCS>:SEIMHIU 
 # CB p.12 #1.b
 <T>[Aa]n</T> <NMGS>UNLENITEDBCFGMP</NMGS>:SEIMHIU 
 # CB p.23 #9
@@ -35,9 +35,9 @@
 # CB p.23 #10
 <T>[Aa]n</T> <NMGS>INITIALS</NMGS>:PREFIXT 
 # CB p.6 #1
-<T>[Aa]n</T> <NFGS></NFGS>:BACHOIR{na}
+<T>[Aa]n</T> <NFGS>ANYTHING</NFGS>:BACHOIR{na}
 # CB p.6 #1
-<T>[Aa]n</T> <NP></NP>:BACHOIR{na}
+<T>[Aa]n</T> <NP>ANYTHING</NP>:BACHOIR{na}
 # CB p.13 #3.c
 <A>[Aa]on</A> <N>UNLENITEDBCFGMP</N>:SEIMHIU
 # CB p.19 #13
@@ -53,9 +53,9 @@
 # CB p.5 #17
 <V>[Bb]a</V> INITIALVOWELORF:BACHOIR{b+uaschamóg}
 # CB p.13 #3.e
-[Bb]eirt <N>UNLENITED</N>:SEIMHIU
+<N>[Bb]eirt</N> <N>UNLENITED</N>:SEIMHIU
 # CB p.16 #9.d
-[Bb]h?eirte? <N></N> <A>UNLENITED</A>:SEIMHIU
+<N>[Bb]h?eirte?</N> <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
 # CB p.20 1.a
 <D>[Bb]hur</D> UNECLIPSED:URU
 # CB p.20 1.b
@@ -79,9 +79,9 @@
 # CB p.24 #11.b.ii
 <R>[Cc]homh</R> <A>INITALVOWEL</A>:PREFIXH
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
-<S>[Cc]huig</S> <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+<S>[Cc]huig</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
-<S>[Cc]huig</S> <T>an</T> <NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+<S>[Cc]huig</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.14 Note
 <S>[Cc]huig</S> <N>LENITED</N>:NISEIMHIU
 # CB p.14 Note
@@ -89,12 +89,12 @@
 # CB p.13 #3.f
 [Cc]úig <NCS>UNLENITED</NCS>:SEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
-<S>[Dd]ar</S> <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+<S>[Dd]ar</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
-<S>[Dd]ar</S> <T>an</T> <NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+<S>[Dd]ar</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.14 Note
 <S>[Dd]ar</S> <N>LENITED</N>:NISEIMHIU
-[Dd]há UNLENITED:SEIMHIU
+<^D>ANYTHING</^D> [Dd]há UNLENITED:SEIMHIU
 # CB p.24 #11.a.iv
 Dé Aoine:PREFIXH
 # CB p.20 #1.c
@@ -104,7 +104,7 @@ Dé Aoine:PREFIXH
 # CB p.12 #1.c.i
 [Dd][eo]n <N>UNLENITEDBCFGMP</N>:SEIMHIU
 # CB p.17 #9.g
-[Dd][eo]n <NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+[Dd][eo]n <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.6 #2
 [Dd]e <T>an</T>:BACHOIR{den}
 # CB p.6 #2
@@ -120,15 +120,15 @@ Dé Aoine:PREFIXH
 # CB p.6 #2
 <S>[Ff]aoi</S> <T>an</T>:BACHOIR{faoin}
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
-<S>[Ff]aoin</S> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+<S>[Ff]aoin</S> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
-<S>[Ff]aoin</S> <NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+<S>[Ff]aoin</S> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.16 #8.c
 Fh?éile LENITED:NISEIMHIU
 # CB p.14 #4.c.i
 <S>[Gg]an</S> LENITEDDFST:NISEIMHIU
 # CB p.14 #4.c.iv
-<S>[Gg]an</S> <Y></Y>:NISEIMHIU
+<S>[Gg]an</S> <Y>ANYTHING</Y>:NISEIMHIU
 # CB p.24 #11.a.v, #11.b.ii
 [Gg]o INITIALVOWEL:PREFIXH
 # CB p.14 Note
@@ -155,9 +155,9 @@ Fh?éile LENITED:NISEIMHIU
 <S>[Ii]</S> <U>a</U>:BACHOIR{ina}
 <S>[Ii]</S> <U>ar</U>:BACHOIR{inar}
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
-<S>[Ii]onsar</S> <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+<S>[Ii]onsar</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
-<S>[Ii]onsar</S> <T>an</T> <NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+<S>[Ii]onsar</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.14 Note
 <S>[Ll]e</S> <N>LENITED</N>:NISEIMHIU
 # CB p.24 #11.a.v (N) #11.b.ii (A) #11.c (P)
@@ -167,9 +167,9 @@ Fh?éile LENITED:NISEIMHIU
 # CB p.6 #2
 <S>[Ll]e</S> <T>na</T>:BACHOIR{leis_na}
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
-<S>[Ll]eis</S> <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+<S>[Ll]eis</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
-<S>[Ll]eis</S> <T>an</T> <NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+<S>[Ll]eis</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.19 #13
 <C>[Mm]á</C> <V>UNLENITED</V>:SEIMHIU
 # CB p.13 #4.a
@@ -219,15 +219,15 @@ Naomh LENITED:NISEIMHIU
 # CB p.20 #1.c
 [Oo]cht <N>UNECLIPSED</N>:URU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
-<S>[Óó]n</S> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+<S>[Óó]n</S> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
-<S>[Óó]n</S> <NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+<S>[Óó]n</S> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.14 Note
 [Oo]s <N>LENITED</N>:NISEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
-<S>[Rr]oimh</S> <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+<S>[Rr]oimh</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
-<S>[Rr]oimh</S> <T>an</T> <NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+<S>[Rr]oimh</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.13 #4.a
 <S>[Rr]oimh</S> <N>UNLENITED</N>:SEIMHIU
 # CB p.6 #2
@@ -237,7 +237,7 @@ Naomh LENITED:NISEIMHIU
 # CB p.23 #9 (subtle - implicit article)
 <S>[Ss]a</S> <NFCS>INITIALS</NFCS>:PREFIXT
 # CB p.17 #9.g
-<S>[Ss]an?</S> <NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+<S>[Ss]an?</S> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.16 #8.c
 <N>San</N> LENITED:NISEIMHIU
 # CB p.12 #1.c.i
@@ -255,9 +255,9 @@ Naomh LENITED:NISEIMHIU
 # CB p.19 #13
 <C>sular</C> <V>UNLENITED</V>:SEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
-[Tt]har <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+[Tt]har <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
-<S>[Tt]har</S> <T>an</T> <NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+<S>[Tt]har</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.24 #11.a.x
 [Tt]rí uaire:PREFIXH
 # CB p.6 #2
@@ -265,14 +265,14 @@ Naomh LENITED:NISEIMHIU
 # CB p.13 #3.f (<A>trí</A>) p.13 #4.a (<S>trí</S>)
 [Tt]rí <NCS>UNLENITED</NCS>:SEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
-[Tt]ríd <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+[Tt]ríd <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
-<S>[Tt]ríd</S> <T>an</T> <NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+<S>[Tt]ríd</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.13 #3.b
 [Uu]ile <N>UNLENITED</N>:SEIMHIU
 # CB p.13 #4.a
 <S>[Uu]m</S> <N>UNLENITED</N>:SEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
-<S>[Uu]m</S> <T>an</T> <N>UNMUTATEDBCFGMP</N>:CLAOCHLU
+<S>[Uu]m</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
-<S>[Uu]m</S> <T>an</T> <NFCS></NFCS> <A>UNLENITED</A>:SEIMHIU
+<S>[Uu]m</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
