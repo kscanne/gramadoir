@@ -19,14 +19,14 @@ An Gramadóir: nonexistentfile: Datei nicht vorhanden.
 An Gramadóir: /home/kps: Ist ein Verzeichnis
 An Gramadóir: /etc/shadow: Zugriff nicht erlaubt
 An Gramadóir: unbekannte Option --fakeoption
-gr --help eingeben, um weitere zu erhalten.
+gr --help eingeben, um weitere Informationen zu erhalten.
 An Gramadóir: unbekannte Option --fakeoption
-gr --help eingeben, um weitere zu erhalten.
+gr --help eingeben, um weitere Informationen zu erhalten.
 An Gramadóir: Ein Argument ist bei der Option --teanga erforderlich
-gr --help eingeben, um weitere zu erhalten.
+gr --help eingeben, um weitere Informationen zu erhalten.
 An Gramadóir: Ein Argument ist bei der Option --xml nicht erlaubt
-gr --help eingeben, um weitere zu erhalten.
-An Gramadóir: Die Sprache el wird nicht unterstutzt.
+gr --help eingeben, um weitere Informationen zu erhalten.
+An Gramadóir: Die Sprache el wird nicht unterstützt.
 iconv: Konvertierung von »fakecode« wird nicht unterstützt
 An Gramadóir: Problem beim Lesen der Datenbank
 An Gramadóir: Problem beim Lesen der Datenbank
