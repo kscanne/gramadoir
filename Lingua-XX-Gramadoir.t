@@ -5,7 +5,7 @@ use warnings;
 
 use Test::More tests => 1;
 use Lingua::@TEANGA@::Gramadoir::Languages;
-use Lingua::@TEANGA@::Gramadoir qw( xml_stream grammatical_errors spell_check );
+use Lingua::@TEANGA@::Gramadoir;
 use Encode 'decode';
 
 BEGIN { use_ok('Lingua::@TEANGA@::Gramadoir') };
