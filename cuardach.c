@@ -114,7 +114,7 @@ load_replacements ()
       if (repl_total != iomlan)
 	{
 	  fprintf (stderr, gettext ("%s: warning: check size of %s: %d?\n"),
-		   packagename, replfile, ignore_total);
+		   packagename, replfile, repl_total);
 	}
       if (fclose (repl))
 	{
