@@ -33,32 +33,32 @@ How to Contribute</h1>
 </ul>
 
 <hr>
+<h2>Reporting bugs</h2>
+Bug reports, support requests, and patches may be submitted via the
+<a href="http://sourceforge.net/tracker/?group_id=114958">sourceforge tracker</a>.
+<br>
+
 <h2>Grammar checking other languages</h2>
 See the <a href="iompar.html">Languages</a> page for more information.
-<br><br>
+<br>
 
 <h2>Translating the user interface</h2>
 See our page at the 
 <a href="http://www2.iro.umontreal.ca/~gnutra/registry.cgi?domain=gramadoir">GNU Translation Project</a> 
 for more information.
-<br><br>
-
-<hr>
-<h2>Contributing words</h2>
-The database of Irish words used by <i lang="ga">An Gramad&oacute;ir</i>
-is the same one used by my other Irish language applications:
-the 
-<a href="/ispell/index.html">GaelSpell</a> spellchecker
-and <a href="/teasaras/index.html">An Teas&aacute;ras Leictreonach</a>.
-Thus, if you take the time to contribute new words to any one of 
-these packages, your contributions will be reflected in future 
-releases of all of them.  Also, my software adds all inflections
-and mutations of a given word to the database, so you don't have 
-to worry about <i lang="ga">nGaeltacht, Ghaeltacht, Gaeltachta</i>,
-etc. once the headword <i lang="ga">Gaeltacht</i> has been entered.
+<br>
 
 <hr>
 <h2>Hacking the rule set</h2>
+<p>
+This section describes the syntax of the key 
+input files used in constructing the grammar checker.  
+I will make reference to the existing Irish language
+version, but these descriptions apply equally to
+any language by simply replacing "ga"
+by the appropriate ISO-639 language code.
+</p>
+
 <p>
 The easiest and most valuable way to contribute is by
 helping add new rules to the checker.   Rules are contained in
@@ -67,9 +67,6 @@ four plain text files called <i>comhshuite-ga.in</i>, <i>aonchiall-ga.in</i>,
 Complicated "meta"-scripts convert these (more or less) human-readable
 files into the Perl scripts which actually find and mark up the grammatical
 errors.   
-You fortunately don't need to understand this process to contribute rules
-(although anyone who is curious can read the  
-<a href="sonrai.html">Details</a> page).
 </p>
 
 <p>
@@ -133,7 +130,7 @@ to match in the marked up text stream.   The phrase syntax is the same for all
 three files: a sequence of words separated by single spaces.
 A word can either be an explicit regular expression
 (e.g. "[Aa]ch" to match upper or lowercase "ach") or one
-of a collection of macros defined in the file <i>macra-ga.meta.sed</i>
+of a collection of macros defined in the file <i>macra-ga.meta.pl</i>
 (e.g. "LENITEDDFST" expands to the regular expression
 "[DdFfSsTt]h[^&lt;]*").  In addition, a word can be provided with
 a grammatical tag when there is a danger of ambiguity.
@@ -207,13 +204,12 @@ the grammars the same, each line should be terminated by a colon).
 </p>
 
 <hr>
-<em>© Cóipcheart/Copyright 2003 Kevin P. Scannell</em><br><br>
+<em>© Cóipcheart/Copyright 2003, 2004 Kevin P. Scannell</em><br><br>
 </ul>
 </div>
 <div class="navigation">
 <a href = "index.html">Home</a><br>
 <a href = "sios.html">Download</a><br>
-<a href = "sonrai.html">Details</a><br>
 Contributing<br>
 <a href = "iompar.html">Languages</a><br>
 <a href = "stair.html">History</a><br>
