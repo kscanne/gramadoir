@@ -228,6 +228,7 @@ an <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
 an <B>Níl</B>:<N pl="n" gnt="n" gnd="f">
 <S>ANYTHING</S> <B>Níl</B>:<N pl="n" gnt="n" gnd="f">
 <B>Níl</B>:<V p="y" t="láith">
+<B>[Nn]íor</B> <V>ANYTHING</V>:<U>
 <B>[Nn]íor</B>:<V cop="y">
 <B>[Nn]uair</B>:<C>
 # not "deer"
@@ -310,9 +311,9 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 # see rialacha
 [Dd]ís|[Dd]h?osaen|[Pp]h?éire <B><Z>ANYNMGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="m">
 [Dd]ís|[Dd]h?osaen|[Pp]h?éire <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
-# exceptions to next one
-<N>[Cc]h?úpla</N> <B><Z>ANYNMC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<N>[Cc]h?úpla</N> <B><Z>ANYNFC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+# exceptions to next pair
+<NCS>[Cc]h?úpla</NCS> <B><Z>ANYNMC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<NCS>[Cc]h?úpla</NCS> <B><Z>ANYNFC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <NCS>ANYTHING</NCS> <B><Z>ANYNMG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <NCS>ANYTHING</NCS> <B><Z>ANYNFG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 # amach, síos, suas, aníos, ...  optional <A> on isteach, amuigh, istigh, etc
@@ -458,7 +459,11 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 # e.g.  next rule gets "ar siad" since siad -> <P> above 
 <B>[Aa]r</B> s[éí]:<V cop="y">
 <B>[Aa]r</B> <P>ANYTHING</P>:<V cop="y">
-<B>[Aa]r</B> <VPAST>ANYTHING</VPAST>:<Q>
+# don't use VPAST (even though that's correct) since verb might not be disambig
+# bean ar maraíodh a mac
+ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
+# ar éirigh é?
+<B>[Aa]r</B> <V>ANYTHING</V>:<Q>
 <B>[Aa]r</B>:<S>
 # next rule kills possibility of catching "de a:BACHOIR{dá}"
 # Bhain sé de a bhróga. 

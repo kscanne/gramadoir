@@ -189,6 +189,9 @@ sin sin:OK
 # INPHRASE rule, but example sentence is best caught before "na" rules
 #. Maidin lá ar na mhárach thug a fhear gaoil cuairt air.
 <N>[Mm]hárach</N>:INPHRASE{arna mhárach}
+##############################################################################
+#   Rules A->Z begin here...
+##############################################################################
 # CB p.13 #4.a
 #. Tá an Rialtas tar éis áit na Gaeilge i saol na tíre a ceistiú.
 <S>a</S> <N>UNLENITED</N>:SEIMHIU
@@ -815,7 +818,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Ll]e</S> <T>na</T>:BACHOIR{leis na}
 # CB p.84 #8, p.132 #2
 #. Labhraíodh gach duine an fhírinne le a chomharsa.
-#. Aontaím le a bhfuil ráite agat.
+#. É dílis don teaghlach le a mbaineann sé.
 <S>[Ll]e</S> a:BACHOIR{lena}
 # CB p.132 #2
 #. Beir i do láimh ar an tslat le ar bhuail tú an abhainn, agus seo leat.
@@ -1363,6 +1366,31 @@ a <A>[Dd]há</A> <E><NWITHH>ANYTHING</NWITHH></E>:OK
 # CB p.24 #11.a.x
 #. Tháinig múinteoir úr i gceithre huaire fichead (OK).
 d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
+# CB p.132 #3; dependent forms of verb <=> dependent clause
+#  keep these near bottom so "níor fhacthas" gives "BACHOIR{ní}"
+#  instead of silly "no need for relative form"
+#. An oíche sin, sular chuaigh sé a chodladh, chuir sé litir fhada dom.
+<C>RFORMCONJ</C> <VPAST>ABSPASTVERB</VPAST>:RELATIVE
+#. Tá mioneolas faoinar rinne sé ansin.
+<S>RFORMPREP</S> <VPAST>ABSPASTVERB</VPAST>:RELATIVE
+#. Níor rinneadh a leithéid le fada agus ní raibh aon slat tomhais acu.
+[Aa]r|[Cc]ár|[Nn]ár|[Nn]íor <VPAST>ABSPASTVERB</VPAST>:RELATIVE
+#. Teastaíonn uaidh an scéal a insint sula ngeobhaidh sé bás.
+<C>NONRFORMCONJ</C> <V>ABSNONPASTVERB</V>:RELATIVE
+#. Tá folúntas sa chomhlacht ina tá mé ag obair faoi láthair.
+<S>NONRFORMPREP</S> <V>ABSNONPASTVERB</V>:RELATIVE
+#. Ní gheobhaidh an mealltóir nathrach aon táille.
+#  apparently  " a gheobh*" is OK as direct relative
+[Aa]n|[Cc]á|[Dd]á|[Nn]ach|[Nn]í <V>ABSNONPASTVERB</V>:RELATIVE
+#. Cad é mar a tá tú?
+[Aa] <V>JUSTTA</V>:BACHOIR{atá}
+#  next three are the converse rules; dependent forms "in phrase" only
+#. Má dhearna sí praiseach de, thosaigh sí arís go bhfuair sí ceart é.
+<V>DEPENDENT</V>:ABSOLUTE
+<C>NONRFORMCONJ</C> <E><V>DEPENDENT</V></E>:OK
+<S>NONRFORMPREP</S> <E><V>DEPENDENT</V></E>:OK
+#. Chan fhacthas dom go raibh an saibhreas céanna i mBéarla (OK).
+[Aa]|[Aa]n|[Cc]á|[Cc]ha|[Cc]han|[Dd]á|[Nn]ach|[Nn]í <E><V>DEPENDENT</V></E>:OK
 #############################################################################
 ###### next batch came from analyses of "tag 2-grams" in the corpus    ######
 #############################################################################
@@ -1382,8 +1410,14 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 <O>ANYTHING</O> <AFGS>ANYTHING</AFGS>:CUPLA
 <NMGS>ANYTHING</NMGS> <AFGS>ANYTHING</AFGS>:CUPLA
 <NFGS>ANYTHING</NFGS> <AMGS>ANYTHING</AMGS>:CUPLA
-# reinstate when I deal with gs markup on "tithe tábhairne beaga"
-#<NCS>ANYTHING</NCS> <AP>ANYTHING</AP>:CUPLA
+# CB p.61 #2
+#   This examples should be "tithe beaga tábhairne"; too pedantic?
+# . Tá sé i mbaile beag atá lán le tithe tábhairne beaga.
+# <NS>ANYTHING</NS> <AP>ANYTHING</AP>:CUPLA
+# CB p.67 #17a,b exceptions; "seacht gcapall déag bhána" in there explicitly
+# [Dd]há|[Tt]h?rí|[Cc]h?eithre|[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|[Oo]cht|[Nn]aoi|[Dd]h?eich <E><NS>ANYTHING</NS> <AP>ANYTHING</AP></E>:OK
+# [Dd]há|[Tt]h?rí|[Cc]h?eithre|[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|[Oo]cht|[Nn]aoi <N>ANYTHING</N> <E><N>[Dd]éag</N> <AP>ANYTHING</AP></E>:OK
+# <N>[Bb]h?eirt</N> <E><NS>ANYTHING</NS> <AP>ANYTHING</AP></E>:OK
 <D>ANYTHING</D> <AP>ANYTHING</AP>:CUPLA
 <D>ANYTHING</D> <C>ANYTHING</C>:CUPLA
 <D>ANYTHING</D> <D>ANYTHING</D>:CUPLA
