@@ -30,15 +30,15 @@ doing natural language processing.
 <p>
 In addition to the Irish version, there are three other
 language packs available (in various stages of
-completion): Afrikaans (by Petri Jooste),
-Welsh (by Kevin Donnelly) and Walloon (by Pablo Saratxaga).
+completion): Afrikaans (by Petri Jooste), Cornish (by Paul Bowden and 
+Edi Werner), Walloon (by Pablo Saratxaga), and Welsh (by Kevin Donnelly).
 These are kept under CVS at <a href="http://cvs.sourceforge.net/viewcvs.py/gramadoir/">sourceforge.net</a>.
 </p>
 
 <p>
 Preliminary work has been done on several other languages; hopefully
 some of these will become available under CVS before long:
-Azerbaijani, Breton, Chichewa, Cornish, Igbo, Kinyarwanda, Ladin, Malagasy, Malay, Manx Gaelic, Mongolian, Norwegian, Scottish Gaelic, Setswana, Tagalog, Tetum, Upper Sorbian, Xhosa, Zulu.
+Azerbaijani, Breton, Chichewa, Igbo, Kinyarwanda, Ladin, Malagasy, Malay, Manx Gaelic, Mongolian, Norwegian, Scottish Gaelic, Setswana, Tagalog, Tetum, Upper Sorbian, Xhosa, Zulu.
 </p>
 
 <p>
@@ -96,14 +96,36 @@ This is required in order to have write access to the project
 </p>
 
 <p>
-Next, <a href="sios.html">download</a> the latest version of
-the developers' pack, extract, and configure it:
+The first step is to checkout the gramadoir engine and
+a language pack from CVS.
+Here is the command (substituting your
+sourceforge account name for "username" and your language code for 
+"xx"):
 </p>
 
 <pre>
-$ gunzip gramadoir-0.5-r1.tar.gz
-$ tar xvf gramadoir-0.5-r1.tar
-$ cd gramadoir-0.5-r1
+$ cvs -d:ext:username@cvs.sf.net:/cvsroot/gramadoir checkout engine xx
+cvs checkout: Updating engine
+U engine/ABOUT-NLS
+U engine/COPYING
+...
+</pre>
+
+<p>
+This will create a subdirectory "xx" (your language code)
+containing the language pack files and another subdirectory
+"engine" containing the language-independent gramadoir scripts.
+The sourceforge site has some excellent documentation on
+<a href="http://sourceforge.net/docman/display_doc.php?docid=768&group_id=1">using CVS as a developer</a> and an overview document for anyone
+<a href="http://sourceforge.net/docman/display_doc.php?docid=14033&group_id=1">new to CVS</a>.
+</p>
+
+<p>
+Next, configure the engine:
+</p>
+
+<pre>
+$ cd engine
 $ ./configure
 </pre>
 
@@ -123,39 +145,10 @@ contains the scripts used in converting the language pack files
 into an installable Perl module.
 </p>
 
-<p>
-The next step is to checkout the language pack from CVS
-into the gramadoir-0.5-r1 directory in which you have just run ./configure.
-Here is the command (substituting your
-sourceforge account name for "username" and your language code for 
-"xx"):
-</p>
+<p>Now go into the language pack directory, run "configure" (to create a Makefile) and "make rebuildlex" (to create the lexical database):</p>
 
 <pre>
-$ cvs -d:ext:username@cvs.sf.net:/cvsroot/gramadoir checkout xx
-cvs checkout: Updating xx
-U xx/3grams-xx.txt
-U xx/COPYING
-U xx/Changes
-U xx/README
-U xx/aonchiall-xx.in
-U xx/comhshuite-xx.in
-...
-</pre>
-
-<p>
-This will create a subdirectory "xx" (your language code)
-containing the language pack files.
-The sourceforge site has some excellent documentation on
-<a href="http://sourceforge.net/docman/display_doc.php?docid=768&group_id=1">using CVS as a developer</a> and an overview document for anyone
-<a href="http://sourceforge.net/docman/display_doc.php?docid=14033&group_id=1">new to CVS</a>.
-</p>
-
-<p>Now run "configure" in this directory (to create a Makefile)
-and "make rebuildlex" (to create the lexical database):</p>
-
-<pre>
-$ cd xx
+$ cd ../xx
 $ ./configure
 $ make rebuildlex
 </pre>
