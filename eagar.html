@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+  <title>An Gramad&oacute;ir : Text Editors</title>
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="description" content="An Gramad&oacute;ir: integration into text editors">
+  <meta name="keywords" content="grammar checking, Gaeilge, Irish language">
+  <meta name="author" content="Kevin P. Scannell">
+  <link rel="stylesheet" href="../kps.css" type="text/css">
+</head>
+
+<body>
+<div class="content">
+<h1>An Gramad&oacute;ir:<br>
+Text Editors</h1>
+
+<hr>
+<h2>Emacs</h2>
+<p>
+Martin Gregory has kindly contributed an Emacs interface 
+to An Gramadóir which is very easy to use.  It shows you
+a split screen with the original text file on top and the 
+errors output by An Gramadóir below.  With a single keystroke,
+you can move through the errors in parallel, making corrections as 
+you go.  Here are his instructions:
+</p>
+
+<p>
+If you are an experienced Emacs user, you'll
+probably want to auto load the file and define your own keys for the
+two functions listed below.
+</p>
+
+<ol>
+<li>put gramadoir.el in your emacs site lisp directory, if you don't
+have one, put it it ~/lisp
+
+<li>put the following lines in your ~/.emacs file
+<pre>
+   (load-file "~/lisp/gramadoir.el")
+   (global-set-key "\C-cg" 'gramadoir-check-files)
+   (global-set-key [f3] 'gramadoir-next-message)
+</pre>
+
+<li>start Emacs
+
+<li>To have An Gramadóir check files, press the key ^C followed by the
+key g. 
+
+<li>You are prompted for files to check, enter them using either
+relative or absolute paths, but avoid using ~ or environment
+variables as gramadoir.el doesn't handle these yet.
+
+<li>A second window will open with the messages from gr.
+
+<li>To go to the first error position in the first file, press
+F3. Repeated pressing of F3 takes you to each subsequent error.
+</ol>
+
+<hr>
+<h2>Vim</h2>
+<p>
+Coming soon (?)
+</p>
+
+<hr>
+<em>© Cóipcheart/Copyright 2003 Kevin P. Scannell</em><br><br>
+</ul>
+</div>
+<div class="navigation">
+<a href = "index.html">Home</a><br>
+<a href = "sios.html">Download</a><br>
+<a href = "sonrai.html">Details</a><br>
+<a href = "cuidiu.html">Contributing</a><br>
+<a href = "iompar.html">Languages</a><br>
+<a href = "sampla.html">Sampler</a><br>
+<a href = "foirm.html">Web Interface</a><br>
+Editors<br>
+<a href = "/gaeilge.html">Projects</a><br>
+<p class="centered">
+<img src="gram.jpg" alt="dictionary excerpt" height="160" width="125">
+</p>
+</div>
+</body>
+</html>
