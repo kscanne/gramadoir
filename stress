@@ -25,7 +25,8 @@ gr --fakeoption /dev/null
 gr --fakeoption=fakearg /dev/null
 gr --teanga /dev/null
 gr --xml=fakearg /dev/null
-gr --teanga=el
+gr --teanga=el /dev/null
+gr --ionchod=fakecode /dev/null
 ##  add stuff for ponc.in  checks
 mv /usr/local/share/gramadoir/focail.bs ./f.bs
 gr --litriu triail

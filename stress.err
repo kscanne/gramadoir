@@ -11,6 +11,7 @@ Try gr --help for more information.
 An Gramadoir: option --xml does not allow an argument
 Try gr --help for more information.
 An Gramadoir: Language el is not supported.
+iconv: conversion from `fakecode' is not supported
 An Gramadoir: problem reading the database
 An Gramadoir: problem reading the database
 test various error messages
@@ -26,6 +27,7 @@ gr --help eingeben, um weitere zu erhalten.
 An Gramadóir: Ein Argument ist bei der Option --xml nicht erlaubt
 gr --help eingeben, um weitere zu erhalten.
 An Gramadóir: Die Sprache el wird nicht unterstutzt.
+iconv: Konvertierung von »fakecode« wird nicht unterstützt
 An Gramadóir: Problem beim Lesen der Datenbank
 An Gramadóir: Problem beim Lesen der Datenbank
 test various error messages
@@ -41,5 +43,6 @@ Bain triail as gr --help chun tuilleadh eolais a fháil.
 An Gramadóir: ní cheadaítear argóint i ndiaidh an rogha --xml
 Bain triail as gr --help chun tuilleadh eolais a fháil.
 An Gramadóir: Níl an teanga el ar fáil.
+iconv: conversion from `fakecode' is not supported
 An Gramadóir: fadhb ag léamh an bhunachair sonraí
 An Gramadóir: fadhb ag léamh an bhunachair sonraí

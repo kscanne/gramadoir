@@ -1030,6 +1030,7 @@ Lenition missing.
 148: Idir dhá sholas, um tráthnóna, faoi choim na hoíche agus sa dorchadas. 
 Lenition missing.
 
+Currently checking /dev/null
 test help flag
 Syntax: gr [OPTIONS] [FILES]
 
@@ -2062,6 +2063,7 @@ Lenierung fehlt.
 148: Idir dhá sholas, um tráthnóna, faoi choim na hoíche agus sa dorchadas. 
 Lenierung fehlt.
 
+/dev/null wird geprüft
 test help flag
 Úsáid: gr [ROGHANNA] [COMHAD]
 
@@ -3095,3 +3097,4 @@ Séimhiú ar iarraidh.
 148: Idir dhá sholas, um tráthnóna, faoi choim na hoíche agus sa dorchadas. 
 Séimhiú ar iarraidh.
 
+Ag seiceáil /dev/null
