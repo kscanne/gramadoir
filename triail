@@ -1,8 +1,3 @@
-<This file is a sample text file containing examples of the errors>
-<which are caught by the grammar checker.>
-<Note first that one of the preprocessing steps strips any SGML-like>
-<markup, so for instance these lines will not be checked.>
-
 An bhfuil aon uaktar reoite agat?
 An bhfuil ayn uachtar roach agat?
 Tá na lachain slachtmhara ar eitilt.
@@ -91,12 +86,43 @@ Ceapadh mise i mo bolscaire.
 Bhuail mé mo dhá bois ar a chéile.
 Mura tagann aon duine i gcabhair orainn, rachaimid anonn chugaibh.
 Murar thairbhigh siad d'aisíoc iomlán nó páirteach ar na dleachtanna nó na muirir sin.
-
-
-
-An bhfuil aon uachtar reoite agat sa cuisneoir?
+Is mór ag náisiún na Éireann a choibhneas speisialta le daoine de bhunadh na hÉireann atá ina gcónaí ar an gcoigríoch.
+Chuir an Coimisiún féin comhfhreagras chuig na eagraíochtaí seo ag lorg mioneolais faoina ngníomhaíochtaí.
+Ná iompaígí chun na n-íol, agus ná dealbhaígí déithe de mhiotal.
+Is fearr de bhéile luibheanna agus grá leo ná mhart méith agus gráin leis.
+Nach bainfidh mé uaidh an méid a ghoid sé uaim?
+Rinneadh an roinnt don naoi treibh go leith ar cranna.
+Tháinig na bróga chomh fada siar le haimsir Naomh Phádraig féin.
+Nár breá liom claíomh a bheith agam i mo ghlaic!
+Nár freagair sé thú, focal ar fhocal.
+Feicimid gur de dheasca a n-easumhlaíochta nárbh féidir leo dul isteach ann.
+Ní féadfaidh a gcuid airgid ná óir iad a shábháil.
+Ní hé sin do phíopa ar an tábla!
+Níor dearc aon duine ort le trua duit.
+Níor gá do dheoraí riamh codladh sa tsráid; Bhí mo dhoras riamh ar leathadh.
+Níorbh foláir dó éisteacht a thabhairt dom.
+Tabhair an t-ordú seo leanas ó béal.
+Bíodh bhur ngrá saor ó an gcur i gcéill.
+Bhí ocht tábla ar fad ar a maraídís na híobairtí.
+Bíodh bhur ngrá saor ón cur i gcéill.
+Tá do ghéaga spréite ar bhraillín gléigeal os fharraige faoileán.
+Tharla na rudaí seo na blianta roimh an maidin seo.
+Is gaiste é eagla roimh daoine.
 An bhfuil aon uachtar reoite agat sa oighear?
+An bhfuil aon uachtar reoite agat sa cuisneoir?
 An bhfuil aon uachtar reoite agat sa seamair?
 An bhfuil aon uachtar reoite agat sa scoil (OK)?
 An bhfuil aon uachtar reoite agat sa samhradh (OK)?
+Tá sé bráthair de chuid Ord San Phroinsias.
 An bhfuil aon uachtar reoite agat san foraois?
+Anois i ndeireadh an tséasúir bhí sé uaire de oíche ann.
+Cuireadh boscaí ticeála isteach seachas bhoscaí le freagraí a scríobh isteach.
+Tá seacht lampa air agus seacht gob ar gach ceann díobh.
+Iompróidh siad thú lena lámha sula buailfeá do chos in aghaidh cloiche.
+Dhéan an comhairleoir gnó moltaí áirithe don údarás sular ceannaíodar é.
+Chuir iad ina suí mar a raibh onóir acu thar an cuid eile a fuair cuireadh.
+Timpeall trí uaire a chloig ina dhiaidh sin tháinig an bhean isteach.
+Beirimid an bua go caithréimeach trí an té úd a thug grá dúinn.
+Gabhfaidh siad trí muir na hÉigipte.
+Idir dhá sholas, um tráthnóna, faoi choim na hoíche agus sa dorchadas.
+Tá sé-- tá sé- mo ---shin-seanathair an-chantalach.
