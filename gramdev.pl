@@ -87,9 +87,6 @@ sub localized_die
 	elsif ( $signal =~ m/^getopt/ ) {
 		$msg = gettext('error parsing command-line options');
 	}
-	elsif ( $signal =~ m/^gram: maketext (.*)/ ) {
-		$msg = gettext('Language %s is not supported.', $1);
-	}
 	else {
 		die $signal;
 	}
@@ -102,14 +99,11 @@ sub localized_die
 $lh = Lingua::@TEANGA@::Gramadoir::Languages->get_handle();
 $SIG{__DIE__} = 'localized_die';
 # scalars for global options
-use vars qw($brill $comheadan $help $ionchod $version $ambig $freq);
-$ionchod = '@NATIVE@';
+use vars qw($brill $help $version $ambig $freq);
 eval { 
 	local $SIG{__WARN__} = 'localized_die';
 	GetOptions (	
-		'incode|ionchod|f=s'    => \$ionchod,
 		'help|cabhair|h'        => \$help,
-		'interface|comheadan=s' => \$comheadan,
 		'version|leagan|v'      => \$version,
 		'brill'			=> \$brill,
 		'minic|freq'		=> \$freq,
@@ -120,11 +114,6 @@ die "getopt error" if $@;
 
 binmode STDOUT, ":encoding(utf8)";
 binmode STDERR, ":encoding(utf8)";
-
-if ($comheadan) {
-	$lh = Lingua::@TEANGA@::Gramadoir::Languages->get_handle($comheadan);
-	die "gram: maketext $comheadan" unless $lh;
-}
 
 $clar = gettext('An Gramadoir');
 
@@ -137,18 +126,6 @@ if ($version) {
 }
 if ($help) {
 	my @helpmessages = (
-"  -f, --incode,",
-gettext(
-"    --ionchod=ENC  specify the character encoding of the text to be checked"),
-"  --interface,",
-gettext(
-"    --comheadan=xx choose the language for error messages"),
-"  -h, --cabhair,",
-gettext(
-"    --help         display this help and exit"),
-"  -v, --leagan,",
-gettext(
-"    --version      output version information and exit"),
 "  --ambig,",
 gettext(
 "    --ilchiall     report unresolved ambiguities, sorted by frequency"),
@@ -157,6 +134,12 @@ gettext(
 "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"),
 gettext(
 "    --brill        find disambiguation rules via Brill's unsupervised algorithm"),
+"  -h, --cabhair,",
+gettext(
+"    --help         display this help and exit"),
+"  -v, --leagan,",
+gettext(
+"    --version      output version information and exit"),
 "",
 gettext(
 "If no file is given, read from standard input."),
@@ -174,8 +157,8 @@ my $gr = new Lingua::@TEANGA@::Gramadoir(
 	fix_spelling => 0,
 	use_ignore_file => 0,
 	unigram_tagging => 0,
-	interface_language => $comheadan,
-	input_encoding => $ionchod,
+	interface_language => '',
+	input_encoding => '@NATIVE@',
 );
 
 binmode STDIN, ":bytes";
