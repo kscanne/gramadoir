@@ -11,6 +11,8 @@ s/INITIALH/h[^<]*/g
 s/INITIALS/[Ss][lnraeiouáéíóú][^<]*/g
 s/INITIALVOWELORF/([aeiouAEIOUáéíóúÁÉÍÓÚ]|[Ff]h?[aeiouáéíóú])[^<]*/g
 s/INITIALVOWEL/[aeiouAEIOUáéíóúÁÉÍÓÚ][^<]*/g
+s/NONVOWELNONF/[^aeiouAEIOUáéíóúÁÉÍÓÚFf][^<]*/g
+s/UNECLIPSEDCONS/([cfptCFPT]|d[^Tt']|g[^Cc]|b[^Pph]|bh[^fF])[^<]*/g
 s/UNECLIPSED/([aeiouAEIOUáéíóúÁÉÍÓÚcfptCFPT]|d[^Tt']|g[^Cc]|b[^Pph]|bh[^fF])[^<]*/g
 s/ECLIPSED/(n(-[aeiouáéíóú]|[AEIOUÁÉÍÓÚ])|d[Tt]|g[Cc]|b[Pp]|bh[fF])[^<]*/g
 s/UNLENITEDBCGMP/[BbCcGgMmPp][^h'][^<]*/g
@@ -18,12 +20,14 @@ s/UNLENITEDBCFGMP/[BbCcFfGgMmPp][^h'][^<]*/g
 s/UNMUTATEDBCFGP/[BbCcFfGgPp][^hbBcCgGpP'][^<]*/g
 s/UNLENITEDF/[Ff][^h][^<]*/g
 s/UNLENITED/([BbCcDdFfGgMmPpTt][^h']|[Ss][lnraeiouáéíóú])[^<]*/g
+s/ORDINALADJ/[^<][^<][^m<]*ú/
 s/PREFIXEDT/t([AEIOUÁÉÍÓÚ]|-[aeiouáéíóú])[^<]*/g
 s/LENITEDDFST/[DdFfSsTt]h[^<]*/g
 s/LENITED/([CcDdFfGgMmPpSsTt]h|bh[^fF])[^<]*/g
 s/SLENDERFINALCONSONANT/[^<]*[eéií][^aeiouáéíóú<]+/g
 s/NONVOWELNONF/[^AEIOUÁÉÍÓÚaeiouáéíóúFf][^<]*/g
 s/FINALVOWEL/[^<]*[^bcdfghjlmnprstvxz<]+/g
+s/FINALA/[^<]*[AÁaá]/g
 s/NOBEEAPOST/([^b]|b[^'])[^<]*/g
 s/VNISH/[^<]*(a[dm]h|i[nr]t|áil|ú)/g
 s/NOTDO/[^<][^<][^<]+/g
@@ -41,14 +45,15 @@ s/ANYNFC/(<[^>]*>)*<N pl="n" gnt="n" gnd="f"( h="y")?.>(<[^>]*>)*/g
 s/ANYNMPL/(<[^>]*>)*<N pl="y" gnt="n" gnd="m"( h="y")?.>(<[^>]*>)*/g
 s/ANYNFPL/(<[^>]*>)*<N pl="y" gnt="n" gnd="f"( h="y")?.>(<[^>]*>)*/g
 s/NFONEC/<N pl="n" gnt="n" gnd="f".><N pl="y" gnt="y" gnd="f".>/g
+s/ANYNMONEC/(<[^>]*>)*<N pl="n" gnt="n" gnd="m"( h="y")?.><N pl="y" gnt="y" gnd="m"( h="y")?.>(<[^>]*>)*/g
+s/ANYNMONE/(<[^>]*>)*<N pl="n" gnt="y" gnd="m"( h="y")?.><N pl="y" gnt="n" gnd="m"( h="y")?.>(<[^>]*>)*/g
 s/NMONEC/<N pl="n" gnt="n" gnd="m"( h="y")?.><N pl="y" gnt="y" gnd="m"( h="y")?.>/g
 s/NMONE/<N pl="n" gnt="y" gnd="m"( h="y")?.><N pl="y" gnt="n" gnd="m"( h="y")?.>/g
 s/ANDROGYN/<N pl="n" gnt="n" gnd="f".><N pl="n" gnt="y" gnd="m".>/g
 s/STRONGPLM/<N pl="y" gnt="n" gnd="m"( h="y")?.><N pl="y" gnt="y" gnd="m"( h="y")?.>/g
 s/STRONGPLF/<N pl="y" gnt="n" gnd="f"( h="y")?.><N pl="y" gnt="y" gnd="f"( h="y")?.>(<A pl="n" gnt="y" gnd="f".>)?/g
 s/NMFOUR/<N pl="n" gnt="n" gnd="m".><N pl="n" gnt="y" gnd="m".>(<V [^>]*t="foshuit".>)*/g
-s/NFFOURH/<N pl="n" gnt="n" gnd="f" h="y".><N pl="n" gnt="y" gnd="f" h="y".>/g
-s/NFFOUR/<N pl="n" gnt="n" gnd="f".><N pl="n" gnt="y" gnd="f".>/g
+s/NFFOUR/<N pl="n" gnt="n" gnd="f"( h="y")?.><N pl="n" gnt="y" gnd="f"( h="y")?.>/g
 s/NMADJ/<N pl="n" gnt="n" gnd="m".>(<N pl="y" gnt="y" gnd="m".>)?<A pl="n" gnt="n".>(<[A-Z][^>]*>)*/g
 s/NFADJ/<N pl="n" gnt="n" gnd="f".><A pl="n" gnt="n".>(<[A-Z][^>]*>)*/g
 s/NOUNADJH/(<N[^>]*>)+<A pl="n" gnt="n" h="y".>(<[AV][^>]*>)*/g
@@ -83,6 +88,8 @@ s/GENERICSUB/(<V[^>]* t="foshuit".>)+/g
 s/NUMERICAL/<N pl="n" gnt="n" gnd="m".><N pl="n" gnt="y" gnd="m".><A pl="n" gnt="n".>/g
 s/COPULAPART/<U.><C.><Q.><V cop="y".>/g
 s/\*P\[/*pl="y"[/g
+s/\*C\[/*gnt="n"[/g
+s/\*G\[/*gnt="y"[/g
 s/\*CP\[/*pl="y" gnt="n"[/g
 s/\*GP\[/*pl="y" gnt="y"[/g
 s/\*CS\[/*pl="n" gnt="n"[/g
@@ -97,3 +104,4 @@ s/\*MGP\[/*pl="y" gnt="y" gnd="m"[/g
 s/\*NOPAUT\[/*( p=.[^s]|t=..[^a])[/g
 s/\*WITHH\[/*h="y"[/g
 s/\*IMP\[/*t="ord"[/g
+s/\*PRFU\[/*t="[fl]ái.."[/g
