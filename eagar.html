@@ -14,15 +14,33 @@
 <body>
 <div class="content">
 <h1>An Gramad&oacute;ir:<br>
-Emacs/Vim Support</h1>
+Text Editor Support</h1>
+
+<h2>Download</h2>
+<p>
+Interfaces are available for the three most popular editors 
+in the open source community: <i>Vim</i>, <i>Emacs</i>, and 
+<i>OpenOffice</i>.  These interfaces are distributed with the Perl
+module in the <i>share/</i> directory, but if you prefer you
+can download them here:
+</p>
+
+<ul>
+<li><b><a href="gramadoir.el">gramadoir.el</a></b>.  Emacs Lisp Interface.
+<li><b><a href="gramadoir.vim">gramadoir.vim</a></b>.  Plug-in for Vim.
+<li><b><a href="gramadoir.sxw">gramadoir.sxw</a></b>.  OpenOffice macro.
+</ul>
+
+<p>
+Installation and usage instructions follow.
+</p>
 
 <hr>
 <h2>Emacs</h2>
 <p>
 Martin Gregory has kindly contributed an Emacs interface 
 to <i lang="ga">An Gramadóir</i> which is very easy to use.
-Here are his instructions (the file <i>gramadoir.el</i> is
-included in the distribution as of version 0.3):
+Here are his instructions:
 </p>
 
 
@@ -115,8 +133,8 @@ to your ~/.emacs."
 <h2>Vim</h2>
 <p>
 I've written a script which emulates the behavior of Martin's
-Emacs interface within Vim.  It will be included in future 
-distributions, or you can download it directly from
+Emacs interface within Vim.  You can download it from the link at the
+top of this page, or you can get it directly from
 <a href="http://vim.sourceforge.net/scripts/script.php?script_id=802">
 Vim online</a>.     Instructions:
 <ol>
@@ -134,30 +152,67 @@ or choose different hot keys if you want.
 
 <li>open the text file to be checked in Vim.
 
-<li>to check its grammar, press F3; a second buffer,
+<li>to check its grammar, press <b>F3</b>; a second buffer,
 containing the messages from <i lang="ga">An Gramadóir</i>,
 will open at the bottom of the screen.  The cursor
 will move to the first error (which is also highlighted in red if you
 are using a suitable color terminal).
 
-<li>Each successive use of F3 moves to the next error
+<li>Each successive use of <b>F3</b> moves to the next error
 (in both windows, in parallel).
 
 <li>If the current error is a single word (unknown, misspelled, rare,
 non-standard, etc.), you can insert it into your <code>.neamhshuim</code> 
-(ignore) file by pressing F4.
+(ignore) file by pressing <b>F4</b>.
 
-<li>Pressing F5 exits the grammar checker and resumes normal editing.
+<li>Pressing <b>F5</b> exits the grammar checker and resumes normal editing.
 
 <li>Notes: you are free to make edits, corrections, etc. to the 
 main buffer while running the grammar checker.  The last error
 displayed is tracked according to the cursor position in the 
-error buffer, so whenever you press F3 it will correctly take you 
+error buffer, so whenever you press <b>F3</b> it will correctly take you 
 to the next error.  This also means that you can jump to any
 particular error you'd like: go into the error buffer (with Crtl-w-w),
-move the cursor to just before the desired error, press F3.
+move the cursor to just before the desired error, press <b>F3</b>.
 </ol>
 
+</p>
+
+<hr>
+<h2>OpenOffice</h2>
+<p>
+The file <i>gramadoir.sxw</i> is an OpenOffice document 
+that contains an embedded macro allowing <i lang="ga">An Gramadóir</i>
+to be called directly from an OpenOffice session.  See Russ Phillips'
+<a href="http://www.ooomacros.org/dev.php#98392">Macro Library How-To</a>
+for more detailed installation instructions.
+</p>
+
+<ol>
+<li>Open <i>gramadoir.sxw</i> in OpenOffice.
+<li>Go to <b>Tools</b> and select <b>Macros</b>, then <b>Macro...</b>.
+<li>The "Macro" dialog will appear.  Double click "Gramadoir" and then
+single click the "Gramadoir" underneath.
+<li>Now click the <b>Edit</b> button, which will open up the macro
+source code.  The first line points to the file <i>groo-ga.bat</i>;
+change the "ga" to your ISO-639 language code (if you don't speak Irish),
+and change the file extension "bat" to "pl"
+if you're not running Windows.
+<li>Close the source code window, which should take you back to the 
+original file.  Now reopen the "Macro" dialog as in step 2; this time
+click on the <b>Organizer</b> button.
+<li>The "Macro Organizer" dialog will appear.  Click on the <b>Libraries</b> tab at the top left.
+<li>Be sure "soffice" appears under "Application/Document", then click <b>Append</b>.
+<li>Choose <i>gramadoir.sxw</i> using the file selection dialog that opens.
+<li>Make sure only "Gramadoir" is checked in the "Append Libraries"
+dialog; you may need to uncheck "Standard".   Then click <b>OK</b>.
+<li>Close the Macro Organizer and then close the Macro dialog.
+</ol>
+
+<p>
+You should now have the macro installed and ready to use from any
+OpenOffice session.   You can associate a hot key or a toolbar item 
+with the macro via the <b>Tools-&gt;Configure</b> dialog.
 </p>
 
 <hr>
