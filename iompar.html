@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+  <title>An Gramad&oacute;ir : Other Languages</title>
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="description" content="An Gramad&oacute;ir porting page">
+  <meta name="keywords" content="grammar checking, Gaeilge, Irish language">
+  <meta name="author" content="Kevin P. Scannell">
+  <link rel="stylesheet" href="../kps.css" type="text/css">
+</head>
+
+<body>
+<div class="content">
+<h1>An Gramad&oacute;ir:<br>
+Porting to other languages</h1>
+
+<h2>Introduction</h2>
+<p>
+I would be excited to help port this software
+for use with languages other than Irish.  Getting 
+something simple up and running should be easy,
+even if your language lacks some of the basics for
+doing natural language processing.  If, however, you 
+already have things like a large word list or a
+part-of-speech tagger,
+then you should be able to begin implementing 
+sophisticated grammatical rules immediately.
+</p>
+
+<h2>Things to do</h2>
+
+<p>
+<b>1. Build focail.bs</b>.   This is the database of recognized words.
+If you have some grammatical rules that
+don't require part of speech information, then in fact this step
+is optional.  You can either construct <i>focail.bs</i> from a plain text file
+containing one word per line (like you will find distributed with
+GNU aspell if your language has 
+<a href="ftp://ftp.gnu.org/pub/gnu/aspell/dict/index.html">aspell support</a>):
+<samp>
+cat aspell.txt | sed 's/.*/&amp; 1/' | cabhair > focail.bs
+</samp>
+or get rid of the first rule in <i>rialacha.in</i> to turn off
+spellchecking if you have no word list at all.
+An intermediate possibility would be if, for instance, you want 
+to check for erroneous
+constructions like the English 
+"He done went fishing", or "He done ate his dinner"
+(sadly common in my part of the world).
+You can add a rule to <i>rialacha.in</i> resembling:
+<samp>
+done &lt;VP&gr;&lt;/VP&rt;
+</samp>
+and populate <i>focail.bs</i> with verbs in the past tense.
+It all depends on what kind of checks you need to do for your language.
+</p>
+
+<p>
+<b>2. Rewrite "byte_to_markup" in cuardach.c</b>.
+You can choose the grammatical codes that go into <i>focail.bs</i>
+as you see fit;
+just decode them correctly in this one function.
+</p>
+
+<p>
+<b>3. Tweak the details</b>.
+If your language has unusual conventions for ends of sentences,
+you may need to play with the <i>abairti</i> module.  Or if
+you need characters outside of Latin-1, the <i>di-utf</i> 
+function will need to be generalized.  There may be other minor
+things as well.
+</p>
+
+<p>
+<b>4. Write aonchiall.in</b>.  These are the rules for disambiguation.
+In Irish, and I would imagine in many other language, you can get
+away in a lot of cases without too many rules here.  See
+the description of this file on the <a href="cuidiu.html">Contributing</a>
+page.
+</p>
+
+<p>
+<b>5. Write rialacha.in</b>.  These are the grammatical rules.
+Again see the <a href="cuidiu.html">Contributing</a> page for information
+on how to create this file.
+
+<p>
+<b>6. Localize message strings</b>.
+Technically this is part of porting the user interface, not
+porting the grammar checker.  I'm guessing however that you'll want to
+see the output in the same language as the language of 
+the documents that are being
+checked.  I've kept these strings together at the top of <i>gr.in</i>.
+I'll move to using <i>gettext</i> in the future to streamline this.
+</p>
+
+<hr>
+<em>© Cóipcheart/Copyright 2003 Kevin P. Scannell</em><br><br>
+</ul>
+</div>
+<div class="navigation">
+<a href = "index.html">Home</a><br>
+<a href = "sios.html">Download</a><br>
+<a href = "sonrai.html">Details</a><br>
+<a href = "cuidiu.html">Contributing</a><br>
+<a href = "sampla.html">Sampler</a><br>
+<a href = "/gaeilge.html">Projects</a><br>
+<p class="centered">
+<img src="gram.jpg" alt="dictionary excerpt" height="160" width="125">
+</p>
+</div>
+</body>
+</html>
