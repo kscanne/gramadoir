@@ -17,5 +17,15 @@ AC_HEADER_STDC
 dnl Checks for typedefs, structures, and compiler characteristics.
 AC_C_CONST
 
+AM_GNU_GETTEXT([external])
+if test "$USE_NLS" = "yes"
+then
+	AC_MSG_RESULT([NLS activated])
+	SH_GETTEXT="gettext"
+else
+	AC_MSG_WARN([NLS deactivated])
+	SH_GETTEXT="echo"
+fi
+
 AC_CONFIG_FILES(Makefile po/Makefile.in )
 AC_OUTPUT
