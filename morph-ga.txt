@@ -52,6 +52,7 @@
 ^h?an-([bcfgmp][^h])		$1		2
 ^h?an-([^bcfgmp])		$1		0
 ^h?an-([^bcfgmp]h)		$1		2    # an-dhuine 
+^ana-				an-		1    # ana-eagraithe
 ^dea-([bcdfgmpt]h)		$1		0
 ^dea-([bcdfgmpt][^h])		$1		2
 ^dea-(sh[aeiouαινσϊlnr])	$1		0
@@ -147,12 +148,12 @@
 achai?s$			ach		0
 acht$				ach		0
 νocht$				νoch		0
-([aouασϊ][^aeiouαινσϊ]+)-?san$	$1		0
-([eiιν][^aeiouαινσϊ]+)-?sean$	$1		0
-([aouασϊ][^aeiouαινσϊ]+)-?sa$	$1		0
-([eiιν][^aeiouαινσϊ]+)-?se$	$1		0
-([aouασϊ][^aeiouαινσϊ]+)-?na$	$1		0
-([eiιν][^aeiouαινσϊ]+)-?ne$	$1		0
+([aouασϊ][^aeiouαινσϊ-]+)-?san$	$1		0
+([eiιν][^aeiouαινσϊ-]+)-?sean$	$1		0
+([aouασϊ][^aeiouαινσϊ-]+)-?sa$	$1		0
+([eiιν][^aeiouαινσϊ-]+)-?se$	$1		0
+([aouασϊ][^aeiouαινσϊ-]+)-?na$	$1		0
+([eiιν][^aeiouαινσϊ-]+)-?ne$	$1		0
 ^aith				ath		1
 ^eadar				idir		1
 ^dh'				d'		1
