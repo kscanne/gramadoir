@@ -24,7 +24,8 @@ to <i lang="ga">An Gramadóir</i> which is very easy to use.  It shows you
 a split screen with the original text file on top and the 
 errors output by <i lang="ga">An Gramadóir</i> below.  With a single keystroke,
 you can move through the errors in parallel, making corrections as 
-you go.  Here are his instructions:
+you go.  Here are his instructions (the file <i>gramadoir.el</i> is
+included in the distribution as of version 0.3):
 </p>
 
 <p>
@@ -34,7 +35,7 @@ two functions listed below.
 </p>
 
 <ol>
-<li>put gramadoir.el in your emacs site lisp directory, if you don't
+<li>put <i>gramadoir.el</i> in your emacs site lisp directory, if you don't
 have one, put it it ~/lisp
 
 <li>put the following lines in your ~/.emacs file
@@ -50,7 +51,7 @@ have one, put it it ~/lisp
 
 <li>You are prompted for files to check, enter them using either
 relative or absolute paths, but avoid using ~ or environment
-variables as gramadoir.el doesn't handle these yet.
+variables as <i>gramadoir.el</i> doesn't handle these yet.
 
 <li>A second window will open with the messages from gr.
 
@@ -61,7 +62,34 @@ F3. Repeated pressing of F3 takes you to each subsequent error."
 <hr>
 <h2>Vim</h2>
 <p>
-Coming soon (?)
+I've written a script which emulates the behavior of Martin's
+Emacs interface within Vim.  It will be included in future 
+distributions, or you can download it directly from
+<a href="http://vim.sourceforge.net/scripts/script.php?script_id=802">
+Vim online</a>.     Instructions:
+<ol>
+<li>put <i>gramadoir.vim</i> in ~/.vim/plugin.
+
+<li>put the following lines in your ~/.vimrc file
+<pre>
+map &lt;F3&gt; &lt;Gr&gt;
+map &lt;F4&gt; &lt;Amach&gt;
+</pre>
+or choose different hot keys if you want.
+
+<li>open an Irish language text file in Vim.
+
+<li>to check its grammar, press F3; a second window will open with 
+the messages from <i lang="ga">An Gramadóir</i>.  The cursor
+will move to the first error (which is also highlighted in red if you
+are using a suitable color terminal).
+
+<li>Each successive use of F3 moves to the next error
+(in both windows, in parallel).
+
+<li>Pressing F4 exits the grammar checker and resumes normal editing.
+</ol>
+
 </p>
 
 <hr>
