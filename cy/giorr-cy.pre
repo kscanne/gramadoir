@@ -1,0 +1,6 @@
+#  This file is used to escape punctuation marks that aren't at the 
+#  end of a sentence.  The two lines below can be uncommented to 
+#  deal with single letters followed by punctutaion.
+#
+# s/([^@BDCHARS@@INTCHARS@][@BDCHARS@@INTCHARS@])([.?!])/$1\\$2/g;
+# s/([^@BDCHARS@@INTCHARS@][I])\\([.?!])/$1$2/g;
