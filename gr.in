@@ -121,6 +121,7 @@ CUPLA=`@SH_GETTEXT@ "Unusual combination of words"`
 BREISCHEIM=`@SH_GETTEXT@ "Comparative adjective required"`
 NIAITCH=`@SH_GETTEXT@ "Unnecessary prefix \/h\/"`
 NITEE=`@SH_GETTEXT@ "Unnecessary prefix \/t\/"`
+ONEART=`@SH_GETTEXT@ "Unnecessary use of the definite article"`
 
 # save for gettext calls within cuardach...
 OLDCTYPE="${LC_CTYPE}"
@@ -150,6 +151,7 @@ s/\"CUPLA/\"${CUPLA}/g
 s/\"BREISCHEIM/\"${BREISCHEIM}/g
 s/\"NIAITCH/\"${NIAITCH}/g
 s/\"NITEE/\"${NITEE}/g
+s/\"ONEART/\"${ONEART}/g
 "
 }
 
@@ -168,7 +170,7 @@ htmlversion()
 {
 echo "<p>"
 printf "<a href=\"http://borel.slu.edu/gramadoir/\">${CLAR}</a>, ${versionstring}<br>\n" "${packageversion}"
-echo "Cóipcheart/Copyright (C) 2003 <a href=\"http://borel.slu.edu/\">Kevin P. Scannell</a><br><br>"
+echo "Copyright (C) 2003 <a href=\"http://borel.slu.edu/\">Kevin P. Scannell</a><br><br>"
 echo "<i>"
 printf "${gpl}\n"
 echo "</i></p><hr>"
@@ -607,10 +609,10 @@ rm -f "${BIGXMLSUBSET}"
 # remainder is the "main()"
 
 AIBHSIGHVAR="@EGREP_COLOR@ "
-ACTION=comhad
-SCRIOBH_HTML=nihea
-TEANGA=ga
-IONCHOD=unspecified
+ACTION="comhad"
+SCRIOBH_HTML="nihea"
+TEANGA="ga"
+IONCHOD="unspecified"
 while [ ${1%%[^-]*} ]
 do
 	if echo "${1}" | grep "=" > /dev/null
@@ -656,25 +658,25 @@ do
 		;;
 		"--html" )
 			AIBHSIGHVAR="@AWK@ -f @prefix@/libexec/hilite.awk pattern="
-			SCRIOBH_HTML=issea
+			SCRIOBH_HTML="issea"
 		;;
 		"--litriu" )
-			ACTION=litriu
+			ACTION="litriu"
 		;;
 		"--xml" )
-			ACTION=xml_output
+			ACTION="xml_output"
 		;;
 		"--brill" )
-			ACTION=brill_unsupervised_learning
+			ACTION="brill_unsupervised_learning"
 		;;
 		"--ilchiall" )
-			ACTION=ambiguity_report
+			ACTION="ambiguity_report"
 		;;
 		"--minic" )
-			ACTION=create_unigram_file
+			ACTION="create_unigram_file"
 		;;
 		"--no-unigram" )
-			ACTION=nounigram_output
+			ACTION="nounigram_output"
 		;;
 		"--iomlan" )
 			USEIGNORE="noignore"
