@@ -86,24 +86,31 @@ the developers' pack, extract, and configure it:
 </p>
 
 <pre>
-$ gunzip gramadoir-x.x.tar.gz
-$ tar xvf gramadoir-x.x.tar
-$ cd gramadoir-x.x
+$ gunzip gramadoir-0.5-r1.tar.gz
+$ tar xvf gramadoir-0.5-r1.tar
+$ cd gramadoir-0.5-r1
 $ ./configure
 </pre>
 
 <p>
-This creates a <i>Makefile</i> but at this point there is nothing 
+The developers' pack requires the Perl module Locale::PO; if you get an error
+message saying that this is not on your system, run (as root user):
+</p>
+
+<pre>
+# perl -MCPAN -e 'install Locale::PO'
+</pre>
+
+<p>
+You should now have a <i>Makefile</i> but at this point there is nothing 
 to make and nothing to install.   The developers' pack just
 contains the scripts used in converting the language pack files
 into an installable Perl module.
 </p>
 
 <p>
-The next step is to checkout the language pack from CVS.
-The sourceforge site has some excellent documentation on
-<a href="http://sourceforge.net/docman/display_doc.php?docid=768&group_id=1">using CVS as a developer</a> and an overview document for anyone
-<a href="http://sourceforge.net/docman/display_doc.php?docid=14033&group_id=1">new to CVS</a>.
+The next step is to checkout the language pack from CVS
+into the gramadoir-0.5-r1 directory in which you have just run ./configure.
 Here is the command (substituting your
 sourceforge account name for "username" and your language code for 
 "xx"):
@@ -121,7 +128,15 @@ U xx/comhshuite-xx.in
 ...
 </pre>
 
-<p>Then run "configure" in this directory (to create a Makefile)
+<p>
+This will create a subdirectory "xx" (your language code)
+containing the language pack files.
+The sourceforge site has some excellent documentation on
+<a href="http://sourceforge.net/docman/display_doc.php?docid=768&group_id=1">using CVS as a developer</a> and an overview document for anyone
+<a href="http://sourceforge.net/docman/display_doc.php?docid=14033&group_id=1">new to CVS</a>.
+</p>
+
+<p>Now run "configure" in this directory (to create a Makefile)
 and "make rebuildlex" (to create the lexical database):</p>
 
 <pre>
@@ -131,17 +146,39 @@ $ make rebuildlex
 </pre>
 
 <p>
-Now anytime you want to create or update the <i>Lingua::XX::Gramadoir</i>
-Perl module, you just run "make".  This will generate all
-of the necessary files in the subdirectory <i>Lingua-XX-Gramadoir</i>.
-You can build, test, and install the module
-<a href="http://cpan.uwinnipeg.ca/htdocs/ExtUtils-MakeMaker/ExtUtils/MakeMaker.html#default_makefile_behaviour">in the usual way</a>:
+To create the necessary files for the <i>Lingua::XX::Gramadoir</i>
+Perl module, run "make" in the "xx" (language code) directory.
+This will generate the files
+in the subdirectory <i>Lingua-XX-Gramadoir</i>.  
+If you want to update these files
+at any point in the future, just run "make" again in the "xx" directory.
+</p>
+
+<p>
+To use these files to build, test, and install the module, use
+the following
+<a href="http://cpan.uwinnipeg.ca/htdocs/ExtUtils-MakeMaker/ExtUtils/MakeMaker.html#default_makefile_behaviour">standard procedure</a>:
 <pre>
 $ cd Lingua-XX-Gramadoir
 $ perl Makefile.PL
 $ make
 $ make test
 $ make install
+</pre>
+
+<p>
+<i lang="ga">An Gramadóir</i> depends on a few Perl modules that
+do not come with the standard distribution; e.g. 
+<i>String::Approx</i> and <i>Archive::Zip</i>.  
+If these modules (or any other dependencies) are missing
+from your system, you will get warnings when you
+try to build <i>Lingua::XX::Gramadoir</i>.
+In this case, install the missing modules using CPAN:
+</p>
+
+<pre>
+# perl -MCPAN -e 'install String::Approx'
+# perl -MCPAN -e 'install Archive::Zip'
 </pre>
 
 <p>
