@@ -29,10 +29,19 @@ packageversion="@PACKAGE_VERSION@"
 bugemail="@PACKAGE_BUGREPORT@"
 TEXTDOMAINDIR="@prefix@/share/locale"
 TEXTDOMAIN="@PACKAGE_NAME@"
+export TEXTDOMAINDIR TEXTDOMAIN
 
 # title that prints to screen, not used as filename.  I'd also prefer
 # that it not be localized even for non-Irish grammar checking.
 CLAR='An Gramadóir'    
+EXECUTABLE="${0##/*/}"
+HELPCOMMAND="${EXECUTABLE} --help"
+
+d_usage1=$"Usage: %s [OPTIONS] [FILES]"
+d_bugreports=$"Send bug reports to <%s>."
+d_gpl=$"This is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\nto the extent permitted by law."
+d_stdinhelp=$"If no file is given, read from standard input."
+d_tryhelp=$"Try %s for more information."
 
 # All i18n strings collected here.  See gramadoir.pot for some 
 # translation hints.
@@ -40,19 +49,19 @@ checking=$"Currently checking %s"
 notfound=$"There is no such file."
 isdir=$"Is a directory"
 permissions=$"Permission denied"
-usage1=$"Usage: gr [OPTIONS] [FILES]"
+usage1=`gettext -s "Usage: %s [OPTIONS] [FILES]"`
 usage2=$"    --litriu       write misspelled words to standard output"
 usage3=$"    --html         produce HTML output for viewing in a web browser"
 usage4=$"    --xml          write tagged XML stream to standard output, for debugging"
 usage5=$"    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
 usage6=$"    --help         display this help and exit"
 usage7=$"    --version      output version information and exit"
-stdinhelp=$"If no file is given, read from standard input"
-bugreports=$"Send bug reports to <%s>.\n"
+stdinhelp=`gettext -s "If no file is given, read from standard input."`
+bugreports=`gettext -s "Send bug reports to <%s>."`
 versionstring=$"version %s"
-gpl=$"This is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\nto the extent permitted by law."
+gpl=`gettext -s "This is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\nto the extent permitted by law."`
+tryhelp=`gettext -s "Try %s for more information."`
 unknownopt=$"unknown option"
-tryhelp=$"Try \"gr --help\" for more information."
 
 # i18n: grammatical errors.  See rialacha.in.
 # If you port to another language, you won't translate these; instead
@@ -82,7 +91,7 @@ TAB=`@AWK@ 'BEGIN{printf "\t";}'`
 versionout()
 {
 printf "${CLAR}, ${versionstring}\n" "${packageversion}"
-echo "Cóipcheart/Copyright (C) 2003 Kevin P. Scannell"
+echo "Copyright (C) 2003 Kevin P. Scannell"
 printf "${gpl}\n"
 }
 
@@ -99,7 +108,7 @@ echo "</i></p><hr>"
 # this is what happens if --help is passed
 helpout()
 {
-echo "${usage1}"
+printf "${usage1}\n" "${EXECUTABLE}"
 echo
 echo "${usage2}"
 echo "${usage3}"
@@ -110,14 +119,14 @@ echo "${usage7}"
 echo
 echo "${stdinhelp}"
 echo
-printf "${bugreports}" "${bugemail}"
+printf "${bugreports}\n" "${bugemail}"
 }
 
 # one argument, the erroneous option passed
 option_error()
 {
 echo "${CLAR}: ${unknownopt} \`${1}'"
-echo "${tryhelp}"
+printf "${tryhelp}\n" "${HELPCOMMAND}"
 }
 
 
