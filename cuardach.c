@@ -613,6 +613,7 @@ main (int argc, char *argv[])
   int badtoken = 0;
 
   setlocale (LC_MESSAGES, "");	/* read from environment */
+  setlocale (LC_CTYPE, "");	/* needed so accents appear correctly! */
   bindtextdomain (PACKAGE_NAME, LOCALEDIR);
   textdomain (PACKAGE_NAME);
 
