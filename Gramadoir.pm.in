@@ -179,8 +179,8 @@ sub gettext
 	$string =~ s/\%s/[_2]/;
 	$string =~ s/\%s/[_3]/;
 	$string =~ s/\\n$/\n/;
-	$string =~ s#\\/([@BDCHARS@@INTCHARS@]+)\\/#/$1/#;
 	$string =~ s#\\/\\([1-9])\\/#/[_$1]/#;
+	$string =~ s#\\/([@BDCHARS@@INTCHARS@]+)\\/#/$1/#;
 
 	return $lh->maketext($string, @rest);
 }
@@ -474,6 +474,7 @@ sub tag_one_word
 	if ($self->{'use_ignore_file'}) {
 		return "<Y>".$word."</Y>" if ( exists($IGNORE{$word}) );
 	}
+	return "<A>".$word."</A>" if ($word =~ /^[0-9,'-]+$/);
 	my $ans = $self->tag_recurse($word, $word, -1, [], 6);
 	return $ans if $ans;
 	$ans = $self->tag_as_compound($word);
@@ -662,7 +663,6 @@ sub xml_sentences
 	my $sentences = add_tags_real(@_);
 	foreach my $sentence (@$sentences) {
 		rialacha ($sentence);
-		eisceacht ($sentence);
 	}
 	return $sentences;
 }
@@ -947,6 +947,15 @@ sub aonchiall_deux
 	return aonchiall(@_);
 }
 
+# called from rialacha "OK" rules
+sub strip_errors
+{
+	my ( $str ) = @_;
+	$str =~ s/<E[^>]*>//;
+	$str =~ s/<\/E>//;
+	return $str;
+}
+
 ##############################################################################
 #   The remaining functions are automatically generated using a high
 #   level description of @NAME_ENGLISH@ grammar; see the An Gramadoir
@@ -964,13 +973,6 @@ sub comhshuite
 {
 	for ($_[0]) {
 # comhshuite code goes here
-	}
-}
-
-sub eisceacht
-{
-	for ($_[0]) {
-# eisceacht code goes here
 	}
 }
 
