@@ -388,9 +388,6 @@ RFORMCONJ <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">
 <S>RFORMPREP</S> <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">
 # leave out "r-form" verbal particle "ar" here!
 [Cc]ár|[Cc]har|[Nn]ár|[Nn]íor <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">
-# OK if before something that is definitely a verb: 
-# exception to next
-<B>Inis</B>:<N pl="n" gnt="n" gnd="f">
 # Ainmnigh dhá chineál múchtóirí dóiteán; no need for "F" since lenited =>
 # not an imperative and not lenited => not PASTIMPER
 <B><Z>ANYPASTIMPER</Z>CAPVOWEL</B>:<V p="y" t="ord">
@@ -486,13 +483,15 @@ is <B><Z>ANYWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
 # N[FM]ADJ macros don't allow genitives (see last rule in batch)
 <S>ANYTHING</S> <B><Z>NMADJ</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <T>[Aa]n</T> <B><Z>NMADJ</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-[Aa] <B><Z>NMADJ</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+#  comment out -- NMADJ includes verbs too "saor, nocht" etc.
+# [Aa] <B><Z>NMADJ</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <N>ANYTHING</N> <B><Z>NMADJ</Z>ANYTHING</B>:<A pl="n" gnt="n">
 # next batch is for feminine: "maith", etc.
 <S>ANYTHING</S> <B><Z>NFADJ</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <T>[Aa]n</T> <B><Z>NFADJ</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
-[Aa] <B><Z>NFADJ</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
-<N>ANYTHING</N> <B><Z>NFADJ</Z>ANYTHING</B>:<A>
+# see above
+# [Aa] <B><Z>NFADJ</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<N>ANYTHING</N> <B><Z>NFADJ</Z>ANYTHING</B>:<A pl="n" gnt="n">
 # next batch is for "scríobh", "rith", "líon", etc. 
 <S>ANYTHING</S> <B><Z>NMVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <T>[Aa]n</T> <B><Z>NMVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
@@ -501,7 +500,7 @@ a <B><Z>NMVERB</Z>ANYTHING</B> <P>ANYTHING</P>:<V p="y" t="caite">
 a <B><Z>NMVERB</Z>ANYTHING</B> sé:<V p="y" t="caite">
 a <B><Z>NMVERB</Z>ANYTHING</B> <N>ANYTHING</N>:<V p="y" t="caite">
 a <B><Z>NMVERB</Z>ANYTHING</B> <Y>ANYTHING</Y>:<V p="y" t="caite">
-a <B><Z>NMVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+# a <B><Z>NMVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <V>ANYTHING</V> <B><Z>NMVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 # repeat previous batch for feminine:  "roinn", "úsáid", "chaill", etc. 
 <S>ANYTHING</S> <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
@@ -510,7 +509,7 @@ a <B><Z>NFVERB</Z>ANYTHING</B> <P>ANYTHING</P>:<V p="y" t="caite">
 a <B><Z>NFVERB</Z>ANYTHING</B> sé:<V p="y" t="caite">
 a <B><Z>NFVERB</Z>ANYTHING</B> <N>ANYTHING</N>:<V p="y" t="caite">
 a <B><Z>NFVERB</Z>ANYTHING</B> <Y>ANYTHING</Y>:<V p="y" t="caite">
-a <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+# a <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <V>ANYTHING</V> <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 # agus cogaint na círe agus scríobadh thochas na tóna
 #  shouldn't lenite after verb (but maybe not after NMCS either?)
@@ -643,6 +642,17 @@ ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
 <V>ANYTHING</V> <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
 <C>ANYTHING</C> <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
 <B><Z>SEOSIN</Z>ANYTHING</B>:<A pl="n" gnt="n">
+# "tarraing sí a hanáil"
+<B>[Aa]</B> INITIALH:<D>
+<B>[Aa]</B> <N>ECLIPSED</N>:<D>
+<B>[Aa]</B> <NP>ANYTHING</NP>:<D>
+# Now in comhshuite; should only use <U> before verbs! (CUPLA rule)
+# <B>[Aa]</B> chlog:<U>
+<B>[Aa]</B> chóir:<S>
+<B>[Aa]</B> dhíth:<S>
+# called again below w/o [^V] condition
+<B>[Aa]</B> <[^V]>VNISH</[^V]>:<S>
+<B>[Aa]</B> NOTVNISHVN:<S>
 # new Jan '05; <G>=direct relative "a", <H>=indirect relative
 # as refinements of the <U> tag.  When unsure can still use <U>
 # see LGG pp.176-177 for a nice survey
@@ -688,16 +698,8 @@ ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
 <B>[Aa]</B> <V>LENITED</V>:<G>
 <B>[Aa]</B> <V>INITIALDAPOST</V>:<G>
 <B>[Aa]</B> <V>ANYTHING</V>:<U>
-# "tarraing sí a hanáil"
-<B>[Aa]</B> INITIALH:<D>
-<B>[Aa]</B> <N>ECLIPSED</N>:<D>
-<B>[Aa]</B> <NP>ANYTHING</NP>:<D>
-# see "trí a" rule.
-<B>[Aa]</B> chlog:<U>
-<B>[Aa]</B> chóir:<S>
-<B>[Aa]</B> dhíth:<S>
+<[GHU]>[Aa]</[GHU]> <B>ANYTHING</B>:!<[^V][^>]*>
 <B>[Aa]</B> VNISH:<S>
-<B>[Aa]</B> NOTVNISHVN:<S>
 <B>[Aa]</B>:<D>
 <B>dó</B>:<O>
 # functionally same as the adverb "too"; hopefully noun is picked up with <S>?
@@ -728,4 +730,4 @@ ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
 [Aa]n <B><Z>ANYPAST</Z>ANYTHING</B>:!<V p="y" t="caite">
 [Aa]n <B><Z>ANYPASTAUT</Z>ANYTHING</B>:!<V p="n" t="caite">
 <[^C]>NOTNA</[^C]> <B><Z>ANYIMPER</Z>ANYTHING</B>:!<V p="y" t="ord">
-<B><Z>ANYVERB</Z>ANYTHING</B> <NG>ANYTHING</NG>:!<V.*>
+<B><Z>ANYVERB</Z>ANYTHING</B> <NG>ANYTHING</NG>:!<V[^>]+>

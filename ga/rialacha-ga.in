@@ -71,6 +71,13 @@ sin sin:OK
 #      compound including a non-standard component.
 #. An bhfuil ayn uachtar roeite agattt?
 <X>ANYTHING</X>:ANAITHNID
+<F>[Bb]húr</F>:IONADAI{bhur}
+<F>[Cc]huile</F>:IONADAI{gach uile}
+<F>[Cc]h?láracha</F>:IONADAI{cláir}
+# but not caps!
+<F>leitir</F>:IONADAI{litir}
+<F>[Ll]eitreacha</F>:IONADAI{litreacha}
+<F>[Óó]m</F>:IONADAI{ó mo}
 #. Bíonn an geál ag satailt ar an dubh.
 <F>ANYTHING</F>:NEAMHCHOIT
 # this is here for the clearer error message, otherwise it's NOSUBJ
@@ -357,6 +364,8 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 # "aon/ocht" rules are the same as the Noun rules above
 <T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A> <NCS>ANYTHING</NCS>:PREFIXT
 <S>ANYTHING</S> <E><T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A> <NCS>ANYTHING</NCS></E>:OK
+# corpus -- "Ag tosach an ochtú haois déag" i.e. common form where you might expect a genitive "haoise"
+<T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A> <NCS>haois</NCS>:OK
 # CB p.12 #1.b
 #. Chóirigh sé na lampaí le solas a chaitheamh os comhair an coinnleora.
 <T>[Aa]n</T> <N pl="n" gnt="y" gnd="m">UNLENITEDBCFGMP</N>:SEIMHIU

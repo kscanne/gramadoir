@@ -37,6 +37,8 @@ s/FAIGHECLIPSED/bh[Ff]ua(?:ir(?:ea[md]ar)?|rthas)/g;
 s/FAIGHTOECLIPSE/[Ff]ua(?:ir(?:ea[md]ar)?|rthas)/g;
 s/VOWELNUMERAL/(?:[0-9]?[18]|1?8[0-9][0-9][0-9]*)/g;
 s/VOWELORDINAL/(?:80|[0-9]?[18]|1?8[0-9][0-9][0-9]*)ú/g;
+# see CB p.22 -- adjectives that can take a prefix t
+s/VOWELNUMADJ/(?:[Aa]onú?|[Oo]cht(?:[óú]|ódú)?)/g;
 s/NIBS/[Nn]í(?: ?ba|b)/g;
 s/UNLENITEDS/[Ss][lnraeiouáéíóú][^<]+/g;
 s/INITIALVOWELORF/(?:[aeiouAEIOUáéíóúÁÉÍÓÚ]|[Ff]h?[aeiouáéíóú])[^<]+/g;
@@ -66,6 +68,8 @@ s/LENITEDF/[Ff][Hh][aeiouáéíóú][^<]*/g;
 s/ORDINALADJ/(?:[^<][^<]*[^m]|[0-9]+)ú/g;
 s/PREFIXEDT/t(?:[AEIOUÁÉÍÓÚ]|-[aeiouáéíóú])[^<]+/g;
 s/EIRE/(?:[nh])?Éire(?:ann)?/g;
+s/NGMPERSON/(?:[^<]+(?:[óú]ra|eora|éara|aí)|cailín|duine|fir|páiste)/g;
+s/NGFPERSON/(?:baintrí|clainne|mná)/g;
 s/REGULARPOSS/(?:[MmDd]o|[Aa]|[Áá]r|[Bb]hur)/g;
 # gan/chun/ainneoin disallow "[^ >]+n"
 s/FUSEDPOSS/(?:[Dd]ár?|(?:[Ff]aoi|[Ii]|[Ll]e|[Tt]rí)n(?:a|ár))/g;
@@ -90,12 +94,23 @@ s/SLENDERFINALCONSONANT/[^<]*[eéií][^aeiouáéíóú<]+/g;
 s/BROADFINALCONSONANT/[^<]*[aáoóuú][^aeiouáéíóú<]+/g;
 s/FINALVOWEL/[^<]*[^bcdfghjlmnprstvxz<]+/g;
 s/FINALA/[^<]*[AÁaá]/g;
+s/SLENDERFINALDLNST/[^<]*[eéií][^aeiouáéíóú<]*[DdLlNnSsTt]/g;
+s/FINALDLNST/[^<]+[DdLlNnSsTt]/g;
 s/DAYOFTHEWEEK/Dé [^<]+/g;
 s/NOBEEAPOST/(?:[^b]|b[^'])[^<]+/g;
+# ilt = oscailt, tochailt, cuimilt
+s/FEMVN/(?:[^<]+i[lnr]t|[^<]+áil|breith|foghlaim|iarraidh|obair|seilg)/g;
 s/NOTVNISHVN/(?:bheith|cheannach|chur|dhíol|dhul|fhoghlaim|íoc|iompar|oscailt|rá|roinnt|scríobh|sholáthar|theacht)/g;
 s/VNISH/[^<]*(?:a[dm]h|i[nr]t|áil|ú)/g;
 s/NOTDO/[^<][^<][^<]+/g;
+# used with FEMVN above so no need to repeat "áil", etc.
+# "cúis" should not be here; "cúis ghearáin", etc. are correct
+# "céim" is a mixed bag in OD depending on semantics
+s/FEMABSTRACT/(?:[^<]+(?:[ao]cht|íl)|h?[Aa]cmhainn|h?[Aa]irde|(?:bh)?[Ff]h?(?:airsinge|earg|inne)|n?[Gg]h?éarchéim|h?[Íí]de|[Ll]aige|[Mm]h?aise|h?[Oo]iread|h?[Óó]ige|t?[Ss]céim|t?[Ss]h?aoirse)/g;
+s/QUANTITYWORD/(?:[Aa]ilp|m?[Bb]h?ailc|(?:an-|g)?[Cc]h?uid|m?[Bb]h?arraíocht|m?[Bb]h?reis|n?[Dd]h?íth|n?[Dd]h?óthain|h?[Éé]agmais|h?[Ee]aspa|h?[Ii]omarca|[Ll]eath|[Rr]oinnt)/g;
 s/INITIALC/[Cc][^<]+/g;
+s/INITIALDST/[DdSsTt][^<]+/g;
+s/INITIALF/[Ff][^<]+/g;
 s/INITIALH/h[^<]+/g;
 s/INITIALL/[Ll][^<]+/g;
 s/INITIALM/[Mm][^<]+/g;
@@ -132,6 +147,7 @@ s/ANYIMPER/(?:<[^>]+>)*<V p="y" t="ord".>(?:<[^>]+>)*/g;
 s/ANYPASTAUT/(?:<[^>]+>)*<V p="n" t="caite".>(?:<[^>]+>)*/g;
 s/ANYPAST/(?:<[^>]+>)*<V p="y" t="caite".>(?:<[^>]+>)*/g;
 s/ANYVERB/(?:<[^>]+>)*<V[^>]+>(?:<[^>]+>)*/g;
+s/NOVERBS/(?:<[^V][^>]*>)+/g;
 s/NMWITHHIMPER/<N pl="n" gnt="n" gnd="m" h="y".><V p="y" t="ord".>/g;
 s/NFWITHHIMPER/<N pl="n" gnt="n" gnd="f" h="y".><V p="y" t="ord".>/g;
 s/NFONEC/<N pl="n" gnt="n" gnd="f".><N pl="y" gnt="y" gnd="f".>/g;
