@@ -80,7 +80,6 @@ chmod 755 ${DIR}/configure
 cp ${GRAMDIR}/COPYING ${DIR}/COPYING
 touch ${DIR}/earraidi-${TEANGA}.bs
 touch ${DIR}/eile-${TEANGA}.bs
-cp ${TEMPLATE}/eisceacht-xx.in ${DIR}/eisceacht-${TEANGA}.in
 touch ${DIR}/triail.xml
 echo "Creating lexicon..."
 LC_ALL=C sort -u ${CRUBADAN}/GLAN > ${DIR}/lexicon-${TEANGA}.txt
