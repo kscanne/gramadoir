@@ -7,4 +7,5 @@
 # This is free software; see the file COPYING for copying conditions.  There is
 # NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #
+s/^\(.*\)<B><Z>\(.*\)<\/Z>\(.*\)<\/B>\(.*\):<\([A-DF-Z]\)\([^>]*\)> *$/s\/(\1)<B><Z>()\2<\\\/Z>(\3)<\\\/B>(\4)\/$1<\5\6>$3<\\\/\5>$4\/g;/
 s/^\(.*\)<B>\(.*\)<\/B>\(.*\):<\([A-DF-Z]\)\([^>]*\)> *$/s\/(\1)<B><Z>(<[^>]*>)+(\2)<\\\/B>(\3)\/$1<\4\5>$3<\\\/\4>$4\/g;/

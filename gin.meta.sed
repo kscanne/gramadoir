@@ -35,6 +35,8 @@ s/LENITEDDFST/[DdFfSsTt]h[^<]*/g
 s/LENITED/([CcDdFfGgMmPpSsTt]h|bh[^fF])[^<]*/g
 s/SLENDERFINALCONSONANT/[^<]*[eéií][^aeiouáéíóú<]+/g
 s/FINALVOWEL/[^<]*[^bcdfghjlmnprstvxz<]+/g
+s/NMFOUR/<N pl="n" gnt="n" gnd="m"\\\\\\\/><N pl="n" gnt="y" gnd="m"\\\\\\\/>/g
+s/NFFOUR/<N pl="n" gnt="n" gnd="f"\\\\\\\/><N pl="n" gnt="y" gnd="f"\\\\\\\/>/g
 s/\*P\[/*pl="y"[/g
 s/\*CP\[/*pl="y" gnt="n"[/g
 s/\*GP\[/*pl="y" gnt="y"[/g
