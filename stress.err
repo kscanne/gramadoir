@@ -46,3 +46,35 @@ An Gramadóir: Níl an teanga el ar fáil.
 iconv: conversion from `fakecode' is not supported
 An Gramadóir: fadhb ag léamh an bhunachair sonraí
 An Gramadóir: fadhb ag léamh an bhunachair sonraí
+test various error messages
+Un Gramadoir: nonexistentfile: Nu a existat acest fiºier.
+Un Gramadoir: /home/kps: E un director.
+Un Gramadoir: /etc/shadow: Permisiune neacordatã.
+Un Gramadoir: opþiune necunoscutã --fakeoption.
+Încercaþi gr --help pentru mai multe informaþii.
+Un Gramadoir: opþiune necunoscutã --fakeoption.
+Încercaþi gr --help pentru mai multe informaþii.
+Un Gramadoir: opþiunea --teanga necesitã un parametru
+Încercaþi gr --help pentru mai multe informaþii.
+Un Gramadoir: opþiunea --xml nu permite parametri
+Încercaþi gr --help pentru mai multe informaþii.
+Un Gramadoir: Limba el nu este suportatã.
+iconv: conversion from `fakecode' is not supported
+Un Gramadoir: problemã în citirea bazei de date
+Un Gramadoir: problemã în citirea bazei de date
+test various error messages
+An Gramadóir: nonexistentfile: Dit bestand bestaat niet.
+An Gramadóir: /home/kps: Is een map
+An Gramadóir: /etc/shadow: Toegang geweigerd
+An Gramadóir: onbekende optie --fakeoption
+Probeer gr --help voor meer informatie.
+An Gramadóir: onbekende optie --fakeoption
+Probeer gr --help voor meer informatie.
+An Gramadóir: optie --teanga vereist een argument
+Probeer gr --help voor meer informatie.
+An Gramadóir: optie --xml staat geen argumenten toe
+Probeer gr --help voor meer informatie.
+An Gramadóir: Taal el word niet ondersteund.
+iconv: conversion from `fakecode' is not supported
+An Gramadóir: Problemen met lezen van de databank
+An Gramadóir: Problemen met lezen van de databank
