@@ -280,13 +280,10 @@ elsif ($ambig) {
 elsif ($freq) {
 	my %posseen;
 	for ($big) {
-		while (/(<[ACDF-W][^>]*>)/g) {
+		while (/(<[ACDF-W][^>]*>)(?!<)/g) {
 			$posseen{$1}++;
 		}
-		foreach (sort {$posseen{$b} <=> $posseen{$a}} keys %posseen) {
-			print;
-			print "\n";
-		}
+		print "$_\n" foreach (sort {$posseen{$b} <=> $posseen{$a}} keys %posseen);
 	}
 }
 exit 0;
