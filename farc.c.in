@@ -9,11 +9,34 @@
 
 /* Prototypes */
 
+int
+my_tolower (const char* teanga, const char* w, int* pos, char* lowered)
+{
+/* External 1 */
+  else
+    {
+      fprintf (stderr, gettext ("Language %s is not supported."), teanga);
+      return 0;
+    }
+}
+
+int
+make_all_lowercase_lang (const char* teanga, const char *word, char *lowered, 
+			int lowers, int uppers, int firstupper)
+{
+/* External 3 */
+  else
+    {
+      fprintf (stderr, gettext ("Language %s is not supported."), teanga);
+      return 0;
+    }
+}
+
 void
 byte_to_markup (const char *teanga, const char *packagename, const unsigned char c, char *fill, char *attrs)
 {
   int ret = 0;
-/* External calls */
+/* External 4 */
   else
     {
       fprintf (stderr, gettext ("Language %s is not supported."), teanga);
