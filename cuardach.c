@@ -604,7 +604,8 @@ cleanup ()
   if (toignore != NULL)
     free (toignore);
   for (l = 0; l < repl_total; l++)
-    free (torepl[repl_total].athfhocal);
+    free (torepl[l].athfhocal);
+  free (torepl);
 }
 
 int
