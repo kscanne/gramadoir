@@ -456,14 +456,22 @@ replacementlookup (const char *word, char *repl)
 int
 dictlookup (const char *word, char *fill, char *attrs, char *extratags)
 {
-  int len, retval = 1;
+  int i, len, retval = 1;
   char unused, repl[GR_REPLMAX], codes[2 * GR_AMBIGMAX], lowered[GR_WORDMAX];
   *codes = 0;
   rawlookup (word, codes);
   if (isupper (word[0]))
     {
-      strcpy (lowered, word);
-      *lowered = (char) tolower (word[0]);
+      i = 0;
+      while (word[i] != 0)
+	{
+	  if (isupper (word[i]))
+	    lowered[i] = (char) tolower (word[i]);
+	  else
+	    lowered[i] = word[i];
+	  i++;
+	}
+      lowered[i] = 0;
       len = strlen (codes);
       unused = codes[len - 1];
       codes[len - 1] = 0;
@@ -486,6 +494,14 @@ dictlookup (const char *word, char *fill, char *attrs, char *extratags)
 	    {
 	      strcpy (fill, "Y");
 	      return 1;
+	    }
+	  else if (isupper (word[0]))
+	    {
+	      if (rawignorelookup (lowered))
+		{
+		  strcpy (fill, "Y");
+		  return 1;
+		}
 	    }
 	}
       if (replacementlookup (word, repl))
