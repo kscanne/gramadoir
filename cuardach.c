@@ -220,7 +220,10 @@ int main()
          fprintf(stderr, "gramadóir: fadhb ag léamh an bhunachair sonraí\n");
          return 1;
         }
-
+    
+    printf("<?xml version=\"1.0\" encoding=\"ISO-8859-1\" standalone=\"no\"?>\n");
+    printf("<!DOCTYPE teacs SYSTEM \"/dtds/gramadoir.dtd\">\n");
+    printf("<teacs>");
     while (scanf("%s",token) != EOF)
           {
            if (strstr(token, "<line")==token) printf("\n");
@@ -229,5 +232,6 @@ int main()
                  printf("%s", token);
            else markup(token,w);
           }
+    printf("\n</teacs>");
     return 0;
    }
