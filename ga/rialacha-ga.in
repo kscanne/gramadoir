@@ -227,6 +227,8 @@ sin sin:OK
 #  BUT, not OK before common-form prepositions so these must be trapped
 #  elsewhere: see ach, amhail, seachas, etc.
 <S>ANYTHING</S> <E><T>[Aa]n</T> <NFCS>ECLIPSED</NFCS></E>:OK
+#. Chinn sé an cruinniú a chur ar an méar fhada (OK).
+<S>ANYTHING</S> <E><T>[Aa]n</T> <NFCS>INITIALM</NFCS></E>:OK
 # CB p.22 #8.a
 #. Cad é an chomhairle a thug an ochtapas dó?
 #. An Acht um Chomhionannas Fostaíochta.
@@ -995,6 +997,12 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 #############################################################################
 #. Nach holc an mhaise duit a bheith ag magadh.
 <AWITHH>ANYTHING</AWITHH>:NIAITCH
+# CB p.24 #11.b
+#. Dún do bhéal, a mhiúil na haon chloiche (OK)!
+<T>[Nn]a</T> <E><AWITHH>(haon|hocht)</AWITHH></E>:OK
+# CB p.24 #11.b
+#. Scaoileadh seachtar duine chun báis i mBaile Átha Cliath le hocht mí anuas (OK).
+<S>[Ll]e</S> <E><AWITHH>(haon|hocht)</AWITHH></E>:OK
 # CB p.24 #11.b
 #. Is mar gheall ar sin atá líníocht phictiúrtha chomh húsáideach sin (OK).
 [Cc]homh <E><AWITHH>ANYTHING</AWITHH></E>:OK

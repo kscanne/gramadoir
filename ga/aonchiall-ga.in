@@ -31,10 +31,13 @@
 <B>Ach</B>:<C>
 # Not needed until corpus ref turns up for "ar" nm1
 # <B>[Aa]ir</B>:<O>
+[Aa]n <B>Aire</B>:<N pl="n" gnt="y" gnd="m">
 <B>Aire</B>:<N pl="n" gnt="n" gnd="m">
 <B>(n-)?aire</B>:<N pl="n" gnt="n" gnd="f">
 # háirithe now handled in comhshuite
 <B>áirithe</B>:<A>
+# not "a haló"="her aloe"!
+<B>[Hh]aló</B>:<I>
 <B>[Aa]lt</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Aa]ma</B>:<N pl="n" gnt="y" gnd="m">
 <B>[Aa]s</B> <T>na</T>:<S>
@@ -43,6 +46,8 @@
 # "in ann" is now handled in comhshuite; do before "an": "an ann no nach ann?"
 #<S>[Ii]n</S> <B>ann</B>:<N pl="n" gnt="n">
 <B>ann</B>:<O>
+# otherwise these show up as missing lenition
+<B>[Aa]n</B> <NFCS>(maith|cúis)</NFCS>:<V cop="y">
 <B>[Aa]n</B> <V>ANYTHING</V>:<Q>
 <B>[Aa]n</B> amhlaidh:<V cop="y">
 <B>[Aa]n</B> mar:<V cop="y">
@@ -138,7 +143,8 @@ an <B>dó</B>:<A pl="n" gnt="n">
 <B>Dh?ún</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Éé]</B>:<P>
 # go héasca in comhshuite; "chomh héasca" here
-<B>h?éasca</B>:<A>
+# 5 Jan 05, noun "éasca" is mccnl, so no need for this until a ref turns up
+# <B>h?éasca</B>:<A>
 # comhshuite now
 #[Gg]o <B>dtí</B>:<S>
 # obvious <S> cases here; last resort PREPPRONM rules at end
@@ -169,6 +175,7 @@ an <B>dó</B>:<A pl="n" gnt="n">
 <B>[Ll]án</B> <NP>ANYTHING</NP>:<N pl="n" gnt="n" gnd="m">
 <B>[Ll]án</B> <D>ANYTHING</D>:<N pl="n" gnt="n" gnd="m">
 <B>[Ll]án</B> <S>de</S>:<A pl="n" gnt="n">
+<S>[Ll]e</S> <B>(haon|hocht)</B>:<A pl="n" gnt="n" h="y">
 <B>[Ll]éinn</B>:<N pl="n" gnt="y" gnd="m">
 # see last resort at the end
 <B>[Ll]eis</B> <T>na</T>:<S>
@@ -183,6 +190,7 @@ an <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
 <B>[Mm]h?aith</B>:<A pl="n" gnt="n">
 <B>[Mm]ar</B> gheall:<S>
 <B>[Mm]h?ór</B>:<A pl="n" gnt="n">
+<T>[Nn]a</T> <B>(haon|hocht)</B>:<A pl="n" gnt="n" h="y">
 <B>[Nn]á</B> <V>ANYTHING</V>:<U>
 # note that next rule is disjoint from previous (so don't put <U> in next one)
 [Nn]á <B><Z>ANYIMPER</Z>ANYTHING</B>:<V p="y" t="ord">
