@@ -93,11 +93,11 @@
 <E offset="38" fromy="90" fromx="38" toy="90" tox="39" sentence="Ná hith aon arán gabhála mar aon léi (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
 <E offset="51" fromy="91" fromx="51" toy="91" tox="52" sentence="Freagair aon dá cheann ar bith díobh seo a leanas (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
 <E offset="42" fromy="92" fromx="42" toy="92" tox="50" sentence="Bhí daoine le fáil i Sasana a chreid gach ar dúradh sa bholscaireacht." errortext="ar dúradh" msg="Ba chóir duit /a, an/ a úsáid anseo">
-<E offset="36" fromy="93" fromx="36" toy="93" tox="42" sentence="Tá treoirlínte mionsonraithe curtha ar fail ag an gCoimisiún." errortext="ar fail" msg="Séimhiú ar iarraidh">
-<E offset="46" fromy="94" fromx="46" toy="94" tox="52" sentence="Bhí cead againn fanacht ag obair ar an talamh ar fead trí mhí." errortext="ar fead" msg="Séimhiú ar iarraidh">
+<E offset="36" fromy="93" fromx="36" toy="93" tox="42" sentence="Tá treoirlínte mionsonraithe curtha ar fail ag an gCoimisiún." errortext="ar fail" msg="Leanann séimhiú an réamhfhocal /ar/ go minic, ach níl mé cinnte sa chás seo">
+<E offset="46" fromy="94" fromx="46" toy="94" tox="52" sentence="Bhí cead againn fanacht ag obair ar an talamh ar fead trí mhí." errortext="ar fead" msg="Leanann séimhiú an réamhfhocal /ar/ go minic, ach níl mé cinnte sa chás seo">
 <E offset="55" fromy="95" fromx="55" toy="95" tox="56" sentence="Tá sé an chéad suíomh gréasán ar bronnadh teastas air (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
-<E offset="71" fromy="96" fromx="71" toy="96" tox="78" sentence="Bhíomar ag féachaint ar an Ghaeltacht mar ionad chun feabhas a chur ar ar gcuid Gaeilge." errortext="ar gcuid" msg="Séimhiú ar iarraidh">
-<E offset="14" fromy="97" fromx="14" toy="97" tox="19" sentence="Cosc a bheith ar cic a thabhairt don sliotar." errortext="ar cic" msg="Séimhiú ar iarraidh">
+<E offset="71" fromy="96" fromx="71" toy="96" tox="78" sentence="Bhíomar ag féachaint ar an Ghaeltacht mar ionad chun feabhas a chur ar ar gcuid Gaeilge." errortext="ar gcuid" msg="Leanann séimhiú an réamhfhocal /ar/ go minic, ach níl mé cinnte sa chás seo">
+<E offset="14" fromy="97" fromx="14" toy="97" tox="19" sentence="Cosc a bheith ar cic a thabhairt don sliotar." errortext="ar cic" msg="Leanann séimhiú an réamhfhocal /ar/ go minic, ach níl mé cinnte sa chás seo">
 <E offset="39" fromy="98" fromx="39" toy="98" tox="40" sentence="Cosc a bheith ar CIC leabhair a dhíol (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
 <E offset="41" fromy="99" fromx="41" toy="99" tox="42" sentence="Beidh cairde dá cuid ar Gaeilgeoirí iad (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
 <E offset="0" fromy="100" fromx="0" toy="100" tox="8" sentence="Ar gcaith tú do chiall agus do chéadfaí ar fad?" errortext="Ar gcaith" msg="Séimhiú ar iarraidh">
@@ -174,8 +174,8 @@
 <E offset="62" fromy="171" fromx="62" toy="171" tox="63" sentence="Tá Féile Bhealtaine an Oireachtais ar siúl an tseachtain seo (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
 <E offset="47" fromy="172" fromx="47" toy="172" tox="57" sentence="Tá ar chumas an duine saol iomlán a chaitheamh gan theanga eile á brú air." errortext="gan theanga" msg="Séimhiú gan ghá">
 <E offset="19" fromy="173" fromx="19" toy="173" tox="30" sentence="Tá gruaim mhór orm gan Chaitlín." errortext="gan Chaitlín" msg="Séimhiú gan ghá">
-<E offset="37" fromy="174" fromx="37" toy="174" tox="45" sentence="Deir daoine eile, áfach, gur dailtín gan maith é." errortext="gan maith" msg="Séimhiú ar iarraidh">
-<E offset="42" fromy="175" fromx="42" toy="175" tox="52" sentence="Fuarthas an fear marbh ar an trá, a chorp gan máchail gan ghortú." errortext="gan máchail" msg="Séimhiú ar iarraidh">
+<E offset="37" fromy="174" fromx="37" toy="174" tox="45" sentence="Deir daoine eile, áfach, gur dailtín gan maith é." errortext="gan maith" msg="Leanann séimhiú an réamhfhocal /gan/ go minic, ach níl mé cinnte sa chás seo">
+<E offset="42" fromy="175" fromx="42" toy="175" tox="52" sentence="Fuarthas an fear marbh ar an trá, a chorp gan máchail gan ghortú." errortext="gan máchail" msg="Leanann séimhiú an réamhfhocal /gan/ go minic, ach níl mé cinnte sa chás seo">
 <E offset="26" fromy="176" fromx="26" toy="176" tox="27" sentence="Dúirt sé liom gan pósadh (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
 <E offset="74" fromy="177" fromx="74" toy="177" tox="75" sentence="Na duilleoga ar an ngas beag, cruth lansach orthu agus iad gan cos fúthu (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
 <E offset="52" fromy="178" fromx="52" toy="178" tox="53" sentence="D'fhág sin gan meas dá laghad ag duine ar bith air (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
