@@ -4,50 +4,51 @@
 <T>
 <A pl="n" gnt="n">
 <C>
-<P>
-<V p="y" t="láith">
-<V p="y" t="caite">
-<U>
-<N pl="y" gnt="n" gnd="m">
 <R>
+<V p="y" t="láith">
+<P>
+<V p="y" t="caite">
+<N pl="y" gnt="n" gnd="m">
 <O>
+<N pl="n" gnt="y" gnd="m">
+<N pl="n" gnt="y" gnd="f">
 <D>
 <V cop="y">
-<N pl="n" gnt="y" gnd="f">
-<N pl="n" gnt="y" gnd="m">
-<N pl="y" gnt="n" gnd="f">
-<N pl="n" gnt="n">
-<A pl="y" gnt="n">
+<U>
+<G>
 <A>
-<A pl="n" gnt="y" gnd="f">
-<Q>
+<N pl="y" gnt="n" gnd="f">
+<A pl="y" gnt="n">
 <V p="y" t="coinn">
 <V p="y" t="fáist">
+<Q>
+<A pl="n" gnt="y" gnd="f">
 <V p="n" t="caite">
+<N pl="n" gnt="n">
+<N pl="y" gnt="y" gnd="m">
+<H>
 <N pl="n" gnt="y" gnd="f" h="y">
 <V p="n" t="láith">
-<V p="y" t="ord">
 <F>
-<N pl="y" gnt="y" gnd="m">
-<A pl="n" gnt="y" gnd="m">
+<V p="y" t="ord">
+<N pl="n" gnt="d">
+<N pl="y" gnt="y" gnd="f">
 <A pl="n" gnt="n" h="y">
 <O em="y">
-<N pl="n" gnt="n" gnd="f" h="y">
-<V p="n" t="coinn">
 <V p="n" t="fáist">
+<V p="n" t="coinn">
+<N pl="n" gnt="n" gnd="f" h="y">
 <V p="y" t="gnáth">
-<N pl="y" gnt="y" gnd="f">
+<A pl="n" gnt="y" gnd="m">
 <N pl="n" gnt="n" gnd="m" h="y">
 <P h="y">
-<N pl="n" gnt="n" h="y">
-<I>
 <N pl="y" gnt="n">
+<N pl="n" gnt="d" h="y">
+<I>
 <N pl="y" gnt="y">
-<N pl="y" gnt="n" gnd="m" h="y">
-<N pl="y" gnt="n" gnd="f" h="y">
 <V p="y" t="foshuit">
+<N pl="y" gnt="n" gnd="f" h="y">
 <V p="n" t="gnáth">
-<N pl="n" gnt="y" gnd="m" h="y">
 <N pl="y" gnt="n" h="y">
-<V p="n" t="ord">
-<V p="n" t="foshuit">
+<N pl="n" gnt="y" gnd="m" h="y">
+<N pl="n" gnt="n" h="y">
