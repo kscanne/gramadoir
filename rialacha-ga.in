@@ -18,12 +18,32 @@
 ##############################################################################
 #. Ní raibh líon mór daoine bainteach leis an scaifte a bhí ag iarraidh mioscais a chothú.
 #   "scaifte" is recognized as an alternate of scata directly by "cuardach"
+#. Ach thosnaíos-sa ag léamh agus bhog mé isteach ionam féin.
+#    Also marked "CAIGHDEAN" by cuardach but only after applying morphology
 #. Tabhair go leor leor de na na rudaí seo do do chara, a Chaoimhín.
 #    the doubled "na na" is marked up directly by "cuardach"
-#. An bhfuil aon uaktar reoite agat?
+#. Chuaigh sí in olcas ina dhiaidh sin agus bhí an-imní orthu.
+#    "MOIRF" warning inserted by cuardach
+#. Tharla sé seo ar lá an-mífheiliúnach, an Déardaoin.
+#    "DROCHMHOIRF" warning inserted by cuardach
+#. Ní maith liom na daoine míintleachtúla.
+#    "DROCHMHOIRF" also, but with non-standard root.
+#. Trí chomhtharlúint, bhí siad sa tuaisceart ag an am.
+#    "CAIGHMOIRF" warning inserted by cuardach
+#. Sílim nárbh ea, agus is docha nach bhfuil i gceist ach easpa smaoinimh.
+#    "MICHEART" common misspelling marked up
+#. Tá súil le feabhas nuair a thosóidh airgead ag teacht isteach ó ola agus gás i mBearna Timor.
+#    also marked as "MICHEART" but this is "ag gaelú".
+#. Beidh nuachtáin shuaracha i ngreim cé nach mbeadh cinsireacht den droch-chinéal i gceist.
+#    "MIMHOIRF" derived from common misspelling
+#. Bhí sé páirteach sa chéad léiriú poiblí de Riverdance.
+#     Three-grams=>marked up as "foreign"
+#. Beidh an tionchar le mothú níos mó i gcás comhlachtaí Éireannacha mar gur mionairgeadra é an punt.
+#     unrecognized compound marked up
+#. Bhí an dream dí-armtha ag iarraidh a gcuid gunnaí.
+#      compound including a non-standard component.
+#. An bhfuil ayn uachtar roeite agattt?
 <X>ANYTHING</X>:ANAITHNID
-#. An bhfuil ayn uachtar roach agat?
-<X>ANYTHING</X>:ANAITHNIDSRL
 #. Bíonn an geál ag satailt ar an dubh.
 <F>ANYTHING</F>:NEAMHCHOIT
 # CB p.138
@@ -734,7 +754,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <ACS>ANYTHING</ACS> <AFGS>ANYTHING</AFGS>:CUPLA
 #. Tá sé-- tá sé- mo ---shin-seanathair (OK).
 #  this tests that the tokenizer handles hyphens correctly.
-#. 23. IV.  Is abairt í seo le giorrúcháin, cf. Dr. Scannell, Jr. agus m.sh. Caoimhín Ó Scanaill, T. D. atá i gceanas faoi réir m. sh. VIII, ceart go leor?
+#   23. IV.  Is abairt í seo le giorrúcháin, cf. Dr. Scannell, Jr. agus m.sh. Caoimhín Ó Scanaill, T. D. atá i gceanas faoi réir m. sh. VIII, ceart go leor?
 #  this tests the segmentation module.
 #############################################################################
 #                 SET PHRASES                                               #
