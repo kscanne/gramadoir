@@ -58,11 +58,12 @@ userop4=`@SH_GETTEXT@ "    --teanga=XX    specify the language of the text to be
 userop5=`@SH_GETTEXT@ "    --help         display this help and exit"`
 userop6=`@SH_GETTEXT@ "    --version      output version information and exit"`
 usage3=`@SH_GETTEXT@ "Options for developers:"`
-devop1=`@SH_GETTEXT@ "    --html         produce HTML output for viewing in a web browser"`
-devop2=`@SH_GETTEXT@ "    --ilchiall     report unresolved ambiguities, sorted by frequency"`
-devop3=`@SH_GETTEXT@ "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"`
-devop4=`@SH_GETTEXT@ "    --no-unigram   do not resolve ambiguous parts of speech by frequency"`
-devop5=`@SH_GETTEXT@ "    --xml          write tagged XML stream to standard output, for debugging"`
+devop1=`@SH_GETTEXT@ "    --brill        find disambiguation rules via Brill's unsupervised algorithm"`
+devop2=`@SH_GETTEXT@ "    --html         produce HTML output for viewing in a web browser"`
+devop3=`@SH_GETTEXT@ "    --ilchiall     report unresolved ambiguities, sorted by frequency"`
+devop4=`@SH_GETTEXT@ "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"`
+devop5=`@SH_GETTEXT@ "    --no-unigram   do not resolve ambiguous parts of speech by frequency"`
+devop6=`@SH_GETTEXT@ "    --xml          write tagged XML stream to standard output, for debugging"`
 stdinhelp=`@SH_GETTEXT@ "If no file is given, read from standard input."`
 bugreports=`@SH_GETTEXT@ "Send bug reports to <%s>."`
 versionstring=`@SH_GETTEXT@ "version %s"`
@@ -88,6 +89,7 @@ DUBAILTE=`@SH_GETTEXT@ "Repeated word"`
 CUPLA=`@SH_GETTEXT@ "Unusual combination of words"`
 BREISCHEIM=`@SH_GETTEXT@ "Comparative adjective required"`
 NIAITCH=`@SH_GETTEXT@ "Unnecessary prefix \/h\/"`
+NITEE=`@SH_GETTEXT@ "Unnecessary prefix \/t\/"`
 
 # save for gettext calls within cuardach...
 OLDCTYPE="${LC_CTYPE}"
@@ -116,6 +118,7 @@ s/\"DUBAILTE/\"${DUBAILTE}/g
 s/\"CUPLA/\"${CUPLA}/g
 s/\"BREISCHEIM/\"${BREISCHEIM}/g
 s/\"NIAITCH/\"${NIAITCH}/g
+s/\"NITEE/\"${NITEE}/g
 "
 }
 
@@ -159,6 +162,7 @@ echo "${devop2}"
 echo "${devop3}"
 echo "${devop4}"
 echo "${devop5}"
+echo "${devop6}"
 echo
 echo "${stdinhelp}"
 echo
@@ -234,15 +238,22 @@ s/\([IVX][IVX]\)\([.?!]\)/\1\\\\\2/g
 # whether I like the line number markups on the interiors of lines
 abairti()
 {
-tr -d "\015" | @EGREP@ -n '^' | sed "s/<[^>]*>//g; s/[&\<>]/ /g" |
-		escape_punc "${BDCHARS}" | sed "
-		s/[${BDCHARS}][${BDCHARS}${INTCHARS}]*/<c>&<\/c>/g;
-		s/\([${INTCHARS}][${INTCHARS}]*\)<\/c>/<\/c>\1/g;
-		s/^\([1-9][0-9]*\):/<line uimhir=\"\1\"> /; 
-		s/\([^\][.?!][]\"\')}]*\) [ ${TAB}\n]*/\1 <\/line>\n/g;
-		s/[^\][.?!][]\"\')}]*$/& <\/line>/" |
-		tr -d '\\' | athuimhir | athcheang |
-		sed 's/\(.\)<line uimhir[^>]*>/\1/g'
+tr -d "\015" |
+@EGREP@ -n '^' |
+sed "s/<[^>]*>//g; s/[&\<>]/ /g" |
+escape_punc "${BDCHARS}" | 
+sed "
+s/[${BDCHARS}][${BDCHARS}${INTCHARS}]*/<c>&<\/c>/g;
+s/\([${INTCHARS}][${INTCHARS}]*\)<\/c>/<\/c>\1/g;
+s/^\([1-9][0-9]*\):/<line uimhir=\"\1\"> /; 
+s/\([^\][.?!][]\"\')}]*\) [ ${TAB}\n]*/\1 <\/line>/g;
+s/[^\][.?!][]\"\')}]*$/& <\/line>/" |
+sed 's/<\/line>\(.\)/<\/line>\
+\1/g' |
+tr -d '\\' |
+athuimhir |
+athcheang |
+sed 's/\(.\)<line uimhir[^>]*>/\1/g'
 }
 
 # helper for abairti.  If a sentence starts in the middle of a line,
@@ -409,27 +420,31 @@ nounigram_output()
 
 ambiguity_report()
 {
-		nounigram_output | 
-		tee /tmp/amb_rep.xml |
-		sed 's/<B>/\n<B>/g' | @EGREP@ '^<B>' | 
-		sed 's/^<B><Z>\([^Z]*\)<\/Z>.*/\1/' | 
-		sort | uniq -c | sort -r -n |
-		while read ambig
-		do
-			echo "${ambig}"
-			JUSTTAGS=`echo "${ambig}" | sed 's/^[^<]*//'`
-			@EGREP@ -e "${JUSTTAGS}" /tmp/amb_rep.xml | sed "s@<B><Z>${JUSTTAGS}@\n&@g" | @EGREP@ -e "^<B><Z>${JUSTTAGS}</Z>" | sed "s@^<B><Z>${JUSTTAGS}<\/Z>\([^<]*\)<\/B>.*@\1@" | sort | uniq -c | sort -r -n | head -n 15 | sed "s/^/       /"
-		done
-		rm -f /tmp/amb_rep.xml
+TEMPXML=`mktemp` || TEMPXML="/tmp/amb_rep.xml"
+nounigram_output | 
+tee ${TEMPXML} |
+sed 's/<B>/\
+<B>/g' |
+@EGREP@ '^<B>' | 
+sed 's/^<B><Z>\([^Z]*\)<\/Z>.*/\1/' | 
+sort | uniq -c | sort -r -n |
+while read ambig
+do
+	echo "${ambig}"
+	JUSTTAGS=`echo "${ambig}" | sed 's/^[^<]*//'`
+	@EGREP@ -e "${JUSTTAGS}" "${TEMPXML}" | sed "s@<B><Z>${JUSTTAGS}@\\\\&@g" | sed 's/\\<B>/\
+<B>/g' | @EGREP@ -e "^<B><Z>${JUSTTAGS}</Z>" | sed "s@^<B><Z>${JUSTTAGS}<\/Z>\([^<]*\)<\/B>.*@\1@" | sort | uniq -c | sort -r -n | head -n 15 | sed "s/^/       /"
+done
+rm -f "${TEMPXML}"
 }
 
 create_unigram_file()
 {
-		nounigram_output |
-		unigram |
-		sed 's/<[A-Z]/\n&/g' | grep "^<[ACDF-W]" | grep -v "/>" |
-		sed "s/>.*/>/" | sort | uniq -c | sort -r -n |
-		sed 's/^[^<]*//'
+nounigram_output |
+unigram |
+grep -o "<[ACDF-W][^>/]*>" |
+sort | uniq -c | sort -r -n |
+sed 's/^[^<]*//'
 }
 
 # This is the main sequence of filters for checking a given file
@@ -445,22 +460,116 @@ comhad()
 
 litriu_comheadan()
 {
-sed -n "
+sed -n '
 /<X>/{
 s/<[^X\/][^>]*>//g
 s/<\/[^X][^>]*>//g
 s/^[^<]*<X>//
 s/<\/X>[^<]*$//
-s/<\/X>[^<]*<X>/\n/g
+s/<\/X>[^<]*<X>/\
+/g
 p
 }
-"
+'
 }
 
 # This replaces "comhad" above when "--litriu" option is given
 litriu()
 {
 	unchecked_xml | litriu_comheadan
+}
+
+# used by Brill
+process_two_best()
+{
+WHOLE=`cat`
+COUNT1=`echo ${WHOLE} | sed 's/^\([0-9][0-9]*\).*/\1/'`
+FREQ1=`echo ${WHOLE} | sed 's/^[0-9][0-9]* \([0-9][0-9]*\).*/\1/'`
+TAG1=`echo ${WHOLE} | sed 's/^[0-9][0-9]* [0-9][0-9]* \(<[^>]*>\).*/\1/'`
+COUNT2=`echo ${WHOLE} | sed 's/^[^@]*@\([0-9][0-9]*\).*/\1/'`
+ANSWER=`echo "${COUNT1} ${COUNT2} - ${FREQ1} * p" | dc`
+echo "${ANSWER} ${TAG1}"
+}
+
+# Computes scores for Brill algorithm
+# Takes one argument (the temp file containing ambigs in context)
+best_tag_in_context()
+{
+UNAMBIGFILE="/tmp/unambigs"
+(echo "0 0 <NOTHING>"; echo "0 0 <NOTHING>";
+sort | uniq -c |
+while read line
+do
+	TAG=`echo "${line}" | sed 's/^ *[1-9][0-9]*.//'`
+	INCONTEXT=`echo "${line}" | sed 's/^ *\([1-9][0-9]*\).*/\1/'`
+	FREQ=`egrep "${TAG}" ./tagfreqs.txt | sed 's/^ *\([1-9][0-9]*\).*/\1/'`
+	PPMINCONTEXT=`echo "${INCONTEXT} 1000000 * ${FREQ} / p" | dc`
+	echo "${PPMINCONTEXT} ${FREQ} ${TAG}"
+done) > "${UNAMBIGFILE}"
+cat "${1}" | sed 's/^<Z>//' | sed 's/<\/Z>//' |
+while read ambiguity
+do
+	echo "${ambiguity}<NOTHING>" | sed "s/</\n</g" | sed "s/\/>/>/" | egrep "^<" |
+	while read individual
+	do
+		egrep -e "${individual}" "${UNAMBIGFILE}"
+	done | sort -r -n | head -n 2 | tr "\n" "@" | process_two_best |
+	sed "s%^\([0-9]*\) \(.*\)%\1 <B><Z>${ambiguity}</Z>ANYTHING</B>:\2%"
+done
+rm -f "${UNAMBIGFILE}"
+}
+
+# 1st arg=contextual marker (chunk of XML amounting to a single marked up word)
+#   assuming one set of escaped parentheses in it!
+# 2nd arg, like 1st arg, but used in output to putative "aonchiall-xx.in"
+# 3rd arg=(subset of) XML file
+#  does both the "before" and "after" contexts 
+compute_given_context()
+{
+AMBIGFILE="/tmp/ambigs"
+grep -o "${1} <B><Z>\(<[A-Z][^>]*/>\)*</Z>" "${3}" |
+sed "s@^${1} <B>\(<Z>\(<[A-Z][^>]*>\)*</Z>\)@\2@" |
+sort -u > "${AMBIGFILE}"
+grep -o "${1} <[ACDF-W][^>]*>" "${3}" |
+sed "s@^${1} \(<[ACDF-W][^>]*>\)@\2@" |
+best_tag_in_context "${AMBIGFILE}" |
+sed "s@^\([0-9]*\) @\1 ${2} @"
+
+grep -o "<B><Z>(<[A-Z][^>]*/>)+</Z>[^<]*<\/B> ${1}" "${3}" |
+sed "s@^<B>\(<Z>\(<[A-Z][^>]*>\)*</Z>\).*@\1@" |
+sort -u > "${AMBIGFILE}" 
+grep -o "<[ACDF-W][^>]*>[^<]*<\/[A-Z]> ${1}" "${3}" |
+sed "s@^\(<[ACDF-W][^>]*>\).*@\1@" |
+best_tag_in_context "${AMBIGFILE}" |
+sed "s@:<[^>]*>@ ${2}&@"
+rm -f "${AMBIGFILE}"
+}
+
+brill_unsupervised_learning()
+{
+BIGXML="./brill.xml"
+BIGXMLSUBSET="/tmp/tobrillsubset.xml"
+(nounigram_output |
+tee "${BIGXML}" |
+egrep -o "<[ACDF-W][^>/]*>" |
+sort | uniq -c | tee ./tagfreqs.txt |
+sed 's/^ *[0-9]*.//' |
+while read tag
+do
+	egrep "${tag}" "${BIGXML}" > "${BIGXMLSUBSET}"
+	compute_given_context "`echo "${tag}" | sed 's/<\([A-Z]\)[^>]*>/&[^<]*<\/\\\(\1\\\)>/'`" "`echo "${tag}" | sed 's/<\([A-Z]\)[^>]*>/&ANYTHING<\/\1>/'`" "${BIGXMLSUBSET}"
+done;
+cat "${BIGXML}" |
+egrep -o ">[^< ]+<" |
+sort | uniq -c | sort -r -n |
+sed 's/^ *[0-9]*.//' |
+head -n 50 |
+while read commonword
+do
+	egrep "${commonword}" "${BIGXML}" > "${BIGXMLSUBSET}"
+	compute_given_context "`echo "${commonword}" | sed 's/>\(.*\)/\\\\(<[^>]*>\\\\)*\1\/[A-Z]>/'`" "`echo "${commonword}" | sed 's/>\([^<]*\)</\1/'`" "${BIGXMLSUBSET}"
+done) | sort -r -n | egrep -v '^0 '
+rm -f "${BIGXMLSUBSET}"
 }
 
 # remainder is the "main()"
@@ -489,7 +598,7 @@ do
 		"--ionchod" )
 			IONCHOD="${OPTARG}"
 		;;
-		"--help" | "--version" | "--html" | "--ilchiall" | "--minic" | "--no-unigram" | "--xml" | "--litriu" | "--iomlan" )
+		"--help" | "--version" | "--brill" | "--html" | "--ilchiall" | "--minic" | "--no-unigram" | "--xml" | "--litriu" | "--iomlan" )
 			unwanted_arg "${JUSTOPT}" >&2
 			exit 1
 		;;
@@ -522,6 +631,9 @@ do
 		;;
 		"--xml" )
 			ACTION=xml_output
+		;;
+		"--brill" )
+			ACTION=brill_unsupervised_learning
 		;;
 		"--ilchiall" )
 			ACTION=ambiguity_report
@@ -558,7 +670,6 @@ then
 fi
 if [ "${IONCHOD}" != "${NATIVE}" ]
 then
-#	if ! echo | iconv -f "${IONCHOD}" -t "${NATIVE}" | iconv -f "${NATIVE}" -t "${IONCHOD}" > /dev/null 2>&1
 	if ! echo | iconv -f "${IONCHOD}" -t "${NATIVE}" > /dev/null 2>&1
 	then
 		printf "${CLAR}: ${iconvproblem}\n" "${IONCHOD}" >&2
