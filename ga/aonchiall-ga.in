@@ -90,8 +90,8 @@
 <B>·r</B> <C>ANYTHING</C>:<N pl="n" gnt="n" gnd="m">
 <B>·r</B> <T>ANYTHING</T>:<N pl="n" gnt="n" gnd="m">
 <B>[¡·]r</B>:<D>
-# almost always a typo, not "swollen"
-<B>ata</B>:<F>
+# almost always a typo, not "swollen"; now done in posmap.pl
+# <B>ata</B>:<F>
 <B>[Aa]t·</B>:<V p="y" t="l·ith">
 <T>[Nn]a</T> <B>ba</B>:<N pl="y" gnt="n" gnd="f">
 <B>[Bb]a</B>:<V cop="y">
