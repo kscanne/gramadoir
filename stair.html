@@ -34,6 +34,7 @@ independently as the Perl module <i>Lingua::GA::Gramadoir</i>.
 <tr><td>0.4</td> <td>8 Jan 2004</td> <td>315,041</td> <td>24,107</td> <td>214</td>    <td>331</td>   <td>361</td> <td>77</td></tr>
 <tr><td>0.50</td> <td>28 Jul 2004</td> <td>320,958</td> <td>27,868</td> <td>222</td>    <td>333</td>   <td>362</td> <td>77</td></tr>
 <tr><td>0.51</td> <td>25 Aug 2004</td> <td>321,088</td> <td>31,077</td> <td>222</td>    <td>333</td>   <td>362</td> <td>77</td></tr>
+<tr><td>0.60</td> <td>3 Mar 2005</td> <td>310,883</td> <td>44,067</td> <td>410</td>    <td>456</td>   <td>1573</td> <td>492</td></tr>
 </table>
 
 <h2>Benchmarks</h2>
@@ -54,9 +55,31 @@ dual Xeon box running Gentoo Linux).   WPM = words per minute.
 <tr><td>0.4</td> <td><i>208.39</i></td> <td><i>55398</i></td> <td><i>15.06</i></td> <td><i>2.60</i></td> <td><i>6.39</i></td> <td><i>133.83</i></td> <td><i>26.46</i></td> <td><i>0.76</i></td> <td><i>19.25</i></td> <td><i>1.04</i></td> <td><i>3.00</i></td></tr>
 <tr><td>0.50</td> <td><i>216.36</i></td> <td><i>53357</i></td> <td><i>6.97</i></td> <td><i>6.05</i></td> <td><i>9.75</i></td> <td><i>144.02</i></td> <td><i>29.08</i></td> <td><i>1.41</i></td> <td><i>14.72</i></td> <td><i>1.83</i></td> <td><i>2.60</i></td></tr>
 <tr><td>0.51</td> <td><i>204.19</i></td> <td><i>56537</i></td> <td><i>6.95</i></td> <td><i>6.63</i></td> <td><i>8.97</i></td> <td><i>130.11</i></td> <td><i>26.89</i></td> <td><i>1.26</i></td> <td><i>19.03</i></td> <td><i>1.65</i></td> <td><i>2.62</i></td></tr>
+<tr><td>0.60</td> <td><i>193.00</i></td> <td><i>59815</i></td> <td><i>24.49</i></td> <td><i>7.40</i></td> <td><i>23.39</i></td> <td><i>78.73</i></td> <td><i>25.07</i></td> <td><i>1.34</i></td> <td><i>29.91</i></td> <td><i>-</i></td> <td><i>2.42</i></td></tr>
 </table>
 
 <h2>ChangeLog Summary</h2>
+<p>
+<b>Version 0.51->0.60</b>
+<ul>
+<li>Lexicon additions, improvements, and bug fixes (some unnecessary 
+inflections removed)
+<li>Rule set more than tripled in size, now covering a wide range
+of Irish grammar, including nearly all rules concerning 
+missing or unnecessary initial mutations
+<li>Simplification of the tagset, some regular expression optimizations,
+less dependence on part-of-speech macros, 
+and the restructuring of a few slow rules lead to another 5% 
+speed improvement despite the massively larger rule set
+<li>Added warnings for many "dangerous pairs" based on corpus analysis
+<li>Now correctly tokenizes numerals, including years, ordinals like "5ú",
+and plurals like "1950í".
+<li>Many morphological rules added for treating pre-standard orthography;
+together with work on the replacement file, these allow An Gramad&oacute;ir
+to be used as a "normalizer" for indexing, information retrieval, etc.
+</ul>
+</p> 
+
 <p>
 <b>Version 0.50->0.51</b>
 <ul>
