@@ -94,7 +94,7 @@ TEMPFILE=`mktemp`
 cat ${DIR}/freq-${TEANGA}.txt | recoder > ${TEMPFILE}
 mv -f ${TEMPFILE} ${DIR}/freq-${TEANGA}.txt
 sed "/CAPITAL/s/A-Z/${UPPERS}/" ${TEMPLATE}/macra-xx.meta.pl > ${DIR}/macra-${TEANGA}.meta.pl
-sed "s/A-Z/${UPPERS}/" ${TEMPLATE}/morph-xx.txt > ${DIR}/morph-${TEANGA}.txt
+sed "s/A-Z/${UPPERS}/g" ${TEMPLATE}/morph-xx.txt > ${DIR}/morph-${TEANGA}.txt
 touch ${DIR}/nocombo-${TEANGA}.txt
 (echo "1 <U>"; echo "127 <F>") > ${DIR}/pos-${TEANGA}.txt
 sed "s/@TEANGA@/${TEANGA}/; s/@NAME_ENGLISH@/${NAME_ENG}/" ${TEMPLATE}/README-xx > ${DIR}/README
