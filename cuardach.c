@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>		/* atoi, strtol */
+#include <locale.h>
 #include "gettext.h"
 #else
 /* trouble! */
