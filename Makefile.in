@@ -229,6 +229,7 @@ dist : FORCE
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/ponc.in.y
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/README
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/rialacha.meta.sed
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/rigeail
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/TEANGACHA
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/triail
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/triail.err
