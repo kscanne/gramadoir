@@ -383,7 +383,7 @@ int
 dictlookup (const char *word, char *fill, char *attrs, char *extratags)
 {
   int i, j, k, len, totlen, retval = 1;
-  unsigned char unused, codes[2 * GR_AMBIGMAX];
+  unsigned char prev, unused, codes[2 * GR_AMBIGMAX];
   char repl[GR_REPLMAX], lowered[GR_WORDMAX];
   *codes = 0;
   rawlookup (word, codes);
@@ -413,19 +413,26 @@ dictlookup (const char *word, char *fill, char *attrs, char *extratags)
 	{
 	  if (len)
 	    {
-	      totlen = strlen (codes) - 1;
+	      totlen = strlen (codes) - 1;	/* ASSERT: at least two */
 	      qsort (codes, (size_t) totlen, sizeof (unsigned char),
 		     sort_bytes);
-	      j = 1;		/* strip repeats */
-	      for (k = 1; k < totlen; k++)
-		{
-		  if (codes[k] != codes[j - 1])
+	      if (totlen > 2 || codes[0] != codes[1])
+		{		/* strip repeats */
+		  j = 0;
+		  prev = (unsigned char) 127;
+		  for (k = 0; k < totlen; k++)
 		    {
-		      if (j < k)
-			codes[j] = codes[k];
-		      j++;
+		      if (codes[k] != prev && codes[k] != (unsigned char) 127)
+			{
+			  if (j < k)
+			    codes[j] = codes[k];
+			  j++;
+			}
+		      prev = codes[j - 1];
 		    }
 		}
+	      else
+		j = 1;
 	      codes[j] = unused;
 	      codes[j + 1] = 0;
 	    }			/* if capital word was found originally */
@@ -506,7 +513,10 @@ markup (char *token, char *wrd)
       *tail = '\0';
       *w = '\0';
       doubled = (val && !strcmp (w + 3, wrd));
-      strcpy (wrd, w + 3);
+      if (strlen (tail + 4))
+	strcpy (wrd, "");
+      else
+	strcpy (wrd, w + 3);		  /** ignore dbls if punct intervenes*/
       printf ("%s", token);		  /** chars before <c> **/
       if (doubled)
 	printf ("<E msg=\"DUBAILTE\">");
