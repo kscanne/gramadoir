@@ -70,6 +70,8 @@ sin sin:OK
 <X>ANYTHING</X>:ANAITHNID
 #. Bíonn an geál ag satailt ar an dubh.
 <F>ANYTHING</F>:NEAMHCHOIT
+# this is here for the clearer error message, otherwise it's NOSUBJ
+<S>[Ff]aoi</S> ndeara:CAIGHDEAN{faoi deara}
 # CB p.119 #4a-e
 # usually this rule finds typos, no intention to use subjunctive:
 #. Ach go rithe an fhíréantacht mar uisce agus an t-ionracas mar shruth gan dísc (OK)!
@@ -1351,35 +1353,35 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 <A>[Aa]nsa</A>:INPHRASE{níos ansa, is ansa}
 <VCOP>ANYTHING</VCOP> <E><A>[Aa]nsa</A></E>:OK
 <R>[Nn]íos</R> <E><A>[Aa]nsa</A></E>:OK
-<R>NIBA</R> <E><A>[Aa]nsa</A></E>:OK
+<R>NIBS</R> <E><A>[Aa]nsa</A></E>:OK
 <A>[Dd]h?óichí</A>:INPHRASE{níos dóichí, is dóichí}
 <VCOP>ANYTHING</VCOP> <E><A>[Dd]h?óichí</A></E>:OK
 <R>[Nn]íos</R> <E><A>[Dd]h?óichí</A></E>:OK
-<R>NIBA</R> <E><A>[Dd]h?óichí</A></E>:OK
+<R>NIBS</R> <E><A>[Dd]h?óichí</A></E>:OK
 <A>[Ff]h?aide</A>:INPHRASE{níos faide, is faide}
 <VCOP>ANYTHING</VCOP> <E><A>[Ff]h?aide</A></E>:OK
 <R>[Nn]íos</R> <E><A>[Ff]h?aide</A></E>:OK
-<R>NIBA</R> <E><A>[Ff]h?aide</A></E>:OK
+<R>NIBS</R> <E><A>[Ff]h?aide</A></E>:OK
 <A>[Ff]h?earr</A>:INPHRASE{níos fearr, is fearr}
 <VCOP>ANYTHING</VCOP> <E><A>[Ff]h?earr</A></E>:OK
 <R>[Nn]íos</R> <E><A>[Ff]h?earr</A></E>:OK
-<R>NIBA</R> <E><A>[Ff]h?earr</A></E>:OK
+<R>NIBS</R> <E><A>[Ff]h?earr</A></E>:OK
 <A>[Ff]h?usa</A>:INPHRASE{níos fusa, is fusa}
 <VCOP>ANYTHING</VCOP> <E><A>[Ff]h?usa</A></E>:OK
 <R>[Nn]íos</R> <E><A>[Ff]h?usa</A></E>:OK
-<R>NIBA</R> <E><A>[Ff]h?usa</A></E>:OK
+<R>NIBS</R> <E><A>[Ff]h?usa</A></E>:OK
 <A>[Ll]ú</A>:INPHRASE{níos lú, is lú}
 <VCOP>ANYTHING</VCOP> <E><A>[Ll]ú</A></E>:OK
 <R>[Nn]íos</R> <E><A>[Ll]ú</A></E>:OK
-<R>NIBA</R> <E><A>[Ll]ú</A></E>:OK
+<R>NIBS</R> <E><A>[Ll]ú</A></E>:OK
 <A>[Mm]h?ó</A>:INPHRASE{níos mó, is mó}
 <VCOP>ANYTHING</VCOP> <E><A>[Mm]h?ó</A></E>:OK
 <R>[Nn]íos</R> <E><A>[Mm]h?ó</A></E>:OK
-<R>NIBA</R> <E><A>[Mm]h?ó</A></E>:OK
+<R>NIBS</R> <E><A>[Mm]h?ó</A></E>:OK
 <A>[Tt]h?úisce</A>:INPHRASE{níos túisce, is túisce}
 <VCOP>ANYTHING</VCOP> <E><A>[Tt]h?úisce</A></E>:OK
 <R>[Nn]íos</R> <E><A>[Tt]h?úisce</A></E>:OK
-<R>NIBA</R> <E><A>[Tt]h?úisce</A></E>:OK
+<R>NIBS</R> <E><A>[Tt]h?úisce</A></E>:OK
 #############################################################################
 #  Now, just random words that appear only in the specificed phrase(s)
 #############################################################################
