@@ -184,8 +184,8 @@ acht$				ach		0
 ^eadar				idir		1
 ^dh'				d'		1
 ^h-				h		1
-^n-([AEIOU賽邲焱)		n-\l$1		1
-^t-([AEIOU賽邲焱)		t-\l$1		1
+^n-([AEIOU賽邲焱)		n$1		1
+^t-([AEIOU賽邲焱)		t$1		1
 ^ana-				an-		1    # ana-eagraithe
 ^de[ai]gh			dea		1
 ^ion				in		1
