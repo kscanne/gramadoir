@@ -714,6 +714,9 @@ sub localize_me
 			s/NEAMHCHOIT/$msgid/;
 		}
 		if (/INPHRASE{([^}]+)}/) {
+# TRANSLATORS: You can use whatever kind of quotes you prefer for your locale
+# around the variable \\1.  You should keep the double backslash before the 1,
+# but there is no need to escape the quotes the way they are in the msgid.
 			$msgid = gettext('Usually used in the set phrase \/\1\/', $1);
 			s/INPHRASE{([^}]+)}/$msgid/;
 		}
@@ -818,6 +821,10 @@ sub localize_me
 		if (/GENITIVE/) {
 			$msgid = gettext('The genitive case is required here');
 			s/GENITIVE/$msgid/;
+		}
+		if (/NODATIVE/) {
+			$msgid = gettext('The dative is used only in special phrases');
+			s/NODATIVE/$msgid/;
 		}
 		if (/RELATIVE/) {
 			$msgid = gettext('The dependent form of the verb is required here');
