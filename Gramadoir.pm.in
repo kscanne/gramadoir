@@ -709,6 +709,10 @@ sub localize_me
 			$msgid = gettext('Unknown word');
 			s/ANAITHNID/$msgid/;
 		}
+		if (/IONADAI{([^}]+)}/) {
+			$msgid = gettext('Valid word but more often found in place of \/\1\/', $1);
+			s/IONADAI{([^}]+)}/$msgid/;
+		}
 		if (/NEAMHCHOIT/) {
 			$msgid = gettext('Valid word but extremely rare in actual usage');
 			s/NEAMHCHOIT/$msgid/;
@@ -993,6 +997,31 @@ sub strip_errors
 	$str =~ s/<E[^>]*>//;
 	$str =~ s/<\/E>//;
 	return $str;
+}
+
+# called from aonchiall ":!" rules
+# first argument is the stuff between <Z> and </Z>
+# second argument is the word
+# third argument is a regexp matching all tags to be tossed out
+sub strip_badpos
+{
+	my ( $str, $word, $badpos ) = @_;
+	my $pos;
+	my $orig = $str;
+	$str =~ s/$badpos//g;
+	if ($str =~ m/></) {
+		return "<B><Z>$str</Z>$word</B>";
+	}
+	elsif ($str =~ m/^<([A-Z])/) {
+		$pos = $1;
+		$str =~ s/.>$/>/;
+		return "$str$word</$pos>";
+	}
+	else {
+		$orig =~ s/^(<([A-Z])[^>]*).><.*/$1>/;
+		$pos = $2;
+		return "$orig$word</$pos>";
+	}
 }
 
 ##############################################################################
