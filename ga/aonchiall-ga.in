@@ -47,7 +47,7 @@
 <B><Z>ANYCOPULA</Z>ANYTHING</B> <N pl="n" gnt="n" gnd="m">fuath</N>:<V cop="y">
 <B><Z>ANYCOPULA</Z>ANYTHING</B> <N>gá</N>:<V cop="y">
 <B><Z>ANYCOPULA</Z>ANYTHING</B> <A pl="n" gnt="n">(dh?ócha|eagal|fh?oláir|ionann|leor|mh?iste)</A>:<V cop="y">
-<B><Z>ANYCOPULA</Z>ANYTHING</B> <A pl="n" gnt="y" gnd="f">(fearr|mó)</A>:<V cop="y">
+<B><Z>ANYCOPULA</Z>ANYTHING</B> <A pl="n" gnt="y" gnd="f">(fh?earr|mh?ó)</A>:<V cop="y">
 <B><Z>ANYCOPULA</Z>ANYTHING</B> <A>(iomaí|léir|náir)</A>:<V cop="y">
 <B><Z>ANYCOPULA</Z>ANYTHING</B> cóir|cuma|deacair|dh?éanaí|deimhin|dh?ual|h?ea|éard|fiú|maith|mh?ithid:<V cop="y">
 # lowercase ach under last resorts
@@ -237,6 +237,8 @@ CAPITAL <B>Gabhann</B>:<Y>
 <B><Z>NMWITHHIMPER</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m" h="y">
 <B><Z>NFWITHHIMPER</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f" h="y">
 <N>Spiorad</N> <B>Naomh</B>:<A pl="n" gnt="n">
+# Comaoin na Naomh
+<T>na</T> <B>[Nn]aomh</B>:<N pl="y" gnt="y" gnd="m">
 <B>[Nn]aomh</B>:<N pl="n" gnt="n" gnd="m">
 # subjunctive in db, only used in phrase with faoi  -- now in comhshuite
 #<B>ndeara</B>:<N pl="n" gnt="n">
@@ -579,6 +581,7 @@ ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
 # corpus, near 100%
 <A pl="n" gnt="n">[Gg]ach</A> <B>[Aa]</B>:<H>
 # An ceann ar a bhfuil, etc. the most common
+# also things like "an fáth um a bhfágfaidh"
 <S>ANYTHING</S> <B>[Aa]</B> <V>ANYTHING</V>:<H>
 # if not disambig'd yet: "cá as a bhfuil tú"
 [Aa]s <B>[Aa]</B> <V>ANYTHING</V>:<H>
