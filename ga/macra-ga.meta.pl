@@ -40,6 +40,7 @@ s/UNLENITED/(?:[BbCcDdFfGgMmPpTt][^h']|[Ss][lnraeiouαινσϊ]|bh[Ff])[^<]*/g;
 s/ORDINALADJ/[^<][^<]*[^m]ϊ/;
 s/PREFIXEDT/t(?:[AEIOUΑΙΝΣΪ]|-[aeiouαινσϊ])[^<]+/g;
 s/LENITEDBCFGMPS/(?:[CcFfGgMmPpSs]h|[Bb]h[^fF])[^<]+/g;
+s/MUTATEDDST/(?:n[Dd]|d[Tt]|[DdSsTt]h)[^<]+/g;
 s/LENITEDDFST/[DdFfSsTt]h[^<]+/g;
 s/LENITED/(?:[CcDdFfGgMmPpSsTt]h|[Bb]h[^fF])[^<]+/g;
 s/SLENDERFINALCONSONANT/[^<]*[eιiν][^aeiouαινσϊ<]+/g;

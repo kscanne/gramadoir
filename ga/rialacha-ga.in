@@ -157,6 +157,9 @@ ANYTHING <VNOLEN>LENITED</VNOLEN>:NISEIMHIU
 # CB p.6 #1
 #. Is é is dóichí go raibh baint ag an eisimirce leis an laghdú i líon an gcainteoirí Gaeilge.
 <T>[Aa]n</T> <NP>ANYTHING</NP>:BACHOIR{na}
+# CB p.12 #1.abc, p.20 #2a
+#. Ní bhíonn an dhíograis chéanna ná an dhúthracht chéanna i gceist.
+<T>[Aa]n</T> <N>MUTATEDDST</N>:NICLAOCHLU
 # CB p.8 #4
 #. Ba é an fear an phortaigh a tháinig thart leis na plátaí bia.
 <T>ANYTHING</T> <NC>ANYTHING</NC> <T>ANYTHING</T> <NG>ANYTHING</NG>:ONEART
@@ -316,6 +319,9 @@ Dé Aoine:PREFIXH
 # CB p.12 #1.c.i
 #. Is cúis imní don pobal a laghad maoinithe a dhéantar ar Naíscoileanna.
 [Dd][eo]n <N>UNLENITEDBCFGMP</N>:SEIMHIU
+# CB p.12 #1.c, p.20 #2a
+#. Daoine eile atá ina mbaill den dhream seo.
+[Dd][eo]n <N>MUTATEDDST</N>:NICLAOCHLU
 # CB p.6 #2
 #. Creidim go raibh siad de an thuairim chéanna.
 [Dd]e <T>an</T>:BACHOIR{den}
@@ -373,6 +379,9 @@ Dé Aoine:PREFIXH
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. Tá dualgas ar an gComhairle sin tabhairt faoin cúram seo.
 <S>[Ff]aoin</S> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
+# CB p.12 #1.c, p.20 #2a
+#. Tugadh mioneolas faoin dtionscnamh seo in Eagrán 1.
+<S>[Ff]aoin</S> <N>MUTATEDDST</N>:NICLAOCHLU
 # CB p.84 #8 keep before following
 <D>[Ff]aoinár</D> dhá <N>UNECLIPSED</N>:URU
 # CB p.84 #8
@@ -433,6 +442,8 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 #. An bhfuil aon uachtar reoite agat i cuisneoir?
 #. An bhfuil aon uachtar reoite agat i chuisneoir?
 <S>[Ii]</S> <N>UNECLIPSEDCONS</N>:URU
+#. Táimid ag lorg 200 Club Gailf i gach cearn d'Éirinn.
+<S>[Ii]</S> [Gg]ach:URU
 # CB p.20 Note, OD i^1
 #. An bhfuil aon uachtar reoite agaibh i bhur gcuisneoir?
 <S>[Ii]</S> <D>[Bb]hur</D>:BACHOIR{in bhur}
@@ -613,6 +624,9 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. Bíodh bhur ngrá saor ón cur i gcéill.
 <S>[Óó]n</S> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
+# CB p.12 #1.c, p.20 #2a
+#. Ná glacaim sos ón thochailt.
+<S>[Óó]n</S> <N>MUTATEDDST</N>:NICLAOCHLU
 # CB p.84 #8, p.132 #2
 #. Amharcann sé ó a ionad cónaithe ar gach aon neach dá maireann ar talamh.
 <S>[Óó]n?</S> a:BACHOIR{óna}
@@ -645,6 +659,9 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.12 #1.c.i; prev. rule handles f+vowel, so next one is f[lr] only
 #. An bhfuil aon uachtar reoite agat sa cuisneoir?
 <S>[Ss]a</S> UNLENITEDBCFGMP:SEIMHIU
+# CB p.12 #1.c, p.20 #2a
+#. Ní mór dom umhlú agus cic maith sa thóin a thabhairt duit. 
+<S>[Ss]a</S> <N>MUTATEDDST</N>:NICLAOCHLU
 # CB p.23 #9 (implicit article)
 #. An bhfuil aon uachtar reoite agat sa seamair?
 #. An bhfuil aon uachtar reoite agat sa scoil (OK)?
