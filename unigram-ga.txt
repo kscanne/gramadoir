@@ -5,7 +5,7 @@
 <A pl="n" gnt="n">
 <C>
 <P>
-<V t="láith">
+<V p="xx" t="láith">
 <V p="xx" t="caite">
 <U>
 <N pl="y" gnt="n" gnd="m">
@@ -13,59 +13,41 @@
 <O>
 <D>
 <V cop="y">
-<N pl="n" gnt="y" gnd="m">
 <N pl="n" gnt="y" gnd="f">
+<N pl="n" gnt="y" gnd="m">
 <N pl="y" gnt="n" gnd="f">
 <N pl="n" gnt="n">
 <A pl="y" gnt="n">
 <A>
 <A pl="n" gnt="y" gnd="f">
 <Q>
-<V t="fáist">
-<V t="coinn">
+<V p="xx" t="coinn">
+<V p="xx" t="fáist">
 <V p="saor" t="caite">
 <N pl="n" gnt="y" gnd="f" h="y">
-<V p="2ú" t="ord">
 <V p="saor" t="láith">
+<V p="xx" t="ord">
 <F>
-<V p="1ú" t="láith">
 <N pl="y" gnt="y" gnd="m">
-<A pl="n" gnt="n" h="y">
 <A pl="n" gnt="y" gnd="m">
-<N pl="n" gnt="n" gnd="f" h="y">
+<A pl="n" gnt="n" h="y">
 <O em="y">
+<N pl="n" gnt="n" gnd="f" h="y">
 <V p="saor" t="coinn">
-<V p="3ú" t="ord">
 <V p="saor" t="fáist">
-<N pl="n" gnt="n" gnd="m" h="y">
+<V p="xx" t="gnáth">
 <N pl="y" gnt="y" gnd="f">
-<V p="2ú" t="coinn">
-<V p="1ú" t="coinn">
-<V pl="y" p="1ú" t="láith">
+<N pl="n" gnt="n" gnd="m" h="y">
 <P h="y">
-<N pl="y" gnt="n" gnd="m" h="y">
-<V pl="y" p="3ú" t="caite">
-<V pl="y" p="1ú" t="caite">
 <N pl="n" gnt="n" h="y">
-<N pl="y" gnt="n" gnd="f" h="y">
 <I>
-<V pl="y" p="3ú" t="coinn">
 <N pl="y" gnt="y">
 <N pl="y" gnt="n">
-<V p="1ú" t="caite">
-<V pl="y" p="2ú" t="ord">
-<V pl="y" p="1ú" t="fáist">
+<N pl="y" gnt="n" gnd="m" h="y">
+<N pl="y" gnt="n" gnd="f" h="y">
 <V p="xx" t="foshuit">
-<V pl="y" p="1ú" t="ord">
-<V p="1ú" t="gnáth">
 <V p="saor" t="gnáth">
-<V pl="y" p="3ú" t="ord">
-<V pl="y" p="1ú" t="coinn">
 <N pl="n" gnt="y" gnd="m" h="y">
-<V pl="y" p="3ú" t="láith">
 <N pl="y" gnt="n" h="y">
-<V pl="y" p="1ú" t="gnáth">
 <V p="saor" t="ord">
 <V p="saor" t="foshuit">
-<V pl="y" p="3ú" t="gnáth">
-<V p="1ú" t="ord">
