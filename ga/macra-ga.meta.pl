@@ -49,6 +49,7 @@ s/ECLIPSEDVOWEL/n(?:-[aeiouαινσϊ]|[AEIOUΑΙΝΣΪ])[^<]*/g;
 s/ECLIPSED/(?:n(?:-[aeiouαινσϊ]|[AEIOUΑΙΝΣΪ])|d[Tt]|g[Cc]|b[Pp]|m[Bb]|n[DdGg]|bh[fF])[^<]*/g;
 s/INITIALM/[Mm][^<]+/g;
 s/UNLENITABLE/(?:[^BbCcDdFfGgMmPpTt]|[Ss][^lnraeiouαινσϊ])[^<]*/g;
+s/UNLENITEDBCGMP/[BbCcGgMmPp][^h'][^<]*/g;
 s/UNLENITEDBCFGMP/(?:[BbCcFfGgMmPp][^h']|bh[fF])[^<]*/g;
 s/UNMUTATEDBCFGP/[BbCcFfGgPp][^hcCpP'][^<]*/g;
 # s,m+vowel not *definitely* UNMUTATED since it could be an eclipsis scenario 

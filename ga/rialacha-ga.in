@@ -271,7 +271,7 @@ sin sin:OK
 #. Comhlánóidh saoránacht an Aontais an saoránacht náisiúnta agus ní ghabhfaidh sí a hionad.
 <T>[Aa]n</T> <NFCS>INITIALS</NFCS>:PREFIXT
 # CB p.23 #10
-#. Bíonn na cimí ar a suaimhneas le chéile gan guth an séiléara le clos a thuilleadh.
+#. Ní raibh guth an séiléara le clos a thuilleadh.
 <T>[Aa]n</T> <NMGS>INITIALS</NMGS>:PREFIXT
 # CB p.6 #1
 #. Tá sin ráite cheana féin acu le muintir an tíre seo.
@@ -714,6 +714,20 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Gg]an</S> <T>an</T> <NMCS>INITIALVOWEL</NMCS>:PREFIXT
 # CB p.134 #1.a (unlenited caught by more general rule)
 <S>[Gg]an</S> <T>an</T> <NFCS>ECLIPSED</NFCS>:SEIMHIU
+# CB p.14 #4.c  (note no "Y"'s, initial d,f,s,t here)
+<S>[Gg]an</S> <N>UNLENITEDBCGMP</N>:SEIMHIU
+# next few are exceptions CB p.14 #4.c.ii for "qualified" nouns
+<S>[Gg]an</S> <N>([Bb]eann|[Cc]uimhneamh|[Mm]órán)</N>:OK
+#. Dúirt sé liom gan pósadh (OK).
+<S>[Gg]an</S> <N>VNISH</N>:OK
+<E><S>[Gg]an</S> <N>UNLENITEDBCGMP</N></E> <A>ANYTHING</A>:OK
+<E><S>[Gg]an</S> <N>UNLENITEDBCGMP</N></E> <R>ar bith</R>:OK
+<E><S>[Gg]an</S> <N>UNLENITEDBCGMP</N></E> <R>(amach|amháin)</R>:OK
+<E><S>[Gg]an</S> <N>UNLENITEDBCGMP</N></E> <NG>ANYTHING</NG>:OK
+<E><S>[Gg]an</S> <N>UNLENITEDBCGMP</N></E> <T>ANYTHING</T> <NG>ANYTHING</NG>:OK
+#. Níl sé ceadaithe aistriú ó rang go chéile gan cead a fháil uaim (OK).
+<E><S>[Gg]an</S> <N>UNLENITEDBCGMP</N></E> a <N>VNISH</N>:OK
+<S>[Gg]an</S> <N>[Ff]ios</N>:SEIMHIU
 # CB p.132 #5
 [Gg]o <VPAST>ANYTHING</VPAST>:BACHOIR{gur}
 # CB p.133 #12 irreg. exceptions
