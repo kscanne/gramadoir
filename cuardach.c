@@ -361,13 +361,16 @@ int dictlookup(const char* word, char* fill, char* attrs, char* extratags)
 	   if (toignore != NULL) {
 	         if (rawignorelookup(word)) {strcpy(fill, "Y"); return 1;}
 		}
-	   if (replacementlookup(word, repl)) {
+	   if (replacementlookup(word, repl)) retval=0;
+	   else if (isupper(word[0])) {
+	             if (replacementlookup(lowered, repl)) retval=0;
+	            }
+           if (retval==0) {
 	        strcpy(fill, "E");
                 strcpy(extratags, "<Y>");
 		strcpy(attrs, " msg=\"CAIGHDEAN{");
 		strcat(attrs, repl);
 		strcat(attrs, "\"");
-		retval=0;
                }
           }
      return retval;
