@@ -1,6 +1,0 @@
-#!PERLPATH
-while(<>){
-# UNIGRAMS
-print;
-}
-exit;
