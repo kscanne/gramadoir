@@ -143,6 +143,15 @@ sub new {
 	foreach my $rule (@MORPH) {
 		my $patt = $rule->{'patt'};
 		$rule->{'compiled'} = qr/$patt/;
+		$patt = $rule->{'rootpos'};
+		if ($patt =~ m/^<\.([+*])?>$/) {
+			$rule->{'poscompiled'} = '';   # for speed
+		}
+		else {
+			$patt =~ s/\./[^>]/g;
+			$patt =~ s/>$/\/?>/;
+			$rule->{'poscompiled'} = qr/$patt/;
+		}
 	}
 
 	if ($self->{'use_ignore_file'}) {
@@ -293,35 +302,36 @@ sub mylcfirst {
 # same arguments, return conventions as tag_recurse, just no recursion!
 sub lookup
 {
-	my ( $self, $original, $current, $level ) = @_;
+	my ( $self, $original, $current, $level, $rootpos ) = @_;
 
 	my $ans;
 	for my $href ( @FOCAIL ) {
 		if ( exists($href->{$current}) ) {
-			if ( $level == -1 ) {
-				my $codez = $href->{$current};
-				my %tempseen;
-				if ( $current =~ m/^[@CAPITALS@]/ ) {
-					my $lower = mylcfirst($current);
-					if ( exists($href->{$lower}) ) {
-						foreach my $bee (split //, $href->{$current}.$href->{$lower}) {
-							$tempseen{$bee}++;
-						}
-						$codez = join('', sort(keys %tempseen));
-						if ( length( $codez ) > 1 ) {
-							$codez =~ s/\177//;
-						}
+			my $codez = $href->{$current};
+			my %tempseen;
+			if ( $current =~ m/^[@CAPITALS@]/ ) {
+				my $lower = mylcfirst($current);
+				if ( exists($href->{$lower}) ) {
+					foreach my $bee (split //, $href->{$current}.$href->{$lower}) {
+						$tempseen{$bee}++;
+					}
+					$codez = join('', sort(keys %tempseen));
+					if ( length( $codez ) > 1 ) {
+						$codez =~ s/\177//;
 					}
 				}
-				$ans = $self->add_grammar_tags($original, $codez);
 			}
-			elsif ( $level == 0 ) {
+			$ans = $self->add_grammar_tags($original, $codez);
+			if ($rootpos) {
+				return "STOP" unless ($ans =~ m/$rootpos/);
+			}
+			if ( $level == 0 ) {
 				$ans = "<E msg=\"MOIRF{$current}\"><X>".$original."</X></E>";
 			}
 			elsif ( $level == 1 ) {
 				$ans = "<E msg=\"CAIGHDEAN{$current}\"><X>".$original."</X></E>";
 			}
-			else {
+			elsif ( $level == 2 ) {
 				$ans = "<E msg=\"DROCHMHOIRF{$current}\"><X>".$original."</X></E>";
 			}
 			return $ans;
@@ -363,12 +373,12 @@ sub lookup
 sub tag_as_compound
 {
 	my ( $self, $word ) = @_;
-	if ($self->{'fix_spelling'}) {
+#	if ($self->{'fix_spelling'}) {
 		if ($word =~ m/^([^-]+)-(.*)$/) {
 			my $l = $1;
 			my $r = $2;
-			my $t1 = $self->tag_recurse( $l, $l, -1 );
-			my $t2 = $self->tag_recurse( $r, $r, -1 );
+			my $t1 = $self->tag_recurse( $l, $l, -1, "" );
+			my $t2 = $self->tag_recurse( $r, $r, -1, "" );
 			if ($t1 && $t2) {
 				if ($t1 !~ m/<E/ && $t2 !~ m/<E/) {
 					return "<E msg=\"COMHFHOCAL{$l+$r}\"><X>".$word."</X></E>";
@@ -385,8 +395,8 @@ sub tag_as_compound
 				my $r = substr($word, $i, $len - $i);
 				if (!exists($NOCOMBO{$l}) &&
 				    !exists($NOCOMBO{$r})) {
-					my $tl = $self->tag_recurse($l,$l,-1);
-					my $tr = $self->tag_recurse($r,$r,-1);
+					my $tl = $self->tag_recurse($l,$l,-1, "");
+					my $tr = $self->tag_recurse($r,$r,-1, "");
 				    	if ( $tl && $tr ) {
 						if ($tl !~ m/<E/ && $tr !~ m/<E/) {
 							return "<E msg=\"COMHFHOCAL{$l+$r}\"><X>".$word."</X></E>";
@@ -398,7 +408,7 @@ sub tag_as_compound
 				}
 			}
 		}
-	}
+#	}
 	return "";
 }
 
@@ -464,11 +474,11 @@ sub tag_one_word
 	if ($self->{'use_ignore_file'}) {
 		return "<Y>".$word."</Y>" if ( exists($IGNORE{$word}) );
 	}
-	my $ans = $self->tag_recurse($word, $word, -1);
-	return $ans if $ans;
-	$ans = $self->tag_as_near_miss($word);
+	my $ans = $self->tag_recurse($word, $word, -1, "");
 	return $ans if $ans;
 	$ans = $self->tag_as_compound($word);
+	return $ans if $ans;
+	$ans = $self->tag_as_near_miss($word);
 	return $ans if $ans;
 	$ans = $self->find_bad_three_grams($word);
 	return $ans if $ans;
@@ -959,9 +969,10 @@ sub unigram
 #   false ("") if the recursion bottoms out with no matches
 sub tag_recurse
 {
-	my ( $self, $original, $current, $level ) = @_;
+	my ( $self, $original, $current, $level, $rootpos ) = @_;
 
-	my $ans = $self->lookup( $original, $current, $level );
+	my $ans = $self->lookup( $original, $current, $level, $rootpos );
+	return "" if ($ans eq "STOP");
 	return $ans if $ans;
 	my $newcurrent;
 	foreach my $rule (@MORPH) {
@@ -970,7 +981,7 @@ sub tag_recurse
 			my $r = $rule->{'repl'};
 			$newcurrent = $current;
 			$newcurrent =~ s/$p/$r/eeg;
-			$ans = $self->tag_recurse($original, $newcurrent, ($level > $rule->{'level'}) ? $level : $rule->{'level'});
+			$ans = $self->tag_recurse($original, $newcurrent, ($level > $rule->{'level'}) ? $level : $rule->{'level'}, $rule->{'poscompiled'});
 			return $ans if $ans;
 		}
 	}
