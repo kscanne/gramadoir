@@ -78,6 +78,7 @@ s/FUSEDPREP/(?:[Dd][eo]n|[Ss]an?|[Ff]aoin|[Óó]n)/g;
 # neither lists "gan" but in practice dative forms used after it
 # ok to include "tríd" here since it won't be resolved as <S>
 # unless there is an article after it...
+#   corpus is split on "idir" - LGG doesn't list it as dative
 s/DATIVEPREP/(?:[Aa][grs]|[Cc]huig|[Dd][eo]|[Ff]aoi|[Gg]an|[Gg]o|[Ll]e|[Óó]|[Ii]n?|[Rr]oimh|[Tt]har|[Tt]ríd?|[Uu]m)/g;
 s/INITIALDAPOST/d'[^<]+/g;
 s/INITIALBAPOST/b'[^<]+/g;
