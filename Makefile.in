@@ -223,7 +223,7 @@ eile.bs : FORCE
 	rm -f eile.pre.bs tempeile
 
 neamhshuim : FORCE
-	cat ../../ispell/bearla/glac ../../ispell/bearla/hyphenglac | LC_COLLATE=POSIX sort -u > /tmp/neamhshuim.tmp
+	cat ../../gnu/gnu/poglac ../../ispell/bearla/glac ../../ispell/bearla/hyphenglac | LC_COLLATE=POSIX sort -u > /tmp/neamhshuim.tmp
 	(cat /tmp/neamhshuim.tmp | wc -l | sed 's/^[^0-9]*//'; cat /tmp/neamhshuim.tmp) > ${HOME}/.neamhshuim
 
 FORCE :
