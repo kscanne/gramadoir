@@ -566,11 +566,9 @@ in the input text.
 
 ##############################################################################
 
-# current behavior is to report <F> words as misspellings, which 
-# matches the behavior of aspell-ga since I exclude such words entirely
-# from that package.  Just change FX -> X below to accept these words.
-# In reality though, if this becomes irritating, it probably means 
-# that the "misspelled" words in question should actually not be <F>...
+# current behavior is to accept <F> words as correct, like aspell-ga literary.
+# Just change X -> FX below to reject these words (this would
+# break the replcheck target though...)
 sub spell_check
 {
 	my ( $self, $text ) = @_;
@@ -581,12 +579,12 @@ sub spell_check
 	my $sentences = $self->unchecked_xml($text);
 	my $badwords = [];
 	foreach my $s (@$sentences) {
-		if ($s =~ m/<[FX]>/) {
-			$s =~ s/<[^FX\/][^>]*>//g;
-			$s =~ s/<\/[^FX][^>]*>//g;
-			$s =~ s/^[^<]*<[FX]>//;
-			$s =~ s/<\/[FX]>[^<]*$//;
-			$s =~ s/<\/[FX]>[^<]*<[FX]>/\n/g;
+		if ($s =~ m/<[X]>/) {
+			$s =~ s/<[^X\/][^>]*>//g;
+			$s =~ s/<\/[^X][^>]*>//g;
+			$s =~ s/^[^<]*<[X]>//;
+			$s =~ s/<\/[X]>[^<]*$//;
+			$s =~ s/<\/[X]>[^<]*<[X]>/\n/g;
 			$s = decode('@NATIVE@', $s);
 			push @$badwords,$s;
 		}
