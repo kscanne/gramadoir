@@ -78,7 +78,7 @@
 <E offset="38" fromy="76" fromx="38" toy="76" tox="39" sentence="Dath bánbhuí éadrom atá ar an adhmad (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
 <E offset="55" fromy="77" fromx="55" toy="77" tox="67" sentence="Chóirigh sé na lampaí le solas a chaitheamh os comhair an coinnleora." errortext="an coinnleora" msg="Séimhiú ar iarraidh">
 <E offset="34" fromy="78" fromx="34" toy="78" tox="46" sentence="Comhlánóidh saoránacht an Aontais an saoránacht náisiúnta agus ní ghabhfaidh sí a hionad." errortext="an saoránacht" msg="Réamhlitir /t/ ar iarraidh">
-<E offset="49" fromy="79" fromx="49" toy="79" tox="59" sentence="Bíonn na cimí ar a suaimhneas le chéile gan guth an séiléara le clos a thuilleadh." errortext="an séiléara" msg="Réamhlitir /t/ ar iarraidh">
+<E offset="14" fromy="79" fromx="14" toy="79" tox="24" sentence="Ní raibh guth an séiléara le clos a thuilleadh." errortext="an séiléara" msg="Réamhlitir /t/ ar iarraidh">
 <E offset="40" fromy="80" fromx="40" toy="80" tox="46" sentence="Tá sin ráite cheana féin acu le muintir an tíre seo." errortext="an tíre" msg="Ba chóir duit /na/ a úsáid anseo">
 <E offset="68" fromy="81" fromx="68" toy="81" tox="81" sentence="Is é is dóichí go raibh baint ag an eisimirce leis an laghdú i líon an gcainteoirí Gaeilge." errortext="an gcainteoirí" msg="Ba chóir duit /na/ a úsáid anseo">
 <E offset="7" fromy="82" fromx="7" toy="82" tox="12" sentence="Is iad an trí cholún sin le chéile an tAontas Eorpach." errortext="an trí" msg="Ba chóir duit /na/ a úsáid anseo">
