@@ -43,16 +43,22 @@ TESTS = $(PERLD)/t/$(PERLD).t
 LOCALES = locale_ok $(PERLLIB)/Languages.pm $(PERLLIB)/Languages/en_us.pm
 INTERMEDIATE = morph-$(TEANGA).pl aonchiall-$(TEANGA).pl comhshuite-$(TEANGA).pl eisceacht-$(TEANGA).pl giorr-$(TEANGA).pl rialacha-$(TEANGA).pl unigram-$(TEANGA).pl
 
-all : perldb
+all : perl
 
 perldb : FORCE
 	(cd $(PERLD); if [ -e Makefile ]; then make distclean; fi)
 	$(MAKE) perl
 
-perl : $(PERLTOP) $(PERLCODE) $(LEXICONS) $(EXTRAS) $(TESTS) $(LOCALES)
-	(cd $(PERLD); perl Makefile.PL; make)
+perl : $(PERLTOP) $(PERLCODE) $(LEXICONS) $(EXTRAS) $(TESTS) $(LOCALES) $(PERLD)/Makefile
+	(cd $(PERLD); make)
 
-install : all
+$(PERLD)/Makefile : $(PERLD)/Makefile.PL
+	(cd $(PERLD); perl Makefile.PL)
+
+test : perl
+	(cd $(PERLD); make test)
+
+install : perl
 	(cd $(PERLD); make pure_install)
 
 installcheck : triail FORCE
