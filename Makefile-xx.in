@@ -149,7 +149,7 @@ $(SHARE)/gramadoir.vim : $(GRAMDIR)/gramadoir.vim $(PERLDOK)
 	sed "s/gram-ga\.pl/$(SCRIPTNAME)/g" $(GRAMDIR)/gramadoir.vim > $@
 
 $(PERLD)/t/$(PERLD).t : $(GRAMDIR)/Lingua-XX-Gramadoir.t triail $(PERLDOK)
-	cat $(GRAMDIR)/Lingua-XX-Gramadoir.t | sed "s/@TEANGA@/$(UPPERTEANGA)/g; s/@NATIVE@/$(NATIVE)/g; s/tests => 1;/tests => 4+`cat triail.xml | wc -l`;/" | sed "/<<.EOF.;/r triail" | sed "/<<.RESEOF.;/r triail.xml" > $@
+	cat $(GRAMDIR)/Lingua-XX-Gramadoir.t | sed "s/@TEANGA@/$(UPPERTEANGA)/g; s/@NATIVE@/$(NATIVE)/g; s/tests => 1;/tests => 4+`cat triail.xml | wc -l | sed 's/^ *//'`;/" | sed "/<<.EOF.;/r triail" | sed "/<<.RESEOF.;/r triail.xml" > $@
 	chmod 644 $@
 
 triail : rialacha-$(TEANGA).in
@@ -202,7 +202,7 @@ unigram-$(TEANGA).pl : unigram-$(TEANGA).pre unigram-$(TEANGA).txt
 	(cat unigram-$(TEANGA).pre | $(EGREP) '^s/' | sed 's/^/\t/'; cat unigram-$(TEANGA).txt | sed 's/^\(<\([A-Z]\)[^>]*\)>/\ts\/<B><Z>(?:<[^>]*>)*\1.>(?:<[^>]*>)*<\\\/Z>([^<]+)<\\\/B>\/\1>$$1<\\\/\2>\/g;/') > $@
 
 $(SHARE)/focail0.bs : lexicon-$(TEANGA).txt freq-$(TEANGA).txt $(PERLDOK)
-	cat lexicon-$(TEANGA).txt | $(PERL) $(GRAMDIR)/count.pl freq-$(TEANGA).txt | sort -n -r > lex.txt
+	cat lexicon-$(TEANGA).txt | $(PERL) $(GRAMDIR)/count.pl freq-$(TEANGA).txt | LC_COLLATE=C sort -n -r > lex.txt
 	rm -f lexicon?.txt
 	egrep '^0' lex.txt | sed 's/^0 //' > lexicon6.txt
 	egrep '^1 ' lex.txt | sed 's/^1 //' > lexicon5.txt
@@ -257,6 +257,7 @@ dist : FORCE
 	$(MAKE) rebuildlex
 	$(LN_S) `pwd` ../$(TARBALL)
 	$(PERL) -p -i -e 's/^#!.*/#!!PERLPATH!/' macra-$(TEANGA).meta.pl
+	rm -f Makefile  # previous line means need reconfig
 	tar cvhf $(TARBALL).tar -C .. $(TARBALL)/Changes
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/configure
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/COPYING
