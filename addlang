@@ -55,6 +55,7 @@ then
 	echo "${DIR} already exists..."
 	exit
 fi
+echo "Creating directory structure..."
 mkdir ${DIR}
 mkdir ${PERLDIR}
 mkdir ${PERLDIR}/lib
@@ -67,6 +68,7 @@ mkdir ${PERLDIR}/share
 mkdir ${PERLDIR}/t
 
 
+echo "Computing good 3-grams from corpus..."
 togail "${TEANGA}" good 15 | sed 's/ *\([0-9]*\) \(.*\)/\2 \1/'  | recoder > ${DIR}/3grams-${TEANGA}.txt
 cp xx/aonchiall-xx.in ${DIR}/aonchiall-${TEANGA}.in
 (echo "ChangeLog Summary"; echo; echo "Version ${VERSION}"; echo "  * Initial Release") > ${DIR}/Changes
@@ -88,9 +90,13 @@ cp COPYING ${DIR}/COPYING
 touch ${DIR}/earraidi-${TEANGA}.bs
 touch ${DIR}/eile-${TEANGA}.bs
 cp xx/eisceacht-xx.in ${DIR}/eisceacht-${TEANGA}.in
-cp xx/giorr-xx.pre ${DIR}/giorr-${TEANGA}.pre
-cp xx/giorr-xx.txt ${DIR}/giorr-${TEANGA}.txt
+echo "Creating lexicon..."
 LC_ALL=C sort -u ${CRUBADAN}/GLAN > ${DIR}/lexicon-${TEANGA}.txt
+ONELETTER=`egrep '^.$' ${DIR}/lexicon-${TEANGA}.txt | tr -d "\n"`
+sed "s/\[\.\]/[${ONELETTER}]/" xx/giorr-xx.pre > ${DIR}/giorr-${TEANGA}.pre
+cp xx/giorr-xx.txt ${DIR}/giorr-${TEANGA}.txt
+echo "Computing likely abbreviations..."
+togail "${TEANGA}" abbs | egrep ' (100|[789][0-9]) ' | sed 's/ \([0-9]*\) / # \1% /' >> ${DIR}/giorr-${TEANGA}.txt
 counts.pl ${CRUBADAN}/FREQ ${DIR}/lexicon-${TEANGA}.txt | egrep -v ' 0$' > ${DIR}/freq-${TEANGA}.txt
 sed -i 's/.*/& 1/' ${DIR}/lexicon-${TEANGA}.txt
 cat ${DIR}/lexicon-${TEANGA}.txt | recoder | ./cabhair.pl -c --encoding=${NATIVE} > ${DIR}/lexicon-${TEANGA}.bs
@@ -99,10 +105,9 @@ TEMPFILE=`mktemp`
 cat ${DIR}/freq-${TEANGA}.txt | recoder > ${TEMPFILE}
 mv -f ${TEMPFILE} ${DIR}/freq-${TEANGA}.txt
 sed "/CAPITAL/s/A-Z/${UPPERS}/" xx/macra-xx.meta.pl > ${DIR}/macra-${TEANGA}.meta.pl
-# get MANIFEST, MANIFEST.SKIP from gramadoir 
-cp xx/morph-xx.txt ${DIR}/morph-${TEANGA}.txt
+sed "s/A-Z/${UPPERS}/" xx/morph-xx.txt > ${DIR}/morph-${TEANGA}.txt
 touch ${DIR}/nocombo-${TEANGA}.txt
-echo "1 <U>" > ${DIR}/pos-${TEANGA}.txt
+(echo "1 <U>"; echo "127 <F>") > ${DIR}/pos-${TEANGA}.txt
 sed "s/@TEANGA@/${TEANGA}/; s/@NAME_ENGLISH@/${NAME_ENG}/" README-xx > ${DIR}/README
 cp xx/rialacha-xx.in ${DIR}/rialacha-${TEANGA}.in
 cp xx/unigram-xx.pre ${DIR}/unigram-${TEANGA}.pre
