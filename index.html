@@ -5,7 +5,7 @@
   <title lang="ga">An Gramad&oacute;ir</title>
   <meta http-equiv="Content-Language" content="en">
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-  <meta name="description" content="Home page for Irish language grammar and style checker">
+  <meta name="description" content="Home page for the open source grammar checking engine An Gramad&oacute;ir">
   <meta name="keywords" content="grammar checker, Gaeilge, Irish language">
   <meta name="author" content="Kevin P. Scannell">
   <link rel="stylesheet" href="../kps.css" type="text/css">
@@ -24,62 +24,79 @@
 
 <p>
 This is the home page for <i lang="ga">An Gramad&oacute;ir</i>,
-the first grammar and style checker for the Irish language.
-In fact, to the best of my knowledge, this is the first
-such package for any minority language.  It is intended
+an open source grammar checking engine.  It is intended
 as a platform for the development of sophisticated
-natural language processing tools for Irish and for
-other languages with limited computational resources.
+natural language processing tools for languages with limited
+computational resources.
+It is currently implemented for the Irish language (Gaeilge);
+this is, to the best of my knowledge, the first grammar checker
+developed for any minority language.
 </p>
 
-<p>
-Interfaces are provided for the standard
-text editors <a href="eagar.html">emacs and vim</a>.
-Here is a <a href="gramadoir.png">screenshot</a> of the
-vim interface in action.
-</p>
-
-<p>
-You are welcome to <a href="sios.html">download</a> the software
-for free from this site.  It is released under the 
+<hr>
+<h2><a name="Features">Features</a></h2>
+An Gramadóir is:
+<ul>
+<li><b>Portable</b>.  As of version 0.5 the core engine is 
+written entirely in Perl which it means it will run on just about
+anything that plugs in.   It has been tested on a variety of
+platforms and operating systems:
+Linux (x86, ppc, amd64),
+*BSD (x86),
+Sun Solaris,
+DEC alpha,
+Mac OSX,
+and Windows.
+<li><b>Modular</b>.   The Perl module provides separate interfaces
+for sentence segmentation, spell checking, part-of-speech tagging,
+and grammar checking.   These components provide a platform for the development of applications for much more complex natural language processing tasks
+(e.g. parsing, machine translation).
+<li><b>Easy to use</b>.  There is a simple command line interface 
+that reads text from standard input and writes errors to standard
+output (you can see some actual output on
+the <a href="sampla.html">Sampler page</a>). 
+Or, you can try the software now using the
+<a href="foirm.html">Web Interface</a>.
+There are also interfaces that allow the grammar checker to
+be called from the text editors <a href="eagar.html">emacs and vim</a>
+(here is a <a href="gramadoir.png">screenshot</a> of the
+vim interface in action). A prototype interface to 
+<a href="http://www.openoffice.org/">OpenOffice</a> is available as well.
+Last but not least, I'm working on a nice standalone GUI
+version (with <a href="http://www.cruinneog.com/">Diarmaid Mac Mathúna</a>)
+that should be ready before long.
+<li><b>Corpus-based</b>.  Various components of the engine can be 
+bootstrapped from corpora harvested by my web crawling
+software <a href="/crubadan/index.html">An Crúbadán</a>.  This is
+essential for languages with severely limited resources, allowing
+for rapid development with a minimum of effort.
+<li><b>Easy to develop</b>.  I've tried to design the language
+developer's pack so that no programming experience is needed.
+All Perl code is generated automatically from a number
+of (hopefully simple) plain text input files.
+This is especially important for minority languages where in 
+many cases there is a lack of trained linguists, software
+developers, or both.
+<li><b>Scalable</b>.    With as little as an hour or two of work (editing
+word lists output by my web crawler) a developer can have a decent
+spell checking package up and running.   On the other hand, the
+engine is flexible enough to allow for full-scale grammar checking
+(as evidenced by the sometimes-rococo Irish version).
+<li><b>Language independent</b>.   (More or less).  Most open source 
+language technology is designed with (Indo-)European languages in mind.
+To counter this trend I've included things like full Unicode support and
+better support for
+the rich morphological phenomena found in many non-European languages.
+<li><b>Free Software</b>.  
+It is released under the 
 <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License</a>
 which means (roughly speaking) 
 that you are free to copy, modify, or even sell this 
 software as long as redistributed versions preserve these same freedoms.
 Please consider 
-<a href="cuidiu.html">contributing</a> your own rules to
+<a href="cuidiu.html">contributing</a> to
 help improve later releases.
-</p>
-
-<hr>
-<h2>System Requirements</h2>
-<p>
-This is software for Unix and Linux platforms.
-If you are an Irish speaker and are using, say, Windows, 
-you should format your hard drive and install something
-like <a href="http://www.gentoo.org">Gentoo Linux</a>.
-It's free and the grassroots
-<a href="/gnu/index.html">translation of GNU/Linux into Irish</a> is well underway.
-Otherwise, have fun waiting for Microsoft to release 
-<a href="http://www.fainne.org/microbog/">Windows in Irish</a>.
-</p>
-
-<p>
-There are (intentionally) very few software dependencies for this package. 
-Everything you need should come pre-loaded with any self-respecting
-Linux distribution: <i>bash</i>, 
-<i>sed</i>, <i>awk</i>, <i>perl</i>,
-<i>grep</i>, and a C compiler.  Users interested in
-<a href="cuidiu.html">contributing</a> rules will probably also want
-<i>flex</i> and <i>bison</i>.  If you don't want the error messages
-to appear in English, you'll need GNU <i>gettext</i> as well.
-</p>
-
-<p>
-I have managed to build and test everything under 
-Gentoo Linux (x86 and ppc),
-Solaris 8 (sparc), Mac OS X, and on a DEC alpha.
-</p>
+</ul>
 
 <hr>
 <h2>Installation and Usage</h2>
@@ -108,20 +125,11 @@ Irish language text file called <i>gaeilge.txt</i>, use the following:
 % gr gaeilge.txt
 </pre>
 
-<p>
-Each sentence containing an error is written to standard output.
-The sentence is preceded by the line number (in the original text file)
-on which it starts and is followed by a brief description of the errors
-found in the sentence.   You can see some actual output on
-the <a href="sampla.html">Sampler page</a>, or enter some of your own text into
-the <a href="foirm.html">Web Interface</a>.
-</p>
 
 <p>
 If there are words you would like to be disregarded while checking
-spelling and grammar you can create a plain text file in your home directory 
-called ".neamhshuim".  The first line should contain the number of
-words in the file and then place one word on each line.
+spelling and grammar you can place them, one per line, in a plain text file
+in your home directory called ".neamhshuim".
 </p>
 
 <p>
@@ -147,7 +155,7 @@ for more information on how to use these options effectively):
 <li><b>--brill</b>: Find candidate disambiguation rules using Brill's
 unsupervised learning algorithm.
 <li><b>--html</b>: Produce HTML output which should resemble the output of vanilla "gr" when viewed in a web browser.  This option is used by the 
-<a href="foirm.html">Web Interface</a>.
+<a href="form.html">Web Interface</a>.
 <li><b>--ilchiall</b>: Generate a report consisting of all (part of speech)
 ambiguities remaining after two passes through the disambiguation module,
 sorted by frequency.
