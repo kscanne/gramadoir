@@ -24,24 +24,42 @@
 CLAR='An Gramadóir'        # title that prints to screen, not used as filename
 
 # i18n strings; use gettext eventually
+
+# "Currently checking x"  (message printed as each file is checked)
 checking='Ag seiceáil'
+# "There is no such file" (file you tried to check doesn't exist)
 notfound='níl a leithéid de chomhad ann'
+# "Is a directory" (file you tried to check is a directory)
 isdir='is comhadlann í'
+# "Permission denied"  (tried to check a file without having read permission)
 permissions='cead diúltaithe'
+# Usage string.  Don't translate the --litriu option (means "spelling"!)
+# You can translate "COMHAID" to "FILES"
 usage="Úsáid: gr [--help] [--version] [--html] [--xml] [--litriu] [COMHAID]"
+# "If no file is given, read from standard input"
 stdinhelp="Mura bhfuil comhad ann, léigh ón ionchur caighdeánach"
+# "Send bug reports to <...>"   Leave the @PACKAGE_BUGREPORT@ alone.
 bugreports="Seol tuairiscí fabhtanna chuig <@PACKAGE_BUGREPORT@>."
+# "version" Leave the @PACKAGE_VERSION@ alone.
 versionstring="leagan @PACKAGE_VERSION@"
+# "This is free software; see the source for copying conditions.  There is NO
+# warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,
+# to the extent permitted by law."
 gpl1="Is saorbhogearra an ríomhchlár seo; féach ar an bhunchód le haghaidh"
 gpl2="coinníollacha cóipeála.  Níl baránta AR BITH ann; go fiú níl baránta ann"
 gpl3="d'INDÍOLTACHT nó FEILIÚNACHT DO FHEIDHM AR LEITH, an oiread atá ceadaithe"
 gpl4="de réir dlí."
+# "unknown option"
 unknownopt="rogha anaithnid"
+# "Try \'gr --help' for more information."
 tryhelp="Bain triail as \`gr --help' chun tuilleadh eolais a fháil."
 
 TAB=`@AWK@ 'BEGIN{printf "\t";}'`
 
 # i18n: grammatical errors.  See rialacha.in.
+# If you port to another language, you won't translate these; instead
+# they will be replaced completely with messages corresponding to
+# the errors for your language.
 loganu()
 {
 sed "
@@ -58,6 +76,7 @@ s/\"URU/\"Urú ar iarraidh/g
 }
 
 # this is what happens if --version is passed
+# Do not translate "Copyright" per the GNU coding standards.
 versionout()
 {
 echo "${CLAR}, ${versionstring}"
@@ -261,6 +280,7 @@ comhad()
 		/bin/bash -s
 }
 
+# This replaces "comhad" above when "--xml" options is given
 # same as filters in comhad up to the interface
 xml_output()
 {
@@ -286,6 +306,7 @@ p
 "
 }
 
+# This replaces "comhad" above when "--litriu" options is given
 litriu()
 {
 	cat $1 | diutf | 
