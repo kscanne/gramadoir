@@ -11,6 +11,7 @@ Try gr --help for more information.
 An Gramadoir: option --xml does not allow an argument
 Try gr --help for more information.
 An Gramadoir: Language el is not supported.
+An Gramadoir: aspell-EN is not installed
 An Gramadoir: conversion from fakecode is not supported
 An Gramadoir: problem reading the database
 An Gramadoir: problem reading the database
@@ -27,6 +28,7 @@ gr --help eingeben, um weitere Informationen zu erhalten.
 An Gramadóir: Ein Argument ist bei der Option --xml nicht erlaubt
 gr --help eingeben, um weitere Informationen zu erhalten.
 An Gramadóir: Die Sprache el wird nicht unterstützt.
+An Gramadóir: aspell-EN is not installed
 An Gramadóir: Konvertierung von fakecode wird nicht unterstützt
 An Gramadóir: Problem beim Lesen der Datenbank
 An Gramadóir: Problem beim Lesen der Datenbank
@@ -43,6 +45,7 @@ Bain triail as gr --help chun tuilleadh eolais a fháil.
 An Gramadóir: ní cheadaítear argóint i ndiaidh an rogha --xml
 Bain triail as gr --help chun tuilleadh eolais a fháil.
 An Gramadóir: Níl an teanga el ar fáil.
+An Gramadóir: Níl aspell-EN ar fáil
 An Gramadóir: níl aon fháil ar tiontú ón ionchódú fakecode
 An Gramadóir: fadhb ag léamh an bhunachair sonraí
 An Gramadóir: fadhb ag léamh an bhunachair sonraí
@@ -59,6 +62,7 @@ Bain triail as gr --help chun tuilleadh eolais a fhÃ¡il.
 An GramadÃ³ir: nÃ­ cheadaÃ­tear argÃ³int i ndiaidh an rogha --xml
 Bain triail as gr --help chun tuilleadh eolais a fhÃ¡il.
 An GramadÃ³ir: NÃ­l an teanga el ar fÃ¡il.
+An GramadÃ³ir: NÃ­l aspell-EN ar fÃ¡il
 An GramadÃ³ir: nÃ­l aon fhÃ¡il ar tiontÃº Ã³n ionchÃ³dÃº fakecode
 An GramadÃ³ir: fadhb ag lÃ©amh an bhunachair sonraÃ­
 An GramadÃ³ir: fadhb ag lÃ©amh an bhunachair sonraÃ­
@@ -75,6 +79,7 @@ Un Gramadoir: opþiunea --teanga necesitã un parametru
 Un Gramadoir: opþiunea --xml nu permite parametri
 Încercaþi gr --help pentru mai multe informaþii.
 Un Gramadoir: Limba el nu este suportatã.
+Un Gramadoir: aspell-EN is not installed
 Un Gramadoir: conversion from fakecode is not supported
 Un Gramadoir: problemã în citirea bazei de date
 Un Gramadoir: problemã în citirea bazei de date
@@ -91,6 +96,7 @@ Probeer gr --help voor meer informatie.
 An Gramadóir: optie --xml staat geen argumenten toe
 Probeer gr --help voor meer informatie.
 An Gramadóir: Taal el word niet ondersteund.
+An Gramadóir: aspell-EN is not installed
 An Gramadóir: conversion from fakecode is not supported
 An Gramadóir: Problemen met lezen van de databank
 An Gramadóir: Problemen met lezen van de databank
