@@ -95,12 +95,13 @@ If your language has unusual conventions for ends of sentences,
 you may need to play with the <i>abairti</i> module.
 The buffers in <i>cuardach.c</i>
 for storing words are 32 bytes long
-(longest Irish word: <i>ngearr-chlóscríobhneoireachta</i>, 28 bytes) and
+(longest Irish word: <i>ngearr&#8209;chlóscríobhneoireachta</i>, 28 bytes) and
 may need to be increased.  Finally, be sure to add a line for your language to
-the TEANGACHA file of the form:
+the TEANGACHA file of the form:<br><br>
 <samp>
 xx ENCODING BOUNDARYCHARS INTERNALCHARS
 </samp>
+<br><br>
 where "ENCODING" is the default character encoding for texts in your
 language (and also the character encoding used in the rule files),
 e.g. "ISO88591" or "UTF8", etc. 
@@ -127,8 +128,9 @@ porting the grammar checker.  I'm guessing however that you'll want to
 see the output in the same language as
 the documents that are being
 checked.    As of version 0.3, this is done with the GNU
-gettext package.  The POT file <i>gramadoir.pot</i> is available 
-under the directory "po" in the distribution.
+gettext package.  
+You can find out more from our page at the 
+<a href="http://www2.iro.umontreal.ca/~gnutra/registry.cgi?domain=gramadoir">GNU Translation Project</a>.
 </p>
 
 <hr>
