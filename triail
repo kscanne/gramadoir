@@ -3,23 +3,49 @@
 <Note first that one of the preprocessing steps strips any SGML-like>
 <markup, so for instance these lines will not be checked.>
 
-
-<Word forms not in the database are flagged and reported.>
 An bhfuil aon uaktar reoite agat?
-
-<Multiple errors on a single line are all highlighted and reported>
 An bhfuil ayn uachtar roach agat?
-
-<"a" is a preposition here and should cause lenition -- need to disambiguate!>
-Tá muid in ann an t-uachtar reoite a placadh.
-Níl aon duine ann ach mhangaire. 
+Tá na lachain slachtmhara ar eitilt.
+Tá an Rialtas tar éis áit na Gaeilge i saol na tíre a plé.
+Bhíodar ag rá ar an aonach gur agamsa a bhí na huain ab fearr.
+Ní bheidh ach mhallacht i ndán dó ó na ciníocha agus fuath ó na náisiúin.
 An bhfuil aon uachtar reoite ar an cuntar?
-An bhfuil aon duine ag mhaireachtáil?
-Níl an cliath ar an chuntar.
-Níl uachtar an míl ag snámh.
+Tá sé riachtanach ar mhaithe le feidhmiú an phlean a bheidh ceaptha ag an eagraíocht ceannasach.
+Má shuíonn tú ag bhord le flaith, tabhair faoi deara go cúramach céard atá leagtha romhat.
+Bláthaíonn sé amhail bhláth an mhachaire.
+An bainim sult as bás an drochdhuine?
+Ní féidir an Gaeltacht a choinneáil mar réigiún Gaeilge go náisiúnta gan athrú bunúsach.
+Chóirigh sé na lampaí le solas a chaitheamh os comhair an coinnleora.
+Comhlánóidh saoránacht an Aontais an saoránacht náisiúnta agus ní ghabhfaidh sí a hionad.
+Bíonn na cimí ar a suaimhneas le chéile gan guth an séiléara le clos a thuilleadh.
+Tá sin ráite cheana féin acu le muintir an tíre seo.
+Is é is dóichí go raibh baint ag an eisimirce leis an laghdú i líon an gcainteoirí Gaeilge.
+Ní bheidh aon buntáiste againn orthu sin.
+Ar caith tú do chiall agus do chéadfaí ar fad?
+Gheobhaimid maoin de gach sórt, agus líonfaimid ár tithe le creach.
+Ní amháin ár dhá chosa, ach nigh ár lámha!
+Níl aon ní arbh fiú a shantú seachas í.
+Ba maith liom fios a thabhairt anois daoibh.
+Ba eol duit go hiomlán m'anam.
+D'fhan beirt buachaill sa champa.
+D'fhan beirt bhuachaill cancrach sa champa.
+Déanaigí beart leis de réir bhur briathra.
+Ní amháin bhur dhá chosa, ach nigh bhur lámha!
+Cá cuireann tú do thréad ar féarach?
+Cá áit a nochtfadh sé é féin ach in Bhostún!
+Cá chás dúinn bheith ag máinneáil thart anseo?
+Cár fág tú eisean?
+Cár fágadh eisean (OK)?
+Cé iad na fir seo ag fanacht farat?
+Cé an ceart atá agamsa a thuilleadh fós a lorg ar an rí?
+Chuir siad fios orm ceithre uaire ar an tslí sin.
+Beidh ar Bhord Feidhmiúcháin an tUachtarán agus ceithre ball eile.
+Bhí an chéad cruinniú den Choimisiún i Ros Muc i nGaeltacht na Gaillimhe.
+Tá sé chomh iontach le sneachta dearg.
+
 An bhfuil aon uachtar reoite agat i cuisneoir?
 An bhfuil aon uachtar reoite agaibh i bhur gcuisneoir?
-An bhfuil aon uachtar reoite agat i dhá cuisneoir?
+An bhfuil aon uachtar reoite agat i dhá chuisneoir?
 An bhfuil aon uachtar reoite agat i an chuisneoir?
 An bhfuil aon uachtar reoite agat i na cuisneoirí?
 An bhfuil aon uachtar reoite i a cuisneoir?
