@@ -143,7 +143,7 @@ byte_to_markup_ga (const unsigned char c, char *fill, char *attrs)
 	  strcat (attrs, " t=\"gnáth\"");
 	  break;
 	case 6:
-	  strcat (attrs, " t=\"coinn");
+	  strcat (attrs, " t=\"coinn\"");
 	  break;
 	case 7:
 	  strcat (attrs, " t=\"foshuit\"");
