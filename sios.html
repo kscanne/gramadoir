@@ -46,24 +46,34 @@ All of the language-dependent input files used by the developers' pack
 <hr>
 <h2><a name="Install">Installation and Usage</a></h2>
 
+<h3>Linux and Mac OS X</h3>
 <p>
 The Irish grammar checker is distributed as the Perl module
 <a href="http://search.cpan.org/dist/Lingua-GA-Gramadoir/"><i>Lingua::GA::Gramadoir</i></a>.
 If you are using Linux or some other Unix-like 
-operating system, you surely already have Perl installed
+operating system (including Mac OS X),
+you surely already have Perl installed
 and you can
-<a href="http://www.troubleshooters.com/codecorn/littperl/perlcpan.htm">install the module using <i>CPAN.pm</i></a>.
-If you are running something primitive like 
-<a href="http://www.fainne.org/microbog/">Windows</a>,
-you'll first have to install
-<a href="http://www.activestate.com/Products/ActivePerl/">ActiveState Perl</a>
-and then install <i>An Gramadóir</i> using
-<a href="http://aspn.activestate.com/ASPN/docs/ActivePerl/faq/ActivePerl-faq2.html">ppm</a>.
+<a href="http://www.troubleshooters.com/codecorn/littperl/perlcpan.htm">install the module using <i>CPAN.pm</i></a>, for example, like this:
+</p>
+
+<pre>
+$ cpan
+cpan&gt; install Lingua::GA::Gramadoir
+</pre>
+
+<p>
+You probably need to have root permission to do this; 
+if you don't, or you don't know what this means, ask a system
+administrator for help. 
+Also, if this is the first time you're running cpan, you'll be
+guided through some configuration steps before you can
+do the installation.
 </p>
 
 <p>
-You can also install manually:
-<a href="http://sourceforge.net/project/showfiles.php?group_id=114958&package_id=125358">download</a>,
+Alternatively, you can also install everything by hand:
+<a href="http://sourceforge.net/project/showfiles.php?group_id=114958&package_id=125358">download</a> Lingua::GA::Gramadoir,
 unpack the archive, and
 try the following standard procedure:
 </p>
@@ -74,10 +84,10 @@ try the following standard procedure:
 </pre>
 
 <p>
-You should then have the front-end script 
+You should now have the front-end script 
 <i>gram-ga.pl</i> installed.  To check the grammar of an
 Irish language text file called <i>gaeilge.txt</i>,
-use the following from the command line:
+use the following from the shell prompt:
 </p>
 <pre>
 % gram-ga.pl gaeilge.txt
@@ -89,6 +99,49 @@ More detailed usage instructions can be found using:
 <pre>
 % gram-ga.pl --help
 </pre>
+
+<h3>Windows</h3>
+
+<p>
+Things are somewhat more painful if you're running something primitive
+like <a href="http://www.fainne.org/microbog/">Windows</a>.
+</p>
+
+<ol>
+<li>Install the latest version of
+<a href="http://www.activestate.com/Products/ActivePerl/">ActiveState Perl</a>.
+<li>Go the DOS prompt (for the youngsters, you can get there
+by going to Start-&gt;Accessories-&gt;Command Prompt)
+<li>Enter "perl -v" to verify that perl was installed correctly and is in your path; you should see something like this:
+<pre>
+C:&gt; perl -v
+
+This is perl, v.5.8.6 built for MSWin32-x86-multi-thread
+(with 3 registered patches, see perl -V for more detail)
+
+Copyright 1987-2004, Larry Wall
+...
+</pre>
+<li>Now install <i>An Gramadóir</i> using the ActivePerl package manager
+<a href="http://aspn.activestate.com/ASPN/docs/ActivePerl/faq/ActivePerl-faq2.html">ppm</a>:
+<pre>
+C:&gt; ppm3
+ppm&gt; install Lingua::GA::Gramadoir
+ppm&gt; quit
+</pre>
+<li>You should now have the front-end script 
+<i>gram-ga.pl</i> installed.  Unfortunately, DOS isn't
+capable of displaying the ANSI control codes that are
+used to highlight the errors in color.  Also, you need to
+tell <i lang="ga">An Gramad&oacute;ir</i> to display messages
+in the default DOS character encoding (ibm-850).
+Therefore, to check an Irish language text file called <i>gaeilge.txt</i>,
+use the following:
+</p>
+<pre>
+C:&gt; gram-ga.pl --aschod=cp850 --dath=none gaeilge.txt
+</pre>
+</ol>
 
 <hr>
 <em>© Cóipcheart/Copyright 2003-2005 Kevin P. Scannell</em><br><br>
