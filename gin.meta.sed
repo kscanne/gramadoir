@@ -11,6 +11,8 @@ s/+\([^(<]*|[^(<]*\)</+(\1)</g
 s/^~//
 s/  / /g
 s/ANYTHING/[^<]*/g
+s/CAPITALLENITED/[BCDFGMPST]h[^<]*/g
+s/CAPITAL/[A-ZÁÉÍÓÚ][^<]*/g
 s/INITIALS/[Ss][lnraeiouáéíóú][^<]*/g
 s/INITIALVOWELORF/([aeiouAEIOUáéíóúÁÉÍÓÚ]|[Ff]h?[aeiouáéíóú])[^<]*/g
 s/INITIALVOWEL/[aeiouAEIOUáéíóúÁÉÍÓÚ][^<]*/g
