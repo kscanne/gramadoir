@@ -37,4 +37,5 @@ s/\*MCS\[/*pl="n" gnt="n" gnd="m"[/g
 s/\*MCP\[/*pl="y" gnt="n" gnd="m"[/g
 s/\*MGS\[/*pl="n" gnt="y" gnd="m"[/g
 s/\*MGP\[/*pl="y" gnt="y" gnd="m"[/g
+s/\*NOPAUT\[/*( p=.[1-3]|t=..[^a])[/g
 s/\([^:]*\):\([^ ]*\)/s\/(\1)\/<E msg="\2">$1<\\\/E>\/g;/
