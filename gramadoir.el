@@ -259,5 +259,24 @@ only searches within the current line"
     )
   )
 
+(defun gramadoir-dired ()
+  "Run gramadoir on files in a dired buffer. If no files are marked, the 
+file on the current line is checked, otherwise all marked files are checked.
+
+This command should only be used in a dired buffer."
+  (interactive)
+  (if (equal major-mode 'dired-mode)
+    (let* ((file-list (dired-get-marked-files))
+	   (list-len (length file-list))
+	   (this-string "")
+	   (i 0))
+      (while (<= i list-len)
+	(setq this-string (concat this-string (nth i file-list) " "))
+	(setq i (1+ i)))
+      (gramadoir-check-files this-string))
+    (message "gramadoir-dired: current buffer is not a dired buffer.")
+    )
+  )
+
 (provide 'gramadoir)
 ;;; gramadoir.el ends here

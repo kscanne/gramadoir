@@ -14,51 +14,98 @@
 <body>
 <div class="content">
 <h1>An Gramad&oacute;ir:<br>
-Text Editors</h1>
+Emacs/Vim Support</h1>
 
 <hr>
 <h2>Emacs</h2>
 <p>
 Martin Gregory has kindly contributed an Emacs interface 
-to <i lang="ga">An Gramadóir</i> which is very easy to use.  It shows you
-a split screen with the original text file on top and the 
-errors output by <i lang="ga">An Gramadóir</i> below.  With a single keystroke,
-you can move through the errors in parallel, making corrections as 
-you go.  Here are his instructions (the file <i>gramadoir.el</i> is
+to <i lang="ga">An Gramadóir</i> which is very easy to use.
+Here are his instructions (the file <i>gramadoir.el</i> is
 included in the distribution as of version 0.3):
 </p>
 
+
 <p>
-"If you are an experienced Emacs user, you'll
-probably want to auto load the file and define your own keys for the
-two functions listed below.
+"The Emacs interface to <i lang="ga">An Gramadóir</i> allows you to run <i lang="ga">An Gramadóir</i>
+from within an Emacs session and navigate to the locations in the
+input files where <i lang="ga">An Gramadóir</i> found problems. The interface is
+similar to that of the compile or grep commands in Emacs.
 </p>
 
-<ol>
-<li>put <i>gramadoir.el</i> in your emacs site lisp directory, if you don't
-have one, put it it ~/lisp
 
-<li>put the following lines in your ~/.emacs file
+<h3>INSTALLING THE INTERFACE:</h3>
+
+<p>
+Put gramadoir.el in your emacs site lisp directory, if you don't have
+one, put it it ~/lisp or some other directory of your choice and put
+the following line in your ~/.emacs file<br>
 <pre>
-   (load-file "~/lisp/gramadoir.el")
+   (load-file "/where/you/put/gramadoir.el")
+</pre>
+If you are an experienced Emacs user, you'll probably want to auto
+load the file.
+</p>
+
+
+<h3>USING THE INTERFACE:</h3>
+
+<p>
+The interface allows you to specify files in two different ways:
+</p>
+<ul>
+<li>using the command gramadoir-check-files which prompts for a space
+separated list of files, without file completion;
+<li>from a dired window using the gramadoir-dired command. This behaves
+like other dired commands: either all selected files are processed
+or, if no file is selected, the file listed on the current
+line is processed.
+</ul>
+
+<p>
+After running one of the above commands, the output of <i lang="ga">An Gramadóir</i> is
+written to a new buffer which is displayed in a separate window. Using
+the gramadoir-next-message command positions the cursor at the
+location of the first error in the first file. Subsequent use of this
+command takes you to the locations of subsequent errors. If you
+reposition the cursor in the output buffer, the command takes you to
+the location of the next error after that position.
+</p>
+
+
+<h3>CUSTOMISATION:</h3>
+
+<p>
+For convenience, you can bind the three commands to keys. These need
+to be global definitions, for example:
+</p>
+
+<pre>
    (global-set-key "\C-cg" 'gramadoir-check-files)
+   (global-set-key "\C-cd" 'gramadoir-dired)
    (global-set-key [f3] 'gramadoir-next-message)
 </pre>
 
-<li>start Emacs
 
-<li>To have <i lang="ga">An Gramadóir</i> check files, press the key ^C followed by the key g. 
+<p>
+If you installed <i lang="ga">An Gramadóir</i> anywhere other than in /usr/local/bin/gr
+you need to tell the interface where to look for it by putting a line
+similar to the following:<br>
+<pre>
+   (setq gramadoir-program-path "/usr/local/bin/gr")
+</pre>
+in your ~/.emacs, substituting the appropriate path.
+</p>
 
-<li>You are prompted for files to check, enter them using either
-relative or absolute paths, but avoid using ~ or environment
-variables as <i>gramadoir.el</i> doesn't handle these yet.
-
-<li>A second window will open with the messages from gr.
-
-<li>To go to the first error position in the first file, press
-F3. Repeated pressing of F3 takes you to each subsequent error."
-</ol>
-
+<p>
+Finally, the interface highlights the error text both in the output
+buffer and in the buffer of the original file. If you prefer not to
+highlight the text in the original file, add this:<br>
+<pre>
+   (setq gramadoir-highlight-text nil)
+</pre>
+to your ~/.emacs."
+</p>
 <hr>
 <h2>Vim</h2>
 <p>
