@@ -1,5 +1,5 @@
-# This file contains ISO-639-1 codes for the languages supported
-# by An Gramadóir (that is, there exist rule sets for checking the
+# This file contains ISO-639-1 codes for all supported languages
+# (that is, there exist rule sets for checking the
 # grammar of texts written in these languages).
 #
 # The second column contains the default character encoding for documents

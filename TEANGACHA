@@ -1,5 +1,5 @@
-# This file contains ISO-639-1 codes for the languages supported
-# by An GramadÛir (that is, there exist rule sets for checking the
+# This file contains ISO-639-1 codes for all supported languages
+# (that is, there exist rule sets for checking the
 # grammar of texts written in these languages).
 #
 # The second column contains the default character encoding for documents
@@ -12,5 +12,6 @@
 # languages can be found in the "po" directory (in particular, "po/LINGUAS").
 # 
 ga ISO-8859-1 A-Z¡…Õ”⁄a-z·ÈÌÛ˙ '-
+GA UTF-8 A-Z√Å√â√ç√ì√öa-z√°√©√≠√≥√∫ '-
 en ISO-8859-1 A-Za-z '
 EN ASCII A-Za-z '
