@@ -565,6 +565,8 @@ in the input text.
 # current behavior is to report <F> words as misspellings, which 
 # matches the behavior of aspell-ga since I exclude such words entirely
 # from that package.  Just change FX -> X below to accept these words.
+# In reality though, if this becomes irritating, it probably means 
+# that the "misspelled" words in question should actually not be <F>...
 sub spell_check
 {
 	my ( $self, $text ) = @_;
@@ -731,8 +733,12 @@ sub localize_me
 			$msgid = gettext('Derived incorrectly from the root \/\1\/', $1);
 			s/DROCHMHOIRF{([^}]+)}/$msgid/;
 		}
-		if (/CLAOCHLU/) {
+		if (/NICLAOCHLU/) {
 # TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
+			$msgid = gettext('Unnecessary initial mutation');
+			s/NICLAOCHLU/$msgid/;
+		}
+		if (/CLAOCHLU/) {
 			$msgid = gettext('Initial mutation missing');
 			s/CLAOCHLU/$msgid/;
 		}
@@ -754,10 +760,14 @@ sub localize_me
 			$msgid = gettext('Lenition missing');
 			s/SEIMHIU/$msgid/;
 		}
-		if (/URU/) {
+		if (/NIURU/) {
 # TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
 # initial consonants in Irish.  It is indicated in writing by the addition
 # of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
+			$msgid = gettext('Unnecessary eclipsis');
+			s/NIURU/$msgid/;
+		}
+		if (/URU/) {
 			$msgid = gettext('Eclipsis missing');
 			s/URU/$msgid/;
 		}
@@ -785,13 +795,25 @@ sub localize_me
 			$msgid = gettext('Unnecessary use of the definite article');
 			s/ONEART/$msgid/;
 		}
+		if (/NOGENITIVE/) {
+			$msgid = gettext('Unnecessary use of the genitive case');
+			s/NOGENITIVE/$msgid/;
+		}
 		if (/GENITIVE/) {
 			$msgid = gettext('The genitive case is required here');
 			s/GENITIVE/$msgid/;
 		}
+		if (/UATHA/) {
+			$msgid = gettext('The singular form is required here');
+			s/UATHA/$msgid/;
+		}
 		if (/MOIRF{([^}]+)}/) {
 			$msgid = gettext('Not in database but apparently formed from the root \/\1\/', $1);
 			s/MOIRF{([^}]+)}/$msgid/;
+		}
+		if (/NIGA{([^}]+)}/) {
+			$msgid = gettext('The word \/\1\/ is not needed', $1);
+			s/NIGA{([^}]+)}/$msgid/;
 		}
 		if (/MICHEART{([^}]+)}/) {
 			$msgid = gettext('Do you mean \/\1\/?', $1);
