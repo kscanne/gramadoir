@@ -318,6 +318,8 @@ h?[Aa]on <N>LENITEDDST</N>:NISEIMHIU
 # CB p.133 #12.a
 #. Bhí daoine le fáil i Sasana a chreid gach ar dúradh sa bholscaireacht.
 <[QU]>[Aa]r</[QU]> <VPAST>PASTNORFORMLEN</VPAST>:BACHOIR{a, an}
+# CB p.13 #4.b
+<S>[Aa]r</S> <N>UNLENITED</N>:SEIMHIU
 # CB p.19 #13, p.132 #5, OD ar^5
 #. Ar gcaith tú do chiall agus do chéadfaí ar fad?
 <Q>[Aa]r</Q> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
@@ -685,7 +687,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Gg]an</S> <N>LENITEDDFST</N>:NISEIMHIU
 # corpus, OD fios.4
 <S>[Gg]an</S> <N>[Ff]hios</N>:OK
-# CB p.14 #4.c.iv
+# CB p.14 #4.c.iv (worth adding exceptions for "Charles", etc. from gall?)
 #. Tá gruaim mhór orm gan Chaitlín.
 <S>[Gg]an</S> <Y>LENITED</Y>:NISEIMHIU
 # CB p.22 #8.a, also CB p.134 #1.a
@@ -988,7 +990,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 #. Nach bainfidh mé uaidh an méid a ghoid sé uaim?
 [Nn]ach <V>UNECLIPSED</V>:URU
 # CB p.20 #1.c, p.76 #8.c (even in plural)
-#. Rinneadh an roinnt don naoi treibh go leith ar cranna.
+#. Rinneadh an roinnt don naoi treibh go leith ar chrainn.
 <[^Y]>[Nn]aoi</[^Y]> <N>UNECLIPSED</N>:URU
 # CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
 <[^Y]>[Nn]aoi</[^Y]> <N>m[Bb]liain</N>:BACHOIR{mbliana}
@@ -1678,6 +1680,59 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 <R>[Nn]íos</R> <E><A>[Tt]h?úisce</A></E>:OK
 <R>NIBS</R> <E><A>[Tt]h?úisce</A></E>:OK
 #############################################################################
+#  Some set phrases with "ar" without lenition, could have "NISEIMHIU"
+#  as the error for these, but INPHRASE is clearer, softened by "usually" too.
+#  Ar+eclipsis trapped by general "ar+UNLENITED" rule.
+#############################################################################
+<S>[Aa]r</S> <N>bhís</N>:INPHRASE{ar bís}
+<S>[Aa]r</S> <N>bhuile</N>:INPHRASE{ar buile}
+<S>[Aa]r</S> <N>chéalacan</N>:INPHRASE{ar céalacan}
+<S>[Aa]r</S> <N>cheant</N>:INPHRASE{ar ceant}
+<S>[Aa]r</S> <N>chipíní</N>:INPHRASE{ar cipíní}
+<S>[Aa]r</S> <N>chóimhéid</N>:INPHRASE{ar cóimhéid}
+<S>[Aa]r</S> <N>chomhbhrí</N>:INPHRASE{ar comhbhrí}
+<S>[Aa]r</S> <N>chomhfhad</N>:INPHRASE{ar comhfhad}
+<S>[Aa]r</S> <N>chrith</N>:INPHRASE{ar crith}
+<S>[Aa]r</S> <N>chrochadh</N>:INPHRASE{ar crochadh}
+<S>[Aa]r</S> <N>dháir</N>:INPHRASE{ar dáir}
+<S>[Aa]r</S> <N>dheic</N>:INPHRASE{ar deic}
+<S>[Aa]r</S> <N>dheil</N>:INPHRASE{ar deil}
+<S>[Aa]r</S> <N>dheiseal</N>:INPHRASE{ar deiseal}
+<S>[Aa]r</S> <N>dheoraíocht</N>:INPHRASE{ar deoraíocht}
+<S>[Aa]r</S> <N>dhiúité</N>:INPHRASE{ar diúité}
+<S>[Aa]r</S> <N>fháil</N>:INPHRASE{ar fáil}
+<S>[Aa]r</S> <N>fhán</N>:INPHRASE{ar fán}
+<S>[Aa]r</S> <N>fhaonoscailt</N>:INPHRASE{ar faonoscailt}
+<S>[Aa]r</S> <N>fheadh</N>:INPHRASE{ar feadh}
+<S>[Aa]r</S> <N>fhéarach</N>:INPHRASE{ar féarach}
+<S>[Aa]r</S> <N>fheitheamh</N>:INPHRASE{ar feitheamh}
+<S>[Aa]r</S> <N>fhiar</N>:INPHRASE{ar fiar}
+<S>[Aa]r</S> <N>fhionraí</N>:INPHRASE{ar fionraí}
+<S>[Aa]r</S> <N>fhiuchadh</N>:INPHRASE{ar fiuchadh}
+<S>[Aa]r</S> <N>fhónamh</N>:INPHRASE{ar fónamh}
+<S>[Aa]r</S> <N>fhorbhás</N>:INPHRASE{ar forbhás}
+<S>[Aa]r</S> <N>fhostú</N>:INPHRASE{ar fostú}
+<S>[Aa]r</S> <N>fhruiliú</N>:INPHRASE{ar fruiliú}
+<S>[Aa]r</S> <N>ghor</N>:INPHRASE{ar gor}
+<S>[Aa]r</S> <N>mhaidin</N>:INPHRASE{ar maidin}
+<S>[Aa]r</S> <N>mhaos</N>:INPHRASE{ar maos}
+<S>[Aa]r</S> <N>mhearaí</N>:INPHRASE{ar mearaí}
+<S>[Aa]r</S> <N>mhearbhall</N>:INPHRASE{ar mearbhall}
+<S>[Aa]r</S> <N>mhearú</N>:INPHRASE{ar mearú}
+<S>[Aa]r</S> <N>mheisce</N>:INPHRASE{ar meisce}
+<S>[Aa]r</S> <N>mhire</N>:INPHRASE{ar mire}
+<S>[Aa]r</S> <N>mhuir</N>:INPHRASE{ar muir}
+<S>[Aa]r</S> <N>phromhadh</N>:INPHRASE{ar promhadh}
+<S>[Aa]r</S> <N>sheachrán</N>:INPHRASE{ar seachrán}
+<S>[Aa]r</S> <N>shileadh</N>:INPHRASE{ar sileadh}
+<S>[Aa]r</S> <N>shnámh</N>:INPHRASE{ar snámh}
+<S>[Aa]r</S> <N>shodar</N>:INPHRASE{ar sodar}
+<S>[Aa]r</S> <N>thaispeáint</N>:INPHRASE{ar taispeáint}
+<S>[Aa]r</S> <N>theaghrán</N>:INPHRASE{ar teaghrán}
+<S>[Aa]r</S> <N>thí</N>:INPHRASE{ar tí}
+<S>[Aa]r</S> <N>thogradh</N>:INPHRASE{ar togradh}
+<S>[Aa]r</S> <N>thuathal</N>:INPHRASE{ar tuathal}
+#############################################################################
 #  Now, just random words that appear only in the specificed phrase(s)
 #############################################################################
 <N>[Aa]ice</N>:INPHRASE{in aice}
@@ -1689,6 +1744,7 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 <A>m?[Bb]h?eathach</A>:INPHRASE{beo beathach}
 <N>m?[Bb]h?ith</N>:INPHRASE{ar bith, cár bith}
 <N>[Bb]h?íthin</N>:INPHRASE{trí bhíthin, de bhíthin}
+<N>m?[Bb]h?óiléagar</N>:INPHRASE{ar bóiléagar}
 <N>m?[Bb]h?óín</N>:INPHRASE{bóín Dé}
 <N>[Bb]rách</N>:INPHRASE{go brách}
 <N>m?[Bb]h?rín</N>:INPHRASE{brín óg}
@@ -1723,6 +1779,8 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 <N>[Éé]is</N>:INPHRASE{tar éis, dá éis}
 <A>(bh)?[Ff]h?ách</N>:INPHRASE{i bhfách}
 <N>(bh)?[Ff]h?aopach</N>:INPHRASE{san fhaopach}
+<N>(bh)?[Ff]h?uaidreamh</N>:INPHRASE{ag fuaidreamh, ar fuaidreamh}
+<N>(bh)?[Ff]h?oluain</N>:INPHRASE{ag foluain, ar foluain}
 <N>bh[Ff]ud</N>:INPHRASE{ar fud na bhfud}
 <A>[Ff]eilbhinn</A>:INPHRASE{go feillbhinn}
 <N>[Ff]íorchaoin</N>:INPHRASE{fíorchaoin fáilte}
@@ -1742,6 +1800,8 @@ háirithe:INPHRASE{go háirithe}
 <A>hansa</A>:INPHRASE{ní hansa}
 <N>[HC]ong</N>:INPHRASE{Hong Cong}
 <N>[Hh]úta</N>:INPHRASE{raiple húta}
+<N>[Ii]nn</N>:INPHRASE{ar inn ar ea, ar inn ar éigean}
+<S>[Aa]r</S> <E><N>[Ii]nn</N></E> ar ea|éigean:OK
 <N>[Ll]ánseol</N>:INPHRASE{faoi lánseol}
 <N>[Ll]éig</N>:INPHRASE{i léig}
 <N>[Ll]eithligh</N>:INPHRASE{ar leithligh}
@@ -1750,6 +1810,7 @@ háirithe:INPHRASE{go háirithe}
 <N>liútar</N>:INPHRASE{liútar éatar}
 <N>[Ll]uthairt</N>:INPHRASE{luthairt lathairt}
 <N>[Mm]aos</N>:INPHRASE{ar maos}
+<N>[Mm]h?arthain</N>:INPHRASE{ar marthain}
 <U>[Mm]oite</U>:INPHRASE{cé is moite}
 <N>[Mm]ugadh</N>:INPHRASE{mugadh magadh}
 <N>ndáiríre</N>:INPHRASE{i ndáiríre}
@@ -1775,12 +1836,18 @@ n[gG]an:INPHRASE{i ngan fhios}
 <N>[Ss]incín</N>:INPHRASE{siún sincín}
 <N>[Ss]iobhái?n</N>:INPHRASE{mac siobháin}
 <N>[Ss]iún</N>:INPHRASE{siún sincín}
+#. Labhair mé ar shon na daoine.
+<N>[Ss]h?on</N>:INPHRASE{ar son}
+# ar son already in comhshuite, so just get ones with intervening possessive
+<S>[Aa]r</S> <D>(mo|do|a)</D> <E><N>[Ss]hon</N></E>:OK
+<S>[Aa]r</S> <D>(ár|bhur|a)</D> <E><N>[Ss]on</N></E>:OK
 <N>[Ss]p[ie][oa]r</N>:INPHRASE{spior spear}
 <N>[Ss]teig</N>:INPHRASE{steig meig}
 <N>[Ss]teillbheatha</N>:INPHRASE{ina steillbheatha}
 <N>[Ss]trae</N>:INPHRASE{ar strae}
 [Ss][úá]m:INPHRASE{súm sám}
 <N>d[Tt]aisce</N>:INPHRASE{i dtaisce}
+<N>d?[Tt]h?eachtadh</N>:INPHRASE{ar teachtadh}
 <N>d[Tt]eagmháil</N>:INPHRASE{i dteagmháil}
 <S>d[Tt]í</S>:INPHRASE{go dtí}
 <N>d[Tt]ólamh</N>:INPHRASE{i dtólamh}
@@ -1791,4 +1858,6 @@ n[gG]an:INPHRASE{i ngan fhios}
 <N>[Tt]hiarcais</N>:INPHRASE{a thiarcais}
 <N>[Tt]inneall</N>:INPHRASE{ar tinneall}
 <N>[Tt]reis</N>:INPHRASE{go treis, sa treis}
+# not "incense"; 124 times in corpus Jan '05
+<S>[Aa]r</S> <N>dtúis</N>:MICHEART{ar dtús}
 <N>[Uu]airibh</N>:INPHRASE{ar uairibh}

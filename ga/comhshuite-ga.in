@@ -16,6 +16,9 @@
 [Aa] thiarcais:<I>
 # ag bárcadh allais
 [Aa]gus araile:<R>
+###  A lot of the "ar" phrases that follow are exceptions to 
+###  the "lenite nouns after ar" rule; all such exceptions should also
+###  be given as phrases in IG with appropriate references
 [Aa]r aghaidh:<S>
 [Aa]r ais:<R>
 # infrequent
@@ -24,34 +27,109 @@
 # infrequent
 [Aa]r athláimh:<R>
 [Aa]r atráth:<R>
+[Aa]r ba[lo]l:<R>
+[Aa]r barr:<R>
+[Aa]r bior:<R>
+[Aa]r bís:<R>
 [Aa]r bith:<R>
 [Aa]r bhíthin:<S>
+[Aa]r bogadh:<R>
+[Aa]r bóiléagar:<R>
+[Aa]r bord:<R>
+[Aa]r buile:<R>
 [Aa]r bun:<R>
+[Aa]r cairde:<R>
+[Aa]r ceal:<R>
+[Aa]r céalacan:<R>
+[Aa]r ceant:<R>
 [Aa]r chúl:<S>
+[Aa]r cíos:<R>
+[Aa]r cipíní:<R>
+# mixed bag in corpus, OD has clé, OF81 chlé throughout.
+[Aa]r clé:<R>
+[Aa]r cois:<R>
+[Aa]r comhbhrí:<R>
+[Aa]r comhchéim:<R>
+[Aa]r comhfhad:<R>
+[Aa]r cosaint:<R>
+[Aa]r crith:<R>
+[Aa]r crochadh:<R>
+[Aa]r cuairt:<R>
+[Aa]r dáir:<R>
 # infrequent
 [Aa]r dearglasadh:<R>
 # infrequent
 [Aa]r deargmheisce:<R>
+[Aa]r dei[cl]:<R>
+[Aa]r deireadh:<R>
+[Aa]r deiseal:<R>
+[Aa]r deoraíocht:<R>
+[Aa]r díol:<R>
+[Aa]r diúité:<R>
+[Aa]r dóigh:<R>
+[Aa]r domhan:<R>
+[Aa]r dtús:<R>
+[Aa]r dualgas:<R>
+[Aa]r éigean:<R>
 [Aa]r fad:<R>
 [Aa]r fáil:<R>
+[Aa]r fán:<R>
+[Aa]r faonoscailt:<R>
 [Aa]r feadh:<S>
+[Aa]r féarach:<R>
+[Aa]r feitheamh:<R>
+[Aa]r fiar:<R>
+[Aa]r fionraí:<R>
+[Aa]r fiuchadh:<R>
+# both in OF81 e.g.
+[Aa][gr] foluain:<R>
+[Aa]r fónamh:<R>
+[Aa]r forbhás:<R>
+[Aa]r fostú:<R>
+[Aa]r fruiliú:<R>
+# both in OF81 e.g.
+[Aa][gr] fuaidreamh:<R>
 [Aa]r fud:<S>
+[Aa]r gcúl:<R>
+[Aa]r gor:<R>
+# see rialacha "INPHRASE" rules for "ar inn *"
 [Aa]r leith:<R>
 [Aa]r leithligh:<R>
 [Aa]r liobarna:<R>
 [Aa]r lorg:<S>
+[Aa]r maidin:<R>
 [Aa]r maos:<R>
+[Aa]r marthain:<R>
+[Aa]r mearaí:<R>
+[Aa]r mearbhall:<R>
+[Aa]r mearú:<R>
+[Aa]r meisce:<R>
+[Aa]r mire:<R>
+[Aa]r muir:<R>
 # [Aa]r na mallaibh
 [Aa]r ndóigh:<R>
 [Aa]r neamhchead:<R>
 [Aa]r nós:<S>
+[Aa]r promhadh:<R>
+[Aa]r saoire:<R>
+[Aa]r seachrán:<R>
+[Aa]r sileadh:<R>
 [Aa]r siúl:<R>
+[Aa]r snámh:<R>
+[Aa]r sodar:<R>
 [Aa]r son:<S>
 [Aa]r strae:<R>
-#  prepositional uses in the minority... leave commented out
-#[Aa]r tí:<S>
+[Aa]r taispeáint:<R>
+[Aa]r talamh:<R>
+[Aa]r teachtadh:<R>
+[Aa]r teaghrán:<R>
+[Aa]r teitheadh:<R>
+[Aa]r tí:<R>
 # infrequent
 [Aa]r tinneall:<R>
+[Aa]r togradh:<R>
+[Aa]r tosach:<R>
+[Aa]r tuathal:<R>
 [Aa]r uairibh:<R>
 [Aa]rna mhárach:<R>
 [Aa]rú amárach:<R>
