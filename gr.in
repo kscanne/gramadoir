@@ -1,5 +1,6 @@
 #!/bin/bash
-# gr: Irish language grammar checker
+# @configure_input@
+# This script is the front-end to an Irish language grammar checker.
 # Copyright (C) 2003 Kevin P. Scannell <scannell@slu.edu>
 #
 # Usage: gr [--html] [FILES]
@@ -22,7 +23,7 @@ permissions='cead diúltaithe'
 usage="Úsáid: gr [--help] [--version] [--html] [COMHAID]"
 stdinhelp="Mura bhfuil comhad ann, léigh ón ionchur caighdeánach"
 bugreports="Seol tuairiscí fabhtanna chuig <scannell@slu.edu>."
-versionstring="leagan __RELEASE_"
+versionstring="leagan @PACKAGE_VERSION@"
 gpl1="Is saorbhogearra an ríomhchlár seo; féach ar an bhunchód le haghaidh"
 gpl2="coinníollacha cóipeála.  Níl baránta AR BITH ann; go fiú níl baránta ann"
 gpl3="d'INDÍOLTACHT nó FEILIÚNACHT DO FHEIDHM AR LEITH, an oiread atá ceadaithe"
@@ -81,7 +82,9 @@ abairti()
 {
 egrep -n '^' | sed "
 		s/<[^>]*>//g; 
-		s/[A-Za-záéíóúÁÉÍÓÚ-]\+/<c>&<\/c>/g; 
+		s/&//g; 
+		s/[A-Za-záéíóúÁÉÍÓÚ][A-Za-záéíóúÁÉÍÓÚ-]*/<c>&<\/c>/g; 
+		s/\(--*\)<\/c>/<\/c>\1/g;
 		s/<c>\([BDMbdm]\)<\/c>'<c>/<c>\1'/g;
 		s/<c>\([Mm]b\)<\/c>'<c>/<c>\1'/g;
 		s/^\([1-9][0-9]*\):/<line uimhir=\"\1\"> /; 
@@ -95,6 +98,8 @@ egrep -n '^' | sed "
 # need the line number tag to propagate down to the beginning of this
 # sentence.  Thus, the first chunk below stores the line number markup 
 # in hold space and the second chunk retrieves it and inserts at beginning
+#  n.b. POSIX sed requires no whitespace after the "!" in the negated 
+#  match below.    Discovered while porting to an old DEC machine.
 athuimhir()
 {
 sed '
@@ -104,7 +109,7 @@ s/^\(<line uimhir=\"[1-9][0-9]*\">\).*$/\1/
 x
 }
 
-/^<line uimhir=/! {
+/^<line uimhir=/!{
 G
 s/^\(.*\)\n\(<line uimhir=\"[1-9][0-9]*\">\)$/\2 \1/
 }
@@ -127,7 +132,7 @@ s/\n//g
 s/[ \t][ \t]*/ /g
 }
 
-/<\/line>$/! {
+/<\/line>$/!{
 H
 d
 }
@@ -146,19 +151,19 @@ d
 #  that...     distinguishing between ...  is sometimes much harder.
 aonchiall()
 {
-perl __libexecdir_/aonchiall.pl
+perl @prefix@/libexec/aonchiall.pl
 }
 
 # This is the workhorse.  It does the actually marking up of errors.
 rialacha()
 {
-perl __libexecdir_/rialacha.pl
+perl @prefix@/libexec/rialacha.pl
 }
 
 # This strips off errors from exceptions to rules
 eisceacht()
 {
-perl __libexecdir_/eisceacht.pl
+perl @prefix@/libexec/eisceacht.pl
 }
 
 # This is the final filter used by the "gr" program.
@@ -227,7 +232,7 @@ comhad()
 {
 	cat $1 | diutf | 
 		abairti |
-		__libexecdir_/cuardach |
+		@prefix@/libexec/cuardach |
 		aonchiall |
 		rialacha |
 		eisceacht |
@@ -257,10 +262,10 @@ else
 
 	if [ ${1} = "--html" ]
 	then
-		AIBHSIGHVAR="awk -f __libexecdir_/hilite.awk pattern="
+		AIBHSIGHVAR="awk -f @prefix@/libexec/hilite.awk pattern="
 		shift
 	else
-		AIBHSIGHVAR="__AIBHSIGH_ "
+		AIBHSIGHVAR="@EGREP@ --color -h "
 	fi
 
 	for file in "$@"; do
