@@ -33,7 +33,6 @@ BDCHARS = !BDCHARS!
 INTCHARS = !INTCHARS!
 CAPITALS = !UPPERS!
 LOWERS = !LOWERS!
-AUTHOR = !AUTHOR!
 
 # targets '
 SCRIPTNAME = gram-${TEANGA}.pl
@@ -117,15 +116,15 @@ $(PERLD)/META.yml : perl
 	(cd $(PERLD); make metafile)
 
 $(PERLD)/README : $(GRAMDIR)/README.perl $(PERLDOK)
-	sed "s/@UPPERTEANGA@/$(UPPERTEANGA)/; s/@TEANGA@/$(TEANGA)/; s/@VERSION@/$(VERSION)/; s/@GRAMVERSION@/$(GRAMVERSION)/; s/@NAME_ENG@/$(NAME_ENG)/" $(GRAMDIR)/README.perl | LC_ALL="C" $(PERL) -p -e 's/(.*)/$$1\n                   $(AUTHOR)/ if m/^Copyright \(C\)/;' > $@
+	(sed "s/@UPPERTEANGA@/$(UPPERTEANGA)/; s/@TEANGA@/$(TEANGA)/; s/@VERSION@/$(VERSION)/; s/@GRAMVERSION@/$(GRAMVERSION)/; s/@NAME_ENG@/$(NAME_ENG)/" $(GRAMDIR)/README.perl; cat README) > $@
 	chmod 644 $@
 
 $(PERLD)/scripts/$(SCRIPTNAME) : $(GRAMDIR)/gram.pl $(PERLDOK)
-	cat $(GRAMDIR)/gram.pl | sed "s/@SCRIPTNAME@/$(SCRIPTNAME)/; s/@PACKAGE_VERSION@/$(PERLVERSION)/; s/@TEANGA@/$(UPPERTEANGA)/g; s/@NATIVE@/$(NATIVE)/g; s/@NAME_ENGLISH@/$(NAME_ENG)/g" | LC_ALL="C" $(PERL) -p -e 's/(.*)/$$1\n                   $(AUTHOR)/ if m/^Copyright \(C\)/;' > $@
+	cat $(GRAMDIR)/gram.pl | sed "s/@SCRIPTNAME@/$(SCRIPTNAME)/; s/@PACKAGE_VERSION@/$(PERLVERSION)/; s/@TEANGA@/$(UPPERTEANGA)/g; s/@NATIVE@/$(NATIVE)/g; s/@NAME_ENGLISH@/$(NAME_ENG)/g" > $@
 	chmod 644 $@
 
 $(PERLD)/scripts/$(OOSCRIPTNAME) : $(GRAMDIR)/OOo/groo.pl $(PERLDOK)
-	cat $(GRAMDIR)/OOo/groo.pl | sed "s/@SCRIPTNAME@/$(OOSCRIPTNAME)/; s/@TEANGA@/$(UPPERTEANGA)/g; s/@LOWERTEANGA@/$(TEANGA)/g; s/@NAME_ENGLISH@/$(NAME_ENG)/g" | LC_ALL="C" $(PERL) -p -e 's/(.*)/$$1\n                   $(AUTHOR)/ if m/^Copyright \(C\)/;' > $@
+	cat $(GRAMDIR)/OOo/groo.pl | sed "s/@SCRIPTNAME@/$(OOSCRIPTNAME)/; s/@TEANGA@/$(UPPERTEANGA)/g; s/@LOWERTEANGA@/$(TEANGA)/g; s/@NAME_ENGLISH@/$(NAME_ENG)/g" > $@
 	chmod 644 $@
 
 $(SHARE)/3grams.bs : 3grams-$(TEANGA).txt $(PERLDOK)
@@ -188,7 +187,7 @@ triail.xml-update : FORCE
 # last line (subst of \x{} codes) is a hack for legacy encodings w/ 5.8.0
 $(PERLLIB).pm : $(GRAMDIR)/Gramadoir.pm.in $(INTERMEDIATE) $(PERLDOK)
 	sed "/^# aonchiall code /r aonchiall-$(TEANGA).pl" $(GRAMDIR)/Gramadoir.pm.in | sed "/^# comhshuite code /r comhshuite-$(TEANGA).pl" | sed "/^# giorr code /r giorr-$(TEANGA).pl" | sed "/^# rialacha code /r rialacha-$(TEANGA).pl" | sed "/^# unigram code /r unigram-$(TEANGA).pl" | \
-	sed "s/@PACKAGE_VERSION@/$(PERLVERSION)/; s/@TEANGA@/$(UPPERTEANGA)/g; s/@NAME_ENGLISH@/$(NAME_ENG)/g; s/@NATIVE@/$(NATIVE)/g; s/@BDCHARS@/$(BDCHARS)/g; s/@INTCHARS@/$(INTCHARS)/g; s/@CAPITALS@/$(CAPITALS)/g; s/@LOWERS@/$(LOWERS)/g;" | LC_ALL="C" $(PERL) -p -e 's/(.*)/$$1\n                   $(AUTHOR)/ if m/^Copyright \(C\)/;' | sed '/^# [a-z]* code goes here/d' > $@
+	sed "s/@PACKAGE_VERSION@/$(PERLVERSION)/; s/@TEANGA@/$(UPPERTEANGA)/g; s/@NAME_ENGLISH@/$(NAME_ENG)/g; s/@NATIVE@/$(NATIVE)/g; s/@BDCHARS@/$(BDCHARS)/g; s/@INTCHARS@/$(INTCHARS)/g; s/@CAPITALS@/$(CAPITALS)/g; s/@LOWERS@/$(LOWERS)/g;" | sed '/^# [a-z]* code goes here/d' > $@
 	if $(ECHO) "$(NATIVE)" | $(EGREP) -i 'utf' > /dev/null; \
 	then \
 		LC_ALL="C" $(PERL) -i -p -e 'if (m/^use warnings/) {s/(.*)/$${1}\nuse utf8;/;} if (m/decode\(/) {s/^/#/;} if (m/eval.*from_to/) {s/^(.*from_to\(([^,]+), *([^,]+),.*)/#$${1}\n\teval {$$2 = decode($$3, $$2) };/}' $@; \
@@ -237,7 +236,7 @@ $(SHARE)/focail0.bs : lexicon-$(TEANGA).txt freq-$(TEANGA).txt $(PERLDOK)
 	rm -f $(HASHDIR)/focail*.hash $(PERLD)/Makefile
 
 $(DEVSCRIPTNAME) : $(GRAMDIR)/gramdev.pl
-	cat $(GRAMDIR)/gramdev.pl | sed "s/@SCRIPTNAME@/$(DEVSCRIPTNAME)/; s/@PACKAGE_VERSION@/$(PERLVERSION)/; s/@TEANGA@/$(UPPERTEANGA)/g; s/@NATIVE@/$(NATIVE)/g; s/@NAME_ENGLISH@/$(NAME_ENG)/g; s/@BDCHARS@/$(BDCHARS)/; s/@INTCHARS@/$(INTCHARS)/" | LC_ALL="C" $(PERL) -p -e 's/(.*)/$$1\n                   $(AUTHOR)/ if m/^Copyright \(C\)/;' > $@
+	cat $(GRAMDIR)/gramdev.pl | sed "s/@SCRIPTNAME@/$(DEVSCRIPTNAME)/; s/@PACKAGE_VERSION@/$(PERLVERSION)/; s/@TEANGA@/$(UPPERTEANGA)/g; s/@NATIVE@/$(NATIVE)/g; s/@NAME_ENGLISH@/$(NAME_ENG)/g; s/@BDCHARS@/$(BDCHARS)/; s/@INTCHARS@/$(INTCHARS)/" > $@
 	if $(ECHO) "$(NATIVE)" | $(EGREP) -i 'utf' > /dev/null; \
 	then \
 		LC_ALL="C" $(PERL) -p -i -e 's/(.*)/$$1\nuse utf8;/ if m/^use warnings/;' $@; \
