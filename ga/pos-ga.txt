@@ -14,6 +14,7 @@
 64 <N pl="n" gnt="n">
 65 <N pl="n" gnt="d">
 66 <N pl="n" gnt="n" h="y">
+67 <N pl="n" gnt="d" h="y">
 72 <N pl="n" gnt="n" gnd="f">
 74 <N pl="n" gnt="n" gnd="f" h="y">
 76 <N pl="n" gnt="n" gnd="m">
@@ -25,6 +26,7 @@
 96 <N pl="y" gnt="n">
 97 <N pl="y" gnt="d">
 98 <N pl="y" gnt="n" h="y">
+99 <N pl="y" gnt="d" h="y">
 104 <N pl="y" gnt="n" gnd="f">
 106 <N pl="y" gnt="n" gnd="f" h="y">
 108 <N pl="y" gnt="n" gnd="m">

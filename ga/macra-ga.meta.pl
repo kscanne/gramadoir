@@ -57,12 +57,13 @@ s/UNMUTATEDBCFGP/[BbCcFfGgPp][^hcCpP'][^<]*/g;
 s/UNMUTATED/[BbCcDdFfGgPpTt][^hcCpPtT'][^<]*/g;
 s/UNLENITEDF/[Ff][aeiou·ÈÌÛ˙][^<]*/g;
 s/UNLENITED/(?:[BbCcDdFfGgMmPpTt][^h']|[Ss][lnraeiou·ÈÌÛ˙]|bh[Ff])[^<]*/g;
+s/LENITEDF/[Ff]h[aeiou·ÈÌÛ˙][^<]*/g;
 s/ORDINALADJ/(?:[^<][^<]*[^m]|[0-9]+)˙/g;
 s/PREFIXEDT/t(?:[AEIOU¡…Õ”⁄]|-[aeiou·ÈÌÛ˙])[^<]+/g;
 # gan/chun/ainneoin disallow "[^ >]+n"
 s/FUSEDPOSS/(?:[Dd]·r?|(?:[Ff]aoi|[Ii]|[Ll]e|[Tt]rÌ)n(?:a|·r))/g;
 s/FUSEDPREP/(?:[Dd][eo]n|[Ss]an?|[Ff]aoin|[”Û]n)/g;
-s/DATIVEPREP/(?:[Aa][rs]|[Dd][eo]|[Ff]aoi|[Gg]an|[Ll]e|[”Û]|[Ii]n?)/g;
+s/DATIVEPREP/(?:[Aa][grs]|[Dd][eo]|[Ff]aoi|[Gg]an|[Gg]o|[Ll]e|[”Û]|[Ii]n?)/g;
 s/INITIALTS/t[sS][^<]+/g;
 s/INITIALL/[Ll][^<]+/g;
 s/INITIALDAPOST/d'[^<]+/g;
