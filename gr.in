@@ -156,7 +156,7 @@ diutf()
 {
 if [ "${IONCHOD}" != "${NATIVE}" ]
 then
-	iconv -f ${IONCHOD} -t ${NATIVE}
+	iconv -f "${IONCHOD}" -t "${NATIVE}"
 else
 	cat
 fi
@@ -296,33 +296,31 @@ p
 # does the error messaging and returns the boolean 
 drochchomhad()
 {
-	if [ ! -e ${1} ]
+	if [ ! -e "${1}" ]
 	then
 		echo "${CLAR}: ${1}: $notfound"
 	else
-		if [ -d ${1} ]
+		if [ -d "${1}" ]
 		then
 			echo "${CLAR}: ${1}: $isdir" > 2
 		else
-			if [ ! -r ${1} ]
+			if [ ! -r "${1}" ]
 			then
 				echo "${CLAR}: ${1}: $permissions" > 2
 			fi
 		fi
 	fi
-	[ ! -e ${1} ] || [ -d ${1} ] || [ ! -r ${1} ]    # return value
+	[ ! -e "${1}" ] || [ -d "${1}" ] || [ ! -r "${1}" ]    # return value
 }
 
 USEIGNORE="ignore"
 
 # This is the main sequence of filters for checking a given file
-# Either $1 is empty (stdin) or, if not, we've checked
-# it exists, is not a directory, and is readable
 comhad()
 {
-	cat $1 | diutf | 
+		diutf | 
 		abairti |
-		@prefix@/libexec/cuardach ${USEIGNORE} "${CLAR}" |
+		@prefix@/libexec/cuardach "${USEIGNORE}" "${CLAR}" |
 		aonchiall |
 		rialacha |
 		eisceacht |
@@ -336,9 +334,9 @@ comhad()
 # same as filters in comhad up to the interface
 xml_output()
 {
-	cat $1 | diutf |
+		diutf |
 		abairti |
-		@prefix@/libexec/cuardach ${USEIGNORE} "${CLAR}" |
+		@prefix@/libexec/cuardach "${USEIGNORE}" "${CLAR}" |
 		aonchiall |
 		rialacha |
 		eisceacht
@@ -361,9 +359,9 @@ p
 # This replaces "comhad" above when "--litriu" option is given
 litriu()
 {
-	cat $1 | diutf |
+		diutf |
 		abairti |
-		@prefix@/libexec/cuardach ${USEIGNORE} "${CLAR}" |
+		@prefix@/libexec/cuardach "${USEIGNORE}" "${CLAR}" |
 		litriu_comheadan
 }
 
@@ -376,17 +374,17 @@ TEANGA=ga
 IONCHOD=unspecified
 while [ ${1%%[^-]*} ]
 do
-	if echo ${1} | grep "=" > /dev/null
+	if echo "${1}" | grep "=" > /dev/null
 	then
-		JUSTOPT=`echo ${1} | sed 's/=.*//'`
-		OPTARG=`echo ${1} | sed 's/^[^=]*=//'`
+		JUSTOPT=`echo "${1}" | sed 's/=.*//'`
+		OPTARG=`echo "${1}" | sed 's/^[^=]*=//'`
 		case "${JUSTOPT}" in
 		"--teanga" )
 			if echo "${TEANGACHA}" | grep "${OPTARG}" > /dev/null
 			then
 				TEANGA="${OPTARG}"
 			else
-				printf "${unsupported}\n" ${OPTARG}
+				printf "${unsupported}\n" "${OPTARG}"
 				exit 1
 			fi
 		;;
@@ -394,18 +392,18 @@ do
 			IONCHOD="${OPTARG}"
 		;;
 		"--help" | "--version" | "--html" | "--xml" | "--litriu" | "--iomlan" )
-			unwanted_arg ${JUSTOPT}
+			unwanted_arg "${JUSTOPT}"
 			exit 1
 		;;
 		* )
-			option_error ${JUSTOPT}
+			option_error "${JUSTOPT}"
 			exit 1
 		;;
 		esac
 	else
 		case "${1}" in
 		"--version" )
-			if [ ${SCRIOBH_HTML} = "issea" ]
+			if [ "${SCRIOBH_HTML}" = "issea" ]
 			then
 				htmlversion
 			else
@@ -431,11 +429,11 @@ do
 			USEIGNORE="noignore"
 		;;
 		"--ionchod" | "--teanga" )
-			no_argument ${1}
+			no_argument "${1}"
 			exit 1
 		;;
 		* )
-			option_error ${1}
+			option_error "${1}"
 			exit 1
 		;;
 		esac
@@ -446,7 +444,7 @@ done
 NATIVE=`grep "^${TEANGA} " ${DATADIR}/TEANGACHA | sed "s/^${TEANGA} *\([^ ]*\).*/\1/"`
 if [ "${IONCHOD}" = "unspecified" ]
 then
-	IONCHOD=${NATIVE}
+	IONCHOD="${NATIVE}"
 fi
 
 if [ -z "${1}" ]
@@ -455,13 +453,13 @@ then
 else
 	until [ -z "$1" ]
 	do
-		if ! drochchomhad ${1}
+		if ! drochchomhad "${1}"
 		then
-			if [ ${ACTION} = "comhad" ]
+			if [ "${ACTION}" = "comhad" ]
 			then
-				printf "${checking}\n" ${1}
+				printf "${checking}\n" "${1}"
 			fi
-			${ACTION} ${1}
+			cat "${1}" | ${ACTION}
 		fi	
 		shift
 	done
