@@ -250,7 +250,7 @@
 <E offset="41" fromy="247" fromx="41" toy="247" tox="42" sentence="Is fearr an bás ná bheith beo ar dhéirc (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
 <E offset="32" fromy="248" fromx="32" toy="248" tox="33" sentence="Nach raibh dóthain eolais aige (OK)?" errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
 <E offset="0" fromy="249" fromx="0" toy="249" tox="12" sentence="Nach bainfidh mé uaidh an méid a ghoid sé uaim?" errortext="Nach bainfidh" msg="Urú ar iarraidh">
-<E offset="23" fromy="250" fromx="23" toy="250" tox="33" sentence="Rinneadh an roinnt don naoi treibh go leith ar cranna." errortext="naoi treibh" msg="Urú ar iarraidh">
+<E offset="23" fromy="250" fromx="23" toy="250" tox="33" sentence="Rinneadh an roinnt don naoi treibh go leith ar chrainn." errortext="naoi treibh" msg="Urú ar iarraidh">
 <E offset="44" fromy="251" fromx="44" toy="251" tox="57" sentence="Tháinig na bróga chomh fada siar le haimsir Naomh Phádraig féin." errortext="Naomh Phádraig" msg="Séimhiú gan ghá">
 <E offset="0" fromy="252" fromx="0" toy="252" tox="7" sentence="Nár breá liom claíomh a bheith agam i mo ghlac!" errortext="Nár breá" msg="Séimhiú ar iarraidh">
 <E offset="0" fromy="253" fromx="0" toy="253" tox="13" sentence="Nár bhfreagair sé thú, focal ar fhocal." errortext="Nár bhfreagair" msg="Séimhiú ar iarraidh">
