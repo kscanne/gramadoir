@@ -21,7 +21,6 @@ TARBALL = @PACKAGE_TARNAME@
 pkgdatadir = $(datadir)/$(PACKAGE_NAME)
 INSTALL = @INSTALL@
 INSTALL_DATA = @INSTALL_DATA@
-INSTALL_PROGRAM = @INSTALL@
 CC = @CC@
 CFLAGS = @CFLAGS@
 DEFS = -DLOCALEDIR=\"$(localedir)\" @DEFS@
@@ -33,7 +32,6 @@ LEX_OUTPUT_ROOT = @LEX_OUTPUT_ROOT@
 LN_S = @LN_S@
 PERL = @PERL@
 YACC = @YACC@
-TEANGACHA = @TEANGACHA@
 
 configure: configure.ac
 	autoconf
@@ -71,7 +69,6 @@ installhtml :
 	$(INSTALL_DATA) index.html $(webhome)
 	$(INSTALL_DATA) iompar.html $(webhome)
 	$(INSTALL_DATA) sios.html $(webhome)
-	$(INSTALL_DATA) sonrai.html $(webhome)
 	$(INSTALL_DATA) stair.html $(webhome)
 	$(INSTALL_DATA) sampla.html $(webhome)
 
@@ -91,9 +88,6 @@ maintainer-clean :
 
 ChangeLog : FORCE
 	cvs2cl.pl
-
-CHANGES : FORCE
-	vilistextum stair.html - | sed -n '/^ChangeLog/,/----/p' | egrep -v -- '---' > CHANGES
 
 dist : FORCE
 	$(MAKE) ChangeLog
@@ -137,62 +131,6 @@ dist : FORCE
 	gzip $(TARBALL).tar
 	chmod 444 $(TARBALL).tar.gz
 	rm -f ../$(TARBALL)
-
-#############################################################################
-#              LEXICON BUILDING
-#############################################################################
-
-ISPELLDIR = ${HOME}/gaeilge/ispell
-
-# use "groom" instead of this directly (since it requires ispell personal, etc.)
-FOCAIL-ga.all : FORCE
-	Gin 12
-	((cat ${HOME}/.ispell_gaeilge; cat ${HOME}/.biobla | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | aspell -dga -p${HOME}/.aspell.blank.pws -l) | sed 's/.*/& 44/'; cat FOCAIL) | LC_COLLATE=POSIX sort -u -k1,1 -k2,2n > FOCAIL-ga.all
-	rm -f FOCAIL
-
-CYSRC = ${HOME}/gaeilge/gramadoir/cy/bangor/cyall.txt
-focail-cy.bs : $(CYSRC)
-	(cat $(CYSRC) | sed 's/ [0-9]*//' | uniq | wc -l | sed 's/^ *//'; cat $(CYSRC) | ./cabhair.pl -c) > focail-cy.bs
-	chmod 644 focail-cy.bs
-
-# for convenience (from groom); but also ensures built in correct order
-gafromdb : FORCE
-	$(MAKE) focail-ga.bs
-	$(MAKE) eile-ga.bs
-	$(MAKE) earraidi-ga.bs
-
-# use "groom" instead of this directly
-focail-ga.bs : FOCAIL-ga.all
-	(cat FOCAIL-ga.all | sed 's/ [0-9]*//' | uniq | wc -l | sed 's/^ *//'; cat FOCAIL-ga.all | ./cabhair.pl -c) > focail-ga.bs
-	chmod 644 focail-ga.bs
-
-focail-EN.bs : FORCE
-	cat ../en/FOCAIL.EN | LC_COLLATE=POSIX sort -u -k1,1 -k2,2n > FOCAIL-EN.all
-	(cat FOCAIL-EN.all | sed 's/ [0-9]*//' | uniq | wc -l | sed 's/^ *//'; cat FOCAIL-EN.all | ./cabhair.pl -c) > focail-EN.bs
-	chmod 644 focail-EN.bs
-
-focail-en.bs : FORCE
-	(cat ${ISPELLDIR}/bearla/ENWORDS | wc -l | sed 's/^ *//'; cat ${ISPELLDIR}/bearla/ENWORDS | sed 's/$$/ 1/' | ./cabhair.pl -c) > focail-en.bs
-	chmod 644 focail-en.bs
-
-ATH = ${ISPELLDIR}/ispell-gaeilge/athfhocail
-
-# use "groom" instead of this directly
-eile-ga.bs : FORCE
-	$(MAKE) cabhair
-	sed 's/ .*//' FOCAIL-ga.all > ./tempfocail
-	sed 's/ .*//' $(ATH) | keepif -n ./tempfocail latin-1 | sort -u | join $(ATH) - | LC_COLLATE=POSIX sort -k1,1 | sed 's/ /_/g; s/_/ /;' | $(EGREP) . > ./tempeile
-	(cat ./tempeile | wc -l | sed 's/^[^0-9]*//'; cat ./tempeile) > ./eile-ga.bs
-	rm -f tempeile tempfocail
-
-EARR = ${ISPELLDIR}/ispell-gaeilge/gaelu ${ISPELLDIR}/ispell-gaeilge/earraidi
-
-# use "groom" instead of this directly
-earraidi-ga.bs : FORCE
-	sed 's/ .*//' FOCAIL-ga.all eile-ga.bs > ./tempfocail
-	sort -k1,1 $(EARR) > ./tempsrc
-	sed 's/ .*//' ./tempsrc | keepif -n ./tempfocail latin-1 | sort -u | join ./tempsrc - | LC_COLLATE=POSIX sort -k1,1 | sed 's/ /_/g; s/_/ /;' | $(EGREP) . > ./earraidi-ga.bs
-	rm -f tempfocail tempsrc
 
 ###############################################################################
 #                     .IN FILE GRAMMAR/PARSER
