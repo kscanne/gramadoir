@@ -210,6 +210,12 @@ g?[Cc]h?othrom na [Ff]éinne:<N pl="n" gnt="n" gnd="m">
 [Dd]e sciotán:<R>
 [Dd]e thairbhe:<S>
 [Dd]e thaisme:<R>
+Dé Luain:<N pl="n" gnt="n">
+Dé Máirt:<N pl="n" gnt="n">
+Dé Céadaoin:<N pl="n" gnt="n">
+Dé hAoine:<N pl="n" gnt="n">
+Dé Sathairn:<N pl="n" gnt="n">
+Dé Domhnaigh:<N pl="n" gnt="n">
 # next batch to avoid "déag" exceptions to mutation
 # caps on D a non-trivial amount in corpus
 # CB p.74
@@ -293,6 +299,7 @@ Hong Cong:<N pl="n" gnt="n">
 [Ii] dtreo:<S>
 [Ii] dtuilleamaí:<S>
 [Ii] gcaitheamh:<S>
+[Ii] gceann:<S>
 #  corpus
 [Ii] gceartlár:<S>
 [Ii] gcéin:<R>
@@ -314,7 +321,8 @@ Hong Cong:<N pl="n" gnt="n">
 [Ii] lár:<S>
 [Ii] láthair:<S>
 [Ii] léig:<R>
-[Ii] leith:<R>
+# usually with genitive after so important that it's <S>
+[Ii] leith:<S>
 [Ii] mbliana:<R>
 [Ii] mbun:<S>
 [Ii] measc:<S>
@@ -331,6 +339,7 @@ Hong Cong:<N pl="n" gnt="n">
 [Ii]n aice:<S>
 # infrequent
 [Ii]n aicearracht:<R>
+[Ii]n ainneoin:<S>
 [Ii]n airde:<R>
 # infrequent
 [Ii]n airicis:<S>

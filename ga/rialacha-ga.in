@@ -1430,7 +1430,7 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 <N pl="n" gnt="n" gnd="m">[Oo]chtar</N> <N pl="n" gnt="n" gnd="f">m?bh?ean</N>:BACHOIR{ban}
 # MacL00 p.118
 #. Beidh an chéad chruinniú oifigiúil ag an gcoiste oíche Dé Luain.
-<N>[Oo]íche</N> <N>Dé</N>:NIGA{Dé}
+<N>[Oo]íche</N> <N pl="n" gnt="n">DAYOFTHEWEEK</N>:NIGA{Dé}
 # MacL00 p.118
 #. Bíonn ranganna ar siúl oíche Dhéardaoin.
 <N>[Oo]íche</N> <N>Dhéardaoin</N>:NISEIMHIU
@@ -1772,16 +1772,26 @@ d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</
 #############################################################################
 #  <=> Genitive rules
 #############################################################################
+#  First, note that we are giving up catching em at beginning of sentence;
+#  the problem is that the single word error gives lots of irritating
+#  errors following "real" errors on the preceding word....
 # exclude possessives for constructs like: "de dheasca a n-easumhlaíochta"
 # recall this construct is the only reason for allowing "m'","d'","h" on gen.
-<[^ADNTY]>ANYTHING</[^ADNTY]> <NG>ANYTHING</NG>:NOGENITIVE
+#  exclude <R> until can tag "amach", "amháin" as <A> correctly
+#. Bhí cuid mhór teannais agus iomaíochta ann (OK).
+# na gnéithe sóisialta agus oideachais...
+#   should properly only have <NG> before <C> in this exception
+#   but tagging isn't robust enough yet:
+<[^ACDNRTY]>ANYTHING</[^ACDNRTY]> <NG>ANYTHING</NG>:NOGENITIVE
+#. Galar crúibe is béil (OK).
+<V cop="y">is</V> <NG>ANYTHING</NG>:OK
 <S>COMPOUND</S> <NG>ANYTHING</NG>:OK
 <S>([Cc]hun|[Cc]ois|[Dd]ála|[Ff]earacht|[Tt]impeall|[Tt]rasna)</S> <NG>ANYTHING</NG>:OK
 #. Caitheann sé go leor ama ann (OK).
-<R>[Gg]o leor</R> <NGS>ANYTHING</NGS>:OK
-#. Bhí cuid mhór teannais agus iomaíochta ann (OK).
-#. Galar crúibe agus béil (OK).
-<NG>ANYTHING</NG> <E><C>ANYTHING</C> <NG>ANYTHING</NG></E>:OK
+#  disabled temporarily since <R> is no longer in main rule
+# <R>[Gg]o leor</R> <NGS>ANYTHING</NGS>:OK
+# ... croílár pé ceiste ...
+<P>pé</P> <NG>ANYTHING</NG>:OK
 #. An raibh mórán daoine ag an tsiopa?
 #. Ní raibh dúil bheo le feiceáil ar na bhfuinneog.
 <S>NONCOMPOUND</S> <T>ANYTHING</T> <NG>ANYTHING</NG>:NOGENITIVE
@@ -1789,13 +1799,13 @@ d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</
 <S>([Cc]hun|[Cc]ois|[Dd]ála|[Ff]earacht|[Tt]impeall|[Tt]rasna)</S> <T>ANYTHING</T> <NG>ANYTHING</NG>:OK
 #. Cá bhfuil an tseomra?
 #. Is iad na nGardaí.
-<[^ANSY]>ANYTHING</[^ANSY]> <T>ANYTHING</T> <NG>ANYTHING</NG>:NOGENITIVE
-# analogue of the "cuid mhór teannais agus iomaíochta" exception above
+#  exclude <R> until can tag "amach", "amháin" as <A> correctly:
+#. Éirí Amach na Cásca (OK).
 #. Leas phobal na hÉireann agus na hEorpa (OK).
-<NG>ANYTHING</NG> <E><C>ANYTHING</C> <T>ANYTHING</T> <NG>ANYTHING</NG></E>:OK
-# in phrases; see OD deo
+<[^ACNRSY]>ANYTHING</[^ACNRSY]> <T>ANYTHING</T> <NG>ANYTHING</NG>:NOGENITIVE
+# in phrases; see OD deo.  Temporarily disabled since <R> out of main rule
 #. Go deo na ndeor, go deo na díleann (OK).
-<R>[Gg]o deo</R> <T>ANYTHING</T> <NG>ANYTHING</NG>:OK
+# <R>[Gg]o deo</R> <T>ANYTHING</T> <NG>ANYTHING</NG>:OK
 #############################################################################
 #  <=> Eclipsis rules
 #############################################################################
@@ -1878,7 +1888,8 @@ ECLIPSINGNUMBER <E><N>ECLIPSED</N></E>:OK
 [Cc]é|[Nn]í|[Ll]e|[Pp]é <E><PWITHH>ANYTHING</PWITHH></E>:OK
 #. Ba iad na trí háit iad Bostún, Baile Átha Cliath agus Nua Eabhrac.
 <NWITHH>ANYTHING</NWITHH>:NIAITCH
-<N>Dé</N> <E><NWITHH>hAoine</NWITHH></E>:OK
+# "Dé hAoine" now in comhshuite
+# <N>Dé</N> <E><NWITHH>hAoine</NWITHH></E>:OK
 # feminine possessives are ok (+ina,faoina,etc.)
 #. Phós sé bean eile ina háit (OK).
 <D>FINALA</D> <E><NWITHH>ANYTHING</NWITHH></E>:OK

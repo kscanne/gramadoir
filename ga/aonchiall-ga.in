@@ -43,6 +43,7 @@
 <B>[Aa]b</B>:<V cop="y">
 # with copula, not genitive "ál"
 <B>[Áá]il</B>:<N pl="n" gnt="n">
+<B>[Mm]h?óide</B>:<A pl="n" gnt="y" gnd="f">
 #  most of these are the ones REQUIRING a preceding copula so this is important
 #  18 Jan '05 added more needed to disambiguate preceding "ar" as copula
 #  and not a preposition so we don't get "lenition missing" errors:
@@ -54,7 +55,7 @@
 <B><Z>ANYCOPULA</Z>ANYTHING</B> <N pl="n" gnt="n" gnd="m">fuath</N>:<V cop="y">
 <B><Z>ANYCOPULA</Z>ANYTHING</B> <N>gá</N>:<V cop="y">
 <B><Z>ANYCOPULA</Z>ANYTHING</B> <A pl="n" gnt="n">(dh?ócha|eagal|fh?oláir|ionann|leor|mh?iste)</A>:<V cop="y">
-<B><Z>ANYCOPULA</Z>ANYTHING</B> <A pl="n" gnt="y" gnd="f">(fh?earr|mh?ó)</A>:<V cop="y">
+<B><Z>ANYCOPULA</Z>ANYTHING</B> <A pl="n" gnt="y" gnd="f">(fh?earr|mh?ó|mh?óide)</A>:<V cop="y">
 <B><Z>ANYCOPULA</Z>ANYTHING</B> <A>(iomaí|léir|náir)</A>:<V cop="y">
 <B><Z>ANYCOPULA</Z>ANYTHING</B> cóir|cuma|deacair|dh?éanaí|deimhin|dh?ual|h?ea|éard|fiú|maith|mh?ithid:<V cop="y">
 # lowercase ach under last resorts
@@ -130,6 +131,16 @@
 <B>[Cc]h?éanna</B>:<A pl="n" gnt="n">
 # handles fichiú, etc. by brute force; ceathrú is feminine so get separate rules
 <B><Z>NUMERICAL</Z>ANYTHING</B>:<A pl="n" gnt="n">
+# now do bliana since numbers are easier to match...
+d?[Tt]h?rí <B>[Bb]liana</B>:<N pl="y" gnt="n" gnd="f">
+<A pl="n" gnt="n">g?[Cc]h?eithre</A> <B>[Bb]liana</B>:<N pl="y" gnt="n" gnd="f">
+<A pl="n" gnt="n">g?[Cc]h?úig</A> <B>[Bb]liana</B>:<N pl="y" gnt="n" gnd="f">
+[Ss]h?é <B>[Bb]liana</B>:<N pl="y" gnt="n" gnd="f">
+<A pl="n" gnt="n">[Ss]h?eacht</A> <B>m[Bb]liana</B>:<N pl="y" gnt="n" gnd="f">
+<A pl="n" gnt="n">h?[Oo]cht</A> <B>m[Bb]liana</B>:<N pl="y" gnt="n" gnd="f">
+<A pl="n" gnt="n">[Nn]aoi</A> <B>m[Bb]liana</B>:<N pl="y" gnt="n" gnd="f">
+<A pl="n" gnt="n">n?[Dd]h?eich</A> <B>m[Bb]liana</B>:<N pl="y" gnt="n" gnd="f">
+<B>m?[Bb]h?liana</B>:<N pl="n" gnt="y" gnd="f">
 # others unigram to <N pl="n" gnt="n" gnd="f">
 <T>[Aa]n</T> <B>[Cc]heathrú</B>:<A pl="n" gnt="n">
 <S>FUSEDPREP</S> <B>[Cc]heathrú</B>:<A pl="n" gnt="n">
@@ -144,6 +155,7 @@
 # "de réir an chuir síos", etc.
 <T>an</T> <B>[Cc]huir</B>:<N pl="n" gnt="y" gnd="m">
 <B>[Cc]huir</B>:<V p="y" t="caite">
+<B>[Cc]uir</B>:<V p="y" t="ord">
 <T>na</T> <B>g[Cc]umann</B>:<N pl="y" gnt="y" gnd="m">
 <B>g?[Cc]h?umann</B>:<N pl="n" gnt="n" gnd="m">
 # OD dhá 
@@ -237,6 +249,9 @@ CAPITAL <B>Gabhann</B>:<Y>
 <B>[Ll]eis</B> an:<S>
 <B>[Ll]eith</B>:<N pl="n" gnt="n" gnd="f">
 <B>[Ll]eo</B>:<O>
+# <T> should be "na" but plenty of errors like "i nGaeilge an linne seo"
+<[DT]>ANYTHING</[DT]> <B>[Ll]inne</B>:<N pl="n" gnt="y" gnd="f">
+<B>[Ll]inne</B>:<O em="y">
 <B>[Mm]á</B> <V>ANYTHING</V>:<C>
 <S>ANYTHING</S> <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
 # never in corpus: (weird)
@@ -245,6 +260,9 @@ CAPITAL <B>Gabhann</B>:<Y>
 <A pl="n" gnt="n">[Aa]on</A> <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
 <B>[Mm]h?aith</B>:<A pl="n" gnt="n">
 <B>[Mm]ar</B> gheall:<S>
+<T>an</T> <B>mheasa</B>:<N pl="n" gnt="y" gnd="m">
+# almost always "ba mheasa"
+<B>mh?easa</B>:<A pl="n" gnt="y" gnd="f">
 <B>[Mm]h?ór</B>:<A pl="n" gnt="n">
 <T>[Nn]a</T> <B>(haon|hocht)</B>:<A pl="n" gnt="n" h="y">
 <B>[Nn]á</B> <V>ANYTHING</V>:<U>
