@@ -1,0 +1,102 @@
+#  with the exception of some of the non-standard verb endings,
+#  each rule decreases number of caps or length => recursion will stop.
+#
+#  each substitution is applied globally (though this is only relevant
+#  for the few rules that aren't anchored at ^ or $
+#
+#  There is no need to encode the regular inflectional morphology of 
+#  Irish here because it is already handled by the C++ code that generates
+#  the basic lexicon.   So if "imirceacha" is not in the lexicon (it is)
+#  "imirceach" won't be either.   On the other hand it can be quite useful
+#  to include *derivational* morphology; so if "gaimbíneachas" is not
+#  in the lexicon (it is) there is some hope that by stripping the 
+#  "eachas" it will find the root "gaimbín".
+^BP				bP		1
+^BHF				bhF		1
+^DT				dT		1
+^GC				gC		1
+^MB				mB		1
+^ND				nD		1
+^NG				nG		1
+^TS				tS		1
+^([A-ZÁÉÍÓÚ'-]+)$		\L$1		-1	# PRÍOMH-AIRE
+^([A-ZÁÉÍÓÚ])			\l$1		-1 	# Príomhach
+-([A-ZÁÉÍÓÚ])			-\l$1		-1 	# Príomh-Aire
+^b'([AEIOUÁÉÍÓÚF])		b'\l$1		-1
+^bP([A-ZÁÉÍÓÚ'-]+)$		bp\L$1		-1	# bPRÍOMH-AIRE
+^bP				bp		-1	# bPríomhach
+^bhF([A-ZÁÉÍÓÚ'-]+)$		bhf\L$1		-1
+^bhF				bhf		-1
+^d'([AEIOUÁÉÍÓÚF])		d'\l$1		-1
+^dT([A-ZÁÉÍÓÚ'-]+)$		dt\L$1		-1
+^dT				dt		-1
+^gC([A-ZÁÉÍÓÚ'-]+)$		gc\L$1		-1
+^gC				gc		-1
+^h([AEIOUÁÉÍÓÚ])([A-ZÁÉÍÓÚ'-]+)$	h\l$1\L$2	-1	# hÉIREANN
+^h([AEIOUÁÉÍÓÚ])		h\l$1		-1
+^m'([AEIOUÁÉÍÓÚF])		m'\l$1		-1
+^mB([A-ZÁÉÍÓÚ'-]+)$		mb\L$1		-1
+^mB				mb		-1
+^n([AEIOUÁÉÍÓÚ])([A-ZÁÉÍÓÚ'-]+)$	n-\l$1\L$2	-1
+^n([AEIOUÁÉÍÓÚ])		n-\l$1		-1
+^nD([A-ZÁÉÍÓÚ'-]+)$		nd\L$1		-1
+^nD				nd		-1
+^nG([A-ZÁÉÍÓÚ'-]+)$		ng\L$1		-1
+^nG				ng		-1
+^tS([A-ZÁÉÍÓÚ'-]+)$		ts\L$1		-1
+^tS				ts		-1
+^t([AEIOUÁÉÍÓÚ])([A-ZÁÉÍÓÚ'-]+)$	t-\l$1\L$2	-1	# tUASAL
+^t([AEIOUÁÉÍÓÚ])		t-\l$1		-1
+^an-([bcfgmp]h)			$1		0
+^an-([bcfgmp][^h])		$1		1
+^an-([^bcfgmp])			$1		0
+^an-([^bcfgmp]h)		$1		1    # an-dhuine 
+^dea-([bcdfgmpt]h)		$1		0
+^dea-([bcdfgmpt][^h])		$1		1
+^dea-(sh[aeiouáéíóúlnr])	$1		0
+^dea-(s[aeiouáéíóúlnr])		$1		1
+^dea-(s[^aeiouáéíóúlnrh])	$1		0    # dea-scéal
+^dea-([^bcdfgmpst])		$1		0
+^ain([bcfgmp]h)			$1		0
+^ath([bcdfgmp]h)		$1		0
+^ath(sh[aeiouáéíóúlnr])		$1		0
+^ath(s[^aeiouáéíóúlnrh])	$1		0
+^comh([bcdfgpt]h)		$1		0
+^comh(sh[aeiouáéíóúlnr])	$1		0
+^comh(s[^aeiouáéíóúlnrh])	$1		0
+^có(mh[aáoóuú])			$1		0
+^cói(mh[eéií])			$1		0
+achai?s$			ach		0
+acht$				ach		0
+íocht$				íoch		0
+^h-				h		1
+^n-([AEIOUÁÉÍÓÚ])		n-\l$1		1
+^t-([AEIOUÁÉÍÓÚ])		t-\l$1		1
+#  ró, reamh, etc.   -sa, -na -se  droch, an- 
+#   bhth, mhth, etc.
+#  fad, íos, etc.
+# Future forms: see OS88 p.215 for these (fe?as, etc. on p.63)
+fa[ds]$				faidh		1
+fea[ds]$			fidh		1
+ó[ds]$				óidh		1
+eo[ds]$				eoidh		1
+# Future 2nd p., "r" forms noted on p.216
+fai[rs]$			faidh		1
+fi[rs]$				fidh		1
+óis$				óidh		1
+eois$				eoidh		1
+# Past; also see Di27 (present).  "r" forms on p.216
+eas$				""		1
+as$				""		1
+íos$				igh		1
+ai[rs]$				""		1
+i[rs]$				""		1
+ís$				igh		1
+ains$				ann		1
+ins$				eann		1
+íns$				íonn		1
+#  OS88 p.126  present 
+anns$				ann		1
+íonns$				íonn		1
+# last resort for weird caps
+([A-ZÁÉÍÓÚ])			\l$1		2	# pRíOMhach
