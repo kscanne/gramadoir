@@ -246,7 +246,8 @@ load_dictionary ()
 }
 
 /* cod has trailing newline on there */
-void
+/* return 0 if ok, 1 if problem */
+int
 code_to_markup (const char *cod, char *fill, char *attrs, char *extratags)
 {
   int len = strlen (cod) - 1, j;
@@ -267,20 +268,21 @@ code_to_markup (const char *cod, char *fill, char *attrs, char *extratags)
 	  strcat (extratags, "/>");
 	}
       strcat (extratags, "</Z>");
+      return 0;
     }
   else if (len == 1)
     {
       byte_to_markup (teanga, packagename, cod[0], fill, attrs);
       strcpy (extratags, "");
+      return 0;
     }
   else
-    {
-      fprintf (stderr, gettext ("%s: no grammar codes\n"), packagename);
-    }
+    return 1;
 }
 
 /* this does the actual log search, concatenates codes */
 /* word is terminated with "\n\0" already */
+/* return 1 if found, 0 otherwise */
 int
 rawlookup (const char *word, char *codes)
 {
@@ -373,7 +375,7 @@ my_isupper (const char x)
 int
 dictlookup (const char *word, char *fill, char *attrs, char *extratags)
 {
-  int i, len, retval = 1;
+  int i, j, k, len, totlen, retval = 1;
   char unused, repl[GR_REPLMAX], codes[2 * GR_AMBIGMAX], lowered[GR_WORDMAX];
   *codes = 0;
   rawlookup (word, codes);
@@ -389,17 +391,42 @@ dictlookup (const char *word, char *fill, char *attrs, char *extratags)
 	  i++;
 	}
       lowered[i] = 0;
-      len = strlen (codes);
-      unused = codes[len - 1];
-      codes[len - 1] = 0;
+      len = strlen (codes) - 1;
+      if (len < 0)
+	len = 0;
+      unused = codes[len];
+      codes[len] = 0;
       if (!rawlookup (lowered, codes))
-	{			/* strip repeats? */
-	  codes[len - 1] = unused;
-	  codes[len] = 0;
+	{
+	  codes[len] = unused;
+	  codes[len + 1] = 0;
+	}
+      else
+	{
+	  totlen = strlen (codes) - 1;
+	  unused = codes[totlen];	/* needed if len=0 => unused=0 */
+	  for (j = 0; j < len; j++)
+	    {
+	      for (k = len; k < totlen; k++)
+		{
+		  if (codes[j] == codes[k])
+		    {
+		      totlen--;
+		      codes[k] = codes[totlen];
+		      break;
+		    }
+		}
+	    }
+	  codes[totlen] = unused;
+	  codes[totlen + 1] = 0;
 	}
     }
   if (*codes)
-    code_to_markup (codes, fill, attrs, extratags);
+    {
+      if (code_to_markup (codes, fill, attrs, extratags))
+	fprintf (stderr, gettext ("%s: no grammar codes: %s\n"), packagename,
+		 word);
+    }
   else
     {
       strcpy (attrs, "");
