@@ -320,6 +320,14 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 # These aren't in corpus with "ag" so leave as error
 <S>[Aa]s</S> bheith|thú:OK
 <S>[Aa][gs]</S> bhur|dhá|thart:OK
+# CB p.83
+<S>[Aa]g</S> <P>[Mm]é</P>:BACHOIR{agam}
+<S>[Aa]g</S> <P>[Tt]h?ú</P>:BACHOIR{agat}
+<S>[Aa]g</S> <P>[Éé]</P>:BACHOIR{aige}
+<S>[Aa]g</S> <P>[Íí]</P>:BACHOIR{aici}
+<S>[Aa]g</S> <P>([Mm]uid|[Ss]inn)</P>:BACHOIR{againn}
+<S>[Aa]g</S> <P>[Ss]ibh</P>:BACHOIR{agaibh}
+<S>[Aa]g</S> <P>[Ii]ad</P>:BACHOIR{acu}
 # CB p.14 Note; "~ bheith" not in corpus
 # works for all POS; as conjunction should have "amhail a dhéanann", etc. 
 #. Bláthaíonn sé amhail bhláth an mhachaire.
@@ -462,6 +470,31 @@ h?[Aa]on <N>LENITEDDST</N>:NISEIMHIU
 # CB p.113-114
 <V cop="y">[Aa]r</V> INITIALVOWEL:BACHOIR{arb, arbh}
 <V cop="y">[Aa]r</V> LENITEDF:BACHOIR{arbh}
+# CB p.83
+<S>[Aa]r</S> <P>[Mm]é</P>:BACHOIR{orm}
+<E><S>[Aa]r</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Aa]r</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Aa]r</S> <P>[Tt]h?ú</P>:BACHOIR{ort}
+<E><S>[Aa]r</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Aa]r</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Aa]r</S> <P>[Éé]</P>:BACHOIR{air}
+<E><S>[Aa]r</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Aa]r</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Aa]r</S> <P>ANYTHING</P></E> seo|sin|siúd <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Aa]r</S> <P>[Íí]</P>:BACHOIR{uirthi}
+<E><S>[Aa]r</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Aa]r</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Aa]r</S> <P>ANYTHING</P></E> seo|sin|siúd <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Aa]r</S> <P>([Mm]uid|[Ss]inn)</P>:BACHOIR{orainn}
+<E><S>[Aa]r</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Aa]r</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Aa]r</S> <P>[Ss]ibh</P>:BACHOIR{oraibh}
+<E><S>[Aa]r</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Aa]r</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Aa]r</S> <P>[Ii]ad</P>:BACHOIR{orthu}
+<E><S>[Aa]r</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Aa]r</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Aa]r</S> <P>ANYTHING</P></E> seo|sin|siúd <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
 # CB p.20 1.b. keep before following
 #. Ní amháin ár dhá chosa, ach nigh ár lámha!
 <D>[Áá]r</D> <A pl="n" gnt="n">dhá</A> <N>UNECLIPSED</N>:URU
@@ -474,7 +507,12 @@ h?[Aa]on <N>LENITEDDST</N>:NISEIMHIU
 # CB p.16 #7 (N), p.18 #10 (A)
 #. Níl aon ní arbh fiú a shantú seachas í.
 <V cop="y">[Aa]rbh</V> UNLENITEDF:SEIMHIU
-# corpus.  Compare disambig rules for "mba" in aonchiall
+# CB p.83
+# tagging problem with these, sometimes <O>, some are
+# "cárbh as mé féin", some "as iad a chur"...
+# <S>[Aa]s</S> <P>[Mm]é</P>:BACHOIR{asam}
+# ... etc.
+# Corpus rule.  Compare disambig rules for "mba" in aonchiall
 #  don't do this for "mba" itself since it disambigs as NPL otherwise
 #  and likely we'd get a NIURU from the noun rules
 INITIALMBAPOST:NIURU
@@ -677,6 +715,14 @@ g?[Cc]h?eithre <N>airde</N>:BACHOIR{hairde}
 # CB p.68 #19
 <A pl="n" gnt="n">cuibheasach</A> <A>ANYTHING</A>:UATHA
 <A pl="n" gnt="n">cuibheasach</A> <A pl="n" gnt="n">ANYTHING</A>:OK
+# CB p.83
+<S>[Cc]huig</S> <P>[Mm]é</P>:BACHOIR{chugam}
+<S>[Cc]huig</S> <P>[Tt]h?ú</P>:BACHOIR{chugat}
+<S>[Cc]huig</S> <P>[Éé]</P>:BACHOIR{chuige}
+<S>[Cc]huig</S> <P>[Íí]</P>:BACHOIR{chuici}
+<S>[Cc]huig</S> <P>([Mm]uid|[Ss]inn)</P>:BACHOIR{chugainn}
+<S>[Cc]huig</S> <P>[Ss]ibh</P>:BACHOIR{chugaibh}
+<S>[Cc]huig</S> <P>[Ii]ad</P>:BACHOIR{chucu}
 # CB p.13 #3.f, p.76 #8.b
 #. Bhí sé cúig bhanlámh ar fhad, cúig banlámh ar leithead.
 g?[Cc]h?úig <N>UNLENITED</N>:SEIMHIU
@@ -696,6 +742,31 @@ g?[Cc]h?úig <NP>(bliana|cinn|cloigne|fichid|huaire)</NP>:OK
 <N pl="n" gnt="n" gnd="m">g?[Cc]h?úigear</N> <NP>ANYTHING</NP>:UATHA
 <N pl="n" gnt="n" gnd="m">g?[Cc]h?úigear</N> <N pl="y" gnt="y" gnd="f">ban</N>:OK
 <N pl="n" gnt="n" gnd="m">g?[Cc]h?úigear</N> <N pl="n" gnt="n" gnd="f">m?bh?ean</N>:BACHOIR{ban}
+# CB p.83
+<S>[Cc]hun</S> <P>[Mm]é</P>:BACHOIR{chugam}
+<E><S>[Cc]hun</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Cc]hun</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Cc]hun</S> <P>[Tt]h?ú</P>:BACHOIR{chugat}
+<E><S>[Cc]hun</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Cc]hun</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Cc]hun</S> <P>[Éé]</P>:BACHOIR{chuige}
+<E><S>[Cc]hun</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Cc]hun</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Cc]hun</S> <P>ANYTHING</P></E> seo|sin|siúd <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Cc]hun</S> <P>[Íí]</P>:BACHOIR{chuici}
+<E><S>[Cc]hun</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Cc]hun</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Cc]hun</S> <P>ANYTHING</P></E> seo|sin|siúd <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Cc]hun</S> <P>([Mm]uid|[Ss]inn)</P>:BACHOIR{chugainn}
+<E><S>[Cc]hun</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Cc]hun</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Cc]hun</S> <P>[Ss]ibh</P>:BACHOIR{chugaibh}
+<E><S>[Cc]hun</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Cc]hun</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Cc]hun</S> <P>[Ii]ad</P>:BACHOIR{chucu}
+<E><S>[Cc]hun</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Cc]hun</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Cc]hun</S> <P>ANYTHING</P></E> seo|sin|siúd <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
 # corpus -- common misspelling of cúnta unless after "an" or before a name
 <N>g?[Cc]h?unta</N>:MICHEART{cúnta}
 <T>[Aa]n</T> <E><N>[Cc]h?unta</N></E>:OK
@@ -735,6 +806,14 @@ g?[Cc]h?úig <NP>(bliana|cinn|cloigne|fichid|huaire)</NP>:OK
 <N>n?[Dd]h?áréag</N> <NP>ANYTHING</NP>:UATHA
 <N>n?[Dd]h?áréag</N> <N pl="y" gnt="y" gnd="f">ban</N>:OK
 <N>n?[Dd]h?áréag</N> <N pl="n" gnt="n" gnd="f">m?bh?ean</N>:BACHOIR{ban}
+# CB p.83; useless -- always disambigs to <O> before <P>: "mar is cuid de thú"
+# <S>[Dd]e</S> <P>[Mm]é</P>:BACHOIR{díom}
+# <S>[Dd]e</S> <P>[Tt]h?ú</P>:BACHOIR{díot}
+# <S>[Dd]e</S> <P>[Éé]</P>:BACHOIR{de}
+# <S>[Dd]e</S> <P>[Íí]</P>:BACHOIR{di}
+# <S>[Dd]e</S> <P>([Mm]uid|[Ss]inn)</P>:BACHOIR{dínn}
+# <S>[Dd]e</S> <P>[Ss]ibh</P>:BACHOIR{díbh}
+# <S>[Dd]e</S> <P>[Ii]ad</P>:BACHOIR{díobh}
 # corpus; CB p.109 for conjugation of "déan"
 #  not sure what I was thinking here, I see plenty of legit imperfects...
 # <V>n?[Dd]h?éanadh</V>:CAIGHDEAN{rinneadh, déanamh}
@@ -901,6 +980,14 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 [Dd][eo] [áa]r:BACHOIR{dár}
 # corpus
 [Dd]o réir:BACHOIR{de réir}
+# CB p.83
+<S>[Dd]o</S> <P>[Mm]é</P>:BACHOIR{dom}
+<S>[Dd]o</S> <P>[Tt]h?ú</P>:BACHOIR{duit}
+<S>[Dd]o</S> <P>[Éé]</P>:BACHOIR{dó}
+<S>[Dd]o</S> <P>[Íí]</P>:BACHOIR{di}
+<S>[Dd]o</S> <P>([Mm]uid|[Ss]inn)</P>:BACHOIR{dúinn}
+<S>[Dd]o</S> <P>[Ss]ibh</P>:BACHOIR{daoibh}
+<S>[Dd]o</S> <P>[Ii]ad</P>:BACHOIR{dóibh}
 # CB p.77 #8.g
 [Dd]h?osaen <NC>ANYTHING</NC>:GENITIVE
 [Dd]h?osaen <NS>ANYTHING</NS>:IOLRA
@@ -917,6 +1004,31 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 # CB p.6 #2, LGG p.26
 #. Caithfidh pobal na Gaeltachta iad féin cinneadh a dhéanamh faoi an Ghaeilge.
 <S>[Ff]aoi</S> <T>an</T>:BACHOIR{faoin}
+# CB p.83
+<S>[Ff]aoi</S> <P>[Mm]é</P>:BACHOIR{fúm}
+<E><S>[Ff]aoi</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Ff]aoi</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Ff]aoi</S> <P>[Tt]h?ú</P>:BACHOIR{fút}
+<E><S>[Ff]aoi</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Ff]aoi</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Ff]aoi</S> <P>[Éé]</P>:BACHOIR{faoi}
+<E><S>[Ff]aoi</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Ff]aoi</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Ff]aoi</S> <P>ANYTHING</P></E> seo|sin|siúd <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Ff]aoi</S> <P>[Íí]</P>:BACHOIR{fúithi}
+<E><S>[Ff]aoi</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Ff]aoi</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Ff]aoi</S> <P>ANYTHING</P></E> seo|sin|siúd <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Ff]aoi</S> <P>([Mm]uid|[Ss]inn)</P>:BACHOIR{fúinn}
+<E><S>[Ff]aoi</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Ff]aoi</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Ff]aoi</S> <P>[Ss]ibh</P>:BACHOIR{fúibh}
+<E><S>[Ff]aoi</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Ff]aoi</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Ff]aoi</S> <P>[Ii]ad</P>:BACHOIR{fúthu}
+<E><S>[Ff]aoi</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Ff]aoi</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Ff]aoi</S> <P>ANYTHING</P></E> seo|sin|siúd <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
 # CB p.84 #8, p.132 #2
 #. Cuireann sí a neart mar chrios faoi a coim.
 [Ff]aoin? a:BACHOIR{faoina}
@@ -1106,6 +1218,14 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Ii]</S> <[^Y]>LENITED</[^Y]>:NISEIMHIU
 #. Tá níos mó ná 8500 múinteoir ann i thart faoi 540 scoil (OK).
 <S>[Ii]</S> <R>thart</R>:OK
+# CB p.83
+<S>[Ii]</S> <P>[Mm]é</P>:BACHOIR{ionam}
+<S>[Ii]</S> <P>[Tt]h?ú</P>:BACHOIR{ionat}
+<S>[Ii]</S> <P>[Éé]</P>:BACHOIR{ann}
+<S>[Ii]</S> <P>[Íí]</P>:BACHOIR{inti}
+<S>[Ii]</S> <P>([Mm]uid|[Ss]inn)</P>:BACHOIR{ionainn}
+<S>[Ii]</S> <P>[Ss]ibh</P>:BACHOIR{ionaibh}
+<S>[Ii]</S> <P>[Ii]ad</P>:BACHOIR{iontu}
 # CB p.6 #2
 #. An bhfuil aon uachtar reoite agat i an chuisneoir?
 <S>[Ii]n?</S> [Aa]n:BACHOIR{sa}
@@ -1177,6 +1297,14 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <A pl="n" gnt="n">[Ii]omaí</A> <NG>ANYTHING</NG>:NOGENITIVE
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 <S>[Ii]onsar</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
+# CB p.83
+<S>[Ii]onsar</S> <P>[Mm]é</P>:BACHOIR{ionsorm}
+<S>[Ii]onsar</S> <P>[Tt]h?ú</P>:BACHOIR{ionsort}
+<S>[Ii]onsar</S> <P>[Éé]</P>:BACHOIR{ionsair}
+<S>[Ii]onsar</S> <P>[Íí]</P>:BACHOIR{ionsuirthi}
+<S>[Ii]onsar</S> <P>([Mm]uid|[Ss]inn)</P>:BACHOIR{ionsorainn}
+<S>[Ii]onsar</S> <P>[Ss]ibh</P>:BACHOIR{ionsoraibh}
+<S>[Ii]onsar</S> <P>[Ii]ad</P>:BACHOIR{ionsorthu}
 # converse of CB p.16 #7, no lenition after present/future copula
 <V cop="y">[Ii]s</V> <[AN]>LENITED</[AN]>:NISEIMHIU
 <V cop="y">[Ii]s</V> <A pl="n" gnt="n">[Dd]há</A>:OK
@@ -1211,6 +1339,31 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Ll]e</S> <V cop="y">(is|ar|arb)</V>:BACHOIR{lenar, lenarb}
 <S>[Ll]e</S> <V cop="y">(ba|ab|arbh)</V>:BACHOIR{lenar, lenarbh}
 <S>[Ll]e</S> INITIALBAPOST:BACHOIR{lenarbh}
+# CB p.83
+<S>[Ll]e</S> <P>[Mm]é</P>:BACHOIR{liom}
+<E><S>[Ll]e</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Ll]e</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Ll]e</S> <P>[Tt]h?ú</P>:BACHOIR{leat}
+<E><S>[Ll]e</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Ll]e</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Ll]e</S> <P h="y">h[Éé]</P>:BACHOIR{leis}
+<E><S>[Ll]e</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Ll]e</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Ll]e</S> <P>ANYTHING</P></E> seo|sin|siúd <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Ll]e</S> <P h="y">h[Íí]</P>:BACHOIR{léi}
+<E><S>[Ll]e</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Ll]e</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Ll]e</S> <P>ANYTHING</P></E> seo|sin|siúd <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Ll]e</S> <P>([Mm]uid|[Ss]inn)</P>:BACHOIR{linn}
+<E><S>[Ll]e</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Ll]e</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Ll]e</S> <P>[Ss]ibh</P>:BACHOIR{libh}
+<E><S>[Ll]e</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Ll]e</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Ll]e</S> <P h="y">h[Ii]ad</P>:BACHOIR{leo}
+<E><S>[Ll]e</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Ll]e</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Ll]e</S> <P>ANYTHING</P></E> seo|sin|siúd <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. Tá do scrios chomh leathan leis an farraige.
 <S>[Ll]eis</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
@@ -1520,6 +1673,31 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Óó]</S> <T>an</T>:BACHOIR{ón}
 # CB p.113
 <[CS]>[Óó]</[CS]> <V cop="y">is</V>:BACHOIR{ós}
+# CB p.83
+<S>[Óó]</S> <P>[Mm]é</P>:BACHOIR{uaim}
+<E><S>[Óó]</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Óó]</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Óó]</S> <P>[Tt]h?ú</P>:BACHOIR{uait}
+<E><S>[Óó]</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Óó]</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Óó]</S> <P>[Éé]</P>:BACHOIR{uaidh}
+<E><S>[Óó]</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Óó]</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Óó]</S> <P>ANYTHING</P></E> seo|sin|siúd <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Óó]</S> <P>[Íí]</P>:BACHOIR{uaithi}
+<E><S>[Óó]</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Óó]</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Óó]</S> <P>ANYTHING</P></E> seo|sin|siúd <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Óó]</S> <P>([Mm]uid|[Ss]inn)</P>:BACHOIR{uainn}
+<E><S>[Óó]</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Óó]</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Óó]</S> <P>[Ss]ibh</P>:BACHOIR{uaibh}
+<E><S>[Óó]</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Óó]</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Óó]</S> <P>[Ii]ad</P>:BACHOIR{uathu}
+<E><S>[Óó]</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Óó]</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Óó]</S> <P>ANYTHING</P></E> seo|sin|siúd <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
 #   these three appear to be non-rules when ó is a <C>:
 #   "Agus ó ba mhó é a mbuaireamh", "ó b'annamh go..."
 # [Óó]n? <V cop="y">(ar|arb)</V>:BACHOIR{ónar, ónarb}
@@ -1615,6 +1793,31 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 <S>[Rr]oimh</S> <N>UNLENITED</N>:SEIMHIU
 # CB p.22 #8.a
 <S>[Rr]oimh</S> <T>an</T> <N pl="n" gnt="n" gnd="m">PREFIXEDT</N>:NITEE
+# CB p.83
+<S>[Rr]oimh</S> <P>[Mm]é</P>:BACHOIR{romham}
+<E><S>[Rr]oimh</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Rr]oimh</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Rr]oimh</S> <P>[Tt]h?ú</P>:BACHOIR{romhat}
+<E><S>[Rr]oimh</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Rr]oimh</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Rr]oimh</S> <P>[Éé]</P>:BACHOIR{roimhe}
+<E><S>[Rr]oimh</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Rr]oimh</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Rr]oimh</S> <P>ANYTHING</P></E> seo|sin|siúd <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Rr]oimh</S> <P>[Íí]</P>:BACHOIR{roimpi}
+<E><S>[Rr]oimh</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Rr]oimh</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Rr]oimh</S> <P>ANYTHING</P></E> seo|sin|siúd <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Rr]oimh</S> <P>([Mm]uid|[Ss]inn)</P>:BACHOIR{romhainn}
+<E><S>[Rr]oimh</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Rr]oimh</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Rr]oimh</S> <P>[Ss]ibh</P>:BACHOIR{romhaibh}
+<E><S>[Rr]oimh</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Rr]oimh</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Rr]oimh</S> <P>[Ii]ad</P>:BACHOIR{rompu}
+<E><S>[Rr]oimh</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Rr]oimh</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Rr]oimh</S> <P>ANYTHING</P></E> seo|sin|siúd <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
 # CB p.6 #2 <=>
 #. An bhfuil aon uachtar reoite agat sa oighear?
 <S>[Ss]a</S> INITIALVOWELORF:BACHOIR{san}
@@ -1707,6 +1910,26 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 <N pl="n" gnt="n" gnd="m">[Ss]h?eisear</N> <NP>ANYTHING</NP>:UATHA
 <N pl="n" gnt="n" gnd="m">[Ss]h?eisear</N> <N pl="y" gnt="y" gnd="f">ban</N>:OK
 <N pl="n" gnt="n" gnd="m">[Ss]h?eisear</N> <N pl="n" gnt="n" gnd="f">m?bh?ean</N>:BACHOIR{ban}
+# CB p.82 #3
+<[^V]>ANYTHING</[^V]> <P>[Ss]é</P>:BACHOIR{é}
+<V cop="y">ANYTHING</V> <P>[Ss]é</P>:BACHOIR{é}
+<VAUT>ANYTHING</VAUT> <P>[Ss]é</P>:BACHOIR{é}
+<[^V]>ANYTHING</[^V]> <P>[Ss]eisean</P>:BACHOIR{eisean}
+<V cop="y">ANYTHING</V> <P>[Ss]eisean</P>:BACHOIR{eisean}
+<VAUT>ANYTHING</VAUT> <P>[Ss]eisean</P>:BACHOIR{eisean}
+<[^V]>ANYTHING</[^V]> <P>[Ss]í</P>:BACHOIR{í}
+<V cop="y">ANYTHING</V> <P>[Ss]í</P>:BACHOIR{í}
+<VAUT>ANYTHING</VAUT> <P>[Ss]í</P>:BACHOIR{í}
+<[^V]>ANYTHING</[^V]> <P>[Ss]ise</P>:BACHOIR{ise}
+<V cop="y">ANYTHING</V> <P>[Ss]ise</P>:BACHOIR{ise}
+<VAUT>ANYTHING</VAUT> <P>[Ss]ise</P>:BACHOIR{ise}
+<[^V]>ANYTHING</[^V]> <P>[Ss]í</P>:BACHOIR{iad}
+#. Is siad na rudaí crua a mhairfidh.
+<V cop="y">ANYTHING</V> <P>[Ss]iad</P>:BACHOIR{iad}
+<VAUT>ANYTHING</VAUT> <P>[Ss]iad</P>:BACHOIR{iad}
+<[^V]>ANYTHING</[^V]> <P>[Ss]iadsan</P>:BACHOIR{iadsan}
+<V cop="y">ANYTHING</V> <P>[Ss]iadsan</P>:BACHOIR{iadsan}
+<VAUT>ANYTHING</VAUT> <P>[Ss]iadsan</P>:BACHOIR{iadsan}
 # Shile is 127; Chile is usually "An tSile" unless genitive exception here
 <N>Sile</N>:MICHEART{Síle}
 <T>na</T> <E><N>Sile</N></E>:OK
@@ -1772,6 +1995,14 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 <S>[Tt]har</S> [Mm]h?aoi?l:INPHRASE{thar maoil}
 # CB p.14 #4.e; several adverbial exceptions in comhshuite
 <S>[Tt]har</S> <N>UNLENITED</N>:WEAKSEIMHIU{thar}
+# CB p.83
+<S>[Tt]har</S> <P>[Mm]é</P>:BACHOIR{tharam}
+<S>[Tt]har</S> <P>[Tt]h?ú</P>:BACHOIR{tharat}
+<S>[Tt]har</S> <P>[Éé]</P>:BACHOIR{thairis}
+<S>[Tt]har</S> <P>[Íí]</P>:BACHOIR{thairsti}
+<S>[Tt]har</S> <P>([Mm]uid|[Ss]inn)</P>:BACHOIR{tharainn}
+<S>[Tt]har</S> <P>[Ss]ibh</P>:BACHOIR{tharaibh}
+<S>[Tt]har</S> <P>[Ii]ad</P>:BACHOIR{tharstu}
 # CB p.24 #11.a.x
 #. Timpeall trí uaire a chloig ina dhiaidh sin tháinig an bhean isteach.
 [Tt]rí uaire?:BACHOIR{huaire}
@@ -1792,6 +2023,31 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 <S>[Tt]rí</S> <V cop="y">(is|ar|arb)</V>:BACHOIR{trínar, trínarb}
 <S>[Tt]rí</S> <V cop="y">(ba|ab|arbh)</V>:BACHOIR{trínar, trínarbh}
 <S>[Tt]rí</S> INITIALBAPOST:BACHOIR{trínarbh}
+# CB p.83
+<S>[Tt]rí</S> <P>[Mm]é</P>:BACHOIR{tríom}
+<E><S>[Tt]rí</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Tt]rí</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Tt]rí</S> <P>[Tt]h?ú</P>:BACHOIR{tríot}
+<E><S>[Tt]rí</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Tt]rí</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Tt]rí</S> <P>[Éé]</P>:BACHOIR{tríd}
+<E><S>[Tt]rí</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Tt]rí</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Tt]rí</S> <P>ANYTHING</P></E> seo|sin|siúd <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Tt]rí</S> <P>[Íí]</P>:BACHOIR{tríthi}
+<E><S>[Tt]rí</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Tt]rí</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Tt]rí</S> <P>ANYTHING</P></E> seo|sin|siúd <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Tt]rí</S> <P>([Mm]uid|[Ss]inn)</P>:BACHOIR{trínn}
+<E><S>[Tt]rí</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Tt]rí</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Tt]rí</S> <P>[Ss]ibh</P>:BACHOIR{tríbh}
+<E><S>[Tt]rí</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Tt]rí</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<S>[Tt]rí</S> <P>[Ii]ad</P>:BACHOIR{tríothu}
+<E><S>[Tt]rí</S> <P>ANYTHING</P></E> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Tt]rí</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
+<E><S>[Tt]rí</S> <P>ANYTHING</P></E> seo|sin|siúd <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
 # CB p.13 #3.f, p.76 #8.b (<A>trí</A>) p.13 #4.a (<S>trí</S>)
 #. Gabhfaidh siad trí muir na hÉigipte.
 d?[Tt]h?rí <N>UNLENITED</N>:SEIMHIU
@@ -1863,6 +2119,14 @@ d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</
 <S>[Uu]m</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.22 #8.a
 <S>[Uu]m</S> <T>an</T> <N pl="n" gnt="n" gnd="m">PREFIXEDT</N>:NITEE
+# CB p.83
+<S>[Uu]m</S> <P>[Mm]é</P>:BACHOIR{umam}
+<S>[Uu]m</S> <P>[Tt]h?ú</P>:BACHOIR{umat}
+<S>[Uu]m</S> <P>[Éé]</P>:BACHOIR{uime}
+<S>[Uu]m</S> <P>[Íí]</P>:BACHOIR{uimpi}
+<S>[Uu]m</S> <P>([Mm]uid|[Ss]inn)</P>:BACHOIR{umainn}
+<S>[Uu]m</S> <P>[Ss]ibh</P>:BACHOIR{umaibh}
+<S>[Uu]m</S> <P>[Ii]ad</P>:BACHOIR{umpu}
 #############################################################################
 #   Nouns appearing only in the dative; see CB p.46 #13, p.55 #6 (Éirinn)
 # good to keep this before the <=> eclipsis for things like "dar gcionn"

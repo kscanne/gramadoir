@@ -24,6 +24,7 @@
 <S>[Ii]</S> <B>bhfuil</B>:<N pl="n" gnt="n" gnd="f">
 <B>bhfuil</B>:<V p="y" t="láith">
 <B>raibh</B>:<V p="y" t="caite">
+<B>[Tt]har</B>:<S>
 # Before a verb it's "not", not "sang"
 <B>[Cc]han</B> <V>ANYTHING</V>:<U>
 # "under the" not "supine"
@@ -549,9 +550,9 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 <A pl="n" gnt="n">([Aa]on|[Gg]ach)</A> <B><Z>ANYNMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 [Aa]n <B><Z>ANYNMONEC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <A pl="n" gnt="n">([Aa]on|[Gg]ach)</A> <B><Z>ANYNMONEC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<T>na</T> <B><Z>NMONEC</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="m">
+<T>na</T> <B><Z>ANYNMONEC</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="m">
 <B><Z>NMONEC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<T>na</T> <B><Z>NFONEC</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
+<T>na</T> <B><Z>ANYNFONEC</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 <B><Z>NFONEC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <N>ANYTHING</N> <T>[Aa]n</T> <B><Z>ANDROGYN</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <T>[Aa]n</T> <B><Z>ANDROGYN</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
@@ -591,6 +592,8 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 # bhíodh, etc. -- otherwise unigram=>ORD and need to explain lenition...
 <B><Z>BHIODHLIKE</Z>ANYTHING</B>:<V p="y" t="gnáth">
 <B><Z>GENERICPAST</Z>LENITED</B>:<V p="y" t="caite">
+# D'fhás Caoimhín.
+<B><Z>ANYPAST</Z>INITIALBIGDAPOST</B>:<V p="y" t="caite">
 # Ainmnigh na rudaí atá...  (imperative w/o "d'")
 # subsumed by the more general ":!" rule that follows...
 # <B><Z>GENERICPAST</Z>INITIALVOWELORF</B>:<V p="y" t="ord">
@@ -603,20 +606,23 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 <B><Z>GENERICPAUT</Z>ANYTHING</B>:<V p="n" t="caite">
 <B><Z>GENERICFIRST</Z>ANYTHING</B>:<V p="y" t="láith">
 # last resorts
-# e.g.  next rule gets "ar siad" since siad -> <P> above 
-<B>[Aa]r</B> s[éí]:<V cop="y">
-<B>[Aa]r</B> <P>ANYTHING</P>:<V cop="y">
+# e.g.  next rule gets "ar siad/sé/sí" since all are disambigd above
+# Actually a copula in IG but this flags "ar sise" as BACHOIR "ar ise", etc.
+<B>[Aa]r</B> <P>SUBJECTPRONOUN</P>:<V p="y" t="láith">
 # don't use VPAST (even though that's correct) since verb might not be disambig
 # bean ar maraíodh a mac
 ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
 # ar éirigh é?
 <B>[Aa]r</B> <V>ANYTHING</V>:<Q>
 <B>[Aa]r</B>:<S>
+# safe to do this now that 'ar' is handled
+<B>ANYTHING</B> <P>SUBJECTPRONOUN</P>:!<[^V][^<]*>
 # next rule kills possibility of catching "de a:BACHOIR{dá}"
 # Bhain sé de a bhróga. 
 <B>[Dd]e</B> a:<O>
 # "rinne siad ionadh de go raibh" needs go -> <C> first
-<B>[Dd]e</B> <[CSR]>ANYTHING</[CSR]>:<O>
+# <P> important too: "ar gach taobh de iad"
+<B>[Dd]e</B> <[CPSR]>ANYTHING</[CPSR]>:<O>
 <B>[Dd]e</B>:<S>
 <B>n?[Dd]h?earcadh</B>:<N pl="n" gnt="n" gnd="m">
 # "gur rinne" needs rinne -> <V> first
