@@ -1,18 +1,51 @@
 Currently checking triail
 Ní raibh líon mór daoine bainteach leis an scaifte a bhí ag iarraidh mioscais a chothú.
-Non-standard form: perhaps use /scata/?.
+Non-standard form of /scata/.
+
+Ach thosnaíos-sa ag léamh agus bhog mé isteach ionam féin.
+Non-standard form of /thosnaigh (thosaigh)/.
 
 Tabhair go leor leor de na na rudaí seo do do chara, a Chaoimhín.
 Repeated word.
 
-An bhfuil aon uaktar reoite agat?
-Unknown word.
+Chuaigh sí in olcas ina dhiaidh sin agus bhí an-imní orthu.
+Not in database but apparently formed from the root /imní/.
 
-An bhfuil ayn uachtar roach agat?
-Unknown word.
+Tharla sé seo ar lá an-mífheiliúnach, an Déardaoin.
+Derived incorrectly from the root /mífheiliúnach/.
 
-An bhfuil ayn uachtar roach agat?
-Unknown word (ignoring remainder in this sentence).
+Ní maith liom na daoine míintleachtúla.
+Derived incorrectly from the root /intleachtúla (intleachtacha, intleachtaí)/.
+
+Trí chomhtharlúint, bhí siad sa tuaisceart ag an am.
+Derived from a non-standard form of /tharlú/.
+
+Sílim nárbh ea, agus is docha nach bhfuil i gceist ach easpa smaoinimh.
+Do you mean /dócha/?.
+
+Tá súil le feabhas nuair a thosóidh airgead ag teacht isteach ó ola agus gás i mBearna Timor.
+Do you mean /Tíomór/?.
+
+Beidh nuachtáin shuaracha i ngreim cé nach mbeadh cinsireacht den droch-chinéal i gceist.
+Derived form of common misspelling /chinéal (chineál)/?.
+
+Bhí sé páirteach sa chéad léiriú poiblí de Riverdance.
+Possibly a foreign word (the sequence /Riv/ is highly improbable).
+
+Beidh an tionchar le mothú níos mó i gcás comhlachtaí Éireannacha mar gur mionairgeadra é an punt.
+Not in database but may be a compound /mion+airgeadra/?.
+
+Bhí an dream dí-armtha ag iarraidh a gcuid gunnaí.
+Not in database but may be a non-standard compound /dí+armtha/?.
+
+An bhfuil ayn uachtar roeite agattt?
+Unknown word /aon, ann, an/?.
+
+An bhfuil ayn uachtar roeite agattt?
+Unknown word /reoite/?.
+
+An bhfuil ayn uachtar roeite agattt?
+Possibly a foreign word (the sequence /ttt/ is highly improbable).
 
 Bíonn an geál ag satailt ar an dubh.
 Valid word but extremely rare in actual usage.
@@ -144,7 +177,7 @@ Cár bhfág tú eisean?
 Lenition missing.
 
 Cár fágadh eisean (OK)?
-Unknown word.
+Possibly a foreign word (the sequence /^OK/ is highly improbable).
 
 Cé iad na fir seo ag fanacht farat?
 Prefix /h/ missing.
@@ -243,7 +276,7 @@ Beidh paráid Lá Fhéile Phádraig i mBostún.
 Unnecessary lenition.
 
 Tá Féile Bhealtaine an Oireachtais ar siúl an tseachtain seo (OK).
-Unknown word.
+Possibly a foreign word (the sequence /^OK/ is highly improbable).
 
 Tá ar chumas an duine saol iomlán a chaitheamh gan theanga eile á brú air.
 Unnecessary lenition.
@@ -474,10 +507,10 @@ An bhfuil aon uachtar reoite agat sa seamair?
 Prefix /t/ missing.
 
 An bhfuil aon uachtar reoite agat sa scoil (OK)?
-Unknown word.
+Possibly a foreign word (the sequence /^OK/ is highly improbable).
 
 An bhfuil aon uachtar reoite agat sa samhradh (OK)?
-Unknown word.
+Possibly a foreign word (the sequence /^OK/ is highly improbable).
 
 Tá sé bráthair de chuid Ord San Phroinsias.
 Unnecessary lenition.
@@ -498,7 +531,7 @@ Ní féidir iad a sheinm le snáthaid ach cúig nó sé uaire.
 You should use /huaire/ here instead.
 
 Dúirt sé uair amháin nach raibh áit eile ar mhaith leis cónaí ann (OK).
-Unknown word.
+Possibly a foreign word (the sequence /^OK/ is highly improbable).
 
 Céard atá ann ná sé cathaoirleach coiste.
 Lenition missing.
@@ -549,13 +582,7 @@ Idir dhá sholas, um tráthnóna, faoi choim na hoíche agus sa dorchadas.
 Lenition missing.
 
 Tá sé-- tá sé- mo ---shin-seanathair (OK).
-Unknown word.
-
-23. IV. Is abairt í seo le giorrúcháin, cf. Dr. Scannell, Jr. agus m.sh. Caoimhín Ó Scanaill, T. D. atá i gceanas faoi réir m. sh. VIII, ceart go leor?
-Unknown word.
-
-23. IV. Is abairt í seo le giorrúcháin, cf. Dr. Scannell, Jr. agus m.sh. Caoimhín Ó Scanaill, T. D. atá i gceanas faoi réir m. sh. VIII, ceart go leor?
-Unknown word (ignoring remainder in this sentence).
+Possibly a foreign word (the sequence /^OK/ is highly improbable).
 
 Maidin lá ar na mhárach thug a fhear gaoil cuairt air.
 Usually used in the set phrase /arna mhárach/.
