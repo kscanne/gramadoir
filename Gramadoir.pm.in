@@ -971,17 +971,21 @@ sub tag_recurse
 		my $p = $rule->{'compiled'};
 		if ( $current =~ m/$p/ ) {
 			my $r = $rule->{'repl'};
-			my $pos = $rule->{'poscompiled'};
 			$newcurrent = $current;
 			$newcurrent =~ s/$p/$r/eeg;
 			$ans = $self->tag_recurse($original, $newcurrent, ($level > $rule->{'level'}) ? $level : $rule->{'level'}, $posans, $maxdepth - 1);
 			if ($ans) {
 				unless ($$posans eq '<OK>') {
+					my $pos = $rule->{'poscompiled'};
 					my $temp = $$posans;
 					$$posans = '';
 					while ($temp =~ m/(<[ACDF-Y][^>]*>)/g) {
 						my $cand = $1;
-						$$posans .= $cand if ($cand =~ m/$pos/);
+						if ($cand =~ m/$pos/) {
+							$r = $rule->{'replpos'};
+							$cand =~ s/$pos/$r/ unless ($r eq '<&>');
+							$$posans .= $cand;
+						}
 					}
 				}
 				return $ans if $$posans;
@@ -1008,7 +1012,11 @@ sub clean_tag_recurse
 			my $toadd = $self->clean_tag_recurse($newcurrent, $maxdepth - 1);
 			while ($toadd =~ m/(<[^>]+>)/g) {
 				my $cand = $1;
-				$ans .= $cand if ($cand =~ m/$pos/);
+				if ($cand =~ m/$pos/) {
+					$r = $rule->{'replpos'};
+					$cand =~ s/$pos/$r/ unless ($r eq '<&>');
+					$ans .= $cand;
+				}
 			}
 		}
 	}
