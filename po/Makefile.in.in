@@ -36,6 +36,7 @@ MSGMERGE_UPDATE = @MSGMERGE@ --update
 MSGINIT = msginit
 MSGCONV = msgconv
 MSGFILTER = msgfilter
+MSGID_BUGS = @PACKAGE_BUGREPORT@
 
 POFILES = @POFILES@
 GMOFILES = @GMOFILES@
@@ -81,10 +82,10 @@ all-no:
 # have been downloaded.
 
 $(DOMAIN).pot-update: $(POTFILES) $(srcdir)/POTFILES.in remove-potcdate.sed
-	cat $(srcdir)/POTFILES.in | grep '\.[cy]' > POTFILES.KPS
 	$(XGETTEXT) --default-domain=$(DOMAIN) --directory=$(top_srcdir) \
 	  --add-comments=TRANSLATORS: $(XGETTEXT_OPTIONS) \
-	  --files-from=$(srcdir)/POTFILES.KPS \
+	  --files-from=$(srcdir)/POTFILES.in \
+	  --msgid-bugs-address="<$(MSGID_BUGS)>" \
 	  --copyright-holder='$(COPYRIGHT_HOLDER)'
 	test ! -f $(DOMAIN).po || { \
 	  if test -f $(srcdir)/$(DOMAIN).pot; then \
@@ -100,8 +101,7 @@ $(DOMAIN).pot-update: $(POTFILES) $(srcdir)/POTFILES.in remove-potcdate.sed
 	    mv $(DOMAIN).po $(srcdir)/$(DOMAIN).pot; \
 	  fi; \
 	}
-	rm -f POTFILES.KPS
-	cd $(top_srcdir) && cat gr.in | sed '/SH_GETTEXT/s/`.SH_GETTEXT. \(.*\)`/$$\1/' | egrep -v 'not supported' | /bin/bash --dump-po-strings | sed "s/^#: \/bin\/bash/\n#: gr.in/" >> po/$(DOMAIN).pot
+	sed -i 's/gr\.sh:/gr.in:/' $(srcdir)/$(DOMAIN).pot
 
 $(srcdir)/$(DOMAIN).pot:
 	$(MAKE) $(DOMAIN).pot-update
