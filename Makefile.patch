@@ -1,14 +1,23 @@
---- Makefile	2004-08-25 22:42:56.527784288 -0500
-+++ Makefile.ok	2004-08-25 22:43:36.661683008 -0500
-@@ -69,6 +69,7 @@
+--- Makefile	2004-09-05 21:29:20.388671152 -0500
++++ Makefile.ok	2004-09-05 21:28:06.648881304 -0500
+@@ -69,8 +69,16 @@
  
  Makefile : Makefile.in config.status
  	./config.status
 +	patch < Makefile.patch
  	chmod 444 Makefile
  
++Makefile.patch : FORCE
++	rm -f Makefile.patch
++	mv -f Makefile Makefile.ok
++	./configure
++	- diff -u Makefile Makefile.ok > Makefile.patch
++	mv -f Makefile.ok Makefile
++
  config.status: configure
-@@ -90,4 +91,85 @@
+ 	./config.status --recheck
+ 
+@@ -90,4 +98,92 @@
  semiclean :
  	rm -f y.tab.* $(LEX_OUTPUT_ROOT).* aonchiall.y eisceacht.y rialacha.y
  
@@ -29,10 +38,15 @@
 +	$(INSTALL_DATA) stair.html $(webhome)
 +	$(INSTALL_DATA) sampla.html $(webhome)
 +
-+installweb :
++installweb : FORCE
 +	$(MAKE) installhtml
 +	$(INSTALL_DATA) gramadoir.dtd $(webhome)/../dtds
 +	$(INSTALL_DATA) gramadoir.lsm $(webhome)
++	$(INSTALL_DATA) gramadoir.vim $(webhome)
++	$(INSTALL_DATA) gramadoir.el $(webhome)
++	$(INSTALL_DATA) OOo/gramadoir.sxw $(webhome)
++
++installcgi : FORCE
 +	cp -f gr.cgi /home/httpd/cgi-bin
 +	chmod 755 /home/httpd/cgi-bin/gr.cgi
 +
@@ -88,6 +102,8 @@
 +	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/README.perl
 +	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/README-xx
 +	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/rialacha.meta.pl
++	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/OOo/groo.pl
++	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/OOo/gramadoir.sxw
 +	cd po && $(MAKE) dist
 +	gzip $(TARBALL).tar
 +	chmod 444 $(TARBALL).tar.gz
