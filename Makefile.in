@@ -94,7 +94,7 @@ allperl : $(ALLIN) lastperl
 	$(MAKE) $(ALLPL)
 
 installcheck : FORCE
-	@LC_ALL=C $(bindir)/gr --iomlan triail | sed "s/^[0-9]*: //" > triail.tmp
+	@LC_ALL=C gram-ga.pl --dath=none --iomlan --aspell --aschod=iso-8859-1 triail | sed "s/^[0-9]*: //" > triail.tmp
 	@if diff triail.err triail.tmp; then $(ECHO) 'OK.'; else $(ECHO) 'Problem.'; fi
 	@rm -f triail.tmp
 
@@ -204,7 +204,7 @@ benchmark : FORCE
 	rm -f tmon.out
 
 triail.html : FORCE
-	gr --html triail > triail.html
+	gram-ga.pl --iomlan --aschod=iso-8859-1 --html --aspell triail > triail.html
 
 triail.xml : FORCE
 	LC_ALL=ga_IE gram-ga.pl --api --iomlan --aspell triail > triail.xml
@@ -291,7 +291,7 @@ triail : rialacha-ga.in
 
 triail.err : FORCE
 	rm -f triail.err
-	LC_ALL=C gr --iomlan triail | sed 's/^[0-9]*: //' > triail.err
+	LC_ALL=C gram-ga.pl --dath=none --iomlan --aspell --aschod=iso-8859-1 triail | sed 's/^[0-9]*: //' > triail.err
 
 #############################################################################
 #              LEXICON BUILDING
