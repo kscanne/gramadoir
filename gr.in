@@ -27,6 +27,18 @@ TEANGACHA="@TEANGACHA@"
 DATADIR="@prefix@/share/${PACKAGE_NAME}"
 export TEXTDOMAINDIR TEXTDOMAIN
 
+# LC_ALL overrides others, and since I'm about to turn it off,
+# need to pass its value down to the environment variables needed by gettext
+if [ -n "${LC_ALL}" ]
+then
+	export LC_MESSAGES="${LC_ALL}"
+	export LC_CTYPE="${LC_ALL}"
+fi
+
+# must turn off LC_ALL since LC_MESSAGES != LC_COLLATE/LC_CTYPE
+export LC_ALL=""
+export LC_COLLATE="C"
+
 EXECUTABLE="${0##/*/}"
 HELPCOMMAND="${EXECUTABLE} --help"
 
@@ -55,6 +67,7 @@ unknownopt=`@SH_GETTEXT@ "unrecognized option %s"`
 missingarg=`@SH_GETTEXT@ "option %s requires an argument"`
 unwanted=`@SH_GETTEXT@ "option %s does not allow an argument"`
 unsupported=`@SH_GETTEXT@ "Language %s is not supported."`
+iconvproblem=`@SH_GETTEXT@ "conversion from %s is not supported"`
 ANAITHNIDSRL=`@SH_GETTEXT@ "Unknown word (ignoring remainder in this sentence)"`
 ANAITHNID=`@SH_GETTEXT@ "Unknown word"`
 NEAMHCHOIT=`@SH_GETTEXT@ "Valid word but extremely rare in actual usage"`
@@ -70,6 +83,10 @@ DUBAILTE=`@SH_GETTEXT@ "Repeated word"`
 CUPLA=`@SH_GETTEXT@ "Unusual combination of words"`
 BREISCHEIM=`@SH_GETTEXT@ "Comparative adjective required"`
 NIAITCH=`@SH_GETTEXT@ "Unnecessary prefix \/h\/"`
+
+# save for gettext calls within cuardach...
+OLDCTYPE="${LC_CTYPE}"
+export LC_CTYPE="C"
 
 # i18n: grammatical errors.  See rialacha-*.in.
 # If you port to another language, you won't translate these; instead
@@ -172,14 +189,22 @@ else
 fi
 }
 
+toutf()
+{
+if [ "${IONCHOD}" != "${NATIVE}" ]
+then
+	iconv -f "${NATIVE}" -t "${IONCHOD}"
+else
+	cat
+fi
+}
+
 # escape punctuation marks which cannot be end-of-sentence.
 # Don't even care if there isn't space or quotes after since
 # these surely won't be end of sentence either.
 escape_punc()
 {
 sed "
-s/\([^${BDCHARS}][${BDCHARS}]\)\([.?!]\)/\1\\\\\2/g
-s/\([^${BDCHARS}][йн]\)\\\\\([.?!]\)/\1\2/g
 s/\([^${BDCHARS}0-9-][0-9]\)\([.?!]\)/\1\\\\\2/g
 s/\([^${BDCHARS}0-9-][0-9][0-9]\)\([.?!]\)/\1\\\\\2/g
 s/\(\...\)\([.?!]\)/\1\\\\\2/g
@@ -199,7 +224,7 @@ s/\([IVX][IVX]\)\([.?!]\)/\1\\\\\2/g
 abairti()
 {
 tr -d "\015" | @EGREP@ -n '^' | sed "s/<[^>]*>//g; s/[&\<>]/ /g" |
-		escape_punc "${BDCHARS}" | LC_COLLATE=C sed "
+		escape_punc "${BDCHARS}" | sed "
 		s/[${BDCHARS}][${BDCHARS}${INTCHARS}]*/<c>&<\/c>/g;
 		s/\([${INTCHARS}][${INTCHARS}]*\)<\/c>/<\/c>\1/g;
 		s/^\([1-9][0-9]*\):/<line uimhir=\"\1\"> /; 
@@ -269,6 +294,11 @@ aonchiall()
 @PERL@ @prefix@/libexec/aonchiall-${TEANGA}.pl
 }
 
+unigram()
+{
+@PERL@ @prefix@/libexec/unigram-${TEANGA}.pl
+}
+
 # This is the workhorse.  It does the actually marking up of errors.
 rialacha()
 {
@@ -325,15 +355,15 @@ drochchomhad()
 {
 	if [ ! -e "${1}" ]
 	then
-		echo "${CLAR}: ${1}: $notfound" >&2
+		echo "${CLAR}: ${1}: ${notfound}" >&2
 	else
 		if [ -d "${1}" ]
 		then
-			echo "${CLAR}: ${1}: $isdir" >&2
+			echo "${CLAR}: ${1}: ${isdir}" >&2
 		else
 			if [ ! -r "${1}" ]
 			then
-				echo "${CLAR}: ${1}: $permissions" >&2
+				echo "${CLAR}: ${1}: ${permissions}" >&2
 			fi
 		fi
 	fi
@@ -346,7 +376,7 @@ unchecked_xml()
 {
 		diutf | 
 		abairti |
-		@prefix@/libexec/cuardach "${USEIGNORE}" "${CLAR}" "${TEANGA}"
+		LC_CTYPE="${OLDCTYPE}" @prefix@/libexec/cuardach "${USEIGNORE}" "${CLAR}" "${TEANGA}"
 }
 
 # This replaces "comhad" when "--xml" options is given
@@ -355,6 +385,7 @@ xml_output()
 {
 		unchecked_xml |
 		aonchiall | aonchiall |
+		unigram |
 		rialacha |
 		eisceacht
 }
@@ -365,6 +396,7 @@ comhad()
 		xml_output |
 		comheadan |
 		@AWK@ "{sub(/myaibhsigh/,\"${AIBHSIGHVAR}\"); print}" |
+		toutf |
 		loganu |
 		/bin/bash -s
 }
@@ -473,12 +505,21 @@ if [ "${IONCHOD}" = "unspecified" ]
 then
 	IONCHOD="${NATIVE}"
 fi
+if [ "${IONCHOD}" != "${NATIVE}" ]
+then
+#	if ! echo | iconv -f "${IONCHOD}" -t "${NATIVE}" | iconv -f "${NATIVE}" -t "${IONCHOD}" > /dev/null 2>&1
+	if ! echo | iconv -f "${IONCHOD}" -t "${NATIVE}" > /dev/null 2>&1
+	then
+		printf "${CLAR}: ${iconvproblem}\n" "${IONCHOD}" >&2
+		exit 1
+	fi
+fi
 
 if [ -z "${1}" ]
 then
 	${ACTION}
 else
-	until [ -z "$1" ]
+	until [ -z "${1}" ]
 	do
 		if ! drochchomhad "${1}"
 		then
