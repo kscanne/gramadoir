@@ -1,0 +1,163 @@
+#!/usr/bin/perl
+
+=head1 NAME
+
+@SCRIPTNAME@ - Check the grammar of @NAME_ENGLISH@ language OpenOffice documents
+
+=head1 SYNOPSIS
+
+B<@SCRIPTNAME@> I<filetocheck[.sxw]> I<errorfile[.sxw]>
+
+=head1 DESCRIPTION
+
+This script checks the grammar of the @NAME_ENGLISH@ language OpenOffice
+document given as the first argument, and creates a new document 
+with the errors highlighted and annotated with appropriate messages.
+
+=head1 REQUIRES
+
+Perl 5.8, Lingua::@TEANGA@::Gramadoir
+
+=head1 SEE ALSO
+
+=over 4
+
+=item *
+L<http://borel.slu.edu/gramadoir/>
+
+=item *
+L<Lingua::@TEANGA@::Gramadoir>
+
+=item *
+L<perl(1)>
+
+=back
+
+=head1 AUTHOR
+
+Kevin P. Scannell, E<lt>scannell@slu.eduE<gt>.
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright (C) 2004 Kevin P. Scannell
+
+This is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself, either Perl version 5.8.2 or,
+at your option, any later version of Perl 5 you may have available.
+
+=cut
+
+use strict;
+use warnings;
+use utf8;
+
+use Archive::Zip qw( :ERROR_CODES);
+use Lingua::@TEANGA@::Gramadoir;
+use Encode qw(decode encode);
+
+if (scalar @ARGV != 2) {
+	print "Usage: $0 filetocheck[.sxw] errorfile[.sxw]\n";
+	exit 1;
+}
+
+my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime time;
+my $datestr = sprintf("%04d-%02d-%02d", $year+1900, $mon+1, $mday);
+
+#  style definition for preamble
+#    double-wavy red underline
+# my $style = '<style:style style:name="gramadoir" style:family="text"><style:properties style:text-underline="double-wave" style:text-underline-color="#800000"/></style:style>';
+#    wavy green underline
+# my $style = '<style:style style:name="gramadoir" style:family="text"><style:properties style:text-underline="wave" style:text-underline-color="#008000"/></style:style>';
+#    yellow highlighter
+my $style = '<style:style style:name="gramadoir" style:family="text"><style:properties style:text-background-color="#ffff00"/></style:style>';
+
+
+# annotation markup
+my $ann = "<office:annotation office:author=\"An Gramadóir\" office:create-date=\"$datestr\"><text:p>";
+my $closeann = '</text:p></office:annotation>';
+
+
+# markup to insert before each error
+my $markup = '<text:span text:style-name="gramadoir">';
+my $closemarkup = $markup;
+$closemarkup =~ s/[ >].*/>/;
+$closemarkup =~ s/</<\//;
+
+my $filetocheck = $ARGV[0];
+my $errorfile = $ARGV[1];
+$filetocheck =~ s/$/.sxw/ unless ($filetocheck =~ m/\.sxw$/);
+$errorfile =~ s/$/.sxw/ unless ($errorfile =~ m/\.sxw$/);
+
+my $zip = Archive::Zip->new();
+die "error reading $filetocheck" unless $zip->read($filetocheck) == AZ_OK;
+my $xml = $zip->contents('content.xml');
+$xml =~ s/&quot;/\\"/g;
+$xml =~ s/&lt;/\\</g;
+$xml =~ s/&gt;/\\>/g;
+$xml =~ s/&apos;/\\'/g;
+$xml =~ s/&amp;/\\&/g;
+
+# from_to($xml, "utf-8", "iso-8859-1");
+# $xml = decode("utf-8", $xml);
+
+my $gr = new Lingua::@TEANGA@::Gramadoir(
+	fix_spelling => 1,
+	interface_language => '@LOWERTEANGA@', 
+	input_encoding => 'utf-8',
+);
+
+my $errs = $gr->grammatical_errors($xml);
+$xml = decode("utf-8", $xml);
+my @xmllines = split /\n/, $xml;
+my $xmlans;
+my $curr_y = 1;
+my $curr_x = 0;
+my ($f_y, $f_x, $t_y, $t_x, $errmsg);
+foreach (@$errs) {
+	($f_y, $f_x, $t_y, $t_x, $errmsg) = m/^<E.*fromy="([0-9]+)" fromx="([0-9]+)" toy="([0-9]+)" tox="([0-9]+)".*msg="(.*)">$/;
+	while ($curr_y < $f_y) {
+		$xmlans .= substr($xmllines[$curr_y-1], $curr_x)."\n";
+		$curr_y++;
+		$curr_x = 0;
+	}
+	$xmlans .= substr($xmllines[$f_y - 1], $curr_x, $f_x - $curr_x);
+	$curr_x = $f_x;
+	$xmlans .= $markup;
+	while ($curr_y < $t_y) {
+		$xmlans .= substr($xmllines[$curr_y-1], $curr_x)."\n";
+		$curr_y++;
+		$curr_x = 0;
+	}
+	$t_x++;  # first char after error
+	$xmlans .= substr($xmllines[$t_y - 1], $curr_x, $t_x - $curr_x);
+	$curr_x = $t_x;
+	$xmlans .= $closemarkup;
+	$xmlans .= $ann;
+	$xmlans .= $errmsg;
+	$xmlans .= $closeann;
+}
+$xmlans .= substr($xmllines[$curr_y - 1], $t_x+1);
+$curr_y++;
+while ($curr_y <= @xmllines) {
+	$xmlans .= $xmllines[$curr_y-1]."\n";
+	$curr_y++;
+}
+
+# from_to($xmlans, "iso-8859-1", "utf-8");
+$xmlans = encode("utf-8", $xmlans);
+
+$xmlans =~ s/\\&/&amp;/g;
+$xmlans =~ s/\\"/&quot;/g;
+$xmlans =~ s/\\</&lt;/g;
+$xmlans =~ s/\\>/&gt;/g;
+$xmlans =~ s/\\'/&apos;/g;
+
+
+# insert description of gramadoir style in preamble
+$xmlans =~ s/(?<=<office:automatic-styles>)/$style/;
+$xmlans =~ s/(?<=<office:automatic-styles)\/>/>$style<\/office:automatic-styles>/;
+
+$zip->contents('content.xml', $xmlans);
+die "could not write to $errorfile" unless ($zip->writeToFileNamed( $errorfile ) == AZ_OK);
+
+exit 0;
