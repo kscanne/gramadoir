@@ -3,3 +3,5 @@
 #
 s/([^\\@BDCHARS@@INTCHARS@][@BDCHARS@@INTCHARS@])([.?!])/$1$NOBD$2/g;
 s/([^@BDCHARS@@INTCHARS@][йн])$NOBD([.?!])/$1$2/g;
+s/([^@BDCHARS@@INTCHARS@]Beo)!/$1$NOBD!/g;
+s/([^@BDCHARS@@INTCHARS@][Yy]ahoo)!/$1$NOBD!/g;
