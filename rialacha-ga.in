@@ -42,7 +42,7 @@ ANYTHING <VIMP>INITIALH</VIMP>:NIAITCH
 # with t-léine, etc. Note na+NMCS picked up elsewhere.  "cén"+t- in eisceacht
 #. Tá ceacht stairiúil uathúil do chuairteoirí san t-ionad seo.
 <[^T]>ANYTHING</[^T]> <NMCS>PREFIXEDT</NMCS>:NITEE
-# CB p.16 #9.a  (needs shallow parse)
+# CB p.16 #9.a  (needs shallow parse) -- subsumes CB p.17 #9.gh after <S>
 #. Tá sé riachtanach ar mhaithe le feidhmiú an phlean a bheidh ceaptha ag an eagraíocht ceannasach.
 <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 <NFGS>ANYTHING</NFGS> <A>LENITED</A>:NISEIMHIU
@@ -66,8 +66,6 @@ ANYTHING <VIMP>INITIALH</VIMP>:NIAITCH
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. An bhfuil aon uachtar reoite ar an cuntar?
 <S>[Aa][grs]</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
-# CB p.17 #9.h
-<S>[Aa][grs]</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.14 Note
 #. Má shuíonn tú ag bhord le flaith, tabhair faoi deara go cúramach céard atá leagtha romhat.
 <S>[Aa][gs]</S> <N>LENITED</N>:NISEIMHIU
@@ -178,8 +176,6 @@ ANYTHING <VIMP>INITIALH</VIMP>:NIAITCH
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. Chuir mé céad punta chuig an banaltra.
 <S>[Cc]huig</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
-# CB p.17 #9.h
-<S>[Cc]huig</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.14 Note
 #. Níl tú do do sheoladh chuig dhaoine a labhraíonn teanga dhothuigthe.
 <S>[Cc]huig</S> <N>LENITED</N>:NISEIMHIU
@@ -191,8 +187,6 @@ ANYTHING <VIMP>INITIALH</VIMP>:NIAITCH
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. Beirim mo mhionna dar an beart a rinne Dia le mo shinsir.
 <S>[Dd]ar</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
-# CB p.17 #9.h
-<S>[Dd]ar</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.14 Note
 #. Dearbhaím é dar chuthach m'éada i gcoinne na gciníocha eile.
 <S>[Dd]ar</S> <N>LENITED</N>:NISEIMHIU
@@ -216,8 +210,6 @@ Dé Aoine:PREFIXH
 # CB p.12 #1.c.i
 #. Is cúis imní don pobal a laghad maoinithe a dhéantar ar Naíscoileanna.
 [Dd][eo]n <N>UNLENITEDBCFGMP</N>:SEIMHIU
-# CB p.17 #9.g
-[Dd][eo]n <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.6 #2
 #. Creidim go raibh siad de an thuairim chéanna.
 [Dd]e <T>an</T>:BACHOIR{den}
@@ -261,8 +253,6 @@ Dé Aoine:PREFIXH
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. Tá dualgas ar an gComhairle sin tabhairt faoin cúram seo.
 <S>[Ff]aoin</S> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
-# CB p.17 #9.h
-<S>[Ff]aoin</S> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.84 #8 keep before following
 <D>[Ff]aoinár</D> dhá <N>UNECLIPSED</N>:URU
 # CB p.84 #8
@@ -332,8 +322,6 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 <D>[Ii]nár</D> UNECLIPSED:URU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 <S>[Ii]onsar</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
-# CB p.17 #9.h
-<S>[Ii]onsar</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.14 Note
 #. Is tuar dóchais é an méid dul chun cinn atá déanta le bhlianta beaga.
 <S>[Ll]e</S> <N>LENITED</N>:NISEIMHIU
@@ -357,8 +345,6 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. Tá do scrios chomh leathan leis an farraige.
 <S>[Ll]eis</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
-# CB p.17 #9.h
-<S>[Ll]eis</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.84 #8 keep before following
 <D>[Ll]enár</D> dhá <N>UNECLIPSED</N>:URU
 # CB p.84 #8
@@ -461,8 +447,6 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. Bíodh bhur ngrá saor ón cur i gcéill.
 <S>[Óó]n</S> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
-# CB p.17 #9.h
-<S>[Óó]n</S> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.84 #8, p.132 #2
 #. Amharcann sé ó a ionad cónaithe ar gach aon neach dá maireann ar talamh.
 <S>[Óó]n?</S> a:BACHOIR{óna}
@@ -486,8 +470,6 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. Agus tháinig scéin air roimh an pobal seo ar a líonmhaire.
 <S>[Rr]oimh</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
-# CB p.17 #9.h
-<S>[Rr]oimh</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.13 #4.a
 #. Is gaiste é eagla roimh daoine.
 <S>[Rr]oimh</S> <N>UNLENITED</N>:SEIMHIU
@@ -499,8 +481,6 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 #. An bhfuil aon uachtar reoite agat sa scoil (OK)?
 #. An bhfuil aon uachtar reoite agat sa samhradh (OK)?
 <S>[Ss]a</S> <NFCS>INITIALS</NFCS>:PREFIXT
-# CB p.17 #9.g
-<S>[Ss]an?</S> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.16 #8.c
 #. Tá sé bráthair de chuid Ord San Phroinsias.
 <N>San</N> LENITED:NISEIMHIU
@@ -539,8 +519,6 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. Chuir iad ina suí mar a raibh onóir acu thar an cuid eile a fuair cuireadh.
 [Tt]har <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
-# CB p.17 #9.h
-<S>[Tt]har</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.24 #11.a.x
 #. Timpeall trí uaire a chloig ina dhiaidh sin tháinig an bhean isteach.
 [Tt]rí uaire?:BACHOIR{huaire}
@@ -564,8 +542,6 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 # CB p.6 #2 _singular_ article only; corpus
 #. Feidhmeoidh an ciste coimisiúnaithe tríd na foilsitheoirí go príomha.
 <S>[Tt]ríd</S> <T>na</T>:BACHOIR{trí na}
-# CB p.17 #9.h
-<S>[Tt]ríd</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.84 #8 keep before following
 <D>[Tt]rínár</D> dhá <N>UNECLIPSED</N>:URU
 # CB p.84 #8
@@ -578,8 +554,6 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 <S>[Uu]m</S> <N>UNLENITED</N>:SEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 <S>[Uu]m</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
-# CB p.17 #9.h
-<S>[Uu]m</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 ###### next batch came from analyses of "tag 2-grams" in the corpus ######
 <T>ANYTHING</T> <AP>ANYTHING</AP>:CUPLA
 # "an <P>té</P>" in eisceacht
