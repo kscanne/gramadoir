@@ -1844,7 +1844,7 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 <O>ANYTHING</O> <A pl="y" gnt="n">ANYTHING</A>:CUPLA
 <O>ANYTHING</O> <A pl="n" gnt="y" gnd="f">ANYTHING</A>:CUPLA
 <NMGS>ANYTHING</NMGS> <A pl="n" gnt="y" gnd="f">ANYTHING</A>:CUPLA
-<NFGS>ANYTHING</NFGS> <A pl="n" gnt="y" gnd="f">ANYTHING</AMGS>:CUPLA
+<NFGS>ANYTHING</NFGS> <A pl="n" gnt="y" gnd="m">ANYTHING</A>:CUPLA
 # CB p.61 #2
 #   This examples should be "tithe beaga tábhairne"; too pedantic?
 #  In any case, will require improved disambig (ensuring NPL before APL
