@@ -80,9 +80,9 @@ farc.c : TEANGACHA farc.c.in
 	./rigeail $@ $(PERL)
 
 .pre.pl :
-	cat `echo "$<" | sed 's/\.pre/.txt/'` | sed 's/^\(<\([A-Z]\)[^>]*\)>/s\/<B><Z>(<[^>]*>)*\1.>(<[^>]*>)*<\\\/Z>([^<]*)<\\\/B>\/\1>$$3<\\\/\2>\/g;/' > ug.temp.pl
-	cat "$<" | sed "s@PERLPATH@$(PERL)@" | sed "/UNIGRAMS/r ug.temp.pl" > $@
-	rm -f ug.temp.pl
+	cat `echo "$<" | sed 's/\.pre/.txt/'` | sed 's/^\(<\([A-Z]\)[^>]*\)>/s\/<B><Z>(<[^>]*>)*\1.>(<[^>]*>)*<\\\/Z>([^<]*)<\\\/B>\/\1>$$3<\\\/\2>\/g;/' > $<.tmp
+	cat "$<" | sed "s@PERLPATH@$(PERL)@" | sed "/UNIGRAMS/r $<.tmp" > $@
+	rm -f $<.tmp
 
 .txt.pre :
 	touch $@
