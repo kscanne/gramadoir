@@ -210,10 +210,10 @@ sub get_sentences
 	return $answer;
 }
 
+my $BD="\001";
 my $NOBD="\002";
 sub get_sentences_real
 {
-	my $BD="\001";
 	my $sentences;
 
 	for ($_[0]) {
@@ -754,6 +754,14 @@ according to locale settings as determined by Locale::Maketext.
 
 ##############################################################################
 
+# used to be " " x length($text)  but we need to keep newlines for coords
+sub whiteout
+{
+	my ( $text ) = @_;
+	$text =~ s/[^\n]/ /g;
+	return $text;
+}
+
 # like the bash "xml_api"
 sub grammatical_errors
 {
@@ -763,7 +771,12 @@ sub grammatical_errors
 	croak gettext('conversion from %s is not supported', 
 			$self->{'input_encoding'}) if $@;
 	my $pristine = $text;  # so actually NOT pristine e.g. if input is utf8
-	$pristine =~ s/(<[^>]*>)/" " x length($1);/eg;
+	  # next three lines need to preserve all newlines, all lengths!
+	  # they mimic the code in get_sentences_real
+	$pristine =~ s/(<[^>]*>)/whiteout($1);/eg;
+	$pristine =~ s/$NOBD/ /g;
+	$pristine =~ s/$BD/ /g;
+	  # next three lines add "buffering" for easier searching per-line
 	$pristine =~ s/^/ /;
 	$pristine =~ s/\n/ \n /g;
 	$pristine =~ s/$/ /;
@@ -790,7 +803,7 @@ sub grammatical_errors
 				$errortext =~ s/<[^>]+>//g; # strip pos stuff
 				my $errorregexp = $errortext;
 				$thiserror =~ s/^<E/<E sentence="$plain" errortext="$errortext"/;
-				$errorregexp =~ s/ /([\\s\\\\]|<[^>]+>)+/g;
+				$errorregexp =~ s/ /\\s+/g;
 				$errorregexp =~ s/^/(?<=[^@BDCHARS@])/;
 				$errorregexp =~ s/$/(?=[^@BDCHARS@])/;
 				$pristine =~ m!$errorregexp!gs;
