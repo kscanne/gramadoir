@@ -352,64 +352,66 @@
 <E offset="20" fromy="349" fromx="20" toy="349" tox="30" sentence="Ba é an gleann cúng trína ghabh an abhainn." errortext="trína ghabh" msg="Urú ar iarraidh">
 <E offset="28" fromy="350" fromx="28" toy="350" tox="42" sentence="Is mar a chéile an próiseas trínar ndéantar é seo." errortext="trínar ndéantar" msg="Ba chóir duit «trína» a úsáid anseo">
 <E offset="4" fromy="351" fromx="4" toy="351" tox="16" sentence="Mar trínár peacaí, tá do phobal ina ábhar gáire ag cách máguaird orainn." errortext="trínár peacaí" msg="Urú ar iarraidh">
-<E offset="17" fromy="352" fromx="17" toy="352" tox="28" sentence="Idir dhá sholas, um tráthnóna, faoi choim na hoíche agus sa dorchadas." errortext="um tráthnóna" msg="Séimhiú ar iarraidh">
-<E offset="10" fromy="353" fromx="10" toy="353" tox="15" sentence="An lá dar gcionn nochtadh gealltanas an Taoisigh sa nuachtán." errortext="gcionn" msg="Ní úsáidtear an tabharthach ach in abairtí speisialta">
-<E offset="15" fromy="354" fromx="15" toy="354" tox="20" sentence="Conas a bheadh Éirinn agus Meiriceá difriúil?" errortext="Éirinn" msg="Ní úsáidtear an tabharthach ach in abairtí speisialta">
-<E offset="17" fromy="355" fromx="17" toy="355" tox="18" sentence="Ba chois tine é (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="9" fromy="356" fromx="9" toy="356" tox="18" sentence="Clann na bPoblachta a thug siad orthu féin." errortext="bPoblachta" msg="Urú gan ghá">
-<E offset="36" fromy="357" fromx="36" toy="357" tox="48" sentence="Cruthaíodh an chloch sin go domhain faoin dtalamh." errortext="faoin dtalamh" msg="Urú nó séimhiú gan ghá">
-<E offset="11" fromy="358" fromx="11" toy="358" tox="19" sentence="Tá ainm in n-easnamh a mbeadh coinne agat leis." errortext="n-easnamh" msg="Urú gan ghá">
-<E offset="24" fromy="359" fromx="24" toy="359" tox="28" sentence="Tá muid compordach inar gcuid &quot;fírinní&quot; féin." errortext="gcuid" msg="Urú gan ghá">
-<E offset="63" fromy="360" fromx="63" toy="360" tox="66" sentence="Tá siad ag éileamh go n-íocfaí iad as a gcuid costais agus iad mbun traenála." errortext="mbun" msg="Urú gan ghá">
-<E offset="50" fromy="361" fromx="50" toy="361" tox="51" sentence="Cruthaíodh an chloch sin go domhain faoin gcrann (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="19" fromy="362" fromx="19" toy="362" tox="22" sentence="Sin é a dhéantar i gcas cuntair oibre cistine." errortext="gcas" msg="Urú gan ghá">
-<E offset="5" fromy="363" fromx="5" toy="363" tox="8" sentence="Nach holc an mhaise duit a bheith ag magadh." errortext="holc" msg="Réamhlitir «h» gan ghá">
-<E offset="41" fromy="364" fromx="41" toy="364" tox="42" sentence="Dún do bhéal, a mhiúil na haon chloiche (OK)!" errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="76" fromy="365" fromx="76" toy="365" tox="77" sentence="Scaoileadh seachtar duine chun báis i mBaile Átha Cliath le hocht mí anuas (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="63" fromy="366" fromx="63" toy="366" tox="64" sentence="Ní dhúnfaidh an t-ollmhargadh go dtí a haon a chlog ar maidin (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="68" fromy="367" fromx="68" toy="367" tox="69" sentence="Is mar gheall ar sin atá líníocht phictiúrtha chomh húsáideach sin (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="35" fromy="368" fromx="35" toy="368" tox="36" sentence="Tá sí ag feidhmiú go héifeachtach (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="55" fromy="369" fromx="55" toy="369" tox="56" sentence="Ní hionann cuingir na ngabhar agus cuingir na lánúine (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="3" fromy="370" fromx="3" toy="370" tox="6" sentence="Ba hiad na hamhráin i dtosach ba chúis leis." errortext="hiad" msg="Réamhlitir «h» gan ghá">
-<E offset="33" fromy="371" fromx="33" toy="371" tox="34" sentence="Ní hé lá na gaoithe lá na scolb (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="14" fromy="372" fromx="14" toy="372" tox="17" sentence="Ba iad na trí háit iad Bostún, Baile Átha Cliath agus Nua Eabhrac." errortext="háit" msg="Réamhlitir «h» gan ghá">
-<E offset="28" fromy="373" fromx="28" toy="373" tox="29" sentence="Phós sé bean eile ina háit (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="45" fromy="374" fromx="45" toy="374" tox="46" sentence="Cá ham a tháinig sí a staidéar anseo ó thús (OK)?" errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="71" fromy="375" fromx="71" toy="375" tox="72" sentence="Bhí a dheartháir ag siúl na gceithre hairde agus bhí seisean ina shuí (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="37" fromy="376" fromx="37" toy="376" tox="38" sentence="Chaith sé an dara hoíche i Sligeach (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="54" fromy="377" fromx="54" toy="377" tox="55" sentence="Tá sé i gcóip a rinneadh i lár na cúigiú haoise déag (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="37" fromy="378" fromx="37" toy="378" tox="38" sentence="Chuir sí a dhá huillinn ar an bhord (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="16" fromy="379" fromx="16" toy="379" tox="23" sentence="Chuir mé mo dhá huillinn ar an bhord." errortext="huillinn" msg="Réamhlitir «h» gan ghá">
-<E offset="37" fromy="380" fromx="37" toy="380" tox="38" sentence="Cuireadh cuid mhaith acu go hÉirinn (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="70" fromy="381" fromx="70" toy="381" tox="71" sentence="Tá tús curtha le clár chun rampaí luchtaithe a chur sna hotharchairr (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="37" fromy="382" fromx="37" toy="382" tox="38" sentence="Cuimhnígí ar na héachtaí a rinne sé (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="92" fromy="383" fromx="92" toy="383" tox="93" sentence="Creidim go mbeidh iontas ar mhuintir na hÉireann nuair a fheiceann siad an feidhmchlár seo (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="48" fromy="384" fromx="48" toy="384" tox="49" sentence="Tháinig múinteoir úr i gceithre huaire fichead (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="10" fromy="385" fromx="10" toy="385" tox="19" sentence="In Éirinn chaitheann breis is 30 faoin gcéad de mhná toitíní." errortext="chaitheann" msg="Séimhiú gan ghá">
-<E offset="0" fromy="386" fromx="0" toy="386" tox="8" sentence="Chuirfear in iúl do dhaoine gurb é sin an aidhm atá againn." errortext="Chuirfear" msg="Séimhiú gan ghá">
-<E offset="73" fromy="387" fromx="73" toy="387" tox="74" sentence="Déan cur síos ar dhá thoradh a bhíonn ag caitheamh tobac ar an tsláinte (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="67" fromy="388" fromx="67" toy="388" tox="68" sentence="Má bhrúitear idir chnónna agus bhlaoscanna faightear ola inchaite (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="39" fromy="389" fromx="39" toy="389" tox="40" sentence="Ní chothaíonn na briathra na bráithre (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="58" fromy="390" fromx="58" toy="390" tox="59" sentence="Cha bhíonn striapachas agus seafóid Mheiriceá ann feasta (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="66" fromy="391" fromx="66" toy="391" tox="67" sentence="Tá cleachtadh ag daoine ó bhíonn siad an-óg ar uaigneas imeachta (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="64" fromy="392" fromx="64" toy="392" tox="65" sentence="Ar an láithreán seo gheofar foclóirí agus liostaí téarmaíochta (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="14" fromy="393" fromx="14" toy="393" tox="26" sentence="An oíche sin, sular chuaigh sé a chodladh, chuir sé litir fhada dom." errortext="sular chuaigh" msg="Tá gá leis an fhoirm spleách anseo">
-<E offset="13" fromy="394" fromx="13" toy="394" tox="25" sentence="Tá mioneolas faoinar rinne sé ansin." errortext="faoinar rinne" msg="Tá gá leis an fhoirm spleách anseo">
-<E offset="0" fromy="395" fromx="0" toy="395" tox="12" sentence="Níor rinneadh a leithéid le fada agus ní raibh aon slat tomhais acu." errortext="Níor rinneadh" msg="Tá gá leis an fhoirm spleách anseo">
-<E offset="35" fromy="396" fromx="35" toy="396" tox="49" sentence="Teastaíonn uaidh an scéal a insint sula ngeobhaidh sé bás." errortext="sula ngeobhaidh" msg="Tá gá leis an fhoirm spleách anseo">
-<E offset="26" fromy="397" fromx="26" toy="397" tox="31" sentence="Tá folúntas sa chomhlacht ina tá mé ag obair faoi láthair." errortext="ina tá" msg="Urú ar iarraidh">
-<E offset="0" fromy="398" fromx="0" toy="398" tox="12" sentence="Ní gheobhaidh an mealltóir nathrach aon táille." errortext="Ní gheobhaidh" msg="Tá gá leis an fhoirm spleách anseo">
-<E offset="3" fromy="399" fromx="3" toy="399" tox="9" sentence="Má dhearna sí praiseach de, thosaigh sí arís go bhfuair sí ceart é." errortext="dhearna" msg="Ní gá leis an fhoirm spleách">
-<E offset="58" fromy="400" fromx="58" toy="400" tox="59" sentence="Chan fhacthas dom go raibh an saibhreas céanna i mBéarla (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="32" fromy="401" fromx="32" toy="401" tox="37" sentence="Chuaigh sé chun na huaimhe agus fhéach sé isteach." errortext="fhéach" msg="Réamhlitir «d'» ar iarraidh">
-<E offset="31" fromy="402" fromx="31" toy="402" tox="32" sentence="Fágadh faoi smacht a lámh iad (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="19" fromy="403" fromx="19" toy="403" tox="20" sentence="An íosfá ubh eile (OK)?" errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="19" fromy="404" fromx="19" toy="404" tox="33" sentence="Níorbh fhada, ámh, gur d'fhoghlaim sí an téarma ceart uathu." errortext="gur d'fhoghlaim" msg="Réamhlitir «d'» gan ghá">
-<E offset="48" fromy="405" fromx="48" toy="405" tox="49" sentence="Nílim ag rá gur d'aon ghuth a ainmníodh Sheehy (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="61" fromy="406" fromx="61" toy="406" tox="62" sentence="Nochtadh na fírinne sa dóigh a n-admhódh an té is bréagaí í (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="47" fromy="407" fromx="47" toy="407" tox="56" sentence="Tá a chumas sa Ghaeilge níos airde ná cumas na bhfear óga." errortext="bhfear óga" msg="Tá gá leis an leagan uatha anseo">
-<E offset="37" fromy="408" fromx="37" toy="408" tox="38" sentence="Beirt bhan Mheiriceánacha a bhí ann (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="38" fromy="409" fromx="38" toy="409" tox="39" sentence="Tá sé-- tá sé- mo ---shin-seanathair (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="3" fromy="410" fromx="3" toy="410" tox="8" sentence="Is foláir dóibh a ndualgais a chomhlíonadh." errortext="foláir" msg="Ní úsáidtear an focal seo ach san abairtín «ní foláir» de ghnáth">
-<E offset="23" fromy="411" fromx="23" toy="411" tox="24" sentence="Bhain na toibreacha le re eile agus le dream daoine atá imithe." errortext="re" msg="Ní úsáidtear an focal seo ach san abairtín «gach re» de ghnáth">
-<E offset="14" fromy="412" fromx="14" toy="412" tox="17" sentence="Labhair mé ar shon na daoine." errortext="shon" msg="Ní úsáidtear an focal seo ach san abairtín «ar son» de ghnáth">
+<E offset="19" fromy="352" fromx="19" toy="352" tox="33" sentence="Nár thug sí póg do gach uile duine?" errortext="gach uile duine" msg="Séimhiú ar iarraidh">
+<E offset="26" fromy="353" fromx="26" toy="353" tox="27" sentence="D'ith na daoine uile bia (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="17" fromy="354" fromx="17" toy="354" tox="28" sentence="Idir dhá sholas, um tráthnóna, faoi choim na hoíche agus sa dorchadas." errortext="um tráthnóna" msg="Séimhiú ar iarraidh">
+<E offset="10" fromy="355" fromx="10" toy="355" tox="15" sentence="An lá dar gcionn nochtadh gealltanas an Taoisigh sa nuachtán." errortext="gcionn" msg="Ní úsáidtear an tabharthach ach in abairtí speisialta">
+<E offset="15" fromy="356" fromx="15" toy="356" tox="20" sentence="Conas a bheadh Éirinn agus Meiriceá difriúil?" errortext="Éirinn" msg="Ní úsáidtear an tabharthach ach in abairtí speisialta">
+<E offset="17" fromy="357" fromx="17" toy="357" tox="18" sentence="Ba chois tine é (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="9" fromy="358" fromx="9" toy="358" tox="18" sentence="Clann na bPoblachta a thug siad orthu féin." errortext="bPoblachta" msg="Urú gan ghá">
+<E offset="36" fromy="359" fromx="36" toy="359" tox="48" sentence="Cruthaíodh an chloch sin go domhain faoin dtalamh." errortext="faoin dtalamh" msg="Urú nó séimhiú gan ghá">
+<E offset="11" fromy="360" fromx="11" toy="360" tox="19" sentence="Tá ainm in n-easnamh a mbeadh coinne agat leis." errortext="n-easnamh" msg="Urú gan ghá">
+<E offset="24" fromy="361" fromx="24" toy="361" tox="28" sentence="Tá muid compordach inar gcuid &quot;fírinní&quot; féin." errortext="gcuid" msg="Urú gan ghá">
+<E offset="63" fromy="362" fromx="63" toy="362" tox="66" sentence="Tá siad ag éileamh go n-íocfaí iad as a gcuid costais agus iad mbun traenála." errortext="mbun" msg="Urú gan ghá">
+<E offset="50" fromy="363" fromx="50" toy="363" tox="51" sentence="Cruthaíodh an chloch sin go domhain faoin gcrann (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="19" fromy="364" fromx="19" toy="364" tox="22" sentence="Sin é a dhéantar i gcas cuntair oibre cistine." errortext="gcas" msg="Urú gan ghá">
+<E offset="5" fromy="365" fromx="5" toy="365" tox="8" sentence="Nach holc an mhaise duit a bheith ag magadh." errortext="holc" msg="Réamhlitir «h» gan ghá">
+<E offset="41" fromy="366" fromx="41" toy="366" tox="42" sentence="Dún do bhéal, a mhiúil na haon chloiche (OK)!" errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="76" fromy="367" fromx="76" toy="367" tox="77" sentence="Scaoileadh seachtar duine chun báis i mBaile Átha Cliath le hocht mí anuas (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="63" fromy="368" fromx="63" toy="368" tox="64" sentence="Ní dhúnfaidh an t-ollmhargadh go dtí a haon a chlog ar maidin (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="68" fromy="369" fromx="68" toy="369" tox="69" sentence="Is mar gheall ar sin atá líníocht phictiúrtha chomh húsáideach sin (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="35" fromy="370" fromx="35" toy="370" tox="36" sentence="Tá sí ag feidhmiú go héifeachtach (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="55" fromy="371" fromx="55" toy="371" tox="56" sentence="Ní hionann cuingir na ngabhar agus cuingir na lánúine (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="3" fromy="372" fromx="3" toy="372" tox="6" sentence="Ba hiad na hamhráin i dtosach ba chúis leis." errortext="hiad" msg="Réamhlitir «h» gan ghá">
+<E offset="33" fromy="373" fromx="33" toy="373" tox="34" sentence="Ní hé lá na gaoithe lá na scolb (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="14" fromy="374" fromx="14" toy="374" tox="17" sentence="Ba iad na trí háit iad Bostún, Baile Átha Cliath agus Nua Eabhrac." errortext="háit" msg="Réamhlitir «h» gan ghá">
+<E offset="28" fromy="375" fromx="28" toy="375" tox="29" sentence="Phós sé bean eile ina háit (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="45" fromy="376" fromx="45" toy="376" tox="46" sentence="Cá ham a tháinig sí a staidéar anseo ó thús (OK)?" errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="71" fromy="377" fromx="71" toy="377" tox="72" sentence="Bhí a dheartháir ag siúl na gceithre hairde agus bhí seisean ina shuí (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="37" fromy="378" fromx="37" toy="378" tox="38" sentence="Chaith sé an dara hoíche i Sligeach (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="54" fromy="379" fromx="54" toy="379" tox="55" sentence="Tá sé i gcóip a rinneadh i lár na cúigiú haoise déag (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="37" fromy="380" fromx="37" toy="380" tox="38" sentence="Chuir sí a dhá huillinn ar an bhord (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="16" fromy="381" fromx="16" toy="381" tox="23" sentence="Chuir mé mo dhá huillinn ar an bhord." errortext="huillinn" msg="Réamhlitir «h» gan ghá">
+<E offset="37" fromy="382" fromx="37" toy="382" tox="38" sentence="Cuireadh cuid mhaith acu go hÉirinn (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="70" fromy="383" fromx="70" toy="383" tox="71" sentence="Tá tús curtha le clár chun rampaí luchtaithe a chur sna hotharchairr (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="37" fromy="384" fromx="37" toy="384" tox="38" sentence="Cuimhnígí ar na héachtaí a rinne sé (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="92" fromy="385" fromx="92" toy="385" tox="93" sentence="Creidim go mbeidh iontas ar mhuintir na hÉireann nuair a fheiceann siad an feidhmchlár seo (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="48" fromy="386" fromx="48" toy="386" tox="49" sentence="Tháinig múinteoir úr i gceithre huaire fichead (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="10" fromy="387" fromx="10" toy="387" tox="19" sentence="In Éirinn chaitheann breis is 30 faoin gcéad de mhná toitíní." errortext="chaitheann" msg="Séimhiú gan ghá">
+<E offset="0" fromy="388" fromx="0" toy="388" tox="8" sentence="Chuirfear in iúl do dhaoine gurb é sin an aidhm atá againn." errortext="Chuirfear" msg="Séimhiú gan ghá">
+<E offset="73" fromy="389" fromx="73" toy="389" tox="74" sentence="Déan cur síos ar dhá thoradh a bhíonn ag caitheamh tobac ar an tsláinte (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="67" fromy="390" fromx="67" toy="390" tox="68" sentence="Má bhrúitear idir chnónna agus bhlaoscanna faightear ola inchaite (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="39" fromy="391" fromx="39" toy="391" tox="40" sentence="Ní chothaíonn na briathra na bráithre (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="58" fromy="392" fromx="58" toy="392" tox="59" sentence="Cha bhíonn striapachas agus seafóid Mheiriceá ann feasta (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="66" fromy="393" fromx="66" toy="393" tox="67" sentence="Tá cleachtadh ag daoine ó bhíonn siad an-óg ar uaigneas imeachta (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="64" fromy="394" fromx="64" toy="394" tox="65" sentence="Ar an láithreán seo gheofar foclóirí agus liostaí téarmaíochta (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="14" fromy="395" fromx="14" toy="395" tox="26" sentence="An oíche sin, sular chuaigh sé a chodladh, chuir sé litir fhada dom." errortext="sular chuaigh" msg="Tá gá leis an fhoirm spleách anseo">
+<E offset="13" fromy="396" fromx="13" toy="396" tox="25" sentence="Tá mioneolas faoinar rinne sé ansin." errortext="faoinar rinne" msg="Tá gá leis an fhoirm spleách anseo">
+<E offset="0" fromy="397" fromx="0" toy="397" tox="12" sentence="Níor rinneadh a leithéid le fada agus ní raibh aon slat tomhais acu." errortext="Níor rinneadh" msg="Tá gá leis an fhoirm spleách anseo">
+<E offset="35" fromy="398" fromx="35" toy="398" tox="49" sentence="Teastaíonn uaidh an scéal a insint sula ngeobhaidh sé bás." errortext="sula ngeobhaidh" msg="Tá gá leis an fhoirm spleách anseo">
+<E offset="26" fromy="399" fromx="26" toy="399" tox="31" sentence="Tá folúntas sa chomhlacht ina tá mé ag obair faoi láthair." errortext="ina tá" msg="Urú ar iarraidh">
+<E offset="0" fromy="400" fromx="0" toy="400" tox="12" sentence="Ní gheobhaidh an mealltóir nathrach aon táille." errortext="Ní gheobhaidh" msg="Tá gá leis an fhoirm spleách anseo">
+<E offset="3" fromy="401" fromx="3" toy="401" tox="9" sentence="Má dhearna sí praiseach de, thosaigh sí arís go bhfuair sí ceart é." errortext="dhearna" msg="Ní gá leis an fhoirm spleách">
+<E offset="58" fromy="402" fromx="58" toy="402" tox="59" sentence="Chan fhacthas dom go raibh an saibhreas céanna i mBéarla (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="32" fromy="403" fromx="32" toy="403" tox="37" sentence="Chuaigh sé chun na huaimhe agus fhéach sé isteach." errortext="fhéach" msg="Réamhlitir «d'» ar iarraidh">
+<E offset="31" fromy="404" fromx="31" toy="404" tox="32" sentence="Fágadh faoi smacht a lámh iad (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="19" fromy="405" fromx="19" toy="405" tox="20" sentence="An íosfá ubh eile (OK)?" errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="19" fromy="406" fromx="19" toy="406" tox="33" sentence="Níorbh fhada, ámh, gur d'fhoghlaim sí an téarma ceart uathu." errortext="gur d'fhoghlaim" msg="Réamhlitir «d'» gan ghá">
+<E offset="48" fromy="407" fromx="48" toy="407" tox="49" sentence="Nílim ag rá gur d'aon ghuth a ainmníodh Sheehy (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="61" fromy="408" fromx="61" toy="408" tox="62" sentence="Nochtadh na fírinne sa dóigh a n-admhódh an té is bréagaí í (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="47" fromy="409" fromx="47" toy="409" tox="56" sentence="Tá a chumas sa Ghaeilge níos airde ná cumas na bhfear óga." errortext="bhfear óga" msg="Tá gá leis an leagan uatha anseo">
+<E offset="37" fromy="410" fromx="37" toy="410" tox="38" sentence="Beirt bhan Mheiriceánacha a bhí ann (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="38" fromy="411" fromx="38" toy="411" tox="39" sentence="Tá sé-- tá sé- mo ---shin-seanathair (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="3" fromy="412" fromx="3" toy="412" tox="8" sentence="Is foláir dóibh a ndualgais a chomhlíonadh." errortext="foláir" msg="Ní úsáidtear an focal seo ach san abairtín «ní foláir» de ghnáth">
+<E offset="23" fromy="413" fromx="23" toy="413" tox="24" sentence="Bhain na toibreacha le re eile agus le dream daoine atá imithe." errortext="re" msg="Ní úsáidtear an focal seo ach san abairtín «gach re» de ghnáth">
+<E offset="14" fromy="414" fromx="14" toy="414" tox="17" sentence="Labhair mé ar shon na daoine." errortext="shon" msg="Ní úsáidtear an focal seo ach san abairtín «ar son» de ghnáth">
