@@ -45,6 +45,17 @@ AC_SUBST(EGREP_COLOR)
 
 AM_GNU_GETTEXT([external])
 
+TEANGACHA=`sed '/^#/d' TEANGACHA | tr "\n" " "`
+ALLPL=""
+for cod in ${TEANGACHA}
+do
+	ALLPL="${ALLPL} aonchiall-${cod}.pl eisceacht-${cod}.pl rialacha-${cod}.pl"
+done
+ALLIN=`echo ${ALLPL} | sed "s/\.pl/.in/g"`
+
+AC_SUBST(TEANGACHA)
+AC_SUBST(ALLPL)
+AC_SUBST(ALLIN)
 
 AC_CONFIG_FILES(Makefile gr po/Makefile.in )
 AC_OUTPUT
