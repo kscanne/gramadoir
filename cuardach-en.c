@@ -1,5 +1,4 @@
 /*
-  cuardach-en.c : decodes English grammatical codes
  Copyright (C) 2003 Kevin P. Scannell <scannell@slu.edu>
 
  This is free software; see the file COPYING for copying conditions.  There is
