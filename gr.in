@@ -71,6 +71,8 @@ s/\"ANAITHNIDSRL/\"Focal anaithnid (scaoilfear an chuid eile)/g
 s/\"ANAITHNID/\"Focal anaithnid/g
 /BACHOIR/s/_/ /g
 s/\"BACHOIR{\([^}]*\)}/\"Ba chóir duit \/\1\/ a úsáid anseo/g
+/CAIGHDEAN/s/_/ /g
+s/\"CAIGHDEAN{\([^}]*\)}/\"Focal neamhchaighdeánach: ar mhaith leat \/\1\/?/g
 s/\"CLAOCHLU/\"Seimhiú nó urú ar iarraidh/g
 s/\"NISEIMHIU/\"Seimhiú gan ghá/g
 s/\"PREFIXH/\"Réamhlitir \/h\/ ar iarraidh/g
@@ -329,39 +331,31 @@ AIBHSIGHVAR="@EGREP_COLOR@ "
 ACTION=comhad
 while [ ${1%%[^-]*} ]
 do
-	if [ ${1} = "--version" ]
-	then
-		versionout
-		exit 0
-	fi
-
-	if [ ${1} = "--help" ]
-	then
-		helpout
-		exit 0
-	fi
-
-	if [ ${1} = "--html" ]
-	then
-		AIBHSIGHVAR="@AWK@ -f @prefix@/libexec/hilite.awk pattern="
-	else
-		if [ ${1} = "--litriu" ]
-		then
+	case "${1}" in
+		"--version" )
+			versionout
+			exit 0
+		;;
+		"--help" )
+			helpout
+			exit 0
+		;;
+		"--html" )
+			AIBHSIGHVAR="@AWK@ -f @prefix@/libexec/hilite.awk pattern="
+		;;
+		"--litriu" )
 			ACTION=litriu
-		else
-			if [ ${1} = "--xml" ]
-			then
-				ACTION=xml_output
-			else
-				if [ ${1} = "--iomlan" ]
-				then
-					USEIGNORE="noignore"
-				else
-					option_error ${1}
-				fi
-			fi
-		fi
-	fi
+		;;
+		"--xml" )
+			ACTION=xml_output
+		;;
+		"--iomlan" )
+			USEIGNORE="noignore"
+		;;
+		* )
+			option_error ${1}
+		;;
+	esac
 	shift
 done
 
