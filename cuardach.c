@@ -51,6 +51,10 @@ struct replacement *torepl = NULL;
 
 extern void byte_to_markup (const char *tng, const char *pkg,
 			    const unsigned char c, char *fill, char *attrs);
+extern int my_tolower (const char *tng, const char* w, int* pos, char* lwr);
+extern int make_all_lowercase_lang (const char *tng, const char *w,
+				    char *lwr, int lowers, int uppers,
+				    int firstupper);
 
 /* return 0 if everything went well enough to proceed, non-zero if not */
 int
@@ -351,94 +355,32 @@ replacementlookup (const char *word, char *repl)
   return 0;
 }
 
-/* used to set the locale for these and use ctype functions.
-  Might as well do them myself for those without Latin-1 locales. 
-  In each case we may assume that "x" is an Irish latin-1 character
-  since others are filtered out earlier */
-
-char
-my_tolower (const char x)
-{
-  return (x | 0x20);		/* know that x is upper as determined by my_isupper */
-}
-
-/* exploit the fact that the only non-ASCII chars in Irish are vowels! */
-int
-vowel_p (const char x)
-{
-  char z = my_tolower (x);
-  return ((z & 0x80) || z == 'a' || z == 'e' || z == 'i' || z == 'o'
-	  || z == 'u');
-}
-
-int
-my_isupper (const char x)
-{
-  if (x & 0x80)
-    return !(x & 0x20);
-  else
-    return (x >= 'A' && x <= 'Z');
-}
-
 /* return true iff lowered != word, i.e. word has some uppercase letter */
 int
 make_all_lowercase (const char *word, char *lowered)
 {
-  int i = 0, offset = 0, lowers = 0, uppers = 0, firstupper = -1;
+  int i = 0, j, lowers = 0, uppers = 0, firstupper = -1;
 
-  if ((word[0] == 'n' || word[0] == 't') && my_isupper (word[1]))
-    {
-      lowered[0] = word[0];
-      lowered[1] = '-';
-      lowered[2] = my_tolower (word[1]);
-      lowers = uppers = firstupper = 1;
-      i = 2;
-      offset = 1;
-    }
   while (word[i] != 0)
     {
-      if (my_isupper (word[i]))
+      j=i;
+      if (my_tolower (teanga, word, &j, lowered))
 	{
-	  lowered[i + offset] = my_tolower (word[i]);
 	  uppers++;
 	  if (firstupper == -1)
 	    firstupper = i;
 	}
       else
 	{
-	  lowered[i + offset] = word[i];
 	  if (word[i] != '\n')
 	    lowers++;
 	}
+      i=j;
       i++;
     }
-  lowered[i + offset] = 0;
-  if (uppers == 0)
-    return 0;
-  else if (lowers == 0)
-    return 1;
-  else if (uppers > 1)
-    return 0;
-  else if (firstupper == 0)
-    return 1;			/* rest is for ga only; move eventually */
-  else if (firstupper == 1)
-    {
-      if (vowel_p (word[1]))
-	return (word[0] == 'h' || word[0] == 'n' || word[0] == 't');
-      else
-	return ((word[0] == 'b' && word[1] == 'P') ||
-		(word[0] == 'd' && word[1] == 'T') ||
-		(word[0] == 'g' && word[1] == 'C') ||
-		(word[0] == 'm' && word[1] == 'B') ||
-		(word[0] == 'n' && (word[1] == 'D' || word[1] == 'G')) ||
-		(word[0] == 't' && word[1] == 'S'));
-    }
-  else if (firstupper == 2)
-    {
-      return (word[0] == 'b' && word[1] == 'h' && word[2] == 'F');
-    }
-  else
-    return 0;
+  lowered[i] = 0;
+  return make_all_lowercase_lang (teanga, word, lowered, lowers, uppers,
+				  firstupper);
 }
 
 int
