@@ -3,6 +3,7 @@
 # It only needs to be changed if the grammar of the .in file changes
 # or new tags are added, etc.
 /^#/d
+s/<^\([A-Z]\)><\/^[A-Z]>/(<[^\\\1][^>]*>[^<]*<\\\/[^\1]>|<B><Z>(<[^\1][^>]*>)+<\\\/Z>[^<]*<\\\/B>)/g
 s/<\([A-Z]\)\([^>]*\)><\/[A-Z][^>]*>/<\1[^>]*\2[^>]*>[^<]*<\\\/\1>/g
 s/<\([A-Z]\)\([^>]*\)>\([^<]*\)<\/[A-Z][^>]*>/(<\1[^>]*\2[^>]*>\3<\\\/\1>|<B><Z>(<\1[^>]*\2[^>]*>)+<\\\/Z>\3<\\\/B>)/g
 s/^/~/
@@ -12,13 +13,20 @@ s/^~//
 s/  / /g
 s/INITIALS/[Ss][lnraeiouáéíóú][^<]*/g
 s/INITIALVOWELORF/([aeiouAEIOUáéíóúÁÉÍÓÚ]|[Ff]h?[aeiouáéíóú])[^<]*/g
+s/INITIALVOWEL/[aeiouAEIOUáéíóúÁÉÍÓÚ][^<]*/g
 s/UNECLIPSED/([aeiouAEIOUáéíóúÁÉÍÓÚcfptCFPT]|d[^Tt']|g[^Cc]|b[^Pph]|bh[^fF])[^<]*/g
-s/UNLENITEDBCGMP/[BbCcGgMmPp][^h][^<]*/g
-s/UNLENITEDBCFGMP/[BbCcFfGgMmPp][^h][^<]*/g
-s/UNMUTATEDBCFGMP/[BbCcFfGgMmPp][^hbBcCgGpP][^<]*/g
+s/UNLENITEDBCGMP/[BbCcGgMmPp][^h'][^<]*/g
+s/UNLENITEDBCFGMP/[BbCcFfGgMmPp][^h'][^<]*/g
+s/UNMUTATEDBCFGMP/[BbCcFfGgMmPp][^hbBcCgGpP'][^<]*/g
 s/UNLENITEDF/[Ff][^h][^<]*/g
-s/UNLENITED/([BbCcDdFfGgMmPpTt][^h]|[Ss][lnraeiouáéíóú])[^<]*/g
+s/UNLENITED/([BbCcDdFfGgMmPpTt][^h']|[Ss][lnraeiouáéíóú])[^<]*/g
+s/LENITEDDFST/[DdFfSsTt]h[^<]*/g
 s/LENITED/([CcDdFfGgMmPpSsTt]h|bh[^fF])[^<]*/g
+s/SLENDERFINALCONSONANT/[^<]*[eéií][^aeiouáéíóú<]+/g
+s/FINALVOWEL/[^<]*[^bcdfghjlmnprstvxz<]+/g
+s/\*P\[/*pl="y"[/g
+s/\*CP\[/*pl="y" gnt="n"[/g
+s/\*GP\[/*pl="y" gnt="y"[/g
 s/\*CS\[/*pl="n" gnt="n"[/g
 s/\*FCS\[/*pl="n" gnt="n" gnd="f"[/g
 s/\*FCP\[/*pl="y" gnt="n" gnd="f"[/g
