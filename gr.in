@@ -184,12 +184,12 @@ s/\([^${BDCHARS}0-9-][0-9]\)\([.?!]\)/\1\\\\\2/g
 s/\([^${BDCHARS}0-9-][0-9][0-9]\)\([.?!]\)/\1\\\\\2/g
 s/\(\...\)\([.?!]\)/\1\\\\\2/g
 s/\.ie\\\\\([.?!]\)/.ie\1/g
-s/\.uk\\\\\([.?!]\)/.ie\1/g
+s/\.uk\\\\\([.?!]\)/.uk\1/g
 s/\(\..\)\([.?!]\)/\1\\\\\2/g
 s/\(\.\)\([.?!]\)/\1\\\\\2/g
 s/\([IVX][IVX]\)\([.?!]\)/\1\\\\\2/g
 " |
-@prefix@/libexec/giorr "${BDCHARS}"
+@prefix@/libexec/giorr-${TEANGA} "${BDCHARS}"
 }
 
 # strips any pre-existing markup, tokenizes with <c></c>,
