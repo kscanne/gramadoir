@@ -1,6 +1,6 @@
 /* 
   This is a short program developers can use to create a database of words.
-  See the Makefile target "focail.bs" for usage.
+  See the Makefile targets "focail-xx.bs" for usage.
 
   Copyright (C) 2003 Kevin P. Scannell <scannell@slu.edu>
  
@@ -15,7 +15,7 @@
 /* trouble */
 #endif
 
-/* ngearr-chlóscríobhneoireachta  has 28 */
+/* ngearr-chl\'oscr\'iobhneoireachta  has 28 */
 #define GR_WORDMAX 32
 /*  can redefine this to something like 257 to turn this business off */
 #define RAREBYTE 127
@@ -30,7 +30,7 @@ main (int argc, char *argv[])
 
   if (argc != 2)
     {
-      fprintf (stderr, "Úsáid: cabhair [0|1]\n");
+      fprintf (stderr, "Usage: cabhair [0|1]\n");
       return 1;
     }
   if (argv[1][0] == '0')
