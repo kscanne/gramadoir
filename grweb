@@ -1,0 +1,3 @@
+#!/bin/bash
+/usr/local/bin/gr --html --version
+echo "${1}" | /usr/local/bin/gr --html --iomlan
