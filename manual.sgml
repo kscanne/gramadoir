@@ -77,7 +77,7 @@
 	  In addition to the flagship Irish version, there are several other
 	  language packs currently available (in various stages of
 	  completion):
-	  Afrikaans (by Petri Jooste),
+	  Afrikaans (by Petri Jooste and Tjaart van der Walt),
 	  Cornish (by Paul Bowden and Edi Werner),
 	  Walloon (by Pablo Saratxaga),
 	  and Welsh (by Kevin Donnelly).
@@ -404,6 +404,13 @@ directions 32
 	    </screen>
 	  </example>
 	  <para>
+	    Note that ambiguous words should be listed multiple
+	    times, once for each possible part of speech 
+	    (we are thinking in the example above of the
+	    word <wordasword>direct</wordasword> as either
+	    a verb, adjective, or adverb).
+	  </para>
+	  <para>
 	    As noted earlier, in the default language pack, all grammatical
 	    codes are initially set to "1"
 	    (<literal>&lt;<sgmltag>U</sgmltag>&gt;</literal>) as
@@ -441,16 +448,35 @@ spellchecker spell checker
         <sect2>
           <title>Morphology</title>
 	  <para>
-	    The file <filename>morph-xx.txt</filename> encodes the
-	    morphological rules for your language;
+	    The file <filename>morph-xx.txt</filename> encodes
+	    morphological rules and other spelling changes for your language;
 	    it is structured as a sequence of substitutions,
 	    one per line, using Perl regular expression syntax,
 	    with fields separated by whitespace.
 	    When an unknown word is encountered, these replacements
-	    are applied recursively (depth first) until a match is
-	    found.
+	    are applied recursively (depth first, to a maximum depth
+	    of 6) until a match is found.
 	  </para>
 	  <para>
+	    So, for example, this file is where you can
+	    specify customized rules for decapitalization (the default
+	    language pack provides standard rules for this,
+	    while for Irish it is substantially more complicated).
+	    You can also use it to strip common prefixes and suffixes
+	    in much the same way as the "affix file" is used
+	    for <application>ispell</application> or
+	    for <application>aspell</application> (but, unlike those
+	    programs, allowing several levels of recursion).  
+	    For Irish,
+	    <filename>morph-ga.txt</filename> is also used
+	    to encode many of the spelling
+	    reforms that were introduced as part of the
+	    "Official Standard" in the 1940's.
+	  </para>
+	  <para>
+	    The syntax is simpler than it first appears.
+	    Each line represents a single rule, and contains
+	    four whitespace-separated fields.
 	    The first field contains the pattern to be replaced,
 	    the second field is the replacement (backreferences allowed,
 	    which moves us beyond the usual realm of finite state
@@ -645,7 +671,7 @@ phrase:action
 	    with this command:
 	  </para>
 	  <screen>
-	    % cat big.txt | gramdev-xx.pl --minic &gt; unigram-xx.txt
+<prompt>%</prompt> <userinput>cat big.txt | gramdev-xx.pl --minic &gt; unigram-xx.txt</userinput>
 	  </screen>
 
 	  <para>
@@ -716,13 +742,55 @@ phrase:action
 	    Following each rule, one has the option of including a block
 	    of patterns representing exceptions to the rule that are
 	    actually grammatical and should not be reported as errors.
-	    For instance, the preposition
-	    <foreignphrase lang="ga"><wordasword>sa</wordasword></foreignphrase>
-	    causes lenition in general, but not in the phrase
-	    <foreignphrase lang="ga"><wordasword>sa m&eacute;id</wordasword></foreignphrase>;
-	    this phrase is therefore included in
-	    <filename>rialacha-ga.in</filename>
-	    with the action portion of the rule set to <literal>OK</literal>.
+	    For instance, the word
+	    <foreignphrase lang="ga"><wordasword>dh&aacute;</wordasword></foreignphrase>
+	    ("two") causes lenition in general, but not, for instance,
+	    when preceded by the possessive adjective
+	    <foreignphrase lang="ga"><wordasword>&aacute;r</wordasword></foreignphrase>.
+	    To implement this exception, it is placed in 
+	    <filename>rialacha-ga.in</filename> immediately following
+	    the general rule, and
+	    with the action portion of the rule set to <literal>OK</literal>:
+	  </para>
+	  <screen>
+&lt;A&gt;[Dd]h&aacute;&lt;A&gt; UNLENITED:SEIMHIU
+&lt;D&gt;[&Aacute;&aacute;]r&lt;D&gt; &lt;E&gt;&lt;A&gt;[Dd]h&aacute;&lt;A&gt; UNLENITED&lt;E&gt;:OK
+	  </screen>
+	  <para>
+	    When the exception requires more context than the rule itself,
+	    as in this example,
+	    the words corresponding to the rule must be enclosed 
+	    within <literal>&lt;<sgmltag>E</sgmltag>&gt;</literal> tags
+	    to avoid potential ambiguities.
+	    You can specify as many exceptions as you like to a single rule,
+	    but note that exceptions only apply to the rule that
+	    they follow.
+	  </para>
+	  <para>
+	    It is a good idea to include one or more sample 
+	    sentences for each rule in
+	    <filename>rialacha-xx.in</filename>.
+            These are given on lines beginning with <literal>#.</literal>,
+	    which for Irish I usually put on the line directly
+	    preceding the rule that they illustrate.
+            When you build the Perl module, these sentences are 
+	    extracted into the plain text file <filename>triail</filename>
+	    in the language pack directory, and are also used to
+	    generate a test script for the Perl module.
+	    The "expected output" when the grammar checker
+	    is applied to <filename>triail</filename> is stored
+	    in <filename>triail.xml</filename>.
+	    The command <command>make test</command> will 
+	    rebuild the Perl module and test scripts (if necessary),
+	    and then compare the results of checking
+	    <filename>triail</filename> with the contents of
+	    <filename>triail.xml</filename>, complaining with 
+	    great bitterness when they differ.
+	    When new sample sentences are added, you'll need to
+	    update <filename>triail.xml</filename>; use
+	    <command>make triail.xml-update</command> to do this
+	    (but be sure before you update that you haven't accidentally
+	    broken any other rules).
 	  </para>
         </sect2>
       </sect1>
@@ -790,8 +858,33 @@ phrase:action
 	    <application>Lingua::XX::Gramadoir</application> is
 	    generated in pure Perl and will run under
 	    ActiveState Perl, the <application>gramadoir</application>
-	    scripts for generating it use <application>bash</application>,
+	    scripts for generating it use
+	    <application>bash</application>,
+	    <application>iconv</application>,
 	    <application>sed</application> and all that.
+	  </para>
+	</answer>
+      </qandaentry>
+      <qandaentry>
+        <question>
+	  <para>
+	    What character encoding should I use for the input files in
+	    the language pack?
+	  </para>
+	</question>
+        <answer>
+	  <para>
+	    You can use whatever encoding you want.  The end user will
+	    be aware of this choice in only one way: it will be the default
+	    encoding for files input to the front-end script
+	    <filename>gram-xx.pl</filename>.  On the other hand, they need
+	    only specify the command line option <literal>--incode</literal>
+	    to change the default.  One other issue to be aware of is
+	    that the Perl regular expression engine for Unicode is 
+	    <emphasis>two to three times slower</emphasis> than
+	    the 8-bit version.   So if you are deciding between
+	    using UTF-8 and, say, one of the ISO-8859 encodings,
+	    it is probably worth sticking with ISO-8859.
 	  </para>
 	</answer>
       </qandaentry>
