@@ -2,5 +2,5 @@
 #  end of a sentence.  The two lines below can be uncommented to 
 #  deal with single letters followed by punctutaion.
 #
-# s/([^@BDCHARS@@INTCHARS@][@BDCHARS@@INTCHARS@])([.?!])/$1\\$2/g;
-# s/([^@BDCHARS@@INTCHARS@][.])\\([.?!])/$1$2/g;
+# s/([^\\@BDCHARS@@INTCHARS@][@BDCHARS@@INTCHARS@])([.?!])/$1$NOBD$2/g;
+# s/([^@BDCHARS@@INTCHARS@][.])$NOBD([.?!])/$1$2/g;
