@@ -1,5 +1,5 @@
 # This file contains the disambiguation rules which use local context
-# to select correct stems for ambiguous tokens.
+# to select correct tags for ambiguous tokens.
 # Copyright (C) 2003 Kevin P. Scannell <scannell@slu.edu>
 #
 # This is free software; see the file COPYING for copying conditions.  There is
