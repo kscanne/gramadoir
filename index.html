@@ -118,18 +118,36 @@ words in the file and then place one word on each line.
 </p>
 
 <p>
-There are also a few command line options:
+Here are a few generally useful command line options:
 </p>
 <ul>
 <li><b>--litriu</b>: Write all of the unknown/misspelled words to standard output.
-<li><b>--html</b>: Produce HTML output which should resemble the output of vanilla "gr" when viewed in a web browser.
-<li><b>--xml</b>: Write the intermediate tagged XML stream to standard output;
 useful for debugging.
 <li><b>--iomlan</b>: Report all errors (do not use the file "~/.neamhshuim").
 <li><b>--teanga=XX</b>: Specify the two-letter ISO-639-1 code for the language of the text to be checked.  Default is ga (Irish).
 <li><b>--ionchod=ENC</b>: Specify the character encoding of the input text.  The default depends on the language; Irish uses ISO88591.
 <li><b>--help</b>: Display some help and exit.
 <li><b>--version</b>: Display version and copyright information and exit.
+</ul>
+
+<p>
+And some for use by developers (see the <a href="sonrai.html">Details</a> page
+for more information on how to use these options effectively):
+</p>
+<ul>
+<li><b>--brill</b>: Find candidate disambiguation rules using Brill's
+unsupervised learning algorithm.
+<li><b>--html</b>: Produce HTML output which should resemble the output of vanilla "gr" when viewed in a web browser.  This option is used by the 
+<a href="foirm.html">Web Interface</a>.
+<li><b>--ilchiall</b>: Generate a report consisting of all (part of speech)
+ambiguities remaining after two passes through the disambiguation module,
+sorted by frequency.
+<li><b>--minic</b>: List all part of speech tags appearing in the file, sorted
+by frequency.  This output can be used for the <i>unigram-xx.txt</i> file.
+<li><b>--no-unigram</b>: Do not perform the "last resort" part of speech
+disambiguation according to tag frequency.
+<li><b>--xml</b>: Write the intermediate tagged XML stream to standard output;
+useful for debugging.
 </ul>
 
 <hr>
