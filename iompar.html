@@ -210,7 +210,20 @@ many European languages).
 </p>
 
 <p>
-<b>6. Write <i>aonchiall-xx.in</i></b>.  These are the rules for disambiguation.
+<b>6. Write comhshuite-xx.in</b>.
+Each line of this file contains a "set phrase" that you would like
+to be marked up as a single unit.  See the description of this file on the
+<a href="cuidiu.html">Contributing</a> page.
+</p>
+<p>
+<i>Quick and Dirty:</i>
+<pre>
+% touch comhshuite-xx.in 
+</pre>
+</p>
+
+<p>
+<b>7. Write <i>aonchiall-xx.in</i></b>.  These are the rules for disambiguation.
 See the description of this file on the <a href="cuidiu.html">Contributing</a>
 page.  This, and the other input files, also require the macros stored
 in <i>macra-xx.meta.sed</i>.
@@ -235,7 +248,7 @@ so that the output is suitable for use in <i>aonchiall-xx.in</i>
 </p>
 
 <p>
-<b>7. Write <i>unigram-xx.*</i></b>.  
+<b>8. Write <i>unigram-xx.*</i></b>.  
 The file <i>unigram-xx.txt</i>
 consists of a list of the legal XML part-of-speech tags for your language
 (as determined in step three above),
@@ -256,7 +269,7 @@ are up and running you can create this file using:
 </p>
 
 <p>
-<b>8. Write <i>rialacha-xx.in</i> and <i>eisceacht-xx.in</i></b>.  
+<b>9. Write <i>rialacha-xx.in</i> and <i>eisceacht-xx.in</i></b>.  
 These are the grammatical rules and exceptions.
 Again see the <a href="cuidiu.html">Contributing</a> page for information
 on how to create these files.
@@ -272,7 +285,7 @@ unrecognized words and "rare" words marked up with grammatical code 127.
 </p>
 
 <p>
-<b>9. Localize message strings</b>.
+<b>10. Localize message strings</b>.
 Technically this is part of porting the user interface, not
 porting the grammar checker.  I'm guessing however that you'll want to
 see the output in the same language as
