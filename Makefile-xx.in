@@ -195,7 +195,8 @@ distclean :
 	$(MAKE) topclean
 	rm -f $(PERLTOP) $(PERLCODE) $(LEXICONS) $(EXTRAS) $(TESTS) $(PERLD)/Makefile
 	rm -f Makefile
-	rm -f triail triail.xml
+	rm -f triail
+#	rm -f triail.xml    # should leave as is
 
 clean :
 	$(MAKE) topclean
