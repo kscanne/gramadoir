@@ -19,9 +19,9 @@ else
 fi
 }
   
-if [ $# -ne 3 ]
+if [ $# -ne 2 ]
 then
-	echo "Usage: addlang xx [y|n] \"author <email>\""
+	echo "Usage: addlang xx [y|n]"
 	echo "\"y\" means use the internal crubadan encoding, \"n\" for utf8"
 	exit
 fi
@@ -31,7 +31,6 @@ TEANGA="${1}"
 UPPERTEANGA=`echo "${TEANGA}" | tr "[:lower:]" "[:upper:]"`
 VERSION="0.01"
 USECRUBADAN="${2}"
-AUTHOR="${3}"
 CRUBADAN="/usr/local/share/crubadan/${TEANGA}"
 THISYEAR=`date +%Y`
 if [ ! -e ${CRUBADAN} ]
@@ -74,7 +73,6 @@ s/\^BDCHARS\^/${BDCHARS}/
 s/\^INTCHARS\^/${INTCHARS}/
 s/\^UPPERS\^/${UPPERS}/
 s/\^LOWERS\^/${LOWERS}/
-s/\^AUTHOR\^/${AUTHOR}/
 " ${TEMPLATE}/configure > ${DIR}/configure
 chmod 755 ${DIR}/configure
 cp ${GRAMDIR}/COPYING ${DIR}/COPYING
@@ -99,13 +97,11 @@ sed "/CAPITAL/s/A-Z/${UPPERS}/" ${TEMPLATE}/macra-xx.meta.pl > ${DIR}/macra-${TE
 sed "s/A-Z/${UPPERS}/" ${TEMPLATE}/morph-xx.txt > ${DIR}/morph-${TEANGA}.txt
 touch ${DIR}/nocombo-${TEANGA}.txt
 (echo "1 <U>"; echo "127 <F>") > ${DIR}/pos-${TEANGA}.txt
-sed "s/@TEANGA@/${TEANGA}/; s/@NAME_ENGLISH@/${NAME_ENG}/" ${GRAMDIR}/README-xx > ${DIR}/README
+sed "s/@TEANGA@/${TEANGA}/; s/@NAME_ENGLISH@/${NAME_ENG}/" ${TEMPLATE}/README-xx > ${DIR}/README
 cp ${TEMPLATE}/rialacha-xx.in ${DIR}/rialacha-${TEANGA}.in
 cp ${TEMPLATE}/unigram-xx.pre ${DIR}/unigram-${TEANGA}.pre
 cp ${TEMPLATE}/unigram-xx.txt ${DIR}/unigram-${TEANGA}.txt
 sed -i "s/(C) 20.. /(C) ${THISYEAR} /" ${DIR}/*-${TEANGA}.in ${DIR}/macra-${TEANGA}.meta.pl
-sed -i "/Copyright.*Kevin P\. Scannell/s/.*/&\n#                    ${AUTHOR}/" ${DIR}/*-${TEANGA}.in ${DIR}/macra-${TEANGA}.meta.pl ${DIR}/morph-${TEANGA}.txt
-sed -i "/Copyright.*Kevin P\. Scannell/s/.*/&\n                     ${AUTHOR}/" ${DIR}/README
 sed -i "
 s/\^NAME_ENG\^/${NAME_ENG}/
 s/\^TEANGA\^/${TEANGA}/
