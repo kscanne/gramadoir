@@ -210,6 +210,8 @@ ChangeLog : FORCE
 dist : FORCE
 	$(MAKE) ChangeLog
 	$(LN_S) gr ../$(TARBALL)
+	mv TEANGACHA TEANGACHA.bak
+	cp TEANGACHA.dist TEANGACHA
 	tar cvhf $(TARBALL).tar -C .. $(TARBALL)/ABOUT-NLS
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/aonchiall.meta.sed
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/cabhair.c
@@ -241,15 +243,16 @@ dist : FORCE
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/TEANGACHA
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/triail
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/triail.err
-	for infile in $(ALLIN); do \
-		tar rvhf $(TARBALL).tar -C .. $(TARBALL)/$$infile; \
-	done
-	for teanga in $(TEANGACHA); do \
+	cat TEANGACHA | sed '/^#/d; s/ .*//' | \
+	while read teanga; do \
+		tar rvhf $(TARBALL).tar -C .. $(TARBALL)/aonchiall-$${teanga}.in; \
 		tar rvhf $(TARBALL).tar -C .. $(TARBALL)/cuardach-$${teanga}.c; \
 		tar rvhf $(TARBALL).tar -C .. $(TARBALL)/eile-$${teanga}.bs; \
+		tar rvhf $(TARBALL).tar -C .. $(TARBALL)/eisceacht-$${teanga}.in; \
 		tar rvhf $(TARBALL).tar -C .. $(TARBALL)/focail-$${teanga}.bs; \
 		tar rvhf $(TARBALL).tar -C .. $(TARBALL)/giorr-$${teanga}; \
 		tar rvhf $(TARBALL).tar -C .. $(TARBALL)/macra-$${teanga}.meta.sed; \
+		tar rvhf $(TARBALL).tar -C .. $(TARBALL)/rialacha-$${teanga}.in; \
 		tar rvhf $(TARBALL).tar -C .. $(TARBALL)/unigram-$${teanga}.pre; \
 		tar rvhf $(TARBALL).tar -C .. $(TARBALL)/unigram-$${teanga}.txt; \
 	done
@@ -258,6 +261,7 @@ dist : FORCE
 	chmod 444 $(TARBALL).tar.gz
 	mv $(TARBALL).tar.gz $(webhome)
 	rm -f ../$(TARBALL)
+	mv -f TEANGACHA.bak TEANGACHA
 
 triail.err : FORCE
 	rm -f triail.err
@@ -266,14 +270,20 @@ triail.err : FORCE
 focail-ga.bs : FORCE
 	$(MAKE) cabhair
 	Gin 12
-	((cat ${HOME}/.ispell_gaeilge | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/'; cat ${HOME}/.biobla | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | ispell -dgaeilge -p/dev/null -l) | sed 's/.*/& 44/'; cat FOCAIL) | LC_COLLATE=POSIX sort -u -k1,1 -k2,2n > FOCAIL.all
-	(cat FOCAIL.all | sed 's/ [0-9]*//' | uniq | wc -l | sed 's/^ *//'; cat FOCAIL.all | ./cabhair 0) > focail-ga.bs
+	((cat ${HOME}/.ispell_gaeilge | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/'; cat ${HOME}/.biobla | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | ispell -dgaeilge -p/dev/null -l) | sed 's/.*/& 44/'; cat FOCAIL) | LC_COLLATE=POSIX sort -u -k1,1 -k2,2n > FOCAIL-ga.all
+	(cat FOCAIL-ga.all | sed 's/ [0-9]*//' | uniq | wc -l | sed 's/^ *//'; cat FOCAIL-ga.all | ./cabhair 0) > focail-ga.bs
 	chmod 644 focail-ga.bs
-#	rm -f FOCAIL FOCAIL.all
+	rm -f FOCAIL
+
+focail-EN.bs : FORCE
+	$(MAKE) cabhair
+	cat ../bearla/FOCAIL.EN | LC_COLLATE=POSIX sort -u -k1,1 -k2,2n > FOCAIL-EN.all
+	(cat FOCAIL-EN.all | sed 's/ [0-9]*//' | uniq | wc -l | sed 's/^ *//'; cat FOCAIL-EN.all | ./cabhair 0) > focail-EN.bs
+	chmod 644 focail-EN.bs
 
 focail-en.bs : FORCE
 	$(MAKE) cabhair
-	(cat ${HOME}/gaeilge/ispell/bearla/ENWORDS | wc -l | sed 's/^ *//'; cat ${HOME}/gaeilge/ispell/bearla/ENWORDS | sed 's/.*/& 1/' | ./cabhair 0) > focail-en.bs
+	(cat ${HOME}/gaeilge/ispell/bearla/ENWORDS | wc -l | sed 's/^ *//'; cat ${HOME}/gaeilge/ispell/bearla/ENWORDS | sed 's/$$/ 1/' | ./cabhair 0) > focail-en.bs
 	chmod 644 focail-en.bs
 
 cabhair : cabhair.o
