@@ -1,4 +1,4 @@
 #!/bin/bash
 /usr/local/bin/gr --html --version
 (date; echo "${1}"; echo; echo;) >> /home/httpd/gr.log
-echo "${1}" | /usr/local/bin/gr --html
+echo "${1}" "." | /usr/local/bin/gr --html
