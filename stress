@@ -2,9 +2,7 @@
 
 test_language()
 {
-LC_MESSAGES="${1}"
-LC_CTYPE="${1}"
-export LC_MESSAGES LC_CTYPE
+export LC_ALL="${1}" 
 echo "test help flag"
 gr --help
 echo "test version flag"
@@ -47,6 +45,7 @@ head triail > triail.2
 test_language POSIX
 test_language de_DE
 test_language ga_IE
+test_language ga_IE.utf8
 test_language ro_RO
 test_language nl_NL
 rm -f triail.2
