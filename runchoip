@@ -1,7 +1,0 @@
-#!/bin/bash
-## for security, this is used in the Gramadoir "make installweb" target
-## so no one knows where my stuff is, etc.
-cp -f gr.cgi /home/httpd/cgi-bin
-chmod 755 /home/httpd/cgi-bin/gr.cgi
-cp -f grweb /usr/local/bin
-chmod 755 /usr/local/bin/grweb
