@@ -29,7 +29,7 @@
 
 ;;; Code:
 
-(defvar gramadoir-program-path "/usr/local/bin/gr"
+(defvar gramadoir-program-path "/usr/bin/gram-ga.pl"
 "Location of the executable for An Gramadóir"
 )
 
@@ -38,7 +38,7 @@
 value of t highlights, nil prevents not. The words in error in the
 Gramadoir output buffer are always highlighted")
 
-(defvar gramadoir-program-options "--html"
+(defvar gramadoir-program-options "--html --aspell --aschod=ISO-8859-1"
 "options for the executable for An Gramadóir")
 
 (defvar gramadoir-display-buffer "*Gramadoir Output*"
@@ -83,7 +83,7 @@ temporary buffer whence it can be parsed.
 		     nil	; keep output
 		     buffer	; write to buffer
 		     nil	; dont show it until finished
-		     gramadoir-program-options)
+		     ,@(split-string gramadoir-program-options " "))
 ;; might want to call (setq output (shell-command-to-string command))
 ;; calls:
 ;gramadoir-parse-results (buffer)
@@ -103,7 +103,7 @@ files.
 			      nil	; no standard input
 			      gramadoir-display-buffer	; write to buffer
 			      nil	; dont show it until finished
-			      gramadoir-program-options
+			      ,@(split-string gramadoir-program-options " ")
 			      ,@(split-string gramadoir-file-spec " ")))
   (eval gr-cmd)
 
