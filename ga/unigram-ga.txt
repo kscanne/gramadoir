@@ -8,8 +8,8 @@
 <V p="y" t="láith">
 <P>
 <V p="y" t="caite">
-<N pl="y" gnt="n" gnd="m">
 <O>
+<N pl="y" gnt="n" gnd="m">
 <N pl="n" gnt="y" gnd="m">
 <N pl="n" gnt="y" gnd="f">
 <D>
@@ -26,31 +26,30 @@
 <V p="n" t="caite">
 <N pl="n" gnt="n">
 <N pl="y" gnt="y" gnd="m">
-<H>
 <N pl="n" gnt="y" gnd="f" h="y">
+<H>
 <V p="n" t="láith">
+<N pl="y" gnt="n" gnd="m" h="y">
 <F>
 <V p="y" t="ord">
 <N pl="n" gnt="d">
 <N pl="y" gnt="y" gnd="f">
 <A pl="n" gnt="n" h="y">
 <O em="y">
+<N pl="n" gnt="n" gnd="f" h="y">
+<N pl="n" gnt="n" gnd="m" h="y">
 <V p="n" t="fáist">
 <V p="n" t="coinn">
-<N pl="n" gnt="n" gnd="f" h="y">
+<N pl="y" gnt="n" gnd="f" h="y">
 <V p="y" t="gnáth">
 <A pl="n" gnt="y" gnd="m">
-<N pl="n" gnt="n" gnd="m" h="y">
 <P h="y">
 <N pl="y" gnt="n">
 <N pl="n" gnt="d" h="y">
 <I>
 <N pl="y" gnt="y">
 <V p="y" t="foshuit">
-<N pl="y" gnt="n" gnd="m" h="y">
-<N pl="y" gnt="n" gnd="f" h="y">
 <V p="n" t="gnáth">
 <N pl="y" gnt="n" h="y">
 <N pl="n" gnt="y" gnd="m" h="y">
 <N pl="n" gnt="n" h="y">
-<N pl="y" gnt="y" gnd="m" h="y">
