@@ -61,7 +61,7 @@ function s:NextError()
   if l:linenumber == "1"
       execute "normal G$"
   else
-      execute "normal k$"
+      execute "normal jkk$"
   endif
   call search(s:errorpattern)
   execute "syntax match grError /".s:errorpattern."/"
@@ -78,8 +78,8 @@ endfunction
 function s:Neamhshuim()
   if s:errorwords !~ ".* .*"
      let l:dummy2=system("touch ". s:ignore)
-     let l:dummy3=system("(echo \"0\"; grep -v '^[0-9]' ". s:ignore . "; echo \"". s:errorwords ."\") | LC_COLLATE=C sort -u -o ". s:ignore)
-     let l:dummy4=system("sed -i \"1s/.*/`cat ". s:ignore . " | grep -v '^0$' | wc -l`/\" ". s:ignore)
+     let l:dummy3=system("(echo \"0\"; grep -v '[0-9]' ". s:ignore . "; echo \"". s:errorwords ."\") | LC_COLLATE=C sort -u -o ". s:ignore)
+     let l:dummy4=system("sed -i \"1s/.*/`cat ". s:ignore . " | grep -v '^0$' | wc -l | sed 's/^ *//'`/\" ". s:ignore)
      execute "normal \<C-W>b"
      execute "normal ma"
      silent execute "%s/<b>".s:errorwords."<.b>/".s:errorwords."/g"
