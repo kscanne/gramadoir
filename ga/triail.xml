@@ -106,7 +106,7 @@
 <E offset="11" fromy="103" fromx="11" toy="103" tox="18" sentence="Níl aon ní arbh fiú a shantú seachas í." errortext="arbh fiú" msg="Séimhiú ar iarraidh">
 <E offset="0" fromy="104" fromx="0" toy="104" tox="7" sentence="Ba maith liom fios a thabhairt anois daoibh." errortext="Ba maith" msg="Séimhiú ar iarraidh">
 <E offset="16" fromy="105" fromx="16" toy="105" tox="24" sentence="Dúirt daoine go mba ceart an poll a dhúnadh suas ar fad." errortext="mba ceart" msg="Séimhiú ar iarraidh">
-<E offset="0" fromy="106" fromx="0" toy="106" tox="5" sentence="Ba eol duit go hiomlán m'anam." errortext="Ba eol" msg="Ba chóir duit /b+uaschamóg/ a úsáid anseo">
+<E offset="0" fromy="106" fromx="0" toy="106" tox="5" sentence="Ba eol duit go hiomlán m'anam." errortext="Ba eol" msg="Ba chóir duit /b', ab/ a úsáid anseo">
 <E offset="7" fromy="107" fromx="7" toy="107" tox="21" sentence="D'fhan beirt buachaill sa champa." errortext="beirt buachaill" msg="Séimhiú ar iarraidh">
 <E offset="7" fromy="108" fromx="7" toy="108" tox="31" sentence="D'fhan beirt bhuachaill cancrach sa champa." errortext="beirt bhuachaill cancrach" msg="Séimhiú ar iarraidh">
 <E offset="48" fromy="109" fromx="48" toy="109" tox="49" sentence="Mothóidh Pobal Osraí an bheirt laoch sin uathu (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
