@@ -125,8 +125,8 @@
 <B>[Cc]ár</B> LENITED:<Q>
 <T>na</T> <B>[Cc]é</B>:<N pl="n" gnt="y" gnd="f">
 <B>[Cc][Éé]</B>:<Q>
-# next is always "an am gcéanna"; all others are "mar an? gcéanna" <N> unigram
-<N>ANYTHING</N> <B>gcéanna</B>:<A pl="n" gnt="n">
+# "an am gcéanna" adj. occurs a lot, but ok to tag <N> and get "NIURU"
+# <N>ANYTHING</N> <B>gcéanna</B>:<A pl="n" gnt="n">
 <B>[Cc]h?éanna</B>:<A pl="n" gnt="n">
 # handles fichiú, etc. by brute force; ceathrú is feminine so get separate rules
 <B><Z>NUMERICAL</Z>ANYTHING</B>:<A pl="n" gnt="n">
@@ -486,7 +486,8 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 # missing prefixh on "caighdeán na imeartha"
 <T>ANYTHING</T> <B><Z>GENADJF</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 <T>ANYTHING</T> <B><Z>GENADJM</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
-<B><Z>GENADJ</Z>ANYTHING</B>:<A pl="n" gnt="n">
+<B><Z>GENADJF</Z>ANYTHING</B>:<A pl="n" gnt="n">
+<B><Z>GENADJM</Z>ANYTHING</B>:<A pl="n" gnt="n">
 # next one better without <T>, "an chnuasaigh", etc.
 [Aa]n <B><Z>ANYNMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <A pl="n" gnt="n">([Aa]on|[Gg]ach)</A> <B><Z>ANYNMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">

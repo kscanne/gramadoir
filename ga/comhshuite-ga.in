@@ -210,16 +210,17 @@ g?[Cc]h?othrom na [Ff]éinne:<N pl="n" gnt="n" gnd="m">
 [Dd]e thairbhe:<S>
 [Dd]e thaisme:<R>
 # next batch to avoid "déag" exceptions to mutation
+# caps on D a non-trivial amount in corpus
 # CB p.74
-h[Aa]on déag:<A pl="n" gnt="n">
-[Dd]ó dhéag:<A pl="n" gnt="n">
-[Tt]rí déag:<A pl="n" gnt="n">
-[Cc]eathair déag:<A pl="n" gnt="n">
-[Cc]úig déag:<A pl="n" gnt="n">
-[Ss]é déag:<A pl="n" gnt="n">
-[Ss]eacht déag:<A pl="n" gnt="n">
-[Oo]cht déag:<A pl="n" gnt="n">
-[Nn]aoi déag:<A pl="n" gnt="n">
+h?[Aa]on [Dd]éag:<A pl="n" gnt="n">
+[Dd]ó [Dd]héag:<A pl="n" gnt="n">
+[Tt]rí [Dd]éag:<A pl="n" gnt="n">
+[Cc]eathair [Dd]éag:<A pl="n" gnt="n">
+[Cc]úig [Dd]éag:<A pl="n" gnt="n">
+[Ss]é [Dd]éag:<A pl="n" gnt="n">
+[Ss]eacht [Dd]éag:<A pl="n" gnt="n">
+h?[Oo]cht [Dd]éag:<A pl="n" gnt="n">
+[Nn]aoi [Dd]éag:<A pl="n" gnt="n">
 # [Dd]rioll ar an dreall
 [Ff]ad is:<C>
 [Ff]aoi bhráid:<S>
@@ -232,6 +233,7 @@ h[Aa]on déag:<A pl="n" gnt="n">
 [Ff]aoi lánseol:<R>
 [Ff]aoi láthair:<R>
 [Ff]aoi leith:<R>
+[Ff]aoi seach:<R>
 Fear Manach:<N pl="n" gnt="n">
 # infrequent
 [Ff]íorchaoin fáilte:<N pl="n" gnt="n">
@@ -377,6 +379,8 @@ Mh?aigh Eo:<N pl="n" gnt="n">
 # infrequent
 [Mm]ugadh magadh:<N pl="n" gnt="n">
 na bhfud:<N pl="y" gnt="y" gnd="m">
+# can't do INPHRASE since it's also "nectar"
+neachtar acu:<P>
 [Nn]í ba:<R>
 [Nn]í hamháin:<U>
 [Nn]í hamhlaidh:<U>

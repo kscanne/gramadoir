@@ -41,24 +41,16 @@ s/INITIALVOWELORF/(?:[aeiouAEIOU·ÈÌÛ˙¡…Õ”⁄]|[Ff]h?[aeiou·ÈÌÛ˙])[^<]+/g;
 s/INITIALVOWEL/[aeiouAEIOU·ÈÌÛ˙¡…Õ”⁄][^<]*/g;
 s/INITIALCONSONANT/[^aeiouAEIOU·ÈÌÛ˙¡…Õ”⁄][^<]+/g;
 s/NONVOWELNONF/(?:[^aeiouAEIOU·ÈÌÛ˙¡…Õ”⁄fF]|[Ff]h?[lr])[^<]+/g;
-s/UNECLIPSEDDT/(?:[tT]|d[^Tt'])[^<]+/g;
+s/UNECLIPSEDDT/(?:[tT]|[Dd][^Tt'])[^<]+/g;
 # note this rule doesn't represent all possible eclipses since m/n don't ecl.
-s/UNECLIPSEDCONS/(?:[cfptCFPT]|d[^Tt']|g[^Cc]|b[^Pph]|bh[^fF])[^<]+/g;
-s/UNECLIPSED/(?:[aeiouAEIOU·ÈÌÛ˙¡…Õ”⁄cfptCFPT]|d[^Tt']|g[^Cc]|b[^Pph]|bh[^fF])[^<]*/g;
+s/UNECLIPSEDCONS/(?:[cfptCFPT]|[Dd][^Tt']|[Gg][^Cc]|[Bb][^Pph]|[Bb]h[^fF])[^<]+/g;
+s/UNECLIPSED/(?:[aeiouAEIOU·ÈÌÛ˙¡…Õ”⁄cfptCFPT]|[Dd][^Tt']|[Gg][^Cc]|[Bb][^Pph]|[Bb]h[^fF])[^<]*/g;
 s/ECLIPSEDVOWEL/n(?:-[aeiou·ÈÌÛ˙]|[AEIOU¡…Õ”⁄])[^<]*/g;
 s/ECLIPSEDDT/(?:d[Tt]|n[Dd])[^<]+/g;
 s/ECLIPSEDBCFGP/(?:g[Cc]|b[Pp]|m[Bb]|n[Gg]|bh[fF])[^<]+/g;
 s/ECLIPSED/(?:n(?:-[aeiou·ÈÌÛ˙]|[AEIOU¡…Õ”⁄])|d[Tt]|g[Cc]|b[Pp]|m[Bb]|n[DdGg]|bh[fF])[^<]*/g;
 s/ECLIPSINGNUMBER/(?:n?[Dd]h?eich|[Nn]aoi|(?:h|[mbd]')?[Oo]cht|[Ss]h?eacht|[0-9]*[789]|[0-9]*10)/g;
 s/ECLIPSINGPOSS/(?:(?:[Ff]aoin|[Ii]n|[Ll]en|[”Û]n|[Tt]rÌn)?(?:[Aa]|·r)|[Dd]?[¡·]r?|[Bb]hur|[Aa]rna)/g;
-# all feminine
-s/INITIALC/[Cc][^<]+/g;
-s/INITIALH/h[^<]+/g;
-s/INITIALL/[Ll][^<]+/g;
-s/INITIALM/[Mm][^<]+/g;
-s/INITIALN/[Nn][^<]+/g;
-s/INITIALS/[Ss][lnraeiou·ÈÌÛ˙h][^<]+/g;
-s/INITIALTS/t[sS][^<]+/g;
 s/UNLENITABLE/(?:[^BbCcDdFfGgMmPpTt]|[Ss][^lnraeiou·ÈÌÛ˙])[^<]*/g;
 s/UNLENITEDBCGMP/[BbCcGgMmPp][^h'][^<]*/g;
 s/UNLENITEDBCFGMP/(?:[BbCcFfGgMmPp][^h']|bh[fF])[^<]*/g;
@@ -66,11 +58,13 @@ s/UNMUTATEDBCFGP/[BbCcFfGgPp][^hcCpP'][^<]*/g;
 # s,m+vowel not *definitely* UNMUTATED since it could be an eclipsis scenario 
 s/UNMUTATED/[BbCcDdFfGgPpTt][^hcCpPtT'][^<]*/g;
 s/UNLENITEDF/[Ff][aeiou·ÈÌÛ˙][^<]*/g;
+s/UNLENITEDCDFGST/(?:[CcDdFfGgTt][^h']|[Ss][lnraeiou·ÈÌÛ˙]|bh[Ff])[^<]*/g;
 s/UNLENITED/(?:[BbCcDdFfGgMmPpTt][^h']|[Ss][lnraeiou·ÈÌÛ˙]|bh[Ff])[^<]*/g;
 s/LENITEDF/[Ff]h[aeiou·ÈÌÛ˙][^<]*/g;
 s/ORDINALADJ/(?:[^<][^<]*[^m]|[0-9]+)˙/g;
 s/PREFIXEDT/t(?:[AEIOU¡…Õ”⁄]|-[aeiou·ÈÌÛ˙])[^<]+/g;
 s/EIRE/(?:[nh])?…ire(?:ann)?/g;
+s/REGULARPOSS/(?:[MmDd]o|[Aa]|[¡·]r|[Bb]hur)/g;
 # gan/chun/ainneoin disallow "[^ >]+n"
 s/FUSEDPOSS/(?:[Dd]·r?|(?:[Ff]aoi|[Ii]|[Ll]e|[Tt]rÌ)n(?:a|·r))/g;
 s/FUSEDPREP/(?:[Dd][eo]n|[Ss]an?|[Ff]aoin|[”Û]n)/g;
@@ -80,9 +74,11 @@ s/FUSEDPREP/(?:[Dd][eo]n|[Ss]an?|[Ff]aoin|[”Û]n)/g;
 # unless there is an article after it...
 #   corpus is split on "idir" - LGG doesn't list it as dative
 s/DATIVEPREP/(?:[Aa][grs]|[Cc]huig|[Dd][eo]|[Ff]aoi|[Gg]an|[Gg]o|[Ll]e|[”Û]|[Ii]n?|[Rr]oimh|[Tt]har|[Tt]rÌd?|[Uu]m)/g;
+s/INITIALMORDAPOST/[md]'[^<]+/g;
 s/INITIALDAPOST/d'[^<]+/g;
 s/INITIALBAPOST/b'[^<]+/g;
 s/LENITEDBCFGMPS/(?:[CcFfGgMmPpSs]h|[Bb]h[^fF])[^<]+/g;
+s/LENITEDBMP/(?:[MmPp]h|[Bb]h[^fF])[^<]+/g;
 s/MUTATEDDST/(?:n[Dd]|d[Tt]|[DdSsTt]h)[^<]+/g;
 s/LENITEDDFST/[DdFfSsTt]h[^<]+/g;
 s/LENITEDDST/[DdSsTt]h[^<]+/g;
@@ -95,6 +91,13 @@ s/NOBEEAPOST/(?:[^b]|b[^'])[^<]+/g;
 s/NOTVNISHVN/(?:bheith|cheannach|chur|dhÌol|dhul|fhoghlaim|Ìoc|iompar|oscailt|r·|roinnt|scrÌobh|shol·thar|theacht)/g;
 s/VNISH/[^<]*(?:a[dm]h|i[nr]t|·il|˙)/g;
 s/NOTDO/[^<][^<][^<]+/g;
+s/INITIALC/[Cc][^<]+/g;
+s/INITIALH/h[^<]+/g;
+s/INITIALL/[Ll][^<]+/g;
+s/INITIALM/[Mm][^<]+/g;
+s/INITIALN/[Nn][^<]+/g;
+s/INITIALS/[Ss][lnraeiou·ÈÌÛ˙h][^<]+/g;
+s/INITIALTS/t[sS][^<]+/g;
 ############################################################################
 s/AWITHGSM/(?:<N pl="y"[^>]*>)*(?:<A[^>]*>)*<A pl="n" gnt="y" gnd="m".>(?:<A[^>]*>)*/g;
 s/AWITHGSF/(?:<N pl="y"[^>]*>)*(?:<A[^>]*>)*<A pl="n" gnt="y" gnd="f".>(?:<A[^>]*>)*/g;
