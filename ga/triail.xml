@@ -380,3 +380,4 @@
 <E offset="38" fromy="377" fromx="38" toy="377" tox="39" sentence="Tá sé-- tá sé- mo ---shin-seanathair (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
 <E offset="3" fromy="378" fromx="3" toy="378" tox="8" sentence="Is foláir dóibh a ndualgais a chomhlíonadh." errortext="foláir" msg="Ní úsáidtear an focal seo ach san abairtín /ní foláir/ de ghnáth">
 <E offset="23" fromy="379" fromx="23" toy="379" tox="24" sentence="Bhain na toibreacha le re eile agus le dream daoine atá imithe." errortext="re" msg="Ní úsáidtear an focal seo ach san abairtín /gach re/ de ghnáth">
+<E offset="14" fromy="380" fromx="14" toy="380" tox="17" sentence="Labhair mé ar shon na daoine." errortext="shon" msg="Ní úsáidtear an focal seo ach san abairtín /ar son/ de ghnáth">
