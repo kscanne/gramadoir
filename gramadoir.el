@@ -33,14 +33,8 @@
 "Location of the executable for An Gramadóir"
 )
 
-(defvar gramadoir-program-options "" ;"--xml"
+(defvar gramadoir-program-options "--html"
 "options for the executable for An Gramadóir")
-
-(defvar gramadoir-results-alist ""
-"alist containing list of lines with errors")
-
-(defvar gramadoir-xml-buffer ""
-"Name of buffer containing the xml output from An Gramadóir")
 
 (defvar gramadoir-display-buffer "*Gramadoir Output*"
 "Name of buffer containing human readable output of An Gramadóir")
@@ -50,6 +44,25 @@
 
 (defvar gramadoir-current-line 0
 "Line in the current file on which the current error occurs")
+
+(defvar gramadoir-check-file-msgid "^Currently checking %s"
+"gettext message id for determining the translation of the message which
+identifies the file currently being checked."
+)
+
+(defun gramadoir-set-check-file-msg ()
+  "Set gramadoir-check-file-msg according to locale."
+  (setq gramadoir-check-file-msg
+	(format 
+	 (concat "^"
+		 (shell-command-to-string
+		  "/usr/bin/gettext gramadoir \"Currently checking %s\"")) ""))
+  )
+
+(defvar gramadoir-check-file-msg (gramadoir-set-check-file-msg)
+"Regular expression used to determine which file a message relates to. The 
+initial value is taken from the translation of the English version of the
+ message.")
 
 (defun gramadoir-check-region (start end)
 "This function runs the grammar checking program An Gramadóir on the current 
@@ -85,16 +98,19 @@ files.
 			      nil	; no standard input
 			      gramadoir-display-buffer	; write to buffer
 			      nil	; dont show it until finished
+			      gramadoir-program-options
 			      ,@(split-string gramadoir-file-spec " ")))
   (eval gr-cmd)
 
   ;; calls:
   ;;gramadoir-parse-results (buffer)
   ;; display the results in the lower window.
-  (set-buffer gramadoir-display-buffer)
-  (goto-char (point-min))
-  (display-buffer gramadoir-display-buffer t)
-  )
+  (with-current-buffer gramadoir-display-buffer
+    (goto-char (point-min))
+    (gramadoir-highlight)
+    ;(goto-char (point-min))
+    (display-buffer gramadoir-display-buffer t)
+  ))
 
 (defun gramadoir-format-message (text)
 "convert an error message code (xml tag) into a human-readable form")
@@ -123,22 +139,23 @@ so it can be presented to the user for possible substitution")
       (delete-window (get-buffer-window gramadoir-display-buffer)))
   ;; determine line number of next message
   ;(message "Before re-search: in %s at %d" (current-buffer) (point))
-  (re-search-forward "^\\([0-9]*\\):")
-  (setq gramadoir-current-line (string-to-number (match-string 1)))
+  (if (re-search-forward "^\\([0-9]*\\):" nil t)
+      (progn
+	(setq gramadoir-current-line (string-to-number (match-string 1)))
 
-  ;(message "Before excursion: in %s at %d" (current-buffer) (point))
+	;;(message "Before excursion: in %s at %d" (current-buffer) (point))
 
-  ;; determine which file is the message in 
-  (setq gramadoir-current-file 
-	(save-excursion 
-	  (end-of-line) ; in case we are located on a file name line
-	  (re-search-backward "^Currently checking ")
-	  (forward-word 2)
-          (buffer-substring (+ 1 (point))
-                            (save-excursion (end-of-line) (point)))))
+	;; determine which file is the message in 
+	(setq gramadoir-current-file 
+	      (save-excursion 
+		(end-of-line) ; in case we are located on a file name line
+		(re-search-backward gramadoir-check-file-msg)
+		(forward-word 2)
+		(buffer-substring (+ 1 (point))
+				  (save-excursion (end-of-line) (point)))))
 
-  ;(message "After excursion: in %s at %d" (current-buffer) (point))
-  (gramadoir-goto-message gramadoir-current-file gramadoir-current-line)
+	(gramadoir-goto-message gramadoir-current-file gramadoir-current-line))
+    (message "No more errors."))
   )
 
 (defun gramadoir-goto-message (gramadoir-current-file gramadoir-current-line)
@@ -159,12 +176,29 @@ so it can be presented to the user for possible substitution")
   (display-buffer gramadoir-display-buffer)
 )
 
-(defun gramadoir-display-results ()
-"Major mode for display of parsed, formatted results."
-(interactive)
-; calls
-; gramadoir-next-message
-; gramadoir-goto-message
-)
+(defun gramadoir-highlight ()
+  "Function to highlight messages from An Gramadóir"
+  (interactive)
+  (save-excursion 
+    (let ((start-re "<b class=gramadoir>") 
+	  (end-re "</b>")
+	  (start-error 0))
+      (goto-char (point-min))
+      (while (re-search-forward start-re (point-max) t)
+	(put-text-property (match-beginning 0) (point) 'invisible t)
+	(setq start-error (point))
+	(if (re-search-forward end-re (point-max) t)
+	    (progn
+	      (put-text-property start-error (match-beginning 0)
+				 'face 'font-lock-comment-face)
+	      (put-text-property (match-beginning 0) (point) 'invisible t)
+	      )))))
+  ;; remove the <br> tags
+  (save-excursion
+    (while (re-search-forward "<br>" nil t)
+      (replace-match "" nil t)))
+  (message "end of gramadoir-highlight, point=%d" (point))
+  )
+
 (provide 'gramadoir)
 ;;; gramadoir.el ends here
