@@ -228,6 +228,7 @@ sub get_sentences_real
 
 	for ($_[0]) {
 		s/<[^>]*>/ /g;  # naive; see comments above
+		s/\\[tnvfr]/ /g;
 		s/&/&amp;/g;    # this one first!
 		s/</&lt;/g;
 		s/>/&gt;/g;
@@ -849,6 +850,7 @@ sub grammatical_errors
 	  # next three lines need to preserve all newlines, all lengths!
 	  # they mimic the code in get_sentences_real
 	$pristine =~ s/(<[^>]*>)/whiteout($1);/eg;
+	$pristine =~ s/\\[tnvfr]/  /g;
 	$pristine =~ s/$NOBD/ /g;
 	$pristine =~ s/$BD/ /g;
 	  # next three lines add "buffering" for easier searching per-line
