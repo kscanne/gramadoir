@@ -31,6 +31,8 @@
 <S>[Ff]aoin</S> <B>g?ch?éad</B>:<N pl="n" gnt="n">
 # "down" not lenited "housekeeping"
 <B>[Tt]híos</B>:<R>
+# not worth dealing with <N>
+<B>[Ff]iú</B>:<R>
 # go n-éirí, go n-oibrí, etc. 
 [Gg]o <B><Z>NMFOURSUBJ</Z>ECLIPSED</B>:<V p="y" t="foshuit">
 # this century
@@ -85,10 +87,12 @@
 <B>[Aa]n</B> <P>té</P>:<T>
 <B>[Aa]n</B> <[PRSO]>ANYTHING</[PRSO]>:<V cop="y">
 <B>[Aa]n</B> leis:<V cop="y">
-<B>[Aa]n</B> mó:<V cop="y">
+# generalized above
+#<B>[Aa]n</B> mó:<V cop="y">
 <B>[Aa]n</B> de:<V cop="y">
 <B>[Aa]n</B> faoi:<V cop="y">
-<B>[Aa]n</B> fiú:<V cop="y">
+# generalized above
+#<B>[Aa]n</B> fiú:<V cop="y">
 # see resolutions of chuir,mhaith below; very slow without this done first
 # and no good with capital A...  "An maith leat an dán?"
 <B>an</B> chuir|mh?aith|ní:<T>
@@ -105,6 +109,8 @@
 # almost always a typo, not "swollen"; now done in posmap.pl
 # <B>ata</B>:<F>
 <B>[Aa]tá</B>:<V p="y" t="láith">
+# without "h" is handled by unigram
+<B>h[Aa]thair</B>:<N pl="n" gnt="n" gnd="m" h="y">
 <T>[Nn]a</T> <B>ba</B>:<N pl="y" gnt="n" gnd="f">
 <B>[Bb]a</B>:<V cop="y">
 [Gg]o|[Nn]ach <B>m[Bb]a</B>:<V cop="y">
@@ -155,6 +161,8 @@ d?[Tt]h?rí <B>[Bb]liana</B>:<N pl="y" gnt="n" gnd="f">
 <B>cinn</B>:<N pl="n" gnt="y" gnd="m">
 <B>[Cc]omhalta</B>:<N pl="n" gnt="n" gnd="m">
 <B>g?ch?ónaí</B>:<N pl="n" gnt="n" gnd="m">
+# since if it gets nb2, will want lenition on cainte
+<B>[Cc]ora</B> <N pl="n" gnt="y" gnd="f">[Cc]ainte</N>:<N pl="y" gnt="n" gnd="m">
 # lenition => prob not imperative
 # "de réir an chuir síos", etc.
 <T>an</T> <B>[Cc]huir</B>:<N pl="n" gnt="y" gnd="m">
@@ -363,6 +371,22 @@ a <B>sé</B>:<A pl="n" gnt="n">
 #############################################################
 # Brill transformations (not associated to particular words)#
 #############################################################
+# exceptions to next
+[Aa]n <B>([Cc]háil|[Gg]hráin)</B>:<N pl="n" gnt="n" gnd="f">
+# ar cheannaireacht an pháirtí => genitive
+<[^S]>ANYTHING</[^S]> [Aa]n <B><Z>ANYNMG</Z>LENITED</B>:<N pl="n" gnt="y" gnd="m">
+# chun an bhaile...
+<S>[Cc]hun</S> [Aa]n <B><Z>ANYNMG</Z>LENITED</B>:<N pl="n" gnt="y" gnd="m">
+# exception to next
+<B>Inis</B>:<N pl="n" gnt="n" gnd="f">
+# Ainmnigh dhá chineál múchtóirí dóiteán; no need for "F" since lenited =>
+# not an imperative and not lenited => not PASTIMPER
+<B><Z>ANYPASTIMPER</Z>CAPVOWEL</B>:<V p="y" t="ord">
+RFORMCONJ <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">
+<S>RFORMPREP</S> <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">
+# leave out "r-form" verbal particle "ar" here!
+[Cc]ár|[Cc]har|[Nn]ár|[Nn]íor <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">
+# OK if before something that is definitely a verb: 
 # exception to next
 <B>Inis</B>:<N pl="n" gnt="n" gnd="f">
 # Ainmnigh dhá chineál múchtóirí dóiteán; no need for "F" since lenited =>

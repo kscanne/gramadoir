@@ -149,6 +149,7 @@
 [Aa]r teachtadh:<R>
 [Aa]r teaghrán:<R>
 [Aa]r teitheadh:<R>
+[Aa]r thóir:<S>
 [Aa]r tí:<R>
 # infrequent
 [Aa]r tinneall:<R>
@@ -164,6 +165,7 @@
 [Aa]rú anuraidh:<R>
 [Aa]rú aréir:<R>
 [Aa]rú inné:<R>
+[Bb]ainte [Aa]mach:<A pl="n" gnt="n">
 m?[Bb]h?eo beathach:<A pl="n" gnt="n">
 m?[Bb]h?óín Dé:<N pl="n" gnt="n" gnd="f">
 m?[Bb]h?rín óg:<N pl="n" gnt="n">
@@ -187,7 +189,8 @@ m?[Bb]h?uaileam sciath:<N pl="n" gnt="n">
 [Cc]úig chéad:<A pl="n" gnt="n">
 [Ss]é chéad:<A pl="n" gnt="n">
 g?[Cc]h?odladh grifín:<N pl="n" gnt="n" gnd="m">
-g?[Cc]h?os ar bolg:<N pl="n" gnt="n" gnd="m">
+# better with no gender
+g?[Cc]h?os ar bolg:<N pl="n" gnt="n">
 g?[Cc]h?othrom na [Ff]éinne:<N pl="n" gnt="n" gnd="m">
 [Cc]hun cinn:<R>
 [Cc]hun tosaigh:<R>
@@ -204,6 +207,7 @@ g?[Cc]h?othrom na [Ff]éinne:<N pl="n" gnt="n" gnd="m">
 [Dd]e chois:<S>
 # infrequent
 [Dd]e chóir:<S>
+[Dd]e chuid:<S>
 [Dd]e dheasca:<S>
 [Dd]e dhíobháil:<S>
 [Dd]e ghlanmheabhair:<R>
@@ -270,6 +274,9 @@ Fear Manach:<N pl="n" gnt="n">
 [Gg]ach re:<A>
 # exception to lots of "don't lenite after gan" rules, so easier this way
 [Gg]an [Ff]hios:<R>
+# OD fiú.2
+[Gg]an fiú:<R>
+n?Gh?aoth Dobhair:<N pl="n" gnt="n">
 [Gg]liog gleag:<N pl="n" gnt="n">
 [Gg]o brách:<R>
 [Gg]o ceann:<S>
@@ -281,6 +288,8 @@ Fear Manach:<N pl="n" gnt="n">
 [Gg]o dtí:<S>
 # infrequent
 [Gg]o feillbhinn:<R>
+# OD fiú.2
+[Gg]o fiú:<R>
 [Gg]o fóill:<R>
 # infrequent
 [Gg]o fras:<R>
@@ -297,6 +306,8 @@ Fear Manach:<N pl="n" gnt="n">
 [Gg]o luath:<R>
 [Gg]o minic:<R>
 [Gg]o nuige:<R>
+# SEIMHIU error otherwise; in OD
+[Gg]o tóin poill:<R>
 # infrequent
 [Gg]o treis:<R>
 Hong Cong:<N pl="n" gnt="n">
@@ -378,8 +389,12 @@ Hong Cong:<N pl="n" gnt="n">
 [Ii]na leith:<R>
 # infrequent
 [Ii]na steillbheatha:<R>
+# unlenited genitive
+hInis Meáin:<N pl="n" gnt="n" gnd="f" h="y">
+Inis Meáin:<N pl="n" gnt="n" gnd="f">
 # unlenited adj.
-h?Inis Mór:<N pl="n" gnt="n" gnd="f">
+hInis Mór:<N pl="n" gnt="n" gnd="f" h="y">
+Inis Mór:<N pl="n" gnt="n" gnd="f">
 # actually "idir sin is tráthas"
 # is tráthas:<N>
 [Ll]e [Cc]héile:<R>
@@ -407,6 +422,9 @@ Mh?aigh Eo:<N pl="n" gnt="n">
 [Mm]ar sin féin:<R>
 # infrequent
 [Mm]eacan ragaim:<N pl="n" gnt="n" gnd="m">
+# exception to lenition of genitive after fem.  Only one of the months
+# that is an exception, cf. Mí Mheán Fómhair
+[Mm]h?í Feabhra:<N pl="n" gnt="n" gnd="f">
 # infrequent
 [Mm]ugadh magadh:<N pl="n" gnt="n">
 na bhfud:<N pl="y" gnt="y" gnd="m">

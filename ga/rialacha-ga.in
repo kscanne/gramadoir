@@ -126,7 +126,7 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 <N pl="n" gnt="n" gnd="f">INITIALTS</N>:NITEE
 #. Cén chaoi a n-aimsíonn scoil an tseirbhís seo (OK)?
 <T>[Aa][Nn]</T> <E><N pl="n" gnt="n" gnd="f">INITIALTS</N></E>:OK
-#. Tá sonraí ann faoin tslí ina n-iarrtar taifid faoin Acht um Shaoráil Faisnéise (OK).
+#. Tá sonraí ann faoin tslí ina n-iarrtar taifid faoin Acht (OK).
 <S>FUSEDPREP</S> <E><N pl="n" gnt="n" gnd="f">INITIALTS</N></E>:OK
 # corpus exception
 #. Cén tslí bheatha a bhí ag Naoi (OK)?
@@ -135,6 +135,9 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 <N pl="n" gnt="y" gnd="m">INITIALTS</N>:NITEE
 #. Bhí imní ag teacht ar dheartháir an tsagairt (OK).
 <T>[Aa]n</T> <E><N pl="n" gnt="y" gnd="m">INITIALTS</N></E>:OK
+# noun "fríd" used almost exclusively in gen. "faic na fríde, oiread na fríde"
+# do this before <NFCS> lenition rules!
+<N pl="n" gnt="n" gnd="f">fríd</N>:CAIGHDEAN{trí, tríd}
 # MacL00 p.114 (Béarlachas)
 # Lá fuar agus fliuch a bhí ann.
 #  many exceptions?
@@ -150,6 +153,63 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 #. Léimeann an fharraige céad méadar suas sa spéir (OK).
 <NFCS>ANYTHING</NFCS> <A pl="n" gnt="n">(bainte|céad|cibé|curtha|deich|dulta|gach|seacht|seo|sin|tugtha)</A>:OK
 <N pl="n" gnt="n" gnd="f">[Bb]heith</N> <A pl="n" gnt="n">UNLENITED</A>:OK
+<S>[Aa]g</S> <N pl="n" gnt="n" gnd="f">[Ff]áil</N> <N pl="n" gnt="y" gnd="m">báis</N>:SEIMHIU
+<S>[Aa]g</S> <N pl="n" gnt="n" gnd="f">[Gg]abháil</N> <N pl="n" gnt="y" gnd="m">(foinn|ceoil)</N>:SEIMHIU
+<NFCS>ANYTHING</NFCS> <NG>UNLENITED</NG>:SEIMHIU
+# Next two are LGG p.59 (d)
+<E><NFCS>ANYTHING</NFCS> <N pl="n" gnt="y" gnd="m">ANYTHING</N></E> <A pl="n" gnt="y" gnd="m">ANYTHING</A>:OK
+#. Briseadh bád Éamoinn Óig oíche gaoithe móire (OK).
+<E><NFCS>ANYTHING</NFCS> <N pl="n" gnt="y" gnd="f">ANYTHING</N></E> <A pl="n" gnt="y" gnd="f">ANYTHING</A>:OK
+# See CB p.15 bottom, "indefinite noun in the genitive is hardly ever aspirated when it denotes persons..."
+# LGG p.60 (j) but also useful for (e),(i)
+<NFCS>ANYTHING</NFCS> <N pl="n" gnt="y" gnd="m">NGMPERSON</N>:OK
+<NFCS>ANYTHING</NFCS> <N pl="n" gnt="y" gnd="f">NGFPERSON</N>:OK
+# other e.g.s are likely to tag as common form (clann, etc.)...
+<NFCS>ANYTHING</NFCS> <N pl="y" gnt="y" gnd="f">ban</N>:OK
+# LGG p.59 (a)
+<NFCS>FINALDLNST</NFCS> <NG>INITIALDST</NG>:OK
+# excess, part, want exceptions; "ailp,díth" CO p.84, LGG p.59 (c)
+<NFCS>QUANTITYWORD</NFCS> <NG>UNLENITED</NG>:OK
+<NFCS>bheith</NFCS> <NG>UNLENITED</NG>:OK
+# OD, corpus; OD also has "dé sholais" so shouldn't have more general exception
+<N pl="n" gnt="n" gnd="f">n?[Dd]h?é</N> <N pl="n" gnt="y" gnd="m">deiridh</N>:OK
+# not sure why, OD and corpus are consistent though: gloine fíona, 
+# gloine fuinneoige, gloine formhéadúcháin, etc.
+<N pl="n" gnt="n" gnd="f">n?[Gg]h?loine</N> <NG>INITIALF</NG>:OK
+# See OD+corpus
+<N pl="n" gnt="n" gnd="f">([Ff]h?oireann|[Ff]h?oinse)</N> <NG>ANYTHING</NG>:OK
+# corpus, who knows why
+<N pl="n" gnt="n" gnd="f">[Mm]h?eitheal</N> <N pl="n" gnt="y" gnd="f">[Ff]orbartha</N>:OK
+# CO p.84 (a) -- all feminine abstract nouns, LGG p.59 (b)
+#. Bhíodh na daoir scaoilte saor óna gcuid oibre agus bhíodh saoirse cainte acu (OK).
+<NFCS>FEMABSTRACT</NFCS> <NG>ANYTHING</NG>:OK
+# LGG p.60 (h)
+#. Bhí mé ag tógáil balla agus ag baint móna (OK).
+<NFCS>FEMVN</NFCS> <NG>ANYTHING</NG>:OK
+# CB p.76 #6
+<NFCS>ANYTHING</NFCS> <N pl="n" gnt="y" gnd="m">fichead</N>:OK
+# almost always the "part" exception: fuinneog tí
+<NFCS>ANYTHING</NFCS> <N pl="n" gnt="y" gnd="m">[Tt]í</N>:OK
+<S>[Aa]g</S> <E><NFCS>FEMVN</NFCS> <NG>UNLENITED</NG></E>:OK
+<NFCS>FINALDLNST</NFCS> <NG>LENITEDDST</NG>:NISEIMHIU
+# CB p.16 #6 exception
+#. Is as Londain Shasana mé ó dhúchas (OK).
+<NFCS>ANYTHING</NFCS> <NG>CAPITAL</NG>:OK
+<NFCS>QUANTITYWORD</NFCS> <NG>LENITED</NG>:NISEIMHIU
+<NFCS>n?[Gg]h?loine</NFCS> <NG>LENITEDF</NG>:NISEIMHIU
+# not consistent enough in corpus to exclude lenition since there is no good explanation
+# <NFCS>([Ff]h?oireann|[Ff]h?oinse)</NFCS> <NG>LENITED</NG>:NISEIMHIU
+#   too hard to nail down these regexps
+# <NFCS>FEMABSTRACT</NFCS> <NG>LENITED</NG>:NISEIMHIU
+# <NFCS>FEMVN</NFCS> <NG>LENITED</NG>:NISEIMHIU
+# not a vn of course
+# <N pl="n" gnt="n" gnd="f">m?[Bb]h?eirt</N> <NG>LENITED</NG>:OK
+#. Mar chuid den socrú beidh Michelle ag labhairt Ghaeilge ag ócáidí poiblí.
+<S>[Aa]g</S> <NFCS>FEMVN</NFCS> <NG>LENITED</NG>:NISEIMHIU
+# exceptions in LGG, p.60
+<S>[Aa]g</S> <N pl="n" gnt="n" gnd="f">[Ff]áil</N> <N pl="n" gnt="y" gnd="m">bháis</N>:OK
+<S>[Aa]g</S> <N pl="n" gnt="n" gnd="f">[Gg]abháil</N> <N pl="n" gnt="y" gnd="m">(fhoinn|cheoil)</N>:OK
+#   ** add more NISEIMHIUs corresponding to all OK's above
 # next rule doesn't make sense: "bileog bholscaireachta dhátheangach" is fine
 # will need a shallow parse to link up adjectives to nouns they modify
 #<NFGS>ANYTHING</NFGS> <A>LENITED</A>:NISEIMHIU
@@ -176,6 +236,15 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 #. Mhair cuid mhór dár sinsir céad caoga bliain ó shin (OK).
 #. Tá sé le cloisteáil sna meáin gach seachtain (OK).
 <NP>SLENDERFINALCONSONANT</NP> <A pl="y" gnt="n">(bainte|cibé|curtha|dulta|tugtha)</A>:OK
+# CB p.15 #5.i
+#. Déanann siad na breiseáin brabhsála don tionscal ríomhaireachta.
+#. Is ar éisc mara agus ar na hainmhithe mara eile atáimid ag díriú.
+<NP>SLENDERFINALCONSONANT</NP> <NG>UNLENITED</NG>:SEIMHIU
+#. Chonaic mé líon agus crainn tógála ann (OK).
+<NP>FINALDLNST</NP> <NG>INITIALDST</NG>:OK
+# CB p.15 #5.i; converse of previous
+#. Bhí pictiúir le feiceáil ar scáileáin theilifíse ar fud an domhain.
+<NP>FINALDLNST</NP> <NG>LENITEDDST</NG>:NISEIMHIU
 # INPHRASE rule, but example sentence is best caught before "na" rules
 #. Maidin lá ar na mhárach thug a fhear gaoil cuairt air.
 <N pl="n" gnt="n">[Mm]hárach</N>:INPHRASE{arna mhárach}
@@ -874,8 +943,6 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 #. Beidh paráid Lá Fhéile Phádraig i mBostún.
 #. Tá Féile Bhealtaine an Oireachtais ar siúl an tseachtain seo (OK).
 Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
-# noun "fríd" used almost exclusively in gen. "faic na fríde, oiread na fríde"
-<N pl="n" gnt="n" gnd="f">fríd</N>:CAIGHDEAN{trí, tríd}
 # corpus
 <S>[Aa]g</S> <N pl="y" gnt="n" gnd="m">gabhail</N>:MICHEART{gabháil}
 <S>[Aa]</S> <N pl="y" gnt="n" gnd="m">ghabhail</N>:MICHEART{ghabháil}
@@ -2021,6 +2088,13 @@ d?[tT]h?rí|g?[Cc]h?eithre|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 <C>NONRFORMCONJ</C> <VDEE>INTIALDAPOST</VDEE>:NIDEE
 <S>NONRFORMPREP</S> <VDEE>INTIALDAPOST</VDEE>:NIDEE
 [Aa]n|[Cc]á|[Dd]á|[Nn]ach|[Nn]í <VDEE>INTIALDAPOST</VDEE>:NIDEE
+#############################################################################
+#     More lenition -- best to have these near bottom to allow stuff
+#     like "i an chuisneoir" to be caught as "BACHOIR{sa}" vs. NISEIMHIU
+#############################################################################
+# CB p.12
+<T>[Aa]n</T> <NMCS>LENITED</NMCS>:NISEIMHIU
+<S>([Aa][grs]|[Cc]huig|[Ll]eis|[Rr]oimh|[Tt]har|[Tt]ríd|[Uu]m)</S> <E><T>[Aa]n</T> <NMCS>LENITED</NMCS></E>:OK
 #############################################################################
 ###### next batch came from analyses of "tag 2-grams" in the corpus    ######
 #############################################################################
