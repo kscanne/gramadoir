@@ -11,7 +11,7 @@ SHELL = /bin/sh
 PERL = /usr/bin/perl
 CC = gcc
 CFLAGS = -g
-RELEASE = 0.1pre1
+RELEASE = 0.1pre2
 APPNAME_ASCII = gramadoir
 APPNAME = $(APPNAME_ASCII)-$(RELEASE)
 # non-root users can change next three to "cp" and next to "mkdir" in a pinch
@@ -112,7 +112,7 @@ dist : triail.err
 	tar rvhf $(APPNAME).tar -C .. $(APPNAME)/cabhair.c
 	tar rvhf $(APPNAME).tar -C .. $(APPNAME)/COPYING
 	tar rvhf $(APPNAME).tar -C .. $(APPNAME)/cuardach.c
-	tar cvhf $(APPNAME).tar -C .. $(APPNAME)/eisceacht.in
+	tar rvhf $(APPNAME).tar -C .. $(APPNAME)/eisceacht.in
 	tar rvhf $(APPNAME).tar -C .. $(APPNAME)/eisceacht.meta.sed
 	tar rvhf $(APPNAME).tar -C .. $(APPNAME)/focail.bs
 	tar rvhf $(APPNAME).tar -C .. $(APPNAME)/gin.meta.sed
