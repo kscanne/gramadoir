@@ -474,7 +474,9 @@ while (<>) {
 	s!<E line="[^"]+" !<E fromy="$fromy" fromx="$fromx" toy="$toy" tox="$tox" !;
 	print;
 }
-'
+' |
+toutf |
+loganu
 }
 
 # This is the final filter used by the "gr" program.
