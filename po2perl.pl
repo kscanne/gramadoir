@@ -15,8 +15,8 @@ sub massage
 	$string =~ s/\%s/[_1]/;
 	$string =~ s/\%s/[_2]/;
 	$string =~ s/\%s/[_3]/;
-	$string =~ s#\\\\/([A-Za-z]+)\\\\/#/$1/#;
 	$string =~ s#\\\\/\\\\([1-9])\\\\/#/[_$1]/#;
+	$string =~ s#\\\\/([A-Za-z']+)\\\\/#/$1/#;
 
 	return $string;
 }
