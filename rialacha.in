@@ -106,6 +106,10 @@
 <S>[Dd]ar</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.14 Note
 <S>[Dd]ar</S> <N>LENITED</N>:NISEIMHIU
+# CB p.84 #8 keep before following
+<D>[Dd]ár</D> dhá <N>UNECLIPSED</N>:URU
+# CB p.84 #8
+<D>[Dd]ár</D> UNECLIPSED:URU
 # CB p.13 #3.d
 <^D>ANYTHING</^D> [Dd]há UNLENITED:SEIMHIU
 # CB p.24 #11.a.iv
@@ -124,8 +128,16 @@ Dé Aoine:PREFIXH
 [Dd]o <T>an</T>:BACHOIR{don}
 # CB p.5 #17
 [Dd][eo] <N>INITIALVOWELORF</N>:BACHOIR{d+uaschamóg}
+# CB p.84 #8, p.132 #2
+<S>[Dd]e</S> a:BACHOIR{dá}
+# CB p.132 #2
+<S>[Dd]e</S> ar:BACHOIR{dár}
+# CB p.84 #8, p.132 #2
 [Dd]o a:BACHOIR{dá}
-[Dd]o ár:BACHOIR{dár}
+# CB p.132 #2
+[Dd]o ar:BACHOIR{dár}
+# CB p.84 #8
+[Dd][eo] ár:BACHOIR{dár}
 # CB p.18 #9.j
 [Dd]ó déag:SEIMHIU
 # CB p.13 #3.d
@@ -134,10 +146,20 @@ Dé Aoine:PREFIXH
 <S>[Ff]aoi</S> <N>UNLENITED</N>:SEIMHIU
 # CB p.6 #2
 <S>[Ff]aoi</S> <T>an</T>:BACHOIR{faoin}
+# CB p.84 #8, p.132 #2
+[Ff]aoi a:BACHOIR{faoina}
+# CB p.132 #2
+<S>[Ff]aoi</S> ar:BACHOIR{faoinar}
+# CB p.84 #8
+[Ff]aoi ár:BACHOIR{faoinár}
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 <S>[Ff]aoin</S> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
 <S>[Ff]aoin</S> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
+# CB p.84 #8 keep before following
+<D>[Ff]aoinár</D> dhá <N>UNECLIPSED</N>:URU
+# CB p.84 #8
+<D>[Ff]aoinár</D> UNECLIPSED:URU
 # CB p.16 #8.c
 Fh?éile CAPITALLENITED:NISEIMHIU
 # CB p.14 #4.c.i (says "nouns" specif.)
@@ -167,10 +189,16 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 # CB p.6 #2
 <S>[Ii]</S> [Aa]n:BACHOIR{sa}
 <S>[Ii]</S> [Nn]a:BACHOIR{sna}
-<S>[Ii]</S> <D>a</D>:BACHOIR{ina}
-<S>[Ii]</S> <D>ár</D>:BACHOIR{inár}
-<S>[Ii]</S> <U>a</U>:BACHOIR{ina}
-<S>[Ii]</S> <U>ar</U>:BACHOIR{inar}
+# CB p.84 #8, p.132 #2
+<S>[Ii]</S> a:BACHOIR{ina}
+# CB p.132 #2
+<S>[Ii]</S> ar:BACHOIR{inar}
+# CB p.84 #8
+<S>[Ii]</S> ár:BACHOIR{inár}
+# CB p.84 #8 keep before following
+<D>[Ii]nár</D> dhá <N>UNECLIPSED</N>:URU
+# CB p.84 #8
+<D>[Ii]nár</D> UNECLIPSED:URU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 <S>[Ii]onsar</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
@@ -181,12 +209,22 @@ Fh?éile CAPITALLENITED:NISEIMHIU
 <S>[Ll]e</S> <T>an</T>:BACHOIR{leis_an}
 # CB p.6 #2
 <S>[Ll]e</S> <T>na</T>:BACHOIR{leis_na}
+# CB p.84 #8, p.132 #2
+<S>[Ll]e</S> a:BACHOIR{lena}
+# CB p.132 #2
+<S>[Ll]e</S> ar:BACHOIR{lenar}
+# CB p.84 #8
+<S>[Ll]e</S> ár:BACHOIR{lenár}
 # CB p.24 #11.a.v (N) #11.b.ii (A) #11.c (P)
 <S>[Ll]e</S> INITIALVOWEL:PREFIXH
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 <S>[Ll]eis</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
 <S>[Ll]eis</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
+# CB p.84 #8 keep before following
+<D>[Ll]enár</D> dhá <N>UNECLIPSED</N>:URU
+# CB p.84 #8
+<D>[Ll]enár</D> UNECLIPSED:URU
 # CB p.19 #13, p.133 #9
 <C>[Mm]á</C> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
 # CB p.13 #4.a
@@ -245,6 +283,16 @@ Naomh CAPITALLENITED:NISEIMHIU
 <S>[Óó]n</S> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
 <S>[Óó]n</S> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
+# CB p.84 #8, p.132 #2
+<S>[Óó]n?</S> a:BACHOIR{óna}
+# CB p.132 #2
+<S>[Óó]n?</S> ar:BACHOIR{ónar}
+# CB p.84 #8
+<S>[Óó]n?</S> ár:BACHOIR{ónár}
+# CB p.84 #8 keep before following
+<D>[Óó]nár</D> dhá <N>UNECLIPSED</N>:URU
+# CB p.84 #8
+<D>[Óó]nár</D> UNECLIPSED:URU
 # CB p.14 Note
 [Oo]s <N>LENITED</N>:NISEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
@@ -283,14 +331,24 @@ Naomh CAPITALLENITED:NISEIMHIU
 <S>[Tt]har</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.24 #11.a.x
 [Tt]rí uaire:PREFIXH
+# CB p.84 #8, p.132 #2
+<S>[Tt]rí</S> a:BACHOIR{trína}
+# CB p.132 #2
+[Tt]rí ar:BACHOIR{trínar}
 # CB p.6 #2
-[Tt]rí <T>an</T>:BACHOIR{tríd}
+[Tt]rí <T>an</T>:BACHOIR{tríd_an}
+# CB p.84 #8
+[Tt]rí ár:BACHOIR{trínár}
 # CB p.13 #3.f (<A>trí</A>) p.13 #4.a (<S>trí</S>)
 [Tt]rí <NCS>UNLENITED</NCS>:SEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 [Tt]ríd <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
 <S>[Tt]ríd</S> <T>an</T> <NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
+# CB p.84 #8 keep before following
+<D>[Tt]rínár</D> dhá <N>UNECLIPSED</N>:URU
+# CB p.84 #8
+<D>[Tt]rínár</D> UNECLIPSED:URU
 # CB p.13 #3.b  (needs shallow parse)
 #[Uu]ile <N>UNLENITED</N>:SEIMHIU
 # CB p.13 #4.a
