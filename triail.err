@@ -1,430 +1,457 @@
 Currently checking triail
-1: An bhfuil aon uaktar reoite agat? 
+1: Tabhair go leor leor de na na rudaí seo do do chara, a Chaoimhín. 
+Repeated word.
+
+2: An bhfuil aon uaktar reoite agat? 
 Unknown word.
 
-2: An bhfuil ayn uachtar roach agat? 
+3: An bhfuil ayn uachtar roach agat? 
 Unknown word, Unknown word (ignoring remainder in this sentence).
 
-3: Ní raibh líon mór daoine bainteach leis an scaifte a bhí ag iarraidh mioscais a chothú. 
+4: Bíonn an geál ag satailt ar an dubh. 
+Valid word but extremely rare in actual usage.
+
+5: Ní raibh líon mór daoine bainteach leis an scaifte a bhí ag iarraidh mioscais a chothú. 
 Non-standard form: perhaps use /scata/?.
 
-4: Tá na lachain slachtmhara ar eitilt. 
+6: Tá na lachain slachtmhara ar eitilt. 
 Lenition missing.
 
-7: Ní bheidh ach mhallacht i ndán dó ó na ciníocha agus fuath ó na náisiúin. 
+7: Tá an Rialtas tar éis áit na Gaeilge i saol na tíre a ceistiú. 
+Lenition missing.
+
+8: Bhíodar ag rá ar an aonach gur agamsa a bhí na huain ab fearr. 
+Lenition missing.
+
+9: Ní bheidh ach mhallacht i ndán dó ó na ciníocha agus fuath ó na náisiúin. 
 Unnecessary lenition.
 
-8: An bhfuil aon uachtar reoite ar an cuntar? 
+10: An bhfuil aon uachtar reoite ar an cuntar? 
 Initial mutation missing.
 
-9: Tá sé riachtanach ar mhaithe le feidhmiú an phlean a bheidh ceaptha ag an eagraíocht ceannasach. 
+11: Tá sé riachtanach ar mhaithe le feidhmiú an phlean a bheidh ceaptha ag an eagraíocht ceannasach. 
 Lenition missing.
 
-10: Má shuíonn tú ag bhord le flaith, tabhair faoi deara go cúramach céard atá leagtha romhat. 
+12: Má shuíonn tú ag bhord le flaith, tabhair faoi deara go cúramach céard atá leagtha romhat. 
 Unnecessary lenition.
 
-11: Bláthaíonn sé amhail bhláth an mhachaire. 
+13: Bláthaíonn sé amhail bhláth an mhachaire. 
 Unnecessary lenition.
 
-12: An bainim sult as bás an drochdhuine? 
+14: An bainim sult as bás an drochdhuine? 
 Eclipsis missing.
 
-13: Ní féidir an Gaeltacht a choinneáil mar réigiún Gaeilge go náisiúnta gan athrú bunúsach. 
+15: Ní féidir an Gaeltacht a choinneáil mar réigiún Gaeilge go náisiúnta gan athrú bunúsach. 
 Lenition missing.
 
-14: Chóirigh sé na lampaí le solas a chaitheamh os comhair an coinnleora. 
+16: Chóirigh sé na lampaí le solas a chaitheamh os comhair an coinnleora. 
 Lenition missing.
 
-15: Comhlánóidh saoránacht an Aontais an saoránacht náisiúnta agus ní ghabhfaidh sí a hionad. 
+17: Comhlánóidh saoránacht an Aontais an saoránacht náisiúnta agus ní ghabhfaidh sí a hionad. 
 Prefix /t/ missing.
 
-16: Bíonn na cimí ar a suaimhneas le chéile gan guth an séiléara le clos a thuilleadh. 
+18: Bíonn na cimí ar a suaimhneas le chéile gan guth an séiléara le clos a thuilleadh. 
 Prefix /t/ missing.
 
-17: Tá sin ráite cheana féin acu le muintir an tíre seo. 
+19: Tá sin ráite cheana féin acu le muintir an tíre seo. 
 You should use /na/ here instead.
 
-18: Is é is dóichí go raibh baint ag an eisimirce leis an laghdú i líon an gcainteoirí Gaeilge. 
+20: Is é is dóichí go raibh baint ag an eisimirce leis an laghdú i líon an gcainteoirí Gaeilge. 
 You should use /na/ here instead.
 
-19: Ní bheidh aon buntáiste againn orthu sin. 
+21: Ní bheidh aon buntáiste againn orthu sin. 
 Lenition missing.
 
-20: Ar caith tú do chiall agus do chéadfaí ar fad? 
+22: Ar caith tú do chiall agus do chéadfaí ar fad? 
 Lenition missing.
 
-22: Ní amháin ár dhá chosa, ach nigh ár lámha! 
+23: Gheobhaimid maoin de gach sórt, agus líonfaimid ár tithe le creach. 
 Eclipsis missing.
 
-23: Níl aon ní arbh fiú a shantú seachas í. 
+24: Ní amháin ár dhá chosa, ach nigh ár lámha! 
+Eclipsis missing.
+
+25: Níl aon ní arbh fiú a shantú seachas í. 
 Lenition missing.
 
-24: Ba maith liom fios a thabhairt anois daoibh. 
+26: Ba maith liom fios a thabhairt anois daoibh. 
 Lenition missing.
 
-25: Ba eol duit go hiomlán m'anam. 
+27: Ba eol duit go hiomlán m'anam. 
 You should use /b+uaschamóg/ here instead.
 
-26: D'fhan beirt buachaill sa champa. 
+28: D'fhan beirt buachaill sa champa. 
 Lenition missing.
 
-27: D'fhan beirt bhuachaill cancrach sa champa. 
+29: D'fhan beirt bhuachaill cancrach sa champa. 
 Lenition missing.
 
-28: Déanaigí beart leis de réir bhur briathra. 
+30: Déanaigí beart leis de réir bhur briathra. 
 Eclipsis missing.
 
-29: Ní amháin bhur dhá chosa, ach nigh bhur lámha! 
+31: Ní amháin bhur dhá chosa, ach nigh bhur lámha! 
 Eclipsis missing.
 
-30: Cá cuireann tú do thréad ar féarach? 
+32: Cá cuireann tú do thréad ar féarach? 
 Eclipsis missing.
 
-31: Cá áit a nochtfadh sé é féin ach in Bhostún! 
+33: Cá áit a nochtfadh sé é féin ach in Bhostún! 
 Prefix /h/ missing.
 
-32: Cá chás dúinn bheith ag máinneáil thart anseo? 
+34: Cá chás dúinn bheith ag máinneáil thart anseo? 
 Unnecessary lenition.
 
-33: Cár fág tú eisean? 
+35: Cár fág tú eisean? 
 Lenition missing.
 
-34: Cár fágadh eisean (OK)? 
+36: Cár fágadh eisean (OK)? 
 Unknown word.
 
-35: Cé iad na fir seo ag fanacht farat? 
+37: Cé iad na fir seo ag fanacht farat? 
 Prefix /h/ missing.
 
-37: Chuir siad fios orm ceithre uaire ar an tslí sin. 
+38: Cé an ceart atá agamsa a thuilleadh fós a lorg ar an rí? 
+You should use /cén/ here instead.
+
+39: Chuir siad fios orm ceithre uaire ar an tslí sin. 
 Prefix /h/ missing.
 
-38: Beidh ar Bhord Feidhmiúcháin an tUachtarán agus ceithre ball eile. 
+40: Beidh ar Bhord Feidhmiúcháin an tUachtarán agus ceithre ball eile. 
 Lenition missing.
 
-39: Bhí an chéad cruinniú den Choimisiún i Ros Muc i nGaeltacht na Gaillimhe. 
+41: Bhí an chéad cruinniú den Choimisiún i Ros Muc i nGaeltacht na Gaillimhe. 
 Lenition missing.
 
-40: Tá sé chomh iontach le sneachta dearg. 
+42: Tá sé chomh iontach le sneachta dearg. 
 Prefix /h/ missing.
 
-41: Chuir mé céad punta chuig an banaltra. 
+43: Chuir mé céad punta chuig an banaltra. 
 Initial mutation missing.
 
-42: Níl tú do do sheoladh chuig dhaoine a labhraíonn teanga dothuigthe. 
+44: Níl tú do do sheoladh chuig dhaoine a labhraíonn teanga dhothuigthe. 
 Unnecessary lenition.
 
-43: Bhí sé cúig bhanlámh ar fhad, cúig banlámh ar leithead. 
+45: Bhí sé cúig bhanlámh ar fhad, cúig banlámh ar leithead. 
 Lenition missing.
 
-44: Beirim mo mhionna dar an beart a rinne Dia le mo shinsir. 
+46: Beirim mo mhionna dar an beart a rinne Dia le mo shinsir. 
 Initial mutation missing.
 
-45: Dearbhaím é dar chuthach m'éada i gcoinne na gciníocha eile. 
+47: Dearbhaím é dar chuthach m'éada i gcoinne na gciníocha eile. 
 Unnecessary lenition.
 
-46: Sa dara bliain déag dár braighdeanas, tháinig fear ar a theitheadh. 
+48: Sa dara bliain déag dár braighdeanas, tháinig fear ar a theitheadh. 
 Eclipsis missing.
 
-47: Tá dhá teanga oifigiúla le stádas bunreachtúil á labhairt sa tír seo. 
+49: Tá dhá teanga oifigiúla le stádas bunreachtúil á labhairt sa tír seo. 
 Lenition missing.
 
-48: D'oibrigh mé liom go dtí Dé Aoine. 
+50: D'oibrigh mé liom go dtí Dé Aoine. 
 Prefix /h/ missing.
 
-49: Bhí deich tobar fíoruisce agus seachtó crann pailme ann. 
+51: Bhí deich tobar fíoruisce agus seachtó crann pailme ann. 
 Eclipsis missing.
 
-50: Tógfaidh mé do coinnleoir óna ionad, mura ndéana tú aithrí. 
+52: Tógfaidh mé do coinnleoir óna ionad, mura ndéana tú aithrí. 
 Lenition missing.
 
-51: Is cúis imní don pobal a laghad maoinithe a dhéantar ar Naíscoileanna. 
+53: Is cúis imní don pobal a laghad maoinithe a dhéantar ar Naíscoileanna. 
 Lenition missing.
 
-52: Is mairg don chathair cantalach thruaillithe. 
+54: Is mairg don chathair cantalach thruaillithe. 
 Lenition missing.
 
-53: Creidim go raibh siad de an thuairim chéanna. 
+55: Creidim go raibh siad de an thuairim chéanna. 
 You should use /den/ here instead.
 
-54: Cá bhfuil feoil le fáil agamsa le tabhairt do an mhuintir seo? 
+56: Cá bhfuil feoil le fáil agamsa le tabhairt do an mhuintir seo? 
 You should use /don/ here instead.
 
-55: Is amhlaidh a bheidh freisin do na tagairtí do airteagail. 
+57: Is amhlaidh a bheidh freisin do na tagairtí do airteagail. 
 You should use /d+uaschamóg/ here instead.
 
-56: Tá sé de chúram seirbhís a chur ar fáil do a gcustaiméirí i nGaeilge. 
+58: Tá sé de chúram seirbhís a chur ar fáil do a gcustaiméirí i nGaeilge. 
 You should use /dá/ here instead.
 
-57: Seinnigí moladh ar an gcruit do ár nDia. 
+59: Seinnigí moladh ar an gcruit do ár nDia. 
 You should use /dár/ here instead.
 
-58: Tabharfaidh an tUachtarán a óráid ag leath i ndiaidh a dó déag Dé Sathairn. 
+60: Tabharfaidh an tUachtarán a óráid ag leath i ndiaidh a dó déag Dé Sathairn. 
 Lenition missing.
 
-59: Tá an domhan go léir faoi suaimhneas. 
+61: Tá an domhan go léir faoi suaimhneas. 
 Lenition missing.
 
-60: Caithfidh pobal na Gaeltachta iad féin cinneadh a dhéanamh faoi an Ghaeilge. 
+62: Caithfidh pobal na Gaeltachta iad féin cinneadh a dhéanamh faoi an Ghaeilge. 
 You should use /faoin/ here instead.
 
-61: Cuireann sí a neart mar chrios faoi a coim. 
+63: Cuireann sí a neart mar chrios faoi a coim. 
 You should use /faoina/ here instead.
 
-62: Cuireann sé ciníocha faoi ár smacht agus cuireann sé náisiúin faoinár gcosa. 
+64: Cuireann sé ciníocha faoi ár smacht agus cuireann sé náisiúin faoinár gcosa. 
 You should use /faoinár/ here instead.
 
-63: Tá dualgas ar an gComhairle sin tabhairt faoin cúram seo. 
+65: Tá dualgas ar an gComhairle sin tabhairt faoin cúram seo. 
 Initial mutation missing.
 
-64: Ní bheidh gearán ag duine ar bith faoin gciste fial atá faoinár cúram. 
+66: Ní bheidh gearán ag duine ar bith faoin gciste fial atá faoinár cúram. 
 Eclipsis missing.
 
-65: Beidh paráid Lá Fhéile Phádraig i mBostún. 
+67: Beidh paráid Lá Fhéile Phádraig i mBostún. 
 Unnecessary lenition.
 
-66: Tá ar chumas an duine saol iomlán a chaitheamh gan theanga eile á brú air. 
+68: Tá ar chumas an duine saol iomlán a chaitheamh gan theanga eile á brú air. 
 Unnecessary lenition.
 
-67: Tá gruaim mhór orm gan Chaitlín. 
+69: Tá gruaim mhór orm gan Chaitlín. 
 Unnecessary lenition.
 
-68: Is stáit ilteangacha iad cuid mhór de na stáit sin atá aonteangach go oifigiúil. 
+70: Is stáit ilteangacha iad cuid mhór de na stáit sin atá aonteangach go oifigiúil. 
 Prefix /h/ missing.
 
-69: Ní bheidh bonn comparáide ann go beidh torthaí Dhaonáireamh 2007 ar fáil. 
+71: Ní bheidh bonn comparáide ann go beidh torthaí Dhaonáireamh 2007 ar fáil. 
 Eclipsis missing.
 
-70: Rug sé ar ais mé go dhoras an Teampaill. 
+72: Rug sé ar ais mé go dhoras an Teampaill. 
 Unnecessary lenition.
 
-71: Tar, téanam go dtí bhean na bhfíseanna. 
+73: Tar, téanam go dtí bhean na bhfíseanna. 
 Unnecessary lenition.
 
-72: An ea nach cás leat gur fág mo dheirfiúr an freastal fúmsa i m'aonar? 
+74: An ea nach cás leat gur fág mo dheirfiúr an freastal fúmsa i m'aonar? 
 Lenition missing.
 
-73: B'fhéidir gurbh fearr é seo duit ná leamhnacht na bó ba mhilse i gcontae Chill Mhantáin. 
+75: B'fhéidir gurbh fearr é seo duit ná leamhnacht na bó ba mhilse i gcontae Chill Mhantáin. 
 Lenition missing.
 
-74: An bhfuil aon uachtar reoite agat i cuisneoir? 
+76: An bhfuil aon uachtar reoite agat i cuisneoir? 
 Eclipsis missing.
 
-75: An bhfuil aon uachtar reoite agat i chuisneoir? 
+77: An bhfuil aon uachtar reoite agat i chuisneoir? 
 Eclipsis missing.
 
-76: An bhfuil aon uachtar reoite agaibh i bhur gcuisneoir? 
+78: An bhfuil aon uachtar reoite agaibh i bhur gcuisneoir? 
 You should use /in bhur/ here instead.
 
-77: An bhfuil aon uachtar reoite agat i dhá chuisneoir? 
+79: An bhfuil aon uachtar reoite agat i dhá chuisneoir? 
 You should use /in dhá/ here instead.
 
-78: An bhfuil aon uachtar reoite agat i an chuisneoir? 
+80: An bhfuil aon uachtar reoite agat i an chuisneoir? 
 You should use /sa/ here instead.
 
-79: An bhfuil aon uachtar reoite agat i na cuisneoirí? 
+81: An bhfuil aon uachtar reoite agat i na cuisneoirí? 
 You should use /sna/ here instead.
 
-80: An bhfuil aon uachtar reoite i a cuisneoir? 
+82: An bhfuil aon uachtar reoite i a cuisneoir? 
 You should use /ina/ here instead.
 
-81: Rinne gach cine é sin sna cathracha i ar lonnaíodar. 
+83: An bhfuil aon uachtar reoite ag fear na bád? 
+Eclipsis missing.
+
+84: Rinne gach cine é sin sna cathracha i ar lonnaíodar. 
 You should use /inar/ here instead.
 
-82: An bhfuil aon uachtar reoite i ár cuisneoir? 
+85: An bhfuil aon uachtar reoite i ár gcuisneoir? 
 You should use /inár/ here instead.
 
-83: Tá beirfean inár craiceann faoi mar a bheimis i sorn. 
+86: Tá beirfean inár craiceann faoi mar a bheimis i sorn. 
 Eclipsis missing.
 
-84: Is tuar dóchais é an méid dul chun cinn atá déanta le bhlianta beaga. 
+87: Is tuar dóchais é an méid dul chun cinn atá déanta le bhlianta beaga. 
 Unnecessary lenition.
 
-85: D'fhéadfadh tábhacht a bheith ag baint le an gcéad toisc díobh sin. 
+88: D'fhéadfadh tábhacht a bheith ag baint le an gcéad toisc díobh sin. 
 You should use /leis an/ here instead.
 
-86: Molann an Coimisiún go maoineofaí scéim chun tacú le na pobail sin. 
+89: Molann an Coimisiún go maoineofaí scéim chun tacú le na pobail sin. 
 You should use /leis na/ here instead.
 
-87: Labhraíodh gach duine an fhírinne le a chomharsa. 
+90: Labhraíodh gach duine an fhírinne le a chomharsa. 
 You should use /lena/ here instead.
 
-88: Beir i do láimh ar an tslat le ar bhuail tú an abhainn, agus seo leat. 
+91: Beir i do láimh ar an tslat le ar bhuail tú an abhainn, agus seo leat. 
 You should use /lenar/ here instead.
 
-89: Ba mhaith liom buíochas a ghlacadh le ár bhfoireann riaracháin. 
+92: Ba mhaith liom buíochas a ghlacadh le ár bhfoireann riaracháin. 
 You should use /lenár/ here instead.
 
-90: Tógann siad cuid de le iad féin a théamh. 
+93: Tógann siad cuid de le iad féin a théamh. 
 Prefix /h/ missing.
 
-91: Tá do scrios chomh leathan leis an farraige. 
+94: Tá do scrios chomh leathan leis an farraige. 
 Initial mutation missing.
 
-92: Is linne í ar ndóigh agus lenár clann. 
+95: Is linne í ar ndóigh agus lenár clann. 
 Eclipsis missing.
 
-93: Má tugann rí breith ar na boicht le cothromas, bunófar a ríchathaoir go brách. 
+96: Má tugann rí breith ar na boicht le cothromas, bunófar a ríchathaoir go brách. 
 Lenition missing.
 
-94: Roghnaítear an bhliain 1961 mar pointe tosaigh don anailís. 
+97: Roghnaítear an bhliain 1961 mar pointe tosaigh don anailís. 
 Lenition missing.
 
-95: Comhlíon mo aitheanta agus mairfidh tú beo. 
+98: Comhlíon mo aitheanta agus mairfidh tú beo. 
 You should use /m+uaschamóg/ here instead.
 
-96: Ceapadh mise i mo bolscaire. 
+99: Ceapadh mise i mo bolscaire. 
 Lenition missing.
 
-97: Bhuail mé mo dhá bos ar a chéile. 
+100: Bhuail mé mo dhá bos ar a chéile. 
 Lenition missing.
 
-98: Mura tagann aon duine i gcabhair orainn, rachaimid anonn chugaibh. 
+101: Mura tagann aon duine i gcabhair orainn, rachaimid anonn chugaibh. 
 Eclipsis missing.
 
-99: Murar cruthaigh mise lá agus oíche... teilgim uaim sliocht Iacóib. 
+102: Murar cruthaigh mise lá agus oíche... teilgim uaim sliocht Iacóib. 
 Lenition missing.
 
-100: Is mór ag náisiún na Éireann a choibhneas speisialta le daoine de bhunadh na hÉireann atá ina gcónaí ar an gcoigríoch. 
+103: Is mór ag náisiún na Éireann a choibhneas speisialta le daoine de bhunadh na hÉireann atá ina gcónaí ar an gcoigríoch. 
 Prefix /h/ missing.
 
-101: Chuir an Coimisiún féin comhfhreagras chuig na eagraíochtaí seo ag lorg eolais faoina ngníomhaíochtaí. 
+104: Chuir an Coimisiún féin comhfhreagras chuig na eagraíochtaí seo ag lorg eolais faoina ngníomhaíochtaí. 
 Prefix /h/ missing.
 
-102: Ná iompaígí chun na n-íol, agus ná dealbhaígí déithe de mhiotal. 
+105: Ná iompaígí chun na n-íol, agus ná dealbhaígí déithe de mhiotal. 
 Prefix /h/ missing.
 
-103: Is fearr de bhéile luibheanna agus grá leo ná mhart méith agus gráin leis. 
+106: Is fearr de bhéile luibheanna agus grá leo ná mhart méith agus gráin leis. 
 Unnecessary lenition.
 
-104: Nach bainfidh mé uaidh an méid a ghoid sé uaim? 
+107: Nach bainfidh mé uaidh an méid a ghoid sé uaim? 
 Eclipsis missing.
 
-105: Rinneadh an roinnt don naoi treibh go leith ar cranna. 
+108: Rinneadh an roinnt don naoi treibh go leith ar cranna. 
 Eclipsis missing.
 
-106: Tháinig na bróga chomh fada siar le haimsir Naomh Phádraig féin. 
+109: Tháinig na bróga chomh fada siar le haimsir Naomh Phádraig féin. 
 Unnecessary lenition.
 
-107: Nár breá liom claíomh a bheith agam i mo ghlac! 
+110: Nár breá liom claíomh a bheith agam i mo ghlac! 
 Lenition missing.
 
-108: Nár freagair sé thú, focal ar fhocal. 
+111: Nár freagair sé thú, focal ar fhocal. 
 Lenition missing.
 
-109: Feicimid gur de dheasca a n-easumhlaíochta nárbh féidir leo dul isteach ann. 
+112: Feicimid gur de dheasca a n-easumhlaíochta nárbh féidir leo dul isteach ann. 
 Lenition missing.
 
-110: Ní féadfaidh a gcuid airgid ná óir iad a shábháil. 
+113: Ní féadfaidh a gcuid airgid ná óir iad a shábháil. 
 Lenition missing.
 
-111: Ní iad sin do phíopaí ar an tábla! 
+114: Ní iad sin do phíopaí ar an tábla! 
 Prefix /h/ missing.
 
-112: Níor bain sé leis an dream a bhí i gcogar ceilge. 
+115: Níor bain sé leis an dream a bhí i gcogar ceilge. 
 Lenition missing.
 
-113: Níor gá do dheoraí riamh codladh sa tsráid; Bhí mo dhoras riamh ar leathadh. 
+116: Níor gá do dheoraí riamh codladh sa tsráid; Bhí mo dhoras riamh ar leathadh. 
 Lenition missing.
 
-114: Níorbh foláir dó éisteacht a thabhairt dom. 
+117: Níorbh foláir dó éisteacht a thabhairt dom. 
 Lenition missing.
 
-115: Tabhair an t-ordú seo leanas ó béal. 
+118: Tabhair an t-ordú seo leanas ó béal. 
 Lenition missing.
 
-116: Bíodh bhur ngrá saor ó an gcur i gcéill. 
+119: Bíodh bhur ngrá saor ó an gcur i gcéill. 
 You should use /ón/ here instead.
 
-117: Bhí ocht tábla ar fad ar a maraídís na híobairtí. 
+120: Bhí ocht tábla ar fad ar a maraídís na híobairtí. 
 Eclipsis missing.
 
-118: Bíodh bhur ngrá saor ón cur i gcéill. 
+121: Bíodh bhur ngrá saor ón cur i gcéill. 
 Initial mutation missing.
 
-119: Amharcann sé ó a ionad cónaithe ar gach aon neach dá maireann ar talamh. 
+122: Amharcann sé ó a ionad cónaithe ar gach aon neach dá maireann ar talamh. 
 You should use /óna/ here instead.
 
-120: Seo iad a gcéimeanna de réir na n-áiteanna ó ar thosaíodar. 
+123: Seo iad a gcéimeanna de réir na n-áiteanna ó ar thosaíodar. 
 You should use /ónar/ here instead.
 
-121: Agus rinne sé ár bhfuascailt ó ár naimhde. 
+124: Agus rinne sé ár bhfuascailt ó ár naimhde. 
 You should use /ónár/ here instead.
 
-122: Bhíodh súil in airde againn ónár túir faire. 
+125: Bhíodh súil in airde againn ónár túir faire. 
 Eclipsis missing.
 
-123: Tá do ghéaga spréite ar bhraillín ghléigeal os fharraige faoileán. 
+126: Tá do ghéaga spréite ar bhraillín ghléigeal os fharraige faoileán. 
 Unnecessary lenition.
 
-124: Agus tháinig scéin air roimh an pobal seo ar a líonmhaire. 
+127: Agus tháinig scéin air roimh an pobal seo ar a líonmhaire. 
 Initial mutation missing.
 
-125: Is gaiste é eagla roimh daoine. 
+128: Is gaiste é eagla roimh daoine. 
 Lenition missing.
 
-126: An bhfuil aon uachtar reoite agat sa oighear? 
+129: An bhfuil aon uachtar reoite agat sa oighear? 
 You should use /san/ here instead.
 
-127: An bhfuil aon uachtar reoite agat sa cuisneoir? 
+130: An bhfuil aon uachtar reoite agat sa cuisneoir? 
 Lenition missing.
 
-128: An bhfuil aon uachtar reoite agat sa seamair? 
+131: An bhfuil aon uachtar reoite agat sa seamair? 
 Prefix /t/ missing.
 
-129: An bhfuil aon uachtar reoite agat sa scoil (OK)? 
+132: An bhfuil aon uachtar reoite agat sa scoil (OK)? 
 Unknown word.
 
-130: An bhfuil aon uachtar reoite agat sa samhradh (OK)? 
+133: An bhfuil aon uachtar reoite agat sa samhradh (OK)? 
 Unknown word.
 
-131: Tá sé bráthair de chuid Ord San Phroinsias. 
+134: Tá sé bráthair de chuid Ord San Phroinsias. 
 Unnecessary lenition.
 
-132: San fásach cuirfidh mé crainn chéadrais. 
+135: San fásach cuirfidh mé crainn chéadrais. 
 Lenition missing.
 
-133: An bhfuil aon uachtar reoite agat san foraois? 
+136: An bhfuil aon uachtar reoite agat san foraois? 
 Lenition missing.
 
-134: Anois i ndeireadh an tséasúir bhí sé uaire d'oíche ann. 
+137: Anois i ndeireadh an tséasúir bhí sé uaire d'oíche ann. 
 Prefix /h/ missing.
 
-136: Cuireadh boscaí ticeála isteach seachas bhoscaí le freagraí a scríobh isteach. 
-Unnecessary lenition.
-
-137: Tá seacht lampa air agus seacht píopa ar gach ceann díobh. 
-Eclipsis missing.
-
-138: Iompróidh siad thú lena lámha sula bhuailfeá do chos in aghaidh cloiche. 
-Eclipsis missing.
-
-139: Ach sular sroich sé, dúirt sí: "Dúnaigí an doras air!" 
+138: Céard atá ann ná sé cathaoirleach coiste. 
 Lenition missing.
 
-140: Chuir iad ina suí mar a raibh onóir acu thar an cuid eile a fuair cuireadh. 
+139: Cuireadh boscaí ticeála isteach seachas bhoscaí le freagraí a scríobh isteach. 
+Unnecessary lenition.
+
+140: Tá seacht lampa air agus seacht píopa ar gach ceann díobh. 
+Eclipsis missing.
+
+141: Iompróidh siad thú lena lámha sula bhuailfeá do chos in aghaidh cloiche. 
+Eclipsis missing.
+
+142: Ach sular sroich sé, dúirt sí: "Dúnaigí an doras air!" 
+Lenition missing.
+
+143: Chuir iad ina suí mar a raibh onóir acu thar an cuid eile a fuair cuireadh. 
 Initial mutation missing.
 
-141: Timpeall trí uaire a chloig ina dhiaidh sin tháinig an bhean isteach. 
+144: Timpeall trí uaire a chloig ina dhiaidh sin tháinig an bhean isteach. 
 Prefix /h/ missing.
 
-143: Ní fhillfidh siad ar an ngeata trí ar ghabh siad isteach. 
+146: Ní fhillfidh siad ar an ngeata trí ar ghabh siad isteach. 
 You should use /trínar/ here instead.
 
-144: Beirimid an bua go caithréimeach trí an té úd a thug grá dúinn. 
+147: Beirimid an bua go caithréimeach trí an té úd a thug grá dúinn. 
 You should use /tríd an/ here instead.
 
-145: Coinníodh lenár sála sa chaoi nárbh fhéidir siúl trí ár sráideanna. 
+148: Coinníodh lenár sála sa chaoi nárbh fhéidir siúl trí ár sráideanna. 
 You should use /trínár/ here instead.
 
-146: Mar trínár peacaí, tá do phobal ina ábhar gáire ag cách máguaird orainn. 
+149: Mar trínár peacaí, tá do phobal ina ábhar gáire ag cách máguaird orainn. 
 Eclipsis missing.
 
-147: Gabhfaidh siad trí muir na hÉigipte. 
+150: Gabhfaidh siad trí muir na hÉigipte. 
 Lenition missing.
 
-148: Idir dhá sholas, um tráthnóna, faoi choim na hoíche agus sa dorchadas. 
+151: Idir dhá sholas, um tráthnóna, faoi choim na hoíche agus sa dorchadas. 
 Lenition missing.
 
-149: Tá sé-- tá sé- mo ---shin-seanathair (OK). 
+152: Tá sé-- tá sé- mo ---shin-seanathair (OK). 
 Unknown word.
+
+153: 23. IV. Is abairt í seo le giorrúcháin, cf. Dr. Scannell, Jr. agus m.sh. Caoimhín Ó Scanaill, T. D. atá i gceanas faoi réir m. sh. VIII, ceart go leor? 
+Unknown word, Unknown word (ignoring remainder in this sentence).
 
