@@ -55,6 +55,8 @@ use Archive::Zip qw( :ERROR_CODES);
 use Lingua::@TEANGA@::Gramadoir;
 use Encode qw(decode encode);
 
+my $debug = 0;
+
 if (scalar @ARGV != 2) {
 	print "Usage: $0 filetocheck[.sxw] errorfile[.sxw]\n";
 	exit 1;
@@ -65,11 +67,11 @@ my $datestr = sprintf("%04d-%02d-%02d", $year+1900, $mon+1, $mday);
 
 #  style definition for preamble
 #    double-wavy red underline
-# my $style = '<style:style style:name="gramadoir" style:family="text"><style:properties style:text-underline="double-wave" style:text-underline-color="#800000"/></style:style>';
+my $style = '<style:style style:name="gramadoir" style:family="text"><style:properties style:text-underline="double-wave" style:text-underline-color="#800000"/></style:style>';
 #    wavy green underline
 # my $style = '<style:style style:name="gramadoir" style:family="text"><style:properties style:text-underline="wave" style:text-underline-color="#008000"/></style:style>';
 #    yellow highlighter
-my $style = '<style:style style:name="gramadoir" style:family="text"><style:properties style:text-background-color="#ffff00"/></style:style>';
+# my $style = '<style:style style:name="gramadoir" style:family="text"><style:properties style:text-background-color="#ffff00"/></style:style>';
 
 
 # annotation markup
@@ -94,19 +96,21 @@ my $xml = $zip->contents('content.xml');
 $xml =~ s/&quot;/\\"/g;
 $xml =~ s/&lt;/\\</g;
 $xml =~ s/&gt;/\\>/g;
-$xml =~ s/&apos;/\\'/g;
+$xml =~ s/&apos;/'/g;
 $xml =~ s/&amp;/\\&/g;
 
-# from_to($xml, "utf-8", "iso-8859-1");
-# $xml = decode("utf-8", $xml);
+print STDERR "Unpacked contents.xml, converted char entities...\n" if ($debug);
 
 my $gr = new Lingua::@TEANGA@::Gramadoir(
-	fix_spelling => 1,
+#	fix_spelling => 1,
 	interface_language => '@LOWERTEANGA@', 
 	input_encoding => 'utf-8',
 );
 
+print STDERR "Gramadoir object created...\n" if ($debug);
+
 my $errs = $gr->grammatical_errors($xml);
+print STDERR "Grammatical errors found...\n" if ($debug);
 $xml = decode("utf-8", $xml);
 my @xmllines = split /\n/, $xml;
 my $xmlans;
@@ -122,35 +126,42 @@ foreach (@$errs) {
 	}
 	$xmlans .= substr($xmllines[$f_y - 1], $curr_x, $f_x - $curr_x);
 	$curr_x = $f_x;
-	$xmlans .= $markup;
+	my $errorspan='';
 	while ($curr_y < $t_y) {
-		$xmlans .= substr($xmllines[$curr_y-1], $curr_x)."\n";
+		$errorspan .= substr($xmllines[$curr_y-1], $curr_x)."\n";
 		$curr_y++;
 		$curr_x = 0;
 	}
 	$t_x++;  # first char after error
-	$xmlans .= substr($xmllines[$t_y - 1], $curr_x, $t_x - $curr_x);
+	$errorspan .= substr($xmllines[$t_y - 1], $curr_x, $t_x - $curr_x);
+	$errorspan =~ s/((\s*<[^>]+>\s*)+)/$closemarkup$1$markup/g;
+	$errorspan =~ s/^/$markup/;
+	$errorspan =~ s/$/$closemarkup/;
 	$curr_x = $t_x;
-	$xmlans .= $closemarkup;
+	$xmlans .= $errorspan;
 	$xmlans .= $ann;
+	$errmsg =~ s/\//\\"/g;
 	$xmlans .= $errmsg;
 	$xmlans .= $closeann;
 }
-$xmlans .= substr($xmllines[$curr_y - 1], $t_x+1);
+print STDERR "All error markup inserted...\n" if ($debug);
+$xmlans .= substr($xmllines[$curr_y - 1], $t_x);
 $curr_y++;
 while ($curr_y <= @xmllines) {
 	$xmlans .= $xmllines[$curr_y-1]."\n";
 	$curr_y++;
 }
+print STDERR "New XML completed...\n" if ($debug);
 
-# from_to($xmlans, "iso-8859-1", "utf-8");
 $xmlans = encode("utf-8", $xmlans);
 
 $xmlans =~ s/\\&/&amp;/g;
 $xmlans =~ s/\\"/&quot;/g;
 $xmlans =~ s/\\</&lt;/g;
 $xmlans =~ s/\\>/&gt;/g;
-$xmlans =~ s/\\'/&apos;/g;
+$xmlans =~ s/'/&apos;/g;
+
+print STDERR "New XML converted to utf-8 octets...\n" if ($debug);
 
 
 # insert description of gramadoir style in preamble
@@ -158,6 +169,8 @@ $xmlans =~ s/(?<=<office:automatic-styles>)/$style/;
 $xmlans =~ s/(?<=<office:automatic-styles)\/>/>$style<\/office:automatic-styles>/;
 
 $zip->contents('content.xml', $xmlans);
+print STDERR "New XML replaces old in contents.xml...\n" if ($debug);
 die "could not write to $errorfile" unless ($zip->writeToFileNamed( $errorfile ) == AZ_OK);
+print STDERR "Zip file written...\n" if ($debug);
 
 exit 0;
