@@ -25,6 +25,7 @@ History</h1>
 <tr><td>0.2</td> <td>30 Jul 2003</td> <td>314,027</td> <td>22,292</td> <td>-</td>     <td>22</td>    <td>173</td> <td>18</td></tr>
 <tr><td>0.3</td> <td>21 Oct 2003</td> <td>315,002</td> <td>23,353</td> <td>-</td>     <td>24</td>    <td>177</td> <td>18</td></tr>
 <tr><td>0.4</td> <td>8 Jan 2004</td> <td>315,041</td> <td>24,107</td> <td>214</td>    <td>331</td>   <td>361</td> <td>77</td></tr>
+<tr><td>0.5</td> <td>28 Jul 2004</td> <td>320,958</td> <td>27,868</td> <td>222</td>    <td>333</td>   <td>362</td> <td>77</td></tr>
 </table>
 
 <h2>Benchmarks</h2>
@@ -43,13 +44,52 @@ dual Xeon box running Gentoo Linux).   WPM = words per minute.
 <tr><td>0.2</td> <td><i>220.73</i></td> <td><i>52301</i></td> <td><i>5.10</i></td> <td><i>1.13</i></td> <td><i>-</i></td> <td><i>3.38</i></td> <td><i>-</i></td> <td><i>-</i></td> <td><i>206.80</i></td> <td><i>0.43</i></td> <td><i>3.88</i></td></tr>
 <tr><td>0.3</td> <td><i>241.61</i></td> <td><i>47781</i></td> <td><i>5.04</i></td> <td><i>1.11</i></td> <td><i>-</i></td> <td><i>3.41</i></td> <td><i>-</i></td> <td><i>-</i></td> <td><i>227.64</i></td> <td><i>0.44</i></td> <td><i>3.97</i></td></tr>
 <tr><td>0.4</td> <td><i>208.39</i></td> <td><i>55398</i></td> <td><i>15.06</i></td> <td><i>2.60</i></td> <td><i>6.39</i></td> <td><i>133.83</i></td> <td><i>26.46</i></td> <td><i>0.76</i></td> <td><i>19.25</i></td> <td><i>1.04</i></td> <td><i>3.00</i></td></tr>
+<tr><td>0.5</td> <td><i>216.36</i></td> <td><i>53357</i></td> <td><i>6.97</i></td> <td><i>6.05</i></td> <td><i>9.75</i></td> <td><i>144.02</i></td> <td><i>29.08</i></td> <td><i>1.41</i></td> <td><i>14.72</i></td> <td><i>1.83</i></td> <td><i>2.60</i></td></tr>
 </table>
 
 <h2>ChangeLog Summary</h2>
 <p>
+<b>Version 0.4->0.5 (Perl Module 0.50)</b>
+<ul>
+<li>Complete rewrite of core engine entirely in Perl
+<li>Default output encoding is now utf8; added a "--aschod" option to
+change this
+<li>The default is now to report all spelling errors in a sentence
+(was at most two)
+<li>Added a complete morphological analyzer which greatly improves
+the error messages when words are not found in the lexicon.
+<li>The morphology engine also improves handling of late capitals
+so words like "d'Fhoras", "Sean-Nós" are passed over silently as correct now.
+Also, since the lowered version of a word like "hAire" is not automatically
+searched (since the capitalized version is in the lexicon),
+this gets the correct, unambiguous masculine POS tag.
+Or in "bPáirtí Glas", the first word is now recognized unambiguously
+as a noun which then has the added benefit of allowing "Glas" to be correctly
+recognized as an adjective.
+<li>Line numbers are now given where the error occurs
+(was the line number of the beginning of the sentence containing the error).
+<li>Non-standard words are now tagged so as to be reported as misspellings
+when the "--litriu" flag is given.
+<li>Doubled words only reported when there is no intervening punctuation;
+the two words together are now marked up as the erroneous text.
+<li>Bug from unescaped "$" in bash version goes away with perl
+<li>Global highlighting bug fixed (e.g. "re" in "gach re" caused the "re" in
+"toibreacha" to be highlighted also).
+<li>No more "uimhir" line number attribute in intermediate XML
+<li>Use character entities "&amp;quot;", etc. in "--api", "--html", and "--xml" output
+<li>Added "--api" command line option which generates XML output
+suitable for use as an interface to other programs
+<li>Added command line options "--aschur", "--dath", "--comheadan"
+<li>I cracked and added English versions of the long command-line options
+<li>Improvements (adding to .neamhshuim) and bug fixes to Vim interface
+<li>Afrikaans localization
+</ul>
+</p>
+
+<p>
 <b>Version 0.3->0.4</b>
 <ul>
-<li>Rule set more than double the size of 0.3 (improved generation of Perl code
+<li>Rule set more than double the size (improved generation of Perl code
 means no loss in efficiency, in fact a 15% improvement)
 <li>"tag 2-gram" rules added that flag unlikely part-of-speech combinations
 <li>Complete Brill-like rule-based tagger added with 331 disambiguation rules
