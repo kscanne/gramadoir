@@ -298,15 +298,15 @@ drochchomhad()
 {
 	if [ ! -e "${1}" ]
 	then
-		echo "${CLAR}: ${1}: $notfound"
+		echo "${CLAR}: ${1}: $notfound" >&2
 	else
 		if [ -d "${1}" ]
 		then
-			echo "${CLAR}: ${1}: $isdir" > 2
+			echo "${CLAR}: ${1}: $isdir" >&2
 		else
 			if [ ! -r "${1}" ]
 			then
-				echo "${CLAR}: ${1}: $permissions" > 2
+				echo "${CLAR}: ${1}: $permissions" >&2
 			fi
 		fi
 	fi
@@ -315,31 +315,31 @@ drochchomhad()
 
 USEIGNORE="ignore"
 
-# This is the main sequence of filters for checking a given file
-comhad()
+unchecked_xml()
 {
 		diutf | 
 		abairti |
-		@prefix@/libexec/cuardach "${USEIGNORE}" "${CLAR}" |
+		@prefix@/libexec/cuardach "${USEIGNORE}" "${CLAR}"
+}
+
+# This replaces "comhad" when "--xml" options is given
+# same as filters in comhad up to the interface
+xml_output()
+{
+		unchecked_xml |
 		aonchiall |
 		rialacha |
-		eisceacht |
+		eisceacht
+}
+
+# This is the main sequence of filters for checking a given file
+comhad()
+{
+		xml_output |
 		comheadan |
 		@AWK@ "{sub(/myaibhsigh/,\"${AIBHSIGHVAR}\"); print}" |
 		loganu |
 		/bin/bash -s
-}
-
-# This replaces "comhad" above when "--xml" options is given
-# same as filters in comhad up to the interface
-xml_output()
-{
-		diutf |
-		abairti |
-		@prefix@/libexec/cuardach "${USEIGNORE}" "${CLAR}" |
-		aonchiall |
-		rialacha |
-		eisceacht
 }
 
 litriu_comheadan()
@@ -359,10 +359,7 @@ p
 # This replaces "comhad" above when "--litriu" option is given
 litriu()
 {
-		diutf |
-		abairti |
-		@prefix@/libexec/cuardach "${USEIGNORE}" "${CLAR}" |
-		litriu_comheadan
+	unchecked_xml | litriu_comheadan
 }
 
 # remainder is the "main()"
@@ -384,7 +381,7 @@ do
 			then
 				TEANGA="${OPTARG}"
 			else
-				printf "${unsupported}\n" "${OPTARG}"
+				printf "${CLAR}: ${unsupported}\n" "${OPTARG}" >&2
 				exit 1
 			fi
 		;;
@@ -392,11 +389,11 @@ do
 			IONCHOD="${OPTARG}"
 		;;
 		"--help" | "--version" | "--html" | "--xml" | "--litriu" | "--iomlan" )
-			unwanted_arg "${JUSTOPT}"
+			unwanted_arg "${JUSTOPT}" >&2
 			exit 1
 		;;
 		* )
-			option_error "${JUSTOPT}"
+			option_error "${JUSTOPT}" >&2
 			exit 1
 		;;
 		esac
@@ -429,11 +426,11 @@ do
 			USEIGNORE="noignore"
 		;;
 		"--ionchod" | "--teanga" )
-			no_argument "${1}"
+			no_argument "${1}" >&2
 			exit 1
 		;;
 		* )
-			option_error "${1}"
+			option_error "${1}" >&2
 			exit 1
 		;;
 		esac
