@@ -20,7 +20,7 @@ s/PASTNORFORM/(?:ndúi?r|rai?bh|bhfuai?r|bhfac|ndeach|ndearna)[^<]*/g;
 s/PASTAFTERNI/(?:bhfuai?r|dúi?r|rai?bh|fhac|dheach|dhearna)[^<]*/g;
 s/FAIGHECLIPSE/[Ff]uai?r[^<]*/g;
 s/VOWELNUMERAL/(?:[0-9]?[18]|1?8[0-9][0-9][0-9]*)/g;
-s/VOWELORDINAL/(?:[0-9]?[18]|1?8[0-9][0-9][0-9]*)ú/g;
+s/VOWELORDINAL/(?:80|[0-9]?[18]|1?8[0-9][0-9][0-9]*)ú/g;
 s/NIBS/[Nn]í(?: ?ba|b)/g;
 s/INITIALH/h[^<]+/g;
 s/UNLENITEDS/[Ss][lnraeiouáéíóú][^<]+/g;
