@@ -20,7 +20,7 @@ TARBALL = @PACKAGE_TARNAME@
 pkgdatadir = $(datadir)/$(PACKAGE_NAME)
 INSTALL = @INSTALL@
 INSTALL_DATA = @INSTALL_DATA@
-INSTALL_PROGRAM = @INSTALL_PROGRAM@
+INSTALL_PROGRAM = @INSTALL@
 AWK = @AWK@
 CC = @CC@
 CFLAGS = @CFLAGS@
@@ -35,45 +35,39 @@ YACC = @YACC@
 all : aonchiall.pl eisceacht.pl rialacha.pl cuardach
 
 cuardach : cuardach.o
-	rm -f cuardach
 	$(CC) -o cuardach $(CFLAGS) cuardach.o
-	chmod 555 cuardach
 	
 cuardach.o : cuardach.c
 	$(CC) -c $(CFLAGS) -DBSONRAI=\"$(pkgdatadir)/focail.bs\" cuardach.c
 
 rialacha.pl : rialacha.in rialacha.meta.sed gin.meta.sed
-	rm -f rialacha.pl
 	($(ECHO) "#!$(PERL)"; $(ECHO) '# Users should modify rialacha.in, not this file'; $(ECHO) 'while(<>){';  cat rialacha.in | sed -f gin.meta.sed | sed -f rialacha.meta.sed; $(ECHO) 'print;'; $(ECHO) '}'; $(ECHO) 'exit;') > rialacha.pl
-	chmod 555 rialacha.pl
 
 aonchiall.pl : aonchiall.in aonchiall.meta.sed gin.meta.sed
-	rm -f aonchiall.pl
 	($(ECHO) "#!$(PERL)"; $(ECHO) '# Users should modify aonchiall.in, not this file'; $(ECHO) 'while(<>){'; cat aonchiall.in | sed -f gin.meta.sed | sed -f aonchiall.meta.sed; $(ECHO) 'print;'; $(ECHO) '}'; $(ECHO) 'exit;') > aonchiall.pl
-	chmod 555 aonchiall.pl
 
 eisceacht.pl : eisceacht.in eisceacht.meta.sed gin.meta.sed
-	rm -f eisceacht.pl
 	($(ECHO) "#!$(PERL)"; $(ECHO) '# Users should modify eisceacht.in, not this file'; $(ECHO) 'while(<>){'; cat eisceacht.in | sed -f gin.meta.sed | sed -f eisceacht.meta.sed; $(ECHO) 'print;'; $(ECHO) '}'; $(ECHO) 'exit;') > eisceacht.pl
-	chmod 555 eisceacht.pl
 
-check : all
+check : FORCE
 	@gr triail > triail.tmp
 	@if diff triail.tmp triail.err; then $(ECHO) 'Ceart go leor.'; else $(ECHO) 'Fadhb.'; fi
 	@rm -f triail.tmp
 
 
-install : all
-	$(INSTALL_DIR) $(pkgdatadir)
-	$(INSTALL_DATA) focail.bs $(pkgdatadir)
-	$(INSTALL_DIR) $(libexecdir)
-	$(INSTALL_PROGRAM) cuardach $(libexecdir)
-	$(INSTALL_PROGRAM) hilite.awk $(libexecdir)
-	$(INSTALL_PROGRAM) aonchiall.pl $(libexecdir)
-	$(INSTALL_PROGRAM) eisceacht.pl $(libexecdir)
-	$(INSTALL_PROGRAM) rialacha.pl $(libexecdir)
-	$(INSTALL_DIR) $(bindir)
-	$(INSTALL_PROGRAM) gr $(bindir)
+install : all installdirs
+	$(INSTALL_DATA) focail.bs $(pkgdatadir)/focail.bs
+	$(INSTALL_PROGRAM) cuardach $(libexecdir)/cuardach
+	$(INSTALL_PROGRAM) hilite.awk $(libexecdir)/hilite.awk
+	$(INSTALL_PROGRAM) aonchiall.pl $(libexecdir)/aonchiall.pl
+	$(INSTALL_PROGRAM) eisceacht.pl $(libexecdir)/eisceacht.pl
+	$(INSTALL_PROGRAM) rialacha.pl $(libexecdir)/rialacha.pl
+	$(INSTALL_PROGRAM) gr $(bindir)/gr
+	rm -f gr
+
+installdirs : mkinstalldirs
+	./mkinstalldirs $(bindir) $(pkgdatadir) $(libexecdir)
+	chmod 755 $(bindir) $(pkgdatadir) $(libexecdir)
 
 uninstall :
 	rm -f $(pkgdatadir)/focail.bs
@@ -89,13 +83,13 @@ Makefile gr : Makefile.in gr.in
 
 distclean :
 	${MAKE} clean
-	rm -f config.log config.status Makefile
+	rm -f gr config.log config.status Makefile
 
 clean :
-	rm -f triail.html cuardach cuardach.o rialacha.pl aonchiall.pl eisceacht.pl gr cabhair.o cabhair triail.err.old y.tab.* lex.yy.* aparser eparser rparser aonchiall.y eisceacht.y rialacha.y
+	rm -f triail.html cuardach cuardach.o rialacha.pl aonchiall.pl eisceacht.pl cabhair.o cabhair y.tab.* lex.yy.* aparser eparser rparser aonchiall.y eisceacht.y rialacha.y
 
 semiclean :
-	rm -f triail.html cuardach.o cabhair.o cabhair triail.err.old y.tab.* lex.yy.*
+	rm -f triail.html cuardach.o cabhair.o cabhair y.tab.* lex.yy.*
 
 ###############################################
 # Remaining targets are for use by developers #
@@ -112,15 +106,15 @@ installweb :
 	$(INSTALL_DATA) sampla.html $(webhome)
 	$(INSTALL_DATA) gramadoir.dtd $(webhome)/../dtds
 
-triail.html : all triail
-	./gr --html triail > triail.html
+triail.html : FORCE
+	gr --html triail > triail.html
 
 maintainer-clean :
-	make distclean
-	rm -f focail.bs triail.err
+	${MAKE} distclean
+	rm -f focail.bs
 
-dist : triail.err
-	ln -s gr ../$(TARBALL)
+dist : FORCE
+	$(LN_S) gr ../$(TARBALL)
 	tar cvhf $(TARBALL).tar -C .. $(TARBALL)/aonchiall.in
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/aonchiall.meta.sed
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/cabhair.c
@@ -135,7 +129,11 @@ dist : triail.err
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gr.in
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/gramadoir.dtd
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/hilite.awk
-	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/makefile.in
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/install-sh
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/Makefile.in
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/mkinstalldirs
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/ponc.in.l
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/ponc.in.y
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/README
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/rialacha.in
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/rialacha.meta.sed
@@ -145,13 +143,12 @@ dist : triail.err
 	chmod 444 $(TARBALL).tar.gz
 	rm -f ../$(TARBALL)
 
-triail.err : all triail
-	mv -f triail.err triail.err.old
-	./gr triail > triail.err
-	- diff triail.err.old triail.err
+triail.err : FORCE
+	rm -f triail.err
+	gr triail > triail.err
 
 focail.bs : FORCE
-	make cabhair
+	${MAKE} cabhair
 	Gin 12
 	(cat ${HOME}/.ispell_gaeilge ${HOME}/.biobla | sed 's/.*/& 44/'; cat FOCAIL) | LC_COLLATE=POSIX sort -u > FOCAIL.all
 	cat FOCAIL.all | ./cabhair > focail.bs
