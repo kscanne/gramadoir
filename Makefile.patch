@@ -1,5 +1,5 @@
---- Makefile	2005-03-02 22:19:41.115544560 -0600
-+++ Makefile.ok	2005-03-02 22:19:33.861647320 -0600
+--- Makefile	2005-03-02 22:40:37.128601552 -0600
++++ Makefile.ok	2005-03-02 22:40:27.925000712 -0600
 @@ -60,8 +60,16 @@
  
  Makefile : Makefile.in config.status
@@ -17,7 +17,7 @@
  config.status: configure
  	./config.status --recheck
  
-@@ -81,4 +89,190 @@
+@@ -81,4 +89,187 @@
  semiclean :
  	rm -f y.tab.* $(LEX_OUTPUT_ROOT).* aonchiall.y rialacha.y
  
@@ -63,11 +63,8 @@
 +	$(MAKE) distclean
 +	rm -f ChangeLog configure sampla.html bugs.html
 +
-+ChangeLog : FORCE
-+	cvs2cl --FSF
-+
++# as of 0.6 assume cvs2cl is run manually before "make dist"
 +dist : FORCE
-+	$(MAKE) ChangeLog
 +	$(LN_S) gr ../$(TARBALL)
 +	tar cvhf $(TARBALL).tar -C .. $(TARBALL)/ABOUT-NLS
 +	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/aonchiall.meta.pl
