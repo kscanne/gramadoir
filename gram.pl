@@ -402,7 +402,7 @@ while ($ARGV = shift @ARGV) {
 				}
 			}
 			$s .= substr($3,$1+length($4));
-			$s .= "<br>\n$5.\n\n";
+			$s .= "<br>\n$5\n\n";  # don't add punctuation
 			if (!$html) {
 				$s =~ s/<br>//g;
 				$s =~ s/&quot;/"/g;
