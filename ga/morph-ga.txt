@@ -131,7 +131,7 @@
 # ilsiamsa, ilsiollach, etc.  no special case
 ^il([^bcfgmp-]..)	$1		0	<[AN].*>
 ^il([bcfgmp]h.)		$1		0	<[AN].*>
-^im([^bcdfgmpst-]..)	$1		0	<[ANV].*>
+^im([^bcdfghmpst-]..)	$1		0	<[ANV].*>
 ^im([bcdfgmpt]h.)	$1		0	<[ANV].*>
 ^im(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>
 ^im(s[^aeiouáéíóúlnrh].)	$1		0	<[ANV].*>
@@ -178,7 +178,7 @@
 ^so([bcdfgmpt]h.)	$1		0	<[AN].*>
 ^so(sh[aeiouáéíóúlnr].)	$1		0	<[AN].*>
 ^so(s[^aeiouáéíóúlnrh]..)	$1		0	<[AN].*>
-^tras([^bcfgmnps-])	$1		0	<[ANV].*>   # leave "^trasn" alone
+^tras([^bcfghmnps-])	$1		0	<[ANV].*>   # leave "^trasn" alone
 ^tras([bcfgmp]h)	$1		0	<[ANV].*>
 ^tras-(s)		$1		0	<[ANV].*>
 # next batch are non-words so really need to be here, but VERY infrequent
