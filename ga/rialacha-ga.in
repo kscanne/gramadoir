@@ -611,7 +611,7 @@ g?[Cc]h?úig <NP>(bliana|cinn|cloigne|fichid|huaire)</NP>:OK
 # CB p.22 #7.h, p.132 #6 "if", but also p.132 #4 since it's de/do+a sometimes
 <C>[Dd]á</C> <V>UNECLIPSED</V>:URU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
-#. Beirim mo mhionna dar an beart a rinne Dia le mo shinsir.
+#. Beirim mo mhionn dar an beart a rinne Dia le mo shinsir.
 <S>[Dd]ar</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.113-114
 <V cop="y">[Dd]ar</V> INITIALVOWEL:BACHOIR{darb, darbh}
@@ -1660,7 +1660,7 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 [Tt]rí uaire?:BACHOIR{huaire}
 # CB p.84 #8 <D>a</D>, p.132 #2 <S>a</D>
 #. Scríobhaim chugaibh mar gur maitheadh daoibh bhur bpeacaí trí a ainm.
-#. Cuirtear i láthair na struchtúir trí a reáchtálfar gnímh ag an leibhéal náisiúnta.
+#. Cuirtear i láthair na struchtúir trí a reáchtálfar gníomhartha ag an leibhéal náisiúnta.
 <S>[Tt]rí</S> a:BACHOIR{trína}
 # CB p.132 #2; <Q> or <S>
 #. Ní fhillfidh siad ar an ngeata trí ar ghabh siad isteach.
@@ -1769,6 +1769,33 @@ d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</
 <D>FUSEDPOSS</D> <E><ND>ANYTHING</ND></E>:OK
 <A pl="n" gnt="n">[Dd]há</A> <E><ND>ANYTHING</ND></E>:OK
 <T>[Aa]n</T> [Dd]á <E><ND>ANYTHING</ND></E>:OK
+#############################################################################
+#  <=> Genitive rules
+#############################################################################
+# exclude possessives for constructs like: "de dheasca a n-easumhlaíochta"
+# recall this construct is the only reason for allowing "m'","d'","h" on gen.
+<[^ADNTY]>ANYTHING</[^ADNTY]> <NG>ANYTHING</NG>:NOGENITIVE
+<S>COMPOUND</S> <NG>ANYTHING</NG>:OK
+<S>([Cc]hun|[Cc]ois|[Dd]ála|[Ff]earacht|[Tt]impeall|[Tt]rasna)</S> <NG>ANYTHING</NG>:OK
+#. Caitheann sé go leor ama ann (OK).
+<R>[Gg]o leor</R> <NGS>ANYTHING</NGS>:OK
+#. Bhí cuid mhór teannais agus iomaíochta ann (OK).
+#. Galar crúibe agus béil (OK).
+<NG>ANYTHING</NG> <E><C>ANYTHING</C> <NG>ANYTHING</NG></E>:OK
+#. An raibh mórán daoine ag an tsiopa?
+#. Ní raibh dúil bheo le feiceáil ar na bhfuinneog.
+<S>NONCOMPOUND</S> <T>ANYTHING</T> <NG>ANYTHING</NG>:NOGENITIVE
+#. Bhí, dála an scéil, ocht mbean déag aige (OK).
+<S>([Cc]hun|[Cc]ois|[Dd]ála|[Ff]earacht|[Tt]impeall|[Tt]rasna)</S> <T>ANYTHING</T> <NG>ANYTHING</NG>:OK
+#. Cá bhfuil an tseomra?
+#. Is iad na nGardaí.
+<[^ANSY]>ANYTHING</[^ANSY]> <T>ANYTHING</T> <NG>ANYTHING</NG>:NOGENITIVE
+# analogue of the "cuid mhór teannais agus iomaíochta" exception above
+#. Leas phobal na hÉireann agus na hEorpa (OK).
+<NG>ANYTHING</NG> <E><C>ANYTHING</C> <T>ANYTHING</T> <NG>ANYTHING</NG></E>:OK
+# in phrases; see OD deo
+#. Go deo na ndeor, go deo na díleann (OK).
+<R>[Gg]o deo</R> <T>ANYTHING</T> <NG>ANYTHING</NG>:OK
 #############################################################################
 #  <=> Eclipsis rules
 #############################################################################
