@@ -633,9 +633,12 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.13 #4.a
 #. Is gaiste é eagla roimh daoine.
 <S>[Rr]oimh</S> <N>UNLENITED</N>:SEIMHIU
-# CB p.12 #1.c.i
+# CB p.6 #2 <=>
+#. An bhfuil aon uachtar reoite agat sa oighear?
+<S>[Ss]a</S> INITIALVOWELORF:BACHOIR{san}
+# CB p.12 #1.c.i; prev. rule handles f+vowel, so next one is f[lr] only
 #. An bhfuil aon uachtar reoite agat sa cuisneoir?
-<S>[Ss]a</S> UNLENITEDBCGMP:SEIMHIU
+<S>[Ss]a</S> UNLENITEDBCFGMP:SEIMHIU
 # CB p.23 #9 (implicit article)
 #. An bhfuil aon uachtar reoite agat sa seamair?
 #. An bhfuil aon uachtar reoite agat sa scoil (OK)?
@@ -649,8 +652,6 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 #. An bhfuil aon uachtar reoite agat san foraois?
 <S>[Ss]an</S> UNLENITEDF:SEIMHIU
 # CB p.6 #2 <=>
-#. An bhfuil aon uachtar reoite agat sa oighear?
-<S>[Ss]a</S> INITIALVOWELORF:BACHOIR{san}
 #. Tugaimid faoi abhainn na Sionainne san bhád locha ó Ros Comáin.
 <S>[Ss]an</S> NONVOWELNONF:BACHOIR{sa}
 # CB p.24 #11.a.x
