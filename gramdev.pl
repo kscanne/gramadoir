@@ -117,14 +117,8 @@ binmode STDERR, ":encoding(utf8)";
 
 $clar = gettext('An Gramadoir');
 
-if ($version) {
-	my $vstring = gettext('version %s', $VERSION);
-	my $copyright = 'Copyright (C) 2003, 2004 Kevin P. Scannell';
-	my $gpl = gettext('This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law.');
-	print "$clar, $vstring\n$copyright\n$gpl\n";
-	exit 0;
-}
-if ($help) {
+sub do_help
+{
 	my @helpmessages = (
 "  --ambig,",
 gettext(
@@ -153,10 +147,19 @@ gettext(
 	exit 0;
 }
 
+if ($version) {
+	my $vstring = gettext('version %s', $VERSION);
+	my $copyright = 'Copyright (C) 2003, 2004 Kevin P. Scannell';
+	my $gpl = gettext('This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law.');
+	print "$clar, $vstring\n$copyright\n$gpl\n";
+	exit 0;
+}
+do_help if $help;
+
 my $gr = new Lingua::@TEANGA@::Gramadoir(
 	fix_spelling => 0,
 	use_ignore_file => 0,
-	unigram_tagging => 0,
+	unigram_tagging => $freq,
 	interface_language => '',
 	input_encoding => '@NATIVE@',
 );
@@ -164,5 +167,128 @@ my $gr = new Lingua::@TEANGA@::Gramadoir(
 binmode STDIN, ":bytes";
 local $/;
 $_ = <STDIN>;
-my $bigboy = $gr->xml_stream($_);
+my $big = $gr->xml_stream($_);
+if ($brill) {
+	 # hash, keys are brill replacement rules (aonchiall lines)
+	 # and values are "scores" according to brill algorithm
+	my %candidates;
+	my %posseen;
+	while ($big =~ /(<[ACDF-W][^>\/]*>)/g) {
+		$posseen{$1}++;
+	}
+
+	my %wordsseen;
+	pos $big = 0;
+	while ($big =~ /(?<=[>])([A-Z¡…Õ”⁄a-z·ÈÌÛ˙'-]+)(?=[<])/g) {
+		$wordsseen{$1}++;
+	}
+
+	sub total_count
+	{
+		my ($tocount) = @_;
+		if ($tocount =~ m/^</) {
+			return $posseen{$tocount};
+		}
+		else {
+			return $wordsseen{$tocount};
+		}
+	}
+
+	sub find_rules_given_context
+	{
+		my ($patt, $printpatt, $before_p) = @_;
+		my $ambig_nbr = $patt.' <B><Z>((?:<[A-Z][^>]*/>)+)</Z>';
+		my $unambig_nbr = $patt.' (<[ACDF-W][^>]*>)';
+		if ($before_p) {
+			$ambig_nbr = '<B><Z>((?:<[A-Z][^>]*/>)+)</Z>[^<]+</B> '.$patt;
+			$unambig_nbr = '(<[ACDF-W][^>]*>)[^<]+</[ACDF-W]> '.$patt;
+		}
+		my %ambig_this_context;
+		my %unambig_this_context;
+		my %ppm_this_context;
+		pos $big = 0;
+		while ($big =~ m/$ambig_nbr/g) {
+			$ambig_this_context{$1}++;
+		}
+		pos $big = 0;
+		while ($big =~ m/$unambig_nbr/g) {
+			$unambig_this_context{$1}++;
+		}
+		foreach (keys %unambig_this_context) {
+			$ppm_this_context{$_} = ($unambig_this_context{$_}*1000000)/total_count($1);
+		}
+		foreach (keys %ambig_this_context) {
+			my @viable;
+			while (m/(<[^>]+>)/g) {
+				my $t = $1;
+				$t =~ s/\/>$/>/;
+				push @viable, $t if (exists($ppm_this_context{$t}));
+			}
+			my @cands = sort {$ppm_this_context{$b} <=> $ppm_this_context{$a}} @viable;
+			if (@cands > 0) {
+				my $nextppm = 0;
+				$nextppm = $ppm_this_context{$cands[1]} if (@cands > 1);
+				my $score = int(($ppm_this_context{$cands[0]} - $nextppm)*total_count($cands[0]));
+				if ($before_p) {
+					$candidates{"<B><Z>$_</Z>ANYTHING</B> $printpatt:$cands[0]"} = $score;
+				}
+				else {
+					$candidates{"$printpatt <B><Z>$_</Z>ANYTHING</B>:$cands[0]"} = $score;
+				}
+			}
+		}
+	}
+
+	foreach my $tag (keys %posseen) {
+		my $printable = $tag;
+		$tag =~ s/(<([A-Z]).*>)/${1}[^<]+<\/${2}>/;
+		$printable =~ s/(<([A-Z]).*>)/${1}ANYTHING<\/${2}>/;
+		find_rules_given_context($tag, $printable, 0);
+		find_rules_given_context($tag, $printable, 1);
+	}
+
+	my @highfreq = sort {$wordsseen{$b} <=> $wordsseen{$a}} keys %wordsseen;
+	foreach (splice (@highfreq, 0, 50)) {
+		my $w = $_;
+		s/(.*)/(?:<[^>]+>)+$1<\/[A-Z]>/;
+		find_rules_given_context($_, $w, 0);
+		find_rules_given_context($_, $w, 1);
+	}
+	print "$_\n" foreach (sort {$candidates{$b} <=> $candidates{$a}} keys %candidates);
+
+}
+elsif ($ambig) {
+	my %genotypes;
+	for ($big) {
+		while (/<Z>((?:<[^<]+>)+)<\/Z>/g) {
+			$genotypes{$1}++;
+		}
+		foreach my $genotype (sort {$genotypes{$b} <=> $genotypes{$a}} keys %genotypes) {
+			my %examples;
+			print "$genotype\n";
+			while (/<Z>$genotype<\/Z>([^<]+)<\/B>/g) {
+				$examples{$1}++;
+			}
+			my @samplai = sort {$examples{$b} <=> $examples{$a}} keys %examples;
+			foreach my $example (splice (@samplai, 0, 15)) {
+				print "$examples{$example}\t$example\n";
+			}
+		}
+	}
+}
+elsif ($freq) {
+	my %posseen;
+	for ($big) {
+		while (/(<[ACDF-W][^>]*>)/g) {
+			$posseen{$1}++;
+		}
+		foreach (sort {$posseen{$b} <=> $posseen{$a}} keys %posseen) {
+			print;
+			print "\n";
+		}
+	}
+}
+else {
+	do_help;
+}
 exit 0;
