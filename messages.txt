@@ -1,7 +1,17 @@
-ANAITHNID=ANKOTHVOS	'Unknown word'
-MOLADH		'Unknown word: \/\1\/?'
-IONADAI		'Valid word but more often found in place of \/\1\/'
-NEAMHCHOIT=NAMMENOWGH	'Valid word but extremely rare in actual usage'
+# TRANSLATORS: The remaining strings are errors reported by the grammar
+# checking engine.  The first batch consists of messages intended to be
+# reused across a wide range of languages.
+NEAMHCHOIT=NAMMENOWGH=UNCOMMON	'Valid word but extremely rare in actual usage'
+DUBAILTE	'Repeated word'
+CUPLA=KESUNYANS		'Unusual combination of words'
+IOLRA		'The plural form is required here'
+UATHA		'The singular form is required here'
+BREISCHEIM	'Comparative adjective required'
+NEEDART		'Definite article required'
+ONEART		'Unnecessary use of the definite article'
+NOGENITIVE	'Unnecessary use of the genitive case'
+GENITIVE	'The genitive case is required here'
+NOSUBJ		'It seems unlikely that you intended to use the subjunctive here'
 # TRANSLATORS: You can use whatever kind of quotes you prefer for your locale
 # around the variable \\1.  You should keep the double backslash before the 1,
 # but there is no need to escape the quotes the way they are in the msgid.
@@ -10,38 +20,10 @@ BACHOIR=EWNHEANS		'You should use \/\1\/ here instead'
 CAIGHDEAN	'Non-standard form of \/\1\/'
 CAIGHMOIRF	'Derived from a non-standard form of \/\1\/'
 DROCHMHOIRF	'Derived incorrectly from the root \/\1\/'
-# TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
-NICLAOCHLU	'Unnecessary initial mutation'
-CLAOCHLU	'Initial mutation missing'
-# TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
-# It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
-NISEIMHIU	'Unnecessary lenition'
-PREFIXH		'Prefix \/h\/ missing'
-PREFIXT		'Prefix \/t\/ missing'
-PREFIXD		'Prefix \/d\'\/ missing'
-WEAKSEIMHIU	'Often the preposition \/\1\/ causes lenition, but this case is unclear'
-SEIMHIU		'Lenition missing'
-# TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
-# initial consonants in Irish.  It is indicated in writing by the addition
-# of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
-NIURU		'Unnecessary eclipsis'
-URU		'Eclipsis missing'
-DUBAILTE	'Repeated word'
-CUPLA=KESUNYANS		'Unusual combination of words'
-NOSUBJ		'It seems unlikely that you intended to use the subjunctive here'
-BREISCHEIM	'Comparative adjective required'
-NIAITCH		'Unnecessary prefix \/h\/'
-NITEE		'Unnecessary prefix \/t\/'
-NIDEE		'Unnecessary prefix \/d\'\/'
-NEEDART		'Definite article required'
-ONEART		'Unnecessary use of the definite article'
-NOGENITIVE	'Unnecessary use of the genitive case'
-GENITIVE	'The genitive case is required here'
-NODATIVE	'The dative is used only in special phrases'
-RELATIVE	'The dependent form of the verb is required here'
-ABSOLUTE	'Unnecessary use of the dependent form of the verb'
-IOLRA		'The plural form is required here'
-UATHA		'The singular form is required here'
+ANAITHNID=ANKOTHVOS=UNKNOWN	'Unknown word'
+# TRANSLATORS: \\1 is substituted with one or more suggested replacements
+MOLADH		'Unknown word: \/\1\/?'
+IONADAI		'Valid word but more often found in place of \/\1\/'
 MOIRF		'Not in database but apparently formed from the root \/\1\/'
 NIGA		'The word \/\1\/ is not needed'
 MICHEART	'Do you mean \/\1\/?'
@@ -49,7 +31,31 @@ MIMHOIRF	'Derived form of common misspelling \/\1\/?'
 COMHFHOCAL	'Not in database but may be a compound \/\1\/?'
 COMHCHAIGH	'Not in database but may be a non-standard compound \/\1\/?'
 GRAM		'Possibly a foreign word (the sequence \/\1\/ is highly improbable)'
+# TRANSLATORS: Rules specific to the Irish language (ga)
+PREFIXH		'Prefix \/h\/ missing'
+PREFIXT		'Prefix \/t\/ missing'
+PREFIXD		'Prefix \/d\'\/ missing'
+NIAITCH		'Unnecessary prefix \/h\/'
+NITEE		'Unnecessary prefix \/t\/'
+NIDEE		'Unnecessary prefix \/d\'\/'
+# TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
+NICLAOCHLU	'Unnecessary initial mutation'
+CLAOCHLU	'Initial mutation missing'
+# TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
+# It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
+NISEIMHIU	'Unnecessary lenition'
+WEAKSEIMHIU	'Often the preposition \/\1\/ causes lenition, but this case is unclear'
+SEIMHIU		'Lenition missing'
+# TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
+# initial consonants in Irish.  It is indicated in writing by the addition
+# of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
+NIURU		'Unnecessary eclipsis'
+URU		'Eclipsis missing'
+NODATIVE	'The dative is used only in special phrases'
+RELATIVE	'The dependent form of the verb is required here'
+ABSOLUTE	'Unnecessary use of the dependent form of the verb'
 SYNTHETIC	'The synthetic (combined) form, ending in \/\1\/, is often used here'
+# TRANSLATORS: Rules specific to the Cornish language (kw)
 NESSATREYLYANS		'Second (soft) mutation missing'
 TRESSATREYLYANS		'Third (breathed) mutation missing'
 PESWARATREYLYANS	'Fourth (hard) mutation missing'
