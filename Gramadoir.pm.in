@@ -137,6 +137,7 @@ sub gettext
 	$string =~ s/\[/~[/g;
 	$string =~ s/\]/~]/g;
 	$string =~ s/\%s/[_1]/;
+	$string =~ s/\\n$/\n/;
 	$string =~ s#\\/([@BDCHARS@@INTCHARS@]+)\\/#/$1/#;
 	$string =~ s#\\/\\([1-9])\\/#/[_$1]/#;
 
@@ -204,15 +205,28 @@ sub add_grammar_tags
 	my $ans;
 	if ( length( $grambytes ) == 1) {
 		my $tag = $POS{ord($grambytes)};
-		$tag =~ m/^<([A-Z])/;
-		$ans = $tag.$word."</".$1.">";
+		if (defined($tag)) {
+			$tag =~ m/^<([A-Z])/;
+			$ans = $tag.$word."</".$1.">";
+		}
+		else {
+			carp gettext('%s: illegal grammatical code\n',
+					gettext('An Gramadoir'));
+			$ans = "<U>$word</U>";
+		}
 	}
 	else {
 		$ans = "<B><Z>";
 		foreach my $byte (split //, $grambytes) {
 			my $tag = $POS{ord($byte)};
-			$tag =~ s/>$/\/>/;
-			$ans = $ans.$tag;
+			if (defined($tag)) {
+				$tag =~ s/>$/\/>/;
+				$ans = $ans.$tag;
+			}
+			else {
+				carp gettext('%s: illegal grammatical code\n',
+					gettext('An Gramadoir'));
+			}
 		}
 		$ans = $ans."</Z>".$word."</B>";
 	}
