@@ -167,7 +167,7 @@ focail.bs : FORCE
 	$(MAKE) cabhair
 	Gin 12
 	(cat ${HOME}/.ispell_gaeilge ${HOME}/.biobla | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | sed 's/.*/& 44/'; cat FOCAIL) | LC_COLLATE=POSIX sort -u > FOCAIL.all
-	cat FOCAIL.all | ./cabhair > focail.bs
+	cat FOCAIL.all | ./cabhair 0 > focail.bs
 	chmod 644 focail.bs
 	@$(ECHO) 'Verify count in cuardach.c:' 
 	@$(ECHO) `cat FOCAIL.all | sed 's/ [0-9]*//' | uniq | wc -l`
@@ -215,7 +215,11 @@ poncin : aparser eparser rparser
 	@cat rialacha.in | ./rparser
 
 eile.bs : FORCE
+	$(MAKE) cabhair
 	replnua
+	cat eile.pre.bs | ./cabhair 1 | egrep . > tempeile
+	(cat tempeile | wc -l | sed 's/^[^0-9]*//'; cat tempeile) > ./eile.bs
+	rm -f eile.pre.bs tempeile
 
 neamhshuim : FORCE
 	cat ../../ispell/bearla/glac ../../ispell/bearla/hyphenglac | LC_COLLATE=POSIX sort -u > /tmp/neamhshuim.tmp
