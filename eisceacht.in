@@ -1,0 +1,17 @@
+# Exceptions to grammatical rules.   Patterns here are "OK".
+[Aa]ch bheith:
+ANYTHING [Aa]n méid:
+[Bb]a é|ea|eisean|í|iad:
+[Cc]á as:
+[Cc]á mhinice|fhad|mhéad:
+[Cc]hun bheith:
+[Ff]aoi deara:
+[Gg]an fhios:
+[Gg]o chéile:
+[Ll]e bheith|bhur|[Cc]héile|dhá:
+[Mm]á tá(im|imid|thar)?:
+[Mm]á deir(im|imid)?:
+[Nn]í bhfuair(ea[md]ar)?:
+[Nn]í bhfaigh(idh|imi[ds]|fear|inn|feá|eadh|idís|fí):
+[Nn]í deir(im|imid|tear|inn|eadh|imis|teá|idís|tí|e)?:
+[Nn]í dúirt:
