@@ -13,7 +13,7 @@ use String::Approx qw(amatch adist);
 use Lingua::@TEANGA@::Gramadoir::Languages;
 
 our $VERSION = '@PACKAGE_VERSION@';
-our qw( @FOCAIL %EILE %EARRAIDI %NOCOMBO %POS %GRAMS %IGNORE $lh);
+use vars qw(@FOCAIL %EILE %EARRAIDI %NOCOMBO %POS %GRAMS %IGNORE $lh);
 
 memoize('tag_one_word', TIE => [ 'Memoize::ExpireLRU',
 				CACHESIZE => 5000,
