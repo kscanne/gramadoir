@@ -1,317 +1,8 @@
 #!/bin/bash
-# @configure_input@
-# This is a front-end script for the An Gramadóir developers' pack.
-# Copyright (C) 2003, 2004 Kevin P. Scannell <scannell@slu.edu>
-#
-# This is free software; see the file COPYING for copying conditions.  There is
-# NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-#
-# Usage: gr [OPTIONS] [FILES]
-#
-# There are several command line options.  See the web page
-# http://borel.slu.edu/gramadoir/
-# for a description of these, or use "gr --help"
-
-# NOT internationalized
-PACKAGE_NAME="@PACKAGE_NAME@"
-TEXTDOMAINDIR="@prefix@/share/locale"
-TEXTDOMAIN="${PACKAGE_NAME}"
-TEANGACHA="@TEANGACHA@"
-DATADIR="@prefix@/share/${PACKAGE_NAME}"
-export TEXTDOMAINDIR TEXTDOMAIN
-
-# LC_ALL overrides others, and since I'm about to turn it off,
-# need to pass its value down to the environment variables needed by gettext
-if [ -n "${LC_ALL}" ]
-then
-	export LC_MESSAGES="${LC_ALL}"
-	export LC_CTYPE="${LC_ALL}"
-fi
-
-# must turn off LC_ALL since LC_MESSAGES != LC_COLLATE/LC_CTYPE
-export LC_ALL=""
-export LC_COLLATE="C"
-
-EXECUTABLE="${0##/*/}"
-HELPCOMMAND="${EXECUTABLE} --help"
-
-CLAR=`@SH_GETTEXT@ "An Gramadoir"`
-
-# TRANSLATORS: "disambiguation" is a term from natural language processing.
-# Here it means the process of deciding, for a given word with several
-# possible parts of speech (noun, verb, etc.), the correct part of speech
-# given the context.  Brill's algorithm is "unsupervised" because it relies
-# only on statistics gathered from texts which have not been tagged in advance.
-devop1=`@SH_GETTEXT@ "    --brill        find disambiguation rules via Brill's unsupervised algorithm"`
-devop2=`@SH_GETTEXT@ "    --ilchiall     report unresolved ambiguities, sorted by frequency"`
-devop3=`@SH_GETTEXT@ "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"`
-
-# TRANSLATORS: By default, if there is no rule in the disambiguation module
-# for selecting the correct part of speech of an ambiguous word, the program
-# chooses the part of speech with the highest frequency.  This is sometimes
-# called "unigram" tagging.   The --no-unigram option turns this behavior off.
-devop4=`@SH_GETTEXT@ "    --no-unigram   do not resolve ambiguous parts of speech by frequency"`
-
-tryhelp=`@SH_GETTEXT@ "Try %s for more information."`
-unknownopt=`@SH_GETTEXT@ "unrecognized option %s"`
-missingarg=`@SH_GETTEXT@ "option %s requires an argument"`
-unwanted=`@SH_GETTEXT@ "option %s does not allow an argument"`
-unsupported=`@SH_GETTEXT@ "Language %s is not supported."`
-
-# TRANSLATORS: "conversion" here means conversion between character encodings
-iconvproblem=`@SH_GETTEXT@ "conversion from %s is not supported"`
-
-# this is what happens if --help is passed
-helpout()
-{
-gram-${TEANGA}.pl --help
-echo
-echo "Additional options in developer pack:";
-echo "${devop1}"
-echo "${devop2}"
-echo "${devop3}"
-echo "${devop4}"
-}
-
-htmlversion()
-{
-gram-${TEANGA}.pl --html --version
-}
-
-versionout()
-{
-gram-${TEANGA}.pl --version
-}
-
-# one argument, the erroneous option passed
-option_error()
-{
-printf "${CLAR}: ${unknownopt}\n" "${1}"
-printf "${tryhelp}\n" "${HELPCOMMAND}"
-}
-
-# one argument, the erroneous option passed
-no_argument()
-{
-printf "${CLAR}: ${missingarg}\n" "${1}"
-printf "${tryhelp}\n" "${HELPCOMMAND}"
-}
-
-# one argument, the erroneous option passed
-unwanted_arg()
-{
-printf "${CLAR}: ${unwanted}\n" "${1}"
-printf "${tryhelp}\n" "${HELPCOMMAND}"
-}
-
-
-# This function used to simply convert a utf-8 stream into ISO-8859-1,
-# hence the name.  It has now been generalized to use GNU libc "iconv"
-# to do all conversions of character encodings.
-diutf()
-{
-if [ "${IONCHOD}" != "${NATIVE}" ]
-then
-	iconv -f "${IONCHOD}" -t "${NATIVE}"
-else
-	cat
-fi
-}
-
-toutf()
-{
-if [ "${IONCHOD}" != "${NATIVE}" ]
-then
-	iconv -f "${NATIVE}" -t "${IONCHOD}"
-else
-	cat
-fi
-}
-
-# escape punctuation marks which cannot be end-of-sentence.
-# Don't even care if there isn't space or quotes after since
-# these surely won't be end of sentence either.
-escape_punc()
-{
-sed "
-s/\([^${BDCHARS}0-9-][0-9]\)\([.?!]\)/\1\\\\\2/g
-s/\([^${BDCHARS}0-9-][0-9][0-9]\)\([.?!]\)/\1\\\\\2/g
-s/\(\...\)\([.?!]\)/\1\\\\\2/g
-s/\.ie\\\\\([.?!]\)/.ie\1/g
-s/\.uk\\\\\([.?!]\)/.uk\1/g
-s/\(\..\)\([.?!]\)/\1\\\\\2/g
-s/\(\.\)\([.?!]\)/\1\\\\\2/g
-s/\([IVX][IVX]\)\([.?!]\)/\1\\\\\2/g
-" |
-@prefix@/libexec/giorr-${TEANGA} "${BDCHARS}${INTCHARS}"
-}
-
-# strips any pre-existing markup, tokenizes with <c></c>,
-# inserts line number markup, puts one sentence per line 
-# final filter is there because of some indecision about
-# whether I like the line number markups on the interiors of lines
-abairti()
-{
-tr -d "\015" |
-@EGREP@ -n '^' |
-sed "s/<[^>]*>/ /g; s/[&\<>]/ /g" |
-escape_punc | 
-sed "
-s/[${BDCHARS}][${BDCHARS}${INTCHARS}]*/<c>&<\/c>/g;
-s/\([${INTCHARS}][${INTCHARS}]*\)<\/c>/<\/c>\1/g;
-s/^\([1-9][0-9]*\):/<line uimhir=\"\1\"> /; 
-s/\([^\][.?!][]\"\')}]*\) [ ${TAB}\n]*/\1 <\/line>/g;
-s/[^\][.?!][]\"\')}]*$/& <\/line>/" |
-sed 's/<\/line>\(.\)/<\/line>\
-\1/g' |
-tr -d '\\' |
-athuimhir |
-athcheang |
-sed 's/\(.\)<line uimhir[^>]*>/\1/g'
-}
-
-# helper for abairti.  If a sentence starts in the middle of a line,
-# need the line number tag to propagate down to the beginning of this
-# sentence.  Thus, the first chunk below stores the line number markup 
-# in hold space and the second chunk retrieves it and inserts at beginning
-#  n.b. POSIX sed requires no whitespace after the "!" in the negated 
-#  match below.    Discovered while porting to an old DEC machine.
-athuimhir()
-{
-sed '
-/^<line uimhir=/ {
-h
-s/^\(<line uimhir=\"[1-9][0-9]*\">\).*$/\1/
-x
-}
-
-/^<line uimhir=/!{
-G
-s/^\(.*\)\n\(<line uimhir=\"[1-9][0-9]*\">\)$/\2 \1/
-}
-
-/^<line uimhir=\"[1-9][0-9]*\"> *$/d
-'
-}
-
-# helper for abairti.  This is the "complement" to athuimhir, for when
-# a sentence spans across lines.   It needs to be "rejoined" (athcheangailte).
-# onto a single line.
-athcheang()
-{
-sed "
-/<\/line>$/ {
-H
-s/^.*$//
-x
-s/\n//g
-s/[ ${TAB}][ ${TAB}]*/ /g
-}
-
-/<\/line>$/!{
-H
-d
-}
-"
-}
-
-comhshuite()
-{
-@PERL@ @prefix@/libexec/comhshuite-${TEANGA}.pl
-}
-
-# This is a filter which takes the markup generated by 
-# looking up words in the dictionary and tries to resolve
-# any ambiguties by looking at local context.
-#
-#  It is a sequence of sed replacements which are discovered
-#  inductively by looking at examples of ambiguities in real
-#  Irish texts.  It is important to order the replacements
-#  according to their "confidence level"; while it is clear
-#  that...     distinguishing between ...  is sometimes much harder.
-aonchiall()
-{
-@PERL@ @prefix@/libexec/aonchiall-${TEANGA}.pl
-}
-
-unigram()
-{
-@PERL@ @prefix@/libexec/unigram-${TEANGA}.pl
-}
-
-# This is the workhorse.  It does the actually marking up of errors.
-rialacha()
-{
-@PERL@ @prefix@/libexec/rialacha-${TEANGA}.pl
-}
-
-# This strips off errors from exceptions to rules
-eisceacht()
-{
-@PERL@ @prefix@/libexec/eisceacht-${TEANGA}.pl
-}
-
-aspell_search()
-{
-@EGREP@ -o '><X>[^<]*' | sort -u | aspell -a -d ${TEANGA} | @EGREP@ '^&' | 
-sed '
-s/^& \([^ ]*\).*:/\1/
-s/, /%/5
-s/%.*//
-s/^\([^ ]*\) \(.*\)/s\/ANAITHNID"><X>\1<\/ANAITHNID \\\/\2\\\/?"><X>\1<\/\
-s\/ANAITHNIDSRL"><X>\1<\/ANAITHNIDSRL \\\/\2\\\/?"><X>\1<\//
-'
-}
-
-aspell_xml_output()
-{
-TEMPXML=`mktemp` || TEMPXML="/tmp/aspell_repl.xml"
-TEMPSED=`mktemp` || TEMPSED="/tmp/aspell_repl.sed"
-		vanilla_xml_output | tee "${TEMPXML}" |
-		aspell_search > "${TEMPSED}"
-		cat "${TEMPXML}" | 
-		sed -f "${TEMPSED}"
-rm -f "${TEMPXML}" "${TEMPSED}"
-}
-
-# This is the "GPS" function.  For efficiency, don't want to maintain
-# the additional state represented by global positions in original
-# file while checking grammar.  So this hunts down the (hopefully small
-# number of) errors in the original file and inserts positions into markup
-xml_api()
-{
-gram-${TEANGA}.pl --api
-}
-
-# does the error messaging and returns the boolean 
-drochchomhad()
-{
-	if [ ! -e "${1}" ]
-	then
-		echo "${CLAR}: ${1}: ${notfound}" >&2
-	else
-		if [ -d "${1}" ]
-		then
-			echo "${CLAR}: ${1}: ${isdir}" >&2
-		else
-			if [ ! -r "${1}" ]
-			then
-				echo "${CLAR}: ${1}: ${permissions}" >&2
-			fi
-		fi
-	fi
-	[ ! -e "${1}" ] || [ -d "${1}" ] || [ ! -r "${1}" ]    # return value
-}
-
-vanilla_xml_output()
-{
-gram-${TEANGA}.pl --xml
-}
-
 
 nounigram_output()
 {
-gram-${TEANGA}.pl --no-unigram
+gram-${TEANGA}.pl --no-unigram --iomlan
 }
 
 ambiguity_report()
@@ -341,33 +32,6 @@ unigram |
 grep -o "<[ACDF-W][^>/]*>" |
 sort | uniq -c | sort -r -n |
 sed 's/^[^<]*//'
-}
-
-# This is the main sequence of filters for checking a given file
-comhad()
-{
-gram-${TEANGA}.pl
-}
-
-litriu_comheadan()
-{
-sed -n '
-/<X>/{
-s/<[^X\/][^>]*>//g
-s/<\/[^X][^>]*>//g
-s/^[^<]*<X>//
-s/<\/X>[^<]*$//
-s/<\/X>[^<]*<X>/\
-/g
-p
-}
-'
-}
-
-# This replaces "comhad" above when "--litriu" option is given
-litriu()
-{
-gram-${TEANGA}.pl --litriu
 }
 
 # used by Brill
@@ -463,15 +127,8 @@ done) | sort -r -n | @EGREP@ -v '^0 ' | sed 's/^[0-9]* //'
 rm -f "${BIGXMLSUBSET}"
 }
 
-# remainder is the "main()"
-
 ACTION="comhad"
-SCRIOBH_HTML="nihea"
 TEANGA="ga"
-IONCHOD="unspecified"
-GLOBALFILENAME=""
-XML_OUTPUT="vanilla_xml_output"
-REDIRECT="/dev/stdout"
 while [ ${1%%[^-]*} ]
 do
 	if echo "${1}" | grep "=" > /dev/null
@@ -480,60 +137,11 @@ do
 		OPTARG=`echo "${1}" | sed 's/^[^=]*=//'`
 		case "${JUSTOPT}" in
 		"--teanga" )
-			if echo "${TEANGACHA}" | grep "${OPTARG}" > /dev/null
-			then
-				TEANGA="${OPTARG}"
-			else
-				printf "${CLAR}: ${unsupported}\n" "${OPTARG}" >&2
-				exit 1
-			fi
-		;;
-		"--ionchod" )
-			IONCHOD="${OPTARG}"
-		;;
-		"--aschur" )
-			REDIRECT="${OPTARG}"
-		;;
-
-		"--help" | "--version" | "--api" | "--brill" | "--html" | "--ilchiall" | "--minic" | "--no-unigram" | "--xml" | "--litriu" | "--aspell" | "--iomlan" )
-			unwanted_arg "${JUSTOPT}" >&2
-			exit 1
-		;;
-		* )
-			option_error "${JUSTOPT}" >&2
-			exit 1
+			TEANGA="${OPTARG}"
 		;;
 		esac
 	else
 		case "${1}" in
-		"--version" )
-			if [ "${SCRIOBH_HTML}" = "issea" ]
-			then
-				htmlversion
-			else
-				versionout
-			fi
-			exit 0
-		;;
-		"--help" )
-			helpout
-			exit 0
-		;;
-		"--html" )
-			SCRIOBH_HTML="issea"
-		;;
-		"--litriu" )
-			ACTION="litriu"
-		;;
-		"--aspell" )
-			XML_OUTPUT="aspell_xml_output"
-		;;
-		"--xml" )
-			ACTION="xml_output"
-		;;
-		"--api" )
-			ACTION="xml_api"
-		;;
 		"--brill" )
 			ACTION="brill_unsupervised_learning"
 		;;
@@ -542,12 +150,6 @@ do
 		;;
 		"--minic" )
 			ACTION="create_unigram_file"
-		;;
-		"--no-unigram" )
-			ACTION="nounigram_output"
-		;;
-		"--iomlan" )
-			USEIGNORE="noignore"
 		;;
 		"--ionchod" | "--teanga" | "--aschur" )
 			no_argument "${1}" >&2
@@ -562,53 +164,5 @@ do
 	shift
 done
 
-NATIVE=`grep "^${TEANGA} " ${DATADIR}/TEANGACHA | sed "s/^${TEANGA}  *\([^ ]*\).*/\1/"`
-CHARSPEC=`grep "^${TEANGA} " ${DATADIR}/TEANGACHA | sed "s/^${TEANGA}  *[^ ]*  *//"`
-BDCHARS=`echo "${CHARSPEC}" | sed "s/ .*//"`
-INTCHARS=`echo "${CHARSPEC}" | sed "s/^[^ ]*  *\([^ ]*\).*/\1/"`
-
-if [ "${IONCHOD}" = "unspecified" ]
-then
-	IONCHOD="${NATIVE}"
-fi
-if [ "${IONCHOD}" != "${NATIVE}" ]
-then
-	if ! echo | iconv -f "${IONCHOD}" -t "${NATIVE}" > /dev/null 2>&1
-	then
-		printf "${CLAR}: ${iconvproblem}\n" "${IONCHOD}" >&2
-		exit 1
-	fi
-fi
-if [ "${XML_OUTPUT}" = "aspell_xml_output" ]
-then
-	if ! echo "hellooo" | aspell -a -d "${TEANGA}" > /dev/null 2>&1
-	then
-		printf "${CLAR}: ${aspellproblem}\n" "${TEANGA}" >&2
-		XML_OUTPUT="vanilla_xml_output"
-	fi
-fi
-if [ "${ACTION}" = "xml_output" ]
-then
-	ACTION="${XML_OUTPUT}"
-fi
-
-if [ -z "${1}" ]
-then
-	GLOBALFILENAME=`mktemp` || GLOBALFILENAME="/tmp/rawdata.txt"
-	tee "${GLOBALFILENAME}" | ${ACTION}
-else
-	until [ -z "${1}" ]
-	do
-		if ! drochchomhad "${1}"
-		then
-			if [ "${ACTION}" = "comhad" ]
-			then
-				printf "${checking}\n" "${1}"
-			fi
-			GLOBALFILENAME="${1}"
-			cat "${1}" | ${ACTION}
-		fi	
-		shift
-	done
-fi > "${REDIRECT}"
+${ACTION}
 exit 0
