@@ -13,7 +13,7 @@ use String::Approx qw(amatch adist);
 use Lingua::@TEANGA@::Gramadoir::Languages;
 
 our $VERSION = '@PACKAGE_VERSION@';
-use vars qw(@FOCAIL %EILE %EARRAIDI %NOCOMBO %POS %GRAMS %IGNORE $lh);
+use vars qw(@FOCAIL @MORPH %EILE %EARRAIDI %NOCOMBO %POS %GRAMS %IGNORE $lh);
 
 memoize('tag_one_word', TIE => [ 'Memoize::ExpireLRU',
 				CACHESIZE => 5000,
@@ -114,28 +114,35 @@ sub new {
 	croak 'Could not set interface language' unless $lh;
 
 	( my $datapath ) = __FILE__ =~ /(.*)\.pm/;
-	my $hashref;
+	my $ref;
 	my $errormsg = gettext('%s: problem reading the database\n',
 				gettext('An Gramadoir'));
-	eval {$hashref = retrieve(File::Spec->catfile($datapath, 'eile.hash'))};
-	croak $errormsg if ($@ or !$hashref);
-	%EILE = %$hashref;
-	eval {$hashref = retrieve(File::Spec->catfile($datapath, 'earraidi.hash'))};
-	croak $errormsg if ($@ or !$hashref);
-	%EARRAIDI = %$hashref;
-	eval {$hashref = retrieve(File::Spec->catfile($datapath, 'nocombo.hash'))};
-	croak $errormsg if ($@ or !$hashref);
-	%NOCOMBO = %$hashref;
-	eval {$hashref = retrieve(File::Spec->catfile($datapath, 'pos.hash'))};
-	croak $errormsg if ($@ or !$hashref);
-	%POS = %$hashref;
-	eval {$hashref = retrieve(File::Spec->catfile($datapath, '3grams.hash'))};
-	croak $errormsg if ($@ or !$hashref);
-	%GRAMS = %$hashref;
+	eval {$ref = retrieve(File::Spec->catfile($datapath, 'eile.hash'))};
+	croak $errormsg if ($@ or !$ref);
+	%EILE = %$ref;
+	eval {$ref = retrieve(File::Spec->catfile($datapath, 'earraidi.hash'))};
+	croak $errormsg if ($@ or !$ref);
+	%EARRAIDI = %$ref;
+	eval {$ref = retrieve(File::Spec->catfile($datapath, 'nocombo.hash'))};
+	croak $errormsg if ($@ or !$ref);
+	%NOCOMBO = %$ref;
+	eval {$ref = retrieve(File::Spec->catfile($datapath, 'pos.hash'))};
+	croak $errormsg if ($@ or !$ref);
+	%POS = %$ref;
+	eval {$ref = retrieve(File::Spec->catfile($datapath, '3grams.hash'))};
+	croak $errormsg if ($@ or !$ref);
+	%GRAMS = %$ref;
 	for my $i (0 .. 6) {
-		eval {$hashref = retrieve(File::Spec->catfile($datapath, "focail$i.hash" ) )};
-		croak $errormsg if ($@ or !$hashref);
-		push @FOCAIL, $hashref;
+		eval {$ref = retrieve(File::Spec->catfile($datapath, "focail$i.hash" ) )};
+		croak $errormsg if ($@ or !$ref);
+		push @FOCAIL, $ref;
+	}
+	eval {$ref = retrieve(File::Spec->catfile($datapath, 'morph.hash'))};
+	croak $errormsg if ($@ or !$ref);
+	@MORPH = @$ref;
+	foreach my $rule (@MORPH) {
+		my $patt = $rule->{'patt'};
+		$rule->{'compiled'} = qr/$patt/;
 	}
 
 	if ($self->{'use_ignore_file'}) {
@@ -903,7 +910,16 @@ sub tag_recurse
 	my $ans = $self->lookup( $original, $current, $level );
 	return $ans if $ans;
 	my $newcurrent;
-# morphology code goes here
+	foreach my $rule (@MORPH) {
+		my $p = $rule->{'compiled'};
+		if ( $current =~ m/$p/ ) {
+			my $r = $rule->{'repl'};
+			$newcurrent = $current;
+			$newcurrent =~ s/$p/$r/eeg;
+			$ans = $self->tag_recurse($original, $newcurrent, ($level > $rule->{'level'}) ? $level : $rule->{'level'});
+			return $ans if $ans;
+		}
+	}
 	return "";
 }
 
