@@ -136,6 +136,9 @@ uninstall :
 vim : FORCE
 	cp -f ./gramadoir.vim ${HOME}/.vim/plugin
 
+emacs : FORCE
+	cp -f ./gramadoir.el /usr/share/emacs/site-lisp/gramadoir
+
 configure: configure.ac
 	autoconf
 
