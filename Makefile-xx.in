@@ -41,7 +41,7 @@ DEVSCRIPTNAME = gramdev-${TEANGA}.pl
 OOSCRIPTNAME = groo-$(TEANGA).pl
 PERLTOP = $(PERLD)/Changes $(PERLD)/Makefile.PL $(PERLD)/MANIFEST $(PERLD)/MANIFEST.SKIP $(PERLD)/README
 PERLCODE = $(PERLD)/scripts/$(SCRIPTNAME) $(PERLLIB).pm $(PERLD)/scripts/$(OOSCRIPTNAME)
-LEXICONS = $(SHARE)/3grams.bs $(SHARE)/earraidi.bs $(SHARE)/eile.bs $(SHARE)/focail0.bs $(SHARE)/nocombo.bs $(SHARE)/pos.bs $(SHARE)/morph.bs
+LEXICONS = $(SHARE)/3grams.bs $(SHARE)/earraidi.bs $(SHARE)/eile.bs $(SHARE)/focail0.bs $(SHARE)/nocombo.bs $(SHARE)/pos.bs $(SHARE)/morph.bs $(SHARE)/messages.bs
 EXTRAS = $(SHARE)/gramadoir.el $(SHARE)/gramadoir.vim $(SHARE)/gramadoir.sxw
 TESTS = $(PERLD)/t/$(PERLD).t
 LOCALES = locale_ok $(PERLLIB)/Languages.pm $(PERLLIB)/Languages/en_us.pm
@@ -157,6 +157,11 @@ $(SHARE)/morph.bs : morph-$(TEANGA).txt $(PERLDOK)
 	cp morph-$(TEANGA).txt $@
 	chmod 644 $@
 	rm -f $(HASHDIR)/morph.hash $(PERLD)/Makefile
+
+$(SHARE)/messages.bs : $(GRAMDIR)/messages.txt $(PERLDOK)
+	cp $(GRAMDIR)/messages.txt $@
+	chmod 644 $@
+	rm -f $(HASHDIR)/messages.hash $(PERLD)/Makefile
 
 $(SHARE)/gramadoir.el : $(GRAMDIR)/gramadoir.el $(PERLDOK)
 	sed "s/gram-ga\.pl/$(SCRIPTNAME)/g" $(GRAMDIR)/gramadoir.el > $@

@@ -47,6 +47,7 @@ sub build_hashes {
 	my $posfile = File::Spec->catfile( $dir, 'pos.hash');
 	my $gramfile = File::Spec->catfile( $dir, '3grams.hash');
 	my $morphfile = File::Spec->catfile( $dir, 'morph.hash');
+	my $messagesfile = File::Spec->catfile( $dir, 'messages.hash');
 	my $rawfile;
 
 	for my $i (0 .. 6) {
@@ -184,6 +185,24 @@ sub build_hashes {
 		close DATABASE;
 		store \%COMBO, $combofile;
 	}
+	unless ( -f $messagesfile ) {
+		my %MESSAGES;
+		$rawfile = File::Spec->catfile( $srcdir, 'messages.bs');
+		open(DATABASE, $rawfile) or die "Can't open dictionary: $!";
+		binmode DATABASE, ":bytes";
+#		binmode DATABASE, ":bytes";
+		while (<DATABASE>) {
+			chomp;
+			m/^(\S+)\s+'(.*)' *$/;
+			my $macro = $1;
+			my $msgid = $2;
+			$msgid =~ s/\\'/'/g;
+			$MESSAGES{$macro} = $msgid;
+		}
+		close DATABASE;
+		store \%MESSAGES, $messagesfile;
+	}
 	return ( -f $replfile and -f $combofile and -f $morphfile and
-		-f $errfile and -f $posfile and -f $gramfile );
+		-f $errfile and -f $posfile and -f $gramfile and
+		-f $messagesfile);
 }
