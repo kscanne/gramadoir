@@ -152,8 +152,8 @@
 <E offset="24" fromy="149" fromx="24" toy="149" tox="28" sentence="Míle naoi gcéad a hocht ndéag is fiche." errortext="ndéag" msg="Foirm neamhchaighdeánach de «déag»">
 <E offset="21" fromy="150" fromx="21" toy="150" tox="30" sentence="Feicim go bhfuil aon duine déag curtha san uaigh seo." errortext="duine déag" msg="Séimhiú ar iarraidh">
 <E offset="69" fromy="151" fromx="69" toy="151" tox="70" sentence="D'fhás sé ag deireadh na naoú haoise déag agus fás an náisiúnachais (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="55" fromy="152" fromx="55" toy="152" tox="61" sentence="Tabharfaidh an tUachtarán a óráid ag leath i ndiaidh a dó déag Dé Sathairn." errortext="dó déag" msg="Séimhiú ar iarraidh">
-<E offset="17" fromy="153" fromx="17" toy="153" tox="25" sentence="Bhuail an clog a trí dhéag." errortext="trí dhéag" msg="Ní úsáidtear an focal seo ach san abairtín «a trí déag, trí X déag» de ghnáth">
+<E offset="53" fromy="152" fromx="53" toy="152" tox="61" sentence="Tabharfaidh an tUachtarán a óráid ag leath i ndiaidh a dó déag Dé Sathairn." errortext="a dó déag" msg="Ní úsáidtear an focal seo ach san abairtín «a dó dhéag, dhá X déag» de ghnáth">
+<E offset="15" fromy="153" fromx="15" toy="153" tox="25" sentence="Bhuail an clog a trí dhéag." errortext="a trí dhéag" msg="Ní úsáidtear an focal seo ach san abairtín «a trí déag, trí X déag» de ghnáth">
 <E offset="3" fromy="154" fromx="3" toy="154" tox="10" sentence="Tá trí déag litir san fhocal seo." errortext="trí déag" msg="Ní úsáidtear an focal seo ach san abairtín «a trí déag, trí X déag» de ghnáth">
 <E offset="4" fromy="155" fromx="4" toy="155" tox="14" sentence="Bhí deich tobar fíoruisce agus seachtó crann pailme ann." errortext="deich tobar" msg="Urú ar iarraidh">
 <E offset="12" fromy="156" fromx="12" toy="156" tox="24" sentence="Tógfaidh mé do coinnleoir óna ionad, mura ndéana tú aithrí." errortext="do coinnleoir" msg="Séimhiú ar iarraidh">
