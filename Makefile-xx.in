@@ -303,6 +303,14 @@ dist : FORCE
 	chmod 444 $(TARBALL).tar.gz
 	rm -f ../$(TARBALL)
 
+replcheck : FORCE
+	@$(MAKE) perl
+	@echo "earraidi-$(TEANGA).bs..."
+	@sed 's/^[^ ]* //; s/$$/\./' earraidi-$(TEANGA).bs | $(PERL) -I $(PERLD)/lib $(PERLD)/scripts/$(SCRIPTNAME) --litriu --iomlan
+	@echo "eile-$(TEANGA).bs..."
+	@sed 's/^[^ ]* //; s/$$/\./' eile-$(TEANGA).bs | $(PERL) -I $(PERLD)/lib $(PERLD)/scripts/$(SCRIPTNAME) --litriu --iomlan
+
+
 counts : FORCE
 	(cat lexicon-$(TEANGA).bs | wc -l; $(ECHO) '2 / p') | dc
 	cat eile-$(TEANGA).bs | wc -l
