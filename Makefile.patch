@@ -1,6 +1,6 @@
---- Makefile	2004-09-09 23:30:34.890592808 -0500
-+++ Makefile.ok	2004-09-09 23:30:25.972948496 -0500
-@@ -69,8 +69,16 @@
+--- Makefile	2005-01-17 10:22:06.424897944 -0600
++++ Makefile.ok	2005-01-17 10:21:58.668077160 -0600
+@@ -60,8 +60,16 @@
  
  Makefile : Makefile.in config.status
  	./config.status
@@ -17,9 +17,9 @@
  config.status: configure
  	./config.status --recheck
  
-@@ -90,4 +98,92 @@
+@@ -81,4 +89,97 @@
  semiclean :
- 	rm -f y.tab.* $(LEX_OUTPUT_ROOT).* aonchiall.y eisceacht.y rialacha.y
+ 	rm -f y.tab.* $(LEX_OUTPUT_ROOT).* aonchiall.y rialacha.y
  
 +###############################################################################
 +#                    REMAINDER IS FOR MAINTAINER ONLY                         #
@@ -27,7 +27,8 @@
 +
 +webhome = $(HOME)/public_html/$(PACKAGE_NAME)
 +
-+installhtml : sampla.html FORCE
++installhtml : bugs.html sampla.html FORCE
++	$(INSTALL_DATA) bugs.html $(webhome)
 +	$(INSTALL_DATA) cuidiu.html $(webhome)
 +	$(INSTALL_DATA) eagar.html $(webhome)
 +	$(INSTALL_DATA) foirm.html $(webhome)
@@ -54,12 +55,16 @@
 +	(cd ga; $(MAKE) triail.html)
 +	sed '/gram-ga\.pl triail/r ga/triail.html' samptemplate.html > sampla.html
 +
++bugs.html : FORCE
++	(cd ga; $(MAKE) bugs.html)
++	sed '/scannell at slu dot edu/r ga/bugs.html' bugstemplate.html > bugs.html
++
 +maintainer-clean :
 +	$(MAKE) distclean
 +	rm -f ChangeLog configure sampla.html
 +
 +ChangeLog : FORCE
-+	cvs2cl.pl --FSF
++	cvs2cl --FSF
 +
 +dist : FORCE
 +	$(MAKE) ChangeLog
