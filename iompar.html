@@ -75,6 +75,8 @@ You can use the C program <i lang="ga">cabhair</i>
 (provided in the distribution)
 to convert such a file into <i>focail-xx.bs</i>; see the Makefile
 target <i>focail-en.bs</i> for the exact commands.
+It is important to sort alphabetically on the word first and 
+then numerically on the code.
 </p>
 
 <p>
@@ -197,7 +199,7 @@ and keep others that tend to recur across languages
 Be sure to add a line for your language to
 the TEANGACHA file of the form:<br><br>
 <samp>
-xx ENCODING BOUNDARYCHARS INTERNALCHARS
+xx ENCODING BOUNDARYCHARS INTERNALCHARS CAPITALS LOWERCASE
 </samp>
 <br><br>
 where "ENCODING" is the default character encoding for texts in your
@@ -206,7 +208,9 @@ e.g. "ISO-8859-1" or "UTF-8", etc.  "BOUNDARYCHARS" is a regular expression
 containing all characters which are allowed to appear at the beginning
 or end of a word, and INTERNALCHARS matches any additional legal characters
 which never appear at the beginning or end of a word (like hyphens in
-many European languages).
+many European languages).  "CAPITALS" and "LOWERCASE" are regular
+expressions that are used as the two halves of a "tr" command
+to convert to lowercase when looking up words in the lexicon.
 </p>
 
 <p>
@@ -314,7 +318,7 @@ Languages<br>
 <a href = "sampla.html">Sampler</a><br>
 <a href = "foirm.html">Web Interface</a><br>
 <a href = "eagar.html">Editors</a><br>
-<a href = "/gaeilge.html">Projects</a><br>
+<a href = "/nlp.html">Projects</a><br>
 <p class="centered">
 <img src="gram.jpg" alt="dictionary excerpt" height="160" width="125">
 </p>
