@@ -14,7 +14,7 @@
 #  are marked up with <F> and all other tags automatically take precedence
 #  over <F>; e.g. raibh as a noun.  But should leave the rules here since 
 #  the performance hit is small and they might pop up in corpus eventually
-<B>bhfuil</B>:<V t="láith">
+<B>bhfuil</B>:<V p="xx" t="láith">
 <B>raibh</B>:<V p="xx" t="caite">
 <B>[Ff]aoin</B>:<S>
 <B>[Cc]heana</B>:<R>
@@ -28,20 +28,21 @@
 <B>[Aa]s</B> <T>na</T>:<S>
 <B>[Aa]s</B> an:<S>
 <B>[Aa]s</B> <N>ANYTHING</N>:<S>
-<B>[Aa]n</B> <V>ANYTHING</V>:<Q>
-<B>[Aa]n</B> mar:<Q>
-<B>[Aa]n</B> <P>té</P>:<T>
-<B>[Aa]n</B> <P>ANYTHING</P>:<Q>
-<B>[Aa]n</B> <S>ANYTHING</S>:<Q>
-<B>[Aa]n</B> <O>ANYTHING</O>:<Q>
-<B>[Aa]n</B> leis:<Q>
-<B>[Aa]n</B> de:<Q>
-<B>[Aa]n</B> faoi:<Q>
-<B>[Aa]n</B> <[^V]>ANYTHING</[^V]>:<T>
-<S>ANYTHING</S> <B>[Aa]n</B>:<T>
-# "ann" is a substantive in "in ann"
+# "ann" is a substantive in "in ann"; do before "an": "an ann no nach ann?"
 <S>[Ii]n</S> <B>ann</B>:<N pl="n" gnt="n">
 <B>ann</B>:<O>
+<B>[Aa]n</B> <V>ANYTHING</V>:<Q>
+<B>[Aa]n</B> amhlaidh:<Q>
+<B>[Aa]n</B> mar:<Q>
+<B>[Aa]n</B> <P>té</P>:<T>
+<B>[Aa]n</B> <[PRSO]>ANYTHING</[PRSO]>:<Q>
+<B>[Aa]n</B> leis:<Q>
+<B>[Aa]n</B> mó:<Q>
+<B>[Aa]n</B> de:<Q>
+<B>[Aa]n</B> faoi:<Q>
+<B>[Aa]n</B> fiú:<Q>
+<B>[Aa]n</B> <[^V]>ANYTHING</[^V]>:<T>
+<S>ANYTHING</S> <B>[Aa]n</B>:<T>
 <B>[Aa]nuas</B>:<R>
 [Mm]ar <B>aon</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Aa]on</B>:<A pl="n" gnt="n">
@@ -50,13 +51,16 @@
 <B>ár</B> <T>ANYTHING</T>:<N pl="n" gnt="n" gnd="m">
 <B>[Áá]r</B>:<D>
 <B>ata</B>:<F>
-<B>[Aa]tá</B>:<V t="láith">
+<B>[Aa]tá</B>:<V p="xx" t="láith">
 <T>[Nn]a</T> <B>ba</B>:<N pl="y" gnt="n" gnd="f">
 <B>[Bb]a</B>:<V cop="y">
 <B>m?[Bb]h?aile</B>:<N pl="n" gnt="n" gnd="m">
+<B>[Bb]haineann</B>:<V p="xx" t="láith">
 <B>[Bb]h?arr</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Bb]h?eag</B>:<A pl="n" gnt="n">
 <B>[Bb]hí</B>:<V p="xx" t="caite">
+<B>[Cc]ár</B> <V>ANYTHING</V>:<Q>
+<B>[Cc]ár</B> LENITED:<Q>
 <T>na</T> <B>[Cc]é</B>:<N pl="n" gnt="y" gnd="f">
 <B>[Cc][Éé]</B>:<Q>
 # an unusual step -- surely misspelling of "chéile" and not subjunctive.
@@ -65,6 +69,7 @@
 <B>[Cc]omhalta</B>:<N pl="n" gnt="n" gnd="m">
 <B>g?ch?ónaí</B>:<N pl="n" gnt="n" gnd="m">
 # lenition => prob not imperative
+an <B>[Cc]huir</B>:<N pl="n" gnt="y" gnd="m">
 <B>[Cc]huir</B>:<V p="xx" t="caite">
 <T>na</T> <B>g[Cc]umann</B>:<N pl="y" gnt="y" gnd="m">
 <B>g?[Cc]h?umann</B>:<N pl="n" gnt="n" gnd="m">
@@ -73,14 +78,17 @@
 # OD dhá 
 g?ch?éad <B>dá</B>:<A pl="n" gnt="n">
 <S>[Ss]a</S> <B>dá</B>:<A pl="n" gnt="n">
+# idir an dá linn, Tadhg an dá thaobh
+[Aa]n <B>[Dd]á</B>:<A pl="n" gnt="n">
 <B>[Dd]á</B> <V>ANYTHING</V>:<C>
 <B>[Dd]á</B> <N>ANYTHING</N>:<D>
+an <B>dála</B>:<N pl="n" gnt="n" gnd="f">
 <B>Dé</B>:<N pl="n" gnt="y" gnd="m">
 <N>Dé</N> <B><Z>ANYNMG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <N>Dé</N> <B><Z>ANYNFG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 <B>[Dd]éag</B>:<N pl="n" gnt="n">
 <B>n?[Dd]h?earna</B>:<V p="xx" t="caite">
-<B>[Dd]eir</B>:<V t="láith">
+<B>[Dd]eir</B>:<V p="xx" t="láith">
 <B>[Dd]eireadh</B>:<N pl="n" gnt="n" gnd="m">
 <B>dío?bh</B>:<O>
 <B>[Dd]o</B> <T>na</T>:<S>
@@ -92,6 +100,7 @@ g?ch?éad <B>dá</B>:<A pl="n" gnt="n">
 #do <B>do</B>:<D>
 # numerical, last resort <O> at bottom if not noun via Brill xforms
 a <B>dó</B>:<N pl="n" gnt="n">
+an <B>dó</B>:<A pl="n" gnt="n">
 <B>dó</B> dhéag:<A pl="n" gnt="n">
 <B>Dh?ún</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Éé]</B>:<P>
@@ -148,14 +157,18 @@ an <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
 <B>[Nn]í</B> <P>ANYTHING</P>:<V cop="y">
 an <B>Níl</B>:<N pl="n" gnt="n" gnd="f">
 <S>ANYTHING</S> <B>Níl</B>:<N pl="n" gnt="n" gnd="f">
-<B>Níl</B>:<V t="láith">
+<B>Níl</B>:<V p="xx" t="láith">
 <B>[Nn]íor</B>:<V cop="y">
 <B>[Nn]uair</B>:<C>
 <B>os</B>:<S>
 <T>na</T> <B>[Rr]inne</B>:<N pl="n" gnt="y" gnd="f">
 <B>[Rr]inne</B>:<V p="xx" t="caite">
+# missp. of ríthe
+<B>[Rr]ithe</B>:<F>
 <B>San</B> CAPITAL:<N pl="n" gnt="n">
 <B>San</B>:<S>
+# gender problem?
+<T>na</T> <B>sí</B>:<N pl="n" gnt="y" gnd="m">
 # capital Sí is sometimes the noun; need for sé below
 <B>sí</B>:<P>
 Ó <B>Sé</B>:<Y>
@@ -164,8 +177,8 @@ an <B>Níl</B>:<N pl="n" gnt="n" gnd="f">
 a <B>sé</B>:<A pl="n" gnt="n">
 # exception to <^V> rule
 <P>sí</P> <C>nó</C> <B>sé</B>:<P>
-# cúig nó sé, buille an sé, etc.
-<[^V]>ANYTHING</[^V]> <B>sé</B>:<A pl="n" gnt="n">
+# cúig nó sé, buille an sé, na Sé Chontae, etc.
+<[^V]>ANYTHING</[^V]> <B>[Ss]é</B>:<A pl="n" gnt="n">
 # last resort
 <B>[Ss]é</B>:<P>
 # almost always "ó shin"
@@ -177,6 +190,7 @@ a <B>sé</B>:<A pl="n" gnt="n">
 <[^N]>ANYTHING</[^N]> <B>[Tt][Hh][Ee]</B>:<F>
 <B>[Tt][Hh][Ee]</B> <X>ANYTHING</X>:<F>
 <B>theannta</B>:<N pl="n" gnt="n" gnd="m">
+<T>ANYTHING</T> <B>[Tt]rí</B>:<A pl="n" gnt="n">
 <B>[Tt]rí</B> bliana|cinn|fichid|seachtaine:<A pl="n" gnt="n">
 <B>[Tt]rí</B>:<S>
 <B>[Tt]ríd</B> <T>na</T>:<S>
@@ -267,7 +281,10 @@ a <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <B><Z>NFGSUBJ</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 <B><Z>PLADJSUBJ</Z>ANYTHING</B>:<A pl="y" gnt="n">
 <B><Z>GENADJ</Z>ANYTHING</B>:<A>
-<T>an</T> <B><Z>NMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+# next one better without <T>, "an chnuasaigh", etc.
+[Aa]n <B><Z>ANYNMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+[Gg]ach <B><Z>ANYNMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+[Aa]n <B><Z>ANYNMONEC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 #<T>na</T> <B><Z>NMONE</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">  see next
 <[^N]>ANYTHING</[^N]> <B><Z>NMONE</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 <B><Z>NMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
@@ -275,27 +292,25 @@ a <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <B><Z>NMONEC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <T>na</T> <B><Z>NFONEC</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 <B><Z>NFONEC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
-<N>ANYTHING</N> <T>an</T> <B><Z>ANDROGYN</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
-<T>an</T> <B><Z>ANDROGYN</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<N>ANYTHING</N> <T>[Aa]n</T> <B><Z>ANDROGYN</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<T>[Aa]n</T> <B><Z>ANDROGYN</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <[^N]>ANYTHING</[^N]> <B><Z>ANDROGYN</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
-<S>ANYTHING</S> <T>an</T> <B><Z>NMFOUR</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<T>an</T> <B><Z>NMFOUR</Z>UNLENITED</B>:<N pl="n" gnt="n" gnd="m">
-<T>an</T> <B><Z>NMFOUR</Z>LENITED</B>:<N pl="n" gnt="y" gnd="m">
-<N>ANYTHING</N> <T>an</T> <B><Z>NMFOUR</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<S>ANYTHING</S> <T>[Aa]n</T> <B><Z>NMFOUR</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<T>[Aa]n</T> <B><Z>NMFOUR</Z>UNLENITED</B>:<N pl="n" gnt="n" gnd="m">
+<T>[Aa]n</T> <B><Z>NMFOUR</Z>LENITED</B>:<N pl="n" gnt="y" gnd="m">
+<[^T]>ANYTHING</[^T]> <N>ANYTHING</N> <T>[Aa]n</T> <B><Z>NMFOUR</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 #<[^N]>ANYTHING</[^N]> <B><Z>NMFOUR</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <B><Z>NMFOUR</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <T>na</T> <B><Z>STRONGPLM</Z>ECLIPSED</B>:<N pl="y" gnt="y" gnd="m">
 <B><Z>STRONGPLM</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 <T>na</T> <B><Z>STRONGPLF</Z>ECLIPSED</B>:<N pl="y" gnt="y" gnd="f">
 <B><Z>STRONGPLF</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
-<T>na</T> <B><Z>NFFOUR</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+<T>na</T> <B><Z>ANYNFG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 <[^N]>ANYTHING</[^N]> <B><Z>NFFOUR</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
-<T>na</T> <B><Z>NFFOURH</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f" h="y">
-<B><Z>NFFOURH</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f" h="y">
 # mar, ach, go
 <B><Z>PREPCONJ</Z>ANYTHING</B> <[NP]>ANYTHING</[NP]>:<S>
 <B><Z>PREPCONJ</Z>ANYTHING</B> <T>na</T>:<S>
-<B><Z>PREPCONJ</Z>ANYTHING</B> an:<S>
+<B><Z>PREPCONJ</Z>ANYTHING</B> [Aa]n:<S>
 <B><Z>PREPCONJ</Z>ANYTHING</B> seo:<S>
 <B><Z>PREPCONJ</Z>ANYTHING</B> sin:<S>
 #<B><Z>PREPCONJ</Z>ANYTHING</B> <[CSV]>ANYTHING</[CSV]>:<C>
@@ -305,9 +320,9 @@ a <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <B><Z>COPULAPART</Z>ANYTHING</B>:<V cop="y">
 # do next batch for efficiency only
 <B><Z>GENERICPAST</Z>ANYTHING</B>:<V p="xx" t="caite">
-<B><Z>GENERICPRES</Z>ANYTHING</B>:<V t="láith">
-<B><Z>GENERICFUTURE</Z>ANYTHING</B>:<V t="fáist">
-<B><Z>GENERICCOND</Z>ANYTHING</B>:<V t="coinn">
+<B><Z>GENERICPRES</Z>ANYTHING</B>:<V p="xx" t="láith">
+<B><Z>GENERICFUTURE</Z>ANYTHING</B>:<V p="xx" t="fáist">
+<B><Z>GENERICCOND</Z>ANYTHING</B>:<V p="xx" t="coinn">
 <B><Z>GENERICAUT</Z>ANYTHING</B>:<V p="saor" t="láith">
 <B><Z>GENERICPAUT</Z>ANYTHING</B>:<V p="saor" t="caite">
 <B><Z>GENERICFIRST</Z>ANYTHING</B>:<V p="1ú" t="láith">
@@ -344,6 +359,7 @@ a <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <C>ANYTHING</C> <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
 <B><Z>SEOSIN</Z>ANYTHING</B>:<A pl="n" gnt="n">
 <B>[Aa]</B> <V>ANYTHING</V>:<U>
+<C>[Nn]uair</C> <B>[Aa]</B>:<U>
 #<B>[Aa]</B> UNLENITED:<D>
 <B>[Aa]</B> <N>ECLIPSED</N>:<D>
 <B>[Aa]</B> <NP>ANYTHING</NP>:<D>
