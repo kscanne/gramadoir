@@ -2,10 +2,8 @@
 
 fixbackrefs()
 {
-if [ "${1}" != "aonchiall" ]
+if [ "${1}" = "aonchiall" ]
 then
-	sed 's/|<B><Z>[^+]*+<\\\/Z>[^/]*\/B>//g'
-else
 while read perlline
 do
 	if echo "${perlline}" | grep '^s/' > /dev/null
@@ -19,6 +17,13 @@ do
 		echo "${perlline}" | sed 's/\([[<^]\)\//\1\\\//g'
 	fi
 done
+else
+	if [ "${1}" = "comhshuite" ]
+	then
+		cat
+	else
+		sed 's/|<B><Z>[^+]*+<\\\/Z>[^/]*\/B>//g; s/(<\[\\\/A-DF-Z\]\[^>\]\*>)+/<[A-DF-Z][^>]*>/g'
+	fi
 fi
 }
 
@@ -37,5 +42,5 @@ METASED=`echo ${PERLOUT} | sed 's/\.pl/.meta.sed/'`
 
 rm -f ${METASED}
 cat gin.meta.sed macra-${MYLANG}.meta.sed ${FLAVOR}.meta.sed | egrep -v '^#' > ${METASED}
-(echo "#!${PERLPATH}"; echo "# Users should modify $<, not this file"; echo 'while(<>){';  cat "${INFILE}" | sed '/^#/!s/:/~:/' | tr "~" "\n" | LC_ALL="C" sed -f ${METASED}; echo 'print;'; echo '}'; echo 'exit;') | fixbackrefs ${FLAVOR} > ${PERLOUT}
+(echo "#!${PERLPATH}"; echo "# Users should modify ${INFILE}, not this file"; echo 'while(<>){';  cat "${INFILE}" | sed '/^#/!s/:/~:/' | tr "~" "\n" | LC_ALL="C" sed -f ${METASED}; echo 'print;'; echo '}'; echo 'exit;') | fixbackrefs ${FLAVOR} > ${PERLOUT}
 rm -f ${METASED}
