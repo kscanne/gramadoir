@@ -814,6 +814,7 @@ sub grammatical_errors
 				my $fromx;
 				$errortext =~ s/<[^>]+>//g; # strip pos stuff
 				my $errorregexp = $errortext;
+				$errorregexp =~ s/\^/\\^/g; # esperanto
 				$thiserror =~ s/^<E/<E sentence="$plain" errortext="$errortext"/;
 				$errorregexp =~ s/ /\\s+/g;
 				$errorregexp =~ s/^/(?<=[^@BDCHARS@])/;
