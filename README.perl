@@ -1,6 +1,9 @@
 Lingua-@UPPERTEANGA@-Gramadoir: Check the grammar of @NAME_ENG@ language texts
 ================================
 
+This module was generated automatically using
+gramadoir-@GRAMVERSION@ and the language pack gramadoir-@TEANGA@-@VERSION@.
+
 For more detailed information, see the web page:
     http://borel.slu.edu/gramadoir/
 
