@@ -153,7 +153,7 @@
 <E offset="72" fromy="150" fromx="72" toy="150" tox="73" sentence="Cha dtug mé cur síos ach ar dhá bhabhta collaíochta san úrscéal ar fad (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
 <E offset="7" fromy="151" fromx="7" toy="151" tox="20" sentence="Bhí an chéad cruinniú den Choimisiún i Ros Muc i nGaeltacht na Gaillimhe." errortext="chéad cruinniú" msg="Séimhiú ar iarraidh">
 <E offset="6" fromy="152" fromx="6" toy="152" tox="18" sentence="Tá sé chomh iontach le sneachta dearg." errortext="chomh iontach" msg="Réamhlitir «h» ar iarraidh">
-<E offset="26" fromy="153" fromx="26" toy="153" tox="36" sentence="Chuir mé céad punta chuig an banaltra." errortext="an banaltra" msg="Séimhiú ar iarraidh">
+<E offset="25" fromy="153" fromx="25" toy="153" tox="35" sentence="Chuir mé céad punt chuig an banaltra." errortext="an banaltra" msg="Séimhiú ar iarraidh">
 <E offset="22" fromy="154" fromx="22" toy="154" tox="34" sentence="Níl tú do do sheoladh chuig dhaoine a labhraíonn teanga dhothuigthe." errortext="chuig dhaoine" msg="Séimhiú gan ghá">
 <E offset="41" fromy="155" fromx="41" toy="155" tox="50" sentence="Seo deis iontach chun an Ghaeilge a chur chun chinn." errortext="chun chinn" msg="Séimhiú gan ghá">
 <E offset="54" fromy="156" fromx="54" toy="156" tox="55" sentence="Tiocfaidh deontas faoin alt seo chun bheith iníoctha (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
@@ -292,7 +292,7 @@
 <E offset="32" fromy="289" fromx="32" toy="289" tox="33" sentence="Nach raibh dóthain eolais aige (OK)?" errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
 <E offset="0" fromy="290" fromx="0" toy="290" tox="12" sentence="Nach bainfidh mé uaidh an méid a ghoid sé uaim?" errortext="Nach bainfidh" msg="Urú ar iarraidh">
 <E offset="0" fromy="291" fromx="0" toy="291" tox="10" sentence="Nach ghasta a fuair tú í!" errortext="Nach ghasta" msg="Séimhiú gan ghá">
-<E offset="23" fromy="292" fromx="23" toy="292" tox="33" sentence="Rinneadh an roinnt don naoi treibh go leith ar chrainn." errortext="naoi treibh" msg="Urú ar iarraidh">
+<E offset="25" fromy="292" fromx="25" toy="292" tox="35" sentence="Rinneadh an roinnt do na naoi treibh go leith ar chrainn." errortext="naoi treibh" msg="Urú ar iarraidh">
 <E offset="44" fromy="293" fromx="44" toy="293" tox="57" sentence="Tháinig na bróga chomh fada siar le haimsir Naomh Phádraig féin." errortext="Naomh Phádraig" msg="Séimhiú gan ghá">
 <E offset="0" fromy="294" fromx="0" toy="294" tox="7" sentence="Nár breá liom claíomh a bheith agam i mo ghlac!" errortext="Nár breá" msg="Séimhiú ar iarraidh">
 <E offset="0" fromy="295" fromx="0" toy="295" tox="13" sentence="Nár bhfreagair sé thú, focal ar fhocal." errortext="Nár bhfreagair" msg="Séimhiú ar iarraidh">
