@@ -189,10 +189,10 @@ installweb :
 	bash runchoip
 
 perl : FORCE
-	bash buildperl ga Irish n
+	bash buildperl ga Irish n native @PACKAGE_VERSION@
 
 perldb : FORCE
-	bash buildperl ga Irish y
+	bash buildperl ga Irish y native @PACKAGE_VERSION@
 
 debug : FORCE
 	$(MAKE) all
@@ -220,6 +220,11 @@ maintainer-clean :
 
 ChangeLog : FORCE
 	cvs2cl.pl
+
+zipped : FORCE
+	(cd Lingua-GA-Gramadoir; make distclean; find . -name '*.hash' | xargs rm -f)
+	zip -r Lingua-GA-Gramadoir Lingua-GA-Gramadoir
+	mv -f Lingua-GA-Gramadoir.zip /home/kps/public_html
 
 dist : FORCE
 	$(MAKE) ChangeLog
