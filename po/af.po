@@ -189,16 +189,14 @@ msgstr "Nie-standaardvorm: gebruik miskien \\/\\1\\/?"
 
 #. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
 #: gr.in:110
-#, fuzzy
 msgid "Initial mutation missing"
-msgstr "Initial mutation missing"
+msgstr "Aanvangsmutasie ontbreek"
 
 #. TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
 #. It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
 #: gr.in:114
-#, fuzzy
 msgid "Unnecessary lenition"
-msgstr "Unnecessary lenition"
+msgstr "Onnodige linisie"
 
 #: gr.in:115
 msgid "Prefix \\/h\\/ missing"
@@ -209,17 +207,15 @@ msgid "Prefix \\/t\\/ missing"
 msgstr "Voorvoegsel \\/t\\/ ontbreekkdesu is weg"
 
 #: gr.in:117
-#, fuzzy
 msgid "Lenition missing"
-msgstr "Lenition missing"
+msgstr "Lenisie ontbreek"
 
 #. TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
 #. initial consonants in Irish.  It is indicated in writing by the addition
 #. of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
 #: gr.in:122
-#, fuzzy
 msgid "Eclipsis missing"
-msgstr "Eclipsis missing"
+msgstr "Eklips ontbreek"
 
 #: gr.in:123
 msgid "Repeated word"
