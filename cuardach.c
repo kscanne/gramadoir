@@ -38,15 +38,37 @@ struct replacement
 };
 
 char packagename[64];
-char dictfile[16] = "focail.bs";
+char teanga[8];
 
-#define DICTTOTAL 314027
+int dict_total = 0;
 int ignore_total = 0;
 int repl_total = 0;
 
-struct foirm focloir[DICTTOTAL];
+struct foirm *focloir = NULL;
 struct ignorable *toignore = NULL;
 struct replacement *torepl = NULL;
+
+extern int byte_to_markup_ga (const unsigned char c, char *fill, char *attrs);
+extern int byte_to_markup_en (const unsigned char c, char *fill, char *attrs);
+
+void
+byte_to_markup (const unsigned char c, char *fill, char *attrs)
+{
+  int ret = 0;
+  if (!strcmp (teanga, "ga"))
+    ret = byte_to_markup_ga (c, fill, attrs);
+  else if (!strcmp (teanga, "en"))
+    ret = byte_to_markup_en (c, fill, attrs);
+  else
+    {
+      fprintf (stderr, gettext ("Language %s is not supported."), teanga);
+    }
+  if (ret)
+    {
+      fprintf (stderr, gettext ("%s: illegal grammatical code\n"),
+	       packagename);
+    }
+}
 
 /* return 0 if everything went well enough to proceed, non-zero if not */
 int
@@ -55,15 +77,18 @@ load_replacements ()
   int wordlen, iomlan, retval = 0;
   FILE *repl;
   char token[GR_REPLMAX + GR_WORDMAX];
-  char fn[GR_FILENAMEMAX], countstr[8];
+  char fn[GR_FILENAMEMAX], countstr[16], replfile[16] = "eile-";
   char *split;
 
+  strcat (replfile, teanga);
+  strcat (replfile, ".bs");
   strcpy (fn, BSONRAI);
-  strcat (fn, "/eile.bs");
+  strcat (fn, "/");
+  strcat (fn, replfile);
   repl = fopen (fn, "r");
   if (repl)
     {
-      fgets (countstr, 8, repl);
+      fgets (countstr, 16, repl);
       countstr[strlen (countstr) - 1] = 0;
       iomlan = atoi (countstr);
       if (!iomlan)
@@ -83,8 +108,8 @@ load_replacements ()
 	  split = strchr (token, ' ');
 	  if (split == NULL)
 	    {
-	      fprintf (stderr, gettext ("%s: `eile.bs' corrupted at %s\n"),
-		       packagename, token);
+	      fprintf (stderr, gettext ("%s: `%s' corrupted at %s\n"),
+		       packagename, replfile, token);
 	      return 0;		/* muddle on thru */
 	    }
 	  else
@@ -107,12 +132,12 @@ load_replacements ()
       if (repl_total != iomlan)
 	{
 	  fprintf (stderr, gettext ("%s: warning: check size of %s: %d?\n"),
-		   packagename, fn, ignore_total);
+		   packagename, replfile, ignore_total);
 	}
       if (fclose (repl))
 	{
 	  fprintf (stderr, gettext ("%s: warning: problem closing %s\n"),
-		   packagename, fn);
+		   packagename, replfile);
 	}
     }
   else
@@ -126,9 +151,9 @@ int
 real_loader (char *grignore, FILE * grig)
 {
   int iomlan;
-  char countstr[8];
+  char countstr[16];
 
-  fgets (countstr, 8, grig);
+  fgets (countstr, 16, grig);
   countstr[strlen (countstr) - 1] = 0;
   iomlan = atoi (countstr);
   if (!iomlan)
@@ -190,13 +215,28 @@ load_dictionary ()
 {
   FILE *bs;
   char fn[GR_FILENAMEMAX], temp[GR_WORDMAX], *hold;
-  int cp, meid = 1;
+  int meid = 1;
+  char dictfile[16] = "focail-";
+  char countstr[16];
 
+  strcat (dictfile, teanga);
+  strcat (dictfile, ".bs");
   strcpy (fn, BSONRAI);
   strcat (fn, "/");
   strcat (fn, dictfile);
   if ((bs = fopen (fn, "r")) == NULL)
     return 1;
+  fgets (countstr, 16, bs);
+  countstr[strlen (countstr) - 1] = 0;
+  dict_total = atoi (countstr);
+  if (!dict_total)
+    return 0;			/* in case of bad malloc - main() works with focloir NULL! */
+  focloir = malloc (dict_total * sizeof (struct foirm));
+  if (focloir == NULL)
+    {
+      fprintf (stderr, gettext ("%s: out of memory\n"), packagename);
+      return 1;
+    }
   if (fgets (focloir[0].focal, GR_WORDMAX, bs) == NULL)
     return 1;
   if (fgets (focloir[0].coid, GR_AMBIGMAX, bs) == NULL)
@@ -209,7 +249,7 @@ load_dictionary ()
       fgets (focloir[meid].coid, GR_AMBIGMAX, bs);
       meid++;
     }
-  if (meid != DICTTOTAL)
+  if (meid != dict_total)
     {
       fprintf (stderr,
 	       gettext ("%s: warning: check size of %s: %d?\n"),
@@ -222,145 +262,6 @@ load_dictionary ()
 	       dictfile);
     }
   return 0;
-}
-
-/* all encoding conventions should be contained in here!
-   using same markup code for part of speech as the National Irish Corpus
-   www.ite.ie/corpus/pos.htm
-   Though they use a generic "w" word tag and attributes for grammar.
-     Used:        ACDINOPQRSTUV
-    "E" is used as error markup code in my stuff
-    "B" is used to markup ambiguous words
-    "Z" is used inside <B></B> to markup list of ambigous parts of speech 
-    "Y" is used for words to ignore (proper words or from .neamhshuim)
-    "X" is used when a word is not in database
-     Changes to these codes need to be reflected in rialacha.meta.sed too
- */
-void
-byte_to_markup (const unsigned char c, char *fill, char *attrs)
-{
-  unsigned char pos = (0xc0 & c) >> 6;
-  unsigned char person = (c & 0x18) >> 3;	/* verbs only */
-  unsigned char tense = (c & 0x07);	/* verbs only */
-  if (pos == 0)
-    {
-      strcpy (attrs, "");
-      switch (c >> 2)
-	{			/* pspeech.cxx */
-	case 1:
-	  strcpy (fill, "U");
-	  break;		/* unknown/unique */
-	case 2:
-	  strcpy (fill, "T");
-	  break;		/* article */
-	case 3:
-	  strcpy (fill, "S");
-	  break;		/* adposition (prep) */
-	case 4:
-	  strcpy (fill, "P");	/* pronoun */
-	  if (c & 2)
-	    strcpy (attrs, " h=\"y\"");
-	  break;
-	case 5:
-	  strcpy (fill, "O");	/* adposition (pronm) */
-	  if (c & 2)
-	    strcpy (attrs, " em=\"y\"");
-	  break;
-	case 6:
-	  strcpy (fill, "R");
-	  break;		/* adverb */
-	case 7:
-	  strcpy (fill, "C");
-	  break;		/* conjunction */
-	case 8:
-	  strcpy (fill, "Q");
-	  break;		/* interrogative */
-	case 9:
-	  strcpy (fill, "I");
-	  break;		/* interjection */
-	case 10:
-	  strcpy (fill, "D");
-	  break;		/* determiner (poss) */
-	case 11:
-	  strcpy (fill, "Y");
-	  break;		/* proper name */
-	};
-    }
-  else if (pos == 1 || pos == 2)
-    {
-      strcpy (attrs, "");
-      if (pos == 1)
-	strcpy (fill, "N");
-      else
-	strcpy (fill, "A");
-      if (c & 0x20)
-	strcat (attrs, " pl=\"y\"");
-      else
-	strcat (attrs, " pl=\"n\"");
-      if (c & 0x10)
-	strcat (attrs, " gnt=\"y\"");
-      else
-	strcat (attrs, " gnt=\"n\"");
-      if (c & 0x08)
-	{
-	  if (c & 0x04)
-	    strcat (attrs, " gnd=\"m\"");
-	  else
-	    strcat (attrs, " gnd=\"f\"");
-	}
-      if (c & 0x02)
-	strcat (attrs, " h=\"y\"");
-    }
-  else
-    {
-      strcpy (fill, "V");
-      strcpy (attrs, "");
-      if (c & 0x20)
-	strcat (attrs, " pl=\"y\"");
-      switch (person)
-	{
-	case 0:
-	  strcat (attrs, " p=\"saor\"");
-	  break;
-	case 1:
-	  strcat (attrs, " p=\"1ú\"");
-	  break;
-	case 2:
-	  strcat (attrs, " p=\"2ú\"");
-	  break;
-	case 3:
-	  strcat (attrs, " p=\"3ú\"");
-	  break;
-	};
-      switch (tense)
-	{
-	case 0:
-	  strcat (attrs, " t=\"ord\"");
-	  break;
-	case 1:
-	  strcat (attrs, " t=\"láith\"");
-	  break;
-	case 2:
-	  fprintf (stderr, gettext ("%s: illegal grammatical code\n"),
-		   packagename);
-	  break;
-	case 3:
-	  strcat (attrs, " t=\"caite\"");
-	  break;
-	case 4:
-	  strcat (attrs, " t=\"fáist\"");
-	  break;
-	case 5:
-	  strcat (attrs, " t=\"gnáth\"");
-	  break;
-	case 6:
-	  strcat (attrs, " t=\"coinn");
-	  break;
-	case 7:
-	  strcat (attrs, " t=\"foshuit\"");
-	  break;
-	};
-    }
 }
 
 /* cod has trailing newline on there */
@@ -402,7 +303,7 @@ code_to_markup (const char *cod, char *fill, char *attrs, char *extratags)
 int
 rawlookup (const char *word, char *codes)
 {
-  int min = 0, max = DICTTOTAL - 1;
+  int min = 0, max = dict_total - 1;
   int guess, cmp;
   while (min <= max)
     {
@@ -603,9 +504,14 @@ cleanup ()
   int l;
   if (toignore != NULL)
     free (toignore);
-  for (l = 0; l < repl_total; l++)
-    free (torepl[l].athfhocal);
-  free (torepl);
+  if (focloir != NULL)
+    free (focloir);
+  if (torepl != NULL)
+    {
+      for (l = 0; l < repl_total; l++)
+	free (torepl[l].athfhocal);
+      free (torepl);
+    }
 }
 
 void
@@ -625,7 +531,7 @@ main (int argc, char *argv[])
   bindtextdomain (PACKAGE_NAME, LOCALEDIR);
   textdomain (PACKAGE_NAME);
 
-  if (argc != 3)
+  if (argc != 4)
     {
       fprintf (stderr, gettext ("problem with the `cuardach' command\n"));
       flush_input (token);
@@ -633,6 +539,7 @@ main (int argc, char *argv[])
     }
 
   strcpy (packagename, argv[2]);
+  strcpy (teanga, argv[3]);
 
   if (load_dictionary () || load_replacements ())
     {
