@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: GNU gramadoir 0.4\n"
+"Project-Id-Version: GNU gramadoir 0.5\n"
 "Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
 "POT-Creation-Date: 2004-08-25 11:22-0500\n"
-"PO-Revision-Date: 2004-01-09 08:00-0500\n"
+"PO-Revision-Date: 2004-08-26 08:00-0500\n"
 "Last-Translator: Michel Robitaille <robitail@IRO.UMontreal.CA>\n"
 "Language-Team: French <traduc@traduc.org>\n"
 "MIME-Version: 1.0\n"
@@ -52,7 +52,7 @@ msgstr "option %s ne permet pas un argument"
 
 #: gram.pl:174 gramdev.pl:88
 msgid "error parsing command-line options"
-msgstr ""
+msgstr "erreur d'analyse de syntaxe des options de la ligne de commande"
 
 #: gram.pl:177
 #, perl-format
@@ -79,10 +79,7 @@ msgid "version %s"
 msgstr "version %s"
 
 #: gram.pl:247 gramdev.pl:153
-msgid ""
-"This is free software; see the source for copying conditions.  There is NO"
-"\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
-"PURPOSE,\\nto the extent permitted by law."
+msgid "This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law."
 msgstr ""
 "Ce logiciel est libre; voir les sources pour les conditions de\n"
 "reproduction. AUCUNE garantie n'est donnée; tant pour des raisons\n"
@@ -100,41 +97,35 @@ msgstr "Options les usagers:"
 
 #: gram.pl:268
 msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
-msgstr ""
-"    --iomlan       rapporter toutes les erreurs (i.e. ne pas utiliser ~/."
-"neamhshuim)"
+msgstr "    --iomlan       rapporter toutes les erreurs (i.e. ne pas utiliser ~/.neamhshuim)"
 
 #: gram.pl:271
-msgid ""
-"    --ionchod=ENC  specify the character encoding of the text to be checked"
-msgstr ""
-"    --ionchod=ENC  spécifier l'encodage des caractères du texte à vérifier"
+msgid "    --ionchod=ENC  specify the character encoding of the text to be checked"
+msgstr "    --ionchod=ENC  spécifier l'encodage des caractères du texte à vérifier"
 
 #: gram.pl:274
 msgid "    --aschod=ENC   specify the character encoding for output"
-msgstr ""
+msgstr "    --aschod=ENC   spécifier l'encodage des caractères pour la sortie"
 
 #: gram.pl:277
 msgid "    --comheadan=xx choose the language for error messages"
-msgstr ""
+msgstr "    --comheadan=xx choisir le langage pour les message d'erreur"
 
 #: gram.pl:280
 msgid "    --dath=COLOR   specify the color to use for highlighting errors"
-msgstr ""
+msgstr "    --dath=COULEUR spécifier la COULEUR à utiliser pour surligner les erreurs"
 
 #: gram.pl:283
 msgid "    --litriu       write misspelled words to standard output"
-msgstr ""
-"    --litriu       écrire les mots mal orthographiés sur la sortie standard"
+msgstr "    --litriu       écrire les mots mal orthographiés sur la sortie standard"
 
 #: gram.pl:286
 msgid "    --aspell       suggest corrections for misspellings"
-msgstr ""
-"    --aspell       suggérer des corrections pour les erreurs d'orhographe"
+msgstr "    --aspell       suggérer des corrections pour les erreurs d'orhographe"
 
 #: gram.pl:289
 msgid "    --aschur=FILE  write output to FILE"
-msgstr ""
+msgstr "    --aschur=FICHIER  écrire la sortie dans le FICHIER"
 
 #: gram.pl:292 gramdev.pl:133
 msgid "    --help         display this help and exit"
@@ -149,29 +140,20 @@ msgid "Options for developers:"
 msgstr "Options pour les développeurs:"
 
 #: gram.pl:300
-msgid ""
-"    --api          output a simple XML format for use with other applications"
-msgstr ""
+msgid "    --api          output a simple XML format for use with other applications"
+msgstr "    --api          produire un format XML simple de sortie avec d'autres applications"
 
 #: gram.pl:302
 msgid "    --html         produce HTML output for viewing in a web browser"
-msgstr ""
-"    --html         produire une sortie HTML pour un logiciel de navigation "
-"Internet"
+msgstr "    --html         produire une sortie HTML pour un logiciel de navigation Internet"
 
 #: gram.pl:308
-msgid ""
-"    --no-unigram   do not resolve ambiguous parts of speech by frequency"
-msgstr ""
-"    --no-unigram   ne pas résoudre les parties ambiguës de la langue selon "
-"la fréquence"
+msgid "    --no-unigram   do not resolve ambiguous parts of speech by frequency"
+msgstr "    --no-unigram   ne pas résoudre les parties ambiguës de la langue selon la fréquence"
 
 #: gram.pl:314
-msgid ""
-"    --xml          write tagged XML stream to standard output, for debugging"
-msgstr ""
-"    --xml          écrire un flot XML étiqueté sur la sortie standard, pour "
-"mise au point (debug)"
+msgid "    --xml          write tagged XML stream to standard output, for debugging"
+msgstr "    --xml          écrire un flot XML étiqueté sur la sortie standard, pour mise au point (debug)"
 
 #: gram.pl:317 gramdev.pl:139
 msgid "If no file is given, read from standard input."
@@ -206,24 +188,15 @@ msgstr "Vérification en cours %s"
 
 #: gramdev.pl:125
 msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
-msgstr ""
-"    --ilchiall     rapporter les ambiguïtés non résolues, triées selon la "
-"fréquence"
+msgstr "    --ilchiall     rapporter les ambiguïtés non résolues, triées selon la fréquence"
 
 #: gramdev.pl:128
-msgid ""
-"    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
-msgstr ""
-"    --minic        afficher toutes les étiquettes,  triées selon la "
-"fréquence (pour unigram-xx.txt)"
+msgid "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
+msgstr "    --minic        afficher toutes les étiquettes,  triées selon la fréquence (pour unigram-xx.txt)"
 
 #: gramdev.pl:130
-msgid ""
-"    --brill        find disambiguation rules via Brill's unsupervised "
-"algorithm"
-msgstr ""
-"    --brill        trouver des règle de clarification à l'aide de "
-"l'algorithme non supervisé de Brill"
+msgid "    --brill        find disambiguation rules via Brill's unsupervised algorithm"
+msgstr "    --brill        trouver des règle de clarification à l'aide de l'algorithme non supervisé de Brill"
 
 #: Gramadoir.pm.in:118
 #, perl-format
@@ -269,17 +242,16 @@ msgid "You should use \\/\\1\\/ here instead"
 msgstr "Vous devriez utiliser \\/\\1\\/ ici à la place"
 
 #: Gramadoir.pm.in:638
-#, fuzzy
 msgid "Non-standard form of \\/\\1\\/"
-msgstr "Forme non conforme: utiliser plutôt \\/\\1\\/?"
+msgstr "Forme non standard de \\/\\1\\/"
 
 #: Gramadoir.pm.in:642
 msgid "Derived from a non-standard form of \\/\\1\\/"
-msgstr ""
+msgstr "Dérivé d'une forme non standard de \\/\\1\\/"
 
 #: Gramadoir.pm.in:646
 msgid "Derived incorrectly from the root \\/\\1\\/"
-msgstr ""
+msgstr "Dérivé incorrectement de la racine \\/\\1\\/"
 
 #. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
 #: Gramadoir.pm.in:651
@@ -341,41 +313,30 @@ msgstr "le cas génitif est requis ici"
 
 #: Gramadoir.pm.in:708
 msgid "Not in database but apparently formed from the root \\/\\1\\/"
-msgstr ""
+msgstr "N'est pas dans la base de données mais apparemment formé à partir de la racine \\/\\1\\/"
 
 #: Gramadoir.pm.in:712
 msgid "Do you mean \\/\\1\\/?"
-msgstr ""
+msgstr "Entendez-vous \\/\\1\\/?"
 
 #: Gramadoir.pm.in:716
 msgid "Derived form of common misspelling \\/\\1\\/?"
-msgstr ""
+msgstr "Forme dérivée d'une erreur d'orthographe commune \\/\\1\\/?"
 
 #: Gramadoir.pm.in:720
 msgid "Not in database but may be a compound \\/\\1\\/?"
-msgstr ""
+msgstr "N'est pas dans la base de données mais peut être composé \\/\\1\\/?"
 
 #: Gramadoir.pm.in:724
 msgid "Not in database but may be a non-standard compound \\/\\1\\/?"
-msgstr ""
+msgstr "N'est pas dans la base de données mais peut être composé de manière non standard \\/\\1\\/?"
 
 #: Gramadoir.pm.in:728
 msgid "Possibly a foreign word (the sequence \\/\\1\\/ is highly improbable)"
-msgstr ""
+msgstr "Possiblement un mot étranger (la séquence \\/\\1\\/ est hautement improbable)"
 
-#~ msgid ""
-#~ "    --aspell       suggest corrections for misspellings (requires GNU "
-#~ "aspell)"
-#~ msgstr ""
-#~ "    --aspell       suggérer des corrections pour les erreurs d'orhographe "
-#~ "(GNU aspell requis)"
-
-#~ msgid ""
-#~ "    --teanga=XX    specify the language of the text to be checked "
-#~ "(default=ga)"
-#~ msgstr ""
-#~ "    --teanga=XX    spécifier le langage du texte à vérifier (par "
-#~ "défaut=ga)"
+#~ msgid "    --teanga=XX    specify the language of the text to be checked (default=ga)"
+#~ msgstr "    --teanga=XX    spécifier le langage du texte à vérifier (par défaut=ga)"
 
 #~ msgid "aspell-%s is not installed"
 #~ msgstr "aspell-%s n'est pas installé"
