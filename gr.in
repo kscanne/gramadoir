@@ -218,21 +218,21 @@ p
 # does the error messaging and returns the boolean 
 drochchomhad()
 {
-	if [ ! -e $1 ]
+	if [ ! -e ${1} ]
 	then
-		echo "${CLAR}: ${file}: $notfound"
+		echo "${CLAR}: ${1}: $notfound"
 	else
-		if [ -d $1 ]
+		if [ -d ${1} ]
 		then
-			echo "${CLAR}: $1: $isdir" > 2
+			echo "${CLAR}: ${1}: $isdir" > 2
 		else
-			if [ ! -r $1 ]
+			if [ ! -r ${1} ]
 			then
-				echo "${CLAR}: $1: $permissions" > 2
+				echo "${CLAR}: ${1}: $permissions" > 2
 			fi
 		fi
 	fi
-	[ ! -e $1 ] || [ -d $1 ] || [ ! -r $1 ]    # return value
+	[ ! -e ${1} ] || [ -d ${1} ] || [ ! -r ${1} ]    # return value
 }
 
 # This is the main sequence of filters for checking a given file
