@@ -164,21 +164,40 @@ else
 fi
 }
 
+# escape punctuation marks which cannot be end-of-sentence.
+# Don't even care if there isn't space or quotes after since
+# these surely won't be end of sentence either.
+escape_punc()
+{
+sed "
+s/\([^${BDCHARS}][${BDCHARS}]\)\([.?!]\)/\1\\\\\2/g
+s/\([^${BDCHARS}][йн]\)\\\\\([.?!]\)/\1\2/g
+s/\([^${BDCHARS}0-9-][0-9]\)\([.?!]\)/\1\\\\\2/g
+s/\([^${BDCHARS}0-9-][0-9][0-9]\)\([.?!]\)/\1\\\\\2/g
+s/\(\...\)\([.?!]\)/\1\\\\\2/g
+s/\.ie\\\\\([.?!]\)/.ie\1/g
+s/\.uk\\\\\([.?!]\)/.ie\1/g
+s/\(\..\)\([.?!]\)/\1\\\\\2/g
+s/\(\.\)\([.?!]\)/\1\\\\\2/g
+s/\([IVX][IVX]\)\([.?!]\)/\1\\\\\2/g
+" |
+@prefix@/libexec/giorr "${BDCHARS}"
+}
+
 # strips any pre-existing markup, tokenizes with <c></c>,
 # inserts line number markup, puts one sentence per line 
 # final filter is there because of some indecision about
 # whether I like the line number markups on the interiors of lines
 abairti()
 {
-tr -d "\015" | @EGREP@ -n '^' | LC_COLLATE=C sed "
-		s/<[^>]*>//g; 
-		s/[&\<>]/ /g; 
+tr -d "\015" | @EGREP@ -n '^' | sed "s/<[^>]*>//g; s/[&\<>]/ /g" |
+		escape_punc "${BDCHARS}" | LC_COLLATE=C sed "
 		s/[${BDCHARS}][${BDCHARS}${INTCHARS}]*/<c>&<\/c>/g;
 		s/\([${INTCHARS}][${INTCHARS}]*\)<\/c>/<\/c>\1/g;
 		s/^\([1-9][0-9]*\):/<line uimhir=\"\1\"> /; 
-		s/\([^.][^.][^.][.?!][]\"\')}]*\) [ ${TAB}\n]*/\1 <\/line>\n/g;
-		s/[^.][^.][^.][.?!][]\"\')}]*$/& <\/line>/" |
-		athuimhir | athcheang |
+		s/\([^\][.?!][]\"\')}]*\) [ ${TAB}\n]*/\1 <\/line>\n/g;
+		s/[^\][.?!][]\"\')}]*$/& <\/line>/" |
+		tr -d '\\' | athuimhir | athcheang |
 		sed 's/\(.\)<line uimhir[^>]*>/\1/g'
 }
 
