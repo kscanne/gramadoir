@@ -77,7 +77,7 @@ $(PERLD)/Changes : Changes
 
 $(PERLD)/Makefile.PL : $(GRAMDIR)/Makefile.PL.in
 	cat $(GRAMDIR)/Makefile.PL.in | sed "s/@TEANGA@/$(UPPERTEANGA)/g; s/@LOWERTEANGA@/$(TEANGA)/g" > $@
-	if [ "$(NATIVE)" = "utf8" ]; \
+	if echo "$(NATIVE)" | $(EGREP) -i 'utf' > /dev/null; \
 	then \
 		sed -i '/#.*binmode/s/#//g' $@; \
 	else \
@@ -145,6 +145,7 @@ triail.xml-update : FORCE
 	rm -f triail.xml
 	LC_ALL=ga_IE $(SCRIPTNAME) --api --iomlan --aspell triail > triail.xml
 
+# last line (subst of \x{} codes) is a hack for legacy encodings w/ 5.8.0
 $(PERLLIB).pm : $(GRAMDIR)/Gramadoir.pm.in $(INTERMEDIATE)
 	sed "/^# morphology code /r morph-$(TEANGA).pl" $(GRAMDIR)/Gramadoir.pm.in > $@
 	sed -i "/^# aonchiall code /r aonchiall-$(TEANGA).pl" $@
@@ -163,7 +164,12 @@ $(PERLLIB).pm : $(GRAMDIR)/Gramadoir.pm.in $(INTERMEDIATE)
 	sed -i "s/@LOWERS@/$(LOWERS)/g" $@
 	sed -i '/^# [a-z]* code goes here/d' $@
 	sed -i "/^Copyright (C)/s/.*/&\n                   $(AUTHOR)/" $@
-	perl -i -p -e 's/([\x{80}-\x{ff}])/sprintf("\\x{%x}",ord($$1));/ge;' $@
+	if echo "$(NATIVE)" | $(EGREP) -i 'utf' > /dev/null; \
+	then \
+		perl -i -p -e 'if (m/^use warnings/) {s/(.*)/$${1}\nuse utf8;/;} if (m/decode\(/) {s/^/#/;} if (m/eval.*from_to/) {s/^(.*from_to\(([^,]+), *([^,]+),.*)/#$${1}\n\teval {$$2 = decode($$3, $$2) };/}' $@; \
+	else \
+		perl -i -p -e 's/([\x{80}-\x{ff}])/sprintf("\\x{%x}",ord($$1));/ge;' $@; \
+	fi
 	chmod 644 $@
 
 morph-$(TEANGA).pl : morph-$(TEANGA).txt
@@ -176,7 +182,7 @@ $(PERLLIB)/Languages/en_us.pm : $(GRAMDIR)/Languages-en_us.pm
 	sed "s/@TEANGA@/$(UPPERTEANGA)/g" $(GRAMDIR)/Languages-en_us.pm > $@
 
 locale_ok :
-	cat $(GRAMDIR)/po/LINGUAS | tr " " "\n" | egrep '[a-z]' | while read x; do perl $(GRAMDIR)/po2perl.pl $(GRAMDIR)/po/$${x}.po "$${x}" 1> pometa-$${x}.tmp 2> /dev/null; cat pometa-$${x}.tmp | iconv -f `egrep '^"Content-Type:' $(GRAMDIR)/po/$${x}.po | sed 's/^.*charset *= *\([^ ]*\)\\\n.*/\1/'`  -t utf-8 > $(PERLLIB)/Languages/$${x}.pm; sed -n '1,/^"Content-Transfer-Encoding/{/^[^#]/s/^/#/; p;}' $(GRAMDIR)/po/$${x}.po > pometa-$${x}.tmp; sed -i "/^package/r pometa-$${x}.tmp" $(PERLLIB)/Languages/$${x}.pm; done
+	cat $(GRAMDIR)/po/LINGUAS | tr " " "\n" | $(EGREP) '[a-z]' | while read x; do perl $(GRAMDIR)/po2perl.pl $(GRAMDIR)/po/$${x}.po "$${x}" 1> pometa-$${x}.tmp 2> /dev/null; cat pometa-$${x}.tmp | iconv -f `$(EGREP) '^"Content-Type:' $(GRAMDIR)/po/$${x}.po | sed 's/^.*charset *= *\([^ ]*\)\\\n.*/\1/'`  -t utf-8 > $(PERLLIB)/Languages/$${x}.pm; sed -n '1,/^"Content-Transfer-Encoding/{/^[^#]/s/^/#/; p;}' $(GRAMDIR)/po/$${x}.po > pometa-$${x}.tmp; sed -i "/^package/r pometa-$${x}.tmp" $(PERLLIB)/Languages/$${x}.pm; done
 	sed -i "s/@TEANGA@/$(UPPERTEANGA)/g" $(PERLLIB)/Languages/*.pm
 	rm -f pometa*.tmp
 	touch locale_ok
@@ -185,26 +191,40 @@ locale_ok :
 	cat "$<" | sed '/^#/!s/:/~:/' | tr "~" "\n" | LC_ALL="C" $(PERL) -n $(GRAMDIR)/gin.meta.pl | LC_ALL="C" $(PERL) -p macra-${TEANGA}.meta.pl | LC_ALL="C" $(PERL) -p $(GRAMDIR)/`echo $< | sed 's/-.*//'`.meta.pl | sed 's/^/\t/' > $@
 
 giorr-$(TEANGA).pl : giorr-$(TEANGA).txt giorr-$(TEANGA).pre
-	(cat giorr-$(TEANGA).pre | egrep '^s/' | sed 's/^/\t/'; cat giorr-$(TEANGA).txt | sed 's/ .*//' | sed 's/.*/\ts\/([^@BDCHARS@@INTCHARS@]&)\\.\/$$1\\\\.\/g;/') > $@
+	(cat giorr-$(TEANGA).pre | $(EGREP) '^s/' | sed 's/^/\t/'; cat giorr-$(TEANGA).txt | sed 's/ .*//' | sed 's/.*/\ts\/([^@BDCHARS@@INTCHARS@]&)\\.\/$$1\\\\.\/g;/') > $@
 
 unigram-$(TEANGA).pl : unigram-$(TEANGA).pre unigram-$(TEANGA).txt
-	(cat unigram-$(TEANGA).pre | egrep '^s/' | sed 's/^/\t/'; cat unigram-$(TEANGA).txt | sed 's/^\(<\([A-Z]\)[^>]*\)>/\ts\/<B><Z>(?:<[^>]*>)*\1.>(?:<[^>]*>)*<\\\/Z>([^<]+)<\\\/B>\/\1>$$1<\\\/\2>\/g;/') > $@
+	(cat unigram-$(TEANGA).pre | $(EGREP) '^s/' | sed 's/^/\t/'; cat unigram-$(TEANGA).txt | sed 's/^\(<\([A-Z]\)[^>]*\)>/\ts\/<B><Z>(?:<[^>]*>)*\1.>(?:<[^>]*>)*<\\\/Z>([^<]+)<\\\/B>\/\1>$$1<\\\/\2>\/g;/') > $@
 
 $(SHARE)/focail0.bs : lexicon-$(TEANGA).txt freq-$(TEANGA).txt
-	bash $(GRAMDIR)/lexbuild $(TEANGA) $(GRAMDIR)
+	bash $(GRAMDIR)/lexbuild $(TEANGA) $(GRAMDIR) $(NATIVE)
 
 gramdev-$(TEANGA).pl : $(GRAMDIR)/gramdev.pl
 	cat $(GRAMDIR)/gramdev.pl | sed "s/@SCRIPTNAME@/$(DEVSCRIPTNAME)/; s/@PACKAGE_VERSION@/$(PERLVERSION)/; s/@TEANGA@/$(UPPERTEANGA)/g; s/@NATIVE@/$(NATIVE)/g; s/@NAME_ENGLISH@/$(NAME_ENG)/g; /^Copyright (C)/s/.*/&\n                   $(AUTHOR)/; s/@BDCHARS@/$(BDCHARS)/; s/@INTCHARS@/$(INTCHARS)/" > $@
+	if echo "$(NATIVE)" | $(EGREP) -i 'utf' > /dev/null; \
+	then \
+		sed -i '/^use warnings/s/.*/&\nuse utf8;/' $@; \
+	else \
+		perl -i -p -e 's/([\x{80}-\x{ff}])/sprintf("\\x{%x}",ord($$1));/ge;' $@; \
+	fi
 	chmod 755 $@
 
+poncin : FORCE
+	@cd $(GRAMDIR) && make all
+	@$(ECHO) 'Checking aonchiall-$(TEANGA).in'
+	@cat aonchiall-$(TEANGA).in | $(GRAMDIR)/aparser
+	@$(ECHO) 'Checking eisceacht-$(TEANGA).in'
+	@cat eisceacht-$(TEANGA).in | $(GRAMDIR)/eparser
+	@$(ECHO) 'Checking rialacha-$(TEANGA).in'
+	@cat rialacha-$(TEANGA).in | $(GRAMDIR)/rparser
+
 topclean :
-	rm -f lexicon-$(TEANGA).txt locale_ok $(INTERMEDIATE) *.tar.gz
+	rm -f lexicon-$(TEANGA).txt locale_ok $(INTERMEDIATE) *.tar.gz triail
+	rm -f $(PERLTOP) $(PERLCODE) $(LEXICONS) $(EXTRAS) $(TESTS) $(PERLD)/Makefile
 
 distclean :
 	$(MAKE) topclean
-	rm -f $(PERLTOP) $(PERLCODE) $(LEXICONS) $(EXTRAS) $(TESTS) $(PERLD)/Makefile
 	rm -f Makefile
-	rm -f triail
 
 clean :
 	$(MAKE) topclean
@@ -246,10 +266,10 @@ dist : FORCE
 counts : FORCE
 	(cat lexicon-$(TEANGA).bs | wc -l; echo '2 / p') | dc
 	cat eile-$(TEANGA).bs | wc -l
-	egrep '^[^#]' comhshuite-$(TEANGA).in | wc -l
-	egrep '^[^#]' aonchiall-$(TEANGA).in | wc -l
-	egrep '^[^#]' rialacha-$(TEANGA).in | wc -l
-	egrep '^[^#]' eisceacht-$(TEANGA).in | wc -l
+	$(EGREP) '^[^#]' comhshuite-$(TEANGA).in | wc -l
+	$(EGREP) '^[^#]' aonchiall-$(TEANGA).in | wc -l
+	$(EGREP) '^[^#]' rialacha-$(TEANGA).in | wc -l
+	$(EGREP) '^[^#]' eisceacht-$(TEANGA).in | wc -l
 
 zipped : FORCE
 	(cd Lingua-$(UPPERTEANGA)-Gramadoir; make realclean)
