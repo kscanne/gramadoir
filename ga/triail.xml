@@ -1,6 +1,6 @@
 <E offset="43" fromy="1" fromx="43" toy="1" tox="49" sentence="Ní raibh líon mór daoine bainteach leis an scaifte a bhí ag iarraidh mioscais a chothú." errortext="scaifte" msg="Foirm neamhchaighdeánach de «scata»">
 <E offset="4" fromy="2" fromx="4" toy="2" tox="15" sentence="Ach thosnaíos-sa ag léamh agus bhog mé isteach ionam féin." errortext="thosnaíos-sa" msg="Foirm neamhchaighdeánach de «thosnaigh (thosaigh)»">
-<E offset="24" fromy="3" fromx="24" toy="3" tox="28" sentence="Tabhair go leor leor de na na rudaí seo do do chara, a Chaoimhín." errortext="na na" msg="Focal céanna faoi dhó">
+<E offset="24" fromy="3" fromx="24" toy="3" tox="28" sentence="Tabhair go leor leor de na na rudaí do do chara, a Chaoimhín." errortext="na na" msg="Focal céanna faoi dhó">
 <E offset="51" fromy="4" fromx="51" toy="4" tox="52" sentence="Seo é a chuntas féin ar ar tharla ina dhiaidh sin (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
 <E offset="30" fromy="5" fromx="30" toy="5" tox="31" sentence="Aithníonn ciaróg ciaróg eile (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
 <E offset="55" fromy="6" fromx="55" toy="6" tox="56" sentence="Go deo deo arís ní fheicfeadh sí a cheannaithe snoite (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
@@ -95,7 +95,7 @@
 <E offset="14" fromy="93" fromx="14" toy="93" tox="24" sentence="Ní raibh guth an séiléara le clos a thuilleadh." errortext="an séiléara" msg="Réamhlitir «t» ar iarraidh">
 <E offset="40" fromy="94" fromx="40" toy="94" tox="46" sentence="Tá sin ráite cheana féin acu le muintir an tíre seo." errortext="an tíre" msg="Ba chóir duit «na» a úsáid anseo">
 <E offset="68" fromy="95" fromx="68" toy="95" tox="81" sentence="Is é is dóichí go raibh baint ag an eisimirce leis an laghdú i líon an gcainteoirí Gaeilge." errortext="an gcainteoirí" msg="Ba chóir duit «na» a úsáid anseo">
-<E offset="7" fromy="96" fromx="7" toy="96" tox="12" sentence="Is iad an trí cholún sin le chéile an tAontas Eorpach." errortext="an trí" msg="Ba chóir duit «na» a úsáid anseo">
+<E offset="7" fromy="96" fromx="7" toy="96" tox="12" sentence="Is iad an trí cholún le chéile an tAontas Eorpach." errortext="an trí" msg="Ba chóir duit «na» a úsáid anseo">
 <E offset="57" fromy="97" fromx="57" toy="97" tox="58" sentence="Sheol an ceithre mhíle de na meirligh amach san fhásach (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
 <E offset="10" fromy="98" fromx="10" toy="98" tox="21" sentence="Ní bhíonn an dhíograis chéanna ná an dhúthracht chéanna i gceist." errortext="an dhíograis" msg="Urú nó séimhiú gan ghá">
 <E offset="34" fromy="98" fromx="34" toy="98" tox="46" sentence="Ní bhíonn an dhíograis chéanna ná an dhúthracht chéanna i gceist." errortext="an dhúthracht" msg="Urú nó séimhiú gan ghá">
@@ -178,7 +178,7 @@
 <E offset="28" fromy="175" fromx="28" toy="175" tox="29" sentence="Bhí Eibhlín ar a dhá glúin (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
 <E offset="20" fromy="176" fromx="20" toy="176" tox="25" sentence="Is léir nach bhfuil an dhá theanga ar chomhchéim lena chéile." errortext="an dhá" msg="Séimhiú gan ghá">
 <E offset="13" fromy="177" fromx="13" toy="177" tox="21" sentence="Tionóladh an chéad dhá chomórtas i nGaoth Dobhair." errortext="chéad dhá" msg="Séimhiú gan ghá">
-<E offset="43" fromy="178" fromx="43" toy="178" tox="47" sentence="Cá bhfuil feoil le fáil agamsa le tabhairt do an mhuintir seo?" errortext="do an" msg="Ba chóir duit «don» a úsáid anseo">
+<E offset="43" fromy="178" fromx="43" toy="178" tox="47" sentence="Cá bhfuil feoil le fáil agamsa le tabhairt do an mhuintir?" errortext="do an" msg="Ba chóir duit «don» a úsáid anseo">
 <E offset="44" fromy="179" fromx="44" toy="179" tox="56" sentence="Is amhlaidh a bheidh freisin do na tagairtí do airteagail." errortext="do airteagail" msg="Ba chóir duit «d+uaschamóg» a úsáid anseo">
 <E offset="40" fromy="180" fromx="40" toy="180" tox="43" sentence="Tá sé de chúram seirbhís a chur ar fáil do a chustaiméirí i nGaeilge." errortext="do a" msg="Ba chóir duit «dá» a úsáid anseo">
 <E offset="29" fromy="181" fromx="29" toy="181" tox="33" sentence="Seinnigí moladh ar an gcruit do ár máthair." errortext="do ár" msg="Ba chóir duit «dár» a úsáid anseo">
@@ -247,7 +247,7 @@
 <E offset="74" fromy="244" fromx="74" toy="244" tox="75" sentence="Níor cuireadh aon tine síos, ar ndóigh, le chomh breá is a bhí an aimsir (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
 <E offset="36" fromy="245" fromx="36" toy="245" tox="37" sentence="Tá sí ag teacht le thú a fheiceáil (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
 <E offset="39" fromy="246" fromx="39" toy="246" tox="43" sentence="D'fhéadfadh tábhacht a bheith ag baint le an gcéad toisc díobh sin." errortext="le an" msg="Ba chóir duit «leis an» a úsáid anseo">
-<E offset="50" fromy="247" fromx="50" toy="247" tox="54" sentence="Molann an Coimisiún go maoineofaí scéim chun tacú le na pobail sin." errortext="le na" msg="Ba chóir duit «leis na» a úsáid anseo">
+<E offset="50" fromy="247" fromx="50" toy="247" tox="54" sentence="Molann an Coimisiún go maoineofaí scéim chun tacú le na pobail." errortext="le na" msg="Ba chóir duit «leis na» a úsáid anseo">
 <E offset="34" fromy="248" fromx="34" toy="248" tox="37" sentence="Labhraíodh gach duine an fhírinne le a chomharsa." errortext="le a" msg="Ba chóir duit «lena» a úsáid anseo">
 <E offset="40" fromy="249" fromx="40" toy="249" tox="43" sentence="Le halt 16 i ndáil le hiarratas ar ordú le a meastar gur tugadh toiliú." errortext="le a" msg="Ba chóir duit «lena» a úsáid anseo">
 <E offset="28" fromy="250" fromx="28" toy="250" tox="32" sentence="Beir i do láimh ar an tslat le ar bhuail tú an abhainn, agus seo leat." errortext="le ar" msg="Ba chóir duit «lenar» a úsáid anseo">
