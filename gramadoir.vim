@@ -31,7 +31,7 @@ function s:Check()
   execute "normal \<C-W>b"
   execute "normal \<C-W>K"
   execute "normal \<C-W>b"
-  execute "normal 6\<C-W>_"
+  execute "normal 7\<C-W>_"
   execute "normal 1G"
   execute "normal \<C-W>t"
   execute "normal 1G"
@@ -52,13 +52,14 @@ function s:NextError()
   let l:boldplustail=strpart(l:currline, l:position-1, strlen(l:currline)-l:position)
   let l:bolderror=matchstr(l:boldplustail, "<b>[^<]*<.b>")
   let s:errorwords=strpart(l:bolderror, 3, strlen(l:bolderror)-7)
+  let s:errorpattern=substitute(s:errorwords," ",'[ \\t\\n]',"g")
   execute "normal jk0".l:position."l"
   execute "normal ll"
   execute "syntax match grError /".s:errorwords."/"
   execute "normal \<C-W>t"
   execute "normal ".l:linenumber."G"
   call search(s:errorwords)
-  execute "syntax match grError /".s:errorwords."/"
+  execute "syntax match grError /".s:errorpattern."/"
   highlight grError cterm=bold ctermfg=Red guifg=Red
 endfunction
 
