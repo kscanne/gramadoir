@@ -593,7 +593,8 @@ g?[Cc]h?úig <NP>(bliana|cinn|cloigne|fichid|huaire)</NP>:OK
 <N>n?[Dd]h?áréag</N> <NP>ban</N>:OK
 <N>n?[Dd]h?áréag</N> <N>m?bh?ean</N>:BACHOIR{ban}
 # corpus; CB p.109 for conjugation of "déan"
-<V>n?[Dd]h?éanadh</V>:CAIGHDEAN{rinneadh, déanamh}
+#  not sure what I was thinking here, I see plenty of legit imperfects...
+# <V>n?[Dd]h?éanadh</V>:CAIGHDEAN{rinneadh, déanamh}
 # CB p.24 #11.a.iv, LGG p.112
 #. D'oibrigh mé liom go dtí Dé Aoine.
 Dé Aoine:PREFIXH
@@ -1195,7 +1196,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # No need for future forms "Ní faighidh" since these aren't 
 # legal words and will show up as unknown
 #. Ní fuaireamar puinn eile tuairisce air i ndiaidh sin.
-<U>[Nn]í</U> <V>FAIGHECLIPSE</V>:URU
+<U>[Nn]í</U> <V>FAIGHTOECLIPSE</V>:URU
 # CB p.132 #5
 #. Ní chuireadar aon áthas ar Mhac Dara.
 [Nn]í <VPAST>ANYTHING</VPAST>:BACHOIR{níor}
@@ -1655,6 +1656,8 @@ ECLIPSINGNUMBER <E><N>ECLIPSED</N></E>:OK
 <Q>([Aa]n|[Cc]á)</Q> <E><V>ECLIPSED</V></E>:OK
 <C>([Dd]á|[Gg]o|[Mm]ura|[Ss]ula)</C> <E><V>ECLIPSED</V></E>:OK
 <S>NONRFORMPREP</S> <E><V>ECLIPSED</V></E>:OK
+# CB p.133 #12.e
+<U>[Nn]í</U> <E><V>FAIGHECLIPSED</V></E>:OK
 #############################################################################
 #  <=> Prefix h rules (verbs handled at top)
 #############################################################################
@@ -1767,7 +1770,7 @@ d?[tT]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 #. Fágadh faoi smacht a lámh iad (OK).
 <VPAUT>INITIALVOWELORF</VPAUT>:OK
 <VPAST>[Aa]rsa</VPAST>:OK
-<VPAST>FAIGHECLIPSE</VPAST>:OK
+<VPAST>FAIGHTOECLIPSE</VPAST>:OK
 <C>RFORMCONJ</C> <E><VDEE>INITIALVOWELORF</VDEE></E>:OK
 <S>RFORMPREP</S> <E><VDEE>INITIALVOWELORF</VDEE></E>:OK
 [Aa]r|[Cc]ár|[Cc]har|[Nn]ár|[Nn]íor <E><VDEE>INITIALVOWELORF</VDEE></E>:OK
