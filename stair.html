@@ -33,6 +33,7 @@ independently as the Perl module <i>Lingua::GA::Gramadoir</i>.
 <tr><td>0.3</td> <td>21 Oct 2003</td> <td>315,002</td> <td>23,353</td> <td>-</td>     <td>24</td>    <td>177</td> <td>18</td></tr>
 <tr><td>0.4</td> <td>8 Jan 2004</td> <td>315,041</td> <td>24,107</td> <td>214</td>    <td>331</td>   <td>361</td> <td>77</td></tr>
 <tr><td>0.50</td> <td>28 Jul 2004</td> <td>320,958</td> <td>27,868</td> <td>222</td>    <td>333</td>   <td>362</td> <td>77</td></tr>
+<tr><td>0.51</td> <td>25 Aug 2004</td> <td>321,088</td> <td>31,077</td> <td>222</td>    <td>333</td>   <td>362</td> <td>77</td></tr>
 </table>
 
 <h2>Benchmarks</h2>
@@ -52,9 +53,24 @@ dual Xeon box running Gentoo Linux).   WPM = words per minute.
 <tr><td>0.3</td> <td><i>241.61</i></td> <td><i>47781</i></td> <td><i>5.04</i></td> <td><i>1.11</i></td> <td><i>-</i></td> <td><i>3.41</i></td> <td><i>-</i></td> <td><i>-</i></td> <td><i>227.64</i></td> <td><i>0.44</i></td> <td><i>3.97</i></td></tr>
 <tr><td>0.4</td> <td><i>208.39</i></td> <td><i>55398</i></td> <td><i>15.06</i></td> <td><i>2.60</i></td> <td><i>6.39</i></td> <td><i>133.83</i></td> <td><i>26.46</i></td> <td><i>0.76</i></td> <td><i>19.25</i></td> <td><i>1.04</i></td> <td><i>3.00</i></td></tr>
 <tr><td>0.50</td> <td><i>216.36</i></td> <td><i>53357</i></td> <td><i>6.97</i></td> <td><i>6.05</i></td> <td><i>9.75</i></td> <td><i>144.02</i></td> <td><i>29.08</i></td> <td><i>1.41</i></td> <td><i>14.72</i></td> <td><i>1.83</i></td> <td><i>2.60</i></td></tr>
+<tr><td>0.51</td> <td><i>204.19</i></td> <td><i>56537</i></td> <td><i>6.95</i></td> <td><i>6.63</i></td> <td><i>8.97</i></td> <td><i>130.11</i></td> <td><i>26.89</i></td> <td><i>1.26</i></td> <td><i>19.03</i></td> <td><i>1.65</i></td> <td><i>2.62</i></td></tr>
 </table>
 
 <h2>ChangeLog Summary</h2>
+<p>
+<b>Version 0.50->0.51</b>
+<ul>
+<li>Lexicon additions and improvements
+<li>Improved error trapping
+<li>Improved Perl code generation (consistent use of non-capturing
+parentheses, etc.) giving 5% speed improvement.
+<li>Perl implementation of developer options "--brill", "--freq", "--ambig"
+distributed in the language pack <i>gramadoir-ga-0.51</i>.
+<li>Added "--no-unigram" option to <i>gram-ga.pl</i>
+<li>POD documentation for <i>gram-ga.pl</i>
+</ul>
+</p> 
+
 <p>
 <b>Version 0.4->0.50</b>
 <ul>
