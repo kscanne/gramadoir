@@ -34,8 +34,9 @@ LOWERS = !LOWERS!
 AUTHOR = !AUTHOR!
 
 # targets '
+SCRIPTNAME = gram-${TEANGA}.pl
 PERLTOP = $(PERLD)/Changes $(PERLD)/Makefile.PL $(PERLD)/MANIFEST $(PERLD)/MANIFEST.SKIP $(PERLD)/README
-PERLCODE = $(PERLD)/scripts/gram-$(TEANGA).pl $(PERLLIB).pm
+PERLCODE = $(PERLD)/scripts/$(SCRIPTNAME) $(PERLLIB).pm
 LEXICONS = $(SHARE)/3grams.bs $(SHARE)/earraidi.bs $(SHARE)/eile.bs $(SHARE)/focail0.bs $(SHARE)/nocombo.bs $(SHARE)/pos.bs
 EXTRAS = $(SHARE)/gramadoir.el $(SHARE)/gramadoir.vim
 TESTS = $(PERLD)/t/$(PERLD).t
@@ -55,7 +56,7 @@ install : all
 	(cd $(PERLD); make pure_install)
 
 installcheck : triail FORCE
-	@LC_ALL=C gram-$(TEANGA).pl --dath=none --iomlan --aspell --aschod=iso-8859-1 triail | sed "s/^[0-9]*: //" > triail.tmp
+	@LC_ALL=C $(SCRIPTNAME) --dath=none --iomlan --aspell --aschod=iso-8859-1 triail | sed "s/^[0-9]*: //" > triail.tmp
 	@if diff triail.err triail.tmp; then $(ECHO) 'OK.'; else $(ECHO) 'Problem.'; fi
 	@rm -f triail.tmp
 
@@ -65,10 +66,6 @@ lexicon-$(TEANGA).txt : lexicon-$(TEANGA).bs
 $(PERLD)/Changes : Changes
 	cp -f Changes $@
 	chmod 644 $@
-
-# Irish only
-# Changes : stair.html
-# 	vilistextum stair.html - | sed -n '/^ChangeLog/,/----/p' | egrep -v -- '---' > $@
 
 $(PERLD)/Makefile.PL : $(GRAMDIR)/Makefile.PL.in
 	cat $(GRAMDIR)/Makefile.PL.in | sed "s/@TEANGA@/$(UPPERTEANGA)/g; s/@LOWERTEANGA@/$(TEANGA)/g" > $@
@@ -95,8 +92,8 @@ $(PERLD)/README : $(GRAMDIR)/README.perl
 	sed "s/@UPPERTEANGA@/$(UPPERTEANGA)/; s/@NAME_ENG@/$(NAME_ENG)/; /^Copyright (C)/s/.*/&\n                   $(AUTHOR)/" $(GRAMDIR)/README.perl > $@
 	chmod 644 $@
 
-$(PERLD)/scripts/gram-$(TEANGA).pl : $(GRAMDIR)/gram.pl
-	cat $(GRAMDIR)/gram.pl | sed "s/@PACKAGE_VERSION@/$(PERLVERSION)/; s/@TEANGA@/$(UPPERTEANGA)/g; s/@NATIVE@/$(NATIVE)/g; s/@NAME_ENGLISH@/$(NAME_ENG)/g; /^# Copyright (C)/s/.*/&\n#                    $(AUTHOR)/" > $@
+$(PERLD)/scripts/$(SCRIPTNAME) : $(GRAMDIR)/gram.pl
+	cat $(GRAMDIR)/gram.pl | sed "s/@SCRIPTNAME@/$(SCRIPTNAME)/; s/@PACKAGE_VERSION@/$(PERLVERSION)/; s/@TEANGA@/$(UPPERTEANGA)/g; s/@NATIVE@/$(NATIVE)/g; s/@NAME_ENGLISH@/$(NAME_ENG)/g; /^Copyright (C)/s/.*/&\n                   $(AUTHOR)/" > $@
 	chmod 644 $@
 
 $(SHARE)/3grams.bs : 3grams-$(TEANGA).txt
@@ -120,10 +117,10 @@ $(SHARE)/pos.bs : pos-$(TEANGA).txt
 	chmod 644 $@
 
 $(SHARE)/gramadoir.el : $(GRAMDIR)/gramadoir.el
-	sed "s/gram-ga\.pl/gram-$(TEANGA).pl/g" $(GRAMDIR)/gramadoir.el > $@
+	sed "s/gram-ga\.pl/$(SCRIPTNAME)/g" $(GRAMDIR)/gramadoir.el > $@
 
 $(SHARE)/gramadoir.vim : $(GRAMDIR)/gramadoir.vim
-	sed "s/gram-ga\.pl/gram-$(TEANGA).pl/g" $(GRAMDIR)/gramadoir.vim > $@
+	sed "s/gram-ga\.pl/$(SCRIPTNAME)/g" $(GRAMDIR)/gramadoir.vim > $@
 
 $(PERLD)/t/$(PERLD).t : $(GRAMDIR)/Lingua-XX-Gramadoir.t triail
 	touch triail.xml
@@ -137,11 +134,11 @@ triail : rialacha-$(TEANGA).in
 
 triail.xml : FORCE
 	$(MAKE) triail
-	LC_ALL=ga_IE gram-$(TEANGA).pl --api --iomlan --aspell triail > triail.xml
+	LC_ALL=ga_IE $(SCRIPTNAME) --api --iomlan --aspell triail > triail.xml
 
 triail.err : FORCE
 	rm -f triail.err
-	LC_ALL=C gram-$(TEANGA).pl --dath=none --iomlan --aspell triail | sed 's/^[0-9]*: //' > triail.err
+	LC_ALL=C $(SCRIPTNAME) --dath=none --iomlan --aspell triail | sed 's/^[0-9]*: //' > triail.err
 
 $(PERLLIB).pm : $(GRAMDIR)/Gramadoir.pm.in $(INTERMEDIATE)
 	sed "/^# morphology code /r morph-$(TEANGA).pl" $(GRAMDIR)/Gramadoir.pm.in > $@
@@ -183,7 +180,7 @@ locale_ok :
 	cat "$<" | sed '/^#/!s/:/~:/' | tr "~" "\n" | LC_ALL="C" $(PERL) -n $(GRAMDIR)/gin.meta.pl | LC_ALL="C" $(PERL) -p macra-${TEANGA}.meta.pl | LC_ALL="C" $(PERL) -p $(GRAMDIR)/`echo $< | sed 's/-.*//'`.meta.pl | sed 's/^/\t/' > $@
 
 giorr-$(TEANGA).pl : giorr-$(TEANGA).txt giorr-$(TEANGA).pre
-	(cat giorr-$(TEANGA).pre | egrep '^s/' | sed 's/^/\t/'; cat giorr-$(TEANGA).txt | sed 's/.*/\ts\/([^@BDCHARS@@INTCHARS@]&)\\.\/$$1\\\\.\/g;/') > $@
+	(cat giorr-$(TEANGA).pre | egrep '^s/' | sed 's/^/\t/'; cat giorr-$(TEANGA).txt | sed 's/ .*//' | sed 's/.*/\ts\/([^@BDCHARS@@INTCHARS@]&)\\.\/$$1\\\\.\/g;/') > $@
 
 unigram-$(TEANGA).pl : unigram-$(TEANGA).pre unigram-$(TEANGA).txt
 	(cat unigram-$(TEANGA).pre | egrep '^s/' | sed 's/^/\t/'; cat unigram-$(TEANGA).txt | sed 's/^\(<\([A-Z]\)[^>]*\)>/\ts\/<B><Z>(?:<[^>]*>)*\1.>(?:<[^>]*>)*<\\\/Z>([^<]+)<\\\/B>\/\1>$$1<\\\/\2>\/g;/') > $@
@@ -196,7 +193,7 @@ topclean :
 
 distclean :
 	$(MAKE) topclean
-	rm -f $(PERLTOP) $(PERLCODE) $(LEXICONS) $(EXTRAS) $(TESTS)
+	rm -f $(PERLTOP) $(PERLCODE) $(LEXICONS) $(EXTRAS) $(TESTS) $(PERLD)/Makefile
 	rm -f Makefile
 	rm -f triail triail.xml
 
