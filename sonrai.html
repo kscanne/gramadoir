@@ -104,13 +104,24 @@ the markup into your own NLP tools.
 
 <h3><i>abairti</i></h3>
 <p>
-Coming soon...
+This module is implemented as a couple of simple sed scripts.  It
+inserts line number references from the original text,
+strips out any existing markup (which would interfere with
+several of the later steps), tokenizes according to the 
+language specific information given in the file <i>TEANGACHA</i>,
+and (most importantly) breaks up the input file into "sentences", 
+one per line.   The ends of sentences are determined by a 
+simple regular expression (roughly [.?!] followed by 
+optional quotations, parentheses, braces, then some white space).
+"False positives" are avoided by escaping punctuation in certain 
+circumstances -- see "escape_punc" in <i>gr</i> and the abbreviation
+database in the file <i>giorr-ga</i>.
 </p>
  
 <h3><i>cuardach</i></h3>
 <p>
 This is the only part of the code which uses the dictionary
-database <i>focail.bs</i>.  It is (for this reason) the only module
+database <i>focail-ga.bs</i>.  It is (for this reason) the only module
 which is written in C.   The database consists of around 300,000 
 records, each representing an Irish word, of the form:
 </p>
@@ -207,9 +218,18 @@ disambiguation strategy.    A typical rule provides a regular
 expression containing an ambiguous word in some local context,
 plus the disambiguated part of speech appropriate for that context.
 One simple example in Irish is to match (in the tagged XML stream)
-the ambiguous word "an" followed by any verb; in this case
-"an" is likely to be an interrogative particle and not the definite
+the ambiguous word <i lang="ga">an</i> followed by any verb; in this case
+<i lang="ga">an</i>
+is likely to be an interrogative particle and not the definite
 article.
+</p>
+
+<p>
+The existing rule set was constructed by hand.  However 
+in doing so I relied heavily
+on a large (untagged) corpus of Irish and a suite of simple statistical
+machine-learning tools I've implemented.  These are similar in spirit
+to Brill's "unsupervised" tagging algorithm.
 </p>
 
 <p>

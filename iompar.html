@@ -87,6 +87,15 @@ specifically American and British word lists that are distributed with
 You can choose the grammatical codes that go into <i>focail-xx.bs</i>
 and the corresponding XML tags as you see fit;
 just correctly convert the former to the latter in this one function.
+The only restrictions are that you may not use 0 or 10 as grammatical codes
+(the first would confuse the C program which manages the database
+and the second is used as a delimiter in <i>focail-xx.bs</i>).
+Also, code 127 has a special meaning across all languages: it is
+used to markup words which are correct but are very rare or
+might hide common misspellings.   A good example in Irish
+is <i lang="ga">brúitíneach</i> which means "a small fat person"
+and does not appear in my corpus of over 20 million words
+except as a misspelling of <i lang="ga">bruitíneach</i> ("the measles").
 </p>
 
 <p>
