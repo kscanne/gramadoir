@@ -1,0 +1,207 @@
+# Mesajele în limba românã pentru pachetul gramadoir.
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Acest fiºier este distribuit sub aceeaºi licenþã ca pachetul gramadoir.
+# Eugen Hoanca <eugenh@urban-grafx.ro>, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramadoir 0.3\n"
+"POT-Creation-Date: 2003-10-21 10:32-0500\n"
+"PO-Revision-Date: 2003-10-28 12:23+0200\n"
+"Last-Translator: Eugen Hoanca <eugenh@urban-grafx.ro>\n"
+"Language-Team: Romanian <translation-team-ro@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: cuardach.c:83 cuardach.c:102 cuardach.c:145 cuardach.c:218
+#, c-format
+msgid "%s: out of memory\n"
+msgstr "%s: Memorie plinã\n"
+
+#: cuardach.c:92
+#, c-format
+msgid "%s: `%s' corrupted at %s\n"
+msgstr "%s: `%s' corupt la %s\n"
+
+#: cuardach.c:115 cuardach.c:156 cuardach.c:236
+#, c-format
+msgid "%s: warning: check size of %s: %d?\n"
+msgstr "%s: avertisment: verificaþi mãrimea lui %s: %d?\n"
+
+#: cuardach.c:120 cuardach.c:161 cuardach.c:242
+#, c-format
+msgid "%s: warning: problem closing %s\n"
+msgstr "%s: avertisment: problemã la închiderea %s\n"
+
+#: cuardach.c:278
+#, c-format
+msgid "%s: no grammar codes\n"
+msgstr "%s: nu existã codecuri de gramaticã\n"
+
+#: cuardach.c:518
+msgid "problem with the `cuardach' command\n"
+msgstr "problemã cu comanda `cuardach'\n"
+
+#: cuardach.c:528
+#, c-format
+msgid "%s: problem reading the database\n"
+msgstr "%s: problemã în citirea bazei de date\n"
+
+#: farc.c.in:19
+#, c-format
+msgid "Language %s is not supported."
+msgstr "Limba %s nu este suportatã."
+
+#: farc.c.in:23
+#, c-format
+msgid "%s: illegal grammatical code\n"
+msgstr "%s: cod gramatical incorect\n"
+
+#: ponc.in.y:63
+#, c-format
+msgid "There was %d error.\n"
+msgid_plural "There were %d errors.\n"
+msgstr[0] "S-a produs %d eroare.\n"
+msgstr[1] "S-au produs %d erori.\n"
+
+#: ponc.in.y:69
+#, c-format
+msgid "Successfully parsed %d rule.\n"
+msgid_plural "Successfully parsed %d rules.\n"
+msgstr[0] "S-a analizat cu succes %d regulã.\n"
+msgstr[1] "S-au analizat cu succes %d reguli.\n"
+
+#: ponc.in.y:79
+#, c-format
+msgid "Line %d: %s\n"
+msgstr "Linia %d: %s\n"
+
+#: gr.in:35
+msgid "An Gramadoir"
+msgstr "Un Gramadoir"
+
+#: gr.in:36
+msgid "Currently checking %s"
+msgstr "În prezent se verificã %s"
+
+#: gr.in:37
+msgid "There is no such file."
+msgstr "Nu a existat acest fiºier."
+
+#: gr.in:38
+msgid "Is a directory"
+msgstr "E un director."
+
+#: gr.in:39
+msgid "Permission denied"
+msgstr "Permisiune neacordatã."
+
+#: gr.in:40
+msgid "Usage: %s [OPTIONS] [FILES]"
+msgstr "Folosire: %s [OPÞIUNI] [FIªIERE]"
+
+#: gr.in:41
+msgid "    --litriu       write misspelled words to standard output"
+msgstr "    --litriu       scrie cuvintele greºite la ieºirea standard"
+
+#: gr.in:42
+msgid "    --html         produce HTML output for viewing in a web browser"
+msgstr "    --html         produce output HTML pentru vizualizarea într-un browser de web"
+
+#: gr.in:43
+msgid "    --xml          write tagged XML stream to standard output, for debugging"
+msgstr "    --xml          scrie secvenþã XML marcat(tagged) la ieºirea standard, pentru debugging"
+
+#: gr.in:44
+msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
+msgstr "    --iomlan       raporteazã toate erorile (i.e. nu se foloseºte ~/.neamhshuim)"
+
+#: gr.in:45
+msgid "    --teanga=XX    specify the language of the text to be checked (default=ga)"
+msgstr "    --teanga=XX    specificã limba textului care urmeazã a fi verificat(implicit=ga)"
+
+#: gr.in:46
+msgid "    --ionchod=ENC  specify the character encoding of the text to be checked"
+msgstr "    --ionchod=ENC  specificã codarea(encoding) de textului ce urmeazã a fi verificat"
+
+#: gr.in:47
+msgid "    --help         display this help and exit"
+msgstr "    --help         afiºeazã acest help ºi iese"
+
+#: gr.in:48
+msgid "    --version      output version information and exit"
+msgstr "    --version      afiºeazã informaþii despre versiune ºi iese"
+
+#: gr.in:49
+msgid "If no file is given, read from standard input."
+msgstr "Dacã nu este furnizat nici un fiºier, se citeºte de la intrarea standard."
+
+#: gr.in:50
+msgid "Send bug reports to <%s>."
+msgstr "Trimiteþi rapoarte de bug-uri la <%s>."
+
+#: gr.in:51
+msgid "version %s"
+msgstr "versiunea %s"
+
+#: gr.in:52
+msgid "This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law."
+msgstr "Acesta este software liber; citiþi sursele pentru condiþiile de copiere.  NU existã\\nNICI o garanþie; nici mãcar pentru VANDABILITATE SAU MODIFICARE ÎNTR-UN SCOP PRIVAT,\\npe întinderea permisã de lege."
+
+#: gr.in:53
+msgid "Try %s for more information."
+msgstr "Încercaþi %s pentru mai multe informaþii."
+
+#: gr.in:54
+msgid "unrecognized option %s"
+msgstr "opþiune necunoscutã %s."
+
+#: gr.in:55
+msgid "option %s requires an argument"
+msgstr "opþiunea %s necesitã un parametru"
+
+#: gr.in:56
+msgid "option %s does not allow an argument"
+msgstr "opþiunea %s nu permite parametri"
+
+#: gr.in:57
+msgid "Unknown word (ignoring remainder in this sentence)"
+msgstr "Cuvânt necunoscut (se ignorã marcajul(remainder) în aceastã propoziþie)"
+
+#: gr.in:58
+msgid "Unknown word"
+msgstr "Cuvânt necunoscut"
+
+#: gr.in:59
+msgid "You should use \\/\\1\\/ here instead"
+msgstr "Ar trebui sã folosiþi mai bine \\/\\1\\/ aici"
+
+#: gr.in:60
+msgid "Non-standard form: perhaps use \\/\\1\\/?"
+msgstr "Formã nestandardizatã: mai bine folosiþi  \\/\\1\\/?"
+
+#: gr.in:61
+msgid "Initial mutation missing"
+msgstr "Mutaþie iniþialã lipsã"
+
+#: gr.in:62
+msgid "Unnecessary lenition"
+msgstr "Indulgenþã(lenition) nenecesarã"
+
+#: gr.in:63
+msgid "Prefix \\/h\\/ missing"
+msgstr "Lipseºte prefixul \\/h\\/"
+
+#: gr.in:64
+msgid "Prefix \\/t\\/ missing"
+msgstr "Lipseºte prefixul \\/t\\/"
+
+#: gr.in:65
+msgid "Lenition missing"
+msgstr "Indulgenþã(lenition) lipsã"
+
+#: gr.in:66
+msgid "Eclipsis missing"
+msgstr "Eclipsare(eclipsis) lipsã"
