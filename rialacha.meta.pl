@@ -8,7 +8,7 @@
 # NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #
 s/\|<B><Z>[^+]+\+<\\\/Z>[^\/]+\/B>//g;
-s/\(\?:<\[\\\/A-DF-Z\]\[^>\]\*>\)\+/<[A-DF-Z][^>]*>/g;
+s/\(\?:<\[\\\/A-DF-Z\]\[\^>\]\*>\)\+/<[A-DF-Z][^>]*>/g;
 if (/:OK *$/) {
 #	s/^/s\/<E[^>]*>(/;
 #	s/:OK *$/)<\\\/E>\/\$1\/g;/;
