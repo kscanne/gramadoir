@@ -319,7 +319,7 @@ unchecked_xml()
 {
 		diutf | 
 		abairti |
-		@prefix@/libexec/cuardach "${USEIGNORE}" "${CLAR}"
+		@prefix@/libexec/cuardach "${USEIGNORE}" "${CLAR}" "${TEANGA}"
 }
 
 # This replaces "comhad" when "--xml" options is given
