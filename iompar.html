@@ -70,6 +70,17 @@ some preliminary work involved in constructing one.
 </p>
 
 <p>
+If you have a <a href="http://sourceforge.net/">sourceforge</a> 
+account, send me your user name and I will add you as a 
+developer to the
+<a href="http://sourceforge.net/projects/gramadoir/">gramadoir project</a>.
+If not, it is easy to
+<a href="http://sourceforge.net/account/newuser_emailverify.php">register for an account</a>.
+This is required in order to have write access to the project
+<a href="http://sourceforge.net/cvs/?group_id=114958">CVS repository</a>.
+</p>
+
+<p>
 Next, <a href="sios.html">download</a> the latest version of
 the developers' pack, extract, and configure it:
 </p>
@@ -89,28 +100,31 @@ into an installable Perl module.
 </p>
 
 <p>
-Now put the language pack <i>gramadoir-xx-0.01.tar.gz</i> in the
-<i>gramadoir-x.x</i> directory you just created and unpack:
+The next step is to checkout the language pack from CVS.
+The sourceforge site has some excellent documentation on
+<a href="http://sourceforge.net/docman/display_doc.php?docid=768&group_id=1">using CVS as a developer</a> and an overview document for anyone
+<a href="http://sourceforge.net/docman/display_doc.php?docid=14033&group_id=1">new to CVS</a>.
+Here is the command (substituting your
+sourceforge account name for "username" and your language code for 
+"xx"):
 </p>
 
 <pre>
-$ gunzip gramadoir-xx-0.01.tar.gz
-$ tar xvf gramadoir-xx-0.01.tar
-$ cd gramadoir-xx-0.01
-$ ls
-3grams-xx.txt     eisceacht-xx.in   pos-xx.txt
-aonchiall-xx.in   freq-xx.txt       README
-Changes           giorr-xx.pre      rialacha-xx.in
-comhshuite-xx.in  giorr-xx.txt      triail.xml
-configure*        lexicon-xx.bs     unigram-xx.pre
-COPYING           macra-xx.meta.pl  unigram-xx.txt
-earraidi-xx.bs    morph-xx.txt
-eile-xx.bs        nocombo-xx.txt
+$ cvs -d:ext:username@cvs.sf.net:/cvsroot/gramadoir checkout xx
+cvs checkout: Updating xx
+U xx/3grams-xx.txt
+U xx/COPYING
+U xx/Changes
+U xx/README
+U xx/aonchiall-xx.in
+U xx/comhshuite-xx.in
+...
 </pre>
 
-<p>Then run "configure" to create a Makefile:</p>
+<p>Then run "configure" in this directory to create a Makefile:</p>
 
 <pre>
+$ cd xx
 $ ./configure
 </pre>
 
