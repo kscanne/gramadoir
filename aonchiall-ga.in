@@ -19,11 +19,9 @@
 <B>[Ff]aoin</B>:<S>
 <B>[Cc]heana</B>:<R>
 <B>[Mm]ás</B>:<C>
-<B>[Aa]b</B>:<V>
+<B>[Aa]b</B>:<V cop="y">
+# lowercase ach under last resorts
 <B>Ach</B>:<C>
-<B>ach</B> <V>ANYTHING</V>:<C>
-<B>ach</B> <N>ANYTHING</N>:<S>
-<B>ach</B> <T>ANYTHING</T>:<S>
 <B>[Aa]ir</B>:<O>
 <B>h?áirithe</B>:<A>
 <B>[Aa]lt</B>:<N pl="n" gnt="n" gnd="m">
@@ -42,7 +40,7 @@
 <B>[Aa]n</B> <[^V]>ANYTHING</[^V]>:<T>
 <S>ANYTHING</S> <B>[Aa]n</B>:<T>
 # "ann" is a substantive in "in ann"
-<S>[Ii]n</S> <B>ann</B>:<N>
+<S>[Ii]n</S> <B>ann</B>:<N pl="n" gnt="n">
 <B>ann</B>:<O>
 <B>[Aa]nuas</B>:<R>
 [Mm]ar <B>aon</B>:<N pl="n" gnt="n" gnd="m">
@@ -51,35 +49,50 @@
 <B>ár</B> <C>ANYTHING</C>:<N pl="n" gnt="n" gnd="m">
 <B>ár</B> <T>ANYTHING</T>:<N pl="n" gnt="n" gnd="m">
 <B>[Áá]r</B>:<D>
+<B>ata</B>:<F>
 <B>[Aa]tá</B>:<V t="láith">
 <T>[Nn]a</T> <B>ba</B>:<N pl="y" gnt="n" gnd="f">
-<B>[Bb]a</B>:<V>
+<B>[Bb]a</B>:<V cop="y">
+<B>m?[Bb]h?aile</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Bb]h?arr</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Bb]h?eag</B>:<A pl="n" gnt="n">
 <B>[Bb]hí</B>:<V p="xx" t="caite">
 <T>na</T> <B>[Cc]é</B>:<N pl="n" gnt="y" gnd="f">
 <B>[Cc][Éé]</B>:<Q>
 # an unusual step -- surely misspelling of "chéile" and not subjunctive.
-<B>cheile</B>:<X>
+<B>cheile</B>:<F>
+<B>cinn</B>:<N pl="n" gnt="y" gnd="m">
+<B>[Cc]omhalta</B>:<N pl="n" gnt="n" gnd="m">
 <B>g?ch?ónaí</B>:<N pl="n" gnt="n" gnd="m">
 # lenition => prob not imperative
 <B>[Cc]huir</B>:<V p="xx" t="caite">
 <T>na</T> <B>g[Cc]umann</B>:<N pl="y" gnt="y" gnd="m">
 <B>g?[Cc]h?umann</B>:<N pl="n" gnt="n" gnd="m">
-<B>n?[Dd]h?earna</B>:<V>
-<B>[Dd]eir</B>:<V>
+# OD dhá 
+[Aa]o?n <B>dá</B>:<A pl="n" gnt="n">
+# OD dhá 
+g?ch?éad <B>dá</B>:<A pl="n" gnt="n">
+<S>[Ss]a</S> <B>dá</B>:<A pl="n" gnt="n">
+<B>[Dd]á</B> <V>ANYTHING</V>:<C>
+<B>[Dd]á</B> <N>ANYTHING</N>:<D>
+<B>Dé</B>:<N pl="n" gnt="y" gnd="m">
+<N>Dé</N> <B><Z>ANYNMG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<N>Dé</N> <B><Z>ANYNFG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
+<B>[Dd]éag</B>:<N pl="n" gnt="n">
+<B>n?[Dd]h?earna</B>:<V p="xx" t="caite">
+<B>[Dd]eir</B>:<V t="láith">
 <B>[Dd]eireadh</B>:<N pl="n" gnt="n" gnd="m">
 <B>dío?bh</B>:<O>
-# last resort "do" -> <S> at bottom
 <B>[Dd]o</B> <T>na</T>:<S>
 <S>ANYTHING</S> <B>do</B>:<D>
 <B>do</B> <D>ANYTHING</D>:<S>
 <B>do</B> <Y>ANYTHING</Y>:<S>
 <B>do</B> gach:<S>
-<B>do</B> do:<S>
+# broken because of repeat markup?
+#do <B>do</B>:<D>
 # numerical, last resort <O> at bottom if not noun via Brill xforms
-a <B>dó</B>:<A>
-<B>dó</B> dhéag:<A>
+a <B>dó</B>:<N pl="n" gnt="n">
+<B>dó</B> dhéag:<A pl="n" gnt="n">
 <B>Dh?ún</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Éé]</B>:<P>
 <B>h?éasca</B>:<A>
@@ -97,6 +110,9 @@ a <B>dó</B>:<A>
 <B>[Gg]ach</B>:<A pl="n" gnt="n">
 <B>[Gg]o</B> <S>dtí</S>:<S>
 <B>[Gg]o</B> <A>ANYTHING</A>:<U>
+# amháin, siar, thiar, thuaidh, etc; iontach only prominent exception
+<B>iontach</B>:<A pl="n" gnt="n">
+<B><Z>ADJADV</Z>ANYTHING</B>:<R>
 <B>[Ll]án</B> <NP>ANYTHING</NP>:<N pl="n" gnt="n" gnd="m">
 <B>[Ll]án</B> <D>ANYTHING</D>:<N pl="n" gnt="n" gnd="m">
 <B>[Ll]án</B> <S>de</S>:<A pl="n" gnt="n">
@@ -115,30 +131,30 @@ an <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
 <B>[Mm]ar</B> gheall:<S>
 <B>[Mm]h?ór</B>:<A pl="n" gnt="n">
 <B>[Nn]á</B> <V>ANYTHING</V>:<U>
-<B>[Nn]á</B> <N>ANYTHING</N>:<C>
+<B>[Nn]á</B>:<C>
 <N>Spiorad</N> <B>Naomh</B>:<A pl="n" gnt="n">
 <B>[Nn]aomh</B>:<N pl="n" gnt="n" gnd="m">
 # listed as subjunctive in db, only used in phrase with faoi
-<B>ndeara</B>:<N>
+<B>ndeara</B>:<N pl="n" gnt="n">
 [Aa]n <B>[Nn]í</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Nn]í</B> nach:<N pl="n" gnt="n" gnd="m">
 <B>[Nn]í</B> a:<N pl="n" gnt="n" gnd="m">
 [Gg]ach <B>[Nn]í</B>:<N pl="n" gnt="n" gnd="m">
 [Aa]on <B>[Nn]í</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Nn]í</B> <V>ANYTHING</V>:<U>
-<B>[Nn]í</B> <A>mór</A>:<V>
-<C>ANYTHING</C> <B>ní</B> <[^V]>ANYTHING</[^V]>:<V>
-<B>[Nn]í</B> <N>ANYTHING</N>:<V>
-<B>[Nn]í</B> <P>ANYTHING</P>:<V>
+<B>[Nn]í</B> <A>mór</A>:<V cop="y">
+<C>ANYTHING</C> <B>ní</B> <[^V]>ANYTHING</[^V]>:<V cop="y">
+<B>[Nn]í</B> <N>ANYTHING</N>:<V cop="y">
+<B>[Nn]í</B> <P>ANYTHING</P>:<V cop="y">
 an <B>Níl</B>:<N pl="n" gnt="n" gnd="f">
 <S>ANYTHING</S> <B>Níl</B>:<N pl="n" gnt="n" gnd="f">
 <B>Níl</B>:<V t="láith">
-<B>[Nn]íor</B>:<V>
+<B>[Nn]íor</B>:<V cop="y">
 <B>[Nn]uair</B>:<C>
 <B>os</B>:<S>
 <T>na</T> <B>[Rr]inne</B>:<N pl="n" gnt="y" gnd="f">
 <B>[Rr]inne</B>:<V p="xx" t="caite">
-<B>San</B> CAPITAL:<N>
+<B>San</B> CAPITAL:<N pl="n" gnt="n">
 <B>San</B>:<S>
 # capital Sí is sometimes the noun; need for sé below
 <B>sí</B>:<P>
@@ -158,8 +174,11 @@ a <B>sé</B>:<A pl="n" gnt="n">
 <V>ANYTHING</V> <B>sé</B>:<P>
 <[^V]>ANYTHING</[^V]> <B>sé</B>:<A pl="n" gnt="n">
 <B>[Tt]har</B>:<S>
-<[^N]>ANYTHING</[^N]> <B>[Tt]he</B>:<X>
-<B>[Tt]he</B> <X>ANYTHING</X>:<X>
+<[^N]>ANYTHING</[^N]> <B>[Tt][Hh][Ee]</B>:<F>
+<B>[Tt][Hh][Ee]</B> <X>ANYTHING</X>:<F>
+<B>theannta</B>:<N pl="n" gnt="n" gnd="m">
+<B>[Tt]rí</B> bliana|cinn|fichid|seachtaine:<A pl="n" gnt="n">
+<B>[Tt]rí</B>:<S>
 <B>[Tt]ríd</B> <T>na</T>:<S>
 <B>[Tt]ríd</B> an:<S>
 <B>[Tt]ríd</B>:<O>
@@ -190,12 +209,17 @@ a <B>sé</B>:<A pl="n" gnt="n">
 <NFGS>ANYTHING</NFGS> <A>ANYTHING</A> <B><Z>AWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
 <NMGS>ANYTHING</NMGS> <A>ANYTHING</A> <B><Z>AWITHGSM</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="m">
 <NCS>ANYTHING</NCS> <A>ANYTHING</A> <B><Z>AWITHCOMMON</Z>ANYTHING</B>:<A pl="n" gnt="n">
+# na=>plural
+<T>[Nn]a</T> <B><Z>ANYNFPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+<T>[Nn]a</T> <B><Z>ANYNMPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 # go léir, go fóill
 [Gg]o <B><Z>AWITHCOMMON</Z>ANYTHING</B>:<A pl="n" gnt="n">
 <R>[Cc]homh</R> <B><Z>ANYWITHCOMMON</Z>ANYTHING</B>:<A pl="n" gnt="n">
 <R>[Cc]homh</R> <B><Z>ANYWITHCOMMONH</Z>ANYTHING</B>:<A pl="n" gnt="n" h="y">
 # comparitive, superlative; not nec. all adjective, e.g. "níos déanaí"
 <R>[Nn]íos</R> <B><Z>ANYWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
+<R>[Nn]íb</R> <B><Z>ANYWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
+<R>[Nn]íba</R> <B><Z>ANYWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
 [Ii]s <B><Z>ANYWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
 [Gg]o <B><Z>NOUNADJ</Z>ANYTHING</B>:<A pl="n" gnt="n">
 [Gg]o <B><Z>NOUNADJH</Z>ANYTHING</B>:<A pl="n" gnt="n" h="y">
@@ -203,7 +227,7 @@ a <B>sé</B>:<A pl="n" gnt="n">
 <S>ANYTHING</S> <B><Z>NMADJ</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <T>ANYTHING</T> <B><Z>NMADJ</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 [Aa] <B><Z>NMADJ</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<N>ANYTHING</N> <B><Z>NMADJ</Z>ANYTHING</B>:<A>
+<N>ANYTHING</N> <B><Z>NMADJ</Z>ANYTHING</B>:<A pl="n" gnt="n">
 # next batch is for feminine: "maith", etc.
 <S>ANYTHING</S> <B><Z>NFADJ</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <T>ANYTHING</T> <B><Z>NFADJ</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
@@ -212,51 +236,35 @@ a <B>sé</B>:<A pl="n" gnt="n">
 # next batch is for "scríobh", "rith", "líon", etc. 
 <S>ANYTHING</S> <B><Z>NMVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <T>ANYTHING</T> <B><Z>NMVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-a <B><Z>NMVERB</Z>ANYTHING</B> <P>ANYTHING</P>:<V>
-a <B><Z>NMVERB</Z>ANYTHING</B> sé:<V>
-a <B><Z>NMVERB</Z>ANYTHING</B> <N>ANYTHING</N>:<V>
-a <B><Z>NMVERB</Z>ANYTHING</B> <Y>ANYTHING</Y>:<V>
+a <B><Z>NMVERB</Z>ANYTHING</B> <P>ANYTHING</P>:<V p="xx" t="caite">
+a <B><Z>NMVERB</Z>ANYTHING</B> sé:<V p="xx" t="caite">
+a <B><Z>NMVERB</Z>ANYTHING</B> <N>ANYTHING</N>:<V p="xx" t="caite">
+a <B><Z>NMVERB</Z>ANYTHING</B> <Y>ANYTHING</Y>:<V p="xx" t="caite">
 a <B><Z>NMVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <V>ANYTHING</V> <B><Z>NMVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 # repeat previous batch for feminine:  "roinn", "úsáid", "chaill", etc. 
 <S>ANYTHING</S> <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <T>ANYTHING</T> <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
-a <B><Z>NFVERB</Z>ANYTHING</B> <P>ANYTHING</P>:<V>
-a <B><Z>NFVERB</Z>ANYTHING</B> sé:<V>
-a <B><Z>NFVERB</Z>ANYTHING</B> <N>ANYTHING</N>:<V>
-a <B><Z>NFVERB</Z>ANYTHING</B> <Y>ANYTHING</Y>:<V>
+a <B><Z>NFVERB</Z>ANYTHING</B> <P>ANYTHING</P>:<V p="xx" t="caite">
+a <B><Z>NFVERB</Z>ANYTHING</B> sé:<V p="xx" t="caite">
+a <B><Z>NFVERB</Z>ANYTHING</B> <N>ANYTHING</N>:<V p="xx" t="caite">
+a <B><Z>NFVERB</Z>ANYTHING</B> <Y>ANYTHING</Y>:<V p="xx" t="caite">
 a <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <V>ANYTHING</V> <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 # doesn't matter
 <B><Z>TEMPORAL</Z>ANYTHING</B>:<R>
-# mar, ach, go
-<B><Z>PREPCONJ</Z>ANYTHING</B> <N>ANYTHING</N>:<S>
-<B><Z>PREPCONJ</Z>ANYTHING</B> <T>na</T>:<S>
-<B><Z>PREPCONJ</Z>ANYTHING</B> an:<S>
-<B><Z>PREPCONJ</Z>ANYTHING</B> seo:<S>
-<B><Z>PREPCONJ</Z>ANYTHING</B> sin:<S>
-<B><Z>PREPCONJ</Z>ANYTHING</B> <V>ANYTHING</V>:<C>
-<B><Z>PREPCONJ</Z>ANYTHING</B> <C>ANYTHING</C>:<C>
-<B><Z>PREPCONJ</Z>ANYTHING</B> <U>a</U>:<C>
-<B><Z>PREPCONJ</Z>ANYTHING</B> <S>ANYTHING</S>:<C>
 <B><Z>PREPPOSS</Z>NOTDO</B> <V>ANYTHING</V>:<S>
-<B><Z>PREPPOSS</Z>NOTDO</B> <N>ANYTHING</N>:<D>
+<B><Z>PREPPOSS</Z>NOTDO</B>:<D>
 <B><Z>MASCPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 <B><Z>PROPER</Z>ANYTHING</B>:<Y>
 <B><Z>NMSUBJ</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <B><Z>NPLMSUBJ</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 <B><Z>NPLFSUBJ</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
 <B><Z>NPLF</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
-<B><Z>PLADJSUBJ</Z>ANYTHING</B>:<A pl="y" gnt="n">
-<B><Z>GENADJ</Z>ANYTHING</B>:<A>
-<B><Z>PREPPOSS</Z>NOTDO</B> <V>ANYTHING</V>:<S>
-<B><Z>PREPPOSS</Z>NOTDO</B> <N>ANYTHING</N>:<D>
-<B><Z>MASCPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
-<B><Z>PROPER</Z>ANYTHING</B>:<Y>
-<B><Z>NMSUBJ</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<B><Z>NPLMSUBJ</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
-<B><Z>NPLFSUBJ</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
-<B><Z>NPLF</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+# Táimid, etc.
+<B><Z>PRESSUBJ</Z>ANYTHING</B>:<V pl="y" p="1ú" t="láith">
+# Roinne, vótála, etc.
+<B><Z>NFGSUBJ</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 <B><Z>PLADJSUBJ</Z>ANYTHING</B>:<A pl="y" gnt="n">
 <B><Z>GENADJ</Z>ANYTHING</B>:<A>
 <T>an</T> <B><Z>NMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
@@ -284,6 +292,17 @@ a <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <[^N]>ANYTHING</[^N]> <B><Z>NFFOUR</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <T>na</T> <B><Z>NFFOURH</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f" h="y">
 <B><Z>NFFOURH</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f" h="y">
+# mar, ach, go
+<B><Z>PREPCONJ</Z>ANYTHING</B> <[NP]>ANYTHING</[NP]>:<S>
+<B><Z>PREPCONJ</Z>ANYTHING</B> <T>na</T>:<S>
+<B><Z>PREPCONJ</Z>ANYTHING</B> an:<S>
+<B><Z>PREPCONJ</Z>ANYTHING</B> seo:<S>
+<B><Z>PREPCONJ</Z>ANYTHING</B> sin:<S>
+#<B><Z>PREPCONJ</Z>ANYTHING</B> <[CSV]>ANYTHING</[CSV]>:<C>
+<B><Z>PREPCONJ</Z>ANYTHING</B>:<C>
+# nach and nár only: lumping in what is properly <Q> with particle <U>
+<B><Z>COPULAPART</Z>ANYTHING</B> <V>ANYTHING</V>:<U>
+<B><Z>COPULAPART</Z>ANYTHING</B>:<V cop="y">
 # do next batch for efficiency only
 <B><Z>GENERICPAST</Z>ANYTHING</B>:<V p="xx" t="caite">
 <B><Z>GENERICPRES</Z>ANYTHING</B>:<V t="láith">
@@ -293,10 +312,11 @@ a <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <B><Z>GENERICPAUT</Z>ANYTHING</B>:<V p="saor" t="caite">
 <B><Z>GENERICFIRST</Z>ANYTHING</B>:<V p="1ú" t="láith">
 <B><Z>GENERICSUB</Z>ANYTHING</B>:<V p="xx" t="foshuit">
+<B><Z>NUMERICAL</Z>ANYTHING</B>:<A pl="n" gnt="n">
 # last resorts
 # e.g.  next rule gets "ar siad" since siad -> <P> above 
-<B>[Aa]r</B> s[éí]:<V>
-<B>[Aa]r</B> <P>ANYTHING</P>:<V>
+<B>[Aa]r</B> s[éí]:<V cop="y">
+<B>[Aa]r</B> <P>ANYTHING</P>:<V cop="y">
 <B>[Aa]r</B>:<S>
 # "rinne siad ionadh de go raibh" needs go -> <C> first
 <B>[Dd]e</B> <C>ANYTHING</C>:<O>
@@ -305,7 +325,7 @@ a <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <B>[Dd]e</B>:<S>
 # "gur rinne" needs rinne -> <V> first
 <B>gur</B> <V>ANYTHING</V>:<C>
-<B>gur</B>:<V>
+<B>gur</B>:<V cop="y">
 # "is fada anois ó rinne ..." needs rinne -> <V>, also want <Y> resolved too
 <B>Ó</B> CAPITAL:<Y>
 # need this next one for "Ó hE.*", etc.
@@ -317,7 +337,7 @@ a <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 # "Ní hUallacháin", etc.
 <B>Ní</B> <Y>ANYTHING</Y>:<Y>
 # last resort -- (hopfully) copula + <S>,<A>,<R>, etc. Ní+<V>:<U> is done above
-<B>Ní</B>:<V>
+<B>Ní</B>:<V cop="y">
 <S>ANYTHING</S> <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
 <Q>ANYTHING</Q> <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
 <V>ANYTHING</V> <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
@@ -327,13 +347,13 @@ a <B><Z>NFVERB</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 #<B>[Aa]</B> UNLENITED:<D>
 <B>[Aa]</B> <N>ECLIPSED</N>:<D>
 <B>[Aa]</B> <NP>ANYTHING</NP>:<D>
-<B>[Aa]</B> chlog:<S>
+# see "trí a" rule.
+<B>[Aa]</B> chlog:<U>
 <B>[Aa]</B> chóir:<S>
 <B>[Aa]</B> dhíth:<S>
 <B>[Aa]</B> VNISH:<S>
-<B>[Aa]</B> (bheith|cheannach|chur|dhíol|dhul|fhoghlaim|iompar|oscailt|rá|roinnt|scríobh|theacht):<S>
+<B>[Aa]</B> bheith|cheannach|chur|dhíol|dhul|fhoghlaim|iompar|oscailt|rá|roinnt|scríobh|theacht:<S>
 <B>[Aa]</B>:<D>
-<B>[Dd]o</B>:<S>
 <B>dó</B>:<O>
 # functionally same as the adverb "too"; hopefully noun is picked up with <S>?
 <B>[Ll]eis</B>:<O>
