@@ -155,6 +155,7 @@ if ($version) {
 	exit 0;
 }
 do_help if $help;
+do_help unless ($brill or $ambig or $freq);
 
 my $gr = new Lingua::@TEANGA@::Gramadoir(
 	fix_spelling => 0,
@@ -287,8 +288,5 @@ elsif ($freq) {
 			print "\n";
 		}
 	}
-}
-else {
-	do_help;
 }
 exit 0;
