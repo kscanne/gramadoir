@@ -65,7 +65,7 @@
 <E offset="35" fromy="63" fromx="35" toy="63" tox="49" sentence="Teastaíonn uaidh an scéal a insint sula ngeobhaidh sé bás." errortext="sula ngeobhaidh" msg="Tá gá leis an fhoirm spleách anseo">
 <E offset="26" fromy="64" fromx="26" toy="64" tox="31" sentence="Tá folúntas sa chomhlacht ina tá mé ag obair faoi láthair." errortext="ina tá" msg="Tá gá leis an fhoirm spleách anseo">
 <E offset="0" fromy="65" fromx="0" toy="65" tox="12" sentence="Ní gheobhaidh an mealltóir nathrach aon táille." errortext="Ní gheobhaidh" msg="Tá gá leis an fhoirm spleách anseo">
-<E offset="10" fromy="66" fromx="10" toy="66" tox="13" sentence="Cad é mar a tá tú?" errortext="a tá" msg="Tá gá leis an fhoirm spleách anseo">
+<E offset="10" fromy="66" fromx="10" toy="66" tox="13" sentence="Cad é mar a tá tú?" errortext="a tá" msg="Ba chóir duit /atá/ a úsáid anseo">
 <E offset="16" fromy="67" fromx="16" toy="67" tox="22" sentence="Maidin lá ar na mhárach thug a fhear gaoil cuairt air." errortext="mhárach" msg="Ní úsáidtear an focal seo ach san abairtín /arna mhárach/ de ghnáth">
 <E offset="52" fromy="68" fromx="52" toy="68" tox="60" sentence="Tá an Rialtas tar éis áit na Gaeilge i saol na tíre a ceistiú." errortext="a ceistiú" msg="Séimhiú ar iarraidh">
 <E offset="52" fromy="69" fromx="52" toy="69" tox="53" sentence="Ach sin scéal eile mar a déarfadh an té a déarfadh (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha /^OK/ neamhdhóchúil)">
