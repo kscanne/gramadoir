@@ -193,11 +193,12 @@ sub build_hashes {
 #		binmode DATABASE, ":bytes";
 		while (<DATABASE>) {
 			chomp;
-			m/^(\S+)\s+'(.*)' *$/;
-			my $msgid = $2;
-			my @macros = split /=/,$1;
-			$msgid =~ s/\\'/'/g;
-			$MESSAGES{$_} = $msgid foreach (@macros);
+			if (m/^(\S+)\s+'(.*)' *$/) {
+				my $msgid = $2;
+				my @macros = split /=/,$1;
+				$msgid =~ s/\\'/'/g;
+				$MESSAGES{$_} = $msgid foreach (@macros);
+			}
 		}
 		close DATABASE;
 		store \%MESSAGES, $messagesfile;
