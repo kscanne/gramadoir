@@ -216,14 +216,14 @@ sin sin:OK
 # Note that "as" is sometimes <O>, e.g. before "chomh/chun" (aonchiall's job):
 #. Baintear feidhm as chun aicídí súl a mhaolú (OK).
 #. Má shuíonn tú ag bhord le flaith, tabhair faoi deara go cúramach céard atá leagtha romhat.
-<S>[Aa][gs]</S> LENITED:NISEIMHIU
+<S>[Aa][gs]</S> <[^Y]>LENITED</[^Y]>:NISEIMHIU
 # These aren't in corpus with "ag" so leave as error
 <S>[Aa]s</S> bheith|thú:OK
 <S>[Aa][gs]</S> bhur|dhá|thart:OK
 # CB p.14 Note; "~ bheith" not in corpus
 # works for all POS; as conjunction should have "amhail a dhéanann", etc. 
 #. Bláthaíonn sé amhail bhláth an mhachaire.
-<S>[Aa]mhail</S> LENITED:NISEIMHIU
+<S>[Aa]mhail</S> <[^Y]>LENITED</[^Y]>:NISEIMHIU
 <S>[Aa]mhail</S> [Dd]há:OK
 # CB p.22 #8.a, also CB p.134 #1.a
 <S>[Aa]mhail</S> <T>an</T> <NMCS>INITIALVOWEL</NMCS>:PREFIXT
@@ -448,13 +448,13 @@ g?[Cc]h?eithre <N>[Ss]heachtain</N>:BACHOIR{seachtaine}
 <S>[Cc]huig</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.14 Note; "~ bheith' not in corpus so no exception
 #. Níl tú do do sheoladh chuig dhaoine a labhraíonn teanga dhothuigthe.
-<S>[Cc]huig</S> LENITED:NISEIMHIU
+<S>[Cc]huig</S> <[^Y]>LENITED</[^Y]>:NISEIMHIU
 <S>[Cc]huig</S> bhur|dhá|thart:OK
 # CB p.22 #8.a
 <S>[Cc]huig</S> <T>an</T> <NMCS>PREFIXEDT</NMCS>:NITEE
 # CB p.14 Note; all POS ok 7 Jan 2005
 #. Seo deis iontach chun an Ghaeilge a chur chun chinn.
-[Cc]hun LENITED:NISEIMHIU
+[Cc]hun <[^Y]>LENITED</[^Y]>:NISEIMHIU
 #. Tiocfaidh deontas faoin alt seo chun bheith iníoctha (OK).
 [Cc]hun <N>bheith</N>:OK
 [Cc]hun bhur|dhá|thú:OK
@@ -622,7 +622,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 #. Rug sé ar ais mé go dhoras an Teampaill.
 # "go chéile" is in comhshuite
 #. Tiocfaidh coimhlintí chun tosaigh sa Chumann ó am go chéile (OK).
-[Gg]o LENITED:NISEIMHIU
+[Gg]o <[^Y]>LENITED</[^Y]>:NISEIMHIU
 #. Is turas iontach é an turas ó bheith i do thosaitheoir go bheith i do mhúinteoir (OK).
 [Gg]o <N>bheith</N>:OK
 #. Tá a chuid leabhar tiontaithe go dhá theanga fichead (OK).
@@ -632,7 +632,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 [Gg]o <T>ANYTHING</T>:BACHOIR{go dtí}
 # CB p.14 Note
 #. Tar, téanam go dtí bhean na bhfíseanna.
-<S>[Gg]o dtí</S> LENITED:NISEIMHIU
+<S>[Gg]o dtí</S> <[^Y]>LENITED</[^Y]>:NISEIMHIU
 #. Agus rachaidh mé siar go dtí thú tráthnóna, más maith leat (OK).
 <S>[Gg]o dtí</S> bhur|dhá|thart|thú:OK
 # CB p.22 #8.a, also CB p.134 #1.a
@@ -672,7 +672,8 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # corpus; previous two rules give more refined error message
 # rules seems to hold for any part of speech
 #. Bhí slám de pháipéar tais ag cruinniú i mhullach a chéile.
-<S>[Ii]</S> LENITED:NISEIMHIU
+#. Fuair Derek Bell bás tobann i Phoenix (OK).
+<S>[Ii]</S> <[^Y]>LENITED</[^Y]>:NISEIMHIU
 #. Tá níos mó ná 8500 múinteoir ann i thart faoi 540 scoil (OK).
 <S>[Ii]</S> <R>thart</R>:OK
 # CB p.6 #2
@@ -716,7 +717,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Ii]onsar</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.14 Note; extended to all POS 7 Jan 2005
 #. Is tuar dóchais é an méid dul chun cinn atá déanta le bhlianta beaga.
-<S>[Ll]e</S> LENITED:NISEIMHIU
+<S>[Ll]e</S> <[^Y]>LENITED</[^Y]>:NISEIMHIU
 # "le chéile" in comhshuite
 #. Leanaigí oraibh le bhur ndílseacht dúinn (OK).
 #. Baineann an scéim le thart ar 28,000 miondíoltóir ar fud na tíre (OK).
@@ -792,7 +793,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <C>[Mm]ura</C> <VPAST>PASTNORFORM</VPAST>:OK
 # CB p.14 Note
 # Murach fhear na haislinge cén áit a mbeadh tír na hÉireann inniu?
-<C>[Mm]urach</C> LENITED:NISEIMHIU
+<C>[Mm]urach</C> <[^Y]>LENITED</[^Y]>:NISEIMHIU
 #. Murach bheith mar sin, bheadh sé dodhéanta dó oibriú na huaireanta fada (OK).
 <C>[Mm]urach</C> bheith|chomh|thú:OK
 # CB p.22 #8.a, also CB p.134 #1.a
@@ -817,7 +818,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 #. Chuir an Coimisiún féin comhfhreagras chuig na eagraíochtaí seo ag lorg eolais faoina ngníomhaíochtaí.
 <T>na</T> <NCP>INITIALVOWEL</NCP>:PREFIXH
 # corpus; holds for any POS really
-<T>[Nn]a</T> LENITED:NISEIMHIU
+<T>[Nn]a</T> <[^Y]>LENITED</[^Y]>:NISEIMHIU
 <T>[Nn]a</T> [Cc]héad:OK
 #. Tá an tréith sin coitianta i measc na nÉireannaigh sa tír seo.
 <T>[Nn]a</T> <NCP>ECLIPSED</NCP>:GENITIVE
@@ -995,7 +996,7 @@ h?[Oo]ocht <N>[Ss]eachtain</N>:BACHOIR{seachtaine}
 # CB p.14 Note; no "os bheith" in corpus so no exception
 #. Tá do ghéaga spréite ar bhraillín ghléigeal os fharraige faoileán.
 #. Ar ais leis ansin os chomhair an teilifíseáin.
-[Oo]s LENITED:NISEIMHIU
+[Oo]s <[^Y]>LENITED</[^Y]>:NISEIMHIU
 [Oo]s bhur:OK
 # OD pé
 #. Uaidh féin, b'fhéidir, pé é féin.
