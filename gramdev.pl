@@ -6,11 +6,11 @@
 
 =head1 SYNOPSIS
 
-B<@SCRIPTNAME@> --ambig [I<options>]
+B<@SCRIPTNAME@> --ambig
 
-B<@SCRIPTNAME@> --brill [I<options>]
+B<@SCRIPTNAME@> --brill
 
-B<@SCRIPTNAME@> --freq [I<options>]
+B<@SCRIPTNAME@> --freq
 
 =head1 DESCRIPTION
 
