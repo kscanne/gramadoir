@@ -11,8 +11,8 @@
 # controlled by GNU gettext, and information about available user interface
 # languages can be found in the "po" directory (in particular, "po/LINGUAS").
 # 
-ga ISO-8859-1 A-ZΑΙΝΣΪa-zαινσϊ '-
-GA UTF-8 A-ZΓΓ‰ΓΓ“Γa-zΓ΅Γ©Γ­Γ³ΓΊ '-
-en ISO-8859-1 A-Za-z '
-EN ASCII A-Za-z '
-#fi ISO-8859-1 A-Za-zΔδφ '-
+ga ISO-8859-1 A-ZΑΙΝΣΪa-zαινσϊ '- A-ZΑΙΝΣΪ a-zαινσϊ
+en ISO-8859-1 A-Za-z ' A-Z a-z
+EN ASCII A-Za-z ' A-Z a-z
+cy ISO-8859-14 'A-Za-zΑΙΝΣΪαινσϊύέΐΘΜÒΩΰθμςωΔΛΟΦάδλοφόÿ―ΒΚΞΤΫβκξτϋπΠώή - A-ZΑΙΝΣΪέΐΘΜÒΩΔΛΟΦά―ΒΚΞΤΫΠή a-zαινσϊύΰθμςωδλοφόÿβκξτϋπώ
+#fi ISO-8859-1 A-Za-zΔδφ '- A-ZΔ a-zδ
