@@ -7,6 +7,7 @@
 " Licence:          This program is free software; you can redistribute it
 "                   and/or modify it under the terms of the GNU General Public
 "                   License.  See http://www.gnu.org/copyleft/gpl.txt
+" Version:          0.4.1, 2004-02-08
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if exists("loaded_gramadoir") || &compatible
    finish
