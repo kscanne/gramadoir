@@ -3,7 +3,8 @@
 # on the web page:  http://borel.slu.edu/gramadoir/
 # Please send me any useful additional rules for inclusion in
 # future releases: <scannell@slu.edu>
-#<X>ANYTHING</X>:ANAITHNID
+#
+<X>ANYTHING</X>:ANAITHNID
 # CB p.16 #9.a  (needs shallow parse)
 #<NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.16 #9.b  (needs shallow parse)
@@ -39,13 +40,13 @@
 # CB p.6 #1
 <T>[Aa]n</T> <NP>ANYTHING</NP>:BACHOIR{na}
 # CB p.13 #3.c
-<A>[Aa]on</A> <N>UNLENITEDBCFGMP</N>:SEIMHIU
+[Aa]on <N>UNLENITEDBCFGMP</N>:SEIMHIU
 # CB p.19 #13, p.132 #5
-<Q>[Aa]r</Q> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
+[Aa]r <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
 # CB p.20 1.a
 <D>[¡·]r</D> UNECLIPSED:URU
 # CB p.20 1.b
-<D>[¡·]r</D> dh· <N>UNECLIPSED</N>:URU
+[¡·]r dh· <N>UNECLIPSED</N>:URU
 # CB p.16 #7 (N), p.18 #10 (A)
 <V>[Aa]rbh</V> UNLENITEDF:SEIMHIU
 # CB p.16 #7 (N), p.18 #10 (A)
@@ -67,7 +68,7 @@
 # OD77 c·; see exceptions
 <Q>[Cc]·</Q> <N>LENITED</N>:NISEIMHIU
 # CB p.19 #13, p.132 #5
-<Q>[Cc]·r</Q> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
+[Cc]·r <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
 # CB p.24 #11.c
 <Q>[Cc]È</Q> <P>INITIALVOWEL</P>:PREFIXH
 # CB p.6 #2
@@ -77,9 +78,9 @@
 # CB p.13 #3.f
 [Cc]eithre <NCS>UNLENITED</NCS>:SEIMHIU
 # CB p.13 #3.c
-<A>[Cc]hÈad</A> <N>UNLENITEDBCFGMP</N>:SEIMHIU
+[Cc]hÈad <N>UNLENITEDBCFGMP</N>:SEIMHIU
 # CB p.24 #11.b.ii
-<R>[Cc]homh</R> <A>INITALVOWEL</A>:PREFIXH
+<R>[Cc]homh</R> INITIALVOWEL:PREFIXH
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 <S>[Cc]huig</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.17 #9.h
@@ -168,7 +169,7 @@ Fh?Èile LENITED:NISEIMHIU
 # CB p.14 Note
 <S>[Ll]e</S> <N>LENITED</N>:NISEIMHIU
 # CB p.24 #11.a.v (N) #11.b.ii (A) #11.c (P)
-<S>[Ll]e</S> INITALVOWEL:PREFIXH
+<S>[Ll]e</S> INITIALVOWEL:PREFIXH
 # CB p.6 #2
 <S>[Ll]e</S> <T>an</T>:BACHOIR{leis_an}
 # CB p.6 #2
