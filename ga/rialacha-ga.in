@@ -1737,6 +1737,7 @@ ECLIPSINGNUMBER <E><N>ECLIPSED</N></E>:OK
 [Cc]é|[Nn]í|[Ll]e|[Pp]é <E><PWITHH>ANYTHING</PWITHH></E>:OK
 #. Ba iad na trí háit iad Bostún, Baile Átha Cliath agus Nua Eabhrac.
 <NWITHH>ANYTHING</NWITHH>:NIAITCH
+<N>Dé</N> <E><NWITHH>hAoine</NWITHH></E>:OK
 # feminine possessives are ok (+ina,faoina,etc.)
 #. Phós sé bean eile ina háit (OK).
 <D>FINALA</D> <E><NWITHH>ANYTHING</NWITHH></E>:OK
