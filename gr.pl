@@ -1,14 +1,16 @@
-#!/usr/bin/perl
+#!/usr/bin/perl -w
+
+use strict;
 use Frontier::Client;
-use Encode 'from_to';
+use Encode qw(from_to);
+
+binmode STDOUT, ":utf8";
 my $server_url = 'http://borel.slu.edu:8080/RPC2';
 my $server = Frontier::Client->new(url => $server_url,  debug => 0, );
-my @textinput = <>;
-my $toserver = "@textinput";
+local $/;
+my $toserver = <STDIN>;
 from_to($toserver, "iso-8859-1", "utf-8");
 print $server->call('gaeilge.gramadoir', $toserver);
-
-
 
 
 # (1) Download and install Perl for Windows from
