@@ -25,7 +25,8 @@ then
 	echo "\"y\" means use the internal crubadan encoding, \"n\" for utf8"
 	exit
 fi
-TEMPLATE=${HOME}/gaeilge/gramadoir/gr/xx
+GRAMDIR=${HOME}/gaeilge/gramadoir/gr
+TEMPLATE=${GRAMDIR}/xx
 TEANGA="${1}"
 UPPERTEANGA=`echo "${TEANGA}" | tr "[:lower:]" "[:upper:]"`
 VERSION="0.01"
@@ -87,7 +88,7 @@ s/\^LOWERS\^/${LOWERS}/
 s/\^AUTHOR\^/${AUTHOR}/
 " ${TEMPLATE}/configure > ${DIR}/configure
 chmod 755 ${DIR}/configure
-cp COPYING ${DIR}/COPYING
+cp ${GRAMDIR}/COPYING ${DIR}/COPYING
 touch ${DIR}/earraidi-${TEANGA}.bs
 touch ${DIR}/eile-${TEANGA}.bs
 cp ${TEMPLATE}/eisceacht-xx.in ${DIR}/eisceacht-${TEANGA}.in
@@ -110,7 +111,7 @@ sed "/CAPITAL/s/A-Z/${UPPERS}/" ${TEMPLATE}/macra-xx.meta.pl > ${DIR}/macra-${TE
 sed "s/A-Z/${UPPERS}/" ${TEMPLATE}/morph-xx.txt > ${DIR}/morph-${TEANGA}.txt
 touch ${DIR}/nocombo-${TEANGA}.txt
 (echo "1 <U>"; echo "127 <F>") > ${DIR}/pos-${TEANGA}.txt
-sed "s/@TEANGA@/${TEANGA}/; s/@NAME_ENGLISH@/${NAME_ENG}/" README-xx > ${DIR}/README
+sed "s/@TEANGA@/${TEANGA}/; s/@NAME_ENGLISH@/${NAME_ENG}/" ${GRAMDIR}/README-xx > ${DIR}/README
 cp ${TEMPLATE}/rialacha-xx.in ${DIR}/rialacha-${TEANGA}.in
 cp ${TEMPLATE}/unigram-xx.pre ${DIR}/unigram-${TEANGA}.pre
 cp ${TEMPLATE}/unigram-xx.txt ${DIR}/unigram-${TEANGA}.txt
