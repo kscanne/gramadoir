@@ -247,11 +247,13 @@ topclean :
 # lexicon-xx.txt is treated like a distributed file even though it's not
 distclean :
 	$(MAKE) clean
+	$(MAKE) lexicon-$(TEANGA).txt  # this line and next ensure .bs is OK
+	$(MAKE) rebuildlex
 	rm -f Makefile $(PERLDOK) lexicon-$(TEANGA).txt
 	rm -fR $(PERLD)
 
 clean :
-	(cd $(PERLD); if [ -e Makefile ]; then make distclean; fi)
+	if [ -e $(PERLD)/Makefile ]; then (cd $(PERLD);  make distclean); fi
 	$(MAKE) topclean
 	rm -f $(PERLTOP) $(PERLCODE) $(LEXICONS) $(EXTRAS) $(TESTS) $(PERLD)/Makefile locale_ok $(PERLLIB)/Languages.pm $(PERLLIB)/Languages/*.pm $(SHARE)/focail?.bs $(PERLD)/META.yml
 
