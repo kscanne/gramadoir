@@ -8,3 +8,5 @@
 #
 s/ANYTHING/[^<]*/g;
 s/CAPITAL/[A-Z -¯À-Þ][^<]*/g;
+s/INITIALVOWEL/[AEIOUaeiou][^<]*/g;
+s/YOO/[Uu](?:ni[^mn]|[^aeioun][aeiou])[^<]*/g;
