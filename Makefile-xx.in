@@ -216,7 +216,7 @@ locale_ok : $(PERLDOK)
 	cat "$<" | LC_ALL="C" $(PERL) $(GRAMDIR)/gin.meta.pl `sed -n '/<[A-Z] /{s/^[0-9]* <\([A-Z]\).*/\1/; p;}' pos-$(TEANGA).txt | sort -u | tr -d "\n"` | LC_ALL="C" $(PERL) -p macra-${TEANGA}.meta.pl | LC_ALL="C" $(PERL) $(GRAMDIR)/`$(ECHO) $< | sed 's/-.*//'`.meta.pl | sed 's/^/\t/' > $@
 
 giorr-$(TEANGA).pl : giorr-$(TEANGA).txt giorr-$(TEANGA).pre
-	(cat giorr-$(TEANGA).pre | $(EGREP) '^s/' | sed 's/^/\t/'; cat giorr-$(TEANGA).txt | sed 's/ .*//' | sed 's/.*/\ts\/([^@BDCHARS@@INTCHARS@]&)\\.\/$$1$$NOBD.\/g;/') > $@
+	(cat giorr-$(TEANGA).pre | $(EGREP) '^s/' | sed 's/^/\t/'; cat giorr-$(TEANGA).txt | LC_ALL=C sed 's/ .*//' | LC_ALL=C sed 's/.*/\ts\/([^@BDCHARS@@INTCHARS@]&)\\.\/$$1$$NOBD.\/g;/') > $@
 
 unigram-$(TEANGA).pl : unigram-$(TEANGA).pre unigram-$(TEANGA).txt
 	(cat unigram-$(TEANGA).pre | $(EGREP) '^s/' | sed 's/^/\t/'; cat unigram-$(TEANGA).txt | sed 's/^\(<\([A-Z]\)[^>]*\)>/\ts\/<B><Z>(?:<[^>]*>)*\1.>(?:<[^>]*>)*<\\\/Z>([^<]+)<\\\/B>\/\1>$$1<\\\/\2>\/g;/') > $@
