@@ -45,13 +45,19 @@ cuardach.o : cuardach.c
 	$(CC) -c $(CFLAGS) $(DEFS) -DBSONRAI=\"$(pkgdatadir)\" cuardach.c
 
 rialacha.pl : rialacha.in rialacha.meta.sed gin.meta.sed
-	($(ECHO) "#!$(PERL)"; $(ECHO) '# Users should modify rialacha.in, not this file'; $(ECHO) 'while(<>){';  cat rialacha.in | sed -f gin.meta.sed | sed -f rialacha.meta.sed; $(ECHO) 'print;'; $(ECHO) '}'; $(ECHO) 'exit;') > rialacha.pl
+	cat rialacha.in | sed '/^#/!s/:/\n:/' > rialacha.in.2
+	($(ECHO) "#!$(PERL)"; $(ECHO) '# Users should modify rialacha.in, not this file'; $(ECHO) 'while(<>){';  cat rialacha.in.2 | sed -f gin.meta.sed | sed -f rialacha.meta.sed; $(ECHO) 'print;'; $(ECHO) '}'; $(ECHO) 'exit;') > rialacha.pl
+	rm -f rialacha.in.2
 
 aonchiall.pl : aonchiall.in aonchiall.meta.sed gin.meta.sed
-	($(ECHO) "#!$(PERL)"; $(ECHO) '# Users should modify aonchiall.in, not this file'; $(ECHO) 'while(<>){'; cat aonchiall.in | sed -f gin.meta.sed | sed -f aonchiall.meta.sed; $(ECHO) 'print;'; $(ECHO) '}'; $(ECHO) 'exit;') > aonchiall.pl
+	cat aonchiall.in | sed '/^#/!s/:/\n:/' > aonchiall.in.2
+	($(ECHO) "#!$(PERL)"; $(ECHO) '# Users should modify aonchiall.in, not this file'; $(ECHO) 'while(<>){'; cat aonchiall.in.2 | sed -f gin.meta.sed | sed -f aonchiall.meta.sed; $(ECHO) 'print;'; $(ECHO) '}'; $(ECHO) 'exit;') > aonchiall.pl
+	rm -f aonchiall.in.2
 
 eisceacht.pl : eisceacht.in eisceacht.meta.sed gin.meta.sed
-	($(ECHO) "#!$(PERL)"; $(ECHO) '# Users should modify eisceacht.in, not this file'; $(ECHO) 'while(<>){'; cat eisceacht.in | sed -f gin.meta.sed | sed -f eisceacht.meta.sed; $(ECHO) 'print;'; $(ECHO) '}'; $(ECHO) 'exit;') > eisceacht.pl
+	cat eisceacht.in | sed '/^#/!s/:/\n:/' > eisceacht.in.2
+	($(ECHO) "#!$(PERL)"; $(ECHO) '# Users should modify eisceacht.in, not this file'; $(ECHO) 'while(<>){'; cat eisceacht.in.2 | sed -f gin.meta.sed | sed -f eisceacht.meta.sed; $(ECHO) 'print;'; $(ECHO) '}'; $(ECHO) 'exit;') > eisceacht.pl
+	rm -f eisceacht.in.2
 
 installcheck : FORCE
 	@$(bindir)/gr --iomlan triail | sed "s/^[0-9]*: //" > triail.tmp
@@ -165,7 +171,7 @@ dist : FORCE
 
 triail.err : FORCE
 	rm -f triail.err
-	gr triail > triail.err
+	gr --iomlan triail > triail.err
 
 focail.bs : FORCE
 	$(MAKE) cabhair
