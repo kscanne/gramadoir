@@ -94,6 +94,19 @@ echo ${gpl3}
 echo ${gpl4}
 }
 
+htmlversion()
+{
+echo "<p>"
+echo "<a href=\"http://borel.slu.edu/gramadoir/\">${CLAR}</a>, ${versionstring}<br>"
+echo "Copyright (C) 2003 <a href=\"http://borel.slu.edu/\">Kevin P. Scannell</a><br><br>"
+echo "<i>"
+echo "${gpl1}"
+echo "${gpl2}"
+echo "${gpl3}"
+echo "${gpl4}"
+echo "</i></p><hr>"
+}
+
 # this is what happens if --help is passed
 helpout()
 {
@@ -126,7 +139,7 @@ tr -d "\303" | tr "[\200-\277]" "[\300-\377]"
 # whether I like the line number markups on the interiors of lines
 abairti()
 {
-@EGREP@ -n '^' | sed "
+tr -d "\015" | @EGREP@ -n '^' | sed "
 		s/<[^>]*>//g; 
 		s/[&\<>]/ /g; 
 		s/[A-Za-z·ÈÌÛ˙¡…Õ”⁄][A-Za-z·ÈÌÛ˙¡…Õ”⁄-]*/<c>&<\/c>/g; 
@@ -329,11 +342,17 @@ litriu()
 
 AIBHSIGHVAR="@EGREP_COLOR@ "
 ACTION=comhad
+SCRIOBH_HTML=nihea
 while [ ${1%%[^-]*} ]
 do
 	case "${1}" in
 		"--version" )
-			versionout
+			if [ ${SCRIOBH_HTML} = "issea" ]
+			then
+				htmlversion
+			else
+				versionout
+			fi
 			exit 0
 		;;
 		"--help" )
@@ -342,6 +361,7 @@ do
 		;;
 		"--html" )
 			AIBHSIGHVAR="@AWK@ -f @prefix@/libexec/hilite.awk pattern="
+			SCRIOBH_HTML=issea
 		;;
 		"--litriu" )
 			ACTION=litriu
