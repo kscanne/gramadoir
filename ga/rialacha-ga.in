@@ -131,7 +131,7 @@ sin sin:OK
 <NFCS>ANYTHING</NFCS> <A>COMPOUND</A>:OK
 # corpus; exception to "lenite adj after feminine noun" (céad comes before)
 #. Léimeann an fharraige céad méadar suas sa spéir (OK).
-<NFCS>ANYTHING</NFCS> <A>(céad|curtha|gach|seo|sin)</A>:OK
+<NFCS>ANYTHING</NFCS> <A>(céad|curtha|gach|seo|sin|tugtha)</A>:OK
 <NFCS>[Bb]heith</NFCS> <A>UNLENITED</A>:OK
 # next rule doesn't make sense: "bileog bholscaireachta dhátheangach" is fine
 # will need a shallow parse to link up adjectives to nouns they modify
@@ -157,7 +157,7 @@ sin sin:OK
 # corpus exceptions
 #. Mhair cuid mhór dár sinsir céad caoga bliain ó shin (OK).
 #. Tá sé le cloisteáil sna meáin gach seachtain (OK).
-<NP>SLENDERFINALCONSONANT</NP> <A>(céad|curtha|gach|seo|sin)</A>:OK
+<NP>SLENDERFINALCONSONANT</NP> <A>(céad|curtha|gach|seo|sin|tugtha)</A>:OK
 # INPHRASE rule, but example sentence is best caught before "na" rules
 #. Maidin lá ar na mhárach thug a fhear gaoil cuairt air.
 <N>[Mm]hárach</N>:INPHRASE{arna mhárach}
@@ -367,6 +367,9 @@ h?[Aa]on <N>UNLENITEDBCFGMP</N>:SEIMHIU
 # CB p.13 #3.f, p.76 #8.b
 #. Beidh ar Bhord Feidhmiúcháin an tUachtarán agus ceithre ball eile.
 g?[Cc]h?eithre <N>UNLENITED</N>:SEIMHIU
+# OD dúil "Lit."
+#. Tá sé tuigthe aige go bhfuil na ceithre dúile ann (OK).
+<T>[Nn]a</T> <E>g?[Cc]h?eithre <N>[Dd]úile</N></E>:OK
 # CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
 g?[Cc]h?eithre <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</N>:OK
 # CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
@@ -648,7 +651,10 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Ii]dir</S> <T>an</T> <NFCS>ECLIPSED</NFCS>:SEIMHIU
 # CB p.20 Note, OD i^1, "in bhur", "in dhá" in eisceacht
 #. Thug sé seo deis dom breathnú in mo thimpeall.
+#. Phós sí Pádraig, fear ón mBlascaod Mór, in 1982.
 <S>[Ii]n</S> INITIALCONSONANT:BACHOIR{i}
+#. Phós sí Pádraig, fear ón mBlascaod Mór, in 1892 (OK).
+<S>[Ii]n</S> <A>VOWELNUMERAL</A>:OK
 # two exceptions when "in" is OK before a consonant:
 #. Theastaigh uaibh beirt bheith in bhur scríbhneoirí (OK).
 <S>[Ii]n</S> <D>[Bb]hur</D>:OK
@@ -933,6 +939,8 @@ h?[Oo]ocht <N>[Ss]eachtain</N>:BACHOIR{seachtaine}
 # CB p.6 #2 <=>
 #. An bhfuil aon uachtar reoite agat sa oighear?
 <S>[Ss]a</S> INITIALVOWELORF:BACHOIR{san}
+#. Abairt a chuireann in iúl dearóile na hÉireann sa 18ú agus sa 19ú haois.
+<S>[Ss]a</S> VOWELORDINAL:BACHOIR{san}
 # CB p.12 #1.c.i; prev. rule handles f+vowel, so next one is f[lr] only
 #. An bhfuil aon uachtar reoite agat sa cuisneoir?
 <S>[Ss]a</S> UNLENITEDBCFGMP:SEIMHIU
@@ -957,6 +965,8 @@ h?[Oo]ocht <N>[Ss]eachtain</N>:BACHOIR{seachtaine}
 # CB p.6 #2 <=>
 #. Tugaimid faoi abhainn na Sionainne san bhád locha ó Ros Comáin.
 <S>[Ss]an</S> NONVOWELNONF:BACHOIR{sa}
+#. Tógadh an foirgneamh féin san 18ú haois (OK).
+<S>[Ss]an</S> VOWELORDINAL:OK
 # CB p.24 #11.a.x
 #. Ní féidir iad a sheinm le snáthaid ach cúig nó sé uaire.
 #. Dúirt sé uair amháin nach raibh áit eile ar mhaith leis cónaí ann (OK).
