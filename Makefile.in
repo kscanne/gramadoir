@@ -55,16 +55,26 @@ cuardach.o : cuardach.c gettext.h
 farc.o : farc.c
 	$(CC) -c $(CFLAGS) $(DEFS) farc.c
 
-farc.c : TEANGACHA
+farc.c : TEANGACHA farc.c.in
 	for teanga in $(TEANGACHA); do \
+		$(ECHO) "extern int my_tolower_$${teanga} (const char* w, int* pos, char* lowered);"; \
+		$(ECHO) "extern int make_all_lowercase_$${teanga} (const char* w, char *lwr, int l, int u, int f);"; \
 		$(ECHO) "extern int byte_to_markup_$${teanga} (const unsigned char c, char *fill, char *attrs);"; \
-	done > seal1.sub
+	done > seal0.sub
+	for teanga in $(TEANGACHA); do \
+		$(ECHO) "  else if (!strcmp (teanga, \"$${teanga}\"))"; \
+		$(ECHO) "    return my_tolower_$${teanga} (w, pos, lowered);"; \
+	done | sed '1s/else //' > seal1.sub
+	for teanga in $(TEANGACHA); do \
+		$(ECHO) "  else if (!strcmp (teanga, \"$${teanga}\"))"; \
+		$(ECHO) "    return make_all_lowercase_$${teanga} (word, lowered, lowers, uppers, firstupper);"; \
+	done | sed '1s/else //' > seal3.sub
 	for teanga in $(TEANGACHA); do \
 		$(ECHO) "  else if (!strcmp (teanga, \"$${teanga}\"))"; \
 		$(ECHO) "    ret = byte_to_markup_$${teanga} (c, fill, attrs);"; \
-	done | sed '1s/else //' > seal2.sub
-	cat farc.c.in | sed "/Prototypes/r seal1.sub" | sed "/External calls/r seal2.sub" > farc.c
-	rm -f seal1.sub seal2.sub
+	done | sed '1s/else //' > seal4.sub
+	cat farc.c.in | sed "/Prototypes/r seal0.sub" | sed "/External 1/r seal1.sub" | sed "/External 3/r seal3.sub" | sed "/External 4/r seal4.sub" > farc.c
+	rm -f seal*.sub
 
 .in.pl :
 	cat $< | sed '/^#/!s/:/~:/' | tr "~" "\n" > $<.2
@@ -267,13 +277,20 @@ triail.err : FORCE
 	rm -f triail.err
 	LC_ALL=C gr --iomlan triail > triail.err
 
-focail-ga.bs : FORCE
-	$(MAKE) cabhair
+FOCAIL-ga.all : FORCE
 	Gin 12
 	((cat ${HOME}/.ispell_gaeilge | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/'; cat ${HOME}/.biobla | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | ispell -dgaeilge -p/dev/null -l) | sed 's/.*/& 44/'; cat FOCAIL) | LC_COLLATE=POSIX sort -u -k1,1 -k2,2n > FOCAIL-ga.all
+	rm -f FOCAIL
+
+focail-ga.bs : FOCAIL-ga.all
+	$(MAKE) cabhair
 	(cat FOCAIL-ga.all | sed 's/ [0-9]*//' | uniq | wc -l | sed 's/^ *//'; cat FOCAIL-ga.all | ./cabhair 0) > focail-ga.bs
 	chmod 644 focail-ga.bs
-	rm -f FOCAIL
+
+focail-GA.bs : FOCAIL-ga.all
+	$(MAKE) cabhair
+	(cat FOCAIL-ga.all | sed 's/ [0-9]*//' | uniq | wc -l | sed 's/^ *//'; cat FOCAIL-ga.all | iconv -f ISO-8859-1 -t UTF-8 | ./cabhair 0) > focail-GA.bs
+	chmod 644 focail-GA.bs
 
 focail-EN.bs : FORCE
 	$(MAKE) cabhair
@@ -339,6 +356,9 @@ eile-ga.bs : FORCE
 	cat eile.pre.bs | ./cabhair 1 | egrep . > tempeile
 	(cat tempeile | wc -l | sed 's/^[^0-9]*//'; cat tempeile) > ./eile-ga.bs
 	rm -f eile.pre.bs tempeile
+
+eile-GA.bs : eile-ga.bs
+	cat eile-ga.bs | iconv -f ISO-8859-1 -t UTF-8 > eile-GA.bs
 
 unigram-ga.txt :
 	beocorp | gr --minic --iomlan > unigram-ga.txt
