@@ -13,6 +13,7 @@
 # CB=The Christian Brothers, New Irish Grammar, C. J. Fallon, 1994.
 #
 <X>ANYTHING</X>:ANAITHNID
+<X>ANYTHING</X>:ANAITHNIDSRL
 # CB p.16 #9.a  (needs shallow parse)
 #<NFCS>ANYTHING</NFCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.16 #9.b  (needs shallow parse)

@@ -63,6 +63,7 @@ TAB=`@AWK@ 'BEGIN{printf "\t";}'`
 loganu()
 {
 sed "
+s/\"ANAITHNIDSRL/\"Focal anaithnid (scaoilfear an chuid eile)/g
 s/\"ANAITHNID/\"Focal anaithnid/g
 /BACHOIR/s/_/ /g
 s/\"BACHOIR{\([^}]*\)}/\"Ba chóir duit \/\1\/ a úsáid anseo/g
@@ -118,7 +119,7 @@ tr -d "\303" | tr "[\200-\277]" "[\300-\377]"
 # whether I like the line number markups on the interiors of lines
 abairti()
 {
-egrep -n '^' | sed "
+@EGREP@ -n '^' | sed "
 		s/<[^>]*>//g; 
 		s/&//g; 
 		s/[A-Za-záéíóúÁÉÍÓÚ][A-Za-záéíóúÁÉÍÓÚ-]*/<c>&<\/c>/g; 
