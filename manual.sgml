@@ -1,0 +1,800 @@
+<!doctype book PUBLIC "-//OASIS//DTD DocBook V3.1//EN"[
+  <!ENTITY gram "<foreignphrase lang='ga'>An Gramad&oacute;ir</foreignphrase>">
+  <!ENTITY crub "<foreignphrase lang='ga'>An Cr&uacute;bad&aacute;n</foreignphrase>">
+]>
+
+<book id="gramadoir-manual" lang="en">
+  <bookinfo>
+    <date>2005-03-01</date>
+    <title><ulink url="http://borel.slu.edu/gramadoir/">&gram;</ulink></title>
+    <subtitle>Developers' Guide</subtitle>
+    <author>
+	<firstname>Kevin</firstname>
+	<surname>Scannell</surname>
+	<affiliation>
+	  <orgname>Saint Louis University</orgname>
+	</affiliation>
+    </author>
+    <authorinitials>kps</authorinitials>
+    <address>
+      <email>scannell@slu.edu</email>
+    </address>
+    <copyright>
+      <year>2005</year>
+      <holder>Kevin P. Scannell</holder>
+    </copyright>
+    <legalnotice><para>
+      This document can be freely redistributed according to the terms
+      of the <ulink url="http://www.gnu.org/copyleft/fdl.html"><acronym>GNU</acronym> Free Documentation License</ulink>.</para>
+    </legalnotice>
+  </bookinfo>
+  <toc></toc>
+  <chapter>
+    <title>An Overview</title>
+    <para>This manual is intended for developers interested in 
+    porting &gram; to a new language.  Help for 
+    end users with installation, usage, etc. is available from
+    the <ulink url="http://borel.slu.edu/gramadoir/">web site</ulink>.
+    </para>
+    <note><title>Convention</title>
+      <para>
+        Throughout this manual, I will use "xx" or "XX" to refer
+	to the ISO-639 two- or three-letter code for your language.
+      </para>
+    </note>
+    <sect1>
+        <title>Package Structure</title>
+	<para>Three different packages are involved when creating
+	  a grammar checker for your language.  The first is
+	  <application>gramadoir</application> itself, which is the grammar
+	  checking "engine", and is completely language-independent.
+	  Sometimes I'll refer to this as the
+	  <firstterm>developers' pack</firstterm>.
+	  The second is
+	  <application>gramadoir-xx</application>
+	  (the so-called <firstterm>language pack</firstterm>) which contains
+	  all of the language-specific input files.
+	  These two packages work together to produce, automatically, an 
+	  installable Perl module
+	  <application>Lingua::XX::Gramadoir</application>
+	  that end users can download
+	  (e.g. from <ulink url="http://www.cpan.org/"><acronym>CPAN</acronym></ulink>),
+	  install, and use to check their grammar.    
+	</para>
+      </sect1>
+      <sect1>
+        <title>Available languages</title>
+	<para>The goal of this project is to provide a framework 
+	  for the development of language technology for languages
+	  with limited computational resources.  Using corpora
+	  harvested by my web crawler 
+	  <ulink url="http://borel.slu.edu/crubadan/">&crub;</ulink>,
+	  and statistical analyses of these corpora, it is possible
+	  to get something simple up and running with a minimum
+	  of work.
+	</para>
+	<para>
+	  In addition to the flagship Irish version, there are several other
+	  language packs currently available (in various stages of
+	  completion):
+	  Afrikaans (by Petri Jooste),
+	  Cornish (by Paul Bowden and Edi Werner),
+	  Walloon (by Pablo Saratxaga),
+	  and Welsh (by Kevin Donnelly).
+	  These are kept under <acronym>CVS</acronym> at
+	  <ulink url="http://cvs.sourceforge.net/viewcvs.py/gramadoir/">sourceforge.net</ulink>.
+	</para>
+	<para>
+	  Preliminary work has been done on several other languages; hopefully
+	  some of these will become available under <acronym>CVS</acronym> before long:
+	  Azerbaijani, Breton, Chichewa, French, Igbo, Kinyarwanda, Ladin, Malagasy, Malay, Manx Gaelic, Mongolian, Norwegian, Scottish Gaelic, Setswana, Tagalog, Tetum, Upper Sorbian, Xhosa, Zulu.
+	</para>
+      </sect1>
+      <sect1>
+        <title>Caveat Emptor</title>
+	<para>
+	  &gram; finds errors
+	  by first marking up the input text with grammatical information
+	  (ranging from simple part-of-speech tags to full phrase structure)
+	  and then performing
+	  pattern-matching on the marked up text.   In other words, it
+	  is "rule-based", but without the limitations of a trivial
+	  pattern-matching approach like the one used by the
+	  venerable
+	  <ulink url="http://www.gnu.org/software/diction/diction.html"><application>GNU diction</application></ulink>
+	  package.
+	  The complexity of
+	  the errors that can be trapped and reported is limited
+	  only by the sophistication of the markup that is added.
+	  For Irish and the other Celtic languages,
+	  relatively little markup is required because many of the common
+	  errors made in writing involve misuse of the
+	  <ulink url="http://www.fiosfeasa.com/bearla/language/claochlo.htm">initial mutations</ulink>
+	  which are determined almost entirely by local context
+	  (usually, just the preceding word).
+	  Finding errors reliably in languages
+	  like English (or languages with free word order)
+	  will require at least
+	  a shallow parse of the input text.
+	</para>
+      </sect1>
+  </chapter>
+
+  <chapter>
+    <title>Starting a new language</title>
+      <sect1>
+        <title>Statistical support</title>
+	<para>
+	  The first thing you should do if you're interested in
+	  porting &gram; is
+	  <ulink url="http://borel.slu.edu/">Contact me</ulink>.
+	  Assuming your language is one of the
+	  <ulink url="http://borel.slu.edu/crubadan/stadas.html">150+ languages</ulink>
+	  for which my
+	  <ulink url="http://borel.slu.edu/crubadan/">web crawler</ulink>
+	  is running, I will create a new language pack for you using
+	  this data.  If you don't have a clean word list there will be
+	  some preliminary work involved in constructing one.
+	</para>
+      </sect1>
+
+      <sect1>
+        <title><acronym>CVS</acronym> access</title>
+	<para>
+	  If you have a <ulink url="http://sourceforge.net/">sourceforge</ulink>
+	  account, send me your user name and I will add you as a
+	  developer to the
+	  <ulink url="http://sourceforge.net/projects/gramadoir/"><application>gramadoir</application> project</ulink>.
+	  If not, it is easy to
+	  <ulink url="http://sourceforge.net/account/newuser_emailverify.php">register for an account</ulink>.
+	  This is required in order to have write access to the project
+	  <ulink url="http://sourceforge.net/cvs/?group_id=114958"><acronym>CVS</acronym> repository</ulink>.
+	</para>
+      </sect1>
+
+      <sect1>
+        <title>Installing prerequisites</title>
+        <para>The developers' pack runs only on Unix-like systems that
+	  have a relatively recent version of <application>Perl</application>
+	  installed (at least 5.8.0).
+	  There are some <application>Perl</application>
+	  modules that are required by &gram; that do not come
+	  with standard Perl distributions:
+	  <application>Locale::PO</application>,
+	  <application>String::Approx</application>,
+	  and
+	  <application>Archive::Zip</application>.
+	  If these modules (or any other dependencies) are missing
+	  from your system, you will get warnings when you
+	  try to build <application>Lingua::XX::Gramadoir</application>.
+	  You can install these by running the following commands (as root user):
+	</para>
+	<screen>
+<prompt>#</prompt> <userinput>perl -MCPAN -e 'install Locale::PO'</userinput>
+<prompt>#</prompt> <userinput>perl -MCPAN -e 'install String::Approx'</userinput>
+<prompt>#</prompt> <userinput>perl -MCPAN -e 'install Archive::Zip'</userinput>
+        </screen>
+      </sect1>
+
+      <sect1>
+        <title>Getting the language pack</title>
+	<para>
+	  To checkout the <application>gramadoir</application> engine
+	  and your language pack from <acronym>CVS</acronym>, use the following
+	  command (substituting your
+	  sourceforge account name for "username"
+	  and your language code for "xx"):
+	</para>
+	<screen>
+<prompt>$</prompt> <userinput>cvs -d:ext:username@cvs.sf.net:/cvsroot/gramadoir checkout engine xx</userinput>
+cvs checkout: Updating engine
+U engine/ABOUT-NLS
+U engine/COPYING
+...
+	</screen>
+	<para>
+	  This will create a subdirectory "xx" (your language code)
+	  containing the language pack files and another subdirectory
+	  "engine" containing the language-independent
+	  <application>gramadoir</application> scripts.
+	  The sourceforge site has some excellent documentation on
+	  <ulink url='http://sourceforge.net/docman/display_doc.php?docid=768&amp;group_id=1'>using <acronym>CVS</acronym> as a developer</ulink> and an overview document for anyone
+	  <ulink url='http://sourceforge.net/docman/display_doc.php?docid=14033&amp;group_id=1'>new to <acronym>CVS</acronym></ulink>.
+	</para>
+	<para>
+	  Next, configure the engine:
+	</para>
+	<screen>
+<prompt>$</prompt> <userinput>cd engine</userinput>
+<prompt>$</prompt> <userinput>./configure</userinput>
+	</screen>
+	<para>
+	  You should now have a <filename>Makefile</filename>
+	  but at this point there is nothing
+	  to make and nothing to install.   Recall that the developers' pack
+	  just
+	  contains the scripts used in converting the language pack files
+	  into an installable Perl module.
+	</para>
+	<para>
+	  Now go into the language pack directory,
+	  run <command>configure</command>
+	  (to create a <filename>Makefile</filename>)
+	  and <command>make rebuildlex</command>
+	  (to create the lexical database):
+	</para>
+	<screen>
+<prompt>$</prompt> <userinput>cd ../xx</userinput>
+<prompt>$</prompt> <userinput>./configure</userinput>
+<prompt>$</prompt> <userinput>make rebuildlex</userinput>
+	</screen>
+	<para>
+	  These steps should only have to be performed once.
+	  The development and maintenance process for the language
+	  pack is described in the following section.
+	</para>
+      </sect1>
+
+      <sect1>
+        <title>Creating a grammar checker from the language pack</title>
+	<para>
+	  Creating the necessary files for the
+	  <application>Lingua::XX::Gramadoir</application>
+	  Perl module is as simple as running
+	  <application>make</application> in the
+	  <filename>xx</filename> (language code)
+	  directory.
+	  This will generate the files
+	  in the subdirectory <filename>Lingua-XX-Gramadoir</filename>.
+	  If you want to update these files
+	  at any point in the future,
+	  just run <application>make</application>
+	  again in the <filename>xx</filename> directory.
+	</para>
+	<para>
+	  To use these files to build, test, and install the module, use
+	  the following
+	  <ulink url="http://cpan.uwinnipeg.ca/htdocs/ExtUtils-MakeMaker/ExtUtils/MakeMaker.html#default_makefile_behaviour">standard procedure</ulink>:
+	</para>
+	<screen>
+<prompt>$</prompt> <userinput>cd Lingua-XX-Gramadoir</userinput>
+<prompt>$</prompt> <userinput>perl Makefile.PL</userinput>
+<prompt>$</prompt> <userinput>make</userinput>
+<prompt>$</prompt> <userinput>make test</userinput>
+<prompt>$</prompt> <userinput>make install</userinput>
+	</screen>
+	<para>
+	  Naturally, you may have to run the last of these commands
+	  as the root user.  The <filename>Makefile</filename> in the
+	  <filename>Lingua-XX-Gramadoir</filename> directory
+	  has all of the standard targets, including 
+	  a <command>make dist</command> that will create
+	  a tarball that can be made available for download
+	  by end users, for instance by uploading it to
+	  <ulink url="http://www.cpan.org/"><acronym>CPAN</acronym></ulink>.
+	</para>
+      </sect1>
+  </chapter>
+
+
+  <chapter>
+      <title>A tour of the language pack</title>
+      <para>Of course, until you actually add some real grammatical rules
+        to the language pack input files, the Perl module will
+        function as a simple spell checker only.   In this 
+        chapter I'll describe
+        the syntax of the input files and some tricks for building them
+        quickly.
+      </para>
+
+      <sect1>
+        <title>The lexicon</title>
+	<para>
+	  If you'd like your grammar checker to have
+	  <emphasis>at least</emphasis> the functionality of a spell checker,
+	  you'll need to assemble a large
+	  word list (though it is worth mentioning that, for some languages,
+	  it is possible to implement a tool that performs interesting
+	  checks without necessarily recognizing each word, e.g.
+	  Igbo "vowel harmony" rules).
+	  Most languages will want a <emphasis>tagged</emphasis>
+	  list, with part-of-speech information associated to each word.
+	</para>
+
+        <sect2>
+          <title>Parts of speech</title>
+	  <para>
+	    Part-of-speech markup is added to input texts as
+	    <acronym>XML</acronym> tags; you'll need to choose these
+	    tags first.
+	    If you haven't provided me with a tagged word list
+	    (e.g. if you're just starting with a word list from
+	    a spell checker) the default language pack will simply
+	    tag all words with <literal>&lt;<sgmltag>U</sgmltag>&gt;</literal>
+	    ("unknown" part of speech).
+	    If you just want a fancy spell checker this is sufficient.
+	    Otherwise you can place your tags
+	    (e.g. <literal>&lt;N&gt;</literal>, <literal>&lt;V&gt;</literal>, <literal>&lt;N plural="y"&gt;</literal>, <abbrev>etc.</abbrev>)
+	    in <filename>pos-xx.txt</filename>
+	    and assign a numerical code to each (used internally).
+	    There are a couple of mild restrictions:
+	  </para>
+	  <itemizedlist>
+	    <listitem>
+	      <para>
+	        The numerical codes must lie between 1 and 255, excluding
+		10 (used as a file delimiter).
+	      </para>
+	    </listitem>
+	    <listitem>
+	      <para>
+	        Code 127 has a special meaning across all languages: it is
+		used to markup words which are correct but are very rare or
+		might hide common misspellings.   A good example in Irish
+		is <foreignphrase><wordasword>ata</wordasword></foreignphrase>
+		which is a past participle meaning "swollen", but does not
+		appear in my corpus of over 20 million words
+		except as a misspelling of
+		<foreignphrase><wordasword>at&aacute;</wordasword></foreignphrase>
+		(a form of the verb "to be").
+		Words like <wordasword>yor</wordasword> and
+		<wordasword>cant</wordasword> are well-known
+		examples in English.
+	      </para>
+	    </listitem>
+	    <listitem>
+	      <para>
+	        The <acronym>XML</acronym> tags must be
+		<acronym>ASCII</acronym> capital letters,
+		excluding
+		<sgmltag>B</sgmltag>,
+		<sgmltag>E</sgmltag>,
+		<sgmltag>F</sgmltag>,
+		<sgmltag>X</sgmltag>,
+		<sgmltag>Y</sgmltag>,
+		and <sgmltag>Z</sgmltag>
+		(which are all tags added to the <acronym>XML</acronym> stream
+		by &gram; while checking grammar).  This leaves
+		20 possible tags,
+		which should be more than enough in light of the
+		fact that you can refine the semantics of your tags by adding
+		<acronym>XML</acronym> attributes where appropriate.
+	      </para>
+	    </listitem>
+	  </itemizedlist>
+        </sect2>
+  
+        <sect2>
+          <title>Main word list</title>
+	  <para>
+	    The files <filename>lexicon-xx.bs</filename> and
+	    <filename>lexicon-xx.txt</filename> contain the main database
+	    of recognized words.  The first of these is the compressed
+	    version that comes in the language pack tarball,
+	    the latter is the uncompressed version that you should use for
+	    editing, adding words, part-of-speech tags, etc.
+	    If you don't see <filename>lexicon-xx.txt</filename> you can
+	    recreate it using:
+	  </para>
+	  <screen>
+<prompt>$</prompt> <userinput>make lexicon-xx.txt</userinput>
+	  </screen>
+	  <para>
+	    Conversely, if you ever do a <command>make dist</command>,
+	    the compressed version will be updated correctly,
+	    taking into account any additions or changes
+	    made to <filename>lexicon-xx.txt</filename>.
+	    The file <filename>lexicon-xx.txt</filename> contains one word
+	    per line followed by whitespace and one of
+	    the numerical grammatical codes from
+	    <filename>pos-xx.txt</filename>; e.g.:
+	  </para>
+	  <example>
+	    <title>An excerpt from a fictional <filename>lexicon-en.txt</filename></title>
+	    <screen>
+dipper 31
+dire 36
+direct 33
+direct 36
+direct 37
+directed 36
+direction 31
+directional 36
+directions 32
+	    </screen>
+	  </example>
+	  <para>
+	    As noted earlier, in the default language pack, all grammatical
+	    codes are initially set to "1"
+	    (<literal>&lt;<sgmltag>U</sgmltag>&gt;</literal>) as
+	    placeholders, until a proper tagged word list can
+	    be constructed.
+	  </para>
+        </sect2>
+
+        <sect2>
+          <title>Replacements</title>
+	  <para>
+	    The file <filename>eile-xx.bs</filename>
+	    is a "replacement" file which contains on
+	    each line a non-standard or dialect spelling of a legitimate word
+	    followed by a suggested replacement.
+	    The file <filename>earraidi-xx.bs</filename>
+	    is similar, but should be used for true misspellings.
+	    The only difference in functionality between the two files
+	    is how the replacements are reported to the end-user.
+	    I built the file
+	    <filename>eile-en.bs</filename> in the English language pack
+	    by collating the specifically American and British word lists
+	    that are distributed with
+	    <application>ispell</application>.
+	    The Irish file <filename>eile-ga.bs</filename> is a by-product of
+	    my work on dialect support for
+	    <ulink url="http://borel.slu.edu/ispell/">Irish language spell checkers</ulink>.
+	    The replacement "word" is allowed to contain spaces, e.g.
+	  </para>
+	  <screen>
+spellchecker spell checker
+	  </screen>
+        </sect2>
+
+        <sect2>
+          <title>Morphology</title>
+	  <para>
+	    The file <filename>morph-xx.txt</filename> encodes the
+	    morphological rules for your language;
+	    it is structured as a sequence of substitutions,
+	    one per line, using Perl regular expression syntax,
+	    with fields separated by whitespace.
+	    When an unknown word is encountered, these replacements
+	    are applied recursively (depth first) until a match is
+	    found.
+	  </para>
+	  <para>
+	    The first field contains the pattern to be replaced,
+	    the second field is the replacement (backreferences allowed,
+	    which moves us beyond the usual realm of finite state
+	    morphology), and the third field is a code indicating the
+	    "violence level" the change represents.   Level -1 means
+	    that no message should be reported if the rule is applied and
+	    the modified word is found (as in the default
+	    rule which turn uppercase words into lowercase).
+	    Level 0 means that a message is given which just alerts the
+	    user that the surface form was not found in the database but
+	    that the modified version was.
+	    Level 1 indicates that the rule applies only to non-standard
+	    or variant
+	    forms and will be reported as such
+	    (e.g. for American English you could
+	    define a level 1 rule that changes
+	    <literal>^anaesth</literal> to <literal>anesth</literal>,
+	    or globally changes <literal>centre</literal> to
+	    <literal>center</literal>, etc.)
+	    Level 2 indicates that the rule applies only when the surface
+	    form is truly incorrect in some way.
+	  </para>
+	  <para>
+	    False positives can be avoided by placing
+	    words that are not morphologically productive
+	    in the file <filename>nocombo-xx.txt</filename>.
+	  </para>
+        </sect2>
+      </sect1>
+
+      <sect1>
+        <title>Grammar checking</title>
+	<para>The grammar checker
+	  <foreignphrase lang="la">per se</foreignphrase>
+	  is generated from three
+          input files that share the same basic syntax,
+	  to be described in the sections below.
+	  Complicated "meta" scripts convert
+	  these (more or less) human-readable
+	  files into the Perl scripts which actually
+	  find and mark up the grammatical errors.
+	</para>
+
+	<sect2>
+	  <title>Common structure of the <filename>*.in</filename> files</title>
+	  <para>
+	    The structure of all three input files is essentially the same.
+	    I've included a <application>flex/bison</application> parser in
+	    the distribution
+	    that can be used for error-checking these files during development
+	    (see the <literal>poncin</literal> target in the
+	    <filename>Makefile</filename>).
+	    Also, those who might prefer
+	    a formal (<acronym>BNF</acronym>-like) grammar can look at the files
+	    <filename>ponc.in.l</filename>
+	    and <filename>ponc.in.y</filename>.
+	  </para>
+
+	  <para>
+	    Lines beginning with a <literal>#</literal> or lines
+	    containing only whitespace are ignored.
+	    All other lines contain "rules", which are structured as follows:
+	  </para>
+	  <literallayout>
+phrase:action
+	  </literallayout>
+	  <para>
+	    A phrase is a simplified description of the
+	    regular expression you want
+	    to match in the marked up text stream.
+	    The phrase syntax is the same for all
+	    three files: a sequence of words separated by single spaces.
+	    A word can either be an explicit regular expression
+	    (e.g. <literal>[Aa]ch</literal> to match upper or lowercase
+	    <foreignphrase lang="ga"><wordasword>ach</wordasword></foreignphrase>) or one
+	    of a collection of macros defined in the file
+	    <filename>macra-xx.meta.pl</filename>
+	    (e.g. <literal>LENITEDDFST</literal> expands to the
+	    regular expression
+	    <literal>[DdFfSsTt]h[^&lt;]*</literal>).
+	    In addition, a word can be provided with
+	    a grammatical tag when there is a danger of ambiguity.
+	    For instance
+	    <literal>&lt;<sgmltag>T</sgmltag>&gt;[Aa]n&lt;/T&gt;</literal>
+	    refers specifically to the word
+	    <foreignphrase lang="ga"><wordasword>an</wordasword></foreignphrase>
+	    as the definite article and
+	    not, say, as an interrogative particle.  It is a good idea to
+	    include these tags even for unambiguous words, in case the database
+	    changes in the future (it is also faster this way).
+	    The tag syntax
+	    <literal>&lt;[^S]&gt;do&lt;/[^S]&gt;</literal>
+	    is permitted as well; this will match instances of the word
+	    <foreignphrase lang="ga"><wordasword>do</wordasword></foreignphrase>
+	    which are <emphasis>not</emphasis> prepositions.
+	    Complicated regular expressions should be defined as
+	    macros in <filename>macra-xx.meta.pl</filename>; simple expressions
+	    such as optional substrings or alternation are fine.
+	    In such cases, you should avoid using "non-capturing parentheses"
+	    and use plain (capturing) parentheses;
+	    the conversion scripts
+	    will treat these correctly when generating the
+	    final Perl code.
+	  </para>
+	</sect2>
+
+        <sect2>
+          <title>Multi-word units</title>
+	  <para>The file <filename>comhshuite-xx.in</filename>
+	    is the simplest of the three; each
+	    line contains a multiword "set phrase" in the phrase portion 
+	    of the rule, followed by the
+	    part of speech tag that should be assigned to the given phrase
+	    as the action portion.
+	    For instance, the phrase 
+	    <foreignphrase lang="ga"><wordasword>le haghaidh</wordasword></foreignphrase>
+	    appears in 
+	    the Irish version,
+	    followed by the single (opening) 
+	    part of speech tag &lt;<sgmltag>S</sgmltag>&gt;,
+	    indicating that it is to be treated as a
+	    preposition.   
+	    Since this filter is applied before any disambiguation occurs,
+	    the phrase portion should consist of the words to be lumped 
+	    together with no additional markup.
+	  </para>
+	  <para>
+	    Dealing with idiomatic expressions in this
+	    way improves
+	    the performance of the part-of-speech tagger 
+	    (in terms of both speed and accuracy).  It also allows us
+	    to report an error when a word which is almost always used in a
+	    set phrase is mistakenly used in some other context.
+	  </para>
+        </sect2>
+
+        <sect2>
+          <title>Disambiguation</title>
+	  <para>The file <filename>aonchiall-xx.in</filename> contains
+	    rules for disambiguating
+	    parts of speech; for instance, the word
+	    <foreignphrase lang="ga"><wordasword>an</wordasword></foreignphrase>
+	    in Irish can either be
+	    the definite article or an interrogative particle.  You will find
+	    a sequence of rules in <filename>aonchiall-ga.in</filename>
+	    which indicate, for instance,
+	    that if <foreignphrase lang="ga"><wordasword>an</wordasword></foreignphrase>
+	    is followed by a verb,
+	    preposition, or pronoun, we expect it to be
+	    an interrogative (and in most other cases it is the article).
+	    This kind of disambiguation is obviously a
+	    necessary preliminary step before one
+	    can try to apply grammatical rules depending on part of speech.
+	  </para>
+	  <para>
+	    More specifically, the phrase portion of a rule in
+	    <filename>aonchiall-xx.in</filename>
+	    is required to contain a single word marked up with
+	    <literal>&lt;<sgmltag>B</sgmltag>&gt;&lt;/B&gt;</literal>.  
+	    Naturally, this is the word to disambiguate
+	    and the phrase is the context in which the disambiguation
+	    is to occur.
+	    Like <filename>comhshuite-xx.in</filename>,
+	    the "action" portion consists of a single
+	    part of speech tag, representing the disambiguated part of speech
+	    when the given phrase is matched.
+	  </para>
+	  <para>
+	    The rules specified in
+	    <filename>aonchiall-xx.in</filename> are applied
+	    (in the order they appear) two times.  The second pass
+	    is quite useful for Irish, allowing rules to be applied
+	    in cases that the contextual parts of speech are disambiguated
+	    in the first pass.
+	  </para>
+	  <para>
+	    If an ambiguity is not resolved after two passes through
+	    <filename>aonchiall-xx.in</filename>, then the default
+	    behavior is to simply assign the candidate tag with the
+	    highest overall frequency in your language.
+	    The file <filename>unigram-xx.txt</filename>
+	    consists of a list of the legal
+	    part-of-speech tags for your language
+	    sorted in order of frequency highest to lowest.
+	    Sometimes it helps in disambiguation to "lump together"
+	    several tags (e.g. by stripping attributes that have
+	    no use in grammar checking).   This can be achieved by
+	    placing appropriate substitutions in
+	    <filename>unigram-xx.pre</filename>.
+	    After you have a first version up and running, you can
+	    create or update <filename>unigram-xx.txt</filename>
+	    with this command:
+	  </para>
+	  <screen>
+	    % cat big.txt | gramdev-xx.pl --minic &gt; unigram-xx.txt
+	  </screen>
+
+	  <para>
+	    In fact, it is even possible for &gram; to apply
+	    statistical methods to help find candidate rules for
+	    <filename>aonchiall-xx.in</filename>.
+	    I've implemented the algorithm from
+	    Eric Brill's paper
+	    <ulink url="http://acl.ldc.upenn.edu/W/W95/W95-0101.pdf">Unsupervised learning of disambiguation rules for part of speech tagging</ulink>
+	    so that the output is suitable for use in
+	    <filename>aonchiall-xx.in</filename>
+	    (and so that the highest-scoring rules come first).
+	    Run it as follows:
+	  </para>
+	  <screen>
+<prompt>$</prompt> <userinput>cat big.txt | gramdev-xx.pl --brill &gt; rules.txt</userinput>
+	  </screen>
+        </sect2>
+
+        <sect2>
+          <title>Rules and exceptions</title>
+	  <para>The file <filename>rialacha-xx.in</filename>
+	    contains the grammatical rules proper,
+	    and lists any exceptions to these rules.
+	    The phrase portion of a rule in
+	    <filename>rialacha-xx.in</filename>
+	    is converted to a regular expression which matches
+	    a grammatical <emphasis>error</emphasis>.
+	    The action portion consists simply of a macro which expands
+	    to the error message you want to be displayed when the rule
+	    applies.   These macros
+	    are defined in <filename>messages.txt</filename>.
+	    Perhaps the most common rule for Irish is
+	    <literal>SEIMHIU</literal> which expands to
+	    <foreignphrase lang="ga">"S&eacute;imhi&uacute; ar iarraidh"</foreignphrase>
+	    ("Missing lenition").
+	    Certain macros can also take an parameter inside curly braces:
+	    the action <literal>BACHOIR{ina}</literal>
+	    expands to
+	    <foreignphrase lang="ga">"Ba ch&oacute;ir duit /ina/ a &uacute;s&aacute;id anseo"</foreignphrase>
+	    ("You ought to use /ina/ here")
+	    with the parameter inserted between the slashes.
+	  </para>
+	  <para>
+	    Two very important rules are included in the default
+	    language pack:
+	  </para>
+	  <screen>
+&lt;X&gt;ANYTHING&lt;X&gt;UNKNOWN
+&lt;F&gt;ANYTHING&lt;F&gt;UNCOMMON
+	  </screen>
+	  <para>
+	    Words not found in the lexicon are marked up with the tag
+	    <literal>&lt;<sgmltag>X</sgmltag>&gt;</literal>,
+	    and so the first rule reports such words as "unknown".
+	    Words that are found in the lexicon, but appear there with
+	    part of speech code 127 (see above), are given the special
+	    tag 
+	    <literal>&lt;<sgmltag>F</sgmltag>&gt;</literal>
+	    and so the second rule reports these as "uncommon".
+	  </para>
+	  <para>
+	    In earlier versions, the exceptions were kept in a separate input
+	    file called <filename>eisceacht-xx.in</filename>.
+	    We now find it more convenient
+	    to store the exceptions together with the rules to which they
+	    apply in the file <filename>rialacha-xx.in</filename>.
+	    Following each rule, one has the option of including a block
+	    of patterns representing exceptions to the rule that are
+	    actually grammatical and should not be reported as errors.
+	    For instance, the preposition
+	    <foreignphrase lang="ga"><wordasword>sa</wordasword></foreignphrase>
+	    causes lenition in general, but not in the phrase
+	    <foreignphrase lang="ga"><wordasword>sa m&eacute;id</wordasword></foreignphrase>;
+	    this phrase is therefore included in
+	    <filename>rialacha-ga.in</filename>
+	    with the action portion of the rule set to <literal>OK</literal>.
+	  </para>
+        </sect2>
+      </sect1>
+
+      <sect1>
+        <title>An assortment of less important files</title>
+	<para>The remainder of the files in the language pack 
+	  require less attention, and some can be ignored entirely.
+	</para>
+        <sect2>
+          <title>Segmentation</title>
+	  <para>
+	   The grammar checker performs simple segmentation of the
+	   input text into sentences.  It is possible to customize
+	   this for your language by editing the files
+	   <filename>giorr-xx.txt</filename> and
+	   <filename>giorr-xx.pre</filename>.
+	   The default language pack uses statistical methods to extract
+	   likely abbreviations from a text corpus
+	   (i.e. words that appear almost
+	   exclusively followed by a period ".").
+	   You'll find these in <filename>giorr-xx.txt</filename>.
+	   You may also want to uncomment the lines in
+	   <filename>giorr-xx.pre</filename> so that one letter abbreviations
+	   are escaped properly.
+	   Any other unusual conventions for ends of sentences should
+	   get encoded here.
+	  </para>
+        </sect2>
+	<sect2>
+	  <title>Files to leave alone</title>
+	  <para>
+	    The statistics in <filename>3grams-xx.txt</filename> and
+	    <filename>freq-xx.txt</filename>
+	    are generated by my web crawler and don't need to be edited.
+	    Periodically I can provide updates to these files if the
+	    web corpora grow substantially.   The <filename>README</filename>
+	    and <filename>COPYING</filename> files only need to be changed
+	    if you prefer a license other than the
+	    <ulink url="http://www.gnu.org/licenses/gpl.html"><acronym>GPL</acronym></ulink>.
+	    You only need to worry about the <filename>Changes</filename>
+	    file before a release; this gets copied into the top-level
+	    directory of the Perl module.
+	    The files <filename>configure</filename> and
+	    <filename>triail.xml</filename> should not be edited at all.
+	  </para>
+	</sect2>
+      </sect1>
+  </chapter>
+  <chapter>
+    <title>&gram; <acronym>FAQ</acronym></title>
+    <qandaset>
+      <qandaentry>
+        <question>
+	  <para>
+	    Can I develop a language pack on my Windows computer?
+	  </para>
+	</question>
+        <answer>
+	  <para>
+	    No, or at least not without simulating a Unix-like
+	    environment with
+	    <ulink url="http://www.cygwin.com/">Cygwin</ulink>.  
+	    Even though the end user grammar checker
+	    <application>Lingua::XX::Gramadoir</application> is
+	    generated in pure Perl and will run under
+	    ActiveState Perl, the <application>gramadoir</application>
+	    scripts for generating it use <application>bash</application>,
+	    <application>sed</application> and all that.
+	  </para>
+	</answer>
+      </qandaentry>
+    </qandaset>
+  </chapter>
+</book>
