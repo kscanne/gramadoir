@@ -228,6 +228,11 @@ ighile$				íola		1    # Dinneen
 (dh?í?)omb			$1om		1    # CO p.109
 (ai?n)bhf			$1bh		1    # CO p.109  ainbhfiosach
 (..)u(i?s)$			$1a$2		1    # solus, árus, etc.
+([oó]ga)í$			$1		1    # duilleogaí, fuinneogaí
+nnaí$				nna		1    # ceisteannaí
+thaí$				tha		1    # glórthaí, spéarthaí,...
+dha$				tha		1    # measardha, muinteardha
+dha$				a		1    # stuamdha, príomhdha
 ##################  NON/PRE-STANDARD VERB ENDINGS #########################
 #   2nd declension Dinneen-style endings
 u(i?gh)				a$1		1    # in prep for next ones...
