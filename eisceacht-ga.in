@@ -7,10 +7,15 @@
 ANYTHING [Aa]n méid:
 # An talamh ar ar leag tú...
 ar:
-[Bb]a é|ea|eisean|í|iad:
 ANYTHING bheith:
-[Cc]á as:
+bheith ANYTHING:
 [Cc]á mhinice|fhad|mhéad:
+# CB p.24 #11.c
+[Cc]é|[Nn]í|[Ll]e|[Pp]é <PWITHH>ANYTHING</PWITHH>:
+# corpus
+<Q>[Cc]én</Q> <NMCS>PREFIXEDT</NMCS>:
+# CB p.24 #11.b
+[Cc]homh <AWITHH>ANYTHING</AWITHH>:
 # aithníonn ciaróg ciaróg eile
 ciaróg:
 # CB p.133 #12.b
@@ -26,17 +31,25 @@ ANYTHING dú(irt|ra[dm]ar|radh):
 # le fada fada (an lá)
 fada:
 [Ff]aoi deara:
+ANYTHING gach:
 [Gg]an fhios:
 [Gg]o chéile:
+# CB p.24 #11.b
+[Gg]o <AWITHH>ANYTHING</AWITHH>:
 [Ll]e bhur|[Cc]héile|dhá:
 # go leor leor
 leor:
 # CB p.133 #12.c
 [Mm]á tá(im|imid|thar)?:
+mé:
 [Nn]á is:
+# CB p.24 #11.d
+[Nn]á <VIMP>INITIALH</VIMP>:
 [Nn]í ba:
 # CB p.133 #12.e (past)
 [Nn]í bhfua(ir|rthas|irea[md]ar):
 # CB p.133 #12.e (future/cond)
 [Nn]í bhfaigh(idh|imi[ds]|fear|inn|feá|eadh|idís|fí):
 [Ss]a méid:
+ANYTHING seo:
+ANYTHING sin:
