@@ -36,6 +36,9 @@
 <B>[Ff]iú</B>:<R>
 # go n-éirí, go n-oibrí, etc. 
 [Gg]o <B><Z>NMFOURSUBJ</Z>ECLIPSED</B>:<V p="y" t="foshuit">
+[Nn]ár <B>[Cc]huma</B>:<A pl="n" gnt="n">
+[Nn]ár <B><Z>ANYSUBJ</Z>LENITED</B>:<V p="y" t="foshuit">
+<B><Z>ANYSUBJ</Z>LENITED</B>:!<V p="y" t="foshuit">
 # this century
 <B>g?[Cc]h?éad</B> seo:<N pl="n" gnt="n" gnd="m">
 <B>g?[Cc]h?éad</B>:<A pl="n" gnt="n">
@@ -54,12 +57,15 @@
 # "fuath", "cóir", "cuma"
 # only add these unlenited since this disambiguation is not always correct
 <B><Z>ANYCOPULA</Z>ANYTHING</B> <N pl="n" gnt="n">(áil|ch?uimhin|eol|fh?éidir|oth)</N>:<V cop="y">
+#   other h's never appear
+<B><Z>ANYCOPULA</Z>ANYTHING</B> <N pl="n" gnt="n" h="y">(háil|heol)</N>:<V cop="y">
 <B><Z>ANYCOPULA</Z>ANYTHING</B> <N pl="n" gnt="n" gnd="f">(aithnid|mian|suim)</N>:<V cop="y">
 <B><Z>ANYCOPULA</Z>ANYTHING</B> <N pl="n" gnt="n" gnd="m">fuath</N>:<V cop="y">
 <B><Z>ANYCOPULA</Z>ANYTHING</B> <N>gá</N>:<V cop="y">
 <B><Z>ANYCOPULA</Z>ANYTHING</B> <A pl="n" gnt="n">(dh?ócha|eagal|fh?oláir|ionann|leor|mh?iste)</A>:<V cop="y">
+<B><Z>ANYCOPULA</Z>ANYTHING</B> <A pl="n" gnt="n" h="y">(heagal|hionann)</A>:<V cop="y">
 <B><Z>ANYCOPULA</Z>ANYTHING</B> <A pl="n" gnt="y" gnd="f">(fh?earr|mh?ó|mh?óide)</A>:<V cop="y">
-<B><Z>ANYCOPULA</Z>ANYTHING</B> <A>(iomaí|léir|náir)</A>:<V cop="y">
+<B><Z>ANYCOPULA</Z>ANYTHING</B> <A>(h?iomaí|léir|náir)</A>:<V cop="y">
 <B><Z>ANYCOPULA</Z>ANYTHING</B> cóir|cuma|deacair|dh?éanaí|deimhin|dh?ual|h?ea|éard|fiú|maith|mh?ithid:<V cop="y">
 # lowercase ach under last resorts
 <B>Ach</B>:<C>
@@ -137,6 +143,8 @@
 # "an am gcéanna" adj. occurs a lot, but ok to tag <N> and get "NIURU"
 # <N>ANYTHING</N> <B>gcéanna</B>:<A pl="n" gnt="n">
 <B>[Cc]h?éanna</B>:<A pl="n" gnt="n">
+# "dhó" is an exception to next, sometimes means "burning"
+a|á <B>dhó</B>:<N pl="n" gnt="n" gnd="m">
 # handles fichiú, etc. by brute force; ceathrú is feminine so get separate rules
 <B><Z>NUMERICAL</Z>ANYTHING</B>:<A pl="n" gnt="n">
 # now do bliana since numbers are easier to match...

@@ -263,6 +263,7 @@ Dé Domhnaigh:<N pl="n" gnt="n">
 [Ff]aoi deara:<R>
 [Ff]aoi dhéin:<S>
 [Ff]aoi dheoidh:<R>
+[Ff]aoi dhó:<R>
 [Ff]aoi lánseol:<R>
 [Ff]aoi láthair:<R>
 [Ff]aoi leith:<R>
@@ -413,6 +414,8 @@ Inis Mór:<N pl="n" gnt="n" gnd="f">
 # infrequent
 [Ll]iútar éatar:<N pl="n" gnt="n">
 Loch Garman:<Y>
+# avoids NEEDART: "an lúb ar lár sin"
+[Ll]úb [Aa]r [Ll]ár:<N pl="n" gnt="n" gnd="f">
 # infrequent; both <F> in fact
 #[Ll]uchartha lochartha:<A pl="n" gnt="n">
 # infrequent
@@ -429,6 +432,8 @@ Mh?aigh Eo:<N pl="n" gnt="n">
 # exception to lenition of genitive after fem.  Only one of the months
 # that is an exception, cf. Mí Mheán Fómhair
 [Mm]h?í Feabhra:<N pl="n" gnt="n" gnd="f">
+# prevents NEEDART:  an club sacair mór le rá sin
+[Mm]h?ór [Ll]e [Rr]á:<A pl="n" gnt="n">
 # infrequent
 [Mm]ugadh magadh:<N pl="n" gnt="n">
 na bhfud:<N pl="y" gnt="y" gnd="m">
