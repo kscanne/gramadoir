@@ -211,11 +211,12 @@ int main()
     /* set locale for the toupper/tolower stuff, NOT for sorting
        since I use strcmp instead of strcoll -- if you look in the 
        makefile when focail.bs is built I set LC_COLLATE to POSIX */
-    if (!setlocale(LC_CTYPE, "ga_IE.iso88591") ||
-        !setlocale(LC_COLLATE, "ga_IE.iso88591")) {
-         fprintf(stderr, "gramadóir: fadhb leis an logánú\n");
-         return 1;
-	}
+    if (!setlocale(LC_CTYPE, "ga_IE.iso88591")) 
+       if (!setlocale(LC_CTYPE, "en_US.iso88591"))
+         if (!setlocale(LC_CTYPE, "en_US.ISO8859-1")) {
+            fprintf(stderr, "gramadóir: fadhb leis an logánú\n");
+            return 1;
+	   }
     if (load_dictionary()) {
          fprintf(stderr, "gramadóir: fadhb ag léamh an bhunachair sonraí\n");
          return 1;
