@@ -46,6 +46,7 @@ EXTRAS = $(SHARE)/gramadoir.el $(SHARE)/gramadoir.vim $(SHARE)/gramadoir.sxw
 TESTS = $(PERLD)/t/$(PERLD).t
 LOCALES = locale_ok $(PERLLIB)/Languages.pm $(PERLLIB)/Languages/en_us.pm
 INTERMEDIATE = aonchiall-$(TEANGA).pl comhshuite-$(TEANGA).pl eisceacht-$(TEANGA).pl giorr-$(TEANGA).pl rialacha-$(TEANGA).pl unigram-$(TEANGA).pl
+HASHDIR = ${PERLD}/lib/Lingua/${UPPERTEANGA}/Gramadoir
 
 all : perldistfiles $(DEVSCRIPTNAME)
 
@@ -70,7 +71,7 @@ perldb : FORCE $(PERLDOK)
 perl : perldistfiles $(PERLD)/Makefile
 	(cd $(PERLD); make)
 
-$(PERLD)/Makefile : $(PERLD)/Makefile.PL
+$(PERLD)/Makefile : $(PERLD)/Makefile.PL $(LEXICONS)
 	(cd $(PERLD); $(PERL) Makefile.PL)
 
 Makefile : $(GRAMDIR)/Makefile-xx.in configure
@@ -130,26 +131,32 @@ $(PERLD)/scripts/$(OOSCRIPTNAME) : $(GRAMDIR)/OOo/groo.pl $(PERLDOK)
 $(SHARE)/3grams.bs : 3grams-$(TEANGA).txt $(PERLDOK)
 	cp 3grams-$(TEANGA).txt $@
 	chmod 644 $@
+	rm -f $(HASHDIR)/3grams.hash
 
 $(SHARE)/earraidi.bs : earraidi-$(TEANGA).bs $(PERLDOK)
 	cp earraidi-$(TEANGA).bs $@
 	chmod 644 $@
+	rm -f $(HASHDIR)/earraidi.hash
 
 $(SHARE)/eile.bs : eile-$(TEANGA).bs $(PERLDOK)
 	cp eile-$(TEANGA).bs $@
 	chmod 644 $@
+	rm -f $(HASHDIR)/eile.hash
 
 $(SHARE)/nocombo.bs : nocombo-$(TEANGA).txt $(PERLDOK)
 	cp nocombo-$(TEANGA).txt $@
 	chmod 644 $@
+	rm -f $(HASHDIR)/nocombo.hash
 
 $(SHARE)/pos.bs : pos-$(TEANGA).txt $(PERLDOK)
 	cp pos-$(TEANGA).txt $@
 	chmod 644 $@
+	rm -f $(HASHDIR)/pos.hash
 
 $(SHARE)/morph.bs : morph-$(TEANGA).txt $(PERLDOK)
 	cp morph-$(TEANGA).txt $@
 	chmod 644 $@
+	rm -f $(HASHDIR)/morph.hash
 
 $(SHARE)/gramadoir.el : $(GRAMDIR)/gramadoir.el $(PERLDOK)
 	sed "s/gram-ga\.pl/$(SCRIPTNAME)/g" $(GRAMDIR)/gramadoir.el > $@
@@ -222,6 +229,7 @@ $(SHARE)/focail0.bs : lexicon-$(TEANGA).txt freq-$(TEANGA).txt $(PERLDOK)
 	done
 	rm -f lexicon?.txt lex.txt
 	chmod 644 $(SHARE)/focail?.bs
+	rm -f $(HASHDIR)/focail*.hash
 
 $(DEVSCRIPTNAME) : $(GRAMDIR)/gramdev.pl
 	cat $(GRAMDIR)/gramdev.pl | sed "s/@SCRIPTNAME@/$(DEVSCRIPTNAME)/; s/@PACKAGE_VERSION@/$(PERLVERSION)/; s/@TEANGA@/$(UPPERTEANGA)/g; s/@NATIVE@/$(NATIVE)/g; s/@NAME_ENGLISH@/$(NAME_ENG)/g; s/@BDCHARS@/$(BDCHARS)/; s/@INTCHARS@/$(INTCHARS)/" | $(PERL) -p -e 's/(.*)/$$1\n                   $(AUTHOR)/ if m/^Copyright \(C\)/;' > $@
