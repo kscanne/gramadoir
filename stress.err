@@ -1,0 +1,45 @@
+test various error messages
+An Gramadoir: nonexistentfile: There is no such file.
+An Gramadoir: /home/kps: Is a directory
+An Gramadoir: /etc/shadow: Permission denied
+An Gramadoir: unrecognized option --fakeoption
+Try gr --help for more information.
+An Gramadoir: unrecognized option --fakeoption
+Try gr --help for more information.
+An Gramadoir: option --teanga requires an argument
+Try gr --help for more information.
+An Gramadoir: option --xml does not allow an argument
+Try gr --help for more information.
+An Gramadoir: Language el is not supported.
+An Gramadoir: problem reading the database
+An Gramadoir: problem reading the database
+test various error messages
+An Gramadóir: nonexistentfile: Datei nicht vorhanden.
+An Gramadóir: /home/kps: Ist ein Verzeichnis
+An Gramadóir: /etc/shadow: Zugriff nicht erlaubt
+An Gramadóir: unbekannte Option --fakeoption
+gr --help eingeben, um weitere zu erhalten.
+An Gramadóir: unbekannte Option --fakeoption
+gr --help eingeben, um weitere zu erhalten.
+An Gramadóir: Ein Argument ist bei der Option --teanga erforderlich
+gr --help eingeben, um weitere zu erhalten.
+An Gramadóir: Ein Argument ist bei der Option --xml nicht erlaubt
+gr --help eingeben, um weitere zu erhalten.
+An Gramadóir: Die Sprache el wird nicht unterstutzt.
+An Gramadóir: Problem beim Lesen der Datenbank
+An Gramadóir: Problem beim Lesen der Datenbank
+test various error messages
+An Gramadóir: nonexistentfile: Níl a leithéid de chomhad ann
+An Gramadóir: /home/kps: Is comhadlann é
+An Gramadóir: /etc/shadow: Cead diúltaithe
+An Gramadóir: rogha anaithnid --fakeoption
+Bain triail as gr --help chun tuilleadh eolais a fháil.
+An Gramadóir: rogha anaithnid --fakeoption
+Bain triail as gr --help chun tuilleadh eolais a fháil.
+An Gramadóir: ní foláir argóint don rogha --teanga
+Bain triail as gr --help chun tuilleadh eolais a fháil.
+An Gramadóir: ní cheadaítear argóint i ndiaidh an rogha --xml
+Bain triail as gr --help chun tuilleadh eolais a fháil.
+An Gramadóir: Níl an teanga el ar fáil.
+An Gramadóir: fadhb ag léamh an bhunachair sonraí
+An Gramadóir: fadhb ag léamh an bhunachair sonraí

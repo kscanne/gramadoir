@@ -1,0 +1,45 @@
+#!/bin/bash
+
+test_language()
+{
+LC_MESSAGES="${1}"
+export LC_MESSAGES
+echo "test help flag"
+gr --help
+echo "test version flag"
+gr --version
+echo "test litriu flag"
+gr --litriu --iomlan triail
+echo "test xml flag"
+gr --xml --iomlan triail
+echo "test html flag"
+gr --html --iomlan triail
+echo "test ionchod flag and ability to read from stdin"
+cat triail | iconv -f iso88591 -t utf8 | gr --ionchod=utf8
+echo "test various error messages" >&2
+rm -f nonexistentfile
+gr nonexistentfile
+gr ${HOME}
+gr /etc/shadow
+gr --fakeoption /dev/null
+gr --fakeoption=fakearg /dev/null
+gr --teanga /dev/null
+gr --xml=fakearg /dev/null
+gr --teanga=el
+##  add stuff for ponc.in  checks
+mv /usr/local/share/gramadoir/focail.bs ./f.bs
+gr --litriu triail
+mv ./f.bs /usr/local/share/gramadoir/focail.bs
+mv /usr/local/share/gramadoir/eile.bs ./e.bs
+gr --litriu triail
+mv ./e.bs /usr/local/share/gramadoir/eile.bs
+}
+
+do_all()
+{
+test_language POSIX
+test_language de_DE
+test_language ga_IE
+}
+
+do_all > stress.out 2> stress.err
