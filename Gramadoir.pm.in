@@ -475,9 +475,41 @@ sub tag_one_word
 	return "<X>$word</X>";
 }
 
+##############################################################################
+
+=item tokenize TEXT
+
+Splits the input TEXT up into orthographic words and returns a reference to an
+array containing the words.
+
+=cut
+
+##############################################################################
+
+sub tokenize
+{
+	my ( $self, $text ) = @_;
+	return undef unless defined $text;
+	eval {from_to($text,$self->{'input_encoding'},'@NATIVE@') };
+	croak gettext('conversion from %s is not supported', 
+			$self->{'input_encoding'}) if $@;
+
+	my $answer = [];
+	my $sentences = get_sentences_real($text);
+	foreach my $sentence (@$sentences) {
+		$sentence = $self->tokenize_real($sentence);
+		push @$answer, $1 while ($sentence =~ m/<c>([^<]*)<\/c>/g);
+	}
+	foreach my $s (@$answer) {
+		$s = decode('@NATIVE@', $s);
+	}
+	return $answer;
+}
+
+
 # takes a sentence as input and returns the sentence with trivial markup
 # around each token (in bash version this was part of abairti)
-sub tokenize
+sub tokenize_real
 {
 	my ( $self, $sentence ) = @_;
 	$sentence =~ s/([@BDCHARS@][@BDCHARS@@INTCHARS@]*)/<c>$1<\/c>/g;
@@ -493,7 +525,7 @@ sub unchecked_xml
 	my $self = $_[0];
 	my $sentences = get_sentences_real($_[1]);
 	foreach my $sentence (@$sentences) {
-		$sentence = $self->tokenize($sentence);
+		$sentence = $self->tokenize_real($sentence);
 		$sentence =~ s/(<c>[^<]+<\/c>) \1/<E msg="DUBAILTE">$1 $1<\/E>/g;
 		1 while ( $sentence =~ s/<c>([^<]*)<\/c>/$self->tag_one_word($1);/e );
 		$sentence =~ s/^/<line> /;
@@ -513,6 +545,9 @@ in the input text.
 
 ##############################################################################
 
+# current behavior is to report <F> words as misspellings, which 
+# matches the behavior of aspell-ga since I exclude such words entirely
+# from that package.  Just change FX -> X below to accept these words.
 sub spell_check
 {
 	my ( $self, $text ) = @_;
@@ -523,12 +558,12 @@ sub spell_check
 	my $sentences = $self->unchecked_xml($text);
 	my $badwords = [];
 	foreach my $s (@$sentences) {
-		if ($s =~ m/<X>/) {
-			$s =~ s/<[^X\/][^>]*>//g;
-			$s =~ s/<\/[^X][^>]*>//g;
-			$s =~ s/^[^<]*<X>//;
-			$s =~ s/<\/X>[^<]*$//;
-			$s =~ s/<\/X>[^<]*<X>/\n/g;
+		if ($s =~ m/<[FX]>/) {
+			$s =~ s/<[^FX\/][^>]*>//g;
+			$s =~ s/<\/[^FX][^>]*>//g;
+			$s =~ s/^[^<]*<[FX]>//;
+			$s =~ s/<\/[FX]>[^<]*$//;
+			$s =~ s/<\/[FX]>[^<]*<[FX]>/\n/g;
 			$s = decode('@NATIVE@', $s);
 			push @$badwords,$s;
 		}
