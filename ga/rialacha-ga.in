@@ -1682,9 +1682,9 @@ ECLIPSINGNUMBER <E><N>ECLIPSED</N></E>:OK
 # CB p.24 #11.b
 #. Scaoileadh seachtar duine chun báis i mBaile Átha Cliath le hocht mí anuas (OK).
 <S>([Ll]e|[Ss]na)</S> <E><AWITHH>(haon|hocht)</AWITHH></E>:OK
-# CB p.24 #11.b
+# CB p.24 #11.b; of course "a hAon" in the corpus just to irritate me
 #. Ní dhúnfaidh an t-ollmhargadh go dtí a haon a chlog ar maidin (OK).
-[Aa] <E><AWITHH>(haon|hocht)</AWITHH></E>:OK
+[Aa] <E><AWITHH>(h[Aa]on|h[Oo]cht)</AWITHH></E>:OK
 # CB p.24 #11.b
 #. Is mar gheall ar sin atá líníocht phictiúrtha chomh húsáideach sin (OK).
 [Cc]homh <E><AWITHH>ANYTHING</AWITHH></E>:OK
