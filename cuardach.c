@@ -1,3 +1,11 @@
+/*
+  cuardach.c : part of speech tagger for An Gramadóir
+ Copyright (C) 2003 Kevin P. Scannell <scannell@slu.edu>
+
+ This is free software; see the file COPYING for copying conditions.  There is
+ NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*/
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>    /* strtol */
@@ -8,7 +16,7 @@ struct foirm {
       char focal[32], coid[16];
     };
 
-#define DICTTOTAL 312627
+#define DICTTOTAL 313973
 
 struct foirm focloir[DICTTOTAL];
 

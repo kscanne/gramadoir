@@ -1,3 +1,13 @@
+/* 
+  This is a short program developers can use to create a database of words.
+  See the Makefile target "focail.bs" for usage.
+
+  Copyright (C) 2003 Kevin P. Scannell <scannell@slu.edu>
+ 
+ This is free software; see the file COPYING for copying conditions.  There is
+ NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*/
+
 #include <stdio.h>
 #include <string.h>
 
