@@ -121,6 +121,7 @@ installweb :
 	$(INSTALL_DATA) sonrai.html $(webhome)
 	$(INSTALL_DATA) sampla.html $(webhome)
 	$(INSTALL_DATA) gramadoir.dtd $(webhome)/../dtds
+	$(INSTALL_DATA) $(HOME)/.neamhshuim $(pkgdatadir)/Neamhshuim
 	runchoip
 
 triail.html : FORCE
