@@ -256,7 +256,7 @@ sub add_grammar_tags
 	my $ans;
 	my $num = length( $grambytes );
 	if ( $num == 1) {
-		my $tag = $POS{ord($grambytes)};
+		my $tag = $POS{$grambytes};
 		if (defined($tag)) {
 			$tag =~ m/^<([A-Z])/;
 			$ans = $tag.$word."</".$1.">";
@@ -270,7 +270,7 @@ sub add_grammar_tags
 	elsif ( $num > 1 ) {
 		$ans = "<B><Z>";
 		foreach my $byte (split //, $grambytes) {
-			my $tag = $POS{ord($byte)};
+			my $tag = $POS{$byte};
 			if (defined($tag)) {
 				$tag =~ s/>$/\/>/;
 				$ans = $ans.$tag;
@@ -317,7 +317,7 @@ sub lookup
 			if ( $current =~ m/^[@CAPITALS@]/ ) {
 				my $lower = mylcfirst($current);
 				if ( exists($href->{$lower}) ) {
-					foreach my $bee (split //, $href->{$current}.$href->{$lower}) {
+					foreach my $bee (split //, $codez.$href->{$lower}) {
 						$tempseen{$bee}++;
 					}
 					$codez = join('', sort(keys %tempseen));

@@ -99,9 +99,9 @@ $(PERLD)/Makefile.PL : $(GRAMDIR)/Makefile.PL.in $(PERLDOK)
 	cat $(GRAMDIR)/Makefile.PL.in | sed "s/@TEANGA@/$(UPPERTEANGA)/g; s/@LOWERTEANGA@/$(TEANGA)/g" | \
 	if $(ECHO) "$(NATIVE)" | $(EGREP) -i 'utf' > /dev/null; \
 	then \
-		sed '/#.*binmode/s/#//g'; \
-	else \
 		sed '/^#.*binmode/d'; \
+	else \
+		sed '/#.*binmode/s/#//g'; \
 	fi > $@
 	chmod 644 $@
 

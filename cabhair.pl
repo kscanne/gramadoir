@@ -54,7 +54,7 @@ sub sq
 }
 
 if ($compress) {
-	binmode STDOUT, ":bytes";
+	binmode STDOUT, ":utf8";
 	if ($unicode) {
 		binmode STDIN, ":utf8";
 	}
@@ -69,11 +69,11 @@ if ($compress) {
 		( my $word, my $code ) = m/([^ ]+) (.*)/;
 		if ($word ne $currword) {
 			if ($currword) {
-				binmode STDOUT, ":utf8" if $unicode;
+				binmode STDOUT, ":bytes" unless $unicode;
 				print sq($currword, $prevword)."\cJ" if $currword;
 				delete($seen{$rarebyte}) unless ( keys %seen == 1 );
-				binmode STDOUT, ":bytes" if $unicode;
-				print chr($_) foreach (sort { $a <=> $b } keys %seen);
+				binmode STDOUT, ":utf8" unless $unicode;
+				print pack("U",$_) foreach (sort { $a <=> $b } keys %seen);
 				print "\cJ";
 			}
 			%seen = ();
@@ -82,15 +82,15 @@ if ($compress) {
 		}
 		$seen{$code}++;
 	}
-	binmode STDOUT, ":utf8" if $unicode;
+	binmode STDOUT, ":bytes" unless $unicode;
 	print sq($currword, $prevword)."\cJ";
 	delete($seen{$rarebyte}) unless ( keys %seen == 1 );
-	binmode STDOUT, ":bytes" if $unicode;
-	print chr($_) foreach (sort { $a <=> $b } keys %seen);
+	binmode STDOUT, ":utf8" unless $unicode;
+	print pack("U",$_) foreach (sort { $a <=> $b } keys %seen);
 	print "\cJ";
 }
 else {
-	binmode STDIN, ":bytes";
+	binmode STDIN, ":utf8";
 	if ($unicode) {
 		binmode STDOUT, ":utf8";
 	}
@@ -99,21 +99,21 @@ else {
 	}
 	{
 	local $/ = "\cJ";
-	my $grambytes;  # byte semantics always
-	binmode STDIN, ":utf8" if $unicode;
+	my $grambytes;
+	binmode STDIN, ":bytes" unless $unicode;
 	chomp(my $currword=<STDIN>);
-	binmode STDIN, ":bytes" if $unicode;
+	binmode STDIN, ":utf8" unless $unicode;
 	chomp($grambytes = <STDIN>);
-	print "$currword ".ord($_)."\n" foreach (split //, $grambytes);
-	binmode STDIN, ":utf8" if $unicode;
+	print "$currword ".unpack("U", $_)."\n" foreach (split //, $grambytes);
+	binmode STDIN, ":bytes" unless $unicode;
 	while (<STDIN>) {
 		chomp;
 		m/^([0-9]?)(.*)/;
 		$currword = substr($currword,0,$1).$2;
-		binmode STDIN, ":bytes" if $unicode;
+		binmode STDIN, ":utf8" unless $unicode;
 		chomp ($grambytes = <STDIN>);
-		print "$currword ".ord($_)."\n" foreach (split //, $grambytes);
-		binmode STDIN, ":utf8" if $unicode;
+		print "$currword ".unpack("U", $_)."\n" foreach (split //, $grambytes);
+		binmode STDIN, ":bytes" unless $unicode;
 	}
 	}
 }
