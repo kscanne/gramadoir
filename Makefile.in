@@ -65,13 +65,13 @@ allperl : $(ALLIN) lastperl
 	$(MAKE) $(ALLPL)
 
 installcheck : FORCE
-	@$(bindir)/gr --iomlan triail | sed "s/^[0-9]*: //" > triail.tmp
+	@LC_MESSAGES=C $(bindir)/gr --iomlan triail | sed "s/^[0-9]*: //" > triail.tmp
 	@cat triail.err | sed "s/^[0-9]*: //" > triail2.tmp
 	@if diff triail2.tmp triail.tmp; then $(ECHO) 'OK.'; else $(ECHO) 'Problem.'; fi
 	@rm -f triail.tmp triail2.tmp
 
 utfcheck : triail.utf
-	@$(bindir)/gr --iomlan --ionchod=UTF8 triail.utf | sed "s/^[0-9]*: //; s/\.utf//" > triail.tmp
+	@LC_MESSAGES=C $(bindir)/gr --iomlan --ionchod=UTF8 triail.utf | sed "s/^[0-9]*: //; s/\.utf//" > triail.tmp
 	@cat triail.err | sed "s/^[0-9]*: //" > triail2.tmp
 	@if diff triail2.tmp triail.tmp; then $(ECHO) 'OK.'; else $(ECHO) 'Problem.'; fi
 	@rm -f triail.tmp triail2.tmp
@@ -206,7 +206,7 @@ dist : FORCE
 
 triail.err : FORCE
 	rm -f triail.err
-	gr --iomlan triail > triail.err
+	LC_MESSAGES=C gr --iomlan triail > triail.err
 
 triail.utf : FORCE
 	@rm -f triail.utf
