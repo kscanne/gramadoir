@@ -54,7 +54,7 @@ eisceacht.pl : eisceacht.in eisceacht.meta.sed gin.meta.sed
 	($(ECHO) "#!$(PERL)"; $(ECHO) '# Users should modify eisceacht.in, not this file'; $(ECHO) 'while(<>){'; cat eisceacht.in | sed -f gin.meta.sed | sed -f eisceacht.meta.sed; $(ECHO) 'print;'; $(ECHO) '}'; $(ECHO) 'exit;') > eisceacht.pl
 
 installcheck : FORCE
-	@$(bindir)/gr triail > triail.tmp
+	@$(bindir)/gr --iomlan triail > triail.tmp
 	@if diff triail.err triail.tmp; then $(ECHO) 'Ceart go leor.'; else $(ECHO) 'Fadhb.'; fi
 	@rm -f triail.tmp
 
