@@ -27,5 +27,14 @@ else
 	SH_GETTEXT="echo"
 fi
 
+AC_MSG_CHECKING([for perl module Locale::PO])
+if "$PERL" -e 'eval {use Locale::PO};' 2> /dev/null
+then
+	AC_MSG_RESULT([yes])
+else
+	AC_MSG_RESULT([no])
+	AC_MSG_ERROR([Locale::PO is required])
+fi
+
 AC_CONFIG_FILES(Makefile po/Makefile.in )
 AC_OUTPUT
