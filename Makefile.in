@@ -153,11 +153,16 @@ maintainer-clean :
 	$(MAKE) distclean
 	rm -f focail.bs eile.bs
 
+ChangeLog : FORCE
+	cvs2cl.pl
+
 dist : FORCE
+	$(MAKE) ChangeLog
 	$(LN_S) gr ../$(TARBALL)
 	tar cvhf $(TARBALL).tar -C .. $(TARBALL)/ABOUT-NLS
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/aonchiall.meta.sed
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/cabhair.c
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/ChangeLog
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/config.guess
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/config.rpath
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/config.sub
