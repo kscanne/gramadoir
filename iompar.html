@@ -154,7 +154,7 @@ form is truly incorrect in some way.
 <p>
 False positives can be avoided by placing 
 words that are not morphologically productive
-in the file <i>nocombo-gd.txt</i>.
+in the file <i>nocombo-xx.txt</i>.
 </p>
 
 <p>
@@ -179,9 +179,7 @@ Eric Brill's paper on unsupervised learning of disambiguation rules
 so that the output is suitable for use in <i>aonchiall-xx.in</i>
 (and so that the highest-scoring rules come first).  Run it as follows:
 <pre>
-% cat bigtextfile | 
-  gr --teanga=xx --brill --iomlan &gt;
-  rule.candidates
+% cat big.txt | gramdev-xx.pl --brill &gt; rules.txt
 </pre>
 </p>
 
@@ -197,7 +195,7 @@ module uses this as a "last resort" tagging method.
 If you actually have some part of speech markup, then after things
 are up and running you can create this file using:
 <pre>
-% gr --minic bigtextfile &gt; unigram-xx.txt
+% cat big.txt | gramdev-xx.pl --minic &gt; unigram-xx.txt
 </pre>
 </p>
 
