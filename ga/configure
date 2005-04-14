@@ -17,7 +17,7 @@ GRAMVERSION=`grep '^TARBALL =' ${GRAMDIR}/Makefile | sed 's/^TARBALL = gramadoir
 # changes should be made upstream also
 NAME_ENG="Irish"
 NATIVE="ISO-8859-1"
-BDCHARS="A-ZΑΙΝΣΪa-zαινσϊ0-9"
+BDCHARS="A-ZΑΙΝΣΪa-zαινσϊ"
 INTCHARS="'-"
 UPPERS="A-ZΑΙΝΣΪ"
 LOWERS="a-zαινσϊ"
