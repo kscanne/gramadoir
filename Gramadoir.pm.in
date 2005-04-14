@@ -13,7 +13,7 @@ use String::Approx qw(amatch adist);
 use Lingua::@TEANGA@::Gramadoir::Languages;
 
 our $VERSION = '@PACKAGE_VERSION@';
-use vars qw(@FOCAIL @MORPH @PUREMORPH %EILE %EARRAIDI %NOCOMBO %POS %SOP %GRAMS %MESSAGES %IGNORE $lh);
+use vars qw(@FOCAIL @MORPH @PUREMORPH @TOKEN %EILE %EARRAIDI %NOCOMBO %POS %SOP %GRAMS %MESSAGES %IGNORE $lh);
 
 memoize('tag_one_word', TIE => [ 'Memoize::ExpireLRU',
 				CACHESIZE => 5000,
@@ -140,6 +140,14 @@ sub new {
 		eval {$ref = retrieve(File::Spec->catfile($datapath, "focail$i.hash" ) )};
 		croak $errormsg if ($@ or !$ref);
 		push @FOCAIL, $ref;
+	}
+	eval {$ref = retrieve(File::Spec->catfile($datapath, 'token.hash'))};
+	croak $errormsg if ($@ or !$ref);
+	@TOKEN = @$ref;
+	foreach my $rule (@TOKEN) {
+		my $patt = $rule->{'patt'};
+		$rule->{'compiled'} = qr/$patt/;
+		$rule->{'tail'} = substr($rule->{'tag'},1,1);
 	}
 	eval {$ref = retrieve(File::Spec->catfile($datapath, 'morph.hash'))};
 	croak $errormsg if ($@ or !$ref);
@@ -502,7 +510,6 @@ sub tag_one_word
 	if ($self->{'use_ignore_file'}) {
 		return "<Y>".$word."</Y>" if ( exists($IGNORE{$word}) );
 	}
-	return "<A>".$word."</A>" if ($word =~ /^[0-9,'-]+$/);
 	my $ans = $self->tag_one_word_clean($word);
 	return $ans if $ans;
 	my $dummy;
@@ -540,7 +547,7 @@ sub tokenize
 	my $sentences = get_sentences_real($text);
 	foreach my $sentence (@$sentences) {
 		$sentence = $self->tokenize_real($sentence);
-		push @$answer, $1 while ($sentence =~ m/<c>([^<]*)<\/c>/g);
+		push @$answer, $1 while ($sentence =~ m/<[A-Zc][^>]*>([^<]*)<\/[A-Zc]>/g);
 	}
 	foreach my $s (@$answer) {
 		$s = decode('@NATIVE@', $s);
@@ -556,10 +563,39 @@ sub tokenize_real
 	my ( $self, $sentence ) = @_;
 	my $answer="";
 	foreach my $chunk (split / /,$sentence) {
-		unless ($chunk =~ /^(?:(?:https?|ftp):\/\/|www\.)/) {
-			$chunk =~ s/([@BDCHARS@][@BDCHARS@@INTCHARS@]*)/<c>$1<\/c>/g;
-			$chunk =~ s/([@INTCHARS@]+)<\/c>/<\/c>$1/g;
-			$chunk =~ s/&<c>(quot|lt|gt|amp)<\/c>;/&$1;/g;
+		if ($chunk =~ m/^[@BDCHARS@]+$/) {
+			$chunk =~ s/^/<c>/;
+			$chunk =~ s/$/<\/c>/;
+		}
+		else {
+			$chunk =~ s/(&(?:quot|[gl]t|amp);)/<c>$1<\/c>/g;
+			my $chunkdone = '1';
+			foreach my $rule (@TOKEN) {
+				my $chtemp="";
+				my $p = $rule->{'compiled'};
+				my $tag = $rule->{'tag'};
+				my $t = $rule->{'tail'};
+				my $todo;
+				while ($chunk =~ /([^<]*)(<[A-Zc][^>]*>[^<]+<\/[A-Zc]>)/g) {
+					$todo = $1;
+					my $done = $2;
+					if ($todo) {
+						$chunkdone = '';
+						$todo =~ s/$p/$tag$1<\/$t>/g;
+					}
+					$chtemp .= $todo.$done;
+				}
+				$chunk =~ /([^>]*)$/;
+				$todo = $1;
+				if ($todo) {
+					$chunkdone = '';
+					$todo =~ s/$p/$tag$1<\/$t>/g;
+				}
+				last if $chunkdone;
+				$chtemp .= $todo;
+				$chunk = $chtemp;
+			}
+			$chunk =~ s/<c>(&(?:quot|[gl]t|amp);)<\/c>/$1/g;
 		}
 		$answer .= " " if $answer;
 		$answer .= $chunk;
@@ -575,7 +611,7 @@ sub unchecked_xml
 	my $sentences = get_sentences_real($_[1]);
 	foreach my $sentence (@$sentences) {
 		$sentence = $self->tokenize_real($sentence);
-		$sentence =~ s/(<c>[^<]+<\/c>) \1/<E msg="DUBAILTE">$1 $1<\/E>/g;
+		$sentence =~ s/(<[A-Zc][^>]*>[^<]+<\/[A-Zc]>) \1/<E msg="DUBAILTE">$1 $1<\/E>/g;
 		1 while ( $sentence =~ s/<c>([^<]*)<\/c>/$self->tag_one_word($1);/e );
 		$sentence =~ s/^/<line> /;
 		$sentence =~ s/$/ <\/line>/;
