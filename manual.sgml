@@ -279,8 +279,14 @@ A umpire.  The status quo.
 	  language packs currently available (in various stages of
 	  completion):
 	  Afrikaans (by Petri Jooste and Tjaart van der Walt),
+	  Akan (by Paa Kwesi Imbeah),
 	  Cornish (by Paul Bowden and Edi Werner),
-	  Esperanto,
+	  Esperanto (by Tim Morley),
+	  French (by Myriam Lechelt and Laurent Godard),
+	  Hiligaynon (by Francis Dimzon),
+	  Igbo (by Chinedu Uchechukwu),
+	  Scottish Gaelic (by Caoimh&iacute;n &Oacute; Donna&iacute;le),
+	  Tagalog (by Ramil Sagum),
 	  Walloon (by Pablo Saratxaga),
 	  and Welsh (by Kevin Donnelly).
 	  These are kept under <acronym>CVS</acronym> at
@@ -289,7 +295,7 @@ A umpire.  The status quo.
 	<para>
 	  Preliminary work has been done on several other languages; hopefully
 	  some of these will become available under <acronym>CVS</acronym> before long:
-	  Azerbaijani, Breton, Chichewa, French, Igbo, Kinyarwanda, Ladin, Malagasy, Malay, Manx Gaelic, Mongolian, Norwegian, Scottish Gaelic, Setswana, Tagalog, Tetum, Upper Sorbian, Xhosa, Zulu.
+	  Azerbaijani, Breton, Chichewa, Kashubian, Kinyarwanda, Kurdish, Ladin, Malagasy, Malay, Manx Gaelic, Mongolian, Norwegian, Setswana, Tagalog, Tetum, Upper Sorbian, Xhosa, Zulu.
 	</para>
       </sect1>
       <sect1 id="caveat">
