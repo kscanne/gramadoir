@@ -36,4 +36,5 @@ share/messages.bs		Macros for output messages
 share/morph.bs			Morphological rules
 share/nocombo.bs		Words that don't form compounds
 share/pos.bs			Part-of-speech tags
+share/token.bs			Tokenization rules
 t/Lingua-@UPPERTEANGA@-Gramadoir.t		Test suite

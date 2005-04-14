@@ -40,7 +40,7 @@ DEVSCRIPTNAME = gramdev-${TEANGA}.pl
 OOSCRIPTNAME = groo-$(TEANGA).pl
 PERLTOP = $(PERLD)/Changes $(PERLD)/Makefile.PL $(PERLD)/MANIFEST $(PERLD)/MANIFEST.SKIP $(PERLD)/README
 PERLCODE = $(PERLD)/scripts/$(SCRIPTNAME) $(PERLLIB).pm $(PERLD)/scripts/$(OOSCRIPTNAME)
-LEXICONS = $(SHARE)/3grams.bs $(SHARE)/earraidi.bs $(SHARE)/eile.bs $(SHARE)/focail0.bs $(SHARE)/nocombo.bs $(SHARE)/pos.bs $(SHARE)/morph.bs $(SHARE)/messages.bs
+LEXICONS = $(SHARE)/3grams.bs $(SHARE)/earraidi.bs $(SHARE)/eile.bs $(SHARE)/focail0.bs $(SHARE)/nocombo.bs $(SHARE)/pos.bs $(SHARE)/morph.bs $(SHARE)/messages.bs $(SHARE)/token.bs
 EXTRAS = $(SHARE)/gramadoir.el $(SHARE)/gramadoir.vim $(SHARE)/gramadoir.sxw
 TESTS = $(PERLD)/t/$(PERLD).t
 LOCALES = locale_ok $(PERLLIB)/Languages.pm $(PERLLIB)/Languages/en_us.pm
@@ -161,6 +161,11 @@ $(SHARE)/messages.bs : $(GRAMDIR)/messages.txt $(PERLDOK)
 	cp $(GRAMDIR)/messages.txt $@
 	chmod 644 $@
 	rm -f $(HASHDIR)/messages.hash $(PERLD)/Makefile
+
+$(SHARE)/token.bs : token-$(TEANGA).in $(PERLDOK)
+	cp token-$(TEANGA).in $@
+	chmod 644 $@
+	rm -f $(HASHDIR)/token.hash $(PERLD)/Makefile
 
 $(SHARE)/gramadoir.el : $(GRAMDIR)/gramadoir.el $(PERLDOK)
 	sed "s/gram-ga\.pl/$(SCRIPTNAME)/g" $(GRAMDIR)/gramadoir.el > $@
@@ -297,6 +302,7 @@ dist : FORCE
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/nocombo-$(TEANGA).txt
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/pos-$(TEANGA).txt
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/rialacha-$(TEANGA).in
+	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/token-$(TEANGA).in
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/triail.xml
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/unigram-$(TEANGA).pre
 	tar rvhf $(TARBALL).tar -C .. $(TARBALL)/unigram-$(TEANGA).txt

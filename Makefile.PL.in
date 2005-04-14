@@ -47,6 +47,7 @@ sub build_hashes {
 	my $posfile = File::Spec->catfile( $dir, 'pos.hash');
 	my $gramfile = File::Spec->catfile( $dir, '3grams.hash');
 	my $morphfile = File::Spec->catfile( $dir, 'morph.hash');
+	my $tokenfile = File::Spec->catfile( $dir, 'token.hash');
 	my $messagesfile = File::Spec->catfile( $dir, 'messages.hash');
 	my $rawfile;
 
@@ -138,6 +139,24 @@ sub build_hashes {
 		store \%POS, $posfile;
 	}
 
+	unless ( -f $tokenfile ) {
+		my @TokenRules;
+		$rawfile = File::Spec->catfile( $srcdir, 'token.bs');
+		open(DATABASE, $rawfile) or die "Can't open dictionary: $!";
+		binmode DATABASE, ":utf8";
+#		binmode DATABASE, ":bytes";
+		while (<DATABASE>) {
+			chomp;
+			s/^#.*$//;
+			if (/\S/) {
+				/^(.*):(<[^>]+>)$/;
+				push @TokenRules, {'patt' => "($1)", 'tag' => $2};
+			}
+		}
+		close DATABASE;
+		store \@TokenRules, $tokenfile;
+	}
+
 	unless ( -f $morphfile ) {
 		my @MorphRules;
 		$rawfile = File::Spec->catfile( $srcdir, 'morph.bs');
@@ -207,5 +226,5 @@ sub build_hashes {
 	}
 	return ( -f $replfile and -f $combofile and -f $morphfile and
 		-f $errfile and -f $posfile and -f $gramfile and
-		-f $messagesfile);
+		-f $messagesfile and -f $tokenfile);
 }
