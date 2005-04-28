@@ -535,6 +535,7 @@ array containing the words.
 
 ##############################################################################
 
+
 sub tokenize
 {
 	my ( $self, $text ) = @_;
@@ -553,6 +554,22 @@ sub tokenize
 		$s = decode('@NATIVE@', $s);
 	}
 	return $answer;
+}
+
+sub maybe_tokenize
+{
+	my ( $self, $tag, $word, $t ) = @_;
+	if ( $t eq 'd') {
+		if ($self->tag_one_word_clean($word)) {
+			return '<c>'.$word.'</c>';
+		}
+		else {
+			return $word;
+		}
+	}
+	else {
+		return $tag.$word.'</'.$t.'>';
+	}
 }
 
 
@@ -582,7 +599,7 @@ sub tokenize_real
 					my $done = $2;
 					if ($todo) {
 						$chunkdone = '';
-						$todo =~ s/$p/$tag$1<\/$t>/g;
+						$todo =~ s/$p/$self->maybe_tokenize($tag,$1,$t)/eg;
 					}
 					$chtemp .= $todo.$done;
 				}
@@ -590,7 +607,7 @@ sub tokenize_real
 				$todo = $1;
 				if ($todo) {
 					$chunkdone = '';
-					$todo =~ s/$p/$tag$1<\/$t>/g;
+					$todo =~ s/$p/$self->maybe_tokenize($tag,$1,$t)/eg;
 				}
 				last if $chunkdone;
 				$chtemp .= $todo;
