@@ -562,6 +562,7 @@ sub tokenize_real
 {
 	my ( $self, $sentence ) = @_;
 	my $answer="";
+	# assumes get_sentences_real has been called, collapses \s+ to " "
 	foreach my $chunk (split / /,$sentence) {
 		if ($chunk =~ m/^[@BDCHARS@]+$/) {
 			$chunk =~ s/^/<c>/;
@@ -596,6 +597,7 @@ sub tokenize_real
 				$chunk = $chtemp;
 			}
 			$chunk =~ s/<c>(&(?:quot|[gl]t|amp);)<\/c>/$1/g;
+			$chunk =~ s/(<\/.>)</$1 </g;
 		}
 		$answer .= " " if $answer;
 		$answer .= $chunk;
