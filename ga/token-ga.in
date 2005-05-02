@@ -5,6 +5,7 @@
 # NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #
 (?:https?|ftp)://[A-Za-z0-9/.:=_%?&~+;$@\#()-]+[A-Za-z0-9/=]:<Y>
+[A-Za-z0-9._]+@[A-Za-z0-9.]+[A-Za-z0-9]:<Y>
 www\.[A-Za-z0-9/.:=_%?&~+;$@\#()-]+[A-Za-z0-9/=]:<Y>
 (?:EUR|[¥$£])[0-9][0-9.,]*[0-9]:<Y>
 [0-9][0-9.,]*[0-9][%p¢x]:<Y>
