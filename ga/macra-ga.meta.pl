@@ -19,6 +19,7 @@ s/ABSNONPASTVERB/(?:n?gh?eo[bf][^<]+|d'íosf[^<]+|tá(?:im|imid|thar)?)/g;
 # "ní bhfaighimid" is dep fut, but "faighimid" is abs pres so leave it out
 s/DEPENDENT/(?:rai?bh(?:a[md]ar|thas)?|bhfuil(?:im|imid|tear)?|n?dh?each(?:aigh|a[md]ar|thas)|íosf[aá][^<]+|(?:bhf|fh)ac(?:a|a[dm]ar|thas)|(?:bhf|fh)aigh(?:idh|fear|inn|feá|eadh|imis|idís|fí)|n?dh?earn[^<]+)/g;
 s/JUSTTA/[Tt]á(?:i[dm]|imid|thar)?/g;
+s/JUSTATA/atá(?:i[dm]|imid|thar)?/g;
 s/NONRFORMCONJ/(?:[Gg]o|[Mm]ura|[Ss]ula)/g;
 # dá done separately b/c of aonchiall issues
 s/NONRFORMPREP/(?:faoi|i|le|ó|trí)na/g;
@@ -136,8 +137,8 @@ s/SLENDERSECONDCOND/[^<]+eodh/g;
 s/AWITHGSM/(?:<N pl="y"[^>]+>)*(?:<A[^>]*>)*<A pl="n" gnt="y" gnd="m".>(?:<A[^>]*>)*/g;
 s/AWITHGSF/(?:<N pl="y"[^>]+>)*(?:<A[^>]*>)*<A pl="n" gnt="y" gnd="f".>(?:<A[^>]*>)*/g;
 s/ANYWITHGSF/(?:<N pl="y"[^>]+>)*(?:<[^>]+>)*<A pl="n" gnt="y" gnd="f".>(?:<[^>]+>)*/g;
-s/AWITHPL/(?:<N pl="y"[^>]+>)*(?:<A[^>]*>)*<A pl="y" gnt="n".>/g;
-s/AWITHCOMMON/(?:<N pl="y"[^>]+>)*<A pl="n" gnt="n".>(?:<A[^>]*>)*/g;
+s/AWITHPL/(?:<N pl="n" gnt="y" gnd=".".>)?(?:<N pl="y" gnt="n" gnd=".".>)?(?:<A[^>]*>)*<A pl="y" gnt="n".>/g;
+s/AWITHCOMMON/(?:<N pl="n" gnt="y" gnd=".".>)?(?:<N pl="y" gnt="n" gnd=".".>)?<A pl="n" gnt="n".>(?:<A[^>]*>)*/g;
 s/ANYWITHCOMMONH/(?:<[^>]+>)*<A pl="n" gnt="n" h="y".>(?:<[^>]+>)*/g;
 s/ANYWITHCOMMON/(?:<[^>]+>)*<A pl="n" gnt="n".>(?:<[^>]+>)*/g;
 s/ANYNMGPL/(?:<[^>]+>)*<N pl="y" gnt="y" gnd="m".>(?:<[^>]+>)*/g;

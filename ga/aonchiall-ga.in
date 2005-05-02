@@ -24,6 +24,8 @@
 <S>[Ii]</S> <B>bhfuil</B>:<N pl="n" gnt="n" gnd="f">
 <B>bhfuil</B>:<V p="y" t="láith">
 <B>raibh</B>:<V p="y" t="caite">
+<B>[Bb]huaigh</B>:<V p="y" t="caite">
+<B>[Bb]hraith</B>:<V p="y" t="caite">
 <B>[Tt]har</B>:<S>
 # Before a verb it's "not", not "sang"
 <B>[Cc]han</B> <V>ANYTHING</V>:<U>
@@ -214,6 +216,7 @@ g?ch?éad <B>dá</B>:<A pl="n" gnt="n">
 <B>do</B> <A pl="n" gnt="n">gach</A>:<S>
 # fad do shaoil
 <B>do</B> <NG>ANYTHING</NG>:<D>
+[Dd]o <B><Z>ANYVERB</Z>ANYTHING</B>:!<V[^>]+>
 # broken because of repeat markup?
 #do <B>do</B>:<D>
 # numerical, last resort <O> at bottom if not noun via Brill xforms
@@ -248,6 +251,8 @@ CAPITAL <B>Gabhann</B>:<Y>
 <B>g[Cc]inn</B>:<N pl="y" gnt="n" gnd="m">
 # comhshuite now
 #<B>[Gg]o</B> <S>dtí</S>:<S>
+#  avoids lenition error on "acmhainn grinn"
+<N pl="n" gnt="n" gnd="f">ANYTHING</N> <B>grinn</B>:<N pl="n" gnt="y" gnd="m">
 <B>[Gg]o</B> <A>ANYTHING</A>:<U>
 # see "gur" last resort...
 <T>na</T> <B>huaire</B>:<N pl="n" gnt="y" gnd="f" h="y">
@@ -444,13 +449,8 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 # see rialacha
 <N>[Dd]ís|[Dd]h?osaen|[Pp]h?éire</N> <B><Z>ANYNMGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="m">
 <N>[Dd]ís|[Dd]h?osaen|[Pp]h?éire</N> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
-# exceptions to next pair
 <N pl="n" gnt="n" gnd="m">[Cc]h?úpla</N> <B><Z>ANYNMC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <N pl="n" gnt="n" gnd="m">[Cc]h?úpla</N> <B><Z>ANYNFC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
-# exception to next:  tugann litir dó, avoids complaint about missing lenition
-<NFCS>ANYTHING</NFCS> <B>dó</B>:<O>
-<NCS>ANYTHING</NCS> <B><Z>ANYNMG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
-<NCS>ANYTHING</NCS> <B><Z>ANYNFG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 # amach, síos, suas, aníos, ...  optional <A> on isteach, amuigh, istigh, etc
 <B><Z>PREPADV</Z>ANYTHING</B>:<R>
 # disambiguate adjectives
@@ -467,6 +467,10 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 <A pl="n" gnt="y" gnd="f">ANYTHING</A> <B><Z>AWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
 <A pl="n" gnt="y" gnd="m">ANYTHING</A> <B><Z>AWITHGSM</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="m">
 <ACS>ANYTHING</ACS> <B><Z>AWITHCOMMON</Z>ANYTHING</B>:<A pl="n" gnt="n">
+# exception to next:  tugann litir dó, avoids complaint about missing lenition
+<NFCS>ANYTHING</NFCS> <B>dó</B>:<O>
+<NCS>ANYTHING</NCS> <B><Z>ANYNMG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<NCS>ANYTHING</NCS> <B><Z>ANYNFG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 #  four below were previous (poor) attempts at the previous four
 #<NP>ANYTHING</NP> <A>ANYTHING</A> <B><Z>AWITHPL</Z>ANYTHING</B>:<A pl="y" gnt="n">
 #<NFGS>ANYTHING</NFGS> <A>ANYTHING</A> <B><Z>AWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
@@ -558,8 +562,8 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 # missing prefixh on "caighdeán na imeartha"
 <T>ANYTHING</T> <B><Z>GENADJF</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 <T>ANYTHING</T> <B><Z>GENADJM</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
-<B><Z>GENADJF</Z>ANYTHING</B>:<A pl="n" gnt="n">
-<B><Z>GENADJM</Z>ANYTHING</B>:<A pl="n" gnt="n">
+#<B><Z>GENADJF</Z>ANYTHING</B>:<A pl="n" gnt="n">
+#<B><Z>GENADJM</Z>ANYTHING</B>:<A pl="n" gnt="n">
 # next one better without <T>, "an chnuasaigh", etc.
 [Aa]n <B><Z>ANYNMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <A pl="n" gnt="n">([Aa]on|[Gg]ach)</A> <B><Z>ANYNMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
@@ -637,7 +641,8 @@ ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
 <B>[Dd]e</B> a:<O>
 # "rinne siad ionadh de go raibh" needs go -> <C> first
 # <P> important too: "ar gach taobh de iad"
-<B>[Dd]e</B> <[CPSR]>ANYTHING</[CPSR]>:<O>
+#  <V>:  de bharr cuid eile de bhraith mé go bhfuil...
+<B>[Dd]e</B> <[CPSRV]>ANYTHING</[CPSRV]>:<O>
 <B>[Dd]e</B>:<S>
 <B>n?[Dd]h?earcadh</B>:<N pl="n" gnt="n" gnd="m">
 # "gur rinne" needs rinne -> <V> first

@@ -254,6 +254,7 @@ Dé Domhnaigh:<N pl="n" gnt="n">
 [Aa] [Ss]eacht:<A pl="n" gnt="n">
 [Aa] h[Oo]cht:<A pl="n" gnt="n">
 [Aa] [Nn]aoi:<A pl="n" gnt="n">
+[Ff]á dtaobh:<R>
 # [Dd]rioll ar an dreall
 [Ff]ad is:<C>
 [Ff]aoi bhráid:<S>
@@ -408,12 +409,12 @@ Inis Mór:<N pl="n" gnt="n" gnd="f">
 [Ll]e [Cc]héile:<R>
 [Ll]e cois:<S>
 # rare instance in which déanaí is not preceded by copula; see rialacha
-[Ll]e déanaí:<R>
-[Ll]e deireanas:<R>
-[Ll]e feiceáil:<R>
+[Ll]e [Dd]éanaí:<R>
+[Ll]e [Dd]eireanas:<R>
+[Ll]e [Ff]eiceáil:<R>
 [Ll]e haghaidh:<S>
 [Ll]e hais:<S>
-[Ll]e linn:<S>
+[Ll]e [Ll]inn:<S>
 # infrequent
 [Ll]iútar éatar:<N pl="n" gnt="n">
 Loch Garman:<Y>
@@ -448,11 +449,11 @@ neachtar acu:<P>
 # infrequent
 [Nn]í hansa:<U>
 # rare instance in which déanaí is not preceded by copula; see rialacha
-[Nn]íos déanaí:<R>
+[Nn]íos [Dd]éanaí:<R>
 # rare instance in which fearr is not preceded by copula; see rialacha
-[Nn]íos fearr:<A>
+[Nn]íos [Ff]earr:<A>
 # rare instance in which mó is not preceded by copula; see rialacha
-[Nn]íos mó:<A>
+[Nn]íos [Mm]ó:<A>
 # infrequent
 [Nn]iúdar neádar:<N pl="n" gnt="n">
 [Óó] chianaibh:<R>

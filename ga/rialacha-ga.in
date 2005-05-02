@@ -104,6 +104,7 @@ sin sin:OK
 <F>[Dd]íofa</F>:IONADAI{díobh}
 <S>[Ii]</S> <F>n[Dd]oimhne</F>:IONADAI{i ndoimhneacht}
 <F>n?[Dd]h?rud</F>:IONADAI{druidim}
+<V>[Tt]ar</V> <F>[Ee]is</F>:IONADAI{éis}
 <F>[Ff]héin</F>:IONADAI{féin}
 <F>[Ff]h?iní</F>:IONADAI{finte}
 <F>[Ff]h?irinne</F>:IONADAI{fírinne}
@@ -132,6 +133,7 @@ sin sin:OK
 <F>[Óó]m</F>:IONADAI{ó mo}
 <F>b?[Pp]h?ill</F>:IONADAI{fill, d'fhill}
 <F>b?[Pp]huntaí?</F>:IONADAI{punt, puint}
+<F>[Rr]abh</F>:IONADAI{raibh}
 <F>[Rr]ámhaillí</F>:IONADAI{rámhaille}
 <F>[Rr]ámhailligh</F>:IONADAI{rámhaille}
 <F>[Rr]ataí?</F>:IONADAI{ráta, rachta}
@@ -224,8 +226,10 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 <NFCS>ANYTHING</NFCS> <A pl="n" gnt="n">COMPOUND</A>:OK
 # corpus; exception to "lenite adj after feminine noun" (céad comes before)
 #. Léimeann an fharraige céad méadar suas sa spéir (OK).
-<NFCS>ANYTHING</NFCS> <A pl="n" gnt="n">(bainte|céad|cibé|curtha|deich|dulta|gach|seacht|seo|sin|tugtha)</A>:OK
+<NFCS>ANYTHING</NFCS> <A pl="n" gnt="n">(bainte|céad|cibé|curtha|deich|dulta|gach|seacht|seo|sin|suite|tugtha)</A>:OK
 <N pl="n" gnt="n" gnd="f">[Bb]heith</N> <A pl="n" gnt="n">UNLENITED</A>:OK
+# OD oiread "followed by m. of adjective"
+<N pl="n" gnt="n" gnd="f">[Oo]iread</N> <A pl="n" gnt="n">UNLENITED</A>:OK
 <S>[Aa]g</S> <N pl="n" gnt="n" gnd="f">[Ff]áil</N> <N pl="n" gnt="y" gnd="m">báis</N>:SEIMHIU
 <S>[Aa]g</S> <N pl="n" gnt="n" gnd="f">[Gg]abháil</N> <N pl="n" gnt="y" gnd="m">(foinn|ceoil)</N>:SEIMHIU
 <NFCS>ANYTHING</NFCS> <NG>UNLENITED</NG>:SEIMHIU
@@ -310,7 +314,7 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 # corpus exceptions
 #. Mhair cuid mhór dár sinsir céad caoga bliain ó shin (OK).
 #. Tá sé le cloisteáil sna meáin gach seachtain (OK).
-<NP>SLENDERFINALCONSONANT</NP> <A pl="y" gnt="n">(bainte|cibé|curtha|dulta|tugtha)</A>:OK
+<NP>SLENDERFINALCONSONANT</NP> <A pl="y" gnt="n">(bainte|cibé|curtha|dulta|suite|tugtha)</A>:OK
 # CB p.15 #5.i
 #. Déanann siad na breiseáin brabhsála don tionscal ríomhaireachta.
 #. Is ar éisc mara agus ar na hainmhithe mara eile atáimid ag díriú.
@@ -1030,6 +1034,7 @@ n?[Dd]h?eich <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 <A pl="n" gnt="n">[Dd]há</A> [Cc]hloigne:BACHOIR{chloigeann}
 <A pl="n" gnt="n">[Dd]há</A> [Ff]hichid:BACHOIR{chloigeann}
 <A pl="n" gnt="n">[Dd]há</A> h?uaire:BACHOIR{uair}
+<A pl="n" gnt="n">[Dd]há</A> [Ss]heachtaine:BACHOIR{sheachtain}
 # CB p.77 #8.d; no such rule in OD/LGG
 <A pl="n" gnt="n">[Dd]há</A> m?[Bb]h?os:BACHOIR{bhois}
 # CB p.77 #8.d; no such rule in OD/LGG
@@ -1099,6 +1104,7 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 [Dd]h?osaen <NS>ANYTHING</NS>:IOLRA
 # CB p.55
 <S>DATIVEPREP</S> <N>EIRE</N>:BACHOIR{Éirinn}
+<S>[Ff]á</S>:CAIGHDEAN{faoi}
 # corpus with and without lenition
 <N>fh?aid</N> <V cop="y">is</V>:IONADAI{fad}
 <N>fh?aid</N> a:IONADAI{fad}
@@ -2113,6 +2119,9 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 # CB p.77 #8.h, 2nd part
 <S>[Ss]na</S> <A pl="n" gnt="n">(trí|ceithre|cúig|sé|seacht|ocht|naoi|deich)</A> g?ch?éad|mh?íle|mh?illiún:BACHOIR{sa}
 <S>[Ss]na</S> <A pl="n" gnt="n" h="y">hocht</A> g?ch?éad|mh?íle|mh?illiún:BACHOIR{sa}
+#   very low frequency
+# subh th?alúin:IONADAI{sú}
+# subh chraoibhe:IONADAI{sú}
 # CB p.132 #5
 #. Sula sroicheadar an bun arís, bhí an oíche ann agus chuadar ar strae.
 <C>[Ss]ula</C> <VPAST>ANYTHING</VPAST>:BACHOIR{sular}
@@ -2529,7 +2538,7 @@ d?[tT]h?rí|g?[Cc]h?eithre|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 [Mm]á|[Nn]í|[Óó] <E><VNOLEN>LENITED</VNOLEN></E>:OK
 # CB p.132 #8.a
 # exception only for DIRECT relatives, so not for "faoina, ina, lena", etc.
-[Aa] <E><VNOLEN>LENITED</VNOLEN></E>:OK
+<G>[Aa]</G> <E><VNOLEN>LENITED</VNOLEN></E>:OK
 #. Cha bhíonn striapachas agus seafóid Mheiriceá ann feasta (OK).
 <U>[Cc]ha</U> <E><VNOLEN>LENITEDBCFGMPS</VNOLEN></E>:OK
 #. Tá cleachtadh ag daoine ó bhíonn siad an-óg ar uaigneas imeachta (OK).
@@ -2555,11 +2564,14 @@ d?[tT]h?rí|g?[Cc]h?eithre|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 [Aa]n|[Cc]á|[Dd]á|[Nn]ach|[Nn]í <V>ABSNONPASTVERB</V>:RELATIVE
 #  next three are the converse rules; dependent forms "in phrase" only
 #. Má dhearna sí praiseach de, thosaigh sí arís go bhfuair sí ceart é.
+#. Nuair a raibh mé óg.
 <V>DEPENDENT</V>:ABSOLUTE
 <C>NONRFORMCONJ</C> <E><V>DEPENDENT</V></E>:OK
 <S>NONRFORMPREP</S> <E><V>DEPENDENT</V></E>:OK
+#. An clapsholas a raibh mé ag dréim leis (OK).
+<[HU]>[Aa]</[HU]> <E><V>DEPENDENT</V></E>:OK
 #. Chan fhacthas dom go raibh an saibhreas céanna i mBéarla (OK).
-[Aa]|[Aa]n|[Cc]á|[Cc]ha|[Cc]han|[Dd]á|[Nn]ach|[Nn]í <E><V>DEPENDENT</V></E>:OK
+[Aa]n|[Cc]á|[Cc]ha|[Cc]han|[Dd]á|[Nn]ach|[Nn]í <E><V>DEPENDENT</V></E>:OK
 #############################################################################
 #  Note that we only need non-eclipsing particles as exceptions
 #  Also, INITIALVOWELORF macro allows unlenited "f", but never happens here!
@@ -2878,7 +2890,8 @@ d?[tT]h?rí|g?[Cc]h?eithre|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 <R>[Aa]rú</R>:INPHRASE{arú amárach,anuraidh,aréir,inné}
 <N>h?[Aa]thláimh</N>:INPHRASE{ar athláimh}
 <N pl="n" gnt="n" gnd="m">[Aa]tráth</N>:INPHRASE{ar atráth}
-<A pl="n" gnt="n">[Bb]h?eathach</A>:INPHRASE{beo beathach}
+# <A pl="n" gnt="n">[Bb]h?eathach</A>:INPHRASE{beo beathach}
+<A pl="n" gnt="n">[Bb]h?eathach</A>:IONADAI{beithíoch}
 <N pl="n" gnt="n" gnd="m">m?[Bb]h?ith</N>:INPHRASE{ar bith, cár bith}
 <N pl="n" gnt="n">[Bb]h?íthin</N>:INPHRASE{trí bhíthin, de bhíthin}
 <N pl="n" gnt="n">m?[Bb]h?óiléagar</N>:INPHRASE{ar bóiléagar}
@@ -2932,8 +2945,9 @@ m?Bh?éal <E><A pl="n" gnt="n">Feirsteach</A></E>:OK
 <N pl="n" gnt="n">(bh)?[Ff]h?ogas</N>:INPHRASE{i bhfogas}
 <A>[Ff]óill</A>:INPHRASE{go fóill}
 <[AN]>[Ff]ras</[AN]>:INPHRASE{go fras}
-# both have same genderless tag
-<N pl="n" gnt="n">[Ff][ua]ta</N>:INPHRASE{futa fata}
+# both futa and fata have same genderless tag
+<N pl="n" gnt="n">[Ff]ata</N>:IONADAI{práta}
+<N pl="n" gnt="n">[Ff]uta</N>:INPHRASE{futa fata}
 <N pl="n" gnt="n">[Ff]ud</N>:INPHRASE{ar fud, fud fad}
 # see bhfearr above
 <A pl="n" gnt="n">bhfusa</A>:INPHRASE{gura seacht bhfusa}
