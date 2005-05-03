@@ -398,6 +398,25 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 <S>[Aa]g</S> <P>([Mm]uid|[Ss]inn)</P>:BACHOIR{againn}
 <S>[Aa]g</S> <P>[Ss]ibh</P>:BACHOIR{agaibh}
 <S>[Aa]g</S> <P>[Ii]ad</P>:BACHOIR{acu}
+# LGG p.135, CB p.129
+#. Tá sí ag ullmhú é.
+<S>[Aa]g</S> <N>VNISH</N> <P>([ÉéÍí]|[Ii]ad)</P>:BACHOIR{á X}
+#. Chuir sí ag machnamh é (OK).
+<S>[Aa]g</S> <N pl="n" gnt="n" gnd="m">machnamh</N> <P>ANYTHING</P>:OK
+<S>[Aa]g</S> <N>NOTVNISHUNLEN</N> <P>([ÉéÍí]|[Ii]ad)</P>:BACHOIR{á X}
+#. Bhí neach oilbhéasach ag leanúint mé.
+<S>[Aa]g</S> <N>VNISH</N> <P>[Mm]é</P>:BACHOIR{do mo X}
+<S>[Aa]g</S> <N pl="n" gnt="n" gnd="m">machnamh</N> <P>ANYTHING</P>:OK
+<S>[Aa]g</S> <N>NOTVNISHUNLEN</N> <P>[Mm]é</P>:BACHOIR{do mo X}
+<S>[Aa]g</S> <N>VNISH</N> <P>[Tt]hú</P>:BACHOIR{do do X}
+<S>[Aa]g</S> <N pl="n" gnt="n" gnd="m">machnamh</N> <P>ANYTHING</P>:OK
+<S>[Aa]g</S> <N>NOTVNISHUNLEN</N> <P>[Tt]hú</P>:BACHOIR{do do X}
+<S>[Aa]g</S> <N>VNISH</N> <P>([Mm]uid|[Ss]inn)</P>:BACHOIR{dár X}
+<S>[Aa]g</S> <N pl="n" gnt="n" gnd="m">machnamh</N> <P>ANYTHING</P>:OK
+<S>[Aa]g</S> <N>NOTVNISHUNLEN</N> <P>([Mm]uid|[Ss]inn)</P>:BACHOIR{dár X}
+<S>[Aa]g</S> <N>VNISH</N> <P>[Ss]ibh</P>:BACHOIR{do bhur X}
+<S>[Aa]g</S> <N pl="n" gnt="n" gnd="m">machnamh</N> <P>ANYTHING</P>:OK
+<S>[Aa]g</S> <N>NOTVNISHUNLEN</N> <P>[Ss]ibh</P>:BACHOIR{do bhur X}
 # common misspellings...
 <S>FUSEDPREP</S> <A pl="n" gnt="n">[Aa]it</A>:IONADAI{áit}
 <S>[Ii]n</S> <A pl="n" gnt="n">[Aa]it</A>:IONADAI{in áit}
@@ -812,6 +831,13 @@ g?[Cc]h?eithre <N>airde</N>:BACHOIR{hairde}
 #   keep next rule commented - can't really do better than generic NOGEN rules
 # <V>ANYTHING</V> <T>na</T> <N>ch?oda</N>:IONADAI{codanna}
 <V cop="y">ANYTHING</V> <N pl="n" gnt="n" gnd="f">[Cc]hoir</N>:IONADAI(chóir}
+# LGG p.204
+<N pl="n" gnt="n" gnd="m">g?Ch?ontae</N> <N pl="n" gnt="y" gnd="f">(Gaillimhe|Iarmhí|Mí)</N>:NEEDART
+<N pl="n" gnt="n" gnd="m">g?Ch?ontae</N> <N pl="n" gnt="y" gnd="m">(Cabháin|Cláir|Dúin|Longfoirt)</N>:NEEDART
+<N pl="n" gnt="n" gnd="m">g?Ch?ontae</N> <T>ANYTHING</T> <N>CAPITAL</N>:ONEART
+<N pl="n" gnt="n" gnd="m">g?Ch?ontae</N> <T>ANYTHING</T> <N>(Gaillimhe|hIarmhí|Mí|Chabháin|Chláir|Dúin|Longfoirt)</N>:OK
+# contae is alt. feminine but with county names always lenites...
+<N pl="n" gnt="n" gnd="m">g?Ch?ontae</N> <N>CAPITALUNLENITED</N>:SEIMHIU
 # CB p.68 #19
 <A pl="n" gnt="n">cuibheasach</A> <A>ANYTHING</A>:UATHA
 <A pl="n" gnt="n">cuibheasach</A> <A pl="n" gnt="n">ANYTHING</A>:OK

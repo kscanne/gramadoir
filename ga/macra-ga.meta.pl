@@ -6,6 +6,7 @@
 # NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #
 s/ANYTHING/[^<]+/g;
+s/CAPITALUNLENITED/(?:[BCDFGMPT][^Hh']|S[lnraeiouáéíóú]|bhF)[^<]*/g;
 s/CAPITALLENITED/[BCDFGMPST][Hh][^<]+/g;
 s/CAPITAL/[A-ZÁÉÍÓÚ][^<]*/g;
 s/CAPVOWEL/[AEIOUÁÉÍÓÚ][^<]*/g;
@@ -103,6 +104,8 @@ s/NOBEEAPOST/(?:[^b]|b[^'])[^<]+/g;
 # ilt = oscailt, tochailt, cuimilt
 s/FEMVN/(?:[^<]+i[lnr]t|[^<]+áil|breith|foghlaim|iarraidh|obair|seilg)/g;
 s/SUBJECTPRONOUN/[Ss](?:[éí]|iad(?:san)?|ise|eisean)/g;
+# no need for "dul", "teacht" intransitives!
+s/NOTVNISHUNLEN/(?:ceannach|cur|díol|foghlaim|íoc|iompar|oscailt|rá|roinnt|scríobh|soláthar)/g;
 s/NOTVNISHVN/(?:bheith|cheannach|chur|dhíol|dhul|fhoghlaim|íoc|iompar|oscailt|rá|roinnt|scríobh|sholáthar|theacht)/g;
 s/VNISH/[^<]*(?:a[dm]h|i[nr]t|áil|ú)/g;
 s/NOTDO/[^<][^<][^<]+/g;
