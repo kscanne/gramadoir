@@ -510,6 +510,8 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 # CB p.8 #4
 #. Tá dhá shiombail ag an bharr gach leathanaigh.
 <T>ANYTHING</T> <NC>ANYTHING</NC> <A pl="n" gnt="n">gach</A> <NG>ANYTHING</NG>:ONEART
+#. Tabharfaimid an t-ainm do mháthar uirthi.
+<T>ANYTHING</T> <NC>ANYTHING</NC> <D>ANYTHING</D> <NG>ANYTHING</NG>:ONEART
 # converse of CB p.16 #7, no lenition after present/future copula
 #. An fhéidir le duine ar bith eile breathnú ar mo script?
 <V cop="y">[Aa]n</V> <[AN]>LENITED</[AN]>:NISEIMHIU
@@ -1549,6 +1551,9 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <T>na</T> <A pl="n" gnt="y" gnd="f">luaithe</A>:IONADAI{luatha}
 # CB p.121 #6
 <C>[Mm]á</C> <VCOND>ANYTHING</VCOND>:BACHOIR{dá}
+# LGG p.167, NGBC p.37
+#. Má thiocfaidh acmhainní breise ar fáil, beidh mé sásta.
+<C>[Mm]á</C> <VFUT>ANYTHING</VFUT>:PRESENT
 # CB p.19 #13, p.133 #9
 #. Má tugann rí breith ar na boicht le cothromas, bunófar a ríchathaoir go brách.
 <C>[Mm]á</C> <VNOPAUT>UNLENITED</VNOPAUT>:SEIMHIU
@@ -1585,6 +1590,12 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 #. Tosaíodh ar mhodh adhlactha eile ina mbaintí úsáid as clocha measartha móra.
 <A>measartha</A> <A>ANYTHING</A>:UATHA
 <A>measartha</A> <A pl="n" gnt="n">ANYTHING</A>:OK
+# LGG p.58
+<N>Mhic</N> <Y>CAPITALUNLENITEDNOTCG</Y>:SEIMHIU
+<N>Mhic</N> <Y>Dara</Y>:OK
+<N>Mhic</N> <Y>LENITEDCAPCG</Y>:NISEIMHIU
+<Y>Mhig</Y> <Y>CAPITALUNLENITEDNOTCG</Y>:SEIMHIU
+<Y>Mhig</Y> <Y>LENITEDCAPCG</Y>:NISEIMHIU
 # CB p.5 #17
 #. Comhlíon mo aitheanta agus mairfidh tú beo.
 <D>[Mm]o</D> INITIALVOWELORF:BACHOIR{m+uaschamóg}
@@ -1747,6 +1758,8 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.16 #7 (N), p.18 #10 (A)
 #. Feicimid gur de dheasca a n-easumhlaíochta nárbh féidir leo dul isteach ann.
 <V cop="y">[Nn]árbh</V> UNLENITEDF:SEIMHIU
+# LGG p.58
+<Y>Ní</Y> <Y>CAPITALUNLENITED</Y>:SEIMHIU
 # same as ní+unlenited rule, but with correct message for "fuair"
 # No need for future forms "Ní faighidh" since these aren't 
 # legal words and will show up as unknown
@@ -1793,6 +1806,11 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <R>[Nn]íba</R> <A pl="n" gnt="y" gnd="f">INITIALVOWELORF</A>:BACHOIR{níb}
 #. Bhí na páistí ag éirí níba tréine.
 <R>[Nn]íba</R> <A pl="n" gnt="y" gnd="f">UNLENITED</A>:SEIMHIU
+# LGG p.58
+#. Tá tuairisc ar an léacht a thug Niamh Nic Suibhne ar leathanach a hocht.
+<Y>Ni[cg]</Y> <Y>CAPITALUNLENITEDNOTCG</Y>:SEIMHIU
+#. Is saoririseoir agus ceoltóir í Aoife Nic Chormaic.
+<Y>Ni[cg]</Y> <Y>LENITEDCAPCG</Y>:NISEIMHIU
 # CB p.132 #4
 [Nn]íor <VNOTPAST>ANYTHING</VNOTPAST>:BACHOIR{ní}
 # CB p.133 #12.a
@@ -2301,6 +2319,9 @@ d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</
 <N pl="n" gnt="n" gnd="m">d?[Tt]h?riúr</N> <NP>ANYTHING</NP>:UATHA
 <N pl="n" gnt="n" gnd="m">d?[Tt]h?riúr</N> <N pl="y" gnt="y" gnd="f">ban</N>:OK
 <N pl="n" gnt="n" gnd="m">d?[Tt]h?riúr</N> <N pl="n" gnt="n" gnd="f">m?bh?ean</N>:BACHOIR{ban}
+# LGG p.58
+#. Beidh cúrsa Gaeilge ar siúl do mhic léinn in Áras Mháirtín Uí Cadhain.
+<Y>Uí</Y> <Y>CAPITALUNLENITED</Y>:SEIMHIU
 # CB p.13 #3.b
 #. Nár thug sí póg do gach uile duine?
 # Just uile+<N> is not good enough since it might be
@@ -2573,7 +2594,7 @@ d?[tT]h?rí|g?[Cc]h?eithre|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 #. Ar an láithreán seo gheofar foclóirí agus liostaí téarmaíochta (OK).
 <VNOLEN>LENITEDFUTURE</VNOLEN>:OK
 # CB p.132 #3; dependent forms of verb <=> dependent clause
-#  keep these near bottom so "níor fhacthas" gives "BACHOIR{ní}"
+#  keep these near bottom so "níor fhacthas/raibh" gives "BACHOIR{ní}"
 #  instead of silly "no need for relative form"
 #. An oíche sin, sular chuaigh sé a chodladh, chuir sé litir fhada dom.
 <C>RFORMCONJ</C> <VPAST>ABSPASTVERB</VPAST>:RELATIVE

@@ -6,6 +6,7 @@
 # NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #
 s/ANYTHING/[^<]+/g;
+s/CAPITALUNLENITEDNOTCG/(?:[BDFMPT][^Hh']|S[lnraeiouáéíóú]|bhF)[^<]*/g;
 s/CAPITALUNLENITED/(?:[BCDFGMPT][^Hh']|S[lnraeiouáéíóú]|bhF)[^<]*/g;
 s/CAPITALLENITED/[BCDFGMPST][Hh][^<]+/g;
 s/CAPITAL/[A-ZÁÉÍÓÚ][^<]*/g;
@@ -87,6 +88,7 @@ s/INITIALBIGDAPOST/D'[^<]+/g;
 s/INITIALDAPOST/d'[^<]+/g;
 s/INITIALBAPOST/b'[^<]+/g;
 s/INITIALMBAPOST/mb'[^<]+/g;
+s/LENITEDCAPCG/[CG][Hh][^<]+/g;
 s/LENITEDBCFGMPS/(?:[CcFfGgMmPpSs][Hh]|[Bb]h[^fF])[^<]+/g;
 s/LENITEDBMP/(?:[MmPp][Hh]|[Bb][Hh][^fF])[^<]+/g;
 s/MUTATEDDST/(?:n[Dd]|d[Tt]|[DdSsTt][Hh])[^<]+/g;
@@ -244,6 +246,7 @@ s/\*IMP\[/*t="ord"[/g;
 s/\*NOLEN\[/*t="[flo][^o][/g;
 s/\*COND\[/*t="coinn"[/g;
 s/\*PAST\[/*t="caite"[/g;
+s/\*FUT\[/*t="fáist"[/g;
 s/\*SUBJ\[/*t="foshuit"[/g;
 s/\*NOTPASTSUBJ\[/*t=".[^a][^s][/g;
 s/\*NOTCOND\[/*t="...[^n][/g;
