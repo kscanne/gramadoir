@@ -107,7 +107,7 @@
 <E offset="20" fromy="104" fromx="20" toy="104" tox="44" sentence="Tá dhá shiombail ag an bharr gach leathanaigh." errortext="an bharr gach leathanaigh" msg="Ní gá leis an alt cinnte anseo">
 <E offset="13" fromy="105" fromx="13" toy="105" tox="32" sentence="Tabharfaimid an t-ainm do mháthar uirthi." errortext="an t-ainm do mháthar" msg="Ní gá leis an alt cinnte anseo">
 <E offset="0" fromy="106" fromx="0" toy="106" tox="9" sentence="An fhéidir le duine ar bith eile breathnú ar mo script?" errortext="An fhéidir" msg="Séimhiú gan ghá">
-<E offset="10" fromy="107" fromx="10" toy="107" tox="16" sentence="Ní bhíonn aon dhá chlár as an chrann céanna mar a chéile go díreach." errortext="aon dhá" msg="Séimhiú gan ghá">
+<E offset="10" fromy="107" fromx="10" toy="107" tox="16" sentence="Ní bhíonn aon dhá chlár as an chrann chéanna mar a chéile go díreach." errortext="aon dhá" msg="Séimhiú gan ghá">
 <E offset="10" fromy="108" fromx="10" toy="108" tox="22" sentence="Ní bheidh aon buntáiste againn orthu sin." errortext="aon buntáiste" msg="Séimhiú ar iarraidh">
 <E offset="6" fromy="109" fromx="6" toy="109" tox="11" sentence="Rogha aon de na focail a tháinig i d'intinn." errortext="aon de" msg="Cor cainte aisteach">
 <E offset="38" fromy="110" fromx="38" toy="110" tox="39" sentence="Ná hith aon arán gabhála mar aon léi (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
