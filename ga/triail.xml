@@ -101,8 +101,8 @@
 <E offset="68" fromy="99" fromx="68" toy="99" tox="81" sentence="Is é is dóichí go raibh baint ag an eisimirce leis an laghdú i líon an gcainteoirí Gaeilge." errortext="an gcainteoirí" msg="Ba chóir duit «na» a úsáid anseo">
 <E offset="7" fromy="100" fromx="7" toy="100" tox="12" sentence="Is iad an trí cholún le chéile an tAontas Eorpach." errortext="an trí" msg="Ba chóir duit «na» a úsáid anseo">
 <E offset="57" fromy="101" fromx="57" toy="101" tox="58" sentence="Sheol an ceithre mhíle de na meirligh amach san fhásach (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="10" fromy="102" fromx="10" toy="102" tox="21" sentence="Ní bhíonn an dhíograis chéanna ná an dhúthracht chéanna i gceist." errortext="an dhíograis" msg="Urú nó séimhiú gan ghá">
-<E offset="34" fromy="102" fromx="34" toy="102" tox="46" sentence="Ní bhíonn an dhíograis chéanna ná an dhúthracht chéanna i gceist." errortext="an dhúthracht" msg="Urú nó séimhiú gan ghá">
+<E offset="10" fromy="102" fromx="10" toy="102" tox="21" sentence="Ní bhíonn an dhíograis ná an dhúthracht i gceist." errortext="an dhíograis" msg="Urú nó séimhiú gan ghá">
+<E offset="26" fromy="102" fromx="26" toy="102" tox="38" sentence="Ní bhíonn an dhíograis ná an dhúthracht i gceist." errortext="an dhúthracht" msg="Urú nó séimhiú gan ghá">
 <E offset="5" fromy="103" fromx="5" toy="103" tox="24" sentence="Ba é an fear an phortaigh a tháinig thart leis na plátaí bia." errortext="an fear an phortaigh" msg="Ní gá leis an alt cinnte anseo">
 <E offset="20" fromy="104" fromx="20" toy="104" tox="44" sentence="Tá dhá shiombail ag an bharr gach leathanaigh." errortext="an bharr gach leathanaigh" msg="Ní gá leis an alt cinnte anseo">
 <E offset="13" fromy="105" fromx="13" toy="105" tox="32" sentence="Tabharfaimid an t-ainm do mháthar uirthi." errortext="an t-ainm do mháthar" msg="Ní gá leis an alt cinnte anseo">
@@ -177,7 +177,7 @@
 <E offset="12" fromy="174" fromx="12" toy="174" tox="24" sentence="Tógfaidh mé do coinnleoir óna ionad, mura ndéana tú aithrí." errortext="do coinnleoir" msg="Séimhiú ar iarraidh">
 <E offset="13" fromy="175" fromx="13" toy="175" tox="21" sentence="Is cúis imní don pobal a laghad maoinithe a dhéantar ar Naíscoileanna." errortext="don pobal" msg="Séimhiú ar iarraidh">
 <E offset="27" fromy="176" fromx="27" toy="176" tox="36" sentence="Daoine eile atá ina mbaill den dhream seo." errortext="den dhream" msg="Urú nó séimhiú gan ghá">
-<E offset="25" fromy="177" fromx="25" toy="177" tox="35" sentence="Creidim go raibh siad de an thuairim chéanna." errortext="an thuairim" msg="Urú nó séimhiú gan ghá">
+<E offset="25" fromy="177" fromx="25" toy="177" tox="35" sentence="Creidim go raibh siad de an thuairim seo." errortext="an thuairim" msg="Urú nó séimhiú gan ghá">
 <E offset="3" fromy="178" fromx="3" toy="178" tox="12" sentence="Tá dhá teanga oifigiúla le stádas bunreachtúil á labhairt sa tír seo." errortext="dhá teanga" msg="Séimhiú ar iarraidh">
 <E offset="0" fromy="179" fromx="0" toy="179" tox="10" sentence="Dhá fiacail lárnacha i ngach aon chomhla." errortext="Dhá fiacail" msg="Séimhiú ar iarraidh">
 <E offset="19" fromy="180" fromx="19" toy="180" tox="30" sentence="Rug sí greim ar mo dhá gualainn agus an fhearg a bhí ina súile." errortext="dhá gualainn" msg="Séimhiú ar iarraidh">
