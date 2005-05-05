@@ -38,6 +38,7 @@ s/PASTNORFORM/(?:ndúi?r|rai?bh|bhfuai?r|bhfac|ndeach|ndearna)[^<]*/g;
 s/PASTAFTERNI/(?:bhfuai?r|dúi?r|rai?bh|fhac|dheach|dhearna)[^<]*/g;
 s/FAIGHECLIPSED/bh[Ff]ua(?:ir(?:ea[md]ar)?|rthas)/g;
 s/FAIGHTOECLIPSE/[Ff]ua(?:ir(?:ea[md]ar)?|rthas)/g;
+s/TWOTONINETEEN/(?:[2-9]|1[0-9])/g;
 s/VOWELNUMERAL/(?:[0-9]?[18]|1?8[0-9][0-9][0-9]*)/g;
 s/VOWELORDINAL/(?:80|[0-9]?[18]|1?8[0-9][0-9][0-9]*)ú/g;
 # see CB p.22 -- adjectives that can take a prefix t
@@ -58,6 +59,7 @@ s/ECLIPSEDBCFGP/(?:g[Cc]|b[Pp]|m[Bb]|n[Gg]|bh[fF])[^<]+/g;
 s/ECLIPSED/(?:n(?:-[aeiouáéíóú]|[AEIOUÁÉÍÓÚ])|d[Tt]|g[Cc]|b[Pp]|m[Bb]|n[DdGg]|bh[fF])[^<]*/g;
 s/ECLIPSINGNUMBER/(?:n?[Dd]h?eich|[Nn]aoi|(?:h|[mbd]')?[Oo]cht|[Ss]h?eacht|[0-9]*[789]|[0-9]*10)/g;
 s/ECLIPSINGPOSS/(?:(?:[Ff]aoin|[Ii]n|[Ll]en|[Óó]n|[Tt]rín)?(?:[Aa]|ár)|[Dd]?[Áá]r?|[Bb]hur|[Aa]rna)/g;
+s/UNLENITABLEADJ/(?:bainte|céad|cibé|curtha|deich|dulta|gach|seacht|seo|sin|suite|tugtha)/g;
 s/UNLENITABLE/(?:[^BbCcDdFfGgMmPpTt]|[Ss][^lnraeiouáéíóú])[^<]*/g;
 s/UNLENITEDBCGMP/[BbCcGgMmPp][^Hh'][^<]*/g;
 s/UNLENITEDBCFGMP/(?:[BbCcFfGgMmPp][^Hh']|bh[fF])[^<]*/g;
@@ -139,6 +141,7 @@ s/SLENDERFIRSTCOND/[^<]+feadh/g;
 s/BROADSECONDCOND/[^<]+ódh/g;
 s/SLENDERSECONDCOND/[^<]+eodh/g;
 ############################################################################
+s/BHOGLIKE/<A pl="n" gnt="n".><V p="y" t="ord".><V p="y" t="caite".>/g;
 s/AWITHGSM/(?:<N pl="y"[^>]+>)*(?:<A[^>]*>)*<A pl="n" gnt="y" gnd="m".>(?:<A[^>]*>)*/g;
 s/AWITHGSF/(?:<N pl="y"[^>]+>)*(?:<A[^>]*>)*<A pl="n" gnt="y" gnd="f".>(?:<A[^>]*>)*/g;
 s/ANYWITHGSF/(?:<N pl="y"[^>]+>)*(?:<[^>]+>)*<A pl="n" gnt="y" gnd="f".>(?:<[^>]+>)*/g;
@@ -146,6 +149,7 @@ s/AWITHPL/(?:<N pl="n" gnt="y" gnd=".".>)?(?:<N pl="y" gnt="n" gnd=".".>)?(?:<A[
 s/AWITHCOMMON/(?:<N pl="n" gnt="y" gnd=".".>)?(?:<N pl="y" gnt="n" gnd=".".>)?<A pl="n" gnt="n".>(?:<A[^>]*>)*/g;
 s/ANYWITHCOMMONH/(?:<[^>]+>)*<A pl="n" gnt="n" h="y".>(?:<[^>]+>)*/g;
 s/ANYWITHCOMMON/(?:<[^>]+>)*<A pl="n" gnt="n".>(?:<[^>]+>)*/g;
+s/ANYWITHADJ/(?:<[^>]+>)*<A[^>]+>(?:<[^>]+>)*/g;
 s/ANYNMGPL/(?:<[^>]+>)*<N pl="y" gnt="y" gnd="m".>(?:<[^>]+>)*/g;
 s/ANYNFGPL/(?:<[^>]+>)*<N pl="y" gnt="y" gnd="f".>(?:<[^>]+>)*/g;
 s/ANYNMGH/(?:<[^>]+>)*<N pl="n" gnt="y" gnd="m" h="y".>(?:<[^>]+>)*/g;
@@ -238,7 +242,9 @@ s/\*MCP\[/*pl="y" gnt="n" gnd="m"[/g;
 s/\*MGS\[/*pl="n" gnt="y" gnd="m"[/g;
 s/\*MGP\[/*pl="y" gnt="y" gnd="m"[/g;
 s/\*NOPAUT\[/*(?: p=.y|t=..[^a])[/g;
-s/\*AUT\[/*p="n"[/g;
+s/\*AUT\[/* p="n"[/g;
+# also implies non-copula
+s/\*PERS\[/* p="y"[/g;
 s/\*DEE\[/*t="(?:caite|gnáth|coinn)"[/g;
 s/\*PWITHH\[/*pl="y" .+ h="y"[/g;
 s/\*WITHH\[/*h="y"[/g;

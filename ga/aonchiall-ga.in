@@ -36,11 +36,24 @@
 <B>[Tt]híos</B>:<R>
 # not worth dealing with <N>
 <B>[Ff]iú</B>:<R>
+# ba => copula should be done before BHOGLIKE rules for instance
+<T>[Nn]a</T> <B>ba</B>:<N pl="y" gnt="n" gnd="f">
+<B>[Bb]a</B>:<V cop="y">
+[Gg]o|[Nn]ach <B>m[Bb]a</B>:<V cop="y">
+[Dd]h?á <B>m[Bb]a</B>:<V cop="y">
 # go n-éirí, go n-oibrí, etc. 
 [Gg]o <B><Z>NMFOURSUBJ</Z>ECLIPSED</B>:<V p="y" t="foshuit">
 [Nn]ár <B>[Cc]huma</B>:<A pl="n" gnt="n">
 [Nn]ár <B><Z>ANYSUBJ</Z>LENITED</B>:<V p="y" t="foshuit">
 <B><Z>ANYSUBJ</Z>LENITED</B>:!<V p="y" t="foshuit">
+#  these níos/ní ba rules need to be before ":!<A" rule below
+# comparitive, superlative; not nec. all adjective, e.g. "níos déanaí"
+<R>[Nn]íos</R> <B><Z>ANYWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
+# "ní ba", "níb", "níba"
+<R>NIBS</R> <B><Z>ANYWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
+<[AN]>ANYTHING</[AN]> <B><Z>BHOGLIKE</Z>LENITED</B>:<A pl="n" gnt="n">
+<V cop="y">ANYTHING</V> <B><Z>BHOGLIKE</Z>LENITED</B>:<A pl="n" gnt="n">
+<B><Z>BHOGLIKE</Z>LENITED</B>:<V p="y" t="caite">
 # this century
 <B>g?[Cc]h?éad</B> seo:<N pl="n" gnt="n" gnd="m">
 <B>g?[Cc]h?éad</B>:<A pl="n" gnt="n">
@@ -68,7 +81,8 @@
 <B><Z>ANYCOPULA</Z>ANYTHING</B> <A pl="n" gnt="n" h="y">(heagal|hionann)</A>:<V cop="y">
 <B><Z>ANYCOPULA</Z>ANYTHING</B> <A pl="n" gnt="y" gnd="f">(fh?earr|mh?ó|mh?óide)</A>:<V cop="y">
 <B><Z>ANYCOPULA</Z>ANYTHING</B> <A>(h?iomaí|léir|náir)</A>:<V cop="y">
-<B><Z>ANYCOPULA</Z>ANYTHING</B> cóir|cuma|deacair|dh?éanaí|deimhin|dh?ual|h?ea|éard|fiú|maith|mh?ithid:<V cop="y">
+<B>an</B> mhaith:<T>
+<B><Z>ANYCOPULA</Z>ANYTHING</B> cóir|cuma|deacair|dh?éanaí|deimhin|dh?ual|h?ea|éard|fiú|gh?nách|mh?aith|mh?ithid:<V cop="y">
 # lowercase ach under last resorts
 <B>Ach</B>:<C>
 # Clochán an Aifir, not verb
@@ -105,8 +119,8 @@
 # generalized above
 #<B>[Aa]n</B> fiú:<V cop="y">
 # see resolutions of chuir,mhaith below; very slow without this done first
-# and no good with capital A...  "An maith leat an dán?"
-<B>an</B> chuir|mh?aith|ní:<T>
+# and no good with capital A...
+<B>an</B> chuir|ní|mh?ói?r:<T>
 <B>[Aa]n</B> <[^V]>ANYTHING</[^V]>:<T>
 <S>ANYTHING</S> <B>[Aa]n</B>:<T>
 <B>[Aa]nuas</B>:<R>
@@ -122,10 +136,6 @@
 <B>[Aa]tá</B>:<V p="y" t="láith">
 # without "h" is handled by unigram
 <B>h[Aa]thair</B>:<N pl="n" gnt="n" gnd="m" h="y">
-<T>[Nn]a</T> <B>ba</B>:<N pl="y" gnt="n" gnd="f">
-<B>[Bb]a</B>:<V cop="y">
-[Gg]o|[Nn]ach <B>m[Bb]a</B>:<V cop="y">
-[Dd]h?á <B>m[Bb]a</B>:<V cop="y">
 #   why do I need this?   kills me in "i lár an bhaile"
 # <B>m?[Bb]h?aile</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Bb]haineann</B>:<V p="y" t="láith">
@@ -149,7 +159,9 @@
 <B>[Cc]h?éanna</B>:<A pl="n" gnt="n">
 # "dhó" is an exception to next, sometimes means "burning"
 a|á <B>dhó</B>:<N pl="n" gnt="n" gnd="m">
+[Aa]n <B>[Mm]híle</B>:<N pl="n" gnt="y" gnd="m">
 # handles fichiú, etc. by brute force; ceathrú is feminine so get separate rules
+<B>[Mm]híle</B>:<N pl="n" gnt="n" gnd="m">
 <B><Z>NUMERICAL</Z>ANYTHING</B>:<A pl="n" gnt="n">
 # now do bliana since numbers are easier to match...
 d?[Tt]h?rí <B>[Bb]liana</B>:<N pl="y" gnt="n" gnd="f">
@@ -162,7 +174,8 @@ d?[Tt]h?rí <B>[Bb]liana</B>:<N pl="y" gnt="n" gnd="f">
 <A pl="n" gnt="n">n?[Dd]h?eich</A> <B>m[Bb]liana</B>:<N pl="y" gnt="n" gnd="f">
 <B>m?[Bb]h?liana</B>:<N pl="n" gnt="y" gnd="f">
 # others unigram to <N pl="n" gnt="n" gnd="f">
-<T>[Aa]n</T> <B>[Cc]heathrú</B>:<A pl="n" gnt="n">
+#   beware "An Cheathrú Rua", "an cheathrú dheireanach"
+<T>[Aa]n</T> <B>[Cc]heathrú</B> <N>ANYTHING</N>:<A pl="n" gnt="n">
 <S>FUSEDPREP</S> <B>[Cc]heathrú</B>:<A pl="n" gnt="n">
 <B>g?[Cc]h?eathrú</B> <N>UNLENITED</N>:<A pl="n" gnt="n">
 <B>g?[Cc]h?eathrú</B> <NWITHH>ANYTHING</NWITHH>:<A pl="n" gnt="n">
@@ -287,17 +300,23 @@ a <B>[Ll]inne</B>:<N pl="n" gnt="y" gnd="f">
 <[DT]>ANYTHING</[DT]> <B>[Ll]inne</B>:<N pl="n" gnt="y" gnd="f">
 <B>[Ll]inne</B>:<O em="y">
 <B>[Mm]á</B> <V>ANYTHING</V>:<C>
+# esp. important to get "mhaith" right else "NISEIMHIU" adj errors
 <S>ANYTHING</S> <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
-# never in corpus: (weird)
-# <T>na</T> <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
+<Q>[Cc]én</Q> <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
+# "an" resolved as <T> above (copula rules)
 <T>an</T> <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
-<A pl="n" gnt="n">[Aa]on</A> <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
+<A pl="n" gnt="n">([Aa]on|[Cc]héad)</A> <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
 <B>[Mm]h?aith</B>:<A pl="n" gnt="n">
 <B>[Mm]ar</B> gheall:<S>
 <T>an</T> <B>mheasa</B>:<N pl="n" gnt="y" gnd="m">
 # almost always "ba mheasa"
 <B>mh?easa</B>:<A pl="n" gnt="y" gnd="f">
+<S>ANYTHING</S> <B>mh?ór</B>:<N pl="n" gnt="n" gnd="m">
+<T>an</T> <B>mh?ór</B>:<N pl="n" gnt="n" gnd="m">
+<T>an</T> <B>mh?óir</B>:<N pl="n" gnt="y" gnd="m">
+<B>[Mm]h?óir</B>:<A pl="n" gnt="y" gnd="m">
 <B>[Mm]h?ór</B>:<A pl="n" gnt="n">
+<B>[Mm]h?óra</B>:<A pl="y" gnt="n">
 <T>[Nn]a</T> <B>(haon|hocht)</B>:<A pl="n" gnt="n" h="y">
 <B>[Nn]á</B> <V>ANYTHING</V>:<U>
 # note that next rule is disjoint from previous (so don't put <U> in next one)
@@ -375,7 +394,8 @@ a <B>sé</B>:<A pl="n" gnt="n">
 # house, not golf
 <B>[Tt]h?í</B>:<N pl="n" gnt="y" gnd="m">
 <B>Treasa</B>:<Y>
-<T>ANYTHING</T> <B>[Tt]rí</B>:<A pl="n" gnt="n">
+# le trí chúilín, an trí chúilín
+<[ST]>ANYTHING</[ST]> <B>[Tt]rí</B>:<A pl="n" gnt="n">
 <B>[Tt]rí</B> bliana|cinn|fichid|seachtaine:<A pl="n" gnt="n">
 <B>[Tt]rí</B>:<S>
 <B>[Tt]ríd</B> <T>na</T>:<S>
@@ -389,6 +409,9 @@ a <B>sé</B>:<A pl="n" gnt="n">
 <T>[Aa]n</T> <B>Aire</B>:<N pl="n" gnt="y" gnd="m">
 <B>Aire</B>:<N pl="n" gnt="n" gnd="m">
 <B>(n-)?aire</B>:<N pl="n" gnt="n" gnd="f">
+# agus bhog mé...   a cheannaithe féin...  not adjectives
+#  do this after "the" rules, and NUMERICAL, etc.
+<[^ANV]>ANYTHING</[^ANV]> <B><Z>ANYWITHADJ</Z>LENITED</B>:!<A[^>]+>
 #############################################################
 # Brill transformations (not associated to particular words)#
 #############################################################
@@ -488,10 +511,6 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 [Gg]o <B><Z>AWITHCOMMON</Z>ANYTHING</B>:<A pl="n" gnt="n">
 <R>[Cc]homh</R> <B><Z>ANYWITHCOMMON</Z>ANYTHING</B>:<A pl="n" gnt="n">
 <R>[Cc]homh</R> <B><Z>ANYWITHCOMMONH</Z>ANYTHING</B>:<A pl="n" gnt="n" h="y">
-# comparitive, superlative; not nec. all adjective, e.g. "níos déanaí"
-<R>[Nn]íos</R> <B><Z>ANYWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
-# "ní ba", "níb", "níba"
-<R>NIBS</R> <B><Z>ANYWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
 # uppercase "Is" is usually copula: "Is ócáidí iontacha"
 is <B><Z>ANYWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
 [Gg]o <B><Z>NOUNADJ</Z>ANYTHING</B>:<A pl="n" gnt="n">
@@ -678,6 +697,8 @@ ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
 # <B>[Aa]</B> chlog:<U>
 <B>[Aa]</B> chóir:<S>
 <B>[Aa]</B> dhíth:<S>
+# exception to next
+<B>[Aa]</B> <N pl="n" gnt="n" gnd="f">d?[Tt]h?uarascáil</N>:<D>
 # called again below w/o [^V] condition
 <B>[Aa]</B> <[^V]>VNISH</[^V]>:<S>
 <B>[Aa]</B> NOTVNISHVN:<S>

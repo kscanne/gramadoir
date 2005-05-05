@@ -226,7 +226,7 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 <NFCS>ANYTHING</NFCS> <A pl="n" gnt="n">COMPOUND</A>:OK
 # corpus; exception to "lenite adj after feminine noun" (céad comes before)
 #. Léimeann an fharraige céad méadar suas sa spéir (OK).
-<NFCS>ANYTHING</NFCS> <A pl="n" gnt="n">(bainte|céad|cibé|curtha|deich|dulta|gach|seacht|seo|sin|suite|tugtha)</A>:OK
+<NFCS>ANYTHING</NFCS> <A pl="n" gnt="n">UNLENITABLEADJ</A>:OK
 <N pl="n" gnt="n" gnd="f">[Bb]heith</N> <A pl="n" gnt="n">UNLENITED</A>:OK
 # OD oiread "followed by m. of adjective"
 <N pl="n" gnt="n" gnd="f">[Oo]iread</N> <A pl="n" gnt="n">UNLENITED</A>:OK
@@ -288,20 +288,9 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 # exceptions in LGG, p.60
 <S>[Aa]g</S> <N pl="n" gnt="n" gnd="f">[Ff]áil</N> <N pl="n" gnt="y" gnd="m">bháis</N>:OK
 <S>[Aa]g</S> <N pl="n" gnt="n" gnd="f">[Gg]abháil</N> <N pl="n" gnt="y" gnd="m">(fhoinn|cheoil)</N>:OK
-#   ** add more NISEIMHIUs corresponding to all OK's above
-# next rule doesn't make sense: "bileog bholscaireachta dhátheangach" is fine
-# will need a shallow parse to link up adjectives to nouns they modify
-#<NFGS>ANYTHING</NFGS> <A>LENITED</A>:NISEIMHIU
 # CB p.16 #9.b  (needs shallow parse)
-# same comments as the <NFGS> rule
-#<NMGS>ANYTHING</NMGS> <A>UNLENITED</A>:SEIMHIU
-<N pl="n" gnt="n" gnd="m">UNLENITED</N> <A pl="n" gnt="n">LENITED</A>:NISEIMHIU
-# corpus exceptions
-#. Tá dún cosanta eile ar an taobh thoir den oileán (OK).
-#. Déan teagmháil leis an Rannóg ag an seoladh thuasluaite (OK).
-<NMCS>ANYTHING</NMCS> <A pl="n" gnt="n">([Dd]há|[Tt]hoir|[Tt]huasluaite)</A>:OK
-<NMCS>UNLENITABLE</NMCS> <A pl="n" gnt="n">LENITED</A>:NISEIMHIU
-<NMCS>ANYTHING</NMCS> <A pl="n" gnt="n">([Dd]há|[Tt]hoir|[Tt]huasluaite)</A>:OK
+#. Tugadh cuireadh dó a theacht i láthair an fhir móir.
+<NMGS>ANYTHING</NMGS> <A pl="n" gnt="y" gnd="m">UNLENITED</A>:SEIMHIU
 #  Next rule requires shallow parse;  else false positive like the following:
 #  "Tugann an <b>clár deis</b> do dhaoine taithí oibre a fháil"
 #  "Rinne mé <b>iarracht scéal</b> a scríobh"
@@ -314,7 +303,7 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 # corpus exceptions
 #. Mhair cuid mhór dár sinsir céad caoga bliain ó shin (OK).
 #. Tá sé le cloisteáil sna meáin gach seachtain (OK).
-<NP>SLENDERFINALCONSONANT</NP> <A pl="y" gnt="n">(bainte|cibé|curtha|dulta|suite|tugtha)</A>:OK
+<NP>SLENDERFINALCONSONANT</NP> <A pl="y" gnt="n">UNLENITABLEADJ</A>:OK
 # CB p.15 #5.i
 #. Déanann siad na breiseáin brabhsála don tionscal ríomhaireachta.
 #. Is ar éisc mara agus ar na hainmhithe mara eile atáimid ag díriú.
@@ -333,6 +322,7 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 # but better to get it out of the way before "a+UNMUTATED"
 #. Cad é mar a tá tú?
 [Aa] <V>JUSTTA</V>:BACHOIR{atá}
+[Aa]n <A>[Gg]hnách</A>:IONADAI{ghnáth}
 ##############################################################################
 #   Rules A->Z begin here...
 ##############################################################################
@@ -368,10 +358,9 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 <V cop="y">[Aa]b</V> UNLENITED:SEIMHIU
 # CB p.14 Note
 #. Ní bheidh ach mhallacht i ndán dó ó na ciníocha agus fuath ó na náisiúin.
-<S>[Aa]ch</S> <[AN]>LENITED</[AN]>:NISEIMHIU
+<S>[Aa]ch</S> <N>LENITED</N>:NISEIMHIU
 #. Ní theastaíonn uaithi ach bheith ina ball den chumann (OK).
 <S>[Aa]ch</S> <N pl="n" gnt="n" gnd="f">bheith</N>:OK
-<S>[Aa]ch</S> <A pl="n" gnt="n">[Dd]há</A>:OK
 # CB p.22 #8.a, also CB p.134 #1.a
 <S>[Aa]ch</S> <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N>:PREFIXT
 <S>[Aa]ch</S> <T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A>:PREFIXT
@@ -380,16 +369,19 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. An bhfuil aon uachtar reoite ar an cuntar?
 <S>[Aa][grs]</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
+# CB p.17 #9.h  (feminine handled by more general rule)
+<S>[Aa][grs]</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITED</A>:SEIMHIU
+<S>[Aa][grs]</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITABLEADJ</A>:OK
 # CB p.22 #8.a
 <S>[Aa][grs]</S> <T>an</T> <N pl="n" gnt="n" gnd="m">PREFIXEDT</N>:NITEE
 # CB p.14 Note; extended to all POS 7 Jan 2005
 # Note that "as" is sometimes <O>, e.g. before "chomh/chun" (aonchiall's job):
 #. Baintear feidhm as chun aicídí súl a mhaolú (OK).
 #. Má shuíonn tú ag bhord le flaith, tabhair faoi deara go cúramach céard atá leagtha romhat.
-<S>[Aa][gs]</S> <[^Y]>LENITED</[^Y]>:NISEIMHIU
+<S>[Aa][gs]</S> <[^AY]>LENITED</[^AY]>:NISEIMHIU
 # These aren't in corpus with "ag" so leave as error
 <S>[Aa]s</S> bheith|thú:OK
-<S>[Aa][gs]</S> bhur|dhá|thart:OK
+<S>[Aa][gs]</S> bhur|thart:OK
 # CB p.83
 <S>[Aa]g</S> <P>[Mm]é</P>:BACHOIR{agam}
 <S>[Aa]g</S> <P>[Tt]h?ú</P>:BACHOIR{agat}
@@ -425,8 +417,7 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 # CB p.14 Note; "~ bheith" not in corpus
 # works for all POS; as conjunction should have "amhail a dhéanann", etc. 
 #. Bláthaíonn sé amhail bhláth an mhachaire.
-<S>[Aa]mhail</S> <[^Y]>LENITED</[^Y]>:NISEIMHIU
-<S>[Aa]mhail</S> <A pl="n" gnt="n">[Dd]há</A>:OK
+<S>[Aa]mhail</S> <[^AY]>LENITED</[^AY]>:NISEIMHIU
 # CB p.22 #8.a, also CB p.134 #1.a
 <S>[Aa]mhail</S> <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N>:PREFIXT
 <S>[Aa]mhail</S> <T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A>:PREFIXT
@@ -502,7 +493,7 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 <T>[Aa]n</T> <N>[Dd]háréag</N>:NISEIMHIU
 <S>FUSEDPREP</S> <N>[Dd]háréag</N>:NISEIMHIU
 # CB p.12 #1.abc, p.20 #2a
-#. Ní bhíonn an dhíograis chéanna ná an dhúthracht chéanna i gceist.
+#. Ní bhíonn an dhíograis ná an dhúthracht i gceist.
 <T>[Aa]n</T> <N>MUTATEDDST</N>:NICLAOCHLU
 # CB p.8 #4
 #. Ba é an fear an phortaigh a tháinig thart leis na plátaí bia.
@@ -513,11 +504,12 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 #. Tabharfaimid an t-ainm do mháthar uirthi.
 <T>ANYTHING</T> <NC>ANYTHING</NC> <D>ANYTHING</D> <NG>ANYTHING</NG>:ONEART
 # converse of CB p.16 #7, no lenition after present/future copula
+# leave "A" here; exception to general adj. NISEIMHIU rule is too broad - *any* copula
 #. An fhéidir le duine ar bith eile breathnú ar mo script?
 <V cop="y">[Aa]n</V> <[AN]>LENITED</[AN]>:NISEIMHIU
 <V cop="y">[Aa]n</V> <A pl="n" gnt="n">[Dd]há</A>:OK
 # OD dhá; do this before "aon + non-noun" rule below for better error message
-#. Ní bhíonn aon dhá chlár as an chrann céanna mar a chéile go díreach.
+#. Ní bhíonn aon dhá chlár as an chrann chéanna mar a chéile go díreach.
 <A pl="n" gnt="n">[Aa]on</A> <A pl="n" gnt="n">[Dd]há</A>:NISEIMHIU
 # OD dháréag
 <A pl="n" gnt="n">[Aa]on</A> <N>[Dd]háréag</N>:NISEIMHIU
@@ -811,16 +803,19 @@ g?[Cc]h?eithre <N>airde</N>:BACHOIR{hairde}
 <S>[Cc]huig</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
 # CB p.14 Note; "~ bheith' not in corpus so no exception
 #. Níl tú do do sheoladh chuig dhaoine a labhraíonn teanga dhothuigthe.
-<S>[Cc]huig</S> <[^Y]>LENITED</[^Y]>:NISEIMHIU
-<S>[Cc]huig</S> bhur|dhá|thart:OK
+<S>[Cc]huig</S> <[^AY]>LENITED</[^AY]>:NISEIMHIU
+<S>[Cc]huig</S> bhur|thart:OK
+# CB p.17 #9.h  (feminine handled by more general rule)
+<S>[Cc]huig</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITED</A>:SEIMHIU
+<S>[Cc]huig</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITABLEADJ</A>:OK
 # CB p.22 #8.a
 <S>[Cc]huig</S> <T>an</T> <N pl="n" gnt="n" gnd="m">PREFIXEDT</N>:NITEE
 # CB p.14 Note; all POS ok 7 Jan 2005
 #. Seo deis iontach chun an Ghaeilge a chur chun chinn.
-[Cc]hun <[^Y]>LENITED</[^Y]>:NISEIMHIU
+[Cc]hun <[^AY]>LENITED</[^AY]>:NISEIMHIU
 #. Tiocfaidh deontas faoin alt seo chun bheith iníoctha (OK).
 [Cc]hun <N pl="n" gnt="n" gnd="f">bheith</N>:OK
-[Cc]hun bhur|dhá|thú:OK
+[Cc]hun bhur|thú:OK
 # here the noun is either NOT governed by chun:
 # "íoc chun an t-idirlíon a rochtain" or it is and should be tagged genitive:
 # "chun an idirlín"
@@ -917,6 +912,9 @@ g?[Cc]h?úig <NP>(bliana|cinn|cloigne|fichid|huaire)</NP>:OK
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. Beirim mo mhionn dar an beart a rinne Dia le mo shinsir.
 <S>[Dd]ar</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
+# CB p.17 #9.h  (feminine handled by more general rule)
+<S>[Dd]ar</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITED</A>:SEIMHIU
+<S>[Dd]ar</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITABLEADJ</A>:OK
 # CB p.113-114
 <V cop="y">[Dd]ar</V> INITIALVOWEL:BACHOIR{darb, darbh}
 <V cop="y">[Dd]ar</V> LENITEDF:BACHOIR{darbh}
@@ -1041,10 +1039,12 @@ n?[Dd]h?eich <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 # CB p.12 #1.c, p.20 #2a
 #. Daoine eile atá ina mbaill den dhream seo.
 <S>[Dd][eo]n</S> <N>MUTATEDDST</N>:NICLAOCHLU
+# NOT a rule; See CB p.17 #9.g "need not be aspirated"
+# <S>[Dd][eo]n</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITED</A>:SEIMHIU
 # CB p.23 #9 (implicit article)
 <S>[Dd][eo]n</S> <N pl="n" gnt="n" gnd="f">INITIALS</N>:PREFIXT
 # CB p.6 #2, LGG p.26
-#. Creidim go raibh siad de an thuairim chéanna.
+#. Creidim go raibh siad de an thuairim seo.
 [Dd]e <T>an</T>:BACHOIR{den}
 # exception to next one; give clearer message:
 <A pl="n" gnt="n">[Dd]há</A> <V>ECLIPSED</V>:CAIGHDEAN{dá}
@@ -1130,6 +1130,9 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 # CB p.77 #8.g
 [Dd]h?osaen <NC>ANYTHING</NC>:GENITIVE
 [Dd]h?osaen <NS>ANYTHING</NS>:IOLRA
+#   problems:  "molaim é", "duine a mhol é", etc.
+# <VPERS>ANYTHING</VPERS> <P>é</P>:BACHOIR{sé}
+# <VIMP>ANYTHING</VIMP> <P>é</P>:OK
 # CB p.55
 <S>DATIVEPREP</S> <N>EIRE</N>:BACHOIR{Éirinn}
 <S>[Ff]á</S>:CAIGHDEAN{faoi}
@@ -1187,6 +1190,9 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. Tá dualgas ar an gComhairle sin tabhairt faoin cúram seo.
 <S>[Ff]aoin</S> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
+# CB p.17 #9.h  (feminine handled by more general rule)
+<S>[Ff]aoin</S> <NMCS>LENITED</NMCS> <A>UNLENITED</A>:SEIMHIU
+<S>[Ff]aoin</S> <NMCS>LENITED</NMCS> <A>UNLENITABLEADJ</A>:OK
 # CB p.12 #1.c, p.20 #2a
 #. Tugadh mioneolas faoin dtionscnamh seo in Eagrán a haon.
 <S>[Ff]aoin</S> <N>MUTATEDDST</N>:NICLAOCHLU
@@ -1278,6 +1284,9 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <E><S>[Gg]an</S> <N>UNLENITEDBCGMP</N></E> a <N>VNISH</N>:OK
 <E><S>[Gg]an</S> <N>UNLENITEDBCGMP</N></E> a <N>NOTVNISHVN</N>:OK
 <S>[Gg]an</S> <N pl="n" gnt="n" gnd="m">[Ff]ios</N>:SEIMHIU
+<S>ANYTHING</S> <A>[Gg]h?nách</A>:IONADAI{gnáth}
+# next one also near top b/c of tagging errors with "an" (copula=>NISEIMHIU)
+<T>[Aa]n</T> <A>[Gg]nách</A>:IONADAI{gnáth}
 # CB p.132 #5
 [Gg]o <VPAST>ANYTHING</VPAST>:BACHOIR{gur}
 # CB p.133 #12 irreg. exceptions
@@ -1295,11 +1304,9 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 #. Rug sé ar ais mé go dhoras an Teampaill.
 # "go chéile" is in comhshuite
 #. Tiocfaidh coimhlintí chun tosaigh sa Chumann ó am go chéile (OK).
-[Gg]o <[^Y]>LENITED</[^Y]>:NISEIMHIU
+[Gg]o <[^AY]>LENITED</[^AY]>:NISEIMHIU
 #. Is turas iontach é an turas ó bheith i do thosaitheoir go bheith i do mhúinteoir (OK).
 [Gg]o <N pl="n" gnt="n" gnd="f">bheith</N>:OK
-#. Tá a chuid leabhar tiontaithe go dhá theanga fichead (OK).
-[Gg]o <A pl="n" gnt="n">[Dd]há</A>:OK
 # corpus; see also CB p.6 #2, analogous to leis, tríd; no converse
 #. Chuaigh mé suas go an doras cúil a chaisleáin.
 [Gg]o <T>ANYTHING</T>:BACHOIR{go dtí}
@@ -1310,9 +1317,9 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 [Gg]o <N>INITIALMORDAPOST</N>:BACHOIR{go dtí}
 # CB p.14 Note
 #. Tar, téanam go dtí bhean na bhfíseanna.
-<S>[Gg]o dtí</S> <[^Y]>LENITED</[^Y]>:NISEIMHIU
+<S>[Gg]o dtí</S> <[^AY]>LENITED</[^AY]>:NISEIMHIU
 #. Agus rachaidh mé siar go dtí thú tráthnóna, más maith leat (OK).
-<S>[Gg]o dtí</S> bhur|dhá|thart|thú:OK
+<S>[Gg]o dtí</S> bhur|thart|thú:OK
 # CB p.22 #8.a, also CB p.134 #1.a
 <S>[Gg]o dtí</S> <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N>:PREFIXT
 <S>[Gg]o dtí</S> <T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A>:PREFIXT
@@ -1389,6 +1396,11 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Ii]n?</S> <V cop="y">(is|ar|arb)</V>:BACHOIR{inar, inarb}
 <S>[Ii]n?</S> <V cop="y">(ba|ab|arbh)</V>:BACHOIR{inar, inarbh}
 <S>[Ii]n?</S> INITIALBAPOST:BACHOIR{inarbh}
+#   problems with these; see "é"
+# <VPERS>ANYTHING</VPERS> <P>í</P>:BACHOIR{sí}
+# <VIMP>ANYTHING</VIMP> <P>í</P>:OK
+# <VPERS>ANYTHING</VPERS> <P>iad</P>:BACHOIR{siad}
+# <VIMP>ANYTHING</VIMP> <P>iad</P>:OK
 # CB p.22 #8.a, also CB p.134 #1.a
 <S>[Ii]dir</S> <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N>:PREFIXT
 <S>[Ii]dir</S> <T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A>:PREFIXT
@@ -1397,6 +1409,10 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # OD; lenited version in comhshuite
 <S>[Ii]dir</S> <N>g?[Cc]amáin</N>:INPHRASE{idir chamáin}
 <S>[Ii]dir</S> <N pl="n" gnt="n" gnd="f">g?[Cc]léir</N>:INPHRASE{idir chléir agus thuath}
+# CB p.14 #4.d (N) 
+# CB p.17 #9.f (A) "idir bheag agus mhór" meaning "both" not "between, among"!
+#  also need an exception for numerals...
+# <S>[Ii]dir</S> <[AN]>UNLENITED</[AN]>:SEIMHIU
 # CB p.20 Note, OD i^1, "in bhur", "in dhá" in eisceacht
 #. Thug sé seo deis dom breathnú in mo thimpeall.
 #. Phós sí Pádraig, fear ón mBlascaod Mór, in 1982.
@@ -1448,6 +1464,9 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>FUSEDPREP</S> <E><N>[Ii]omarca</N></E>:OK
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 <S>[Ii]onsar</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
+# CB p.17 #9.h  (feminine handled by more general rule)
+<S>[Ii]onsar</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITED</A>:SEIMHIU
+<S>[Ii]onsar</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITABLEADJ</A>:OK
 # CB p.83
 <S>[Ii]onsar</S> <P>[Mm]é</P>:BACHOIR{ionsorm}
 <S>[Ii]onsar</S> <P>[Tt]h?ú</P>:BACHOIR{ionsort}
@@ -1457,17 +1476,18 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Ii]onsar</S> <P>[Ss]ibh</P>:BACHOIR{ionsoraibh}
 <S>[Ii]onsar</S> <P>[Ii]ad</P>:BACHOIR{ionsorthu}
 # converse of CB p.16 #7, no lenition after present/future copula
+# leave "A" here; exception to general adj. NISEIMHIU rule is too broad
 <V cop="y">[Ii]s</V> <[AN]>LENITED</[AN]>:NISEIMHIU
 <V cop="y">[Ii]s</V> <A pl="n" gnt="n">[Dd]há</A>:OK
 # CB p.14 Note; extended to all POS 7 Jan 2005
 #. Is tuar dóchais é an méid dul chun cinn atá déanta le bhlianta beaga.
-<S>[Ll]e</S> <[^Y]>LENITED</[^Y]>:NISEIMHIU
+<S>[Ll]e</S> <[^AY]>LENITED</[^AY]>:NISEIMHIU
 # "le chéile" in comhshuite
 #. Leanaigí oraibh le bhur ndílseacht dúinn (OK).
 #. Baineann an scéim le thart ar 28,000 miondíoltóir ar fud na tíre (OK).
 #. Níor cuireadh aon tine síos, ar ndóigh, le chomh breá is a bhí an aimsir (OK).
 #. Tá sí ag teacht le thú a fheiceáil (OK).
-<S>[Ll]e</S> bheith|bhur|chomh|dhá|thart|thú:OK
+<S>[Ll]e</S> bheith|bhur|chomh|thart|thú:OK
 # CB p.6 #2, converse handled by aonchiall  (leis +<[^T]> => <O>leis</O>)
 #. D'fhéadfadh tábhacht a bheith ag baint le an gcéad toisc díobh sin.
 <S>[Ll]e</S> <T>an</T>:BACHOIR{leis an}
@@ -1521,6 +1541,9 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. Tá do scrios chomh leathan leis an farraige.
 <S>[Ll]eis</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
+# CB p.17 #9.h  (feminine handled by more general rule)
+<S>[Ll]eis</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITED</A>:SEIMHIU
+<S>[Ll]eis</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITABLEADJ</A>:OK
 # CB p.22 #8.a
 <S>[Ll]eis</S> <T>an</T> <N pl="n" gnt="n" gnd="m">PREFIXEDT</N>:NITEE
 # combined form with "a"; see references above (only with INdirect relative)
@@ -1580,6 +1603,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Mm]ar</S> <T>an</T> <N pl="n" gnt="n" gnd="f">ECLIPSED</N>:SEIMHIU
 <N>[Mm]ara</N> <V>ECLIPSED</V>:IONADAI{mura}
 # converse of CB p.16 #7, no lenition after present/future copula
+# leave "A" here; exception to general adj. NISEIMHIU rule is too broad
 #. Más mhian leat tuilleadh eolais a fháil, scríobh chugainn.
 <V cop="y">[Mm]ás</V> <[AN]>LENITED</[AN]>:NISEIMHIU
 <V cop="y">[Mm]ás</V> <A pl="n" gnt="n">[Dd]há</A>:OK
@@ -1628,13 +1652,14 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <V cop="y">[Mm]urar?</V> INITIALVOWEL:BACHOIR{murab, murarbh}
 <V cop="y">[Mm]urar</V> LENITEDF:BACHOIR{murarbh}
 # converse of CB p.16 #7, no lenition after present/future copula
+# leave "A" here; exception to general adj. NISEIMHIU rule is too broad
 <V cop="y">[Mm]ura</V> <[AN]>LENITED</[AN]>:NISEIMHIU
 <V cop="y">[Mm]ura</V> <A pl="n" gnt="n">[Dd]há</A>:OK
 # CB p.113
 <V cop="y">[Mm]urab</V> INITIALCONSONANT:BACHOIR{mura}
 # CB p.14 Note
 # Murach fhear na haislinge cén áit a mbeadh tír na hÉireann inniu?
-<C>[Mm]urach</C> <[^Y]>LENITED</[^Y]>:NISEIMHIU
+<C>[Mm]urach</C> <[^AY]>LENITED</[^AY]>:NISEIMHIU
 #. Murach bheith mar sin, bheadh sé dodhéanta dó oibriú na huaireanta fada (OK).
 <C>[Mm]urach</C> bheith|chomh|thú:OK
 # CB p.22 #8.a, also CB p.134 #1.a
@@ -1666,8 +1691,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # corpus
 <T>[Nn]a</T> <Y>INITIALVOWEL</Y>:PREFIXH
 # corpus; holds for any POS really
-<T>[Nn]a</T> <[^Y]>LENITED</[^Y]>:NISEIMHIU
-<T>[Nn]a</T> [Cc]héad:OK
+<T>[Nn]a</T> <[^AY]>LENITED</[^AY]>:NISEIMHIU
 #. Tá an tréith sin coitianta i measc na nÉireannaigh sa tír seo.
 <T>[Nn]a</T> <NCP>ECLIPSED</NCP>:GENITIVE
 #. Athdhéantar na snáithe i ngach ceann de na curaclaim seo.
@@ -1700,10 +1724,9 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 #. Níor thúisce greim bia caite aige ná thug sé an tuath air féin.
 # So I'm counting on the fact that this should be "ná a thug"? See OD ná^4
 #. Is fearr de bhéile luibheanna agus grá leo ná mhart méith agus gráin leis.
-[Nn]á <[ANV]>LENITED</[ANV]>:NISEIMHIU
+[Nn]á <[NV]>LENITED</[NV]>:NISEIMHIU
 #. Is fearr an bás ná bheith beo ar dhéirc (OK).
 [Nn]á <N pl="n" gnt="n" gnd="f">bheith</N>:OK
-[Nn]á <A pl="n" gnt="n">[Dd]há</A>:OK
 # CB p.22 #8.a, also CB p.134 #1.a
 <S>[Nn]á</S> <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N>:PREFIXT
 <S>[Nn]á</S> <T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A>:PREFIXT
@@ -1718,6 +1741,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 #. Nach bainfidh mé uaidh an méid a ghoid sé uaim?
 [Nn]ach <V>UNECLIPSED</V>:URU
 # converse of CB p.16 #7, no lenition after present/future copula
+# leave "A" here; exception to general adj. NISEIMHIU rule is too broad
 #. Nach ghasta a fuair tú í!
 <V cop="y">[Nn]ach</V> <[AN]>LENITED</[AN]>:NISEIMHIU
 <V cop="y">[Nn]ach</V> <A pl="n" gnt="n">[Dd]há</A>:OK
@@ -1790,6 +1814,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 #. Ní iad sin do phíopaí ar an tábla!
 <V cop="y">[Nn]í</V> <P>INITIALVOWEL</P>:PREFIXH
 # converse of CB p.16 #7, no lenition after present/future copula
+# leave "A" here; exception to general adj. NISEIMHIU rule is too broad
 #  By good fortune can use this to catch exception to
 # "ní lenites verbs" rule for "abair" (CB p.133 #12.b):
 #. Ní dheireadh aon duine acu aon rud liom.
@@ -1831,9 +1856,6 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB pp.70-71
 <R>[Nn]íos</R>:BREISCHEIM
 <E><R>[Nn]íos</R></E> <A pl="n" gnt="y" gnd="f">ANYTHING</A>:OK
-# previous rules require an <A>, so include for speed here
-#. Tá bonn i bhfad níos dhoimhne ná sin le Féilte an Oireachtais.
-<R>[Nn]íos</R> <A pl="n" gnt="y" gnd="f">LENITED</A>:NISEIMHIU
 # CB p.24 #11.a.viii, LGG p.112
 #. Eoghan Ó Anluain a thabharfaidh léacht deiridh na comhdhála.
 <Y>Ó</Y> <Y>INITIALVOWEL</Y>:PREFIXH
@@ -1909,6 +1931,9 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. Bíodh bhur ngrá saor ón cur i gcéill.
 <S>[Óó]n</S> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
+# CB p.17 #9.h  (feminine handled by more general rule)
+<S>[Óó]n</S> <NMCS>LENITED</NMCS> <A>UNLENITED</A>:SEIMHIU
+<S>[Óó]n</S> <NMCS>LENITED</NMCS> <A>UNLENITABLEADJ</A>:OK
 # CB p.12 #1.c, p.20 #2a
 #. Ná glacaim sos ón thochailt.
 <S>[Óó]n</S> <N>MUTATEDDST</N>:NICLAOCHLU
@@ -1956,6 +1981,7 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 [Oo]s <[^Y]>LENITED</[^Y]>:NISEIMHIU
 [Oo]s bhur:OK
 # converse of CB p.16 #7, no lenition after present/future copula
+# leave "A" here; exception to general adj. NISEIMHIU rule is too broad - *any* copula
 <V cop="y">[Óó]s</V> <[AN]>LENITED</[AN]>:NISEIMHIU
 <V cop="y">[Óó]s</V> <A pl="n" gnt="n">[Dd]há</A>:OK
 <V cop="y">[Óó]s</V> <N pl="n" gnt="n" gnd="f">(coinne|comhair)</N>:IONADAI{os}
@@ -1984,6 +2010,9 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 # CB p.13 #4.a
 #. Is gaiste é eagla roimh daoine.
 <S>[Rr]oimh</S> <N>UNLENITED</N>:SEIMHIU
+# CB p.17 #9.h  (feminine handled by more general rule)
+<S>[Rr]oimh</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITED</A>:SEIMHIU
+<S>[Rr]oimh</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITABLEADJ</A>:OK
 # CB p.22 #8.a
 <S>[Rr]oimh</S> <T>an</T> <N pl="n" gnt="n" gnd="m">PREFIXEDT</N>:NITEE
 # CB p.83
@@ -2067,10 +2096,9 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 <A pl="n" gnt="n">[Ss]h?é</A> <NP>(bliana|cinn|cloigne|fichid|huaire)</NP>:OK
 # CB p.14 Note
 #. Cuireadh boscaí ticeála isteach seachas bhoscaí le freagraí a scríobh isteach.
-<S>[Ss]eachas</S> <[ANV]>LENITED</[ANV]>:NISEIMHIU
+<S>[Ss]eachas</S> <[NV]>LENITED</[NV]>:NISEIMHIU
 #. Dá ndéanfadh sí amhlaidh réiteodh sí an fhadhb seachas bheith á ghéarú (OK).
 <S>[Ss]eachas</S> <N pl="n" gnt="n" gnd="f">bheith</N>:OK
-<S>[Ss]eachas</S> <A pl="n" gnt="n">[Dd]há</A>:OK
 # CB p.22 #8.a, also CB p.134 #1.a
 <S>[Ss]eachas</S> <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N>:PREFIXT
 <S>[Ss]eachas</S> <T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A>:PREFIXT
@@ -2152,8 +2180,7 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 #   now defunct, caught by more general NOGENITIVE after <S> rule...
 # <S>[Ss]na</S> <N pl="n" gnt="y" gnd="m">ANYTHING</N>:NOGENITIVE
 # corpus; holds for any POS really
-<S>[Ss]na</S> <[^Y]>LENITED</[^Y]>:NISEIMHIU
-<S>[Ss]na</S> [Cc]héad:OK
+<S>[Ss]na</S> <[^AY]>LENITED</[^AY]>:NISEIMHIU
 # CB p.77 #8.h (implicitly); unlike "na" above we catch "sna haon" here
 <S>[Ss]na</S> h?aon:BACHOIR{san aon}
 <S>[Ss]na</S> [Dd]h?á:BACHOIR{sa dá}
@@ -2163,6 +2190,9 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 # CB p.77 #8.h, 2nd part
 <S>[Ss]na</S> <A pl="n" gnt="n">(trí|ceithre|cúig|sé|seacht|ocht|naoi|deich)</A> g?ch?éad|mh?íle|mh?illiún:BACHOIR{sa}
 <S>[Ss]na</S> <A pl="n" gnt="n" h="y">hocht</A> g?ch?éad|mh?íle|mh?illiún:BACHOIR{sa}
+<A pl="n" gnt="n">Sh?ocair</A>:IONADAI{Socraigh}
+# avoids incorrect NISEIMHIU on adj
+<A pl="n" gnt="n">shocair</A> <P>ANYTHING</P>:IONADAI{shocraigh}
 #   very low frequency
 # subh th?alúin:IONADAI{sú}
 # subh chraoibhe:IONADAI{sú}
@@ -2200,8 +2230,11 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 #  the next rule should stay commented; caught by NIURU rule
 # <T>na</T> <N>dteorann</N>:IONADAI{dteorainneacha}
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
-#. Chuir iad ina suí mar a raibh onóir acu thar an cuid eile a fuair cuireadh.
+#. Chuir sé iad ina suí mar a raibh onóir acu thar an cuid eile a fuair cuireadh.
 [Tt]har <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
+# CB p.17 #9.h  (feminine handled by more general rule)
+<S>[Tt]har</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITED</A>:SEIMHIU
+<S>[Tt]har</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITABLEADJ</A>:OK
 # CB p.22 #8.a
 <S>[Tt]har</S> <T>an</T> <N pl="n" gnt="n" gnd="m">PREFIXEDT</N>:NITEE
 # common mistake; before UNLENITED rule below for clearer message
@@ -2288,6 +2321,9 @@ d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</
 # CB p.6 #2 _singular_ article only; corpus
 #. Feidhmeoidh an ciste coimisiúnaithe tríd na foilsitheoirí go príomha.
 <S>[Tt]ríd</S> <T>na</T>:BACHOIR{trí na}
+# CB p.17 #9.h  (feminine handled by more general rule)
+<S>[Tt]ríd</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITED</A>:SEIMHIU
+<S>[Tt]ríd</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITABLEADJ</A>:OK
 # CB p.22 #8.a
 <S>[Tt]ríd</S> <T>an</T> <N pl="n" gnt="n" gnd="m">PREFIXEDT</N>:NITEE
 # combined form with "a"; see references above (only with INdirect relative)
@@ -2346,6 +2382,9 @@ d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</
 <S>[Uu]m</S> <N>LENITEDBMP</N>:NISEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 <S>[Uu]m</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
+# CB p.17 #9.h  (feminine handled by more general rule)
+<S>[Uu]m</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITED</A>:SEIMHIU
+<S>[Uu]m</S> <T>an</T> <NMCS>LENITED</NMCS> <A>UNLENITABLEADJ</A>:OK
 # CB p.22 #8.a
 <S>[Uu]m</S> <T>an</T> <N pl="n" gnt="n" gnd="m">PREFIXEDT</N>:NITEE
 # CB p.83
@@ -2648,6 +2687,60 @@ d?[tT]h?rí|g?[Cc]h?eithre|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 <S>NONRFORMPREP</S> <VDEE>INTIALDAPOST</VDEE>:NIDEE
 [Aa]n|[Cc]á|[Dd]á|[Nn]ach|[Nn]í <VDEE>INTIALDAPOST</VDEE>:NIDEE
 #############################################################################
+#  NISEIMHIU and exceptions for adjectives
+#  Note exceptions are too broad (any preceding copula e.g.) so there
+# are other NISEIMHIUs left above that apply to adjectives (after "is" etc.)
+#############################################################################
+#. Tá bonn i bhfad níos dhoimhne ná sin le Féilte an Oireachtais.
+<A>LENITED</A>:NISEIMHIU
+# irritation; might miss some real egs though  "an fear the"
+<A>the</A>:OK
+<A>COMPOUND</A>:OK
+# in áit bheag, i bhfoirm dhigiteach
+<S>COMPOUND</S> <E><A>LENITED</A></E>:OK
+# in áit éigin chiúin
+<S>COMPOUND</S> <A>ANYTHING</A> <E><A>LENITED</A></E>:OK
+# nó a chomhionann, a bheag nó a mhór
+<D>[Aa]</D> <E><A>LENITED</A></E>:OK
+# Bríd bheag
+<Y>ANYTHING</Y> <E><A>LENITED</A></E>:OK
+# corpus exceptions
+#. Tá a chuid leabhar tiontaithe go dhá theanga fichead (OK).
+#. Tá dún cosanta eile ar an taobh thoir den oileán (OK).
+#. Déan teagmháil leis an Rannóg ag an seoladh thuasluaite (OK).
+<A>([Dd]há|[Cc]héad|[Tt]heas|[Tt]hoir|[Tt]huasluaite)</A>:OK
+<[CDST]>ANYTHING</[CDST]> <E><A>([Tt]hrí|[Cc]heithre|[Cc]húig|[Ss]hé|[Ss]heacht|[Dd]heich)</A></E>:OK
+<[CDST]>ANYTHING</[CDST]> <E><A>ORDINALADJ</A></E>:OK
+<[CDST]>ANYTHING</[CDST]> <E><A>[Dd]hara</A></E>:OK
+# next three rules handle nouns preceded by 2-19
+<A>([Dd]h?á|d?[Tt]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|n?[Dd]h?eich)</A> <N>ANYTHING</N> <E><A>LENITED</A></E>:OK
+<A>([Dd]h?á|d?[Tt]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|n?[Dd]h?eich)</A> <N>ANYTHING</N> [Dd]h?éag <E><A>LENITED</A></E>:OK
+<A>TWOTONINETEEN</A> <N>ANYTHING</N> <E><A>LENITED</A></E>:OK
+<R>NIBS</R> <E><A pl="n" gnt="y" gnd="f">ANYTHING</A></E>:OK
+<C>[Nn]ó</C> <E><A pl="n" gnt="n">dhó</A></E>:OK
+# should be just <A pl="y" gnt="n"> in this exception but 
+# avoids tagging errors this way... "teileafóin shoghluaiste"
+<NP>SLENDERFINALCONSONANT</NP> <E><A>LENITED</A></E>:OK
+<NP>SLENDERFINALCONSONANT</NP> <A>ANYTHING</A> <E><A>LENITED</A></E>:OK
+# should be just <A pl="n" gnt="y" gnd="m"> in this exception but 
+# avoids tagging errors this way... "i ndiaidh an chláir cháiliúil"
+<NMGS>ANYTHING</NMGS> <E><A>LENITED</A></E>:OK
+# le linn an gheimhridh fhada fhliuch
+<NMGS>ANYTHING</NMGS> <A>ANYTHING</A> <E><A>LENITED</A></E>:OK
+<NFCS>ANYTHING</NFCS> <E><A pl="n" gnt="n">LENITED</A></E>:OK
+<NFCS>ANYTHING</NFCS> <A>ANYTHING</A> <E><A pl="n" gnt="n">LENITED</A></E>:OK
+# bileog bholscaireachta dhátheangach
+<NFCS>ANYTHING</NFCS> <NG>ANYTHING</NG> <E><A pl="n" gnt="n">LENITED</A></E>:OK
+# ceist shimplí ach thábhachtach
+<NFCS>ANYTHING</NFCS> <A>ANYTHING</A> <C>ach</C> <E><A pl="n" gnt="n">LENITED</A></E>:OK
+<N pl="n" gnt="n" gnd="m">LENITED</N> <E><A pl="n" gnt="n">LENITED</A></E>:OK
+# ar an chomhréiteach shochrach shóúil
+<N pl="n" gnt="n" gnd="m">LENITED</N> <A>ANYTHING</A> <E><A pl="n" gnt="n">LENITED</A></E>:OK
+<S>[Ii]dir</S> <E><A pl="n" gnt="n">LENITED</A></E>:OK
+<S>[Ii]dir</S> <A pl="n" gnt="n">ANYTHING</A> <C>agus</C> <E><A pl="n" gnt="n">LENITED</A></E>:OK
+<V cop="y">ANYTHING</V> <E><A>LENITED</A></E>:OK
+<N>[Bb]h?eirte?</N> <N>ANYTHING</N> <E><A>LENITED</A></E>:OK
+#############################################################################
 #     More lenition -- best to have these near bottom to allow stuff
 #     like "i an chuisneoir" to be caught as "BACHOIR{sa}" vs. NISEIMHIU
 #############################################################################
@@ -2676,8 +2769,8 @@ d?[tT]h?rí|g?[Cc]h?eithre|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 <P>ANYTHING</P> <A pl="n" gnt="y" gnd="f">NOBEEAPOST</A>:CUPLA
 <O>ANYTHING</O> <A pl="y" gnt="n">ANYTHING</A>:CUPLA
 <O>ANYTHING</O> <A pl="n" gnt="y" gnd="f">ANYTHING</A>:CUPLA
-<NMGS>ANYTHING</NMGS> <A pl="n" gnt="y" gnd="f">ANYTHING</A>:CUPLA
-<NFGS>ANYTHING</NFGS> <A pl="n" gnt="y" gnd="m">ANYTHING</A>:CUPLA
+<NMGS>ANYTHING</NMGS> <A pl="n" gnt="y" gnd="f">ANYTHING</A>:GENDER
+<NFGS>ANYTHING</NFGS> <A pl="n" gnt="y" gnd="m">ANYTHING</A>:GENDER
 <S>NONCOMPOUND</S> <VNOTCOP>ANYTHING</VNOTCOP>:CUPLA
 <S>NONCOMPOUND</S> <V>JUSTATA</V>:OK
 <S>NONRFORMPREP</S> <VNOTCOP>ANYTHING</VNOTCOP>:OK
@@ -2689,11 +2782,18 @@ d?[tT]h?rí|g?[Cc]h?eithre|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 #  In any case, will require improved disambig (ensuring NPL before APL
 #  for ambiguous nouns, like nm1 gs/npl type)
 # . Tá sé i mbaile beag atá lán le tithe tábhairne beaga.
-# <NS>ANYTHING</NS> <AP>ANYTHING</AP>:CUPLA
+# <NS>ANYTHING</NS> <AP>ANYTHING</AP>:NUMBER
 # CB p.67 #17a,b exceptions; "seacht gcapall déag bhána" in there explicitly
 # [Dd]há|[Tt]h?rí|[Cc]h?eithre|[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|[Oo]cht|[Nn]aoi|[Dd]h?eich <E><NS>ANYTHING</NS> <AP>ANYTHING</AP></E>:OK
 # [Dd]há|[Tt]h?rí|[Cc]h?eithre|[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|[Oo]cht|[Nn]aoi <N>ANYTHING</N> <E><N>[Dd]éag</N> <AP>ANYTHING</AP></E>:OK
 # <N>[Bb]h?eirt</N> <E><NS>ANYTHING</NS> <AP>ANYTHING</AP></E>:OK
+# the "converses" of the OK's above are acceptable:
+<A pl="n" gnt="n">([Dd]há|[Tt]h?rí|[Cc]h?eithre|[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|[Oo]cht|[Nn]aoi|[Dd]h?eich)</A> <NS>ANYTHING</NS> <AS>ANYTHING</AS>:AIDIOLRA
+<A pl="n" gnt="n">ANYTHING</A> <NS>ANYTHING</NS> <AS>(sin|seo)</AS>:OK
+<A pl="n" gnt="n">([Dd]há|[Tt]h?rí|[Cc]h?eithre|[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|[Oo]cht|[Nn]aoi)</A> <NS>ANYTHING</NS> <N>[Dd]éag</N> <AS>ANYTHING</AS>:AIDIOLRA
+<A pl="n" gnt="n">ANYTHING</A> <NS>ANYTHING</NS> <N>[Dd]éag</N> <AS>(sin|seo)</AS>:OK
+<N pl="n" gnt="n" gnd="f">[Bb]h?eirt</N> <NS>ANYTHING</NS> <AS>ANYTHING</AS>:AIDIOLRA
+<N pl="n" gnt="n" gnd="f">[Bb]h?eirt</N> <NS>ANYTHING</NS> <AS>(sin|seo)</AS>:OK
 ######
 # This is related to the rule above: CB p.61 #4
 # BROADFINALCONSONANT <=> "weak" genitive plural
@@ -2711,8 +2811,8 @@ d?[tT]h?rí|g?[Cc]h?eithre|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 <D>ANYTHING</D> <Q>ANYTHING</Q>:CUPLA
 <D>ANYTHING</D> <T>ANYTHING</T>:CUPLA
 # note "na daoine Éireannacha b'fhadsaolaí" is ok in next rule
-<A pl="y" gnt="n">ANYTHING</A> <A pl="n" gnt="y" gnd="f">NOBEEAPOST</A>:CUPLA
-<A pl="n" gnt="y" gnd="f">ANYTHING</A> <A pl="y" gnt="n">ANYTHING</A>:CUPLA
+<A pl="y" gnt="n">ANYTHING</A> <A pl="n" gnt="y" gnd="f">NOBEEAPOST</A>:NUMBER
+<A pl="n" gnt="y" gnd="f">ANYTHING</A> <A pl="y" gnt="n">ANYTHING</A>:NUMBER
 <A pl="n" gnt="n">ANYTHING</A> <A pl="n" gnt="y" gnd="f">ANYTHING</A>:CUPLA
 #. Tá sé-- tá sé- mo ---shin-seanathair (OK).
 #  this tests that the tokenizer handles hyphens correctly.
@@ -2722,8 +2822,8 @@ d?[tT]h?rí|g?[Cc]h?eithre|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 # from corpus
 # used to have [^ORSY], but verbs are out too:
 # Mura mbeadh shínfeadh sé ar ais chuici é (OK).
-<VNOTCOP>ANYTHING</VNOTCOP> <[AN]>LENITED</[AN]>:NISEIMHIU
-<VNOTCOP>ANYTHING</VNOTCOP> [Dd]há|[Ff]hios:OK
+<VNOTCOP>ANYTHING</VNOTCOP> <N>LENITED</N>:NISEIMHIU
+<VNOTCOP>ANYTHING</VNOTCOP> <N pl="n" gnt="n" gnd="m">[Ff]hios</N>:OK
 #############################################################################
 # rules for irregular comparative adjectives:
 #  these are only gsf's that aren't correct comparatives; i.e. all other
