@@ -227,9 +227,21 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 # corpus; exception to "lenite adj after feminine noun" (céad comes before)
 #. Léimeann an fharraige céad méadar suas sa spéir (OK).
 <NFCS>ANYTHING</NFCS> <A pl="n" gnt="n">UNLENITABLEADJ</A>:OK
-<N pl="n" gnt="n" gnd="f">[Bb]heith</N> <A pl="n" gnt="n">UNLENITED</A>:OK
 # OD oiread "followed by m. of adjective"
-<N pl="n" gnt="n" gnd="f">[Oo]iread</N> <A pl="n" gnt="n">UNLENITED</A>:OK
+<N pl="n" gnt="n" gnd="f">([Bb]heith|[Oo]iread)</N> <A pl="n" gnt="n">UNLENITED</A>:OK
+<NFCS>ANYTHING</NFCS> <A>ANYTHING</A> <A pl="n" gnt="n">UNLENITED</A>:SEIMHIU
+<NFCS>ANYTHING</NFCS> <A>UNLENITABLEADJ</A> <A pl="n" gnt="n">UNLENITED</A>:OK
+<NFCS>ANYTHING</NFCS> <A>(cuibheasach|eile|iontach|measartha|réasúnta)</A> <A pl="n" gnt="n">UNLENITED</A>:OK
+<NFCS>ANYTHING</NFCS> <A>ANYTHING</A> <A pl="n" gnt="n">UNLENITABLEADJ</A>:OK
+<N pl="n" gnt="n" gnd="f">([Bb]heith|[Oo]iread)</N> <A>ANYTHING</A> <A pl="n" gnt="n">UNLENITED</A>:OK
+#  these are no good b/c of tagging problems, adj. is *sometimes*
+#  supposed to be genitive, modifying the NG, and therefore usually unlenited
+# <NFCS>ANYTHING</NFCS> <NG>ANYTHING</NG> <A pl="n" gnt="n">UNLENITED</A>:SEIMHIU
+# <NFCS>ANYTHING</NFCS> <NG>ANYTHING</NG> <A pl="n" gnt="n">UNLENITABLEADJ</A>:OK
+# <N pl="n" gnt="n" gnd="f">([Bb]heith|[Oo]iread)</N> <NG>ANYTHING</NG> <A pl="n" gnt="n">UNLENITED</A>:OK
+<NFCS>ANYTHING</NFCS> <A>ANYTHING</A> <C>ach</C> <A pl="n" gnt="n">UNLENITED</A>:SEIMHIU
+<NFCS>ANYTHING</NFCS> <A>ANYTHING</A> <C>ach</C> <A pl="n" gnt="n">UNLENITABLEADJ</A>:OK
+<N pl="n" gnt="n" gnd="f">([Bb]heith|[Oo]iread)</N> <A>ANYTHING</A> <C>ach</C> <A pl="n" gnt="n">UNLENITED</A>:OK
 <S>[Aa]g</S> <N pl="n" gnt="n" gnd="f">[Ff]áil</N> <N pl="n" gnt="y" gnd="m">báis</N>:SEIMHIU
 <S>[Aa]g</S> <N pl="n" gnt="n" gnd="f">[Gg]abháil</N> <N pl="n" gnt="y" gnd="m">(foinn|ceoil)</N>:SEIMHIU
 <NFCS>ANYTHING</NFCS> <NG>UNLENITED</NG>:SEIMHIU
@@ -271,6 +283,8 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 <NFCS>ANYTHING</NFCS> <N pl="n" gnt="y" gnd="m">[Tt]í</N>:OK
 <S>[Aa]g</S> <E><NFCS>FEMVN</NFCS> <NG>UNLENITED</NG></E>:OK
 <NFCS>FINALDLNST</NFCS> <NG>LENITEDDST</NG>:NISEIMHIU
+# unclear in corpus "beirt duine" is common, but rules don't indicate exc.
+<N pl="n" gnt="n" gnd="f">m?[Bb]h?eirt</N> <NG>LENITEDDST</NG>:OK
 # CB p.16 #6 exception
 #. Is as Londain Shasana mé ó dhúchas (OK).
 <NFCS>ANYTHING</NFCS> <NG>CAPITAL</NG>:OK
@@ -632,7 +646,7 @@ INITIALMBAPOST:NIURU
 #. D'fhan beirt bhuachaill cancrach sa champa.
 <N>[Bb]h?eirte?</N> <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
 #. Mothóidh Pobal Osraí an bheirt laoch sin uathu (OK).
-<N>[Bb]h?eirte?</N> <N>ANYTHING</N> seo|sin:OK
+<N>[Bb]h?eirte?</N> <N>ANYTHING</N> <A>UNLENITABLEADJ</A>:OK
 # corpus, achtanna mostly
 <S>[Dd]e</S> <V>[Bb]huadh</V>:IONADAI{bhua}
 [Dd]á <V>[Bb]huadh</V>:IONADAI{dá bhua}
@@ -747,6 +761,10 @@ g?[Cc]h?eithre <N>airde</N>:BACHOIR{hairde}
 <T>[Nn]a</T> <E><A pl="n" gnt="n">g?[Cc]h?eithre</A> <N>[Dd]úile</N></E>:OK
 # CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
 <A pl="n" gnt="n">g?[Cc]h?eithre</A> <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</N>:OK
+<A pl="n" gnt="n">g?[Cc]h?eithre</A> <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
+<A pl="n" gnt="n">g?[Cc]h?eithre</A> <N>ANYTHING</N> <A>UNLENITABLEADJ</A>:OK
+<A pl="n" gnt="n">g?[Cc]h?eithre</A> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SEIMHIU
+<A pl="n" gnt="n">g?[Cc]h?eithre</A> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITABLEADJ</A>:OK
 # CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
 <A pl="n" gnt="n">g?[Cc]h?eithre</A> <N pl="n" gnt="n" gnd="f">[Bb]hliain</N>:BACHOIR{bliana}
 <A pl="n" gnt="n">g?[Cc]h?eithre</A> <N pl="n" gnt="n" gnd="m">[Cc]heann</N>:BACHOIR{cinn}
@@ -851,6 +869,10 @@ g?[Cc]h?eithre <N>airde</N>:BACHOIR{hairde}
 g?[Cc]h?úig <N>UNLENITED</N>:SEIMHIU
 # CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
 g?[Cc]h?úig <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</N>:OK
+g?[Cc]h?úig <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
+g?[Cc]h?úig <N>ANYTHING</N> <A>UNLENITABLEADJ</A>:OK
+g?[Cc]h?úig <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SEIMHIU
+g?[Cc]h?úig <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITABLEADJ</A>:OK
 # CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
 g?[Cc]h?úig <N pl="n" gnt="n" gnd="f">[Bb]hliain</N>:BACHOIR{bliana}
 g?[Cc]h?úig <N pl="n" gnt="n" gnd="m">[Cc]heann</N>:BACHOIR{cinn}
@@ -955,55 +977,58 @@ g?[Cc]h?úig <NP>(bliana|cinn|cloigne|fichid|huaire)</NP>:OK
 #. D'oibrigh mé liom go dtí Dé Aoine.
 Dé Aoine:PREFIXH
 #. Míle naoi gcéad a hocht ndéag is fiche.
-ndéag:CAIGHDEAN{déag}
+<N pl="n" gnt="n">ndéag</N>:CAIGHDEAN{déag}
 # CB p.18 #9.j, p.74 #2; LGG p.195, OD déag
 #. Feicim go bhfuil aon duine déag curtha san uaigh seo.
 # genitive is OK I think:
 #. D'fhás sé ag deireadh na naoú haoise déag agus fás an náisiúnachais (OK).
-<NCS>FINALVOWEL</NCS> déag:SEIMHIU
+<NCS>FINALVOWEL</NCS> <N pl="n" gnt="n">déag</N>:SEIMHIU
 # specifically in OD; but just "bhfichid, fh?ichid"?
-<NP>SLENDERFINALCONSONANT</NP> déag:SEIMHIU
+<NP>SLENDERFINALCONSONANT</NP> <N pl="n" gnt="n">déag</N>:SEIMHIU
+# this exception and following rule from OD (+ corpus)
+<NP>g?ch?inn</NP> <N pl="n" gnt="n">déag</N>:OK
+<N pl="y" gnt="n" gnd="m">g?ch?inn</N> <N pl="n" gnt="n">dhéag</N>:NISEIMHIU
 # CB p.74; correct forms in comhshuite, exceptions to existence of "a" p.75 #4
 #. Tabharfaidh an tUachtarán a óráid ag leath i ndiaidh a dó déag Dé Sathairn.
-n?[Dd]h?ó [Dd]h?éag:INPHRASE{a dó dhéag, dhá X déag}
-<A pl="n" gnt="n">[Aa] [Dd]ó</A> [Dd]éag:INPHRASE{a dó dhéag, dhá X déag}
+n?[Dd]h?ó <N pl="n" gnt="n">[Dd]h?éag</N>:INPHRASE{a dó dhéag, dhá X déag}
+<A pl="n" gnt="n">[Aa] [Dd]ó</A> <N pl="n" gnt="n">[Dd]éag</N>:INPHRASE{a dó dhéag, dhá X déag}
 <A pl="n" gnt="n">[Dd]ó [Dd]héag</A>:INPHRASE{a dó dhéag, dhá X déag}
 # [Aa] <E><A pl="n" gnt="n">[Dd]ó [Dd]héag</A></E>:OK
 <C>[Nn]ó</C> <E><A pl="n" gnt="n">[Dd]ó [Dd]héag</A></E>:OK
 #. Bhuail an clog a trí dhéag.
-d?[Tt]h?rí [Dd]h?éag:INPHRASE{a trí déag, trí X déag}
-<A pl="n" gnt="n">[Aa] [Tt]rí</A> [Dd]héag:INPHRASE{a trí déag, trí X déag}
+d?[Tt]h?rí <N pl="n" gnt="n">[Dd]h?éag</N>:INPHRASE{a trí déag, trí X déag}
+<A pl="n" gnt="n">[Aa] [Tt]rí</A> <N pl="n" gnt="n">[Dd]héag</N>:INPHRASE{a trí déag, trí X déag}
 #. Tá trí déag litir san fhocal seo.
 <A pl="n" gnt="n">[Tt]rí [Dd]éag</A>:INPHRASE{a trí déag, trí X déag}
 # [Aa] <E><A pl="n" gnt="n">[Tt]rí [Dd]éag</A></E>:OK
 <C>[Nn]ó</C> <E><A pl="n" gnt="n">[Tt]rí [Dd]éag</A></E>:OK
-g?[Cc]h?eathair [Dd]h?éag:INPHRASE{a ceathair déag, ceithre X déag}
-<A pl="n" gnt="n">[Aa] [Cc]eathair</A> [Dd]héag:INPHRASE{a ceathair déag, ceathair X déag}
+g?[Cc]h?eathair <N pl="n" gnt="n">[Dd]h?éag</N>:INPHRASE{a ceathair déag, ceithre X déag}
+<A pl="n" gnt="n">[Aa] [Cc]eathair</A> <N pl="n" gnt="n">[Dd]héag</N>:INPHRASE{a ceathair déag, ceathair X déag}
 <A pl="n" gnt="n">[Cc]eathair [Dd]éag</A>:INPHRASE{a ceathair déag, ceithre X déag}
 # [Aa] <E><A pl="n" gnt="n">[Cc]eathair [Dd]éag</A></E>:OK
 <C>[Nn]ó</C> <E><A pl="n" gnt="n">[Cc]eathair [Dd]éag</A></E>:OK
-g?[Cc]h?úig [Dd]h?éag:INPHRASE{a cúig déag, cúig X déag}
-<A pl="n" gnt="n">[Aa] [Cc]úig</A> [Dd]héag:INPHRASE{a cúig déag, cúig X déag}
+g?[Cc]h?úig <N pl="n" gnt="n">[Dd]h?éag</N>:INPHRASE{a cúig déag, cúig X déag}
+<A pl="n" gnt="n">[Aa] [Cc]úig</A> <N pl="n" gnt="n">[Dd]héag</N>:INPHRASE{a cúig déag, cúig X déag}
 <A pl="n" gnt="n">[Cc]úig [Dd]éag</A>:INPHRASE{a cúig déag, cúig X déag}
 # [Aa] <E><A pl="n" gnt="n">[Cc]úig [Dd]éag</A></E>:OK
 <C>[Nn]ó</C> <E><A pl="n" gnt="n">[Cc]úig [Dd]éag</A></E>:OK
-[Ss]h?é [Dd]h?éag:INPHRASE{a sé déag, sé X déag}
-<A pl="n" gnt="n">[Aa] [Ss]é</A> [Dd]héag:INPHRASE{a sé déag, sé X déag}
+[Ss]h?é <N pl="n" gnt="n">[Dd]h?éag</N>:INPHRASE{a sé déag, sé X déag}
+<A pl="n" gnt="n">[Aa] [Ss]é</A> <N pl="n" gnt="n">[Dd]héag</N>:INPHRASE{a sé déag, sé X déag}
 <A pl="n" gnt="n">[Ss]é [Dd]éag</A>:INPHRASE{a sé déag, sé X déag}
 # [Aa] <E><A pl="n" gnt="n">[Ss]é [Dd]éag</A></E>:OK
 <C>[Nn]ó</C> <E><A pl="n" gnt="n">[Ss]é [Dd]éag</A></E>:OK
-[Ss]h?eacht [Dd]h?éag:INPHRASE{a seacht déag, seacht X déag}
-<A pl="n" gnt="n">[Aa] [Ss]eacht</A> [Dd]héag:INPHRASE{a seacht déag, seacht X déag}
+[Ss]h?eacht <N pl="n" gnt="n">[Dd]h?éag</N>:INPHRASE{a seacht déag, seacht X déag}
+<A pl="n" gnt="n">[Aa] [Ss]eacht</A> <N pl="n" gnt="n">[Dd]héag</N>:INPHRASE{a seacht déag, seacht X déag}
 <A pl="n" gnt="n">[Ss]eacht [Dd]éag</A>:INPHRASE{a seacht déag, seacht X déag}
 # [Aa] <E><A pl="n" gnt="n">[Ss]eacht [Dd]éag</A></E>:OK
 <C>[Nn]ó</C> <E><A pl="n" gnt="n">[Ss]eacht [Dd]éag</A></E>:OK
-h?[Oo]cht [Dd]h?éag:INPHRASE{a hocht déag, ocht X déag}
-<A pl="n" gnt="n">[Aa] h[Oo]cht</A> [Dd]héag:INPHRASE{a hocht déag, ocht X déag}
+h?[Oo]cht <N pl="n" gnt="n">[Dd]h?éag</N>:INPHRASE{a hocht déag, ocht X déag}
+<A pl="n" gnt="n">[Aa] h[Oo]cht</A> <N pl="n" gnt="n">[Dd]héag</N>:INPHRASE{a hocht déag, ocht X déag}
 <A pl="n" gnt="n">[Oo]cht [Dd]éag</A>:INPHRASE{a hocht déag, ocht X déag}
 # [Aa] <E><A pl="n" gnt="n">h[Oo]cht [Dd]éag</A></E>:OK
 <C>[Nn]ó</C> <E><A pl="n" gnt="n">[Oo]cht [Dd]éag</A></E>:OK
-[Nn]aoi [Dd]h?éag:INPHRASE{a naoi déag, naoi X déag}
-<A pl="n" gnt="n">[Aa] [Nn]aoi</A> [Dd]héag:INPHRASE{a naoi déag, naoi X déag}
+[Nn]aoi <N pl="n" gnt="n">[Dd]h?éag</N>:INPHRASE{a naoi déag, naoi X déag}
+<A pl="n" gnt="n">[Aa] [Nn]aoi</A> <N pl="n" gnt="n">[Dd]héag</N>:INPHRASE{a naoi déag, naoi X déag}
 <A pl="n" gnt="n">[Nn]aoi [Dd]éag</A>:INPHRASE{a naoi déag, naoi X déag}
 # [Aa] <E><A pl="n" gnt="n">[Nn]aoi [Dd]éag</A></E>:OK
 <C>[Nn]ó</C> <E><A pl="n" gnt="n">[Nn]aoi [Dd]éag</A></E>:OK
@@ -1020,6 +1045,8 @@ n?[Dd]h?eich <N pl="n" gnt="n" gnd="f">[Ss]eachtain</N>:BACHOIR{seachtaine}
 # NGBC p.184, CB p.76 #8.a
 n?[Dd]h?eich <NP>ANYTHING</NP>:UATHA
 n?[Dd]h?eich <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
+n?[Dd]h?eich <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
+n?[Dd]h?eich <N>ANYTHING</N> <A>UNLENITABLEADJ</A>:OK
 # CB p.79 #13.a
 <N pl="n" gnt="n" gnd="m">n?[Dd]h?eichniúr</N> <NP>ANYTHING</NP>:UATHA
 <N pl="n" gnt="n" gnd="m">n?[Dd]h?eichniúr</N> <N pl="y" gnt="y" gnd="f">ban</N>:OK
@@ -1056,6 +1083,10 @@ n?[Dd]h?eich <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 # CB p.13 #3.d
 #. Bhí Eibhlín ar a dhá glúin (OK).
 <D>([Aa]|[Áá]r|[Bb]hur)</D> <E><A pl="n" gnt="n">[Dd]há</A> UNLENITED</E>:OK
+<A pl="n" gnt="n">[Dd]h?á</A> <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
+<A pl="n" gnt="n">[Dd]h?á</A> <N>ANYTHING</N> <A>UNLENITABLEADJ</A>:OK
+<A pl="n" gnt="n">[Dd]h?á</A> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SEIMHIU
+<A pl="n" gnt="n">[Dd]h?á</A> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITABLEADJ</A>:OK
 # CB p.77 #8.e; these would be caught by "dhá+NP" below, but clearer message
 <A pl="n" gnt="n">[Dd]há</A> [Bb]hliana:BACHOIR{bhliain}
 <A pl="n" gnt="n">[Dd]há</A> [Cc]hinn:BACHOIR{cheann}
@@ -1760,6 +1791,10 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # NGBC p.184, CB p.76 #8.a
 <[^Y]>[Nn]aoi</[^Y]> <NP>ANYTHING</NP>:UATHA
 <[^Y]>[Nn]aoi</[^Y]> <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
+<[^Y]>[Nn]aoi</[^Y]> <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
+<[^Y]>[Nn]aoi</[^Y]> <N>ANYTHING</N> <A>UNLENITABLEADJ</A>:OK
+<[^Y]>[Nn]aoi</[^Y]> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SEIMHIU
+<[^Y]>[Nn]aoi</[^Y]> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITABLEADJ</A>:OK
 # CB p.16 #8.c
 #. Tháinig na bróga chomh fada siar le haimsir Naomh Phádraig féin.
 <N>Naomh</N> CAPITALLENITED:NISEIMHIU
@@ -1827,6 +1862,8 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 #. Eisean beagán níb óga ná mise.
 <R>NIBS</R>:BREISCHEIM
 <E><R>NIBS</R></E> <A pl="n" gnt="y" gnd="f">ANYTHING</A>:OK
+#. Agus do na daoine a bhí níb boichte ná iad féin.
+<R>[Nn]íb</R> <A pl="n" gnt="y" gnd="f">NONVOWELNONF</A>:BACHOIR{níba}
 #. Eisean beagán níba óige ná mise.
 <R>[Nn]íba</R> <A pl="n" gnt="y" gnd="f">INITIALVOWELORF</A>:BACHOIR{níb}
 #. Bhí na páistí ag éirí níba tréine.
@@ -1918,6 +1955,10 @@ h?[Oo]ocht <N pl="n" gnt="n" gnd="f">[Ss]eachtain</N>:BACHOIR{seachtaine}
 # NGBC p.184, CB p.76 #8.a
 h?[Oo]cht <NP>ANYTHING</NP>:UATHA
 h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
+h?[Oo]cht <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
+h?[Oo]cht <N>ANYTHING</N> <A>UNLENITABLEADJ</A>:OK
+h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SEIMHIU
+h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITABLEADJ</A>:OK
 # CB p.79 #13.a
 <N pl="n" gnt="n" gnd="m">[Oo]chtar</N> <NP>ANYTHING</NP>:UATHA
 <N pl="n" gnt="n" gnd="m">[Oo]chtar</N> <N pl="y" gnt="y" gnd="f">ban</N>:OK
@@ -2084,6 +2125,10 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 <A pl="n" gnt="n">[Ss]h?é</A> <N>UNLENITED</N>:SEIMHIU
 # CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
 <A pl="n" gnt="n">[Ss]h?é</A> <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</N>:OK
+<A pl="n" gnt="n">[Ss]h?é</A> <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
+<A pl="n" gnt="n">[Ss]h?é</A> <N>ANYTHING</N> <A>UNLENITABLEADJ</A>:OK
+<A pl="n" gnt="n">[Ss]h?é</A> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SEIMHIU
+<A pl="n" gnt="n">[Ss]h?é</A> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITABLEADJ</A>:OK
 # CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
 <A pl="n" gnt="n">[Ss]h?é</A> <N pl="n" gnt="n" gnd="f">[Bb]hliain</N>:BACHOIR{bliana}
 <A pl="n" gnt="n">[Ss]h?é</A> <N pl="n" gnt="n" gnd="m">[Cc]heann</N>:BACHOIR{cinn}
@@ -2117,6 +2162,10 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 # NGBC p.184, CB p.76 #8.a
 [Ss]h?eacht <NP>ANYTHING</NP>:UATHA
 [Ss]h?eacht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
+[Ss]h?eacht <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
+[Ss]h?eacht <N>ANYTHING</N> <A>UNLENITABLEADJ</A>:OK
+[Ss]h?eacht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SEIMHIU
+[Ss]h?eacht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITABLEADJ</A>:OK
 # CB p.79 #13.a
 <N pl="n" gnt="n" gnd="m">[Ss]h?eachtar</N> <NP>ANYTHING</NP>:UATHA
 <N pl="n" gnt="n" gnd="m">[Ss]h?eachtar</N> <N pl="y" gnt="y" gnd="f">ban</N>:OK
@@ -2304,6 +2353,10 @@ h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
 d?[Tt]h?rí <N>UNLENITED</N>:SEIMHIU
 # CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
 d?[Tt]h?rí <N>([Bb]liana|[Cc]inn|[Cc]loigne|[Cc]uarta|[Ff]ichid|[Ss]eachtaine)</N>:OK
+<A pl="n" gnt="n">d?[Tt]h?rí</A> <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
+<A pl="n" gnt="n">d?[Tt]h?rí</A> <N>ANYTHING</N> <A>UNLENITABLEADJ</A>:OK
+d?[Tt]h?rí <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SEIMHIU
+d?[Tt]h?rí <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITABLEADJ</A>:OK
 #   next batch needs disambiguation; "Rinne mé é trí bhliain a chaitheamh..."
 #  "I did it by spending a year"
 # CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
@@ -2687,6 +2740,8 @@ d?[tT]h?rí|g?[Cc]h?eithre|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 <S>NONRFORMPREP</S> <VDEE>INTIALDAPOST</VDEE>:NIDEE
 [Aa]n|[Cc]á|[Dd]á|[Nn]ach|[Nn]í <VDEE>INTIALDAPOST</VDEE>:NIDEE
 #############################################################################
+<A>TWOTONINETEEN</A> <N>ANYTHING</N> <A>UNLENITED</A>:SEIMHIU
+<A>TWOTONINETEEN</A> <N>ANYTHING</N> <A>UNLENITABLEADJ</A>:OK
 #  NISEIMHIU and exceptions for adjectives
 #  Note exceptions are too broad (any preceding copula e.g.) so there
 # are other NISEIMHIUs left above that apply to adjectives (after "is" etc.)
@@ -2695,7 +2750,7 @@ d?[tT]h?rí|g?[Cc]h?eithre|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 <A>LENITED</A>:NISEIMHIU
 # irritation; might miss some real egs though  "an fear the"
 <A>the</A>:OK
-<A>COMPOUND</A>:OK
+<A>dhá chéad</A>:OK
 # in áit bheag, i bhfoirm dhigiteach
 <S>COMPOUND</S> <E><A>LENITED</A></E>:OK
 # in áit éigin chiúin
@@ -2714,7 +2769,7 @@ d?[tT]h?rí|g?[Cc]h?eithre|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 <[CDST]>ANYTHING</[CDST]> <E><A>[Dd]hara</A></E>:OK
 # next three rules handle nouns preceded by 2-19
 <A>([Dd]h?á|d?[Tt]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|n?[Dd]h?eich)</A> <N>ANYTHING</N> <E><A>LENITED</A></E>:OK
-<A>([Dd]h?á|d?[Tt]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|n?[Dd]h?eich)</A> <N>ANYTHING</N> [Dd]h?éag <E><A>LENITED</A></E>:OK
+<A>([Dd]h?á|d?[Tt]h?rí|g?[Cc]h?eithre|g?[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|n?[Dd]h?eich)</A> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <E><A>LENITED</A></E>:OK
 <A>TWOTONINETEEN</A> <N>ANYTHING</N> <E><A>LENITED</A></E>:OK
 <R>NIBS</R> <E><A pl="n" gnt="y" gnd="f">ANYTHING</A></E>:OK
 <C>[Nn]ó</C> <E><A pl="n" gnt="n">dhó</A></E>:OK
@@ -2785,15 +2840,15 @@ d?[tT]h?rí|g?[Cc]h?eithre|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 # <NS>ANYTHING</NS> <AP>ANYTHING</AP>:NUMBER
 # CB p.67 #17a,b exceptions; "seacht gcapall déag bhána" in there explicitly
 # [Dd]há|[Tt]h?rí|[Cc]h?eithre|[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|[Oo]cht|[Nn]aoi|[Dd]h?eich <E><NS>ANYTHING</NS> <AP>ANYTHING</AP></E>:OK
-# [Dd]há|[Tt]h?rí|[Cc]h?eithre|[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|[Oo]cht|[Nn]aoi <N>ANYTHING</N> <E><N>[Dd]éag</N> <AP>ANYTHING</AP></E>:OK
+# [Dd]há|[Tt]h?rí|[Cc]h?eithre|[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|[Oo]cht|[Nn]aoi <N>ANYTHING</N> <E><N pl="n" gnt="n">[Dd]éag</N> <AP>ANYTHING</AP></E>:OK
 # <N>[Bb]h?eirt</N> <E><NS>ANYTHING</NS> <AP>ANYTHING</AP></E>:OK
 # the "converses" of the OK's above are acceptable:
 <A pl="n" gnt="n">([Dd]há|[Tt]h?rí|[Cc]h?eithre|[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|[Oo]cht|[Nn]aoi|[Dd]h?eich)</A> <NS>ANYTHING</NS> <AS>ANYTHING</AS>:AIDIOLRA
-<A pl="n" gnt="n">ANYTHING</A> <NS>ANYTHING</NS> <AS>(sin|seo)</AS>:OK
-<A pl="n" gnt="n">([Dd]há|[Tt]h?rí|[Cc]h?eithre|[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|[Oo]cht|[Nn]aoi)</A> <NS>ANYTHING</NS> <N>[Dd]éag</N> <AS>ANYTHING</AS>:AIDIOLRA
-<A pl="n" gnt="n">ANYTHING</A> <NS>ANYTHING</NS> <N>[Dd]éag</N> <AS>(sin|seo)</AS>:OK
+<A pl="n" gnt="n">ANYTHING</A> <NS>ANYTHING</NS> <AS>UNLENITABLEADJ</AS>:OK
+<A pl="n" gnt="n">([Dd]há|[Tt]h?rí|[Cc]h?eithre|[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|[Oo]cht|[Nn]aoi)</A> <NS>ANYTHING</NS> <N pl="n" gnt="n">[Dd]h?éag</N> <AS>ANYTHING</AS>:AIDIOLRA
+<A pl="n" gnt="n">ANYTHING</A> <NS>ANYTHING</NS> <N pl="n" gnt="n">[Dd]h?éag</N> <AS>UNLENITABLEADJ</AS>:OK
 <N pl="n" gnt="n" gnd="f">[Bb]h?eirt</N> <NS>ANYTHING</NS> <AS>ANYTHING</AS>:AIDIOLRA
-<N pl="n" gnt="n" gnd="f">[Bb]h?eirt</N> <NS>ANYTHING</NS> <AS>(sin|seo)</AS>:OK
+<N pl="n" gnt="n" gnd="f">[Bb]h?eirt</N> <NS>ANYTHING</NS> <AS>UNLENITABLEADJ</AS>:OK
 ######
 # This is related to the rule above: CB p.61 #4
 # BROADFINALCONSONANT <=> "weak" genitive plural

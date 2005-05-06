@@ -217,7 +217,7 @@ g?ch?éad <B>dá</B>:<A pl="n" gnt="n">
 # doing this hear helps "go+<A>"
 <B>[Dd]eas</B>:<A pl="n" gnt="n">
 # ok as is; "trí bliana déag", etc.  "trí déag"... in comhshuite
-<B>[Dd]éag</B>:<N pl="n" gnt="n">
+<B>n?[Dd]h?éag</B>:<N pl="n" gnt="n">
 <B>n?[Dd]h?earna</B>:<V p="y" t="caite">
 <B>[Dd]eir</B>:<V p="y" t="láith">
 <B>[Dd]eireadh</B>:<N pl="n" gnt="n" gnd="m">
@@ -393,6 +393,8 @@ a <B>sé</B>:<A pl="n" gnt="n">
 <B>theannta</B>:<N pl="n" gnt="n" gnd="m">
 # house, not golf
 <B>[Tt]h?í</B>:<N pl="n" gnt="y" gnd="m">
+<S>[Aa]g</S> <B>[Tt]rá</B>:<N pl="n" gnt="n" gnd="m">
+<B>d?[Tt]h?rá</B>:!<N[^<]+gnd="m">
 <B>Treasa</B>:<Y>
 # le trí chúilín, an trí chúilín
 <[ST]>ANYTHING</[ST]> <B>[Tt]rí</B>:<A pl="n" gnt="n">
@@ -481,6 +483,8 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 <NGP>BROADFINALCONSONANT</NGP> <B><Z>ANYWITHCOMMON</Z>ANYTHING</B>:<A pl="n" gnt="n">
 # na fir comhaimseartha
 <NP>ANYTHING</NP> <B><Z>AWITHPL</Z>ANYTHING</B>:<A pl="y" gnt="n">
+<A pl="n" gnt="n">([Dd]há|[Tt]h?rí|[Cc]h?eithre|[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|[Oo]cht|[Nn]aoi|[Dd]h?eich)</A> <N>ANYTHING</N> <B><Z>ANYWITHPLADJ</Z>ANYTHING</B>:<A pl="y" gnt="n">
+<A pl="n" gnt="n">([Dd]há|[Tt]h?rí|[Cc]h?eithre|[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|[Oo]cht|[Nn]aoi)</A> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <B><Z>ANYWITHPLADJ</Z>ANYTHING</B>:<A pl="y" gnt="n">
 # next two are a bad idea: "crann tógála mór buí" => "mór" genitive
 #<NFGS>ANYTHING</NFGS> <B><Z>AWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
 #<NMGS>ANYTHING</NMGS> <B><Z>AWITHGSM</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="m">
