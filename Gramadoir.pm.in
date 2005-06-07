@@ -586,7 +586,6 @@ sub tokenize_real
 			$chunk =~ s/$/<\/c>/;
 		}
 		else {
-			$chunk =~ s/(&(?:quot|[gl]t|amp);)/<c>$1<\/c>/g;
 			my $chunkdone = '1';
 			foreach my $rule (@TOKEN) {
 				my $chtemp="";
@@ -613,7 +612,7 @@ sub tokenize_real
 				$chtemp .= $todo;
 				$chunk = $chtemp;
 			}
-			$chunk =~ s/<c>(&(?:quot|[gl]t|amp);)<\/c>/$1/g;
+			$chunk =~ s/&<c>(quot|[gl]t|amp)<\/c>;/&$1;/g;
 			$chunk =~ s/(<\/.>)</$1 </g;
 		}
 		$answer .= " " if $answer;
