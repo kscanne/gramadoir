@@ -718,6 +718,7 @@ sub add_tags
 			$self->{'input_encoding'}) if $@;
 	my $answer = $self->add_tags_real($text);
 	foreach my $s (@$answer) {
+		$s =~ s/<\/?E[^>]*>//g;   # just POS tags
 		$s = decode('@NATIVE@', $s);
 	}
 	return $answer;
