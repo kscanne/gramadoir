@@ -99,6 +99,7 @@ touch ${DIR}/nocombo-${TEANGA}.txt
 (echo "1 <U>"; echo "127 <F>") > ${DIR}/pos-${TEANGA}.txt
 sed "s/@TEANGA@/${TEANGA}/; s/@NAME_ENGLISH@/${NAME_ENG}/" ${TEMPLATE}/README-xx > ${DIR}/README
 cp ${TEMPLATE}/rialacha-xx.in ${DIR}/rialacha-${TEANGA}.in
+cp ${TEMPLATE}/token-xx.in ${DIR}/token-${TEANGA}.in
 cp ${TEMPLATE}/unigram-xx.pre ${DIR}/unigram-${TEANGA}.pre
 cp ${TEMPLATE}/unigram-xx.txt ${DIR}/unigram-${TEANGA}.txt
 sed -i "s/(C) 20.. /(C) ${THISYEAR} /" ${DIR}/*-${TEANGA}.in ${DIR}/macra-${TEANGA}.meta.pl
