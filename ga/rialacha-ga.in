@@ -145,6 +145,7 @@ sin sin:OK
 <F>[Tt]h?arrach</F>:IONADAI{tarraingt}
 <F>d?[Tt]h?oiseach</F>:IONADAI{tosach}
 <F>[Tt]h?oisigh</F>:IONADAI{tosaigh}
+<F>d?[Tt]h?oithe</F>:IONADAI{tithe}
 <F>[Tt]uige</F>:IONADAI{cad chuige}
 #. Bíonn an geál ag satailt ar an dubh.
 <F>ANYTHING</F>:NEAMHCHOIT
@@ -337,6 +338,17 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 #. Cad é mar a tá tú?
 [Aa] <V>JUSTTA</V>:BACHOIR{atá}
 [Aa]n <A>[Gg]hnách</A>:IONADAI{ghnáth}
+<A>POSITIVEINT</A> <NP>ANYTHING</NP>:UATHA
+<A>POSITIVEINT</A> <NP>(m?bh?liana|g?ch?inn|g?ch?loigne|bhfichid|fh?ichid|n-uaire|uaire)</NP>:OK
+# CB p.20 #1.c, p.76 #8.c (even in plural)
+#. Bhí deich tobar fíoruisce agus seachtó crann pailme ann.
+#. Rinneadh an roinnt do na naoi treibh go leith ar chrainn.
+#. Bhí ocht tábla ar fad ar a maraídís na híobairtí.
+#. Sáraíonn sé na seacht nó na hocht bliana.
+#. Tá seacht lampa air agus seacht píopa ar gach ceann díobh.
+<[^Y]>ECLIPSINGNUMBER</[^Y]> <N>UNECLIPSED</N>:URU
+# no lenition in these exceptions!
+<[^Y]>ECLIPSINGNUMBER</[^Y]> <N>(Eanáir|Feabhra|Aibreán|Bealtaine|Iúil|Deireadh)</N>:OK
 ##############################################################################
 #   Rules A->Z begin here...
 ##############################################################################
@@ -658,6 +670,10 @@ INITIALMBAPOST:NIURU
 <D>[Bb]hur</D> UNECLIPSED:URU
 # corpus
 <T>[Nn]a</T> <A pl="y" gnt="n">[Bb]ochta</A>:IONADAI{boicht}
+#. Cad déarfaidh mé libh mar sin?
+<Q>INITIALC</Q> <VNOTCOP>ANYTHING</VNOTCOP>:BACHOIR{a}
+<Q>INITIALC</Q> <VNOTCOP>JUSTATA</VNOTCOP>:OK
+<Q>[Cc]ár?</Q> <VNOTCOP>ANYTHING</VNOTCOP>:OK
 # OD méid, corpus; common alternate of "Cé mhéad"
 #. Cé mhéid gealladh ar briseadh ar an Indiach bocht?
 [Cc][áé] <N>[Mm]h?éid</N>:CAIGHDEAN{mhéad}
@@ -744,6 +760,10 @@ INITIALMBAPOST:NIURU
 <N pl="n" gnt="n" gnd="m">[Cc]eard</N> <S>faoi</S>:IONADAI{céard}
 <N pl="n" gnt="n" gnd="m">[Cc]eard</N> <V cop="y">ANYTHING</V>:IONADAI{céard}
 <N pl="n" gnt="n" gnd="m">[Cc]eard</N> [Aa] <V>ANYTHING</V>:IONADAI{céard}
+# OD "usually preceded by 'a'"; "a/faoi cheathair" in comhshuite
+g?[Cc]h?eathair:INPHRASE{a ceathair, faoi cheathair}
+<C>[Nn]ó</C> <E>[Cc]eathair</E>:OK
+<E>[Cc]eathair</E> <C>[Nn]ó</C>:OK
 # CB p.79 #13.a
 <N pl="n" gnt="n" gnd="m">g?[Cc]h?eathrar</N> <NP>ANYTHING</NP>:UATHA
 <N pl="n" gnt="n" gnd="m">g?[Cc]h?eathrar</N> <N pl="y" gnt="y" gnd="f">ban</N>:OK
@@ -838,6 +858,8 @@ g?[Cc]h?eithre <N>airde</N>:BACHOIR{hairde}
 # "íoc chun an t-idirlíon a rochtain" or it is and should be tagged genitive:
 # "chun an idirlín"
 <S>[Cc]hun</S> <T>[Aa]n</T> <N pl="n" gnt="n" gnd="m">INITIALVOWEL</N>:PREFIXT
+# corpus
+<S>[Ii]</S> <V>g[Cc]lódh</V>:IONADAI{i gcló}
 # OD clog^1.2b; "a chloi?g" is in comhshuite; worth trapping 
 # since this can follow "trí", exception to "trí a" => "trína" rule
 # "her bell/clock" is a potential exception but never in the corpus.
@@ -970,6 +992,15 @@ g?[Cc]h?úig <NP>(bliana|cinn|cloigne|fichid|huaire)</NP>:OK
 # <S>[Dd]e</S> <P>([Mm]uid|[Ss]inn)</P>:BACHOIR{dínn}
 # <S>[Dd]e</S> <P>[Ss]ibh</P>:BACHOIR{díbh}
 # <S>[Dd]e</S> <P>[Ii]ad</P>:BACHOIR{díobh}
+# LGG p.201 (but it's OK to lenite Dé if not in name of a day: "gnúis mo Dhé")
+#. Beidh picéid ar an monarcha óna naoi a chlog maidin Dhé Luain.
+<N>Dhé</N> <N>CAPITAL</N>:NISEIMHIU
+# MacL00 p.118, LGG p.201
+#. Bíonn ranganna ar siúl oíche Dhéardaoin.
+#. Cuireadh tús le himeachtaí ar Dhéardaoin na Féile le cluiche mór.
+<N>Dhéardaoin</N>:NISEIMHIU
+# LGG p.201 requires genitive after Dé; only matters for these three:
+<N>Dé</N> <N pl="n" gnt="n" gnd="m">(Dh?omhnach|Luan|Sh?atharn)</N>:GENITIVE
 # corpus; CB p.109 for conjugation of "déan"
 #  not sure what I was thinking here, I see plenty of legit imperfects...
 # <V>n?[Dd]h?éanadh</V>:CAIGHDEAN{rinneadh, déanamh}
@@ -1032,9 +1063,6 @@ h?[Oo]cht <N pl="n" gnt="n">[Dd]h?éag</N>:INPHRASE{a hocht déag, ocht X déag}
 <A pl="n" gnt="n">[Nn]aoi [Dd]éag</A>:INPHRASE{a naoi déag, naoi X déag}
 # [Aa] <E><A pl="n" gnt="n">[Nn]aoi [Dd]éag</A></E>:OK
 <C>[Nn]ó</C> <E><A pl="n" gnt="n">[Nn]aoi [Dd]éag</A></E>:OK
-# CB p.20 #1.c, p.76 #8.c (even in plural)
-#. Bhí deich tobar fíoruisce agus seachtó crann pailme ann.
-n?[Dd]h?eich <N>UNECLIPSED</N>:URU
 # CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
 n?[Dd]h?eich <N pl="n" gnt="n" gnd="f">m[Bb]liain</N>:BACHOIR{mbliana}
 n?[Dd]h?eich <N pl="n" gnt="n" gnd="m">g[Cc]eann</N>:BACHOIR{gcinn}
@@ -1262,6 +1290,8 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Aa]</S> <N pl="y" gnt="n" gnd="m">ghabhail</N>:IONADAI{ghabháil}
 # corpus
 <A pl="n" gnt="n">[Gg]ach</A> <NP>ANYTHING</NP>:UATHA
+# corpus; stuff like "gach bhliain", "gach shaghas" pretty common actually
+<A pl="n" gnt="n">[Gg]ach</A> <N>LENITED</N>:NISEIMHIU
 # corpus
 #. Fágtar na mílte eile gan ghéaga nó radharc na súl.
 <S>[Gg]an</S> <N>ANYTHING</N> <C>nó</C> <N>ANYTHING</N>:BACHOIR{ná}
@@ -1651,6 +1681,9 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <N>Mhic</N> <Y>LENITEDCAPCG</Y>:NISEIMHIU
 <Y>Mhig</Y> <Y>CAPITALUNLENITEDNOTCG</Y>:SEIMHIU
 <Y>Mhig</Y> <Y>LENITEDCAPCG</Y>:NISEIMHIU
+# LGG p.202
+<N pl="n" gnt="n" gnd="f">[Mm]h?í</N> <T>ANYTHING</T> <N>(Eanáir|Fh?eabhra|Aibreái?n|Iúil|Lúnasa|Mh?eán|Dh?eireadh)</N>:ONEART
+<N pl="n" gnt="n" gnd="f">[Mm]h?í</N> <N>(Mh?árta|Bh?ealtaine|Mh?eithimh|Mh?eitheamh|Sh?amhain|Sh?amhna|Nollai?g)</N>:NEEDART
 # CB p.5 #17
 #. Comhlíon mo aitheanta agus mairfidh tú beo.
 <D>[Mm]o</D> INITIALVOWELORF:BACHOIR{m+uaschamóg}
@@ -1778,9 +1811,6 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <V cop="y">[Nn]ach</V> <A pl="n" gnt="n">[Dd]há</A>:OK
 # don't uncomment; can't do better than general NOGENITIVE rules
 # <V>ANYTHING</V> <T>an</T> <N>nádúir</N>:IONADAI{nádúr}
-# CB p.20 #1.c, p.76 #8.c (even in plural)
-#. Rinneadh an roinnt do na naoi treibh go leith ar chrainn.
-<[^Y]>[Nn]aoi</[^Y]> <N>UNECLIPSED</N>:URU
 # CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
 <[^Y]>[Nn]aoi</[^Y]> <N pl="n" gnt="n" gnd="f">m[Bb]liain</N>:BACHOIR{mbliana}
 <[^Y]>[Nn]aoi</[^Y]> <N pl="n" gnt="n" gnd="m">g[Cc]eann</N>:BACHOIR{gcinn}
@@ -1941,10 +1971,6 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # [Óó]n? <V cop="y">(ar|arb)</V>:BACHOIR{ónar, ónarb}
 # [Óó]n? <V cop="y">(ba|ab|arbh)</V>:BACHOIR{ónar, ónarbh}
 # [Óó]n? INITIALBAPOST:BACHOIR{ónarbh}
-# CB p.20 #1.c, p.76 #8.c (even in plural)
-#. Bhí ocht tábla ar fad ar a maraídís na híobairtí.
-#. Sáraíonn sé na seacht nó na hocht bliana.
-h?[Oo]cht <N>UNECLIPSED</N>:URU
 # CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
 h?[Oo]ocht <N pl="n" gnt="n" gnd="f">m[Bb]liain</N>:BACHOIR{mbliana}
 h?[Oo]ocht <N pl="n" gnt="n" gnd="m">g[Cc]eann</N>:BACHOIR{gcinn}
@@ -1966,9 +1992,6 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITABLEADJ</A>:
 # MacL00 p.118
 #. Beidh an chéad chruinniú oifigiúil ag an gcoiste oíche Dé Luain.
 <N>[Oo]íche</N> <N pl="n" gnt="n">DAYOFTHEWEEK</N>:NIGA{Dé}
-# MacL00 p.118
-#. Bíonn ranganna ar siúl oíche Dhéardaoin.
-<N>[Oo]íche</N> <N>Dhéardaoin</N>:NISEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. Bíodh bhur ngrá saor ón cur i gcéill.
 <S>[Óó]n</S> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
@@ -2149,9 +2172,6 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITABLEADJ</A>:
 <S>[Ss]eachas</S> <T>[Aa]n</T> <A pl="n" gnt="n">VOWELNUMADJ</A>:PREFIXT
 # CB p.134 #1.a (unlenited caught by more general rule)
 <S>[Ss]eachas</S> <T>an</T> <N pl="n" gnt="n" gnd="f">ECLIPSED</N>:SEIMHIU
-# CB p.20 #1.c
-#. Tá seacht lampa air agus seacht píopa ar gach ceann díobh.
-[Ss]h?eacht <N>UNECLIPSED</N>:URU
 # CB p.77 #8.ef, p.79 #14; seachtaine/cuarta in OD
 [Ss]h?eacht <N pl="n" gnt="n" gnd="f">m[Bb]liain</N>:BACHOIR{mbliana}
 [Ss]h?eacht <N pl="n" gnt="n" gnd="m">g[Cc]eann</N>:BACHOIR{gcinn}
@@ -2580,6 +2600,7 @@ d?[Tt]h?rí <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITABLEADJ</A>
 <D>([Aa]|[Áá]r|[Bb]hur)</D> <A pl="n" gnt="n">[Dd]há</A> <E><N>ECLIPSED</N></E>:OK
 # numbers sometimes tagged as "<N>" so leave like this
 ECLIPSINGNUMBER <E><N>ECLIPSED</N></E>:OK
+MAYBEECLIPSINGNUMBER <E><N>ECLIPSED</N></E>:OK
 #  "a seacht ndícheall"
 <A pl="n" gnt="n">[Aa] [Ss]eacht</A> <E><N>ECLIPSED</N></E>:OK
 <A pl="n" gnt="n">[Aa] h[Oo]cht</A> <E><N>ECLIPSED</N></E>:OK
@@ -3203,8 +3224,8 @@ háirithe:INPHRASE{go háirithe}
 <N pl="n" gnt="n" gnd="m">[Ss]aochan</N>:INPHRASE{saochan céille}
 <N pl="n" gnt="n" gnd="f">t?sh?lánchruinne</N>:INPHRASE{sa tslánchruinne}
 <N>[Ss]ciotán</N>:INPHRASE{de sciotán}
-# "scan" of course has a legit <V> tag
-<R>[Ss]c[ua]n</R>:INPHRASE{scun scan}
+# "scan" of course has a legit <V> tag; gets <R> by unigram though so leave out
+<R>[Ss]cun</R>:INPHRASE{scun scan}
 <S>[Ss]each</S>:INPHRASE{faoi seach}
 <A>[Ss]hin</A>:INPHRASE{ó shin}
 <N pl="n" gnt="n">[Ss]incín</N>:INPHRASE{siún sincín}

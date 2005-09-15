@@ -38,6 +38,7 @@ s/PASTNORFORM/(?:ndúi?r|rai?bh|bhfuai?r|bhfac|ndeach|ndearna)[^<]*/g;
 s/PASTAFTERNI/(?:bhfuai?r|dúi?r|rai?bh|fhac|dheach|dhearna)[^<]*/g;
 s/FAIGHECLIPSED/bh[Ff]ua(?:ir(?:ea[md]ar)?|rthas)/g;
 s/FAIGHTOECLIPSE/[Ff]ua(?:ir(?:ea[md]ar)?|rthas)/g;
+s/POSITIVEINT/[0-9]+/g;
 s/TWOTONINETEEN/(?:[2-9]|1[0-9])/g;
 s/VOWELNUMERAL/(?:[0-9]?[18]|1?8[0-9][0-9][0-9]*)/g;
 s/VOWELORDINAL/(?:80|[0-9]?[18]|1?8[0-9][0-9][0-9]*)ú/g;
@@ -57,16 +58,17 @@ s/ECLIPSEDVOWEL/n(?:-[aeiouáéíóú]|[AEIOUÁÉÍÓÚ])[^<]*/g;
 s/ECLIPSEDDT/(?:d[Tt]|n[Dd])[^<]+/g;
 s/ECLIPSEDBCFGP/(?:g[Cc]|b[Pp]|m[Bb]|n[Gg]|bh[fF])[^<]+/g;
 s/ECLIPSED/(?:n(?:-[aeiouáéíóú]|[AEIOUÁÉÍÓÚ])|d[Tt]|g[Cc]|b[Pp]|m[Bb]|n[DdGg]|bh[fF])[^<]*/g;
-s/ECLIPSINGNUMBER/(?:n?[Dd]h?eich|[Nn]aoi|(?:h|[mbd]')?[Oo]cht|[Ss]h?eacht|[0-9]*[789]|[0-9]*10)/g;
+s/MAYBEECLIPSINGNUMBER/(?:[1-9][0-9]*[789]|[0-9]*10)/g;
+s/ECLIPSINGNUMBER/(?:n?[Dd]h?eich|[Nn]aoi|(?:h|[mbd]')?[Oo]cht|[Ss]h?eacht|[789]|10)/g;
 s/ECLIPSINGPOSS/(?:(?:[Ff]aoin|[Ii]n|[Ll]en|[Óó]n|[Tt]rín)?(?:[Aa]|ár)|[Dd]?[Áá]r?|[Bb]hur|[Aa]rna)/g;
 # include "uile" etc. now - better name is "non-binding" adjs!
 s/UNLENITABLEADJ/(?:bainte|caite|céad|cibé|curtha|déanta|deich|dulta|fágtha|faighte|gach|seacht|seo|sin|suite|t[au]gtha|uile)/g;
 s/UNLENITABLE/(?:[^BbCcDdFfGgMmPpTt]|[Ss][^lnraeiouáéíóú])[^<]*/g;
 s/UNLENITEDBCGMP/[BbCcGgMmPp][^Hh'][^<]*/g;
 s/UNLENITEDBCFGMP/(?:[BbCcFfGgMmPp][^Hh']|bh[fF])[^<]*/g;
-s/UNMUTATEDBCFGP/[BbCcFfGgPp][^hcCpP'][^<]*/g;
+s/UNMUTATEDBCFGP/[BbCcFfGgPp][^hHcCpP'][^<]*/g;
 # s,m+vowel not *definitely* UNMUTATED since it could be an eclipsis scenario 
-s/UNMUTATED/[BbCcDdFfGgPpTt][^hcCpPtT'][^<]*/g;
+s/UNMUTATED/[BbCcDdFfGgPpTt][^hHcCpPtT'][^<]*/g;
 s/UNLENITEDF/[Ff][aeiouáéíóú][^<]*/g;
 s/UNLENITEDCDFGST/(?:[CcDdFfGgTt][^Hh']|[Ss][lnraeiouáéíóú]|bh[Ff])[^<]*/g;
 s/UNLENITED/(?:[BbCcDdFfGgMmPpTt][^Hh']|[Ss][lnraeiouáéíóú]|bh[Ff])[^<]*/g;
@@ -209,7 +211,8 @@ s/GENADJM/<N pl="n" gnt="y" gnd="m".><A pl="n" gnt="n".><A pl="n" gnt="y" gnd="f
 s/PROPER/<Y.>(?:<[^>]+>)+/g;
 s/MASCPL/<N pl="y" gnt="n".><N pl="y" gnt="n" gnd="m".>/g;
 s/ADJADV/<R.><A pl="n" gnt="n".>/g;
-s/PREPCONJ/<S.><C.>/g;
+# <U> added for "go"
+s/PREPCONJ/(?:<U.>)?<S.><C.>/g;
 s/PREPPOSS/<S.><D.>/g;
 s/PREPADV/<S.><R.>(?:<A pl="n" gnt="n".>)?/g;
 s/PREPPRONM/<S.><O.>/g;
