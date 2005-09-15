@@ -174,7 +174,7 @@ m?[Bb]h?uaileam sciath:<N pl="n" gnt="n">
 # OD méad.2
 [Aa]r mhéad:<R>
 [Aa]r a mhéad:<R>
-m?[Bb]h?aile Átha Cliath:<N pl="n" gnt="n" gnd="m">
+m?Bh?aile Átha Cliath:<N pl="n" gnt="n" gnd="m">
 [Cc][áé] [Mm]héad:<Q>
 [Cc]ad [Cc]huige:<Q>
 [Dd]á mhéad:<R>
@@ -185,6 +185,7 @@ m?[Bb]h?aile Átha Cliath:<N pl="n" gnt="n" gnd="m">
 [Cc]eannann céanna:<A pl="n" gnt="n">
 [Cc]heannann chéanna:<A pl="n" gnt="n">
 [Cc]iolar chiot:<N pl="n" gnt="n" gnd="f">
+[Cc]réad fá:<Q>
 # do the next batch to help disambiguate "chéad" (first vs. hundred)
 [Dd]há chéad:<A pl="n" gnt="n">
 [Tt]rí chéad:<A pl="n" gnt="n">
@@ -262,6 +263,7 @@ Dé Domhnaigh:<N pl="n" gnt="n">
 [Ff]aoi bhráid:<S>
 [Ff]aoi bhun:<S>
 [Ff]aoi cheann:<S>
+[Ff]aoi cheathair:<R>
 [Ff]aoi choinne:<S>
 [Ff]aoi deara:<R>
 [Ff]aoi dhéin:<S>
@@ -489,7 +491,7 @@ Ros Muc:<N pl="n" gnt="n">
 [Ss]aor [Ii]n [Aa]isce:<R>
 [Ss]cun scan:<R>
 [Ss]eo caite:<A pl="n" gnt="n">
-[Ss]h?inn Féin:<N pl="n" gnt="n">
+Sh?inn Féin:<N pl="n" gnt="n">
 # infrequent
 [Ss]iún sincín:<N pl="n" gnt="n">
 # infrequent
@@ -522,4 +524,5 @@ Ros Muc:<N pl="n" gnt="n">
 [Tt]har tír:<R>
 [Tt]har toinn:<R>
 [Tt]rí bhíthin:<S>
+Uíbh Fhailí:<Y>
 [Uu]m an dtaca:<R>
