@@ -24,6 +24,7 @@
 <S>[Ii]</S> <B>bhfuil</B>:<N pl="n" gnt="n" gnd="f">
 <B>bhfuil</B>:<V p="y" t="láith">
 <B>raibh</B>:<V p="y" t="caite">
+<B>té</B>:<P>
 <B>[Bb]huaigh</B>:<V p="y" t="caite">
 <B>[Bb]hraith</B>:<V p="y" t="caite">
 <B>[Tt]har</B>:<S>
@@ -432,15 +433,12 @@ a <B>sé</B>:<A pl="n" gnt="n">
 <B><Z>ANYPASTIMPER</Z>CAPVOWEL</B>:<V p="y" t="ord">
 RFORMCONJ <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">
 <S>RFORMPREP</S> <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">
-# leave out "r-form" verbal particle "ar" here!
+# leave out "r-form" verbal particle "ar" entirely here!
 [Cc]ár|[Cc]har|[Nn]ár|[Nn]íor <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">
-# Ainmnigh dhá chineál múchtóirí dóiteán; no need for "F" since lenited =>
-# not an imperative and not lenited => not PASTIMPER
-<B><Z>ANYPASTIMPER</Z>CAPVOWEL</B>:<V p="y" t="ord">
-RFORMCONJ <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">
-<S>RFORMPREP</S> <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">
-# leave out "r-form" verbal particle "ar" here!
-[Cc]ár|[Cc]har|[Nn]ár|[Nn]íor <B><Z>ANYPAST</Z>ANYTHING</B>:<V p="y" t="caite">
+RFORMCONJ <B><Z>ANYPASTAUT</Z>ANYTHING</B>:<V p="n" t="caite">
+<S>RFORMPREP</S> <B><Z>ANYPASTAUT</Z>ANYTHING</B>:<V p="n" t="caite">
+# "r-form" verbal particle "ar" here is handled with negative rule below
+[Cc]ár|[Cc]har|[Nn]ár|[Nn]íor <B><Z>ANYPASTAUT</Z>ANYTHING</B>:<V p="n" t="caite">
 # OK if before something that is definitely a verb: 
 # now subsumed by more general rule that follows.
 # [Aa]r <B><Z>GENERICPAST</Z>LENITED</B>:<V p="y" t="caite">
