@@ -456,7 +456,10 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 #. An ndeachaigh tú ag iascaireacht inniu (OK)?
 #. An raibh aon bhealach praiticiúil eile chun na hInd (OK)?
 <Q>[Aa]n</Q> <VPAST>PASTNORFORM</VPAST>:OK
+# actually not OK, but will fall through to URU error below, giving clearer message
+<Q>[Aa]n</Q> <VPAST>PASTNORFORMLEN</VPAST>:OK
 # CB p.22 #7.b, p.132 #4; vowel exception from corpus
+#. An dhearna mé an rud ceart?
 #. An bainim sult as bás an drochdhuine?
 #. An éireodh níos fearr leo dá mba mar sin a bheidís (OK)?
 <Q>[Aa]n</Q> <V>UNECLIPSEDCONS</V>:URU
