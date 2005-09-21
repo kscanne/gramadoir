@@ -16,7 +16,7 @@ B<@SCRIPTNAME@> --freq
 
 This script provides several useful functions for language pack
 developers of the An GramadE<oacute>ir grammar and style checker.
-The script read from standard input in all cases.
+The script reads from standard input in all cases.
 Try @SCRIPTNAME@ --help for more information.
 
 =head1 SEE ALSO
