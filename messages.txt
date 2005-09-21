@@ -6,11 +6,13 @@ DUBAILTE	'Repeated word'
 CUPLA=KESUNYANS		'Unusual combination of words'
 IOLRA		'The plural form is required here'
 UATHA		'The singular form is required here'
+AIDIOLRA	'Plural adjective required'
 BREISCHEIM	'Comparative adjective required'
 NEEDART		'Definite article required'
 ONEART		'Unnecessary use of the definite article'
 NOGENITIVE	'Unnecessary use of the genitive case'
 GENITIVE	'The genitive case is required here'
+PRESENT		'You should use the present tense here'
 NOSUBJ		'It seems unlikely that you intended to use the subjunctive here'
 # TRANSLATORS: You can use whatever kind of quotes you prefer for your locale
 # around the variable \\1.  You should keep the double backslash before the 1,
