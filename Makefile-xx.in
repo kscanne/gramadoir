@@ -261,7 +261,7 @@ poncin : FORCE
 	@cat rialacha-$(TEANGA).in | $(GRAMDIR)/rparser
 
 topclean :
-	rm -f $(INTERMEDIATE) *.tar.gz *.zip triail $(DEVSCRIPTNAME)
+	rm -f $(INTERMEDIATE) *.tar.gz *.zip triail $(DEVSCRIPTNAME) gram-$(TEANGA).dtd
 
 # lexicon-xx.txt is treated like a distributed file even though it's not
 distclean :
