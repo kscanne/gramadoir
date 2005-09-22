@@ -1,7 +1,5 @@
 ;;; gramadoir.el --- Interface to An Gramadóir
 
-;; $Id$
-
 ;; Copyright (C) 2003  Free Software Foundation, Inc.
 
 ;; Author: Martin Gregory <Martin.Gregory@eur.sas.com>
