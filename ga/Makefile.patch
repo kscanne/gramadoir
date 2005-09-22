@@ -1,5 +1,5 @@
---- Makefile	2005-04-13 15:51:20.000000000 -0500
-+++ Makefile.ok	2005-04-13 15:51:01.000000000 -0500
+--- Makefile	2005-09-22 02:42:42.000000000 +0000
++++ Makefile.ok	2005-09-22 02:42:37.000000000 +0000
 @@ -75,6 +75,15 @@
  
  Makefile : $(GRAMDIR)/Makefile-xx.in configure
@@ -29,7 +29,7 @@
  triail.xml-update : FORCE
  	$(MAKE) triail
  	$(MAKE) perl
-@@ -267,6 +282,7 @@
+@@ -270,6 +285,7 @@
  	$(MAKE) rebuildlex
  	rm -f Makefile $(PERLDOK) lexicon-$(TEANGA).txt
  	rm -fR $(PERLD)
@@ -37,7 +37,7 @@
  
  clean :
  	if [ -e $(PERLD)/Makefile ]; then (cd $(PERLD);  make distclean); fi
-@@ -313,9 +329,9 @@
+@@ -316,9 +332,9 @@
  replcheck : FORCE
  	@$(MAKE) perl
  	@echo "earraidi-$(TEANGA).bs..."
@@ -49,7 +49,7 @@
  
  
  counts : FORCE
-@@ -329,4 +345,95 @@
+@@ -332,4 +348,101 @@
  zipped : perl
  	(cd $(PERLD); make zipdist)
  
@@ -132,6 +132,12 @@
 +
 +bugs.html : bugs.txt
 +	cat bugs.txt | sed '/^[^#]/s/\*\([^\*]*\)\*/<b class=gramadoir>\1<\/b>/g; s/^[^#].*/<i>&<\/i><br>/; s/^# *HEADING: *\(.*\)/<hr><h2>\1<\/h2><p>/; s/^# *BUG.*/<\/p><p>/; s/^# \(.*\)/\1<br>/;' > $@
++
++testdtd : FORCE
++	$(MAKE) gram-$(TEANGA).dtd
++	cp -f gram-$(TEANGA).dtd ${HOME}/public_html/dtds
++	/usr/bin/gram-ga.pl --iomlan --aschod=utf-8 --xml --aspell triail > temp.xml
++	xmllint --dtdvalid http://borel.slu.edu/dtds/gram-$(TEANGA).dtd temp.xml
 +
 +gram-ga.exe : FORCE
 +	rm -fR gramadoir
