@@ -132,7 +132,7 @@ sub build_hashes {
 #		binmode DATABASE, ":bytes";
 		while (<DATABASE>) {
 			chomp;
-			m/^([^ ]*) (.*)$/;
+			m/^([0-9]+) +(<[^>]+>) *$/;
 			$POS{pack('U',$1)} = $2;
 		}
 		close DATABASE;
