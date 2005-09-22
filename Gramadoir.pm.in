@@ -775,7 +775,7 @@ sub xml_stream
 	my $langcode='@TEANGA@';
 	my $langlower="\L$langcode\E";
 	my $answer='<?xml version="1.0" encoding="utf-8" standalone="no"?>';
-	$answer = $answer."\n<!DOCTYPE teacs SYSTEM \"/dtds/gram-$langlower.dtd\">";
+	$answer = $answer."\n<!DOCTYPE teacs SYSTEM \"http://borel.slu.edu/dtds/gram-$langlower.dtd\">";
 	$answer = $answer."\n<teacs>\n";
 	my $sentences = $self->xml_sentences($text);
 	$answer = $answer.join("\n", @$sentences);
