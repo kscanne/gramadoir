@@ -14,14 +14,17 @@ open (POS, "pos-$ARGV[0].txt");
 $HoH{'X'}{'>'}=1;
 while(<POS>) {
 	chomp;
-	s/^[0-9]+\s+//; 
-	(my $tag, my $attrs) = m/^<([A-Z]) *([^>]*)>/;
-	$HoH{ $tag }{ '>' }++;    # the '>' entry holds the count for this tag
-	if ($attrs) {
-		while ($attrs =~ m/([^ ]+)/g) {
-			my $full = $1;
-			$full =~ s/[ =].*//;
-			$HoH{ $tag }{ $full }++; # '>' can't be an attribute!
+	s/^#.*$//;
+	if (/\S/) {
+		s/^[0-9]+\s+//; 
+		(my $tag, my $attrs) = m/^<([A-Z]) *([^>]*)>/;
+		$HoH{ $tag }{ '>' }++;    # the '>' entry holds the count for this tag
+		if ($attrs) {
+			while ($attrs =~ m/([^ ]+)/g) {
+				my $full = $1;
+				$full =~ s/[ =].*//;
+				$HoH{ $tag }{ $full }++; # '>' can't be an attribute!
+			}
 		}
 	}
 }
