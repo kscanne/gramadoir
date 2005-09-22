@@ -250,6 +250,9 @@ $(DEVSCRIPTNAME) : $(GRAMDIR)/gramdev.pl
 	fi
 	chmod 755 $@
 
+gram-$(TEANGA).dtd : pos-$(TEANGA).txt $(GRAMDIR)/gram2dtd.pl
+	$(PERL) $(GRAMDIR)/gram2dtd.pl $(TEANGA) > $@
+
 poncin : FORCE
 	@cd $(GRAMDIR) && make parsers
 	@$(ECHO) 'Checking aonchiall-$(TEANGA).in'
