@@ -228,7 +228,7 @@ A umpire.  The status quo.
 &lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>T</sgmltag> def="y"&gt;The&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>N</sgmltag>&gt;status quo&lt;/<sgmltag>N</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
 -->
 &lt;?xml version="1.0" encoding="utf-8" standalone="no"?&gt;
-&lt;!DOCTYPE teacs SYSTEM "/dtds/gram-en.dtd"&gt;
+&lt;!DOCTYPE teacs SYSTEM "http://borel.slu.edu/dtds/gram-en.dtd"&gt;
 &lt;<sgmltag>teacs</sgmltag>&gt;
 &lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>E</sgmltag> msg="BACHOIR{an}"&gt;&lt;<sgmltag>T</sgmltag> def="n"&gt;A&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>N</sgmltag>&gt;umpire&lt;/<sgmltag>N</sgmltag>&gt;&lt;/<sgmltag>E</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
 &lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>T</sgmltag> def="y"&gt;The&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>N</sgmltag>&gt;status quo&lt;/<sgmltag>N</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
