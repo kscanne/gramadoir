@@ -45,6 +45,7 @@
 152 <A pl="n" gnt="y" gnd="f">
 156 <A pl="n" gnt="y" gnd="m">
 160 <A pl="y" gnt="n">
+176 <A>
 192 <V p="n" t="ord">
 193 <V p="n" t="láith">
 194 <V cop="y">
