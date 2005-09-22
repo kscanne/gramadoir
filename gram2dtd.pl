@@ -29,7 +29,7 @@ close POS;
 
 my @sorted = sort keys %HoH;
 my $gramtags = join ' | ',@sorted;
-print "<?xml version=\"1.0\"?>\n";
+print "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n";
 print "<!ENTITY % tag \"( $gramtags )\">\n";
 print "<!ENTITY % mycontent \"( #PCDATA | $gramtags | E | B )*\">\n";
 print "<!ELEMENT teacs ( line )+>\n";
