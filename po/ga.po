@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramadoir 0.6\n"
 "Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
-"POT-Creation-Date: 2005-05-05 14:50-0500\n"
+"POT-Creation-Date: 2005-09-21 18:49+0000\n"
 "PO-Revision-Date: 2005-03-02 23:33-0600\n"
 "Last-Translator: Kevin Patrick Scannell <scannell@SLU.EDU>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -210,7 +210,7 @@ msgstr "%s: rabhadh: fadhb ag dúnadh %s\n"
 #: gram.pl:387
 #, perl-format
 msgid "Currently checking %s"
-msgstr "Ag seiceáil %s"
+msgstr "%s á sheiceáil"
 
 #: gramdev.pl:125
 msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
@@ -242,8 +242,8 @@ msgid "%s: `%s' corrupted at %s\n"
 msgstr "%s: `%s' truaillithe ag %s\n"
 
 #. TRANSLATORS: "conversion" here means conversion between character encodings
-#: Gramadoir.pm.in:227 Gramadoir.pm.in:544 Gramadoir.pm.in:660
-#: Gramadoir.pm.in:694 Gramadoir.pm.in:717 Gramadoir.pm.in:773
+#: Gramadoir.pm.in:227 Gramadoir.pm.in:544 Gramadoir.pm.in:659
+#: Gramadoir.pm.in:693 Gramadoir.pm.in:716 Gramadoir.pm.in:773
 #: Gramadoir.pm.in:837
 #, perl-format
 msgid "conversion from %s is not supported"

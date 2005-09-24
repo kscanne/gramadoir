@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramadoir 0.3\n"
 "Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
-"POT-Creation-Date: 2005-03-10 21:06-0600\n"
+"POT-Creation-Date: 2005-09-21 18:49+0000\n"
 "PO-Revision-Date: 2003-11-23 15:58-0600\n"
 "Last-Translator: Anneke Bart <barta@slu.edu>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
@@ -68,8 +68,8 @@ msgstr "Taal %s word niet ondersteund."
 #. "o" in "Gramadoir" if available in your character set and encoding.
 #. If you must translate, this is the Irish for (literally) "The Grammarian"
 #: gram.pl:185 gram.pl:248 gramdev.pl:93 gramdev.pl:118 Gramadoir.pm.in:119
-#: Gramadoir.pm.in:168 Gramadoir.pm.in:282 Gramadoir.pm.in:285
-#: Gramadoir.pm.in:486 Gramadoir.pm.in:750
+#: Gramadoir.pm.in:176 Gramadoir.pm.in:290 Gramadoir.pm.in:293
+#: Gramadoir.pm.in:494 Gramadoir.pm.in:805
 msgid "An Gramadoir"
 msgstr "An Gramadóir"
 
@@ -221,30 +221,30 @@ msgstr ""
 msgid "%s: problem reading the database\n"
 msgstr "%s: Problemen met lezen van de databank\n"
 
-#: Gramadoir.pm.in:167
+#: Gramadoir.pm.in:175
 #, perl-format
 msgid "%s: `%s' corrupted at %s\n"
 msgstr ""
 
 #. TRANSLATORS: "conversion" here means conversion between character encodings
-#: Gramadoir.pm.in:219 Gramadoir.pm.in:536 Gramadoir.pm.in:605
-#: Gramadoir.pm.in:639 Gramadoir.pm.in:662 Gramadoir.pm.in:718
-#: Gramadoir.pm.in:782
+#: Gramadoir.pm.in:227 Gramadoir.pm.in:544 Gramadoir.pm.in:659
+#: Gramadoir.pm.in:693 Gramadoir.pm.in:716 Gramadoir.pm.in:773
+#: Gramadoir.pm.in:837
 #, fuzzy, perl-format
 msgid "conversion from %s is not supported"
 msgstr "Taal %s word niet ondersteund."
 
-#: Gramadoir.pm.in:282 Gramadoir.pm.in:485
+#: Gramadoir.pm.in:290 Gramadoir.pm.in:493
 #, perl-format
 msgid "%s: illegal grammatical code\n"
 msgstr "%s: foutieve grammatica code\n"
 
-#: Gramadoir.pm.in:285
+#: Gramadoir.pm.in:293
 #, perl-format
 msgid "%s: no grammar codes: %s\n"
 msgstr ""
 
-#: Gramadoir.pm.in:749
+#: Gramadoir.pm.in:804
 #, fuzzy, perl-format
 msgid "%s: unrecognized error macro: %s\n"
 msgstr "onbekende optie %s"
@@ -273,210 +273,228 @@ msgid "The singular form is required here"
 msgstr ""
 
 #: messages.txt:9
-msgid "Comparative adjective required"
+msgid "Plural adjective required"
 msgstr ""
 
 #: messages.txt:10
-msgid "Definite article required"
+msgid "Comparative adjective required"
 msgstr ""
 
 #: messages.txt:11
-msgid "Unnecessary use of the definite article"
+msgid "Definite article required"
 msgstr ""
 
 #: messages.txt:12
+msgid "Unnecessary use of the definite article"
+msgstr ""
+
+#: messages.txt:13
 #, fuzzy
 msgid "Unnecessary use of the genitive case"
 msgstr "Onnodige lenitie"
 
-#: messages.txt:13
+#: messages.txt:14
 msgid "The genitive case is required here"
 msgstr ""
 
-#: messages.txt:14
+#: messages.txt:15
+#, fuzzy
+msgid "You should use the present tense here"
+msgstr "Gebruik \\/\\1\\/ hier"
+
+#: messages.txt:16
 msgid "It seems unlikely that you intended to use the subjunctive here"
 msgstr ""
 
 #. TRANSLATORS: You can use whatever kind of quotes you prefer for your locale
 #. around the variable \\1.  You should keep the double backslash before the 1,
 #. but there is no need to escape the quotes the way they are in the msgid.
-#: messages.txt:18
+#: messages.txt:20
 msgid "Usually used in the set phrase \\/\\1\\/"
 msgstr ""
 
-#: messages.txt:19
+#: messages.txt:21
 msgid "You should use \\/\\1\\/ here instead"
 msgstr "Gebruik \\/\\1\\/ hier"
 
-#: messages.txt:20
+#: messages.txt:22
 #, fuzzy
 msgid "Non-standard form of \\/\\1\\/"
 msgstr "Geen standard vorm: gebruik misschien \\/\\1\\/?"
 
-#: messages.txt:21
+#: messages.txt:23
 msgid "Derived from a non-standard form of \\/\\1\\/"
 msgstr ""
 
-#: messages.txt:22
+#: messages.txt:24
 msgid "Derived incorrectly from the root \\/\\1\\/"
 msgstr ""
 
-#: messages.txt:23
+#: messages.txt:25
 msgid "Unknown word"
 msgstr "Onbekend woord"
 
 #. TRANSLATORS: \\1 is substituted with one or more suggested replacements
-#: messages.txt:25
+#: messages.txt:27
 #, fuzzy
 msgid "Unknown word: \\/\\1\\/?"
 msgstr "Onbekend woord"
 
-#: messages.txt:26
+#: messages.txt:28
 msgid "Valid word but more often found in place of \\/\\1\\/"
 msgstr ""
 
-#: messages.txt:27
+#: messages.txt:29
 msgid "Not in database but apparently formed from the root \\/\\1\\/"
 msgstr ""
 
-#: messages.txt:28
+#: messages.txt:30
 msgid "The word \\/\\1\\/ is not needed"
 msgstr ""
 
-#: messages.txt:29
+#: messages.txt:31
 msgid "Do you mean \\/\\1\\/?"
 msgstr ""
 
-#: messages.txt:30
+#: messages.txt:32
 msgid "Derived form of common misspelling \\/\\1\\/?"
 msgstr ""
 
-#: messages.txt:31
+#: messages.txt:33
 msgid "Not in database but may be a compound \\/\\1\\/?"
 msgstr ""
 
-#: messages.txt:32
+#: messages.txt:34
 msgid "Not in database but may be a non-standard compound \\/\\1\\/?"
 msgstr ""
 
-#: messages.txt:33
+#: messages.txt:35
 msgid "Possibly a foreign word (the sequence \\/\\1\\/ is highly improbable)"
 msgstr ""
 
-#: messages.txt:34
+#: messages.txt:36
+msgid "Gender disagreement"
+msgstr ""
+
+#: messages.txt:37
 msgid "Number disagreement"
 msgstr ""
 
-#: messages.txt:35
+#: messages.txt:38
 msgid "Case disagreement"
 msgstr ""
 
 #. TRANSLATORS: Rules specific to the Irish language (ga)
-#: messages.txt:37
+#: messages.txt:40
 msgid "Prefix \\/h\\/ missing"
 msgstr "Voorvoegsel \\/h\\/ ontbreekt"
 
-#: messages.txt:38
+#: messages.txt:41
 msgid "Prefix \\/t\\/ missing"
 msgstr "Voorvoegsel \\/t\\/ ontbreekt"
 
-#: messages.txt:39
+#: messages.txt:42
 #, fuzzy
 msgid "Prefix \\/d'\\/ missing"
 msgstr "Voorvoegsel \\/h\\/ ontbreekt"
 
-#: messages.txt:40
+#: messages.txt:43
 msgid "Unnecessary prefix \\/h\\/"
 msgstr ""
 
-#: messages.txt:41
+#: messages.txt:44
 msgid "Unnecessary prefix \\/t\\/"
 msgstr ""
 
-#: messages.txt:42
+#: messages.txt:45
 #, fuzzy
 msgid "Unnecessary prefix \\/d'\\/"
 msgstr "Onnodige lenitie"
 
 #. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
-#: messages.txt:44
+#: messages.txt:47
 #, fuzzy
 msgid "Unnecessary initial mutation"
 msgstr "Onnodige lenitie"
 
-#: messages.txt:45
+#: messages.txt:48
 msgid "Initial mutation missing"
 msgstr "Begin mutatie ontbreekt"
 
 #. TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
 #. It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
-#: messages.txt:48
+#: messages.txt:51
 msgid "Unnecessary lenition"
 msgstr "Onnodige lenitie"
 
-#: messages.txt:49
+#: messages.txt:52
 msgid ""
 "Often the preposition \\/\\1\\/ causes lenition, but this case is unclear"
 msgstr ""
 
-#: messages.txt:50
+#: messages.txt:53
 msgid "Lenition missing"
 msgstr "Lenitie (verzachting) ontbreekt"
 
 #. TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
 #. initial consonants in Irish.  It is indicated in writing by the addition
 #. of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
-#: messages.txt:54
+#: messages.txt:57
 #, fuzzy
 msgid "Unnecessary eclipsis"
 msgstr "Onnodige lenitie"
 
-#: messages.txt:55
+#: messages.txt:58
 msgid "Eclipsis missing"
 msgstr "Eclipsis ontbreekt"
 
-#: messages.txt:56
+#: messages.txt:59
 msgid "The dative is used only in special phrases"
 msgstr ""
 
-#: messages.txt:57
+#: messages.txt:60
 msgid "The dependent form of the verb is required here"
 msgstr ""
 
-#: messages.txt:58
+#: messages.txt:61
 #, fuzzy
 msgid "Unnecessary use of the dependent form of the verb"
 msgstr "Onnodige lenitie"
 
-#: messages.txt:59
+#: messages.txt:62
 msgid "The synthetic (combined) form, ending in \\/\\1\\/, is often used here"
 msgstr ""
 
 #. TRANSLATORS: Rules specific to the Cornish language (kw)
-#: messages.txt:61
+#: messages.txt:64
 #, fuzzy
 msgid "Second (soft) mutation missing"
 msgstr "Begin mutatie ontbreekt"
 
-#: messages.txt:62
+#: messages.txt:65
 #, fuzzy
 msgid "Third (breathed) mutation missing"
 msgstr "Begin mutatie ontbreekt"
 
-#: messages.txt:63
+#: messages.txt:66
 #, fuzzy
 msgid "Fourth (hard) mutation missing"
 msgstr "Begin mutatie ontbreekt"
 
-#: messages.txt:64
+#: messages.txt:67
 #, fuzzy
 msgid "Fifth (mixed) mutation missing"
 msgstr "Begin mutatie ontbreekt"
 
-#: messages.txt:65
+#: messages.txt:68
 #, fuzzy
 msgid "Fifth (mixed) mutation after 'th missing"
 msgstr "Begin mutatie ontbreekt"
+
+#. TRANSLATORS: Rules specific to the Igbo language (ig)
+#: messages.txt:70
+msgid "This word violates the rules of Igbo vowel harmony"
+msgstr ""
 
 #~ msgid ""
 #~ "    --teanga=XX    specify the language of the text to be checked "
