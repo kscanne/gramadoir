@@ -1,5 +1,5 @@
 #  This file is used to escape punctuation marks that aren't at the 
 #  end of a sentence.
 #
-s/([^\\@BDCHARS@@INTCHARS@][@BDCHARS@@INTCHARS@])([.?!])/$1$NOBD$2/g;
-s/([^@BDCHARS@@INTCHARS@]I)$NOBD([.?!])/$1$2/g;
+s/([^\\@BDCHARS@][@BDCHARS@])([.?!])/$1$NOBD$2/g;
+s/([^@BDCHARS@]I)$NOBD([.?!])/$1$2/g;
