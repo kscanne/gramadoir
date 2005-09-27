@@ -241,7 +241,7 @@ $(SHARE)/focail0.bs : lexicon-$(TEANGA).txt freq-$(TEANGA).txt $(PERLDOK)
 	rm -f $(HASHDIR)/focail*.hash $(PERLD)/Makefile
 
 $(DEVSCRIPTNAME) : $(GRAMDIR)/gramdev.pl
-	cat $(GRAMDIR)/gramdev.pl | sed "s/@SCRIPTNAME@/$(DEVSCRIPTNAME)/; s/@PACKAGE_VERSION@/$(PERLVERSION)/; s/@TEANGA@/$(UPPERTEANGA)/g; s/@NATIVE@/$(NATIVE)/g; s/@NAME_ENGLISH@/$(NAME_ENG)/g; s/@BDCHARS@/$(BDCHARS)/; s/@INTCHARS@/$(INTCHARS)/" > $@
+	cat $(GRAMDIR)/gramdev.pl | sed "s/@SCRIPTNAME@/$(DEVSCRIPTNAME)/; s/@PACKAGE_VERSION@/$(PERLVERSION)/; s/@TEANGA@/$(UPPERTEANGA)/g; s/@NATIVE@/$(NATIVE)/g; s/@NAME_ENGLISH@/$(NAME_ENG)/g" > $@
 	if $(ECHO) "$(NATIVE)" | $(EGREP) -i 'utf' > /dev/null; \
 	then \
 		LC_ALL="C" $(PERL) -p -i -e 's/(.*)/$$1\nuse utf8;/ if m/^use warnings/;' $@; \

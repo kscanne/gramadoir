@@ -180,7 +180,7 @@ if ($brill) {
 
 	my %wordsseen;
 	pos $big = 0;
-	while ($big =~ /(?<=[>])([@BDCHARS@@INTCHARS@]+)(?=[<])/g) {
+	while ($big =~ /<(?:\/Z|[ACDF-Y][^>]*)>([^<]+)<\/[A-Z]>/g) {
 		$wordsseen{$1}++;
 	}
 
