@@ -46,7 +46,6 @@ then
 fi
 CHARSET=`egrep '^charset ' ${CRUBADAN}/EOLAS | sed 's/^charset  *//'`
 BDCHARS=`egrep '^boundary ' ${CRUBADAN}/EOLAS | sed 's/^boundary  *//' | recoder`
-INTCHARS=`egrep '^interior ' ${CRUBADAN}/EOLAS | sed 's/^interior  *//' | recoder`
 UPPERS=`caps.pl -U ${CHARSET} | recoder`
 LOWERS=`caps.pl -L ${CHARSET} | recoder`
 DIR="${TEANGA}" # gramadoir-${TEANGA}-${VERSION}"
@@ -70,7 +69,6 @@ s/\^UPPERTEANGA\^/${UPPERTEANGA}/
 s/\^VERSION\^/${VERSION}/
 s/\^NATIVE\^/${NATIVE}/
 s/\^BDCHARS\^/${BDCHARS}/
-s/\^INTCHARS\^/${INTCHARS}/
 s/\^UPPERS\^/${UPPERS}/
 s/\^LOWERS\^/${LOWERS}/
 " ${TEMPLATE}/configure > ${DIR}/configure
