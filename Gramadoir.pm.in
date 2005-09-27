@@ -173,7 +173,7 @@ sub new {
 			while (<DATAFILE>) {
 				chomp;
 				carp gettext('%s: `%s\' corrupted at %s\n', 
-					gettext('An Gramadoir'), ".neamhshuim", $.) if /[^@BDCHARS@@INTCHARS@]/;
+					gettext('An Gramadoir'), ".neamhshuim", $.) if /^$/;
 				$IGNORE{$_}++;
 			}
 		}
@@ -193,7 +193,7 @@ sub gettext
 	$string =~ s/\%s/[_3]/;
 	$string =~ s/\\n$/\n/;
 	$string =~ s#\\/\\([1-9])\\/#/[_$1]/#;
-	$string =~ s#\\/([@BDCHARS@@INTCHARS@]+)\\/#/$1/#;
+	$string =~ s#\\/([^_\\]+)\\/#/$1/#;
 
 	return $lh->maketext($string, @rest);
 }
