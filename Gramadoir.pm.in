@@ -621,20 +621,18 @@ sub tokenize_real
 	return $answer;
 }
 
-# takes the input TEXT and returns a reference to an array of sentences with 
-# a preliminary XML markup consisting of all possible parts of speech
+# takes an untagged sentence (usually fresh from get_sentences_real),
+# tokenizes, and adds a preliminary XML markup consisting of all possible
+# parts of speech for each word
 sub unchecked_xml
 {
-	my $self = $_[0];
-	my $sentences = get_sentences_real($_[1]);
-	foreach my $sentence (@$sentences) {
-		$sentence = $self->tokenize_real($sentence);
-		$sentence =~ s/(<[A-Zc][^>]*>[^<]+<\/[A-Zc]>) \1/<E msg="DUBAILTE">$1 $1<\/E>/g;
-		1 while ( $sentence =~ s/<c>([^<]*)<\/c>/$self->tag_one_word($1);/e );
-		$sentence =~ s/^/<line> /;
-		$sentence =~ s/$/ <\/line>/;
-	}
-	return $sentences;
+	my ( $self, $sentence ) = @_;
+	$sentence = $self->tokenize_real($sentence);
+	$sentence =~ s/(<[A-Zc][^>]*>[^<]+<\/[A-Zc]>) \1/<E msg="DUBAILTE">$1 $1<\/E>/g;
+	1 while ( $sentence =~ s/<c>([^<]*)<\/c>/$self->tag_one_word($1);/e );
+	$sentence =~ s/^/<line> /;
+	$sentence =~ s/$/ <\/line>/;
+	return $sentence;
 }
 
 ##############################################################################
@@ -658,9 +656,10 @@ sub spell_check
 	eval {from_to($text,$self->{'input_encoding'},'@NATIVE@') };
 	croak gettext('conversion from %s is not supported', 
 			$self->{'input_encoding'}) if $@;
-	my $sentences = $self->unchecked_xml($text);
 	my $badwords = [];
+	my $sentences = get_sentences_real($text);
 	foreach my $s (@$sentences) {
+		$s = $self->unchecked_xml($s);
 		if ($s =~ m/<[X]>/) {
 			$s =~ s/<[^X\/][^>]*>//g;
 			$s =~ s/<\/[^X][^>]*>//g;
@@ -715,40 +714,28 @@ sub add_tags
 	eval {from_to($text,$self->{'input_encoding'},'@NATIVE@') };
 	croak gettext('conversion from %s is not supported', 
 			$self->{'input_encoding'}) if $@;
-	my $answer = $self->add_tags_real($text);
-	foreach my $s (@$answer) {
+	my $sentences = get_sentences_real($text);
+	foreach my $s (@$sentences) {
+		$s = $self->add_tags_real($s);
 		$s =~ s/<\/?E[^>]*>//g;   # just POS tags
 		$s = decode('@NATIVE@', $s);
 	}
-	return $answer;
+	return $sentences;
 }
 
+# takes a sentence as input, usually fresh from get_sentences_real
+# Forms the main step in add_tags, and also in xml_stream and
+# grammatical_errors (in the latter two cases being followed by
+# a call to "rialacha" to add additional <E> markup)
 sub add_tags_real
 {
-	my $self = $_[0];
-	my $sentences = unchecked_xml(@_);
-	foreach my $sentence (@$sentences) {
-		comhshuite($sentence);
-		aonchiall($sentence);
-		aonchiall_deux($sentence);
-		unigram($sentence) if $self->{'unigram_tagging'};
-	}
-	return $sentences;
-}
-
-
-# Takes the input TEXT and returns a reference to an array of sentences
-# containing full XML markup, including part of speech tags and marked
-# up grammatical errors.   
-# Called by grammatical_errors and xml_stream (the latter just adds an
-# XML header/footer and dumps the array of sentences to a scalar).
-sub xml_sentences
-{
-	my $sentences = add_tags_real(@_);
-	foreach my $sentence (@$sentences) {
-		rialacha ($sentence);
-	}
-	return $sentences;
+	(my $self, my $sentence) = @_;
+	$sentence = unchecked_xml(@_);
+	comhshuite($sentence);
+	aonchiall($sentence);
+	aonchiall_deux($sentence);
+	unigram($sentence) if $self->{'unigram_tagging'};
+	return $sentence;
 }
 
 ##############################################################################
@@ -777,7 +764,11 @@ sub xml_stream
 	my $answer='<?xml version="1.0" encoding="utf-8" standalone="no"?>';
 	$answer = $answer."\n<!DOCTYPE teacs SYSTEM \"http://borel.slu.edu/dtds/gram-$langlower.dtd\">";
 	$answer = $answer."\n<teacs>\n";
-	my $sentences = $self->xml_sentences($text);
+	my $sentences = get_sentences_real($text);
+	foreach my $s (@$sentences) {
+		$s = $self->add_tags_real($s);
+		rialacha ($s);
+	}
 	$answer = $answer.join("\n", @$sentences);
 	$answer = $answer."\n</teacs>\n";
 	$answer = decode("@NATIVE@", $answer);
@@ -850,21 +841,23 @@ sub grammatical_errors
 	$pristine =~ s/\n/ \n /g;
 	$pristine =~ s/$/ /;
 
-	my $marked_up_sentences = $self->xml_sentences ($text);
 	my $errors = [];  # array reference to return
   # endoflast is global offset in $pristine following the end of last error
 	my $endoflast = 0;
 	my $toy = 1;   # line number at position $endoflast; lines count from 1
 	my $tox = -1;  # line position of end of last match (not like $+[0]!)
 
-	foreach (@$marked_up_sentences) {
-		if (/<E/) {
-			my $plain = $_;
+	my $sentences = get_sentences_real($text);
+	foreach my $s (@$sentences) {
+		$s = $self->add_tags_real($s);
+		rialacha ($s);
+		if ($s =~ /<E/) {
+			my $plain = $s;
 			$plain =~ s/<[^>]+>//g;
 			$plain =~ s/^ *//;
 			$plain =~ s/ *$//;
 			my $buffered = " $plain ";
-			while (m!(<E[^>]+>)(([^<]|<[^/]|</[^E])*)</E>!g) {
+			while ($s =~ m!(<E[^>]+>)(([^<]|<[^/]|</[^E])*)</E>!g) {
 				my $thiserror = $1;
 				my $errortext = $2;
 				my $fromy;
