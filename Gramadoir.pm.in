@@ -240,6 +240,7 @@ sub get_sentences_real
 	my $sentences = [];
 
 	for ($_[0]) {
+		s/^\s+//;
 		s/<[^>]*>/ /g;  # naive; see comments above
 		s/\\[tnvfr]/ /g;
 		s/&/&amp;/g;    # this one first!
@@ -848,14 +849,10 @@ sub grammatical_errors
 	my $tox = -1;  # line position of end of last match (not like $+[0]!)
 
 	my $sentences = get_sentences_real($text);
-	foreach my $s (@$sentences) {
-		$s = $self->add_tags_real($s);
+	foreach my $plain (@$sentences) {
+		my $s = $self->add_tags_real($plain);
 		rialacha ($s);
 		if ($s =~ /<E/) {
-			my $plain = $s;
-			$plain =~ s/<[^>]+>//g;
-			$plain =~ s/^ *//;
-			$plain =~ s/ *$//;
 			my $buffered = " $plain ";
 			while ($s =~ m!(<E[^>]+>)(([^<]|<[^/]|</[^E])*)</E>!g) {
 				my $thiserror = $1;
