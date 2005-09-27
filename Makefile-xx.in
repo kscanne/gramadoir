@@ -30,7 +30,6 @@ PERLLIB = $(PERLD)/lib/Lingua/$(UPPERTEANGA)/Gramadoir
 SHARE = $(PERLD)/share
 NATIVE = !NATIVE!
 BDCHARS = !BDCHARS!
-INTCHARS = !INTCHARS!
 CAPITALS = !UPPERS!
 LOWERS = !LOWERS!
 
@@ -192,7 +191,7 @@ triail.xml-update : FORCE
 # last line (subst of \x{} codes) is a hack for legacy encodings w/ 5.8.0
 $(PERLLIB).pm : $(GRAMDIR)/Gramadoir.pm.in $(INTERMEDIATE) $(PERLDOK)
 	sed "/^# aonchiall code /r aonchiall-$(TEANGA).pl" $(GRAMDIR)/Gramadoir.pm.in | sed "/^# comhshuite code /r comhshuite-$(TEANGA).pl" | sed "/^# giorr code /r giorr-$(TEANGA).pl" | sed "/^# rialacha code /r rialacha-$(TEANGA).pl" | sed "/^# unigram code /r unigram-$(TEANGA).pl" | \
-	sed "s/@PACKAGE_VERSION@/$(PERLVERSION)/; s/@TEANGA@/$(UPPERTEANGA)/g; s/@NAME_ENGLISH@/$(NAME_ENG)/g; s/@NATIVE@/$(NATIVE)/g; s/@BDCHARS@/$(BDCHARS)/g; s/@INTCHARS@/$(INTCHARS)/g; s/@CAPITALS@/$(CAPITALS)/g; s/@LOWERS@/$(LOWERS)/g;" | sed '/^# [a-z]* code goes here/d' > $@
+	sed "s/@PACKAGE_VERSION@/$(PERLVERSION)/; s/@TEANGA@/$(UPPERTEANGA)/g; s/@NAME_ENGLISH@/$(NAME_ENG)/g; s/@NATIVE@/$(NATIVE)/g; s/@BDCHARS@/$(BDCHARS)/g; s/@CAPITALS@/$(CAPITALS)/g; s/@LOWERS@/$(LOWERS)/g;" | sed '/^# [a-z]* code goes here/d' > $@
 	if $(ECHO) "$(NATIVE)" | $(EGREP) -i 'utf' > /dev/null; \
 	then \
 		LC_ALL="C" $(PERL) -i -p -e 'if (m/^use warnings/) {s/(.*)/$${1}\nuse utf8;/;} if (m/decode\(/) {s/^/#/;} if (m/eval.*from_to/) {s/^(.*from_to\(([^,]+), *([^,]+),.*)/#$${1}\n\teval {$$2 = decode($$3, $$2) };/}' $@; \
@@ -221,7 +220,7 @@ locale_ok : $(PERLDOK)
 	cat "$<" | LC_ALL="C" $(PERL) $(GRAMDIR)/gin.meta.pl `sed -n '/<[A-Z] /{s/^[0-9]* <\([A-Z]\).*/\1/; p;}' pos-$(TEANGA).txt | sort -u | tr -d "\n"` | LC_ALL="C" $(PERL) -p macra-${TEANGA}.meta.pl | LC_ALL="C" $(PERL) $(GRAMDIR)/`$(ECHO) $< | sed 's/-.*//'`.meta.pl | sed 's/^/\t/' > $@
 
 giorr-$(TEANGA).pl : giorr-$(TEANGA).txt giorr-$(TEANGA).pre
-	(cat giorr-$(TEANGA).pre | $(EGREP) '^s/' | sed 's/^/\t/'; cat giorr-$(TEANGA).txt | LC_ALL=C sed 's/ .*//' | LC_ALL=C sed 's/.*/\ts\/([^@BDCHARS@@INTCHARS@]&)\\.\/$$1$$NOBD.\/g;/') > $@
+	(cat giorr-$(TEANGA).pre | $(EGREP) '^s/' | sed 's/^/\t/'; cat giorr-$(TEANGA).txt | LC_ALL=C sed 's/ .*//' | LC_ALL=C sed 's/.*/\ts\/([^@BDCHARS@]&)\\.\/$$1$$NOBD.\/g;/') > $@
 
 unigram-$(TEANGA).pl : unigram-$(TEANGA).pre unigram-$(TEANGA).txt
 	(cat unigram-$(TEANGA).pre | $(EGREP) '^s/' | sed 's/^/\t/'; cat unigram-$(TEANGA).txt | sed 's/^\(<\([A-Z]\)[^>]*\)>/\ts\/<B><Z>(?:<[^>]*>)*\1.>(?:<[^>]*>)*<\\\/Z>([^<]+)<\\\/B>\/\1>$$1<\\\/\2>\/g;/') > $@
