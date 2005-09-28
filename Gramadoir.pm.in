@@ -631,6 +631,7 @@ sub unchecked_xml
 	$sentence = $self->tokenize_real($sentence);
 	$sentence =~ s/(<[A-Zc][^>]*>[^<]+<\/[A-Zc]>) \1/<E msg="DUBAILTE">$1 $1<\/E>/g;
 	1 while ( $sentence =~ s/<c>([^<]*)<\/c>/$self->tag_one_word($1);/e );
+	$sentence =~ s/<E msg="DUBAILTE">(<E[^>]+><X>[^<]+<\/X><\/E>) \1<\/E>/$1 $1/g;
 	$sentence =~ s/^/<line> /;
 	$sentence =~ s/$/ <\/line>/;
 	return $sentence;
@@ -822,6 +823,54 @@ sub whiteout
 	return $text;
 }
 
+# preserve length; see computation of "offsets" below
+sub strip_entities
+{
+	my ( $text ) = @_;
+	$text =~ s/&quot;/""""""/g;
+	$text =~ s/&lt;/<<<</g;
+	$text =~ s/&gt;/>>>>/g;
+	$text =~ s/&amp;/&&&&&/g;
+	return $text;
+}
+
+# note amp is done last of course
+sub deentify
+{
+	my ( $text ) = @_;
+	$text =~ s/&quot;/"/g;
+	$text =~ s/&lt;/</g;
+	$text =~ s/&gt;/>/g;
+	$text =~ s/&amp;/&/g;
+	return $text;
+}
+
+# used by regexify; e.g. ^ in Esperanto, $ in "$100" tokens, etc.
+sub escape_meta
+{
+	my ( $text ) = @_;
+	$text =~ s/([][.?+*$()^])/\\$1/g;
+	return $text;
+}
+
+# Called from search routine below; takes a chunk of the XML 
+# stream and turns it into a regex that can be matched against
+# the original unmodified input stream.   So we need to escape
+# regex chars like parens, ^, $, and strip markup...
+# Assuming no error markup is left when this is called; see below...
+sub regexify
+{
+	my ( $text ) = @_;
+	$text = deentify($text);
+	$text =~ s/ *<\/?line> *//;
+	if ($text =~ m/^[^<]+/) {
+		$text =~ s/^[^<]+/"[^@BDCHARS@]*"/e;
+	}
+	$text =~ s/<[A-Z][^>]*>([^<]+)<\/[A-Z]>[^<]*/escape_meta($1)."[^@BDCHARS@]*"/eg;   # note * not + in replacement
+	$text =~ s/ /\\s+/g;            # spaces within words only
+	return $text;
+}
+
 # like the bash "xml_api"
 sub grammatical_errors
 {
@@ -849,27 +898,35 @@ sub grammatical_errors
 	my $tox = -1;  # line position of end of last match (not like $+[0]!)
 
 	my $sentences = get_sentences_real($text);
+	# these "plain" sentences include entities like &quot; and 
+	# are used as the "sentence" attribute in the --api output
 	foreach my $plain (@$sentences) {
 		my $s = $self->add_tags_real($plain);
 		rialacha ($s);
 		if ($s =~ /<E/) {
-			my $buffered = " $plain ";
-			while ($s =~ m!(<E[^>]+>)(([^<]|<[^/]|</[^E])*)</E>!g) {
-				my $thiserror = $1;
-				my $errortext = $2;
+			my $buffered = strip_entities(" $plain ");
+			while ($s =~ m!(.*?)(<E[^>]+>)(.*?)</E>!g) {
+				my $prefix = regexify($1);
+				my $thiserror = $2; # modify and push onto ans
+				my $errortext = $3; # for attrib. of same name
+				my $errorregex = regexify($3);
+				$errorregex =~ s/\[\^[^]]+\]\*$//;
 				my $fromy;
 				my $fromx;
+				# actually errortext should be extracted from
+				# $plain, in case markup hacks it up; not
+				# an issue now, but should fix eventually
 				$errortext =~ s/<[^>]+>//g; # strip pos stuff
-				my $errorregexp = $errortext;
-				$errorregexp =~ s/\^/\\^/g; # esperanto
 				$thiserror =~ s/^<E/<E sentence="$plain" errortext="$errortext"/;
-				$errorregexp =~ s/ /\\s+/g;
-				$errorregexp =~ s/^/(?<=[^@BDCHARS@])/;
-				$errorregexp =~ s/$/(?=[^@BDCHARS@])/;
-				$pristine =~ m!$errorregexp!gs;
-				my $globs = $-[0];
-				my $globe = $+[0];
+				my $matchregex = "$prefix($errorregex)";
+				$matchregex =~ s/^/(?<=[^@BDCHARS@])/ unless $prefix;
+				$matchregex =~ s/$/(?=[^@BDCHARS@])/;
+#				print "MRE=$matchregex\n";
+				$pristine =~ m!$matchregex!gs;
+				my $globs = $-[1];
+				my $globe = $+[1];
 				my $str = substr($pristine, $endoflast, $globs - $endoflast);
+				# toy is that of the previous err (tox too)
 				$fromy = $toy + ($str =~ tr/\n/\n/);
 				if ($fromy == $toy) {
 					$fromx = $tox + 1 + ($globs - $endoflast);
@@ -890,8 +947,8 @@ sub grammatical_errors
 				$endoflast = $globe;
 				$fromx--;
 				my $toans = $tox - 1;  # keep tox for next err 
-				$buffered =~ m!$errorregexp!g;
-				my $offset = $-[0] - 1;
+				$buffered =~ m!$matchregex!g;
+				my $offset = $-[1] - 1;
 				$thiserror =~ s!^<E !<E offset="$offset" fromy="$fromy" fromx="$fromx" toy="$toy" tox="$toans" !;
 				$thiserror = decode("@NATIVE@", $thiserror);
 				$thiserror =~ s! msg="([^"]+)"!" msg=\"".$self->localize_me($1)."\""!e;
