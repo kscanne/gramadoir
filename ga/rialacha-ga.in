@@ -524,14 +524,6 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 # CB p.12 #1.abc, p.20 #2a
 #. Ní bhíonn an dhíograis ná an dhúthracht i gceist.
 <T>[Aa]n</T> <N>MUTATEDDST</N>:NICLAOCHLU
-# CB p.8 #4
-#. Ba é an fear an phortaigh a tháinig thart leis na plátaí bia.
-<T>ANYTHING</T> <NC>ANYTHING</NC> <T>ANYTHING</T> <NG>ANYTHING</NG>:ONEART
-# CB p.8 #4
-#. Tá dhá shiombail ag an bharr gach leathanaigh.
-<T>ANYTHING</T> <NC>ANYTHING</NC> <A pl="n" gnt="n">gach</A> <NG>ANYTHING</NG>:ONEART
-#. Tabharfaimid an t-ainm do mháthar uirthi.
-<T>ANYTHING</T> <NC>ANYTHING</NC> <D>ANYTHING</D> <NG>ANYTHING</NG>:ONEART
 # converse of CB p.16 #7, no lenition after present/future copula
 # leave "A" here; exception to general adj. NISEIMHIU rule is too broad - *any* copula
 #. An fhéidir le duine ar bith eile breathnú ar mo script?
@@ -3259,3 +3251,16 @@ háirithe:INPHRASE{go háirithe}
 <N pl="n" gnt="n">[Tt]hiarcais</N>:INPHRASE{a thiarcais}
 <N pl="n" gnt="n">[Tt]inneall</N>:INPHRASE{ar tinneall}
 <N pl="n" gnt="n" gnd="f">[Tt]reis</N>:INPHRASE{go treis, sa treis}
+###  Add these at the end since they're length four and we don't
+# want any shorter errors getting nested in side after these apply
+# (as happened with "ar an mbóthar an oiread seo" once - "oiread" was
+# incorrectly tagged as genitive so first rule below applied and
+# then NIURU rule was nested inside...
+# CB p.8 #4
+#. Ba é an fear an phortaigh a tháinig thart leis na plátaí bia.
+<T>ANYTHING</T> <NC>ANYTHING</NC> <T>ANYTHING</T> <NG>ANYTHING</NG>:ONEART
+# CB p.8 #4
+#. Tá dhá shiombail ag an bharr gach leathanaigh.
+<T>ANYTHING</T> <NC>ANYTHING</NC> <A pl="n" gnt="n">gach</A> <NG>ANYTHING</NG>:ONEART
+#. Tabharfaimid an t-ainm do mháthar uirthi.
+<T>ANYTHING</T> <NC>ANYTHING</NC> <D>ANYTHING</D> <NG>ANYTHING</NG>:ONEART
