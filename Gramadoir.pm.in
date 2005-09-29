@@ -613,6 +613,9 @@ sub tokenize_real
 				$chtemp .= $todo;
 				$chunk = $chtemp;
 			}
+			# might have <Y>borel.slu.edu/&amp</Y>; as a URL
+			$chunk =~ s/&(quot|[gl]t|amp)(<\/.>);/&$1;$2/g;
+			# all others are external for now
 			$chunk =~ s/&<c>(quot|[gl]t|amp)<\/c>;/&$1;/g;
 			$chunk =~ s/(<\/.>)</$1 </g;
 		}
@@ -946,7 +949,7 @@ sub grammatical_errors
 				my $globe = $+[1];
 				unless (defined($globs) and defined($globe)) {
 					# segfaults from carp?
-					print STDERR "regex error in computing global coordinates for $thiserror\n";
+					print STDERR "regex error in computing global coordinates for $thiserror\nMRE=$matchregex\n";
 					next;
 				}
 				my $str = substr($pristine, $endoflast, $globs - $endoflast);
