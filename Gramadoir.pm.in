@@ -814,7 +814,9 @@ sub whiteout
 	return $text;
 }
 
-# preserve length; see computation of "offsets" below
+# preserve length; see computation of "offset" attribute below; convention is
+# that it is measured with entities in place of &, <, >, ".  But if we
+# just leave the entities they mess up the various [^A-ZÁÉÍÓÚa-záéíóú]* patts
 sub strip_entities
 {
 	my ( $text ) = @_;
@@ -857,10 +859,12 @@ sub regexify
 	$text = deentify($text);
 	$text =~ s/ *<\/?line> *//;
 	if ($text =~ m/^[^<]+/) {
-		$text =~ s/^[^<]+/"[^@BDCHARS@]*"/e;
+		$text =~ s/^[^<]+/"[^@BDCHARS@]*?"/e;
 	}
-	$text =~ s/<[A-Z][^>]*>([^<]+)<\/[A-Z]>[^<]*/escape_meta($1)."[^@BDCHARS@]*"/eg;   # note * not + in replacement
-	$text =~ s/ /\\s+/g;            # spaces within words only
+	$text =~ s/<[A-Z][^>]*>([^<]+)<\/[A-Z]>[^<]*/escape_meta($1)."[^@BDCHARS@]*?"/eg;   # note * not + in replacement; also minimal match avoids some amazing implausible errors
+	$text =~ s/ /\\s+/g;            # spaces within word tokens only
+	$text =~ s/(["&<>])/$1+/g;      # within tokens only (like URLs!)
+					# need this b/c of strip_entities
 	return $text;
 }
 
