@@ -802,18 +802,9 @@ sub localize_me
 	return $msgstr;
 }
 
-##############################################################################
-
-=item grammatical_errors TEXT
-
-Returns the grammatical errors in the input TEXT as a reference to an array,
-one error per element of the array, with each error given in a simple
-XML format usable by other applications.  Error messages are localized
-according to locale settings as determined by Locale::Maketext.
-
-=cut
-
-##############################################################################
+#
+# The next batch of functions consists of helpers for grammatical_errors
+#
 
 # used to be " " x length($text)  but we need to keep newlines for coords
 sub whiteout
@@ -849,7 +840,9 @@ sub deentify
 sub escape_meta
 {
 	my ( $text ) = @_;
-	$text =~ s/([][.?+*$()^])/\\$1/g;
+	$text =~ s/\[/\\[/g;
+	$text =~ s/\]/\\]/g;
+	$text =~ s/([.?+\$*^()])/\\$1/g;
 	return $text;
 }
 
@@ -871,6 +864,38 @@ sub regexify
 	return $text;
 }
 
+# call this on the raw input string that we use to search for
+# global coordinates of errors; need to strip out markup and stuff
+# but without changing any substring lengths or newlines.
+# Should mimic similar lines in get_sentences_real
+sub tidy_input
+{
+	my ( $text ) = @_;
+	$text =~ s/(<[^>]*>)/whiteout($1);/eg;
+	$text =~ s/\\[tnvfr]/  /g;
+	$text =~ s/$NOBD/ /g;
+	$text =~ s/$BD/ /g;
+  # next three lines add "buffering" for easier searching per-line
+  # these are subtracted appropriately from offsets when matching occurs
+	$text =~ s/^/ /;
+	$text =~ s/\n/ \n /g;
+	$text =~ s/$/ /;
+	return $text;
+}
+
+##############################################################################
+
+=item grammatical_errors TEXT
+
+Returns the grammatical errors in the input TEXT as a reference to an array,
+one error per element of the array, with each error given in a simple
+XML format usable by other applications.  Error messages are localized
+according to locale settings as determined by Locale::Maketext.
+
+=cut
+
+##############################################################################
+
 # like the bash "xml_api"
 sub grammatical_errors
 {
@@ -879,17 +904,7 @@ sub grammatical_errors
 	eval {from_to($text,$self->{'input_encoding'},'@NATIVE@') };
 	croak gettext('conversion from %s is not supported', 
 			$self->{'input_encoding'}) if $@;
-	my $pristine = $text;  # so actually NOT pristine e.g. if input is utf8
-	  # next three lines need to preserve all newlines, all lengths!
-	  # they mimic the code in get_sentences_real
-	$pristine =~ s/(<[^>]*>)/whiteout($1);/eg;
-	$pristine =~ s/\\[tnvfr]/  /g;
-	$pristine =~ s/$NOBD/ /g;
-	$pristine =~ s/$BD/ /g;
-	  # next three lines add "buffering" for easier searching per-line
-	$pristine =~ s/^/ /;
-	$pristine =~ s/\n/ \n /g;
-	$pristine =~ s/$/ /;
+	my $pristine = tidy_input($text);
 
 	my $errors = [];  # array reference to return
   # endoflast is global offset in $pristine following the end of last error
@@ -920,11 +935,16 @@ sub grammatical_errors
 				$thiserror =~ s/^<E/<E sentence="$plain" errortext="$errortext"/;
 				my $matchregex = "$prefix($errorregex)";
 				$matchregex =~ s/^/(?<=[^@BDCHARS@])/ unless $prefix;
-				$matchregex =~ s/$/(?=[^@BDCHARS@])/;
+#				$matchregex =~ s/$/(?=[^@BDCHARS@])/;
 #				print "MRE=$matchregex\n";
 				$pristine =~ m!$matchregex!gs;
 				my $globs = $-[1];
 				my $globe = $+[1];
+				unless (defined($globs) and defined($globe)) {
+					# segfaults from carp?
+					print STDERR "regex error in computing global coordinates for $thiserror\n";
+					next;
+				}
 				my $str = substr($pristine, $endoflast, $globs - $endoflast);
 				# toy is that of the previous err (tox too)
 				$fromy = $toy + ($str =~ tr/\n/\n/);
