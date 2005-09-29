@@ -862,7 +862,8 @@ g?[Cc]h?eithre <N>airde</N>:BACHOIR{hairde}
 [Aa] g?[Cc]loi?g:SEIMHIU
 #   keep next rule commented - can't really do better than generic NOGEN rules
 # <V>ANYTHING</V> <T>na</T> <N>ch?oda</N>:IONADAI{codanna}
-<V cop="y">ANYTHING</V> <N pl="n" gnt="n" gnd="f">[Cc]hoir</N>:IONADAI(chóir}
+#. Shocraigh sé ar an toirt gur choir an t-ábhar tábhachtach seo a phlé leis na daoine.
+<V cop="y">ANYTHING</V> <N pl="n" gnt="n" gnd="f">[Cc]hoir</N>:IONADAI{chóir}
 # LGG p.204
 <N pl="n" gnt="n" gnd="m">g?Ch?ontae</N> <N pl="n" gnt="y" gnd="f">(Gaillimhe|Iarmhí|Mí)</N>:NEEDART
 <N pl="n" gnt="n" gnd="m">g?Ch?ontae</N> <N pl="n" gnt="y" gnd="m">(Cabháin|Cláir|Dúin|Longfoirt)</N>:NEEDART
