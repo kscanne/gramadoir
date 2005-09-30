@@ -860,6 +860,7 @@ sub regexify
 {
 	my ( $text ) = @_;
 	$text =~ s/ *<\/?line> *//;
+	$text =~ s/<\/E>//;  # nested
 	if ($text =~ m/^[^<]+/) {
 		$text =~ s/^[^<]+/"[^@BDCHARS@]*?"/e;
 	}
