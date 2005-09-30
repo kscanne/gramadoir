@@ -2190,26 +2190,6 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITABLEADJ</A>:
 <N pl="n" gnt="n" gnd="m">[Ss]h?eisear</N> <NP>ANYTHING</NP>:UATHA
 <N pl="n" gnt="n" gnd="m">[Ss]h?eisear</N> <N pl="y" gnt="y" gnd="f">ban</N>:OK
 <N pl="n" gnt="n" gnd="m">[Ss]h?eisear</N> <N pl="n" gnt="n" gnd="f">m?bh?ean</N>:BACHOIR{ban}
-# CB p.8 #4.a
-<N>ANYTHING</N> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A>:NEEDART
-<N>n?dh?iaidh</N> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A>:OK
-#  eventually will chunk to deal with the following exceptions:
-#  preceding <A> in NP:
-#. Is iad na trí cheist sin (OK).
-#  phrases with <D>:
-#. Lena chois sin, dá bharr seo, dá bhrí sin, ina aghaidh seo (OK).
-<[ADN]>ANYTHING</[ADN]> <E><N>ANYTHING</N> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
-<T>ANYTHING</T> <E><N>ANYTHING</N> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
-<S>FUSEDPREP</S> <E><N>ANYTHING</N> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
-<S>[Ss]na</S> <E><N>ANYTHING</N> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
-#. Cén t-ionadh sin (OK)?
-<Q>[Cc]én</Q> <E><N>ANYTHING</N> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
-<N>ANYTHING</N> <A>ANYTHING</A> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A>:NEEDART
-<[ADN]>ANYTHING</[ADN]> <E><N>ANYTHING</N> <A>ANYTHING</A> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
-<T>ANYTHING</T> <E><N>ANYTHING</N> <A>ANYTHING</A> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
-<S>FUSEDPREP</S> <E><N>ANYTHING</N> <A>ANYTHING</A> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
-<S>[Ss]na</S> <E><N>ANYTHING</N> <A>ANYTHING</A> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
-<Q>[Cc]én</Q> <E><N>ANYTHING</N> <A>ANYTHING</A> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
 # CB p.82 #3
 <[^V]>ANYTHING</[^V]> <P>[Ss]é</P>:BACHOIR{é}
 <V cop="y">ANYTHING</V> <P>[Ss]é</P>:BACHOIR{é}
@@ -3265,3 +3245,23 @@ háirithe:INPHRASE{go háirithe}
 <T>ANYTHING</T> <NC>ANYTHING</NC> <A pl="n" gnt="n">gach</A> <NG>ANYTHING</NG>:ONEART
 #. Tabharfaimid an t-ainm do mháthar uirthi.
 <T>ANYTHING</T> <NC>ANYTHING</NC> <D>ANYTHING</D> <NG>ANYTHING</NG>:ONEART
+# CB p.8 #4.a
+<N>ANYTHING</N> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A>:NEEDART
+<N>n?dh?iaidh</N> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A>:OK
+#  eventually will chunk to deal with the following exceptions:
+#  preceding <A> in NP:
+#. Is iad na trí cheist sin (OK).
+#  phrases with <D>:
+#. Lena chois sin, dá bharr seo, dá bhrí sin, ina aghaidh seo (OK).
+<[ADN]>ANYTHING</[ADN]> <E><N>ANYTHING</N> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
+<T>ANYTHING</T> <E><N>ANYTHING</N> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
+<S>FUSEDPREP</S> <E><N>ANYTHING</N> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
+<S>[Ss]na</S> <E><N>ANYTHING</N> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
+#. Cén t-ionadh sin (OK)?
+<Q>[Cc]én</Q> <E><N>ANYTHING</N> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
+<N>ANYTHING</N> <A>ANYTHING</A> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A>:NEEDART
+<[ADN]>ANYTHING</[ADN]> <E><N>ANYTHING</N> <A>ANYTHING</A> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
+<T>ANYTHING</T> <E><N>ANYTHING</N> <A>ANYTHING</A> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
+<S>FUSEDPREP</S> <E><N>ANYTHING</N> <A>ANYTHING</A> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
+<S>[Ss]na</S> <E><N>ANYTHING</N> <A>ANYTHING</A> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
+<Q>[Cc]én</Q> <E><N>ANYTHING</N> <A>ANYTHING</A> <A pl="n" gnt="n">([Ss]eo|[Ss]in|[Úú]d)</A></E>:OK
