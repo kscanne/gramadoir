@@ -930,16 +930,10 @@ sub grammatical_errors
 			while ($s =~ m!(.*?)(<E[^>]+>)(.*?)</E>!g) {
 				my $prefix = regexify($1);
 				my $thiserror = $2; # modify and push onto ans
-				my $errortext = $3; # for attrib. of same name
 				my $errorregex = regexify($3);
 				$errorregex =~ s/\[\^[^]]+\]\*$//;
 				my $fromy;
 				my $fromx;
-				# actually errortext should be extracted from
-				# $plain, in case markup hacks it up; not
-				# an issue now, but should fix eventually
-				$errortext =~ s/<[^>]+>//g; # strip pos stuff
-				$thiserror =~ s/^<E/<E sentence="$plain" errortext="$errortext"/;
 				my $matchregex = "$prefix($errorregex)";
 				$matchregex =~ s/^/(?<=[^@BDCHARS@])/ unless $prefix;
 #				$matchregex =~ s/$/(?=[^@BDCHARS@])/;
@@ -976,7 +970,8 @@ sub grammatical_errors
 				my $toans = $tox - 1;  # keep tox for next err 
 				$buffered =~ m!$matchregex!g;
 				my $offset = $-[1] - 1;
-				$thiserror =~ s!^<E !<E offset="$offset" fromy="$fromy" fromx="$fromx" toy="$toy" tox="$toans" !;
+				my $errortext = $1;
+				$thiserror =~ s!^<E!<E offset="$offset" fromy="$fromy" fromx="$fromx" toy="$toy" tox="$toans" sentence="$plain" errortext="$errortext"!;
 				$thiserror = decode("@NATIVE@", $thiserror);
 				$thiserror =~ s! msg="([^"]+)"!" msg=\"".$self->localize_me($1)."\""!e;
 				push @$errors, $thiserror;
