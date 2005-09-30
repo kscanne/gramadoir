@@ -859,11 +859,11 @@ sub escape_meta
 sub regexify
 {
 	my ( $text ) = @_;
-	$text = deentify($text);
 	$text =~ s/ *<\/?line> *//;
 	if ($text =~ m/^[^<]+/) {
 		$text =~ s/^[^<]+/"[^@BDCHARS@]*?"/e;
 	}
+	$text = deentify($text);  # do after previous!
 	$text =~ s/<[A-Z][^>]*>([^<]+)<\/[A-Z]>[^<]*/escape_meta($1)."[^@BDCHARS@]*?"/eg;   # note * not + in replacement; also minimal match avoids some amazing implausible errors
 	$text =~ s/ /\\s+/g;            # spaces within word tokens only
 	$text =~ s/(["&<>])/$1+/g;      # within tokens only (like URLs!)
@@ -924,19 +924,28 @@ sub grammatical_errors
 	# are used as the "sentence" attribute in the --api output
 	foreach my $plain (@$sentences) {
 		my $s = $self->add_tags_real($plain);
-		rialacha ($s);
+		rialacha ($s); # just like xml_stream now
 		if ($s =~ /<E/) {
 			my $buffered = strip_entities(" $plain ");
 			while ($s =~ m!(.*?)(<E[^>]+>)(.*?)</E>!g) {
-				my $prefix = regexify($1);
+				my $prefix = $1;
 				my $thiserror = $2; # modify and push onto ans
-				my $errorregex = regexify($3);
+				my $errorregex = $3;
+				# deal with rare nested errors - only happens
+				# when one (usu. len==1) is inserted in int.
+				# of existing error of len>=3 (no overlapping!)
+				if ($errorregex =~ m/^(.*)(<E[^>]+>)(.*)$/) {
+					$prefix .= $1;
+					$thiserror = $2;
+					$errorregex = $3;
+				}
+				$prefix = regexify($prefix);
+				$errorregex = regexify($errorregex);
 				$errorregex =~ s/\[\^[^]]+\]\*$//;
 				my $fromy;
 				my $fromx;
 				my $matchregex = "$prefix($errorregex)";
 				$matchregex =~ s/^/(?<=[^@BDCHARS@])/ unless $prefix;
-#				$matchregex =~ s/$/(?=[^@BDCHARS@])/;
 #				print "MRE=$matchregex\n";
 				$pristine =~ m!$matchregex!gs;
 				my $globs = $-[1];
