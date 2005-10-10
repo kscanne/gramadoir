@@ -672,7 +672,7 @@ sub spell_check
 			$s =~ s/<\/[X]>[^<]*$//;
 			$s =~ s/<\/[X]>[^<]*<[X]>/\n/g;
 			$s = decode('@NATIVE@', $s);
-			push @$badwords,$s;
+			push @$badwords,split (/\n/,$s);
 		}
 	}
 	return $badwords;
