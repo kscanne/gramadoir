@@ -1,6 +1,6 @@
 #!/bin/sh
 GRAMDIR=".."
-VERSION="0.60"
+VERSION="0.61"
 TEANGA="ga"
 UPPERTEANGA="GA"
 if [ ! -e ${GRAMDIR}/Makefile ]
