@@ -31,7 +31,7 @@
 <E offset="79" fromy="29" fromx="79" toy="29" tox="80" sentence="Ach go rithe an fhíréantacht mar uisce agus an t-ionracas mar shruth gan dísc (OK)!" errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
 <E offset="19" fromy="30" fromx="19" toy="30" tox="23" sentence="Ba iad mo shinsear rithe Chúige Uladh." errortext="rithe" msg="Ní dócha go raibh intinn agat an modh foshuiteach a úsáid anseo">
 <E offset="28" fromy="31" fromx="28" toy="31" tox="33" sentence="Is iad na trí cholún sin le cheile an tAontas Eorpach." errortext="cheile" msg="Ní dócha go raibh intinn agat an modh foshuiteach a úsáid anseo">
-<E offset="31" fromy="32" fromx="31" toy="32" tox="46" sentence="Déantar an glas seo a scriúáil ar chúl an doras." errortext="ar chúl an doras" msg="Tá gá leis an leagan ginideach anseo">
+<E offset="24" fromy="32" fromx="24" toy="32" tox="39" sentence="Scriúáil sé an glas seo ar chúl an doras." errortext="ar chúl an doras" msg="Tá gá leis an leagan ginideach anseo">
 <E offset="55" fromy="33" fromx="55" toy="33" tox="56" sentence="Ach bhí mé ag leanúint ar aghaidh an t-am ar fad leis (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
 <E offset="71" fromy="34" fromx="71" toy="34" tox="72" sentence="Bhain sé sult as clár toghcháin TG4 a chur i láthair an mhí seo caite (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
 <E offset="36" fromy="35" fromx="36" toy="35" tox="37" sentence="Bhrostaigh sé go dtí an t-ospidéal (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">

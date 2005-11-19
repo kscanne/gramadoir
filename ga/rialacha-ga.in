@@ -161,7 +161,7 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 <C>([Dd]á|[Gg]o|[Ss]ula|[Mm]ura)</C> <E><VSUBJ>ANYTHING</VSUBJ></E>:OK
 <U>[Nn]ár</U> <E><VSUBJ>ANYTHING</VSUBJ></E>:OK
 # CB p.138
-#. Déantar an glas seo a scriúáil ar chúl an doras.
+#. Scriúáil sé an glas seo ar chúl an doras.
 <S>COMPOUND</S> <T>ANYTHING</T> <NCS>ANYTHING</NCS>:GENITIVE
 #. Ach bhí mé ag leanúint ar aghaidh an t-am ar fad leis (OK).
 #. Bhain sé sult as clár toghcháin TG4 a chur i láthair an mhí seo caite (OK).
