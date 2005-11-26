@@ -1560,6 +1560,8 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.84 #8
 #. Ba mhaith liom buíochas a ghlacadh le ár seirbhís riaracháin.
 <S>[Ll]e</S> ár:BACHOIR{lenár}
+# CB p.84 #8; this form common in pre-standard texts - catch before NIURU!
+<S>[Ll]e</S> <N pl="n" gnt="n" gnd="m">n-ár</N>:BACHOIR{lenár}
 # CB p.24 #11.a.v (N) #11.b.ii (A) #11.c (P), LGG p.112-113
 #. Tógann siad cuid de le iad féin a théamh.
 <S>[Ll]e</S> <[ANPY]>INITIALVOWEL</[ANPY]>:PREFIXH
@@ -1874,6 +1876,8 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.24 #11.c
 #. Ní iad sin do phíopaí ar an tábla!
 <V cop="y">[Nn]í</V> <P>INITIALVOWEL</P>:PREFIXH
+# pre-standard form; catch here before "NISEIMHIU" rule that follows for clarity
+<V cop="y">[Nn]í</V> <N pl="n" gnt="n" gnd="f">fhuil</N>:BACHOIR{níl}
 # converse of CB p.16 #7, no lenition after present/future copula
 # leave "A" here; exception to general adj. NISEIMHIU rule is too broad
 #  By good fortune can use this to catch exception to
@@ -2123,6 +2127,8 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITABLEADJ</A>:
 <S>[Ss]a</S> <N pl="n" gnt="n" gnd="f">INITIALS</N>:PREFIXT
 # CB p.6 #1 (implicitly)
 <S>[Ss]a</S> <NP>ANYTHING</NP>:BACHOIR{sna}
+# helps caighdeán
+<S>[Ss]a</S> <T>[Nn]a</T>:BACHOIR{sna}
 # CB p.16 #8.c
 #. Tá sé bráthair de chuid Ord San Phroinsias.
 <N pl="n" gnt="n">San</N> LENITED:NISEIMHIU
