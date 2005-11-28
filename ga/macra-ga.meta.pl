@@ -111,8 +111,8 @@ s/NOBEEAPOST/(?:[^b]|b[^'])[^<]+/g;
 # ilt = oscailt, tochailt, cuimilt
 s/FEMVN/(?:[^<]+i[lnr]t|[^<]+áil|breith|foghlaim|iarraidh|obair|seilg)/g;
 s/SUBJECTPRONOUN/[Ss](?:[éí]|iad(?:san)?|ise|eisean)/g;
-# no need for "dul", "teacht" intransitives!
-s/NOTVNISHUNLEN/(?:ceannach|cur|díol|foghlaim|íoc|iompar|oscailt|rá|roinnt|scríobh|soláthar)/g;
+# need "dul", "teacht" even though intransitive for "a'" rule!
+s/NOTVNISHUNLEN/(?:ceannach|cur|díol|dul|foghlaim|íoc|iompar|oscailt|rá|roinnt|scríobh|soláthar|teacht)/g;
 s/NOTVNISHVN/(?:bheith|cheannach|chur|dhíol|dhul|fhoghlaim|íoc|iompar|oscailt|rá|roinnt|scríobh|sholáthar|theacht)/g;
 s/VNISH/[^<]*(?:a[dm]h|i[nr]t|áil|ú)/g;
 s/NOTDO/[^<][^<][^<]+/g;

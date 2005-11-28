@@ -225,6 +225,7 @@ uithe$			ú		0	<N.*>	<&>
 ^duibh			dubh		1	<.+>	<&>
 ^h?ion			in		1	<.+>	<&>
 ^maill			mall		1	<.+>	<&>
+^meadhón		meán		1	<.+>	<&>
 ^nea-mb			neamhbh		1	<.+>	<&>
 ^nea-			neamh-		1	<.+>	<&>    # strip hyphen later
 ^nea([cdfgpt]h)		neamh$1		1	<.+>	<&>
@@ -302,6 +303,8 @@ e[oó]chaimi([ds])$	eoimi$1		1	<V.*>	<&>
 ([^e])óchaimi([ds])$	$1óimi$2	1	<V.*>	<&>
 e[oó]chai(nn|dís)$	eoi$1		1	<V p="y" t="coinn">	<&>
 ([^e])óchai(nn|dís)$	$1ói$2		1	<V p="y" t="coinn">	<&>
+e[oó]chthá$		eofá		1	<V p="y" t="coinn">	<&>
+([^e])óchthá$		$1ófá		1	<V p="y" t="coinn">	<&>
 #   2nd declension Dinneen-style endings
 u(i?gh)			a$1		1	<.+>	<&>  # see next few
 (..)aíd$		$1aíonn		1	<V p="y" t="láith">	<&> # cialluíd
@@ -351,6 +354,8 @@ anns$			ann		1	<V p="y" t="láith">	<&>
 #  corpus 
 th(eá|ear)$		t$1		1	<V.*>	<&>
 (..)faimís$		$1faimis	2	<V p="y" t="coinn">	<&>
+igidh$			igí		1	<V p="y" t="ord">	<&>
+mist$			mis		1	<V.*>	<&>
 #  various -áil  endings should be broad, CO p.120
 áilim$			álaim		1	<V.*>	<&>
 áileann$		álann		1	<V.*>	<&>
