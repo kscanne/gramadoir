@@ -71,6 +71,36 @@ sin sin:OK
 #      compound including a non-standard component.
 #. An bhfuil ayn uachtar roeite agattt?
 <X>ANYTHING</X>:ANAITHNID
+<Y>a'</Y> <N>VNISH</N>:CAIGHDEAN{ag}
+<Y>a'</Y> <N>NOTVNISHUNLEN</N>:CAIGHDEAN{ag}
+<Y>a'</Y>:CAIGHDEAN{an}
+<Y>'ac</Y>:CAIGHDEAN{Mac}
+<Y>'n?ár</Y>:CAIGHDEAN{inár}
+<Y>ars'</Y>:CAIGHDEAN{arsa}
+<Y>'chor</Y>:CAIGHDEAN{ar chor}
+<Y>'chuile</Y>:CAIGHDEAN{gach uile}
+#   usually  "d' uisce", etc.
+# <Y>[dm]'</Y>:CAIGHDEAN{do}
+<Y>dear'</Y>:CAIGHDEAN{deara}
+<Y>dem'</Y>:CAIGHDEAN{de mo}
+<Y>'do</Y>:CAIGHDEAN{i do}
+<Y>dod'</Y>:CAIGHDEAN{do do}
+<Y>'fhad</Y>:CAIGHDEAN{a fhad}
+<Y>'fhios</Y>:CAIGHDEAN{a fhios}
+<Y>gurbh'</Y>:CAIGHDEAN{gurbh}
+<Y>'gus</Y>:CAIGHDEAN{agus}
+<Y>id'</Y>:CAIGHDEAN{i do}
+<Y>im'</Y>:CAIGHDEAN{i mo}
+<Y>led'</Y>:CAIGHDEAN{le do}
+<Y>lem'</Y>:CAIGHDEAN{le mo}
+<Y>'mo?</Y>:CAIGHDEAN{i mo}
+<Y>mur'</Y>:CAIGHDEAN{mura}
+<Y>níorbh'</Y>:CAIGHDEAN{níorbh}
+<Y>s'</Y>:CAIGHDEAN{is}
+<Y>'sé</Y>:CAIGHDEAN{is é}
+<Y>'úirt</Y>:CAIGHDEAN{dúirt}
+<Y>'ul</Y>:CAIGHDEAN{dul}
+<Y>'un</Y>:CAIGHDEAN{chun}
 # before the general <F> => correct but uncommon error, should trap
 # specific such where they almost exclusively appear as an alt/missp in corpus:
 <F>h?[Aa]irithe</F>:IONADAI{áirithe}
@@ -642,6 +672,10 @@ INITIALMBAPOST:NIURU
 # CB p.5 #17, note pronoun exception CB p.114
 #. Ba eol duit go hiomlán m'anam.
 <V cop="y">m?[Bb]a</V> <[AN]>INITIALVOWELORF</[AN]>:BACHOIR{b', ab}
+# corpas
+#. Tá beinn agus buaic orm.
+<V p="y" t="coinn">[Bb]einn</V>:CAIGHDEAN{binn}
+[Nn]á <E><V p="y" t="coinn">[Bb]einn</V></E>:OK
 # CB p.13 #3.e
 #. D'fhan beirt buachaill sa champa.
 <N pl="n" gnt="n" gnd="f">[Bb]eirt</N> <N>UNLENITED</N>:SEIMHIU
