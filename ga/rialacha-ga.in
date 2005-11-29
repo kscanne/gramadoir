@@ -802,7 +802,7 @@ g?[Cc]h?eathair:INPHRASE{a ceathair, faoi cheathair}
 #. Chuir siad fios orm ceithre uaire ar an tslí sin.
 <A pl="n" gnt="n">g?[Cc]h?eithre</A> uaire?:BACHOIR{huaire}
 # uniformly in corpus; no CB/OD
-g?[Cc]h?eithre <N>airde</N>:BACHOIR{hairde}
+<A pl="n" gnt="n">g?[Cc]h?eithre</A> <N>airde</N>:BACHOIR{hairde}
 # CB p.13 #3.f, p.76 #8.b
 #. Beidh ar Bhord Feidhmiúcháin an tUachtarán agus ceithre ball eile.
 <A pl="n" gnt="n">g?[Cc]h?eithre</A> <N>UNLENITED</N>:SEIMHIU
@@ -1147,22 +1147,22 @@ n?[Dd]h?eich <N>ANYTHING</N> <A>UNLENITABLEADJ</A>:OK
 <A pl="n" gnt="n">[Dd]h?á</A> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITED</A>:SEIMHIU
 <A pl="n" gnt="n">[Dd]h?á</A> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITABLEADJ</A>:OK
 # CB p.77 #8.e; these would be caught by "dhá+NP" below, but clearer message
-<A pl="n" gnt="n">[Dd]há</A> [Bb]hliana:BACHOIR{bhliain}
-<A pl="n" gnt="n">[Dd]há</A> [Cc]hinn:BACHOIR{cheann}
-<A pl="n" gnt="n">[Dd]há</A> [Cc]hloigne:BACHOIR{chloigeann}
-<A pl="n" gnt="n">[Dd]há</A> [Ff]hichid:BACHOIR{chloigeann}
-<A pl="n" gnt="n">[Dd]há</A> h?uaire:BACHOIR{uair}
-<A pl="n" gnt="n">[Dd]há</A> [Ss]heachtaine:BACHOIR{sheachtain}
+<A pl="n" gnt="n">[Dd]há</A> [Bb]hliana:BACHOIR{dhá bhliain}
+<A pl="n" gnt="n">[Dd]há</A> [Cc]hinn:BACHOIR{dhá cheann}
+<A pl="n" gnt="n">[Dd]há</A> [Cc]hloigne:BACHOIR{dhá chloigeann}
+<A pl="n" gnt="n">[Dd]há</A> [Ff]hichid:BACHOIR{dhá chloigeann}
+<A pl="n" gnt="n">[Dd]há</A> h?uaire:BACHOIR{dhá uair}
+<A pl="n" gnt="n">[Dd]há</A> [Ss]heachtaine:BACHOIR{dhá sheachtain}
 # CB p.77 #8.d; no such rule in OD/LGG
-<A pl="n" gnt="n">[Dd]há</A> m?[Bb]h?os:BACHOIR{bhois}
+<A pl="n" gnt="n">[Dd]há</A> m?[Bb]h?os:BACHOIR{dhá bhois}
 # CB p.77 #8.d; no such rule in OD/LGG
-<A pl="n" gnt="n">[Dd]há</A> m?[Bb]h?róg:BACHOIR{bhróig}
+<A pl="n" gnt="n">[Dd]há</A> m?[Bb]h?róg:BACHOIR{dhá bhróig}
 # CB p.77 #8.d; no such rule in OD/LGG, in fact "mo dhá chluas" explicitly in OD
-<A pl="n" gnt="n">[Dd]há</A> g?[Cc]h?luas:BACHOIR{chluais}
+<A pl="n" gnt="n">[Dd]há</A> g?[Cc]h?luas:BACHOIR{dhá chluais}
 # CB p.77 #8.d; no such rule in OD/LGG
-<A pl="n" gnt="n">[Dd]há</A> g?[Cc]h?os:BACHOIR{chois}
+<A pl="n" gnt="n">[Dd]há</A> g?[Cc]h?os:BACHOIR{dhá chois}
 # CB p.77 #8.d; no such rule in OD/LGG, in fact "do dhá lámh" explicitly in OD
-<A pl="n" gnt="n">[Dd]há</A> [Ll]ámh:BACHOIR{láimh}
+<A pl="n" gnt="n">[Dd]há</A> [Ll]ámh:BACHOIR{dhá láimh}
 # OD dhá^1; similar rules for dháréag is above, before "an+leniteddst" error
 #. Is léir nach bhfuil an dhá theanga ar chomhchéim lena chéile.
 <T>[Aa]n</T> <A pl="n" gnt="n">[Dd]há</A>:NISEIMHIU
