@@ -134,7 +134,7 @@ sin sin:OK
 <F>[Dd]íofa</F>:IONADAI{díobh}
 <S>[Ii]</S> <F>n[Dd]oimhne</F>:IONADAI{i ndoimhneacht}
 <F>n?[Dd]h?rud</F>:IONADAI{druidim}
-<V>[Tt]ar</V> <F>[Ee]is</F>:IONADAI{éis}
+<V>[Tt]ar</V> <F>[Ee]is</F>:IONADAI{tar éis}
 <F>[Ff]héin</F>:IONADAI{féin}
 <F>[Ff]h?iní</F>:IONADAI{finte}
 <F>[Ff]h?irinne</F>:IONADAI{fírinne}
@@ -367,7 +367,7 @@ n?[Dd]h?eara:INPHRASE{faoi deara}
 # but better to get it out of the way before "a+UNMUTATED"
 #. Cad é mar a tá tú?
 [Aa] <V>JUSTTA</V>:BACHOIR{atá}
-[Aa]n <A>[Gg]hnách</A>:IONADAI{ghnáth}
+[Aa]n <A>[Gg]hnách</A>:IONADAI{an ghnáth}
 <A>POSITIVEINT</A> <NP>ANYTHING</NP>:UATHA
 <A>POSITIVEINT</A> <NP>(m?bh?liana|g?ch?inn|g?ch?loigne|bhfichid|fh?ichid|n-uaire|uaire)</NP>:OK
 # CB p.20 #1.c, p.76 #8.c (even in plural)
@@ -689,7 +689,7 @@ INITIALMBAPOST:NIURU
 #. Mothóidh Pobal Osraí an bheirt laoch sin uathu (OK).
 <N>[Bb]h?eirte?</N> <N>ANYTHING</N> <A>UNLENITABLEADJ</A>:OK
 # corpus, achtanna mostly
-<S>[Dd]e</S> <V>[Bb]huadh</V>:IONADAI{bhua}
+<S>[Dd]e</S> <V>[Bb]huadh</V>:IONADAI{de bhua}
 [Dd]á <V>[Bb]huadh</V>:IONADAI{dá bhua}
 # CB p.20 1.b, keep before following
 #. Ní amháin bhur dhá chosa, ach nigh bhur lámha!
@@ -698,7 +698,7 @@ INITIALMBAPOST:NIURU
 #. Déanaigí beart leis de réir bhur briathra.
 <D>[Bb]hur</D> UNECLIPSED:URU
 # corpus
-<T>[Nn]a</T> <A pl="y" gnt="n">[Bb]ochta</A>:IONADAI{boicht}
+<T>[Nn]a</T> <A pl="y" gnt="n">[Bb]ochta</A>:IONADAI{na boicht}
 #. Cad déarfaidh mé libh mar sin?
 <Q>INITIALC</Q> <VNOTCOP>ANYTHING</VNOTCOP>:BACHOIR{a}
 <Q>INITIALC</Q> <VNOTCOP>JUSTATA</VNOTCOP>:OK
@@ -786,8 +786,8 @@ INITIALMBAPOST:NIURU
 <N pl="y" gnt="n" gnd="m">[Cc]eanna</N>:IONADAI{céanna}
 <[STV]>ANYTHING</[STV]> <E><N pl="y" gnt="n" gnd="m">[Cc]eanna</N></E>:OK
 # corpus
-<A pl="n" gnt="n">[Gg]ach</A> <N pl="n" gnt="n" gnd="m">[Cc]eard</N>:IONADAI{cearn}
-<N pl="n" gnt="n" gnd="m">[Cc]eard</N> <S>faoi</S>:IONADAI{céard}
+<A pl="n" gnt="n">[Gg]ach</A> <N pl="n" gnt="n" gnd="m">[Cc]eard</N>:IONADAI{gach cearn}
+<N pl="n" gnt="n" gnd="m">[Cc]eard</N> <S>faoi</S>:IONADAI{céard faoi}
 <N pl="n" gnt="n" gnd="m">[Cc]eard</N> <V cop="y">ANYTHING</V>:IONADAI{céard}
 <N pl="n" gnt="n" gnd="m">[Cc]eard</N> [Aa] <V>ANYTHING</V>:IONADAI{céard}
 # OD "usually preceded by 'a'"; "a/faoi cheathair" in comhshuite
@@ -1111,7 +1111,7 @@ n?[Dd]h?eich <N>ANYTHING</N> <A>UNLENITABLEADJ</A>:OK
 <N pl="n" gnt="n" gnd="m">n?[Dd]h?eichniúr</N> <N pl="y" gnt="y" gnd="f">ban</N>:OK
 <N pl="n" gnt="n" gnd="m">n?[Dd]h?eichniúr</N> <N pl="n" gnt="n" gnd="f">m?bh?ean</N>:BACHOIR{ban}
 # corpus
-<N pl="n" gnt="n" gnd="f">deifir</N> <S>idir</S>:IONADAI{difear}
+<N pl="n" gnt="n" gnd="f">deifir</N> <S>idir</S>:IONADAI{difear idir}
 # CB p.12 #3.a (<D>do</D>), CB p.13 #4.a (<S>d[eo]</S>)
 #. Tógfaidh mé do coinnleoir óna ionad, mura ndéana tú aithrí.
 [Dd][eo] <N>UNLENITED</N>:SEIMHIU
@@ -1227,12 +1227,12 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 <S>DATIVEPREP</S> <N>EIRE</N>:BACHOIR{Éirinn}
 <S>[Ff]á</S>:CAIGHDEAN{faoi}
 # corpus with and without lenition
-<N>fh?aid</N> <V cop="y">is</V>:IONADAI{fad}
-<N>fh?aid</N> a:IONADAI{fad}
+<N>fh?aid</N> <V cop="y">is</V>:IONADAI{fad is}
+<N>fh?aid</N> a:IONADAI{fad a}
 # corpus work
 <S>([Aa][rg]|[Ll]e)</S> <N pl="n" gnt="n" gnd="f">[Ff]ail</N>:IONADAI{fáil}
-<S>[Aa]</S> <N pl="n" gnt="n" gnd="f">fhail</N>:IONADAI{fháil}
-<D>[Áá]</D> <N pl="n" gnt="n" gnd="f">fhail</N>:IONADAI{fháil}
+<S>[Aa]</S> <N pl="n" gnt="n" gnd="f">fhail</N>:IONADAI{a fháil}
+<D>[Áá]</D> <N pl="n" gnt="n" gnd="f">fhail</N>:IONADAI{á fháil}
 # CB p.13 #4.a
 # NGBC p.32 has explicit exceptions "faoi deara, faoi seach" (comhshuite)
 #. Tá an domhan go léir faoi suaimhneas.
@@ -1319,8 +1319,8 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 #. Tá Féile Bhealtaine an Oireachtais ar siúl an tseachtain seo (OK).
 Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # corpus
-<S>[Aa]g</S> <N pl="y" gnt="n" gnd="m">gabhail</N>:IONADAI{gabháil}
-<S>[Aa]</S> <N pl="y" gnt="n" gnd="m">ghabhail</N>:IONADAI{ghabháil}
+<S>[Aa]g</S> <N pl="y" gnt="n" gnd="m">gabhail</N>:IONADAI{ag gabháil}
+<S>[Aa]</S> <N pl="y" gnt="n" gnd="m">ghabhail</N>:IONADAI{a ghabháil}
 # corpus
 <A pl="n" gnt="n">[Gg]ach</A> <NP>ANYTHING</NP>:UATHA
 # corpus; stuff like "gach bhliain", "gach shaghas" pretty common actually
@@ -1380,7 +1380,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <S>[Gg]an</S> <N pl="n" gnt="n" gnd="m">[Ff]ios</N>:SEIMHIU
 <S>ANYTHING</S> <A>[Gg]h?nách</A>:IONADAI{gnáth}
 # next one also near top b/c of tagging errors with "an" (copula=>NISEIMHIU)
-<T>[Aa]n</T> <A>[Gg]nách</A>:IONADAI{gnáth}
+<T>[Aa]n</T> <A>[Gg]nách</A>:IONADAI{an gnáth}
 # CB p.132 #5
 [Gg]o <VPAST>ANYTHING</VPAST>:BACHOIR{gur}
 # CB p.133 #12 irreg. exceptions
@@ -1634,8 +1634,9 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <E><S>[Ll]e</S> <P>ANYTHING</P></E> <R>[Ff]éin</R> <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
 <E><S>[Ll]e</S> <P>ANYTHING</P></E> seo|sin|siúd <[DS]>[Aa]</[DS]> <NCS>ANYTHING</NCS>:OK
 # many are correct, even "a leagadh" (relative clause)
-<T>[Aa]n</T> <V>leagadh</V>:IONADAI{leagan}
-<S>([Aa]g|[Ll]e)</S> <V>leagadh</V>:IONADAI{leagan}
+<T>[Aa]n</T> <V>leagadh</V>:IONADAI{an leagan}
+<S>[Aa]g</S> <V>leagadh</V>:IONADAI{ag leagan}
+<S>[Ll]e</S> <V>leagadh</V>:IONADAI{le leagan}
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
 #. Tá do scrios chomh leathan leis an farraige.
 <S>[Ll]eis</S> <T>an</T> <N>UNMUTATEDBCFGP</N>:CLAOCHLU
@@ -1669,7 +1670,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 #. Is linne í ar ndóigh agus lenár clann.
 <D>[Ll]enár</D> UNECLIPSED:URU
 # always alt of gs of luaith in corpus (tho could be gs of nb4 luaithe)
-<T>na</T> <A pl="n" gnt="y" gnd="f">luaithe</A>:IONADAI{luatha}
+<T>na</T> <A pl="n" gnt="y" gnd="f">luaithe</A>:IONADAI{na luatha}
 # CB p.121 #6
 <C>[Mm]á</C> <VCOND>ANYTHING</VCOND>:BACHOIR{dá}
 # LGG p.167, NGBC p.37
@@ -2102,7 +2103,7 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITABLEADJ</A>:
 [Pp]h?éire <NC>ANYTHING</NC>:GENITIVE
 [Pp]h?éire <NS>ANYTHING</NS>:IOLRA
 # note no lenition (=> not gs) and singular article
-<T>[Aa]n</T> <N>[Pp]ictiúir</N>:IONADAI{pictiúr}
+<T>[Aa]n</T> <N>[Pp]ictiúir</N>:IONADAI{an pictiúr}
 # no need to uncomment; caught just as well by general NOGENITIVE rules
 # <V>ANYTHING</V> <N>rása</N>:IONADAI{rás}
 # CB p.68 #19
@@ -2344,7 +2345,7 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITABLEADJ</A>:
 <S>[Tt]har</S> <P>[Ss]ibh</P>:BACHOIR{tharaibh}
 <S>[Tt]har</S> <P>[Ii]ad</P>:BACHOIR{tharstu}
 # corpus
-<T>[Aa]n</T> <V>[Tt]h?ráigh</V>:IONADAI{trá}
+<T>[Aa]n</T> <V>[Tt]h?ráigh</V>:IONADAI{an trá}
 <S>FUSEDPREP</S> <V>[Tt]h?ráigh</V>:IONADAI{trá}
 # CB p.24 #11.a.x
 #. Timpeall trí uaire a chloig ina dhiaidh sin tháinig an bhean isteach.
