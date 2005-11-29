@@ -1196,7 +1196,7 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 [Dd]o <T>an</T>:BACHOIR{don}
 # CB p.5 #17 (NGBC p.32: "is gnách, cé nach riachtanach")
 #. Is amhlaidh a bheidh freisin do na tagairtí do airteagail.
-[Dd][eo] <N>INITIALVOWELORF</N>:BACHOIR{d+uaschamóg}
+[Dd][eo] <N>INITIALVOWELORF</N>:BACHOIR{d'}
 # CB p.84 #8, p.132 #2
 # aonchiall disambiguates "de" to <O> in this context, so rule never applies
 #<S>[Dd]e</S> a:BACHOIR{dá}
@@ -1724,7 +1724,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <N pl="n" gnt="n" gnd="f">[Mm]h?í</N> <N>(Mh?árta|Bh?ealtaine|Mh?eithimh|Mh?eitheamh|Sh?amhain|Sh?amhna|Nollai?g)</N>:NEEDART
 # CB p.5 #17
 #. Comhlíon mo aitheanta agus mairfidh tú beo.
-<D>[Mm]o</D> INITIALVOWELORF:BACHOIR{m+uaschamóg}
+<D>[Mm]o</D> INITIALVOWELORF:BACHOIR{m'}
 # CB p.12 #3.a
 #. Ceapadh mise i mo bolscaire.
 <D>[Mm]o</D> UNLENITED:SEIMHIU
