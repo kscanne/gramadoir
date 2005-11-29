@@ -705,7 +705,8 @@ INITIALMBAPOST:NIURU
 <Q>[Cc]ár?</Q> <VNOTCOP>ANYTHING</VNOTCOP>:OK
 # OD méid, corpus; common alternate of "Cé mhéad"
 #. Cé mhéid gealladh ar briseadh ar an Indiach bocht?
-[Cc][áé] <N>[Mm]h?éid</N>:CAIGHDEAN{mhéad}
+<Q>[Cc]é</Q> <N>[Mm]h?éid</N>:CAIGHDEAN{cé mhéad}
+<V cop="y">[Cc]á</V> <N>[Mm]h?éid</N>:CAIGHDEAN{cá mhéad}
 # OD méad, "with s.", MacL00 p.110, LGG p.29
 #. Nach raibh a fhios aige cé mhéad daoine a bhíonn ag éisteacht leis an stáisiún.
 <Q>[Cc][áé] [Mm]héad</Q> <NP>ANYTHING</NP>:UATHA
@@ -974,7 +975,7 @@ g?[Cc]h?úig <NP>(bliana|cinn|cloigne|fichid|huaire)</NP>:OK
 <N>[Cc]h?úpla</N> <NP>ANYTHING</NP>:UATHA
 <N>[Cc]h?úpla</N> <NG>ANYTHING</NG>:NOGENITIVE
 # OD méid is alt of méad
-[Dd]á <N>[Mm]h?éid</N>:CAIGHDEAN{mhéad}
+[Dd]á <N>[Mm]h?éid</N>:CAIGHDEAN{dá mhéad}
 # CB p.121 #6
 <C>[Dd]á</C> <VNOTCOND>ANYTHING</VNOTCOND>:BACHOIR{má}
 # exception in case of mistagged indir rel
@@ -1236,6 +1237,8 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 # NGBC p.32 has explicit exceptions "faoi deara, faoi seach" (comhshuite)
 #. Tá an domhan go léir faoi suaimhneas.
 <S>[Ff]aoi</S> <N>UNLENITED</N>:SEIMHIU
+# this form common in pre-standard texts - catch before NIURU!
+<S>[Ff]aoi</S> <N pl="n" gnt="n" gnd="m">n-ár</N>:BACHOIR{faoinár}
 # CB p.6 #2, LGG p.26
 #. Caithfidh pobal na Gaeltachta iad féin cinneadh a dhéanamh faoi an Ghaeilge.
 <S>[Ff]aoi</S> <T>an</T>:BACHOIR{faoin}
@@ -1434,6 +1437,8 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 # CB p.16 #7 (N), p.18 #10 (A)
 #. B'fhéidir gurbh fearr é seo duit ná leamhnacht na bó ba mhilse i gcontae Chill Mhantáin.
 <V cop="y">[Gg]urbh</V> UNLENITEDF:SEIMHIU
+# This must go before following rule
+<S>[Ii]</S> <N pl="n" gnt="n" gnd="m">n-ár</N>:BACHOIR{inár}
 # CO p.127; "in n-easnamh" will be caught by NIURU below (better message)
 #. Tá ainm i n-easnamh a mbeadh coinne agat leis.
 <S>[Ii]</S> <N>ECLIPSEDVOWEL</N>:BACHOIR{in}
@@ -1967,6 +1972,8 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <C>[Óó]</C> <V>JUSTTA</V>:OK
 #. Ní maith liom é ar chor ar bith ó fuair sé an litir sin (OK).
 <C>[Óó]</C> <V>FAIGHTOECLIPSE</V>:OK
+# this form common in pre-standard texts - catch before NIURU!
+<S>[Óó]</S> <N pl="n" gnt="n" gnd="m">n-ár</N>:BACHOIR{ónár}
 # CB p.13 #4.a
 #. Tabhair an t-ordú seo leanas ó béal.
 <S>[Óó]</S> <N>UNLENITED</N>:SEIMHIU
@@ -2352,6 +2359,8 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITABLEADJ</A>:
 # CB p.6 #2, converse done via aonchiall (tríd <[^T]> -> <O>), "tríd na" below
 #. Beirimid an bua go caithréimeach trí an té úd a thug grá dúinn.
 <S>[Tt]rí</S> <T>an</T>:BACHOIR{tríd an}
+# this form common in pre-standard texts - catch before NIURU!
+<S>[Tt]rí</S> <N pl="n" gnt="n" gnd="m">n-ár</N>:BACHOIR{trínár}
 # CB p.84 #8
 #. Coinníodh lenár sála sa chaoi nárbh fhéidir siúl trí ár sráideanna.
 <S>[Tt]rí</S> <D>ár</D>:BACHOIR{trínár}
