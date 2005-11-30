@@ -62,6 +62,9 @@
 ^t([AEIOUÁÉÍÓÚ])	t-\l$1		-1	<N.*>	<&>
 # these aren't in aspell db by default; better to do early (mb'amhlaidh)
 ^mb'			b'		-1	<.+>	<&>
+#  high prob that this is correct, so do early - avoids mistakes with
+#  "aighthe" (==aghaidheanna)
+i[dg]h(th?.)		i$1		1	<.+>	<&>  # marcaidhthe, masluighthe, beannuighth?ear
 # hyphened prefixes, an-, dea-
 ^h?an-([bcfgmp]h)	$1		0	<[AN].*>	<&>
 ^h?an-([bcfgmp][^h])	$1		2	<[AN].*>	<&>
@@ -309,7 +312,6 @@ e[oó]chthá$		eofá		1	<V p="y" t="coinn">	<&>
 u(i?gh)			a$1		1	<.+>	<&>  # see next few
 (..)aíd$		$1aíonn		1	<V p="y" t="láith">	<&> # cialluíd
 aghadh			ú		1	<N.*>	<&>  # broad and slender
-i[dg]h(th?.)		i$1		1	<.+>	<&>  # marcaidhthe, masluighthe, beannuighth?ear
 (..)thear$		$1tear		1	<V.*>	<&> # aut. present
 ighim			ím		1	<V.*>	<&>    # broad and slender
 ighidh			í		1	<.+>	<&>    # subjunctive?
