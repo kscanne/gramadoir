@@ -1181,6 +1181,14 @@ n?[Dd]h?eich <N>ANYTHING</N> <A>UNLENITABLEADJ</A>:OK
 # NGBC p.184, CB p.76 #8.a
 <A pl="n" gnt="n">[Dd]há</A> <NP>ANYTHING</NP>:UATHA
 <T>[Aa]n</T> [Dd]á <NP>ANYTHING</NP>:UATHA
+# corpus; see caighdean training texts
+<N pl="n" gnt="n" gnd="m">Dia</N> <N pl="n" gnt="y" gnd="m">Luain</N>:BACHOIR{Dé Luain}
+<N pl="n" gnt="n" gnd="m">Dia</N> <N pl="n" gnt="y" gnd="f">Máirt</N>:BACHOIR{Dé Máirt}
+<N pl="n" gnt="n" gnd="m">Dia</N> <N pl="n" gnt="y" gnd="f">Céadaoin</N>:BACHOIR{Dé Céadaoin}
+#  catch before NIAITCH
+<N pl="n" gnt="n" gnd="m">Dia</N> <N pl="n" gnt="y" gnd="f" h="y">hAoine</N>:BACHOIR{Dé hAoine}
+<N pl="n" gnt="n" gnd="m">Dia</N> <N pl="n" gnt="y" gnd="m">Sathairn</N>:BACHOIR{Dé Sathairn}
+<N pl="n" gnt="n" gnd="m">Dia</N> <N pl="n" gnt="y" gnd="m">Domhnaigh</N>:BACHOIR{Dé Domhnaigh}
 # CB p.77 #8.g
 [Dd]h?ís <NC>ANYTHING</NC>:GENITIVE
 [Dd]h?ís <NS>ANYTHING</NS>:IOLRA
