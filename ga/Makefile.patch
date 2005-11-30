@@ -1,6 +1,6 @@
---- Makefile	2005-09-22 02:42:42.000000000 +0000
-+++ Makefile.ok	2005-09-22 02:42:37.000000000 +0000
-@@ -75,6 +75,15 @@
+--- Makefile	2005-11-29 15:35:03.000000000 -0600
++++ Makefile.ok	2005-11-29 15:34:50.000000000 -0600
+@@ -74,6 +74,15 @@
  
  Makefile : $(GRAMDIR)/Makefile-xx.in configure
  	./configure
@@ -16,7 +16,7 @@
  
  test : perl
  	(cd $(PERLD); make test)
-@@ -183,6 +192,12 @@
+@@ -182,6 +191,12 @@
  triail : rialacha-$(TEANGA).in
  	sed -n '/^#\./{s/^#\. //; p;}' rialacha-$(TEANGA).in > triail
  
@@ -29,7 +29,7 @@
  triail.xml-update : FORCE
  	$(MAKE) triail
  	$(MAKE) perl
-@@ -270,6 +285,7 @@
+@@ -269,6 +284,7 @@
  	$(MAKE) rebuildlex
  	rm -f Makefile $(PERLDOK) lexicon-$(TEANGA).txt
  	rm -fR $(PERLD)
@@ -37,7 +37,7 @@
  
  clean :
  	if [ -e $(PERLD)/Makefile ]; then (cd $(PERLD);  make distclean); fi
-@@ -316,9 +332,9 @@
+@@ -315,9 +331,9 @@
  replcheck : FORCE
  	@$(MAKE) perl
  	@echo "earraidi-$(TEANGA).bs..."
@@ -49,7 +49,7 @@
  
  
  counts : FORCE
-@@ -332,4 +348,101 @@
+@@ -331,4 +347,101 @@
  zipped : perl
  	(cd $(PERLD); make zipdist)
  
@@ -76,7 +76,7 @@
 +# use "groom" instead of this directly (since it requires ispell personal, etc.)
 +lexfromdb : FORCE
 +	Gin 12
-+	((cat ${HOME}/.ispell_gaeilge $(ISPELLDIR)/ispell-gaeilge/uimhreacha; cat ${HOME}/.biobla | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | aspell -dga -p${HOME}/.aspell.blank.pws -l) | sed 's/.*/& 44/'; cat FOCAIL) | $(PERL) -p posmap.pl | LC_COLLATE=POSIX sort -u -k1,1 -k2,2n > lexicon-ga.txt
++	((cat ${HOME}/.ispell_gaeilge $(ISPELLDIR)/ispell-gaeilge/uimhreacha $(ISPELLDIR)/ispell-gaeilge/apost; cat ${HOME}/.biobla | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | aspell -dga -p${HOME}/.aspell.blank.pws -l) | sed 's/.*/& 44/'; cat FOCAIL) | $(PERL) -p posmap.pl | LC_COLLATE=POSIX sort -u -k1,1 -k2,2n > lexicon-ga.txt
 +	$(MAKE) rebuildlex
 +	rm -f FOCAIL
 +
