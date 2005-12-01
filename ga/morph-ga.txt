@@ -62,8 +62,9 @@
 ^t([AEIOUÁÉÍÓÚ])	t-\l$1		-1	<N.*>	<&>
 # these aren't in aspell db by default; better to do early (mb'amhlaidh)
 ^mb'			b'		-1	<.+>	<&>
-#  high prob that this is correct, so do early - avoids mistakes with
-#  "aighthe" (==aghaidheanna)
+#  do these early - avoids mistakes with "aighthe" (==aghaidheanna)
+#  and note that first rule must precede second to get "-aithe" pp's correct
+u(i?gh)			a$1		1	<.+>	<&>  # see next few
 i[dg]h(th?.)		i$1		1	<.+>	<&>  # marcaidhthe, masluighthe, beannuighth?ear
 # hyphened prefixes, an-, dea-
 ^h?an-([bcfgmp]h)	$1		0	<[AN].*>	<&>
@@ -153,11 +154,13 @@ i[dg]h(th?.)		i$1		1	<.+>	<&>  # marcaidhthe, masluighthe, beannuighth?ear
 ^leas([aeiouáéíóúd]..)	$1		0	<[AN].*>	<&>
 ^leas([bcfgm]h..)	$1		0	<[AN].*>	<&>
 ^mí-([aeiouáéíóú])	$1		0	<[ANV].*>	<&>
+^(mh?í)-(..)		$1$2		1	<[ANV].*>	<&>
 ^mí([aeiouáéíóú]..)	$1		2	<[ANV].*>	<&>  # míúsáid
 ^mí([lnr]..)		$1		0	<[ANV].*>	<&>
 ^mí([bcdfgmpt]h.)	$1		0	<[ANV].*>	<&>
 ^mí(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>	<&>
 ^mí(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>	<&>
+^neamh-(..)		neamh$1		1	<[ANV].*>	<&>  # try stripping - before stripping whole thing!
 ^neamh-?([aeiouáéíóú])	$1		0	<[ANV].*>	<&>  # neamh-aistear but neamhaithne
 ^neamh([lnr])		$1		0	<[ANV].*>	<&>
 ^neamh([bcdfgpt]h)	$1		0	<[ANV].*>	<&>
@@ -309,7 +312,6 @@ e[oó]chai(nn|dís)$	eoi$1		1	<V p="y" t="coinn">	<&>
 e[oó]chthá$		eofá		1	<V p="y" t="coinn">	<&>
 ([^e])óchthá$		$1ófá		1	<V p="y" t="coinn">	<&>
 #   2nd declension Dinneen-style endings
-u(i?gh)			a$1		1	<.+>	<&>  # see next few
 (..)aíd$		$1aíonn		1	<V p="y" t="láith">	<&> # cialluíd
 aghadh			ú		1	<N.*>	<&>  # broad and slender
 (..)thear$		$1tear		1	<V.*>	<&> # aut. present
@@ -326,7 +328,8 @@ eoi?[ds]$		eoidh		1	<V p="y" t="fáist">	<&>
 # other slender/broad mismatches:
 ([aáoóuú][^aeiouáéíóú]*)fí$	$1faí	1	<V p="n" t="coinn">	<&>
 ([aáoóuú][^aeiouáéíóú]*)fidh?$	$1faidh	1	<V p="y" t="fáist">	<&>
-([eéií][^aeiouáéíóú]*)fa(r|dh)$	$1fea$2	1	<V p="." t="coinn">	<&>
+([eéií][^aeiouáéíóú]*)fadh$	$1feadh	1	<V p="y" t="coinn">	<&>
+([eéií][^aeiouáéíóú]*)far$	$1fear	1	<V p="n" t="fáist">	<&>
 ([eéií][^aeiouáéíóú]*)tar$	$1tear	1	<V p="n" t="láith">	<&> # * not + for chítar
 # Future 2nd p., "r" forms noted on OS88 p.216;
 # see achtanna for íocfaid/íocfa, bainfid/bainfe
@@ -387,10 +390,15 @@ mist$			mis		1	<V.*>	<&>
 ([eiéí][^aeiouáéíóú-]*n)-ne$			$1	0	<[NV].*>	<&>
 #############################################################################
 #   common spelling errors
+iri$			irí		2	<N.*>	<&>
 uil$			úil		2	<A.*>	<&>
+(.[^aeiouáéíóú])ala$	$1ála		2	<N.*>	<&>
 ula$			úla		2	<A.*>	<&>
 eail$			eáil		2	<.+>	<&>    # common missing accent
 u$			ú		2	<N.*>	<&>
+aioch(ta?)$		aíoch$1		2	<N.*>	<&>
+#chtai$			chtaí		2	<N.*>	<&>
+ai$			aí		2	<.+>	<&>
 # i$			í		2	<.+>	<&>  # lotsa false compounds with this
 #############################################################################
 #  rules with somewhat lower probability (e.g. fo-, must be after non-stnd
