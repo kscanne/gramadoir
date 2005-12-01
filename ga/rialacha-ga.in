@@ -71,14 +71,14 @@ sin sin:OK
 #      compound including a non-standard component.
 #. An bhfuil ayn uachtar roeite agattt?
 <X>ANYTHING</X>:ANAITHNID
-<Y>a'</Y> <N>VNISH</N>:CAIGHDEAN{ag}
-<Y>a'</Y> <N>NOTVNISHUNLEN</N>:CAIGHDEAN{ag}
-<Y>a'</Y>:CAIGHDEAN{an}
+<Y>[Aa]'</Y> <N>VNISH</N>:CAIGHDEAN{ag}
+<Y>[Aa]'</Y> <N>NOTVNISHUNLEN</N>:CAIGHDEAN{ag}
+<Y>[Aa]'</Y>:CAIGHDEAN{an}
 <Y>'ac</Y>:CAIGHDEAN{Mac}
 <Y>'n?ár</Y>:CAIGHDEAN{inár}
-<Y>ars'</Y>:CAIGHDEAN{arsa}
+<Y>[Aa]rs'</Y>:CAIGHDEAN{arsa}
 <Y>'chor</Y>:CAIGHDEAN{ar chor}
-<Y>'chuile</Y>:CAIGHDEAN{gach uile}
+<Y>'[Cc]huile</Y>:CAIGHDEAN{gach uile}
 #   usually  "d' uisce", etc.
 # <Y>[dm]'</Y>:CAIGHDEAN{do}
 <Y>dear'</Y>:CAIGHDEAN{deara}
@@ -88,16 +88,16 @@ sin sin:OK
 <Y>'fhad</Y>:CAIGHDEAN{a fhad}
 <Y>'fhios</Y>:CAIGHDEAN{a fhios}
 <Y>gurbh'</Y>:CAIGHDEAN{gurbh}
-<Y>'gus</Y>:CAIGHDEAN{agus}
+<Y>'[Gg]us</Y>:CAIGHDEAN{agus}
 <Y>id'</Y>:CAIGHDEAN{i do}
 <Y>im'</Y>:CAIGHDEAN{i mo}
 <Y>led'</Y>:CAIGHDEAN{le do}
 <Y>lem'</Y>:CAIGHDEAN{le mo}
 <Y>'mo?</Y>:CAIGHDEAN{i mo}
-<Y>mur'</Y>:CAIGHDEAN{mura}
-<Y>níorbh'</Y>:CAIGHDEAN{níorbh}
-<Y>s'</Y>:CAIGHDEAN{is}
-<Y>'sé</Y>:CAIGHDEAN{is é}
+<Y>[Mm]ur'</Y>:CAIGHDEAN{mura}
+<Y>[Nn]íorbh'</Y>:CAIGHDEAN{níorbh}
+<Y>[Ss]'</Y>:CAIGHDEAN{is}
+<Y>'[Ss]é</Y>:CAIGHDEAN{is é}
 <Y>'úirt</Y>:CAIGHDEAN{dúirt}
 <Y>'ul</Y>:CAIGHDEAN{dul}
 <Y>'un</Y>:CAIGHDEAN{chun}
