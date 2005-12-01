@@ -54,6 +54,7 @@ bar
 bha
 bhar
 bhfa
+bhfai
 bhfé
 cha
 chaí
@@ -102,9 +103,11 @@ eachaí
 eadh
 eamhail
 éar
+fai
 faid
 far
 fha
+fhai
 fhe
 fhé
 fhos
@@ -160,6 +163,8 @@ ins
 insigh
 intí
 inti
+iocht
+iochta
 íocht
 íochta
 iona
@@ -186,6 +191,7 @@ lic
 ling
 liom
 lís
+mai
 mair
 mba
 mha
