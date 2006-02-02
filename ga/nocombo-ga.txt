@@ -50,12 +50,14 @@ athach
 athan
 athcho
 athóir
+báil
 bar
 bha
 bhar
 bhfa
 bhfai
 bhfé
+cai
 cha
 chaí
 chain
@@ -89,6 +91,7 @@ dheá
 dhi
 dhlú
 ding
+dís
 dóirí
 dom
 domh
@@ -103,6 +106,7 @@ eachaí
 eadh
 eamhail
 éar
+éis
 fai
 faid
 far
@@ -114,10 +118,12 @@ fhos
 fol
 fos
 fri
+gach
 gan
 gán
 gCo
 gcom
+geam
 ghacht
 ghil
 ghinn
@@ -126,8 +132,10 @@ góirí
 gram
 grin
 gúil
+hachan
 háil
 hailt
+hairt
 ham
 hamh
 har
@@ -191,6 +199,7 @@ lic
 ling
 liom
 lís
+lua
 mai
 mair
 mba
@@ -245,6 +254,7 @@ scot
 sea
 seac
 seir
+seo
 she
 shea
 sheac
@@ -258,6 +268,7 @@ stá
 sula
 súm
 tacht
+táil
 tan
 tAr
 teacht
@@ -268,6 +279,7 @@ thacht
 thachta
 thachtaí
 thaighe
+tháil
 the
 thic
 thidhe
@@ -279,6 +291,7 @@ tic
 time
 tint
 tíocht
+tog
 toir
 ton
 trach
