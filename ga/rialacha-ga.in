@@ -48,6 +48,13 @@ milliún milliún:OK
 #. Agus sin sin de sin (OK)!
 # See OD sin^1.1c
 sin sin:OK
+#  better message for "he" and "hi" <X>-words in certain contexts; helps caighdean
+<V cop="y">[Nn]í</V> <X>he</X>:MICHEART{ní hé}
+<V cop="y">[Nn]í</V> <X>hi</X>:MICHEART{ní hí}
+<P>[Pp]é</P> <X>he</X>:MICHEART{pé hé}
+<P>[Pp]é</P> <X>hi</X>:MICHEART{pé hí}
+<Q>[Cc]é</Q> <X>he</X>:MICHEART{cé hé}
+<Q>[Cc]é</Q> <X>hi</X>:MICHEART{cé hí}
 #. Chuaigh sí in olcas ina dhiaidh sin agus bhí an-imní orthu.
 #    "MOIRF" warning inserted by cuardach
 #. Tharla sé seo ar lá an-mífheiliúnach, an Déardaoin.
@@ -106,6 +113,7 @@ sin sin:OK
 <F>h?[Aa]irithe</F>:IONADAI{áirithe}
 # aiseanna -> áiseanna split
 <F>[Aa]ithnigh</F>:IONADAI{aithin}
+<F>[Aa]stai?r</F>:IONADAI{aistear, aistir}
 <F>[Aa]ta</F>:IONADAI{atá}
 <F>m?[Bb]h?aise</F>:IONADAI{boise}
 <F>m?[Bb]h?as</F>:IONADAI{bás, bos}
@@ -136,6 +144,7 @@ sin sin:OK
 <F>n?[Dd]h?rud</F>:IONADAI{druidim}
 <V>[Tt]ar</V> <F>[Ee]is</F>:IONADAI{tar éis}
 <F>[Ff]héin</F>:IONADAI{féin}
+<F>[Ff]hiacháil</F>:IONADAI{féachaint}
 <F>[Ff]h?iní</F>:IONADAI{finte}
 <F>[Ff]h?irinne</F>:IONADAI{fírinne}
 <S>[Aa]r</S> <F>[Ff]his</F>:IONADAI{ris}
@@ -172,7 +181,7 @@ sin sin:OK
 <F>[Ss]maointigh</F>:IONADAI{smaoinigh}
 <F>[Ss]h?oláthraigh</F>:IONADAI{soláthair}
 <F>[Tt]hairgeadh</F>:IONADAI{tháirgeadh}
-<F>[Tt]h?arrach</F>:IONADAI{tarraingt}
+<F>[Tt]h?arrach?</F>:IONADAI{tarraingt}
 <F>d?[Tt]h?oiseach</F>:IONADAI{tosach}
 <F>[Tt]h?oisigh</F>:IONADAI{tosaigh}
 <F>d?[Tt]h?oithe</F>:IONADAI{tithe}
@@ -649,6 +658,8 @@ h?[Aa]on <N>LENITEDDST</N>:NISEIMHIU
 # CB p.20 1.a
 #. Gheobhaimid maoin de gach sórt, agus líonfaimid ár tithe le creach.
 <D>[Áá]r</D> <N>UNECLIPSED</N>:URU
+# corpus
+<N pl="n" gnt="n" gnd="m">Arann</N>:IONADAI{Árann}
 # CB p.113-114
 <V cop="y">[Aa]rb</V> INITIALCONSONANT:BACHOIR{ar}
 <V cop="y">[Aa]rbh</V> NONVOWELNONF:BACHOIR{ar}
@@ -699,6 +710,16 @@ INITIALMBAPOST:NIURU
 <D>[Bb]hur</D> UNECLIPSED:URU
 # corpus
 <T>[Nn]a</T> <A pl="y" gnt="n">[Bb]ochta</A>:IONADAI{na boicht}
+# DMM
+<A pl="n" gnt="n">buíoch</A> <S>do</S>:BACHOIR{de}
+<A pl="n" gnt="n">buíoch</A> <S>don</S>:BACHOIR{den}
+<A pl="n" gnt="n">buíoch</A> <O>dom</O>:BACHOIR{díom}
+<A pl="n" gnt="n">buíoch</A> <O>duit</O>:BACHOIR{díot}
+<A pl="n" gnt="n">buíoch</A> <O>dó</O>:BACHOIR{de}
+# "di" same for do/de!  (and possessives <D>dár?</D> same too)
+<A pl="n" gnt="n">buíoch</A> <O>dúinn</O>:BACHOIR{dínn}
+<A pl="n" gnt="n">buíoch</A> <O>daoibh</O>:BACHOIR{díbh}
+<A pl="n" gnt="n">buíoch</A> <O>dóibh</O>:BACHOIR{díobh}
 #. Cad déarfaidh mé libh mar sin?
 <Q>INITIALC</Q> <VNOTCOP>ANYTHING</VNOTCOP>:BACHOIR{a}
 <Q>INITIALC</Q> <VNOTCOP>JUSTATA</VNOTCOP>:OK
@@ -1231,8 +1252,13 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 #   problems:  "molaim é", "duine a mhol é", etc.
 # <VPERS>ANYTHING</VPERS> <P>é</P>:BACHOIR{sé}
 # <VIMP>ANYTHING</VIMP> <P>é</P>:OK
+# corpus
+<A>[Éé]agosúi?la?</A>:IONADAI{éagsúil, éagsúla}
 # CB p.55
 <S>DATIVEPREP</S> <N>EIRE</N>:BACHOIR{Éirinn}
+# corpus; eirí is pl. eire
+<S>[Aa]g</S> <N pl="y" gnt="n" gnd="m">[Ee]irí</N>:IONADAI{ag éirí}
+<N pl="y" gnt="n" gnd="m">[Ee]irí</N> [Aa]s:IONADAI{éirí as}
 <S>[Ff]á</S>:CAIGHDEAN{faoi}
 # corpus with and without lenition
 <N>fh?aid</N> <V cop="y">is</V>:IONADAI{fad is}
