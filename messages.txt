@@ -66,5 +66,7 @@ TRESSATREYLYANS		'Third (breathed) mutation missing'
 PESWARATREYLYANS	'Fourth (hard) mutation missing'
 PYMPESTREYLYANS		'Fifth (mixed) mutation missing'
 PYMPESTREYLYANSTH	'Fifth (mixed) mutation after \'th missing'
+# TRANSLATORS: Rules specific to the Welsh language (cy)
+LLAES			'Aspirate mutation missing'
 # TRANSLATORS: Rules specific to the Igbo language (ig)
 VOWELHARMONY		'This word violates the rules of Igbo vowel harmony'
