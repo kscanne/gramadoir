@@ -938,6 +938,8 @@ g?[Cc]h?eathair:INPHRASE{a ceathair, faoi cheathair}
 <S>[Cc]huig</S> <P>([Mm]uid|[Ss]inn)</P>:BACHOIR{chugainn}
 <S>[Cc]huig</S> <P>[Ss]ibh</P>:BACHOIR{chugaibh}
 <S>[Cc]huig</S> <P>[Ii]ad</P>:BACHOIR{chucu}
+# CB p.24 #11.a.x; corpus examples lenited/eclipsed
+g?[Cc]h?úig uaire?:BACHOIR{huaire}
 # CB p.13 #3.f, p.76 #8.b
 #. Bhí sé cúig bhanlámh ar fhad, cúig banlámh ar leithead.
 g?[Cc]h?úig <N>UNLENITED</N>:SEIMHIU
@@ -1122,6 +1124,7 @@ n?[Dd]h?eich <N pl="n" gnt="n" gnd="m">g[Cc]loigeann</N>:BACHOIR{gcloigne}
 n?[Dd]h?eich <N pl="n" gnt="n" gnd="f">g[Cc]uairt</N>:BACHOIR{gcuarta}
 n?[Dd]h?eich <N pl="n" gnt="n" gnd="m">bh[Ff]iche</N>:BACHOIR{bhfichid}
 n?[Dd]h?eich <N pl="n" gnt="n" gnd="f">[Ss]eachtain</N>:BACHOIR{seachtaine}
+n?[Dd]h?eich <N pl="n" gnt="n" gnd="f">n-uair</N>:BACHOIR{n-uaire}
 # NGBC p.184, CB p.76 #8.a
 n?[Dd]h?eich <NP>ANYTHING</NP>:UATHA
 n?[Dd]h?eich <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
@@ -1890,6 +1893,7 @@ Fh?éile <Y>CAPITALLENITED</Y>:NISEIMHIU
 <[^Y]>[Nn]aoi</[^Y]> <N pl="n" gnt="n" gnd="f">g[Cc]uairt</N>:BACHOIR{gcuarta}
 <[^Y]>[Nn]aoi</[^Y]> <N pl="n" gnt="n" gnd="m">bh[Ff]iche</N>:BACHOIR{bhfichid}
 <[^Y]>[Nn]aoi</[^Y]> <N pl="n" gnt="n" gnd="f">[Ss]eachtain</N>:BACHOIR{seachtaine}
+<[^Y]>[Nn]aoi</[^Y]> <N pl="n" gnt="n" gnd="f">n-uair</N>:BACHOIR{n-uaire}
 # NGBC p.184, CB p.76 #8.a
 <[^Y]>[Nn]aoi</[^Y]> <NP>ANYTHING</NP>:UATHA
 <[^Y]>[Nn]aoi</[^Y]> <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
@@ -2054,6 +2058,7 @@ h?[Oo]ocht <N pl="n" gnt="n" gnd="m">g[Cc]loigeann</N>:BACHOIR{gcloigne}
 h?[Oo]ocht <N pl="n" gnt="n" gnd="f">g[Cc]uairt</N>:BACHOIR{gcuarta}
 h?[Oo]ocht <N pl="n" gnt="n" gnd="m">bh[Ff]iche</N>:BACHOIR{bhfichid}
 h?[Oo]ocht <N pl="n" gnt="n" gnd="f">[Ss]eachtain</N>:BACHOIR{seachtaine}
+h?[Oo]ocht <N pl="n" gnt="n" gnd="f">n-uair</N>:BACHOIR{n-uaire}
 # NGBC p.184, CB p.76 #8.a
 h?[Oo]cht <NP>ANYTHING</NP>:UATHA
 h?[Oo]cht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
@@ -2257,6 +2262,7 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITABLEADJ</A>:
 [Ss]h?eacht <N pl="n" gnt="n" gnd="f">g[Cc]uairt</N>:BACHOIR{gcuarta}
 [Ss]h?eacht <N pl="n" gnt="n" gnd="m">bh[Ff]iche</N>:BACHOIR{bhfichid}
 [Ss]h?eacht <N pl="n" gnt="n" gnd="f">[Ss]eachtain</N>:BACHOIR{seachtaine}
+[Ss]h?eacht <N pl="n" gnt="n" gnd="f">n-uair</N>:BACHOIR{n-uaire}
 # NGBC p.184, CB p.76 #8.a
 [Ss]h?eacht <NP>ANYTHING</NP>:UATHA
 [Ss]h?eacht <NP>(mbliana|gcinn|gcloigne|bhfichid|n-uaire)</NP>:OK
