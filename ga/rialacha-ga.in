@@ -2851,7 +2851,7 @@ d?[tT]h?rí|g?[Cc]h?eithre|[Ss]h?é <E><NWITHH>huaire</NWITHH></E>:OK
 #. Tá a chuid leabhar tiontaithe go dhá theanga fichead (OK).
 #. Tá dún cosanta eile ar an taobh thoir den oileán (OK).
 #. Déan teagmháil leis an Rannóg ag an seoladh thuasluaite (OK).
-<A>([Dd]há|[Cc]héad|[Tt]heas|[Tt]hoir|[Tt]huasluaite)</A>:OK
+<A>([Dd]há|[Cc]héad|[Tt]heas|[Tt]hoir|[Tt]huasluaite|[Tt]híosluaite)</A>:OK
 <[CDST]>ANYTHING</[CDST]> <E><A>([Tt]hrí|[Cc]heithre|[Cc]húig|[Ss]hé|[Ss]heacht|[Dd]heich)</A></E>:OK
 <[CDST]>ANYTHING</[CDST]> <E><A>ORDINALADJ</A></E>:OK
 <[CDST]>ANYTHING</[CDST]> <E><A>[Dd]hara</A></E>:OK
