@@ -2342,6 +2342,7 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNLENITABLEADJ</A>:
 # CB p.22 #7.g, p.132 #4
 #. Iompróidh siad thú lena lámha sula bhuailfeá do chos in aghaidh cloiche.
 <C>[Ss]ula</C> UNECLIPSED:URU
+<C>[Ss]ula</C> <R>i bhfad</R>:OK
 # CB p.132 #4
 <C>[Ss]ular</C> <VNOTPAST>ANYTHING</VNOTPAST>:BACHOIR{sula}
 # CB p.133 #12.a
