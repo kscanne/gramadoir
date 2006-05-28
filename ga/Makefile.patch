@@ -1,5 +1,5 @@
---- Makefile	2005-11-29 15:35:03.000000000 -0600
-+++ Makefile.ok	2005-11-29 15:34:50.000000000 -0600
+--- Makefile	2006-03-17 14:02:12.000000000 -0600
++++ Makefile.ok	2006-03-17 14:02:05.000000000 -0600
 @@ -74,6 +74,15 @@
  
  Makefile : $(GRAMDIR)/Makefile-xx.in configure
@@ -76,7 +76,7 @@
 +# use "groom" instead of this directly (since it requires ispell personal, etc.)
 +lexfromdb : FORCE
 +	Gin 12
-+	((cat ${HOME}/.ispell_gaeilge $(ISPELLDIR)/ispell-gaeilge/uimhreacha $(ISPELLDIR)/ispell-gaeilge/apost; cat ${HOME}/.biobla | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | aspell -dga -p${HOME}/.aspell.blank.pws -l) | sed 's/.*/& 44/'; cat FOCAIL) | $(PERL) -p posmap.pl | LC_COLLATE=POSIX sort -u -k1,1 -k2,2n > lexicon-ga.txt
++	((cat ${HOME}/.ispell_gaeilge $(ISPELLDIR)/ispell-gaeilge/uimhreacha $(ISPELLDIR)/ispell-gaeilge/apost; cat ${HOME}/.biobla | ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | aspell -dga -p${HOME}/.aspell.blank.pws list) | sed 's/.*/& 44/'; cat FOCAIL) | $(PERL) -p posmap.pl | LC_COLLATE=POSIX sort -u -k1,1 -k2,2n > lexicon-ga.txt
 +	$(MAKE) rebuildlex
 +	rm -f FOCAIL
 +
