@@ -59,7 +59,7 @@ s/ECLIPSEDDT/(?:d[Tt]|n[Dd])[^<]+/g;
 s/ECLIPSEDBCFGP/(?:g[Cc]|b[Pp]|m[Bb]|n[Gg]|bh[fF])[^<]+/g;
 s/ECLIPSED/(?:n(?:-[aeiouáéíóú]|[AEIOUÁÉÍÓÚ])|d[Tt]|g[Cc]|b[Pp]|m[Bb]|n[DdGg]|bh[fF])[^<]*/g;
 s/MAYBEECLIPSINGNUMBER/(?:[1-9][0-9]*[789]|[0-9]*10)/g;
-s/ECLIPSINGNUMBER/(?:n?[Dd]h?eich|[Nn]aoi|(?:h|[mbd]')?[Oo]cht|[Ss]h?eacht|[789]|10)/g;
+s/ECLIPSINGNUMBER/(?:n?[Dd]h?eich|[Nn]aoi|(?:h|[mbd]'|n-)?[Oo]cht|[Ss]h?eacht|[789]|10)/g;
 s/ECLIPSINGPOSS/(?:(?:[Ff]aoin|[Ii]n|[Ll]en|[Óó]n|[Tt]rín)?(?:[Aa]|ár)|[Dd]?[Áá]r?|[Bb]hur|[Aa]rna)/g;
 # include "uile" etc. now - better name is "non-binding" adjs!
 s/UNLENITABLEADJ/(?:bainte|caite|céad|cibé|curtha|déanta|deich|dulta|fágtha|faighte|gach|seacht|seo|sin|suite|t[au]gtha|uile)/g;
@@ -176,6 +176,7 @@ s/ANYPASTAUT/(?:<[^>]+>)*<V p="n" t="caite".>(?:<[^>]+>)*/g;
 s/ANYPAST/(?:<[^>]+>)*<V p="y" t="caite".>(?:<[^>]+>)*/g;
 s/ANYSUBJ/(?:<[^>]+>)*<V p="y" t="foshuit".>(?:<[^>]+>)*/g;
 s/ANYVERB/(?:<[^>]+>)*<V[^>]+>(?:<[^>]+>)*/g;
+s/ANYNONCOPVERB/(?:<[^>]+>)*<V p=[^>]+>(?:<[^>]+>)*/g;
 s/NOVERBS/(?:<[^V][^>]*>)+/g;
 s/NMWITHHIMPER/<N pl="n" gnt="n" gnd="m" h="y".><V p="y" t="ord".>/g;
 s/NFWITHHIMPER/<N pl="n" gnt="n" gnd="f" h="y".><V p="y" t="ord".>/g;

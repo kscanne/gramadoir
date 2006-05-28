@@ -26,6 +26,8 @@
 <B>raibh</B>:<V p="y" t="caite">
 <B>té</B>:<P>
 <B>[Bb]huaigh</B>:<V p="y" t="caite">
+# Céadaoin an Bhraith
+[Aa]n <B>[Bb]hraith</B>:<N pl="n" gnt="y" gnd="m">
 <B>[Bb]hraith</B>:<V p="y" t="caite">
 <B>[Tt]har</B>:<S>
 # Before a verb it's "not", not "sang"
@@ -82,7 +84,9 @@
 <B><Z>ANYCOPULA</Z>ANYTHING</B> <A pl="n" gnt="n" h="y">(heagal|hionann)</A>:<V cop="y">
 <B><Z>ANYCOPULA</Z>ANYTHING</B> <A pl="n" gnt="y" gnd="f">(fh?earr|mh?ó|mh?óide)</A>:<V cop="y">
 <B><Z>ANYCOPULA</Z>ANYTHING</B> <A>(h?iomaí|léir|náir)</A>:<V cop="y">
+# next two are exceptions to the one following
 <B>an</B> mhaith:<T>
+<B>ar</B> ea:<S>
 <B><Z>ANYCOPULA</Z>ANYTHING</B> cóir|cuma|deacair|dh?éanaí|deimhin|dh?ual|h?ea|éard|fiú|gh?nách|mh?aith|mh?ithid:<V cop="y">
 # lowercase ach under last resorts
 <B>Ach</B>:<C>
@@ -126,6 +130,7 @@
 <S>ANYTHING</S> <B>[Aa]n</B>:<T>
 <B>[Aa]nuas</B>:<R>
 [Mm]ar <B>aon</B>:<N pl="n" gnt="n" gnd="m">
+<B>aon</B> <S>le</S>:<N pl="n" gnt="n" gnd="m">
 <B>[Aa]on</B>:<A pl="n" gnt="n">
 # "ag breathrú ar an ár"  (common form would have "t-")
 <T>[Aa]n</T> <B>ár</B>:<N pl="n" gnt="n" gnd="m">
@@ -150,6 +155,7 @@
 <B>[Cc]á</B> <V>ANYTHING</V>:<Q>
 <B>[Cc]á</B> UNECLIPSED:<V cop="y">
 # friends, not credit
+<T>[Nn]a</T> <B>g[Cc]airde</B>:<N pl="y" gnt="y" gnd="m">
 <B>g?[Cc]h?airde</B>:<N pl="y" gnt="n" gnd="m">
 <B>[Cc]ár</B> <V>ANYTHING</V>:<Q>
 <B>[Cc]ár</B> LENITED:<Q>
@@ -180,6 +186,8 @@ d?[Tt]h?rí <B>[Bb]liana</B>:<N pl="y" gnt="n" gnd="f">
 <S>FUSEDPREP</S> <B>[Cc]heathrú</B>:<A pl="n" gnt="n">
 <B>g?[Cc]h?eathrú</B> <N>UNLENITED</N>:<A pl="n" gnt="n">
 <B>g?[Cc]h?eathrú</B> <NWITHH>ANYTHING</NWITHH>:<A pl="n" gnt="n">
+# fixes "rith chun síl", "cuir chun siúil"
+<S>([Cc]huig|[Cc]hun)</S> <B><Z>ANYNONCOPVERB</Z>ANYTHING</B>:!<V p[^>]+>
 # foilsitheoir, not "kick"
 <B>CIC</B>:<Y>
 # else gets <V> :(
@@ -193,6 +201,7 @@ d?[Tt]h?rí <B>[Bb]liana</B>:<N pl="y" gnt="n" gnd="f">
 <B>g?ch?ónaí</B>:<N pl="n" gnt="n" gnd="m">
 # since if it gets nb2, will want lenition on cainte
 <B>[Cc]ora</B> <N pl="n" gnt="y" gnd="f">[Cc]ainte</N>:<N pl="y" gnt="n" gnd="m">
+<B>[Cc]ora</B> [Cc]rua:<N pl="y" gnt="n" gnd="m">
 # lenition => prob not imperative
 # "de réir an chuir síos", etc.
 <T>an</T> <B>[Cc]huir</B>:<N pl="n" gnt="y" gnd="m">
@@ -236,6 +245,8 @@ g?ch?éad <B>dá</B>:<A pl="n" gnt="n">
 # numerical, last resort <O> at bottom if not noun via Brill xforms
 a <B>dó</B>:<N pl="n" gnt="n">
 <T>an</T> <B>dó</B>:<A pl="n" gnt="n">
+# dó gréine, ~ seaca, etc.
+<B>[Dd]ó</B> <NG>ANYTHING</NG>:<N pl="n" gnt="n" gnd="m">
 # imperative only other choice; this speeds up "dóigh a:<H>" below
 <B>dóigh</B>:<N pl="n" gnt="n" gnd="f">
 # logainmneacha
@@ -302,6 +313,7 @@ a <B>[Ll]inne</B>:<N pl="n" gnt="y" gnd="f">
 <B>[Ll]inne</B>:<O em="y">
 <B>[Mm]á</B> <V>ANYTHING</V>:<C>
 # esp. important to get "mhaith" right else "NISEIMHIU" adj errors
+[Óó] <B>mhaith</B>:<N pl="n" gnt="n" gnd="f">
 <S>ANYTHING</S> <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
 <Q>[Cc]én</Q> <B>mh?aith</B>:<N pl="n" gnt="n" gnd="f">
 # "an" resolved as <T> above (copula rules)
@@ -355,8 +367,13 @@ a <B>[Ll]inne</B>:<N pl="n" gnt="y" gnd="f">
 <B>[Rr]inne</B>:<V p="y" t="caite">
 <B>San</B> CAPITAL:<N pl="n" gnt="n">
 <B>San</B>:<S>
-# gender problem?
-<T>na</T> <B>sí</B>:<N pl="n" gnt="y" gnd="m">
+# gender problem?  - need this tag right or get "BACHOIR{í}" errors
+<N pl="n" gnt="n" gnd="f">m?bh?ean</N> <B>[Ss]í</B>:<N pl="n" gnt="y" gnd="m">
+<N pl="y" gnt="y" gnd="f">m?bh?an</N> <B>[Ss]í</B>:<N pl="n" gnt="y" gnd="m">
+<N>(leannán|long|aos|n?dh?uine|n?dh?aoine|sh?lua)</N> <B>[Ss]í</B>:<N pl="n" gnt="y" gnd="m">
+<B>[Ss]í</B> <N pl="n" gnt="y" gnd="f">gaoithe</N>:<N pl="n" gnt="y" gnd="m">
+<B>[Ss]í</B> <N pl="n" gnt="y" gnd="m">deannaigh</N>:<N pl="n" gnt="y" gnd="m">
+<T>[Nn]a</T> <B>[Ss]í</B>:<N pl="n" gnt="y" gnd="m">
 # capital Sí is sometimes the noun; need for sé below
 <B>sí</B>:<P>
 Ó <B>Sé</B>:<Y>
