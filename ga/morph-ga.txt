@@ -246,6 +246,8 @@ uithe$			ú		0	<N.*>	<&>
 ^h?úir			úr		1	<.+>	<&>
 # deán for déan
 ^(n?dh?)eán		$1éan		1	<V.*>	<&>
+chd(a?)$		cht$1		1	<N.*>	<&>    # masc too (achd, m.sh.)
+óanna$			ónna		1	<N.*>	<&>	# common!  clóanna, seóanna, gnóanna, srl.
 #   Now various general spelling reforms from CO handbook
 ai(cht?ín)		a$1		1	<.+>	<&>    # CO p.120, smaichtín
 sg			sc		1	<.+>	<&>    # CO p.115
@@ -392,13 +394,22 @@ mist$			mis		1	<V.*>	<&>
 #   common spelling errors
 iri$			irí		2	<N.*>	<&>
 uil$			úil		2	<A.*>	<&>
+iúl$			iúil		2	<A.*>	<&>
 (.[^aeiouáéíóú])ala$	$1ála		2	<N.*>	<&>
 ula$			úla		2	<A.*>	<&>
 eail$			eáil		2	<.+>	<&>    # common missing accent
+eor$			eoir		2	<N.*>	<&>
 u$			ú		2	<N.*>	<&>
 aioch(ta?)$		aíoch$1		2	<N.*>	<&>
 #chtai$			chtaí		2	<N.*>	<&>
 ai$			aí		2	<.+>	<&>
+éá			éa		2	<.+>	<&>  # held down alt too long; "éa" is only diphthong with "a" as second letter, and none with e/u
+([áéóú])í		$1i		2	<.+>	<&>
+íó			ío		2	<.+>	<&>
+# places where the second vowel is the one with the fada are rarer - most of
+# them are "aí", then "eá", "iú", "uí", then noise -- all but "iú" conflict
+# with a resolution above; áí is, e.g., almost always a mistake for "ái" !
+í([áú])			i$1		2	<.+>	<&>
 # i$			í		2	<.+>	<&>  # lotsa false compounds with this
 #############################################################################
 #  rules with somewhat lower probability (e.g. fo-, must be after non-stnd
