@@ -377,6 +377,7 @@ mist$			mis		1	<V.*>	<&>
 ái(lf?)idís$		á$1aidís	1	<V.*>	<&>
 áltar$			áiltear		1	<V.*>	<&>
 álta$			áilte		1	<A.*>	<&>
+álaithe$		áilte		1	<A.*>	<&>
 álanna$			álacha		1	<N.*>	<&>  # nb3 pl
 #############################################################################
 #  emphatic suffixes
@@ -399,8 +400,16 @@ iúl$			iúil		2	<A.*>	<&>
 ula$			úla		2	<A.*>	<&>
 eail$			eáil		2	<.+>	<&>    # common missing accent
 eor$			eoir		2	<N.*>	<&>
+ionn$			íonn		2	<V.*>	<&>
+itear$			ítear		2	<V.*>	<&>
+iodh$			íodh		2	<V.*>	<&>
+([^e])oidh$		$1óidh		2	<V.*>	<&>
+([^e])ofar$		$1ófar		2	<V.*>	<&>
 u$			ú		2	<N.*>	<&>
-aioch(ta?)$		aíoch$1		2	<N.*>	<&>
+aio			aío		2	<.+>	<&>
+leir			léir		2	<.+>	<&>
+^(g?ch?)om([^haómnpr]..)	$1omh$2		2	<.+>	<&>
+#aioch(ta?)$		aíoch$1		2	<N.*>	<&>   # see prev.
 #chtai$			chtaí		2	<N.*>	<&>
 ai$			aí		2	<.+>	<&>
 éá			éa		2	<.+>	<&>  # held down alt too long; "éa" is only diphthong with "a" as second letter, and none with e/u
