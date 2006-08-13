@@ -14,6 +14,7 @@ s/CAPVOWEL/[AEIOU¡…Õ”⁄][^<]*/g;
 s/CAPVOWELWITHH/h[AEIOU¡…Õ”⁄][^<]*/g;
 s/LENITEDFUTURE/[Gg]heo[^<]+/g;
 s/ABAIRPAST/[Dd]˙(?:irt|ra[dm]ar|radh)/g;
+# actually this is PResent, FUture, but also imperfect, conditional!
 s/ABAIRPRFU/[Dd](?:eir|Èar)[^<]*/g;
 s/FAIGHFC/bhfaigh[^<]+/g;
 s/ABSPASTVERB/(?:rinne[^<]*|chonai?c[^<]*|chua(?:igh|[md]ar|thas)|bhÌ(?:o[md]ar|othas)?)/g;
@@ -62,7 +63,7 @@ s/MAYBEECLIPSINGNUMBER/(?:[1-9][0-9]*[789]|[0-9]*10)/g;
 s/ECLIPSINGNUMBER/(?:n?[Dd]h?eich|[Nn]aoi|(?:h|[mbd]'|n-)?[Oo]cht|[Ss]h?eacht|[789]|10)/g;
 s/ECLIPSINGPOSS/(?:(?:[Ff]aoin|[Ii]n|[Ll]en|[”Û]n|[Tt]rÌn)?(?:[Aa]|·r)|[Dd]?[¡·]r?|[Bb]hur|[Aa]rna)/g;
 # include "uile" etc. now - better name is "non-binding" adjs!
-s/UNLENITABLEADJ/(?:bainte|caite|cÈad|cibÈ|curtha|dÈanta|deich|dulta|f·gtha|faighte|gach|seacht|seo|sin|suite|t[au]gtha|uile)/g;
+s/UNLENITABLEADJ/(?:bainte|caite|cÈad|cibÈ|curtha|dÈanta|deich|dulta|f·gtha|faighte|gach|seacht|[Ss]eo|[Ss]in|suite|t[au]gtha|uile)/g;
 s/UNLENITABLE/(?:[^BbCcDdFfGgMmPpTt]|[Ss][^lnraeiou·ÈÌÛ˙])[^<]*/g;
 s/UNLENITEDBCGMP/[BbCcGgMmPp][^Hh'][^<]*/g;
 s/UNLENITEDBCFGMP/(?:[BbCcFfGgMmPp][^Hh']|bh[fF])[^<]*/g;
@@ -76,8 +77,10 @@ s/LENITEDF/[Ff][Hh][aeiou·ÈÌÛ˙][^<]*/g;
 s/ORDINALADJ/(?:[^<][^<]*[^m]|[0-9]+)˙/g;
 s/PREFIXEDT/t(?:[AEIOU¡…Õ”⁄]|-[aeiou·ÈÌÛ˙])[^<]+/g;
 s/EIRE/(?:[nh])?…ire(?:ann)?/g;
-s/NGMPERSON/(?:[^<]+(?:[Û˙]ra|eora|Èara|aÌ)|cailÌn|duine|fir|p·iste)/g;
-s/NGFPERSON/(?:baintrÌ|clainne|mn·)/g;
+s/LENITEDNGMPERSON/(?:(?:[CcDdFfGgMmPpSsTt][Hh]|[Bb]h[^fF])[^<]+(?:[Û˙]ra|eora|Èara|aÌ)|chailÌn|dhuine|fhir|ph·iste|bhuachalla)/g;
+s/LENITEDNGFPERSON/(?:bhaintrÌ|chlainne|mhn·|ghirsÌ)/g;
+s/NGMPERSON/(?:[^<]+(?:[Û˙]ra|eora|Èara|aÌ)|cailÌn|duine|fir|p·iste|buachalla)/g;
+s/NGFPERSON/(?:baintrÌ|clainne|mn·|girsÌ)/g;
 s/REGULARPOSS/(?:[MmDd]o|[Aa]|[¡·]r|[Bb]hur)/g;
 # gan/chun/ainneoin disallow "[^ >]+n"
 s/FUSEDPOSS/(?:[Dd]·r?|(?:[Ff]aoi|[Ii]|[Ll]e|[Tt]rÌ)n(?:a|·r))/g;
@@ -119,8 +122,9 @@ s/NOTDO/[^<][^<][^<]+/g;
 # used with FEMVN above so no need to repeat "·il", etc.
 # "c˙is" should not be here; "c˙is ghear·in", etc. are correct
 # "cÈim" is a mixed bag in OD depending on semantics
-s/FEMABSTRACT/(?:[^<]+(?:[ao]cht|Ìl)|h?[Aa]cmhainn|h?[Aa]irde|(?:bh)?[Ff]h?(?:airsinge|earg|inne)|n?[Gg]h?ÈarchÈim|h?[ÕÌ]de|[Ll]aige|[Mm]h?aise|h?[Oo]iread|h?[”Û]ige|t?[Ss]cÈim|t?[Ss]h?aoirse)/g;
-s/QUANTITYWORD/(?:[Aa]ilp|m?[Bb]h?ailc|(?:an-|g)?[Cc]h?uid|m?[Bb]h?arraÌocht|m?[Bb]h?reis|n?[Dd]h?Ìth|n?[Dd]h?Ûthain|h?[…È]agmais|h?[Ee]aspa|h?[Ii]omarca|[Ll]eath|[Rr]oinnt)/g;
+s/FEMABSTRACTRESTRICTED/(?:[^<]+Ìl|h?[Aa]cmhainn|h?[Aa]irde|h?[Aa]ois|h?[…È]iric|(?:bh)?[Ff]h?(?:airsinge|earg|inne)|n?[Gg]h?ÈarchÈim|h?[ÕÌ](?:d|sl)e|[Ll]aige|[Mm]h?aise|h?[Oo]iread|h?[”Û]ige|t?[Ss]h?aoirse|d?[Tt]h?itim)/g;
+s/FEMABSTRACT/(?:[^<]+[ao]cht|t?[Ss]cÈim)/g;
+s/QUANTITYWORD/(?:[Aa]ilp|(?:h?an-|g|n?gh?ann|mh?Ûr|g?ch?aol|leath)?[Cc]h?uid|m?[Bb]h?arraÌocht|m?[Bb]h?reis|n?[Dd]h?Ìolaim|n?[Dd]h?Ìth|n?[Dd]h?Ûthain|h?[…È]agmais|h?[Ee]aspa|(?:bh)?fh?l˙irse|h?[Ii]omarca|[Ll]eath|[Rr]aidhse|[Rr]oinnt)/g;
 s/INITIALC/[Cc][^<]+/g;
 s/INITIALDST/[DdSsTt][^<]+/g;
 s/INITIALF/[Ff][^<]+/g;
