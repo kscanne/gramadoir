@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNU gramadoir 0.6\n"
 "Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
-"POT-Creation-Date: 2005-09-21 18:49+0000\n"
+"POT-Creation-Date: 2006-03-07 21:35-0600\n"
 "PO-Revision-Date: 2005-03-23 08:00-0500\n"
 "Last-Translator: Michel Robitaille <robitail@IRO.UMontreal.CA>\n"
 "Language-Team: French <traduc@traduc.org>\n"
@@ -68,8 +68,8 @@ msgstr "Le langage %s n'est pas supporté."
 #. "o" in "Gramadoir" if available in your character set and encoding.
 #. If you must translate, this is the Irish for (literally) "The Grammarian"
 #: gram.pl:185 gram.pl:248 gramdev.pl:93 gramdev.pl:118 Gramadoir.pm.in:119
-#: Gramadoir.pm.in:176 Gramadoir.pm.in:290 Gramadoir.pm.in:293
-#: Gramadoir.pm.in:494 Gramadoir.pm.in:805
+#: Gramadoir.pm.in:176 Gramadoir.pm.in:291 Gramadoir.pm.in:294
+#: Gramadoir.pm.in:495 Gramadoir.pm.in:803
 msgid "An Gramadoir"
 msgstr "Un Gramadoir"
 
@@ -244,24 +244,24 @@ msgid "%s: `%s' corrupted at %s\n"
 msgstr "%s: « %s » corrompu à %s\n"
 
 #. TRANSLATORS: "conversion" here means conversion between character encodings
-#: Gramadoir.pm.in:227 Gramadoir.pm.in:544 Gramadoir.pm.in:659
-#: Gramadoir.pm.in:693 Gramadoir.pm.in:716 Gramadoir.pm.in:773
-#: Gramadoir.pm.in:837
+#: Gramadoir.pm.in:227 Gramadoir.pm.in:545 Gramadoir.pm.in:662
+#: Gramadoir.pm.in:697 Gramadoir.pm.in:720 Gramadoir.pm.in:765
+#: Gramadoir.pm.in:913
 #, perl-format
 msgid "conversion from %s is not supported"
 msgstr "la conversion 'a partir de %s n'est pas supportée"
 
-#: Gramadoir.pm.in:290 Gramadoir.pm.in:493
+#: Gramadoir.pm.in:291 Gramadoir.pm.in:494
 #, perl-format
 msgid "%s: illegal grammatical code\n"
 msgstr "%s: code grammatical illégal\n"
 
-#: Gramadoir.pm.in:293
+#: Gramadoir.pm.in:294
 #, perl-format
 msgid "%s: no grammar codes: %s\n"
 msgstr "%s: pas de codes de grammaire: %s\n"
 
-#: Gramadoir.pm.in:804
+#: Gramadoir.pm.in:802
 #, perl-format
 msgid "%s: unrecognized error macro: %s\n"
 msgstr "%s: erreur macro non reconnue: %s\n"
@@ -290,9 +290,8 @@ msgid "The singular form is required here"
 msgstr "La forme au singulier est requise ici"
 
 #: messages.txt:9
-#, fuzzy
 msgid "Plural adjective required"
-msgstr "adjectif comparatif nécessaire"
+msgstr ""
 
 #: messages.txt:10
 msgid "Comparative adjective required"
@@ -315,9 +314,8 @@ msgid "The genitive case is required here"
 msgstr "le cas génitif est requis ici"
 
 #: messages.txt:15
-#, fuzzy
 msgid "You should use the present tense here"
-msgstr "Vous devriez utiliser \\/\\1\\/ ici à la place"
+msgstr ""
 
 #: messages.txt:16
 msgid "It seems unlikely that you intended to use the subjunctive here"
@@ -394,11 +392,11 @@ msgstr ""
 
 #: messages.txt:36
 msgid "Gender disagreement"
-msgstr ""
+msgstr "Erreur de genre"
 
 #: messages.txt:37
 msgid "Number disagreement"
-msgstr ""
+msgstr "Erreur de nombre"
 
 #: messages.txt:38
 msgid "Case disagreement"
@@ -505,8 +503,13 @@ msgstr "Quatrième mutation (mixte) manquante"
 msgid "Fifth (mixed) mutation after 'th missing"
 msgstr "Cinquième mutation (mixte) après la nième manquante"
 
-#. TRANSLATORS: Rules specific to the Igbo language (ig)
+#. TRANSLATORS: Rules specific to the Welsh language (cy)
 #: messages.txt:70
+msgid "Aspirate mutation missing"
+msgstr ""
+
+#. TRANSLATORS: Rules specific to the Igbo language (ig)
+#: messages.txt:72
 msgid "This word violates the rules of Igbo vowel harmony"
 msgstr ""
 
