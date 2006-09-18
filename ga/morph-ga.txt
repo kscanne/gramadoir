@@ -393,25 +393,32 @@ mist$			mis		1	<V.*>	<&>
 ([eiéí][^aeiouáéíóú-]*n)-ne$			$1	0	<[NV].*>	<&>
 #############################################################################
 #   common spelling errors
-iri$			irí		2	<N.*>	<&>
+# iri$			irí		2	<N.*>	<&>
 uil$			úil		2	<A.*>	<&>
 iúl$			iúil		2	<A.*>	<&>
 (.[^aeiouáéíóú])ala$	$1ála		2	<N.*>	<&>
 ula$			úla		2	<A.*>	<&>
 eail$			eáil		2	<.+>	<&>    # common missing accent
+([^ae])oir$		$1óir		2	<.+>	<&>
+([^ae])ora$		$1óra		2	<.+>	<&>
 eor$			eoir		2	<N.*>	<&>
 ionn$			íonn		2	<V.*>	<&>
 itear$			ítear		2	<V.*>	<&>
 iodh$			íodh		2	<V.*>	<&>
 ([^e])oidh$		$1óidh		2	<V.*>	<&>
 ([^e])ofar$		$1ófar		2	<V.*>	<&>
+# next batch from ngramprobs.pl
 u$			ú		2	<N.*>	<&>
-aio			aío		2	<.+>	<&>
+#chtai$			chtaí		2	<N.*>	<&>
+#ai$			aí		2	<.+>	<&>
+(...)i$			$1í		2	<.+>	<&>
+iu			iú		2	<.+>	<&>
+no			nó		2	<.+>	<&>
+# aio			aío		2	<.+>	<&>
+#aioch(ta?)$		aíoch$1		2	<N.*>	<&>   # see prev.
+io			ío		2	<.+>	<&>
 leir			léir		2	<.+>	<&>
 ^(g?ch?)om([^haómnpr]..)	$1omh$2		2	<.+>	<&>
-#aioch(ta?)$		aíoch$1		2	<N.*>	<&>   # see prev.
-#chtai$			chtaí		2	<N.*>	<&>
-ai$			aí		2	<.+>	<&>
 éá			éa		2	<.+>	<&>  # held down alt too long; "éa" is only diphthong with "a" as second letter, and none with e/u
 ([áéóú])í		$1i		2	<.+>	<&>
 íó			ío		2	<.+>	<&>
