@@ -466,16 +466,18 @@
 <E offset="57" fromy="463" fromx="57" toy="463" tox="58" sentence="Déan teagmháil leis an Rannóg ag an seoladh thuasluaite (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
 <E offset="9" fromy="464" fromx="9" toy="464" tox="17" sentence="Ritheann an Sláine tríd an pháirc." errortext="an Sláine" msg="Cor cainte aisteach">
 <E offset="61" fromy="465" fromx="61" toy="465" tox="62" sentence="Nochtadh na fírinne sa dóigh a n-admhódh an té is bréagaí í (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="47" fromy="466" fromx="47" toy="466" tox="56" sentence="Tá a chumas sa Ghaeilge níos airde ná cumas na bhfear óga." errortext="bhfear óga" msg="Tá gá leis an leagan uatha anseo">
-<E offset="37" fromy="467" fromx="37" toy="467" tox="38" sentence="Beirt bhan Mheiriceánacha a bhí ann (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="38" fromy="468" fromx="38" toy="468" tox="39" sentence="Tá sé-- tá sé- mo ---shin-seanathair (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="3" fromy="469" fromx="3" toy="469" tox="8" sentence="Is foláir dóibh a ndualgais a chomhlíonadh." errortext="foláir" msg="Ní úsáidtear an focal seo ach san abairtín «ní foláir» de ghnáth">
-<E offset="23" fromy="470" fromx="23" toy="470" tox="24" sentence="Bhain na toibreacha le re eile agus le dream daoine atá imithe." errortext="re" msg="Ní úsáidtear an focal seo ach san abairtín «gach re» de ghnáth">
-<E offset="14" fromy="471" fromx="14" toy="471" tox="17" sentence="Labhair mé ar shon na daoine." errortext="shon" msg="Ní úsáidtear an focal seo ach san abairtín «ar son» de ghnáth">
-<E offset="37" fromy="472" fromx="37" toy="472" tox="39" sentence="Tá sé tábhachtach bheith ag obair an son na cearta." errortext="son" msg="Ní úsáidtear an focal seo ach san abairtín «ar son» de ghnáth">
-<E offset="5" fromy="473" fromx="5" toy="473" tox="24" sentence="Ba é an fear an phortaigh a tháinig thart leis na plátaí bia." errortext="an fear an phortaigh" msg="Níl gá leis an alt cinnte anseo">
-<E offset="20" fromy="474" fromx="20" toy="474" tox="44" sentence="Tá dhá shiombail ag an bharr gach leathanaigh." errortext="an bharr gach leathanaigh" msg="Níl gá leis an alt cinnte anseo">
-<E offset="13" fromy="475" fromx="13" toy="475" tox="32" sentence="Tabharfaimid an t-ainm do mháthar uirthi." errortext="an t-ainm do mháthar" msg="Níl gá leis an alt cinnte anseo">
-<E offset="26" fromy="476" fromx="26" toy="476" tox="27" sentence="Is iad na trí cheist sin (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="60" fromy="477" fromx="60" toy="477" tox="61" sentence="Lena chois sin, dá bharr seo, dá bhrí sin, ina aghaidh seo (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
-<E offset="18" fromy="478" fromx="18" toy="478" tox="19" sentence="Cén t-ionadh sin (OK)?" errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="6" fromy="466" fromx="6" toy="466" tox="20" sentence="Oíche na gaoithe móra." errortext="na gaoithe móra" msg="Tá gá leis an leagan ginideach anseo">
+<E offset="6" fromy="467" fromx="6" toy="467" tox="19" sentence="Oíche na gaoithe mór." errortext="na gaoithe mór" msg="Tá gá leis an leagan ginideach anseo">
+<E offset="47" fromy="468" fromx="47" toy="468" tox="56" sentence="Tá a chumas sa Ghaeilge níos airde ná cumas na bhfear óga." errortext="bhfear óga" msg="Tá gá leis an leagan uatha anseo">
+<E offset="37" fromy="469" fromx="37" toy="469" tox="38" sentence="Beirt bhan Mheiriceánacha a bhí ann (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="38" fromy="470" fromx="38" toy="470" tox="39" sentence="Tá sé-- tá sé- mo ---shin-seanathair (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="3" fromy="471" fromx="3" toy="471" tox="8" sentence="Is foláir dóibh a ndualgais a chomhlíonadh." errortext="foláir" msg="Ní úsáidtear an focal seo ach san abairtín «ní foláir» de ghnáth">
+<E offset="23" fromy="472" fromx="23" toy="472" tox="24" sentence="Bhain na toibreacha le re eile agus le dream daoine atá imithe." errortext="re" msg="Ní úsáidtear an focal seo ach san abairtín «gach re» de ghnáth">
+<E offset="14" fromy="473" fromx="14" toy="473" tox="17" sentence="Labhair mé ar shon na daoine." errortext="shon" msg="Ní úsáidtear an focal seo ach san abairtín «ar son» de ghnáth">
+<E offset="37" fromy="474" fromx="37" toy="474" tox="39" sentence="Tá sé tábhachtach bheith ag obair an son na cearta." errortext="son" msg="Ní úsáidtear an focal seo ach san abairtín «ar son» de ghnáth">
+<E offset="5" fromy="475" fromx="5" toy="475" tox="24" sentence="Ba é an fear an phortaigh a tháinig thart leis na plátaí bia." errortext="an fear an phortaigh" msg="Níl gá leis an alt cinnte anseo">
+<E offset="20" fromy="476" fromx="20" toy="476" tox="44" sentence="Tá dhá shiombail ag an bharr gach leathanaigh." errortext="an bharr gach leathanaigh" msg="Níl gá leis an alt cinnte anseo">
+<E offset="13" fromy="477" fromx="13" toy="477" tox="32" sentence="Tabharfaimid an t-ainm do mháthar uirthi." errortext="an t-ainm do mháthar" msg="Níl gá leis an alt cinnte anseo">
+<E offset="26" fromy="478" fromx="26" toy="478" tox="27" sentence="Is iad na trí cheist sin (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="60" fromy="479" fromx="60" toy="479" tox="61" sentence="Lena chois sin, dá bharr seo, dá bhrí sin, ina aghaidh seo (OK)." errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
+<E offset="18" fromy="480" fromx="18" toy="480" tox="19" sentence="Cén t-ionadh sin (OK)?" errortext="OK" msg="Is féidir gur focal iasachta é seo (tá na litreacha «^OK» neamhdhóchúil)">
