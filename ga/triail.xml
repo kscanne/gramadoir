@@ -21,7 +21,7 @@
 <E offset="87" fromy="21" fromx="87" toy="21" tox="91" sentence="Tá súil le feabhas nuair a thosóidh airgead ag teacht isteach ó ola agus gás i mBearna Timor." errortext="Timor" msg="An raibh «Tíomór» ar intinn agat?">
 <E offset="25" fromy="22" fromx="25" toy="22" tox="32" sentence="Bhí sí cosúil le claíomh Damocles ar crochadh sa spéir." errortext="Damocles" msg="An raibh «Dámaicléas» ar intinn agat?">
 <E offset="66" fromy="23" fromx="66" toy="23" tox="78" sentence="Beidh nuachtáin shuaracha i ngreim cé nach mbeadh cinsireacht den droch-chinéal i gceist." errortext="droch-chinéal" msg="Bunaithe ar fhocal mílitrithe go coitianta «cinéal (cineál)»?">
-<E offset="43" fromy="24" fromx="43" toy="24" tox="52" sentence="Bhí sé páirteach sa chéad léiriú poiblí de Riverdance." errortext="Riverdance" msg="Is féidir gur focal iasachta é seo (tá na litreacha «Riv» neamhdhóchúil)">
+<E offset="43" fromy="24" fromx="43" toy="24" tox="52" sentence="Bhí sé páirteach sa chéad léiriú poiblí de Adaptation." errortext="Adaptation" msg="Is féidir gur focal iasachta é seo (tá na litreacha «dap» neamhdhóchúil)">
 <E offset="74" fromy="25" fromx="74" toy="25" tox="86" sentence="Beidh an tionchar le mothú níos mó i gcás comhlachtaí Éireannacha mar gur mionairgeadra é an punt." errortext="mionairgeadra" msg="Focal anaithnid ach is féidir gur comhfhocal «mion+airgeadra» é?">
 <E offset="13" fromy="26" fromx="13" toy="26" tox="21" sentence="Bhí an dream dí-armtha ag iarraidh a gcuid gunnaí." errortext="dí-armtha" msg="Focal anaithnid ach is féidir gur comhfhocal neamhchaighdeánach «dí+armtha» é?">
 <E offset="10" fromy="27" fromx="10" toy="27" tox="12" sentence="An bhfuil ayn uachtar roeite agattt?" errortext="ayn" msg="Focal anaithnid: «aon, ann, an»?">
