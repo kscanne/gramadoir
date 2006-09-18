@@ -70,7 +70,7 @@ sin sin:OK
 #    also marked as "MICHEART" but this is "ag gaelú".
 #. Beidh nuachtáin shuaracha i ngreim cé nach mbeadh cinsireacht den droch-chinéal i gceist.
 #    "MIMHOIRF" derived from common misspelling
-#. Bhí sé páirteach sa chéad léiriú poiblí de Riverdance.
+#. Bhí sé páirteach sa chéad léiriú poiblí de Adaptation.
 #     Three-grams=>marked up as "foreign"
 #. Beidh an tionchar le mothú níos mó i gcás comhlachtaí Éireannacha mar gur mionairgeadra é an punt.
 #     unrecognized compound marked up
@@ -82,6 +82,7 @@ sin sin:OK
 <Y>[Aa]'</Y> <N>NOTVNISHUNLEN</N>:CAIGHDEAN{ag}
 <Y>[Aa]'</Y>:CAIGHDEAN{an}
 <Y>'ac</Y>:CAIGHDEAN{Mac}
+<Y>ao'</Y>:CAIGHDEAN{aon}
 <Y>'n?ár</Y>:CAIGHDEAN{inár}
 <Y>[Aa]rs'</Y>:CAIGHDEAN{arsa}
 <Y>'chor</Y>:CAIGHDEAN{ar chor}
@@ -107,11 +108,15 @@ sin sin:OK
 <Y>[Nn]íorbh'</Y>:CAIGHDEAN{níorbh}
 <Y>[Ss]'</Y>:CAIGHDEAN{is}
 <Y>'[Ss]é</Y>:CAIGHDEAN{is é}
+<Y>'steach</Y>:CAIGHDEAN{isteach}
 <Y>'úirt</Y>:CAIGHDEAN{dúirt}
 <Y>'ul</Y>:CAIGHDEAN{dul}
 <Y>'un</Y>:CAIGHDEAN{chun}
+<A pl="n" gnt="n">[1-9][0-9]*adh</A>:CAIGHDEAN{-ú}
 # before the general <F> => correct but uncommon error, should trap
 # specific such where they almost exclusively appear as an alt/missp in corpus:
+<F>h?[Aa]ireamh</F>:IONADAI{áireamh}
+<F>h?[Aa]irimh</F>:IONADAI{áirimh}
 <F>h?[Aa]irithe</F>:IONADAI{áirithe}
 # aiseanna -> áiseanna split
 <F>[Aa]ithnigh</F>:IONADAI{aithin}
@@ -143,6 +148,7 @@ sin sin:OK
 <F>n?[Dd]h?eire</F>:IONADAI{deireadh}
 <F>[Dd]íofa</F>:IONADAI{díobh}
 <S>[Ii]</S> <F>n[Dd]oimhne</F>:IONADAI{i ndoimhneacht}
+<F>n?[Dd]h?rama</F>:IONADAI{dráma}
 <F>n?[Dd]h?rud</F>:IONADAI{druidim}
 <V>[Tt]ar</V> <F>[Ee]is</F>:IONADAI{tar éis}
 <F>[Ff]héin</F>:IONADAI{féin}
