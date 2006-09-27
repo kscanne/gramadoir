@@ -185,6 +185,7 @@ m?Bh?aile Átha Cliath:<N pl="n" gnt="n" gnd="m">
 [Cc]eannann céanna:<A pl="n" gnt="n">
 [Cc]heannann chéanna:<A pl="n" gnt="n">
 [Cc]iolar chiot:<N pl="n" gnt="n" gnd="f">
+g?[Cc]h?íor thuathail:<N pl="n" gnt="n" gnd="f">
 [Cc]réad fá:<Q>
 # do the next batch to help disambiguate "chéad" (first vs. hundred)
 [Dd]há chéad:<A pl="n" gnt="n">
@@ -257,6 +258,7 @@ Dé Domhnaigh:<N pl="n" gnt="n">
 [Aa] [Ss]eacht:<A pl="n" gnt="n">
 [Aa] h[Oo]cht:<A pl="n" gnt="n">
 [Aa] [Nn]aoi:<A pl="n" gnt="n">
+n?Dh?eireadh Fómhair:<N pl="n" gnt="n" gnd="m">
 [Ff]á dtaobh:<R>
 # [Dd]rioll ar an dreall
 [Ff]ad is:<C>
@@ -438,6 +440,7 @@ Mh?aigh Eo:<N pl="n" gnt="n">
 [Mm]ar sin féin:<R>
 # infrequent
 [Mm]eacan ragaim:<N pl="n" gnt="n" gnd="m">
+Mh?eán Fómhair:<N pl="n" gnt="n" gnd="m">
 # exception to lenition of genitive after fem.  Only one of the months
 # that is an exception, cf. Mí Mheán Fómhair
 [Mm]h?í Feabhra:<N pl="n" gnt="n" gnd="f">
