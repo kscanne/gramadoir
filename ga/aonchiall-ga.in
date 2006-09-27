@@ -88,7 +88,7 @@
 <B>an</B> mhaith:<T>
 <B>ar</B> ea:<S>
 <B><Z>ANYCOPULA</Z>ANYTHING</B> cóir|cuma|deacair|dh?éanaí|deimhin|dh?ual|h?ea|éard|fiú|gh?nách|mh?aith|mh?ithid:<V cop="y">
-# lowercase ach under last resorts
+# lowercase handled by PREPCONJ rules
 <B>Ach</B>:<C>
 # Clochán an Aifir, not verb
 <B>Aifir</B>:<Y>
@@ -150,6 +150,7 @@
 <T>[Aa]n</T> <B>[Bb]arra</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Bb]h?arr</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Bb]h?eag</B>:<A pl="n" gnt="n">
+<N pl="n" gnt="n" gnd="f">bheith</N> <B><Z>ANYGENITIVE</Z>ANYTHING</B>:!<N pl="." gnt="y" gnd=".">
 <B>[Bb]hí</B>:<V p="y" t="caite">
 # verbal particle or copula
 <B>[Cc]á</B> <V>ANYTHING</V>:<Q>
@@ -163,6 +164,8 @@
 <B>[Cc][Éé]</B>:<Q>
 # "an am gcéanna" adj. occurs a lot, but ok to tag <N> and get "NIURU"
 # <N>ANYTHING</N> <B>gcéanna</B>:<A pl="n" gnt="n">
+# i dtrátha an ama chéanna
+<NMGS>ANYTHING</NMGS> <B>[Cc]h?éanna</B>:<A pl="n" gnt="y" gnd="m">
 <B>[Cc]h?éanna</B>:<A pl="n" gnt="n">
 # "dhó" is an exception to next, sometimes means "burning"
 a|á <B>dhó</B>:<N pl="n" gnt="n" gnd="m">
@@ -209,13 +212,13 @@ d?[Tt]h?rí <B>[Bb]liana</B>:<N pl="y" gnt="n" gnd="f">
 <B>[Cc]uir</B>:<V p="y" t="ord">
 <T>na</T> <B>g[Cc]umann</B>:<N pl="y" gnt="y" gnd="m">
 <B>g?[Cc]h?umann</B>:<N pl="n" gnt="n" gnd="m">
+# idir an dá linn, Tadhg an dá thaobh
 # OD dhá 
-[Aa]o?n <B>dá</B>:<A pl="n" gnt="n">
+[Aa]o?n <B>[Dd]á</B>:<A pl="n" gnt="n">
 # OD dhá 
 g?ch?éad <B>dá</B>:<A pl="n" gnt="n">
 <S>[Ss]a</S> <B>dá</B>:<A pl="n" gnt="n">
-# idir an dá linn, Tadhg an dá thaobh
-<T>[Aa]n</T> <B>[Dd]á</B>:<A pl="n" gnt="n">
+#<T>[Aa]n</T> <B>[Dd]á</B>:<A pl="n" gnt="n">
 <B>[Dd]á</B> <V>ANYTHING</V>:<C>
 <B>[Dd]á</B> <N>ANYTHING</N>:<D>
 # "dá hóige"
@@ -265,6 +268,8 @@ a <B>dó</B>:<N pl="n" gnt="n">
 <T>na</T> <B>bh[Ff]ear</B>:<N pl="y" gnt="y" gnd="m">
 <B>(bh)?[Ff]h?ear</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Ff]éin</B>:<R>
+# grass, not gsm "fiar"
+<B>[Ff]h?éir</B>:<N pl="n" gnt="y" gnd="m">
 <B>(bh)?[Ff]uair</B>:<V p="y" t="caite">
 CAPITAL <B>Gabhann</B>:<Y>
 <B>Gabhann</B>:<V p="y" t="láith">
@@ -283,6 +288,8 @@ CAPITAL <B>Gabhann</B>:<Y>
 <T>na</T> <B>huaire</B>:<N pl="n" gnt="y" gnd="f" h="y">
 # all others are like "ceithre huaire"
 <B>huaire</B>:<N pl="y" gnt="n" gnd="f" h="y">
+# compare "bheith" above
+<N pl="n" gnt="n" gnd="f">iarraidh</N> <B><Z>ANYGENITIVE</Z>ANYTHING</B>:!<N pl="." gnt="y" gnd=".">
 #  not "Carry!" imperative
 <B>iompair</B>:<N pl="n" gnt="y" gnd="m">
 # not "yam" :)
@@ -367,10 +374,12 @@ a <B>[Ll]inne</B>:<N pl="n" gnt="y" gnd="f">
 <B>[Rr]inne</B>:<V p="y" t="caite">
 <B>San</B> CAPITAL:<N pl="n" gnt="n">
 <B>San</B>:<S>
+<B>[Ss]cór</B>:<N pl="n" gnt="n" gnd="m">
 # gender problem?  - need this tag right or get "BACHOIR{í}" errors
 <N pl="n" gnt="n" gnd="f">m?bh?ean</N> <B>[Ss]í</B>:<N pl="n" gnt="y" gnd="m">
 <N pl="y" gnt="y" gnd="f">m?bh?an</N> <B>[Ss]í</B>:<N pl="n" gnt="y" gnd="m">
-<N>(leannán|long|aos|n?dh?uine|n?dh?aoine|sh?lua)</N> <B>[Ss]í</B>:<N pl="n" gnt="y" gnd="m">
+<N pl="n" gnt="n" gnd="m">aos</N> <B>[Ss]í</B>:<N pl="n" gnt="y" gnd="m">
+#<N>leannán|long|n?dh?uine|n?dh?aoine|sh?lua)</N> <B>[Ss]í</B>:<N pl="n" gnt="y" gnd="m">
 <B>[Ss]í</B> <N pl="n" gnt="y" gnd="f">gaoithe</N>:<N pl="n" gnt="y" gnd="m">
 <B>[Ss]í</B> <N pl="n" gnt="y" gnd="m">deannaigh</N>:<N pl="n" gnt="y" gnd="m">
 <T>[Nn]a</T> <B>[Ss]í</B>:<N pl="n" gnt="y" gnd="m">
@@ -390,6 +399,16 @@ a <B>sé</B>:<A pl="n" gnt="n">
 #<B>shin</B>:<P>
 #  "they", not "a growth"!
 <B>[Ss]iad</B>:<P>
+<S>ANYTHING</S> <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
+<Q>ANYTHING</Q> <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
+<V>ANYTHING</V> <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
+<C>ANYTHING</C> <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
+[Aa]ch <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
+[Dd]e <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
+<B>[Dd]e</B> <P>(seo|sin)</P>:<S>
+[Gg]ur <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
+[Mm]ar <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
+<B><Z>SEOSIN</Z>ANYTHING</B>:<A pl="n" gnt="n">
 # compare with similar le,na rules above
 <S>[Ss]na</S> <B>(haon|hocht)</B>:<A pl="n" gnt="n" h="y">
 <S>[Ss]na</S> <B><Z>ANYNMPLH</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m" h="y">
@@ -500,14 +519,18 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 <NP>ANYTHING</NP> <B><Z>AWITHPL</Z>ANYTHING</B>:<A pl="y" gnt="n">
 <A pl="n" gnt="n">([Dd]há|[Tt]h?rí|[Cc]h?eithre|[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|[Oo]cht|[Nn]aoi|[Dd]h?eich)</A> <N>ANYTHING</N> <B><Z>ANYWITHPLADJ</Z>ANYTHING</B>:<A pl="y" gnt="n">
 <A pl="n" gnt="n">([Dd]há|[Tt]h?rí|[Cc]h?eithre|[Cc]h?úig|[Ss]h?é|[Ss]h?eacht|[Oo]cht|[Nn]aoi)</A> <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <B><Z>ANYWITHPLADJ</Z>ANYTHING</B>:<A pl="y" gnt="n">
-# next two are a bad idea: "crann tógála mór buí" => "mór" genitive
-#<NFGS>ANYTHING</NFGS> <B><Z>AWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
-#<NMGS>ANYTHING</NMGS> <B><Z>AWITHGSM</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="m">
+# are next two a bad idea? "crann tógála buí" => "buí" genitive;
+# see rialacha-ga.in also for discussion regarding agreement between
+# adjectives and the head of "tightly bound" compounds like "crann tógála"
+<NFGS>ANYTHING</NFGS> <B><Z>ANYWITHGSF</Z>UNPPLIKE</B>:<A pl="n" gnt="y" gnd="f">
+<NFGS>ANYTHING</NFGS> <B><Z>ANYWITHGSF</Z>FAKEPP</B>:<A pl="n" gnt="y" gnd="f">
+<NMGS>ANYTHING</NMGS> <B><Z>ANYWITHGSM</Z>UNPPLIKE</B>:<A pl="n" gnt="y" gnd="m">
+<NMGS>ANYTHING</NMGS> <B><Z>ANYWITHGSM</Z>FAKEPP</B>:<A pl="n" gnt="y" gnd="m">
 <NCS>ANYTHING</NCS> <B><Z>AWITHCOMMON</Z>ANYTHING</B>:<A pl="n" gnt="n">
 # next four hopefully "cdr"; get "duine mór eile"
 <A pl="y" gnt="n">ANYTHING</A> <B><Z>AWITHPL</Z>ANYTHING</B>:<A pl="y" gnt="n">
-<A pl="n" gnt="y" gnd="f">ANYTHING</A> <B><Z>AWITHGSF</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="f">
-<A pl="n" gnt="y" gnd="m">ANYTHING</A> <B><Z>AWITHGSM</Z>ANYTHING</B>:<A pl="n" gnt="y" gnd="m">
+<A pl="n" gnt="y" gnd="f">ANYTHING</A> <B><Z>AWITHGSF</Z>UNPPLIKE</B>:<A pl="n" gnt="y" gnd="f">
+<A pl="n" gnt="y" gnd="m">ANYTHING</A> <B><Z>AWITHGSM</Z>UNPPLIKE</B>:<A pl="n" gnt="y" gnd="m">
 <ACS>ANYTHING</ACS> <B><Z>AWITHCOMMON</Z>ANYTHING</B>:<A pl="n" gnt="n">
 # exception to next:  tugann litir dó, avoids complaint about missing lenition
 <NFCS>ANYTHING</NFCS> <B>dó</B>:<O>
@@ -628,6 +651,7 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 <T>na</T> <B><Z>ANYNFG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 # this because unigram would give genitive; masculine is fine by unigram
 <D>FINALA</D> <B><Z>ANYNFCH</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f" h="y">
+<S>COMPOUND</S> <T>na</T> <B><Z>ANYNFGH</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f" h="y">
 <N>ANYTHING</N> <T>na</T> <B><Z>ANYNFGH</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f" h="y">
 <T>na</T> <B><Z>ANYNMPLH</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m" h="y">
 <T>na</T> <B><Z>ANYNFPLH</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f" h="y">
@@ -703,11 +727,12 @@ ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
 <B>Ní</B> <Y>ANYTHING</Y>:<Y>
 # last resort -- (hopfully) copula + <S>,<A>,<R>, etc. Ní+<V>:<U> is done above
 <B>Ní</B>:<V cop="y">
-<S>ANYTHING</S> <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
-<Q>ANYTHING</Q> <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
-<V>ANYTHING</V> <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
-<C>ANYTHING</C> <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
-<B><Z>SEOSIN</Z>ANYTHING</B>:<A pl="n" gnt="n">
+# moved above
+# <S>ANYTHING</S> <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
+# <Q>ANYTHING</Q> <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
+# <V>ANYTHING</V> <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
+# <C>ANYTHING</C> <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
+# <B><Z>SEOSIN</Z>ANYTHING</B>:<A pl="n" gnt="n">
 # "tarraing sí a hanáil"
 <B>[Aa]</B> INITIALH:<D>
 <B>[Aa]</B> <N>ECLIPSED</N>:<D>
