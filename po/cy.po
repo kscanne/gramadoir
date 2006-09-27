@@ -1,21 +1,22 @@
+# translation of cy.po to
 # Translation of gramadoir.po to Cymraeg
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR Kevin P. Scannell.
-# Kevin Donnelly <kevin@dotmon.com>, 2005.
+# Kevin Donnelly <kevin@dotmon.com>, 2005, 2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: cy\n"
 "Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
-"POT-Creation-Date: 2005-09-21 18:49+0000\n"
-"PO-Revision-Date: 2005-03-11 20:49+0000\n"
+"POT-Creation-Date: 2006-03-07 21:35-0600\n"
+"PO-Revision-Date: 2006-09-10 11:48+0100\n"
 "Last-Translator: Kevin Donnelly <kevin@dotmon.com>\n"
-"Language-Team: Cymraeg\n"
+"Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==1 ? 0 : 1;\n"
-"X-Generator: KBabel 1.9\n"
+"X-Generator: KBabel 1.10.2\n"
 
 #: ponc.in.y:63
 #, c-format
@@ -44,12 +45,12 @@ msgstr "dewisiad anadnabyddus %s"
 #: gram.pl:168
 #, perl-format
 msgid "option %s requires an argument"
-msgstr "mae ymresymiad yn gofynnol ar gyfer dewisiad %s"
+msgstr "mae ymresymiad yn ofynnol ar gyfer dewisiad %s"
 
 #: gram.pl:171 gramdev.pl:85
 #, perl-format
 msgid "option %s does not allow an argument"
-msgstr "nid yw'r dewisiad %s yn caniatáu ymresymiad"
+msgstr "nid yw'r dewisiad %s yn caniatÃ¡u ymresymiad"
 
 #: gram.pl:174 gramdev.pl:88
 msgid "error parsing command-line options"
@@ -63,16 +64,16 @@ msgstr "Methu gosod y lliw allbwn i %s"
 #: gram.pl:180
 #, perl-format
 msgid "Language %s is not supported."
-msgstr "Ni chynhelir yr iaith %s"
+msgstr "Ni chynhelir yr iaith %s."
 
 #. TRANSLATORS: Please leave untranslated, but add an acute accent to the
 #. "o" in "Gramadoir" if available in your character set and encoding.
 #. If you must translate, this is the Irish for (literally) "The Grammarian"
 #: gram.pl:185 gram.pl:248 gramdev.pl:93 gramdev.pl:118 Gramadoir.pm.in:119
-#: Gramadoir.pm.in:176 Gramadoir.pm.in:290 Gramadoir.pm.in:293
-#: Gramadoir.pm.in:494 Gramadoir.pm.in:805
+#: Gramadoir.pm.in:176 Gramadoir.pm.in:291 Gramadoir.pm.in:294
+#: Gramadoir.pm.in:495 Gramadoir.pm.in:803
 msgid "An Gramadoir"
-msgstr "An Gramadóir"
+msgstr "An Gramadoir"
 
 #: gram.pl:186 gramdev.pl:94
 #, perl-format
@@ -90,7 +91,7 @@ msgid ""
 "\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
 "PURPOSE,\\nto the extent permitted by law."
 msgstr ""
-"Meddalwedd rhydd yw hwn; gweler y tarddiad ar gyfer amodau copïo.  Nid oes "
+"Meddalwedd rhydd yw hwn; gweler y tarddiad ar gyfer amodau copÃ¯o.  Nid oes "
 "DIM\\ngwarant; nid hyd yn oed ar gyfer MASNACHEIDDRWYDD neu ADDASRWYDD AR "
 "GYFER PWRPAS PENODOL, \\nhyd yr eithaf a ganiateir gan y gyfraith."
 
@@ -106,12 +107,11 @@ msgstr "Dewisiadau ar gyfer defnyddwyr:"
 #: gram.pl:274
 msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
 msgstr ""
-"    --iomlan       adrodd pob gwall (h.y. peidiwch â defnyddio ~/.neamhshuim "
+"    --iomlan       adrodd pob gwall (h.y. peidiwch Ã¢ defnyddio ~/.neamhshuim "
 "- ffeil anwybyddu)"
 
 #: gram.pl:277
-msgid ""
-"    --ionchod=ENC  specify the character encoding of the text to be checked"
+msgid "    --ionchod=ENC  specify the character encoding of the text to be checked"
 msgstr "    --ionchod=AMG  penodi'r amgodiad nodau o'r testun i'w gywiro"
 
 #: gram.pl:280
@@ -151,8 +151,7 @@ msgid "Options for developers:"
 msgstr "Dewisiadau ar gyfer datblygwyr:"
 
 #: gram.pl:306
-msgid ""
-"    --api          output a simple XML format for use with other applications"
+msgid "    --api          output a simple XML format for use with other applications"
 msgstr ""
 "    --api          allbynnu fformat XML syml i'w defnyddio efo cymhwysiadau "
 "eraill"
@@ -162,25 +161,23 @@ msgid "    --html         produce HTML output for viewing in a web browser"
 msgstr "    --html         cynhyrchu allbwn HTML i'w weld mewn porydd gwe"
 
 #: gram.pl:314
-msgid ""
-"    --no-unigram   do not resolve ambiguous parts of speech by frequency"
-msgstr "    --no-unigram   peidio â datrys rhannau ymadrodd amwys gan amlder"
+msgid "    --no-unigram   do not resolve ambiguous parts of speech by frequency"
+msgstr "    --no-unigram   peidio Ã¢ datrys rhannau ymadrodd amwys gan amlder"
 
 #: gram.pl:320
-msgid ""
-"    --xml          write tagged XML stream to standard output, for debugging"
+msgid "    --xml          write tagged XML stream to standard output, for debugging"
 msgstr ""
 "    --xml          ysgrifennu llif XML wedi'i dagio i allbwn safonol, ar "
 "gyfer dadnamu"
 
 #: gram.pl:323
 msgid "If no file is given, read from standard input."
-msgstr "Os ni roddir ffeil, darllenir o fewnbwn safonol."
+msgstr "Os ni roddir ffeil, fe'i darllenir o fewnbwn safonol."
 
 #: gram.pl:326 gramdev.pl:142
 #, perl-format
 msgid "Send bug reports to <%s>."
-msgstr "Anfonwch adroddiadau nam i <%s>"
+msgstr "Anfonwch adroddiadau nam i <%s>."
 
 #: gram.pl:348
 msgid "There is no such file."
@@ -188,11 +185,11 @@ msgstr "Nid oes y math ffeil."
 
 #: gram.pl:352
 msgid "Is a directory"
-msgstr "Yn gyfeiriadur"
+msgstr "Cyfeiriadur"
 
 #: gram.pl:360
 msgid "Permission denied"
-msgstr "Gwrthodwyd caniatâd"
+msgstr "Gwrthodwyd caniatÃ¢d"
 
 #: gram.pl:370
 #, perl-format
@@ -206,12 +203,10 @@ msgstr "Gwirio %s ar hyn o bryd"
 
 #: gramdev.pl:125
 msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
-msgstr ""
-"    --ilchiall     adrodd amwyseddau annatrys, wedi eu trefnu gan amlder"
+msgstr "    --ilchiall     adrodd amwyseddau annatrys, wedi eu trefnu gan amlder"
 
 #: gramdev.pl:128
-msgid ""
-"    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
+msgid "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
 msgstr ""
 "    --minic        allbynnu pob tag, wedi'u trefnu gan amlder (ar gyfer "
 "unigram-xx.txt)"
@@ -235,24 +230,24 @@ msgid "%s: `%s' corrupted at %s\n"
 msgstr "%s: `%s' wedi ei lygru wrth %s\n"
 
 #. TRANSLATORS: "conversion" here means conversion between character encodings
-#: Gramadoir.pm.in:227 Gramadoir.pm.in:544 Gramadoir.pm.in:659
-#: Gramadoir.pm.in:693 Gramadoir.pm.in:716 Gramadoir.pm.in:773
-#: Gramadoir.pm.in:837
+#: Gramadoir.pm.in:227 Gramadoir.pm.in:545 Gramadoir.pm.in:662
+#: Gramadoir.pm.in:697 Gramadoir.pm.in:720 Gramadoir.pm.in:765
+#: Gramadoir.pm.in:913
 #, perl-format
 msgid "conversion from %s is not supported"
 msgstr "ni chynhelir trosi o %s"
 
-#: Gramadoir.pm.in:290 Gramadoir.pm.in:493
+#: Gramadoir.pm.in:291 Gramadoir.pm.in:494
 #, perl-format
 msgid "%s: illegal grammatical code\n"
-msgstr "%s: côd gramadegol anghyfreithlon\n"
+msgstr "%s: cÃ´d gramadegol anghyfreithlon\n"
 
-#: Gramadoir.pm.in:293
+#: Gramadoir.pm.in:294
 #, perl-format
 msgid "%s: no grammar codes: %s\n"
 msgstr "%s: dim codau gramadeg: %s\n"
 
-#: Gramadoir.pm.in:804
+#: Gramadoir.pm.in:802
 #, perl-format
 msgid "%s: unrecognized error macro: %s\n"
 msgstr "%s: macro gwall anadnabyddus: %s\n"
@@ -281,9 +276,8 @@ msgid "The singular form is required here"
 msgstr "Mae'r ffurf unigol yn ofynnol yma"
 
 #: messages.txt:9
-#, fuzzy
 msgid "Plural adjective required"
-msgstr "Mae ansoddair cymharol yn ofynnol"
+msgstr "Mae ansoddair lluosog yn ofynnol"
 
 #: messages.txt:10
 msgid "Comparative adjective required"
@@ -306,13 +300,12 @@ msgid "The genitive case is required here"
 msgstr "Mae'r cyflwr genidol yn ofynnol yma"
 
 #: messages.txt:15
-#, fuzzy
 msgid "You should use the present tense here"
-msgstr "Dylech ddefnyddio \\/\\1\\/ yma yn lle"
+msgstr "Dylech ddefnyddio'r amser presennol yma"
 
 #: messages.txt:16
 msgid "It seems unlikely that you intended to use the subjunctive here"
-msgstr "Mae'n annhebyg yr oeddech yn bwriadu defnyddio'r modd dibynnol yma"
+msgstr "Mae'n annhebygol y bwriedir defnyddio'r modd dibynnol yma"
 
 #. TRANSLATORS: You can use whatever kind of quotes you prefer for your locale
 #. around the variable \\1.  You should keep the double backslash before the 1,
@@ -323,7 +316,7 @@ msgstr "Defnyddir fel rheol yn yr ymadrodd sefydlog \\/\\1\\/"
 
 #: messages.txt:21
 msgid "You should use \\/\\1\\/ here instead"
-msgstr "Dylech ddefnyddio \\/\\1\\/ yma yn lle"
+msgstr "Dylid defnyddio \\/\\1\\/ yma yn lle"
 
 #: messages.txt:22
 msgid "Non-standard form of \\/\\1\\/"
@@ -352,8 +345,7 @@ msgstr "Gair dilys, ond fel rheol defnyddir yn lle \\/\\1\\/"
 
 #: messages.txt:29
 msgid "Not in database but apparently formed from the root \\/\\1\\/"
-msgstr ""
-"Dim yn y gronfa ddata, ond yn ôl pob golwg deilliwyd o'r gwreiddyn \\/\\1\\/"
+msgstr "Dim yn y gronfa ddata, ond yn Ã´l pob golwg deilliwyd o'r gwreiddyn \\/\\1\\/"
 
 #: messages.txt:30
 msgid "The word \\/\\1\\/ is not needed"
@@ -381,15 +373,15 @@ msgstr "Efallai gair dieithr (mae'r dilyniant \\/\\1\\/ yn annhebygol iawn)"
 
 #: messages.txt:36
 msgid "Gender disagreement"
-msgstr ""
+msgstr "Anghytundeb cenedl"
 
 #: messages.txt:37
 msgid "Number disagreement"
-msgstr ""
+msgstr "Anghytundeb rhif"
 
 #: messages.txt:38
 msgid "Case disagreement"
-msgstr ""
+msgstr "Anghytundeb cyflwr"
 
 #. TRANSLATORS: Rules specific to the Irish language (ga)
 #: messages.txt:40
@@ -432,8 +424,7 @@ msgid "Unnecessary lenition"
 msgstr "Treiglad meddal diangen"
 
 #: messages.txt:52
-msgid ""
-"Often the preposition \\/\\1\\/ causes lenition, but this case is unclear"
+msgid "Often the preposition \\/\\1\\/ causes lenition, but this case is unclear"
 msgstr ""
 "Gan amlaf, achosa'r arddodiad \\/\\1\\/ dreiglad meddal, ond nid yw'r "
 "enghraifft yma yn glir"
@@ -463,11 +454,11 @@ msgstr "Mae ffurf dibynnol y berf yn ofynnol yma"
 
 #: messages.txt:61
 msgid "Unnecessary use of the dependent form of the verb"
-msgstr "Defnydd diangen o ffurf dibynnol y berf "
+msgstr "Defnydd diangen o ffurf ddibynnol y ferf"
 
 #: messages.txt:62
 msgid "The synthetic (combined) form, ending in \\/\\1\\/, is often used here"
-msgstr "Defnyddir y ffurf cyfansoddol, sy'n gorffen â \\/\\1\\/, yn aml yma"
+msgstr "Defnyddir y ffurf synthetig (gyfunol), sy'n gorffen gyda \\/1\\/, yn aml yma"
 
 #. TRANSLATORS: Rules specific to the Cornish language (kw)
 #: messages.txt:64
@@ -488,9 +479,15 @@ msgstr "Pumed treiglad (cymysg) ar goll"
 
 #: messages.txt:68
 msgid "Fifth (mixed) mutation after 'th missing"
-msgstr "Pumed treiglad (cymysg) ar ôl 'th ar goll"
+msgstr "Pumed treiglad (cymysg) ar Ã´l 'th ar goll"
+
+#. TRANSLATORS: Rules specific to the Welsh language (cy)
+#: messages.txt:70
+msgid "Aspirate mutation missing"
+msgstr "Treiglad llaes ar goll"
 
 #. TRANSLATORS: Rules specific to the Igbo language (ig)
-#: messages.txt:70
+#: messages.txt:72
 msgid "This word violates the rules of Igbo vowel harmony"
-msgstr ""
+msgstr "Mae'r gair yma yn torri rheolau cytgord llafariaid Igbo"
+
