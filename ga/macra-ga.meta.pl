@@ -62,8 +62,14 @@ s/ECLIPSED/(?:n(?:-[aeiouáéíóú]|[AEIOUÁÉÍÓÚ])|d[Tt]|g[Cc]|b[Pp]|m[Bb]|n[DdGg]|bh
 s/MAYBEECLIPSINGNUMBER/(?:[1-9][0-9]*[789]|[0-9]*10)/g;
 s/ECLIPSINGNUMBER/(?:n?[Dd]h?eich|[Nn]aoi|(?:h|[mbd]'|n-)?[Oo]cht|[Ss]h?eacht|[789]|10)/g;
 s/ECLIPSINGPOSS/(?:(?:[Ff]aoin|[Ii]n|[Ll]en|[Óó]n|[Tt]rín)?(?:[Aa]|ár)|[Dd]?[Áá]r?|[Bb]hur|[Aa]rna)/g;
-# include "uile" etc. now - better name is "non-binding" adjs!
-s/UNLENITABLEADJ/(?:bainte|caite|céad|cibé|curtha|déanta|deich|dulta|fágtha|faighte|gach|seacht|[Ss]eo|[Ss]in|suite|t[au]gtha|uile)/g;
+#s/UNBOUNDADJ/(?:bainte|caite|céad|cibé|curtha|déanta|deich|dulta|fágtha|faighte|[Gg]ach|seacht|[Ss]eo|[Ss]in|suite|t[au]gtha|trí|uile)/g;
+# broader def. with all -th?[ae] words helps avoid false positives b/c
+# of tagging problems with verbal adj. vs. gs of vn.:
+#  "easpa maoinithe" is OK (no lenition of gs after share/part/want words),
+#  but would give error if tagged as an plain adj.
+s/UNBOUNDADJ/(?:[^<]+th?[ae]|céad|cibé|deich|dhá|[Gg]ach|seacht|[Ss]eo|[Ss]in|trí|úd|uile)/g;
+s/UNPPLIKE/(?:[^<]+(?:[^ae]|[^th][ae]|[^t]h[ae]))/g;
+s/FAKEPP/(?:[^<]*aimseartha|[Cc]h?athartha|[Cc]h?oitianta|[Gg]h?alánta|[Gg]h?inearálta|[Ll]ogánta|[Mm]h?íleata|[Nn]ádúrtha|(?:[Ii]dir)?[Nn]áisiúnta|[Ss]óisialta|[Ss]peisialta|[Tt]h?raidisiúnta)/g;
 s/UNLENITABLE/(?:[^BbCcDdFfGgMmPpTt]|[Ss][^lnraeiouáéíóú])[^<]*/g;
 s/UNLENITEDBCGMP/[BbCcGgMmPp][^Hh'][^<]*/g;
 s/UNLENITEDBCFGMP/(?:[BbCcFfGgMmPp][^Hh']|bh[fF])[^<]*/g;
@@ -152,6 +158,7 @@ s/BHOGLIKE/<A pl="n" gnt="n".><V p="y" t="ord".><V p="y" t="caite".>/g;
 s/AWITHGSM/(?:<N pl="y"[^>]+>)*(?:<A[^>]*>)*<A pl="n" gnt="y" gnd="m".>(?:<A[^>]*>)*/g;
 s/AWITHGSF/(?:<N pl="y"[^>]+>)*(?:<A[^>]*>)*<A pl="n" gnt="y" gnd="f".>(?:<A[^>]*>)*/g;
 s/ANYWITHGSF/(?:<[^>]+>)*<A pl="n" gnt="y" gnd="f".>(?:<[^>]+>)*/g;
+s/ANYWITHGSM/(?:<[^>]+>)*<A pl="n" gnt="y" gnd="m".>(?:<[^>]+>)*/g;
 s/AWITHPL/(?:<N pl="n" gnt="y" gnd=".".>)?(?:<N pl="y" gnt="n" gnd=".".>)?(?:<A[^>]*>)*<A pl="y" gnt="n".>/g;
 s/ANYWITHPLADJ/(?:<[^>]+>)*<A pl="y" gnt="n".>(?:<[^>]+>)*/g;
 s/AWITHCOMMON/(?:<N pl="n" gnt="y" gnd=".".>)?(?:<N pl="y" gnt="n" gnd=".".>)?<A pl="n" gnt="n".>(?:<A[^>]*>)*/g;
