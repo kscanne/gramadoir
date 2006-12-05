@@ -142,7 +142,7 @@ $(SHARE)/eile.bs : eile-$(TEANGA).bs $(PERLDOK)
 	rm -f $(HASHDIR)/eile.hash $(PERLD)/Makefile
 
 $(SHARE)/nocombo.bs : nocombo-$(TEANGA).txt $(PERLDOK)
-	(cat nocombo-$(TEANGA).txt; $(EGREP) "^[$(LOWERS)]" earraidi-$(TEANGA).bs | sed 's/ .*//') | LC_COLLATE=C sort -u > $@
+	(cat nocombo-$(TEANGA).txt; $(EGREP) "^[$(LOWERS)]" earraidi-$(TEANGA).bs | sed 's/ .*//') | LC_ALL=C sort -u > $@
 	chmod 644 $@
 	rm -f $(HASHDIR)/nocombo.hash $(PERLD)/Makefile
 
@@ -226,14 +226,14 @@ unigram-$(TEANGA).pl : unigram-$(TEANGA).pre unigram-$(TEANGA).txt
 	(cat unigram-$(TEANGA).pre | $(EGREP) '^s/' | sed 's/^/\t/'; cat unigram-$(TEANGA).txt | LC_ALL=C sed 's/^\(<\([A-Z]\)[^>]*\)>/\ts\/<B><Z>(?:<[^>]*>)*\1.>(?:<[^>]*>)*<\\\/Z>([^<]+)<\\\/B>\/\1>$$1<\\\/\2>\/g;/') > $@
 
 $(SHARE)/focail0.bs : lexicon-$(TEANGA).txt freq-$(TEANGA).txt $(PERLDOK)
-	cat lexicon-$(TEANGA).txt | LC_ALL="C" $(PERL) $(GRAMDIR)/count.pl freq-$(TEANGA).txt | LC_COLLATE=C sort -n -r > lex.txt
+	cat lexicon-$(TEANGA).txt | LC_ALL="C" $(PERL) $(GRAMDIR)/count.pl freq-$(TEANGA).txt | LC_ALL=C sort -n -r > lex.txt
 	rm -f lexicon?.txt
 	$(EGREP) '^0' lex.txt | sed 's/^0 //' > lexicon6.txt
 	$(EGREP) '^1 ' lex.txt | sed 's/^1 //' > lexicon5.txt
 	cat lex.txt | sed '/^[01] /d' | sed 's/^[0-9]* //' | LC_ALL="C" $(PERL) $(GRAMDIR)/lexbuild
 	for FILENUM in 0 1 2 3 4 5 6; \
 	do \
-		cat lexicon$${FILENUM}.txt | LC_COLLATE=C sort -u -k1,1 -k2,2n | LC_ALL="C" $(PERL) $(GRAMDIR)/cabhair.pl --compress --encoding=$(NATIVE) > $(SHARE)/focail$${FILENUM}.bs; \
+		cat lexicon$${FILENUM}.txt | LC_ALL=C sort -u -k1,1 -k2,2n | LC_ALL="C" $(PERL) $(GRAMDIR)/cabhair.pl --compress --encoding=$(NATIVE) > $(SHARE)/focail$${FILENUM}.bs; \
 	done
 	rm -f lexicon?.txt lex.txt
 	chmod 644 $(SHARE)/focail?.bs
