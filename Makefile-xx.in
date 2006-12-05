@@ -223,7 +223,7 @@ giorr-$(TEANGA).pl : giorr-$(TEANGA).txt giorr-$(TEANGA).pre
 	(cat giorr-$(TEANGA).pre | $(EGREP) '^s/' | sed 's/^/\t/'; cat giorr-$(TEANGA).txt | LC_ALL=C sed 's/ .*//' | LC_ALL=C sed 's/.*/\ts\/([^@BDCHARS@]&)\\.\/$$1$$NOBD.\/g;/') > $@
 
 unigram-$(TEANGA).pl : unigram-$(TEANGA).pre unigram-$(TEANGA).txt
-	(cat unigram-$(TEANGA).pre | $(EGREP) '^s/' | sed 's/^/\t/'; cat unigram-$(TEANGA).txt | sed 's/^\(<\([A-Z]\)[^>]*\)>/\ts\/<B><Z>(?:<[^>]*>)*\1.>(?:<[^>]*>)*<\\\/Z>([^<]+)<\\\/B>\/\1>$$1<\\\/\2>\/g;/') > $@
+	(cat unigram-$(TEANGA).pre | $(EGREP) '^s/' | sed 's/^/\t/'; cat unigram-$(TEANGA).txt | LC_ALL=C sed 's/^\(<\([A-Z]\)[^>]*\)>/\ts\/<B><Z>(?:<[^>]*>)*\1.>(?:<[^>]*>)*<\\\/Z>([^<]+)<\\\/B>\/\1>$$1<\\\/\2>\/g;/') > $@
 
 $(SHARE)/focail0.bs : lexicon-$(TEANGA).txt freq-$(TEANGA).txt $(PERLDOK)
 	cat lexicon-$(TEANGA).txt | LC_ALL="C" $(PERL) $(GRAMDIR)/count.pl freq-$(TEANGA).txt | LC_COLLATE=C sort -n -r > lex.txt
@@ -233,7 +233,7 @@ $(SHARE)/focail0.bs : lexicon-$(TEANGA).txt freq-$(TEANGA).txt $(PERLDOK)
 	cat lex.txt | sed '/^[01] /d' | sed 's/^[0-9]* //' | LC_ALL="C" $(PERL) $(GRAMDIR)/lexbuild
 	for FILENUM in 0 1 2 3 4 5 6; \
 	do \
-		cat lexicon$${FILENUM}.txt | LC_COLLATE=C sort -u -k1,1 -k2,2n | $(GRAMDIR)/cabhair.pl --compress --encoding=$(NATIVE) > $(SHARE)/focail$${FILENUM}.bs; \
+		cat lexicon$${FILENUM}.txt | LC_COLLATE=C sort -u -k1,1 -k2,2n | LC_ALL="C" $(PERL) $(GRAMDIR)/cabhair.pl --compress --encoding=$(NATIVE) > $(SHARE)/focail$${FILENUM}.bs; \
 	done
 	rm -f lexicon?.txt lex.txt
 	chmod 644 $(SHARE)/focail?.bs
