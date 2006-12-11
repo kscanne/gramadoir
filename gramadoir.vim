@@ -1,6 +1,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Name:             gramadoir.vim
-" Description:      Vim interface to An Gramadóir Irish grammar checker
+" Description:      Vim interface to An GramadÃ³ir Irish grammar checker
 " Author:           Kevin Patrick Scannell <scannell@slu.edu>
 " Url:              http://borel.slu.edu/gramadoir/
 "
@@ -20,14 +20,14 @@ let s:errorwords = ""
 set cpo&vim
 
 function s:Check()
-  echo "An Gramadóir: fan go fóill..."
+  echo "An GramadÃ³ir: fan go fÃ³ill..."
   let l:filename=expand("%")
   if !strlen(l:filename)
     let l:filename=tempname()
     silent execute "w!".l:filename
   endif
   let errorfile = tempname()
-  let l:dummy=system('cat '. escape(l:filename,' \')." | gram-ga.pl --html --aschod=iso-8859-1 | sed 's/<br>//g; s/ class=gramadoir//g' > ".escape(errorfile,' \'))
+  let l:dummy=system('cat '. escape(l:filename,' \')." | gram-ga.pl --html --ionchod=utf-8 | sed 's/<br>//g; s/ class=gramadoir//g' > ".escape(errorfile,' \'))
   silent exe 'split ' . errorfile
   execute "normal \<C-W>b"
   execute "normal \<C-W>K"
