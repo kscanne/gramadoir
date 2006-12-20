@@ -1731,6 +1731,10 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 <N>[Ii]omarca</N>:NEEDART
 <T>[Aa]n</T> <E><N>[Ii]omarca</N></E>:OK
 <S>FUSEDPREP</S> <E><N>[Ii]omarca</N></E>:OK
+# see OD77 iomláine; common error
+# "hiomlán" gets tagged as "A" so gets "NIAITCH"
+<D>[Ii]na</D> <N pl="n" gnt="n" gnd="m">[Ii]omlán</N>:BACHOIR{ina iomláine, ina hiomláine}
+<S>[Aa]s</S> <D>a</D> <N pl="n" gnt="n" gnd="m">iomlán</N>:BACHOIR{as a iomláine, as a hiomláine}
 # exception to "lenite gen. after fem."
 <NFCS>h?ionga</NFCS> <NG>LENITED</NG>:NISEIMHIU
 # CB p.12 #1.c.ii (lenition), p.20 #2.a (eclipsis)
@@ -2541,6 +2545,8 @@ h?[Oo]cht <N>ANYTHING</N> <N pl="n" gnt="n">[Dd]h?éag</N> <A>UNBOUNDADJ</A>:OK
 <V cop="y">[Ss]ularb</V> INITIALCONSONANT:BACHOIR{sular}
 <V cop="y">[Ss]ularbh</V> NONVOWELNONF:BACHOIR{sular}
 # TTTTTTTTTTTTTTTTTTTT
+# corpus; see OD77 taca
+<S>[Uu]m</S> <T>an</T> <N pl="n" gnt="n" gnd="m">taca</N>:URU
 # exception to "lenite gen. after fem."
 <N pl="n" gnt="n" gnd="f">d?[Tt]h?airseach</N> <NG>LENITED</NG>:NISEIMHIU
 # LGG p.88, OD "used with article"
@@ -3472,6 +3478,7 @@ háirithe:INPHRASE{go háirithe}
 <S>[Aa]r</S> <E><N pl="n" gnt="n">[Ii]nn</N></E> <S>ar</S> <P>ea</P>:OK
 <S>[Aa]r</S> <E><N pl="n" gnt="n">[Ii]nn</N></E> <R>ar éigean</R>:OK
 <N pl="n" gnt="n" gnd="m">[Ll]ánseol</N>:INPHRASE{faoi lánseol}
+<A pl="n" gnt="n">leanas</A>:INPHRASE{mar a leanas, seo a leanas}
 <N pl="n" gnt="n" gnd="f">[Ll]éig</N>:INPHRASE{i léig}
 <N>[Ll]eith</N>:INPHRASE{ar leith, faoi leith, i leith}
 # <A> and <N>
