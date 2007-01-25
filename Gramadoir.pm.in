@@ -819,7 +819,7 @@ sub whiteout
 
 # preserve length; see computation of "offset" attribute below; convention is
 # that it is measured with entities in place of &, <, >, ".  But if we
-# just leave the entities they mess up the various [^A-ZÁÉÍÓÚa-záéíóú]* patts
+# just leave the entities they mess up the various [^A-Za-z]* patts
 sub strip_entities
 {
 	my ( $text ) = @_;
