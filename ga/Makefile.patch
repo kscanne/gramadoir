@@ -1,5 +1,5 @@
---- Makefile	2006-12-14 16:31:56.000000000 -0600
-+++ Makefile.ok	2006-12-14 14:16:40.000000000 -0600
+--- Makefile	2007-01-25 15:43:12.000000000 -0600
++++ Makefile.ok	2007-01-25 15:43:01.000000000 -0600
 @@ -74,6 +74,15 @@
  
  Makefile : $(GRAMDIR)/Makefile-xx.in configure
@@ -21,8 +21,8 @@
  	sed -n '/^#\./{s/^#\. //; p;}' rialacha-$(TEANGA).in > triail
  
 +triailcheck : FORCE
-+	cat triail.xml | iconv -f utf8 -t iso-8859-1 | sed 's/^<E offset.*sentence="/<E s="/' > t1.xml
-+	$(PERL) -I $(PERLD)/lib $(PERLD)/scripts/$(SCRIPTNAME) --api --iomlan --aspell --comheadan=ga --aschod=iso-8859-1 triail | sed 's/^<E offset.*sentence="/<E s="/' > t2.xml
++	cat triail.xml | iconv -f utf8 -t iso-8859-1 | sed 's/^<error fromy.*context="/<E s="/' > t1.xml
++	$(PERL) -I $(PERLD)/lib $(PERLD)/scripts/$(SCRIPTNAME) --api --iomlan --aspell --comheadan=ga --aschod=iso-8859-1 triail | sed 's/^<error fromy.*context="/<E s="/' > t2.xml
 +	vimdiff t1.xml t2.xml
 +	rm -f t1.xml t2.xml
 +
@@ -37,18 +37,6 @@
  
  clean :
  	if [ -e $(PERLD)/Makefile ]; then (cd $(PERLD);  make distclean); fi
-@@ -315,9 +331,9 @@
- replcheck : FORCE
- 	@$(MAKE) perl
- 	@echo "earraidi-$(TEANGA).bs..."
--	@sed 's/^[^ ]* //; s/$$/\./' earraidi-$(TEANGA).bs | $(PERL) -I $(PERLD)/lib $(PERLD)/scripts/$(SCRIPTNAME) --litriu --iomlan
-+	@sed 's/^[^ ]* //; s/$$/\./' earraidi-$(TEANGA).bs | $(PERL) -I $(PERLD)/lib $(PERLD)/scripts/$(SCRIPTNAME) --litriu --iomlan --aschod=iso-8859-1
- 	@echo "eile-$(TEANGA).bs..."
--	@sed 's/^[^ ]* //; s/$$/\./' eile-$(TEANGA).bs | $(PERL) -I $(PERLD)/lib $(PERLD)/scripts/$(SCRIPTNAME) --litriu --iomlan
-+	@sed 's/^[^ ]* //; s/$$/\./' eile-$(TEANGA).bs | $(PERL) -I $(PERLD)/lib $(PERLD)/scripts/$(SCRIPTNAME) --litriu --iomlan --aschod=iso-8859-1
- 
- 
- counts : FORCE
 @@ -331,4 +347,101 @@
  zipped : perl
  	(cd $(PERLD); make zipdist)
