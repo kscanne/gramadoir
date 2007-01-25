@@ -291,7 +291,7 @@ A umpire.  The status quo.
 	  Walloon (by Pablo Saratxaga),
 	  and Welsh (by Kevin Donnelly).
 	  These are kept under <acronym>CVS</acronym> at
-	  <ulink url="http://cvs.sourceforge.net/viewcvs.py/gramadoir/">sourceforge.net</ulink>.
+	  <ulink url="http://gramadoir.cvs.sourceforge.net/gramadoir/">sourceforge.net</ulink>.
 	</para>
 	<para>
 	  Preliminary work has been done on several other languages; hopefully
@@ -497,7 +497,7 @@ A umpire.  The status quo.
 	  and your language code for "xx"):
 	</para>
 	<screen>
-<prompt>$</prompt> <userinput>cvs -d:ext:username@cvs.sf.net:/cvsroot/gramadoir checkout engine xx</userinput>
+<prompt>$</prompt> <userinput>cvs -d:ext:username@gramadoir.cvs.sourceforge.net:/cvsroot/gramadoir checkout engine xx</userinput>
 cvs checkout: Updating engine
 U engine/ABOUT-NLS
 U engine/COPYING
