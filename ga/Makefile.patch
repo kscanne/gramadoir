@@ -1,5 +1,5 @@
---- Makefile	2007-01-25 15:43:12.000000000 -0600
-+++ Makefile.ok	2007-01-25 15:43:01.000000000 -0600
+--- Makefile	2007-01-25 15:47:45.000000000 -0600
++++ Makefile.ok	2007-01-25 15:46:10.000000000 -0600
 @@ -74,6 +74,15 @@
  
  Makefile : $(GRAMDIR)/Makefile-xx.in configure
@@ -37,6 +37,18 @@
  
  clean :
  	if [ -e $(PERLD)/Makefile ]; then (cd $(PERLD);  make distclean); fi
+@@ -315,9 +331,9 @@
+ replcheck : FORCE
+ 	@$(MAKE) perl
+ 	@echo "earraidi-$(TEANGA).bs..."
+-	@sed 's/^[^ ]* //; s/$$/\./' earraidi-$(TEANGA).bs | $(PERL) -I $(PERLD)/lib $(PERLD)/scripts/$(SCRIPTNAME) --litriu --iomlan
++	@LC_ALL=C sed 's/^[^ ]* //; s/$$/\./' earraidi-$(TEANGA).bs | $(PERL) -I $(PERLD)/lib $(PERLD)/scripts/$(SCRIPTNAME) --litriu --iomlan
+ 	@echo "eile-$(TEANGA).bs..."
+-	@sed 's/^[^ ]* //; s/$$/\./' eile-$(TEANGA).bs | $(PERL) -I $(PERLD)/lib $(PERLD)/scripts/$(SCRIPTNAME) --litriu --iomlan
++	@LC_ALL=C sed 's/^[^ ]* //; s/$$/\./' eile-$(TEANGA).bs | $(PERL) -I $(PERLD)/lib $(PERLD)/scripts/$(SCRIPTNAME) --litriu --iomlan
+ 
+ 
+ counts : FORCE
 @@ -331,4 +347,101 @@
  zipped : perl
  	(cd $(PERLD); make zipdist)
