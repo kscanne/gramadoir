@@ -73,8 +73,10 @@ if (defined($ionchur)) {
 	);
 
 	foreach (@{$gr->grammatical_errors($ionchur)}) {
-		m/^<E offset="([0-9]+)" fromy="([0-9]+)".* sentence="(.*)" errortext="([^"]+)" msg="([^"]+)">$/;
-		print "<br><br>$2: ".substr($3,0,$1)."<b class=gramadoir>$4</b>".substr($3,$1+length($4))."<br>\n$5.\n\n";
+		(my $ln, my $snt, my $msg) = m/^<error fromy="([0-9]+)".* context="(.*)" msg="([^"]+)"\/>$/;
+		$snt =~ s/<marker>/<b class=gramadoir>/;
+		$snt =~ s/<\/marker>/<\/b>/;
+		print "<br><br>$ln: $snt<br>\n$msg.\n\n";
 	}
 }
 else {
