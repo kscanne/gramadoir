@@ -922,7 +922,7 @@ sub grammatical_errors
 
 	my $sentences = get_sentences_real($text);
 	# these "plain" sentences include entities like &quot; and 
-	# are used as the "sentence" attribute in the --api output
+	# are used as the "context" attribute in the --api output
 	foreach my $plain (@$sentences) {
 		my $s = $self->add_tags_real($plain);
 		rialacha ($s); # just like xml_stream now
