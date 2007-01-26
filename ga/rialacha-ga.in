@@ -3478,7 +3478,12 @@ háirithe:INPHRASE{go háirithe}
 <S>[Aa]r</S> <E><N pl="n" gnt="n">[Ii]nn</N></E> <S>ar</S> <P>ea</P>:OK
 <S>[Aa]r</S> <E><N pl="n" gnt="n">[Ii]nn</N></E> <R>ar éigean</R>:OK
 <N pl="n" gnt="n" gnd="m">[Ll]ánseol</N>:INPHRASE{faoi lánseol}
+# corpus; OD77 has "mar leanas" w/o "a", OF81 has "seo leanas" w/o "a"
 <A pl="n" gnt="n">leanas</A>:INPHRASE{mar a leanas, seo a leanas}
+<A pl="n" gnt="n">seo</A> a <E><A pl="n" gnt="n">leanas</A></E>:OK
+<A pl="n" gnt="n">seo</A> <E><A pl="n" gnt="n">leanas</A></E>:OK
+<C>[Mm]ar</C> a <E><A pl="n" gnt="n">leanas</A></E>:OK
+<C>[Mm]ar</C> <E><A pl="n" gnt="n">leanas</A></E>:OK
 <N pl="n" gnt="n" gnd="f">[Ll]éig</N>:INPHRASE{i léig}
 <N>[Ll]eith</N>:INPHRASE{ar leith, faoi leith, i leith}
 # <A> and <N>
