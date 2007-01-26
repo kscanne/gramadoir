@@ -36,7 +36,7 @@ my $output = $gr->grammatical_errors($test);
 my $errorno = 0;
 is( @resultarr, @$output, 'Verifying correct number of errors found');
 foreach my $error (@$output) {
-	$error =~ m/fromy="([1-9][0-9]*)".*errortext="([^"]+)"/;
+	$error =~ m/fromy="([1-9][0-9]*)".*<marker>([^<]+)<\/marker>/;
 	is ( $error, $resultarr[$errorno], "Verifying error \"$2\" found on input line $1" );
 	++$errorno;
 }
