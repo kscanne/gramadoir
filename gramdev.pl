@@ -40,7 +40,7 @@ Kevin P. Scannell, E<lt>kscanne@gmail.comE<gt>.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2004 Kevin P. Scannell
+Copyright (C) 2004, 2005 Kevin P. Scannell
 
 This is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.2 or,
@@ -149,7 +149,7 @@ gettext(
 
 if ($version) {
 	my $vstring = gettext('version %s', $VERSION);
-	my $copyright = 'Copyright (C) 2003, 2004 Kevin P. Scannell';
+	my $copyright = 'Copyright (C) 2003-2007 Kevin P. Scannell';
 	my $gpl = gettext('This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law.');
 	print "$clar, $vstring\n$copyright\n$gpl\n";
 	exit 0;

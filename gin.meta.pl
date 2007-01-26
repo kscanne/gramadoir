@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 # This perl script is used for converting the hopefully-user-readable
 # *.in files into the somewhat complicated *.pl scripts
-# Copyright (C) 2004 Kevin P. Scannell <scannell@slu.edu>
+# Copyright (C) 2004, 2005 Kevin P. Scannell <kscanne@gmail.com>
 #
 # This is free software; see the file COPYING for copying conditions.  There is
 # NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.

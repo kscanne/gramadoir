@@ -249,7 +249,7 @@ $clar = gettext('An Gramadoir');
 
 if ($version) {
 	my $vstring = gettext('version %s', $VERSION);
-	my $copyright = 'Copyright (C) 2003, 2004 Kevin P. Scannell';
+	my $copyright = 'Copyright (C) 2003-2007 Kevin P. Scannell';
 	my $gpl = gettext('This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law.');
 	if ($html) {
 		$copyright =~ s#(Kevin P. Scannell)#<a href="http://borel.slu.edu/">$1</a><br><br>#;

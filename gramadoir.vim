@@ -1,7 +1,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Name:             gramadoir.vim
 " Description:      Vim interface to An Gramadóir Irish grammar checker
-" Author:           Kevin Patrick Scannell <scannell@slu.edu>
+" Author:           Kevin Patrick Scannell <kscanne@gmail.com>
 " Url:              http://borel.slu.edu/gramadoir/
 "
 " Licence:          This program is free software; you can redistribute it

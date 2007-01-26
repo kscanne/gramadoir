@@ -50,7 +50,7 @@ die "Problem setting language handle" unless $lh;
 # but each string is taken directly from gram.pl
 my $clar = gettext('An Gramadoir');
 my $vstring = gettext('version %s', $VERSION);
-my $copyright = 'Copyright (C) 2003-2005 <a href="http://borel.slu.edu/">Kevin P. Scannell</a><br><br>';
+my $copyright = 'Copyright (C) 2003-2007 <a href="http://borel.slu.edu/">Kevin P. Scannell</a><br><br>';
 my $gpl = gettext('This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law.');
 
 print $q->header(-type=>"text/html",

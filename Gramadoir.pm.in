@@ -1197,11 +1197,11 @@ detailed discussion and specific examples.
 
 =head1 AUTHOR
 
-Kevin P. Scannell, E<lt>scannell@slu.eduE<gt>.
+Kevin P. Scannell, E<lt>kscanne@gmail.comE<gt>.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2004 Kevin P. Scannell
+Copyright (C) 2004, 2005, 2007 Kevin P. Scannell
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.2 or,

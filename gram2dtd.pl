@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# Copyright (C) 2005 Kevin P. Scannell
+# Copyright (C) 2005 Kevin P. Scannell <kscanne@gmail.com>
 # This is free software; see the file COPYING for copying conditions.  There is
 # NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
