@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 # Macros used in converting *.in files into *.pl scripts
-# Copyright (C) 2004 Kevin P. Scannell <scannell@slu.edu>
+# Copyright (C) 2004-2007 Kevin P. Scannell <kscanne@gmail.com>
 #
 # This is free software; see the file COPYING for copying conditions.  There is
 # NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
