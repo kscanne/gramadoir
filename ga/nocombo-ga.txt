@@ -83,6 +83,7 @@ chuise
 chus
 cia
 cli
+cnu
 coin
 com
 con
@@ -241,6 +242,7 @@ lua
 mai
 mair
 mar
+mas
 mba
 mha
 mhacht
