@@ -978,12 +978,16 @@ sub grammatical_errors
 				$endoflast = $globe;
 				$fromx--;
 				my $toans = $tox - 1;  # keep tox for next err 
+				# now setup context; search in buffered which has had
+				# entities stripped. Means we can't just insert <match> in it.
 				$buffered =~ m!$matchregex!g;
 				my $offset = $-[1] - 1;
 				my $errortext = $1;
-				$thiserror =~ s!^<E!<E offset="$offset" fromy="$fromy" fromx="$fromx" toy="$toy" tox="$toans" sentence="$plain" errortext="$errortext"!;
+				my $context = substr($plain,0,$offset)."<marker>$errortext</marker>".substr($plain,$offset+length($errortext));
+				$thiserror =~ s!^<E!<error fromy="$fromy" fromx="$fromx" toy="$toy" tox="$toans" ruleId="Lingua::@TEANGA@::Gramadoir" context="$context"!;
 				$thiserror = decode("@NATIVE@", $thiserror);
 				$thiserror =~ s! msg="([^"]+)"!" msg=\"".$self->localize_me($1)."\""!e;
+				$thiserror =~ s/>$/\/>/;
 				push @$errors, $thiserror;
 			}
 		}
