@@ -36,7 +36,7 @@ L<perl(1)>
 
 =head1 AUTHOR
 
-Kevin P. Scannell, E<lt>scannell@slu.eduE<gt>.
+Kevin P. Scannell, E<lt>kscanne@gmail.comE<gt>.
 
 =head1 COPYRIGHT AND LICENSE
 
@@ -139,7 +139,7 @@ gettext(
 # "If no file is given, read from standard input."),
 # "",
 gettext(
-'Send bug reports to <%s>.','scannell@slu.edu'),
+'Send bug reports to <%s>.','kscanne@gmail.com'),
 ""
 );
 
