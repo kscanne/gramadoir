@@ -1,5 +1,5 @@
---- Makefile	2007-01-25 21:58:57.000000000 -0600
-+++ Makefile.ok	2007-01-25 21:58:46.000000000 -0600
+--- Makefile	2007-01-28 15:33:15.000000000 -0600
++++ Makefile.ok	2007-01-28 15:31:25.000000000 -0600
 @@ -74,6 +74,15 @@
  
  Makefile : $(GRAMDIR)/Makefile-xx.in configure
@@ -21,8 +21,8 @@
  	sed -n '/^#\./{s/^#\. //; p;}' rialacha-$(TEANGA).in > triail
  
 +triailcheck : FORCE
-+	cat triail.xml | iconv -f utf8 -t iso-8859-1 | sed 's/^<error fromy.*context="/<E s="/' > t1.xml
-+	$(PERL) -I $(PERLD)/lib $(PERLD)/scripts/$(SCRIPTNAME) --api --iomlan --aspell --comheadan=ga --aschod=iso-8859-1 triail | sed 's/^<error fromy.*context="/<E s="/' > t2.xml
++	cat triail.xml | LC_ALL=C sed 's/^<error fromy=.*" msg="/<E m="/' > t1.xml
++	$(PERL) -I $(PERLD)/lib $(PERLD)/scripts/$(SCRIPTNAME) --api --iomlan --aspell --comheadan=ga triail | LC_ALL=C sed 's/^<error fromy=.*" msg="/<E m="/' > t2.xml
 +	vimdiff t1.xml t2.xml
 +	rm -f t1.xml t2.xml
 +
