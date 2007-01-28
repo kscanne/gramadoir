@@ -983,11 +983,10 @@ sub grammatical_errors
 				$buffered =~ m!$matchregex!g;
 				my $offset = $-[1] - 1;
 				my $errortext = $1;
-				my $context = substr($plain,0,$offset)."<marker>$errortext</marker>".substr($plain,$offset+length($errortext));
-				$thiserror =~ s!^<E!<error fromy="$fromy" fromx="$fromx" toy="$toy" tox="$toans" ruleId="Lingua::@TEANGA@::Gramadoir" context="$context"!;
+				my $errlen = length($errortext);
+				$thiserror =~ s!^<E (msg=".+")>$!<error fromy="$fromy" fromx="$fromx" toy="$toy" tox="$toans" ruleId="Lingua::@TEANGA@::Gramadoir" $1 context="$plain" contextoffset="$offset" errorlength="$errlen"/>!;
 				$thiserror = decode("@NATIVE@", $thiserror);
 				$thiserror =~ s! msg="([^"]+)"!" msg=\"".$self->localize_me($1)."\""!e;
-				$thiserror =~ s/>$/\/>/;
 				push @$errors, $thiserror;
 			}
 		}
