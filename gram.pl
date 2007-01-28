@@ -392,6 +392,7 @@ while ($ARGV = shift @ARGV) {
 		foreach my $error (@$errs) {
 			(my $ln, my $msg, my $snt, my $offset, my $len) = $error =~ m/^<error fromy="([0-9]+)".* msg="([^"]+)".* context="([^"]+)" contextoffset="([0-9]+)" errorlength="([0-9]+)"\/>$/;
 			my $errortext = substr($snt,$offset,$len);
+			$ln++;   # people count lines from 1
 			my $s = "<br><br>$ln: ".substr($snt,0,$offset);
 			if ($html) {
 				$s .= "<b class=gramadoir>$errortext</b>";

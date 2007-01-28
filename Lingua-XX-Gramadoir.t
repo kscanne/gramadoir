@@ -38,6 +38,7 @@ is( @resultarr, @$output, 'Verifying correct number of errors found');
 foreach my $error (@$output) {
 	(my $ln, my $snt, my $offset, my $len) = $error =~ m/^<error fromy="([0-9]+)".* context="([^"]+)" contextoffset="([0-9]+)" errorlength="([0-9]+)"\/>$/;
 	my $errortext = substr($snt,$offset,$len);
+	$ln++;
 	is ( $error, $resultarr[$errorno], "Verifying error \"$errortext\" found on input line $ln" );
 	++$errorno;
 }

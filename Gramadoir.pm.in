@@ -917,7 +917,7 @@ sub grammatical_errors
 	my $errors = [];  # array reference to return
   # endoflast is global offset in $pristine following the end of last error
 	my $endoflast = 0;
-	my $toy = 1;   # line number at position $endoflast; lines count from 1
+	my $toy = 0;   # line number at position $endoflast; lines count from 1
 	my $tox = -1;  # line position of end of last match (not like $+[0]!)
 
 	my $sentences = get_sentences_real($text);

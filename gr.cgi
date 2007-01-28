@@ -76,6 +76,7 @@ if (defined($ionchur)) {
 		# these lines copied from gram.pl
 		(my $ln, my $msg, my $snt, my $offset, my $len) = m/^<error fromy="([0-9]+)".* msg="([^"]+)".* context="([^"]+)" contextoffset="([0-9]+)" errorlength="([0-9]+)"\/>$/;
 		my $errortext = substr($snt,$offset,$len);
+		$ln++;   # humans count lines from 1
 		print "<br><br>$ln: ".substr($snt,0,$offset)."<b class=gramadoir>$errortext</b>".substr($snt,$offset+$len)."<br>\n$msg.\n\n";
 	}
 }
