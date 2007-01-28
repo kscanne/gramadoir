@@ -118,7 +118,7 @@ my $curr_y = 1;
 my $curr_x = 0;
 my ($f_y, $f_x, $t_y, $t_x, $errmsg);
 foreach (@$errs) {
-	($f_y, $f_x, $t_y, $t_x, $errmsg) = m/^<E.*fromy="([0-9]+)" fromx="([0-9]+)" toy="([0-9]+)" tox="([0-9]+)".*msg="(.*)">$/;
+	($f_y, $f_x, $t_y, $t_x, $errmsg) = m/^<error fromy="([0-9]+)" fromx="([0-9]+)" toy="([0-9]+)" tox="([0-9]+)" .+msg="([^"]+)"/;
 	while ($curr_y < $f_y) {
 		$xmlans .= substr($xmllines[$curr_y-1], $curr_x)."\n";
 		$curr_y++;

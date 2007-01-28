@@ -390,17 +390,21 @@ while ($ARGV = shift @ARGV) {
 		print OUTSTREAM "$status\n" unless ($ARGV eq "-");
 		my $errs = $gr->grammatical_errors($_);
 		foreach my $error (@$errs) {
-			(my $ln, my $snt, my $msg) = $error =~ m/^<error fromy="([0-9]+)".* context="(.*)" msg="([^"]+)"\/>$/;
+			(my $ln, my $msg, my $snt, my $offset, my $len) = $error =~ m/^<error fromy="([0-9]+)".* msg="([^"]+)".* context="([^"]+)" contextoffset="([0-9]+)" errorlength="([0-9]+)"\/>$/;
+			my $errortext = substr($snt,$offset,$len);
+			my $s = "<br><br>$ln: ".substr($snt,0,$offset);
 			if ($html) {
-				$snt =~ s/<marker>/<b class=gramadoir>/;
-				$snt =~ s/<\/marker>/<\/b>/;
+				$s .= "<b class=gramadoir>$errortext</b>";
 			}
 			else {
-				unless ($dath eq "none") {
-					$snt =~ s/<marker>([^<]+)<\/marker>/colored($1,$dath)/e;
+				if ($dath eq "none") {
+					$s .= $errortext;
+				}
+				else {
+					$s .= colored($errortext,$dath);
 				}
 			}
-			my $s = "<br><br>$ln: $snt<br>\n$msg\n\n";  # don't add punctuation
+			$s .= substr($snt,$offset+$len)."<br>\n$msg\n\n";  # don't add punctuation
 			if (!$html) {
 				$s =~ s/<br>//g;
 				$s =~ s/&quot;/"/g;
