@@ -94,5 +94,6 @@ my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime time;
 my $datestr = sprintf("%04d-%02d-%02d", $year+1900, $mon+1, $mday);
 open (LOGFILE, '>>/home/httpd/gr.log') or die "Could not open log file: $!\n";
 print LOGFILE "$datestr\nTeanga=$teanga\n$ionchur\n\n";
+close LOGFILE;
 
 exit 0;
