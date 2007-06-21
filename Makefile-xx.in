@@ -176,7 +176,7 @@ $(SHARE)/gramadoir.sxw : $(GRAMDIR)/OOo/gramadoir.sxw $(PERLDOK)
 	cp -f $(GRAMDIR)/OOo/gramadoir.sxw $@
 
 $(PERLD)/t/$(PERLD).t : $(GRAMDIR)/Lingua-XX-Gramadoir.t triail triail.xml $(PERLDOK)
-	$(EGREP) '^<error ' triail.xml > triail-temp.xml
+	-$(EGREP) '^<error ' triail.xml > triail-temp.xml
 	cat $(GRAMDIR)/Lingua-XX-Gramadoir.t | sed "s/@TEANGA@/$(UPPERTEANGA)/g; s/@NATIVE@/$(NATIVE)/g; s/tests => 1;/tests => `cat triail.xml | wc -l | sed 's/^ *//'`;/" | sed "/<<.EOF.;/r triail" | sed "/<<.RESEOF.;/r triail-temp.xml" > $@
 	chmod 644 $@
 	rm -f triail-temp.xml
