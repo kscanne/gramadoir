@@ -199,6 +199,7 @@ g?[Cc]h?os ar bolg:<N pl="n" gnt="n">
 g?[Cc]h?othrom na [Ff]éinne:<N pl="n" gnt="n" gnd="m">
 [Cc]hun cinn:<R>
 [Cc]hun tosaigh:<R>
+g?[Cc]h?ur [Cc]huige:<N pl="n" gnt="n">
 # listed on equal standing with "ar ndóigh" at OD77 dóigh.3
 [Dd]ar ndóigh:<R>
 # infrequent
@@ -334,7 +335,8 @@ Hong Cong:<N pl="n" gnt="n">
 [Ii] bhfianaise:<S>
 [Ii] bhfochair:<S>
 [Ii] bhfogas:<R>
-[Ii] bhfoirm:<S>
+# often wrong: "i bhfoirm dhigiteach"
+# [Ii] bhfoirm:<S>
 [Ii] bhfolach:<R>
 [Ii] dtaisce:<R>
 [Ii] dteagmháil:<R>
@@ -391,7 +393,8 @@ Hong Cong:<N pl="n" gnt="n">
 [Ii]n airde:<R>
 # infrequent
 [Ii]n airicis:<S>
-[Ii]n áit:<S>
+# this one is usually wrong; lots of "in áit bheag", etc.
+# [Ii]n áit:<S>
 [Ii]n ann:<R>
 [Ii]n éadan:<S>
 [Ii]n éindí:<R>

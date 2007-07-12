@@ -28,6 +28,8 @@ s/NONRFORMCONJ/(?:[Gg]o|[Mm]ura|[Ss]ula)/g;
 s/NONRFORMPREP/(?:faoi|i|le|ó|trí)na/g;
 s/RFORMCONJ/(?:[Gg]ur|[Mm]urar|[Ss]ular)/g;
 s/RFORMPREP/(?:dár|(?:faoi|i|le|ó|trí)nar)/g;
+s/AHNUMBER/[Aa] [^<]+/g;
+s/CHEADCOMPOUND/[^< ]+ chéad/g;
 s/NONCOMPOUND/[^< ]+/g;
 s/COMPOUND/[^< ]+ [^<]+/g;
 s/ALLGENITIVEPREPS/(?:[Cc]hun|[Cc]ois|[Dd]ála|[Ff]earacht|[Tt]impeall|[Tt]rasna)/g;
@@ -73,6 +75,7 @@ s/FAKEPP/(?:[^<]*aimseartha|[Cc]h?athartha|[Cc]h?oitianta|[Gg]h?alánta|[Gg]h?ine
 s/UNLENITABLE/(?:[^BbCcDdFfGgMmPpTt]|[Ss][^lnraeiouáéíóú])[^<]*/g;
 s/UNLENITEDBCGMP/[BbCcGgMmPp][^Hh'][^<]*/g;
 s/UNLENITEDBCFGMP/(?:[BbCcFfGgMmPp][^Hh']|bh[fF])[^<]*/g;
+s/UNMUTATEDVNISH/(?:[BbCcDdFfGgMmPpTt][^hHbBcCpPsStT']|[^BbCcDdFfGgMmPpTt])[^<]*(?:a[dm]h|i[nr]t|áil|ú)/g;
 s/UNMUTATEDBCFGP/[BbCcFfGgPp][^hHcCpP'][^<]*/g;
 # s,m+vowel not *definitely* UNMUTATED since it could be an eclipsis scenario 
 s/UNMUTATED/[BbCcDdFfGgPpTt][^hHcCpPtT'][^<]*/g;
@@ -159,9 +162,9 @@ s/AWITHGSM/(?:<N pl="y"[^>]+>)*(?:<A[^>]*>)*<A pl="n" gnt="y" gnd="m".>(?:<A[^>]
 s/AWITHGSF/(?:<N pl="y"[^>]+>)*(?:<A[^>]*>)*<A pl="n" gnt="y" gnd="f".>(?:<A[^>]*>)*/g;
 s/ANYWITHGSF/(?:<[^>]+>)*<A pl="n" gnt="y" gnd="f".>(?:<[^>]+>)*/g;
 s/ANYWITHGSM/(?:<[^>]+>)*<A pl="n" gnt="y" gnd="m".>(?:<[^>]+>)*/g;
-s/AWITHPL/(?:<N pl="n" gnt="y" gnd=".".>)?(?:<N pl="y" gnt="n" gnd=".".>)?(?:<A[^>]*>)*<A pl="y" gnt="n".>/g;
+s/AWITHPL/(?:<N pl="n" gnt="n" gnd=".".>)?(?:<N pl="n" gnt="y" gnd=".".>)?(?:<N pl="y" gnt="n" gnd=".".>)?(?:<A[^>]*>)*<A pl="y" gnt="n".>/g;
 s/ANYWITHPLADJ/(?:<[^>]+>)*<A pl="y" gnt="n".>(?:<[^>]+>)*/g;
-s/AWITHCOMMON/(?:<N pl="n" gnt="y" gnd=".".>)?(?:<N pl="y" gnt="n" gnd=".".>)?<A pl="n" gnt="n".>(?:<A[^>]*>)*/g;
+s/AWITHCOMMON/(?:<N pl="n" gnt="n" gnd=".".>)?(?:<N pl="n" gnt="y" gnd=".".>)?(?:<N pl="y" gnt="n" gnd=".".>)?<A pl="n" gnt="n".>(?:<A[^>]*>)*/g;
 s/ANYWITHCOMMONH/(?:<[^>]+>)*<A pl="n" gnt="n" h="y".>(?:<[^>]+>)*/g;
 s/ANYWITHCOMMON/(?:<[^>]+>)*<A pl="n" gnt="n".>(?:<[^>]+>)*/g;
 s/ANYWITHADJ/(?:<[^>]+>)*<A[^>]+>(?:<[^>]+>)*/g;

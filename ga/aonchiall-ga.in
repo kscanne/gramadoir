@@ -83,7 +83,7 @@
 <B><Z>ANYCOPULA</Z>ANYTHING</B> <A pl="n" gnt="n">(dh?ócha|eagal|fh?oláir|ionann|leor|mh?iste)</A>:<V cop="y">
 <B><Z>ANYCOPULA</Z>ANYTHING</B> <A pl="n" gnt="n" h="y">(heagal|hionann)</A>:<V cop="y">
 <B><Z>ANYCOPULA</Z>ANYTHING</B> <A pl="n" gnt="y" gnd="f">(fh?earr|mh?ó|mh?óide)</A>:<V cop="y">
-<B><Z>ANYCOPULA</Z>ANYTHING</B> <A>(h?iomaí|léir|náir)</A>:<V cop="y">
+<B><Z>ANYCOPULA</Z>ANYTHING</B> <A>(h?iomaí|léir|náir|fh?ada)</A>:<V cop="y">
 # next two are exceptions to the one following
 <B>an</B> mhaith:<T>
 <B>ar</B> ea:<S>
@@ -92,9 +92,12 @@
 <B>Ach</B>:<C>
 # Clochán an Aifir, not verb
 <B>Aifir</B>:<Y>
+<B>[Aa]inneoin</B>:<N pl="n" gnt="n">
 # Not needed until corpus ref turns up for "ar" nm1
 # <B>[Aa]ir</B>:<O>
 # háirithe now handled in comhshuite
+[Aa]n <B>áirithe</B>:<N pl="n" gnt="n" gnd="f">
+<S>[Ii]n</S> <B>áirithe</B>:<N pl="n" gnt="n" gnd="f">
 <B>áirithe</B>:<A>
 # not "a haló"="her aloe"!
 <B>[Hh]aló</B>:<I>
@@ -165,10 +168,15 @@
 # "an am gcéanna" adj. occurs a lot, but ok to tag <N> and get "NIURU"
 # <N>ANYTHING</N> <B>gcéanna</B>:<A pl="n" gnt="n">
 # i dtrátha an ama chéanna
+[Aa]n <B>[Cc]héanna</B>:<N pl="n" gnt="y" gnd="m">
+[Aa]n <B>[Cc]éanna</B>:<N pl="n" gnt="n" gnd="m">
 <NMGS>ANYTHING</NMGS> <B>[Cc]h?éanna</B>:<A pl="n" gnt="y" gnd="m">
 <B>[Cc]h?éanna</B>:<A pl="n" gnt="n">
 # "dhó" is an exception to next, sometimes means "burning"
 a|á <B>dhó</B>:<N pl="n" gnt="n" gnd="m">
+# "sean" is actually "NUMERICAL" by accident:
+<S>ANYTHING</S> <B>[Ss]h?ean</B>:<N pl="n" gnt="n" gnd="m">
+[Aa]n <B>[Ss]h?ean</B>:<N pl="n" gnt="n" gnd="m">
 [Aa]n <B>[Mm]híle</B>:<N pl="n" gnt="y" gnd="m">
 # handles fichiú, etc. by brute force; ceathrú is feminine so get separate rules
 <B>[Mm]híle</B>:<N pl="n" gnt="n" gnd="m">
@@ -404,10 +412,13 @@ a <B>sé</B>:<A pl="n" gnt="n">
 <V>ANYTHING</V> <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
 <C>ANYTHING</C> <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
 [Aa]ch <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
+[Aa][rs] <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
 [Dd]e <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
+[Ff]aoi <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
 <B>[Dd]e</B> <P>(seo|sin)</P>:<S>
 [Gg]ur <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
 [Mm]ar <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
+[Óó] <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
 <B><Z>SEOSIN</Z>ANYTHING</B>:<A pl="n" gnt="n">
 # compare with similar le,na rules above
 <S>[Ss]na</S> <B>(haon|hocht)</B>:<A pl="n" gnt="n" h="y">
@@ -497,6 +508,7 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 <S>[Gg]o dtí</S> <T>an</T> <B><Z>ANYNMC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <S>[Gg]o dtí</S> <T>na</T> <B><Z>ANYNFPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
 <S>[Gg]o dtí</S> <T>na</T> <B><Z>ANYNMPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<S>COMPOUND</S> <B>ANYTHING</B>:!<A[^>]+>
 <S>COMPOUND</S> <T>an</T> <B><Z>ANYNMG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <S>COMPOUND</S> <T>na</T> <B><Z>ANYNFG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 <S>COMPOUND</S> <T>na</T> <B><Z>ANYNMGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="m">
@@ -527,10 +539,13 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 <NMGS>ANYTHING</NMGS> <B><Z>ANYWITHGSM</Z>UNPPLIKE</B>:<A pl="n" gnt="y" gnd="m">
 <NMGS>ANYTHING</NMGS> <B><Z>ANYWITHGSM</Z>FAKEPP</B>:<A pl="n" gnt="y" gnd="m">
 <NCS>ANYTHING</NCS> <B><Z>AWITHCOMMON</Z>ANYTHING</B>:<A pl="n" gnt="n">
-# next four hopefully "cdr"; get "duine mór eile"
+# next batch hopefully "cdr"; get "duine mór eile"
 <A pl="y" gnt="n">ANYTHING</A> <B><Z>AWITHPL</Z>ANYTHING</B>:<A pl="y" gnt="n">
 <A pl="n" gnt="y" gnd="f">ANYTHING</A> <B><Z>AWITHGSF</Z>UNPPLIKE</B>:<A pl="n" gnt="y" gnd="f">
 <A pl="n" gnt="y" gnd="m">ANYTHING</A> <B><Z>AWITHGSM</Z>UNPPLIKE</B>:<A pl="n" gnt="y" gnd="m">
+# exceptions to following; ar aon chuma, etc.
+<ACS>[Aa]on</ACS> <B><Z>ANYNMC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<ACS>[Aa]on</ACS> <B><Z>ANYNFC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <ACS>ANYTHING</ACS> <B><Z>AWITHCOMMON</Z>ANYTHING</B>:<A pl="n" gnt="n">
 # exception to next:  tugann litir dó, avoids complaint about missing lenition
 <NFCS>ANYTHING</NFCS> <B>dó</B>:<O>
@@ -733,6 +748,7 @@ ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
 # <V>ANYTHING</V> <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
 # <C>ANYTHING</C> <B><Z>SEOSIN</Z>ANYTHING</B>:<P>
 # <B><Z>SEOSIN</Z>ANYTHING</B>:<A pl="n" gnt="n">
+<S>COMPOUND</S> <B>[Aa]</B>:<D>
 # "tarraing sí a hanáil"
 <B>[Aa]</B> INITIALH:<D>
 <B>[Aa]</B> <N>ECLIPSED</N>:<D>
