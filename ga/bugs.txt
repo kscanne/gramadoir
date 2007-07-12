@@ -16,9 +16,9 @@ Bhí cáil *bhainte* amach aige.
 # "He had a reaping tool"
 Bhí uirlis *bainte* aige.
 # Or:
-# "The busy woman is in her office"
+# "The busy woman was in her office"
 Bhí an bhean *gnóthach* ina hoifig.
-# "The woman is busy in her office"
+# "The woman was busy in her office"
 Bhí an bhean *ghnóthach* ina hoifig.
 # Some adjectives that are almost always used predicatively are given as exceptions, so not flagged:
 Bhí an fhéile curtha ar ceal.
