@@ -1,5 +1,5 @@
---- Makefile	2007-01-28 15:33:15.000000000 -0600
-+++ Makefile.ok	2007-01-28 15:31:25.000000000 -0600
+--- Makefile	2007-02-16 22:31:08.000000000 -0600
++++ Makefile.ok	2007-02-16 22:31:04.000000000 -0600
 @@ -74,6 +74,15 @@
  
  Makefile : $(GRAMDIR)/Makefile-xx.in configure
@@ -91,7 +91,7 @@
 +# use "groom" instead of this directly
 +eilefromdb : FORCE
 +	sed 's/ [0-9]*//' lexicon-ga.txt > ./tempfocail
-+	LC_ALL=ga_IE sed 's/ .*//' $(ATH) | keepif -n ./tempfocail latin-1 | LC_ALL=ga_IE sort -u | LC_ALL=ga_IE join $(ATH) - | LC_ALL=POSIX sort -k1,1 | $(EGREP) '^' > ./eile-ga.bs
++	LC_ALL=C sed 's/ .*//' $(ATH) | keepif -n ./tempfocail latin-1 | LC_ALL=C sort -u | LC_ALL=C join $(ATH) - | LC_ALL=C sort -k1,1 | $(EGREP) '^' > ./eile-ga.bs
 +	rm -f tempfocail
 +
 +EARR = ${ISPELLDIR}/ispell-gaeilge/gaelu ${ISPELLDIR}/ispell-gaeilge/earraidi
@@ -99,8 +99,8 @@
 +# use "groom" instead of this directly
 +earrfromdb : FORCE
 +	sed 's/ [0-9]*//' lexicon-ga.txt eile-ga.bs > ./tempfocail
-+	LC_ALL=ga_IE sort -k1,1 $(EARR) > ./tempsrc
-+	LC_ALL=ga_IE sed 's/ .*//' ./tempsrc | keepif -n ./tempfocail latin-1 | LC_ALL=ga_IE sort -u | LC_ALL=ga_IE join ./tempsrc - | LC_ALL=POSIX sort -k1,1 | $(EGREP) . > ./earraidi-ga.bs
++	LC_ALL=C sort -k1,1 $(EARR) > ./tempsrc
++	LC_ALL=C sed 's/ .*//' ./tempsrc | keepif -n ./tempfocail latin-1 | LC_ALL=C sort -u | LC_ALL=C join ./tempsrc - | LC_ALL=C sort -k1,1 | $(EGREP) . > ./earraidi-ga.bs
 +	rm -f tempfocail tempsrc
 +
 +lexicon-$(TEANGA).xml : lexicon-$(TEANGA).txt
