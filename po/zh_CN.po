@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: gramadoir 0.6\n"
 "Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
 "POT-Creation-Date: 2005-03-02 22:40-0600\n"
-"PO-Revision-Date: 2008-02-08 23:07+0800\n"
+"PO-Revision-Date: 2008-02-16 15:21中国标准时间\n"
 "Last-Translator: Ji ZhengYu <zhengyuji@gmail.com>\n"
 "Language-Team: Chinese (simplified) <translation-team-zh-cn@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -21,13 +21,13 @@ msgstr ""
 #, c-format
 msgid "There was %d error.\n"
 msgid_plural "There were %d errors.\n"
-msgstr[0] "存在 %d 个错误。\n"
+msgstr[0] " %d 个错误。\n"
 
 #: ponc.in.y:69
 #, c-format
 msgid "Successfully parsed %d rule.\n"
 msgid_plural "Successfully parsed %d rules.\n"
-msgstr[0] "成功分析 %d 条语法规则。\n"
+msgstr[0] "成功地分析了 %d 条语法规则。\n"
 
 #: ponc.in.y:79
 #, c-format
@@ -75,7 +75,7 @@ msgstr "An Gramadoir"
 #: gram.pl:186 gramdev.pl:94
 #, perl-format
 msgid "Try %s for more information."
-msgstr "试用 %s 取得更多信息。"
+msgstr "尝试用 %s 取得更多信息。"
 
 #: gram.pl:251 gramdev.pl:151
 #, perl-format
@@ -97,7 +97,7 @@ msgstr "最终用户的选项:"
 
 #: gram.pl:274
 msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
-msgstr "    --iomlan      报告所有错误(如: 没用 ~/.neamhshuim)"
+msgstr "    --iomlan      报告所有错误(如: 未使用 ~/.neamhshuim)"
 
 #: gram.pl:277
 msgid "    --ionchod=ENC  specify the character encoding of the text to be checked"
@@ -109,15 +109,15 @@ msgstr "    --aschod=ENC   指定输出时的字符编码"
 
 #: gram.pl:283
 msgid "    --comheadan=xx choose the language for error messages"
-msgstr "    --comheadan=xx 选择错误信息所用的语言"
+msgstr "    --comheadan=xx 选择错误信息所用语言"
 
 #: gram.pl:286
 msgid "    --dath=COLOR   specify the color to use for highlighting errors"
-msgstr "    --dath=COLOR   指定用于高亮错误的颜色"
+msgstr "    --dath=COLOR   指定用于高亮化错误的颜色"
 
 #: gram.pl:289
 msgid "    --litriu       write misspelled words to standard output"
-msgstr "    --litriu       将拼错的单词发至标准输出"
+msgstr "    --litriu       将拼错的单词发送给标准输出"
 
 #: gram.pl:292
 msgid "    --aspell       suggest corrections for misspellings"
@@ -141,11 +141,11 @@ msgstr "开发者的选项:"
 
 #: gram.pl:306
 msgid "    --api          output a simple XML format for use with other applications"
-msgstr "    --api          输出一个其它程序能用的简单的 XML 格式"
+msgstr "    --api          输出一个其它程序能用的简易 XML 格式"
 
 #: gram.pl:308
 msgid "    --html         produce HTML output for viewing in a web browser"
-msgstr "    --html         为用浏览器观看生成 HTML 输出"
+msgstr "    --html         为用浏览器观看而生成 HTML 输出"
 
 #: gram.pl:314
 msgid "    --no-unigram   do not resolve ambiguous parts of speech by frequency"
@@ -153,7 +153,7 @@ msgstr "    --no-unigram   不要多次地解析词法的歧义部分"
 
 #: gram.pl:320
 msgid "    --xml          write tagged XML stream to standard output, for debugging"
-msgstr "    --xml          为调试将标好的 XML 流写入标准输出"
+msgstr "    --xml          为调试而将标记好的 XML 流写入标准输出"
 
 #: gram.pl:323
 msgid "If no file is given, read from standard input."
@@ -179,16 +179,16 @@ msgstr "权限被禁"
 #: gram.pl:370
 #, perl-format
 msgid "%s: warning: problem closing %s\n"
-msgstr "%s: 警告: 正在关闭 %s 出问题\n"
+msgstr "%s: 警告: 正在关闭 %s 时出现问题\n"
 
 #: gram.pl:387
 #, perl-format
 msgid "Currently checking %s"
-msgstr "当前正在检查 %s"
+msgstr "正在检查 %s"
 
 #: gramdev.pl:125
 msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
-msgstr "    --ilchiall     报告未解决的歧义，以次数排序"
+msgstr "    --ilchiall     报告未解决的歧义词语，以次数排序"
 
 #: gramdev.pl:128
 msgid "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
@@ -206,7 +206,7 @@ msgstr "%s: 正在读取数据库时出错\n"
 #: Gramadoir.pm.in:165
 #, perl-format
 msgid "%s: `%s' corrupted at %s\n"
-msgstr "%s: ‘%s’ 在 %s 被损坏\n"
+msgstr "%s: ‘%s’ 在 %s 被破坏了\n"
 
 #. TRANSLATORS: "conversion" here means conversion between character encodings
 #: Gramadoir.pm.in:217 Gramadoir.pm.in:508 Gramadoir.pm.in:579
@@ -240,27 +240,27 @@ msgstr "有效单词但实际上极少使用"
 
 #: messages.txt:5
 msgid "Repeated word"
-msgstr "重复的单词"
+msgstr "多次重复的单词"
 
 #: messages.txt:6
 msgid "Unusual combination of words"
-msgstr "少有的单词合成"
+msgstr "不多见的单词合用"
 
 #: messages.txt:7
 msgid "The plural form is required here"
-msgstr "这里需要复数形式"
+msgstr "这里要求使用复数形式"
 
 #: messages.txt:8
 msgid "The singular form is required here"
-msgstr "这里需要单数形式"
+msgstr "这里要求使用单数形式"
 
 #: messages.txt:9
 msgid "Comparative adjective required"
-msgstr "需要比较级形容词"
+msgstr "要求使用比较级形容词"
 
 #: messages.txt:10
 msgid "Definite article required"
-msgstr "需要明确的冠词"
+msgstr "要求使用明确的冠词"
 
 #: messages.txt:11
 msgid "Unnecessary use of the definite article"
@@ -268,11 +268,11 @@ msgstr "不必使用明确的冠词"
 
 #: messages.txt:12
 msgid "Unnecessary use of the genitive case"
-msgstr "不必使用所有格大写"
+msgstr "不必使用所有格词"
 
 #: messages.txt:13
 msgid "The genitive case is required here"
-msgstr "这里需要所有格大写"
+msgstr "这里需要所有格词"
 
 #: messages.txt:14
 msgid "It seems unlikely that you intended to use the subjunctive here"
@@ -282,9 +282,8 @@ msgstr "看起来你不可能打算在这里用虚拟语气"
 #. around the variable \\1.  You should keep the double backslash before the 1,
 #. but there is no need to escape the quotes the way they are in the msgid.
 #: messages.txt:18
-#, fuzzy
 msgid "Usually used in the set phrase \\/\\1\\/"
-msgstr "通常用于被动语态 \\/\\1\\/"
+msgstr "通常用于固定词组 \\/\\1\\/ 中"
 
 #: messages.txt:19
 msgid "You should use \\/\\1\\/ here instead"
@@ -296,11 +295,11 @@ msgstr "\\/\\1\\/ 的非标准形式"
 
 #: messages.txt:21
 msgid "Derived from a non-standard form of \\/\\1\\/"
-msgstr "从 \\/\\1\\/ 的非标准形式引申出来"
+msgstr "从 \\/\\1\\/ 的非标准形式引申"
 
 #: messages.txt:22
 msgid "Derived incorrectly from the root \\/\\1\\/"
-msgstr "从 \\/\\1\\/ 词根引申错误"
+msgstr "从 \\/\\1\\/ 词根的错误引申"
 
 #: messages.txt:23
 msgid "Unknown word"
@@ -313,7 +312,7 @@ msgstr "未知单词: \\/\\1\\/？"
 
 #: messages.txt:26
 msgid "Valid word but more often found in place of \\/\\1\\/"
-msgstr "有效单词但在 \\/\\1\\/ 找到更常用的"
+msgstr "有效单词但在 \\/\\1\\/ 中更常用"
 
 #: messages.txt:27
 msgid "Not in database but apparently formed from the root \\/\\1\\/"
@@ -329,7 +328,7 @@ msgstr "你是要 \\/\\1\\/？"
 
 #: messages.txt:30
 msgid "Derived form of common misspelling \\/\\1\\/?"
-msgstr "一般拼写错误的衍生形式 \\/\\1\\/？"
+msgstr "衍生自 \\/\\1\\/ 的常见拼写错误？"
 
 #: messages.txt:31
 msgid "Not in database but may be a compound \\/\\1\\/?"
@@ -341,37 +340,37 @@ msgstr "不在数据库中但可能是个非标准的复合词 \\/\\1\\/？"
 
 #: messages.txt:33
 msgid "Possibly a foreign word (the sequence \\/\\1\\/ is highly improbable)"
-msgstr "可能是个外来词汇 (词组 \\/\\1\\/ 极端不可能出现)"
+msgstr "可能是个外来词汇 (词组 \\/\\1\\/ 不可能出现)"
 
 #. TRANSLATORS: Rules specific to the Irish language (ga)
 #: messages.txt:35
 msgid "Prefix \\/h\\/ missing"
-msgstr "缺少前缀 \\/h\\/"
+msgstr "缺少 \\/h\\/ 前缀"
 
 #: messages.txt:36
 msgid "Prefix \\/t\\/ missing"
-msgstr "缺少前缀 \\/t\\/"
+msgstr "缺少 \\/t\\/ 前缀"
 
 #: messages.txt:37
 msgid "Prefix \\/d'\\/ missing"
-msgstr "缺少前缀 \\/d'\\/"
+msgstr "缺少 \\/d'\\/ 前缀"
 
 #: messages.txt:38
 msgid "Unnecessary prefix \\/h\\/"
-msgstr "没必要的前缀 \\/h\\/"
+msgstr "没必要的 \\/h\\/ 前缀"
 
 #: messages.txt:39
 msgid "Unnecessary prefix \\/t\\/"
-msgstr "没必要的前缀 \\/t\\/"
+msgstr "没必要的 \\/t\\/ 前缀"
 
 #: messages.txt:40
 msgid "Unnecessary prefix \\/d'\\/"
-msgstr "没必要的前缀 \\/d'\\/"
+msgstr "没必要的 \\/d'\\/ 前缀"
 
 #. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
 #: messages.txt:42
 msgid "Unnecessary initial mutation"
-msgstr "没必要的首字母的元音变化"
+msgstr "不必进行首字母的元音变化"
 
 #: messages.txt:43
 msgid "Initial mutation missing"
@@ -381,28 +380,26 @@ msgstr "缺少首字母元音变化"
 #. It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
 #: messages.txt:46
 msgid "Unnecessary lenition"
-msgstr "没必要的弱化"
+msgstr "没必要的字首轻辅音"
 
 #: messages.txt:47
 msgid "Often the preposition \\/\\1\\/ causes lenition, but this case is unclear"
-msgstr "频繁用介词 \\/\\1\\/ 引起弱化，但此种情况不清楚"
+msgstr "通常介词 \\/\\1\\/ 会引起轻辅音化，但不一定如此"
 
 #: messages.txt:48
 msgid "Lenition missing"
-msgstr "缺少弱化"
+msgstr "缺少轻辅音"
 
 #. TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
 #. initial consonants in Irish.  It is indicated in writing by the addition
 #. of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
 #: messages.txt:52
-#, fuzzy
 msgid "Unnecessary eclipsis"
-msgstr "没必要的模糊"
+msgstr "没必要的字首浊辅音"
 
 #: messages.txt:53
-#, fuzzy
 msgid "Eclipsis missing"
-msgstr "缺少模糊"
+msgstr "缺少浊辅音"
 
 #: messages.txt:54
 msgid "The dative is used only in special phrases"
@@ -423,20 +420,20 @@ msgstr "这里常用以 \\/\\1\\/ 结尾的综合(合成)形式"
 #. TRANSLATORS: Rules specific to the Cornish language (kw)
 #: messages.txt:59
 msgid "Second (soft) mutation missing"
-msgstr "缺少第二(弱)元音变化"
+msgstr "缺少第二(弱音)辅音变化"
 
 #: messages.txt:60
 msgid "Third (breathed) mutation missing"
-msgstr "缺少第三(轻)元音变化"
+msgstr "缺少第三(轻声)辅音变化"
 
 #: messages.txt:61
 msgid "Fourth (hard) mutation missing"
-msgstr "缺少第四(重)元音变化"
+msgstr "缺少第四(重音)辅音变化"
 
 #: messages.txt:62
 msgid "Fifth (mixed) mutation missing"
-msgstr "缺少第五(混合)元音变化"
+msgstr "缺少第五(混音)辅音变化"
 
 #: messages.txt:63
 msgid "Fifth (mixed) mutation after 'th missing"
-msgstr "在 ‘th’ 后缺少第五(混合)元音变化"
+msgstr "在 ‘th’ 后缺少第五(混音)辅音变化"
