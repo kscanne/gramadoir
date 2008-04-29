@@ -242,6 +242,7 @@ g?ch?éad <B>dá</B>:<A pl="n" gnt="n">
 <B>n?[Dd]h?earna</B>:<V p="y" t="caite">
 <B>[Dd]eir</B>:<V p="y" t="láith">
 <B>[Dd]eireadh</B>:<N pl="n" gnt="n" gnd="m">
+<B>[Dd]h?eiridh</B>:<N pl="n" gnt="y" gnd="m">
 <B>dío?bh</B>:<O>
 <B>[Dd]o</B> <T>na</T>:<S>
 <S>ANYTHING</S> <B>do</B>:<D>
@@ -338,7 +339,12 @@ a <B>[Ll]inne</B>:<N pl="n" gnt="y" gnd="f">
 <B>[Mm]ar</B> gheall:<S>
 <T>an</T> <B>mheasa</B>:<N pl="n" gnt="y" gnd="m">
 # almost always "ba mheasa"
-<B>mh?easa</B>:<A pl="n" gnt="y" gnd="f">
+<V cop="y">ANYTHING</V> <B>mh?easa</B>:<A pl="n" gnt="y" gnd="f">
+# exceptions to default feminime tag couple lines down
+<S>COMPOUND</S> <T>[Aa]n</T> <B>mhéid</B>:<N pl="n" gnt="y" gnd="m">
+<S>GENITIVEPREP</S> <T>[Aa]n</T> <B>mhéid</B>:<N pl="n" gnt="y" gnd="m">
+# or else gets tagged gsm => false NOGENITIVE error sometimes ("ar an mhéid")
+<T>[Aa]n</T> <B>mhéid</B>:<N pl="n" gnt="n" gnd="f">
 <S>ANYTHING</S> <B>mh?ór</B>:<N pl="n" gnt="n" gnd="m">
 <T>an</T> <B>mh?ór</B>:<N pl="n" gnt="n" gnd="m">
 <T>an</T> <B>mh?óir</B>:<N pl="n" gnt="y" gnd="m">
@@ -513,10 +519,10 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 <S>COMPOUND</S> <T>na</T> <B><Z>ANYNFG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 <S>COMPOUND</S> <T>na</T> <B><Z>ANYNMGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="m">
 <S>COMPOUND</S> <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
-<S>ANYTHING</S> <B><Z>ANYNMC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
-<S>ANYTHING</S> <B><Z>ANYNFC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
-<S>ANYTHING</S> <B><Z>ANYNFPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
-<S>ANYTHING</S> <B><Z>ANYNMPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<S>NONCOMPOUND</S> <B><Z>ANYNMC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
+<S>NONCOMPOUND</S> <B><Z>ANYNFC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
+<S>NONCOMPOUND</S> <B><Z>ANYNFPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="f">
+<S>NONCOMPOUND</S> <B><Z>ANYNMPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 # see rialacha
 <N>[Dd]ís|[Dd]h?osaen|[Pp]h?éire</N> <B><Z>ANYNMGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="m">
 <N>[Dd]ís|[Dd]h?osaen|[Pp]h?éire</N> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
@@ -543,6 +549,9 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 <A pl="y" gnt="n">ANYTHING</A> <B><Z>AWITHPL</Z>ANYTHING</B>:<A pl="y" gnt="n">
 <A pl="n" gnt="y" gnd="f">ANYTHING</A> <B><Z>AWITHGSF</Z>UNPPLIKE</B>:<A pl="n" gnt="y" gnd="f">
 <A pl="n" gnt="y" gnd="m">ANYTHING</A> <B><Z>AWITHGSM</Z>UNPPLIKE</B>:<A pl="n" gnt="y" gnd="m">
+# le haghaidh béile Polainéisigh
+<B><Z>ANYNMG</Z>ANYTHING</B> <A pl="n" gnt="y" gnd="m">ANYTHING</A>:<N pl="n" gnt="y" gnd="m">
+<B><Z>ANYNFG</Z>ANYTHING</B> <A pl="n" gnt="y" gnd="f">ANYTHING</A>:<N pl="n" gnt="y" gnd="f">
 # exceptions to following; ar aon chuma, etc.
 <ACS>[Aa]on</ACS> <B><Z>ANYNMC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <ACS>[Aa]on</ACS> <B><Z>ANYNFC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
@@ -563,7 +572,8 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 <S>[Ss]na</S> <B><Z>ANYNMPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
 # "saol pearsanta an iománaí";  compare PREFIXT rule in rialacha-ga.in
 # "R" for "tabhairt isteach an airgeadra"
-<[ANR]>ANYTHING</[ANR]> an <B><Z>ANYNMG</Z>INITIALVOWEL</B>:<N pl="n" gnt="y" gnd="m">
+<[AR]>ANYTHING</[AR]> an <B><Z>ANYNMG</Z>INITIALVOWEL</B>:<N pl="n" gnt="y" gnd="m">
+<NGEND>ANYTHING</NGEND> an <B><Z>ANYNMG</Z>INITIALVOWEL</B>:<N pl="n" gnt="y" gnd="m">
 # go léir, go fóill
 [Gg]o <B><Z>AWITHCOMMON</Z>ANYTHING</B>:<A pl="n" gnt="n">
 <R>[Cc]homh</R> <B><Z>ANYWITHCOMMON</Z>ANYTHING</B>:<A pl="n" gnt="n">
@@ -649,7 +659,7 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 <B><Z>NMONEC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <T>na</T> <B><Z>ANYNFONEC</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 <B><Z>NFONEC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
-<N>ANYTHING</N> <T>[Aa]n</T> <B><Z>ANDROGYN</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<NGEND>ANYTHING</NGEND> <T>[Aa]n</T> <B><Z>ANDROGYN</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <T>[Aa]n</T> <B><Z>ANDROGYN</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <[^N]>ANYTHING</[^N]> <B><Z>ANDROGYN</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <S>ANYTHING</S> <T>[Aa]n</T> <B><Z>NMFOUR</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
@@ -658,7 +668,7 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 <S>ANYTHING</S> <T>[Aa]n</T> <B><Z>NMFOUR</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 [Aa]r <T>[Aa]n</T> <B><Z>NMFOUR</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <T>[Aa]n</T> <B><Z>NMFOUR</Z>LENITED</B>:<N pl="n" gnt="y" gnd="m">
-<[^T]>ANYTHING</[^T]> <N>ANYTHING</N> <T>[Aa]n</T> <B><Z>NMFOUR</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<[^T]>ANYTHING</[^T]> <NGEND>ANYTHING</NGEND> <T>[Aa]n</T> <B><Z>NMFOUR</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 #<[^N]>ANYTHING</[^N]> <B><Z>NMFOUR</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <B><Z>NMFOUR</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <B><Z>STRONGPLM</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
@@ -830,7 +840,7 @@ ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
 <S>FUSEDPREP</S> <B><Z>ANYGENITIVE</Z>ANYTHING</B>:!<N pl="." gnt="y" gnd=".">
 <S>DATIVEPREP</S> <B><Z>ANYGENITIVE</Z>ANYTHING</B>:!<N pl="." gnt="y" gnd=".">
 # last resort if none of this helps!
-<N>ANYTHING</N> <B><Z>NMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
+<NGEND>ANYTHING</NGEND> <B><Z>NMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 #  these are OK because all of the past forms that are eclipsable
 #  (bhfuair, ndearna, etc. CB p.133)  are UNAMBIGOUS
 <B><Z>ANYPAST</Z>ECLIPSED</B>:!<V p="y" t="caite">
