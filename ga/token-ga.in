@@ -14,6 +14,9 @@ www\.[A-Za-z0-9/.:=_%?&~+;$@\#()-]+[A-Za-z0-9/=]:<Y>
 (?:[12][0-9])?[0-9]0í:<N pl="y" gnt="n" gnd="m">
 [1-9][0-9]*ú:<A pl="n" gnt="n">
 [1-9][0-9]*adh:<A pl="n" gnt="n">
+[1-9][0-9]*[rn]d:<A pl="n" gnt="n">
+[1-9][0-9]*st:<A pl="n" gnt="n">
+[1-9][0-9]*th:<A pl="n" gnt="n">
 [0-9][0-9]+:<A>
 [A-Za-zÀ-ÿ0-9][A-Za-zÀ-ÿ'-]*'[A-Za-zÀ-ÿ'-]*[A-Za-zÀ-ÿ0-9]:<c>
 # these ' words must be in main lexicon even if non-standard like "'gus";
