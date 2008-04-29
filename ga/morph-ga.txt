@@ -226,20 +226,27 @@ uithe$			ú		0	<N.*>	<&>
 ^t-([AEIOUÁÉÍÓÚ])	t$1		1	<.+>	<&>    # CO p.125
 ^h?ana-			an-		1	<.+>	<&>    # ana-eagraithe
 ^coimh			comh		1	<.+>	<&>    # coimhlíonadh
-^de[ai]gh		dea		1	<.+>	<&>
+^de[áai]gh-		dea-		1	<.+>	<&>
+^de[áai]gh([^-])	dea-$1		1	<.+>	<&>
 ^dligh(i?)		dlí		1	<.+>	<&>
+^droich			droch		1	<.+>	<&>
 ^duibh			dubh		1	<.+>	<&>
+^fó-			fo-		1	<.+>	<&>
 ^h?ion			in		1	<.+>	<&>
+^lui([mn])		loi$1	1	<.+>	<&>		# luinnir->loinnir
 ^maill			mall		1	<.+>	<&>
 ^meadhón		meán		1	<.+>	<&>
+^mío-			mí-		1	<.+>	<&>
 ^nea-mb			neamhbh		1	<.+>	<&>
 ^nea-			neamh-		1	<.+>	<&>    # strip hyphen later
 ^nea([cdfgpt]h)		neamh$1		1	<.+>	<&>
 ^h?óig			óg		1	<.+>	<&>
 ^prímh			príomh		1	<.+>	<&>
 ^réimh			réamh		1	<.+>	<&>
+^ro-			ró-		1	<.+>	<&>
 ^roimh			réamh		1	<.+>	<&>
 ^seana-			sean-		1	<.+>	<&>    # strip hyphen later
+^teasb([^h])		taispe$1	1	<.+>	<&>
 ^tele([^aeiouáéíóú]+[eéií])	teili$1		1	<.+>	<&>    # OD77
 ^tele([^aeiouáéíóú]+[aáoóuú])	teilea$1	1	<.+>	<&>
 ^h?uaith		uath		1	<.+>	<&>
@@ -247,6 +254,7 @@ uithe$			ú		0	<N.*>	<&>
 # deán for déan
 ^(n?dh?)eán		$1éan		1	<V.*>	<&>
 chd(a?)$		cht$1		1	<N.*>	<&>    # masc too (achd, m.sh.)
+ínteacht(a?)$	íneacht$1	1	<N.*>	<&>    # deisimínteacht, etc. 
 óanna$			ónna		1	<N.*>	<&>	# common!  clóanna, seóanna, gnóanna, srl.
 #   Now various general spelling reforms from CO handbook
 ai(cht?ín)		a$1		1	<.+>	<&>    # CO p.120, smaichtín
@@ -293,16 +301,21 @@ ighile$			íola		1	<N pl="n" gnt="y" gnd="f".*>	<&>
 #   some dialect/pre-standard noun/adjective inflections
 ([oó]ga)í$		$1		1	<N pl="y".*>	<&>   # duilleogaí
 nnaí$			nna		1	<N pl="y".*>	<&>   # ceisteannaí
+chaí$			cha		1	<[AN].*>	<&>
 thaí$			tha		1	<.+>	<&>    # glórthaí, spéarthaí
 (..)dha$		$1tha		1	<.+>	<&>    # measardha, muinteardha
 (..)dha$		$1a		1	<.+>	<&>    # stuamdha, príomhdha
 (.[aá])igh$		$1ch		1	<N.*>	<&>	# nb2 -aí genitives
 (..)igh$		$1each		1	<N.*>	<&>   #  same
 (..)aidh$		$1a		1	<.+>	<&>    # bhfágaidh
+eói?g$			eog		1	<N.*>	<&>   # nb2 
+eoig$			eog		1	<N.*>	<&>   # nb2 
 óig$			óg		1	<N.*>	<&>   # nb2 
 lainn$			lann		1	<N.*>	<&>   # nb2
 aisí$			ais		1	<N.*>	<&>   # cuntaisí, bronntanaisí
 dth([ea])$		dt$1		1	<.+>	<&>    # goidthe
+# Fórsaíbh -> Fórsaí (dpl)
+íbh$			í	1	<N.*>	<&>
 ##################  NON/PRE-STANDARD VERB ENDINGS #########################
 # future/conditional 2nd declension with -cha?- see CO p.103
 e[oó]cha(i?dh)$		eo$1		1	<V.*>	<&>
@@ -313,6 +326,7 @@ e[oó]chai(nn|dís)$	eoi$1		1	<V p="y" t="coinn">	<&>
 ([^e])óchai(nn|dís)$	$1ói$2		1	<V p="y" t="coinn">	<&>
 e[oó]chthá$		eofá		1	<V p="y" t="coinn">	<&>
 ([^e])óchthá$		$1ófá		1	<V p="y" t="coinn">	<&>
+(ó|eo)char$			$1far	1	<V p="n" t="fáist">	<&>
 #   2nd declension Dinneen-style endings
 (..)aíd$		$1aíonn		1	<V p="y" t="láith">	<&> # cialluíd
 aghadh			ú		1	<N.*>	<&>  # broad and slender
@@ -360,7 +374,14 @@ anns$			ann		1	<V p="y" t="láith">	<&>
 íonns$			íonn		1	<V p="y" t="láith">	<&>
 #  corpus 
 th(eá|ear)$		t$1		1	<V.*>	<&>
-(..)faimís$		$1faimis	2	<V p="y" t="coinn">	<&>
+#  -idh, -aidh on 1st declension verbs: Pres. Subj. or 2nd pl. imper (-igí) 
+#  according to Dinneen.  Some examples seem to be pres. in corpus,
+#  e.g. suidhidh, some apparently past e.g. uneclipsed "tigidh"
+#  Here we go with subjunctive which is the most common by far
+(.[^a])idh$	$1e		1	<V p="y" t="foshuit">	<&>
+# (..)aidh$	$1a		1	<V p="y" t="foshuit">	<&>
+#  pre-standard texts commonly have "déanfaimíd", "tugaimís", "rachaimíd"...
+(...)imí([ds])$		$1imi$2	1	<V.*>	<&>
 igidh$			igí		1	<V p="y" t="ord">	<&>
 mist$			mis		1	<V.*>	<&>
 #  various -áil  endings should be broad, CO p.120
