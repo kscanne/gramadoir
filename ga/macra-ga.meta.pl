@@ -69,7 +69,7 @@ s/ECLIPSINGPOSS/(?:(?:[Ff]aoin|[Ii]n|[Ll]en|[”Û]n|[Tt]rÌn)?(?:[Aa]|·r)|[Dd]?[¡·]
 # of tagging problems with verbal adj. vs. gs of vn.:
 #  "easpa maoinithe" is OK (no lenition of gs after share/part/want words),
 #  but would give error if tagged as an plain adj.
-s/UNBOUNDADJ/(?:[^<]+th?[ae]|cÈad|cibÈ|deich|dh·|[Gg]ach|seacht|[Ss]eo|[Ss]in|trÌ|˙d|uile)/g;
+s/UNBOUNDADJ/(?:[^<]+th?[ae]|cÈad|cibÈ|cos˙il|deich|dh·|[Gg]ach|seacht|[Ss]eo|[Ss]in|trÌ|˙d|uile)/g;
 s/UNPPLIKE/(?:[^<]+(?:[^ae]|[^th][ae]|[^t]h[ae]))/g;
 s/FAKEPP/(?:[^<]*aimseartha|[Cc]h?athartha|[Cc]h?oitianta|[Gg]h?al·nta|[Gg]h?inear·lta|[Ll]og·nta|[Mm]h?Ìleata|[Nn]·d˙rtha|(?:[Ii]dir)?[Nn]·isi˙nta|[Ss]Ûisialta|[Ss]peisialta|[Tt]h?raidisi˙nta)/g;
 s/UNLENITABLE/(?:[^BbCcDdFfGgMmPpTt]|[Ss][^lnraeiou·ÈÌÛ˙])[^<]*/g;
@@ -261,6 +261,7 @@ s/\*MCS\[/*pl="n" gnt="n" gnd="m"[/g;
 s/\*MCP\[/*pl="y" gnt="n" gnd="m"[/g;
 s/\*MGS\[/*pl="n" gnt="y" gnd="m"[/g;
 s/\*MGP\[/*pl="y" gnt="y" gnd="m"[/g;
+s/\*GEND\[/*pl="." gnt="." gnd="."[/g;
 s/\*NOPAUT\[/*(?: p=.y|t=..[^a])[/g;
 s/\*AUT\[/* p="n"[/g;
 # also implies non-copula
