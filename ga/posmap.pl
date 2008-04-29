@@ -188,6 +188,7 @@ s/^(Shile) .*/$1 127/;
 s/^(shilfeadh) .*/$1 127/;
 s/^(sh?ilim) .*/$1 127/;
 s/^(sh?iltear) .*/$1 127/;
+s/^(sh?loinnte) (128|1[56].)$/$1 127/;  # kill (verbal) adj tags
 s/^(smaointigh) .*/$1 127/;
 s/^(spaide) .*/$1 127/;
 s/^(speire?) .*/$1 127/;
