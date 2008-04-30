@@ -272,6 +272,7 @@ ocht
 ochtach
 óid
 óide
+óidh
 oile
 oir
 oire
