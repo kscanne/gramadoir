@@ -99,8 +99,11 @@ i[dg]h(th?.)		i$1		1	<.+>	<&>  # marcaidhthe, masluighthe, beannuighth?ear
 ^có(n[aáoóuú])		$1		0	<[ANV].*>	<&>
 ^cói(n[eéií])		$1		0	<[ANV].*>	<&>
 ^coimh-mh		cóimh		1	<[ANV].*>	<&>
-^comh-mh		mh		1	<[ANV].*>	<&>
-^co(i?)mh-?n		có$1n		1	<[ANV].*>	<&>
+^comh-(mh[aáoóuú])		có$1		1	<[ANV].*>	<&>
+^comh-(mh[eéií])		cói$1		1	<[ANV].*>	<&>
+^coimh-n		cóin		1	<[ANV].*>	<&>
+^comh-(n[aáoóuú])		có$1		1	<[ANV].*>	<&>
+^comh-(n[eéií])		cói$1		1	<[ANV].*>	<&>
 ^có-(..)		comh$1		1	<[ANV].*>	<&>
 ^có([bcdfgpt]h)		comh$1		1	<[ANV].*>	<&>
 ^do-([aeiouáéíóú])	$1		0	<[AN].*>	<&>
@@ -218,21 +221,77 @@ uithe$			ú		0	<N.*>	<&>
 ################## CAIGHDEÁN OIFIGIÚIL SPELLING REFORMS #####################
 #############################################################################
 #   modernize prefixes (no need to trap mutated versions, stripped below
+#   full list from OD77 is in gaeilge/diolaim/x/OD77alt-prefixes
 ^h?aith			ath		1	<.+>	<&>
+^h?aird([^e])	ard$1		1	<.+>	<&>
+# handled by more general "nn" rule below
+#^h?anns			ans		1	<.+>	<&>
 ^h?eadar		idir		1	<.+>	<&>
 ^dh'			d'		1	<.+>	<&>
 ^h-			h		1	<.+>	<&>    # CO p.126
 ^n-([AEIOUÁÉÍÓÚ])	n$1		1	<.+>	<&>    # CO p.125
 ^t-([AEIOUÁÉÍÓÚ])	t$1		1	<.+>	<&>    # CO p.125
 ^h?ana-			an-		1	<.+>	<&>    # ana-eagraithe
+^bain			ban		1	<.+>	<&>
+^báin			bán		1	<.+>	<&>
+^bairr			barr		1	<.+>	<&>
+^beig			beag		1	<.+>	<&>
+^béil			béal		1	<.+>	<&>
+^boig			bog		1	<.+>	<&>
+^boinn			bonn		1	<.+>	<&>
+^boirr			borr		1	<.+>	<&>  # boirrphéist...
+# handled by more general ll rule below
+#^bolls			bols		1	<.+>	<&>
+^buain			buan		1	<.+>	<&>  # buainseasamh...
+^caim			cam		1	<.+>	<&>  # caimbheart...
+# handled by more general tht rule below
+#^caitht			cait		1	<.+>	<&>
+^caoimh			caomh		1	<.+>	<&>
+# N.B. makes string longer
+#^ceathar			ceathair		1	<.+>	<&>
+^céid			céad		1	<.+>	<&>
+# N.B. makes string longer
+#^cinn			ceann		1	<.+>	<&>
+^cionn			ceann		1	<.+>	<&>
+^cláir			clár		1	<.+>	<&>   # cláirfhiacail e.g.
+^claoidh			cloí		1	<.+>	<&>
+^coilg			colg		1	<.+>	<&>  # coilgsheasamh e.g.
 ^coimh			comh		1	<.+>	<&>    # coimhlíonadh
+^c[ou]ir([pr])			cor$1		1	<.+>	<&>
+^crainn			crann		1	<.+>	<&>
+^croim			crom		1	<.+>	<&>   # croimleac e.g.
+^cruai?dh			crua		1	<.+>	<&>
+^cúil			cúl		1	<.+>	<&>
+^daill			dall		1	<.+>	<&> # daillintinn
+^daoir([^s])			daor		1	<.+>	<&>
 ^de[áai]gh-		dea-		1	<.+>	<&>
 ^de[áai]gh([^-])	dea-$1		1	<.+>	<&>
+^deir([bg])			dear$1		1	<.+>	<&> # deirbhnialas, deirgmheisce
+^diubhr			diúr		1	<.+>	<&>
 ^dligh(i?)		dlí		1	<.+>	<&>
+^doinn			donn		1	<.+>	<&>
 ^droich			droch		1	<.+>	<&>
 ^duibh			dubh		1	<.+>	<&>
+# handled by more general prefix+gc rule below
+#^éagc			éag		1	<.+>	<&>
+#^éigc			éig		1	<.+>	<&>
+# handled by more general prefix+dt rule below
+#^éadt			éad		1	<.+>	<&>
+#^éidt			éid		1	<.+>	<&>
+# handled by more general ll rule below
+#^falls			fals		1	<.+>	<&>
+^fiadh			fia		1	<.+>	<&>
+^flith			frith		1	<.+>	<&>
+^frioth([^á])	frith$1		1	<.+>	<&>
 ^fó-			fo-		1	<.+>	<&>
+# N.B. makes string longer
+#^gamh			geamh		1	<.+>	<&>
+# N.B. makes string longer
+^girr			gearr		1	<.+>	<&>
+^gobh			gabh		1	<.+>	<&>
 ^h?ion			in		1	<.+>	<&>
+# handled by more general nn rule below
+#^h?ionn([rs])			ion$1		1	<.+>	<&>
 ^lui([mn])		loi$1	1	<.+>	<&>		# luinnir->loinnir
 ^maill			mall		1	<.+>	<&>
 ^meadhón		meán		1	<.+>	<&>
@@ -241,6 +300,9 @@ uithe$			ú		0	<N.*>	<&>
 ^nea-			neamh-		1	<.+>	<&>    # strip hyphen later
 ^nea([cdfgpt]h)		neamh$1		1	<.+>	<&>
 ^h?óig			óg		1	<.+>	<&>
+# handled by more general nn rule below
+#^pannc			panc		1	<.+>	<&>
+#^poinnt			point		1	<.+>	<&>
 ^prímh			príomh		1	<.+>	<&>
 ^réimh			réamh		1	<.+>	<&>
 ^ro-			ró-		1	<.+>	<&>
@@ -249,6 +311,8 @@ uithe$			ú		0	<N.*>	<&>
 ^teasb([^h])		taispe$1	1	<.+>	<&>
 ^tele([^aeiouáéíóú]+[eéií])	teili$1		1	<.+>	<&>    # OD77
 ^tele([^aeiouáéíóú]+[aáoóuú])	teilea$1	1	<.+>	<&>
+# handled by more general rule below
+#^treabhth			treaf		1	<.+>	<&>
 ^h?uaith		uath		1	<.+>	<&>
 ^h?úir			úr		1	<.+>	<&>
 # deán for déan
