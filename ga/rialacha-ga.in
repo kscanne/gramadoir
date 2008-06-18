@@ -19,6 +19,7 @@
 # OS=Ó Siadhail, Learning Irish
 #
 ##############################################################################
+#   All "OK"'s that undo errors inserted by Gramadóir must come first !
 #. Ní raibh líon mór daoine bainteach leis an scaifte a bhí ag iarraidh mioscais a chothú.
 #   "scaifte" is recognized as an alternate of scata directly by "cuardach"
 #. Ach thosnaíos-sa ag léamh agus bhog mé isteach ionam féin.
@@ -52,7 +53,11 @@ sin sin:OK
 # better error here - at this point gramadoir already has inserted
 # <E msg="CAIGHDEAN{mantacháin}"><X>Mantáin</X></E>
 <N pl="n" gnt="n" gnd="f">g?Ch?ill</N> <E><X>Mantáin</X></E>:OK
+# better error here - at this point gramadoir already has inserted
+# <E msg="CAIGHDEAN{ealaín}"><X>ealú</X></E>
+<E><X>[Ee]alú</X></E>:OK
 <N pl="n" gnt="n" gnd="f">g?Ch?ill</N> <X>Mantáin</X>:SEIMHIU
+<X>ealú</X>:MICHEART{éalú}
 #  better message for "he" and "hi" <X>-words in certain contexts; helps caighdean
 <V cop="y">[Nn]í</V> <X>he</X>:MICHEART{ní hé}
 <V cop="y">[Nn]í</V> <X>hi</X>:MICHEART{ní hí}
@@ -115,7 +120,9 @@ sin sin:OK
 <Y>'mach</Y>:CAIGHDEAN{amach}
 <Y>[Mm]ur'</Y>:CAIGHDEAN{mura}
 <Y>'n</Y>:CAIGHDEAN{an}
+<Y>'n-a</Y>:CAIGHDEAN{ina}
 <Y>'na</Y>:CAIGHDEAN{ina}
+<Y>'n-ár</Y>:CAIGHDEAN{inár}
 <Y>'ndiu</Y>:CAIGHDEAN{inniu}
 <Y>'nocht</Y>:CAIGHDEAN{anocht}
 <Y>'nois</Y>:CAIGHDEAN{anois}
@@ -134,11 +141,14 @@ sin sin:OK
 <A pl="n" gnt="n">[1-9][0-9]*[rn]d</A>:MICHEART{-ú}
 # before the general <F> => correct but uncommon error, should trap
 # specific such where they almost exclusively appear as an alt/missp in corpus:
+<F>[Aa]inic</F>:IONADAI{fainic}
 <F>h?[Aa]ireamh</F>:IONADAI{áireamh}
 <F>h?[Aa]irimh</F>:IONADAI{áirimh}
 <F>h?[Aa]irithe</F>:IONADAI{áirithe}
 # aiseanna -> áiseanna split
 <F>[Aa]ithnigh</F>:IONADAI{aithin}
+<F>[Dd]'ar</F> <N pl="n" gnt="n" gnd="m">b'ainm</N>:CAIGHDEAN{darb ainm}
+<F>[Dd]'ar</F>:IONADAI{dar}
 <F>[Aa]stai?r</F>:IONADAI{aistear, aistir}
 <F>[Aa]ta</F>:IONADAI{atá}
 <F>m?[Bb]h?aise</F>:IONADAI{boise}
@@ -174,7 +184,7 @@ sin sin:OK
 <F>n?[Dd]h?rud</F>:IONADAI{druidim}
 <V>[Tt]ar</V> <F>[Ee]is</F>:IONADAI{tar éis}
 <F>[Ff]héin</F>:IONADAI{féin}
-<F>[Ff]hiacháil</F>:IONADAI{féachaint}
+<F>[Ff]h?iacháil</F>:IONADAI{féachaint}
 <F>[Ff]h?iní</F>:IONADAI{finte}
 <F>[Ff]h?irinne</F>:IONADAI{fírinne}
 <S>[Aa]r</S> <F>[Ff]his</F>:IONADAI{ris}
@@ -204,6 +214,8 @@ sin sin:OK
 <F>b?[Pp]h?ill</F>:IONADAI{fill, d'fhill}
 <F>b?[Pp]huntaí?</F>:IONADAI{punt, puint}
 <F>[Rr]abh</F>:IONADAI{raibh}
+# rabhthar is present subj aut of "bí", but usually alt. of past aut.
+<F>[Rr]abhthar</F>:IONADAI{rabhthas}
 <F>[Rr]ámhaillí</F>:IONADAI{rámhaille}
 <F>[Rr]ámhailligh</F>:IONADAI{rámhaille}
 <F>[Rr]ataí?</F>:IONADAI{ráta, rachta}
@@ -517,6 +529,9 @@ n[Dd]eire:IONADAI{ndeireadh}
 # a fuair, a dúirt, etc. also ok
 #. Is iomaí uair a fuair mé locht ar an rialtas (OK).
 <U>[Aa]</U> <VPAST>PASTNORFORMLEN</VPAST>:OK
+#  catch now for better message than rule that follows
+#  "Cén fáth a bhí tú" would give "BACHOIR{ar}" otherwise
+<H>[Aa]</H> <VPAST>ABSPASTVERB</VPAST>:RELATIVE
 # rule below, analogue of "cár", "níor", etc. (CB p.132 #5)
 # does not hold in general because "a" can also be the direct relative
 # conjunction, CB p. 132 #8; so can't have it with <U>a</U>...
@@ -596,6 +611,7 @@ n[Dd]eire:IONADAI{ndeireadh}
 <S>[Aa]g</S> <N pl="n" gnt="n" gnd="m">machnamh</N> <P>ANYTHING</P>:OK
 <S>[Aa]g</S> <N>NOTVNISHUNLEN</N> <P>[Ss]ibh</P>:BACHOIR{do bhur X}
 <S>[Aa]g</S> <S>sna</S>:CAIGHDEAN{ag na}
+<N pl="y" gnt="n" gnd="f">[Aa]icí</N>:IONADAI{aici}
 # common misspellings...
 <S>FUSEDPREP</S> <A pl="n" gnt="n">[Aa]it</A>:IONADAI{áit}
 <S>[Ii]n</S> <A pl="n" gnt="n">[Aa]it</A>:IONADAI{in áit}
@@ -1118,6 +1134,8 @@ g?[Cc]h?eathair:INPHRASE{a ceathair, faoi cheathair}
 # <V>ANYTHING</V> <T>na</T> <N>ch?oda</N>:IONADAI{codanna}
 #. Shocraigh sé ar an toirt gur choir an t-ábhar tábhachtach seo a phlé leis na daoine.
 <V cop="y">ANYTHING</V> <N pl="n" gnt="n" gnd="f">[Cc]hoir</N>:IONADAI{chóir}
+# Corpus
+<V p="y" t="láith">g?[Cc]h?olann</V>:IONADAI{colainn}
 # LGG p.204
 # Gaillimhe, Cabhán, Longfort, Iarmhí  handled in general rules w/o Contae! 
 <N pl="n" gnt="n" gnd="m">g?Ch?ontae</N> <N pl="n" gnt="y" gnd="f">Mh?í</N>:NEEDART
@@ -1456,6 +1474,9 @@ n?[Dd]h?eich <N>ANYTHING</N> <A>UNBOUNDADJ</A>:OK
 <N pl="n" gnt="n" gnd="m">Dia</N> <N pl="n" gnt="y" gnd="f" h="y">hAoine</N>:BACHOIR{Dé hAoine}
 <N pl="n" gnt="n" gnd="m">Dia</N> <N pl="n" gnt="y" gnd="m">Sathairn</N>:BACHOIR{Dé Sathairn}
 <N pl="n" gnt="n" gnd="m">Dia</N> <N pl="n" gnt="y" gnd="m">Domhnaigh</N>:BACHOIR{Dé Domhnaigh}
+# "don" most common to follow "dílis", then dá, do, ...
+<N pl="n" gnt="n" gnd="m">díleas</N> <[DOS]>DOWORD</[DOS]>:IONADAI{dílis don}
+<N pl="n" gnt="n" gnd="m">díleas</N> <N>INITIALDAPOST<N>:IONADAI{dílis}
 # CB p.77 #8.g
 [Dd]h?ís <NC>ANYTHING</NC>:GENITIVE
 [Dd]h?ís <NS>ANYTHING</NS>:IOLRA
@@ -1509,7 +1530,7 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 # corpus
 <A>[Éé]agosúi?la?</A>:IONADAI{éagsúil, éagsúla}
 # corpus
-<S>[Aa]r</S> <A pl="n" gnt="n">éigin</A>:IONADAI{éigean}
+<S>[Aa]r</S> <A pl="n" gnt="n">éigin</A>:IONADAI{ar éigean}
 <V cop="y">ANYTHING</V> <A pl="n" gnt="n">éigin</A>:IONADAI{éigean}
 # FTP81
 <T>[Aa]n</T> <N pl="n" gnt="n" gnd="f">Éire</N>:BADART
@@ -1884,6 +1905,7 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 # CB p.17 #9.f (A) "idir bheag agus mhór" meaning "both" not "between, among"!
 #  also need an exception for numerals...
 # <S>[Ii]dir</S> <[AN]>UNLENITED</[AN]>:SEIMHIU
+<V>[Ii]measc</V>:IONADAI{i measc}
 # CB p.20 Note, OD i^1, "in bhur", "in dhá" in eisceacht
 #. Thug sé seo deis dom breathnú in mo thimpeall.
 #. Phós sí Pádraig, fear ón mBlascaod Mór, in 1982.
