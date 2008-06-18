@@ -10,6 +10,7 @@ achtaí
 adaí
 adaigh
 aibh
+aiceacha
 aicí
 aidh
 aige
@@ -31,6 +32,7 @@ air
 aireacht
 airt
 aise
+aithe
 ál
 ala
 áladh
@@ -38,6 +40,8 @@ ala
 amha
 amhail
 ana
+anacht
+anaigh
 anais
 anas
 ann
@@ -71,8 +75,11 @@ chain
 cháin
 chais
 chaithe
+chán
 chan
 chana
+char
+chár
 che
 chen
 chi
@@ -123,9 +130,11 @@ Dun
 each
 eacha
 eachaí
+eacht
 eadh
 eamhail
 éar
+eing
 éis
 eiri
 eirí
@@ -140,6 +149,7 @@ fhé
 fhos
 fol
 fos
+fre
 fri
 gach
 gan
@@ -152,6 +162,7 @@ ghil
 ghinn
 ghus
 gidh
+gnidh
 góirí
 gram
 grin
@@ -183,6 +194,7 @@ ianacha
 ibeach
 ibh
 idhe
+idhear
 idheartha
 idín
 ige
@@ -214,12 +226,14 @@ ionn
 ions
 íre
 ise
+isicí
 ithe
 ite
 itear
 ití
 iúil
 lacht
+laí
 laibh
 laigh
 laighe
@@ -238,6 +252,8 @@ lic
 ling
 liom
 lís
+lóg
+lóig
 lua
 mai
 mair
@@ -258,6 +274,7 @@ mhú
 midhe
 mos
 nach
+nád
 nai
 nann
 nda
@@ -281,6 +298,7 @@ oireacht
 oireachta
 ois
 omair
+ora
 paruithe
 per
 pha
@@ -288,11 +306,13 @@ pro
 Pro
 rachta
 rachtaí
+réis
 ria
 riagh
 ribh
 sach
 saíochta
+saithe
 sám
 sanna
 sard
@@ -339,6 +359,7 @@ thaighe
 tháil
 thaoi
 the
+theoir
 thi
 thic
 thidhe
@@ -353,6 +374,7 @@ tim
 time
 tint
 tíocht
+tiom
 tog
 toir
 ton
