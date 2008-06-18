@@ -134,6 +134,8 @@ s/NOTDO/[^<][^<][^<]+/g;
 s/FEMABSTRACTRESTRICTED/(?:[^<]+íl|h?[Aa]cmhainn|h?[Aa]irde|h?[Aa]ois|h?[Éé]iric|(?:bh)?[Ff]h?(?:airsinge|earg|inne)|n?[Gg]h?éarchéim|h?[Íí](?:d|sl)e|[Ll]aige|[Mm]h?aise|h?[Oo]iread|h?[Óó]ige|t?[Ss]h?aoirse|d?[Tt]h?itim)/g;
 s/FEMABSTRACT/(?:[^<]+[ao]cht|t?[Ss]céim)/g;
 s/QUANTITYWORD/(?:[Aa]ilp|(?:h?an-|g|n?gh?ann|mh?ór|g?ch?aol|leath)?[Cc]h?uid|m?[Bb]h?arraíocht|m?[Bb]h?reis|n?[Dd]h?íolaim|n?[Dd]h?íth|n?[Dd]h?óthain|h?[Éé]agmais|h?[Ee]aspa|(?:bh)?fh?lúirse|h?[Ii]omarca|[Ll]eath|[Rr]aidhse|[Rr]oinnt)/g;
+# Any form of the preposition "do"
+s/DOWORD/(?:d[áió]|do[mn]|dár|duit|dúinn|daoibh|dóibh)/g;
 s/INITIALC/[Cc][^<]+/g;
 s/INITIALDST/[DdSsTt][^<]+/g;
 s/INITIALF/[Ff][^<]+/g;
