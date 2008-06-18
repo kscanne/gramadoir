@@ -64,7 +64,7 @@
 ^mb'			b'		-1	<.+>	<&>
 #  do these early - avoids mistakes with "aighthe" (==aghaidheanna)
 #  and note that first rule must precede second to get "-aithe" pp's correct
-u(i?gh)			a$1		1	<.+>	<&>  # see next few
+u(i?[dg]h)			a$1		1	<.+>	<&>  # see next few
 i[dg]h(th?.)		i$1		1	<.+>	<&>  # marcaidhthe, masluighthe, beannuighth?ear
 # hyphened prefixes, an-, dea-
 ^h?an-([bcfgmp]h)	$1		0	<[AN].*>	<&>
@@ -102,8 +102,8 @@ i[dg]h(th?.)		i$1		1	<.+>	<&>  # marcaidhthe, masluighthe, beannuighth?ear
 ^comh-(mh[aáoóuú])		có$1		1	<[ANV].*>	<&>
 ^comh-(mh[eéií])		cói$1		1	<[ANV].*>	<&>
 ^coimh-n		cóin		1	<[ANV].*>	<&>
-^comh-(n[aáoóuú])		có$1		1	<[ANV].*>	<&>
-^comh-(n[eéií])		cói$1		1	<[ANV].*>	<&>
+^c[oó]mh-?(n[aáoóuú])		có$1		1	<[ANV].*>	<&>
+^c[oó]mh-?(n[eéií])		cói$1		1	<[ANV].*>	<&>
 ^có-(..)		comh$1		1	<[ANV].*>	<&>
 ^có([bcdfgpt]h)		comh$1		1	<[ANV].*>	<&>
 ^do-([aeiouáéíóú])	$1		0	<[AN].*>	<&>
@@ -232,6 +232,7 @@ uithe$			ú		0	<N.*>	<&>
 ^n-([AEIOUÁÉÍÓÚ])	n$1		1	<.+>	<&>    # CO p.125
 ^t-([AEIOUÁÉÍÓÚ])	t$1		1	<.+>	<&>    # CO p.125
 ^h?ana-			an-		1	<.+>	<&>    # ana-eagraithe
+^bh'			b'		1	<.+>	<&>		# bh'fhiú -> b'fhiú
 ^bain			ban		1	<.+>	<&>
 ^báin			bán		1	<.+>	<&>
 ^bairr			barr		1	<.+>	<&>
@@ -289,13 +290,40 @@ uithe$			ú		0	<N.*>	<&>
 # N.B. makes string longer
 ^girr			gearr		1	<.+>	<&>
 ^gobh			gabh		1	<.+>	<&>
+^héala([^aeiouáéíóú]+[eéií])	héili$1		1	<.+>	<&>    # OD77
+^héala([^aeiouáéíóú]+[aáoóuú])	héilea$1	1	<.+>	<&>
+^h?iarann		iarn		1	<.+>	<&>
+^h?iodar		idir		1	<.+>	<&> # iodarchaidreamh
 ^h?ion			in		1	<.+>	<&>
 # handled by more general nn rule below
 #^h?ionn([rs])			ion$1		1	<.+>	<&>
+^([ls])áimh		$1ámh	1	<.+>	<&>
+^láin		lán		1	<.+>	<&>  # láinchinnte
+# handled by more general sb rule below
+#^léasb			léasp		1	<.+>	<&>
+^leig([^h])		lig$1		1	<.+>	<&>  # leigint, but not leigheas words
+# risky?
+#^leith			leath		1	<.+>	<&>
+^loim			lom		1	<.+>	<&>  # loimeasna
+^lóir		leor		1	<.+>	<&>
+^luaith([^r])	luath$1		1	<.+>	<&>  # luaithintinn
+# handled by more general sg rule below
+#^luasg			luasc		1	<.+>	<&>
+# N.B. makes string longer
+^lubh			luibh		1	<.+>	<&> # lubhghort
 ^lui([mn])		loi$1	1	<.+>	<&>		# luinnir->loinnir
+^lúith			lúth		1	<.+>	<&>
 ^maill			mall		1	<.+>	<&>
+^maoil			maol		1	<.+>	<&>
+^maoith([^n])		maoth$1		1	<.+>	<&>  # maoithintinneach
+^mairbh		marbh		1	<.+>	<&>   # mairbhghin
+# only two math- words anyway?
+#^magh		math		1	<.+>	<&>
 ^meadhón		meán		1	<.+>	<&>
 ^mío-			mí-		1	<.+>	<&>
+# no midh- words anyway?
+#^miodh		midh		1	<.+>	<&>
+^móir			mór		1	<.+>	<&>
 ^nea-mb			neamhbh		1	<.+>	<&>
 ^nea-			neamh-		1	<.+>	<&>    # strip hyphen later
 ^nea([cdfgpt]h)		neamh$1		1	<.+>	<&>
@@ -303,23 +331,59 @@ uithe$			ú		0	<N.*>	<&>
 # handled by more general nn rule below
 #^pannc			panc		1	<.+>	<&>
 #^poinnt			point		1	<.+>	<&>
+^pont			punt		1	<.+>	<&>
 ^prímh			príomh		1	<.+>	<&>
+^réidh			ré		1	<.+>	<&>
 ^réimh			réamh		1	<.+>	<&>
 ^ro-			ró-		1	<.+>	<&>
+^roighn			righn		1	<.+>	<&>
 ^roimh			réamh		1	<.+>	<&>
+^sáir			sár		1	<.+>	<&>  # sáireolas
+^saoghl			saol		1	<.+>	<&>
+^sclug			sclog		1	<.+>	<&>
+^scoith			scoth		1	<.+>	<&> # scoithdhearg
 ^seana-			sean-		1	<.+>	<&>    # strip hyphen later
+^siod			sead		1	<.+>	<&>
+^smúid			smúit		1	<.+>	<&>
+# handled by more general ll rule below
+#^soills			soils		1	<.+>	<&>
+# handled by more general nn rule below
+#^sonnr			sonr		1	<.+>	<&>
+^sr[áa]ic		srac		1	<.+>	<&>
+# N.B. makes string longer
+^srang			sreang		1	<.+>	<&>
+^sream			sram		1	<.+>	<&>
+# N.B. makes string longer - risky, plus no "sruim-" words at all?
+#^srim			sruim		1	<.+>	<&>
+^stáit			stát		1	<.+>	<&>  # stáitseirbhís
+^taidhbh			taibh		1	<.+>	<&>
+# handled by more general sb rule below
+#^taisb		taisp	1	<.+>	<&>
 ^teasb([^h])		taispe$1	1	<.+>	<&>
+^teint			tint		1	<.+>	<&>
 ^tele([^aeiouáéíóú]+[eéií])	teili$1		1	<.+>	<&>    # OD77
 ^tele([^aeiouáéíóú]+[aáoóuú])	teilea$1	1	<.+>	<&>
+^tiom			tim		1	<.+>	<&>
+^tiugh			tiú		1	<.+>	<&>
+# risky
+#^tiúr	tabhar		1	<.+>	<&>
 # handled by more general rule below
 #^treabhth			treaf		1	<.+>	<&>
+^treas			tras		1	<.+>	<&>
+^tréin			tréan		1	<.+>	<&>
+^tuaith		tuath		1	<.+>	<&>  # tuaithcheantar
 ^h?uaith		uath		1	<.+>	<&>
 ^h?úir			úr		1	<.+>	<&>
+# End of Prefixes - Now general spelling reforms (but not from CO handbook)
+# Mostly based on corpus work...
 # deán for déan
 ^(n?dh?)eán		$1éan		1	<V.*>	<&>
+eoracht(a?)$	eoireacht$1		1	<N.*>	<&> # spaisteoracht
+eor$			eoir		1	<.+>	<&>
 chd(a?)$		cht$1		1	<N.*>	<&>    # masc too (achd, m.sh.)
 ínteacht(a?)$	íneacht$1	1	<N.*>	<&>    # deisimínteacht, etc. 
 óanna$			ónna		1	<N.*>	<&>	# common!  clóanna, seóanna, gnóanna, srl.
+^(.)ógh			$1ogh		1	<.+>	<&>		# fóghmhar->foghmhar->fómhar
 #   Now various general spelling reforms from CO handbook
 ai(cht?ín)		a$1		1	<.+>	<&>    # CO p.120, smaichtín
 sg			sc		1	<.+>	<&>    # CO p.115
@@ -391,10 +455,12 @@ e[oó]chai(nn|dís)$	eoi$1		1	<V p="y" t="coinn">	<&>
 e[oó]chthá$		eofá		1	<V p="y" t="coinn">	<&>
 ([^e])óchthá$		$1ófá		1	<V p="y" t="coinn">	<&>
 (ó|eo)char$			$1far	1	<V p="n" t="fáist">	<&>
+faidhear$			far	1	<V p="n" t="fáist">	<&>
 #   2nd declension Dinneen-style endings
 (..)aíd$		$1aíonn		1	<V p="y" t="láith">	<&> # cialluíd
 aghadh			ú		1	<N.*>	<&>  # broad and slender
 (..)thear$		$1tear		1	<V.*>	<&> # aut. present
+(..)t(te?ar)$	$1$2		1	<V.*>	<&> # aut. present
 ighim			ím		1	<V.*>	<&>    # broad and slender
 ighidh			í		1	<.+>	<&>    # subjunctive?
 ighinn			ínn		1	<.+>	<&>    # imperfect
@@ -402,6 +468,7 @@ ighinn			ínn		1	<.+>	<&>    # imperfect
 #  socróid, dílseoid, 3rd plural forms in achtanna
 fa[ds]$			faidh		1	<V p="y" t="fáist">	<&>
 fea[ds]$		fidh		1	<V p="y" t="fáist">	<&>
+óchas$		óidh		1	<V p="y" t="fáist">	<&> # meabhróchas->meabhrós->...
 ói?[ds]$		óidh		1	<V p="y" t="fáist">	<&>
 eoi?[ds]$		eoidh		1	<V p="y" t="fáist">	<&>
 # Common in achtanna to have -fidh,-fid ending on broad stem, lots of 
@@ -429,6 +496,8 @@ eois$			eoidh		1	<V p="y" t="fáist">	<&>
 (...)ai[rs]$		$1		1	<V p="y" t="caite">	<&>
 (..[^aeiouáéíóú])i[rs]$	$1		1	<V p="y" t="caite">	<&>
 (...)ís$		$1igh		1	<V p="y" t="caite">	<&>
+#  Thugtaoi in MU44, e.g.
+taoi$			taí		1	<V p="n" t="gnáth">	<&>
 #  present
 ains$			ann		1	<V p="y" t="láith">	<&>
 ins$			eann		1	<V p="y" t="láith">	<&>
