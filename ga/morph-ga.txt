@@ -62,6 +62,7 @@
 ^t([AEIOUÁÉÍÓÚ])	t-\l$1		-1	<N.*>	<&>
 # these aren't in aspell db by default; better to do early (mb'amhlaidh)
 ^mb'			b'		-1	<.+>	<&>
+^d'f([aeiouáéíóú])	d'fh$1		2	<.+>	<&>
 #  do these early - avoids mistakes with "aighthe" (==aghaidheanna)
 #  and note that first rule must precede second to get "-aithe" pp's correct
 u(i?[dg]h)			a$1		1	<.+>	<&>  # see next few
@@ -232,6 +233,7 @@ uithe$			ú		0	<N.*>	<&>
 ^n-([AEIOUÁÉÍÓÚ])	n$1		1	<.+>	<&>    # CO p.125
 ^t-([AEIOUÁÉÍÓÚ])	t$1		1	<.+>	<&>    # CO p.125
 ^h?ana-			an-		1	<.+>	<&>    # ana-eagraithe
+#^[Áá]rd(-?..)	ard$1		1	<.+>	<&>
 ^bh'			b'		1	<.+>	<&>		# bh'fhiú -> b'fhiú
 ^bain			ban		1	<.+>	<&>
 ^báin			bán		1	<.+>	<&>
@@ -335,6 +337,7 @@ uithe$			ú		0	<N.*>	<&>
 ^prímh			príomh		1	<.+>	<&>
 ^réidh			ré		1	<.+>	<&>
 ^réimh			réamh		1	<.+>	<&>
+^r[íi]gh		rí		1	<.+>	<&>   # righdhamhna
 ^ro-			ró-		1	<.+>	<&>
 ^roighn			righn		1	<.+>	<&>
 ^roimh			réamh		1	<.+>	<&>
@@ -379,11 +382,18 @@ uithe$			ú		0	<N.*>	<&>
 # deán for déan
 ^(n?dh?)eán		$1éan		1	<V.*>	<&>
 eoracht(a?)$	eoireacht$1		1	<N.*>	<&> # spaisteoracht
+óracht(a?)$		óireacht$1	1	<N.*>	<&>   # fáidheadóracht
 eor$			eoir		1	<.+>	<&>
 chd(a?)$		cht$1		1	<N.*>	<&>    # masc too (achd, m.sh.)
 ínteacht(a?)$	íneacht$1	1	<N.*>	<&>    # deisimínteacht, etc. 
 óanna$			ónna		1	<N.*>	<&>	# common!  clóanna, seóanna, gnóanna, srl.
+# corpus - Dómhnach, etc., but not rómhilis, etc.
+([^Rr])ómh([^a])		$1omh$2		1	<.+>	<&>
 ^(.)ógh			$1ogh		1	<.+>	<&>		# fóghmhar->foghmhar->fómhar
+eamhn		iún		1	<.+>	<&>     #  maitheamhnas, breitheamhnas
+([^e])amhn	$1ún	1	<.+>	<&>     #  rathamhnas
+#   warning - makes longer 
+^b'f([aeiouáéíóú])	b'fh$1	1	<.+>	<&>
 #   Now various general spelling reforms from CO handbook
 ai(cht?ín)		a$1		1	<.+>	<&>    # CO p.120, smaichtín
 sg			sc		1	<.+>	<&>    # CO p.115
@@ -394,7 +404,7 @@ dn			nn		1	<.+>	<&>    # CO p.114 céadna
 á(i?r[dlnr])		a$1		1	<.+>	<&>    # CO p.123-124
 ó(i?r[dlnr])		o$1		1	<.+>	<&>    # CO p.123-124
 ú(i?r[dlnr])		u$1		1	<.+>	<&>    # CO p.123-124
-eó			eo		1	<.+>	<&>    # go leór, etc.
+eó			eo		1	<.+>	<&>    # go leór, aibhleóg, etc.
 eamhail$		iúil		1	<[AN].*>	<&>    # dlightheamhail
 eamhla			iúla		1	<[AN].*>	<&>
 ([^e])amhail$		$1úil		1	<[AN].*>	<&>    # CO p.102, a2+barúil, etc.
@@ -437,7 +447,7 @@ thaí$			tha		1	<.+>	<&>    # glórthaí, spéarthaí
 (..)igh$		$1each		1	<N.*>	<&>   #  same
 (..)aidh$		$1a		1	<.+>	<&>    # bhfágaidh
 eói?g$			eog		1	<N.*>	<&>   # nb2 
-eoig$			eog		1	<N.*>	<&>   # nb2 
+eoig$			eog		1	<.+>	<&>   # nb2, leave as <.+> for <F>'s
 óig$			óg		1	<N.*>	<&>   # nb2 
 lainn$			lann		1	<N.*>	<&>   # nb2
 aisí$			ais		1	<N.*>	<&>   # cuntaisí, bronntanaisí
@@ -507,6 +517,7 @@ anns$			ann		1	<V p="y" t="láith">	<&>
 íonns$			íonn		1	<V p="y" t="láith">	<&>
 #  corpus 
 th(eá|ear)$		t$1		1	<V.*>	<&>
+famuid		faimid		1	<V p="y" t="fáist">	<&>
 #  -idh, -aidh on 1st declension verbs: Pres. Subj. or 2nd pl. imper (-igí) 
 #  according to Dinneen.  Some examples seem to be pres. in corpus,
 #  e.g. suidhidh, some apparently past e.g. uneclipsed "tigidh"
