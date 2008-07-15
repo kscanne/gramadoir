@@ -18,10 +18,13 @@ www\.[A-Za-z0-9/.:=_%?&~+;$@\#()-]+[A-Za-z0-9/=]:<Y>
 [1-9][0-9]*st:<A pl="n" gnt="n">
 [1-9][0-9]*th:<A pl="n" gnt="n">
 [0-9][0-9]+:<A>
+[']acha[']n:<Y>
 [A-Za-zÀ-ÿ0-9][A-Za-zÀ-ÿ'-]*'[A-Za-zÀ-ÿ'-]*[A-Za-zÀ-ÿ0-9]:<c>
+['][Ss]a[']:<Y>
+[']n[']:<Y>
 # these ' words must be in main lexicon even if non-standard like "'gus";
 # therefore they require appropriate CAIGHDEAN{} rules in rialacha-ga.in
-['][A-Za-zÀ-ÿ]+:<d>
+['][A-Za-zÀ-ÿ-]+:<d>
 [A-Za-zÀ-ÿ]+[']:<d>
 [A-Za-zÀ-ÿ0-9][A-Za-zÀ-ÿ'-]*[A-Za-zÀ-ÿ0-9]:<c>
 [A-Za-zÀ-ÿ]:<c>
