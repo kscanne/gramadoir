@@ -32,6 +32,7 @@ s/AHNUMBER/[Aa] [^<]+/g;
 s/CHEADCOMPOUND/[^< ]+ chéad/g;
 s/NONCOMPOUND/[^< ]+/g;
 s/COMPOUND/[^< ]+ [^<]+/g;
+s/SYNTHPAST/[^<]+[md]ar/g;
 s/ALLGENITIVEPREPS/(?:[Cc]hun|[Cc]ois|[Dd]ála|[Ff]earacht|[Tt]impeall|[Tt]rasna)/g;
 s/GENITIVEPREP/(?:[Cc]ois|[Dd]ála|[Ff]earacht|[Tt]impeall|[Tt]rasna)/g;
 s/IRREGULARPAST/(?:raibh|dtáinig|dtug|ndearnadh|gcuala|bhfuair)/g;
