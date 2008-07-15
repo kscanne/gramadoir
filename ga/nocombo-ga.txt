@@ -13,7 +13,9 @@ aibh
 aiceacha
 aicí
 aidh
+aig
 aige
+aighthe
 áil
 aill
 áilt
@@ -59,8 +61,10 @@ athcho
 athóir
 báil
 bar
+Bha
 bha
 bhar
+bhas
 bhfa
 bhfai
 bhfé
@@ -68,6 +72,7 @@ cai
 caigh
 caili
 cha
+chadh
 chai
 chaí
 chaili
@@ -132,6 +137,7 @@ eacha
 eachaí
 eacht
 eadh
+éag
 eamhail
 éar
 eing
@@ -152,6 +158,7 @@ fos
 fre
 fri
 gach
+gacht
 gan
 gán
 gCo
@@ -219,6 +226,7 @@ iocht
 iochta
 íocht
 íochta
+iol
 ion
 iona
 íona
@@ -243,6 +251,7 @@ lannaíochta
 láth
 leam
 leat
+lei
 léi
 len
 leo
@@ -283,6 +292,7 @@ neacha
 neacht
 neoid
 ngrin
+nidh
 níonn
 och
 ocht
@@ -302,6 +312,7 @@ ora
 paruithe
 per
 pha
+plod
 pro
 Pro
 rachta
@@ -311,6 +322,7 @@ ria
 riagh
 ribh
 sach
+sadh
 saíochta
 saithe
 sám
@@ -368,6 +380,7 @@ thri
 thu
 thú
 thui
+thuighthe
 thuis
 tic
 tim
