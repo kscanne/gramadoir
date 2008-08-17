@@ -1,16 +1,16 @@
-# Messages français pour GNU concernant gramadoir.
-# Copyright © 2004 Free Software Foundation, Inc.
+# Esperanto translations for Gramadoir.
 # This file is distributed under the same license as the PACKAGE package.
-# Michel Robitaille <robitail@IRO.UMontreal.CA>, traducteur depuis/since 1996.
 #
+# Tim Morley <t_morley@argonet.co.uk>, 2005.
+# Benno Schulenberg <benno@vertaalt.nl>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: GNU gramadoir 0.6\n"
+"Project-Id-Version: GNU gramadoir 0.7\n"
 "Report-Msgid-Bugs-To: <kscanne@gmail.com>\n"
 "POT-Creation-Date: 2008-08-17 12:05-0500\n"
-"PO-Revision-Date: 2005-03-16 14:39-0000\n"
-"Last-Translator: Tim Morley <t_morley@argonet.co.uk>\n"
-"Language-Team: French <traduc@traduc.org>\n"
+"PO-Revision-Date: 2008-08-17 21:42+0200\n"
+"Last-Translator: Benno Schulenberg <benno@vertaalt.nl>\n"
+"Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -52,7 +52,7 @@ msgstr "agordo %s ne permesas argumenton"
 
 #: gram.pl:174 gramdev.pl:88
 msgid "error parsing command-line options"
-msgstr "eraro dum analizado de agordajxoj de komanda linio"
+msgstr "eraro dum analizado de agordaĵoj de komanda linio"
 
 #: gram.pl:177
 #, perl-format
@@ -89,9 +89,9 @@ msgid ""
 "\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
 "PURPOSE,\\nto the extent permitted by law."
 msgstr ""
-"Tiu programo estas libera; vidu la fontkodon por la kondiĉoj pri kopiado. "
-"Estas NENIU garantio, eĉ ne pri TAŬGECO POR VENDADO aŭ POR IU SPECIFA UZO,"
-"\\n ĝis la limo de la leĝo."
+"Tiu programo estas libera; vidu la fontkodon por la kondiĉoj pri kopiado.\\n"
+"Estas NENIU garantio, eĉ ne pri TAŬGECO POR VENDADO aŭ POR IU SPECIFA UZO,\\n"
+"ĝis la limo de la leĝo."
 
 #: gram.pl:267
 #, perl-format
@@ -104,7 +104,7 @@ msgstr "Agordaĵoj por uzuloj:"
 
 #: gram.pl:274
 msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
-msgstr "    --iomlan       raporti pri ĉiu eraro (t.e. ne uzi ~/.neamhshuim)"
+msgstr "    --iomlan        raporti pri ĉiu eraro (t.e. ne uzi ~/.neamhshuim)"
 
 #: gram.pl:277
 msgid ""
@@ -117,19 +117,19 @@ msgstr "    --aschod=KODO   elekti la kodigon de la eligo"
 
 #: gram.pl:283
 msgid "    --comheadan=xx choose the language for error messages"
-msgstr "    --comheadan=xx elekti la lingvon por erarmesaĝoj"
+msgstr "    --comheadan=xx  elekti la lingvon por erarmesaĝoj"
 
 #: gram.pl:286
 msgid "    --dath=COLOR   specify the color to use for highlighting errors"
-msgstr "    --dath=KOLORO    elekti la KOLORON uzendan por montri erarojn"
+msgstr "    --dath=KOLORO   elekti la KOLORON uzendan por montri erarojn"
 
 #: gram.pl:289
 msgid "    --litriu       write misspelled words to standard output"
-msgstr "    --litriu       sendu misliterumitajn vortojn al ĉefeligujo"
+msgstr "    --litriu        sendi misliterumitajn vortojn al ĉefeligujo"
 
 #: gram.pl:292
 msgid "    --aspell       suggest corrections for misspellings"
-msgstr "    --aspell       proponi korektojn por misliterumaĵoj"
+msgstr "    --aspell        proponi korektojn por misliterumaĵoj"
 
 #: gram.pl:295
 msgid "    --aschur=FILE  write output to FILE"
@@ -137,11 +137,11 @@ msgstr "    --aschur=DOSIERO  skribu eligon al DOSIERO"
 
 #: gram.pl:298 gramdev.pl:133
 msgid "    --help         display this help and exit"
-msgstr "    --help         vidigi helpon kaj eliri"
+msgstr "    --help          vidigi helpon kaj eliri"
 
 #: gram.pl:301 gramdev.pl:136
 msgid "    --version      output version information and exit"
-msgstr "    --version      vidigi version de la programo kaj eliri"
+msgstr "    --version       vidigi version de la programo kaj eliri"
 
 #: gram.pl:304
 msgid "Options for developers:"
@@ -155,20 +155,19 @@ msgstr ""
 
 #: gram.pl:308
 msgid "    --html         produce HTML output for viewing in a web browser"
-msgstr "    --html         krei HTML-an eligon por vidigo per TTT-legilo"
+msgstr "    --html          krei HTML-an eligon por vidigo per TTT-legilo"
 
 #: gram.pl:314
 msgid ""
 "    --no-unigram   do not resolve ambiguous parts of speech by frequency"
 msgstr ""
-"    --no-unigram   ne solvi dusencajn gramatikajn kategoriojn per ofteco"
+"    --no-unigram    ne solvi dusencajn gramatikajn kategoriojn per ofteco"
 
 #: gram.pl:320
 msgid ""
 "    --xml          write tagged XML stream to standard output, for debugging"
 msgstr ""
-"    --xml          skribi etikeditan XML-an fluon al ĉefeligujo, por "
-"sencimigo"
+"    --xml           skribi etikeditan XML-an fluon al ĉefeligujo, por sencimigo"
 
 #: gram.pl:323
 msgid "If no file is given, read from standard input."
@@ -177,7 +176,7 @@ msgstr "Se neniu dosieronomo estas donita, legi el ĉefenigujo"
 #: gram.pl:326 gramdev.pl:142
 #, perl-format
 msgid "Send bug reports to <%s>."
-msgstr "Sendi cimraportojn al <%s>."
+msgstr "Sendu cimraportojn al <%s>."
 
 #: gram.pl:348
 msgid "There is no such file."
@@ -242,7 +241,7 @@ msgstr "konverto el %s ne estas subtenata"
 #: Gramadoir.pm.in:291 Gramadoir.pm.in:494
 #, perl-format
 msgid "%s: illegal grammatical code\n"
-msgstr "%s: kontraŭleĝa gramatika kodo\n"
+msgstr "%s: nepermesata gramatika kodo\n"
 
 #: Gramadoir.pm.in:294
 #, perl-format
@@ -258,10 +257,9 @@ msgstr "%s: nerekonita eraro pri makroo: %s\n"
 #. checking engine.  The first batch consists of messages intended to be
 #. reused across a wide range of languages.
 #: messages.txt:4
-#, fuzzy
 msgid ""
 "Valid word but extremely rare in actual usage. Is this the word you want?"
-msgstr "Vorto valida, sed maloftega en reala uzado"
+msgstr "Vorto valida, sed maloftega en reala uzado. Ĉu estas la dezirata vorto?"
 
 #: messages.txt:5
 msgid "Repeated word"
@@ -280,9 +278,8 @@ msgid "The singular form is required here"
 msgstr "La singularo estas bezonata ĉi tie"
 
 #: messages.txt:9
-#, fuzzy
 msgid "Plural adjective required"
-msgstr "Adjektivo komparativa estas bezonata"
+msgstr "Adjektivo plurala estas bezonata"
 
 #: messages.txt:10
 msgid "Comparative adjective required"
@@ -290,16 +287,15 @@ msgstr "Adjektivo komparativa estas bezonata"
 
 #: messages.txt:11
 msgid "Definite article required"
-msgstr "Difina artikolo bezonata"
+msgstr "Difina artikolo bezonatas"
 
 #: messages.txt:12
 msgid "Unnecessary use of the definite article"
 msgstr "Sennecesa uzo de la difina artikolo"
 
 #: messages.txt:13
-#, fuzzy
 msgid "No need for the first definite article"
-msgstr "Sennecesa uzo de la difina artikolo"
+msgstr "Sennecesa uzo de la unua difina artikolo"
 
 #: messages.txt:14
 msgid "Unnecessary use of the genitive case"
@@ -310,13 +306,12 @@ msgid "The genitive case is required here"
 msgstr "Genitivo bezonatas ĉi tie"
 
 #: messages.txt:16
-#, fuzzy
 msgid "You should use the present tense here"
-msgstr "Ĉi tie vi devus anstataŭe uzi \\/\\1\\/"
+msgstr "Ĉi tie vi devus uzi nuntempon"
 
 #: messages.txt:17
 msgid "It seems unlikely that you intended to use the subjunctive here"
-msgstr "Ŝajnas neprobable, ke vi intencis uzi la subjunktivon ĉi tie"
+msgstr "Ŝajnas neprobable ke vi intencis uzi la subjunktivon ĉi tie"
 
 #. TRANSLATORS: You can use whatever kind of quotes you prefer for your locale
 #. around the variable \\1.  You should keep the double backslash before the 1,
@@ -352,11 +347,11 @@ msgstr "Nekonata vorto: \\/\\1\\/?"
 
 #: messages.txt:29
 msgid "Valid word but \\/\\1\\/ is more common"
-msgstr ""
+msgstr "Valida vorto, sed \\/\\1\\/ pli oftas"
 
 #: messages.txt:30
 msgid "Not in database but apparently formed from the root \\/\\1\\/"
-msgstr "Ne en la datumbazo se ŝajne derivita el la radiko \\/\\1\\/"
+msgstr "Ne en la datumbazo sed ŝajne derivita el la radiko \\/\\1\\/"
 
 #: messages.txt:31
 msgid "The word \\/\\1\\/ is not needed"
@@ -384,15 +379,15 @@ msgstr "Eble estas fremda vorto (la sinsekvo \\/\\1\\/ estas maloftega)"
 
 #: messages.txt:37
 msgid "Gender disagreement"
-msgstr ""
+msgstr "Genroj malsamas"
 
 #: messages.txt:38
 msgid "Number disagreement"
-msgstr ""
+msgstr "Nombroj malsamas"
 
 #: messages.txt:39
 msgid "Case disagreement"
-msgstr ""
+msgstr "Kazoj malsamas"
 
 #. TRANSLATORS: Rules specific to the Irish language (ga)
 #: messages.txt:41
@@ -420,14 +415,13 @@ msgid "Unnecessary prefix \\/d'\\/"
 msgstr "Nebezonata prefikso \\/d'\\/"
 
 #: messages.txt:47
-#, fuzzy
 msgid "Unnecessary prefix \\/b'\\/"
-msgstr "Nebezonata prefikso \\/d'\\/"
+msgstr "Nebezonata prefikso \\/b'\\/"
 
 #. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
 #: messages.txt:49
 msgid "Unnecessary initial mutation"
-msgstr "Komenca mutatio nenecesa"
+msgstr "Komenca mutatio nenecesas"
 
 #: messages.txt:50
 msgid "Initial mutation missing"
@@ -441,7 +435,7 @@ msgstr "Nebezonata aspiracio"
 
 #: messages.txt:54
 msgid "The second lenition is unnecessary"
-msgstr ""
+msgstr "La dua aspiracio nenecesas"
 
 #: messages.txt:55
 msgid ""
@@ -503,9 +497,8 @@ msgstr "Kvina (miksita) mutacio post 'th mankas"
 
 #. TRANSLATORS: Rules specific to the Welsh language (cy)
 #: messages.txt:73
-#, fuzzy
 msgid "Aspirate mutation missing"
-msgstr "Komenca mutacio mankas"
+msgstr "Aspiracia mutacio mankas"
 
 #. TRANSLATORS: Rules specific to the Igbo language (ig)
 #: messages.txt:75
@@ -514,25 +507,3 @@ msgstr ""
 
 #~ msgid "Valid word but more often found in place of \\/\\1\\/"
 #~ msgstr "Valida vorto, sed pli ofte trovita anstataŭ \\/\\1\\/"
-
-#~ msgid ""
-#~ "    --teanga=XX    specify the language of the text to be checked "
-#~ "(default=ga)"
-#~ msgstr ""
-#~ "    --teanga=XX    spécifier le langage du texte à vérifier (par "
-#~ "défaut=ga)"
-
-#~ msgid "aspell-%s is not installed"
-#~ msgstr "aspell-%s n'est pas installé"
-
-#~ msgid "Unknown word (ignoring remainder in this sentence)"
-#~ msgstr "Mot inconnu (le reste de la phrase est ignoré)"
-
-#~ msgid "%s: out of memory\n"
-#~ msgstr "%s: mémoire épuisée\n"
-
-#~ msgid "%s: warning: check size of %s: %d?\n"
-#~ msgstr "%s: AVERTISSEMENT: vérifier la taille de %s: %d?\n"
-
-#~ msgid "problem with the `cuardach' command\n"
-#~ msgstr "problème avec la commande « cuardach »\n"

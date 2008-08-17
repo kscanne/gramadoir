@@ -1,15 +1,15 @@
-# Dutch translations for gramadoir.
-# Copyright (C) 2003 Kevin P. Scannell (msgids)
+# Dutch translations for gramadoir-0.7.
+# Copyright (C) 2008 Kevin P. Scannell (msgids)
 # This file is distributed under the same license as the gramadoir package.
 #
 # Anneke Bart <barta@slu.edu>, 2003.
 # Benno Schulenberg <benno@vertaalt.nl>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: gramadoir-0.6\n"
+"Project-Id-Version: gramadoir-0.7\n"
 "Report-Msgid-Bugs-To: <kscanne@gmail.com>\n"
 "POT-Creation-Date: 2008-08-17 12:05-0500\n"
-"PO-Revision-Date: 2008-04-15 23:08+0200\n"
+"PO-Revision-Date: 2008-08-17 23:44+0200\n"
 "Last-Translator: Benno Schulenberg <benno@vertaalt.nl>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
 "MIME-Version: 1.0\n"
@@ -86,10 +86,7 @@ msgid "version %s"
 msgstr "versie %s"
 
 #: gram.pl:253 gramdev.pl:153
-msgid ""
-"This is free software; see the source for copying conditions.  There is NO"
-"\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
-"PURPOSE,\\nto the extent permitted by law."
+msgid "This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law."
 msgstr ""
 "Dit is vrije software; zie de programmatekst voor de kopieervoorwaarden.\n"
 "Er is GEEN ENKELE garantie, zelfs niet voor VERHANDELBAARHEID of\n"
@@ -106,12 +103,10 @@ msgstr "Opties voor eindgebruikers:"
 
 #: gram.pl:274
 msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
-msgstr ""
-"    --iomlan       alle fouten vermelden (dus niet ~/.neamhshuim gebruiken)"
+msgstr "    --iomlan       alle fouten vermelden (dus niet ~/.neamhshuim gebruiken)"
 
 #: gram.pl:277
-msgid ""
-"    --ionchod=ENC  specify the character encoding of the text to be checked"
+msgid "    --ionchod=ENC  specify the character encoding of the text to be checked"
 msgstr "    --ionchod=CODERING    de tekenset van de te controleren tekst"
 
 #: gram.pl:280
@@ -128,8 +123,7 @@ msgstr "    --dath=KLEUR   te gebruiken kleur voor het markeren van fouten"
 
 #: gram.pl:289
 msgid "    --litriu       write misspelled words to standard output"
-msgstr ""
-"    --litriu       verkeerd gespelde woorden naar standaarduitvoer schrijven"
+msgstr "    --litriu       verkeerd gespelde woorden naar standaarduitvoer schrijven"
 
 #: gram.pl:292
 msgid "    --aspell       suggest corrections for misspellings"
@@ -152,27 +146,20 @@ msgid "Options for developers:"
 msgstr "Opties voor ontwikkelaars:"
 
 #: gram.pl:306
-msgid ""
-"    --api          output a simple XML format for use with other applications"
-msgstr ""
-"    --api          eenvoudige XML-uitvoer produceren voor andere programma's"
+msgid "    --api          output a simple XML format for use with other applications"
+msgstr "    --api          eenvoudige XML-uitvoer produceren voor andere programma's"
 
 #: gram.pl:308
 msgid "    --html         produce HTML output for viewing in a web browser"
-msgstr ""
-"    --html         HTML-uitvoer produceren om in webbrowser te bekijken"
+msgstr "    --html         HTML-uitvoer produceren om in webbrowser te bekijken"
 
 #: gram.pl:314
-msgid ""
-"    --no-unigram   do not resolve ambiguous parts of speech by frequency"
-msgstr ""
-"    --no-unigram   dubbelzinnigheden niet oplossen met behulp van frequenties"
+msgid "    --no-unigram   do not resolve ambiguous parts of speech by frequency"
+msgstr "    --no-unigram   dubbelzinnigheden niet oplossen met behulp van frequenties"
 
 #: gram.pl:320
-msgid ""
-"    --xml          write tagged XML stream to standard output, for debugging"
-msgstr ""
-"    --xml          XML-stroom naar standaarduitvoer schrijven, voor debuggen"
+msgid "    --xml          write tagged XML stream to standard output, for debugging"
+msgstr "    --xml          XML-stroom naar standaarduitvoer schrijven, voor debuggen"
 
 #: gram.pl:323
 msgid "If no file is given, read from standard input."
@@ -214,16 +201,11 @@ msgstr ""
 "                     gesorteerd op frequentie"
 
 #: gramdev.pl:128
-msgid ""
-"    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
-msgstr ""
-"    --minic        alle tags uitvoeren, gesorteerd op "
-"frequentie                      (voor unigram-xx.txt)"
+msgid "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
+msgstr "    --minic        alle tags uitvoeren, gesorteerd op frequentie                      (voor unigram-xx.txt)"
 
 #: gramdev.pl:130
-msgid ""
-"    --brill        find disambiguation rules via Brill's unsupervised "
-"algorithm"
+msgid "    --brill        find disambiguation rules via Brill's unsupervised algorithm"
 msgstr "    --brill        disambigueringsregels vinden via Brills algoritme"
 
 #: Gramadoir.pm.in:118
@@ -263,10 +245,8 @@ msgstr "%s: onbekende foutenmacro: %s\n"
 #. checking engine.  The first batch consists of messages intended to be
 #. reused across a wide range of languages.
 #: messages.txt:4
-#, fuzzy
-msgid ""
-"Valid word but extremely rare in actual usage. Is this the word you want?"
-msgstr "Correct woord, maar erg zeldzaam in normaal gebruik"
+msgid "Valid word but extremely rare in actual usage. Is this the word you want?"
+msgstr "Correct woord, maar erg zeldzaam in normaal gebruik.  Is dit het gewenste woord?"
 
 #: messages.txt:5
 msgid "Repeated word"
@@ -285,9 +265,8 @@ msgid "The singular form is required here"
 msgstr "Het enkelvoud is hier vereist"
 
 #: messages.txt:9
-#, fuzzy
 msgid "Plural adjective required"
-msgstr "Een vergelijkende trap is vereist"
+msgstr "Een bijvoeglijk naamwoord in het meervoud is vereist"
 
 #: messages.txt:10
 msgid "Comparative adjective required"
@@ -302,9 +281,8 @@ msgid "Unnecessary use of the definite article"
 msgstr "Onnodig gebruik van bepaald lidwoord"
 
 #: messages.txt:13
-#, fuzzy
 msgid "No need for the first definite article"
-msgstr "Onnodig gebruik van bepaald lidwoord"
+msgstr "Het eerste bepaald lidwoord is onnodig"
 
 #: messages.txt:14
 msgid "Unnecessary use of the genitive case"
@@ -315,9 +293,8 @@ msgid "The genitive case is required here"
 msgstr "De genitief is hier vereist"
 
 #: messages.txt:16
-#, fuzzy
 msgid "You should use the present tense here"
-msgstr "Gebruik hier \\/\\1\\/ in de plaats"
+msgstr "Hier zou de tegenwoordige tijd gebruikt moeten worden"
 
 #: messages.txt:17
 msgid "It seems unlikely that you intended to use the subjunctive here"
@@ -357,7 +334,7 @@ msgstr "Onbekend woord: \\/\\1\\/?"
 
 #: messages.txt:29
 msgid "Valid word but \\/\\1\\/ is more common"
-msgstr ""
+msgstr "Correct woord, maar \\/\\1\\/ wordt meer gebruikt"
 
 #: messages.txt:30
 msgid "Not in database but apparently formed from the root \\/\\1\\/"
@@ -377,32 +354,27 @@ msgstr "Afgeleide vorm van gebruikelijke foutspelling \\/\\1\\/?"
 
 #: messages.txt:34
 msgid "Not in database but may be a compound \\/\\1\\/?"
-msgstr ""
-"Zit niet in de databank, maar zou een \\/\\1\\/-samenstelling kunnen zijn?"
+msgstr "Zit niet in de databank, maar zou een \\/\\1\\/-samenstelling kunnen zijn?"
 
 #: messages.txt:35
 msgid "Not in database but may be a non-standard compound \\/\\1\\/?"
-msgstr ""
-"Zit niet in de databank, maar zou een ongebruikelijke \\/\\1\\/-"
-"samenstelling kunnen zijn?"
+msgstr "Zit niet in de databank, maar zou een ongebruikelijke \\/\\1\\/-samenstelling kunnen zijn?"
 
 #: messages.txt:36
 msgid "Possibly a foreign word (the sequence \\/\\1\\/ is highly improbable)"
-msgstr ""
-"Mogelijk een buitenlands woord (de reeks \\/\\1\\/ is hoogst "
-"onwaarschijnlijk)"
+msgstr "Mogelijk een buitenlands woord (de reeks \\/\\1\\/ is hoogst onwaarschijnlijk)"
 
 #: messages.txt:37
 msgid "Gender disagreement"
-msgstr ""
+msgstr "Geslachten verschillen"
 
 #: messages.txt:38
 msgid "Number disagreement"
-msgstr ""
+msgstr "Aantallen verschillen"
 
 #: messages.txt:39
 msgid "Case disagreement"
-msgstr ""
+msgstr "Naamvallen verschillen"
 
 #. TRANSLATORS: Rules specific to the Irish language (ga)
 #: messages.txt:41
@@ -430,9 +402,8 @@ msgid "Unnecessary prefix \\/d'\\/"
 msgstr "Onnodig voorvoegsel \\/d'\\/"
 
 #: messages.txt:47
-#, fuzzy
 msgid "Unnecessary prefix \\/b'\\/"
-msgstr "Onnodig voorvoegsel \\/d'\\/"
+msgstr "Onnodig voorvoegsel \\/b'\\/"
 
 #. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
 #: messages.txt:49
@@ -451,14 +422,11 @@ msgstr "Onnodige lenitie (verzachting)"
 
 #: messages.txt:54
 msgid "The second lenition is unnecessary"
-msgstr ""
+msgstr "De tweede lenitie (verzachting) is onnodig"
 
 #: messages.txt:55
-msgid ""
-"Often the preposition \\/\\1\\/ causes lenition, but this case is unclear"
-msgstr ""
-"Het voorzetsel \\/\\1\\/ veroorzaakt meestal lenitie, maar dit geval is "
-"onduidelijk"
+msgid "Often the preposition \\/\\1\\/ causes lenition, but this case is unclear"
+msgstr "Het voorzetsel \\/\\1\\/ veroorzaakt meestal lenitie, maar dit geval is onduidelijk"
 
 #: messages.txt:56
 msgid "Lenition missing"
@@ -489,9 +457,7 @@ msgstr "Onnodig gebruik van de afhankelijke vorm van het werkwoord"
 
 #: messages.txt:65
 msgid "The synthetic (combined) form, ending in \\/\\1\\/, is often used here"
-msgstr ""
-"De synthetische (gecombineerde) vorm, eindigend op \\/\\1\\/, wordt hier "
-"meestal gebruikt"
+msgstr "De synthetische (gecombineerde) vorm, eindigend op \\/\\1\\/, wordt hier meestal gebruikt"
 
 #. TRANSLATORS: Rules specific to the Cornish language (kw)
 #: messages.txt:67
@@ -516,14 +482,13 @@ msgstr "Vijfde (gemengde) mutatie na 'th ontbreekt"
 
 #. TRANSLATORS: Rules specific to the Welsh language (cy)
 #: messages.txt:73
-#, fuzzy
 msgid "Aspirate mutation missing"
-msgstr "Beginmutatie ontbreekt"
+msgstr "Aspiratiemutatie ontbreekt"
 
 #. TRANSLATORS: Rules specific to the Igbo language (ig)
 #: messages.txt:75
 msgid "This word violates the rules of Igbo vowel harmony"
-msgstr ""
+msgstr "Dit woord overtreedt de regels van de Igbo-klinkerharmonie"
 
 #~ msgid "Valid word but more often found in place of \\/\\1\\/"
 #~ msgstr "Correct woord, maar vaker gevonden in de plaats van \\/\\1\\/"
