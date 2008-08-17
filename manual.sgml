@@ -20,7 +20,7 @@
       <email>kscanne@gmail.com</email>
     </address>
     <copyright>
-      <year>2005</year>
+      <year>2007</year>
       <holder>Kevin P. Scannell</holder>
     </copyright>
     <legalnotice><para>
@@ -40,7 +40,7 @@
       <para>
         Throughout this manual, I will use "xx" or "XX" to refer
 	to the
-	<ulink url="http://www.w3.org/WAI/ER/IG/ert/iso639.htm">ISO 639</ulink>
+	<ulink url="http://en.wikipedia.org/wiki/ISO_639">ISO 639</ulink>
 	two- or three-letter code for your language.
       </para>
     </note>
@@ -56,8 +56,8 @@
 	  <application>gramadoir-xx</application>
 	  (the so-called <firstterm>language pack</firstterm>) which contains
 	  all of the language-specific input files.
-	  These two packages work together to produce, automatically, an 
-	  installable Perl module
+	  These two packages work together to produce, automatically, the third: an 
+	  installable Perl module named
 	  <application>Lingua::XX::Gramadoir</application>
 	  that end users can download
 	  (e.g. from <ulink url="http://www.cpan.org/"><acronym>CPAN</acronym></ulink>),
@@ -140,7 +140,7 @@ A umpire.  The status quo.
           </listitem>
           <listitem>
 	    <para>
-	      <emphasis>Tokenizing</emphasis>.  Next, each sentence
+	      <emphasis>Tokenization</emphasis>.  Next, each sentence
 	      is broken up into words, each of which is marked up
 	      with a &lt;<sgmltag>c</sgmltag>&gt; tag:
 	    </para>
@@ -151,6 +151,10 @@ A umpire.  The status quo.
 &lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>c</sgmltag>&gt;A&lt;/<sgmltag>c</sgmltag>&gt; &lt;<sgmltag>c</sgmltag>&gt;umpire&lt;/<sgmltag>c</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
 &lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>c</sgmltag>&gt;The&lt;/<sgmltag>c</sgmltag>&gt; &lt;<sgmltag>c</sgmltag>&gt;status&lt;/<sgmltag>c</sgmltag>&gt; &lt;<sgmltag>c</sgmltag>&gt;quo&lt;/<sgmltag>c</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
 	    </screen>
+	    <para>
+	      See <xref linkend="tokenization"> for information on how to
+		  specify language-specific tokenization rules.
+	    </para>
           </listitem>
           <listitem>
 	    <para>
@@ -286,6 +290,7 @@ A umpire.  The status quo.
 	  Hiligaynon (by Francis Dimzon),
 	  Icelandic (by P&eacute;tur Thors),
 	  Igbo (by Chinedu Uchechukwu),
+	  Languedocien (by Bruno Gallart),
 	  Scottish Gaelic (by Caoimh&iacute;n &Oacute; Donna&iacute;le),
 	  Tagalog (by Ramil Sagum),
 	  Walloon (by Pablo Saratxaga),
@@ -375,7 +380,7 @@ A umpire.  The status quo.
 	  porting &gram; is
 	  <ulink url="http://borel.slu.edu/">Contact me</ulink>.
 	  Assuming your language is one of the
-	  <ulink url="http://borel.slu.edu/crubadan/stadas.html">150+ languages</ulink>
+	  <ulink url="http://borel.slu.edu/crubadan/stadas.html">400+ languages</ulink>
 	  for which my
 	  <ulink url="http://borel.slu.edu/crubadan/">web crawler</ulink>
 	  is running, I will create a new language pack for you using
@@ -509,8 +514,7 @@ U engine/COPYING
 	  "engine" containing the language-independent
 	  <application>gramadoir</application> scripts.
 	  The sourceforge site has some excellent documentation on
-	  <ulink url='http://sourceforge.net/docman/display_doc.php?docid=768&amp;group_id=1'>using <acronym>CVS</acronym> as a developer</ulink> and an overview document for anyone
-	  <ulink url='http://sourceforge.net/docman/display_doc.php?docid=14033&amp;group_id=1'>new to <acronym>CVS</acronym></ulink>.
+	  <ulink url='http://sourceforge.net/docman/display_doc.php?docid=29894&amp;group_id=1'>using <acronym>CVS</acronym> as a developer</ulink> including an overview for anyone new to <acronym>CVS</acronym>.
 	</para>
 	<para>
 	  Next, configure the engine:
@@ -569,7 +573,7 @@ U engine/COPYING
 	<para>
 	  To use these files to build, test, and install the module, use
 	  the following
-	  <ulink url="http://cpan.uwinnipeg.ca/htdocs/ExtUtils-MakeMaker/ExtUtils/MakeMaker.html#default_makefile_behaviour">standard procedure</ulink>:
+	  <ulink url="http://cpan.uwinnipeg.ca/htdocs/ExtUtils-MakeMaker/ExtUtils/MakeMaker.html#Default_Makefile_Behaviour">standard procedure</ulink>:
 	</para>
 	<screen>
 <prompt>$</prompt> <userinput>cd Lingua-XX-Gramadoir</userinput>
@@ -714,6 +718,12 @@ U engine/COPYING
 	  <para>
 	    <link linkend="rules"><filename>rialacha-xx.in</filename></link>.
 	    Grammatical rules and exceptions.
+	  </para>
+	</listitem>
+        <listitem>
+	  <para>
+	    <link linkend="tokenization"><filename>token-xx.in</filename></link>.
+	    Language-specific tokenization rules.
 	  </para>
 	</listitem>
         <listitem>
@@ -1219,6 +1229,22 @@ phrase:action
 	    in cases that the contextual parts of speech are disambiguated
 	    in the first pass.
 	    </para>
+		<para>
+		The latest versions of the engine admit an extension that allows
+		certain part-of-speech tags to be <emphasis>excluded</emphasis> in a given context.
+		This is done by prefixing an exclamation point (!) to the action
+		portion of the rule.  So, for example, this rule (for Irish)
+		indicates that eclipsed words should not be tagged as past tense
+		verbs:
+	    <screen>
+&lt;B&gt;&lt;Z&gt;ANYPAST&lt;/Z&gt;ECLIPSED&lt;/B&gt;:!&lt;V p="y" t="caite"&gt;
+	    </screen>
+		Note also that the action portion can be given as a regular expression,
+		and all matching tags will be eliminated from consideration:
+	    <screen>
+[Dd]o &lt;B&gt;&lt;Z&gt;ANYVERB&lt;/Z&gt;ANYTHING&lt;/B&gt;:!&lt;V[^&gt;]+&gt;
+	    </screen>
+		</para>
 	  </sect3>
 	  <sect3 id="unigrams">
 	    <title>Unigram tagging</title>
@@ -1413,6 +1439,25 @@ phrase:action
 	   get encoded here.
 	  </para>
         </sect2>
+        <sect2 id="tokenization">
+          <title>Tokenization</title>
+	  <para>
+	   You can specify how the grammar checker tokenizes the input stream by
+	   added rules to the file <filename>token-xx.in</filename>.  You can
+	   use this to deal with URLs, email addresses, monetary amounts,
+	   ordinals (1st, 2nd, ...), etc. in a clean, uniform way.  The
+	   syntax of this file looks like:
+	  <literallayout>
+regex:tag
+	  </literallayout>
+	   The rules are applied in the order they are specified in the file. 
+	   Applying a rule amounts to matching the regular expression globally
+	   in the input and surrounding the matched text with the specified tag.
+	   The regular expression will not match within or across
+	   already-recognized tokens, so you will want to give rules for longer,
+	   more complicated tokens like URLs first.
+	  </para>
+	    </sect2>
 	<sect2 id="static">
 	  <title>Files to leave alone</title>
           <itemizedlist>
@@ -1484,6 +1529,42 @@ phrase:action
 	  </itemizedlist>
 	</sect2>
       </sect1>
+  </chapter>
+  <chapter id="api">
+    <title>Using &gram; as a library</title>
+	  <para>
+	    There are two senses in which &gram; can be used as a library.   
+		The first, and most powerful, is to write your code in Perl
+		and use the module 
+	  <application>Lingua::XX::Gramadoir</application>
+	    via the handful of methods it exports (for segmentation,
+		tokenization, tagging, etc. in addition to grammar checking).
+		These methods are reasonably well-documented; see for example the 
+	    <ulink url="http://search.cpan.org/~scannell/Lingua-GA-Gramadoir-0.60/lib/Lingua/GA/Gramadoir.pm">POD documentation</ulink> that comes bundled
+		with the Irish version.
+	  </para>
+	  <para>
+		The second way to use &gram; as a library is via the command line
+		option <literal>--api</literal> to the script
+		<filename>gram-xx.pl</filename>.     This approach requires that
+		you do a system call or equivalent from your program to pass
+		the input text to the script.     When the <literal>--api</literal>
+		option is specified, the output is well-formed XML that can
+		be parsed and processed appropriately by your program.   One drawback is that this is
+		only an API for grammar checking and there is no way to extract
+		additional information (e.g. part-of-speech tags) from the output.
+		On the other hand, the syntax of the output has been standardized
+		after extensive discussions with developers of
+		other open source grammar checking engines, and will hopefully be
+		used as a standard
+		interface for grammar checking in OpenOffice.org and KDE.  So,
+		by writing a bit of code to parse the <literal>--api</literal> output,
+		your program will be able to work seamlessly with &gram; as
+		well as any other
+		grammar checkers conforming to this standard, such as 
+		<ulink url="http://www.languagetool.org/">LanguageTool</ulink>.
+		Here is a <ulink url="http://gramadoir.cvs.sourceforge.net/gramadoir/engine/api-output.dtd?view=markup">DTD</ulink> for reference purposes.
+	  </para>
   </chapter>
   <chapter id="faq">
     <title>&gram; <acronym>FAQ</acronym></title>
