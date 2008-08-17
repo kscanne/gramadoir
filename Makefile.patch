@@ -1,5 +1,5 @@
---- Makefile	2007-04-26 14:58:51.000000000 -0500
-+++ Makefile.ok	2007-04-26 14:58:43.000000000 -0500
+--- Makefile	2008-08-17 10:46:10.000000000 -0500
++++ Makefile.ok	2008-08-17 10:46:03.000000000 -0500
 @@ -60,8 +60,16 @@
  
  Makefile : Makefile.in config.status
@@ -17,7 +17,7 @@
  config.status: configure
  	./config.status --recheck
  
-@@ -81,4 +89,190 @@
+@@ -81,4 +89,192 @@
  semiclean :
  	rm -f y.tab.* $(LEX_OUTPUT_ROOT).* aonchiall.y rialacha.y
  
@@ -162,6 +162,7 @@
 +	cp -f po/fr.po $(CVSDIR)/engine/po
 +	cp -f po/ga.po $(CVSDIR)/engine/po
 +	cp -f po/gramadoir.pot $(CVSDIR)/engine/po
++	cp -f po/id.po $(CVSDIR)/engine/po
 +	cp -f po/insert-header.sin $(CVSDIR)/engine/po
 +	cp -f po/LINGUAS $(CVSDIR)/engine/po
 +	cp -f po/Makefile.in.in $(CVSDIR)/engine/po
@@ -176,6 +177,7 @@
 +	cp -f po/sk.po $(CVSDIR)/engine/po
 +	cp -f po/sv.po $(CVSDIR)/engine/po
 +	cp -f po/vi.po $(CVSDIR)/engine/po
++	cp -f po/zh_CN.po $(CVSDIR)/engine/po
 +	(cd $(CVSDIR)/engine; cvs commit -m "sync'd with borel repository" .)
 +	cvs update engine
 +	cp -f ga/3grams-ga.txt $(CVSDIR)/ga
