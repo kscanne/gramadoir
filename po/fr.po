@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GNU gramadoir 0.6\n"
-"Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
-"POT-Creation-Date: 2006-03-07 21:35-0600\n"
+"Report-Msgid-Bugs-To: <kscanne@gmail.com>\n"
+"POT-Creation-Date: 2008-08-17 12:05-0500\n"
 "PO-Revision-Date: 2005-03-23 08:00-0500\n"
 "Last-Translator: Michel Robitaille <robitail@IRO.UMontreal.CA>\n"
 "Language-Team: French <traduc@traduc.org>\n"
@@ -207,7 +207,7 @@ msgstr "Permission refusée"
 msgid "%s: warning: problem closing %s\n"
 msgstr "%s: AVERTISSEMENT: problème de fermeture de %s\n"
 
-#: gram.pl:387
+#: gram.pl:389
 #, perl-format
 msgid "Currently checking %s"
 msgstr "Vérification en cours %s"
@@ -270,7 +270,9 @@ msgstr "%s: erreur macro non reconnue: %s\n"
 #. checking engine.  The first batch consists of messages intended to be
 #. reused across a wide range of languages.
 #: messages.txt:4
-msgid "Valid word but extremely rare in actual usage"
+#, fuzzy
+msgid ""
+"Valid word but extremely rare in actual usage. Is this the word you want?"
 msgstr "mot valide mais extrêmement rare selon l'usage actuel"
 
 #: messages.txt:5
@@ -306,212 +308,229 @@ msgid "Unnecessary use of the definite article"
 msgstr "usage non nécessaire de l'article défini"
 
 #: messages.txt:13
+#, fuzzy
+msgid "No need for the first definite article"
+msgstr "usage non nécessaire de l'article défini"
+
+#: messages.txt:14
 msgid "Unnecessary use of the genitive case"
 msgstr "usage non nécessaire du cas génitif"
 
-#: messages.txt:14
+#: messages.txt:15
 msgid "The genitive case is required here"
 msgstr "le cas génitif est requis ici"
 
-#: messages.txt:15
+#: messages.txt:16
 msgid "You should use the present tense here"
 msgstr ""
 
-#: messages.txt:16
+#: messages.txt:17
 msgid "It seems unlikely that you intended to use the subjunctive here"
 msgstr "Il semble que vous avez l'intention d'utiliser un subjonctif ici"
 
 #. TRANSLATORS: You can use whatever kind of quotes you prefer for your locale
 #. around the variable \\1.  You should keep the double backslash before the 1,
 #. but there is no need to escape the quotes the way they are in the msgid.
-#: messages.txt:20
+#: messages.txt:21
 msgid "Usually used in the set phrase \\/\\1\\/"
 msgstr "habituellement utilisé dans le jeu de phrases \\/\\1\\/"
 
-#: messages.txt:21
+#: messages.txt:22
 msgid "You should use \\/\\1\\/ here instead"
 msgstr "Vous devriez utiliser \\/\\1\\/ ici à la place"
 
-#: messages.txt:22
+#: messages.txt:23
 msgid "Non-standard form of \\/\\1\\/"
 msgstr "Forme non standard de \\/\\1\\/"
 
-#: messages.txt:23
+#: messages.txt:24
 msgid "Derived from a non-standard form of \\/\\1\\/"
 msgstr "Dérivé d'une forme non standard de \\/\\1\\/"
 
-#: messages.txt:24
+#: messages.txt:25
 msgid "Derived incorrectly from the root \\/\\1\\/"
 msgstr "Dérivé incorrectement de la racine \\/\\1\\/"
 
-#: messages.txt:25
+#: messages.txt:26
 msgid "Unknown word"
 msgstr "Mot inconnu"
 
 #. TRANSLATORS: \\1 is substituted with one or more suggested replacements
-#: messages.txt:27
+#: messages.txt:28
 msgid "Unknown word: \\/\\1\\/?"
 msgstr "Mot inconnu: \\/\\1\\/?"
 
-#: messages.txt:28
-msgid "Valid word but more often found in place of \\/\\1\\/"
-msgstr "Mot vlaide mais trouvé plus d'une fois à la place de \\/\\1\\/"
-
 #: messages.txt:29
+msgid "Valid word but \\/\\1\\/ is more common"
+msgstr ""
+
+#: messages.txt:30
 msgid "Not in database but apparently formed from the root \\/\\1\\/"
 msgstr ""
 "N'est pas dans la base de données mais apparemment formé à partir de la "
 "racine \\/\\1\\/"
 
-#: messages.txt:30
+#: messages.txt:31
 msgid "The word \\/\\1\\/ is not needed"
 msgstr "Le mot \\/\\1\\/ n'est pas requis."
 
-#: messages.txt:31
+#: messages.txt:32
 msgid "Do you mean \\/\\1\\/?"
 msgstr "Entendez-vous \\/\\1\\/?"
 
-#: messages.txt:32
+#: messages.txt:33
 msgid "Derived form of common misspelling \\/\\1\\/?"
 msgstr "Forme dérivée d'une erreur d'orthographe commune \\/\\1\\/?"
 
-#: messages.txt:33
+#: messages.txt:34
 msgid "Not in database but may be a compound \\/\\1\\/?"
 msgstr "N'est pas dans la base de données mais peut être composé \\/\\1\\/?"
 
-#: messages.txt:34
+#: messages.txt:35
 msgid "Not in database but may be a non-standard compound \\/\\1\\/?"
 msgstr ""
 "N'est pas dans la base de données mais peut être composé de manière non "
 "standard \\/\\1\\/?"
 
-#: messages.txt:35
+#: messages.txt:36
 msgid "Possibly a foreign word (the sequence \\/\\1\\/ is highly improbable)"
 msgstr ""
 "Possiblement un mot étranger (la séquence \\/\\1\\/ est hautement improbable)"
 
-#: messages.txt:36
+#: messages.txt:37
 msgid "Gender disagreement"
 msgstr "Erreur de genre"
 
-#: messages.txt:37
+#: messages.txt:38
 msgid "Number disagreement"
 msgstr "Erreur de nombre"
 
-#: messages.txt:38
+#: messages.txt:39
 msgid "Case disagreement"
 msgstr ""
 
 #. TRANSLATORS: Rules specific to the Irish language (ga)
-#: messages.txt:40
+#: messages.txt:41
 msgid "Prefix \\/h\\/ missing"
 msgstr "Préfixe \\/h\\/ manquant"
 
-#: messages.txt:41
+#: messages.txt:42
 msgid "Prefix \\/t\\/ missing"
 msgstr "Préfixe \\/t\\/ manquant"
 
-#: messages.txt:42
+#: messages.txt:43
 msgid "Prefix \\/d'\\/ missing"
 msgstr "Le préfixe \\/d'\\/ est manquant"
 
-#: messages.txt:43
+#: messages.txt:44
 msgid "Unnecessary prefix \\/h\\/"
 msgstr "préfixe non nécessaire \\/h\\/"
 
-#: messages.txt:44
+#: messages.txt:45
 msgid "Unnecessary prefix \\/t\\/"
 msgstr "préfixe non nécessaire \\/t\\/"
 
-#: messages.txt:45
+#: messages.txt:46
 msgid "Unnecessary prefix \\/d'\\/"
 msgstr "préfixe non nécessaire \\/d'\\/"
 
-#. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
 #: messages.txt:47
+#, fuzzy
+msgid "Unnecessary prefix \\/b'\\/"
+msgstr "préfixe non nécessaire \\/d'\\/"
+
+#. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
+#: messages.txt:49
 msgid "Unnecessary initial mutation"
 msgstr "Mutation initiale non nécessaire"
 
-#: messages.txt:48
+#: messages.txt:50
 msgid "Initial mutation missing"
 msgstr "Mutation initiale manquante"
 
 #. TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
 #. It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
-#: messages.txt:51
+#: messages.txt:53
 msgid "Unnecessary lenition"
 msgstr "Lénition non nécessaire"
 
-#: messages.txt:52
+#: messages.txt:54
+msgid "The second lenition is unnecessary"
+msgstr ""
+
+#: messages.txt:55
 msgid ""
 "Often the preposition \\/\\1\\/ causes lenition, but this case is unclear"
 msgstr ""
 "Souvent la préposition \\/\\1\\/ provoque une lénition mais ce cas n'est pas "
 "clair"
 
-#: messages.txt:53
+#: messages.txt:56
 msgid "Lenition missing"
 msgstr "Lénition manquante"
 
 #. TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
 #. initial consonants in Irish.  It is indicated in writing by the addition
 #. of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
-#: messages.txt:57
+#: messages.txt:60
 msgid "Unnecessary eclipsis"
 msgstr "Éclipsis non nécessaire"
 
-#: messages.txt:58
+#: messages.txt:61
 msgid "Eclipsis missing"
 msgstr "Éclipsis manquante"
 
-#: messages.txt:59
+#: messages.txt:62
 msgid "The dative is used only in special phrases"
 msgstr "La partie datative est utilisée seulement dans des phrases spéciales"
 
-#: messages.txt:60
+#: messages.txt:63
 msgid "The dependent form of the verb is required here"
 msgstr "La forme dépendante du verbe est requise ici"
 
-#: messages.txt:61
+#: messages.txt:64
 msgid "Unnecessary use of the dependent form of the verb"
 msgstr "Usage non nécessaire de la forme dépendante du verbe"
 
-#: messages.txt:62
+#: messages.txt:65
 msgid "The synthetic (combined) form, ending in \\/\\1\\/, is often used here"
 msgstr ""
 "La forme synthétique (combinée) se terminant par \\/\\1\\/ est souvent "
 "utilisé ici"
 
 #. TRANSLATORS: Rules specific to the Cornish language (kw)
-#: messages.txt:64
+#: messages.txt:67
 msgid "Second (soft) mutation missing"
 msgstr "Seconde mutation (logicielle) manquante"
 
-#: messages.txt:65
+#: messages.txt:68
 msgid "Third (breathed) mutation missing"
 msgstr "Troisième mutation (breathed) manquante"
 
-#: messages.txt:66
+#: messages.txt:69
 msgid "Fourth (hard) mutation missing"
 msgstr "Quatrième mutation (dure) manquante"
 
-#: messages.txt:67
+#: messages.txt:70
 msgid "Fifth (mixed) mutation missing"
 msgstr "Quatrième mutation (mixte) manquante"
 
-#: messages.txt:68
+#: messages.txt:71
 msgid "Fifth (mixed) mutation after 'th missing"
 msgstr "Cinquième mutation (mixte) après la nième manquante"
 
 #. TRANSLATORS: Rules specific to the Welsh language (cy)
-#: messages.txt:70
+#: messages.txt:73
 msgid "Aspirate mutation missing"
 msgstr ""
 
 #. TRANSLATORS: Rules specific to the Igbo language (ig)
-#: messages.txt:72
+#: messages.txt:75
 msgid "This word violates the rules of Igbo vowel harmony"
 msgstr ""
+
+#~ msgid "Valid word but more often found in place of \\/\\1\\/"
+#~ msgstr "Mot vlaide mais trouvé plus d'une fois à la place de \\/\\1\\/"
 
 #~ msgid ""
 #~ "    --teanga=XX    specify the language of the text to be checked "

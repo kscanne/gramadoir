@@ -5,11 +5,11 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gramadoir 0.6\n"
-"Report-Msgid-Bugs-To: <scannell@slu.edu>\n"
-"POT-Creation-Date: 2005-09-21 18:49+0000\n"
-"PO-Revision-Date: 2005-03-02 23:33-0600\n"
-"Last-Translator: Kevin Patrick Scannell <scannell@SLU.EDU>\n"
+"Project-Id-Version: gramadoir 0.7\n"
+"Report-Msgid-Bugs-To: <kscanne@gmail.com>\n"
+"POT-Creation-Date: 2008-08-17 12:05-0500\n"
+"PO-Revision-Date: 2008-08-17 12:08-0500\n"
+"Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
@@ -75,8 +75,8 @@ msgstr "Níl an teanga %s ar fáil."
 #. "o" in "Gramadoir" if available in your character set and encoding.
 #. If you must translate, this is the Irish for (literally) "The Grammarian"
 #: gram.pl:185 gram.pl:248 gramdev.pl:93 gramdev.pl:118 Gramadoir.pm.in:119
-#: Gramadoir.pm.in:176 Gramadoir.pm.in:290 Gramadoir.pm.in:293
-#: Gramadoir.pm.in:494 Gramadoir.pm.in:805
+#: Gramadoir.pm.in:176 Gramadoir.pm.in:291 Gramadoir.pm.in:294
+#: Gramadoir.pm.in:495 Gramadoir.pm.in:803
 msgid "An Gramadoir"
 msgstr "An Gramadóir"
 
@@ -207,7 +207,7 @@ msgstr "Cead diúltaithe"
 msgid "%s: warning: problem closing %s\n"
 msgstr "%s: rabhadh: fadhb ag dúnadh %s\n"
 
-#: gram.pl:387
+#: gram.pl:389
 #, perl-format
 msgid "Currently checking %s"
 msgstr "%s á sheiceáil"
@@ -242,24 +242,24 @@ msgid "%s: `%s' corrupted at %s\n"
 msgstr "%s: `%s' truaillithe ag %s\n"
 
 #. TRANSLATORS: "conversion" here means conversion between character encodings
-#: Gramadoir.pm.in:227 Gramadoir.pm.in:544 Gramadoir.pm.in:659
-#: Gramadoir.pm.in:693 Gramadoir.pm.in:716 Gramadoir.pm.in:773
-#: Gramadoir.pm.in:837
+#: Gramadoir.pm.in:227 Gramadoir.pm.in:545 Gramadoir.pm.in:662
+#: Gramadoir.pm.in:697 Gramadoir.pm.in:720 Gramadoir.pm.in:765
+#: Gramadoir.pm.in:913
 #, perl-format
 msgid "conversion from %s is not supported"
 msgstr "níl aon fháil ar thiontú ón ionchódú %s"
 
-#: Gramadoir.pm.in:290 Gramadoir.pm.in:493
+#: Gramadoir.pm.in:291 Gramadoir.pm.in:494
 #, perl-format
 msgid "%s: illegal grammatical code\n"
 msgstr "%s: cód gramadach neamhcheadaithe\n"
 
-#: Gramadoir.pm.in:293
+#: Gramadoir.pm.in:294
 #, perl-format
 msgid "%s: no grammar codes: %s\n"
 msgstr "%s: níl aon chód gramadaí ann: %s\n"
 
-#: Gramadoir.pm.in:804
+#: Gramadoir.pm.in:802
 #, perl-format
 msgid "%s: unrecognized error macro: %s\n"
 msgstr "%s: macra anaithnid earráide: %s\n"
@@ -268,12 +268,13 @@ msgstr "%s: macra anaithnid earráide: %s\n"
 #. checking engine.  The first batch consists of messages intended to be
 #. reused across a wide range of languages.
 #: messages.txt:4
-msgid "Valid word but extremely rare in actual usage"
-msgstr "Focal ceart ach an-neamhchoitianta"
+msgid ""
+"Valid word but extremely rare in actual usage. Is this the word you want?"
+msgstr "Focal ceart ach an-neamhchoitianta - an é atá uait anseo?"
 
 #: messages.txt:5
 msgid "Repeated word"
-msgstr "Focal céanna faoi dhó"
+msgstr "An focal céanna faoi dhó"
 
 #: messages.txt:6
 msgid "Unusual combination of words"
@@ -304,201 +305,221 @@ msgid "Unnecessary use of the definite article"
 msgstr "Níl gá leis an alt cinnte anseo"
 
 #: messages.txt:13
+msgid "No need for the first definite article"
+msgstr "Níl gá leis an gcéad alt cinnte anseo"
+
+#: messages.txt:14
 msgid "Unnecessary use of the genitive case"
 msgstr "Níl gá leis an leagan ginideach anseo"
 
-#: messages.txt:14
+#: messages.txt:15
 msgid "The genitive case is required here"
 msgstr "Tá gá leis an leagan ginideach anseo"
 
-#: messages.txt:15
+#: messages.txt:16
 msgid "You should use the present tense here"
 msgstr "Ba chóir duit an aimsir láithreach a úsáid anseo"
 
-#: messages.txt:16
+#: messages.txt:17
 msgid "It seems unlikely that you intended to use the subjunctive here"
 msgstr "Ní dócha go raibh intinn agat an modh foshuiteach a úsáid anseo"
 
 #. TRANSLATORS: You can use whatever kind of quotes you prefer for your locale
 #. around the variable \\1.  You should keep the double backslash before the 1,
 #. but there is no need to escape the quotes the way they are in the msgid.
-#: messages.txt:20
+#: messages.txt:21
 msgid "Usually used in the set phrase \\/\\1\\/"
 msgstr "Ní úsáidtear an focal seo ach san abairtín «\\1» de ghnáth"
 
-#: messages.txt:21
+#: messages.txt:22
 msgid "You should use \\/\\1\\/ here instead"
 msgstr "Ba chóir duit «\\1» a úsáid anseo"
 
-#: messages.txt:22
+#: messages.txt:23
 msgid "Non-standard form of \\/\\1\\/"
 msgstr "Foirm neamhchaighdeánach de «\\1»"
 
-#: messages.txt:23
+#: messages.txt:24
 msgid "Derived from a non-standard form of \\/\\1\\/"
 msgstr "Bunaithe ar fhoirm neamhchaighdeánach de «\\1»"
 
-#: messages.txt:24
+#: messages.txt:25
 msgid "Derived incorrectly from the root \\/\\1\\/"
 msgstr "Bunaithe go mícheart ar an bhfréamh «\\1»"
 
-#: messages.txt:25
+#: messages.txt:26
 msgid "Unknown word"
 msgstr "Focal anaithnid"
 
 #. TRANSLATORS: \\1 is substituted with one or more suggested replacements
-#: messages.txt:27
+#: messages.txt:28
 msgid "Unknown word: \\/\\1\\/?"
 msgstr "Focal anaithnid: «\\1»?"
 
-#: messages.txt:28
-msgid "Valid word but more often found in place of \\/\\1\\/"
-msgstr "Focal ceart ach aimsítear é níos minice in ionad «\\1»"
-
 #: messages.txt:29
+msgid "Valid word but \\/\\1\\/ is more common"
+msgstr "Focal ceart ach tá «\\1» níos coitianta"
+
+#: messages.txt:30
 msgid "Not in database but apparently formed from the root \\/\\1\\/"
 msgstr "Focal anaithnid ach bunaithe ar «\\1» is dócha"
 
-#: messages.txt:30
+#: messages.txt:31
 msgid "The word \\/\\1\\/ is not needed"
 msgstr "Níl gá leis an fhocal «\\1»"
 
-#: messages.txt:31
+#: messages.txt:32
 msgid "Do you mean \\/\\1\\/?"
 msgstr "An raibh «\\1» ar intinn agat?"
 
-#: messages.txt:32
+#: messages.txt:33
 msgid "Derived form of common misspelling \\/\\1\\/?"
 msgstr "Bunaithe ar fhocal mílitrithe go coitianta «\\1»?"
 
-#: messages.txt:33
-msgid "Not in database but may be a compound \\/\\1\\/?"
-msgstr "Focal anaithnid ach is féidir gur comhfhocal «\\1» é?"
-
 #: messages.txt:34
-msgid "Not in database but may be a non-standard compound \\/\\1\\/?"
-msgstr ""
-"Focal anaithnid ach is féidir gur comhfhocal neamhchaighdeánach «\\1» é?"
+msgid "Not in database but may be a compound \\/\\1\\/?"
+msgstr "Focal anaithnid ach b'fhéidir gur comhfhocal «\\1» é?"
 
 #: messages.txt:35
-msgid "Possibly a foreign word (the sequence \\/\\1\\/ is highly improbable)"
+msgid "Not in database but may be a non-standard compound \\/\\1\\/?"
 msgstr ""
-"Is féidir gur focal iasachta é seo (tá na litreacha «\\1» neamhdhóchúil)"
+"Focal anaithnid ach b'fhéidir gur comhfhocal neamhchaighdeánach «\\1» é?"
 
 #: messages.txt:36
+msgid "Possibly a foreign word (the sequence \\/\\1\\/ is highly improbable)"
+msgstr ""
+"B'fhéidir gur focal iasachta é seo (tá na litreacha «\\1» neamhchoitianta)"
+
+#: messages.txt:37
 msgid "Gender disagreement"
 msgstr "Inscne mhícheart"
 
-#: messages.txt:37
+#: messages.txt:38
 msgid "Number disagreement"
 msgstr "Uimhir mhícheart"
 
-#: messages.txt:38
+#: messages.txt:39
 msgid "Case disagreement"
 msgstr "Tuiseal mícheart"
 
 #. TRANSLATORS: Rules specific to the Irish language (ga)
-#: messages.txt:40
+#: messages.txt:41
 msgid "Prefix \\/h\\/ missing"
 msgstr "Réamhlitir «h» ar iarraidh"
 
-#: messages.txt:41
+#: messages.txt:42
 msgid "Prefix \\/t\\/ missing"
 msgstr "Réamhlitir «t» ar iarraidh"
 
-#: messages.txt:42
+#: messages.txt:43
 msgid "Prefix \\/d'\\/ missing"
 msgstr "Réamhlitir «d'» ar iarraidh"
 
-#: messages.txt:43
+#: messages.txt:44
 msgid "Unnecessary prefix \\/h\\/"
 msgstr "Réamhlitir «h» gan ghá"
 
-#: messages.txt:44
+#: messages.txt:45
 msgid "Unnecessary prefix \\/t\\/"
 msgstr "Réamhlitir «t» gan ghá"
 
-#: messages.txt:45
+#: messages.txt:46
 msgid "Unnecessary prefix \\/d'\\/"
 msgstr "Réamhlitir «d'» gan ghá"
 
-#. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
 #: messages.txt:47
+msgid "Unnecessary prefix \\/b'\\/"
+msgstr "Réamhlitir «b'» gan ghá"
+
+#. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
+#: messages.txt:49
 msgid "Unnecessary initial mutation"
 msgstr "Urú nó séimhiú gan ghá"
 
-#: messages.txt:48
+#: messages.txt:50
 msgid "Initial mutation missing"
 msgstr "Urú nó séimhiú ar iarraidh"
 
 #. TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
 #. It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
-#: messages.txt:51
+#: messages.txt:53
 msgid "Unnecessary lenition"
 msgstr "Séimhiú gan ghá"
 
-#: messages.txt:52
+#: messages.txt:54
+msgid "The second lenition is unnecessary"
+msgstr "Ní gá leis an dara séimhiú"
+
+#: messages.txt:55
 msgid ""
 "Often the preposition \\/\\1\\/ causes lenition, but this case is unclear"
 msgstr ""
 "Leanann séimhiú an réamhfhocal «\\1» go minic, ach ní léir é sa chás seo"
 
-#: messages.txt:53
+#: messages.txt:56
 msgid "Lenition missing"
 msgstr "Séimhiú ar iarraidh"
 
 #. TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
 #. initial consonants in Irish.  It is indicated in writing by the addition
 #. of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
-#: messages.txt:57
+#: messages.txt:60
 msgid "Unnecessary eclipsis"
 msgstr "Urú gan ghá"
 
-#: messages.txt:58
+#: messages.txt:61
 msgid "Eclipsis missing"
 msgstr "Urú ar iarraidh"
 
-#: messages.txt:59
+#: messages.txt:62
 msgid "The dative is used only in special phrases"
 msgstr "Ní úsáidtear an tabharthach ach in abairtí speisialta"
 
-#: messages.txt:60
+#: messages.txt:63
 msgid "The dependent form of the verb is required here"
 msgstr "Tá gá leis an fhoirm spleách anseo"
 
-#: messages.txt:61
+#: messages.txt:64
 msgid "Unnecessary use of the dependent form of the verb"
 msgstr "Níl gá leis an fhoirm spleách"
 
-#: messages.txt:62
+#: messages.txt:65
 msgid "The synthetic (combined) form, ending in \\/\\1\\/, is often used here"
 msgstr "Is an fhoirm tháite, leis an iarmhír «\\1», a úsáidtear go minic"
 
 #. TRANSLATORS: Rules specific to the Cornish language (kw)
-#: messages.txt:64
+#: messages.txt:67
 msgid "Second (soft) mutation missing"
 msgstr "An dara claochlú (bog) ar iarraidh"
 
-#: messages.txt:65
+#: messages.txt:68
 msgid "Third (breathed) mutation missing"
 msgstr "An tríú claochlú (análach) ar iarraidh"
 
-#: messages.txt:66
+#: messages.txt:69
 msgid "Fourth (hard) mutation missing"
 msgstr "An ceathrú claochlú (crua) ar iarraidh"
 
-#: messages.txt:67
+#: messages.txt:70
 msgid "Fifth (mixed) mutation missing"
 msgstr "An cúigiú claochlú (measctha) ar iarraidh"
 
-#: messages.txt:68
+#: messages.txt:71
 msgid "Fifth (mixed) mutation after 'th missing"
 msgstr "An cúigiú claochlú (measctha) i ndiaidh «'th» ar iarraidh"
 
+#. TRANSLATORS: Rules specific to the Welsh language (cy)
+#: messages.txt:73
+msgid "Aspirate mutation missing"
+msgstr "Claochlú análaithe ar iarraidh"
+
 #. TRANSLATORS: Rules specific to the Igbo language (ig)
-#: messages.txt:70
+#: messages.txt:75
 msgid "This word violates the rules of Igbo vowel harmony"
 msgstr "Tagann an focal seo salach ar chomhréir na ngutaí in Íogbóis"
+
+#~ msgid "Valid word but more often found in place of \\/\\1\\/"
+#~ msgstr "Focal ceart ach aimsítear é níos minice in ionad «\\1»"
 
 #~ msgid ""
 #~ "    --aspell       suggest corrections for misspellings (requires GNU "
