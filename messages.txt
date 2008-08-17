@@ -44,6 +44,7 @@ PREFIXD		'Prefix \/d\'\/ missing'
 NIAITCH		'Unnecessary prefix \/h\/'
 NITEE		'Unnecessary prefix \/t\/'
 NIDEE		'Unnecessary prefix \/d\'\/'
+NIBEE		'Unnecessary prefix \/b\'\/'
 # TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
 NICLAOCHLU	'Unnecessary initial mutation'
 CLAOCHLU	'Initial mutation missing'
