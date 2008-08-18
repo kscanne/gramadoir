@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gramadoir 0.6\n"
+"Project-Id-Version: gramadoir 0.7\n"
 "Report-Msgid-Bugs-To: <kscanne@gmail.com>\n"
 "POT-Creation-Date: 2008-08-17 12:05-0500\n"
-"PO-Revision-Date: 2008-08-17 18:02+0700\n"
+"PO-Revision-Date: 2008-08-18 13:35+0700\n"
 "Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
 "Language-Team: Indonesian <translation-team-id@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -82,14 +82,8 @@ msgid "version %s"
 msgstr "versi %s"
 
 #: gram.pl:253 gramdev.pl:153
-msgid ""
-"This is free software; see the source for copying conditions.  There is NO"
-"\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
-"PURPOSE,\\nto the extent permitted by law."
-msgstr ""
-"Ini adalah perangkat lunak bebas; lihat sumber untuk kondisi penyalinan. "
-"TIDAK ada \\ngaransi; tidak juga untuk PENJUALAN atau PENGGUNAAN UNTUK "
-"TUJUAN KHUSUS,\\nsampai batas yang diizinkan oleh hukum."
+msgid "This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law."
+msgstr "Ini adalah perangkat lunak bebas; lihat sumber untuk kondisi penyalinan. TIDAK ada \\ngaransi; tidak juga untuk PENJUALAN atau PENGGUNAAN UNTUK TUJUAN KHUSUS,\\nsampai batas yang diizinkan oleh hukum."
 
 #: gram.pl:267
 #, perl-format
@@ -102,15 +96,11 @@ msgstr "Opsi untuk pengguna akhir:"
 
 #: gram.pl:274
 msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
-msgstr ""
-"    --iomlan       laporkan semua galat (misalnya jangan gunakan ~/."
-"neamhshuim)"
+msgstr "    --iomlan       laporkan semua galat (misalnya jangan gunakan ~/.neamhshuim)"
 
 #: gram.pl:277
-msgid ""
-"    --ionchod=ENC  specify the character encoding of the text to be checked"
-msgstr ""
-"    --ionchod=SAN  tentukan penyandian karakter dari teks untuk diperiksa"
+msgid "    --ionchod=ENC  specify the character encoding of the text to be checked"
+msgstr "    --ionchod=SAN  tentukan penyandian karakter dari teks untuk diperiksa"
 
 #: gram.pl:280
 msgid "    --aschod=ENC   specify the character encoding for output"
@@ -122,8 +112,7 @@ msgstr "    --comheadan=xx pilih bahasa untuk pesan galat"
 
 #: gram.pl:286
 msgid "    --dath=COLOR   specify the color to use for highlighting errors"
-msgstr ""
-"    --dath=COLOR   tentukan warna yang akan digunakan untuk menyorot galat"
+msgstr "    --dath=COLOR   tentukan warna yang akan digunakan untuk menyorot galat"
 
 #: gram.pl:289
 msgid "    --litriu       write misspelled words to standard output"
@@ -150,27 +139,19 @@ msgid "Options for developers:"
 msgstr "Opsi untuk pengembang:"
 
 #: gram.pl:306
-msgid ""
-"    --api          output a simple XML format for use with other applications"
-msgstr ""
-"    --api          keluaran dalam format XML sederhana untuk digunakan "
-"dengan aplikasi lain"
+msgid "    --api          output a simple XML format for use with other applications"
+msgstr "    --api          keluaran dalam format XML sederhana untuk digunakan dengan aplikasi lain"
 
 #: gram.pl:308
 msgid "    --html         produce HTML output for viewing in a web browser"
-msgstr ""
-"    --html         menghasilkan keluaran HTML untuk ditampilkan dalam "
-"peramban web"
+msgstr "    --html         menghasilkan keluaran HTML untuk ditampilkan dalam peramban web"
 
 #: gram.pl:314
-msgid ""
-"    --no-unigram   do not resolve ambiguous parts of speech by frequency"
-msgstr ""
-"    --no-unigram   jangan pisahkan bagian ambigu tuturan oleh frekuensi"
+msgid "    --no-unigram   do not resolve ambiguous parts of speech by frequency"
+msgstr "    --no-unigram   jangan pisahkan bagian ambigu tuturan oleh frekuensi"
 
 #: gram.pl:320
-msgid ""
-"    --xml          write tagged XML stream to standard output, for debugging"
+msgid "    --xml          write tagged XML stream to standard output, for debugging"
 msgstr "    --xml          tulis arus XML ke keluaran standar, untuk awakutu"
 
 #: gram.pl:323
@@ -206,24 +187,15 @@ msgstr "Saat ini memeriksa %s"
 
 #: gramdev.pl:125
 msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
-msgstr ""
-"    --ilchiall     laporkan ambiguitas tak terpecahkan, diurutkan "
-"berdasarkan frekuensi"
+msgstr "    --ilchiall     laporkan ambiguitas tak terpecahkan, diurutkan berdasarkan frekuensi"
 
 #: gramdev.pl:128
-msgid ""
-"    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
-msgstr ""
-"    --minic        keluaran semua tag, diurutkan berdasarkan frekuensi "
-"(untuk unigram-xx.txt)"
+msgid "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
+msgstr "    --minic        keluaran semua tag, diurutkan berdasarkan frekuensi (untuk unigram-xx.txt)"
 
 #: gramdev.pl:130
-msgid ""
-"    --brill        find disambiguation rules via Brill's unsupervised "
-"algorithm"
-msgstr ""
-"    --brill        temukan peraturan disambigu via algoritma tak diawasi "
-"Brill"
+msgid "    --brill        find disambiguation rules via Brill's unsupervised algorithm"
+msgstr "    --brill        temukan peraturan disambigu via algoritma tak diawasi Brill"
 
 #: Gramadoir.pm.in:118
 #, perl-format
@@ -262,10 +234,8 @@ msgstr "%s: makro galat tak dikenali: %s\n"
 #. checking engine.  The first batch consists of messages intended to be
 #. reused across a wide range of languages.
 #: messages.txt:4
-#, fuzzy
-msgid ""
-"Valid word but extremely rare in actual usage. Is this the word you want?"
-msgstr "Kata sah tapi sangat jarang dalam penggunaan nyata"
+msgid "Valid word but extremely rare in actual usage. Is this the word you want?"
+msgstr "Kata sah tapi sangat jarang dalam penggunaan nyata. Apakah ini kata yang anda inginkan?"
 
 #: messages.txt:5
 msgid "Repeated word"
@@ -284,9 +254,8 @@ msgid "The singular form is required here"
 msgstr "Bentuk singular diperlukan di sini"
 
 #: messages.txt:9
-#, fuzzy
 msgid "Plural adjective required"
-msgstr "Adjektiva komparatif diperlukan"
+msgstr "Adjektiva jamak diperlukan"
 
 #: messages.txt:10
 msgid "Comparative adjective required"
@@ -301,9 +270,8 @@ msgid "Unnecessary use of the definite article"
 msgstr "Penggunaan tak penting dari artikel tertentu"
 
 #: messages.txt:13
-#, fuzzy
 msgid "No need for the first definite article"
-msgstr "Penggunaan tak penting dari artikel tertentu"
+msgstr "Tak perlu untuk artikel tertentu pertama"
 
 #: messages.txt:14
 msgid "Unnecessary use of the genitive case"
@@ -314,9 +282,8 @@ msgid "The genitive case is required here"
 msgstr "Huruf genitif diperlukan di sini"
 
 #: messages.txt:16
-#, fuzzy
 msgid "You should use the present tense here"
-msgstr "Anda harus menggunakan \\/\\1\\/ di sini"
+msgstr "Anda harus menggunakan kala saat ini di sini"
 
 #: messages.txt:17
 msgid "It seems unlikely that you intended to use the subjunctive here"
@@ -356,7 +323,7 @@ msgstr "kata tak dikenal: \\/\\1\\/?"
 
 #: messages.txt:29
 msgid "Valid word but \\/\\1\\/ is more common"
-msgstr ""
+msgstr "Kata sah tapi \\/\\1\\/ lebih umum"
 
 #: messages.txt:30
 msgid "Not in database but apparently formed from the root \\/\\1\\/"
@@ -388,15 +355,15 @@ msgstr "Mungkin kata asing (sekuensi \\/\\1\\/ sangat tidak mungkin)"
 
 #: messages.txt:37
 msgid "Gender disagreement"
-msgstr ""
+msgstr "Ketaksepakatan gender"
 
 #: messages.txt:38
 msgid "Number disagreement"
-msgstr ""
+msgstr "Ketaksepakatan nomor"
 
 #: messages.txt:39
 msgid "Case disagreement"
-msgstr ""
+msgstr "Ketaksepakatan huruf"
 
 #. TRANSLATORS: Rules specific to the Irish language (ga)
 #: messages.txt:41
@@ -424,9 +391,8 @@ msgid "Unnecessary prefix \\/d'\\/"
 msgstr "Prefiks tak diperlukan \\/d'\\/"
 
 #: messages.txt:47
-#, fuzzy
 msgid "Unnecessary prefix \\/b'\\/"
-msgstr "Prefiks tak diperlukan \\/d'\\/"
+msgstr "Prefiks tak diperlukan \\/b'\\/"
 
 #. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
 #: messages.txt:49
@@ -445,14 +411,11 @@ msgstr "Pelenisan tak diperlukan"
 
 #: messages.txt:54
 msgid "The second lenition is unnecessary"
-msgstr ""
+msgstr "Pelenisan kedua tidak perlu"
 
 #: messages.txt:55
-msgid ""
-"Often the preposition \\/\\1\\/ causes lenition, but this case is unclear"
-msgstr ""
-"Seringkali preposisi \\/\\1\\/ menyebabkan pelenisan, tapi huruf ini tidak "
-"jelas"
+msgid "Often the preposition \\/\\1\\/ causes lenition, but this case is unclear"
+msgstr "Seringkali preposisi \\/\\1\\/ menyebabkan pelenisan, tapi huruf ini tidak jelas"
 
 #: messages.txt:56
 msgid "Lenition missing"
@@ -483,9 +446,7 @@ msgstr "Penggunaan tak diperlukan dari bentuk ketergantungan kata kerja"
 
 #: messages.txt:65
 msgid "The synthetic (combined) form, ending in \\/\\1\\/, is often used here"
-msgstr ""
-"Bentuk sintesis (digabungkan), diakhiri di \\/\\1\\/, biasanya diperlukan di "
-"sini."
+msgstr "Bentuk sintesis (digabungkan), diakhiri di \\/\\1\\/, biasanya diperlukan di sini."
 
 #. TRANSLATORS: Rules specific to the Cornish language (kw)
 #: messages.txt:67
@@ -510,14 +471,13 @@ msgstr "Mutasi (campuran) kelima setelah 'th hilang"
 
 #. TRANSLATORS: Rules specific to the Welsh language (cy)
 #: messages.txt:73
-#, fuzzy
 msgid "Aspirate mutation missing"
-msgstr "Mutasi awal hilang"
+msgstr "Mutasi aspirasi hilang"
 
 #. TRANSLATORS: Rules specific to the Igbo language (ig)
 #: messages.txt:75
 msgid "This word violates the rules of Igbo vowel harmony"
-msgstr ""
+msgstr "Kata ini melanggar aturan harmoni vokal Igbo"
 
 #~ msgid "Valid word but more often found in place of \\/\\1\\/"
 #~ msgstr "Kata sah tapi lebih sering ditemukan di tempat \\/\\1\\/"

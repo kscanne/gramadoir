@@ -6,13 +6,12 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gramadoir 0.6\n"
+"Project-Id-Version: gramadoir 0.7\n"
 "Report-Msgid-Bugs-To: <kscanne@gmail.com>\n"
-"POT-Creation-Date: 2008-06-18 20:53-0500\n"
-"PO-Revision-Date: 2008-02-16 15:21中国标准时间\n"
+"POT-Creation-Date: 2008-08-17 12:05-0500\n"
+"PO-Revision-Date: 2008-08-18 09:44+0800\n"
 "Last-Translator: Ji ZhengYu <zhengyuji@gmail.com>\n"
-"Language-Team: Chinese (simplified) <translation-team-zh-cn@lists."
-"sourceforge.net>\n"
+"Language-Team: Chinese (simplified) <translation-team-zh-cn@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -84,14 +83,8 @@ msgid "version %s"
 msgstr "版本 %s"
 
 #: gram.pl:253 gramdev.pl:153
-msgid ""
-"This is free software; see the source for copying conditions.  There is NO"
-"\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
-"PURPOSE,\\nto the extent permitted by law."
-msgstr ""
-"This is free software; see the source for copying conditions.  There is NO"
-"\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
-"PURPOSE,\\nto the extent permitted by law."
+msgid "This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law."
+msgstr "This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law."
 
 #: gram.pl:267
 #, perl-format
@@ -107,8 +100,7 @@ msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
 msgstr "    --iomlan      报告所有错误(如: 未使用 ~/.neamhshuim)"
 
 #: gram.pl:277
-msgid ""
-"    --ionchod=ENC  specify the character encoding of the text to be checked"
+msgid "    --ionchod=ENC  specify the character encoding of the text to be checked"
 msgstr "    --ionchod=ENC  指定要检查的文本的字符编码"
 
 #: gram.pl:280
@@ -148,8 +140,7 @@ msgid "Options for developers:"
 msgstr "开发者的选项:"
 
 #: gram.pl:306
-msgid ""
-"    --api          output a simple XML format for use with other applications"
+msgid "    --api          output a simple XML format for use with other applications"
 msgstr "    --api          输出一个其它程序能用的简易 XML 格式"
 
 #: gram.pl:308
@@ -157,13 +148,11 @@ msgid "    --html         produce HTML output for viewing in a web browser"
 msgstr "    --html         为用浏览器观看而生成 HTML 输出"
 
 #: gram.pl:314
-msgid ""
-"    --no-unigram   do not resolve ambiguous parts of speech by frequency"
+msgid "    --no-unigram   do not resolve ambiguous parts of speech by frequency"
 msgstr "    --no-unigram   不要多次地解析词法的歧义部分"
 
 #: gram.pl:320
-msgid ""
-"    --xml          write tagged XML stream to standard output, for debugging"
+msgid "    --xml          write tagged XML stream to standard output, for debugging"
 msgstr "    --xml          为调试而将标记好的 XML 流写入标准输出"
 
 #: gram.pl:323
@@ -202,14 +191,11 @@ msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
 msgstr "    --ilchiall     报告未解决的歧义词语，以次数排序"
 
 #: gramdev.pl:128
-msgid ""
-"    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
+msgid "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
 msgstr "    --minic        输出所有标记，以次数排序(为 unigram--xx.txt)"
 
 #: gramdev.pl:130
-msgid ""
-"    --brill        find disambiguation rules via Brill's unsupervised "
-"algorithm"
+msgid "    --brill        find disambiguation rules via Brill's unsupervised algorithm"
 msgstr "    --brill        通过 Brill 的非监督分类算法找出无歧义的规则 "
 
 #: Gramadoir.pm.in:118
@@ -249,10 +235,8 @@ msgstr "%s: 未知的宏错误: %s\n"
 #. checking engine.  The first batch consists of messages intended to be
 #. reused across a wide range of languages.
 #: messages.txt:4
-#, fuzzy
-msgid ""
-"Valid word but extremely rare in actual usage. Is this the word you want?"
-msgstr "有效单词但实际上极少使用"
+msgid "Valid word but extremely rare in actual usage. Is this the word you want?"
+msgstr "有效单词但实际上极少使用。此单词确实是您想要的？"
 
 #: messages.txt:5
 msgid "Repeated word"
@@ -271,9 +255,8 @@ msgid "The singular form is required here"
 msgstr "这里要求使用单数形式"
 
 #: messages.txt:9
-#, fuzzy
 msgid "Plural adjective required"
-msgstr "要求使用比较级形容词"
+msgstr "这里要求使用复数形容词"
 
 #: messages.txt:10
 msgid "Comparative adjective required"
@@ -288,9 +271,8 @@ msgid "Unnecessary use of the definite article"
 msgstr "不必使用明确的冠词"
 
 #: messages.txt:13
-#, fuzzy
 msgid "No need for the first definite article"
-msgstr "不必使用明确的冠词"
+msgstr "第一次使用的冠词没必要这么做"
 
 #: messages.txt:14
 msgid "Unnecessary use of the genitive case"
@@ -301,13 +283,12 @@ msgid "The genitive case is required here"
 msgstr "这里需要所有格词"
 
 #: messages.txt:16
-#, fuzzy
 msgid "You should use the present tense here"
-msgstr "这里你该用 \\/\\1\\/ 代替"
+msgstr "这里应该使用现在时"
 
 #: messages.txt:17
 msgid "It seems unlikely that you intended to use the subjunctive here"
-msgstr "看起来你不可能打算在这里用虚拟语气"
+msgstr "看起来您不可能会在这里用虚拟语气"
 
 #. TRANSLATORS: You can use whatever kind of quotes you prefer for your locale
 #. around the variable \\1.  You should keep the double backslash before the 1,
@@ -343,7 +324,7 @@ msgstr "未知单词: \\/\\1\\/？"
 
 #: messages.txt:29
 msgid "Valid word but \\/\\1\\/ is more common"
-msgstr ""
+msgstr "该单词有效，但\\/\\1\\/ 更常用"
 
 #: messages.txt:30
 msgid "Not in database but apparently formed from the root \\/\\1\\/"
@@ -375,15 +356,15 @@ msgstr "可能是个外来词汇 (词组 \\/\\1\\/ 不可能出现)"
 
 #: messages.txt:37
 msgid "Gender disagreement"
-msgstr ""
+msgstr "性别词不一致"
 
 #: messages.txt:38
 msgid "Number disagreement"
-msgstr ""
+msgstr "数词不一致"
 
 #: messages.txt:39
 msgid "Case disagreement"
-msgstr ""
+msgstr "格词不一致"
 
 #. TRANSLATORS: Rules specific to the Irish language (ga)
 #: messages.txt:41
@@ -411,9 +392,8 @@ msgid "Unnecessary prefix \\/d'\\/"
 msgstr "没必要的 \\/d'\\/ 前缀"
 
 #: messages.txt:47
-#, fuzzy
 msgid "Unnecessary prefix \\/b'\\/"
-msgstr "没必要的 \\/d'\\/ 前缀"
+msgstr "没必要的 \\/b'\\/ 前缀"
 
 #. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
 #: messages.txt:49
@@ -432,11 +412,10 @@ msgstr "没必要的字首轻辅音"
 
 #: messages.txt:54
 msgid "The second lenition is unnecessary"
-msgstr ""
+msgstr "第二个字首轻辅音是不必要的"
 
 #: messages.txt:55
-msgid ""
-"Often the preposition \\/\\1\\/ causes lenition, but this case is unclear"
+msgid "Often the preposition \\/\\1\\/ causes lenition, but this case is unclear"
 msgstr "通常介词 \\/\\1\\/ 会引起轻辅音化，但不一定如此"
 
 #: messages.txt:56
@@ -493,14 +472,13 @@ msgstr "在 ‘th’ 后缺少第五(混音)辅音变化"
 
 #. TRANSLATORS: Rules specific to the Welsh language (cy)
 #: messages.txt:73
-#, fuzzy
 msgid "Aspirate mutation missing"
-msgstr "缺少首字母元音变化"
+msgstr "缺少首字母元音发送气音"
 
 #. TRANSLATORS: Rules specific to the Igbo language (ig)
 #: messages.txt:75
 msgid "This word violates the rules of Igbo vowel harmony"
-msgstr ""
+msgstr "这个单词违反了 Igbo 语言中的母音同化规则"
 
 #~ msgid "Valid word but more often found in place of \\/\\1\\/"
 #~ msgstr "有效单词但在 \\/\\1\\/ 中更常用"
