@@ -267,6 +267,8 @@ uithe$			ú		0	<N.*>	<&>
 ^cúil			cúl		1	<.+>	<&>
 ^daill			dall		1	<.+>	<&> # daillintinn
 ^daoir([^s])			daor		1	<.+>	<&>
+#  first spelling of dea- is from na Grianna
+^déagh-			dea-		1	<.+>	<&>
 ^de[áai]gh-		dea-		1	<.+>	<&>
 ^de[áai]gh([^-])	dea-$1		1	<.+>	<&>
 ^deir([bg])			dear$1		1	<.+>	<&> # deirbhnialas, deirgmheisce
@@ -383,8 +385,10 @@ uithe$			ú		0	<N.*>	<&>
 ^(n?dh?)eán		$1éan		1	<V.*>	<&>
 eoracht(a?)$	eoireacht$1		1	<N.*>	<&> # spaisteoracht
 óracht(a?)$		óireacht$1	1	<N.*>	<&>   # fáidheadóracht
+éair$			éir			1	<N.*>	<&>		# piléair, paipéair
 eor$			eoir		1	<.+>	<&>
-chd(a?)$		cht$1		1	<N.*>	<&>    # masc too (achd, m.sh.)
+# 08-11-05, generalize nouns to everything (fraochta e.g.)
+chd(a?)$		cht$1		1	<.+>	<&>    # masc too (achd, m.sh.)
 ínteacht(a?)$	íneacht$1	1	<N.*>	<&>    # deisimínteacht, etc. 
 óanna$			ónna		1	<N.*>	<&>	# common!  clóanna, seóanna, gnóanna, srl.
 # corpus - Dómhnach, etc., but not rómhilis, etc.
@@ -466,6 +470,8 @@ e[oó]chthá$		eofá		1	<V p="y" t="coinn">	<&>
 ([^e])óchthá$		$1ófá		1	<V p="y" t="coinn">	<&>
 (ó|eo)char$			$1far	1	<V p="n" t="fáist">	<&>
 faidhear$			far	1	<V p="n" t="fáist">	<&>
+# dá n-amharcthá, dá dtugthá, srl
+thá$			tá		1	<V p="y" t="gnáth">	<&>
 #   2nd declension Dinneen-style endings
 (..)aíd$		$1aíonn		1	<V p="y" t="láith">	<&> # cialluíd
 aghadh			ú		1	<N.*>	<&>  # broad and slender
