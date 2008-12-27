@@ -448,7 +448,7 @@ thaí$			tha		1	<.+>	<&>    # glórthaí, spéarthaí
 (..)dha$		$1tha		1	<.+>	<&>    # measardha, muinteardha
 (..)dha$		$1a		1	<.+>	<&>    # stuamdha, príomhdha
 (.[aá])igh$		$1ch		1	<N.*>	<&>	# nb2 -aí genitives
-(..)igh$		$1each		1	<N.*>	<&>   #  same
+(..)i[dg]h$		$1each		1	<N.*>	<&>   #  same (e.g. stámhaillidh)
 (..)aidh$		$1a		1	<.+>	<&>    # bhfágaidh
 eói?g$			eog		1	<N.*>	<&>   # nb2 
 eoig$			eog		1	<.+>	<&>   # nb2, leave as <.+> for <F>'s
@@ -458,6 +458,10 @@ aisí$			ais		1	<N.*>	<&>   # cuntaisí, bronntanaisí
 dth([ea])$		dt$1		1	<.+>	<&>    # goidthe
 # Fórsaíbh -> Fórsaí (dpl)
 íbh$			í	1	<N.*>	<&>
+íocha$			í	1	<N pl="y".*>	<&>	# margaidheacha->margaíocha->margaí
+# but note in previous that sometimes this gets interrupted by correct
+# plural adjective:  cogaidheacha->cogaíocha, or sometimes even correct
+# plural noun:  claidheacha->claíocha  (so want to keep -íocha intermediate)
 ##################  NON/PRE-STANDARD VERB ENDINGS #########################
 # future/conditional 2nd declension with -cha?- see CO p.103
 e[oó]cha(i?dh)$		eo$1		1	<V.*>	<&>
@@ -468,13 +472,17 @@ e[oó]chai(nn|dís)$	eoi$1		1	<V p="y" t="coinn">	<&>
 ([^e])óchai(nn|dís)$	$1ói$2		1	<V p="y" t="coinn">	<&>
 e[oó]chthá$		eofá		1	<V p="y" t="coinn">	<&>
 ([^e])óchthá$		$1ófá		1	<V p="y" t="coinn">	<&>
+e[oó]chthaidhe$		eofaí		1	<V p="n" t="coinn">	<&>
+([^e])óchthaidhe$		$1ófaí		1	<V p="n" t="coinn">	<&>
 (ó|eo)char$			$1far	1	<V p="n" t="fáist">	<&>
+(ó|eo)chthar$			$1far	1	<V p="n" t="fáist">	<&>
 faidhear$			far	1	<V p="n" t="fáist">	<&>
 # dá n-amharcthá, dá dtugthá, srl
-thá$			tá		1	<V p="y" t="gnáth">	<&>
+th(eá)$			t$1		1	<V p="y" t="gnáth">	<&>
 #   2nd declension Dinneen-style endings
 (..)aíd$		$1aíonn		1	<V p="y" t="láith">	<&> # cialluíd
 aghadh			ú		1	<N.*>	<&>  # broad and slender
+iaghadh			íodh		1	<V.*>	<&>  # innsiughadh->insíodh
 (..)thear$		$1tear		1	<V.*>	<&> # aut. present
 (..)t(te?ar)$	$1$2		1	<V.*>	<&> # aut. present
 ighim			ím		1	<V.*>	<&>    # broad and slender
@@ -521,8 +529,8 @@ ins$			eann		1	<V p="y" t="láith">	<&>
 #  OS88 p.126  present
 anns$			ann		1	<V p="y" t="láith">	<&>
 íonns$			íonn		1	<V p="y" t="láith">	<&>
-#  corpus 
-th(eá|ear)$		t$1		1	<V.*>	<&>
+#  corpus; now handled above
+# th(eá|ear)$		t$1		1	<V.*>	<&>
 famuid		faimid		1	<V p="y" t="fáist">	<&>
 #  -idh, -aidh on 1st declension verbs: Pres. Subj. or 2nd pl. imper (-igí) 
 #  according to Dinneen.  Some examples seem to be pres. in corpus,
@@ -575,6 +583,7 @@ eail$			eáil		2	<.+>	<&>    # common missing accent
 eor$			eoir		2	<N.*>	<&>
 ionn$			íonn		2	<V.*>	<&>
 itear$			ítear		2	<V.*>	<&>
+iteá$			íteá		2	<V.*>	<&>
 iodh$			íodh		2	<V.*>	<&>
 ([^e])oidh$		$1óidh		2	<V.*>	<&>
 ([^e])ofar$		$1ófar		2	<V.*>	<&>
@@ -625,17 +634,19 @@ leir			léir		2	<.+>	<&>
 (.)-			$1		1	<.+>	<&>       # ró-bheag / róbheag
 # delenite, de-eclipse.  
 # Only helps when we recurse and find a standard unmutated prefix above!
-^bp([^h])		p$1		0	<[ANV].*>	<&>
-^bhf([^h])		f$1		0	<[ANV].*>	<&>
-^dt([^h])		t$1		0	<[ANV].*>	<&>
-^gc([^h])		c$1		0	<[ANV].*>	<&>
-^mb([^h])		b$1		0	<[ANV].*>	<&>
-^nd([^h])		d$1		0	<[ANV].*>	<&>
-^ng([^h])		g$1		0	<[ANV].*>	<&>
-^ts([^h])		s$1		0	<[ANV].*>	<&>
+# putting caps back Dec 08 for non-words like "tSíneach", "nIónach"
+# which will only be found by stripping mutation and keeping cap
+^b([Pp][^h])		$1		0	<[ANV].*>	<&>
+^bh([Ff][^h])		$1		0	<[ANV].*>	<&>
+^d([Tt][^h])		$1		0	<[ANV].*>	<&>
+^g([Cc][^h])		$1		0	<[ANV].*>	<&>
+^m([Bb][^h])		$1		0	<[ANV].*>	<&>
+^n([DdGg][^h])		$1		0	<[ANV].*>	<&>
+^t([Ss][^h])		$1		0	<[ANV].*>	<&>
 ^([bcdfgmpBCDFGMP])h	$1		0	<[ANVY].*>	<&>
 ^([Tt])h([^s])		$1$2		0	<[ANVY].*>	<&>   # luathscéal danger
 ^([Ss])h([lnraeiouáéíóú])	$1$2	0	<[ANVY].*>	<&>
 ^t'([AEIOUÁÉÍÓÚaeiouáéíóú]|[Ff]h)	d'$1	1	<[ANVY].*>	<&>	# t'athair
 ^[bdm]'([AEIOUÁÉÍÓÚaeiouáéíóú]|[Ff]h)	$1	0	<[ANVY].*>	<&>	# d'Éamonn too
 ^[nt]-([aeiouáéíóú])	$1		0	<[ANV].*>	<&>
+^[nt]([AEIOUÁÉÍÓÚ])	$1		0	<[ANV].*>	<&>
