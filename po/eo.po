@@ -1,15 +1,16 @@
 # Esperanto translations for Gramadoir.
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the gramadoir package.
 #
 # Tim Morley <t_morley@argonet.co.uk>, 2005.
 # Benno Schulenberg <benno@vertaalt.nl>, 2008.
+# Felipe Castro <fefcas@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: GNU gramadoir 0.7\n"
 "Report-Msgid-Bugs-To: <kscanne@gmail.com>\n"
 "POT-Creation-Date: 2008-08-17 12:05-0500\n"
-"PO-Revision-Date: 2008-08-17 21:42+0200\n"
-"Last-Translator: Benno Schulenberg <benno@vertaalt.nl>\n"
+"PO-Revision-Date: 2009-01-20 12:28-0300\n"
+"Last-Translator: Felipe Castro <fefcas@gmail.com>\n"
 "Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -84,14 +85,8 @@ msgid "version %s"
 msgstr "versio %s"
 
 #: gram.pl:253 gramdev.pl:153
-msgid ""
-"This is free software; see the source for copying conditions.  There is NO"
-"\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
-"PURPOSE,\\nto the extent permitted by law."
-msgstr ""
-"Tiu programo estas libera; vidu la fontkodon por la kondiĉoj pri kopiado.\\n"
-"Estas NENIU garantio, eĉ ne pri TAŬGECO POR VENDADO aŭ POR IU SPECIFA UZO,\\n"
-"ĝis la limo de la leĝo."
+msgid "This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law."
+msgstr "Tiu programo estas libera; vidu la fontkodon por la kondiĉoj pri kopiado.\\nEstas NENIU garantio, eĉ ne pri TAŬGECO POR VENDADO aŭ POR IU SPECIFA UZO,\\nĝis la limo de la leĝo."
 
 #: gram.pl:267
 #, perl-format
@@ -107,8 +102,7 @@ msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
 msgstr "    --iomlan        raporti pri ĉiu eraro (t.e. ne uzi ~/.neamhshuim)"
 
 #: gram.pl:277
-msgid ""
-"    --ionchod=ENC  specify the character encoding of the text to be checked"
+msgid "    --ionchod=ENC  specify the character encoding of the text to be checked"
 msgstr "    --ionchod=KODO  elekti la kodigon de la teksto kontrolota"
 
 #: gram.pl:280
@@ -148,26 +142,20 @@ msgid "Options for developers:"
 msgstr "Agordaĵoj por programistoj:"
 
 #: gram.pl:306
-msgid ""
-"    --api          output a simple XML format for use with other applications"
-msgstr ""
-"    --api          eligi simplan XML-an formaton por uzo kun aliaj aplikaĵoj"
+msgid "    --api          output a simple XML format for use with other applications"
+msgstr "    --api          eligi simplan XML-an formaton por uzo kun aliaj aplikaĵoj"
 
 #: gram.pl:308
 msgid "    --html         produce HTML output for viewing in a web browser"
 msgstr "    --html          krei HTML-an eligon por vidigo per TTT-legilo"
 
 #: gram.pl:314
-msgid ""
-"    --no-unigram   do not resolve ambiguous parts of speech by frequency"
-msgstr ""
-"    --no-unigram    ne solvi dusencajn gramatikajn kategoriojn per ofteco"
+msgid "    --no-unigram   do not resolve ambiguous parts of speech by frequency"
+msgstr "    --no-unigram    ne solvi dusencajn gramatikajn kategoriojn per ofteco"
 
 #: gram.pl:320
-msgid ""
-"    --xml          write tagged XML stream to standard output, for debugging"
-msgstr ""
-"    --xml           skribi etikeditan XML-an fluon al ĉefeligujo, por sencimigo"
+msgid "    --xml          write tagged XML stream to standard output, for debugging"
+msgstr "    --xml           skribi etikeditan XML-an fluon al ĉefeligujo, por sencimigo"
 
 #: gram.pl:323
 msgid "If no file is given, read from standard input."
@@ -202,23 +190,15 @@ msgstr "Daŭras kontroladon de %s"
 
 #: gramdev.pl:125
 msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
-msgstr ""
-"    --ilchiall     raporti pri nesolvitaj dusencaĵoj, ordigitaj laŭ ofteco"
+msgstr "    --ilchiall     raporti pri nesolvitaj dusencaĵoj, ordigitaj laŭ ofteco"
 
 #: gramdev.pl:128
-msgid ""
-"    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
-msgstr ""
-"    --minic        eligi ĉiujn etikedojn, ordigitaj laŭ ofteco (por unigram-"
-"xx.txt)"
+msgid "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
+msgstr "    --minic        eligi ĉiujn etikedojn, ordigitaj laŭ ofteco (por unigram-xx.txt)"
 
 #: gramdev.pl:130
-msgid ""
-"    --brill        find disambiguation rules via Brill's unsupervised "
-"algorithm"
-msgstr ""
-"    --brill        trovi sendusencaĵigajn regulojn per la nesuperrigardata "
-"algoritmo de Brill"
+msgid "    --brill        find disambiguation rules via Brill's unsupervised algorithm"
+msgstr "    --brill        trovi sendusencaĵigajn regulojn per la nesuperrigardata algoritmo de Brill"
 
 #: Gramadoir.pm.in:118
 #, perl-format
@@ -257,8 +237,7 @@ msgstr "%s: nerekonita eraro pri makroo: %s\n"
 #. checking engine.  The first batch consists of messages intended to be
 #. reused across a wide range of languages.
 #: messages.txt:4
-msgid ""
-"Valid word but extremely rare in actual usage. Is this the word you want?"
+msgid "Valid word but extremely rare in actual usage. Is this the word you want?"
 msgstr "Vorto valida, sed maloftega en reala uzado. Ĉu estas la dezirata vorto?"
 
 #: messages.txt:5
@@ -438,10 +417,8 @@ msgid "The second lenition is unnecessary"
 msgstr "La dua aspiracio nenecesas"
 
 #: messages.txt:55
-msgid ""
-"Often the preposition \\/\\1\\/ causes lenition, but this case is unclear"
-msgstr ""
-"Ofte la prepozicio \\/\\1\\/ kaŭzas aspiracion, sed tiu ĉi kazo ne klaras"
+msgid "Often the preposition \\/\\1\\/ causes lenition, but this case is unclear"
+msgstr "Ofte la prepozicio \\/\\1\\/ kaŭzas aspiracion, sed tiu ĉi kazo ne klaras"
 
 #: messages.txt:56
 msgid "Lenition missing"
@@ -503,7 +480,7 @@ msgstr "Aspiracia mutacio mankas"
 #. TRANSLATORS: Rules specific to the Igbo language (ig)
 #: messages.txt:75
 msgid "This word violates the rules of Igbo vowel harmony"
-msgstr ""
+msgstr "Tiu ĉi vorto malrespektas la regulojn de la Igba vokal-harmonio"
 
 #~ msgid "Valid word but more often found in place of \\/\\1\\/"
 #~ msgstr "Valida vorto, sed pli ofte trovita anstataŭ \\/\\1\\/"
