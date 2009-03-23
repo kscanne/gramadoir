@@ -239,8 +239,11 @@ g?ch?éad <B>dá</B>:<A pl="n" gnt="n">
 <B>[Dd]eas</B>:<A pl="n" gnt="n">
 # ok as is; "trí bliana déag", etc.  "trí déag"... in comhshuite
 <B>n?[Dd]h?éag</B>:<N pl="n" gnt="n">
+<B>n?[Dd]h?éan</B>:<V p="y" t="ord">
 <B>n?[Dd]h?earna</B>:<V p="y" t="caite">
 <B>[Dd]eir</B>:<V p="y" t="láith">
+[Aa] <B>[Dd]eireadh</B>:<V p="y" t="gnáth">
+<B>[Aa]</B> <V p="y" t="gnáth">[Dd]eireadh</V>:<G>
 <B>[Dd]eireadh</B>:<N pl="n" gnt="n" gnd="m">
 <B>[Dd]h?eiridh</B>:<N pl="n" gnt="y" gnd="m">
 <B>dío?bh</B>:<O>
@@ -254,11 +257,15 @@ g?ch?éad <B>dá</B>:<A pl="n" gnt="n">
 [Dd]o <B><Z>ANYVERB</Z>ANYTHING</B>:!<V[^>]+>
 # broken because of repeat markup?
 #do <B>do</B>:<D>
-# numerical, last resort <O> at bottom if not noun via Brill xforms
+# numerical
 a <B>dó</B>:<N pl="n" gnt="n">
 <T>an</T> <B>dó</B>:<A pl="n" gnt="n">
+# ag dó na geirbe
+<S>[Aa]g</S> <B>[Dd]ó</B>:<N pl="n" gnt="n" gnd="m">
 # dó gréine, ~ seaca, etc.
 <B>[Dd]ó</B> <NG>ANYTHING</NG>:<N pl="n" gnt="n" gnd="m">
+# do it now or else get genitive noun from "tugann litir dó"
+<B>[Dd]ó</B>:<O>
 # imperative only other choice; this speeds up "dóigh a:<H>" below
 <B>dóigh</B>:<N pl="n" gnt="n" gnd="f">
 # logainmneacha
@@ -468,6 +475,13 @@ a <B>sé</B>:<A pl="n" gnt="n">
 # agus bhog mé...   a cheannaithe féin...  not adjectives
 #  do this after "the" rules, and NUMERICAL, etc.
 <[^ANV]>ANYTHING</[^ANV]> <B><Z>ANYWITHADJ</Z>LENITED</B>:!<A[^>]+>
+#  KILL LOTS OF GENITIVES FIRST
+<[IOQUV]>ANYTHING</[IOQUV]> <B><Z>ANYWITHANYGEN</Z>ANYTHING</B>:!<N pl="." gnt="y"[^>]*>
+<S>DATIVEPREP</S> <B><Z>ANYWITHANYGEN</Z>ANYTHING</B>:!<N pl="." gnt="y"[^>]*>
+<S>[Gg]o dtí</S> <B><Z>ANYWITHANYGEN</Z>ANYTHING</B>:!<N pl="." gnt="y"[^>]*>
+<D>FUSEDPOSS</D> <B><Z>ANYWITHANYGEN</Z>ANYTHING</B>:!<N pl="." gnt="y"[^>]*>
+<S>DATIVEPREP</S> <D>REGULARPOSS</D> <B><Z>ANYWITHANYGEN</Z>ANYTHING</B>:!<N pl="." gnt="y"[^>]*>
+<[^ACNRSY]>ANYTHING</[^ACNRSY]> <D>REGULARPOSS</D> <B><Z>ANYWITHANYGEN</Z>ANYTHING</B>:!<N pl="." gnt="y"[^>]*>
 #############################################################
 # Brill transformations (not associated to particular words)#
 #############################################################
@@ -498,6 +512,8 @@ RFORMCONJ <B><Z>ANYPASTAUT</Z>ANYTHING</B>:<V p="n" t="caite">
 [Aa]r <B><Z>ANYPASTIMPER</Z>ANYTHING</B>:!<V p="y" t="ord">
 # lots of exceptions to this like "ar teitheadh/crochadh" are in comhshuite!
 [Aa]r <B><Z>ANYPASTAUT</Z>UNLENITED</B>:<V p="n" t="caite">
+<S>[Gg]o dtí</S> <B><Z>NMONE</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">
+<S>COMPOUND</S> <B><Z>NMONE</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 # all the top rules output by Brill algorithm look like these first four!
 # don't seem to have any androgynous words in the COMMON form
 #  There are some words which are androgynous plurals: "Fianna", "ceannaithe"
@@ -556,8 +572,6 @@ GENITIVEPREP <T>na</T> <B><Z>ANYNFGPL</Z>ANYTHING</B>:<N pl="y" gnt="y" gnd="f">
 <ACS>[Aa]on</ACS> <B><Z>ANYNMC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="m">
 <ACS>[Aa]on</ACS> <B><Z>ANYNFC</Z>ANYTHING</B>:<N pl="n" gnt="n" gnd="f">
 <ACS>ANYTHING</ACS> <B><Z>AWITHCOMMON</Z>ANYTHING</B>:<A pl="n" gnt="n">
-# exception to next:  tugann litir dó, avoids complaint about missing lenition
-<NFCS>ANYTHING</NFCS> <B>dó</B>:<O>
 <NCS>ANYTHING</NCS> <B><Z>ANYNMG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="m">
 <NCS>ANYTHING</NCS> <B><Z>ANYNFG</Z>ANYTHING</B>:<N pl="n" gnt="y" gnd="f">
 #  four below were previous (poor) attempts at the previous four
@@ -693,6 +707,9 @@ a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 # nach and nár only: lumping in what is properly <Q> with particle <U>
 <B><Z>COPULAPART</Z>ANYTHING</B> <V>ANYTHING</V>:<U>
 <B><Z>COPULAPART</Z>ANYTHING</B>:<V cop="y">
+# "mar chleachtadh", "mar cheiliúradh" - note that this implies "mar" is mistagged
+<C>[Mm]ar</C> <B><Z>VNPAUTGNATH</Z>LENITED</B>:<N pl="n" gnt="n" gnd="m">
+<[^DSNT]>ANYTHING</[^DSNT]> <B><Z>VNPAUTGNATH</Z>LENITED</B>:<V p="y" t="gnáth">
 # choinníodh, etc. -- otherwise unigram=>PAUT and need to explain lenition...
 <B><Z>PAUTGNATH</Z>LENITED</B>:<V p="y" t="gnáth">
 # bhíodh, etc. -- otherwise unigram=>ORD and need to explain lenition...
@@ -815,7 +832,7 @@ ANYTHING <B>[Aa]r</B> <V>ANYTHING</V>:<U>
 [Cc]é <O>acu</O> <B>[Aa]</B>:<G>
 <B>[Aa]</B> <V>ECLIPSED</V>:<H>
 <B>[Aa]</B> <V>LENITED</V>:<G>
-<B>[Aa]</B> <V>INITIALDAPOST</V>:<G>
+<B>[Aa]</B> INITIALDAPOST:<G>
 <B>[Aa]</B> <V>ANYTHING</V>:<U>
 <[GHU]>[Aa]</[GHU]> <B>ANYTHING</B>:!<[^V][^>]*>
 <B>[Aa]</B> VNISH:<S>
