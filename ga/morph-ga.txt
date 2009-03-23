@@ -468,6 +468,8 @@ e[oó]cha(i?dh)$		eo$1		1	<V.*>	<&>
 ([^e])ócha(i?dh)$	$1ó$2		1	<V.*>	<&>
 e[oó]chaimi([ds])$	eoimi$1		1	<V.*>	<&>
 ([^e])óchaimi([ds])$	$1óimi$2	1	<V.*>	<&>
+e[oó]chamuid$	eoimid		1	<V p="y" t="fáist">	<&>
+([^e])óchamuid$	$1óimid		1	<V p="y" t="fáist">	<&>
 e[oó]chai(nn|dís)$	eoi$1		1	<V p="y" t="coinn">	<&>
 ([^e])óchai(nn|dís)$	$1ói$2		1	<V p="y" t="coinn">	<&>
 e[oó]chthá$		eofá		1	<V p="y" t="coinn">	<&>
