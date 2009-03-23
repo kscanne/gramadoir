@@ -358,7 +358,8 @@ Hong Cong:<N pl="n" gnt="n">
 [Ii] gceartlár:<S>
 [Ii] gcéin:<R>
 [Ii] gceist:<R>
-[Ii] gcionn:<S>
+# strictly non-standard; now rules for -> i gcion, i gceann
+# [Ii] gcionn:<S>
 [Ii] gcoinne:<S>
 [Ii] gcóir:<S>
 [Ii] gcoitinne:<R>
