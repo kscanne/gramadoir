@@ -103,9 +103,10 @@ s/FUSEDPREP/(?:[Dd][eo]n|[Ss]an?|[Ff]aoin|[Óó]n)/g;
 s/DATIVEPREP/(?:[Aa][grs]|[Cc]huig|[Dd][eo]|[Ff]aoi|[Gg]an|[Gg]o|[Ll]e|[Óó]|[Ii]n?|[Rr]oimh|[Tt]har|[Tt]ríd?|[Uu]m)/g;
 s/INITIALMORDAPOST/[md]'[^<]+/g;
 s/INITIALBIGDAPOST/D'[^<]+/g;
-s/INITIALDAPOST/d'[^<]+/g;
-s/INITIALBAPOST/b'[^<]+/g;
-s/INITIALMBAPOST/mb'[^<]+/g;
+s/INITIALDAPOSTF/[Dd]'[Ff][^<]+/g;
+s/INITIALDAPOST/[Dd]'[^<]+/g;
+s/INITIALBAPOST/[Bb]'[^<]+/g;
+s/INITIALMBAPOST/m[Bb]'[^<]+/g;
 s/LENITEDCAPCG/[CG][Hh][^<]+/g;
 s/LENITEDBCFGMPS/(?:[CcFfGgMmPpSs][Hh]|[Bb]h[^fF])[^<]+/g;
 s/LENITEDBMP/(?:[MmPp][Hh]|[Bb][Hh][^fF])[^<]+/g;
@@ -132,11 +133,13 @@ s/NOTDO/[^<][^<][^<]+/g;
 # used with FEMVN above so no need to repeat "áil", etc.
 # "cúis" should not be here; "cúis ghearáin", etc. are correct
 # "céim" is a mixed bag in OD depending on semantics
-s/FEMABSTRACTRESTRICTED/(?:[^<]+íl|h?[Aa]cmhainn|h?[Aa]irde|h?[Aa]ois|h?[Éé]iric|(?:bh)?[Ff]h?(?:airsinge|earg|inne)|n?[Gg]h?éarchéim|h?[Íí](?:d|sl)e|[Ll]aige|[Mm]h?aise|h?[Oo]iread|h?[Óó]ige|t?[Ss]h?aoirse|d?[Tt]h?itim)/g;
+s/FEMABSTRACTRESTRICTED/(?:[^<]+íl|h?[Aa]cmhainn|h?[Aa]irde|h?[Aa]ois|g?[Cc]h?omhairle|h?[Éé]iric|(?:bh)?[Ff]h?(?:airsinge|earg|inne)|n?[Gg]h?éarchéim|h?[Íí](?:d|sl)e|[Ll]aige|[Mm]h?aise|h?[Oo]iread|h?[Óó]ige|t?[Ss]h?aoirse|d?[Tt]h?itim)/g;
 s/FEMABSTRACT/(?:[^<]+[ao]cht|t?[Ss]céim)/g;
 s/QUANTITYWORD/(?:[Aa]ilp|(?:h?an-|g|n?gh?ann|mh?ór|g?ch?aol|leath)?[Cc]h?uid|m?[Bb]h?arraíocht|m?[Bb]h?reis|n?[Dd]h?íolaim|n?[Dd]h?íth|n?[Dd]h?óthain|h?[Éé]agmais|h?[Ee]aspa|(?:bh)?fh?lúirse|h?[Ii]omarca|[Ll]eath|[Rr]aidhse|[Rr]oinnt)/g;
 # Any form of the preposition "do"
 s/DOWORD/(?:d[áió]|do[mn]|dár|duit|dúinn|daoibh|dóibh)/g;
+# Any combined form of the preposition "ar"
+s/ARWORD/(?:or[mt](?:sa)?|uirthi(?:se)?|air(?:sean)?|orainne?|oraibh(?:se)?|orthu(?:san)?)/g;
 s/INITIALC/[Cc][^<]+/g;
 s/INITIALDST/[DdSsTt][^<]+/g;
 s/INITIALF/[Ff][^<]+/g;
@@ -147,8 +150,8 @@ s/INITIALN/[Nn][^<]+/g;
 s/INITIALS/[Ss][lnraeiouáéíóúh][^<]+/g;
 s/INITIALTS/t[sS][^<]+/g;
 s/NOTNA/(?:...|[^Nn]|.[^áÁ])[^<]*/g;
-s/BROADFIRSTPRES/[^<]+[^e]ann/g;
-s/SLENDERFIRSTPRES/[^<]+eann/g;
+s/BROADFIRSTPRES/[^<]+[^eé]ann/g;
+s/SLENDERFIRSTPRES/[^<]+[eé]ann/g;
 s/BROADSECONDPRES/[^<]+aíonn/g;
 s/SLENDERSECONDPRES/[^<]+[^a]íonn/g;
 s/BROADFIRSTFUTURE/[^<]+faidh/g;
@@ -159,6 +162,10 @@ s/BROADFIRSTCOND/[^<]+fadh/g;
 s/SLENDERFIRSTCOND/[^<]+feadh/g;
 s/BROADSECONDCOND/[^<]+ódh/g;
 s/SLENDERSECONDCOND/[^<]+eodh/g;
+s/BROADFIRSTIMP/[^<]+[^ée]adh/g;
+s/SLENDERFIRSTIMP/[^<]+[ée]adh/g;
+s/BROADSECONDIMP/[^<]+aíodh/g;
+s/SLENDERSECONDIMP/[^<]+[^a]íodh/g;
 ############################################################################
 s/BHOGLIKE/<A pl="n" gnt="n".><V p="y" t="ord".><V p="y" t="caite".>/g;
 s/AWITHGSM/(?:<N pl="y"[^>]+>)*(?:<A[^>]*>)*<A pl="n" gnt="y" gnd="m".>(?:<A[^>]*>)*/g;
@@ -174,6 +181,7 @@ s/ANYWITHADJ/(?:<[^>]+>)*<A[^>]+>(?:<[^>]+>)*/g;
 s/ANYNMGPL/(?:<[^>]+>)*<N pl="y" gnt="y" gnd="m".>(?:<[^>]+>)*/g;
 s/ANYNFGPL/(?:<[^>]+>)*<N pl="y" gnt="y" gnd="f".>(?:<[^>]+>)*/g;
 s/ANYNMGH/(?:<[^>]+>)*<N pl="n" gnt="y" gnd="m" h="y".>(?:<[^>]+>)*/g;
+s/ANYWITHANYGEN/(?:<[^>]+>)*<N pl="." gnt="y"[^>]*>(?:<[^>]+>)*/g;
 s/ANYNMG/(?:<[^>]+>)*<N pl="n" gnt="y" gnd="m".>(?:<[^>]+>)*/g;
 s/ANYNFGH/(?:<[^>]+>)*<N pl="n" gnt="y" gnd="f" h="y".>(?:<[^>]+>)*/g;
 s/ANYNFG/(?:<[^>]+>)*<N pl="n" gnt="y" gnd="f".>(?:<[^>]+>)*/g;
@@ -238,6 +246,9 @@ s/TEMPORAL/<R.><N pl="n" gnt="n".>/g;
 s/SEOSIN/<P.><A pl="n" gnt="n".>(?:<A pl="n" gnt="y" gnd="m".>)?/g;
 s/BHIODHLIKE/<V p="y" t="ord".><V p="y" t="gnáth".>/g;
 # s/BHIDISLIKE/<V pl="y" p="[13]ú" t="ord".><V pl="y" p="[13]ú" t="gnáth".>/g;
+# like "chríonadh", where it could also be a vn
+s/VNPAUTGNATH/<N pl="n" gnt="n" gnd="m".><V p="n" t="caite".><V p="y" t="ord".><V p="y" t="gnáth".>/g;
+# like "fhásadh" where there's another vn
 s/PAUTGNATH/<V p="n" t="caite".><V p="y" t="ord".><V p="y" t="gnáth".>/g;
 s/ADHWORD/<N pl="n" gnt="n" gnd="m".><V p="n" t="caite".><V p="y" t="ord".>(?:<V p="y" t="gnáth".>)?/g;
 s/GENERICPAST/<V p="y" t="ord".><V p="y" t="caite".>/g;
