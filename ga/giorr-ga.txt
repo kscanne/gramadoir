@@ -54,6 +54,7 @@ taesp
 tAth
 teil
 Teo
+tOll
 tr
 tSr
 tUas
