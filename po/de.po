@@ -5,13 +5,14 @@
 # Martin Gregory <martin.gregory@sas.com>, 2003.
 # Roland Illig <roland.illig@gmx.de>, 2004.
 # Roland Illig <roland.illig@gmx.de>, 2008.
+# Roland Illig <roland.illig@gmx.de>, 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramadoir 0.7\n"
 "Report-Msgid-Bugs-To: <kscanne@gmail.com>\n"
 "POT-Creation-Date: 2008-08-17 12:05-0500\n"
-"PO-Revision-Date: 2008-11-24 13:30+0100\n"
+"PO-Revision-Date: 2009-11-08 23:52+0100\n"
 "Last-Translator: Roland Illig <roland.illig@gmx.de>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -23,8 +24,8 @@ msgstr ""
 #, c-format
 msgid "There was %d error.\n"
 msgid_plural "There were %d errors.\n"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Es gab %d Fehler.\n"
+msgstr[1] "Es gab %d Fehler.\n"
 
 #: ponc.in.y:69
 #, c-format
