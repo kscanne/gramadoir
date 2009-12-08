@@ -2,13 +2,14 @@
 # Copyright (C) 2009 Kevin P. Scannell & Joe Hansen.
 # This file is distributed under the same license as the gramadoir package.
 # Joe Hansen <joedalton2@yahoo.dk>, 2009.
+# Korrekturlæst af Torben Grøn Helligsø, 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramadoir-0.7\n"
 "Report-Msgid-Bugs-To: <kscanne@gmail.com>\n"
 "POT-Creation-Date: 2008-08-17 12:05-0500\n"
-"PO-Revision-Date: 2009-11-16 14:52+0000\n"
+"PO-Revision-Date: 2009-12-08 14:52+0000\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
@@ -35,6 +36,7 @@ msgstr[1] "Fortolkede %d regler.\n"
 msgid "Line %d: %s\n"
 msgstr "Linje %d: %s\n"
 
+# Eller "tilvalg blev ikke genkendt: %s"
 #: gram.pl:165 gramdev.pl:82
 #, perl-format
 msgid "unrecognized option %s"
@@ -57,7 +59,7 @@ msgstr "fejl ved fortolkning af kommandolinjetilvalg"
 #: gram.pl:177
 #, perl-format
 msgid "Unable to set output color to %s"
-msgstr "Var ikke i stand til at angive uddatafarve til %s"
+msgstr "Var ikke i stand til at angive farve på uddata til %s"
 
 #: gram.pl:180
 #, perl-format
@@ -71,12 +73,13 @@ msgstr "Sprog %s er ikke understøttet."
 #: Gramadoir.pm.in:176 Gramadoir.pm.in:291 Gramadoir.pm.in:294
 #: Gramadoir.pm.in:495 Gramadoir.pm.in:803
 msgid "An Gramadoir"
-msgstr "An Gramadoir"
+msgstr "An Gramadóir"
 
+# prøv, forsøg
 #: gram.pl:186 gramdev.pl:94
 #, perl-format
 msgid "Try %s for more information."
-msgstr "Forsøg %s for yderligere information."
+msgstr "Prøv %s for yderligere information."
 
 #: gram.pl:251 gramdev.pl:151
 #, perl-format
@@ -123,28 +126,29 @@ msgstr "    --litriu       skriv stavefejl til standarduddata"
 
 #: gram.pl:292
 msgid "    --aspell       suggest corrections for misspellings"
-msgstr "    --aspell       forslå rettelser til stavefejl"
+msgstr "    --aspell       foreslå rettelser til stavefejl"
 
 #: gram.pl:295
 msgid "    --aschur=FILE  write output to FILE"
-msgstr "    --aschur=FILE  skriv uddata til FIL"
+msgstr "    --aschur=FIL  skriv uddata til FIL"
 
 #: gram.pl:298 gramdev.pl:133
 msgid "    --help         display this help and exit"
 msgstr "    --help         vis denne hjælp og afslut"
 
 # engelsk fejl her? output -> display or write?
+# Udskriv / vis - der menes vist /output/ i betydningen skriv.
 #: gram.pl:301 gramdev.pl:136
 msgid "    --version      output version information and exit"
-msgstr "    --version      udsend versioninformation og afslut"
+msgstr "    --version      udskriv versioninformation og afslut"
 
 #: gram.pl:304
 msgid "Options for developers:"
-msgstr "Indstillinger for udviklere:"
+msgstr "Tilvalg for udviklere:"
 
 #: gram.pl:306
 msgid "    --api          output a simple XML format for use with other applications"
-msgstr "    --api          udsend et simpelt XML-format til brug for andre programmer"
+msgstr "    --api          udskriv et simpelt XML-format til brug for andre programmer"
 
 #: gram.pl:308
 msgid "    --html         produce HTML output for viewing in a web browser"
@@ -152,15 +156,15 @@ msgstr "    --html         producer HTML-uddata til visning i en internetbrowser
 
 #: gram.pl:314
 msgid "    --no-unigram   do not resolve ambiguous parts of speech by frequency"
-msgstr "    --no-unigram   løs ikke tvetydige dele af tale med hjælp af frekvens"
+msgstr "    --no-unigram   løs ikke tvetydige dele af tale ved hjælp af frekvens"
 
 #: gram.pl:320
 msgid "    --xml          write tagged XML stream to standard output, for debugging"
-msgstr "    --xml          skriv mærket XML-strømme til standarduddata, til fejlsøgning"
+msgstr "    --xml          skriv opmærket XML-strømme til standarduddata; til fejlsøgning"
 
 #: gram.pl:323
 msgid "If no file is given, read from standard input."
-msgstr "Hvis ingen fil er angivet, læs fra standardinddata."
+msgstr "Læs fra standardinddata hvis ingen fil er angivet"
 
 #: gram.pl:326 gramdev.pl:142
 #, perl-format
@@ -184,10 +188,13 @@ msgstr "Tilladelse nægtet"
 msgid "%s: warning: problem closing %s\n"
 msgstr "%s: advarsel: problem med at lukke %s\n"
 
+# Undersøger aktuelt %s
+# undersøger i øjeblikket %s
+# Undersøger nu %s"
 #: gram.pl:389
 #, perl-format
 msgid "Currently checking %s"
-msgstr "Undersøger aktuelt %s"
+msgstr "Undersøger nu %s"
 
 #: gramdev.pl:125
 msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
@@ -199,7 +206,7 @@ msgstr "    --minic        udskriv alle mærker, sorteret efter frekvens (for un
 
 #: gramdev.pl:130
 msgid "    --brill        find disambiguation rules via Brill's unsupervised algorithm"
-msgstr "    --brill        find tvetydige regler via Brills ikke overvågede algoritme"
+msgstr "    --brill        find tvetydige regler via Brills uovervågede algoritme"
 
 #: Gramadoir.pm.in:118
 #, perl-format
@@ -239,7 +246,7 @@ msgstr "%s: ukendt fejlmakro: %s\n"
 #. reused across a wide range of languages.
 #: messages.txt:4
 msgid "Valid word but extremely rare in actual usage. Is this the word you want?"
-msgstr "Gyldigt ord men meget sjælden i daglig brug. Er det ordet, du ønsker?"
+msgstr "Gyldigt ord men meget sjældent i daglig brug. Er du sikker på, at det er ordet, du vil bruge?"
 
 #: messages.txt:5
 msgid "Repeated word"
@@ -251,19 +258,19 @@ msgstr "Usædvanlig kombination af ord"
 
 #: messages.txt:7
 msgid "The plural form is required here"
-msgstr "Flertalsformen er krævet her"
+msgstr "Flertalsform er krævet her"
 
 #: messages.txt:8
 msgid "The singular form is required here"
-msgstr "Entalsformen er krævet her"
+msgstr "Entalsform er krævet her"
 
 #: messages.txt:9
 msgid "Plural adjective required"
-msgstr "Flertalstillægsord krævet"
+msgstr "Tillægsord bøjet i flertal krævet"
 
 #: messages.txt:10
 msgid "Comparative adjective required"
-msgstr "Komparativ tillægsord krævet"
+msgstr "Tillægsord bøjet i højere grad krævet"
 
 #: messages.txt:11
 msgid "Definite article required"
@@ -273,17 +280,19 @@ msgstr "Bestemt form krævet"
 msgid "Unnecessary use of the definite article"
 msgstr "Unødvendig brug af bestemt form"
 
+# "Intet behov for den første bestemte artikel" - det 
+# er nok i tilfælde som "det den grønne mand"
 #: messages.txt:13
 msgid "No need for the first definite article"
-msgstr "Ingen behov for den første bestemte form"
+msgstr "Intet behov for den første bestemte artikel"
 
 #: messages.txt:14
 msgid "Unnecessary use of the genitive case"
-msgstr "Unødvendig brug af genetiv"
+msgstr "Unødvendig brug af ejefald"
 
 #: messages.txt:15
 msgid "The genitive case is required here"
-msgstr "Genetivform er krævet her"
+msgstr "Ejefaldsform er krævet her"
 
 #: messages.txt:16
 msgid "You should use the present tense here"
@@ -306,15 +315,15 @@ msgstr "Du bør her bruge »\\1« i steden for"
 
 #: messages.txt:23
 msgid "Non-standard form of \\/\\1\\/"
-msgstr "En form af »\\1« uden for standard"
+msgstr "En form af »\\1« der ikke er standard"
 
 #: messages.txt:24
 msgid "Derived from a non-standard form of \\/\\1\\/"
-msgstr "Afledt af en form af »\\1« uden for standard"
+msgstr "Afledt af en form af »\\1« der ikke er standard"
 
 #: messages.txt:25
 msgid "Derived incorrectly from the root \\/\\1\\/"
-msgstr "Afledt forkert fra roden »\\1«"
+msgstr "Forkert afledning af roden »\\1«"
 
 #: messages.txt:26
 msgid "Unknown word"
@@ -327,7 +336,7 @@ msgstr "Ukendt ord: »\\1«?"
 
 #: messages.txt:29
 msgid "Valid word but \\/\\1\\/ is more common"
-msgstr "Gyldigt ord men »\\1« er ikke udbredt"
+msgstr "Gyldigt ord men »\\1« er mere udbredt"
 
 #: messages.txt:30
 msgid "Not in database but apparently formed from the root \\/\\1\\/"
@@ -351,7 +360,7 @@ msgstr "Ikke i databasen, men er måske en kombination af »\\1«?"
 
 #: messages.txt:35
 msgid "Not in database but may be a non-standard compound \\/\\1\\/?"
-msgstr "Ikke i databasen, men måske en kombination af »\\1« uden for standard?"
+msgstr "Ikke i databasen, men måske er »\\1« en sammensætning der ikke er standard?"
 
 #: messages.txt:36
 msgid "Possibly a foreign word (the sequence \\/\\1\\/ is highly improbable)"
@@ -372,15 +381,15 @@ msgstr "Forskel på store/små bogstaver"
 #. TRANSLATORS: Rules specific to the Irish language (ga)
 #: messages.txt:41
 msgid "Prefix \\/h\\/ missing"
-msgstr "Præfiks »h« mangler"
+msgstr "Præfikset »h« mangler"
 
 #: messages.txt:42
 msgid "Prefix \\/t\\/ missing"
-msgstr "Præfiks »t« mangler"
+msgstr "Præfikset »t« mangler"
 
 #: messages.txt:43
 msgid "Prefix \\/d'\\/ missing"
-msgstr "Præfiks »d'« mangler"
+msgstr "Præfikset »d'« mangler"
 
 #: messages.txt:44
 msgid "Unnecessary prefix \\/h\\/"
@@ -401,11 +410,11 @@ msgstr "Unødvendigt præfiks »b'«"
 #. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
 #: messages.txt:49
 msgid "Unnecessary initial mutation"
-msgstr "Unødvendig oprindelig mutation"
+msgstr "Unødvendig indledende mutation"
 
 #: messages.txt:50
 msgid "Initial mutation missing"
-msgstr "Oprindelig mutation mangler"
+msgstr "Indledende mutation mangler"
 
 # har ikke fundet en dansk betegnelse for lenition
 #. TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
@@ -416,7 +425,7 @@ msgstr "Unødvendig lenition"
 
 #: messages.txt:54
 msgid "The second lenition is unnecessary"
-msgstr "Den anden lenition er unødvendig"
+msgstr "Anden lenition er unødvendig"
 
 #: messages.txt:55
 msgid "Often the preposition \\/\\1\\/ causes lenition, but this case is unclear"
@@ -432,15 +441,15 @@ msgstr "Manglende lenition"
 #. of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
 #: messages.txt:60
 msgid "Unnecessary eclipsis"
-msgstr "Unødvendig eclipsis"
+msgstr "Unødvendig eklipse"
 
 #: messages.txt:61
 msgid "Eclipsis missing"
-msgstr "Manglende eclipsis"
+msgstr "Manglende eklipse"
 
 #: messages.txt:62
 msgid "The dative is used only in special phrases"
-msgstr "Dativ bruges kun i specielle fraser"
+msgstr "Dativ bruges kun i særlige fraser"
 
 #: messages.txt:63
 msgid "The dependent form of the verb is required here"
@@ -452,17 +461,17 @@ msgstr "Unødvendig brug af den afhængige form af udsagnsordet"
 
 #: messages.txt:65
 msgid "The synthetic (combined) form, ending in \\/\\1\\/, is often used here"
-msgstr "Den syntetiske (kombineret) form, med endelsen »\\1«, bruges ofte her"
+msgstr "Den syntetiske (kombinerede) form, med endelsen »\\1« bruges ofte her"
 
 #. TRANSLATORS: Rules specific to the Cornish language (kw)
 #: messages.txt:67
 msgid "Second (soft) mutation missing"
 msgstr "Anden (blød) mutation mangler"
 
-# breathed ?
+# breathed ? Aspireret (efter en.wikipedia)
 #: messages.txt:68
 msgid "Third (breathed) mutation missing"
-msgstr "Tredje (åndet) mutation mangler"
+msgstr "Tredje (Aspireret) mutation mangler"
 
 #: messages.txt:69
 msgid "Fourth (hard) mutation missing"
@@ -470,18 +479,18 @@ msgstr "Fjerde (hård) mutation mangler"
 
 #: messages.txt:70
 msgid "Fifth (mixed) mutation missing"
-msgstr "Femte (mikset) mutation mangler"
+msgstr "Femte (blandet) mutation mangler"
 
 #: messages.txt:71
 msgid "Fifth (mixed) mutation after 'th missing"
-msgstr "Femte (mikset) mutation efter 'th mangler"
+msgstr "Femte (blandet) mutation efter 'th mangler"
 
 #. TRANSLATORS: Rules specific to the Welsh language (cy)
 #: messages.txt:73
 msgid "Aspirate mutation missing"
-msgstr "Aspirations mutation mangler"
+msgstr "Aspireret mutation mangler"
 
 #. TRANSLATORS: Rules specific to the Igbo language (ig)
 #: messages.txt:75
 msgid "This word violates the rules of Igbo vowel harmony"
-msgstr "Dette ord overtræder reglerne i Igbo vokalharmoni"
+msgstr "Dette ord overtræder reglerne for vokalharmoni i igbo"
