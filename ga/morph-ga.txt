@@ -65,6 +65,7 @@
 ^d'f([aeiouáéíóú])	d'fh$1		2	<.+>	<&>
 #  do these early - avoids mistakes with "aighthe" (==aghaidheanna)
 #  and note that first rule must precede second to get "-aithe" pp's correct
+# IMPORTANT - used for -ughadh endings e.g., -> -aghadh which goes to ú below 
 u(i?[dg]h)			a$1		1	<.+>	<&>  # see next few
 i[dg]h(th?.)		i$1		1	<.+>	<&>  # marcaidhthe, masluighthe, beannuighth?ear
 # hyphened prefixes, an-, dea-
@@ -95,7 +96,9 @@ i[dg]h(th?.)		i$1		1	<.+>	<&>  # marcaidhthe, masluighthe, beannuighth?ear
 ^comh([bcdfgpt]h)	$1		0	<[ANV].*>	<&>
 ^comh(sh[aeiouáéíóúlnr])	$1	0	<[ANV].*>	<&>
 ^comh(s[^aeiouáéíóúlnrh])	$1	0	<[ANV].*>	<&>
+# cómhargadh, cómhalartach; but pre-standard "cómhoibriughadh" too
 ^có(mh[aáoóuú])		$1		0	<[ANV].*>	<&>
+#^cómh([aáoóuú])		comh$1		0	<[ANV].*>	<&>
 ^cói(mh[eéií])		$1		0	<[ANV].*>	<&>
 ^có(n[aáoóuú])		$1		0	<[ANV].*>	<&>
 ^cói(n[eéií])		$1		0	<[ANV].*>	<&>
@@ -209,15 +212,6 @@ i[dg]h(th?.)		i$1		1	<.+>	<&>  # marcaidhthe, masluighthe, beannuighth?ear
 ^(h?ant|fót|nan|par|pol|h?ultr)a-?([^aeiouáéíóú-]+[aouáóú])		$2	0	 <.+>	<&>
 ^(h?ant|fót|nan|par|pol|h?ultr)ai-?([^aeiouáéíóú-]+[eiéí])		$2	0	<.+>	<&>
 ^(h?eachtar|freas|h?íos|neas|réalt|tob|h?uas|h?uath)-?([^-])		$2	0	 <.+>	<&>
-#  derivational morphology
-([ao])chai?s$		$1ch		0	<A pl="n" gnt="n".*>	<&>
-acht$			ach		0	<A pl="n" gnt="n".*>	<N pl="n" gnt="n" gnd="f">
-([ao])chtaí$		$1cht		1	<N pl="n" gnt="n".*>	<&>
-íocht$			íoch		0	<A pl="n" gnt="n".*>	<N pl="n" gnt="n" gnd="f">
-úlachta?$		úil		0	<A pl="n" gnt="n".*>	<&> # CO p.120
-úchái?n$		ú		0	<N.*>	<&>
-# but actually non-standard if it's gs or pp; general  uith -> aith below
-uithe$			ú		0	<N.*>	<&>
 #############################################################################
 ################## CAIGHDEÁN OIFIGIÚIL SPELLING REFORMS #####################
 #############################################################################
@@ -324,6 +318,7 @@ uithe$			ú		0	<N.*>	<&>
 # only two math- words anyway?
 #^magh		math		1	<.+>	<&>
 ^meadhón		meán		1	<.+>	<&>
+^mean		meán		1	<.+>	<&>
 ^mío-			mí-		1	<.+>	<&>
 # no midh- words anyway?
 #^miodh		midh		1	<.+>	<&>
@@ -383,14 +378,14 @@ uithe$			ú		0	<N.*>	<&>
 # Mostly based on corpus work...
 # deán for déan
 ^(n?dh?)eán		$1éan		1	<V.*>	<&>
-eoracht(a?)$	eoireacht$1		1	<N.*>	<&> # spaisteoracht
-óracht(a?)$		óireacht$1	1	<N.*>	<&>   # fáidheadóracht
-éair$			éir			1	<N.*>	<&>		# piléair, paipéair
+eoracht(a?)$	eoireacht$1		1	<[FN].*>	<&> # spaisteoracht
+óracht(a?)$		óireacht$1	1	<[FN].*>	<&>   # fáidheadóracht
+éair$			éir			1	<[FN].*>	<&>		# piléair, paipéair
 eor$			eoir		1	<.+>	<&>
 # 08-11-05, generalize nouns to everything (fraochta e.g.)
 chd(a?)$		cht$1		1	<.+>	<&>    # masc too (achd, m.sh.)
-ínteacht(a?)$	íneacht$1	1	<N.*>	<&>    # deisimínteacht, etc. 
-óanna$			ónna		1	<N.*>	<&>	# common!  clóanna, seóanna, gnóanna, srl.
+ínteacht(a?)$	íneacht$1	1	<[FN].*>	<&>    # deisimínteacht, etc. 
+óanna$			ónna		1	<[FN].*>	<&>	# common!  clóanna, seóanna, gnóanna, srl.
 # corpus - Dómhnach, etc., but not rómhilis, etc.
 ([^Rr])ómh([^a])		$1omh$2		1	<.+>	<&>
 ^(.)ógh			$1ogh		1	<.+>	<&>		# fóghmhar->foghmhar->fómhar
@@ -409,10 +404,10 @@ dn			nn		1	<.+>	<&>    # CO p.114 céadna
 ó(i?r[dlnr])		o$1		1	<.+>	<&>    # CO p.123-124
 ú(i?r[dlnr])		u$1		1	<.+>	<&>    # CO p.123-124
 eó			eo		1	<.+>	<&>    # go leór, aibhleóg, etc.
-eamhail$		iúil		1	<[AN].*>	<&>    # dlightheamhail
-eamhla			iúla		1	<[AN].*>	<&>
-([^e])amhail$		$1úil		1	<[AN].*>	<&>    # CO p.102, a2+barúil, etc.
-([^e])amhla		$1úla		1	<[AN].*>	<&>    # "-amhlachta?" too
+eamhail$		iúil		1	<[ANF].*>	<&>    # dlightheamhail
+eamhla			iúla		1	<[ANF].*>	<&>
+([^e])amhail$		$1úil		1	<[ANF].*>	<&>    # CO p.102, a2+barúil, etc.
+([^e])amhla		$1úla		1	<[ANF].*>	<&>    # "-amhlachta?" too
 aíle$			aíola		1	<.+>	<&>    # *3ú* decl.
 aibh$			a		1	<.+>	<&>    # fearaibh, fiachaibh
 ([^a])ibh$		$1e		1	<.+>	<&>    # coinnibh, etc.
@@ -443,21 +438,21 @@ ighile$			íola		1	<N pl="n" gnt="y" gnd="f".*>	<&>
 #   some dialect/pre-standard noun/adjective inflections
 ([oó]ga)í$		$1		1	<N pl="y".*>	<&>   # duilleogaí
 nnaí$			nna		1	<N pl="y".*>	<&>   # ceisteannaí
-chaí$			cha		1	<[AN].*>	<&>
+chaí$			cha		1	<[ANF].*>	<&>
 thaí$			tha		1	<.+>	<&>    # glórthaí, spéarthaí
 (..)dha$		$1tha		1	<.+>	<&>    # measardha, muinteardha
 (..)dha$		$1a		1	<.+>	<&>    # stuamdha, príomhdha
-(.[aá])igh$		$1ch		1	<N.*>	<&>	# nb2 -aí genitives
-(..)i[dg]h$		$1each		1	<N.*>	<&>   #  same (e.g. stámhaillidh)
+(.[aá])igh$		$1ch		1	<[NF].*>	<&>	# nb2 -aí genitives
+(..)i[dg]h$		$1each		1	<[NF].*>	<&>   #  same (e.g. stámhaillidh)
 (..)aidh$		$1a		1	<.+>	<&>    # bhfágaidh
-eói?g$			eog		1	<N.*>	<&>   # nb2 
+eói?g$			eog		1	<[NF].*>	<&>   # nb2 
 eoig$			eog		1	<.+>	<&>   # nb2, leave as <.+> for <F>'s
-óig$			óg		1	<N.*>	<&>   # nb2 
-lainn$			lann		1	<N.*>	<&>   # nb2
-aisí$			ais		1	<N.*>	<&>   # cuntaisí, bronntanaisí
+óig$			óg		1	<[NF].*>	<&>   # nb2 
+lainn$			lann		1	<[NF].*>	<&>   # nb2
+aisí$			ais		1	<[NF].*>	<&>   # cuntaisí, bronntanaisí
 dth([ea])$		dt$1		1	<.+>	<&>    # goidthe
 # Fórsaíbh -> Fórsaí (dpl)
-íbh$			í	1	<N.*>	<&>
+íbh$			í	1	<[NF].*>	<&>
 íocha$			í	1	<N pl="y".*>	<&>	# margaidheacha->margaíocha->margaí
 # but note in previous that sometimes this gets interrupted by correct
 # plural adjective:  cogaidheacha->cogaíocha, or sometimes even correct
@@ -483,11 +478,11 @@ faidhear$			far	1	<V p="n" t="fáist">	<&>
 th(eá)$			t$1		1	<V p="y" t="gnáth">	<&>
 #   2nd declension Dinneen-style endings
 (..)aíd$		$1aíonn		1	<V p="y" t="láith">	<&> # cialluíd
-aghadh			ú		1	<N.*>	<&>  # broad and slender
-iaghadh			íodh		1	<V.*>	<&>  # innsiughadh->insíodh
-(..)thear$		$1tear		1	<V.*>	<&> # aut. present
-(..)t(te?ar)$	$1$2		1	<V.*>	<&> # aut. present
-ighim			ím		1	<V.*>	<&>    # broad and slender
+aghadh			ú		1	<[NF].*>	<&>  # broad and slender
+iaghadh			íodh		1	<[VF].*>	<&>  # innsiughadh->insíodh
+(..)thear$		$1tear		1	<[VF].*>	<&> # aut. present
+(..)t(te?ar)$	$1$2		1	<[VF].*>	<&> # aut. present
+ighim			ím		1	<[VF].*>	<&>    # broad and slender
 ighidh			í		1	<.+>	<&>    # subjunctive?
 ighinn			ínn		1	<.+>	<&>    # imperfect
 # Future forms: see OS88 p.215 for these (fe?as, etc. on p.63), also CB p.145
@@ -561,6 +556,16 @@ mist$			mis		1	<V.*>	<&>
 álaithe$		áilte		1	<A.*>	<&>
 álanna$			álacha		1	<N.*>	<&>  # nb3 pl
 #############################################################################
+#  derivational morphology
+([ao])chai?s$		$1ch		0	<A pl="n" gnt="n".*>	<&>
+acht$			ach		0	<A pl="n" gnt="n".*>	<N pl="n" gnt="n" gnd="f">
+([ao])chtaí$		$1cht		1	<N pl="n" gnt="n".*>	<&>
+íocht$			íoch		0	<A pl="n" gnt="n".*>	<N pl="n" gnt="n" gnd="f">
+úlachta?$		úil		0	<A pl="n" gnt="n".*>	<&> # CO p.120
+úchái?n$		ú		0	<N.*>	<&>
+# but actually non-standard if it's gs or pp; general  uith -> aith below
+uithe$			ú		0	<N.*>	<&>
+#############################################################################
 #  emphatic suffixes
 (.[aouáóú])(san?|na)$	$1		0	<[NV].*>	<&>
 (.[eiéí])(sean|[sn]e)$	$1		0	<[NV].*>	<&>
@@ -582,6 +587,7 @@ ula$			úla		2	<A.*>	<&>
 eail$			eáil		2	<.+>	<&>    # common missing accent
 ([^ae])oir$		$1óir		2	<.+>	<&>
 ([^ae])ora$		$1óra		2	<.+>	<&>
+aio		aío		2	<.+>	<&>   # ionadaiocht, srl
 eor$			eoir		2	<N.*>	<&>
 ionn$			íonn		2	<V.*>	<&>
 itear$			ítear		2	<V.*>	<&>
