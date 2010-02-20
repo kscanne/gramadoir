@@ -68,150 +68,6 @@
 # IMPORTANT - used for -ughadh endings e.g., -> -aghadh which goes to ú below 
 u(i?[dg]h)			a$1		1	<.+>	<&>  # see next few
 i[dg]h(th?.)		i$1		1	<.+>	<&>  # marcaidhthe, masluighthe, beannuighth?ear
-# hyphened prefixes, an-, dea-
-^h?an-([bcfgmp]h)	$1		0	<[AN].*>	<&>
-^h?an-([bcfgmp][^h])	$1		2	<[AN].*>	<&>
-^h?an-([^bcfgmp][^h])	$1		0	<[AN].*>	<&>
-^h?an-([^bcfgmp]h)	$1		2	<[AN].*>	<&>   # an-dhuine 
-^dea-([bcdfgmpt]h)	$1		0	<[AN].*>	<&>
-^dea-([bcdfgmpt][^h])	$1		2	<[AN].*>	<&>
-^dea-(sh[aeiouáéíóúlnr])	$1	0	<[AN].*>	<&>
-^dea-(s[aeiouáéíóúlnr])	$1		2	<[AN].*>	<&>
-^dea-(s[^aeiouáéíóúlnrh])	$1	0	<[AN].*>	<&>   # dea-scéal
-^dea-([^bcdfgmpst])	$1		0	<[AN].*>	<&>
-# other prefixes; most are not independent words (ath, comh, etc.)
-# but several are -- these are worth including for several reasons:
-# (1) efficiency; morph. analysis happens well before the check for
-#  compounds/run-togethers (2) allows for a more refined check for
-#  lenition of the prefixed word or other changes (comh-mh, comh->có, etc.)
-^h?ain([deéiílnrst])	$1		0	<[AN].*>	<&>
-^h?ain([bcfgmp]h)	$1		0	<[AN].*>	<&>
-^h?ath([^bcdfgmpst-])	$1		0	<[ANV].*>	<&>
-^h?ath([bcdfgmp]h)	$1		0	<[ANV].*>	<&>
-^h?ath(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>	<&>
-^h?ath(s[^aeiouáéíóúlnrh])	$1	0	<[ANV].*>	<&>
-^h?ath-?th		at		1	<[ANV].*>	<&>
-^h?ath-?th		th		1	<[ANV].*>	<&>
-^comh([^bcdfgmnpst-])	$1		0	<[ANV].*>	<&>
-^comh([bcdfgpt]h)	$1		0	<[ANV].*>	<&>
-^comh(sh[aeiouáéíóúlnr])	$1	0	<[ANV].*>	<&>
-^comh(s[^aeiouáéíóúlnrh])	$1	0	<[ANV].*>	<&>
-# cómhargadh, cómhalartach; but pre-standard "cómhoibriughadh" too
-^có(mh[aáoóuú])		$1		0	<[ANV].*>	<&>
-#^cómh([aáoóuú])		comh$1		0	<[ANV].*>	<&>
-^cói(mh[eéií])		$1		0	<[ANV].*>	<&>
-^có(n[aáoóuú])		$1		0	<[ANV].*>	<&>
-^cói(n[eéií])		$1		0	<[ANV].*>	<&>
-^coimh-mh		cóimh		1	<[ANV].*>	<&>
-^comh-(mh[aáoóuú])		có$1		1	<[ANV].*>	<&>
-^comh-(mh[eéií])		cói$1		1	<[ANV].*>	<&>
-^coimh-n		cóin		1	<[ANV].*>	<&>
-^c[oó]mh-?(n[aáoóuú])		có$1		1	<[ANV].*>	<&>
-^c[oó]mh-?(n[eéií])		cói$1		1	<[ANV].*>	<&>
-^có-(..)		comh$1		1	<[ANV].*>	<&>
-^có([bcdfgpt]h)		comh$1		1	<[ANV].*>	<&>
-^do-([aeiouáéíóú])	$1		0	<[AN].*>	<&>
-# ^do([lnr]) BELOW
-^do([bcdfgmpt]h)	$1		0	<[AN].*>	<&>
-^do(sh[aeiouáéíóúlnr])	$1		0	<[AN].*>	<&>
-^do(s[^aeiouáéíóúlnrh])	$1		0	<[AN].*>	<&>
-^do-([aeiouáéíóú])	$1		0	<[ANV].*>	<&>
-^droch([^bcdfgmpst-])	$1		0	<[AN].*>	<&>
-^droch-(ch)		$1		0	<[AN].*>	<&>
-^droch([bdfgmpt]h)	$1		0	<[AN].*>	<&>
-^droch(sh[aeiouáéíóúlnr])	$1		0	<[AN].*>	<&>
-^droch(s[^aeiouáéíóúlnrh])	$1		0	<[AN].*>	<&>
-^fíor([^bcdfgmprst-])	$1		0	<[ANV].*>	<&>
-^fíor-(r)		$1		0	<[ANV].*>	<&>
-^fíor([bcdfgmpt]h)	$1		0	<[ANV].*>	<&>
-^fíor(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>	<&>
-^fíor(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>	<&>
-^for([^bcdfgmprst-])	$1		0	<[ANV].*>	<&>
-^for-(r)		$1		0	<[ANV].*>	<&>
-^for([bcdfgmpt]h)	$1		0	<[ANV].*>	<&>
-^for(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>	<&>
-^for(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>	<&>
-^fo-([aeiouáéíóú])	$1		0	<[ANV].*>	<&>
-# ^fo([lnr]) BELOW
-^fo([bcdfgmpt]h)	$1		0	<[ANV].*>	<&>
-^fo(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>	<&>
-^fo(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>	<&>
-^fo-(..)		$1		1	<[ANV].*>	<&>
-^frith([^bcdfgmpst-])	$1		0	<[ANV].*>	<&>
-^fri(t[^h])		$1		0	<[ANV].*>	<&>
-^frith([bcdfgmp]h)	$1		0	<[ANV].*>	<&>
-^frith(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>	<&>
-^frith(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>	<&>
-^h?iar([^bcdfgmprst-])	$1		0	<[ANV].*>	<&>
-^h?iar-(r)		$1		0	<[ANV].*>	<&>
-^h?iar([bcdfgmpt]h)	$1		0	<[ANV].*>	<&>
-^h?iar(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>	<&>
-^h?iar(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>	<&>
-# ilsiamsa, ilsiollach, etc.  no special case
-^h?il([^bcfgmp-]..)	$1		0	<[AN].*>	<&>
-^h?il([bcfgmp]h.)	$1		0	<[AN].*>	<&>
-^h?im([^bcdfghmpst-]..)	$1		0	<[ANV].*>	<&>
-^h?im([bcdfgmpt]h.)	$1		0	<[ANV].*>	<&>
-^h?im(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>	<&>
-^h?im(s[^aeiouáéíóúlnrh].)	$1		0	<[ANV].*>	<&>
-# ^in([^bcfgmp-]) BELOW
-^h?in-(n)		$1		0	<[AN].*>	<&>
-^h?in([bcfgmp]h..)	$1		0	<[AN].*>	<&>
-^leas-(s)		$1		0	<[AN].*>	<&>
-^leas([aeiouáéíóúd]..)	$1		0	<[AN].*>	<&>
-^leas([bcfgm]h..)	$1		0	<[AN].*>	<&>
-^mí-([aeiouáéíóú])	$1		0	<[ANV].*>	<&>
-^(mh?í)-(..)		$1$2		1	<[ANV].*>	<&>
-^mí([aeiouáéíóú]..)	$1		2	<[ANV].*>	<&>  # míúsáid
-^mí([lnr]..)		$1		0	<[ANV].*>	<&>
-^mí([bcdfgmpt]h.)	$1		0	<[ANV].*>	<&>
-^mí(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>	<&>
-^mí(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>	<&>
-^neamh-(..)		neamh$1		1	<[ANV].*>	<&>  # try stripping - before stripping whole thing!
-^neamh-?([aeiouáéíóú])	$1		0	<[ANV].*>	<&>  # neamh-aistear but neamhaithne
-^neamh([lnr])		$1		0	<[ANV].*>	<&>
-^neamh([bcdfgpt]h)	$1		0	<[ANV].*>	<&>
-^neamh-(mh)		$1		0	<[ANV].*>	<&>
-^neamh(sh[aeiouáéíóúlnr])	$1	0	<[ANV].*>	<&>
-^neamh(s[^aeiouáéíóúlnrh])	$1	0	<[ANV].*>	<&>
-^príomh([^bcdfgmpst-])	$1		0	<N.*>	<&>
-^príomh([bcdfgpt]h)	$1		0	<N.*>	<&>
-^príomh-(mh)		$1		0	<N.*>	<&>
-^príomh(sh[aeiouáéíóúlnr])	$1		0	<N.*>	<&>
-^príomh(s[^aeiouáéíóúlnrh])	$1		0	<N.*>	<&>
-^réamh([^bcdfgmpst-])	$1		0	<[ANV].*>	<&>
-^réamh([bcdfgpt]h)	$1		0	<[ANV].*>	<&>
-^réamh-(mh)		$1		0	<[ANV].*>	<&>
-^réamh(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>	<&>
-^réamh(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>	<&>
-^rí([lnr]..)		$1		0	<[ANV].*>	<&>
-^rí([bcdfgmpt]h.)	$1		0	<[ANV].*>	<&>
-^rí(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>	<&>
-^rí(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>	<&>
-^ró-([aeiouáéíóú]..)	$1		0	<[AN].*>	<&>
-^ró([aeiouáéíóú]..)	$1		2	<[AN].*>	<&>
-^ró([lnr]..)		$1		0	<[AN].*>	<&>
-^ró([bcdfgmpt]h.)	$1		0	<[AN].*>	<&>
-^ró(sh[aeiouáéíóúlnr])	$1		0	<[AN].*>	<&>
-^ró(s[^aeiouáéíóúlnrh])	$1		0	<[AN].*>	<&>
-^sain([^bcdfgmpst-])	$1		0	<[ANV].*>	<&>
-^sain([bcdfgmpt]h)	$1		0	<[ANV].*>	<&>
-^sain(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>	<&>
-^sain(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>	<&>
-^so-([aeiouáéíóú]..)	$1		0	<[AN].*>	<&>
-^so([lnr]..)		$1		0	<[AN].*>	<&>
-^so([bcdfgmpt]h.)	$1		0	<[AN].*>	<&>
-^so(sh[aeiouáéíóúlnr].)	$1		0	<[AN].*>	<&>
-^so(s[^aeiouáéíóúlnrh]..)	$1		0	<[AN].*>	<&>
-^tras([^bcfghmnps-])	$1		0	<[ANV].*>	<&>   # leave "^trasn" alone
-^tras([bcfgmp]h)	$1		0	<[ANV].*>	<&>
-^tras-(s)		$1		0	<[ANV].*>	<&>
-# next batch are non-words so really need to be here, but VERY infrequent
-^(cil|gig|h?is|meig|micr|pic|teil)ea-?([^aeiouáéíóú-]+[aouáóú])	$2	0	 <.+>	<&>
-^(cil|gig|h?is|meig|micr|pic|teil)i-?([^aeiouáéíóú-]+[eiéí])	$2	0	 <.+>	<&>
-^(h?ant|fót|nan|par|pol|h?ultr)a-?([^aeiouáéíóú-]+[aouáóú])		$2	0	 <.+>	<&>
-^(h?ant|fót|nan|par|pol|h?ultr)ai-?([^aeiouáéíóú-]+[eiéí])		$2	0	<.+>	<&>
-^(h?eachtar|freas|h?íos|neas|réalt|tob|h?uas|h?uath)-?([^-])		$2	0	 <.+>	<&>
 #############################################################################
 ################## CAIGHDEÁN OIFIGIÚIL SPELLING REFORMS #####################
 #############################################################################
@@ -221,24 +77,28 @@ i[dg]h(th?.)		i$1		1	<.+>	<&>  # marcaidhthe, masluighthe, beannuighth?ear
 ^h?aird([^e])	ard$1		1	<.+>	<&>
 # handled by more general "nn" rule below
 #^h?anns			ans		1	<.+>	<&>
-^h?eadar		idir		1	<.+>	<&>
 ^dh'			d'		1	<.+>	<&>
 ^h-			h		1	<.+>	<&>    # CO p.126
 ^n-([AEIOUÁÉÍÓÚ])	n$1		1	<.+>	<&>    # CO p.125
 ^t-([AEIOUÁÉÍÓÚ])	t$1		1	<.+>	<&>    # CO p.125
+^h?aoin			aon		1	<.+>	<&>
 ^h?ana-			an-		1	<.+>	<&>    # ana-eagraithe
 #^[Áá]rd(-?..)	ard$1		1	<.+>	<&>
+^h?ath-?th		at		1	<[ANV].*>	<&>
 ^bh'			b'		1	<.+>	<&>		# bh'fhiú -> b'fhiú
 ^bain			ban		1	<.+>	<&>
 ^báin			bán		1	<.+>	<&>
 ^bairr			barr		1	<.+>	<&>
+^baoith			baoth		1	<.+>	<&>
 ^beig			beag		1	<.+>	<&>
 ^béil			béal		1	<.+>	<&>
+^bioth			bith		1	<.+>	<&>
 ^boig			bog		1	<.+>	<&>
 ^boinn			bonn		1	<.+>	<&>
 ^boirr			borr		1	<.+>	<&>  # boirrphéist...
 # handled by more general ll rule below
 #^bolls			bols		1	<.+>	<&>
+^buadh			bua			1	<.+>	<&>
 ^buain			buan		1	<.+>	<&>  # buainseasamh...
 ^caim			cam		1	<.+>	<&>  # caimbheart...
 # handled by more general tht rule below
@@ -249,16 +109,31 @@ i[dg]h(th?.)		i$1		1	<.+>	<&>  # marcaidhthe, masluighthe, beannuighth?ear
 ^céid			céad		1	<.+>	<&>
 # N.B. makes string longer
 #^cinn			ceann		1	<.+>	<&>
+^ceinn			ceann		1	<.+>	<&>  # Di04 ceinn-litir, srl.
 ^cionn			ceann		1	<.+>	<&>
 ^cláir			clár		1	<.+>	<&>   # cláirfhiacail e.g.
 ^claoidh			cloí		1	<.+>	<&>
+^claoin			claon		1	<.+>	<&>
 ^coilg			colg		1	<.+>	<&>  # coilgsheasamh e.g.
+^c[oó]imh-mh		cóimh		1	<[ANV].*>	<&>
 ^coimh			comh		1	<.+>	<&>    # coimhlíonadh
+^cóimh([^eéií])			comh$1	1	<.+>	<&>    # cóimh-chealg (Di04)
+# general ómh[^a] -> omh$1  rule below
+^cómha		comha		1	<[ANV].*>	<&>
+^comh-(mh[aáoóuú])		có$1		1	<[ANV].*>	<&>
+^comh-(mh[eéií])		cói$1		1	<[ANV].*>	<&>
+^coimh-n		cóin		1	<[ANV].*>	<&>
+^c[oó]mh-?(n[aáoóuú])		có$1		1	<[ANV].*>	<&>
+^c[oó]mh-?(n[eéií])		cói$1		1	<[ANV].*>	<&>
+^có-(..)		comh$1		1	<[ANV].*>	<&>
+^có([bcdfgpt]h)		comh$1		1	<[ANV].*>	<&>
 ^c[ou]ir([pr])			cor$1		1	<.+>	<&>
 ^crainn			crann		1	<.+>	<&>
+^crioth			crith		1	<.+>	<&>
 ^croim			crom		1	<.+>	<&>   # croimleac e.g.
 ^cruai?dh			crua		1	<.+>	<&>
 ^cúil			cúl		1	<.+>	<&>
+^dá-			dé		1	<.+>	<&>		# common in Di04 e.g. dá-bheathach
 ^daill			dall		1	<.+>	<&> # daillintinn
 ^daoir([^s])			daor		1	<.+>	<&>
 #  first spelling of dea- is from na Grianna
@@ -266,10 +141,13 @@ i[dg]h(th?.)		i$1		1	<.+>	<&>  # marcaidhthe, masluighthe, beannuighth?ear
 ^de[áai]gh-		dea-		1	<.+>	<&>
 ^de[áai]gh([^-])	dea-$1		1	<.+>	<&>
 ^deir([bg])			dear$1		1	<.+>	<&> # deirbhnialas, deirgmheisce
+^dío-			dí-		1	<.+>	<&>   # Di04 common. dío-chuimhne 
 ^diubhr			diúr		1	<.+>	<&>
 ^dligh(i?)		dlí		1	<.+>	<&>
+^doi-			do-		1	<.+>	<&>  # doi-bhriathar, etc.  Di04
 ^doinn			donn		1	<.+>	<&>
 ^droich			droch		1	<.+>	<&>
+^druim			droim		1	<.+>	<&>
 ^duibh			dubh		1	<.+>	<&>
 # handled by more general prefix+gc rule below
 #^éagc			éag		1	<.+>	<&>
@@ -279,19 +157,31 @@ i[dg]h(th?.)		i$1		1	<.+>	<&>  # marcaidhthe, masluighthe, beannuighth?ear
 #^éidt			éid		1	<.+>	<&>
 # handled by more general ll rule below
 #^falls			fals		1	<.+>	<&>
+^h?eadar		idir		1	<.+>	<&>
+^h?eidir		idir	1	<.+>	<&>
 ^fiadh			fia		1	<.+>	<&>
+^fír-			fíor		1	<.+>	<&> # include hyphen so len is same
 ^flith			frith		1	<.+>	<&>
 ^frioth([^á])	frith$1		1	<.+>	<&>
 ^fó-			fo-		1	<.+>	<&>
+^foir-			for-	1	<.+>	<&>  # foir-chéim
+^fuair-			fuar-	1	<.+>	<&>  # fuair-chrith
 # N.B. makes string longer
 #^gamh			geamh		1	<.+>	<&>
 # N.B. makes string longer
 ^girr			gearr		1	<.+>	<&>
+^gairbh			garbh		1	<.+>	<&>
+^géir			géar		1	<.+>	<&>
+^gnáith			gnáth		1	<.+>	<&>
 ^gobh			gabh		1	<.+>	<&>
 ^héala([^aeiouáéíóú]+[eéií])	héili$1		1	<.+>	<&>    # OD77
 ^héala([^aeiouáéíóú]+[aáoóuú])	héilea$1	1	<.+>	<&>
+^h?iair		iar		1	<.+>	<&>
 ^h?iarann		iarn		1	<.+>	<&>
 ^h?iodar		idir		1	<.+>	<&> # iodarchaidreamh
+^h?iol([^ar])			il$1		1	<.+>	<&>
+^h?iomshlá			iomlá		1	<.+>	<&>  # exception to next
+^h?iom([^aálpr])			im$1		1	<.+>	<&>
 ^h?ion			in		1	<.+>	<&>
 # handled by more general nn rule below
 #^h?ionn([rs])			ion$1		1	<.+>	<&>
@@ -301,7 +191,7 @@ i[dg]h(th?.)		i$1		1	<.+>	<&>  # marcaidhthe, masluighthe, beannuighth?ear
 #^léasb			léasp		1	<.+>	<&>
 ^leig([^h])		lig$1		1	<.+>	<&>  # leigint, but not leigheas words
 # risky?
-#^leith			leath		1	<.+>	<&>
+^leith-			leath-		1	<.+>	<&>
 ^loim			lom		1	<.+>	<&>  # loimeasna
 ^lóir		leor		1	<.+>	<&>
 ^luaith([^r])	luath$1		1	<.+>	<&>  # luaithintinn
@@ -319,14 +209,20 @@ i[dg]h(th?.)		i$1		1	<.+>	<&>  # marcaidhthe, masluighthe, beannuighth?ear
 #^magh		math		1	<.+>	<&>
 ^meadhón		meán		1	<.+>	<&>
 ^mean		meán		1	<.+>	<&>
+# N.B. makes string longer
+^min-		mion-		1	<.+>	<&>
 ^mío-			mí-		1	<.+>	<&>
+^(mh?í)-([^aeiouáéíóú].)		$1$2		1	<[ANV].*>	<&>
 # no midh- words anyway?
 #^miodh		midh		1	<.+>	<&>
 ^móir			mór		1	<.+>	<&>
+^naoimh			naomh		1	<.+>	<&>
+^neamh-([^m].)		neamh$1		1	<[ANV].*>	<&>  # try stripping hyphen before stripping whole thing!
+^neimh		neamh		1	<.+>	<&>  # Di04
 ^nea-mb			neamhbh		1	<.+>	<&>
 ^nea-			neamh-		1	<.+>	<&>    # strip hyphen later
 ^nea([cdfgpt]h)		neamh$1		1	<.+>	<&>
-^h?óig			óg		1	<.+>	<&>
+^h?ói([gr])		ó$1		1	<.+>	<&>
 # handled by more general nn rule below
 #^pannc			panc		1	<.+>	<&>
 #^poinnt			point		1	<.+>	<&>
@@ -334,17 +230,27 @@ i[dg]h(th?.)		i$1		1	<.+>	<&>  # marcaidhthe, masluighthe, beannuighth?ear
 ^prímh			príomh		1	<.+>	<&>
 ^réidh			ré		1	<.+>	<&>
 ^réimh			réamh		1	<.+>	<&>
-^r[íi]gh		rí		1	<.+>	<&>   # righdhamhna
+^r[íi]o?gh		rí		1	<.+>	<&>   # righdhamhna, ríogh-choróin
 ^ro-			ró-		1	<.+>	<&>
+^rói-			ró-		1	<.+>	<&>
 ^roighn			righn		1	<.+>	<&>
 ^roimh			réamh		1	<.+>	<&>
+^ruadh			rua		1	<.+>	<&>
+^rúin			rún		1	<.+>	<&>
 ^sáir			sár		1	<.+>	<&>  # sáireolas
 ^saoghl			saol		1	<.+>	<&>
+^saoibh			saobh		1	<.+>	<&>
+^saoir-			saor-		1	<.+>	<&>
 ^sclug			sclog		1	<.+>	<&>
 ^scoith			scoth		1	<.+>	<&> # scoithdhearg
 ^seana-			sean-		1	<.+>	<&>    # strip hyphen later
+^sein-			sean-		1	<.+>	<&>    # strip hyphen later
 ^siod			sead		1	<.+>	<&>
+^síodh			sí		1	<.+>	<&>
+# N.B. makes it longer
+^sír-			síor-		1	<.+>	<&>
 ^smúid			smúit		1	<.+>	<&>
+^soi-			so-		1	<.+>	<&>  # soi-bhriste, etc.  Di04
 # handled by more general ll rule below
 #^soills			soils		1	<.+>	<&>
 # handled by more general nn rule below
@@ -371,6 +277,7 @@ i[dg]h(th?.)		i$1		1	<.+>	<&>  # marcaidhthe, masluighthe, beannuighth?ear
 #^treabhth			treaf		1	<.+>	<&>
 ^treas			tras		1	<.+>	<&>
 ^tréin			tréan		1	<.+>	<&>
+^troim			trom		1	<.+>	<&>
 ^tuaith		tuath		1	<.+>	<&>  # tuaithcheantar
 ^h?uaith		uath		1	<.+>	<&>
 ^h?úir			úr		1	<.+>	<&>
@@ -387,6 +294,7 @@ chd(a?)$		cht$1		1	<.+>	<&>    # masc too (achd, m.sh.)
 ínteacht(a?)$	íneacht$1	1	<[FN].*>	<&>    # deisimínteacht, etc. 
 óanna$			ónna		1	<[FN].*>	<&>	# common!  clóanna, seóanna, gnóanna, srl.
 # corpus - Dómhnach, etc., but not rómhilis, etc.
+#  Handles  all ^cómh- prefixes too except  ^cómha which we do above explicitly
 ([^Rr])ómh([^a])		$1omh$2		1	<.+>	<&>
 ^(.)ógh			$1ogh		1	<.+>	<&>		# fóghmhar->foghmhar->fómhar
 eamhn		iún		1	<.+>	<&>     #  maitheamhnas, breitheamhnas
@@ -438,13 +346,8 @@ ighile$			íola		1	<N pl="n" gnt="y" gnd="f".*>	<&>
 #   some dialect/pre-standard noun/adjective inflections
 ([oó]ga)í$		$1		1	<N pl="y".*>	<&>   # duilleogaí
 nnaí$			nna		1	<N pl="y".*>	<&>   # ceisteannaí
-chaí$			cha		1	<[ANF].*>	<&>
-thaí$			tha		1	<.+>	<&>    # glórthaí, spéarthaí
 (..)dha$		$1tha		1	<.+>	<&>    # measardha, muinteardha
 (..)dha$		$1a		1	<.+>	<&>    # stuamdha, príomhdha
-(.[aá])igh$		$1ch		1	<[NF].*>	<&>	# nb2 -aí genitives
-(..)i[dg]h$		$1each		1	<[NF].*>	<&>   #  same (e.g. stámhaillidh)
-(..)aidh$		$1a		1	<.+>	<&>    # bhfágaidh
 eói?g$			eog		1	<[NF].*>	<&>   # nb2 
 eoig$			eog		1	<.+>	<&>   # nb2, leave as <.+> for <F>'s
 óig$			óg		1	<[NF].*>	<&>   # nb2 
@@ -511,8 +414,6 @@ eois$			eoidh		1	<V p="y" t="fáist">	<&>
 ^h([aeiouáéíóú].+fe?ar)$	$1	1	<V p="n" t="fáist">	<&>
 ^h([aeiouáéíóú].+fa?í)$		$1	1	<V p="n" t="coinn">	<&>
 # Past; also see Di27 (present).  "r" forms on p.216 (also CB p.145 present)
-(...)eas$		$1		1	<V p="y" t="caite">	<&>
-(..[^aeiouáéíóú])as$	$1		1	<V p="y" t="caite">	<&>
 (...)íos$		$1igh		1	<V p="y" t="caite">	<&>
 (...)ai[rs]$		$1		1	<V p="y" t="caite">	<&>
 (..[^aeiouáéíóú])i[rs]$	$1		1	<V p="y" t="caite">	<&>
@@ -555,6 +456,160 @@ mist$			mis		1	<V.*>	<&>
 álta$			áilte		1	<A.*>	<&>
 álaithe$		áilte		1	<A.*>	<&>
 álanna$			álacha		1	<N.*>	<&>  # nb3 pl
+#############################################################################
+#   start some more radical changes, e.g. stripping prefixes completely
+#############################################################################
+# hyphened prefixes, an-, dea-
+^h?an-([bcfgmp]h)	$1		0	<[AN].*>	<&>
+^h?an-([bcfgmp][^h])	$1		2	<[AN].*>	<&>
+^h?an-([^bcfgmp][^h])	$1		0	<[AN].*>	<&>
+^h?an-([^bcfgmp]h)	$1		2	<[AN].*>	<&>   # an-dhuine 
+^dea-([bcdfgmpt]h)	$1		0	<[AN].*>	<&>
+^dea-([bcdfgmpt][^h])	$1		2	<[AN].*>	<&>
+^dea-(sh[aeiouáéíóúlnr])	$1	0	<[AN].*>	<&>
+^dea-(s[aeiouáéíóúlnr])	$1		2	<[AN].*>	<&>
+^dea-(s[^aeiouáéíóúlnrh])	$1	0	<[AN].*>	<&>   # dea-scéal
+^dea-([^bcdfgmpst])	$1		0	<[AN].*>	<&>
+# other prefixes; most are not independent words (ath, comh, etc.)
+# but several are -- these are worth including for several reasons:
+# (1) efficiency; morph. analysis happens well before the check for
+#  compounds/run-togethers (2) allows for a more refined check for
+#  lenition of the prefixed word or other changes (comh-mh, comh->có, etc.)
+^h?ain([deéiílnrst])	$1		0	<[AN].*>	<&>
+^h?ain([bcfgmp]h)	$1		0	<[AN].*>	<&>
+^h?ath([^bcdfgmpst-])	$1		0	<[ANV].*>	<&>
+^h?ath([bcdfgmp]h)	$1		0	<[ANV].*>	<&>
+^h?ath(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>	<&>
+^h?ath(s[^aeiouáéíóúlnrh])	$1	0	<[ANV].*>	<&>
+^h?ath-?th		th		1	<[ANV].*>	<&>   # -> "at-" above
+^comh([^bcdfgmnpst-])	$1		0	<[ANV].*>	<&>
+^comh([bcdfgpt]h)	$1		0	<[ANV].*>	<&>
+^comh(sh[aeiouáéíóúlnr])	$1	0	<[ANV].*>	<&>
+^comh(s[^aeiouáéíóúlnrh])	$1	0	<[ANV].*>	<&>
+# cómhargadh, cómhalartach; but pre-standard "cómhoibriughadh" too
+^có(mh[aáoóuú])		$1		0	<[ANV].*>	<&>
+^cói(mh[eéií])		$1		0	<[ANV].*>	<&>
+^có(n[aáoóuú])		$1		0	<[ANV].*>	<&>
+^cói(n[eéií])		$1		0	<[ANV].*>	<&>
+^do-([aeiouáéíóú])	$1		0	<[AN].*>	<&>
+# ^do([lnr]) BELOW
+^do([bcdfgmpt]h)	$1		0	<[AN].*>	<&>
+^do(sh[aeiouáéíóúlnr])	$1		0	<[AN].*>	<&>
+^do(s[^aeiouáéíóúlnrh])	$1		0	<[AN].*>	<&>
+^do-([aeiouáéíóú])	$1		0	<[ANV].*>	<&>
+^droch([^bcdfgmpst-])	$1		0	<[AN].*>	<&>
+^droch-(ch)		$1		0	<[AN].*>	<&>
+^droch([bdfgmpt]h)	$1		0	<[AN].*>	<&>
+^droch(sh[aeiouáéíóúlnr])	$1		0	<[AN].*>	<&>
+^droch(s[^aeiouáéíóúlnrh])	$1		0	<[AN].*>	<&>
+^fíor([^bcdfgmprst-])	$1		0	<[ANV].*>	<&>
+^fíor-(r)		$1		0	<[ANV].*>	<&>
+^fíor([bcdfgmpt]h)	$1		0	<[ANV].*>	<&>
+^fíor(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>	<&>
+^fíor(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>	<&>
+^for([^bcdfgmprst-])	$1		0	<[ANV].*>	<&>
+^for-(r)		$1		0	<[ANV].*>	<&>
+^for([bcdfgmpt]h)	$1		0	<[ANV].*>	<&>
+^for(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>	<&>
+^for(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>	<&>
+^fo-([aeiouáéíóú])	$1		0	<[ANV].*>	<&>
+# ^fo([lnr]) BELOW
+^fo([bcdfgmpt]h)	$1		0	<[ANV].*>	<&>
+^fo(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>	<&>
+^fo(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>	<&>
+^fo-(..)		$1		1	<[ANV].*>	<&>
+^frith([^bcdfgmpst-])	$1		0	<[ANV].*>	<&>
+^fri(t[^h])		$1		0	<[ANV].*>	<&>
+^frith([bcdfgmp]h)	$1		0	<[ANV].*>	<&>
+^frith(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>	<&>
+^frith(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>	<&>
+^h?iar([^bcdfgmprst-])	$1		0	<[ANV].*>	<&>
+^h?iar-(r)		$1		0	<[ANV].*>	<&>
+^h?iar([bcdfgmpt]h)	$1		0	<[ANV].*>	<&>
+^h?iar(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>	<&>
+^h?iar(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>	<&>
+# ilsiamsa, ilsiollach, etc.  no special case
+^h?il([^bcfgmp-]..)	$1		0	<[AN].*>	<&>
+^h?il([bcfgmp]h.)	$1		0	<[AN].*>	<&>
+^h?im([^bcdfghmpst-]..)	$1		0	<[ANV].*>	<&>
+^h?im([bcdfgmpt]h.)	$1		0	<[ANV].*>	<&>
+^h?im(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>	<&>
+^h?im(s[^aeiouáéíóúlnrh].)	$1		0	<[ANV].*>	<&>
+# ^in([^bcfgmp-]) BELOW
+^h?in-(n)		$1		0	<[AN].*>	<&>
+^h?in([bcfgmp]h..)	$1		0	<[AN].*>	<&>
+^leas-(s)		$1		0	<[AN].*>	<&>
+^leas([aeiouáéíóúd]..)	$1		0	<[AN].*>	<&>
+^leas([bcfgm]h..)	$1		0	<[AN].*>	<&>
+^mí-([aeiouáéíóú])	$1		0	<[ANV].*>	<&>
+^mí([aeiouáéíóú]..)	$1		2	<[ANV].*>	<&>  # míúsáid
+^mí([lnr]..)		$1		0	<[ANV].*>	<&>
+^mí([bcdfgmpt]h.)	$1		0	<[ANV].*>	<&>
+^mí(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>	<&>
+^mí(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>	<&>
+^neamh-?([aeiouáéíóú])	$1		0	<[ANV].*>	<&>  # neamh-aistear but neamhaithne
+^neamh([lnr])		$1		0	<[ANV].*>	<&>
+^neamh([bcdfgpt]h)	$1		0	<[ANV].*>	<&>
+^neamh-(mh)		$1		0	<[ANV].*>	<&>
+^neamh(sh[aeiouáéíóúlnr])	$1	0	<[ANV].*>	<&>
+^neamh(s[^aeiouáéíóúlnrh])	$1	0	<[ANV].*>	<&>
+^príomh([^bcdfgmpst-])	$1		0	<N.*>	<&>
+^príomh([bcdfgpt]h)	$1		0	<N.*>	<&>
+^príomh-(mh)		$1		0	<N.*>	<&>
+^príomh(sh[aeiouáéíóúlnr])	$1		0	<N.*>	<&>
+^príomh(s[^aeiouáéíóúlnrh])	$1		0	<N.*>	<&>
+^réamh([^bcdfgmpst-])	$1		0	<[ANV].*>	<&>
+^réamh([bcdfgpt]h)	$1		0	<[ANV].*>	<&>
+^réamh-(mh)		$1		0	<[ANV].*>	<&>
+^réamh(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>	<&>
+^réamh(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>	<&>
+^rí([lnr]..)		$1		0	<[ANV].*>	<&>
+^rí([bcdfgmpt]h.)	$1		0	<[ANV].*>	<&>
+^rí(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>	<&>
+^rí(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>	<&>
+^ró-([aeiouáéíóú]..)	$1		0	<[AN].*>	<&>
+^ró([aeiouáéíóú]..)	$1		2	<[AN].*>	<&>
+^ró([lnr]..)		$1		0	<[AN].*>	<&>
+^ró([bcdfgmpt]h.)	$1		0	<[AN].*>	<&>
+^ró(sh[aeiouáéíóúlnr])	$1		0	<[AN].*>	<&>
+^ró(s[^aeiouáéíóúlnrh])	$1		0	<[AN].*>	<&>
+^sain([^bcdfgmpst-])	$1		0	<[ANV].*>	<&>
+^sain([bcdfgmpt]h)	$1		0	<[ANV].*>	<&>
+^sain(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>	<&>
+^sain(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>	<&>
+^so-([aeiouáéíóú]..)	$1		0	<[AN].*>	<&>
+^so([lnr]..)		$1		0	<[AN].*>	<&>
+^so([bcdfgmpt]h.)	$1		0	<[AN].*>	<&>
+^so(sh[aeiouáéíóúlnr].)	$1		0	<[AN].*>	<&>
+^so(s[^aeiouáéíóúlnrh]..)	$1		0	<[AN].*>	<&>
+^tras([^bcfghmnps-])	$1		0	<[ANV].*>	<&>   # leave "^trasn" alone
+^tras([bcfgmp]h)	$1		0	<[ANV].*>	<&>
+^tras-(s)		$1		0	<[ANV].*>	<&>
+# next batch are non-words so really need to be here, but VERY infrequent
+^(cil|gig|h?is|meig|micr|pic|teil)ea-?([^aeiouáéíóú-]+[aouáóú])	$2	0	 <.+>	<&>
+^(cil|gig|h?is|meig|micr|pic|teil)i-?([^aeiouáéíóú-]+[eiéí])	$2	0	 <.+>	<&>
+^(h?ant|fót|nan|par|pol|h?ultr)a-?([^aeiouáéíóú-]+[aouáóú])		$2	0	 <.+>	<&>
+^(h?ant|fót|nan|par|pol|h?ultr)ai-?([^aeiouáéíóú-]+[eiéí])		$2	0	<.+>	<&>
+^(h?eachtar|freas|h?íos|neas|réalt|tob|h?uas|h?uath)-?([^-])		$2	0	 <.+>	<&>
+#############################################################################
+#  Spelling standardizations, but ones where I'm less sure that they 
+#  always apply, i.e. non-standard bits that are also commonly standard,
+#  e.g. -thaí$   which could be legit "torthaí" but also non-std "glórthaí"
+#  Because of this, safer to apply them after the prefix stripping, so
+#  e.g. "iarchoirpigh" comes out as MOIRF{choirpigh} instead of 
+#  CAIGHDEAN{choirpeach}, and "fíorghanntanas" comes out as 
+#  MOIRF{ghanntanas} instead of CAIGHDEAN{ghanntan}
+chaí$			cha		1	<[ANF].*>	<&>
+thaí$			tha		1	<.+>	<&>    # glórthaí, spéarthaí
+(.[aá])igh$		$1ch		1	<[NF].*>	<&>	# nb2 -aí genitives
+(..)i[dg]h$		$1each		1	<[NF].*>	<&>   #  same (e.g. stámhaillidh)
+(..)aidh$		$1a		1	<.+>	<&>    # bhfágaidh
+# past tenses
+(...)eas$		$1		1	<V p="y" t="caite">	<&>
+(..[^aeiouáéíóú])as$	$1		1	<V p="y" t="caite">	<&>
+#  rule for [^eéií] is above with other non-std prefixes, last resort here
+#  for words like cóimhéigean -> comhéigean
+^cóimh([eéií])			comh$1	1	<.+>	<&>
 #############################################################################
 #  derivational morphology
 ([ao])chai?s$		$1ch		0	<A pl="n" gnt="n".*>	<&>
