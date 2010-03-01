@@ -1,5 +1,5 @@
---- Makefile	2008-12-01 23:10:39.000000000 -0600
-+++ Makefile.ok	2008-12-01 23:10:35.000000000 -0600
+--- Makefile	2010-02-27 16:51:56.000000000 -0600
++++ Makefile.ok	2010-02-27 16:51:51.000000000 -0600
 @@ -74,6 +74,15 @@
  
  Makefile : $(GRAMDIR)/Makefile-xx.in configure
@@ -80,7 +80,7 @@
 +# use "groom" instead of this directly (since it requires ispell personal, etc.)
 +lexfromdb : FORCE
 +	Gin 12
-+	((cat $(ISPELLDIR)/ispell-gaeilge/personal $(ISPELLDIR)/ispell-gaeilge/uimhreacha $(ISPELLDIR)/ispell-gaeilge/apost; cat ${HOME}/.ispell_gaeilge | LC_ALL=POSIX ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | LC_ALL=POSIX aspell -dga -p${HOME}/.aspell.blank.pws list) | sed 's/$$/& 44/'; cat FOCAIL) | $(PERL) -p posmap.pl | LC_ALL=POSIX sort -u -k1,1 -k2,2n > lexicon-ga.txt
++	((cat $(ISPELLDIR)/ispell-gaeilge/personal $(ISPELLDIR)/ispell-gaeilge/uimhreacha $(ISPELLDIR)/ispell-gaeilge/apost; cat ${HOME}/.ispell_gaeilge | LC_ALL=POSIX ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | LC_ALL=POSIX aspell -dga -p${HOME}/.aspell.blank.pws list) | sed 's/$$/& 44/'; cat FOCAIL; cat $(ISPELLDIR)/ispell-gaeilge/dinneenok.txt | sed 's/$$/& 127/') | $(PERL) -p posmap.pl | LC_ALL=POSIX sort -u -k1,1 -k2,2n > lexicon-ga.txt
 +	$(MAKE) rebuildlex
 +	rm -f FOCAIL
 +
