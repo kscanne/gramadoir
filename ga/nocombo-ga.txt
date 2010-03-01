@@ -6,6 +6,7 @@ achan
 achas
 acht
 achta
+achtach
 achtaí
 adaí
 adaigh
@@ -16,6 +17,7 @@ aidh
 aig
 aige
 aighthe
+ail
 áil
 aill
 áilt
@@ -38,6 +40,7 @@ aithe
 ál
 ala
 áladh
+alaí
 álta
 amha
 amhail
@@ -188,6 +191,7 @@ highe
 hin
 hine
 hing
+hinn
 hinní
 hion
 hos
@@ -242,6 +246,7 @@ itear
 ití
 iúil
 lacht
+ladh
 laí
 laibh
 laigh
@@ -297,6 +302,7 @@ nidh
 níonn
 och
 ocht
+ochta
 ochtach
 óid
 óide
@@ -307,6 +313,7 @@ oire
 óir
 oireacht
 oireachta
+óirí
 ois
 omair
 ora
@@ -363,6 +370,7 @@ taoi
 tAr
 teacht
 téir
+teoir
 tha
 thá
 thacht
@@ -370,6 +378,7 @@ thachta
 thachtaí
 thaighe
 tháil
+thair
 thaoi
 the
 theoir

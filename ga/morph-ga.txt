@@ -218,7 +218,7 @@ i[dg]h(th?.)		i$1		1	<.+>	<&>  # marcaidhthe, masluighthe, beannuighth?ear
 ^móir			mór		1	<.+>	<&>
 ^naoimh			naomh		1	<.+>	<&>
 ^neamh-([^m].)		neamh$1		1	<[ANV].*>	<&>  # try stripping hyphen before stripping whole thing!
-^neimh		neamh		1	<.+>	<&>  # Di04
+^neimh(..)		neamh$1		1	<.+>	<&>  # Di04
 ^nea-mb			neamhbh		1	<.+>	<&>
 ^nea-			neamh-		1	<.+>	<&>    # strip hyphen later
 ^nea([cdfgpt]h)		neamh$1		1	<.+>	<&>
@@ -230,7 +230,7 @@ i[dg]h(th?.)		i$1		1	<.+>	<&>  # marcaidhthe, masluighthe, beannuighth?ear
 ^prímh			príomh		1	<.+>	<&>
 ^réidh			ré		1	<.+>	<&>
 ^réimh			réamh		1	<.+>	<&>
-^r[íi]o?gh		rí		1	<.+>	<&>   # righdhamhna, ríogh-choróin
+^r[íi]o?gh([^n])		rí$1		1	<.+>	<&>   # righdhamhna, ríogh-choróin, but not "righnigh", "righne", etc.
 ^ro-			ró-		1	<.+>	<&>
 ^rói-			ró-		1	<.+>	<&>
 ^roighn			righn		1	<.+>	<&>
@@ -316,6 +316,7 @@ eamhail$		iúil		1	<[ANF].*>	<&>    # dlightheamhail
 eamhla			iúla		1	<[ANF].*>	<&>
 ([^e])amhail$		$1úil		1	<[ANF].*>	<&>    # CO p.102, a2+barúil, etc.
 ([^e])amhla		$1úla		1	<[ANF].*>	<&>    # "-amhlachta?" too
+adht([aá])		at$1	1	<.+>	<&>	# iadhta, cruadhtán, iarradhtas, srl
 aíle$			aíola		1	<.+>	<&>    # *3ú* decl.
 aibh$			a		1	<.+>	<&>    # fearaibh, fiachaibh
 ([^a])ibh$		$1e		1	<.+>	<&>    # coinnibh, etc.
@@ -568,7 +569,7 @@ mist$			mis		1	<V.*>	<&>
 ^rí(sh[aeiouáéíóúlnr])	$1		0	<[ANV].*>	<&>
 ^rí(s[^aeiouáéíóúlnrh])	$1		0	<[ANV].*>	<&>
 ^ró-([aeiouáéíóú]..)	$1		0	<[AN].*>	<&>
-^ró([aeiouáéíóú]..)	$1		2	<[AN].*>	<&>
+^ró([aeouáéíóú]..)	$1		2	<[AN].*>	<&>  # not "i" since several actual words in Dinneen start with rói-
 ^ró([lnr]..)		$1		0	<[AN].*>	<&>
 ^ró([bcdfgmpt]h.)	$1		0	<[AN].*>	<&>
 ^ró(sh[aeiouáéíóúlnr])	$1		0	<[AN].*>	<&>
