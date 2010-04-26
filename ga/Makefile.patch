@@ -1,5 +1,5 @@
---- Makefile	2010-04-23 15:02:44.000000000 -0500
-+++ Makefile.ok	2010-04-23 15:00:29.000000000 -0500
+--- Makefile	2010-04-25 23:05:10.000000000 -0500
++++ Makefile.ok	2010-04-25 23:05:03.000000000 -0500
 @@ -74,6 +74,15 @@
  
  Makefile : $(GRAMDIR)/Makefile-xx.in configure
@@ -104,7 +104,7 @@
 +earrfromdb : FORCE
 +	sed 's/ [0-9]*//' lexicon-ga.txt eile-ga.bs | iconv -f iso-8859-1 -t utf8 > ./tempfocail
 +	LC_ALL=C sort -k1,1 $(EARR) > ./tempsrc
-+	sed 's/ .*//' ./tempsrc | keepif -n ./tempfocail | LC_ALL=C sort -u | LC_ALL=C join ./tempsrc - | LC_ALL=C sort -k1,1 | $(EGREP) . > ./earraidi-ga.bs
++	sed 's/ .*//' ./tempsrc | keepif -n ./tempfocail | LC_ALL=C sort -u | LC_ALL=C join ./tempsrc - | LC_ALL=C sort -k1,1 | $(EGREP) . | iconv -f utf8 -t iso-8859-1 > ./earraidi-ga.bs
 +	rm -f tempfocail tempsrc
 +
 +lexicon-$(TEANGA).xml : lexicon-$(TEANGA).txt
