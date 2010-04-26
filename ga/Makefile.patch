@@ -1,5 +1,5 @@
---- Makefile	2010-02-27 16:51:56.000000000 -0600
-+++ Makefile.ok	2010-02-27 16:51:51.000000000 -0600
+--- Makefile	2010-04-23 15:02:44.000000000 -0500
++++ Makefile.ok	2010-04-23 15:00:29.000000000 -0500
 @@ -74,6 +74,15 @@
  
  Makefile : $(GRAMDIR)/Makefile-xx.in configure
@@ -80,7 +80,7 @@
 +# use "groom" instead of this directly (since it requires ispell personal, etc.)
 +lexfromdb : FORCE
 +	Gin 12
-+	((cat $(ISPELLDIR)/ispell-gaeilge/personal $(ISPELLDIR)/ispell-gaeilge/uimhreacha $(ISPELLDIR)/ispell-gaeilge/apost; cat ${HOME}/.ispell_gaeilge | LC_ALL=POSIX ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | LC_ALL=POSIX aspell -dga -p${HOME}/.aspell.blank.pws list) | sed 's/$$/& 44/'; cat FOCAIL; cat $(ISPELLDIR)/ispell-gaeilge/dinneenok.txt | sed 's/$$/& 127/') | $(PERL) -p posmap.pl | LC_ALL=POSIX sort -u -k1,1 -k2,2n > lexicon-ga.txt
++	((cat $(ISPELLDIR)/ispell-gaeilge/personal $(ISPELLDIR)/ispell-gaeilge/uimhreacha $(ISPELLDIR)/ispell-gaeilge/apost | iconv -f utf8 -t iso-8859-1; cat ${HOME}/.ispell_gaeilge | LC_ALL=POSIX ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | LC_ALL=POSIX aspell -dga -p${HOME}/.aspell.blank.pws list) | sed 's/$$/& 44/'; cat FOCAIL; cat $(ISPELLDIR)/ispell-gaeilge/dinneenok.txt | sed 's/$$/& 127/' | iconv -f utf8 -t iso-8859-1) | $(PERL) -p posmap.pl | LC_ALL=POSIX sort -u -k1,1 -k2,2n > lexicon-ga.txt
 +	$(MAKE) rebuildlex
 +	rm -f FOCAIL
 +
@@ -94,17 +94,17 @@
 +
 +# use "groom" instead of this directly
 +eilefromdb : FORCE
-+	sed 's/ [0-9]*//' lexicon-ga.txt > ./tempfocail
-+	LC_ALL=C sed 's/ .*//' $(ATH) | keepif -n ./tempfocail latin-1 | LC_ALL=C sort -u | LC_ALL=C join $(ATH) - | LC_ALL=C sort -k1,1 | $(EGREP) '^' > ./eile-ga.bs
++	sed 's/ [0-9]*//' lexicon-ga.txt | iconv -f iso-8859-1 -t utf8 > ./tempfocail
++	sed 's/ .*//' $(ATH) | keepif -n ./tempfocail | LC_ALL=C sort -u | LC_ALL=C join $(ATH) - | LC_ALL=C sort -k1,1 | $(EGREP) '^' | iconv -f utf8 -t iso-8859-1 > ./eile-ga.bs
 +	rm -f tempfocail
 +
 +EARR = ${ISPELLDIR}/ispell-gaeilge/gaelu ${ISPELLDIR}/ispell-gaeilge/earraidi
 +
 +# use "groom" instead of this directly
 +earrfromdb : FORCE
-+	sed 's/ [0-9]*//' lexicon-ga.txt eile-ga.bs > ./tempfocail
++	sed 's/ [0-9]*//' lexicon-ga.txt eile-ga.bs | iconv -f iso-8859-1 -t utf8 > ./tempfocail
 +	LC_ALL=C sort -k1,1 $(EARR) > ./tempsrc
-+	LC_ALL=C sed 's/ .*//' ./tempsrc | keepif -n ./tempfocail latin-1 | LC_ALL=C sort -u | LC_ALL=C join ./tempsrc - | LC_ALL=C sort -k1,1 | $(EGREP) . > ./earraidi-ga.bs
++	sed 's/ .*//' ./tempsrc | keepif -n ./tempfocail | LC_ALL=C sort -u | LC_ALL=C join ./tempsrc - | LC_ALL=C sort -k1,1 | $(EGREP) . > ./earraidi-ga.bs
 +	rm -f tempfocail tempsrc
 +
 +lexicon-$(TEANGA).xml : lexicon-$(TEANGA).txt
