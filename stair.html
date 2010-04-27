@@ -4,7 +4,7 @@
 <head>
   <title>An Gramad&oacute;ir : History</title>
   <meta http-equiv="Content-Language" content="en">
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="description" content="An Gramad&oacute;ir version history">
   <meta name="keywords" content="grammar checking, Gaeilge, Irish language">
   <meta name="author" content="Kevin P. Scannell">
@@ -21,7 +21,7 @@ History</h1>
 
 <p>
 The data on this page refer to the Irish version of
-<i lang="ga">An Gramadóir</i> which was, through version 0.4, packaged
+<i lang="ga">An GramadÃ³ir</i> which was, through version 0.4, packaged
 together with the build scripts as "<i>gramadoir-0.x</i>".    
 Starting with 0.50, the Irish version is distributed
 independently as the Perl module <i>Lingua::GA::Gramadoir</i>.
@@ -72,8 +72,8 @@ less dependence on part-of-speech macros,
 and the restructuring of a few slow rules lead to another 5% 
 speed improvement despite the massively larger rule set
 <li>Added warnings for many "dangerous pairs" based on corpus analysis
-<li>Now correctly tokenizes numerals, including years, ordinals like "5ú",
-and plurals like "1950í".
+<li>Now correctly tokenizes numerals, including years, ordinals like "5Ãº",
+and plurals like "1950Ã­".
 <li>Many morphological rules added for treating pre-standard orthography;
 together with work on the replacement file, these allow An Gramad&oacute;ir
 to be used as a "normalizer" for indexing, information retrieval, etc.
@@ -105,11 +105,11 @@ change this
 <li>Added a complete morphological analyzer which greatly improves
 the error messages when words are not found in the lexicon.
 <li>The morphology engine also improves handling of late capitals
-so words like "d'Fhoras", "Sean-Nós" are passed over silently as correct now.
+so words like "d'Fhoras", "Sean-NÃ³s" are passed over silently as correct now.
 Also, since the lowered version of a word like "hAire" is not automatically
 searched (since the capitalized version is in the lexicon),
 this gets the correct, unambiguous masculine POS tag.
-Or in "bPáirtí Glas", the first word is now recognized unambiguously
+Or in "bPÃ¡irtÃ­ Glas", the first word is now recognized unambiguously
 as a noun which then has the added benefit of allowing "Glas" to be correctly
 recognized as an adjective.
 <li>Line numbers are now given where the error occurs
@@ -183,7 +183,7 @@ Irish and German included)
 </p>
 
 <hr>
-<em>© Cóipcheart/Copyright 2003-2007 Kevin P. Scannell</em><br><br>
+<em>Â© CÃ³ipcheart/Copyright 2003-2010 Kevin P. Scannell</em><br><br>
 </ul>
 </div>
 <div class="navigation">
