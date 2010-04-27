@@ -1,5 +1,5 @@
---- Makefile	2010-04-26 00:27:00.000000000 -0500
-+++ Makefile.ok	2010-04-26 00:26:55.000000000 -0500
+--- Makefile	2010-04-26 22:54:13.000000000 -0500
++++ Makefile.ok	2010-04-26 22:46:09.000000000 -0500
 @@ -74,6 +74,15 @@
  
  Makefile : $(GRAMDIR)/Makefile-xx.in configure
@@ -69,7 +69,7 @@
 +
 +# use installed version for this
 +triail.html : triail
-+	/usr/local/bin/gram-ga.pl --iomlan --aschod=iso-8859-1 --html --aspell triail > $@
++	/usr/local/bin/gram-ga.pl --iomlan --html --aspell triail > $@
 +
 +# for cruinneog.com Ceart site
 +sampler.html : triail
