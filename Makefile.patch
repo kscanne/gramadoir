@@ -1,5 +1,5 @@
---- Makefile	2010-04-26 23:19:17.000000000 -0500
-+++ Makefile.ok	2010-04-26 23:18:33.000000000 -0500
+--- Makefile	2010-04-26 23:20:23.000000000 -0500
++++ Makefile.ok	2010-04-26 23:20:13.000000000 -0500
 @@ -60,8 +60,16 @@
  
  Makefile : Makefile.in config.status
@@ -17,7 +17,7 @@
  config.status: configure
  	./config.status --recheck
  
-@@ -81,4 +89,198 @@
+@@ -81,4 +89,199 @@
  semiclean :
  	rm -f y.tab.* $(LEX_OUTPUT_ROOT).* aonchiall.y rialacha.y
  
@@ -214,5 +214,6 @@
 +	cat CLMANIFEST | xargs cvs2cl
 +	utf $@
 +	chmod 644 $@
++	rm -f ChangeLog.bak
 +
  FORCE :
