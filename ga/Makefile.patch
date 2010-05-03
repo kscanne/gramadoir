@@ -1,5 +1,5 @@
---- Makefile	2010-04-26 22:54:13.000000000 -0500
-+++ Makefile.ok	2010-04-26 22:46:09.000000000 -0500
+--- Makefile	2010-05-03 00:23:56.000000000 -0500
++++ Makefile.ok	2010-05-03 00:08:44.000000000 -0500
 @@ -74,6 +74,15 @@
  
  Makefile : $(GRAMDIR)/Makefile-xx.in configure
@@ -110,7 +110,7 @@
 +lexicon-$(TEANGA).xml : lexicon-$(TEANGA).txt
 +	cat lexicon-$(TEANGA).txt | sed 's/ .*//' | LC_ALL=C sort -u | alltags > $@
 +
-+BIGDIR = /home/spas
++BIGDIR = ${HOME}/gaeilge/gramadoir/tastail
 +
 +big.xml-update : FORCE
 +	$(MAKE) perl
@@ -119,7 +119,7 @@
 +	then \
 +		mv $(BIGDIR)/big.new.xml $(BIGDIR)/big.xml; \
 +	else \
-+		benchcorp | $(PERL) -I $(PERLD)/lib $(PERLD)/scripts/$(SCRIPTNAME) --xml --iomlan --ionchod=utf8 --aschod=iso-8859-1 --comheadan=ga | sed 's/<E/\n<E/g; s/<\/E>/&\n/g' | sed '/^<E/!{s/ </\n</g}' | $(EGREP) '.' > $(BIGDIR)/big.xml; \
++		benchcorp | $(PERL) -I $(PERLD)/lib $(PERLD)/scripts/$(SCRIPTNAME) --xml --iomlan --ionchod=utf8 --comheadan=ga | sed 's/<E/\n<E/g; s/<\/E>/&\n/g' | sed '/^<E/!{s/ </\n</g}' | $(EGREP) '.' > $(BIGDIR)/big.xml; \
 +	fi
 +	if [ -e $(BIGDIR)/bigerr.new.xml ]; \
 +	then \
@@ -130,7 +130,7 @@
 +
 +bigtest : FORCE
 +	@$(MAKE) perl
-+	@benchcorp | $(PERL) -I $(PERLD)/lib $(PERLD)/scripts/$(SCRIPTNAME) --xml --iomlan --aschod=iso-8859-1 --comheadan=ga | sed 's/<E/\n<E/g; s/<\/E>/&\n/g' | sed '/^<E/!{s/ </\n</g}' | $(EGREP) '.' | tee $(BIGDIR)/big.new.xml | $(EGREP) '^<E' | LC_ALL=C sort > $(BIGDIR)/bigerr.new.xml
++	@benchcorp | $(PERL) -I $(PERLD)/lib $(PERLD)/scripts/$(SCRIPTNAME) --xml --iomlan --ionchod=utf8 --comheadan=ga | sed 's/<E/\n<E/g; s/<\/E>/&\n/g' | sed '/^<E/!{s/ </\n</g}' | $(EGREP) '.' | tee $(BIGDIR)/big.new.xml | $(EGREP) '^<E' | LC_ALL=C sort > $(BIGDIR)/bigerr.new.xml
 +	@if diff -u $(BIGDIR)/big.xml $(BIGDIR)/big.new.xml > $(BIGDIR)/diff1.txt; then echo "XML unchanged."; rm -f $(BIGDIR)/big.new.xml $(BIGDIR)/diff1.txt; else echo "Differences in XML."; fi
 +	@if diff -u $(BIGDIR)/bigerr.xml $(BIGDIR)/bigerr.new.xml > $(BIGDIR)/diff2.txt; then echo "Errors unchanged."; rm -f $(BIGDIR)/bigerr.new.xml $(BIGDIR)/diff2.txt; else echo "Differences in errors."; fi
 +
