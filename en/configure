@@ -22,7 +22,7 @@ UPPERS="A-Z -¯À-Þ"
 LOWERS="a-z°-¿ßà-ÿ"
 echo "configure: creating Makefile"
 rm -f Makefile
-sed "
+LC_ALL=C sed "
 s@!ECHO!@${ECHO}@
 s@!EGREP!@${EGREP}@
 s@!LN_S!@${LN_S}@
