@@ -227,9 +227,10 @@ sub get_sentences
 	croak gettext('conversion from %s is not supported', 
 			$self->{'input_encoding'}) if $@;
 	my $answer = get_sentences_real($text);
-	foreach my $s (@$answer) {
-		$s = decode('@NATIVE@', $s);
-	}
+	map{$_ = decode('@NATIVE@', $_)} @$answer;
+#	foreach my $s (@$answer) {
+#		$s = decode('@NATIVE@', $s);
+#	}
 	return $answer;
 }
 
@@ -984,7 +985,7 @@ sub grammatical_errors
 				my $offset = $-[1] - 1;
 				my $errortext = $1;
 				my $errlen = length($errortext);
-				$thiserror =~ s!^<E (msg=".+")>$!<error fromy="$fromy" fromx="$fromx" toy="$toy" tox="$toans" ruleId="Lingua::@TEANGA@::Gramadoir" $1 context="$plain" contextoffset="$offset" errorlength="$errlen"/>!;
+				$thiserror =~ s!^<E (msg="(.+)")>$!<error fromy="$fromy" fromx="$fromx" toy="$toy" tox="$toans" ruleId="Lingua::@TEANGA@::Gramadoir/$2" $1 context="$plain" contextoffset="$offset" errorlength="$errlen"/>!;
 				$thiserror = decode("@NATIVE@", $thiserror);
 				$thiserror =~ s! msg="([^"]+)"!" msg=\"".$self->localize_me($1)."\""!e;
 				push @$errors, $thiserror;
