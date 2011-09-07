@@ -21,7 +21,7 @@ you should tell about the version of `gettext' which is used.
 Quick configuration advice
 ==========================
 
-   Unlike many official GNU packages, An Gramadóir does not include a
+   Unlike many official GNU packages, An GramadÃ³ir does not include a
 gettext implementation in the tarball.  This is because the PO files are
 used primarily to generate the modules used by Perl's Locale::Maketext
 and not for localization of the output of the build scripts per se.
