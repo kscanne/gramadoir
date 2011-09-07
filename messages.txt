@@ -14,6 +14,7 @@ ONEART		'No need for the first definite article'
 NOGENITIVE	'Unnecessary use of the genitive case'
 GENITIVE	'The genitive case is required here'
 PRESENT		'You should use the present tense here'
+CONDITIONAL		'You should use the conditional here'
 NOSUBJ		'It seems unlikely that you intended to use the subjunctive here'
 # TRANSLATORS: You can use whatever kind of quotes you prefer for your locale
 # around the variable \\1.  You should keep the double backslash before the 1,
