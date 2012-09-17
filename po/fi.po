@@ -1,0 +1,488 @@
+# Finnish messages for gramadoir.
+# Copyright © 2010 Free Software Foundation, Inc.
+# Copyright © 2008 Kevin P. Scannell
+# This file is distributed under the same license as the gramadoir package.
+# Jorma Karvonen <karvonen.jorma@gmail.com>, 2010, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramadoir 0.7\n"
+"Report-Msgid-Bugs-To: <kscanne@gmail.com>\n"
+"POT-Creation-Date: 2008-08-17 12:05-0500\n"
+"PO-Revision-Date: 2012-09-15 21:34+0300\n"
+"Last-Translator: Jorma Karvonen <karvonen.jorma@gmail.com>\n"
+"Language-Team: Finnish <translation-team-fi@lists.sourceforge.net>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Lokalize 1.4\n"
+
+#: ponc.in.y:63
+#, c-format
+msgid "There was %d error.\n"
+msgid_plural "There were %d errors.\n"
+msgstr[0] "Virheitä oli %d.\n"
+msgstr[1] "Virheitä oli %d.\n"
+
+#: ponc.in.y:69
+#, c-format
+msgid "Successfully parsed %d rule.\n"
+msgid_plural "Successfully parsed %d rules.\n"
+msgstr[0] "Jäsennetty %d sääntö onnistuneesti.\n"
+msgstr[1] "Jäsennetty %d sääntöä onnistuneesti.\n"
+
+#: ponc.in.y:79
+#, c-format
+msgid "Line %d: %s\n"
+msgstr "Rivi %d: %s\n"
+
+#: gram.pl:165 gramdev.pl:82
+#, perl-format
+msgid "unrecognized option %s"
+msgstr "tunnistamaton valitsin %s"
+
+#: gram.pl:168
+#, perl-format
+msgid "option %s requires an argument"
+msgstr "valitsin %s vaatii argumentin"
+
+#: gram.pl:171 gramdev.pl:85
+#, perl-format
+msgid "option %s does not allow an argument"
+msgstr "valitsin %s ei salli argumenttia"
+
+#: gram.pl:174 gramdev.pl:88
+msgid "error parsing command-line options"
+msgstr "virhe jäsennettäessä komentorivivalitsimia"
+
+#: gram.pl:177
+#, perl-format
+msgid "Unable to set output color to %s"
+msgstr "Tulostevärin %s asettaminen epäonnistui"
+
+#: gram.pl:180
+#, perl-format
+msgid "Language %s is not supported."
+msgstr "Kieltä %s ei tueta."
+
+#. TRANSLATORS: Please leave untranslated, but add an acute accent to the
+#. "o" in "Gramadoir" if available in your character set and encoding.
+#. If you must translate, this is the Irish for (literally) "The Grammarian"
+#: gram.pl:185 gram.pl:248 gramdev.pl:93 gramdev.pl:118 Gramadoir.pm.in:119
+#: Gramadoir.pm.in:176 Gramadoir.pm.in:291 Gramadoir.pm.in:294
+#: Gramadoir.pm.in:495 Gramadoir.pm.in:803
+msgid "An Gramadoir"
+msgstr "Gramadóir"
+
+#: gram.pl:186 gramdev.pl:94
+#, perl-format
+msgid "Try %s for more information."
+msgstr "Lisätietoja komennolla %s."
+
+#: gram.pl:251 gramdev.pl:151
+#, perl-format
+msgid "version %s"
+msgstr "versio %s"
+
+#: gram.pl:253 gramdev.pl:153
+msgid "This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law."
+msgstr "Tämä on ilmainen ohjelmisto; katso lähdekoodista kopiointiehdot.  Ohjelmalle EI\\nole takuuta; ei edes KAUPALLISUUDELLE tai SOPIVUUDELLE TIETTYYN TARKOITUKSEEN,\\nsiinä laajudessa minkä laki sallii."
+
+#: gram.pl:267
+#, perl-format
+msgid "Usage: %s [OPTIONS] [FILES]"
+msgstr "Käyttö: %s [VALITSIMET] [TIEDOSTOT]"
+
+#: gram.pl:270
+msgid "Options for end-users:"
+msgstr "Loppukäyttäjän valitsimet:"
+
+#: gram.pl:274
+msgid "    --iomlan       report all errors (i.e. do not use ~/.neamhshuim)"
+msgstr "    --iomlan       ilmoita kaikki virheet (ts. älä käytä tiedostoa ~/.neamhshuim)"
+
+#: gram.pl:277
+msgid "    --ionchod=ENC  specify the character encoding of the text to be checked"
+msgstr "    --ionchod=ENC  määritä tarkistettavan tekstin merkkikoodaus"
+
+#: gram.pl:280
+msgid "    --aschod=ENC   specify the character encoding for output"
+msgstr "    --aschod=ENC   määritä tulosteen merkkikoodaus"
+
+#: gram.pl:283
+msgid "    --comheadan=xx choose the language for error messages"
+msgstr "    --comheadan=xx valitse virheilmoitusten kieli"
+
+#: gram.pl:286
+msgid "    --dath=COLOR   specify the color to use for highlighting errors"
+msgstr "    --dath=VÄRI      määritä väri virheiden korostamiseen"
+
+#: gram.pl:289
+msgid "    --litriu       write misspelled words to standard output"
+msgstr "    --litriu       kirjoita väärinkirjoitetut sanat vakiotulosteeseen"
+
+#: gram.pl:292
+msgid "    --aspell       suggest corrections for misspellings"
+msgstr "    --aspell       suosittele korjauksia väärinkirjoituksiin"
+
+#: gram.pl:295
+msgid "    --aschur=FILE  write output to FILE"
+msgstr "    --aschur=FILE  kirjoita tuloste tiedostoon FILE"
+
+#: gram.pl:298 gramdev.pl:133
+msgid "    --help         display this help and exit"
+msgstr "    --help         näytä  tämä opaste ja poistu"
+
+#: gram.pl:301 gramdev.pl:136
+msgid "    --version      output version information and exit"
+msgstr "    --version      tulosta versiotiedot ja poistu"
+
+#: gram.pl:304
+msgid "Options for developers:"
+msgstr "Valitsimet kehittäjille:"
+
+#: gram.pl:306
+msgid "    --api          output a simple XML format for use with other applications"
+msgstr "    --api          tulosta yksinkertainen XML-muoto muiden sovellusten käyttöön"
+
+#: gram.pl:308
+msgid "    --html         produce HTML output for viewing in a web browser"
+msgstr "    --html         tuota HTML-tuloste webbiselaimelle"
+
+#: gram.pl:314
+msgid "    --no-unigram   do not resolve ambiguous parts of speech by frequency"
+msgstr "    --no-unigram   älä ratkaise monimerkityksellisiä puheen osia esiintymistaajuuden avulla"
+
+#: gram.pl:320
+msgid "    --xml          write tagged XML stream to standard output, for debugging"
+msgstr "    --xml          kirjoita tunnisteilla varustettu XML-vuo vakiotulosteeseen vianjäljitystarkoituksiin"
+
+#: gram.pl:323
+msgid "If no file is given, read from standard input."
+msgstr "Luetaan vakiosyötteestä jos tiedostoa ei ole annettu."
+
+#: gram.pl:326 gramdev.pl:142
+#, perl-format
+msgid "Send bug reports to <%s>."
+msgstr ""
+"Ilmoita virheistä (englanniksi) osoitteeseen <%s>.\n"
+"Ilmoita käännösvirheistä osoitteeseen <translation-team-fi@lists.sourceforge.net>."
+
+#: gram.pl:348
+msgid "There is no such file."
+msgstr "Tiedostoa ei löydy."
+
+#: gram.pl:352
+msgid "Is a directory"
+msgstr "On hakemisto"
+
+#: gram.pl:360
+msgid "Permission denied"
+msgstr "Ei oikeuksia"
+
+#: gram.pl:370
+#, perl-format
+msgid "%s: warning: problem closing %s\n"
+msgstr "%s: varoitus: pulma suljettaessa %s\n"
+
+#: gram.pl:389
+#, perl-format
+msgid "Currently checking %s"
+msgstr "Parhaillaan tarkistetaan %s"
+
+#: gramdev.pl:125
+msgid "    --ilchiall     report unresolved ambiguities, sorted by frequency"
+msgstr "    --ilchiall     ilmoita ratkaisemattomista monimerkityksellisyyksistä esiintymistaajuuden mukaan lajiteltuna"
+
+#: gramdev.pl:128
+msgid "    --minic        output all tags, sorted by frequency (for unigram-xx.txt)"
+msgstr "    --minic        tulosta kaikki tunnisteet, lajiteltu taajuuden mukaan (tiedostoa unigram-xx.txt varten)"
+
+#: gramdev.pl:130
+msgid "    --brill        find disambiguation rules via Brill's unsupervised algorithm"
+msgstr "    --brill        löydä yksimerkitykselliset säännöt Brillin ohjaamattoman algoritmin kautta"
+
+#: Gramadoir.pm.in:118
+#, perl-format
+msgid "%s: problem reading the database\n"
+msgstr "%s: pulma luettaessa tietokantaa\n"
+
+#: Gramadoir.pm.in:175
+#, perl-format
+msgid "%s: `%s' corrupted at %s\n"
+msgstr "%s: `%s' rikkoutunut osoitteessa %s\n"
+
+#. TRANSLATORS: "conversion" here means conversion between character encodings
+#: Gramadoir.pm.in:227 Gramadoir.pm.in:545 Gramadoir.pm.in:662
+#: Gramadoir.pm.in:697 Gramadoir.pm.in:720 Gramadoir.pm.in:765
+#: Gramadoir.pm.in:913
+#, perl-format
+msgid "conversion from %s is not supported"
+msgstr "muunnosta kohteesta %s ei tueta"
+
+#: Gramadoir.pm.in:291 Gramadoir.pm.in:494
+#, perl-format
+msgid "%s: illegal grammatical code\n"
+msgstr "%s: virheellinen kieliopillinen koodi\n"
+
+#: Gramadoir.pm.in:294
+#, perl-format
+msgid "%s: no grammar codes: %s\n"
+msgstr "%s: ei kielioppikoodeja: %s\n"
+
+#: Gramadoir.pm.in:802
+#, perl-format
+msgid "%s: unrecognized error macro: %s\n"
+msgstr "%s: tunnistamaton virhemakro: %s\n"
+
+#. TRANSLATORS: The remaining strings are errors reported by the grammar
+#. checking engine.  The first batch consists of messages intended to be
+#. reused across a wide range of languages.
+#: messages.txt:4
+msgid "Valid word but extremely rare in actual usage. Is this the word you want?"
+msgstr "Kelvollinen sana, mutta äärimmäisen harvinainen todellisessa käytössä. Onko tämä sana, jota haluat?"
+
+#: messages.txt:5
+msgid "Repeated word"
+msgstr "Toistettu sana"
+
+#: messages.txt:6
+msgid "Unusual combination of words"
+msgstr "Epätavallinen sanojen yhdistelmä"
+
+#: messages.txt:7
+msgid "The plural form is required here"
+msgstr "Tässä vaaditaan monikkomuotoa"
+
+#: messages.txt:8
+msgid "The singular form is required here"
+msgstr "Tässä vaaditaan yksikkömuotoa"
+
+#: messages.txt:9
+msgid "Plural adjective required"
+msgstr "Vaaditaan monikollista adjektiivia"
+
+#: messages.txt:10
+msgid "Comparative adjective required"
+msgstr "Vaaditaan vertailumuotoadjektiivia"
+
+#: messages.txt:11
+msgid "Definite article required"
+msgstr "Vaaditaan määrättyä artikkelia"
+
+#: messages.txt:12
+msgid "Unnecessary use of the definite article"
+msgstr "Määrätyn artikkelin tarpeeton käyttö"
+
+#: messages.txt:13
+msgid "No need for the first definite article"
+msgstr "Ensimmäiselle määrätylle artikkelille ei ole tarvetta"
+
+#: messages.txt:14
+msgid "Unnecessary use of the genitive case"
+msgstr "Genetiivimuodon tarpeeton käyttö"
+
+#: messages.txt:15
+msgid "The genitive case is required here"
+msgstr "Tässä vaaditaan genetiivimuotoa"
+
+#: messages.txt:16
+msgid "You should use the present tense here"
+msgstr "Tässä pitäisi käyttää preesensiä"
+
+#: messages.txt:17
+msgid "It seems unlikely that you intended to use the subjunctive here"
+msgstr "Ei tunnu todennäköiseltä, että tarkoituksesi oli käyttää tässä subjunktiivia"
+
+#. TRANSLATORS: You can use whatever kind of quotes you prefer for your locale
+#. around the variable \\1.  You should keep the double backslash before the 1,
+#. but there is no need to escape the quotes the way they are in the msgid.
+#: messages.txt:21
+msgid "Usually used in the set phrase \\/\\1\\/"
+msgstr "Käytetään tavallisesti joukko-opin lauseessa \\/\\1\\/"
+
+#: messages.txt:22
+msgid "You should use \\/\\1\\/ here instead"
+msgstr "Tässä pitäisi sen sijaan käyttää \\/\\1\\/"
+
+#: messages.txt:23
+msgid "Non-standard form of \\/\\1\\/"
+msgstr "Epästandardi \\/\\1\\/-muoto"
+
+#: messages.txt:24
+msgid "Derived from a non-standard form of \\/\\1\\/"
+msgstr "Periytyy epästandardista \\/\\1\\/-muodosta"
+
+#: messages.txt:25
+msgid "Derived incorrectly from the root \\/\\1\\/"
+msgstr "Periytyy virheellisestä sanavartalosta \\/\\1\\/"
+
+#: messages.txt:26
+msgid "Unknown word"
+msgstr "Tuntematon sana"
+
+#. TRANSLATORS: \\1 is substituted with one or more suggested replacements
+#: messages.txt:28
+msgid "Unknown word: \\/\\1\\/?"
+msgstr "Tuntematon sana: \\/\\1\\/?"
+
+#: messages.txt:29
+msgid "Valid word but \\/\\1\\/ is more common"
+msgstr "Kelvollinen sana, mutta \\/\\1\\/ on tavallisempi"
+
+#: messages.txt:30
+msgid "Not in database but apparently formed from the root \\/\\1\\/"
+msgstr "Ei tietokannassa, mutta ilmeisesti muodostettu sanavartalosta \\/\\1\\/"
+
+#: messages.txt:31
+msgid "The word \\/\\1\\/ is not needed"
+msgstr "Sanaa \\/\\1\\/ ei tarvita"
+
+#: messages.txt:32
+msgid "Do you mean \\/\\1\\/?"
+msgstr "Tarkoitatko \\/\\1\\/?"
+
+#: messages.txt:33
+msgid "Derived form of common misspelling \\/\\1\\/?"
+msgstr "Periytyykö yleisestä väärinkirjoitetusta \\/\\1\\/-muodosta?"
+
+#: messages.txt:34
+msgid "Not in database but may be a compound \\/\\1\\/?"
+msgstr "Ei tietokannassa, mutta saattaa olla yhdyssana \\/\\1\\/?"
+
+#: messages.txt:35
+msgid "Not in database but may be a non-standard compound \\/\\1\\/?"
+msgstr "Ei tietokannassa, mutta saattaa olla epästandardi yhdyssana \\/\\1\\/?"
+
+#: messages.txt:36
+msgid "Possibly a foreign word (the sequence \\/\\1\\/ is highly improbable)"
+msgstr "Mahdollisesti vierassana (sekvenssi \\/\\1\\/ on hyvin epätodennäköinen)"
+
+#: messages.txt:37
+msgid "Gender disagreement"
+msgstr "Sukuristiriita"
+
+#: messages.txt:38
+msgid "Number disagreement"
+msgstr "Lukuristiriita"
+
+#: messages.txt:39
+msgid "Case disagreement"
+msgstr "Kirjainkokoristiriita"
+
+#. TRANSLATORS: Rules specific to the Irish language (ga)
+#: messages.txt:41
+msgid "Prefix \\/h\\/ missing"
+msgstr "Etuliite \\/h\\/ puuttuu"
+
+#: messages.txt:42
+msgid "Prefix \\/t\\/ missing"
+msgstr "Etuliite \\/t\\/ puuttuu"
+
+#: messages.txt:43
+msgid "Prefix \\/d'\\/ missing"
+msgstr "Etuliite \\/d'\\/ puuttuu"
+
+#: messages.txt:44
+msgid "Unnecessary prefix \\/h\\/"
+msgstr "Tarpeeton etuliite \\/h\\/"
+
+#: messages.txt:45
+msgid "Unnecessary prefix \\/t\\/"
+msgstr "Tarpeeton etuliite \\/t\\/"
+
+#: messages.txt:46
+msgid "Unnecessary prefix \\/d'\\/"
+msgstr "Tarpeeton etuliite \\/d'\\/"
+
+#: messages.txt:47
+msgid "Unnecessary prefix \\/b'\\/"
+msgstr "Tarpeeton etuliite \\/b'\\/"
+
+#. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
+#: messages.txt:49
+msgid "Unnecessary initial mutation"
+msgstr "Turha alustava mutaatio"
+
+#: messages.txt:50
+msgid "Initial mutation missing"
+msgstr "Alustava mutaatio puuttuu"
+
+#. TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
+#. It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
+#: messages.txt:53
+msgid "Unnecessary lenition"
+msgstr "Turha liudentuminen"
+
+#: messages.txt:54
+msgid "The second lenition is unnecessary"
+msgstr "Toinen liudentuminen on turha"
+
+#: messages.txt:55
+msgid "Often the preposition \\/\\1\\/ causes lenition, but this case is unclear"
+msgstr "Usein prepositio \\/\\1\\/ aiheuttaa liudentumisen, mutta tämä tapaus on epäselvä"
+
+#: messages.txt:56
+msgid "Lenition missing"
+msgstr "Liudentuminen puuttuu"
+
+#  Elisio tarkoittaa peräkkäisten sanojen ääntämistä siten, että sanan lopun vokaali jää pois vokaalialkuisen sanan edeltä ja sanat äännetään saumattomasti yhteen.
+#. TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
+#. initial consonants in Irish.  It is indicated in writing by the addition
+#. of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
+#: messages.txt:60
+msgid "Unnecessary eclipsis"
+msgstr "Tarpeeton elisio"
+
+#: messages.txt:61
+msgid "Eclipsis missing"
+msgstr "Mykkä tavu puuttuu"
+
+#: messages.txt:62
+msgid "The dative is used only in special phrases"
+msgstr "Datiivia käytetään vain erikoislauseissa"
+
+#: messages.txt:63
+msgid "The dependent form of the verb is required here"
+msgstr "Tässä vaaditaan verbin säännöllinen muoto"
+
+#: messages.txt:64
+msgid "Unnecessary use of the dependent form of the verb"
+msgstr "Säännöllisen verbin tarpeeton käyttö "
+
+#: messages.txt:65
+msgid "The synthetic (combined) form, ending in \\/\\1\\/, is often used here"
+msgstr "Synteettinen (yhdistetty) muoto, lopussa \\/\\1\\/, käytetään usein täällä"
+
+#. TRANSLATORS: Rules specific to the Cornish language (kw)
+#: messages.txt:67
+msgid "Second (soft) mutation missing"
+msgstr "Toinen (pehmeä) mutaatio puuttuu"
+
+#: messages.txt:68
+msgid "Third (breathed) mutation missing"
+msgstr "Kolmas (hengähdetty) mutaatio puuttuu"
+
+#: messages.txt:69
+msgid "Fourth (hard) mutation missing"
+msgstr "Neljäs (kova) mutaatio puuttuu"
+
+#: messages.txt:70
+msgid "Fifth (mixed) mutation missing"
+msgstr "Viides (sekoitettu) mutaatio puuttuu"
+
+#: messages.txt:71
+msgid "Fifth (mixed) mutation after 'th missing"
+msgstr "Viides (sekoitettu) mutaatio 'th:n jälkeen puuttuu"
+
+#. TRANSLATORS: Rules specific to the Welsh language (cy)
+#: messages.txt:73
+msgid "Aspirate mutation missing"
+msgstr "aspiraattamutaatio puuttuu"
+
+#. TRANSLATORS: Rules specific to the Igbo language (ig)
+#: messages.txt:75
+msgid "This word violates the rules of Igbo vowel harmony"
+msgstr "Tämä sana rikkoo igbo-kielen vokaaliharmoniasääntöjä"
