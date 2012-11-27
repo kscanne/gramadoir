@@ -29,7 +29,6 @@ $ENV{PATH}="/bin:/usr/bin";
 delete @ENV{ 'IFS', 'CDPATH', 'ENV', 'BASH_ENV' };
 
 my $q = new CGI;
-# /^(['áéíóúÁÉÍÓÚ\w\s,.!?-]+)$/ is better
 my $pure_input = $q->param( "foirm_ionchur" );
 my $ionchur;
 my $pure_lang = $q->param( "teanga" );
@@ -67,9 +66,11 @@ print $q->header(-type=>"text/html",
 print "<p>\n<a href=\"http://borel.slu.edu/gramadoir/\">$clar</a>, $vstring<br>\n$copyright\n<i>$gpl</i></p><hr>\n";
 
 if (defined($ionchur)) {
+	$ionchur =~ s/\x{e2}\x{80}\x{99}/'/g;  # unicode single quote to '
 	my $gr = new Lingua::GA::Gramadoir(
 		fix_spelling => 1,
 		interface_language => $teanga,
+		input_encoding => 'UTF-8',
 	);
 
 	foreach (@{$gr->grammatical_errors($ionchur)}) {
