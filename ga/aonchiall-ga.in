@@ -644,6 +644,9 @@ a <B><Z>ADHWORD</Z>ECLIPSED</B>:<N pl="n" gnt="n" gnd="m">
 a <B><Z>ADHWORD</Z>UNLENITED</B>:<V p="n" t="caite">
 # doesn't matter
 <B><Z>TEMPORAL</Z>ANYTHING</B>:<R>
+# no longer a PREPPOSS since it has a <Y> tag too
+<B>[Ll]ena</B> <V>ANYTHING</V>:<S>
+<B>[Ll]ena</B>:<D>
 <B><Z>PREPPOSS</Z>NOTDO</B> <V>ANYTHING</V>:<S>
 <B><Z>PREPPOSS</Z>NOTDO</B>:<D>
 <B><Z>MASCPL</Z>ANYTHING</B>:<N pl="y" gnt="n" gnd="m">

@@ -70,7 +70,7 @@ s/ECLIPSINGPOSS/(?:(?:[Ff]aoin|[Ii]n|[Ll]en|[”Û]n|[Tt]rÌn)?(?:[Aa]|·r)|[Dd]?[¡·]
 # of tagging problems with verbal adj. vs. gs of vn.:
 #  "easpa maoinithe" is OK (no lenition of gs after share/part/want words),
 #  but would give error if tagged as an plain adj.
-s/UNBOUNDADJ/(?:[^<]+th?[ae]|cÈad|cibÈ|cos˙il|deich|dh·|[Gg]ach|seacht|[Ss]eo|[Ss]in|trÌ|˙d|uile)/g;
+s/UNBOUNDADJ/(?:[^<]+th?[ae]|cÈad|cibÈ|cos˙il|deich|dh·|[Gg]ach|seacht|[Ss]eo|[Ss]in|trÌ|˙d|uile|[^<]+ [^<]+)/g;
 s/UNPPLIKE/(?:[^<]+(?:[^ae]|[^th][ae]|[^t]h[ae]))/g;
 s/FAKEPP/(?:[^<]*aimseartha|[Cc]h?athartha|[Cc]h?oitianta|[Gg]h?al·nta|[Gg]h?inear·lta|[Ll]og·nta|[Mm]h?Ìleata|[Nn]·d˙rtha|(?:[Ii]dir)?[Nn]·isi˙nta|[Ss]Ûisialta|[Ss]peisialta|[Tt]h?raidisi˙nta)/g;
 s/UNLENITABLE/(?:[^BbCcDdFfGgMmPpTt]|[Ss][^lnraeiou·ÈÌÛ˙])[^<]*/g;
@@ -114,9 +114,11 @@ s/MUTATEDDST/(?:n[Dd]|d[Tt]|[DdSsTt][Hh])[^<]+/g;
 s/LENITEDDFST/[DdFfSsTt][Hh][^<]+/g;
 s/LENITEDDST/[DdSsTt][Hh][^<]+/g;
 s/LENITED/(?:[CcDdFfGgMmPpSsTt][Hh]|[Bb]h[^fF])[^<]+/g;
-s/SLENDERFINALCONSONANT/[^<]*[eÈiÌ][^aeiou·ÈÌÛ˙<]+/g;
-s/BROADFINALCONSONANT/[^<]*[a·oÛu˙][^aeiou·ÈÌÛ˙<]+/g;
-s/FINALVOWEL/[^<]*[^bcdfghjlmnprstvxz<]+/g;
+# don't allow spaces; "ribÌ rÛibÈis" is tagged as plural noun!
+s/SLENDERFINALCONSONANT/[^< ]*[eÈiÌ][^aeiou·ÈÌÛ˙<]+/g;
+s/BROADFINALCONSONANT/[^< ]*[a·oÛu˙][^aeiou·ÈÌÛ˙<]+/g;
+# only used in one rule, for leniting "dÈag"; no spaces!
+s/FINALVOWEL/[^< ]*[^bcdfghjlmnprstvxz <]+/g;
 s/FINALA/[^<]*[A¡a·]/g;
 s/SLENDERFINALDLNST/[^<]*[eÈiÌ][^aeiou·ÈÌÛ˙<]*[DdLlNnSsTt]/g;
 s/FINALDLNST/[^<]+[DdLlNnSsTt]/g;
@@ -281,7 +283,7 @@ s/\*AUT\[/* p="n"[/g;
 # also implies non-copula
 s/\*PERS\[/* p="y"[/g;
 s/\*DEE\[/*t="(?:caite|gn·th|coinn)"[/g;
-s/\*PWITHH\[/*pl="y" .+ h="y"[/g;
+s/\*PWITHH\[/*pl="y" [^>]+ h="y"[/g;
 s/\*WITHH\[/*h="y"[/g;
 s/\*IMP\[/*t="ord"[/g;
 s/\*NOLEN\[/*t="[flo][^o][/g;

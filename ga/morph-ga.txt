@@ -117,9 +117,11 @@ i[dg]h(th?.)		i$1		1	<.+>	<&>  # marcaidhthe, masluighthe, beannuighth?ear
 ^coilg			colg		1	<.+>	<&>  # coilgsheasamh e.g.
 ^c[oó]imh-mh		cóimh		1	<[ANV].*>	<&>
 ^coimh			comh		1	<.+>	<&>    # coimhlíonadh
+^cóimhmh			cóimh	1	<.+>	<&>    # cóimhmheas, srl in Di04
 ^cóimh([^eéií])			comh$1	1	<.+>	<&>    # cóimh-chealg (Di04)
 # general ómh[^a] -> omh$1  rule below
 ^cómha		comha		1	<[ANV].*>	<&>
+^cómhmh			cómh	1	<.+>	<&>    # cómhmhaith, srl in Di04
 ^comh-(mh[aáoóuú])		có$1		1	<[ANV].*>	<&>
 ^comh-(mh[eéií])		cói$1		1	<[ANV].*>	<&>
 ^coimh-n		cóin		1	<[ANV].*>	<&>
@@ -149,6 +151,7 @@ i[dg]h(th?.)		i$1		1	<.+>	<&>  # marcaidhthe, masluighthe, beannuighth?ear
 ^droich			droch		1	<.+>	<&>
 ^druim			droim		1	<.+>	<&>
 ^duibh			dubh		1	<.+>	<&>
+^dubh-			dú		1	<.+>	<&>
 # handled by more general prefix+gc rule below
 #^éagc			éag		1	<.+>	<&>
 #^éigc			éig		1	<.+>	<&>
@@ -157,6 +160,7 @@ i[dg]h(th?.)		i$1		1	<.+>	<&>  # marcaidhthe, masluighthe, beannuighth?ear
 #^éidt			éid		1	<.+>	<&>
 # handled by more general ll rule below
 #^falls			fals		1	<.+>	<&>
+^fágbh			fág			1	<.+>	<&>
 ^h?eadar		idir		1	<.+>	<&>
 ^h?eidir		idir	1	<.+>	<&>
 ^fiadh			fia		1	<.+>	<&>
@@ -209,9 +213,11 @@ i[dg]h(th?.)		i$1		1	<.+>	<&>  # marcaidhthe, masluighthe, beannuighth?ear
 #^magh		math		1	<.+>	<&>
 ^meadhón		meán		1	<.+>	<&>
 ^mean		meán		1	<.+>	<&>
+^mh'([aeiouáéíóú].)		m'$1		1	<.+>	<&>
 # N.B. makes string longer
 ^min-		mion-		1	<.+>	<&>
 ^mío-			mí-		1	<.+>	<&>
+^mío([bcdfgmpst]h)		mí$1		1	<[ANV].*>	<&>  # míochothrom
 ^(mh?í)-([^aeiouáéíóú].)		$1$2		1	<[ANV].*>	<&>
 # no midh- words anyway?
 #^miodh		midh		1	<.+>	<&>
@@ -312,9 +318,9 @@ dn			nn		1	<.+>	<&>    # CO p.114 céadna
 ó(i?r[dlnr])		o$1		1	<.+>	<&>    # CO p.123-124
 ú(i?r[dlnr])		u$1		1	<.+>	<&>    # CO p.123-124
 eó			eo		1	<.+>	<&>    # go leór, aibhleóg, etc.
-eamhail$		iúil		1	<[ANF].*>	<&>    # dlightheamhail
+eamh[au]il$		iúil		1	<[ANF].*>	<&>    # dlightheamhail
 eamhla			iúla		1	<[ANF].*>	<&>
-([^e])amhail$		$1úil		1	<[ANF].*>	<&>    # CO p.102, a2+barúil, etc.
+([^e])amh[au]il$		$1úil		1	<[ANF].*>	<&>    # CO p.102, a2+barúil, etc.
 ([^e])amhla		$1úla		1	<[ANF].*>	<&>    # "-amhlachta?" too
 adht([aá])		at$1	1	<.+>	<&>	# iadhta, cruadhtán, iarradhtas, srl
 aíle$			aíola		1	<.+>	<&>    # *3ú* decl.
@@ -373,8 +379,8 @@ e[oó]chai(nn|dís)$	eoi$1		1	<V p="y" t="coinn">	<&>
 ([^e])óchai(nn|dís)$	$1ói$2		1	<V p="y" t="coinn">	<&>
 e[oó]chthá$		eofá		1	<V p="y" t="coinn">	<&>
 ([^e])óchthá$		$1ófá		1	<V p="y" t="coinn">	<&>
-e[oó]chthaidhe$		eofaí		1	<V p="n" t="coinn">	<&>
-([^e])óchthaidhe$		$1ófaí		1	<V p="n" t="coinn">	<&>
+e[oó]ch(th)?aidhe$		eofaí		1	<V p="n" t="coinn">	<&>
+([^e])óch(th)?aidhe$		$1ófaí		1	<V p="n" t="coinn">	<&>
 (ó|eo)char$			$1far	1	<V p="n" t="fáist">	<&>
 (ó|eo)chthar$			$1far	1	<V p="n" t="fáist">	<&>
 faidhear$			far	1	<V p="n" t="fáist">	<&>
@@ -389,6 +395,8 @@ iaghadh			íodh		1	<[VF].*>	<&>  # innsiughadh->insíodh
 ighim			ím		1	<[VF].*>	<&>    # broad and slender
 ighidh			í		1	<.+>	<&>    # subjunctive?
 ighinn			ínn		1	<.+>	<&>    # imperfect
+uigh'e$			aithe		1	<.+>	<&>	# U019.txt
+fiomuid$		fimid		1	<[VF].*>	<&>
 # Future forms: see OS88 p.215 for these (fe?as, etc. on p.63), also CB p.145
 #  socróid, dílseoid, 3rd plural forms in achtanna
 fa[ds]$			faidh		1	<V p="y" t="fáist">	<&>
