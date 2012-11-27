@@ -296,23 +296,23 @@ msgstr "Ở đây bạn thật muốn sử dụng lối cầu khẩn?"
 #. but there is no need to escape the quotes the way they are in the msgid.
 #: messages.txt:21
 msgid "Usually used in the set phrase \\/\\1\\/"
-msgstr "Thường dụng trong cụm từ riêng «\\1»"
+msgstr "Thường dụng trong cụm từ riêng ‘\\1’"
 
 #: messages.txt:22
 msgid "You should use \\/\\1\\/ here instead"
-msgstr "Ở đây thì nên sử dụng «\\1» thay thế"
+msgstr "Ở đây thì nên sử dụng ‘\\1’ thay thế"
 
 #: messages.txt:23
 msgid "Non-standard form of \\/\\1\\/"
-msgstr "Hình thái không chuẩn của «\\1»"
+msgstr "Hình thái không chuẩn của ‘\\1’"
 
 #: messages.txt:24
 msgid "Derived from a non-standard form of \\/\\1\\/"
-msgstr "Gốc là hình thái không chuẩn của «\\1»"
+msgstr "Gốc là hình thái không chuẩn của ‘\\1’"
 
 #: messages.txt:25
 msgid "Derived incorrectly from the root \\/\\1\\/"
-msgstr "Gốc (không đúng) là «\\1»"
+msgstr "Gốc (không đúng) là ‘\\1’"
 
 #: messages.txt:26
 msgid "Unknown word"
@@ -321,7 +321,7 @@ msgstr "Không biết từ"
 #. TRANSLATORS: \\1 is substituted with one or more suggested replacements
 #: messages.txt:28
 msgid "Unknown word: \\/\\1\\/?"
-msgstr "Không biết từ: «\\1»?"
+msgstr "Không biết từ: ‘\\1’?"
 
 #: messages.txt:29
 msgid "Valid word but \\/\\1\\/ is more common"
@@ -329,31 +329,31 @@ msgstr "Từ đúng nhưng \\/\\1\\/ thường dùng hơn"
 
 #: messages.txt:30
 msgid "Not in database but apparently formed from the root \\/\\1\\/"
-msgstr "Không trong cơ sở dữ liệu nhưng hình như có gốc «\\1»"
+msgstr "Không trong cơ sở dữ liệu nhưng hình như có gốc ‘\\1’"
 
 #: messages.txt:31
 msgid "The word \\/\\1\\/ is not needed"
-msgstr "Không cần từ «\\1»"
+msgstr "Không cần từ ‘\\1’"
 
 #: messages.txt:32
 msgid "Do you mean \\/\\1\\/?"
-msgstr "Ý kiến bạn là «\\1» không?"
+msgstr "Ý kiến bạn là ‘\\1’ không?"
 
 #: messages.txt:33
 msgid "Derived form of common misspelling \\/\\1\\/?"
-msgstr "Hình thái bắt nguồn từ sai chính tả «\\1» không?"
+msgstr "Hình thái bắt nguồn từ sai chính tả ‘\\1’ không?"
 
 #: messages.txt:34
 msgid "Not in database but may be a compound \\/\\1\\/?"
-msgstr "Không trong cơ sở dữ liệu nhưng có lẽ là «\\1» ghép không?"
+msgstr "Không trong cơ sở dữ liệu nhưng có lẽ là ‘\\1’ ghép không?"
 
 #: messages.txt:35
 msgid "Not in database but may be a non-standard compound \\/\\1\\/?"
-msgstr "Không trong cơ sở dữ liệu nhưng có lẽ là «\\1» ghép không chuẩn không?"
+msgstr "Không trong cơ sở dữ liệu nhưng có lẽ là ‘\\1’ ghép không chuẩn không?"
 
 #: messages.txt:36
 msgid "Possibly a foreign word (the sequence \\/\\1\\/ is highly improbable)"
-msgstr "Có lẽ từ nước ngoài (dãy «\\1» rất không chắc)"
+msgstr "Có lẽ từ nước ngoài (dãy ‘\\1’ rất không chắc)"
 
 #: messages.txt:37
 msgid "Gender disagreement"
@@ -417,7 +417,7 @@ msgstr "Không cần sự nhược hoá thứ hai"
 
 #: messages.txt:55
 msgid "Often the preposition \\/\\1\\/ causes lenition, but this case is unclear"
-msgstr "Thường giới từ «\\1» gây ra thêm chữ h để là m cho phụ âm đầu mềm hơn, nhưng trường hợp này không rõ lắm"
+msgstr "Thường giới từ ‘\\1’ gây ra thêm chữ h để là m cho phụ âm đầu mềm hơn, nhưng trường hợp này không rõ lắm"
 
 #: messages.txt:56
 msgid "Lenition missing"
@@ -448,7 +448,7 @@ msgstr "Không cần sử dụng kiểu động tư phụ thuộc"
 
 #: messages.txt:65
 msgid "The synthetic (combined) form, ending in \\/\\1\\/, is often used here"
-msgstr "Ở đây thì thường sử dụng kiểu tổng hợp (kết hợp) mà cuối cùng với «\\1»"
+msgstr "Ở đây thì thường sử dụng kiểu tổng hợp (kết hợp) mà cuối cùng với ‘\\1’"
 
 #. TRANSLATORS: Rules specific to the Cornish language (kw)
 #: messages.txt:67

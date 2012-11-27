@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cy\n"
 "Report-Msgid-Bugs-To: <kscanne@gmail.com>\n"
-"POT-Creation-Date: 2008-08-17 12:05-0500\n"
+"POT-Creation-Date: 2008-09-05 17:20-0500\n"
 "PO-Revision-Date: 2006-09-10 11:48+0100\n"
 "Last-Translator: Kevin Donnelly <kevin@dotmon.com>\n"
 "Language-Team:  <en@li.org>\n"
@@ -317,202 +317,207 @@ msgid "You should use the present tense here"
 msgstr "Dylech ddefnyddio'r amser presennol yma"
 
 #: messages.txt:17
+#, fuzzy
+msgid "You should use the conditional here"
+msgstr "Dylech ddefnyddio'r amser presennol yma"
+
+#: messages.txt:18
 msgid "It seems unlikely that you intended to use the subjunctive here"
 msgstr "Mae'n annhebygol y bwriedir defnyddio'r modd dibynnol yma"
 
 #. TRANSLATORS: You can use whatever kind of quotes you prefer for your locale
 #. around the variable \\1.  You should keep the double backslash before the 1,
 #. but there is no need to escape the quotes the way they are in the msgid.
-#: messages.txt:21
+#: messages.txt:22
 msgid "Usually used in the set phrase \\/\\1\\/"
 msgstr "Defnyddir fel rheol yn yr ymadrodd sefydlog \\/\\1\\/"
 
-#: messages.txt:22
+#: messages.txt:23
 msgid "You should use \\/\\1\\/ here instead"
 msgstr "Dylid defnyddio \\/\\1\\/ yma yn lle"
 
-#: messages.txt:23
+#: messages.txt:24
 msgid "Non-standard form of \\/\\1\\/"
 msgstr "Ffurf ansafonol o \\/\\1\\/"
 
-#: messages.txt:24
+#: messages.txt:25
 msgid "Derived from a non-standard form of \\/\\1\\/"
 msgstr "Deilliwyd o ffurf ansafonol o \\/\\1\\/"
 
-#: messages.txt:25
+#: messages.txt:26
 msgid "Derived incorrectly from the root \\/\\1\\/"
 msgstr "Deilliwyd yn anghywir o'r gwreiddyn \\/\\1\\/"
 
-#: messages.txt:26
+#: messages.txt:27
 msgid "Unknown word"
 msgstr "Gair anhysbys"
 
 #. TRANSLATORS: \\1 is substituted with one or more suggested replacements
-#: messages.txt:28
+#: messages.txt:29
 msgid "Unknown word: \\/\\1\\/?"
 msgstr "Gair anhysbys: \\/\\1\\/?"
 
-#: messages.txt:29
+#: messages.txt:30
 msgid "Valid word but \\/\\1\\/ is more common"
 msgstr ""
 
-#: messages.txt:30
+#: messages.txt:31
 msgid "Not in database but apparently formed from the root \\/\\1\\/"
 msgstr ""
 "Dim yn y gronfa ddata, ond yn Ã´l pob golwg deilliwyd o'r gwreiddyn \\/\\1\\/"
 
-#: messages.txt:31
+#: messages.txt:32
 msgid "The word \\/\\1\\/ is not needed"
 msgstr "Nid oes angen y gair \\/\\1\\/"
 
-#: messages.txt:32
+#: messages.txt:33
 msgid "Do you mean \\/\\1\\/?"
 msgstr "Ydych yn golygu \\/\\1\\/?"
 
-#: messages.txt:33
+#: messages.txt:34
 msgid "Derived form of common misspelling \\/\\1\\/?"
 msgstr "Ffurf ddeilliedig o'r camsillafiad cyffredin \\/\\1\\/?"
 
-#: messages.txt:34
+#: messages.txt:35
 msgid "Not in database but may be a compound \\/\\1\\/?"
 msgstr "Dim yn y gronfa ddata ond efallai cyfansoddair o \\/\\1\\/?"
 
-#: messages.txt:35
+#: messages.txt:36
 msgid "Not in database but may be a non-standard compound \\/\\1\\/?"
 msgstr "Dim yn y gronfa ddata ond efallai cyfansoddair ansafonol o \\/\\1\\/?"
 
-#: messages.txt:36
+#: messages.txt:37
 msgid "Possibly a foreign word (the sequence \\/\\1\\/ is highly improbable)"
 msgstr "Efallai gair dieithr (mae'r dilyniant \\/\\1\\/ yn annhebygol iawn)"
 
-#: messages.txt:37
+#: messages.txt:38
 msgid "Gender disagreement"
 msgstr "Anghytundeb cenedl"
 
-#: messages.txt:38
+#: messages.txt:39
 msgid "Number disagreement"
 msgstr "Anghytundeb rhif"
 
-#: messages.txt:39
+#: messages.txt:40
 msgid "Case disagreement"
 msgstr "Anghytundeb cyflwr"
 
 #. TRANSLATORS: Rules specific to the Irish language (ga)
-#: messages.txt:41
+#: messages.txt:42
 msgid "Prefix \\/h\\/ missing"
 msgstr "Rhagddodiad \\/h\\/ ar goll"
 
-#: messages.txt:42
+#: messages.txt:43
 msgid "Prefix \\/t\\/ missing"
 msgstr "Rhagddodiad \\/t\\/ ar goll"
 
-#: messages.txt:43
+#: messages.txt:44
 msgid "Prefix \\/d'\\/ missing"
 msgstr "Rhagddodiad \\/d'\\/ ar goll"
 
-#: messages.txt:44
+#: messages.txt:45
 msgid "Unnecessary prefix \\/h\\/"
 msgstr "Rhagddodiad diangen \\/h\\/"
 
-#: messages.txt:45
+#: messages.txt:46
 msgid "Unnecessary prefix \\/t\\/"
 msgstr "Rhagddodiad diangen \\/t\\/"
 
-#: messages.txt:46
+#: messages.txt:47
 msgid "Unnecessary prefix \\/d'\\/"
 msgstr "Rhagddodiad diangen \\/d'\\/"
 
-#: messages.txt:47
+#: messages.txt:48
 #, fuzzy
 msgid "Unnecessary prefix \\/b'\\/"
 msgstr "Rhagddodiad diangen \\/d'\\/"
 
 #. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
-#: messages.txt:49
+#: messages.txt:50
 msgid "Unnecessary initial mutation"
 msgstr "Treiglad cychwynnol diangen"
 
-#: messages.txt:50
+#: messages.txt:51
 msgid "Initial mutation missing"
 msgstr "Treiglad cychwynnol ar goll"
 
 #. TRANSLATORS: "Lenition" is the softening of an initial consonant in Irish.
 #. It is indicated in writing by the addition of an "h": e.g. "bean" -> "bhean"
-#: messages.txt:53
+#: messages.txt:54
 msgid "Unnecessary lenition"
 msgstr "Treiglad meddal diangen"
 
-#: messages.txt:54
+#: messages.txt:55
 msgid "The second lenition is unnecessary"
 msgstr ""
 
-#: messages.txt:55
+#: messages.txt:56
 msgid ""
 "Often the preposition \\/\\1\\/ causes lenition, but this case is unclear"
 msgstr ""
 "Gan amlaf, achosa'r arddodiad \\/\\1\\/ dreiglad meddal, ond nid yw'r "
 "enghraifft yma yn glir"
 
-#: messages.txt:56
+#: messages.txt:57
 msgid "Lenition missing"
 msgstr "Treiglad meddal ar goll"
 
 #. TRANSLATORS: "Eclipsis" is, like lenition, a phonetic change applied to
 #. initial consonants in Irish.  It is indicated in writing by the addition
 #. of the eclipsing consonant as a prefix: e.g. "bean" -> "mbean"
-#: messages.txt:60
+#: messages.txt:61
 msgid "Unnecessary eclipsis"
 msgstr "Treiglad trwynol diangen"
 
-#: messages.txt:61
+#: messages.txt:62
 msgid "Eclipsis missing"
 msgstr "Treiglad trwynol ar goll"
 
-#: messages.txt:62
+#: messages.txt:63
 msgid "The dative is used only in special phrases"
 msgstr "Defnyddir y cyflwr derbyniol mewn ymadroddion arbennig yn unig"
 
-#: messages.txt:63
+#: messages.txt:64
 msgid "The dependent form of the verb is required here"
 msgstr "Mae ffurf dibynnol y berf yn ofynnol yma"
 
-#: messages.txt:64
+#: messages.txt:65
 msgid "Unnecessary use of the dependent form of the verb"
 msgstr "Defnydd diangen o ffurf ddibynnol y ferf"
 
-#: messages.txt:65
+#: messages.txt:66
 msgid "The synthetic (combined) form, ending in \\/\\1\\/, is often used here"
 msgstr ""
 "Defnyddir y ffurf synthetig (gyfunol), sy'n gorffen gyda \\/1\\/, yn aml yma"
 
 #. TRANSLATORS: Rules specific to the Cornish language (kw)
-#: messages.txt:67
+#: messages.txt:68
 msgid "Second (soft) mutation missing"
 msgstr "Ail dreiglad (meddal) ar goll"
 
-#: messages.txt:68
+#: messages.txt:69
 msgid "Third (breathed) mutation missing"
 msgstr "Trydydd treiglad (llaes) ar goll"
 
-#: messages.txt:69
+#: messages.txt:70
 msgid "Fourth (hard) mutation missing"
 msgstr "Pedwerydd treiglad (caled) ar goll"
 
-#: messages.txt:70
+#: messages.txt:71
 msgid "Fifth (mixed) mutation missing"
 msgstr "Pumed treiglad (cymysg) ar goll"
 
-#: messages.txt:71
+#: messages.txt:72
 msgid "Fifth (mixed) mutation after 'th missing"
 msgstr "Pumed treiglad (cymysg) ar Ã´l 'th ar goll"
 
 #. TRANSLATORS: Rules specific to the Welsh language (cy)
-#: messages.txt:73
+#: messages.txt:74
 msgid "Aspirate mutation missing"
 msgstr "Treiglad llaes ar goll"
 
 #. TRANSLATORS: Rules specific to the Igbo language (ig)
-#: messages.txt:75
+#: messages.txt:76
 msgid "This word violates the rules of Igbo vowel harmony"
 msgstr "Mae'r gair yma yn torri rheolau cytgord llafariaid Igbo"
 

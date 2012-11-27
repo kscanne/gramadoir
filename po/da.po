@@ -307,23 +307,23 @@ msgstr "Det virker usandsynligt, at du forsøgte at bruge konjunktiv her"
 #. but there is no need to escape the quotes the way they are in the msgid.
 #: messages.txt:21
 msgid "Usually used in the set phrase \\/\\1\\/"
-msgstr "Normalt brugt i angivelsesfrasen »\\1«"
+msgstr "Normalt brugt i angivelsesfrasen ‘\\1’"
 
 #: messages.txt:22
 msgid "You should use \\/\\1\\/ here instead"
-msgstr "Du bør her bruge »\\1« i steden for"
+msgstr "Du bør her bruge ‘\\1’ i steden for"
 
 #: messages.txt:23
 msgid "Non-standard form of \\/\\1\\/"
-msgstr "En form af »\\1« der ikke er standard"
+msgstr "En form af ‘\\1’ der ikke er standard"
 
 #: messages.txt:24
 msgid "Derived from a non-standard form of \\/\\1\\/"
-msgstr "Afledt af en form af »\\1« der ikke er standard"
+msgstr "Afledt af en form af ‘\\1’ der ikke er standard"
 
 #: messages.txt:25
 msgid "Derived incorrectly from the root \\/\\1\\/"
-msgstr "Forkert afledning af roden »\\1«"
+msgstr "Forkert afledning af roden ‘\\1’"
 
 #: messages.txt:26
 msgid "Unknown word"
@@ -332,39 +332,39 @@ msgstr "Ukendt ord"
 #. TRANSLATORS: \\1 is substituted with one or more suggested replacements
 #: messages.txt:28
 msgid "Unknown word: \\/\\1\\/?"
-msgstr "Ukendt ord: »\\1«?"
+msgstr "Ukendt ord: ‘\\1’?"
 
 #: messages.txt:29
 msgid "Valid word but \\/\\1\\/ is more common"
-msgstr "Gyldigt ord men »\\1« er mere udbredt"
+msgstr "Gyldigt ord men ‘\\1’ er mere udbredt"
 
 #: messages.txt:30
 msgid "Not in database but apparently formed from the root \\/\\1\\/"
-msgstr "Ikke i databasen men tilsyneladende dannet fra roden »\\1«"
+msgstr "Ikke i databasen men tilsyneladende dannet fra roden ‘\\1’"
 
 #: messages.txt:31
 msgid "The word \\/\\1\\/ is not needed"
-msgstr "Der er ikke behov for ordet »\\1«"
+msgstr "Der er ikke behov for ordet ‘\\1’"
 
 #: messages.txt:32
 msgid "Do you mean \\/\\1\\/?"
-msgstr "Mener du »\\1«?"
+msgstr "Mener du ‘\\1’?"
 
 #: messages.txt:33
 msgid "Derived form of common misspelling \\/\\1\\/?"
-msgstr "Afledt form af udbredt stavefejl »\\1«?"
+msgstr "Afledt form af udbredt stavefejl ‘\\1’?"
 
 #: messages.txt:34
 msgid "Not in database but may be a compound \\/\\1\\/?"
-msgstr "Ikke i databasen, men er måske en kombination af »\\1«?"
+msgstr "Ikke i databasen, men er måske en kombination af ‘\\1’?"
 
 #: messages.txt:35
 msgid "Not in database but may be a non-standard compound \\/\\1\\/?"
-msgstr "Ikke i databasen, men måske er »\\1« en sammensætning der ikke er standard?"
+msgstr "Ikke i databasen, men måske er ‘\\1’ en sammensætning der ikke er standard?"
 
 #: messages.txt:36
 msgid "Possibly a foreign word (the sequence \\/\\1\\/ is highly improbable)"
-msgstr "Muligvis et fremmedord (sekvensen »\\1« er meget usandsynlig)"
+msgstr "Muligvis et fremmedord (sekvensen ‘\\1’ er meget usandsynlig)"
 
 #: messages.txt:37
 msgid "Gender disagreement"
@@ -381,31 +381,31 @@ msgstr "Forskel på store/små bogstaver"
 #. TRANSLATORS: Rules specific to the Irish language (ga)
 #: messages.txt:41
 msgid "Prefix \\/h\\/ missing"
-msgstr "Præfikset »h« mangler"
+msgstr "Præfikset ‘h’ mangler"
 
 #: messages.txt:42
 msgid "Prefix \\/t\\/ missing"
-msgstr "Præfikset »t« mangler"
+msgstr "Præfikset ‘t’ mangler"
 
 #: messages.txt:43
 msgid "Prefix \\/d'\\/ missing"
-msgstr "Præfikset »d'« mangler"
+msgstr "Præfikset ‘d'’ mangler"
 
 #: messages.txt:44
 msgid "Unnecessary prefix \\/h\\/"
-msgstr "Unødvendigt præfiks »h«"
+msgstr "Unødvendigt præfiks ‘h’"
 
 #: messages.txt:45
 msgid "Unnecessary prefix \\/t\\/"
-msgstr "Unødvendigt præfiks »t«"
+msgstr "Unødvendigt præfiks ‘t’"
 
 #: messages.txt:46
 msgid "Unnecessary prefix \\/d'\\/"
-msgstr "Unødvendigt præfiks »d'«"
+msgstr "Unødvendigt præfiks ‘d'’"
 
 #: messages.txt:47
 msgid "Unnecessary prefix \\/b'\\/"
-msgstr "Unødvendigt præfiks »b'«"
+msgstr "Unødvendigt præfiks ‘b'’"
 
 #. TRANSLATORS: "Mutation" refers to either "lenition" or "eclipsis" (see below)
 #: messages.txt:49
@@ -429,7 +429,7 @@ msgstr "Anden lenition er unødvendig"
 
 #: messages.txt:55
 msgid "Often the preposition \\/\\1\\/ causes lenition, but this case is unclear"
-msgstr "Ofte medfører forholdsordet »\\1« lenition, men dette tilfælde er uklart"
+msgstr "Ofte medfører forholdsordet ‘\\1’ lenition, men dette tilfælde er uklart"
 
 #: messages.txt:56
 msgid "Lenition missing"
@@ -461,7 +461,7 @@ msgstr "Unødvendig brug af den afhængige form af udsagnsordet"
 
 #: messages.txt:65
 msgid "The synthetic (combined) form, ending in \\/\\1\\/, is often used here"
-msgstr "Den syntetiske (kombinerede) form, med endelsen »\\1« bruges ofte her"
+msgstr "Den syntetiske (kombinerede) form, med endelsen ‘\\1’ bruges ofte her"
 
 #. TRANSLATORS: Rules specific to the Cornish language (kw)
 #: messages.txt:67
