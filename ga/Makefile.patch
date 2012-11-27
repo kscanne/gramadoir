@@ -1,5 +1,5 @@
---- Makefile	2010-05-03 00:23:56.000000000 -0500
-+++ Makefile.ok	2010-05-03 00:08:44.000000000 -0500
+--- Makefile	2012-07-10 23:06:53.708424633 -0500
++++ Makefile.ok	2012-07-10 23:06:49.428456844 -0500
 @@ -74,6 +74,15 @@
  
  Makefile : $(GRAMDIR)/Makefile-xx.in configure
@@ -29,6 +29,15 @@
  triail.xml-update : FORCE
  	$(MAKE) triail
  	$(MAKE) perl
+@@ -213,7 +228,7 @@
+ 	while read x; \
+ 	do \
+ 		sed -n '1,/^"Content-Transfer-Encoding/{/^[^#]/s/^/#/; p;}' $(GRAMDIR)/po/$${x}.po > pometa.txt; \
+-		LC_ALL="C" $(PERL) $(GRAMDIR)/po2perl.pl $(GRAMDIR)/po/$${x}.po "$${x}" | iconv -f `$(EGREP) '^"Content-Type:' $(GRAMDIR)/po/$${x}.po | sed 's/^.*charset *= *\([^ ]*\)\\\n.*/\1/'`  -t utf-8 | sed "/^package/r pometa.txt" | sed "s/@TEANGA@/$(UPPERTEANGA)/g" > $(PERLLIB)/Languages/$${x}.pm; \
++		LC_ALL="C" $(PERL) $(GRAMDIR)/po2perl.pl $(GRAMDIR)/po/$${x}.po "$${x}" | sed "/^package/r pometa.txt" | iconv -f `$(EGREP) '^"Content-Type:' $(GRAMDIR)/po/$${x}.po | sed 's/^.*charset *= *\([^ ]*\)\\\n.*/\1/'`  -t utf-8 | sed "s/@TEANGA@/$(UPPERTEANGA)/g" > $(PERLLIB)/Languages/$${x}.pm; \
+ 		rm -f pometa.txt; \
+ 	done
+ 	touch locale_ok
 @@ -271,6 +286,7 @@
  	$(MAKE) rebuildlex
  	rm -f Makefile $(PERLDOK) lexicon-$(TEANGA).txt
@@ -49,7 +58,7 @@
  
  
  counts : FORCE
-@@ -333,4 +349,105 @@
+@@ -333,4 +349,106 @@
  zipped : perl
  	(cd $(PERLD); make zipdist)
  
@@ -80,7 +89,8 @@
 +# use "groom" instead of this directly (since it requires ispell personal, etc.)
 +lexfromdb : FORCE
 +	Gin 12
-+	((cat $(ISPELLDIR)/ispell-gaeilge/personal $(ISPELLDIR)/ispell-gaeilge/uimhreacha $(ISPELLDIR)/ispell-gaeilge/apost | iconv -f utf8 -t iso-8859-1; cat ${HOME}/.ispell_gaeilge | LC_ALL=POSIX ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | LC_ALL=POSIX aspell -dga -p${HOME}/.aspell.blank.pws list) | sed 's/$$/& 44/'; cat FOCAIL; cat $(ISPELLDIR)/ispell-gaeilge/dinneenok.txt | sed 's/$$/& 127/' | iconv -f utf8 -t iso-8859-1) | $(PERL) -p posmap.pl | LC_ALL=POSIX sort -u -k1,1 -k2,2n > lexicon-ga.txt
++	sed -i '$$s/$$/\n/' FOCAIL
++	(((cat $(ISPELLDIR)/ispell-gaeilge/personal $(ISPELLDIR)/ispell-gaeilge/uimhreacha; cat $(ISPELLDIR)/ispell-gaeilge/apost | sed 's/ .*//') | iconv -f utf8 -t iso-8859-1; cat ${HOME}/.ispell_gaeilge | LC_ALL=POSIX ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | LC_ALL=POSIX aspell -dga -p${HOME}/.aspell.blank.pws list) | sed 's/$$/& 44/'; cat FOCAIL; cat $(ISPELLDIR)/ispell-gaeilge/dinneenok.txt | sed 's/$$/& 127/' | iconv -f utf8 -t iso-8859-1) | $(PERL) -p posmap.pl | LC_ALL=POSIX sort -u -k1,1 -k2,2n > lexicon-ga.txt
 +	$(MAKE) rebuildlex
 +	rm -f FOCAIL
 +
