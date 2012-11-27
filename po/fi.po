@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: gramadoir 0.7\n"
 "Report-Msgid-Bugs-To: <kscanne@gmail.com>\n"
 "POT-Creation-Date: 2008-08-17 12:05-0500\n"
-"PO-Revision-Date: 2012-09-15 21:34+0300\n"
+"PO-Revision-Date: 2012-11-27 23:34+0300\n"
 "Last-Translator: Jorma Karvonen <karvonen.jorma@gmail.com>\n"
 "Language-Team: Finnish <translation-team-fi@lists.sourceforge.net>\n"
 "Language: fi\n"
@@ -88,7 +88,7 @@ msgstr "versio %s"
 
 #: gram.pl:253 gramdev.pl:153
 msgid "This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law."
-msgstr "Tämä on ilmainen ohjelmisto; katso lähdekoodista kopiointiehdot.  Ohjelmalle EI\\nole takuuta; ei edes KAUPALLISUUDELLE tai SOPIVUUDELLE TIETTYYN TARKOITUKSEEN,\\nsiinä laajudessa minkä laki sallii."
+msgstr "Tämä on vapaa ohjelmisto; katso lähdekoodista kopiointiehdot.  Ohjelmalle EI\\nole takuuta; ei edes KAUPALLISUUDELLE tai SOPIVUUDELLE TIETTYYN TARKOITUKSEEN,\\nsiinä laajudessa minkä laki sallii."
 
 #: gram.pl:267
 #, perl-format
@@ -370,7 +370,7 @@ msgstr "Lukuristiriita"
 
 #: messages.txt:39
 msgid "Case disagreement"
-msgstr "Kirjainkokoristiriita"
+msgstr "Sijamuotoristiriita"
 
 #. TRANSLATORS: Rules specific to the Irish language (ga)
 #: messages.txt:41
