@@ -1,6 +1,6 @@
 #!/bin/sh
 GRAMDIR=".."
-VERSION="0.61"
+VERSION="0.63"
 TEANGA="ga"
 UPPERTEANGA="GA"
 if [ ! -e ${GRAMDIR}/Makefile ]
@@ -22,7 +22,7 @@ UPPERS="A-Z¡…Õ”⁄"
 LOWERS="a-z·ÈÌÛ˙"
 echo "configure: creating Makefile"
 rm -f Makefile
-sed "
+LC_ALL=C sed "
 s@!ECHO!@${ECHO}@
 s@!EGREP!@${EGREP}@
 s@!LN_S!@${LN_S}@
