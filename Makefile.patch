@@ -1,5 +1,5 @@
---- Makefile	2010-04-26 23:20:23.000000000 -0500
-+++ Makefile.ok	2010-04-26 23:20:13.000000000 -0500
+--- Makefile	2012-09-17 13:35:51.760981601 -0500
++++ Makefile.ok	2012-09-17 13:35:45.001030358 -0500
 @@ -60,8 +60,16 @@
  
  Makefile : Makefile.in config.status
@@ -17,7 +17,7 @@
  config.status: configure
  	./config.status --recheck
  
-@@ -81,4 +89,199 @@
+@@ -81,4 +89,200 @@
  semiclean :
  	rm -f y.tab.* $(LEX_OUTPUT_ROOT).* aonchiall.y rialacha.y
  
@@ -160,6 +160,7 @@
 +	cp -f po/en@boldquot.header $(CVSDIR)/engine/po
 +	cp -f po/en@quot.header $(CVSDIR)/engine/po
 +	cp -f po/eo.po $(CVSDIR)/engine/po
++	cp -f po/fi.po $(CVSDIR)/engine/po
 +	cp -f po/fr.po $(CVSDIR)/engine/po
 +	cp -f po/ga.po $(CVSDIR)/engine/po
 +	cp -f po/gramadoir.pot $(CVSDIR)/engine/po
