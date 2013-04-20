@@ -375,6 +375,7 @@ sin sin:OK
 # lenited too: "Ba é a dhálta sin"
 <F>[Dd]h?álta</F>:IONADAI{dála}
 <E><F>[Dd]álta</F></E> <R>le chéile</R>:OK
+<F>[Dd]aoiní</F>:IONADAI{daoine}
 <F>[Dd]aoithe</F>:IONADAI{di}
 <S>ANYTHING</S> <F>[Dd]athacha</F>:IONADAI{daitheacha}
 <F>[Dd]eán</F>:IONADAI{déan}

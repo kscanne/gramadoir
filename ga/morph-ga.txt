@@ -324,8 +324,12 @@ eamhla			iúla		1	<[ANF].*>	<&>
 ([^e])amhla		$1úla		1	<[ANF].*>	<&>    # "-amhlachta?" too
 adht([aá])		at$1	1	<.+>	<&>	# iadhta, cruadhtán, iarradhtas, srl
 aíle$			aíola		1	<.+>	<&>    # *3ú* decl.
-aibh$			a		1	<.+>	<&>    # fearaibh, fiachaibh
-([^a])ibh$		$1e		1	<.+>	<&>    # coinnibh, etc.
+eachaibh$		igh		1	<N pl="y".*>	<&>    # taoiseachaibh
+([^e])achaibh$		$1aigh		1	<N pl="y".*>	<&>    # Albanachaibh
+anaibh$			anna		1	<N pl="y".*>	<&>    # sgoileanaibh, ceisteanaibh
+ánaibh$			áin		1	<N pl="y".*>	<&>    # uachtaránaibh
+aibh$			a		1	<N pl="y".*>	<&>    # sinagógaibh, fiachaibh
+([^a])ibh$		$1í		1	<N pl="y".*>	<&>    # múinteoiribh, etc.
 (.)eu			$1éa		1	<.+>	<&>    # sgeul, ceudna, srl.
 tch			t		1	<.+>	<&>    # CO p.103
 i[dg]hea		ío		1	<.+>	<&>    # CO p.105,107
@@ -345,7 +349,8 @@ ghail$			aíl		1	<N pl="n" gnt="n" gnd="f".*>	<&>
 ghaile$			aíola		1	<N pl="n" gnt="y" gnd="f".*>	<&>
 ighil$			íl		1	<N pl="n" gnt="n" gnd="f".*>	<&>
 ighile$			íola		1	<N pl="n" gnt="y" gnd="f".*>	<&>
-(ain|é[ai]|iar)gc	$1g		1	<.+>	<&>    # CO p.109
+(ain|[eé][ai]|iar)gc	$1g		1	<.+>	<&>    # CO p.109
+e[au]gc	éag		1	<.+>	<&>    # CO p.109
 (é[ai])dt		$1d		1	<.+>	<&>    # CO p.109
 (dh?í?)omb		$1om		1	<.+>	<&>    # CO p.109
 (ai?n)bhf		$1bh		1	<.+>	<&>    # CO p.109  ainbhfiosach
@@ -392,6 +397,7 @@ aghadh			ú		1	<[NF].*>	<&>  # broad and slender
 iaghadh			íodh		1	<[VF].*>	<&>  # innsiughadh->insíodh
 (..)thear$		$1tear		1	<[VF].*>	<&> # aut. present
 (..)t(te?ar)$	$1$2		1	<[VF].*>	<&> # aut. present
+ighdar			íodar		1	<[VF].*>	<&>    # broad and slender
 ighim			ím		1	<[VF].*>	<&>    # broad and slender
 ighidh			í		1	<.+>	<&>    # subjunctive?
 ighinn			ínn		1	<.+>	<&>    # imperfect
