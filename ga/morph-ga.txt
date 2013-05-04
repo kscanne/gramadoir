@@ -19,9 +19,11 @@
 #  in the lexicon (it is) there is some hope that by stripping the 
 #  "eachas" it will find the root "gaimbМn".
 ^([ACEFH-LO-SU-Zаимсз])([A-Zаимсз'-]*[A-Zаимсз][A-Zаимсз'-]*)$	$1\L$2 -1 <.+>	<&>	# иIRE; potentially eclipsing init chars require more care:
-^B([A-GI-OQ-Zаимсз'][A-Zаимсз'-]*)$	B\L$1		-1	 <.+>	<&>
+^B([A-GI-OQ-Zаимсз][A-Zаимсз'-]*)$	B\L$1		-1	 <.+>	<&>
+^B'([AEIOUаимсзF][A-Zаимсз'-]*)$	B'\L$1		-1	 <.+>	<&>
 ^BH([A-EG-Zаимсз][A-Zаимсз'-]*)$	Bh\L$1		-1	 <.+>	<&>
-^D([A-SU-Zаимсз'][A-Zаимсз'-]*)$	D\L$1		-1	 <.+>	<&>
+^D([A-SU-Zаимсз][A-Zаимсз'-]*)$	D\L$1		-1	 <.+>	<&>
+^D'([AEIOUаимсзF][A-Zаимсз'-]*)$	D'\L$1		-1	 <.+>	<&>
 ^G([ABD-Zаимсз][A-Zаимсз'-]*)$	G\L$1		-1	 <.+>	<&>
 ^M([AC-Zаимсз][A-Zаимсз'-]*)$	M\L$1		-1	 <.+>	<&>
 ^N([ABCEFH-Zаимсз-][A-Zаимсз'-]*)$	N\L$1		-1	 <.+>	<&>
@@ -329,7 +331,7 @@ eachaibh$		igh		1	<N pl="y".*>	<&>    # taoiseachaibh
 anaibh$			anna		1	<N pl="y".*>	<&>    # sgoileanaibh, ceisteanaibh
 Аnaibh$			Аin		1	<N pl="y".*>	<&>    # uachtarАnaibh
 aibh$			a		1	<N pl="y".*>	<&>    # sinagСgaibh, fiachaibh
-([^a])ibh$		$1М		1	<N pl="y".*>	<&>    # mЗinteoiribh, etc.
+(..[^a])ibh$		$1М		1	<N pl="y".*>	<&>    # mЗinteoiribh, etc.
 (.)eu			$1Иa		1	<.+>	<&>    # sgeul, ceudna, srl.
 tch			t		1	<.+>	<&>    # CO p.103
 i[dg]hea		Мo		1	<.+>	<&>    # CO p.105,107
