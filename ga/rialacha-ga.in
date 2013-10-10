@@ -132,7 +132,7 @@ sin sin:OK
 #     unrecognized compound marked up
 #. Bhí an dream dí-armtha ag iarraidh a gcuid gunnaí.
 #      compound including a non-standard component.
-#. An bhfuil ayn uachtar roeite agattt?
+#. An bhfuil uachtar roeite agattt?
 <X>ANYTHING</X>:ANAITHNID
 #  these are just tokens with leading/trailing apostrophe.  Add new ones
 #  in ispell directory's "apost" file; internal apost alternates can just
