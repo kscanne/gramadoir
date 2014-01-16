@@ -326,6 +326,8 @@ eamhla			iúla		1	<[ANF].*>	<&>
 ([^e])amhla		$1úla		1	<[ANF].*>	<&>    # "-amhlachta?" too
 adht([aá])		at$1	1	<.+>	<&>	# iadhta, cruadhtán, iarradhtas, srl
 aíle$			aíola		1	<.+>	<&>    # *3ú* decl.
+aighibh$		aigh	1	<N pl="y".*>	<&>	# Sasanaighibh
+([^a])ighibh$		$1igh	1	<N pl="y".*>	<&>	# Catoilicighibh
 eachaibh$		igh		1	<N pl="y".*>	<&>    # taoiseachaibh
 ([^e])achaibh$		$1aigh		1	<N pl="y".*>	<&>    # Albanachaibh
 anaibh$			anna		1	<N pl="y".*>	<&>    # sgoileanaibh, ceisteanaibh
@@ -336,6 +338,7 @@ aibh$			a		1	<N pl="y".*>	<&>    # sinagógaibh, fiachaibh
 tch			t		1	<.+>	<&>    # CO p.103
 i[dg]hea		ío		1	<.+>	<&>    # CO p.105,107
 i[dg]he			í		1	<.+>	<&>    # CO p.104,106
+i[dg]hio			ío		1	<.+>	<&>    # aeruidhiocht
 uí([mto])		aí$1		1	<.+>	<&>	# cialluíonn, ionaduíochta, leasuítear, mionnuím
 uith			aith		1	<.+>	<&>    # rialuitheoir
 adha			ú		1	<.+>	<&>    # CO p.105
@@ -368,6 +371,8 @@ eoig$			eog		1	<.+>	<&>   # nb2, leave as <.+> for <F>'s
 lainn$			lann		1	<[NF].*>	<&>   # nb2
 aisí$			ais		1	<[NF].*>	<&>   # cuntaisí, bronntanaisí
 dth([ea])$		dt$1		1	<.+>	<&>    # goidthe
+# teilgioch -> teilgeach, réitioch -> réiteach
+ioch$			each	1	<[ANF].*>	<&>
 # Fórsaíbh -> Fórsaí (dpl)
 íbh$			í	1	<[NF].*>	<&>
 íocha$			í	1	<N pl="y".*>	<&>	# margaidheacha->margaíocha->margaí
@@ -422,9 +427,15 @@ eoi?[ds]$		eoidh		1	<V p="y" t="fáist">	<&>
 # Future 2nd p., "r" forms noted on OS88 p.216;
 # see achtanna for íocfaid/íocfa, bainfid/bainfe
 fa$			faidh		1	<V p="y" t="fáist">	<&>
-fai[rsd]$		faidh		1	<V p="y" t="fáist">	<&>
+# separate from following one for caighdeánaitheoir
+fair$		faidh		1	<V p="y" t="fáist">	<&>
+fai[sd]$		faidh		1	<V p="y" t="fáist">	<&>
 fe$			fidh		1	<V p="y" t="fáist">	<&>
-fi[rsd]$		fidh		1	<V p="y" t="fáist">	<&>
+fir$		fidh		1	<V p="y" t="fáist">	<&>
+fi[sd]$		fidh		1	<V p="y" t="fáist">	<&>
+# bainfeam -> bainfimid (via Ruairí Ó hUigín, RIA)
+fam$	faimid	1	<V p="y" t="fáist">	<&>
+feam$	fimid	1	<V p="y" t="fáist">	<&>
 óis$			óidh		1	<V p="y" t="fáist">	<&>
 eois$			eoidh		1	<V p="y" t="fáist">	<&>
 # Future/Cond autonomous; unwanted prefix h is common in achtanna
@@ -435,6 +446,8 @@ eois$			eoidh		1	<V p="y" t="fáist">	<&>
 (...)ai[rs]$		$1		1	<V p="y" t="caite">	<&>
 (..[^aeiouáéíóú])i[rs]$	$1		1	<V p="y" t="caite">	<&>
 (...)ís$		$1igh		1	<V p="y" t="caite">	<&>
+# leigiodh -> ligeadh, deiriodh -> deireadh, sgéithfiodh -> scéithfeadh
+iodh$		eadh		1	<V p="n" t="caite">	<&>
 #  Thugtaoi in MU44, e.g.
 taoi$			taí		1	<V p="n" t="gnáth">	<&>
 #  present
@@ -664,7 +677,7 @@ eor$			eoir		2	<N.*>	<&>
 ionn$			íonn		2	<V.*>	<&>
 itear$			ítear		2	<V.*>	<&>
 iteá$			íteá		2	<V.*>	<&>
-iodh$			íodh		2	<V.*>	<&>
+#iodh$			íodh		2	<V.*>	<&>	# redundant (io->ío)
 ([^e])oidh$		$1óidh		2	<V.*>	<&>
 ([^e])ofar$		$1ófar		2	<V.*>	<&>
 # next batch from ngramprobs.pl
