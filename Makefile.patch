@@ -1,5 +1,5 @@
---- Makefile	2012-09-17 13:35:51.760981601 -0500
-+++ Makefile.ok	2012-09-17 13:35:45.001030358 -0500
+--- Makefile	2014-07-07 08:55:02.391937738 -0500
++++ Makefile.ok	2014-07-07 08:54:56.127984701 -0500
 @@ -60,8 +60,16 @@
  
  Makefile : Makefile.in config.status
@@ -17,7 +17,7 @@
  config.status: configure
  	./config.status --recheck
  
-@@ -81,4 +89,200 @@
+@@ -81,4 +89,201 @@
  semiclean :
  	rm -f y.tab.* $(LEX_OUTPUT_ROOT).* aonchiall.y rialacha.y
  
@@ -164,6 +164,7 @@
 +	cp -f po/fr.po $(CVSDIR)/engine/po
 +	cp -f po/ga.po $(CVSDIR)/engine/po
 +	cp -f po/gramadoir.pot $(CVSDIR)/engine/po
++	cp -f po/hu.po $(CVSDIR)/engine/po
 +	cp -f po/id.po $(CVSDIR)/engine/po
 +	cp -f po/insert-header.sin $(CVSDIR)/engine/po
 +	cp -f po/LINGUAS $(CVSDIR)/engine/po

@@ -10,6 +10,7 @@ lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/eo.pm	Esperanto localization
 lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/fi.pm	Finnish localization
 lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/fr.pm	French localization
 lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/ga.pm	Irish localization
+lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/hu.pm	Hungarian localization
 lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/id.pm	Indonesian localization
 lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/mn.pm	Mongolian localization
 lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/nl.pm	Dutch localization
