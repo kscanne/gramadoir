@@ -21,6 +21,7 @@
 74 <N pl="n" gnt="n" gnd="f" h="y">
 76 <N pl="n" gnt="n" gnd="m">
 78 <N pl="n" gnt="n" gnd="m" h="y">
+80 <N pl="n" gnt="y">
 88 <N pl="n" gnt="y" gnd="f">
 90 <N pl="n" gnt="y" gnd="f" h="y">
 92 <N pl="n" gnt="y" gnd="m">
