@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the gramadoir package.
 # Karl Eichwalder <ke@gnu.franken.de>, 2003.
 # Martin Gregory <martin.gregory@sas.com>, 2003.
-# Roland Illig <roland.illig@gmx.de>, 2004-2014.
+# Roland Illig <roland.illig@gmx.de>, 2004-2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramadoir 0.7\n"
 "Report-Msgid-Bugs-To: <kscanne@gmail.com>\n"
 "POT-Creation-Date: 2008-08-17 12:05-0500\n"
-"PO-Revision-Date: 2014-09-01 12:55+0100\n"
+"PO-Revision-Date: 2015-09-23 19:46+0200\n"
 "Last-Translator: Roland Illig <roland.illig@gmx.de>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: Poedit 1.8.5\n"
 
 #: ponc.in.y:63
 #, c-format
@@ -98,7 +98,7 @@ msgstr ""
 #: gram.pl:267
 #, perl-format
 msgid "Usage: %s [OPTIONS] [FILES]"
-msgstr "Syntax: %s [OPTIONEN] [DATEIEN]"
+msgstr "Aufruf: %s [OPTIONEN] [DATEIEN]"
 
 #: gram.pl:270
 msgid "Options for end-users:"
