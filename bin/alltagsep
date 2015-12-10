@@ -1,0 +1,3 @@
+#!/bin/bash
+ROOTDIR=${HOME}/gaeilge/gramadoir/gr/bin
+perl -I ${ROOTDIR}/../ga/Lingua-GA-Gramadoir/lib  ${ROOTDIR}/alltagsep.pl

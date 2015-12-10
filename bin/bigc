@@ -1,0 +1,103 @@
+#!/bin/sh
+#    Survey a big corpus for unknown words - candidates for addition to DB
+#  DEPENDENCIES: this script assumes you have:
+#  (0) A utf-8 locale to run in
+#  (1) local version of Lingua::GA::Gramadoir built  (<=> "gr" works)
+#  (2) frequency list to check in /home/kps/TEN (configure below) - UTF-8
+#  (3) clean english wordlist in crubadan/en/GLAN  - (ascii actually)
+#  (4) clean Irish wordlist in crubadan/ga/GLAN (utf8 actually) - done w/groom
+# note caighpara dumps ~/TEN file of unknown words...
+
+
+##  NB - it is important to cleanup utf-8 encoded files from aimsigh ciu
+##  before doing this (see gaeilge/aimsigh/aimsigh/MAINT for instr)
+##    Be sure to also do rebuild of indices process which includes
+##   the "make freqs" that remakes the key input file to this script
+
+# first argument is the word list (or freq list) to check
+# second argument is "y" or "n" to use gramadoir --aspell option
+redobigc()
+{
+OPTION=""
+if [ "${2}" = "y" ]
+then
+	OPTION="--aspell"
+fi
+cat "${1}" | sed 's/^ *[0-9]* *//; s/$/./' | egrep -v '^.\.$' | perl -I ${HOME}/gaeilge/gramadoir/gr/ga/Lingua-GA-Gramadoir/lib ${HOME}/gaeilge/gramadoir/gr/ga/Lingua-GA-Gramadoir/scripts/gram-ga.pl --ionchod=UTF-8 --api ${OPTION} | egrep '^<err' | api2old > bigc.xml   # now in UTF-8
+sed -i 's/ fromy=.* msg="/ msg="/' bigc.xml
+sed -i 's/ context=".* errortext=/ text=/' bigc.xml 
+cat bigc.xml |
+egrep -v '"(Séimhiú|Urú) gan ghá"' |
+egrep -v '"Níl gá leis an fhoirm spleách"' |
+egrep -v '"Ba chóir duit' |   # alt cinnte, breischéim, dháréag
+egrep -v '"Ní úsáidtear an focal seo ach san abairtín' | 
+egrep -v '"Foirm neamhchaighdeánach de' |
+egrep -v '"Réamhlitir.*(ar iarraidh|gan ghá)"' |
+egrep -v '"An raibh.*ar intinn agat."' |
+egrep -v '"Ní úsáidtear an tabharthach ach in abairtí speisialta' |
+egrep -v '"Focal ceart ach aimsítear é níos minice in ionad' |
+egrep -v '"Ní dócha go raibh intinn agat an modh foshuiteach' > bigctemp.txt
+mv bigctemp.txt bigc.xml
+}
+
+if [ ! -e ~/seal/bigc ]
+then
+	mkdir ~/seal/bigc
+fi
+cd ~/seal/bigc
+rm -f ~/.neamhshuim
+touch ~/.neamhshuim
+KEYINPUTFILE='/home/kps/TEN'
+#KEYINPUTFILE='/usr/local/share/crubadan/ga/FREQ'
+redobigc "${KEYINPUTFILE}" "n"
+
+##   acro.xml and acro-bruscar.xml ##
+egrep 'text="[A-ZÁÉÍÓÚ]+"' bigc.xml > acro.xml
+sed -i '/text="[A-ZÁÉÍÓÚ]*"/d' bigc.xml
+egrep -v 'text="[A-ZÁÉÍÓÚ]{3,6}"' acro.xml > acro-bruscar.xml
+egrep 'text="[A-ZÁÉÍÓÚ]{3,6}"' acro.xml > tempacro.xml
+mv -f tempacro.xml acro.xml
+
+####  NEAMHCHOIT  ####
+echo "Words flagged as \"ceart ach an-neamhchoitianta\" by gram-ga" > neamhchoit.txt
+echo "Check for some that could be improved to \"correct, but usually used in place of...\" (IONADAI{}) error" >> neamhchoit.txt
+echo "Some might actually not be uncommon; add refs to IG" >> neamhchoit.txt
+egrep 'Focal ceart ach an-neamhchoitianta' bigc.xml | sed 's/.*text="\([^"]*\)".*/\1/' >> neamhchoit.txt
+sed -i '/Focal ceart ach an-neamhchoitianta/d' bigc.xml
+
+####  iasacht/Iasacht ###
+# filter English ok here since the 3-gram means they prob really ARE english
+# also, filter Irish last since English ispell breaks tokens on hyphens
+egrep 'gur focal iasachta' bigc.xml | sed 's/.*text="\([^"]*\)".*/\1/' > iasacht-temp.txt
+egrep -- '-' iasacht-temp.txt > ias-fleiscin.txt
+sed -i '/-/d' iasacht-temp.txt
+cat iasacht-temp.txt | keepif -n /usr/local/share/crubadan/en/GLAN | keepif -n /usr/local/share/crubadan/ga/GLAN > iasacht.txt
+rm -f iasacht-temp.txt
+sed -i '/gur focal iasachta/d' bigc.xml
+echo "Best candidates for aitiuil, gall, gaelu.in (bad 3-grams + capital)" > Iasacht.txt
+echo "There will be others in Ainm.xml probably..." >> Iasacht.txt
+egrep '[A-ZÁÉÍÓÚ]' iasacht.txt >> Iasacht.txt
+sed -i '/[A-ZÁÉÍÓÚ]/d' iasacht.txt
+sed -i '1s/.*/Bad 3-grams, lowercase, English filtered; should be garbage mostly...\n&/' iasacht.txt
+
+## Ainm ##
+echo "No bad 3-grams; candidates for daoine and logainm..." > Ainm.xml
+egrep 'text="[^"]*[A-ZÁÉÍÓÚ]' bigc.xml >> Ainm.xml
+sed -i '/text="[^"]*[A-ZÁÉÍÓÚ]/d' bigc.xml
+sed -i 's/^<error msg=/<e m=/' bigc.xml
+sed -i 's/Focal anaithnid/FA/' bigc.xml
+
+##  split into English/non-English
+egrep -o 'text="[^"]*"' bigc.xml | sed 's/^text="//; s/"$//' > bigctmp.txt
+egrep -- '-' bigctmp.txt > bigc-fleiscin.txt
+sed -i '/-/d' bigctmp.txt
+cat bigctmp.txt | keepif -n /usr/local/share/crubadan/en/GLAN > newbigc.txt
+cat bigc-fleiscin.txt >> newbigc.txt
+rm -f bigc-fleiscin.txt
+redobigc "newbigc.txt" "y"
+cat bigctmp.txt | keepif -n newbigc.txt > english.txt
+rm -f newbigc.txt bigctmp.txt
+
+#   analyze errors in bigc.xml:
+#egrep -o 'msg=".*">$' bigc.xml | sed 's/^msg=.//' | sed 's/">$//' | sed 's/«[^»]*»/""/' | sort | uniq -c | sort -r -n
+mv -f ~/.neamhshuim.bak ~/.neamhshuim

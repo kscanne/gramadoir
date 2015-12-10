@@ -1,0 +1,25 @@
+#!/bin/bash
+
+usage()
+{
+	echo "Usage: segtest [-g|-m]"
+	echo "-g to show possible \"gratuitous\" splits, and"
+	echo "-m to show possible \"missed\" split."
+	exit 1
+}
+
+if [ $# -ne 1 ]
+then
+	usage
+fi
+if [ "$1" = "-g" ]
+then
+	benchcorp | abairti-utf | sed '1d' | egrep -v '^["(]* *[A-ZÁÉÍÓÚ]' | egrep -v '[0-9]+\. *[A-ZÁÉÍÓÚ]' | egrep -v "'[A-ZÁÉÍÓÚ]"
+	exit 0
+fi
+if [ "$1" = "-m" ]
+then
+	benchcorp | abairti-utf | sed '1d' | egrep "[a-záéíóú].*[.?!][]\"')}]* +[A-ZÁÉÍÓÚ]"
+	exit 0
+fi
+usage

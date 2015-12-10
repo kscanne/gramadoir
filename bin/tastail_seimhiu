@@ -1,0 +1,48 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use utf8;
+use Lingua::GA::Gramadoir;
+use Term::ANSIColor;
+use Encode;
+
+binmode STDOUT, ":encoding(utf-8)";
+binmode STDERR, ":encoding(utf-8)";
+
+my $gr = new Lingua::GA::Gramadoir;
+my $wordchr = "A-Za-zÁÉÍÓÚáéíóú'-";
+
+open (CLEAN, '/home/kps/gaeilge/gramadoir/tastail/CLEAN') or die "Could not open file with clean sentences: $!\n";
+binmode CLEAN, ":utf8";
+while (<CLEAN>) {
+	s/^/ /;
+#	print "Original:$_\n";
+	while (m/(?<=[^$wordchr])((?:[BCDFGMPSTcdfgmpst]h|bh[^fF])[$wordchr]+)/g) {
+		my $pre = $`;
+		my $post = $';
+		my $tounlen = $1;
+		$tounlen =~ s/h//;
+		my $modified = "$pre$tounlen$post";
+#		print "Modified:$pre".colored($tounlen,'bold green')."$post\n";
+		$modified = encode("iso-8859-1", $modified);
+		my $errs = $gr->grammatical_errors($modified);
+		if (scalar @$errs == 0) {
+			print colored('Potential problem:','bold yellow')." removing initial mutution did not introduce an error!\n";
+			print "Original:$_\n";
+			print "Modified:$pre".colored($tounlen,'bold green')."$post\n";
+		}
+		else {
+	                foreach my $error (@$errs) {
+                            (my $ln, my $msg, my $snt, my $offset, my $len) = $error =~ m/^<error fromy="([0-9]+)".* msg="([^"]+)".* context="([^"]+)" contextoffset="([0-9]+)" errorlength="([0-9]+)"\/>$/;
+                            my $errortext = substr($snt,$offset,$len);
+                            my $s = substr($snt,0,$offset).colored($errortext,'bold red').substr($snt,$offset+length($errortext))."\n$msg.\n\n";
+                            $s =~ s/&quot;/"/g;
+                            $s =~ s/&lt;/</g;
+                            $s =~ s/&gt;/>/g;
+                            $s =~ s/&amp;/&/g;
+                          #  print $s;
+                	} # loop over errors
+		} # else there were errors
+	} # loop over modifications
+}
+exit 0;

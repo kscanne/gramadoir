@@ -1,0 +1,15 @@
+#!/bin/bash
+#  take XML files in crubadan/ga/spell and pipe them through this
+#  to get some context:
+#
+#    cat /usr/local/share/crubadan/ga/spell/A.toadd.xml | xmlkwic | more
+#
+#  This is noted in Togail Corpais task.
+while read x
+do
+	TERM=`echo "${x}" | sed 's/^<E text="\([^"]*\)" msg=.*/\1/'`
+	echo "${x}"
+	togail ga kwic "${TERM}" | sed 's/^/  /' | tail -n 10
+	echo
+	echo
+done

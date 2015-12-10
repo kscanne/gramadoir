@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+#   compares behavior of aspell dictionary with gramadoir --litriu filter
+#
+#  
+TEANGA="ga"
+DIR=${HOME}/gaeilge/gramadoir/tastail
+cd ${DIR}
+# full togail ga dump is too much for gramadoir...
+brillcorp | gram-${TEANGA}.pl --iomlan --litriu --ionchod=utf8 | egrep '..' > gramspell.txt
+brillcorp | aspell -dga list | egrep -v '^([nth][AEIOUÁÉÍÓÚ]|dT|gC|n[DG]|bP|mB|bhF|tS|[bmd]'([AEIOUÁÉÍÓÚ]|Fh))" > aspell.txt
+diff -u gramspell.txt aspell.txt

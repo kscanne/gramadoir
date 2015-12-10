@@ -1,0 +1,5 @@
+#!/bin/bash
+# Usage: $ allseimh WORD
+#  finds most common lenited words following the word given as argument
+word=$1
+wegrep -i "(^|[^a-zA-ZáéíóúÁÉÍÓÚ'-])$word " | egrep -i -o "(^|[^a-zA-ZáéíóúÁÉÍÓÚ'-])$word ([bBcCdDfFgGmMpPtT]h|[sS]h[lnraeiouáéíóú])[a-zA-ZáéíóúÁÉÍÓÚ'-]*" | sed "s/^.[^ ]* //" | egrep -v '^bh[Ff]' | togail ga keepok | sort | uniq -c | sort -r -n

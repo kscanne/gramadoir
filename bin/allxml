@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+#   This script looks for 127 words that shouldn't be 127 because they
+#    actually appear in the corpus.
+TEANGA="ga"
+cat /usr/local/share/crubadan/${TEANGA}/FREQ | sed 's/^ *[0-9]* //' | sed 's/$/./' | gram-${TEANGA}.pl --xml --iomlan --ionchod=utf8 | egrep "NEAMHCHOIT" | tee ${HOME}/gaeilge/gramadoir/tastail/rare.xml |
+while read line
+do
+	echo "${line}"
+	WORD=`echo "${line}" | sed 's/^.*<F>//' | sed 's/<\/F>.*//'`
+	togail "${TEANGA}" kwic "${WORD}" | sed 's/^/  /' | tail -n 20
+	echo
+	echo
+done

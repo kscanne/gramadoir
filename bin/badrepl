@@ -1,0 +1,34 @@
+#!/bin/bash
+#  this finds words like "chuile", "ortha" that are correct
+#  non-literary, high freq  but MAY be mostly used as alternates
+TMPFILE=`mktemp`
+cat ${HOME}/gaeilge/ispell/ispell-gaeilge/athfhocail | sed 's/ .*//' | keepif ${HOME}/gaeilge/ispell/ispell-gaeilge/aspell.txt | sort -u | join - ${HOME}/gaeilge/ispell/ispell-gaeilge/athfhocail > $TMPFILE
+counts.pl /usr/local/share/crubadan/ga/FREQ $TMPFILE | sort -k2,2 -r -n | egrep -v ' [0-9]{4,6} .* [0-9]{1,2}$' | egrep -v ' [0-9]{3} .* [0-9]{1}$'  | egrep -v ' [012] '
+rm -f $TMPFILE
+
+#  HOW TO PROCESS THE OUTPUT:
+# (1)  If the word and all of its inflections are used ONLY as alternates,
+#   then it would be desirable to remove the word from the spellcheckers too,
+#   therefore it needs to be labelled OD77b in IG.
+#   An example is "conach" which is in OD as "hawkmoth" but in the corpus
+#   is almost always an alternate of "confadh"
+#    If the word is common enough, it might be worth adding a rule
+#   like  "g?ch?onach:IONADAI{confadh}" to rialacha, just for the 
+#   clearer error message (else just get "correct but very uncommon")
+# (2)  If just some inflections are primarily alternates 
+#   (like "pill" which is almost always an alt. of "fill", not
+#    the genitive of "peall", which is harmless enough on its own)
+#    then the dangerous inflections need to be sedded to code 127
+# (3) a slightly weaker option exists if the word is sometimes an
+#    alternate, sometimes not, depending on context:  in this case,
+#   don't change it to 127, but put IONADAI rules in that depend on
+#   context.  For example "fail" is common enough, but after "ag/ar/le" 
+#   it is surely supposed to be "fáil".   Same with "gabhail".
+#    Shouldn't have these without <F> and without context!
+# (4) In rare cases an IONADAI error (correct but usually in place of X)
+#    can be strengthened to CAIGHDEAN (non-standard form of X) when
+#   it is, first of all, totally clear that the non-standard form
+#   is intended, and when the info that the word happens to be
+#   correct is irrelevant/obvious  (e.g. "i bhfos" -> "abhus",
+#    who cares that "fos" is a word?  and in "Dhá+ECLIPSEDVERB" -> "Dá",
+#    no one needs to be told that "dhá" is actually a correct word!)

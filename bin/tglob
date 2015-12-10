@@ -1,0 +1,80 @@
+#!/bin/bash
+sed '
+s/<E[^>]*>//g
+s/<\/E>//g
+s/<S>[^<]*<\/.>/S/g
+s/<N pl="n" gnt="n" gnd="m">[^<]*<\/.>/NMCS/g
+s/<N pl="n" gnt="n" gnd="f">[^<]*<\/.>/NFCS/g
+s/<T>[^<]*<\/.>/T/g
+s/<A pl="n" gnt="n">[^<]*<\/.>/ACS/g
+s/<C>[^<]*<\/.>/C/g
+s/<P>[^<]*<\/.>/P/g
+s/<V p="xx" t="láith">[^<]*<\/.>/VPR/g
+s/<V p="xx" t="caite">[^<]*<\/.>/VPA/g
+s/<U>[^<]*<\/.>/U/g
+s/<N pl="y" gnt="n" gnd="m">[^<]*<\/.>/NMCP/g
+s/<R>[^<]*<\/.>/R/g
+s/<O>[^<]*<\/.>/O/g
+s/<D>[^<]*<\/.>/D/g
+s/<V cop="y">[^<]*<\/.>/VCOP/g
+s/<N pl="n" gnt="y" gnd="m">[^<]*<\/.>/NMGS/g
+s/<N pl="n" gnt="y" gnd="f">[^<]*<\/.>/NFGS/g
+s/<N pl="y" gnt="n" gnd="f">[^<]*<\/.>/NFCP/g
+s/<N pl="n" gnt="n">[^<]*<\/.>/NCS/g
+s/<A pl="y" gnt="n">[^<]*<\/.>/AP/g
+s/<A>[^<]*<\/.>/A/g
+s/<A pl="n" gnt="y" gnd="f">[^<]*<\/.>/AFGS/g
+s/<Q>[^<]*<\/.>/Q/g
+s/<V p="xx" t="fáist">[^<]*<\/.>/VF/g
+s/<V p="xx" t="coinn">[^<]*<\/.>/VC/g
+s/<V p="saor" t="caite">[^<]*<\/.>/VPAUT/g
+s/<N pl="n" gnt="y" gnd="f" h="y">[^<]*<\/.>/NFGS/g
+s/<V p="2ú" t="ord">[^<]*<\/.>/VIMP2S/g
+s/<V p="saor" t="láith">[^<]*<\/.>/VPRAUT/g
+s/<F>[^<]*<\/.>/F/g
+s/<V p="1ú" t="láith">[^<]*<\/.>/VPR1S/g
+s/<N pl="y" gnt="y" gnd="m">[^<]*<\/.>/NMGP/g
+s/<A pl="n" gnt="y" gnd="m">[^<]*<\/.>/AMGS/g
+s/<A pl="n" gnt="n" h="y">[^<]*<\/.>/ACS/g
+s/<O em="y">[^<]*<\/.>/O/g
+s/<N pl="n" gnt="n" gnd="f" h="y">[^<]*<\/.>/NFCS/g
+s/<V p="saor" t="coinn">[^<]*<\/.>/VCAUT/g
+s/<V p="3ú" t="ord">[^<]*<\/.>/VIMP3S/g
+s/<V p="saor" t="fáist">[^<]*<\/.>/VFAUT/g
+s/<N pl="y" gnt="y" gnd="f">[^<]*<\/.>/NFGP/g
+s/<N pl="n" gnt="n" gnd="m" h="y">[^<]*<\/.>/NMCS/g
+s/<V p="2ú" t="coinn">[^<]*<\/.>/VC2S/g
+s/<V p="1ú" t="coinn">[^<]*<\/.>/VC1S/g
+s/<V pl="y" p="1ú" t="láith">[^<]*<\/.>/VPR1P/g
+s/<P h="y">[^<]*<\/.>/P/g
+s/<V pl="y" p="3ú" t="caite">[^<]*<\/.>/VPA3P/g
+s/<V pl="y" p="1ú" t="caite">[^<]*<\/.>/VPA1P/g
+s/<N pl="n" gnt="n" h="y">[^<]*<\/.>/NCS/g
+s/<I>[^<]*<\/.>/I/g
+s/<V pl="y" p="3ú" t="coinn">[^<]*<\/.>/VC3P/g
+s/<N pl="y" gnt="y">[^<]*<\/.>/NGP/g
+s/<N pl="y" gnt="n">[^<]*<\/.>/NCP/g
+s/<V p="1ú" t="caite">[^<]*<\/.>/VPA1S/g
+s/<V pl="y" p="2ú" t="ord">[^<]*<\/.>/VIMP2P/g
+s/<V pl="y" p="1ú" t="fáist">[^<]*<\/.>/VF1P/g
+s/<N pl="y" gnt="n" gnd="f" h="y">[^<]*<\/.>/NFCP/g
+s/<V p="xx" t="foshuit">[^<]*<\/.>/VSUB/g
+s/<V pl="y" p="1ú" t="ord">[^<]*<\/.>/VIMP1P/g
+s/<N pl="y" gnt="n" gnd="m" h="y">[^<]*<\/.>/NMCP/g
+s/<V p="1ú" t="gnáth">[^<]*<\/.>/VPAHAB1S/g
+s/<V p="saor" t="gnáth">[^<]*<\/.>/VPAHABAUT/g
+s/<V pl="y" p="3ú" t="ord">[^<]*<\/.>/VIMP3P/g
+s/<V pl="y" p="1ú" t="coinn">[^<]*<\/.>/VC1P/g
+s/<N pl="n" gnt="y" gnd="m" h="y">[^<]*<\/.>/NMGS/g
+s/<V pl="y" p="3ú" t="láith">[^<]*<\/.>/VPR3P/g
+s/<N pl="y" gnt="n" h="y">[^<]*<\/.>/NCP/g
+s/<V pl="y" p="1ú" t="gnáth">[^<]*<\/.>/VPAHAB1P/g
+s/<V pl="y" p="3ú" t="gnáth">[^<]*<\/.>/VPAHAB3P/g
+s/<V p="saor" t="ord">[^<]*<\/.>/VIMPAUT/g
+s/<V p="saor" t="foshuit">[^<]*<\/.>/VSUBAUT/g
+s/<V p="1ú" t="ord">[^<]*<\/.>/VIMP1S/g
+s/<Y>[^<]*<\/.>/Y/g
+s/<X>[^<]*<\/.>/Y/g
+s/<line[^>]*> //
+s/ <\/line>//
+'

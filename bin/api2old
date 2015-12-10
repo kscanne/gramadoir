@@ -1,0 +1,26 @@
+#!/usr/bin/perl
+
+# pipe output of --api through this and it adds an extra attribute
+# named "errortext" that we used to have before
+
+use strict;
+use warnings;
+use utf8;
+
+binmode STDIN, ":utf8";
+binmode STDOUT, ":utf8";
+binmode STDERR, ":utf8";
+
+while(<STDIN>) {
+	if (m/ context="([^"]+)" contextoffset="([0-9]+)" errorlength="([0-9]+)/) {
+		my $context = $1;
+		my $offset = $2;
+		my $len = $3;
+		my $errortext = substr($context, $offset, $len);
+		s/ context="[^"]+" contextoffset="[0-9]+" errorlength="[0-9]+/ context="$context" errortext="$errortext/;
+	}
+	print;
+}
+
+
+exit 0;

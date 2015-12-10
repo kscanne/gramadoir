@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+#  not for distribution -- 
+#  uses my local crubadan data to refresh gramadoir-xx freq list
+if [ $# -ne 1 ]
+then
+	echo "Usage: newfreq xx"
+fi
+TEANGA=${1}
+GRAMDIR=${HOME}/gaeilge/gramadoir/gr
+CRUBADAN=/usr/local/share/crubadan/${TEANGA}
+rm -f ${GRAMDIR}/${TEANGA}/freq-${TEANGA}.txt
+TEMPFILE=`mktemp`
+cat ${GRAMDIR}/${TEANGA}/lexicon-${TEANGA}.txt | sed 's/ .*//' | sort -u > ${TEMPFILE} 
+counts.pl ${CRUBADAN}/FREQ ${TEMPFILE} | egrep -v ' 0$' > ${GRAMDIR}/${TEANGA}/freq-${TEANGA}.txt
+rm -f ${TEMPFILE}

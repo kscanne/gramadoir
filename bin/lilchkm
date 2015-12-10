@@ -1,0 +1,3 @@
+#!/bin/bash
+# survey of unknown words in crubadan corpus
+cat /usr/local/share/crubadan/ga/FREQ | aspell -dga list | sed 's/$/./' | sed '10001,$d' | perl -I ${HOME}/gaeilge/gramadoir/gr/ga/Lingua-GA-Gramadoir/lib ${HOME}/gaeilge/gramadoir/gr/ga/Lingua-GA-Gramadoir/scripts/gram-ga.pl --ionchod=utf8 --xml

@@ -1,0 +1,25 @@
+#!/bin/bash
+##   See  gramadoir/eile/tagging
+TODAY=`date`
+cd ${HOME}/gaeilge/gramadoir/tastail
+rm -f tc2.xml
+brillcorp | gram-ga.pl --ionchod=utf8 --no-unigram --iomlan > tc2.xml
+STATS=`cat tc2.xml | tagpct`
+(echo; echo "#"; echo "${TODAY} ${STATS}") >> ${HOME}/gaeilge/gramadoir/eile/tagging
+#mv -f rules.2 rules.prev
+#brill tc2.xml > rules.2
+mv -f AMB.2 AMB.prev
+
+
+# this last bit used to be "ambigfreq" script. 
+#  Now this code is in AN GRAMADOIR as the "--ilchiall" flag
+# but since that produces the output from the original text source
+# it has to re-xml everything, so I'll leave this as-as, but
+#   IF THIS GETS MODIFIED, BE SURE TO UPDATE AN GRAMADOIR TOO!
+cat tc2.xml | sed 's/<B>/\n<B>/g' | egrep '^<B>' | sed 's/^<B><Z>\([^Z]*\)<\/Z>.*/\1/' | sort | uniq -c | sort -r -n |
+while read ambig
+do
+	echo "${ambig}"
+	JUSTTAGS=`echo "${ambig}" | sed 's/^[^<]*//'`
+	egrep -e "${JUSTTAGS}" tc2.xml | sed "s@<B><Z>${JUSTTAGS}@\n&@g" | egrep -e "^<B><Z>${JUSTTAGS}</Z>" | sed "s@^<B><Z>${JUSTTAGS}<\/Z>\([^<]*\)<\/B>.*@\1@" | sort | uniq -c | sort -r -n | head -n 15 | sed "s/^/       /"
+done > AMB.2

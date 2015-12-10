@@ -1,0 +1,60 @@
+#!/bin/bash
+#   assumes "tag" has been run recently, generating
+#   ~/gaeilge/gramadoir/tastail/tc2.xml
+#   Top 21 tags should go down through <Q>, discarding anything with
+#   less than 10000, all prefix h's, etc. etc. 
+#
+#  typical usage:  % tag2grams > DUMP
+
+do_one_pair()
+{
+	PERCENTFIRST=`echo "${SUBFREQ}" '10000' '*' "${2}" '/' 'p' | dc`
+	PERCENTSECOND=`echo "${SUBFREQ}" '10000' '*' "${SUBTOTAL}" '/' 'p' | dc`
+	SCORE=`echo "${PERCENTFIRST} ${PERCENTSECOND} + p" | dc`
+	echo "${SCORE}: '${1}' '${SUBTAG}' ${SUBFREQ} times, of ${2} total for 1st (${PERCENTFIRST}), ${SUBTOTAL} total for 2nd (${PERCENTSECOND})"
+}
+
+do_one_tag()
+{
+REGEXP=`echo "${1}" | sed 's/"/./g'`
+(cat tcglob.xml | sed "s/${REGEXP}/\n&/g"; 2grgr "${REGEXP}" "${REGEXP}") | egrep -o "^${REGEXP}[^<]*</[A-Z]> <[ACDF-V][^>]*>" | sed "s/^.*<\/[A-Z]>[^<]*//" | sort | uniq -c > /tmp/currtagcounts
+
+cat /tmp/besttags | grep '[0-9][0-9][0-9][0-9][0-9]' |
+while read subline
+do
+	SUBTAG=`echo "${subline}" | sed 's/^[^<]*//'`
+	SUBTOTAL=`echo "${subline}" | sed 's/ *\([1-9][0-9]*\).*$/\1/'`
+	if egrep "${SUBTAG}" /tmp/currtagcounts > /dev/null
+	then
+		SUBFREQ=`egrep "${SUBTAG}" /tmp/currtagcounts | sed 's/ *\([1-9][0-9]*\).*$/\1/'`
+	else
+		SUBFREQ="0"
+	fi
+	do_one_pair "${1}" "${2}" "${SUBTAG}" "${SUBTOTAL}" "${SUBFREQ}"
+	echo "${1} ${SUBTAG}" >&2
+done
+}
+
+# main starts here
+cd ${HOME}/gaeilge/gramadoir/tastail
+cat tc2.xml | globv > tcglob.xml
+cat tcglob.xml | 
+grep -o "<[ACDF-W][^>/]*>" | sort | uniq -c | sort -r -n > /tmp/besttags
+cat /tmp/besttags | grep '[0-9][0-9][0-9][0-9][0-9]' |
+while read line
+do
+	TAG=`echo "${line}" | sed 's/^[^<]*//'`
+	FREQ=`echo "${line}" | sed 's/ *\([1-9][0-9]*\).*$/\1/'`
+	echo "${TAG}" >&2
+	do_one_tag "${TAG}" "${FREQ}"
+done | sort -n |
+egrep ' ([0-9]|[1-4][0-9]) times' |
+while read candidate
+do
+	echo "${candidate}"
+	ARG1=`echo "${candidate}" | sed "s/^[^']*'\([^']*\)'.*/\1/"`
+	ARG2=`echo "${candidate}" | sed "s/^.*'[^']*' '\([^']*\)'.*/\1/"`
+	2grgr "${ARG1}" "${ARG2}"
+	echo
+	echo
+done

@@ -1,0 +1,24 @@
+#!/bin/bash
+LENITABLE="bBcCdDfFgGmMpPtT"
+ESS="Ss"
+if [ $# -ne 2 ]
+then
+	echo "Usage: seimhsurv [-y|-n] WORD"
+	echo " -y means sort by number WITH lenition"
+	echo " -n means sort by number WITHOUT lenition"
+	exit 1
+fi
+focus=$1
+word=$2
+joinopt="2"
+fixup='s/ / 0 /'
+if [ $focus = "-y" ]
+then
+	joinopt="1"
+	fixup='s/$/ 0/'
+fi
+WITHLEN=`mktemp`
+echo "word len unlen"
+wegrep -i "(^|[^a-zA-ZáéíóúÁÉÍÓÚ'-])$word " | egrep -i -o "(^|[^a-zA-ZáéíóúÁÉÍÓÚ'-])$word ([$LENITABLE]h|[$ESS]h[lnraeiouáéíóú])[a-zA-ZáéíóúÁÉÍÓÚ'-]*" | sed "s/^.[^ ]* //" | egrep -v '^bh[Ff]' | sed 's/h//' | togail ga keepok | sort | uniq -c | sed 's/^ *\([0-9]*\) \(.*\)$/\2\t\1/' | LC_ALL=C sort > $WITHLEN
+wegrep -i "(^|[^a-zA-ZáéíóúÁÉÍÓÚ'-])$word " | egrep -i -o "(^|[^a-zA-ZáéíóúÁÉÍÓÚ'-])$word ([$LENITABLE][^h]|[$ESS][lnraeiouáéíóú])[a-zA-ZáéíóúÁÉÍÓÚ'-]*" | sed "s/^.[^ ]* //" | togail ga keepok | sort | uniq -c | sed 's/^ *\([0-9]*\) \(.*\)$/\2\t\1/' | LC_ALL=C sort | LC_ALL=C join -a$joinopt $WITHLEN - | sed "/^[^ ]* [0-9]*$/$fixup" | sort -r -n +$joinopt
+rm -f WITHLEN

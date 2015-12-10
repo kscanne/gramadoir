@@ -1,0 +1,11 @@
+#!/bin/bash
+cat preps.txt |
+while read prep
+do
+	cat pronouns.txt |
+	while read pn
+	do
+		echo "Searching for \"$prep $pn\"..."
+		wegrep -i "[^a-zA-ZáéíóúÁÉÍÓÚ]$prep $pn[^a-zA-ZáéíóúÁÉÍÓÚ]" | egrep -v 'Sinn Féin' | egrep -v 'i Sí ' | egrep -v 'Ó Sé' | egrep -v '[^a-zA-ZáéíóúÁÉÍÓÚ][Aa]r [Ss]([éí]|iad)'
+	done
+done

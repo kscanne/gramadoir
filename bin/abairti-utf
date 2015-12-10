@@ -1,0 +1,30 @@
+#!/usr/bin/perl
+# N.B. since irish uses latin-1 internally, this breaks UTF-8 quotes, etc. :(
+
+use strict;
+use warnings;
+use utf8;
+use Lingua::GA::Gramadoir;
+
+# important technical point about encodings.   
+# This script, like gram-xx.pl, and all others that "use Lingua::XX::Gramadoir"
+# should read in byte data and pass that on to the module - it
+# is the module's job to convert it to the "input_encoding" specified 
+# below in the constructor...
+binmode STDIN, ":bytes";
+binmode STDOUT, ":utf8";
+binmode STDERR, ":utf8";
+
+my $gr = new Lingua::GA::Gramadoir(input_encoding => 'utf-8');
+
+local $/;
+$_ = <STDIN>;
+my $sentences = $gr->get_sentences($_);
+foreach my $s (@$sentences) {
+	$s =~ s/&quot;/"/g;
+	$s =~ s/&lt;/</g;
+	$s =~ s/&gt;/>/g;
+	$s =~ s/&amp;/&/g;
+	print "$s\n";
+}
+exit 0;

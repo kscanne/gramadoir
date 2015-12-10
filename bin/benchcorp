@@ -1,0 +1,4 @@
+#!/bin/bash
+#  DO NOT CHANGE -- this is used by An Gramadoir benchmarking.
+#  Use via "make benchmark" in gr.   Results in gramadoir/eile/benchmarks. 
+cat ${HOME}/gaeilge/diolaim/n/Beo/02*

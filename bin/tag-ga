@@ -1,0 +1,22 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use Lingua::GA::Gramadoir;
+
+# see remarks on encoding in abairti-utf
+my $gr = new Lingua::GA::Gramadoir(input_encoding => 'utf-8');
+
+binmode STDIN, ":bytes";
+binmode STDOUT, ":utf8";
+binmode STDERR, ":utf8";
+
+local $/;
+$_ = <STDIN>;
+my $sentences = $gr->add_tags($_);
+
+foreach my $sentence (@$sentences) {
+	print $sentence."\n";
+}
+
+exit 0;

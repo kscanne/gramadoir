@@ -1,0 +1,13 @@
+#!/bin/bash
+##  takes output gram-ga.pl --xml and tried to compute percentage of words
+##   unambiguously tagged.
+#glob |   <--- cheating!
+#    note the "egrep -v" in the first line gets rid of the
+#    individual markups from the ambiguous taggings...  one line is counted
+#    from the <B><Z>
+sed "s/<[A-Y]/\n&/g" | egrep '^<[A-WY]' | egrep -v '/>' > /tmp/tagpct.txt
+TOTALTAGGED=`cat /tmp/tagpct.txt | wc -l | sed 's/^ *//'`
+TOTALUNAMBIG=`egrep "^<[AC-WY]" /tmp/tagpct.txt | wc -l | sed 's/^ *//'`
+PERCENTAGE=`echo "100 ${TOTALUNAMBIG} * ${TOTALTAGGED} / p" | dc`
+echo "${TOTALUNAMBIG}/${TOTALTAGGED} = ${PERCENTAGE} percent unambiguously tagged"
+rm -f /tmp/tagpct.txt

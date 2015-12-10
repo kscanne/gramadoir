@@ -1,0 +1,4 @@
+#!/bin/bash
+# mimics behavior of ga/Makefile which gets all errors in XML format
+# from a test corpus, one line each
+perl -I ~/gaeilge/gramadoir/gr/ga/Lingua-GA-Gramadoir/lib ~/gaeilge/gramadoir/gr/ga/Lingua-GA-Gramadoir/scripts/gram-ga.pl --xml --iomlan --comheadan=en | sed 's/<E/\n<E/g; s/<\/E>/&\n/g' | sed '/^<E/!{s/ </\n</g}' | egrep '.' | egrep '^<E' | LC_ALL=C sort

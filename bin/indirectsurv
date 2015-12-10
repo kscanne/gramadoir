@@ -1,0 +1,7 @@
+#!/bin/bash
+#   survey of "a"+verb, compare when following verb is lenited vs. "d'"
+cat UNAMBIGECLIPSEDVERBS | 
+while read x
+do
+	wegrep " a $x[^a-zA-ZАИМСЗаимсз]" | egrep -o "[a-zA-ZАИМСЗаимсз'-]+ a $x"
+done | sed 's/ .*//' | sort | uniq -c | sort -r -n

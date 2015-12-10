@@ -1,0 +1,15 @@
+#!/bin/bash
+##  takes xml output of An Gramadóir and wipes out all tag attributes,
+##  then collapses repeated tags to one.
+## i.e.  <B><Z><N gnt="y"><N gnt="n"></Z>focal</B>  ->  <N>focal</N>
+##  Not used by An Gramadóir proper, just in supported brill stuff.
+sed "
+s/<E[^>]*>//g
+s/<\/E>//g
+s/<\([NVA]\)[^>]*\/>/<\1\/>/g
+s/<\([NVA]\)[^>/]*>/<\1>/g
+s/<N\/>\(<N\/>\)*/<N\/>/g
+s/<V\/>\(<V\/>\)*/<V\/>/g
+s/<A\/>\(<A\/>\)*/<A\/>/g
+s/<B><Z><\([NVA]\)\/><\/Z>\([^<]*\)<\/B>/<\1>\2<\/\1>/g
+"

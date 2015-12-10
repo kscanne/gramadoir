@@ -1,0 +1,20 @@
+#!/bin/bash
+# close.txt will have pairs of words one edit apart,
+# including those differing only by an accent. 
+#  This is then filtered to only pairs differing by an
+# accent and stored in pairs.txt
+togail ga pairs > ${HOME}/close.txt
+cat ${HOME}/close.txt |
+while read x
+do
+	FIRST=`echo "$x" | sed 's/ .*//'`
+	SECOND=`echo "$x" | sed 's/^[^ ]* [0-9]* \([^ ]*\) .*/\1/'`
+	FIRSTSTRIP=`echo $FIRST | tr "áéíóúÁÉÍÓÚ" "aeiouAEIOU"`
+	if [ $FIRSTSTRIP = $SECOND ]
+	then
+		echo $x
+	fi
+done > ${HOME}/pairs.txt
+# since many are already handled as subjunctives, etc:
+# cat pairs.txt | sed 's/^[^ ]* [0-9]* \([^ ]*\) .*/\1./' | gr | more
+# then add any good cands to posmap.pl

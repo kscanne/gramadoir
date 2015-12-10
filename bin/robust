@@ -1,0 +1,8 @@
+#!/bin/bash
+#  Usage: nice robust 2> ~/ERRS
+#    to see if anything ever gets written to stderr!
+DIOLAIM=${HOME}/gaeilge/diolaim
+for dir in r t n OF81 l
+do
+	find ${DIOLAIM}/$dir -type f | while read x; do echo $x >&2; perl -I ${HOME}/gaeilge/gramadoir/gr/ga/Lingua-GA-Gramadoir/lib ${HOME}/gaeilge/gramadoir/gr/ga/Lingua-GA-Gramadoir/scripts/gram-ga.pl --ionchod=utf8 $x > /dev/null; done
+done

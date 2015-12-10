@@ -1,0 +1,10 @@
+#!/bin/bash
+cd ${HOME}/gaeilge/gramadoir/tastail
+mv Dinneen-caigh.txt Dinneen-prev.txt
+MYTMP=`mktemp`
+MYTMP2=`mktemp`
+cat ${HOME}/gaeilge/diolaim/x/Di04 | sed "s/[^a-zA-ZáéíóúÁÉÍÓÚ'-].*//" | sed 's/$/./' > $MYTMP
+cat $MYTMP | cga | sed 's/\. /.\n/g' > $MYTMP2
+paste $MYTMP $MYTMP2 | tr -d "." > Dinneen-caigh.txt
+rm -f $MYTMP $MYTMP2
+vimdiff Dinneen-prev.txt Dinneen-caigh.txt

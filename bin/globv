@@ -1,0 +1,10 @@
+#!/bin/bash
+# same as glob, but verbs only (used for 2 and 3 grams for parts of speech)
+sed "
+s/<E[^>]*>//g
+s/<\/E>//g
+s/<V[^>]*\/>/<V\/>/g
+s/<V[^>/]*>/<V>/g
+s/<V\/>\(<V\/>\)*/<V\/>/g
+s/<B><Z><V\/><\/Z>\([^<]*\)<\/B>/<V>\1<\/V>/g
+"

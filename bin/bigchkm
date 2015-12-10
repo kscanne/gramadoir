@@ -1,0 +1,58 @@
+#!/bin/sh
+## Main tool for testing Irish ispell package.
+# see tascanna instructions.
+#   MYBAD is now a permanent, maintained file. 
+#   it WAS  ispell/bearla/*glac before.
+#
+#      Assumes we've recently "groomed"; 
+#     so ALL ispell stuff updated (expand BIOBLA affixes),
+#    gramadoir updated (check A.latecap.txt with it), etc.
+
+
+# would need to be updated for new --api format   25-01-2007
+
+
+# takes a file arg (one of the A.*.txt); use gramadoir to take out
+# "known" examples of misspellings, morphological variants, etc.
+process() 
+{
+echo "Processing ${1}..."
+if [ "${1}" = "A.glanacc.txt" ]
+then
+	sed 's/ z / /; s/ y /.  /' "${1}" | gram-ga.pl --api --aspell | iconv -f utf8 -t iso-8859-1 | perl -n -e "print unless m/sentence=.[0-9]+ ([^ ]+) .*(Focal anaithnid|an focal seo).*\1/i;" | perl -n -e "print unless m/sentence=.[0-9]+ ([^ ]+) .*errortext=.\1. msg=.Focal neamhch/;" > ${1}.xml
+else
+	sed 's/ .*/./' "${1}" | gram-ga.pl --api --aspell | iconv -f utf8 -t iso-8859-1 > ${1}.xml
+	if [ "${1}" = "A.latecap.txt" ]
+	then
+		sed 's/ .*/./' "${1}" | gram-ga.pl --litriu | iconv -f utf8 -t iso-8859-1 > ${1}.tmp
+		sed 's/.*/& 0/' ${1}.tmp > ${1}
+		rm -f ${1}.tmp 
+	fi
+fi
+sed -i 's/ offset=.* error/ /' ${1}.xml
+}
+
+BIBLETEMP=`mktemp`
+ISPELL=${HOME}/gaeilge/ispell/ispell-gaeilge
+cat ${HOME}/.biobla | ispell -dgaeilge -e3 | tr " " "\n" | egrep -v '\/' > ${BIBLETEMP}
+sed 's/ .*//' ${ISPELL}/earraidi ${ISPELL}/gaelu >> ${BIBLETEMP}
+sort -u ${BIBLETEMP} ${ISPELL}/aspellalt.txt ${HOME}/.ispell_gaeilge_check ${HOME}/gaeilge/gnu/gnu/poglac > /usr/local/share/crubadan/ga/GLAN
+togail ga glan 32
+droch ga GLAN
+cd /usr/local/share/crubadan/ga/spell
+rm -f A.badchar.txt A.novowels.txt A.trips.txt
+mv -f A.toadd.txt toadd.txt
+process A.3gram.txt
+process A.accent.txt
+process A.glanacc.txt
+process A.latecap.txt
+process A.pollute.txt
+process A.toaddcap.txt
+process toadd.txt
+droch ga aitiuil
+droch ga gall
+droch ga eachtar
+droch ga daoine
+droch ga logainm
+rm -f ${BIBLETEMP} /usr/local/share/crubadan/ga/GLAN
+touch /usr/local/share/crubadan/ga/GLAN

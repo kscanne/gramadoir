@@ -1,0 +1,84 @@
+#!/bin/sh
+## used from command line when crafting rules for aonchiall-ga.in
+##  Usage:  tagrep [-f|-m|-l] WORD
+##    to output all instances of the word, plus a following word, 
+##    tagged with part of speech.
+#
+#
+# CORPUS:
+# CORP="togail ga dump"
+CORP="biggercorp"
+#CORP="brillcorp"
+
+# filter; pipe the command line arg (word) through this and 
+# it changes regex to match any mutation
+generalize_regex()
+{
+	sed "
+s/^a/([mbd]'[Aa]|[nt]-a|[nt]A|h?[Aa])/
+s/^e/([mbd]'[Ee]|[nt]-e|[nt]E|h?[Ee])/
+s/^i/([mbd]'[Ii]|[nt]-i|[nt]I|h?[Ii])/
+s/^o/([mbd]'[Oo]|[nt]-o|[nt]O|h?[Oo])/
+s/^u/([mbd]'[Uu]|[nt]-u|[nt]U|h?[Uu])/
+s/^á/([mbd]'[Áá]|[nt]-á|[nt]Á|h?[Áá])/
+s/^é/([mbd]'[Éé]|[nt]-é|[nt]É|h?[Éé])/
+s/^í/([mbd]'[Íí]|[nt]-í|[nt]Í|h?[Íí])/
+s/^ó/([mbd]'[Óó]|[nt]-ó|[nt]Ó|h?[Óó])/
+s/^ú/([mbd]'[Úú]|[nt]-ú|[nt]Ú|h?[Úú])/
+s/^b/(m)?[Bb]h?/
+s/^c/(g)?[Cc]h?/
+s/^d/(n)?[Dd]h?/
+s/^f/(bh|[mbd]')?[Ff]h?/
+s/^g/(n)?[Gg]h?/
+s/^h/[Hh]/
+s/^j/[Jj]/
+s/^k/[Kk]/
+s/^l/l/
+s/^m/[Mm]h?/
+s/^n/[Nn]/
+s/^p/(b)?[Pp]h?/
+s/^r/[Rr]/
+s/^s/(t)?[Ss]h?/
+s/^t/(d)?[Tt]h?/
+s/^v/[Vv]/
+s/^x/[Xx]/
+s/^z/[Zz]/
+"
+}
+
+if [ $# -ne 2 ]
+then
+	echo "Usage: tagrep [-f|-m|-l|-c] WORD"
+	echo "-f: show collocations where chosen word is first of two words"
+	echo "-m: show collocations where chosen word is middle of three words"
+	echo "-l: show collocations where chosen word is second of two words"
+	echo "-c: show count of times word appears"
+	exit 1
+fi
+REG=`echo "${2}" | generalize_regex`
+if [ "${1}" = "-f" ]
+then
+	$CORP | egrep "${REG}" | egrep -o "(^${REG}|[^A-Za-z]${REG}) [ÁÉÍÓÚáéíóúA-Za-z'-]+" | sed 's/^[^A-Za-z]*//; s/ *$/!/' | sort | uniq -c | sort -r -n | gram-ga.pl --xml --iomlan --ionchod=utf-8
+	exit 0
+fi
+
+if [ "${1}" = "-l" ]
+then
+	$CORP | egrep "${REG}" | egrep -o "[ÁÉÍÓÚáéíóúA-Za-z'-]+ (${REG}$|${REG}[^A-Za-z])" | sed 's/^[^A-Za-z]*//; s/[^A-Za-z]$//; s/$/!/' | sort | uniq -c | sort -r -n | gram-ga.pl --xml --iomlan --ionchod=utf-8
+	exit 0
+fi
+
+if [ "${1}" = "-m" ]
+then
+	$CORP | egrep "${REG}" | egrep -o "[ÁÉÍÓÚáéíóúA-Za-z'-]+ ${REG} [ÁÉÍÓÚáéíóúA-Za-z'-]+" | sed 's/^[^A-Za-z]*//; s/ *$/!/' | sort | uniq -c | sort -r -n | gram-ga.pl --xml --iomlan --ionchod=utf-8
+	exit 0
+fi
+
+if [ "${1}" = "-c" ]
+then
+	$CORP | egrep "${REG}" | egrep -o "(^${REG}|[^A-Za-z]${REG})[^A-Za-z]" | wc -l
+	exit 0
+else
+	echo "Usage: tagrep [-f|-m|-l] WORD"
+	exit 1
+fi

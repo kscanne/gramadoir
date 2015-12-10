@@ -1,0 +1,34 @@
+#!/bin/bash
+if [ $# -ne 1 ]
+then
+	echo "Usage: context WORD"
+	exit 1
+fi
+FREQ=`egrep " ${1}$" /usr/local/share/crubadan/ga/FREQ.aimsigh | sed 's/^ *\([0-9]*\) .*/\1/'`
+echo "Appears a total of $FREQ times."
+TEMPF=./context-1.txt
+TEMPP=`mktemp`
+##############################################################################
+tagrep -f "${1}" | egrep '^<line>' | egrep -v '<E' > ${TEMPF}
+NUMW=`cat ${TEMPF} | wc -l`
+cat ${TEMPF} | sed 's/^<line> *<A>[0-9]*<\/A> <[^>]*>[^<]*<[^>]*>[^<]*\(<[^>]*>\).*/\1/' | sort | uniq -c | sort -r -n > ${TEMPP}
+NUMP=`cat ${TEMPP} | wc -l`
+echo '----------------------------------------------------------------------------'
+echo "Appears before $NUMW different words, $NUMP parts of speech."
+head -n 10 ${TEMPP}
+##############################################################################
+#tagrep -m "${1}" | egrep '^<line>' | egrep -v '<E' > ${TEMPF}
+#NUMW=`cat ${TEMPF} | wc -l`
+#echo '----------------------------------------------------------------------------'
+#echo "Appears between $NUMW different pairs."
+##############################################################################
+TEMPF=./context-2.txt
+tagrep -l "${1}" | egrep '^<line>' | egrep -v '<E' > ${TEMPF}
+NUMW=`cat ${TEMPF} | wc -l`
+cat ${TEMPF} | sed 's/^<line> *<A>[0-9]*<\/A> \(<[^>]*>\).*/\1/' | sort | uniq -c | sort -r -n > ${TEMPP}
+NUMP=`cat ${TEMPP} | wc -l`
+echo '----------------------------------------------------------------------------'
+echo "Appears following $NUMW different words, $NUMP parts of speech."
+head -n 10 ${TEMPP}
+##############################################################################
+rm -f $TEMPP $TEMPF

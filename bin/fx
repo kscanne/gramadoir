@@ -1,0 +1,25 @@
+#!/bin/bash
+# Used by "Fx" script
+# aim is to glue together chopped up words from bad PDF->TXT conversion
+if [ $# -ne 2 ]
+then
+	echo "Usage: fx token [l|r]"
+	exit 1
+fi
+DIOLAIM=${HOME}/gaeilge/diolaim
+CRUBADAN=/usr/local/share/crubadan/ga/ciu
+TOKEN="${1}"
+DIR="${2}"
+EGREP="egrep -l"
+PATT="(^|[^A-Za-zÁÉÍÓÚáéíóú])${TOKEN}($|[^A-Za-zÁÉÍÓÚáéíóú])"
+SUBST="s/ \($TOKEN[^A-Za-zÁÉÍÓÚáéíóú]\)/\1/g"
+if [ $DIR = "r" ]
+then
+	SUBST="s/\([^A-Za-zÁÉÍÓÚáéíóú]$TOKEN\) /\1/g"
+fi
+($EGREP "$PATT" ${DIOLAIM}/l/* ${DIOLAIM}/n/*/* ${DIOLAIM}/r/*/*; $EGREP "$PATT" $CRUBADAN/100*.txt; $EGREP "$PATT" $CRUBADAN/101*.txt; $EGREP "$PATT" $CRUBADAN/102*.txt; $EGREP "$PATT" $CRUBADAN/103*.txt; $EGREP "$PATT" $CRUBADAN/104*.txt; $EGREP "$PATT" $CRUBADAN/105*.txt; $EGREP "$PATT" $CRUBADAN/106*.txt; $EGREP "$PATT" $CRUBADAN/107*.txt) |
+while read x
+do
+	echo "applying \"$SUBST\" to ${x}"
+	sed -i "${SUBST}" "${x}"
+done

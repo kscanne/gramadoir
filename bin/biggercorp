@@ -1,0 +1,4 @@
+#!/bin/bash
+#  used when I want to be more ambitious in tagrep
+cd ${HOME}/gaeilge/diolaim
+cat n/Anois/* n/Beo/* n/Feasta/* n/La/* n/TB/* l/* OF81/* r/acht/* r/dail/* r/eile/* r/TEPR/*

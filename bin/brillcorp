@@ -1,0 +1,5 @@
+#!/bin/bash
+#  used for benchmarking tagging algorithms ("tag")
+#  and as a good large text for running "gr --brill"
+cd ${HOME}/gaeilge/diolaim/n
+cat Anois/* Beo/* Feasta/* La/* TB/*
