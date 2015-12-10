@@ -1,5 +1,5 @@
 # This file contains the grammatical rules checked by An Gramadóir.
-# Copyright (C) 2004 Kevin P. Scannell <scannell@slu.edu>
+# Copyright (C) 2004 Kevin P. Scannell <kscanne@gmail.com>
 #                    
 #
 # This is free software; see the file COPYING for copying conditions.  There is
@@ -8,7 +8,7 @@
 # Users can add to this list by following the syntax described
 # on the web page  http://borel.slu.edu/gramadoir/
 # Please send me any useful additional rules for inclusion in
-# future releases <scannell@slu.edu>
+# future releases <kscanne@gmail.com>
 #
 #. This is a sentence with with a repeated word.
 #. ... that that nation might live (CEART).

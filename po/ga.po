@@ -1,7 +1,7 @@
 # Irish translations for gramadoir.
 # Copyright (C) 2003 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gramadoir package.
-# Kevin Patrick Scannell <scannell@SLU.EDU>, 2003, 2004, 2005.
+# Kevin Patrick Scannell <kscanne@gmail.com>, 2003, 2004, 2005.
 #
 msgid ""
 msgstr ""
