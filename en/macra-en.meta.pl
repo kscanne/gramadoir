@@ -1,4 +1,4 @@
-#!!PERLPATH!
+#!/usr/bin/perl
 # Macros used in converting *.in files into *.pl scripts
 # Copyright (C) 2004 Kevin P. Scannell <scannell@slu.edu>
 #                    
