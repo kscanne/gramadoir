@@ -1,5 +1,5 @@
---- Makefile	2014-07-07 08:55:02.391937738 -0500
-+++ Makefile.ok	2014-07-07 08:54:56.127984701 -0500
+--- Makefile	2015-12-10 13:53:36.117744475 -0600
++++ Makefile.ok	2015-12-10 13:53:29.669794046 -0600
 @@ -60,8 +60,16 @@
  
  Makefile : Makefile.in config.status
@@ -17,7 +17,7 @@
  config.status: configure
  	./config.status --recheck
  
-@@ -81,4 +89,201 @@
+@@ -81,4 +89,195 @@
  semiclean :
  	rm -f y.tab.* $(LEX_OUTPUT_ROOT).* aonchiall.y rialacha.y
  
@@ -211,11 +211,5 @@
 +manual: FORCE
 +	rm -f $(webhome)/manual/*.html
 +	jw -f docbook -b html -o $(webhome)/manual manual.sgml
-+
-+ChangeLog: FORCE
-+	cat CLMANIFEST | xargs cvs2cl
-+	utf $@
-+	chmod 644 $@
-+	rm -f ChangeLog.bak
 +
  FORCE :
