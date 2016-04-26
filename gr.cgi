@@ -49,7 +49,7 @@ die "Problem setting language handle" unless $lh;
 # but each string is taken directly from gram.pl
 my $clar = gettext('An Gramadoir');
 my $vstring = gettext('version %s', $VERSION);
-my $copyright = 'Copyright (C) 2003-2007 <a href="http://borel.slu.edu/">Kevin P. Scannell</a><br><br>';
+my $copyright = 'Copyright (C) 2003-2007 <a href="//borel.slu.edu/">Kevin P. Scannell</a><br><br>';
 my $gpl = gettext('This is free software; see the source for copying conditions.  There is NO\\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE,\\nto the extent permitted by law.');
 
 print $q->header(-type=>"text/html",
@@ -60,10 +60,10 @@ print $q->header(-type=>"text/html",
 "<head>\n",
 "<title>An Gramad&oacute;ir</title>\n",
 "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n",
-"<link rel=\"stylesheet\" href=\"http://borel.slu.edu/kps.css\" type=\"text/css\">\n",
+"<link rel=\"stylesheet\" href=\"//borel.slu.edu/kps.css\" type=\"text/css\">\n",
 "</head>\n<body>\n";
 
-print "<p>\n<a href=\"http://borel.slu.edu/gramadoir/\">$clar</a>, $vstring<br>\n$copyright\n<i>$gpl</i></p><hr>\n";
+print "<p>\n<a href=\"//borel.slu.edu/gramadoir/\">$clar</a>, $vstring<br>\n$copyright\n<i>$gpl</i></p><hr>\n";
 
 if (defined($ionchur)) {
 	$ionchur =~ s/\x{e2}\x{80}\x{99}/'/g;  # unicode single quote to '
