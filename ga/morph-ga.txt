@@ -86,7 +86,7 @@ i[dg]hth?(.)		it$1	1	<.+>	<&>  # dóighthe, dóighte
 ^(h?a)ird([^e])	$1rd$1		1	<.+>	<&>
 # handled by more general "nn" rule below
 #^h?anns			ans		1	<.+>	<&>
-^dh'			d'		1	<.+>	<&>
+^([dm])h'			$1'		1	<.+>	<&>  # mh'anam, dh'imthigh
 ^h-			h		1	<.+>	<&>    # CO p.126
 ^n-([AEIOUÁÉÍÓÚ])	n$1		1	<.+>	<&>    # CO p.125
 ^t-([AEIOUÁÉÍÓÚ])	t$1		1	<.+>	<&>    # CO p.125
@@ -127,7 +127,7 @@ i[dg]hth?(.)		it$1	1	<.+>	<&>  # dóighthe, dóighte
 ^(g?ch?)oilg			$1olg		1	<.+>	<&>  # coilgsheasamh e.g.
 ^(g?ch?)[oó]imh-mh		$1óimh		1	<[ANV].*>	<&>
 ^(g?ch?)oimh			$1omh		1	<.+>	<&>    # coimhlíonadh
-^(g?ch?)óimhmh			$1óimh	1	<.+>	<&>    # cóimhmheas, srl in Di04
+^(g?ch?)[óo]imhmh		$1óimh	1	<.+>	<&>    # cóimhmheas, srl in Di04
 ^(g?ch?)óimh([^eéií])			$1omh$2	1	<.+>	<&>    # cóimh-chealg (Di04)
 # general ómh[^a] -> omh$1  rule below
 ^(g?ch?)ómha		$1omha		1	<[ANV].*>	<&>
