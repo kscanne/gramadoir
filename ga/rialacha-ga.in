@@ -2920,20 +2920,20 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 # CB pp.70-71
 # First version is redundant - but is nicer since it highlights the adj too
 # and is the wildly more common possibility
-#. Bhí an méid sin airgid níba luachmhar dúinn ná maoin an domhain.
-#. An raibh duine ar bith acu ní ba bhocht ná eisean?
-#. Eisean beagán níb óga ná mise.
-<R>NIBS</R> <A>ANYTHING</A>:BREISCHEIM
-<R>NIBS</R> <A pl="n" gnt="y" gnd="f">ANYTHING</A>:OK
-<R>NIBS</R> <N pl="n" gnt="n" gnd="m">gh?aiste</N>:CAIGHDEAN{gasta}
-<R>NIBS</R>:BREISCHEIM
-<E><R>NIBS</R></E> <A pl="n" gnt="y" gnd="f">ANYTHING</A>:OK
-#. Agus do na daoine a bhí níb boichte ná iad féin.
-<R>[Nn]íb</R> <A pl="n" gnt="y" gnd="f">NONVOWELNONF</A>:BACHOIR{níba}
-#. Eisean beagán níba óige ná mise.
-<R>[Nn]íba</R> <A pl="n" gnt="y" gnd="f">INITIALVOWELORF</A>:BACHOIR{níb}
-#. Bhí na páistí ag éirí níba tréine.
-<R>[Nn]íba</R> <A pl="n" gnt="y" gnd="f">UNLENITED</A>:SEIMHIU
+# Bhí an méid sin airgid níba luachmhar dúinn ná maoin an domhain.
+# An raibh duine ar bith acu ní ba bhocht ná eisean?
+# Eisean beagán níb óga ná mise.
+#<R>NIBS</R> <A>ANYTHING</A>:BREISCHEIM
+#<R>NIBS</R> <A pl="n" gnt="y" gnd="f">ANYTHING</A>:OK
+#<R>NIBS</R> <N pl="n" gnt="n" gnd="m">gh?aiste</N>:CAIGHDEAN{gasta}
+#<R>NIBS</R>:BREISCHEIM
+#<E><R>NIBS</R></E> <A pl="n" gnt="y" gnd="f">ANYTHING</A>:OK
+# Agus do na daoine a bhí níb boichte ná iad féin.
+#<R>[Nn]íb</R> <A pl="n" gnt="y" gnd="f">NONVOWELNONF</A>:BACHOIR{níba}
+# Eisean beagán níba óige ná mise.
+#<R>[Nn]íba</R> <A pl="n" gnt="y" gnd="f">INITIALVOWELORF</A>:BACHOIR{níb}
+# Bhí na páistí ag éirí níba tréine.
+#<R>[Nn]íba</R> <A pl="n" gnt="y" gnd="f">UNLENITED</A>:SEIMHIU
 # LGG p.58
 #. Tá tuairisc ar an léacht a thug Niamh Nic Suibhne ar leathanach a hocht.
 <Y>Ni[cg]</Y> <Y>CAPITALUNLENITEDNOTCG</Y>:SEIMHIU
