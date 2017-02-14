@@ -251,6 +251,7 @@ i[dg]hth?(.)		it$1	1	<.+>	<&>  # dóighthe, dóighte
 ^(b?ph?)rímh			$1ríomh		1	<.+>	<&>
 ^réidh			ré		1	<.+>	<&>
 ^réimh			réamh		1	<.+>	<&>
+^riaghal		rial		1	<.+>	<&>
 ^r[íi]o?gh([^n])		rí$1		1	<.+>	<&>   # righdhamhna, ríogh-choróin, but not "righnigh", "righne", etc.
 ^ro-			ró-		1	<.+>	<&>
 ^rói-			ró-		1	<.+>	<&>
@@ -331,6 +332,11 @@ sg			sc		1	<.+>	<&>    # CO p.115
 sb			sp		1	<.+>	<&>    # CO p.115
 sd			st		1	<.+>	<&>    # CO p.115
 dn			nn		1	<.+>	<&>    # CO p.114 céadna
+aoí			aoi		1	<.+>	<&>		# from caighdean corpus....
+ín([gs])	in$1	1	<.+>	<&>		# from caighdean corpus....
+éaracht		éireacht	1	<N.*>	<&>	# caimiléaracht, srl.
+(..)[au]ig$		$1aigh	1	<.+>	<&>	# tosaig, ghreamuig, máirnéalaig, srl.
+ngc			nc		1	<.+>	<&>		# caighdean corpus, pongc -> ponc
 é(ir[ld])		e$1		1	<.+>	<&>    # CO p.123
 á(i?r[dlnr])		a$1		1	<.+>	<&>    # CO p.123-124
 ó(i?r[dlnr])		o$1		1	<.+>	<&>    # CO p.123-124
@@ -341,6 +347,7 @@ eamhla			iúla		1	<[ANF].*>	<&>
 ([^e])amh[au]il$		$1úil		1	<[ANF].*>	<&>    # CO p.102, a2+barúil, etc.
 ([^e])amhla		$1úla		1	<[ANF].*>	<&>    # "-amhlachta?" too
 adht([aá])		at$1	1	<.+>	<&>	# iadhta, cruadhtán, iarradhtas, srl
+iomh$			eamh	1	<.+>	<&>	# creidiomh, feithiomh, fuinniomh
 aíle$			aíola		1	<.+>	<&>    # *3ú* decl.
 idhibh$		í	1	<N pl="y".*>	<&>	# siollaidhibh, cailínidhibh, etc.
 ([ií])[dg]hthibh$	$1the	1	<N pl="y".*>	<&>	# troighthibh, seanchaidhthibh, croídhthibh
@@ -419,27 +426,32 @@ i[uú]bha?l		iúl		1	<.+>	<&>	# shiubhlfadh, siúbhalóide, etc.
 ^df([aeiouáéíóú])	d'fh$1	1	<.+>	<&>	# dfág
 ##################  NON/PRE-STANDARD VERB ENDINGS #########################
 # future/conditional 2nd declension with -cha?- see CO p.103
-e[oó]cha(i?dh)$		eo$1		1	<V.*>	<&>
-([^e])ócha(i?dh)$	$1ó$2		1	<V.*>	<&>
+e[oó]cha$		eoidh		1	<V p="y" t="fáist">	<&>
+([^e])ócha$		$1óidh		1	<V p="y" t="fáist">	<&>
+e[oó]chf?a(i?dh)$		eo$1		1	<V.*>	<&>
+([^e])óchf?a(i?dh)$	$1ó$2		1	<V.*>	<&>
 e[oó][cg]haid$		eoidh		1	<V.*>	<&> # future before "siad"
 ([^e])[oó][cg]haid$		$1óidh	1	<V.*>	<&> # future before "siad"
 e[oó]chaimi([ds])$	eoimi$1		1	<V.*>	<&>
 ([^e])óchaimi([ds])$	$1óimi$2	1	<V.*>	<&>
+e[oó]chas$	eoidh		1	<V p="y" t="fáist">	<&>
 e[oó]cham$	eoimid		1	<V p="y" t="fáist">	<&>
 ([^e])ócham$	$1óimid		1	<V p="y" t="fáist">	<&>
-e[oó]chamuid$	eoimid		1	<V p="y" t="fáist">	<&>
-([^e])óchamuid$	$1óimid		1	<V p="y" t="fáist">	<&>
+e[oó]cha?muid$	eoimid		1	<V p="y" t="fáist">	<&>
+([^e])ócha?muid$	$1óimid		1	<V p="y" t="fáist">	<&>
 e[oó]chamaoid$	eoimid		1	<V p="y" t="fáist">	<&>
 ([^e])óchamaoid$	$1óimid		1	<V p="y" t="fáist">	<&>
-e[oó]chai(nn|dís)$	eoi$1		1	<V p="y" t="coinn">	<&>
-([^e])óchai(nn|dís)$	$1ói$2		1	<V p="y" t="coinn">	<&>
-e[oó]chainnse$	eoinnse		1	<V p="y" t="coinn">	<&>
-([^e])óchainnse$	$1óinnse		1	<V p="y" t="coinn">	<&>
-e[oó]chthá$		eofá		1	<V p="y" t="coinn">	<&>
-([^e])óchthá$		$1ófá		1	<V p="y" t="coinn">	<&>
-e[oó]ch(th)?aidhe$		eofaí		1	<V p="n" t="coinn">	<&>
-([^e])óch(th)?aidhe$		$1ófaí		1	<V p="n" t="coinn">	<&>
-(ó|eo)char$			$1far	1	<V p="n" t="fáist">	<&>
+e[oó]ch[au]i(nn|dís)$	eoi$1		1	<V p="y" t="coinn">	<&>
+([^e])óch[au]i(nn|dís)$	$1ói$2		1	<V p="y" t="coinn">	<&>
+e[oó]ch[au]innse$	eoinnse		1	<V p="y" t="coinn">	<&>
+([^e])óch[au]innse$	$1óinnse		1	<V p="y" t="coinn">	<&>
+e[oó]ch(th|f)?[aá]$		eofá		1	<V p="y" t="coinn">	<&>
+([^e])óch(th|f)?[aá]$	$1ófá		1	<V p="y" t="coinn">	<&>
+# cond. aut. below are often -óchthaidhe in prestandard corpus
+# but an earlier rule maps -aidhe to -aí, so rule below handles both
+e[oó]ch(f|th)?(aoi|a?í)$		eofaí		1	<V p="n" t="coinn">	<&>
+([^e])óch(f|th)?(aoi|a?í)$		$1ófaí		1	<V p="n" t="coinn">	<&>
+(ó|eo)chf?ar$			$1far	1	<V p="n" t="fáist">	<&>
 (ó|eo)chthar$			$1far	1	<V p="n" t="fáist">	<&>
 faidhear$			far	1	<V p="n" t="fáist">	<&>
 fidhear$			fear	1	<V p="n" t="fáist">	<&>
@@ -504,6 +516,7 @@ taoi$			taí		1	<V p="n" t="gnáth">	<&>
 #  OS88 p.126  present direct relative
 anns$			ann		1	<V p="y" t="láith">	<&>
 íonns$			íonn		1	<V p="y" t="láith">	<&>
+uíon$			aíonn		1	<V p="y" t="láith">	<&>
 #  corpus; now handled above
 # th(eá|ear)$		t$1		1	<V.*>	<&>
 #  now handled by more general -amuid rules above
