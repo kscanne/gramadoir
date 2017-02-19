@@ -363,9 +363,9 @@ aibh$			aí		1	<N pl="y".*>	<&>    # cordaibh (córdaibh)
 ([^_][^_][^a])ibh$		$1í		1	<N pl="y".*>	<&>    # múinteoiribh, etc.
 (.)[ée]u		$1éa		1	<.+>	<&>    # sgeul, ceudna, féur, srl.
 tch			t		1	<.+>	<&>    # CO p.103
-i[dg]hea		ío		1	<.+>	<&>    # CO p.105,107
-i[dg]he			í		1	<.+>	<&>    # CO p.104,106
-i[dg]hio			ío		1	<.+>	<&>    # aeruidhiocht
+[ií][dg]hea		ío		1	<.+>	<&>    # CO p.105,107
+[ií][dg]he			í		1	<.+>	<&>    # CO p.104,106
+[ií][dg]hio			ío		1	<.+>	<&>    # aeruidhiocht
 uí([mto])		aí$1		1	<.+>	<&>	# cialluíonn, ionaduíochta, leasuítear, mionnuím
 uith			aith		1	<.+>	<&>    # rialuitheoir
 adha			ú		1	<.+>	<&>    # CO p.105
