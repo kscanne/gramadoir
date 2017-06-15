@@ -6,8 +6,27 @@ use strict;
 use CGI;
 use Lingua::GA::Gramadoir;
 use Lingua::GA::Gramadoir::Languages;
+use Log::Dispatch::File;
+use Date::Format;
 
 my $VERSION = '0.70';
+
+# arg looks like: ( message => $log_message, level => $log_level )
+# just return the modified scalar message
+sub log_callback {
+	my %p = @_;
+	return Date::Format::time2str('%Y-%m-%d %T', time)." (".$p{'level'}.") ".$p{'message'}."\n";
+}
+
+my $log = Log::Dispatch->new(callbacks => \&log_callback);
+die unless $log;
+$log->add(Log::Dispatch::File->new(
+    'name' => 'log1',
+    'min_level' => 'info',
+    'binmode' => ':utf8',
+    'filename' => '/home/httpd/gr.log',
+    'mode' => 'append',
+));
 
 my $lh;
 
@@ -34,8 +53,17 @@ my $ionchur;
 my $pure_lang = $q->param( "teanga" );
 my $teanga;
 
+my $ip = $ENV{'REMOTE_ADDR'};
+
+$log->error("No foirm_ionchur parameter in CGI query [$ip]") unless defined($pure_input);
+$log->warning("No teanga parameter in CGI query [$ip]") unless defined($pure_lang);
+
 ( $ionchur ) = $pure_input =~ /^(.+)$/s if defined $pure_input;
 ( $teanga ) = $pure_lang =~ /^([a-z][a-z](?:_[A-Z][A-Z])?)$/ if defined $pure_lang;
+
+if (defined($pure_lang) and !defined($teanga)) {
+	$log->error("Malformed language parameter $pure_lang [$ip]");
+}
 
 if (defined $teanga) {
 	$lh = Lingua::GA::Gramadoir::Languages->get_handle($teanga);
@@ -43,7 +71,11 @@ if (defined $teanga) {
 else {
 	$lh = Lingua::GA::Gramadoir::Languages->get_handle();
 }
-die "Problem setting language handle" unless $lh;
+
+unless ($lh) {
+	$log->error("Problem setting language handle [$ip]");
+	die;
+}
 
 # rightfully this file should go in po/POTFILES.in
 # but each string is taken directly from gram.pl
@@ -73,28 +105,21 @@ if (defined($ionchur)) {
 		input_encoding => 'UTF-8',
 	);
 
+	my $error_count = 0;
 	foreach (@{$gr->grammatical_errors($ionchur)}) {
+		$error_count++;
 		# these lines copied from gram.pl
 		(my $ln, my $msg, my $snt, my $offset, my $len) = m/^<error fromy="([0-9]+)".* msg="([^"]+)".* context="([^"]+)" contextoffset="([0-9]+)" errorlength="([0-9]+)"\/>$/;
 		my $errortext = substr($snt,$offset,$len);
 		$ln++;   # humans count lines from 1
 		print "<br><br>$ln: ".substr($snt,0,$offset)."<b class=gramadoir>$errortext</b>".substr($snt,$offset+$len)."<br>\n$msg.\n\n";
 	}
+	$log->info("Checked text of length ".length($ionchur).", found $error_count errors [$ip]");
 }
 else {
-	$ionchur = '<<empty input>>';
+	$log->warning("Empty input [$ip]");
 }
-
-$teanga = '<<no language>>' unless defined $teanga;
 
 print $q->hr;
 print $q->end_html;
-
-# remainder writes to log file
-my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime time;
-my $datestr = sprintf("%04d-%02d-%02d", $year+1900, $mon+1, $mday);
-open (LOGFILE, '>>/home/httpd/gr.log') or die "Could not open log file: $!\n";
-print LOGFILE "$datestr\nTeanga=$teanga\n$ionchur\n\n";
-close LOGFILE;
-
 exit 0;
