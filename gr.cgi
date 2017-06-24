@@ -55,7 +55,7 @@ my $teanga;
 
 my $ip = $ENV{'REMOTE_ADDR'};
 
-$log->error("No foirm_ionchur parameter in CGI query [$ip]") unless defined($pure_input);
+$log->warning("No foirm_ionchur parameter in CGI query [$ip]") unless defined($pure_input);
 $log->warning("No teanga parameter in CGI query [$ip]") unless defined($pure_lang);
 
 ( $ionchur ) = $pure_input =~ /^(.+)$/s if defined $pure_input;
