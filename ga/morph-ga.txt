@@ -96,7 +96,7 @@ i[dg]hth?(.)		it$1	1	<.+>	<&>  # dóighthe, dóighte
 ^(h?a)th-?th		$1t		1	<[ANV].*>	<&>
 ^bh'			b'		1	<.+>	<&>		# bh'fhiú -> b'fhiú
 ^mbh			mb		2	<.+>	<&>		# mbheidheadh, etc.
-^(m?bh?)ain			$1an		1	<.+>	<&>
+^(m?bh?)ain(..)		$1an$2		1	<.+>	<&>
 ^(m?bh?)áin			$1án		1	<.+>	<&>
 ^(m?bh?)airr			$1arr		1	<.+>	<&>
 ^(m?bh?)aoith			$1aoth		1	<.+>	<&>
