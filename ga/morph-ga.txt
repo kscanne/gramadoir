@@ -744,7 +744,7 @@ ains$			ann		1	<V p="y" t="láith">	<&> # glanains = glanann tú
 chaí$			cha		1	<[ANF].*>	<&>  # paidreachaí, bratachaí
 thaí$			tha		1	<.+>	<&>    # glórthaí, spéarthaí
 (.[aá])igh$		$1ch		1	<[NF].*>	<&>	# nb2 -aí genitives
-(..)i[dg]h$		$1each		1	<[NF].*>	<&>   #  same (e.g. stámhaillidh)
+(.[^aá])i[dg]h$		$1each		1	<[NF].*>	<&>   #  same (e.g. stámhaillidh)
 (..)aidh$		$1a		1	<.+>	<&>    # bhfágaidh
 #  rule for [^eéií] is above with other non-std prefixes, last resort here
 #  for words like cóimhéigean -> comhéigean
@@ -795,12 +795,15 @@ ula$			úla		2	<A.*>	<&>
 eail$			eáil		2	<.+>	<&>    # common missing accent
 ([^ae])oir$		$1óir		2	<.+>	<&>
 ([^ae])ora$		$1óra		2	<.+>	<&>
-aio		aío		2	<.+>	<&>   # ionadaiocht, srl
 eor$			eoir		2	<N.*>	<&>
-ionn$			íonn		2	<V.*>	<&>
 itear$			ítear		2	<V.*>	<&>
 iteá$			íteá		2	<V.*>	<&>
-#iodh$			íodh		2	<V.*>	<&>	# redundant (io->ío)
+#io			ío		2	<.+>	<&>		# too general (fios, sioc, etc.)
+aio				aío			2	<.+>	<&>   # ionadaiocht, srl
+ionn$			íonn		2	<V.*>	<&>
+ioch			íoch		2	<V.*>	<&> # tóraíocht, srl (but sliocht!)
+io([bdm])h		ío$1h		2	<V.*>	<&> # sgriobh, guíodh, ríomh*
+io([dm])ar$		ío$1ar		2	<V.*>	<&>
 ([^e])oidh$		$1óidh		2	<V.*>	<&>
 ([^e])ofar$		$1ófar		2	<V.*>	<&>
 # next batch from ngramprobs.pl
@@ -810,9 +813,6 @@ u$			ú		2	<N.*>	<&>
 (...)i$			$1í		2	<.+>	<&>
 iu			iú		2	<.+>	<&>
 no			nó		2	<.+>	<&>
-# aio			aío		2	<.+>	<&>
-#aioch(ta?)$		aíoch$1		2	<N.*>	<&>   # see prev.
-io			ío		2	<.+>	<&>
 leir			léir		2	<.+>	<&>
 ^(g?ch?)om([^haómnpr]..)	$1omh$2		2	<.+>	<&>
 éá			éa		2	<.+>	<&>  # held down alt too long; "éa" is only diphthong with "a" as second letter, and none with e/u
