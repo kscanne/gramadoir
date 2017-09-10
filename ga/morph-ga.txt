@@ -313,7 +313,9 @@ eoracht(a?)$	eoireacht$1		1	<[FN].*>	<&> # spaisteoracht
 éair$			éir			1	<[FN].*>	<&>		# piléair, paipéair
 eor$			eoir		1	<.+>	<&>
 # 08-11-05, generalize nouns to everything (fraochta e.g.)
-chd(a?)$		cht$1		1	<.+>	<&>    # masc too (achd, m.sh.)
+# Sept 2017, generalize from end of word to anywhere
+chd([^h])		cht$1		1	<.+>	<&>    # masc too (achd, m.sh.)
+chd$		cht		1	<.+>	<&>
 ínteacht(a?)$	íneacht$1	1	<[FN].*>	<&>    # deisimínteacht, etc. 
 óanna$			ónna		1	<[FN].*>	<&>	# common!  clóanna, seóanna, gnóanna, srl.
 # corpus - Dómhnach, etc., but not rómhilis, etc.
@@ -798,6 +800,7 @@ eail$			eáil		2	<.+>	<&>    # common missing accent
 eor$			eoir		2	<N.*>	<&>
 itear$			ítear		2	<V.*>	<&>
 iteá$			íteá		2	<V.*>	<&>
+fea$			feá			2	<V p="y" t="coinn">	<&>
 #io			ío		2	<.+>	<&>		# too general (fios, sioc, etc.)
 aio				aío			2	<.+>	<&>   # ionadaiocht, srl
 ([^áéóú])ionn$	$1íonn		2	<V.*>	<&>
@@ -806,6 +809,7 @@ aio				aío			2	<.+>	<&>   # ionadaiocht, srl
 ([^áéóú])io([dm])ar$		$1ío$2ar		2	<V.*>	<&>
 ([^e])oidh$		$1óidh		2	<V.*>	<&>
 ([^e])ofar$		$1ófar		2	<V.*>	<&>
+([^eií])og$		$1óg	2	<[NF].*>	<&>   # nb2 missing fada
 # next batch from ngramprobs.pl
 u$			ú		2	<N.*>	<&>
 #chtai$			chtaí		2	<N.*>	<&>
