@@ -330,6 +330,7 @@ eamhn		iún		1	<.+>	<&>     #  maitheamhnas, breitheamhnas
 ([dntls])-([dntls])h $1-$2	1	<.+>	<&>
 #   Now various general spelling reforms from CO handbook
 ai(cht?ín)		a$1		1	<.+>	<&>    # CO p.120, smaichtín
+aa			á		1	<.+>	<&>		# baas => bás, iomlaan => iomlán
 sg			sc		1	<.+>	<&>    # CO p.115
 sb			sp		1	<.+>	<&>    # CO p.115
 sd			st		1	<.+>	<&>    # CO p.115
