@@ -1,5 +1,5 @@
---- Makefile	2012-07-10 23:06:53.708424633 -0500
-+++ Makefile.ok	2012-07-10 23:06:49.428456844 -0500
+--- Makefile	2017-12-22 15:47:08.904651642 -0600
++++ Makefile.ok	2017-12-22 15:39:34.079935069 -0600
 @@ -74,6 +74,15 @@
  
  Makefile : $(GRAMDIR)/Makefile-xx.in configure
@@ -90,7 +90,7 @@
 +lexfromdb : FORCE
 +	Gin 12
 +	sed -i '$$s/$$/\n/' FOCAIL
-+	(((cat $(ISPELLDIR)/ispell-gaeilge/personal $(ISPELLDIR)/ispell-gaeilge/uimhreacha; cat $(ISPELLDIR)/ispell-gaeilge/apost | sed 's/ .*//') | iconv -f utf8 -t iso-8859-1; cat ${HOME}/.ispell_gaeilge | LC_ALL=POSIX ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | LC_ALL=POSIX aspell -dga -p${HOME}/.aspell.blank.pws list) | sed 's/$$/& 44/'; cat FOCAIL; cat $(ISPELLDIR)/ispell-gaeilge/dinneenok.txt | sed 's/$$/& 127/' | iconv -f utf8 -t iso-8859-1) | $(PERL) -p posmap.pl | LC_ALL=POSIX sort -u -k1,1 -k2,2n > lexicon-ga.txt
++	(((cat $(ISPELLDIR)/ispell-gaeilge/personal $(ISPELLDIR)/ispell-gaeilge/uimhreacha; cat $(ISPELLDIR)/ispell-gaeilge/apost | sed 's/ .*//') | bash tolatin1.sh; cat ${HOME}/.ispell_gaeilge | LC_ALL=POSIX ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | LC_ALL=POSIX aspell -dga -p${HOME}/.aspell.blank.pws list) | sed 's/$$/& 44/'; cat FOCAIL; cat $(ISPELLDIR)/ispell-gaeilge/dinneenok.txt | sed 's/$$/& 127/' | iconv -f utf8 -t iso-8859-1) | $(PERL) -p posmap.pl | LC_ALL=POSIX sort -u -k1,1 -k2,2n > lexicon-ga.txt
 +	$(MAKE) rebuildlex
 +	rm -f FOCAIL
 +
@@ -105,7 +105,7 @@
 +# use "groom" instead of this directly
 +eilefromdb : FORCE
 +	sed 's/ [0-9]*//' lexicon-ga.txt | iconv -f iso-8859-1 -t utf8 > ./tempfocail
-+	sed 's/ .*//' $(ATH) | keepif -n ./tempfocail | LC_ALL=C sort -u | LC_ALL=C join $(ATH) - | LC_ALL=C sort -k1,1 | $(EGREP) '^' | iconv -f utf8 -t iso-8859-1 > ./eile-ga.bs
++	sed 's/ .*//' $(ATH) | keepif -n ./tempfocail | LC_ALL=C sort -u | LC_ALL=C join $(ATH) - | LC_ALL=C sort -k1,1 | $(EGREP) '^' | bash tolatin1.sh > ./eile-ga.bs
 +	rm -f tempfocail
 +
 +EARR = ${ISPELLDIR}/ispell-gaeilge/gaelu ${ISPELLDIR}/ispell-gaeilge/earraidi
@@ -114,7 +114,7 @@
 +earrfromdb : FORCE
 +	sed 's/ [0-9]*//' lexicon-ga.txt eile-ga.bs | iconv -f iso-8859-1 -t utf8 > ./tempfocail
 +	LC_ALL=C sort -k1,1 $(EARR) > ./tempsrc
-+	sed 's/ .*//' ./tempsrc | keepif -n ./tempfocail | LC_ALL=C sort -u | LC_ALL=C join ./tempsrc - | LC_ALL=C sort -k1,1 | $(EGREP) . | iconv -f utf8 -t iso-8859-1 > ./earraidi-ga.bs
++	sed 's/ .*//' ./tempsrc | keepif -n ./tempfocail | LC_ALL=C sort -u | LC_ALL=C join ./tempsrc - | LC_ALL=C sort -k1,1 | $(EGREP) . | bash tolatin1.sh > ./earraidi-ga.bs
 +	rm -f tempfocail tempsrc
 +
 +lexicon-$(TEANGA).xml : lexicon-$(TEANGA).txt
