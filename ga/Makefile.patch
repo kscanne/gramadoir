@@ -1,5 +1,14 @@
---- Makefile	2017-12-22 15:47:08.904651642 -0600
-+++ Makefile.ok	2017-12-22 15:39:34.079935069 -0600
+--- Makefile	2018-03-24 05:13:48.241092245 +0000
++++ Makefile.ok	2018-03-24 04:38:16.745597987 +0000
+@@ -10,7 +10,7 @@
+ 
+ # general configuration
+ ECHO = echo
+-EGREP = /bin/grep -E
++EGREP = /bin/grep -E -a
+ LN_S = ln -s
+ PERL = /usr/bin/perl
+ 
 @@ -74,6 +74,15 @@
  
  Makefile : $(GRAMDIR)/Makefile-xx.in configure
@@ -90,7 +99,7 @@
 +lexfromdb : FORCE
 +	Gin 12
 +	sed -i '$$s/$$/\n/' FOCAIL
-+	(((cat $(ISPELLDIR)/ispell-gaeilge/personal $(ISPELLDIR)/ispell-gaeilge/uimhreacha; cat $(ISPELLDIR)/ispell-gaeilge/apost | sed 's/ .*//') | bash tolatin1.sh; cat ${HOME}/.ispell_gaeilge | LC_ALL=POSIX ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | LC_ALL=POSIX aspell -dga -p${HOME}/.aspell.blank.pws list) | sed 's/$$/& 44/'; cat FOCAIL; cat $(ISPELLDIR)/ispell-gaeilge/dinneenok.txt | sed 's/$$/& 127/' | iconv -f utf8 -t iso-8859-1) | $(PERL) -p posmap.pl | LC_ALL=POSIX sort -u -k1,1 -k2,2n > lexicon-ga.txt
++	(((cat $(ISPELLDIR)/ispell-gaeilge/personal $(ISPELLDIR)/ispell-gaeilge/uimhreacha; cat $(ISPELLDIR)/ispell-gaeilge/apost | sed 's/ .*//') | bash tolatin1.sh; cat ${HOME}/.ispell_gaeilge | LC_ALL=POSIX ispell -dgaeilge -e3 | tr " " "\n" | $(EGREP) -v '\/' | LC_ALL=POSIX aspell -dga -p${HOME}/.aspell.blank.pws list) | sed 's/$$/& 44/'; cat FOCAIL; cat $(ISPELLDIR)/ispell-gaeilge/dinneenok.txt | sed 's/$$/& 127/' | iconv -f utf8 -t iso-8859-1) | $(PERL) -p posmap.pl | LC_ALL=POSIX sort -u -k1,1 -k2,2n | sed '/^OK /d' > lexicon-ga.txt
 +	$(MAKE) rebuildlex
 +	rm -f FOCAIL
 +
