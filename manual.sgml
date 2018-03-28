@@ -6,7 +6,7 @@
 <book id="gramadoir-manual" lang="en">
   <bookinfo>
     <date>2005-03-01</date>
-    <title><ulink url="http://borel.slu.edu/gramadoir/">&gram;</ulink></title>
+    <title><ulink url="https://cadhan.com/gramadoir/">&gram;</ulink></title>
     <subtitle>Developers' Guide</subtitle>
     <author>
 	<firstname>Kevin</firstname>
@@ -34,7 +34,7 @@
     <para>This manual is intended for developers interested in 
     porting &gram; to a new language.  Help for 
     end users with installation, usage, etc. is available from
-    the <ulink url="http://borel.slu.edu/gramadoir/">project web site</ulink>.
+    the <ulink url="https://cadhan.com/gramadoir/">project web site</ulink>.
     </para>
     <note><title>Convention</title>
       <para>
@@ -232,7 +232,7 @@ A umpire.  The status quo.
 &lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>T</sgmltag> def="y"&gt;The&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>N</sgmltag>&gt;status quo&lt;/<sgmltag>N</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
 -->
 &lt;?xml version="1.0" encoding="utf-8" standalone="no"?&gt;
-&lt;!DOCTYPE teacs SYSTEM "http://borel.slu.edu/dtds/gram-en.dtd"&gt;
+&lt;!DOCTYPE teacs SYSTEM "https://cadhan.com/dtds/gram-en.dtd"&gt;
 &lt;<sgmltag>teacs</sgmltag>&gt;
 &lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>E</sgmltag> msg="BACHOIR{an}"&gt;&lt;<sgmltag>T</sgmltag> def="n"&gt;A&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>N</sgmltag>&gt;umpire&lt;/<sgmltag>N</sgmltag>&gt;&lt;/<sgmltag>E</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
 &lt;<sgmltag>line</sgmltag>&gt;&lt;<sgmltag>T</sgmltag> def="y"&gt;The&lt;/<sgmltag>T</sgmltag>&gt; &lt;<sgmltag>N</sgmltag>&gt;status quo&lt;/<sgmltag>N</sgmltag>&gt;.&lt;/<sgmltag>line</sgmltag>&gt;
@@ -273,7 +273,7 @@ A umpire.  The status quo.
 	  for the development of language technology for languages
 	  with limited computational resources.  Using corpora
 	  harvested by my web crawler 
-	  <ulink url="http://borel.slu.edu/crubadan/">&crub;</ulink>,
+	  <ulink url="https://cadhan.com/crubadan/">&crub;</ulink>,
 	  and statistical analyses of these corpora, it is possible
 	  to get something simple up and running with a minimum
 	  of work.
@@ -378,11 +378,10 @@ A umpire.  The status quo.
 	<para>
 	  The first thing you should do if you're interested in
 	  porting &gram; is
-	  <ulink url="http://borel.slu.edu/">Contact me</ulink>.
+	  <ulink url="http://cs.slu.edu/~scannell/">Contact me</ulink>.
 	  Assuming your language is one of the
-	  <ulink url="http://borel.slu.edu/crubadan/stadas.html">400+ languages</ulink>
-	  for which my
-	  <ulink url="http://borel.slu.edu/crubadan/">web crawler</ulink>
+	  <ulink url="http://crubadan.org/">2000+ languages</ulink>
+	  for which my web crawler
 	  is running, I will create a new language pack for you using
 	  this data.  If you don't have a clean word list there will be
 	  some preliminary work involved in constructing one.
@@ -913,7 +912,7 @@ directions 32
 	    <application>ispell</application>.
 	    The Irish file <filename>eile-ga.bs</filename> is a by-product of
 	    my work on dialect support for
-	    <ulink url="http://borel.slu.edu/ispell/">Irish language spell checkers</ulink>.
+	    <ulink url="https://cadhan.com/ispell/">Irish language spell checkers</ulink>.
 	    The replacement "word" is allowed to contain spaces, e.g.
 	  </para>
 	  <screen>
