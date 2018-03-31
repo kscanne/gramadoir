@@ -2,9 +2,13 @@
 
 <p>
 If you just want to install and use the Irish grammar checker, 
-you probably don't need to download anything from this site;
-instead you should install the Perl module
-<i>Lingua::GA::Gramadoir</i> as described below.
+you probably don't need to download anything from this site.
+You can either install the Perl module
+<i>Lingua::GA::Gramadoir</i>
+<a href="#Install">as described below</a> and run
+the grammar checker from the command-line, or use
+it in conjunction with your favorite
+<a href="">word-processing software</a>.
 </p>
 
 <h2><a name="Devel">Developers</a></h2>
@@ -26,7 +30,7 @@ All of the language-dependent input files used by the developers' pack
 </p>
 
 <hr>
-<h2><a name="Install">Installation and Usage</a></h2>
+<h2><a name="Install">Command-Line Installation and Usage</a></h2>
 
 <h3>Linux and Mac OS X</h3>
 
@@ -135,3 +139,207 @@ C:&gt; gram-ga.pl --aschod=cp850 --dath=none gaeilge.txt
 <a href="http://softkube.com/blog/ansi-command-line-colors-under-windows/">this trick</a> for enabling the ANSI color codes!
 </p>
 </ol>
+
+<hr>
+<h2><a name="Editors">Text Editor Support</a></h2>
+
+<h3>Download</h3>
+<p>
+Interfaces are available for the three most popular editors 
+in the open source community: <i>Vim</i>, <i>Emacs</i>, and 
+<i>OpenOffice</i>.  These interfaces are distributed with the Perl
+module in the <i>share/</i> directory, but if you prefer you
+can download them here:
+</p>
+
+<ul>
+<li><b><a href="gramadoir.el">gramadoir.el</a></b>.  Emacs Lisp Interface (<a href="gram-emacs.png">screenshot</a>).
+<li><b><a href="gramadoir.vim">gramadoir.vim</a></b>.  Plug-in for Vim (<a href="gram-vim.png">screenshot</a>).
+<li><b><a href="gramadoir.sxw">gramadoir.sxw</a></b>.  OpenOffice macro (<a href="gram-OOo.png">screenshot</a>).
+</ul>
+
+<p>
+Installation and usage instructions follow.
+</p>
+
+<hr>
+<h3>Emacs</h3>
+<p>
+Martin Gregory has kindly contributed an Emacs interface 
+to <i lang="ga">An Gramadóir</i> which is very easy to use.
+Here are his instructions:
+</p>
+
+
+<p>
+"The Emacs interface to <i lang="ga">An Gramadóir</i> allows you to run <i lang="ga">An Gramadóir</i>
+from within an Emacs session and navigate to the locations in the
+input files where <i lang="ga">An Gramadóir</i> found problems. The interface is
+similar to that of the compile or grep commands in Emacs.
+</p>
+
+
+<h3>INSTALLING THE INTERFACE:</h3>
+
+<p>
+Put <a href="gramadoir.el"><i>gramadoir.el</i></a> in your emacs site lisp directory, often something like:
+<pre>
+   /usr/share/emacs/site-lisp/gramadoir
+</pre>
+If you don't have
+one, put it it ~/lisp or some other directory of your choice and put
+the following line in your ~/.emacs file<br>
+<pre>
+   (load-file "/where/you/put/gramadoir.el")
+</pre>
+If you are an experienced Emacs user, you'll probably want to auto
+load the file.
+</p>
+
+
+<h3>USING THE INTERFACE:</h3>
+
+<p>
+The interface allows you to specify files in two different ways:
+</p>
+<ul>
+<li>using the command gramadoir-check-files which prompts for a space
+separated list of files, without file completion;
+<li>from a dired window using the gramadoir-dired command. This behaves
+like other dired commands: either all selected files are processed
+or, if no file is selected, the file listed on the current
+line is processed.
+</ul>
+
+<p>
+After running one of the above commands, the output of <i lang="ga">An Gramadóir</i> is
+written to a new buffer which is displayed in a separate window. Using
+the gramadoir-next-message command positions the cursor at the
+location of the first error in the first file. Subsequent use of this
+command takes you to the locations of subsequent errors. If you
+reposition the cursor in the output buffer, the command takes you to
+the location of the next error after that position.
+</p>
+
+
+<h3>CUSTOMISATION:</h3>
+
+<p>
+For convenience, you can bind the three commands to keys. These need
+to be global definitions, for example:
+</p>
+
+<pre>
+   (global-set-key "\C-cg" 'gramadoir-check-files)
+   (global-set-key "\C-cd" 'gramadoir-dired)
+   (global-set-key [f3] 'gramadoir-next-message)
+</pre>
+
+
+<p>
+If you installed <i lang="ga">An Gramadóir</i> anywhere other than in /usr/bin
+you need to tell the interface where to look for it by putting a line
+similar to the following:<br>
+<pre>
+   (setq gramadoir-program-path "/usr/bin/gram-xx.pl")
+</pre>
+in your ~/.emacs, substituting the appropriate path for "/usr/bin"
+and language code for "xx".
+</p>
+
+<p>
+Finally, the interface highlights the error text both in the output
+buffer and in the buffer of the original file. If you prefer not to
+highlight the text in the original file, add this:<br>
+<pre>
+   (setq gramadoir-highlight-text nil)
+</pre>
+to your ~/.emacs."
+</p>
+<hr>
+<h3>Vim</h3>
+<p>
+I've written a script which emulates the behavior of Martin's
+Emacs interface within Vim.  You can download it from the link at the
+top of this page, or you can get it directly from
+<a href="http://vim.sourceforge.net/scripts/script.php?script_id=802">
+Vim online</a>.     Instructions:
+<ol>
+<li>put <a href="gramadoir.vim"><i>gramadoir.vim</i></a> in ~/.vim/plugin.  For languages other
+than Irish, you'll need to change the "gram-ga.pl" around line 30 to
+the appropriate script name.
+
+<li>put the following lines in your ~/.vimrc file
+<pre>
+map &lt;F3&gt; &lt;Plug&gt;Gr
+map &lt;F4&gt; &lt;Plug&gt;Neamh
+map &lt;F5&gt; &lt;Plug&gt;Amach
+</pre>
+or choose different hot keys if you want.
+
+<li>open the text file to be checked in Vim.
+
+<li>to check its grammar, press <b>F3</b>; a second buffer,
+containing the messages from <i lang="ga">An Gramadóir</i>,
+will open at the bottom of the screen.  The cursor
+will move to the first error (which is also highlighted in red if you
+are using a suitable color terminal).
+
+<li>Each successive use of <b>F3</b> moves to the next error
+(in both windows, in parallel).
+
+<li>If the current error is a single word (unknown, misspelled, rare,
+non-standard, etc.), you can insert it into your <code>.neamhshuim</code> 
+(ignore) file by pressing <b>F4</b>.
+
+<li>Pressing <b>F5</b> exits the grammar checker and resumes normal editing.
+
+<li>Notes: you are free to make edits, corrections, etc. to the 
+main buffer while running the grammar checker.  The last error
+displayed is tracked according to the cursor position in the 
+error buffer, so whenever you press <b>F3</b> it will correctly take you 
+to the next error.  This also means that you can jump to any
+particular error you'd like: go into the error buffer (with Crtl-w-w),
+move the cursor to just before the desired error, press <b>F3</b>.
+</ol>
+
+</p>
+
+<hr>
+<h3>OpenOffice</h3>
+<p>
+The file <a href="gramadoir.sxw"><i>gramadoir.sxw</i></a> is an OpenOffice document 
+that contains an embedded macro allowing <i lang="ga">An Gramadóir</i>
+to be called directly from an OpenOffice session.  See Russ Phillips'
+<a href="http://www.ooomacros.org/dev.php#98392">Macro Library How-To</a>
+for more detailed installation instructions.
+</p>
+
+<ol>
+<li>Open <i>gramadoir.sxw</i> in OpenOffice.
+<li>Go to <b>Tools</b> and select <b>Macros</b>, then <b>Macro...</b>.
+<li>The "Macro" dialog will appear.  Double click "Gramadoir" and then
+single click the "Gramadoir" underneath.
+<li>Now click the <b>Edit</b> button, which will open up the macro
+source code.  The first line points to the file <i>groo-ga.bat</i>;
+change the "ga" to your ISO-639 language code (if you don't speak Irish),
+and change the file extension "bat" to "pl"
+if you're not running Windows.  This file will need to 
+be in your path.
+<li>Save your changes and close the source code window,
+which should take you back to the 
+original file.  Now reopen the "Macro" dialog as in step 2; this time
+click on the <b>Organizer</b> button.
+<li>The "Macro Organizer" dialog will appear.  Click on the <b>Libraries</b> tab at the top left.
+<li>Be sure "soffice" appears under "Application/Document", then click <b>Append</b>.
+<li>Choose <i>gramadoir.sxw</i> using the file selection dialog that opens.
+<li>Make sure only "Gramadoir" is checked in the "Append Libraries"
+dialog; you may need to uncheck "Standard".   Then click <b>OK</b>.
+<li>Close the Macro Organizer and then close the Macro dialog.
+</ol>
+
+<p>
+You should now have the macro installed and ready to use from any
+OpenOffice session.   You can associate a hot key or a toolbar item 
+with the macro via the <b>Tools-&gt;Configure</b> dialog.
+</p>
