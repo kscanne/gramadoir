@@ -273,7 +273,7 @@ A umpire.  The status quo.
 	  for the development of language technology for languages
 	  with limited computational resources.  Using corpora
 	  harvested by my web crawler 
-	  <ulink url="https://cadhan.com/crubadan/">&crub;</ulink>,
+	  <ulink url="http://crubadan.org/">&crub;</ulink>,
 	  and statistical analyses of these corpora, it is possible
 	  to get something simple up and running with a minimum
 	  of work.
@@ -912,7 +912,7 @@ directions 32
 	    <application>ispell</application>.
 	    The Irish file <filename>eile-ga.bs</filename> is a by-product of
 	    my work on dialect support for
-	    <ulink url="https://cadhan.com/ispell/">Irish language spell checkers</ulink>.
+	    <ulink url="https://cadhan.com/gaelspell/">Irish language spell checkers</ulink>.
 	    The replacement "word" is allowed to contain spaces, e.g.
 	  </para>
 	  <screen>
