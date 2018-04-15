@@ -73,7 +73,7 @@ You should get a response resembling the following:
 Details
 -------
 
-* The `context` field encodes all ASCII double quotes, ampersands, and greater-than or less-than signs as HTML entities: &quot;, &lt;, &gt;, &amp;. The `contextoffset` is counted within the `context` field with these entities.
+* The `context` field encodes all ASCII double quotes, ampersands, and greater-than or less-than signs as HTML entities: `&quot;`, `&lt;`, `&gt;`, `&amp;`. The `contextoffset` is counted within the `context` field with these entities.
 * The web service supports [CORS requests](http://enable-cors.org/).
 
 HTTP Response Codes
