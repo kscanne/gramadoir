@@ -7,6 +7,7 @@ lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/da.pm	Danish localization
 lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/de.pm	German localization
 lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/en_us.pm	English localization (default)
 lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/eo.pm	Esperanto localization
+lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/es.pm	Spanish localization
 lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/fi.pm	Finnish localization
 lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/fr.pm	French localization
 lib/Lingua/@UPPERTEANGA@/Gramadoir/Languages/ga.pm	Irish localization
