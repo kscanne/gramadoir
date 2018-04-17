@@ -1,5 +1,5 @@
---- Makefile	2018-03-24 05:13:48.241092245 +0000
-+++ Makefile.ok	2018-03-24 04:38:16.745597987 +0000
+--- Makefile	2018-04-17 12:43:57.907073324 -0500
++++ Makefile.ok	2018-04-17 11:52:08.142932107 -0500
 @@ -10,7 +10,7 @@
  
  # general configuration
@@ -83,7 +83,7 @@
 +	benchcorp | iconv -f utf8 -t iso-8859-1 | $(PERL) -I $(PERLD)/lib $(DEVSCRIPTNAME) --minic | iconv -f utf8 -t iso-8859-1 > $@
 +
 +Changes : ../stair.html
-+	vilistextum $(GRAMDIR)/stair.html - | sed -n '/^ChangeLog/,/----/p' | $(EGREP) -v -- '---' > $@
++	vilistextum --charset=utf-8 --output-utf-8 $(GRAMDIR)/stair.html - | sed -n '/^ChangeLog/,/----/p' | $(EGREP) -v -- '---' > $@
 +
 +# use installed version for this
 +triail.html : triail
