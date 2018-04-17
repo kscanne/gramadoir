@@ -1,5 +1,5 @@
---- Makefile	2018-03-31 17:02:55.959864686 -0500
-+++ Makefile.ok	2018-03-31 15:19:33.979035785 -0500
+--- Makefile	2018-04-17 11:36:02.706830186 -0500
++++ Makefile.ok	2018-04-17 11:35:54.346883621 -0500
 @@ -60,8 +60,16 @@
  
  Makefile : Makefile.in config.status
@@ -17,7 +17,7 @@
  config.status: configure
  	./config.status --recheck
  
-@@ -81,4 +89,182 @@
+@@ -81,4 +89,85 @@
  semiclean :
  	rm -f y.tab.* $(LEX_OUTPUT_ROOT).* aonchiall.y rialacha.y
  
@@ -97,103 +97,6 @@
 +	gzip $(TARBALL).tar
 +	chmod 444 $(TARBALL).tar.gz
 +	rm -f ../$(TARBALL)
-+
-+CVSDIR=${HOME}/seal/gramadoir
-+sync : FORCE
-+	cp -f ABOUT-NLS $(CVSDIR)/engine
-+	cp -f aonchiall.meta.pl $(CVSDIR)/engine
-+	cp -f cabhair.pl $(CVSDIR)/engine
-+	cp -f ChangeLog $(CVSDIR)/engine
-+	cp -f comhshuite.meta.pl $(CVSDIR)/engine
-+	cp -f config.guess $(CVSDIR)/engine
-+	cp -f config.rpath $(CVSDIR)/engine
-+	cp -f config.sub $(CVSDIR)/engine
-+	cp -f configure $(CVSDIR)/engine
-+	cp -f configure.ac $(CVSDIR)/engine
-+	cp -f COPYING $(CVSDIR)/engine
-+	cp -f count.pl $(CVSDIR)/engine
-+	cp -f gettext.h $(CVSDIR)/engine
-+	cp -f gin.meta.pl $(CVSDIR)/engine
-+	cp -f gram2dtd.pl $(CVSDIR)/engine
-+	cp -f gramadoir.el $(CVSDIR)/engine
-+	cp -f Gramadoir.pm.in $(CVSDIR)/engine
-+	cp -f gramadoir.vim $(CVSDIR)/engine
-+	cp -f gramdev.pl $(CVSDIR)/engine
-+	cp -f gram.pl $(CVSDIR)/engine
-+	cp -f install-sh $(CVSDIR)/engine
-+	cp -f Languages-en_us.pm $(CVSDIR)/engine
-+	cp -f Languages.pm $(CVSDIR)/engine
-+	cp -f lexbuild $(CVSDIR)/engine
-+	cp -f Lingua-XX-Gramadoir.t $(CVSDIR)/engine
-+	cp -f Makefile.in $(CVSDIR)/engine
-+	cp -f Makefile.PL.in $(CVSDIR)/engine
-+	cp -f Makefile-xx.in $(CVSDIR)/engine
-+	cp -f MANIFEST $(CVSDIR)/engine
-+	cp -f MANIFEST.SKIP $(CVSDIR)/engine
-+	cp -f messages.txt $(CVSDIR)/engine
-+	cp -f po2perl.pl $(CVSDIR)/engine
-+	cp -f ponc.in.l $(CVSDIR)/engine
-+	cp -f ponc.in.y $(CVSDIR)/engine
-+	cp -f README $(CVSDIR)/engine
-+	cp -f README.perl $(CVSDIR)/engine
-+	cp -f rialacha.meta.pl $(CVSDIR)/engine
-+	cp -f OOo/groo.pl $(CVSDIR)/engine/OOo
-+	cp -f OOo/gramadoir.sxw $(CVSDIR)/engine/OOo
-+	cp -f po/af.po $(CVSDIR)/engine/po
-+	cp -f po/boldquot.sed $(CVSDIR)/engine/po
-+	cp -f po/cy.po $(CVSDIR)/engine/po
-+	cp -f po/da.po $(CVSDIR)/engine/po
-+	cp -f po/de.po $(CVSDIR)/engine/po
-+	cp -f po/en@boldquot.header $(CVSDIR)/engine/po
-+	cp -f po/en@quot.header $(CVSDIR)/engine/po
-+	cp -f po/eo.po $(CVSDIR)/engine/po
-+	cp -f po/fi.po $(CVSDIR)/engine/po
-+	cp -f po/fr.po $(CVSDIR)/engine/po
-+	cp -f po/ga.po $(CVSDIR)/engine/po
-+	cp -f po/gramadoir.pot $(CVSDIR)/engine/po
-+	cp -f po/hu.po $(CVSDIR)/engine/po
-+	cp -f po/id.po $(CVSDIR)/engine/po
-+	cp -f po/insert-header.sin $(CVSDIR)/engine/po
-+	cp -f po/LINGUAS $(CVSDIR)/engine/po
-+	cp -f po/Makefile.in.in $(CVSDIR)/engine/po
-+	cp -f po/Makevars $(CVSDIR)/engine/po
-+	cp -f po/mn.po $(CVSDIR)/engine/po
-+	cp -f po/nl.po $(CVSDIR)/engine/po
-+	cp -f po/POTFILES.in $(CVSDIR)/engine/po
-+	cp -f po/quot.sed $(CVSDIR)/engine/po
-+	cp -f po/remove-potcdate.sin $(CVSDIR)/engine/po
-+	cp -f po/ro.po $(CVSDIR)/engine/po
-+	cp -f po/Rules-quot $(CVSDIR)/engine/po
-+	cp -f po/sk.po $(CVSDIR)/engine/po
-+	cp -f po/sv.po $(CVSDIR)/engine/po
-+	cp -f po/vi.po $(CVSDIR)/engine/po
-+	cp -f po/zh_CN.po $(CVSDIR)/engine/po
-+	(cd $(CVSDIR)/engine; cvs commit -m "sync'd with borel repository" .)
-+	cvs update engine
-+	cp -f ga/3grams-ga.txt $(CVSDIR)/ga
-+	cp -f ga/Artistic $(CVSDIR)/ga
-+	cp -f ga/COPYING $(CVSDIR)/ga
-+	cp -f ga/Changes $(CVSDIR)/ga
-+	cp -f ga/README $(CVSDIR)/ga
-+	cp -f ga/aonchiall-ga.in $(CVSDIR)/ga
-+	cp -f ga/comhshuite-ga.in $(CVSDIR)/ga
-+	cp -f ga/configure $(CVSDIR)/ga
-+	cp -f ga/earraidi-ga.bs $(CVSDIR)/ga
-+	cp -f ga/eile-ga.bs $(CVSDIR)/ga
-+	cp -f ga/freq-ga.txt $(CVSDIR)/ga
-+	cp -f ga/giorr-ga.pre $(CVSDIR)/ga
-+	cp -f ga/giorr-ga.txt $(CVSDIR)/ga
-+	cp -f ga/lexicon-ga.txt $(CVSDIR)/ga
-+	cp -f ga/macra-ga.meta.pl $(CVSDIR)/ga
-+	cp -f ga/morph-ga.txt $(CVSDIR)/ga
-+	cp -f ga/nocombo-ga.txt $(CVSDIR)/ga
-+	cp -f ga/pos-ga.txt $(CVSDIR)/ga
-+	cp -f ga/rialacha-ga.in $(CVSDIR)/ga
-+	cp -f ga/token-ga.in $(CVSDIR)/ga
-+	cp -f ga/triail.xml $(CVSDIR)/ga
-+	cp -f ga/unigram-ga.pre $(CVSDIR)/ga
-+	cp -f ga/unigram-ga.txt $(CVSDIR)/ga
-+	(cd $(CVSDIR)/ga; cvs commit -m "sync'd with borel repository" .)
 +
 +manual: FORCE
 +	rm -f $(webhome)/manual/*.html
