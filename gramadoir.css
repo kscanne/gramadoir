@@ -1,0 +1,24 @@
+
+b.gramadoir {
+     color: red;
+}
+
+div.gramcolumn {
+	padding-top: 7px;
+	float: left;
+	width: 50%;
+}
+
+div.foirm:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+span.gramheading {
+  font-weight: bold;
+}
+
+#IGform {
+  margin-top: 5px;
+}
