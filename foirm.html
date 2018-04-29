@@ -1,33 +1,90 @@
-<ul>
-<li>Clóscríobh (nó cóipeáil agus greamaigh) téacs isteach sa bhosca (1024 carachtar ar a mhéad).
-<li>Is féidir leat <em>na hearráidí</em> a thaispeáint in aon cheann de na teangacha thíos (ar ndóigh, ní féidir ach gramadach Ghaeilge a sheiceáil faoi láthair).
-<li>Cliceáil ar an gcnaipe "Seol" thíos.
-</ul>
+<div class="foirm">
+  <div class="gramcolumn">
+    <span class="gramheading">Téacs le seiceáil:</span><br/>
+    <form id="IGform">
+      <textarea rows="15" cols="40" id="sourcetext" name="teacs" wrap="virtual" maxlength="1024"></textarea>
+      <br/>
+      <input type="submit" value="Seol"></input>
+      <input type="reset" value="Glan"></input>
+    </form>
+  </div>
 
-<form action="/cgi-bin/gr.cgi" method="POST">
-<textarea rows="15" cols="40" name="foirm_ionchur" wrap="virtual">
-</textarea>
-<br>
-<input type="submit" name="foirm" value="Seol">
-<input type="reset" value="Glan">
-<br><br>
-<b>Teanga chomhéadain:</b><br>
-<input type="radio" name="teanga" value="ga_IE" checked> Gaeilge (ga)<br>
-<input type="radio" name="teanga" value="af_ZA"> Afracáinis (af)<br>
-<input type="radio" name="teanga" value="en_US"> Béarla (en_US)<br>
-<input type="radio" name="teanga" value="cy_GB"> Breatnais (cy)<br>
-<input type="radio" name="teanga" value="da_DK"> Danmhairgis (da)<br>
-<input type="radio" name="teanga" value="eo"> Esperanto (eo)<br>
-<input type="radio" name="teanga" value="fi_FI"> Fionlainnis (fi)<br>
-<input type="radio" name="teanga" value="fr_FR"> Fraincis (fr)<br>
-<input type="radio" name="teanga" value="de_DE"> Gearmáinis (de)<br>
-<input type="radio" name="teanga" value="id_ID"> Indinéisis (id)<br>
-<input type="radio" name="teanga" value="mn_MN"> Mongóilis (mn)<br>
-<input type="radio" name="teanga" value="nl_NL"> Ollainnis (nl)<br>
-<input type="radio" name="teanga" value="ro_RO"> Rómáinis (ro)<br>
-<input type="radio" name="teanga" value="zh_CN"> Sínis (zh_CN)<br>
-<input type="radio" name="teanga" value="sk_SK"> Slóvaicis (sk)<br>
-<input type="radio" name="teanga" value="sv_SE"> Sualainnis (sv)<br>
-<input type="radio" name="teanga" value="hu_HU"> Ungáiris (hu)<br>
-<input type="radio" name="teanga" value="vi_VI"> Vítneamais (vi)<br>
-</form>
+  <div class="gramcolumn">
+    <span class="gramheading">Teanga an chomhéadain:</span><br/>
+    <form id="IGform">
+      <div class="gramcolumn">
+        <input type="radio" name="teanga" value="af_ZA"> Afracáinis (af)</input><br/>
+        <input type="radio" name="teanga" value="en_US"> Béarla (en_US)</input><br/>
+        <input type="radio" name="teanga" value="cy_GB"> Breatnais (cy)</input><br/>
+        <input type="radio" name="teanga" value="da_DK"> Danmhairgis (da)</input><br/>
+        <input type="radio" name="teanga" value="eo"> Esperanto (eo)</input><br/>
+        <input type="radio" name="teanga" value="fi_FI"> Fionlainnis (fi)</input><br/>
+        <input type="radio" name="teanga" value="fr_FR"> Fraincis (fr)</input><br/>
+        <input type="radio" name="teanga" value="ga_IE" checked> Gaeilge (ga)</input><br/>
+        <input type="radio" name="teanga" value="de_DE"> Gearmáinis (de)</input><br/>
+        <input type="radio" name="teanga" value="id_ID"> Indinéisis (id)</input><br/>
+      </div>
+      <div class="gramcolumn">
+        <input type="radio" name="teanga" value="mn_MN"> Mongóilis (mn)</input><br/>
+        <input type="radio" name="teanga" value="nl_NL"> Ollainnis (nl)</input><br/>
+        <input type="radio" name="teanga" value="ro_RO"> Rómáinis (ro)</input><br/>
+        <input type="radio" name="teanga" value="zh_CN"> Sínis (zh_CN)</input><br/>
+        <input type="radio" name="teanga" value="sk_SK"> Slóvaicis (sk)</input><br/>
+        <input type="radio" name="teanga" value="es_ES"> Spáinnis (es)</input><br/>
+        <input type="radio" name="teanga" value="sv_SE"> Sualainnis (sv)</input><br/>
+        <input type="radio" name="teanga" value="hu_HU"> Ungáiris (hu)</input><br/>
+        <input type="radio" name="teanga" value="vi_VI"> Vítneamais (vi)</input><br/>
+      </div>
+    </form>
+  </div>
+</div>
+<hr/>
+<div id="output"></div>
+<script>
+  window.addEventListener("load", function () {
+    var form = document.getElementById("IGform");
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var XHR = new XMLHttpRequest();
+
+      XHR.onreadystatechange = function(event) {
+        if (XHR.readyState == XMLHttpRequest.DONE) {
+          if (XHR.status == 200) {
+            processJSON(JSON.parse(event.target.responseText));
+          }
+          else {
+            var div=document.getElementById("output");
+            div.innerHTML=XHR.status.toString()+': '+XHR.statusText;
+          }
+        }
+      };
+
+      XHR.open("POST", "https://cadhan.com/api/gramadoir/1.0");
+      XHR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      XHR.setRequestHeader('Accept','application/json');
+      var payload = '';
+      var radios = document.getElementsByName('teanga');
+      for (var i=0; i<radios.length; i++) {
+        if (radios[i].checked) {
+          payload = 'teanga='+radios[i].value+'&teacs=';
+          break;
+        }
+      }
+      payload += encodeURIComponent(document.getElementById('sourcetext').value);
+      XHR.send(payload);
+      var div=document.getElementById("output");
+      div.innerHTML='<em>Á Sheiceáil...</em>'
+    });
+  });
+
+  function processJSON(arr) {
+    var div=document.getElementById("output");
+    div.innerHTML='';
+    for(var i=0; i<arr.length; i++) {
+      var line_num = parseInt(arr[i].fromy) + 1;
+      var c_offset = parseInt(arr[i].contextoffset);
+      var errlen = parseInt(arr[i].errorlength);
+      div.innerHTML += line_num.toString() + ': ' + arr[i].context.slice(0,c_offset) + '<b class="gramadoir">' + arr[i].errortext + '</b>' + arr[i].context.slice(c_offset + errlen) + '<br/>' + arr[i].msg + '<br/><br/>';
+    }
+  }
+</script>

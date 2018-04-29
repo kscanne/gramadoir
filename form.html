@@ -1,35 +1,90 @@
-<ul>
-<li>Type (or cut and paste) some Irish text in the box below (at most 1024 characters).
-<li>You can view the <em>error messages</em> in any of the languages
-listed below by selecting one of the buttons
-(you can't check the grammar of these languages; Irish only at the moment).
-<li>Click the "Send" button.
-</ul>
+<div class="foirm">
+  <div class="gramcolumn">
+    <span class="gramheading">Text to check:</span><br/>
+    <form id="IGform">
+      <textarea rows="15" cols="40" id="sourcetext" name="teacs" wrap="virtual" maxlength="1024"></textarea>
+      <br/>
+      <input type="submit" value="Submit"></input>
+      <input type="reset" value="Clear"></input>
+    </form>
+  </div>
 
-<form action="/cgi-bin/gr.cgi" method="POST">
-<textarea rows="15" cols="40" name="foirm_ionchur" wrap="virtual">
-</textarea>
-<br>
-<input type="submit" name="foirm" value="Send">
-<input type="reset" value="Clear">
-<br><br>
-<b>Interface Language:</b><br>
-<input type="radio" name="teanga" value="ga_IE" checked> Irish (ga)<br>
-<input type="radio" name="teanga" value="af_ZA"> Afrikaans (af)<br>
-<input type="radio" name="teanga" value="zh_CN"> Chinese (zh_CN)<br>
-<input type="radio" name="teanga" value="da_DK"> Danish (da)<br>
-<input type="radio" name="teanga" value="nl_NL"> Dutch (nl)<br>
-<input type="radio" name="teanga" value="en_US"> English (en_US)<br>
-<input type="radio" name="teanga" value="eo"> Esperanto (eo)<br>
-<input type="radio" name="teanga" value="fi_FI"> Finnish (fi)<br>
-<input type="radio" name="teanga" value="fr_FR"> French (fr)<br>
-<input type="radio" name="teanga" value="de_DE"> German (de)<br>
-<input type="radio" name="teanga" value="hu_HU"> Hungarian (hu)<br>
-<input type="radio" name="teanga" value="id_ID"> Indonesian (id)<br>
-<input type="radio" name="teanga" value="mn_MN"> Mongolian (mn)<br>
-<input type="radio" name="teanga" value="ro_RO"> Romanian (ro)<br>
-<input type="radio" name="teanga" value="sk_SK"> Slovakian (sk)<br>
-<input type="radio" name="teanga" value="sv_SE"> Swedish (sv)<br>
-<input type="radio" name="teanga" value="vi_VI"> Vietnamese (vi)<br>
-<input type="radio" name="teanga" value="cy_GB"> Welsh (cy)<br>
-</form>
+  <div class="gramcolumn">
+    <span class="gramheading">Interface language:</span><br/>
+    <form id="IGform">
+      <div class="gramcolumn">
+        <input type="radio" name="teanga" value="af_ZA"> Afrikaans (af)</input><br/>
+        <input type="radio" name="teanga" value="zh_CN"> Chinese (zh_CN)</input><br/>
+        <input type="radio" name="teanga" value="da_DK"> Danish (da)</input><br/>
+        <input type="radio" name="teanga" value="nl_NL"> Dutch (nl)</input><br/>
+        <input type="radio" name="teanga" value="en_US" checked> English (en_US)</input><br/>
+        <input type="radio" name="teanga" value="eo"> Esperanto (eo)</input><br/>
+        <input type="radio" name="teanga" value="fi_FI"> Finnish (fi)</input><br/>
+        <input type="radio" name="teanga" value="fr_FR"> French (fr)</input><br/>
+        <input type="radio" name="teanga" value="de_DE"> German (de)</input><br/>
+        <input type="radio" name="teanga" value="hu_HU"> Hungarian (hu)</input><br/>
+      </div>
+      <div class="gramcolumn">
+        <input type="radio" name="teanga" value="id_ID"> Indonesian (id)</input><br/>
+        <input type="radio" name="teanga" value="ga_IE"> Irish (ga)</input><br/>
+        <input type="radio" name="teanga" value="mn_MN"> Mongolian (mn)</input><br/>
+        <input type="radio" name="teanga" value="ro_RO"> Romanian (ro)</input><br/>
+        <input type="radio" name="teanga" value="sk_SK"> Slovak (sk)</input><br/>
+        <input type="radio" name="teanga" value="es_ES"> Spanish (es)</input><br/>
+        <input type="radio" name="teanga" value="sv_SE"> Sweden (sv)</input><br/>
+        <input type="radio" name="teanga" value="vi_VI"> Vietnamese (vi)</input><br/>
+        <input type="radio" name="teanga" value="cy_GB"> Welsh (cy)</input><br/>
+      </div>
+    </form>
+  </div>
+</div>
+<hr/>
+<div id="output"></div>
+<script>
+  window.addEventListener("load", function () {
+    var form = document.getElementById("IGform");
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var XHR = new XMLHttpRequest();
+
+      XHR.onreadystatechange = function(event) {
+        if (XHR.readyState == XMLHttpRequest.DONE) {
+          if (XHR.status == 200) {
+            processJSON(JSON.parse(event.target.responseText));
+          }
+          else {
+            var div=document.getElementById("output");
+            div.innerHTML=XHR.status.toString()+': '+XHR.statusText;
+          }
+        }
+      };
+
+      XHR.open("POST", "https://cadhan.com/api/gramadoir/1.0");
+      XHR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      XHR.setRequestHeader('Accept','application/json');
+      var payload = '';
+      var radios = document.getElementsByName('teanga');
+      for (var i=0; i<radios.length; i++) {
+        if (radios[i].checked) {
+          payload = 'teanga='+radios[i].value+'&teacs=';
+          break;
+        }
+      }
+      payload += encodeURIComponent(document.getElementById('sourcetext').value);
+      XHR.send(payload);
+      var div=document.getElementById("output");
+      div.innerHTML='<em>Checking...</em>'
+    });
+  });
+
+  function processJSON(arr) {
+    var div=document.getElementById("output");
+    div.innerHTML='';
+    for(var i=0; i<arr.length; i++) {
+      var line_num = parseInt(arr[i].fromy) + 1;
+      var c_offset = parseInt(arr[i].contextoffset);
+      var errlen = parseInt(arr[i].errorlength);
+      div.innerHTML += line_num.toString() + ': ' + arr[i].context.slice(0,c_offset) + '<b class="gramadoir">' + arr[i].errortext + '</b>' + arr[i].context.slice(c_offset + errlen) + '<br/>' + arr[i].msg + '<br/><br/>';
+    }
+  }
+</script>
