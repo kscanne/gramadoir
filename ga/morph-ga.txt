@@ -267,10 +267,12 @@ i[dg]hth?(.)		it$1	1	<.+>	<&>  # dóighthe, dóighte
 ^scoith			scoth		1	<.+>	<&> # scoithdhearg
 ^(sh?)eana-			$1ean-		1	<.+>	<&>    # strip hyphen later
 ^(sh?)ein-			$1ean-		1	<.+>	<&>    # strip hyphen later
+^(sh?)eana([dst])h	$1ean$2		1	<.+>	<&>	# seanashaighdiúir, etc.
 ^(sh?)iod			$1ead		1	<.+>	<&>
 ^(sh?)íodh			$1í		1	<.+>	<&>
 # N.B. makes it longer
 ^(sh?)ír-			$1íor-		1	<.+>	<&>
+^shm			sm			1	<.+>	<&>		# shmacht, etc.
 ^smúid			smúit		1	<.+>	<&>
 ^(sh?)oi-			$1o-		1	<.+>	<&>  # soi-bhriste, etc.  Di04
 # handled by more general ll rule below
