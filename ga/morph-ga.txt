@@ -558,6 +558,9 @@ mist$			mis		1	<V.*>	<&>
 álta$			áilte		1	<A.*>	<&>
 álaithe$		áilte		1	<A.*>	<&>
 álanna$			álacha		1	<N.*>	<&>  # nb3 pl
+^h-?([aeiouáéíóú].+)adh$	n-$1adh	1	<V p="y" t="coinn">	<&> # ná héistfeadh
+^h-?([aeiouáéíóú].+)inn$	n-$1inn	1	<V p="y" t="coinn">	<&> # ná haithneóchainn
+^h-?([aeiouáéíóú].+)ann$	n-$1ann	1	<V p="y" t="láith">	<&> # ná hoireann
 #############################################################################
 #  SYNTHETIC FORMS
 #  more non-standard verbs; these are all examples where the pronoun
