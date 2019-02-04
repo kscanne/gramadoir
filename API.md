@@ -4,7 +4,7 @@ Web API
 
 The Irish grammar checker is available as a web service that
 other developers can use in their own products. At present
-this service powers the [Gramadóir web interface](https://cadhan.com/gramadoir/foirm.html), a CALL platform named [An Scéalaí]() developed
+this service powers the [Gramadóir web interface](https://cadhan.com/gramadoir/foirm.html), a CALL platform named [An Scéalaí](https://files.eric.ed.gov/fulltext/ED590705.pdf) developed
 at Trinity College Dublin, as well as command-line clients.
 
 To use the API, simply make a HTTP POST request to the URL
