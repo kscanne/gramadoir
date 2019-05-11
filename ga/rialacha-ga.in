@@ -937,8 +937,10 @@ n[Dd]eire:IONADAI{ndeireadh}
 <T>[Aa]n</T> <N pl="n" gnt="y" gnd="m">[Mm]éid</N>:OK
 # CB p.23 #9
 #. Comhlánóidh saoránacht an Aontais an saoránacht náisiúnta agus ní ghabhfaidh sí a hionad.
-#. Ritheann an Sláine tríd an pháirc.
 <T>[Aa]n</T> <N pl="n" gnt="n" gnd="f">INITIALS</N>:PREFIXT
+#. Ritheann an Sláine tríd an pháirc.
+<T>[Aa]n</T> <Y>Sláine</Y>:PREFIXT
+<T>[Aa]n</T> <Y>Sionainn</Y>:PREFIXT
 # CB p.23 #10
 #. Ní raibh guth an séiléara le clos a thuilleadh.
 <T>[Aa]n</T> <N pl="n" gnt="y" gnd="m">INITIALS</N>:PREFIXT
@@ -1668,7 +1670,7 @@ g?[Cc]h?úig <NP>(bliana|cinn|cloigne|fichid|huaire|horlaí|troithe)</NP>:OK
 <[OS]>[Dd]e</[OS]> <S>sna</S>:CAIGHDEAN{de na}
 # LGG p.201 (but it's OK to lenite Dé if not in name of a day: "gnúis mo Dhé")
 #. Beidh picéid ar an monarcha óna naoi a chlog maidin Dhé Luain.
-<N>Dhé</N> <N>CAPITAL</N>:NISEIMHIU
+<N>Dhé</N> <[NY]>CAPITAL</[NY]>:NISEIMHIU
 # MacL00 p.118, LGG p.201
 #. Bíonn ranganna ar siúl oíche Dhéardaoin.
 #. Cuireadh tús le himeachtaí ar Dhéardaoin na Féile le cluiche mór.
