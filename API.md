@@ -9,12 +9,16 @@ at Trinity College Dublin, as well as command-line clients.
 
 To use the API, simply make a HTTP POST request to the URL
 `https://cadhan.com/api/gramadoir/1.0`
-with two parameters:
+with three parameters:
 
 * `teacs`: The Irish language text to be checked, as URL-encoded UTF-8
 * `teanga`: The ISO 639-1 code of the language for the error messages. You can
 find the list of available languages on the page with the 
 [web interface](https://cadhan.com/gramadoir/foirm.html).
+* `cliant`: A unique identifier for your client so I can track usage of the
+API. Please send me an email (kscanne at gmail) requesting an
+identifier if you are building something new. Depending on demand,
+I may eventually block requests made without a whitelisted unique ID.
 
 The parameters should be sent in the body of the request
 (not as part of the URL), and the request should specify
