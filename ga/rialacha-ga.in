@@ -550,7 +550,7 @@ n[Dd]eire:IONADAI{ndeireadh}
 <N pl="n" gnt="n" gnd="f">([Bb]heith|[Oo]iread)</N> <A pl="n" gnt="n">UNLENITED</A>:OK
 <NFCS>NONCOMPOUND</NFCS> <A>ANYTHING</A> <A pl="n" gnt="n">UNLENITED</A>:SEIMHIU
 <NFCS>NONCOMPOUND</NFCS> <A>UNBOUNDADJ</A> <A pl="n" gnt="n">UNLENITED</A>:OK
-<NFCS>NONCOMPOUND</NFCS> <A>(cuibheasach|eile|iontach|measartha|réasúnta)</A> <A pl="n" gnt="n">UNLENITED</A>:OK
+<NFCS>NONCOMPOUND</NFCS> <A>(cuibheasach|iontach|measartha|réasúnta)</A> <A pl="n" gnt="n">UNLENITED</A>:OK
 <NFCS>NONCOMPOUND</NFCS> <A>ANYTHING</A> <A pl="n" gnt="n">UNBOUNDADJ</A>:OK
 <N pl="n" gnt="n" gnd="f">([Bb]heith|[Oo]iread)</N> <A>ANYTHING</A> <A pl="n" gnt="n">UNLENITED</A>:OK
 #  these are no good b/c of tagging problems, adj. is *sometimes*
@@ -664,11 +664,9 @@ n[Dd]eire:IONADAI{ndeireadh}
 <N pl="n" gnt="n" gnd="f">(n?[Gg]h?loine|g?[Cc]h?aor|[Ss]cian|d?[Tt]h?onn)</NFCS> <NG>LENITEDF</NG>:NISEIMHIU
 # Next two are LGG p.59 (d)
 <NFCS>ANYTHING</NFCS> <N pl="n" gnt="y" gnd="m">LENITED</N> <A pl="n" gnt="y" gnd="m">ANYTHING</A>:NISEIMHIU
-<NFCS>ANYTHING</NFCS> <N pl="n" gnt="y" gnd="m">LENITED</N> <A pl="n" gnt="y" gnd="m">eile</A>:OK
 <NFCS>ANYTHING</NFCS> <N pl="n" gnt="y" gnd="m">LENITED</N> <A pl="n" gnt="y" gnd="m">UNBOUNDADJ</A>:OK
 #. Seán a d'imigh ar iarraidh ar oíche ghaoithe móire.
 <NFCS>ANYTHING</NFCS> <N pl="n" gnt="y" gnd="f">LENITED</N> <A pl="n" gnt="y" gnd="f">ANYTHING</A>:NISEIMHIU
-<NFCS>ANYTHING</NFCS> <N pl="n" gnt="y" gnd="f">LENITED</N> <A pl="n" gnt="y" gnd="f">eile</A>:OK
 <NFCS>ANYTHING</NFCS> <N pl="n" gnt="y" gnd="f">LENITED</N> <A pl="n" gnt="y" gnd="f">UNBOUNDADJ</A>:OK
 # LGG p.60 (j) but also useful for (e),(i)   (see exception above)
 <NFCS>ANYTHING</NFCS> <N pl="n" gnt="y" gnd="m">LENITEDNGMPERSON</N>:NISEIMHIU
