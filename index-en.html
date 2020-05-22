@@ -1,0 +1,109 @@
+<h2><a name="Summary">Summary</a></h2>
+<p>
+This is the home page for <i lang="ga">An Gramad&oacute;ir</i>,
+an open source grammar checking engine.  It is intended
+as a platform for the development of sophisticated
+natural language processing tools for languages with limited
+computational resources.
+It is currently implemented for the Irish language (Gaeilge);
+upon its release in 2003 this was, to the best of my knowledge,
+the first grammar checker
+developed for any minority language. 
+Ports have been attempted for Afrikaans, Akan,
+Cornish, Esperanto, French, Hiligaynon, Icelandic, Igbo,
+Languedocien, Scottish Gaelic, <a href="http://www.bickersc.com/">Samoan</a>,
+Tagalog, Walloon, and Welsh; see the
+<a href="manual/index.html">Developers' Guide</a> for more information
+on porting.
+</p>
+<p>
+When I first created An Gramadóir, the only meaning of the Irish word
+<i lang="ga">gramad&oacute;ir</i> was "grammarian" or 
+"grammar expert". In recent years, it has taken on the
+<a href="https://www.tearma.ie/q/gramad%C3%B3ir/">additional meaning</a>
+of a (generic) grammar checker; I don't know if 
+I had any influence on this terminological choice!
+If you're curious about the pronounciation, you can
+now <a href="gramadoir.mp3">listen to the word</a> as it's
+pronounced by (an older version of) the wonderful Irish 
+speech synthesizer <a href="https://www.abair.tcd.ie/en/">abair.ie</a>.
+</p>
+
+<p>
+<b>News</b>
+<ul>
+<li>(June 2010): Our friends at the site <a href="http://scriobh.ie/">scriobh.ie</a> are seeking volunteers to help integrate An Gramadóir into OpenOffice.org Writer.</li>
+<li>(March 2010): <a href="gaelsceal.png">Article</a> in the first edition of Gaelscéal about "Anois" - a combination of the grammar checker and <a href="/lsg/index-en.html">my thesaurus</a> in one package.</li>
+<li>(May 2009): <a href="http://nos.ie/teic/ceart-gaelspell/">Review</a> of Ceart and GaelSpell in the Irish magazine <a href="http://www.nos.ie/">nós*</a>.</li>
+<li>(March 2009): Diarmaid Mac Mathúna interviewed on <a href="https://www.rte.ie/podcasts/2009/pc/pod-v-050309-57m16s-ronanbeo.mp3">Ronan Beo</a>.</li>
+<li>(March 2009): Ceart and GaelSpell featured on the <a href="https://www.youtube.com/watch?v=FNSkeGRJCSY">RTÉ News</a>!</li>
+<li>(March 2009): There's an article by Pól Ó Muirí about Ceart in the <a href="https://www.irishtimes.com/culture/2.663/tugann-an-teicneola%C3%ADocht-d%C3%BAshl%C3%A1n-ghramadach-na-gaeilge-1.714976">Irish Times</a>.</li>
+<li>(August 2008): Version 0.7 of the gramadoir engine released.</li>
+<li>(June 2008): I gave a presentation on An Gramadóir at the <a href="http://www.naaclt.org/">NAACLT</a> conference at the University of Rio Grande in Ohio.</li>
+<li>(May 2008): Ceart was named to the Barr-50 Gnó le Gaeilge - a list of the top 50 businesses that make use of the Irish language.</li>
+<li>(October 2007): Diarmaid Mac Mathúna was interviewed about Ceart and GaelSpell on the Raidió na Gaeltachta program "Glór Aniar".</li>
+<li>(January 2007): Article about Ceart in the Galway Advertiser.</li>
+<li>(December 2006): Kevin Donnelly has launched an online version of Welsh Gramadóir called "Klebran".</li>
+<li>(July 2006): "Ceart", a standalone GUI version of the Irish grammar checker, has been released by <a href="https://www.cruinneog.com/">Cruinneog</a>.</li>
+</ul>
+</p>
+
+<hr>
+<h2><a name="Features">Features</a></h2>
+<i lang="ga">An Gramadóir</i> is:
+<ul>
+<li><b>Portable</b>.  As of version 0.5 the core engine is 
+written entirely in Perl which means it will run on just about
+<a href="http://www.cpan.org/ports/index.html">anything that plugs in</a>.
+It has been tested on a variety of
+platforms and operating systems:
+Linux (x86, ppc, amd64),
+*BSD (x86),
+Sun Solaris,
+DEC alpha,
+Mac OSX,
+and Windows.</li>
+<li><b>Modular</b>.   The Perl module provides separate interfaces
+for sentence segmentation, spell checking, part-of-speech tagging,
+and grammar checking.   These components provide a platform for the development of applications for much more complex natural language processing tasks
+(e.g. parsing, machine translation).</li>
+<li><b>Easy to use</b>.  There is a simple command line interface 
+that reads text from standard input and writes errors to standard
+output (you can see some actual output on
+the <a href="sampla-en.html">Sampler page</a>). 
+Or, you can try the software now using the
+<a href="form.html">Web Interface</a>.
+There are also interfaces that allow the grammar checker to
+be called from the text editors <a href="sios-en.html#Editors">emacs, vim, and OpenOffice</a>.
+Last but not least, if you have a Mac you can try
+the Java front-end "Ceart"
+developed by <a href="http://www.cruinneog.com/">Cruinneog</a>.</li>
+<li><b>Corpus-based</b>.  Various components of the engine can be 
+bootstrapped from corpora harvested by my web crawling
+software <a href="http://crubadan.org/">An Crúbadán</a>.  This is
+essential for languages with severely limited resources, allowing 
+rapid development with a minimum of effort.</li>
+<li><b>Easy to develop</b>.  I've tried to design the language
+developers' pack so that no programming experience is needed.
+All Perl code is generated automatically from a number
+of (hopefully simple) plain text input files.
+This is especially important for minority languages where in 
+many cases there is a lack of trained linguists, software
+developers, or both.</li>
+<li><b>Scalable</b>.    With as little as an hour or two of work (editing
+word lists output by my web crawler) a developer can have a decent
+spell checking package up and running.   On the other hand, the
+engine is flexible enough to allow for full-scale grammar checking
+(as evidenced by the rococo Irish version).</li>
+<li><b>Language independent</b>.   (More or less).  Most open source 
+language technology is designed with (Indo-)European languages in mind.
+To counter this trend I've included things like full Unicode support and
+better support for
+the rich morphological phenomena found in many non-European languages.</li>
+<li><b>Free Software</b>.  
+It is released under the 
+<a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GNU General Public License</a>
+which means (roughly speaking) 
+that you are free to copy, modify, or even sell this 
+software as long as redistributed versions preserve these same freedoms.</li>
+</ul>

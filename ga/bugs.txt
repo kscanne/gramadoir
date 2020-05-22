@@ -1,39 +1,39 @@
-# HEADING: Lenition
+# HEADING: Séimhiú
 # BUG
-# The copula "gur" is either present/future (no lenition) or past/conditional (lenition) and deciding which sometimes requires distant contextual markers:
+# Séimhítear focal ar lorg na copaile "gur" san aimsir chaite nó sa mhodh coinníollach, agus ní shéimhítear san aimsir láithreach ná san aimsir fháistineach. Uaireanta tá sé deacair aimsir na copaile a oibriú amach ón gcomhthéacs toisc go mbraitheann sí ar leideanna i bhfad uaithi san abairt:
 An amhlaidh *gur daoine* iad a chaith an lá ar fad ar an bhus?
 Dar leis *gur dhaoine* réasúnta saibhir atá ina gcónaí i mBaile Átha Cliath.
-# The same goes for "ar" and all ambiguous combined forms: dar, faoinar, inar, lenar, sular, etc.
+# Mar an gcéanna i gcás an fhocail "ar" agus na foirmeacha comhtháite éagsúla: dar, faoinar, inar, lenar, sular, srl.
 # BUG
-# One needs semantic information sometimes to tell whether an adjective is being used attributively vs. predicatively, and this affects lenition sometimes:
+# Uaireanta, níl sé soiléir an aidiacht cháilíochta nó aidiacht fhaisnéiseach atá i gceist, agus imríonn an difríocht seo tionchar ar an séimhiú:
 # "Seán broke a window"
 Bhí *fuinneog bhriste* ag Seán.
 # "Seán had a broken window"
 Bhí *fuinneog briste* ag Seán.
-# The second error is currently flagged, but at the expense of incorrectly flagging it when used predicatively.  Another example:
+# Faoi láthair, déanann an Gramadóir tuairisc ar an dara hearráid, agus dá bharr sin, déanann sé botún anois is arís le haidiachtaí faisnéiseacha. Samplaí eile den sórt seo:
 # "He had become famous"
 Bhí cáil *bhainte* amach aige.
 # "He had a reaping tool"
 Bhí uirlis *bainte* aige.
-# Or:
+# Nó:
 # "The busy woman was in her office"
 Bhí an bhean *gnóthach* ina hoifig.
 # "The woman was busy in her office"
 Bhí an bhean *ghnóthach* ina hoifig.
-# Some adjectives that are almost always used predicatively are given as exceptions, so not flagged:
+# Tuigeann an Gramadóir nach n-úsáidtear aidiachtaí áirithe ar bhealach cáilíochta rómhinic, agus is eisceachtaí iad don riail seo:
 Bhí an fhéile curtha ar ceal.
 # BUG
-# "mar a" sometimes precedes an indefinite clause, sometimes definite, about 50/50 in the corpus (compare example below and CB p.146)
+# Séimhítear an briathar ar lorg "mar a" uaireanta, agus uraítear é uaireanta eile, thart ar 50/50 sa chorpas (cf. na samplaí thíos agus CB lch.146)
 Beidh do shíol ina ndeoraithe i dtír nach leo, mar *a bheidh* siad ina ndaoir.
 Chuala tú conas mar *a mbeidh* siad ina gceap uafáis agus mallacht.
 # BUG
-# The noun "méid" is either masculine or feminine, depending on semantics.
-# Intended to mean "amount, quantity" here, so should be masculine:
+# Braitheann inscne an ainmfhocail "méid" ar chúrsaí séimeantaice.
+# Tá sé firinscneach nuair a chiallaíonn sé "líon", "uimhir", nó "tomhas":
 Ní smaoiníonn siad ar *an mhéid* eolais atá le fáil.
-# Intended to mean "size" here, so should be feminine:
+# Tá sé baininscneach nuair a chiallaíonn sé "toirt" nó "téagar":
 Braitheann *an méid* a bhíonn i scriúnna ar an bhfeidhm a bhíonn le baint astu.
 # BUG
-# The preposition "ar" lenites in certain situations, sometimes depending on subtle semantic information:
+# Séimhítear ainmfhocail ar lorg "ar" uaireanta, ag brath ar chúrsaí séimeantaice ar bhealach caolchúiseach:
 Mar sin de, is é scéal na himirce scéal an pharóiste, *ar dóigh*.
 Mar sin de, is é scéal na himirce scéal an pharóiste *ar dhóigh*.
 Bhí clóscríobhán *ar bord* sa chúinne.
@@ -46,39 +46,39 @@ Tionscadal atá *ar bun* sealadach.
 Bhuail sé iad *ar fhad*.
 # "He struck them across their cheek"
 Bhuail sé iad *ar fad* a leicinn.
-# "It is in progress" (Ó Donaill, siúl.5)
+# "It is in progress" (Ó Dónaill, siúl.5)
 Tá sé *ar shiúl*.
-# "He is gone" (Ó Donaill, siúl.6)
+# "He is gone" (Ó Dónaill, siúl.6)
 Tá sé *ar siúl*.
-# There are lots of similar examples where the unlenited form exists in a set phrase but the lenited form is perfectly legitimate as well.  Here are some of the other top offenders: "ar d(h)eireadh", "ar b(h)all", "ar c(h)uairt", "ar t(h)alamh", etc. etc.
+# Tá go leor samplaí eile den sórt seo agus an fhoirm gan séimhiú ina cor cainte, ach glactar leis an bhfoirm shéimhithe, le brí dhifriúil, chomh maith. Seo roinnt de na samplaí is coitianta sa chorpas: "ar d(h)eireadh", "ar b(h)all", "ar c(h)uairt", "ar t(h)alamh", srl. srl.
 # BUG
-# "idir" lenites about half the time, depending on semantics:
+# Feictear séimhiú ar lorg "idir" thart ar leath an ama, arís ag brath ar chúrsaí séimeantaice:
 # "There are both men and women in the park"
 Tá idir *fir agus mná* sa pháirc.
 # "There is a game between men and women in the park"
 Tá cluiche idir *fhir agus mhná* sa pháirc.
 # BUG
-# "chun" is ambiguous -- requires genitive in the first case:
+# Tá dhá bhrí leis an bhfocal "chun" — sa chéad sampla thíos, ba cheart an focal ina dhiaidh a chur sa chás ginideach:
 Tháinig sé chun *an cluiche*.
 Tháinig sé chun *an chluiche* a fheiceáil.
 # BUG
-# "a" is hard/impossible to disambiguate in many instances:
+# Go minic, bíonn sé deacair/dodhéanta feidhm an fhocail "a" a oibriú amach:
 # "He didn't like contradicting them."
 Ní maith leis na daoine *a bréagnú*.
 # "The people didn't like her contradictions."
 Ní maith leis na daoine *a bhréagnú*.
-# Currently, the first of this pair is reported as an error, in which case if the second meaning was intended, this becomes a false positive!
+# Faoi láthair, déanann an Gramadóir tuairisc ar an gcéad cheann mar bhotún; tuairisc bhréagdheimhneach dá mbeadh an dara brí i gceist!
 # "I don't like person number two."
 Ní maith liom duine *a dhó*.
 # "I don't like burning someone."
 Ní maith liom duine *a dó*.
 # BUG
-# Don't yet have accurate markup of definite/indefinite nouns; CB p.16 #6
+# Ní dhéanann an Gramadóir idirdhealú ar bith idir ainmfhocail chinnte agus éiginnte; féach CB lch.16 #6
 Rinne sé iarracht ar threoir a thabhairt ina lá féin conas cúraimí Dé a dheighilt ó ghnóthaí *Sátain*.
 Tá Eifisigh, dá réir sin, ar an litir is fairsinge agus is "caitlicí" de litreacha *Póil*.
 Is cosúil gur finné a scríobh é luath go leor tar éis *báis* Dháiví.
 # BUG
-# Anaphora resolution
+# Réiteach iarthagartha
 Tá Kim Jong-Il ag smaoineamh ar *a pobal*.
 Tá Kim Basinger ag smaoineamh ar *a phobal*.
 Leabhar álainn clóbhuailte, *arna foilsiú* agam.
@@ -88,102 +88,98 @@ Tá Tomás á *moladh*.
 # "Tomás is praising her."
 Tá Tomás á *mholadh*.
 # BUG
-# No attempt at handling the vocative; CB p.12 #2
+# Ní dhéanaim iarracht ar bith an cás gairmeach a láimhseáil; féach CB lch.12 #2
 Bua ann féin é, *a Treasa*, go ndéanann duine a dhícheall!
 # BUG
-# Disambiguating past from imperative verbs
+# An aimsir chaite agus an modh ordaitheach a idirdhealú
 # "Keep me on my toes"
 *Choinnigh* mé ar mo bharraicíní.
 # "I kept on my toes"
 *Coinnigh* mé ar mo bharraicíní.
 # BUG
-# Similarly, disambiguating imperfect from incorrectly lenited past autonomous
+# Agus ar an nós céanna, an aimsir ghnáthchaite agus saorbhriathar san aimsir chaite
 # "The ling fishermen were killed."
 *Mharaíodh* iascairí an langa.
 # "Fishermen used to kill the ling."
 *Maraíodh* iascairí an langa.
 # BUG
-# Should have rule disallowing lenition on past autonomous, but disambiguating the 1st decl. past autonomous from the verbal noun is hard
+# Ba mhaith liom riail a scríobh nuair a shéimhítear saorbhriathar san aimsir chaite, ach uaireanta tá sé deacair é a idirdhealú ón ainm briathartha
 # "The man left his invitation."
 Thréig an fear *a cuireadh*.
 # "Leave the man that was buried."
 Tréig an fear *a chuireadh*.
 # BUG
-# Needs chunking: several adjectives goverened by same noun
+# Frásaí ainmfhoclacha a aithint: m.sh. nuair a mhodhnaíonn níos mó ná aidiacht amháin an t-ainmfhocal céanna
 Ní raibh baint aici le gníomhaíocht ar bith *polaitiúil* le cúig bliana anuas.
-# HEADING: Eclipsis
+# HEADING: Urú
 # BUG
-# Anaphora resolution
+# Réiteach iarthagartha
 Tá brí ina colainn siúd!
 Tá brí ina gcolainn siúd!
 # BUG
-# It can be hard to distinguish the genitive plural from the common plural:
+# Uaireanta tá sé deacair an gnáthiolra agus an ginideach iolra a idirdhealú:
 Tuigimid freisin go bhfuil cathú ar dhaoine *na dtithe* seo a dhíol.
 Tuigimid freisin go bhfuil cathú air fearas *na tithe* seo a dhíol.
 Tá siad tar éis *na Gardaí*.
 Tá siad tar éis *na nGardaí* a cháineadh.
-# Sometimes it is genuinely ambiguous:
+# Agus uaireanta eile tá sé dodhéanta:
 Ní teanga na comharsan amháin a bhíonn i gceist.
 Ní teanga na gcomharsan amháin a bhíonn i gceist.
-# HEADING: Prefix t
+# HEADING: Réimír t-
 # BUG
-# Disambiguation of "leis":
+# Tá dhá bhrí le "leis":
 Glacfar leis *an am* seo.
 Glacfar leis *an t-am* seo.
-# Tagging genitive correctly without benefit of the prefix "t" cue:
+# Má tá an réimír "t" ar iarraidh sa ghinideach firinscneach, is deacair don Ghramadóir aithint gur ginideach atá ann:
 # "It was the business of the Old Testament prophets".
 Ba é gnó fháithe *an Sean-Tiomna* é.
 # "The Old Testament was the business of translators".
 Ba é gnó aistritheoirí *an tSean-Tiomna* é.
-# Tagging "an" correctly without benefit of the prefix "t" cue:
+# Tá sé deacair an léamh ceart a dhéanamh ar an bhfocal "an" má tá an réimír "t-" ar iarraidh:
 *An suim* is airde.
 *An tsuim* agat?
-# "an" copula
-Ní fios *an ainm* dílis air.
-# "an" article
-Ní fios *an t-ainm* dílis air.
-# HEADING: Prefix h
+# HEADING: Réimír h-
 # BUG
-# Anaphora resolution
+# Réiteach iarthagartha
 Tá Kim Jong-Il ag smaoineamh ar *a háit dúchais*.
 Tá Kim Basinger ag smaoineamh ar *a áit dúchais*.
 # BUG
-# Reputable sources have prefix "h" after "ní", others omit it, corpus is split.
+# Deir foinsí áirithe a bhfuil dea-chlú orthu gur chóir "h-" a úsáid ar lorg "ní", fágann foinsí eile ar lár é; meascán sa chorpas.
 *Ní amháin* dúinne in Éirinn ach do na milliúin eile ar fud na hEorpa.
 *Ní hamháin* dúinne in Éirinn ach do na milliúin eile ar fud na hEorpa.
 *Ní ionann* mise agus mo bhean.
 *Ní hionann* mise agus mo bhean.
-# HEADING: Agreement
+# HEADING: Comhtheacht gramadaí
 # BUG
-# Should have a rule flagging plural noun+singular adjective, but it is not always clear when the noun is attributive vs. predicative w/o parsing.  It is indeed an error here:
+# Ba mhaith liom riail a scríobh a d'aithneodh ainmfhocal iolra + aidiacht uatha mar bhotún gramadaí, ach níl sé soiléir i gcónaí an aidiacht cháilíochta atá i gceist gan parsáil a dhéanamh. Is botún é anseo:
 # "The blind people are there"
 Tá na *daoine dall* ann.
-# But not here ("The people are blind"):
+# Ach ní botún é anseo ("The people are blind"):
 Tá na daoine dall.
-# HEADING: Direct/indirect relative
+# HEADING: Clásal díreach/indíreach
 # BUG
-# "mar" introduces direct or indirect depending on semantics (CB p.146):
+# Feictear clásail den dá chineál ar lorg "mar", ag brath ar chúrsaí séimeantaice (CB lch.146):
 # "Leave that as it is"
 Fág siúd mar *a bhfuil* sé.
 # "Leave that where it is"
 Fág siúd mar *atá* sé.
-# HEADING: Other Rules
+# HEADING: Rialacha eile
 # BUG
-# Should have a rule flagging noun+indefinite adjective (úd,sin,etc.)+descriptive adjective (CB p.60 #8) but this can be problematic without a shallow parse.
-# This is OK ("That man is tall"):
+# Ba chóir dom riail a scríobh a dhéanann tuairisc ar ainmfhocal + aidiacht éiginnte (úd,sin,srl.)+aidiacht thuairisciúil (CB lch.60 #8), ach ba chúis le fadhbanna é seo gan parsáil a dhéanamh.
+# Tá an abairt seo ceart go leor ("That man is tall"):
 Tá an fear sin ard.
-# But here "ard" should precede "sin" ("That tall man is there"):
+# Ach sa chás seo, ba chóir do "ard" a theacht roimh "sin" ("That tall man is there"):
 Tá an fear *sin ard* ann.
 # BUG
-# Would like to require comparative after "is" but it is hard to disambiguate the superlative marker from the copula:
-Tá sé an lá *is fada*.
-# But this is fine:
+# Ba chóir an aidiacht shárchéimeach a úsáid tar éis "is" ("is fearr"), ach chun é seo a dhéanamh caithfear an chlib cheart a chur ar "is" (marcóir sárchéimeach vs. an chopail):
+Is é an lá *is fada*.
+# Ach tá an abairt seo ceart go leor:
 Is fada an lá.
 # BUG
-# Should be a rule preventing "beirt", "triúr", etc. from being used with an impersonal noun, see CB p.78 Note.  This requires some semantic markup.
+# Ba chóir dom riail a scríobh a chuirfeadh cosc ar ainmfhocail neamhphearsanta ar lorg "beirt", "triúr", srl. féach CB lch.78 (Nóta). Ach bhraithfeadh sé seo a chlibeáil shéimeantach nach ndéanann an Gramadóir faoi láthair.
 Tá *beirt chat* ann.
 # BUG
-# NGBC p.184 (b), should use singular noun after "ár", "bhur", plural "a" when each individual has just one of the noun in question:
+# NGBC lch.184 (b); ba chóir an t-ainmfhocal uatha a úsáid ar lorg "ár", "bhur", "a" (iolra) nuair nach bhfuil ach ceann amháin den ainmfhocal ag gach duine:
 Beidh siad ar *ár n-aigní*.
-# But this is OK if each of us has two cars:
+# Ach tá an abairt seo ceart má tá dhá charr ag gach duine againn:
 Beidh siad inár gcarranna.

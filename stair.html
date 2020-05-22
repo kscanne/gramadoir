@@ -1,36 +1,35 @@
-<h2>Release History</h2>
+<h2>Stair na Leaganacha</h2>
 
 <p>
-The data on this page refer to the Irish version of
-<i lang="ga">An Gramadóir</i> which was, through version 0.4, packaged
-together with the build scripts as "<i>gramadoir-0.x</i>".    
-Starting with 0.50, the Irish version is distributed
-independently as the Perl module <i>Lingua::GA::Gramadoir</i>.
+Baineann na sonraí ar an leathanach seo leis an leagan Gaeilge
+den Ghramadóir. Trí leagan 0.4, cuireadh an leagan Gaeilge ar fáil
+i bpacáiste amháin leis na scripteanna tógála mar "<i>gramadoir-0.x</i>".
+Ó leagan 0.50 ar aghaidh, cuirtear an leagan Gaeilge ar fáil
+mar phacáiste neamhspleách sa mhodúl Perl <i>Lingua::GA::Gramadoir</i>.
 
 <table border cellpadding=2>
-<tr><td>Version</td> <td>Release Date</td> <td>Size of lexicon</td> <td>Alt. forms</td> <td>Idioms</td> <td>Disambig rules</td> <td>Gramm. rules</td> <td>Excepts</td></tr>
-<tr><td>0.1</td> <td>18 Jul 2003</td> <td>313,973</td> <td>-</td>      <td>-</td>     <td>16</td>    <td>146</td> <td>18</td></tr>
-<tr><td>0.2</td> <td>30 Jul 2003</td> <td>314,027</td> <td>22,292</td> <td>-</td>     <td>22</td>    <td>173</td> <td>18</td></tr>
-<tr><td>0.3</td> <td>21 Oct 2003</td> <td>315,002</td> <td>23,353</td> <td>-</td>     <td>24</td>    <td>177</td> <td>18</td></tr>
-<tr><td>0.4</td> <td>8 Jan 2004</td> <td>315,041</td> <td>24,107</td> <td>214</td>    <td>331</td>   <td>361</td> <td>77</td></tr>
-<tr><td>0.50</td> <td>28 Jul 2004</td> <td>320,958</td> <td>27,868</td> <td>222</td>    <td>333</td>   <td>362</td> <td>77</td></tr>
-<tr><td>0.51</td> <td>25 Aug 2004</td> <td>321,088</td> <td>31,077</td> <td>222</td>    <td>333</td>   <td>362</td> <td>77</td></tr>
-<tr><td>0.60</td> <td>3 Mar 2005</td> <td>310,883</td> <td>44,067</td> <td>410</td>    <td>456</td>   <td>1573</td> <td>492</td></tr>
-<tr><td>0.70</td> <td>10 Oct 2013</td> <td>359,710</td> <td>117,958</td> <td>426</td>    <td>545</td>   <td>2821</td> <td>871</td></tr>
+<tr><td>Leagan</td> <td>Dáta Foilsithe</td> <td>Líon focal</td> <td>Focail mhalart.</td> <td>Cora cainte</td> <td>Rialacha idirdh.</td> <td>Rialacha gram.</td> <td>Eisceachtaí</td></tr>
+<tr><td>0.1</td> <td>18 Iúil 2003</td> <td>313,973</td> <td>-</td>      <td>-</td>     <td>16</td>    <td>146</td> <td>18</td></tr>
+<tr><td>0.2</td> <td>30 Iúil 2003</td> <td>314,027</td> <td>22,292</td> <td>-</td>     <td>22</td>    <td>173</td> <td>18</td></tr>
+<tr><td>0.3</td> <td>21 DFómh 2003</td> <td>315,002</td> <td>23,353</td> <td>-</td>     <td>24</td>    <td>177</td> <td>18</td></tr>
+<tr><td>0.4</td> <td>8 Ean 2004</td> <td>315,041</td> <td>24,107</td> <td>214</td>    <td>331</td>   <td>361</td> <td>77</td></tr>
+<tr><td>0.50</td> <td>28 Iúil 2004</td> <td>320,958</td> <td>27,868</td> <td>222</td>    <td>333</td>   <td>362</td> <td>77</td></tr>
+<tr><td>0.51</td> <td>25 Lún 2004</td> <td>321,088</td> <td>31,077</td> <td>222</td>    <td>333</td>   <td>362</td> <td>77</td></tr>
+<tr><td>0.60</td> <td>3 Már 2005</td> <td>310,883</td> <td>44,067</td> <td>410</td>    <td>456</td>   <td>1573</td> <td>492</td></tr>
+<tr><td>0.70</td> <td>10 DFómh 2013</td> <td>359,710</td> <td>117,958</td> <td>426</td>    <td>545</td>   <td>2821</td> <td>871</td></tr>
 </table>
 
-<h2>Benchmarks</h2>
+<h2>Tagarmharcáil</h2>
 <p>
-The benchmark corpus is comprised of approximately one megabyte of
-plain text from the online Irish monthly 
+Bhailigh mé corpas tástála ón iris mhíosúil ar líne
 <a href="http://www.beo.ie/"><i lang="ga">Beo!</i></a>.
-There are 192406 words in the corpus forming 9292 sentences.
-Times below are given in seconds (real computation time on my 
-dual Xeon box running Gentoo Linux).   WPM = words per minute.
+Tá thar ar 1MB gnáth-théacs sa chorpas; sin 192406 focal i 9292 abairt.
+Soicindí atá i gceist sa tábla thíos (fíor-am ar
+ríomhaire Linux le dhá phróiseálaí Xeon). FSN = focail sa nóiméad.
 </p>
 
 <table border cellpadding=2>
-<tr><td>v</td> <td>TOT</td> <td>WPM</td> <td><i>ab</i></td> <td><i>cu</i></td> <td><i>co</i></td> <td><i>a1</i></td> <td><i>a2</i></td> <td><i>un</i></td> <td><i>rl</i></td> <td><i>ei</i></td> <td><i>as</i></td></tr>
+<tr><td>l</td> <td>AM</td> <td>FSN</td> <td><i>ab</i></td> <td><i>cu</i></td> <td><i>co</i></td> <td><i>a1</i></td> <td><i>a2</i></td> <td><i>un</i></td> <td><i>rl</i></td> <td><i>ei</i></td> <td><i>as</i></td></tr>
 <tr><td>0.1</td> <td><i>220.16</i></td> <td><i>52436</i></td> <td><i>5.20</i></td> <td><i>1.06</i></td> <td><i>-</i></td> <td><i>3.03</i></td> <td><i>-</i></td> <td><i>-</i></td> <td><i>206.52</i></td> <td><i>0.46</i></td> <td><i>3.89</i></td></tr>
 <tr><td>0.2</td> <td><i>220.73</i></td> <td><i>52301</i></td> <td><i>5.10</i></td> <td><i>1.13</i></td> <td><i>-</i></td> <td><i>3.38</i></td> <td><i>-</i></td> <td><i>-</i></td> <td><i>206.80</i></td> <td><i>0.43</i></td> <td><i>3.88</i></td></tr>
 <tr><td>0.3</td> <td><i>241.61</i></td> <td><i>47781</i></td> <td><i>5.04</i></td> <td><i>1.11</i></td> <td><i>-</i></td> <td><i>3.41</i></td> <td><i>-</i></td> <td><i>-</i></td> <td><i>227.64</i></td> <td><i>0.44</i></td> <td><i>3.97</i></td></tr>
@@ -40,135 +39,104 @@ dual Xeon box running Gentoo Linux).   WPM = words per minute.
 <tr><td>0.60</td> <td><i>193.00</i></td> <td><i>59815</i></td> <td><i>24.49</i></td> <td><i>7.40</i></td> <td><i>23.39</i></td> <td><i>78.73</i></td> <td><i>25.07</i></td> <td><i>1.34</i></td> <td><i>29.91</i></td> <td><i>-</i></td> <td><i>2.42</i></td></tr>
 </table>
 
-<h2>ChangeLog Summary</h2>
+<h2>Achoimre ar Athruithe</h2>
 <p>
-<b>Version 0.60->0.70</b>
+<b>Leagan 0.60->0.70</b>
 <ul>
-<li>Massive expansion of lexicon, especially handling of non-standard spellings for Caighdeánaitheoir</li>
-<li>Nearly double the number of grammatical rules</li>
-<li>Small bug fixes</li>
+<li>Borradh mór faoin fhoclóir, go háirithe litrithe malartacha mar chuid den obair ar an gCaighdeánaitheoir</li>
+<li>Beagnach a dhá oiread rialacha gramadaí</li>
+<li>Ceartúcháin ar fhabhtanna beaga</li>
 </ul>
 </p>
 
 <p>
-<b>Version 0.51->0.60</b>
+<b>Leagan 0.51->0.60</b>
 <ul>
-<li>Lexicon additions, improvements, and bug fixes (some unnecessary 
-inflections removed)
-<li>Rule set more than tripled in size, now covering a wide range
-of Irish grammar, including nearly all rules concerning 
-missing or unnecessary initial mutations
-<li>Simplification of the tagset, some regular expression optimizations,
-less dependence on part-of-speech macros, 
-and the restructuring of a few slow rules lead to another 5% 
-speed improvement despite the massively larger rule set
-<li>Added warnings for many "dangerous pairs" based on corpus analysis
-<li>Now correctly tokenizes numerals, including years, ordinals like "5ú",
-and plurals like "1950í".
-<li>Many morphological rules added for treating pre-standard orthography;
-together with work on the replacement file, these allow An Gramad&oacute;ir
-to be used as a "normalizer" for indexing, information retrieval, etc.
+<li>Focail nua, feabhsúcháin, agus ceartúcháin ar an bhfoclóir (baineadh focail infhillte áirithe nach raibh gá leo)</li>
+<li>Méadaíodh an tacar rialacha faoi thrí; clúdaíonn sé cuid mhaith de ghramadach na Gaeilge, beagnach gach riail a bhaineann le hathruithe tosaigh san áireamh</li>
+<li>Tacar clibeanna níos simplí, optamú ar roinnt slonn ionadaíochta, níos lú úsáide da mhacraí ranna cainte, agus athstruchtúrú ar roinnt rialacha malla. Mar gheall ar na hathruithe seo, tá an córas ar fad 5% níos sciobtha, in ainneoin na rialacha nua go léir.</li>
+<li>Rabhaidh nua a bhaineann le "péirí contúirteacha", bunaithe ar anailís ar an gcorpas</li>
+<li>Déanann sé comharthú ceart anois ar uimhreacha (blianta san áireamh), orduimhreacha ar nós "5ú", agus uimhreacha iolra ar nós "1950í".</li>
+<li>Go leor rialacha moirfeolaíochta a bhaineann leis an gcóras litrithe roimh an gCaighdeán Oifigiúil. In éineacht le tuilleadh oibre ar an gcomhad ionadaíochta, is féidir An Gramad&oacute;ir a úsáid anois mar chóras "normalaithe" in inneall cuardaigh, innéacsóir, srl.</li>
 </ul>
 </p> 
 
 <p>
-<b>Version 0.50->0.51</b>
+<b>Leagan 0.50->0.51</b>
 <ul>
-<li>Lexicon additions and improvements
-<li>Improved error trapping
-<li>Improved Perl code generation (consistent use of non-capturing
-parentheses, etc.) giving 5% speed improvement.
-<li>Perl implementation of developer options "--brill", "--freq", "--ambig"
-distributed in the language pack <i>gramadoir-ga-0.51</i>.
-<li>Added "--no-unigram" option to <i>gram-ga.pl</i>
-<li>POD documentation for <i>gram-ga.pl</i>
+<li>Focail nua agus ceartúcháin san fhoclóir</li>
+<li>Na rialacha Gaeilge a fheabhsú</li>
+<li>An cód Perl a ghiniúint ar bhealach níos éifeachtaí (lúibíní gan gabháil a úsáid chuile áit, srl.); 5% níos sciobtha mar thoradh air seo.</li>
+<li>Leagan Perl de na roghanna forbartha "--brill", "--freq", "--ambig" sa bpacáiste teanga <i>gramadoir-ga-0.51</i>.</li>
+<li>Rogha "--no-unigram" in <i>gram-ga.pl</i></li>
+<li>Doiciméadú POD le haghaidh <i>gram-ga.pl</i></li>
 </ul>
 </p> 
 
 <p>
-<b>Version 0.4->0.50</b>
+<b>Leagan 0.4->0.50</b>
 <ul>
-<li>Complete rewrite of core engine entirely in Perl
-<li>Default output encoding is now utf8; added a "--aschod" option to
-change this
-<li>The default is now to report all spelling errors in a sentence
-(was at most two)
-<li>Added a complete morphological analyzer which greatly improves
-the error messages when words are not found in the lexicon.
-<li>The morphology engine also improves handling of late capitals
-so words like "d'Fhoras", "Sean-Nós" are passed over silently as correct now.
-Also, since the lowered version of a word like "hAire" is not automatically
-searched (since the capitalized version is in the lexicon),
-this gets the correct, unambiguous masculine POS tag.
-Or in "bPáirtí Glas", the first word is now recognized unambiguously
-as a noun which then has the added benefit of allowing "Glas" to be correctly
-recognized as an adjective.
-<li>Line numbers are now given where the error occurs
-(was the line number of the beginning of the sentence containing the error).
-<li>Non-standard words are now tagged so as to be reported as misspellings
-when the "--litriu" flag is given.
-<li>Doubled words only reported when there is no intervening punctuation;
-the two words together are now marked up as the erroneous text.
-<li>Bug from unescaped "$" in bash version goes away with perl
-<li>Global highlighting bug fixed (e.g. "re" in "gach re" caused the "re" in
-"toibreacha" to be highlighted also).
-<li>No more "uimhir" line number attribute in intermediate XML
-<li>Use character entities "&amp;quot;", etc. in "--api", "--html", and "--xml" output
-<li>Added "--api" command line option which generates XML output
-suitable for use as an interface to other programs
-<li>Added command line options "--aschur", "--dath", "--comheadan"
-<li>I cracked and added English versions of the long command-line options
-<li>Improvements (adding to .neamhshuim) and bug fixes to Vim interface
-<li>Afrikaans localization
+<li>An buninneall athscríofa ón bhonn aníos i bPerl</li>
+<li>Is é UTF-8 an t-ionchódú aschurtha de réir réamhshocraithe; rogha nua "--aschod" len é seo a athrú más gá</li>
+<li>Déanann tuairisc ar fhocail mhílitrithe de réir réamhshocraithe anois (dhá cheann ar a mhéad roimhe seo)</li>
+<li>Anailíseoir moirfeolaíochta nua; feabhsaíonn sé seo na teachtaireachtaí a fhaightear nuair nach bhfuil focal san fhoclóir</li>
+<li>Glacann sé le focail a bhfuil réimír agus ceannlitir acu anois, mar shampla "d'Fhoras" nó "Sean-Nós". Chomh maith leis sin, toisc go bhfuil "Aire" san fhoclóir le ceannlitir, tugann sé an chlib cheart fhirinscneach dó. Nó, i gcás "bPáirtí Glas", aithníonn sé gur ainmfhocal é an chéad fhocal mar gheall ar an urú (agus, dá bharr sin, "Glas" a aithint mar aidiacht).</li>
+<li>Tugann sé uimhir na líne ar a bhfuil an earráid (roimhe seo, uimhir na líne ag tús na habairte a bhí ann).</li>
+<li>Déanann sé tuairisc ar fhocail neamhchaighdeánacha mar fhocail mhílitrithe nuair a úsáidtear an bhratach "--litriu".</li>
+<li>Ní dhéanann sé tuairisc ar fhocail dhúbailte ach sa chás nach bhfuil poncaíocht ar bith eatarthu; marcálann sé an dá fhocal le chéile mar an botún.</li>
+<li>Níl an fhadhb a bhí ann mar gheall ar "$" gan éalúchán sa leagan Perl ar chor ar bith</li>
+<li>Cheartaigh mé fadhb le haibhsiú (m.sh. rinne sé aibhsiú ar an "re" in "toibreacha" mar gheall ar bhotún le "re" in "gach re").</li>
+<li>Fuair mé réidh leis an aitreabúid "uimhir" san XML inmheánach</li>
+<li>Úsáid aonáin "&amp;quot;", srl. san aschur le "--api", "--html", agus "--xml"</li>
+<li>Rogha nua "--api" a thugann aschur i bhformáid XML is féidir a sholáthar do ríomhchláir eile</li>
+<li>Roghanna nua eile ar líne na n-orduithe: "--aschur", "--dath", "--comheadan"
+<li>Ghéill mé faoi dheireadh agus chuir mé leaganacha Béarla de na roghanna fada ar líne na n-orduithe ar fáil</li>
+<li>Feabhsúcháin agus ceartúcháin sa bhreiseán Vim (m.sh. cur leis an gcomhad .neamhshuim)</li>
+<li>Aistriúchán Afracáinise</li>
 </ul>
 </p>
 
 <p>
-<b>Version 0.3->0.4</b>
+<b>Leagan 0.3->0.4</b>
 <ul>
-<li>Rule set more than double the size (improved generation of Perl code
-means no loss in efficiency, in fact a 15% improvement)
-<li>"tag 2-gram" rules added that flag unlikely part-of-speech combinations
-<li>Complete Brill-like rule-based tagger added with 331 disambiguation rules
-followed by a default unigram tagger
-<li>Added developer options "--brill", "--ilchiall",
-"--minic", and "--no-unigram" useful for developing the tagger
-<li>Module for "chunking" of set phrases added
-<li>Language-dependent modules added for recognizing abbreviations; improves
-sentence segmentation
-<li>Added "--aspell" option which makes suggestions for misspelled words
-<li>Modularized more language-specific material (tolower, macro files, etc.)
-<li>Flagging of repeated words
-<li>Flagging of extremely rare words (which sometimes disguise misspellings)
-<li>Dutch, French, Mongolian, Romanian, and Slovak localizations
-<li>Now builds and runs cleanly in a UTF-8 locale
-<li>Vim interface <i>gramadoir.vim</i> included
-<li>Minor bug fixes
+<li>Tacar rialacha méadaithe faoi dhó (ach, mar gheall ar chód Perl níos éifeachtaí, tá an córas 15% níos sciobtha)</li>
+<li>Rialacha a bhaineann le péirí ranna cainte nach mbeifí ag súil leo</li>
+<li>Clibeálaí ranna cainte, cosúil le clibeálaí Brill, a úsáideann 331 riail imdhealaithe ansin clibeálaí réamhshocraithe 1-gram</li>
+<li>Roghanna nua forbartha "--brill", "--ilchiall",
+"--minic", agus "--no-unigram" a éascaíonn obair ar an gclibeálaí</li>
+<li>Modúl a aithníonn frásaí agus cora cainte</li>
+<li>Modúl a aithníonn giorrúcháin, ag brath ar an teanga; feabhsaíonn sé seo téacsanna a dheighilt ina abairtí</li>
+<li>Rogha nua "--aspell" a mholann ceartúcháin ar fhocail mhílitrithe</li>
+<li>Tuilleadh ábhair sainiúil do theanga scartha ón bhuninneall gramadaí (tiontú go cás íochtair, macraí, srl.)</li>
+<li>Tuairisc a dhéanamh ar fhocail dhúbailte</li>
+<li>Tuairisc a dhéanamh ar fhocail annamha (a fholaíonn mílitrithe coitianta go minic)</li>
+<li>Aistriúcháin nua: Ollainnis, Fraincis, Mongóilis, Rómáinis, Slóvaicis</li>
+<li>Is féidir é a thógáil ar chóras UTF-8 anois</li>
+<li>Breiseán Vim <i>gramadoir.vim</i>
+<li>Ceartúcháin bheaga</li>
 </ul>
 </p>
 
 <p>
-<b>Version 0.2->0.3</b>
+<b>Leagan 0.2->0.3</b>
 <ul>
-<li>Optional native language support with GNU gettext (with translations to
-Irish and German included)
-<li>Added ability to specify text encoding via "--ionchod" command line option
-<li>Modularized language-specific material; added trivial English port and the
-"--teanga" command line option
-<li>Ported to build cleanly under Mac OS X
-<li>Added new (mostly grammar) rules
-<li>Minor bug fixes
-<li>New "extras" in tarball: emacs interface, complete CVS ChangeLog
+<li>Tacaíocht do theachtaireachtaí i dteangacha eile le GNU gettext (Gaeilge agus Gearmáinis san áireamh)</li>
+<li>Rogha nua ar líne na n-orduithe "--ionchod" lenar féidir an t-ionchódú ionchurtha a roghnú</li>
+<li>Scar mé an t-inneall gramadaí ón ábhar sainiúil do theangacha ar leith; bunleagan Béarla, rogha nua "--teanga" ar líne na n-orduithe</li>
+<li>Is féidir é a thógáil ar Mac OS X anois</li>
+<li>Rialacha nua (rialacha gramadaí den chuid is mó)</li>
+<li>Ceartúcháin bheaga</li>
+<li>Rudaí breise sa gcartlann .tar: breiseán emacs, logchomhad iomlán CVS</li>
 </ul>
 </p>
 
 <p>
-<b>Version 0.1->0.2</b>
+<b>Leagan 0.1->0.2</b>
 <ul>
-<li>Added the "replacement file" containing non-standard forms
-<li>Added user "ignore file" and "--iomlan" command line option
-<li>Added new disambiguation and grammar rules
-<li>More robust handling of exceptional input text
-<li>Minor bug fixes
+<li>Comhad nua "ionadaithe" ina bhfuil focail neamhchaighdeánacha</li>
+<li>Foclóir pearsanta ".neamhshuim" agus an rogha nua "--iomlan"</li>
+<li>Rialacha nua imdhealaithe agus gramadaí</li>
+<li>Láimhseáil níos fearr ar théacs eisceachtúil</li>
+<li>Ceartúcháin bheaga
 </ul>
 </p>

@@ -1,0 +1,142 @@
+<h2>Release History</h2>
+
+<p>
+The data on this page refer to the Irish version of
+<i lang="ga">An Gramadóir</i> which was, through version 0.4, packaged
+together with the build scripts as "<i>gramadoir-0.x</i>".    
+Starting with 0.50, the Irish version is distributed
+independently as the Perl module <i>Lingua::GA::Gramadoir</i>.
+
+<table border cellpadding=2>
+<tr><td>Version</td> <td>Release Date</td> <td>Size of lexicon</td> <td>Alt. forms</td> <td>Idioms</td> <td>Disambig rules</td> <td>Gramm. rules</td> <td>Excepts</td></tr>
+<tr><td>0.1</td> <td>18 Jul 2003</td> <td>313,973</td> <td>-</td>      <td>-</td>     <td>16</td>    <td>146</td> <td>18</td></tr>
+<tr><td>0.2</td> <td>30 Jul 2003</td> <td>314,027</td> <td>22,292</td> <td>-</td>     <td>22</td>    <td>173</td> <td>18</td></tr>
+<tr><td>0.3</td> <td>21 Oct 2003</td> <td>315,002</td> <td>23,353</td> <td>-</td>     <td>24</td>    <td>177</td> <td>18</td></tr>
+<tr><td>0.4</td> <td>8 Jan 2004</td> <td>315,041</td> <td>24,107</td> <td>214</td>    <td>331</td>   <td>361</td> <td>77</td></tr>
+<tr><td>0.50</td> <td>28 Jul 2004</td> <td>320,958</td> <td>27,868</td> <td>222</td>    <td>333</td>   <td>362</td> <td>77</td></tr>
+<tr><td>0.51</td> <td>25 Aug 2004</td> <td>321,088</td> <td>31,077</td> <td>222</td>    <td>333</td>   <td>362</td> <td>77</td></tr>
+<tr><td>0.60</td> <td>3 Mar 2005</td> <td>310,883</td> <td>44,067</td> <td>410</td>    <td>456</td>   <td>1573</td> <td>492</td></tr>
+<tr><td>0.70</td> <td>10 Oct 2013</td> <td>359,710</td> <td>117,958</td> <td>426</td>    <td>545</td>   <td>2821</td> <td>871</td></tr>
+</table>
+
+<h2>Benchmarks</h2>
+<p>
+The benchmark corpus is comprised of approximately one megabyte of
+plain text from the online Irish monthly 
+<a href="http://www.beo.ie/"><i lang="ga">Beo!</i></a>.
+There are 192406 words in the corpus forming 9292 sentences.
+Times below are given in seconds (real computation time on my 
+dual Xeon box running Gentoo Linux).   WPM = words per minute.
+</p>
+
+<table border cellpadding=2>
+<tr><td>v</td> <td>TOT</td> <td>WPM</td> <td><i>ab</i></td> <td><i>cu</i></td> <td><i>co</i></td> <td><i>a1</i></td> <td><i>a2</i></td> <td><i>un</i></td> <td><i>rl</i></td> <td><i>ei</i></td> <td><i>as</i></td></tr>
+<tr><td>0.1</td> <td><i>220.16</i></td> <td><i>52436</i></td> <td><i>5.20</i></td> <td><i>1.06</i></td> <td><i>-</i></td> <td><i>3.03</i></td> <td><i>-</i></td> <td><i>-</i></td> <td><i>206.52</i></td> <td><i>0.46</i></td> <td><i>3.89</i></td></tr>
+<tr><td>0.2</td> <td><i>220.73</i></td> <td><i>52301</i></td> <td><i>5.10</i></td> <td><i>1.13</i></td> <td><i>-</i></td> <td><i>3.38</i></td> <td><i>-</i></td> <td><i>-</i></td> <td><i>206.80</i></td> <td><i>0.43</i></td> <td><i>3.88</i></td></tr>
+<tr><td>0.3</td> <td><i>241.61</i></td> <td><i>47781</i></td> <td><i>5.04</i></td> <td><i>1.11</i></td> <td><i>-</i></td> <td><i>3.41</i></td> <td><i>-</i></td> <td><i>-</i></td> <td><i>227.64</i></td> <td><i>0.44</i></td> <td><i>3.97</i></td></tr>
+<tr><td>0.4</td> <td><i>208.39</i></td> <td><i>55398</i></td> <td><i>15.06</i></td> <td><i>2.60</i></td> <td><i>6.39</i></td> <td><i>133.83</i></td> <td><i>26.46</i></td> <td><i>0.76</i></td> <td><i>19.25</i></td> <td><i>1.04</i></td> <td><i>3.00</i></td></tr>
+<tr><td>0.50</td> <td><i>216.36</i></td> <td><i>53357</i></td> <td><i>6.97</i></td> <td><i>6.05</i></td> <td><i>9.75</i></td> <td><i>144.02</i></td> <td><i>29.08</i></td> <td><i>1.41</i></td> <td><i>14.72</i></td> <td><i>1.83</i></td> <td><i>2.60</i></td></tr>
+<tr><td>0.51</td> <td><i>204.19</i></td> <td><i>56537</i></td> <td><i>6.95</i></td> <td><i>6.63</i></td> <td><i>8.97</i></td> <td><i>130.11</i></td> <td><i>26.89</i></td> <td><i>1.26</i></td> <td><i>19.03</i></td> <td><i>1.65</i></td> <td><i>2.62</i></td></tr>
+<tr><td>0.60</td> <td><i>193.00</i></td> <td><i>59815</i></td> <td><i>24.49</i></td> <td><i>7.40</i></td> <td><i>23.39</i></td> <td><i>78.73</i></td> <td><i>25.07</i></td> <td><i>1.34</i></td> <td><i>29.91</i></td> <td><i>-</i></td> <td><i>2.42</i></td></tr>
+</table>
+
+<h2>ChangeLog Summary</h2>
+<p>
+<b>Version 0.60->0.70</b>
+<ul>
+<li>Massive expansion of lexicon, especially handling of non-standard spellings for Caighdeánaitheoir</li>
+<li>Nearly double the number of grammatical rules</li>
+<li>Small bug fixes</li>
+</ul>
+</p>
+
+<p>
+<b>Version 0.51->0.60</b>
+<ul>
+<li>Lexicon additions, improvements, and bug fixes (some unnecessary inflections removed)</li>
+<li>Rule set more than tripled in size, now covering a wide range of Irish grammar, including nearly all rules concerning missing or unnecessary initial mutations</li>
+<li>Simplification of the tagset, some regular expression optimizations, less dependence on part-of-speech macros, and the restructuring of a few slow rules lead to another 5% speed improvement despite the massively larger rule set</li>
+<li>Added warnings for many "dangerous pairs" based on corpus analysis</li>
+<li>Now correctly tokenizes numerals, including years, ordinals like "5ú", and plurals like "1950í".</li>
+<li>Many morphological rules added for treating pre-standard orthography; together with work on the replacement file, these allow An Gramad&oacute;ir to be used as a "normalizer" for indexing, information retrieval, etc.</li>
+</ul>
+</p> 
+
+<p>
+<b>Version 0.50->0.51</b>
+<ul>
+<li>Lexicon additions and improvements</li>
+<li>Improved error trapping</li>
+<li>Improved Perl code generation (consistent use of non-capturing parentheses, etc.) giving 5% speed improvement.</li>
+<li>Perl implementation of developer options "--brill", "--freq", "--ambig" distributed in the language pack <i>gramadoir-ga-0.51</i>.</li>
+<li>Added "--no-unigram" option to <i>gram-ga.pl</i></li>
+<li>POD documentation for <i>gram-ga.pl</i></li>
+</ul>
+</p> 
+
+<p>
+<b>Version 0.4->0.50</b>
+<ul>
+<li>Complete rewrite of core engine entirely in Perl</li>
+<li>Default output encoding is now utf8; added a "--aschod" option to change this</li>
+<li>The default is now to report all spelling errors in a sentence (was at most two)</li>
+<li>Added a complete morphological analyzer which greatly improves the error messages when words are not found in the lexicon.</li>
+<li>The morphology engine also improves handling of late capitals so words like "d'Fhoras", "Sean-Nós" are passed over silently as correct now.  Also, since the lowered version of a word like "hAire" is not automatically searched (since the capitalized version is in the lexicon), this gets the correct, unambiguous masculine POS tag.  Or in "bPáirtí Glas", the first word is now recognized unambiguously as a noun which then has the added benefit of allowing "Glas" to be correctly recognized as an adjective.</li>
+<li>Line numbers are now given where the error occurs (was the line number of the beginning of the sentence containing the error).</li>
+<li>Non-standard words are now tagged so as to be reported as misspellings when the "--litriu" flag is given.</li>
+<li>Doubled words only reported when there is no intervening punctuation; the two words together are now marked up as the erroneous text.</li>
+<li>Bug from unescaped "$" in bash version goes away with perl</li>
+<li>Global highlighting bug fixed (e.g. "re" in "gach re" caused the "re" in "toibreacha" to be highlighted also).</li>
+<li>No more "uimhir" line number attribute in intermediate XML</li>
+<li>Use character entities "&amp;quot;", etc. in "--api", "--html", and "--xml" output</li>
+<li>Added "--api" command line option which generates XML output suitable for use as an interface to other programs</li>
+<li>Added command line options "--aschur", "--dath", "--comheadan"</li>
+<li>I cracked and added English versions of the long command-line options</li>
+<li>Improvements (adding to .neamhshuim) and bug fixes to Vim interface</li>
+<li>Afrikaans localization</li>
+</ul>
+</p>
+
+<p>
+<b>Version 0.3->0.4</b>
+<ul>
+<li>Rule set more than double the size (improved generation of Perl code means no loss in efficiency, in fact a 15% improvement)</li>
+<li>"tag 2-gram" rules added that flag unlikely part-of-speech combinations</li>
+<li>Complete Brill-like rule-based tagger added with 331 disambiguation rules followed by a default unigram tagger</li>
+<li>Added developer options "--brill", "--ilchiall", "--minic", and "--no-unigram" useful for developing the tagger</li>
+<li>Module for "chunking" of set phrases added</li>
+<li>Language-dependent modules added for recognizing abbreviations; improves sentence segmentation</li>
+<li>Added "--aspell" option which makes suggestions for misspelled words</li>
+<li>Modularized more language-specific material (tolower, macro files, etc.)</li>
+<li>Flagging of repeated words</li>
+<li>Flagging of extremely rare words (which sometimes disguise misspellings)</li>
+<li>Dutch, French, Mongolian, Romanian, and Slovak localizations</li>
+<li>Now builds and runs cleanly in a UTF-8 locale</li>
+<li>Vim interface <i>gramadoir.vim</i> included</li>
+<li>Minor bug fixes</li>
+</ul>
+</p>
+
+<p>
+<b>Version 0.2->0.3</b>
+<ul>
+<li>Optional native language support with GNU gettext (with translations to Irish and German included)</li>
+<li>Added ability to specify text encoding via "--ionchod" command line option</li>
+<li>Modularized language-specific material; added trivial English port and the "--teanga" command line option</li>
+<li>Ported to build cleanly under Mac OS X</li>
+<li>Added new (mostly grammar) rules</li>
+<li>Minor bug fixes</li>
+<li>New "extras" in tarball: emacs interface, complete CVS ChangeLog</li>
+</ul>
+</p>
+
+<p>
+<b>Version 0.1->0.2</b>
+<ul>
+<li>Added the "replacement file" containing non-standard forms</li>
+<li>Added user "ignore file" and "--iomlan" command line option</li>
+<li>Added new disambiguation and grammar rules</li>
+<li>More robust handling of exceptional input text</li>
+<li>Minor bug fixes</li>
+</ul>
+</p>
