@@ -1,5 +1,5 @@
---- Makefile	2018-04-17 12:43:57.907073324 -0500
-+++ Makefile.ok	2018-04-17 11:52:08.142932107 -0500
+--- Makefile	2020-05-22 11:42:10.665296672 -0500
++++ Makefile.ok	2020-05-22 11:41:34.181567994 -0500
 @@ -10,7 +10,7 @@
  
  # general configuration
@@ -67,7 +67,7 @@
  
  
  counts : FORCE
-@@ -333,4 +349,106 @@
+@@ -333,4 +349,109 @@
  zipped : perl
  	(cd $(PERLD); make zipdist)
  
@@ -155,6 +155,9 @@
 +
 +bugs.html : bugs.txt
 +	cat bugs.txt | LC_ALL=C sed '/^[^#]/s/\*\([^\*]*\)\*/<b class=gramadoir>\1<\/b>/g; s/^[^#].*/<i>&<\/i><br>/; s/^# *HEADING: *\(.*\)/<hr><h2>\1<\/h2><p>/; s/^# *BUG.*/<\/p><p>/; s/^# \(.*\)/\1<br>/;' > $@
++
++bugs-en.html : bugs-en.txt
++	cat bugs-en.txt | LC_ALL=C sed '/^[^#]/s/\*\([^\*]*\)\*/<b class=gramadoir>\1<\/b>/g; s/^[^#].*/<i>&<\/i><br>/; s/^# *HEADING: *\(.*\)/<hr><h2>\1<\/h2><p>/; s/^# *BUG.*/<\/p><p>/; s/^# \(.*\)/\1<br>/;' > $@
 +
 +testdtd : FORCE
 +	$(MAKE) gram-$(TEANGA).dtd
