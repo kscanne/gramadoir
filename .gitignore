@@ -1,6 +1,8 @@
 Makefile
 autom4te.cache/
 bugs.html
+bugs-en.html
 sampla.html
+sampla-en.html
 config.status
 configure
