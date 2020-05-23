@@ -1,5 +1,5 @@
---- Makefile	2020-05-22 11:37:47.007247188 -0500
-+++ Makefile.ok	2020-05-22 11:36:18.427895906 -0500
+--- Makefile	2020-05-23 10:15:27.258407448 -0500
++++ Makefile.ok	2020-05-23 10:12:45.059579711 -0500
 @@ -60,8 +60,16 @@
  
  Makefile : Makefile.in config.status
@@ -17,7 +17,7 @@
  config.status: configure
  	./config.status --recheck
  
-@@ -81,4 +89,86 @@
+@@ -81,4 +89,87 @@
  semiclean :
  	rm -f y.tab.* $(LEX_OUTPUT_ROOT).* aonchiall.y rialacha.y
  
@@ -44,9 +44,10 @@
 +	sed '/gram-ga\.pl triail/r ga/triail.html' samptemplate.html > sampla.html
 +	sed '/gram-ga\.pl triail/r ga/triail.html' samptemplate-en.html > sampla-en.html
 +
-+bugs.html : FORCE
-+	(cd ga; $(MAKE) bugs.html)
-+	sed '/kscanne at gmail dot com/r ga/bugs.html' bugstemplate.html > bugs.html
++bugs.html bugs-en.html: FORCE
++	(cd ga; $(MAKE) bugs.html bugs-en.html)
++	sed '/kscanne ag gmail ponc com/r ga/bugs.html' bugstemplate.html > bugs.html
++	sed '/kscanne at gmail dot com/r ga/bugs-en.html' bugstemplate-en.html > bugs-en.html
 +
 +maintainer-clean :
 +	$(MAKE) distclean
