@@ -1,5 +1,5 @@
---- Makefile	2020-05-23 10:10:53.596384986 -0500
-+++ Makefile.ok	2020-05-23 09:11:47.521396636 -0500
+--- Makefile	2020-05-23 10:14:52.386659512 -0500
++++ Makefile.ok	2020-05-23 10:14:19.610896413 -0500
 @@ -10,7 +10,7 @@
  
  # general configuration
@@ -154,10 +154,10 @@
 +	@if diff -u $(BIGDIR)/bigerr.xml $(BIGDIR)/bigerr.new.xml > $(BIGDIR)/diff2.txt; then echo "Errors unchanged."; rm -f $(BIGDIR)/bigerr.new.xml $(BIGDIR)/diff2.txt; else echo "Differences in errors."; fi
 +
 +bugs.html : bugs.txt
-+	cat bugs.txt | LC_ALL=C sed '/^[^#]/s/\*\([^\*]*\)\*/<b class=gramadoir>\1<\/b>/g; s/^[^#].*/<i>&<\/i><br\/>/; s/^# *HEADING: *\(.*\)/<hr><h2>\1<\/h2><p>/; s/^# *BUG.*/<\/p><p>/; s/^# \(.*\)/\1<br\/>/; /^#/s/@\([^@]*\)@/<i>\1<\/i>/g;' > $@
++	cat bugs.txt | LC_ALL=C sed '/^[^#]/s/\*\([^\*]*\)\*/<b class=gramadoir>\1<\/b>/g; s/^[^#].*/<i>&<\/i><br\/>/; s/^# *HEADING: *\(.*\)/<hr><h2>\1<\/h2><p>/; s/^# *BUG.*/<\/p><p>/; s/^# \(.*\)/\1<br\/>/; s/@\([^@]*\)@/<i>\1<\/i>/g;' > $@
 +
 +bugs-en.html : bugs-en.txt
-+	cat bugs-en.txt | LC_ALL=C sed '/^[^#]/s/\*\([^\*]*\)\*/<b class=gramadoir>\1<\/b>/g; s/^[^#].*/<i>&<\/i><br\/>/; s/^# *HEADING: *\(.*\)/<hr><h2>\1<\/h2><p>/; s/^# *BUG.*/<\/p><p>/; s/^# \(.*\)/\1<br\/>/; /^#/s/@\([^@]*\)@/<i>\1<\/i>/g;' > $@
++	cat bugs-en.txt | LC_ALL=C sed '/^[^#]/s/\*\([^\*]*\)\*/<b class=gramadoir>\1<\/b>/g; s/^[^#].*/<i>&<\/i><br\/>/; s/^# *HEADING: *\(.*\)/<hr><h2>\1<\/h2><p>/; s/^# *BUG.*/<\/p><p>/; s/^# \(.*\)/\1<br\/>/; s/@\([^@]*\)@/<i>\1<\/i>/g;' > $@
 +
 +testdtd : FORCE
 +	$(MAKE) gram-$(TEANGA).dtd
