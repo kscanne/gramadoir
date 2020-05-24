@@ -1,5 +1,5 @@
---- Makefile	2020-05-23 10:14:52.386659512 -0500
-+++ Makefile.ok	2020-05-23 10:14:19.610896413 -0500
+--- Makefile	2020-05-24 04:31:05.520496353 -0500
++++ Makefile.ok	2020-05-24 04:30:21.128832108 -0500
 @@ -10,7 +10,7 @@
  
  # general configuration
@@ -82,8 +82,8 @@
 +	$(MAKE) perl
 +	benchcorp | iconv -f utf8 -t iso-8859-1 | $(PERL) -I $(PERLD)/lib $(DEVSCRIPTNAME) --minic | iconv -f utf8 -t iso-8859-1 > $@
 +
-+Changes : ../stair.html
-+	vilistextum --charset=utf-8 --output-utf-8 $(GRAMDIR)/stair.html - | sed -n '/^ChangeLog/,/----/p' | $(EGREP) -v -- '---' > $@
++Changes : ../stair-en.html
++	vilistextum --charset=utf-8 --output-utf-8 $(GRAMDIR)/stair-en.html - | sed -n '/^ChangeLog/,/----/p' | $(EGREP) -v -- '---' > $@
 +
 +# use installed version for this
 +triail.html : triail
