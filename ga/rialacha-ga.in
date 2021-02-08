@@ -2378,6 +2378,7 @@ a|á <E><N pl="n" gnt="n" gnd="m">dhó</N></E>:OK
 # CB p.20 Note, OD i^1; see rule catching "i dhá" above
 #. Beidh an spórt seo á imirt in dhá ionad (OK).
 <S>[Ii]n</S> <A pl="n" gnt="n">[Dd]há</A>:OK
+<S>[Ii]n</S> <A pl="n" gnt="n">2|2[0-9][0-9]+</A>:OK
 # CB p.132 #5
 <S>[Ii]na</S> <VPAST>ANYTHING</VPAST>:BACHOIR{inar}
 # CB p.133 #12 irreg. exceptions; lenited ones are wrong but want the clearer
