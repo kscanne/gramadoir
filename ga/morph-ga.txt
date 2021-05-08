@@ -347,6 +347,9 @@ ngc			nc		1	<.+>	<&>		# caighdean corpus, pongc -> ponc
 ó(i?r[dlnr])		o$1		1	<.+>	<&>    # CO p.123-124
 ú(i?r[dlnr])		u$1		1	<.+>	<&>    # CO p.123-124
 eó			eo		1	<.+>	<&>    # go leór, aibhleóg, etc.
+áo			ao		1	<.+>	<&>		# Bedell: náoi, etc.
+úa			ua		1	<.+>	<&>		# Bedell: úair, súas, núair, etc.
+aó			ao		1	<.+>	<&>		# Bedell: naómh, etc.
 eamh[au]il$		iúil		1	<[ANF].*>	<&>    # dlightheamhail
 eamhla			iúla		1	<[ANF].*>	<&>
 ([^e])amh[au]il$		$1úil		1	<[ANF].*>	<&>    # CO p.102, a2+barúil, etc.
@@ -458,8 +461,8 @@ e[oó]ch(f|th)?(aoi|a?í)$		eofaí		1	<V p="n" t="coinn">	<&>
 ([^e])óch(f|th)?(aoi|a?í)$		$1ófaí		1	<V p="n" t="coinn">	<&>
 (ó|eo)chf?ar$			$1far	1	<V p="n" t="fáist">	<&>
 (ó|eo)chthar$			$1far	1	<V p="n" t="fáist">	<&>
-faidhear$			far	1	<V p="n" t="fáist">	<&>
-fidhear$			fear	1	<V p="n" t="fáist">	<&>
+f[au]i[dg]hear$			far	1	<V p="n" t="fáist">	<&>
+fi[dg]hear$			fear	1	<V p="n" t="fáist">	<&>
 [ií]ghean$		íonn	1	<V.*>	<&>	# aithnighean srl
 eamaoid$			imid	1	<V.*>	<&> # chuireamaoid, thuigeamaoid, ...
 ([^e])amaoid$			$1aimid	1	<V.*>	<&>  # iarramaoid, déanfamaoid, ...
