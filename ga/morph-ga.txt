@@ -422,6 +422,7 @@ ioch$			each	1	<[ANF].*>	<&>
 #  more patterns from RIA corpus
 uía				aío	1	<.+>	<&>		# díoluíacht, tosnuíann
 ía				ia	1	<.+>	<&>		# ríachtanach, Día
+^bhfh			bhf	1	<.+>	<&>		# Bedell: in bhur bhfharradh, etc.
 ^ff				bhf	1	<.+>	<&>		# ffiadhnaise
 ^cc				gc	1	<.+>	<&>		# ccás
 ^tt				dt	1	<.+>	<&>		# ttaobh
