@@ -130,7 +130,7 @@ s/SUBJECTPRONOUN/[Ss](?:[éí]|iad(?:san)?|ise|eisean)/g;
 # need "dul", "teacht" even though intransitive for "a'" rule!
 s/NOTVNISHUNLEN/(?:ceannach|cur|díol|dul|foghlaim|íoc|iompar|oscailt|rá|roinnt|scríobh|soláthar|teacht)/g;
 s/NOTVNISHVN/(?:bheith|cheannach|chur|dhíol|dhul|fhoghlaim|íoc|iompar|oscailt|rá|roinnt|scríobh|sholáthar|theacht)/g;
-s/VNISH/[^<]*(?:a[dm]h|i[nr]t|áil|ú)/g;
+s/VNISH/[^<][^<]+(?:a[dm]h|i[nr]t|áil|ú)/g;
 s/NOTDO/[^<][^<][^<]+/g;
 # used with FEMVN above so no need to repeat "áil", etc.
 # "cúis" should not be here; "cúis ghearáin", etc. are correct
