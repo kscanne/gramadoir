@@ -653,7 +653,7 @@ n[Dd]eire:IONADAI{ndeireadh}
 # LGG p.59 (a), but see CB p.15 "maidin shamhraidh", OD "áit dhúchais", "fuil shróine"
 <NFCS>FINALDLNST</NFCS> <NG>LENITEDDST</NG>:NISEIMHIU
 # unclear in corpus "beirt duine" is common, but rules don't indicate exc.
-<N pl="n" gnt="n" gnd="f">m?[Bb]h?eirt</N> <NG>LENITEDDST</NG>:OK
+#<N pl="n" gnt="n" gnd="f">m?[Bb]h?eirt</N> <NG>LENITEDDST</NG>:OK
 # CB p.16 #6 exception
 #. Is as Londain Shasana mé ó dhúchas (OK).
 <NFCS>ANYTHING</NFCS> <NG>CAPITAL</NG>:OK
@@ -1146,7 +1146,8 @@ INITIALMBAPOST:NIURU
 [Nn]á <E><V p="y" t="coinn">[Bb]einn</V></E>:OK
 # CB p.13 #3.e
 #. D'fhan beirt buachaill sa champa.
-<N pl="n" gnt="n" gnd="f">[Bb]eirt</N> <N>UNLENITED</N>:SEIMHIU
+<N pl="n" gnt="n" gnd="f">m?[Bb]h?eirt</N> <N>UNLENITED</N>:SEIMHIU
+<N pl="n" gnt="n" gnd="f">m?[Bb]h?eirt</N> <N>INITIALDST</N>:OK
 # CB p.79 #13.a; but see Liz Warren's email Dec 2008
 <N pl="n" gnt="n" gnd="f">m?[Bb]h?eirt</N> <NP>ANYTHING</NP>:UATHA
 <N pl="n" gnt="n" gnd="f">m?[Bb]h?eirt</N> <N pl="y" gnt="y" gnd="f">bhan</N>:OK
