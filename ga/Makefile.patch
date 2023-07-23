@@ -1,10 +1,10 @@
---- Makefile	2020-05-24 04:31:05.520496353 -0500
-+++ Makefile.ok	2020-05-24 04:30:21.128832108 -0500
+--- Makefile	2023-07-21 14:04:14.602756866 +0000
++++ Makefile-sprioc	2023-07-21 14:05:50.174177592 +0000
 @@ -10,7 +10,7 @@
  
  # general configuration
  ECHO = echo
--EGREP = /bin/grep -E
+-EGREP = /usr/bin/grep -E
 +EGREP = /bin/grep -E -a
  LN_S = ln -s
  PERL = /usr/bin/perl
